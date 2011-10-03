@@ -2645,10 +2645,15 @@ class ErrorType {
 				$this->SeverityCode = $arr[$arrKeyName];
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "ErrorParameters[$i]") ) {
-					$newArray = "ErrorParameters[$i]";
+				if( array_key_exists("ErrorParameters[$i]" ,$arr) ) {
+					$newArray = $arr["ErrorParameters"];
 				$this->ErrorParameters[$i] = new ErrorParameterType();
-				$this->ErrorParameters[$i]->init($newArray);
+				$this->ErrorParameters[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("ErrorParameters", $arr) ) {
+					$newArray = $arr["ErrorParameters"];
+				$this->ErrorParameters = new ErrorParameterType();
+				$this->ErrorParameters->init($newArray);
 			}
 			 }
 		}
@@ -2830,10 +2835,15 @@ class AbstractResponseType {
 				$this->CorrelationID = $arr[$arrKeyName];
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "Errors[$i]") ) {
-					$newArray = "Errors[$i]";
+				if( array_key_exists("Errors[$i]" ,$arr) ) {
+					$newArray = $arr["Errors"];
 				$this->Errors[$i] = new ErrorType();
-				$this->Errors[$i]->init($newArray);
+				$this->Errors[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("Errors", $arr) ) {
+					$newArray = $arr["Errors"];
+				$this->Errors = new ErrorType();
+				$this->Errors->init($newArray);
 			}
 			 }
 			$arrKeyName =  'Version';
@@ -3477,7 +3487,7 @@ class IncentiveAppliedToType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->ItemId = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "IncentiveAmount") ) {
+			if( array_key_exists("IncentiveAmount", $arr) ) {
 				$newArray = "IncentiveAmount";
 				$this->IncentiveAmount = new BasicAmountType();
 				$this->IncentiveAmount->init($arr[$newArray]);
@@ -3567,10 +3577,15 @@ class IncentiveDetailType {
 				$this->IncentiveDescription = $arr[$arrKeyName];
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "AppliedTo[$i]") ) {
-					$newArray = "AppliedTo[$i]";
+				if( array_key_exists("AppliedTo[$i]" ,$arr) ) {
+					$newArray = $arr["AppliedTo"];
 				$this->AppliedTo[$i] = new IncentiveAppliedToType();
-				$this->AppliedTo[$i]->init($newArray);
+				$this->AppliedTo[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("AppliedTo", $arr) ) {
+					$newArray = $arr["AppliedTo"];
+				$this->AppliedTo = new IncentiveAppliedToType();
+				$this->AppliedTo->init($newArray);
 			}
 			 }
 			$arrKeyName =  'Status';
@@ -3899,10 +3914,15 @@ class GetIncentiveEvaluationResponseDetailsType {
 	public function init($arr = null) {
 		if($arr != null) {
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "IncentiveDetails[$i]") ) {
-					$newArray = "IncentiveDetails[$i]";
+				if( array_key_exists("IncentiveDetails[$i]" ,$arr) ) {
+					$newArray = $arr["IncentiveDetails"];
 				$this->IncentiveDetails[$i] = new IncentiveDetailType();
-				$this->IncentiveDetails[$i]->init($newArray);
+				$this->IncentiveDetails[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("IncentiveDetails", $arr) ) {
+					$newArray = $arr["IncentiveDetails"];
+				$this->IncentiveDetails = new IncentiveDetailType();
+				$this->IncentiveDetails->init($newArray);
 			}
 			 }
 			$arrKeyName =  'RequestId';
@@ -5687,7 +5707,7 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Token = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "PayerInfo") ) {
+			if( array_key_exists("PayerInfo", $arr) ) {
 				$newArray = "PayerInfo";
 				$this->PayerInfo = new PayerInfoType();
 				$this->PayerInfo->init($arr[$newArray]);
@@ -5712,7 +5732,7 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->RedirectRequired = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "BillingAddress") ) {
+			if( array_key_exists("BillingAddress", $arr) ) {
 				$newArray = "BillingAddress";
 				$this->BillingAddress = new AddressType();
 				$this->BillingAddress->init($arr[$newArray]);
@@ -5725,28 +5745,38 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->CheckoutStatus = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "PayPalAdjustment") ) {
+			if( array_key_exists("PayPalAdjustment", $arr) ) {
 				$newArray = "PayPalAdjustment";
 				$this->PayPalAdjustment = new BasicAmountType();
 				$this->PayPalAdjustment->init($arr[$newArray]);
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "PaymentDetails[$i]") ) {
-					$newArray = "PaymentDetails[$i]";
+				if( array_key_exists("PaymentDetails[$i]" ,$arr) ) {
+					$newArray = $arr["PaymentDetails"];
 				$this->PaymentDetails[$i] = new PaymentDetailsType();
-				$this->PaymentDetails[$i]->init($newArray);
+				$this->PaymentDetails[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("PaymentDetails", $arr) ) {
+					$newArray = $arr["PaymentDetails"];
+				$this->PaymentDetails = new PaymentDetailsType();
+				$this->PaymentDetails->init($newArray);
 			}
 			 }
-			if( PPUtils::array_match_key($arr, "UserSelectedOptions") ) {
+			if( array_key_exists("UserSelectedOptions", $arr) ) {
 				$newArray = "UserSelectedOptions";
 				$this->UserSelectedOptions = new UserSelectedOptionType();
 				$this->UserSelectedOptions->init($arr[$newArray]);
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "IncentiveDetails[$i]") ) {
-					$newArray = "IncentiveDetails[$i]";
+				if( array_key_exists("IncentiveDetails[$i]" ,$arr) ) {
+					$newArray = $arr["IncentiveDetails"];
 				$this->IncentiveDetails[$i] = new IncentiveDetailsType();
-				$this->IncentiveDetails[$i]->init($newArray);
+				$this->IncentiveDetails[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("IncentiveDetails", $arr) ) {
+					$newArray = $arr["IncentiveDetails"];
+				$this->IncentiveDetails = new IncentiveDetailsType();
+				$this->IncentiveDetails->init($newArray);
 			}
 			 }
 			$arrKeyName =  'GiftMessage';
@@ -5761,7 +5791,7 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->GiftWrapName = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "GiftWrapAmount") ) {
+			if( array_key_exists("GiftWrapAmount", $arr) ) {
 				$newArray = "GiftWrapAmount";
 				$this->GiftWrapAmount = new BasicAmountType();
 				$this->GiftWrapAmount->init($arr[$newArray]);
@@ -5777,13 +5807,18 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 			for($i=0; $i<10;$i++) {
 			 }
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "PaymentRequestInfo[$i]") ) {
-					$newArray = "PaymentRequestInfo[$i]";
+				if( array_key_exists("PaymentRequestInfo[$i]" ,$arr) ) {
+					$newArray = $arr["PaymentRequestInfo"];
 				$this->PaymentRequestInfo[$i] = new PaymentRequestInfoType();
-				$this->PaymentRequestInfo[$i]->init($newArray);
+				$this->PaymentRequestInfo[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("PaymentRequestInfo", $arr) ) {
+					$newArray = $arr["PaymentRequestInfo"];
+				$this->PaymentRequestInfo = new PaymentRequestInfoType();
+				$this->PaymentRequestInfo->init($newArray);
 			}
 			 }
-			if( PPUtils::array_match_key($arr, "ExternalRememberMeStatusDetails") ) {
+			if( array_key_exists("ExternalRememberMeStatusDetails", $arr) ) {
 				$newArray = "ExternalRememberMeStatusDetails";
 				$this->ExternalRememberMeStatusDetails = new ExternalRememberMeStatusDetailsType();
 				$this->ExternalRememberMeStatusDetails->init($arr[$newArray]);
@@ -5811,12 +5846,12 @@ class ExecuteCheckoutOperationsResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "SetDataResponse") ) {
+			if( array_key_exists("SetDataResponse", $arr) ) {
 				$newArray = "SetDataResponse";
 				$this->SetDataResponse = new SetDataResponseType();
 				$this->SetDataResponse->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "AuthorizationResponse") ) {
+			if( array_key_exists("AuthorizationResponse", $arr) ) {
 				$newArray = "AuthorizationResponse";
 				$this->AuthorizationResponse = new AuthorizationResponseType();
 				$this->AuthorizationResponse->init($arr[$newArray]);
@@ -5855,10 +5890,15 @@ class SetDataResponseType {
 				$this->Token = $arr[$arrKeyName];
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "SetDataError[$i]") ) {
-					$newArray = "SetDataError[$i]";
+				if( array_key_exists("SetDataError[$i]" ,$arr) ) {
+					$newArray = $arr["SetDataError"];
 				$this->SetDataError[$i] = new ErrorType();
-				$this->SetDataError[$i]->init($newArray);
+				$this->SetDataError[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("SetDataError", $arr) ) {
+					$newArray = $arr["SetDataError"];
+				$this->SetDataError = new ErrorType();
+				$this->SetDataError->init($newArray);
 			}
 			 }
 		}
@@ -5893,10 +5933,15 @@ class AuthorizationResponseType {
 				$this->Status = $arr[$arrKeyName];
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "AuthorizationError[$i]") ) {
-					$newArray = "AuthorizationError[$i]";
+				if( array_key_exists("AuthorizationError[$i]" ,$arr) ) {
+					$newArray = $arr["AuthorizationError"];
 				$this->AuthorizationError[$i] = new ErrorType();
-				$this->AuthorizationError[$i]->init($newArray);
+				$this->AuthorizationError[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("AuthorizationError", $arr) ) {
+					$newArray = $arr["AuthorizationError"];
+				$this->AuthorizationError = new ErrorType();
+				$this->AuthorizationError->init($newArray);
 			}
 			 }
 		}
@@ -6262,10 +6307,15 @@ Information about the transaction 	 *
 				$this->Token = $arr[$arrKeyName];
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "PaymentInfo[$i]") ) {
-					$newArray = "PaymentInfo[$i]";
+				if( array_key_exists("PaymentInfo[$i]" ,$arr) ) {
+					$newArray = $arr["PaymentInfo"];
 				$this->PaymentInfo[$i] = new PaymentInfoType();
-				$this->PaymentInfo[$i]->init($newArray);
+				$this->PaymentInfo[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("PaymentInfo", $arr) ) {
+					$newArray = $arr["PaymentInfo"];
+				$this->PaymentInfo = new PaymentInfoType();
+				$this->PaymentInfo->init($newArray);
 			}
 			 }
 			$arrKeyName =  'BillingAgreementID';
@@ -6284,7 +6334,7 @@ Information about the transaction 	 *
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->SuccessPageRedirectRequested = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "UserSelectedOptions") ) {
+			if( array_key_exists("UserSelectedOptions", $arr) ) {
 				$newArray = "UserSelectedOptions";
 				$this->UserSelectedOptions = new UserSelectedOptionType();
 				$this->UserSelectedOptions->init($arr[$newArray]);
@@ -6324,7 +6374,7 @@ Information about the transaction 	 *
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->AuthorizationID = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "PaymentInfo") ) {
+			if( array_key_exists("PaymentInfo", $arr) ) {
 				$newArray = "PaymentInfo";
 				$this->PaymentInfo = new PaymentInfoType();
 				$this->PaymentInfo->init($arr[$newArray]);
@@ -7490,17 +7540,17 @@ class BAUpdateResponseDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->BillingAgreementCustom = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "PayerInfo") ) {
+			if( array_key_exists("PayerInfo", $arr) ) {
 				$newArray = "PayerInfo";
 				$this->PayerInfo = new PayerInfoType();
 				$this->PayerInfo->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "BillingAgreementMax") ) {
+			if( array_key_exists("BillingAgreementMax", $arr) ) {
 				$newArray = "BillingAgreementMax";
 				$this->BillingAgreementMax = new BasicAmountType();
 				$this->BillingAgreementMax->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "BillingAddress") ) {
+			if( array_key_exists("BillingAddress", $arr) ) {
 				$newArray = "BillingAddress";
 				$this->BillingAddress = new AddressType();
 				$this->BillingAddress->init($arr[$newArray]);
@@ -7539,17 +7589,17 @@ Information about the transaction 	 *
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "PayerInfo") ) {
+			if( array_key_exists("PayerInfo", $arr) ) {
 				$newArray = "PayerInfo";
 				$this->PayerInfo = new PayerInfoType();
 				$this->PayerInfo->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "PaymentInfo") ) {
+			if( array_key_exists("PaymentInfo", $arr) ) {
 				$newArray = "PaymentInfo";
 				$this->PaymentInfo = new PaymentInfoType();
 				$this->PaymentInfo->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "MerchantPullInfo") ) {
+			if( array_key_exists("MerchantPullInfo", $arr) ) {
 				$newArray = "MerchantPullInfo";
 				$this->MerchantPullInfo = new MerchantPullInfoType();
 				$this->MerchantPullInfo->init($arr[$newArray]);
@@ -7629,7 +7679,7 @@ Note: This field is no longer used and is always
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->MpStatus = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "MpMax") ) {
+			if( array_key_exists("MpMax", $arr) ) {
 				$newArray = "MpMax";
 				$this->MpMax = new BasicAmountType();
 				$this->MpMax->init($arr[$newArray]);
@@ -7768,17 +7818,17 @@ The net amount of the transaction 	 *
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Status = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "GrossAmount") ) {
+			if( array_key_exists("GrossAmount", $arr) ) {
 				$newArray = "GrossAmount";
 				$this->GrossAmount = new BasicAmountType();
 				$this->GrossAmount->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "FeeAmount") ) {
+			if( array_key_exists("FeeAmount", $arr) ) {
 				$newArray = "FeeAmount";
 				$this->FeeAmount = new BasicAmountType();
 				$this->FeeAmount->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "NetAmount") ) {
+			if( array_key_exists("NetAmount", $arr) ) {
 				$newArray = "NetAmount";
 				$this->NetAmount = new BasicAmountType();
 				$this->NetAmount->init($arr[$newArray]);
@@ -8157,27 +8207,27 @@ Information about an individual item in the
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "ReceiverInfo") ) {
+			if( array_key_exists("ReceiverInfo", $arr) ) {
 				$newArray = "ReceiverInfo";
 				$this->ReceiverInfo = new ReceiverInfoType();
 				$this->ReceiverInfo->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "PayerInfo") ) {
+			if( array_key_exists("PayerInfo", $arr) ) {
 				$newArray = "PayerInfo";
 				$this->PayerInfo = new PayerInfoType();
 				$this->PayerInfo->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "PaymentInfo") ) {
+			if( array_key_exists("PaymentInfo", $arr) ) {
 				$newArray = "PaymentInfo";
 				$this->PaymentInfo = new PaymentInfoType();
 				$this->PaymentInfo->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "PaymentItemInfo") ) {
+			if( array_key_exists("PaymentItemInfo", $arr) ) {
 				$newArray = "PaymentItemInfo";
 				$this->PaymentItemInfo = new PaymentItemInfoType();
 				$this->PaymentItemInfo->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "UserSelectedOptions") ) {
+			if( array_key_exists("UserSelectedOptions", $arr) ) {
 				$newArray = "UserSelectedOptions";
 				$this->UserSelectedOptions = new UserSelectedOptionType();
 				$this->UserSelectedOptions->init($arr[$newArray]);
@@ -8194,7 +8244,7 @@ Information about an individual item in the
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->GiftWrapName = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "GiftWrapAmount") ) {
+			if( array_key_exists("GiftWrapAmount", $arr) ) {
 				$newArray = "GiftWrapAmount";
 				$this->GiftWrapAmount = new BasicAmountType();
 				$this->GiftWrapAmount->init($arr[$newArray]);
@@ -8376,7 +8426,7 @@ Holds any enhanced information about the payer
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->PayerStatus = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "PayerName") ) {
+			if( array_key_exists("PayerName", $arr) ) {
 				$newArray = "PayerName";
 				$this->PayerName = new PersonNameType();
 				$this->PayerName->init($arr[$newArray]);
@@ -8389,7 +8439,7 @@ Holds any enhanced information about the payer
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->PayerBusiness = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "Address") ) {
+			if( array_key_exists("Address", $arr) ) {
 				$newArray = "Address";
 				$this->Address = new AddressType();
 				$this->Address->init($arr[$newArray]);
@@ -8398,12 +8448,12 @@ Holds any enhanced information about the payer
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->ContactPhone = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "TaxIdDetails") ) {
+			if( array_key_exists("TaxIdDetails", $arr) ) {
 				$newArray = "TaxIdDetails";
 				$this->TaxIdDetails = new TaxIdDetailsType();
 				$this->TaxIdDetails->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "EnhancedPayerInfo") ) {
+			if( array_key_exists("EnhancedPayerInfo", $arr) ) {
 				$newArray = "EnhancedPayerInfo";
 				$this->EnhancedPayerInfo = new EnhancedPayerInfoType();
 				$this->EnhancedPayerInfo->init($arr[$newArray]);
@@ -8549,7 +8599,7 @@ class OfferDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->OfferCode = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "BMLOfferInfo") ) {
+			if( array_key_exists("BMLOfferInfo", $arr) ) {
 				$newArray = "BMLOfferInfo";
 				$this->BMLOfferInfo = new BMLOfferInfoType();
 				$this->BMLOfferInfo->init($arr[$newArray]);
@@ -8982,22 +9032,22 @@ Amount deposited into the account's primary
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->PaymentDate = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "GrossAmount") ) {
+			if( array_key_exists("GrossAmount", $arr) ) {
 				$newArray = "GrossAmount";
 				$this->GrossAmount = new BasicAmountType();
 				$this->GrossAmount->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "FeeAmount") ) {
+			if( array_key_exists("FeeAmount", $arr) ) {
 				$newArray = "FeeAmount";
 				$this->FeeAmount = new BasicAmountType();
 				$this->FeeAmount->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "SettleAmount") ) {
+			if( array_key_exists("SettleAmount", $arr) ) {
 				$newArray = "SettleAmount";
 				$this->SettleAmount = new BasicAmountType();
 				$this->SettleAmount->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "TaxAmount") ) {
+			if( array_key_exists("TaxAmount", $arr) ) {
 				$newArray = "TaxAmount";
 				$this->TaxAmount = new BasicAmountType();
 				$this->TaxAmount->init($arr[$newArray]);
@@ -9054,7 +9104,7 @@ Amount deposited into the account's primary
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Subject = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "SellerDetails") ) {
+			if( array_key_exists("SellerDetails", $arr) ) {
 				$newArray = "SellerDetails";
 				$this->SellerDetails = new SellerDetailsType();
 				$this->SellerDetails->init($arr[$newArray]);
@@ -9063,27 +9113,27 @@ Amount deposited into the account's primary
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->PaymentRequestID = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "FMFDetails") ) {
+			if( array_key_exists("FMFDetails", $arr) ) {
 				$newArray = "FMFDetails";
 				$this->FMFDetails = new FMFDetailsType();
 				$this->FMFDetails->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "EnhancedPaymentInfo") ) {
+			if( array_key_exists("EnhancedPaymentInfo", $arr) ) {
 				$newArray = "EnhancedPaymentInfo";
 				$this->EnhancedPaymentInfo = new EnhancedPaymentInfoType();
 				$this->EnhancedPaymentInfo->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "PaymentError") ) {
+			if( array_key_exists("PaymentError", $arr) ) {
 				$newArray = "PaymentError";
 				$this->PaymentError = new ErrorType();
 				$this->PaymentError->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "InstrumentDetails") ) {
+			if( array_key_exists("InstrumentDetails", $arr) ) {
 				$newArray = "InstrumentDetails";
 				$this->InstrumentDetails = new InstrumentDetailsType();
 				$this->InstrumentDetails->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "OfferDetails") ) {
+			if( array_key_exists("OfferDetails", $arr) ) {
 				$newArray = "OfferDetails";
 				$this->OfferDetails = new OfferDetailsType();
 				$this->OfferDetails->init($arr[$newArray]);
@@ -9107,7 +9157,7 @@ class SubscriptionTermsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "Amount") ) {
+			if( array_key_exists("Amount", $arr) ) {
 				$newArray = "Amount";
 				$this->Amount = new BasicAmountType();
 				$this->Amount->init($arr[$newArray]);
@@ -9221,10 +9271,15 @@ class SubscriptionInfoType {
 				$this->Recurrences = $arr[$arrKeyName];
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "Terms[$i]") ) {
-					$newArray = "Terms[$i]";
+				if( array_key_exists("Terms[$i]" ,$arr) ) {
+					$newArray = $arr["Terms"];
 				$this->Terms[$i] = new SubscriptionTermsType();
-				$this->Terms[$i]->init($newArray);
+				$this->Terms[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("Terms", $arr) ) {
+					$newArray = $arr["Terms"];
+				$this->Terms = new SubscriptionTermsType();
+				$this->Terms->init($newArray);
 			}
 			 }
 		}
@@ -9538,17 +9593,17 @@ class PaymentDetailsItemType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Quantity = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "Tax") ) {
+			if( array_key_exists("Tax", $arr) ) {
 				$newArray = "Tax";
 				$this->Tax = new BasicAmountType();
 				$this->Tax->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "Amount") ) {
+			if( array_key_exists("Amount", $arr) ) {
 				$newArray = "Amount";
 				$this->Amount = new BasicAmountType();
 				$this->Amount->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "EbayItemPaymentDetailsItem") ) {
+			if( array_key_exists("EbayItemPaymentDetailsItem", $arr) ) {
 				$newArray = "EbayItemPaymentDetailsItem";
 				$this->EbayItemPaymentDetailsItem = new EbayItemPaymentDetailsItemType();
 				$this->EbayItemPaymentDetailsItem->init($arr[$newArray]);
@@ -9565,22 +9620,22 @@ class PaymentDetailsItemType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Description = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "ItemWeight") ) {
+			if( array_key_exists("ItemWeight", $arr) ) {
 				$newArray = "ItemWeight";
 				$this->ItemWeight = new MeasureType();
 				$this->ItemWeight->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "ItemLength") ) {
+			if( array_key_exists("ItemLength", $arr) ) {
 				$newArray = "ItemLength";
 				$this->ItemLength = new MeasureType();
 				$this->ItemLength->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "ItemWidth") ) {
+			if( array_key_exists("ItemWidth", $arr) ) {
 				$newArray = "ItemWidth";
 				$this->ItemWidth = new MeasureType();
 				$this->ItemWidth->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "ItemHeight") ) {
+			if( array_key_exists("ItemHeight", $arr) ) {
 				$newArray = "ItemHeight";
 				$this->ItemHeight = new MeasureType();
 				$this->ItemHeight->init($arr[$newArray]);
@@ -9589,7 +9644,7 @@ class PaymentDetailsItemType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->ItemURL = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "EnhancedItemData") ) {
+			if( array_key_exists("EnhancedItemData", $arr) ) {
 				$newArray = "EnhancedItemData";
 				$this->EnhancedItemData = new EnhancedItemDataType();
 				$this->EnhancedItemData->init($arr[$newArray]);
@@ -9785,16 +9840,21 @@ class PaymentItemType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->HandlingAmount = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "Amount") ) {
+			if( array_key_exists("Amount", $arr) ) {
 				$newArray = "Amount";
 				$this->Amount = new BasicAmountType();
 				$this->Amount->init($arr[$newArray]);
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "Options[$i]") ) {
-					$newArray = "Options[$i]";
+				if( array_key_exists("Options[$i]" ,$arr) ) {
+					$newArray = $arr["Options"];
 				$this->Options[$i] = new OptionType();
-				$this->Options[$i]->init($newArray);
+				$this->Options[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("Options", $arr) ) {
+					$newArray = $arr["Options"];
+				$this->Options = new OptionType();
+				$this->Options->init($newArray);
 			}
 			 }
 		}
@@ -9889,18 +9949,23 @@ class PaymentItemInfoType {
 				$this->SalesTax = $arr[$arrKeyName];
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "PaymentItem[$i]") ) {
-					$newArray = "PaymentItem[$i]";
+				if( array_key_exists("PaymentItem[$i]" ,$arr) ) {
+					$newArray = $arr["PaymentItem"];
 				$this->PaymentItem[$i] = new PaymentItemType();
-				$this->PaymentItem[$i]->init($newArray);
+				$this->PaymentItem[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("PaymentItem", $arr) ) {
+					$newArray = $arr["PaymentItem"];
+				$this->PaymentItem = new PaymentItemType();
+				$this->PaymentItem->init($newArray);
 			}
 			 }
-			if( PPUtils::array_match_key($arr, "Subscription") ) {
+			if( array_key_exists("Subscription", $arr) ) {
 				$newArray = "Subscription";
 				$this->Subscription = new SubscriptionInfoType();
 				$this->Subscription->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "Auction") ) {
+			if( array_key_exists("Auction", $arr) ) {
 				$newArray = "Auction";
 				$this->Auction = new AuctionInfoType();
 				$this->Auction->init($arr[$newArray]);
@@ -10236,27 +10301,27 @@ class PaymentDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "OrderTotal") ) {
+			if( array_key_exists("OrderTotal", $arr) ) {
 				$newArray = "OrderTotal";
 				$this->OrderTotal = new BasicAmountType();
 				$this->OrderTotal->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "ItemTotal") ) {
+			if( array_key_exists("ItemTotal", $arr) ) {
 				$newArray = "ItemTotal";
 				$this->ItemTotal = new BasicAmountType();
 				$this->ItemTotal->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "ShippingTotal") ) {
+			if( array_key_exists("ShippingTotal", $arr) ) {
 				$newArray = "ShippingTotal";
 				$this->ShippingTotal = new BasicAmountType();
 				$this->ShippingTotal->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "HandlingTotal") ) {
+			if( array_key_exists("HandlingTotal", $arr) ) {
 				$newArray = "HandlingTotal";
 				$this->HandlingTotal = new BasicAmountType();
 				$this->HandlingTotal->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "TaxTotal") ) {
+			if( array_key_exists("TaxTotal", $arr) ) {
 				$newArray = "TaxTotal";
 				$this->TaxTotal = new BasicAmountType();
 				$this->TaxTotal->init($arr[$newArray]);
@@ -10281,7 +10346,7 @@ class PaymentDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->NotifyURL = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "ShipToAddress") ) {
+			if( array_key_exists("ShipToAddress", $arr) ) {
 				$newArray = "ShipToAddress";
 				$this->ShipToAddress = new AddressType();
 				$this->ShipToAddress->init($arr[$newArray]);
@@ -10295,18 +10360,23 @@ class PaymentDetailsType {
 				$this->ProfileAddressChangeDate = $arr[$arrKeyName];
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "PaymentDetailsItem[$i]") ) {
-					$newArray = "PaymentDetailsItem[$i]";
+				if( array_key_exists("PaymentDetailsItem[$i]" ,$arr) ) {
+					$newArray = $arr["PaymentDetailsItem"];
 				$this->PaymentDetailsItem[$i] = new PaymentDetailsItemType();
-				$this->PaymentDetailsItem[$i]->init($newArray);
+				$this->PaymentDetailsItem[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("PaymentDetailsItem", $arr) ) {
+					$newArray = $arr["PaymentDetailsItem"];
+				$this->PaymentDetailsItem = new PaymentDetailsItemType();
+				$this->PaymentDetailsItem->init($newArray);
 			}
 			 }
-			if( PPUtils::array_match_key($arr, "InsuranceTotal") ) {
+			if( array_key_exists("InsuranceTotal", $arr) ) {
 				$newArray = "InsuranceTotal";
 				$this->InsuranceTotal = new BasicAmountType();
 				$this->InsuranceTotal->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "ShippingDiscount") ) {
+			if( array_key_exists("ShippingDiscount", $arr) ) {
 				$newArray = "ShippingDiscount";
 				$this->ShippingDiscount = new BasicAmountType();
 				$this->ShippingDiscount->init($arr[$newArray]);
@@ -10319,12 +10389,12 @@ class PaymentDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->AllowedPaymentMethod = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "EnhancedPaymentData") ) {
+			if( array_key_exists("EnhancedPaymentData", $arr) ) {
 				$newArray = "EnhancedPaymentData";
 				$this->EnhancedPaymentData = new EnhancedPaymentDataType();
 				$this->EnhancedPaymentData->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "SellerDetails") ) {
+			if( array_key_exists("SellerDetails", $arr) ) {
 				$newArray = "SellerDetails";
 				$this->SellerDetails = new SellerDetailsType();
 				$this->SellerDetails->init($arr[$newArray]);
@@ -10357,7 +10427,7 @@ class PaymentDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->BranchLevel = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "OfferDetails") ) {
+			if( array_key_exists("OfferDetails", $arr) ) {
 				$newArray = "OfferDetails";
 				$this->OfferDetails = new OfferDetailsType();
 				$this->OfferDetails->init($arr[$newArray]);
@@ -10560,7 +10630,7 @@ class IncentiveDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->SiteAppliedOn = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "TotalDiscountAmount") ) {
+			if( array_key_exists("TotalDiscountAmount", $arr) ) {
 				$newArray = "TotalDiscountAmount";
 				$this->TotalDiscountAmount = new BasicAmountType();
 				$this->TotalDiscountAmount->init($arr[$newArray]);
@@ -10574,10 +10644,15 @@ class IncentiveDetailsType {
 				$this->ErrorCode = $arr[$arrKeyName];
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "IncentiveAppliedDetails[$i]") ) {
-					$newArray = "IncentiveAppliedDetails[$i]";
+				if( array_key_exists("IncentiveAppliedDetails[$i]" ,$arr) ) {
+					$newArray = $arr["IncentiveAppliedDetails"];
 				$this->IncentiveAppliedDetails[$i] = new IncentiveAppliedDetailsType();
-				$this->IncentiveAppliedDetails[$i]->init($newArray);
+				$this->IncentiveAppliedDetails[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("IncentiveAppliedDetails", $arr) ) {
+					$newArray = $arr["IncentiveAppliedDetails"];
+				$this->IncentiveAppliedDetails = new IncentiveAppliedDetailsType();
+				$this->IncentiveAppliedDetails->init($newArray);
 			}
 			 }
 		}
@@ -10645,7 +10720,7 @@ class IncentiveAppliedDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->ExternalTxnId = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "DiscountAmount") ) {
+			if( array_key_exists("DiscountAmount", $arr) ) {
 				$newArray = "DiscountAmount";
 				$this->DiscountAmount = new BasicAmountType();
 				$this->DiscountAmount->init($arr[$newArray]);
@@ -11130,12 +11205,12 @@ class ThreeDSecureInfoType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "ThreeDSecureRequest") ) {
+			if( array_key_exists("ThreeDSecureRequest", $arr) ) {
 				$newArray = "ThreeDSecureRequest";
 				$this->ThreeDSecureRequest = new ThreeDSecureRequestType();
 				$this->ThreeDSecureRequest->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "ThreeDSecureResponse") ) {
+			if( array_key_exists("ThreeDSecureResponse", $arr) ) {
 				$newArray = "ThreeDSecureResponse";
 				$this->ThreeDSecureResponse = new ThreeDSecureResponseType();
 				$this->ThreeDSecureResponse->init($arr[$newArray]);
@@ -11229,7 +11304,7 @@ class CreditCardDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->ExpYear = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "CardOwner") ) {
+			if( array_key_exists("CardOwner", $arr) ) {
 				$newArray = "CardOwner";
 				$this->CardOwner = new PayerInfoType();
 				$this->CardOwner->init($arr[$newArray]);
@@ -11250,7 +11325,7 @@ class CreditCardDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->IssueNumber = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "ThreeDSecureRequest") ) {
+			if( array_key_exists("ThreeDSecureRequest", $arr) ) {
 				$newArray = "ThreeDSecureRequest";
 				$this->ThreeDSecureRequest = new ThreeDSecureRequestType();
 				$this->ThreeDSecureRequest->init($arr[$newArray]);
@@ -11393,7 +11468,7 @@ class UserSelectedOptionType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->ShippingOptionIsDefault = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "ShippingOptionAmount") ) {
+			if( array_key_exists("ShippingOptionAmount", $arr) ) {
 				$newArray = "ShippingOptionAmount";
 				$this->ShippingOptionAmount = new BasicAmountType();
 				$this->ShippingOptionAmount->init($arr[$newArray]);
@@ -11824,12 +11899,12 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "PayerInfo") ) {
+			if( array_key_exists("PayerInfo", $arr) ) {
 				$newArray = "PayerInfo";
 				$this->PayerInfo = new PayerInfoType();
 				$this->PayerInfo->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "BillingAddress") ) {
+			if( array_key_exists("BillingAddress", $arr) ) {
 				$newArray = "BillingAddress";
 				$this->BillingAddress = new AddressType();
 				$this->BillingAddress->init($arr[$newArray]);
@@ -12004,12 +12079,12 @@ class DoReferenceTransactionResponseDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->BillingAgreementID = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "PaymentInfo") ) {
+			if( array_key_exists("PaymentInfo", $arr) ) {
 				$newArray = "PaymentInfo";
 				$this->PaymentInfo = new PaymentInfoType();
 				$this->PaymentInfo->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "Amount") ) {
+			if( array_key_exists("Amount", $arr) ) {
 				$newArray = "Amount";
 				$this->Amount = new BasicAmountType();
 				$this->Amount->init($arr[$newArray]);
@@ -12144,7 +12219,7 @@ class DoNonReferencedCreditResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "Amount") ) {
+			if( array_key_exists("Amount", $arr) ) {
 				$newArray = "Amount";
 				$this->Amount = new BasicAmountType();
 				$this->Amount->init($arr[$newArray]);
@@ -12796,12 +12871,12 @@ class GetBoardingDetailsResponseDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->PartnerCustom = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "AccountOwner") ) {
+			if( array_key_exists("AccountOwner", $arr) ) {
 				$newArray = "AccountOwner";
 				$this->AccountOwner = new PayerInfoType();
 				$this->AccountOwner->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "Credentials") ) {
+			if( array_key_exists("Credentials", $arr) ) {
 				$newArray = "Credentials";
 				$this->Credentials = new APICredentialsType();
 				$this->Credentials->init($arr[$newArray]);
@@ -13196,12 +13271,12 @@ Information about the transaction	 *
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->InvoiceID = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "PayerInfo") ) {
+			if( array_key_exists("PayerInfo", $arr) ) {
 				$newArray = "PayerInfo";
 				$this->PayerInfo = new PayerInfoType();
 				$this->PayerInfo->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "PaymentInfo") ) {
+			if( array_key_exists("PaymentInfo", $arr) ) {
 				$newArray = "PaymentInfo";
 				$this->PaymentInfo = new PaymentInfoType();
 				$this->PaymentInfo->init($arr[$newArray]);
@@ -13481,7 +13556,7 @@ class RecurringPaymentsSummaryType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->NumberCyclesRemaining = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "OutstandingBalance") ) {
+			if( array_key_exists("OutstandingBalance", $arr) ) {
 				$newArray = "OutstandingBalance";
 				$this->OutstandingBalance = new BasicAmountType();
 				$this->OutstandingBalance->init($arr[$newArray]);
@@ -13494,7 +13569,7 @@ class RecurringPaymentsSummaryType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->LastPaymentDate = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "LastPaymentAmount") ) {
+			if( array_key_exists("LastPaymentAmount", $arr) ) {
 				$newArray = "LastPaymentAmount";
 				$this->LastPaymentAmount = new BasicAmountType();
 				$this->LastPaymentAmount->init($arr[$newArray]);
@@ -13610,17 +13685,17 @@ class BillingPeriodDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->TotalBillingCycles = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "Amount") ) {
+			if( array_key_exists("Amount", $arr) ) {
 				$newArray = "Amount";
 				$this->Amount = new BasicAmountType();
 				$this->Amount->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "ShippingAmount") ) {
+			if( array_key_exists("ShippingAmount", $arr) ) {
 				$newArray = "ShippingAmount";
 				$this->ShippingAmount = new BasicAmountType();
 				$this->ShippingAmount->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "TaxAmount") ) {
+			if( array_key_exists("TaxAmount", $arr) ) {
 				$newArray = "TaxAmount";
 				$this->TaxAmount = new BasicAmountType();
 				$this->TaxAmount->init($arr[$newArray]);
@@ -13888,7 +13963,7 @@ class RecurringPaymentsProfileDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->SubscriberName = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "SubscriberShippingAddress") ) {
+			if( array_key_exists("SubscriberShippingAddress", $arr) ) {
 				$newArray = "SubscriberShippingAddress";
 				$this->SubscriberShippingAddress = new AddressType();
 				$this->SubscriberShippingAddress->init($arr[$newArray]);
@@ -14229,52 +14304,52 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->MaxFailedPayments = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "RecurringPaymentsProfileDetails") ) {
+			if( array_key_exists("RecurringPaymentsProfileDetails", $arr) ) {
 				$newArray = "RecurringPaymentsProfileDetails";
 				$this->RecurringPaymentsProfileDetails = new RecurringPaymentsProfileDetailsType();
 				$this->RecurringPaymentsProfileDetails->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "CurrentRecurringPaymentsPeriod") ) {
+			if( array_key_exists("CurrentRecurringPaymentsPeriod", $arr) ) {
 				$newArray = "CurrentRecurringPaymentsPeriod";
 				$this->CurrentRecurringPaymentsPeriod = new BillingPeriodDetailsType();
 				$this->CurrentRecurringPaymentsPeriod->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "RecurringPaymentsSummary") ) {
+			if( array_key_exists("RecurringPaymentsSummary", $arr) ) {
 				$newArray = "RecurringPaymentsSummary";
 				$this->RecurringPaymentsSummary = new RecurringPaymentsSummaryType();
 				$this->RecurringPaymentsSummary->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "CreditCard") ) {
+			if( array_key_exists("CreditCard", $arr) ) {
 				$newArray = "CreditCard";
 				$this->CreditCard = new CreditCardDetailsType();
 				$this->CreditCard->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "TrialRecurringPaymentsPeriod") ) {
+			if( array_key_exists("TrialRecurringPaymentsPeriod", $arr) ) {
 				$newArray = "TrialRecurringPaymentsPeriod";
 				$this->TrialRecurringPaymentsPeriod = new BillingPeriodDetailsType();
 				$this->TrialRecurringPaymentsPeriod->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "RegularRecurringPaymentsPeriod") ) {
+			if( array_key_exists("RegularRecurringPaymentsPeriod", $arr) ) {
 				$newArray = "RegularRecurringPaymentsPeriod";
 				$this->RegularRecurringPaymentsPeriod = new BillingPeriodDetailsType();
 				$this->RegularRecurringPaymentsPeriod->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "TrialAmountPaid") ) {
+			if( array_key_exists("TrialAmountPaid", $arr) ) {
 				$newArray = "TrialAmountPaid";
 				$this->TrialAmountPaid = new BasicAmountType();
 				$this->TrialAmountPaid->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "RegularAmountPaid") ) {
+			if( array_key_exists("RegularAmountPaid", $arr) ) {
 				$newArray = "RegularAmountPaid";
 				$this->RegularAmountPaid = new BasicAmountType();
 				$this->RegularAmountPaid->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "AggregateAmount") ) {
+			if( array_key_exists("AggregateAmount", $arr) ) {
 				$newArray = "AggregateAmount";
 				$this->AggregateAmount = new BasicAmountType();
 				$this->AggregateAmount->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "AggregateOptionalAmount") ) {
+			if( array_key_exists("AggregateOptionalAmount", $arr) ) {
 				$newArray = "AggregateOptionalAmount";
 				$this->AggregateOptionalAmount = new BasicAmountType();
 				$this->AggregateOptionalAmount->init($arr[$newArray]);
@@ -14715,10 +14790,15 @@ class RiskFilterListType {
 	public function init($arr = null) {
 		if($arr != null) {
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "Filters[$i]") ) {
-					$newArray = "Filters[$i]";
+				if( array_key_exists("Filters[$i]" ,$arr) ) {
+					$newArray = $arr["Filters"];
 				$this->Filters[$i] = new RiskFilterDetailsType();
-				$this->Filters[$i]->init($newArray);
+				$this->Filters[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("Filters", $arr) ) {
+					$newArray = $arr["Filters"];
+				$this->Filters = new RiskFilterDetailsType();
+				$this->Filters->init($newArray);
 			}
 			 }
 		}
@@ -14758,22 +14838,22 @@ class FMFDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "AcceptFilters") ) {
+			if( array_key_exists("AcceptFilters", $arr) ) {
 				$newArray = "AcceptFilters";
 				$this->AcceptFilters = new RiskFilterListType();
 				$this->AcceptFilters->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "PendingFilters") ) {
+			if( array_key_exists("PendingFilters", $arr) ) {
 				$newArray = "PendingFilters";
 				$this->PendingFilters = new RiskFilterListType();
 				$this->PendingFilters->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "DenyFilters") ) {
+			if( array_key_exists("DenyFilters", $arr) ) {
 				$newArray = "DenyFilters";
 				$this->DenyFilters = new RiskFilterListType();
 				$this->DenyFilters->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "ReportFilters") ) {
+			if( array_key_exists("ReportFilters", $arr) ) {
 				$newArray = "ReportFilters";
 				$this->ReportFilters = new RiskFilterListType();
 				$this->ReportFilters->init($arr[$newArray]);
@@ -15680,7 +15760,7 @@ class PaymentRequestInfoType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->PaymentRequestID = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "PaymentError") ) {
+			if( array_key_exists("PaymentError", $arr) ) {
 				$newArray = "PaymentError";
 				$this->PaymentError = new ErrorType();
 				$this->PaymentError->init($arr[$newArray]);
@@ -16370,10 +16450,15 @@ class OptionSelectionDetailsType {
 				$this->OptionType = $arr[$arrKeyName];
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "PaymentPeriod[$i]") ) {
-					$newArray = "PaymentPeriod[$i]";
+				if( array_key_exists("PaymentPeriod[$i]" ,$arr) ) {
+					$newArray = $arr["PaymentPeriod"];
 				$this->PaymentPeriod[$i] = new InstallmentDetailsType();
-				$this->PaymentPeriod[$i]->init($newArray);
+				$this->PaymentPeriod[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("PaymentPeriod", $arr) ) {
+					$newArray = $arr["PaymentPeriod"];
+				$this->PaymentPeriod = new InstallmentDetailsType();
+				$this->PaymentPeriod->init($newArray);
 			}
 			 }
 		}
@@ -16437,10 +16522,15 @@ class OptionDetailsType {
 				$this->OptionName = $arr[$arrKeyName];
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "OptionSelectionDetails[$i]") ) {
-					$newArray = "OptionSelectionDetails[$i]";
+				if( array_key_exists("OptionSelectionDetails[$i]" ,$arr) ) {
+					$newArray = $arr["OptionSelectionDetails"];
 				$this->OptionSelectionDetails[$i] = new OptionSelectionDetailsType();
-				$this->OptionSelectionDetails[$i]->init($newArray);
+				$this->OptionSelectionDetails[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("OptionSelectionDetails", $arr) ) {
+					$newArray = $arr["OptionSelectionDetails"];
+				$this->OptionSelectionDetails = new OptionSelectionDetailsType();
+				$this->OptionSelectionDetails->init($newArray);
 			}
 			 }
 		}
@@ -16711,7 +16801,7 @@ class BMCreateButtonResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Website';
+			parent::init($arr);			$arrKeyName =  'Website';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Website = $arr[$arrKeyName];
 			}
@@ -16991,7 +17081,7 @@ class BMUpdateButtonResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Website';
+			parent::init($arr);			$arrKeyName =  'Website';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Website = $arr[$arrKeyName];
 			}
@@ -17090,7 +17180,7 @@ class BMManageButtonStatusResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-		}
+			parent::init($arr);		}
 	}
 }
 
@@ -17302,7 +17392,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Website';
+			parent::init($arr);			$arrKeyName =  'Website';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Website = $arr[$arrKeyName];
 			}
@@ -17333,10 +17423,15 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType {
 			for($i=0; $i<10;$i++) {
 			 }
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "OptionDetails[$i]") ) {
-					$newArray = "OptionDetails[$i]";
+				if( array_key_exists("OptionDetails[$i]" ,$arr) ) {
+					$newArray = $arr["OptionDetails"];
 				$this->OptionDetails[$i] = new OptionDetailsType();
-				$this->OptionDetails[$i]->init($newArray);
+				$this->OptionDetails[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("OptionDetails", $arr) ) {
+					$newArray = $arr["OptionDetails"];
+				$this->OptionDetails = new OptionDetailsType();
+				$this->OptionDetails->init($newArray);
 			}
 			 }
 			for($i=0; $i<10;$i++) {
@@ -17567,7 +17662,7 @@ class BMSetInventoryResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'TransactionID';
+			parent::init($arr);			$arrKeyName =  'TransactionID';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->TransactionID = $arr[$arrKeyName];
 			}
@@ -17700,7 +17795,7 @@ class BMGetInventoryResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'HostedButtonID';
+			parent::init($arr);			$arrKeyName =  'HostedButtonID';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->HostedButtonID = $arr[$arrKeyName];
 			}
@@ -17712,7 +17807,7 @@ class BMGetInventoryResponseType extends AbstractResponseType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->TrackPnl = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "ItemTrackingDetails") ) {
+			if( array_key_exists("ItemTrackingDetails", $arr) ) {
 				$newArray = "ItemTrackingDetails";
 				$this->ItemTrackingDetails = new ItemTrackingDetailsType();
 				$this->ItemTrackingDetails->init($arr[$newArray]);
@@ -17726,10 +17821,15 @@ class BMGetInventoryResponseType extends AbstractResponseType {
 				$this->OptionName = $arr[$arrKeyName];
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "OptionTrackingDetails[$i]") ) {
-					$newArray = "OptionTrackingDetails[$i]";
+				if( array_key_exists("OptionTrackingDetails[$i]" ,$arr) ) {
+					$newArray = $arr["OptionTrackingDetails"];
 				$this->OptionTrackingDetails[$i] = new OptionTrackingDetailsType();
-				$this->OptionTrackingDetails[$i]->init($newArray);
+				$this->OptionTrackingDetails[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("OptionTrackingDetails", $arr) ) {
+					$newArray = $arr["OptionTrackingDetails"];
+				$this->OptionTrackingDetails = new OptionTrackingDetailsType();
+				$this->OptionTrackingDetails->init($newArray);
 			}
 			 }
 			$arrKeyName =  'SoldoutURL';
@@ -17824,11 +17924,16 @@ class BMButtonSearchResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "ButtonSearchResult[$i]") ) {
-					$newArray = "ButtonSearchResult[$i]";
+			parent::init($arr);			for($i=0; $i<10;$i++) {
+				if( array_key_exists("ButtonSearchResult[$i]" ,$arr) ) {
+					$newArray = $arr["ButtonSearchResult"];
 				$this->ButtonSearchResult[$i] = new ButtonSearchResultType();
-				$this->ButtonSearchResult[$i]->init($newArray);
+				$this->ButtonSearchResult[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("ButtonSearchResult", $arr) ) {
+					$newArray = $arr["ButtonSearchResult"];
+				$this->ButtonSearchResult = new ButtonSearchResultType();
+				$this->ButtonSearchResult->init($newArray);
 			}
 			 }
 		}
@@ -18027,26 +18132,26 @@ Total of all previous refunds	 *
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'RefundTransactionID';
+			parent::init($arr);			$arrKeyName =  'RefundTransactionID';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->RefundTransactionID = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "NetRefundAmount") ) {
+			if( array_key_exists("NetRefundAmount", $arr) ) {
 				$newArray = "NetRefundAmount";
 				$this->NetRefundAmount = new BasicAmountType();
 				$this->NetRefundAmount->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "FeeRefundAmount") ) {
+			if( array_key_exists("FeeRefundAmount", $arr) ) {
 				$newArray = "FeeRefundAmount";
 				$this->FeeRefundAmount = new BasicAmountType();
 				$this->FeeRefundAmount->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "GrossRefundAmount") ) {
+			if( array_key_exists("GrossRefundAmount", $arr) ) {
 				$newArray = "GrossRefundAmount";
 				$this->GrossRefundAmount = new BasicAmountType();
 				$this->GrossRefundAmount->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "TotalRefundedAmount") ) {
+			if( array_key_exists("TotalRefundedAmount", $arr) ) {
 				$newArray = "TotalRefundedAmount";
 				$this->TotalRefundedAmount = new BasicAmountType();
 				$this->TotalRefundedAmount->init($arr[$newArray]);
@@ -18117,7 +18222,7 @@ class InitiateRecoupResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-		}
+			parent::init($arr);		}
 	}
 }
 
@@ -18189,7 +18294,7 @@ class CompleteRecoupResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "EnhancedCompleteRecoupResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("EnhancedCompleteRecoupResponseDetails", $arr) ) {
 				$newArray = "EnhancedCompleteRecoupResponseDetails";
 				$this->EnhancedCompleteRecoupResponseDetails = new EnhancedCompleteRecoupResponseDetailsType();
 				$this->EnhancedCompleteRecoupResponseDetails->init($arr[$newArray]);
@@ -18260,7 +18365,7 @@ class CancelRecoupResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-		}
+			parent::init($arr);		}
 	}
 }
 
@@ -18347,12 +18452,12 @@ class GetTransactionDetailsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "PaymentTransactionDetails") ) {
+			parent::init($arr);			if( array_key_exists("PaymentTransactionDetails", $arr) ) {
 				$newArray = "PaymentTransactionDetails";
 				$this->PaymentTransactionDetails = new PaymentTransactionType();
 				$this->PaymentTransactionDetails->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "ThreeDSecureDetails") ) {
+			if( array_key_exists("ThreeDSecureDetails", $arr) ) {
 				$newArray = "ThreeDSecureDetails";
 				$this->ThreeDSecureDetails = new ThreeDSecureInfoType();
 				$this->ThreeDSecureDetails->init($arr[$newArray]);
@@ -18444,12 +18549,12 @@ class BillUserResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "BillUserResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("BillUserResponseDetails", $arr) ) {
 				$newArray = "BillUserResponseDetails";
 				$this->BillUserResponseDetails = new MerchantPullPaymentResponseType();
 				$this->BillUserResponseDetails->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "FMFDetails") ) {
+			if( array_key_exists("FMFDetails", $arr) ) {
 				$newArray = "FMFDetails";
 				$this->FMFDetails = new FMFDetailsType();
 				$this->FMFDetails->init($arr[$newArray]);
@@ -18768,11 +18873,16 @@ Results of a Transaction Search.	 *
 
 	public function init($arr = null) {
 		if($arr != null) {
-			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "PaymentTransactions[$i]") ) {
-					$newArray = "PaymentTransactions[$i]";
+			parent::init($arr);			for($i=0; $i<10;$i++) {
+				if( array_key_exists("PaymentTransactions[$i]" ,$arr) ) {
+					$newArray = $arr["PaymentTransactions"];
 				$this->PaymentTransactions[$i] = new PaymentTransactionSearchResultType();
-				$this->PaymentTransactions[$i]->init($newArray);
+				$this->PaymentTransactions[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("PaymentTransactions", $arr) ) {
+					$newArray = $arr["PaymentTransactions"];
+				$this->PaymentTransactions = new PaymentTransactionSearchResultType();
+				$this->PaymentTransactions->init($newArray);
 			}
 			 }
 		}
@@ -18901,7 +19011,7 @@ class MassPayResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-		}
+			parent::init($arr);		}
 	}
 }
 
@@ -19117,7 +19227,7 @@ class BAUpdateResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "BAUpdateResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("BAUpdateResponseDetails", $arr) ) {
 				$newArray = "BAUpdateResponseDetails";
 				$this->BAUpdateResponseDetails = new BAUpdateResponseDetailsType();
 				$this->BAUpdateResponseDetails->init($arr[$newArray]);
@@ -19310,7 +19420,7 @@ Two-character country code (ISO 3166) on file
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'ConfirmationCode';
+			parent::init($arr);			$arrKeyName =  'ConfirmationCode';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->ConfirmationCode = $arr[$arrKeyName];
 			}
@@ -19415,7 +19525,7 @@ class EnterBoardingResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Token';
+			parent::init($arr);			$arrKeyName =  'Token';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Token = $arr[$arrKeyName];
 			}
@@ -19502,7 +19612,7 @@ class GetBoardingDetailsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "GetBoardingDetailsResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("GetBoardingDetailsResponseDetails", $arr) ) {
 				$newArray = "GetBoardingDetailsResponseDetails";
 				$this->GetBoardingDetailsResponseDetails = new GetBoardingDetailsResponseDetailsType();
 				$this->GetBoardingDetailsResponseDetails->init($arr[$newArray]);
@@ -19586,7 +19696,7 @@ class SetAuthFlowParamResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Token';
+			parent::init($arr);			$arrKeyName =  'Token';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Token = $arr[$arrKeyName];
 			}
@@ -19669,7 +19779,7 @@ class GetAuthDetailsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "GetAuthDetailsResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("GetAuthDetailsResponseDetails", $arr) ) {
 				$newArray = "GetAuthDetailsResponseDetails";
 				$this->GetAuthDetailsResponseDetails = new GetAuthDetailsResponseDetailsType();
 				$this->GetAuthDetailsResponseDetails->init($arr[$newArray]);
@@ -19753,7 +19863,7 @@ class SetAccessPermissionsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Token';
+			parent::init($arr);			$arrKeyName =  'Token';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Token = $arr[$arrKeyName];
 			}
@@ -19841,7 +19951,7 @@ class UpdateAccessPermissionsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Status';
+			parent::init($arr);			$arrKeyName =  'Status';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Status = $arr[$arrKeyName];
 			}
@@ -19924,7 +20034,7 @@ class GetAccessPermissionDetailsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "GetAccessPermissionDetailsResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("GetAccessPermissionDetailsResponseDetails", $arr) ) {
 				$newArray = "GetAccessPermissionDetailsResponseDetails";
 				$this->GetAccessPermissionDetailsResponseDetails = new GetAccessPermissionDetailsResponseDetailsType();
 				$this->GetAccessPermissionDetailsResponseDetails->init($arr[$newArray]);
@@ -20001,7 +20111,7 @@ class GetIncentiveEvaluationResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "GetIncentiveEvaluationResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("GetIncentiveEvaluationResponseDetails", $arr) ) {
 				$newArray = "GetIncentiveEvaluationResponseDetails";
 				$this->GetIncentiveEvaluationResponseDetails = new GetIncentiveEvaluationResponseDetailsType();
 				$this->GetIncentiveEvaluationResponseDetails->init($arr[$newArray]);
@@ -20091,7 +20201,7 @@ class SetExpressCheckoutResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Token';
+			parent::init($arr);			$arrKeyName =  'Token';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Token = $arr[$arrKeyName];
 			}
@@ -20167,7 +20277,7 @@ class ExecuteCheckoutOperationsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "ExecuteCheckoutOperationsResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("ExecuteCheckoutOperationsResponseDetails", $arr) ) {
 				$newArray = "ExecuteCheckoutOperationsResponseDetails";
 				$this->ExecuteCheckoutOperationsResponseDetails = new ExecuteCheckoutOperationsResponseDetailsType();
 				$this->ExecuteCheckoutOperationsResponseDetails->init($arr[$newArray]);
@@ -20251,7 +20361,7 @@ class GetExpressCheckoutDetailsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "GetExpressCheckoutDetailsResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("GetExpressCheckoutDetailsResponseDetails", $arr) ) {
 				$newArray = "GetExpressCheckoutDetailsResponseDetails";
 				$this->GetExpressCheckoutDetailsResponseDetails = new GetExpressCheckoutDetailsResponseDetailsType();
 				$this->GetExpressCheckoutDetailsResponseDetails->init($arr[$newArray]);
@@ -20347,12 +20457,12 @@ class DoExpressCheckoutPaymentResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "DoExpressCheckoutPaymentResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("DoExpressCheckoutPaymentResponseDetails", $arr) ) {
 				$newArray = "DoExpressCheckoutPaymentResponseDetails";
 				$this->DoExpressCheckoutPaymentResponseDetails = new DoExpressCheckoutPaymentResponseDetailsType();
 				$this->DoExpressCheckoutPaymentResponseDetails->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "FMFDetails") ) {
+			if( array_key_exists("FMFDetails", $arr) ) {
 				$newArray = "FMFDetails";
 				$this->FMFDetails = new FMFDetailsType();
 				$this->FMFDetails->init($arr[$newArray]);
@@ -20414,7 +20524,7 @@ class DoUATPExpressCheckoutPaymentResponseType extends DoExpressCheckoutPaymentR
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "UATPDetails") ) {
+			parent::init($arr);			if( array_key_exists("UATPDetails", $arr) ) {
 				$newArray = "UATPDetails";
 				$this->UATPDetails = new UATPDetailsType();
 				$this->UATPDetails->init($arr[$newArray]);
@@ -20505,7 +20615,7 @@ class ManagePendingTransactionStatusResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'TransactionID';
+			parent::init($arr);			$arrKeyName =  'TransactionID';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->TransactionID = $arr[$arrKeyName];
 			}
@@ -20748,7 +20858,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "Amount") ) {
+			parent::init($arr);			if( array_key_exists("Amount", $arr) ) {
 				$newArray = "Amount";
 				$this->Amount = new BasicAmountType();
 				$this->Amount->init($arr[$newArray]);
@@ -20773,12 +20883,12 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->PaymentStatus = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "FMFDetails") ) {
+			if( array_key_exists("FMFDetails", $arr) ) {
 				$newArray = "FMFDetails";
 				$this->FMFDetails = new FMFDetailsType();
 				$this->FMFDetails->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "ThreeDSecureResponse") ) {
+			if( array_key_exists("ThreeDSecureResponse", $arr) ) {
 				$newArray = "ThreeDSecureResponse";
 				$this->ThreeDSecureResponse = new ThreeDSecureResponseType();
 				$this->ThreeDSecureResponse->init($arr[$newArray]);
@@ -20964,7 +21074,7 @@ class DoCaptureResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "DoCaptureResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("DoCaptureResponseDetails", $arr) ) {
 				$newArray = "DoCaptureResponseDetails";
 				$this->DoCaptureResponseDetails = new DoCaptureResponseDetailsType();
 				$this->DoCaptureResponseDetails->init($arr[$newArray]);
@@ -21083,11 +21193,11 @@ class DoReauthorizationResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'AuthorizationID';
+			parent::init($arr);			$arrKeyName =  'AuthorizationID';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->AuthorizationID = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "AuthorizationInfo") ) {
+			if( array_key_exists("AuthorizationInfo", $arr) ) {
 				$newArray = "AuthorizationInfo";
 				$this->AuthorizationInfo = new AuthorizationInfoType();
 				$this->AuthorizationInfo->init($arr[$newArray]);
@@ -21198,7 +21308,7 @@ class DoVoidResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'AuthorizationID';
+			parent::init($arr);			$arrKeyName =  'AuthorizationID';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->AuthorizationID = $arr[$arrKeyName];
 			}
@@ -21334,16 +21444,16 @@ The amount and currency you specified in the
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'TransactionID';
+			parent::init($arr);			$arrKeyName =  'TransactionID';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->TransactionID = $arr[$arrKeyName];
 			}
-			if( PPUtils::array_match_key($arr, "Amount") ) {
+			if( array_key_exists("Amount", $arr) ) {
 				$newArray = "Amount";
 				$this->Amount = new BasicAmountType();
 				$this->Amount->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "AuthorizationInfo") ) {
+			if( array_key_exists("AuthorizationInfo", $arr) ) {
 				$newArray = "AuthorizationInfo";
 				$this->AuthorizationInfo = new AuthorizationInfoType();
 				$this->AuthorizationInfo->init($arr[$newArray]);
@@ -21486,7 +21596,7 @@ class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "UATPDetails") ) {
+			parent::init($arr);			if( array_key_exists("UATPDetails", $arr) ) {
 				$newArray = "UATPDetails";
 				$this->UATPDetails = new UATPDetailsType();
 				$this->UATPDetails->init($arr[$newArray]);
@@ -21565,7 +21675,7 @@ class CreateMobilePaymentResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-		}
+			parent::init($arr);		}
 	}
 }
 
@@ -21648,7 +21758,7 @@ class GetMobileStatusResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'IsActivated';
+			parent::init($arr);			$arrKeyName =  'IsActivated';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->IsActivated = $arr[$arrKeyName];
 			}
@@ -21737,7 +21847,7 @@ class SetMobileCheckoutResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Token';
+			parent::init($arr);			$arrKeyName =  'Token';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Token = $arr[$arrKeyName];
 			}
@@ -21820,7 +21930,7 @@ class DoMobileCheckoutPaymentResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "DoMobileCheckoutPaymentResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("DoMobileCheckoutPaymentResponseDetails", $arr) ) {
 				$newArray = "DoMobileCheckoutPaymentResponseDetails";
 				$this->DoMobileCheckoutPaymentResponseDetails = new DoMobileCheckoutPaymentResponseDetailsType();
 				$this->DoMobileCheckoutPaymentResponseDetails->init($arr[$newArray]);
@@ -21904,7 +22014,7 @@ class GetBalanceResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "Balance") ) {
+			parent::init($arr);			if( array_key_exists("Balance", $arr) ) {
 				$newArray = "Balance";
 				$this->Balance = new BasicAmountType();
 				$this->Balance->init($arr[$newArray]);
@@ -21914,10 +22024,15 @@ class GetBalanceResponseType extends AbstractResponseType {
 				$this->BalanceTimeStamp = $arr[$arrKeyName];
 			}
 			for($i=0; $i<10;$i++) {
-				if( PPUtils::array_match_key($arr, "BalanceHoldings[$i]") ) {
-					$newArray = "BalanceHoldings[$i]";
+				if( array_key_exists("BalanceHoldings[$i]" ,$arr) ) {
+					$newArray = $arr["BalanceHoldings"];
 				$this->BalanceHoldings[$i] = new BasicAmountType();
-				$this->BalanceHoldings[$i]->init($newArray);
+				$this->BalanceHoldings[$i]->init($newArray[$i]);
+			}
+				else if( array_key_exists("BalanceHoldings", $arr) ) {
+					$newArray = $arr["BalanceHoldings"];
+				$this->BalanceHoldings = new BasicAmountType();
+				$this->BalanceHoldings->init($newArray);
 			}
 			 }
 		}
@@ -21993,7 +22108,7 @@ class SetCustomerBillingAgreementResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Token';
+			parent::init($arr);			$arrKeyName =  'Token';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Token = $arr[$arrKeyName];
 			}
@@ -22068,7 +22183,7 @@ class GetBillingAgreementCustomerDetailsResponseType extends AbstractResponseTyp
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "GetBillingAgreementCustomerDetailsResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("GetBillingAgreementCustomerDetailsResponseDetails", $arr) ) {
 				$newArray = "GetBillingAgreementCustomerDetailsResponseDetails";
 				$this->GetBillingAgreementCustomerDetailsResponseDetails = new GetBillingAgreementCustomerDetailsResponseDetailsType();
 				$this->GetBillingAgreementCustomerDetailsResponseDetails->init($arr[$newArray]);
@@ -22145,7 +22260,7 @@ class CreateBillingAgreementResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'BillingAgreementID';
+			parent::init($arr);			$arrKeyName =  'BillingAgreementID';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->BillingAgreementID = $arr[$arrKeyName];
 			}
@@ -22240,12 +22355,12 @@ class DoReferenceTransactionResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "DoReferenceTransactionResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("DoReferenceTransactionResponseDetails", $arr) ) {
 				$newArray = "DoReferenceTransactionResponseDetails";
 				$this->DoReferenceTransactionResponseDetails = new DoReferenceTransactionResponseDetailsType();
 				$this->DoReferenceTransactionResponseDetails->init($arr[$newArray]);
 			}
-			if( PPUtils::array_match_key($arr, "FMFDetails") ) {
+			if( array_key_exists("FMFDetails", $arr) ) {
 				$newArray = "FMFDetails";
 				$this->FMFDetails = new FMFDetailsType();
 				$this->FMFDetails->init($arr[$newArray]);
@@ -22322,7 +22437,7 @@ class DoNonReferencedCreditResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "DoNonReferencedCreditResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("DoNonReferencedCreditResponseDetails", $arr) ) {
 				$newArray = "DoNonReferencedCreditResponseDetails";
 				$this->DoNonReferencedCreditResponseDetails = new DoNonReferencedCreditResponseDetailsType();
 				$this->DoNonReferencedCreditResponseDetails->init($arr[$newArray]);
@@ -22395,7 +22510,7 @@ class CreateRecurringPaymentsProfileResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "CreateRecurringPaymentsProfileResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("CreateRecurringPaymentsProfileResponseDetails", $arr) ) {
 				$newArray = "CreateRecurringPaymentsProfileResponseDetails";
 				$this->CreateRecurringPaymentsProfileResponseDetails = new CreateRecurringPaymentsProfileResponseDetailsType();
 				$this->CreateRecurringPaymentsProfileResponseDetails->init($arr[$newArray]);
@@ -22471,7 +22586,7 @@ class GetRecurringPaymentsProfileDetailsResponseType extends AbstractResponseTyp
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "GetRecurringPaymentsProfileDetailsResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("GetRecurringPaymentsProfileDetailsResponseDetails", $arr) ) {
 				$newArray = "GetRecurringPaymentsProfileDetailsResponseDetails";
 				$this->GetRecurringPaymentsProfileDetailsResponseDetails = new GetRecurringPaymentsProfileDetailsResponseDetailsType();
 				$this->GetRecurringPaymentsProfileDetailsResponseDetails->init($arr[$newArray]);
@@ -22544,7 +22659,7 @@ class ManageRecurringPaymentsProfileStatusResponseType extends AbstractResponseT
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "ManageRecurringPaymentsProfileStatusResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("ManageRecurringPaymentsProfileStatusResponseDetails", $arr) ) {
 				$newArray = "ManageRecurringPaymentsProfileStatusResponseDetails";
 				$this->ManageRecurringPaymentsProfileStatusResponseDetails = new ManageRecurringPaymentsProfileStatusResponseDetailsType();
 				$this->ManageRecurringPaymentsProfileStatusResponseDetails->init($arr[$newArray]);
@@ -22617,7 +22732,7 @@ class BillOutstandingAmountResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "BillOutstandingAmountResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("BillOutstandingAmountResponseDetails", $arr) ) {
 				$newArray = "BillOutstandingAmountResponseDetails";
 				$this->BillOutstandingAmountResponseDetails = new BillOutstandingAmountResponseDetailsType();
 				$this->BillOutstandingAmountResponseDetails->init($arr[$newArray]);
@@ -22690,7 +22805,7 @@ class UpdateRecurringPaymentsProfileResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "UpdateRecurringPaymentsProfileResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("UpdateRecurringPaymentsProfileResponseDetails", $arr) ) {
 				$newArray = "UpdateRecurringPaymentsProfileResponseDetails";
 				$this->UpdateRecurringPaymentsProfileResponseDetails = new UpdateRecurringPaymentsProfileResponseDetailsType();
 				$this->UpdateRecurringPaymentsProfileResponseDetails->init($arr[$newArray]);
@@ -22758,7 +22873,7 @@ class GetPalDetailsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Pal';
+			parent::init($arr);			$arrKeyName =  'Pal';
 			if($arr != null && array_key_exists($arrKeyName, $arr)) {
 				$this->Pal = $arr[$arrKeyName];
 			}
@@ -22838,7 +22953,7 @@ class ReverseTransactionResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( PPUtils::array_match_key($arr, "ReverseTransactionResponseDetails") ) {
+			parent::init($arr);			if( array_key_exists("ReverseTransactionResponseDetails", $arr) ) {
 				$newArray = "ReverseTransactionResponseDetails";
 				$this->ReverseTransactionResponseDetails = new ReverseTransactionResponseDetailsType();
 				$this->ReverseTransactionResponseDetails->init($arr[$newArray]);
@@ -22937,7 +23052,7 @@ class ExternalRememberMeOptOutResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-		}
+			parent::init($arr);		}
 	}
 }
 
