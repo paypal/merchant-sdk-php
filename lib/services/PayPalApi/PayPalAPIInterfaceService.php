@@ -2562,10 +2562,11 @@ class ErrorParameterType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Value';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Value = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='value') {
+				$this->Value = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -2628,34 +2629,32 @@ class ErrorType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'ShortMessage';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ShortMessage = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='shortmessage') {
+				$this->ShortMessage = $arry["text"];
 			}
-			$arrKeyName =  'LongMessage';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->LongMessage = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='longmessage') {
+				$this->LongMessage = $arry["text"];
 			}
-			$arrKeyName =  'ErrorCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ErrorCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='errorcode') {
+				$this->ErrorCode = $arry["text"];
 			}
-			$arrKeyName =  'SeverityCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SeverityCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='severitycode') {
+				$this->SeverityCode = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("ErrorParameters[$i]" ,$arr) ) {
-					$newArray = $arr["ErrorParameters"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="errorparameters[$i]") {
 				$this->ErrorParameters[$i] = new ErrorParameterType();
-				$this->ErrorParameters[$i]->init($newArray[$i]);
+				$this->ErrorParameters[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("ErrorParameters", $arr) ) {
-					$newArray = $arr["ErrorParameters"];
+				else if($arry["name"]=="errorparameters") {
 				$this->ErrorParameters = new ErrorParameterType();
-				$this->ErrorParameters->init($newArray);
+				$this->ErrorParameters->init($arry["children"]);
+					}
 			}
 			 }
+		}
 		}
 	}
 }
@@ -2822,38 +2821,35 @@ class AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Timestamp';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Timestamp = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='timestamp') {
+				$this->Timestamp = $arry["text"];
 			}
-			$arrKeyName =  'Ack';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Ack = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='ack') {
+				$this->Ack = $arry["text"];
 			}
-			$arrKeyName =  'CorrelationID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->CorrelationID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='correlationid') {
+				$this->CorrelationID = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("Errors[$i]" ,$arr) ) {
-					$newArray = $arr["Errors"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="errors[$i]") {
 				$this->Errors[$i] = new ErrorType();
-				$this->Errors[$i]->init($newArray[$i]);
+				$this->Errors[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("Errors", $arr) ) {
-					$newArray = $arr["Errors"];
+				else if($arry["name"]=="errors") {
 				$this->Errors = new ErrorType();
-				$this->Errors->init($newArray);
+				$this->Errors->init($arry["children"]);
+					}
 			}
 			 }
-			$arrKeyName =  'Version';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Version = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='version') {
+				$this->Version = $arry["text"];
 			}
-			$arrKeyName =  'Build';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Build = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='build') {
+				$this->Build = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -3242,70 +3238,56 @@ class AddressType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Name';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Name = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='name') {
+				$this->Name = $arry["text"];
 			}
-			$arrKeyName =  'Street1';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Street1 = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='street1') {
+				$this->Street1 = $arry["text"];
 			}
-			$arrKeyName =  'Street2';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Street2 = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='street2') {
+				$this->Street2 = $arry["text"];
 			}
-			$arrKeyName =  'CityName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->CityName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='cityname') {
+				$this->CityName = $arry["text"];
 			}
-			$arrKeyName =  'StateOrProvince';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->StateOrProvince = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='stateorprovince') {
+				$this->StateOrProvince = $arry["text"];
 			}
-			$arrKeyName =  'Country';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Country = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='country') {
+				$this->Country = $arry["text"];
 			}
-			$arrKeyName =  'CountryName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->CountryName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='countryname') {
+				$this->CountryName = $arry["text"];
 			}
-			$arrKeyName =  'Phone';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Phone = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='phone') {
+				$this->Phone = $arry["text"];
 			}
-			$arrKeyName =  'PostalCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PostalCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='postalcode') {
+				$this->PostalCode = $arry["text"];
 			}
-			$arrKeyName =  'AddressID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->AddressID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='addressid') {
+				$this->AddressID = $arry["text"];
 			}
-			$arrKeyName =  'AddressOwner';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->AddressOwner = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='addressowner') {
+				$this->AddressOwner = $arry["text"];
 			}
-			$arrKeyName =  'ExternalAddressID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ExternalAddressID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='externaladdressid') {
+				$this->ExternalAddressID = $arry["text"];
 			}
-			$arrKeyName =  'InternationalName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->InternationalName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='internationalname') {
+				$this->InternationalName = $arry["text"];
 			}
-			$arrKeyName =  'InternationalStateAndCity';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->InternationalStateAndCity = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='internationalstateandcity') {
+				$this->InternationalStateAndCity = $arry["text"];
 			}
-			$arrKeyName =  'InternationalStreet';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->InternationalStreet = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='internationalstreet') {
+				$this->InternationalStreet = $arry["text"];
 			}
-			$arrKeyName =  'AddressStatus';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->AddressStatus = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='addressstatus') {
+				$this->AddressStatus = $arry["text"];
 			}
+		}
 		}
 	}
 
@@ -3402,26 +3384,23 @@ class PersonNameType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Salutation';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Salutation = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='salutation') {
+				$this->Salutation = $arry["text"];
 			}
-			$arrKeyName =  'FirstName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->FirstName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='firstname') {
+				$this->FirstName = $arry["text"];
 			}
-			$arrKeyName =  'MiddleName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->MiddleName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='middlename') {
+				$this->MiddleName = $arry["text"];
 			}
-			$arrKeyName =  'LastName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->LastName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='lastname') {
+				$this->LastName = $arry["text"];
 			}
-			$arrKeyName =  'Suffix';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Suffix = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='suffix') {
+				$this->Suffix = $arry["text"];
 			}
+		}
 		}
 	}
 
@@ -3479,23 +3458,23 @@ class IncentiveAppliedToType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'BucketId';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BucketId = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='bucketid') {
+				$this->BucketId = $arry["text"];
 			}
-			$arrKeyName =  'ItemId';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ItemId = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='itemid') {
+				$this->ItemId = $arry["text"];
 			}
-			if( array_key_exists("IncentiveAmount", $arr) ) {
-				$newArray = "IncentiveAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="incentiveamount") {
 				$this->IncentiveAmount = new BasicAmountType();
-				$this->IncentiveAmount->init($arr[$newArray]);
+				$this->IncentiveAmount->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'SubType';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SubType = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='subtype') {
+				$this->SubType = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -3556,46 +3535,41 @@ class IncentiveDetailType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'RedemptionCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->RedemptionCode = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='redemptioncode') {
+				$this->RedemptionCode = $arry["text"];
 			}
-			$arrKeyName =  'DisplayCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->DisplayCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='displaycode') {
+				$this->DisplayCode = $arry["text"];
 			}
-			$arrKeyName =  'ProgramId';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProgramId = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='programid') {
+				$this->ProgramId = $arry["text"];
 			}
-			$arrKeyName =  'IncentiveType';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->IncentiveType = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='incentivetype') {
+				$this->IncentiveType = $arry["text"];
 			}
-			$arrKeyName =  'IncentiveDescription';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->IncentiveDescription = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='incentivedescription') {
+				$this->IncentiveDescription = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("AppliedTo[$i]" ,$arr) ) {
-					$newArray = $arr["AppliedTo"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="appliedto[$i]") {
 				$this->AppliedTo[$i] = new IncentiveAppliedToType();
-				$this->AppliedTo[$i]->init($newArray[$i]);
+				$this->AppliedTo[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("AppliedTo", $arr) ) {
-					$newArray = $arr["AppliedTo"];
+				else if($arry["name"]=="appliedto") {
 				$this->AppliedTo = new IncentiveAppliedToType();
-				$this->AppliedTo->init($newArray);
+				$this->AppliedTo->init($arry["children"]);
+					}
 			}
 			 }
-			$arrKeyName =  'Status';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Status = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='status') {
+				$this->Status = $arry["text"];
 			}
-			$arrKeyName =  'ErrorCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ErrorCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='errorcode') {
+				$this->ErrorCode = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -3647,9 +3621,9 @@ class IncentiveItemType {
 			$str .= '<ebl:ItemCategoryList>'.$this->ItemCategoryList.'</ebl:ItemCategoryList>';
 		 }
 		if($this->ItemPrice != null ) {
-			$str .='<cc:ItemPrice>';
+			$str .='<ebl:ItemPrice>';
 			$str .= $this->ItemPrice->toXMLString();
-			$str .=  '</cc:ItemPrice>';
+			$str .=  '</ebl:ItemPrice>';
 		 }
 		if($this->ItemQuantity != null ) {
 			$str .= '<ebl:ItemQuantity>'.$this->ItemQuantity.'</ebl:ItemQuantity>';
@@ -3739,29 +3713,29 @@ class IncentiveBucketType {
 			$str .= '<ebl:ExternalSellerId>'.$this->ExternalSellerId.'</ebl:ExternalSellerId>';
 		 }
 		if($this->BucketSubtotalAmt != null ) {
-			$str .='<cc:BucketSubtotalAmt>';
+			$str .='<ebl:BucketSubtotalAmt>';
 			$str .= $this->BucketSubtotalAmt->toXMLString();
-			$str .=  '</cc:BucketSubtotalAmt>';
+			$str .=  '</ebl:BucketSubtotalAmt>';
 		 }
 		if($this->BucketShippingAmt != null ) {
-			$str .='<cc:BucketShippingAmt>';
+			$str .='<ebl:BucketShippingAmt>';
 			$str .= $this->BucketShippingAmt->toXMLString();
-			$str .=  '</cc:BucketShippingAmt>';
+			$str .=  '</ebl:BucketShippingAmt>';
 		 }
 		if($this->BucketInsuranceAmt != null ) {
-			$str .='<cc:BucketInsuranceAmt>';
+			$str .='<ebl:BucketInsuranceAmt>';
 			$str .= $this->BucketInsuranceAmt->toXMLString();
-			$str .=  '</cc:BucketInsuranceAmt>';
+			$str .=  '</ebl:BucketInsuranceAmt>';
 		 }
 		if($this->BucketSalesTaxAmt != null ) {
-			$str .='<cc:BucketSalesTaxAmt>';
+			$str .='<ebl:BucketSalesTaxAmt>';
 			$str .= $this->BucketSalesTaxAmt->toXMLString();
-			$str .=  '</cc:BucketSalesTaxAmt>';
+			$str .=  '</ebl:BucketSalesTaxAmt>';
 		 }
 		if($this->BucketTotalAmt != null ) {
-			$str .='<cc:BucketTotalAmt>';
+			$str .='<ebl:BucketTotalAmt>';
 			$str .= $this->BucketTotalAmt->toXMLString();
-			$str .=  '</cc:BucketTotalAmt>';
+			$str .=  '</ebl:BucketTotalAmt>';
 		 }
 
 		return $str;
@@ -3878,9 +3852,9 @@ class GetIncentiveEvaluationRequestDetailsType {
 		 }
 		 }
 		if($this->CartTotalAmt != null ) {
-			$str .='<cc:CartTotalAmt>';
+			$str .='<ebl:CartTotalAmt>';
 			$str .= $this->CartTotalAmt->toXMLString();
-			$str .=  '</cc:CartTotalAmt>';
+			$str .=  '</ebl:CartTotalAmt>';
 		 }
 		if($this->RequestDetails != null ) {
 			$str .='<ebl:RequestDetails>';
@@ -3913,22 +3887,23 @@ class GetIncentiveEvaluationResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
+			foreach ($arr as $arry){
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("IncentiveDetails[$i]" ,$arr) ) {
-					$newArray = $arr["IncentiveDetails"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="incentivedetails[$i]") {
 				$this->IncentiveDetails[$i] = new IncentiveDetailType();
-				$this->IncentiveDetails[$i]->init($newArray[$i]);
+				$this->IncentiveDetails[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("IncentiveDetails", $arr) ) {
-					$newArray = $arr["IncentiveDetails"];
+				else if($arry["name"]=="incentivedetails") {
 				$this->IncentiveDetails = new IncentiveDetailType();
-				$this->IncentiveDetails->init($newArray);
+				$this->IncentiveDetails->init($arry["children"]);
+					}
 			}
 			 }
-			$arrKeyName =  'RequestId';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->RequestId = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='requestid') {
+				$this->RequestId = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -4668,9 +4643,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public function toXMLString()  {
 		$str = '';
 		if($this->OrderTotal != null ) {
-			$str .='<cc:OrderTotal>';
+			$str .='<ebl:OrderTotal>';
 			$str .= $this->OrderTotal->toXMLString();
-			$str .=  '</cc:OrderTotal>';
+			$str .=  '</ebl:OrderTotal>';
 		 }
 		if($this->ReturnURL != null ) {
 			$str .= '<ebl:ReturnURL>'.$this->ReturnURL.'</ebl:ReturnURL>';
@@ -4694,9 +4669,9 @@ class SetExpressCheckoutRequestDetailsType {
 			$str .= '<ebl:Token>'.$this->Token.'</ebl:Token>';
 		 }
 		if($this->MaxAmount != null ) {
-			$str .='<cc:MaxAmount>';
+			$str .='<ebl:MaxAmount>';
 			$str .= $this->MaxAmount->toXMLString();
-			$str .=  '</cc:MaxAmount>';
+			$str .=  '</ebl:MaxAmount>';
 		 }
 		if($this->OrderDescription != null ) {
 			$str .= '<ebl:OrderDescription>'.$this->OrderDescription.'</ebl:OrderDescription>';
@@ -4807,9 +4782,9 @@ class SetExpressCheckoutRequestDetailsType {
 			$str .= '<ebl:CallbackURL>'.$this->CallbackURL.'</ebl:CallbackURL>';
 		 }
 		if($this->EnhancedCheckoutData != null ) {
-			$str .='<ed:EnhancedCheckoutData>';
+			$str .='<ebl:EnhancedCheckoutData>';
 			$str .= $this->EnhancedCheckoutData->toXMLString();
-			$str .=  '</ed:EnhancedCheckoutData>';
+			$str .=  '</ebl:EnhancedCheckoutData>';
 		 }
 		if($this->OtherPaymentMethods != null ) {
 		for($i=0; $i<count($this->OtherPaymentMethods);$i++) {
@@ -4859,9 +4834,9 @@ class SetExpressCheckoutRequestDetailsType {
 			$str .= '<ebl:GiftWrapName>'.$this->GiftWrapName.'</ebl:GiftWrapName>';
 		 }
 		if($this->GiftWrapAmount != null ) {
-			$str .='<cc:GiftWrapAmount>';
+			$str .='<ebl:GiftWrapAmount>';
 			$str .= $this->GiftWrapAmount->toXMLString();
-			$str .=  '</cc:GiftWrapAmount>';
+			$str .=  '</ebl:GiftWrapAmount>';
 		 }
 		if($this->BuyerEmailOptInEnable != null ) {
 			$str .= '<ebl:BuyerEmailOptInEnable>'.$this->BuyerEmailOptInEnable.'</ebl:BuyerEmailOptInEnable>';
@@ -5207,9 +5182,9 @@ Expected maximum amount that the merchant may pull
 			$str .= '<ebl:Description>'.$this->Description.'</ebl:Description>';
 		 }
 		if($this->MaxAmount != null ) {
-			$str .='<cc:MaxAmount>';
+			$str .='<ebl:MaxAmount>';
 			$str .= $this->MaxAmount->toXMLString();
-			$str .=  '</cc:MaxAmount>';
+			$str .=  '</ebl:MaxAmount>';
 		 }
 
 		return $str;
@@ -5703,126 +5678,121 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Token';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Token = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='token') {
+				$this->Token = $arry["text"];
 			}
-			if( array_key_exists("PayerInfo", $arr) ) {
-				$newArray = "PayerInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="payerinfo") {
 				$this->PayerInfo = new PayerInfoType();
-				$this->PayerInfo->init($arr[$newArray]);
+				$this->PayerInfo->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'Custom';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Custom = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='custom') {
+				$this->Custom = $arry["text"];
 			}
-			$arrKeyName =  'InvoiceID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->InvoiceID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='invoiceid') {
+				$this->InvoiceID = $arry["text"];
 			}
-			$arrKeyName =  'ContactPhone';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ContactPhone = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='contactphone') {
+				$this->ContactPhone = $arry["text"];
 			}
-			$arrKeyName =  'BillingAgreementAcceptedStatus';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BillingAgreementAcceptedStatus = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='billingagreementacceptedstatus') {
+				$this->BillingAgreementAcceptedStatus = $arry["text"];
 			}
-			$arrKeyName =  'RedirectRequired';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->RedirectRequired = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='redirectrequired') {
+				$this->RedirectRequired = $arry["text"];
 			}
-			if( array_key_exists("BillingAddress", $arr) ) {
-				$newArray = "BillingAddress";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="billingaddress") {
 				$this->BillingAddress = new AddressType();
-				$this->BillingAddress->init($arr[$newArray]);
+				$this->BillingAddress->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'Note';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Note = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='note') {
+				$this->Note = $arry["text"];
 			}
-			$arrKeyName =  'CheckoutStatus';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->CheckoutStatus = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='checkoutstatus') {
+				$this->CheckoutStatus = $arry["text"];
 			}
-			if( array_key_exists("PayPalAdjustment", $arr) ) {
-				$newArray = "PayPalAdjustment";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="paypaladjustment") {
 				$this->PayPalAdjustment = new BasicAmountType();
-				$this->PayPalAdjustment->init($arr[$newArray]);
+				$this->PayPalAdjustment->init($arry["children"]);
+					}
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("PaymentDetails[$i]" ,$arr) ) {
-					$newArray = $arr["PaymentDetails"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="paymentdetails[$i]") {
 				$this->PaymentDetails[$i] = new PaymentDetailsType();
-				$this->PaymentDetails[$i]->init($newArray[$i]);
+				$this->PaymentDetails[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("PaymentDetails", $arr) ) {
-					$newArray = $arr["PaymentDetails"];
+				else if($arry["name"]=="paymentdetails") {
 				$this->PaymentDetails = new PaymentDetailsType();
-				$this->PaymentDetails->init($newArray);
+				$this->PaymentDetails->init($arry["children"]);
+					}
 			}
 			 }
-			if( array_key_exists("UserSelectedOptions", $arr) ) {
-				$newArray = "UserSelectedOptions";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="userselectedoptions") {
 				$this->UserSelectedOptions = new UserSelectedOptionType();
-				$this->UserSelectedOptions->init($arr[$newArray]);
+				$this->UserSelectedOptions->init($arry["children"]);
+					}
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("IncentiveDetails[$i]" ,$arr) ) {
-					$newArray = $arr["IncentiveDetails"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="incentivedetails[$i]") {
 				$this->IncentiveDetails[$i] = new IncentiveDetailsType();
-				$this->IncentiveDetails[$i]->init($newArray[$i]);
+				$this->IncentiveDetails[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("IncentiveDetails", $arr) ) {
-					$newArray = $arr["IncentiveDetails"];
+				else if($arry["name"]=="incentivedetails") {
 				$this->IncentiveDetails = new IncentiveDetailsType();
-				$this->IncentiveDetails->init($newArray);
+				$this->IncentiveDetails->init($arry["children"]);
+					}
 			}
 			 }
-			$arrKeyName =  'GiftMessage';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->GiftMessage = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='giftmessage') {
+				$this->GiftMessage = $arry["text"];
 			}
-			$arrKeyName =  'GiftReceiptEnable';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->GiftReceiptEnable = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='giftreceiptenable') {
+				$this->GiftReceiptEnable = $arry["text"];
 			}
-			$arrKeyName =  'GiftWrapName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->GiftWrapName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='giftwrapname') {
+				$this->GiftWrapName = $arry["text"];
 			}
-			if( array_key_exists("GiftWrapAmount", $arr) ) {
-				$newArray = "GiftWrapAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="giftwrapamount") {
 				$this->GiftWrapAmount = new BasicAmountType();
-				$this->GiftWrapAmount->init($arr[$newArray]);
+				$this->GiftWrapAmount->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'BuyerMarketingEmail';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BuyerMarketingEmail = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='buyermarketingemail') {
+				$this->BuyerMarketingEmail = $arry["text"];
 			}
-			$arrKeyName =  'SurveyQuestion';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SurveyQuestion = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='surveyquestion') {
+				$this->SurveyQuestion = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
 			 }
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("PaymentRequestInfo[$i]" ,$arr) ) {
-					$newArray = $arr["PaymentRequestInfo"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="paymentrequestinfo[$i]") {
 				$this->PaymentRequestInfo[$i] = new PaymentRequestInfoType();
-				$this->PaymentRequestInfo[$i]->init($newArray[$i]);
+				$this->PaymentRequestInfo[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("PaymentRequestInfo", $arr) ) {
-					$newArray = $arr["PaymentRequestInfo"];
+				else if($arry["name"]=="paymentrequestinfo") {
 				$this->PaymentRequestInfo = new PaymentRequestInfoType();
-				$this->PaymentRequestInfo->init($newArray);
+				$this->PaymentRequestInfo->init($arry["children"]);
+					}
 			}
 			 }
-			if( array_key_exists("ExternalRememberMeStatusDetails", $arr) ) {
-				$newArray = "ExternalRememberMeStatusDetails";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="externalremembermestatusdetails") {
 				$this->ExternalRememberMeStatusDetails = new ExternalRememberMeStatusDetailsType();
-				$this->ExternalRememberMeStatusDetails->init($arr[$newArray]);
+				$this->ExternalRememberMeStatusDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -5846,16 +5816,20 @@ class ExecuteCheckoutOperationsResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( array_key_exists("SetDataResponse", $arr) ) {
-				$newArray = "SetDataResponse";
+			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="setdataresponse") {
 				$this->SetDataResponse = new SetDataResponseType();
-				$this->SetDataResponse->init($arr[$newArray]);
+				$this->SetDataResponse->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("AuthorizationResponse", $arr) ) {
-				$newArray = "AuthorizationResponse";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="authorizationresponse") {
 				$this->AuthorizationResponse = new AuthorizationResponseType();
-				$this->AuthorizationResponse->init($arr[$newArray]);
+				$this->AuthorizationResponse->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -5885,22 +5859,23 @@ class SetDataResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Token';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Token = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='token') {
+				$this->Token = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("SetDataError[$i]" ,$arr) ) {
-					$newArray = $arr["SetDataError"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="setdataerror[$i]") {
 				$this->SetDataError[$i] = new ErrorType();
-				$this->SetDataError[$i]->init($newArray[$i]);
+				$this->SetDataError[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("SetDataError", $arr) ) {
-					$newArray = $arr["SetDataError"];
+				else if($arry["name"]=="setdataerror") {
 				$this->SetDataError = new ErrorType();
-				$this->SetDataError->init($newArray);
+				$this->SetDataError->init($arry["children"]);
+					}
 			}
 			 }
+		}
 		}
 	}
 }
@@ -5928,22 +5903,23 @@ class AuthorizationResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Status';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Status = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='status') {
+				$this->Status = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("AuthorizationError[$i]" ,$arr) ) {
-					$newArray = $arr["AuthorizationError"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="authorizationerror[$i]") {
 				$this->AuthorizationError[$i] = new ErrorType();
-				$this->AuthorizationError[$i]->init($newArray[$i]);
+				$this->AuthorizationError[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("AuthorizationError", $arr) ) {
-					$newArray = $arr["AuthorizationError"];
+				else if($arry["name"]=="authorizationerror") {
 				$this->AuthorizationError = new ErrorType();
-				$this->AuthorizationError->init($newArray);
+				$this->AuthorizationError->init($arry["children"]);
+					}
 			}
 			 }
+		}
 		}
 	}
 }
@@ -6204,9 +6180,9 @@ class DoExpressCheckoutPaymentRequestDetailsType {
 			$str .= '<ebl:GiftWrapName>'.$this->GiftWrapName.'</ebl:GiftWrapName>';
 		 }
 		if($this->GiftWrapAmount != null ) {
-			$str .='<cc:GiftWrapAmount>';
+			$str .='<ebl:GiftWrapAmount>';
 			$str .= $this->GiftWrapAmount->toXMLString();
-			$str .=  '</cc:GiftWrapAmount>';
+			$str .=  '</ebl:GiftWrapAmount>';
 		 }
 		if($this->BuyerMarketingEmail != null ) {
 			$str .= '<ebl:BuyerMarketingEmail>'.$this->BuyerMarketingEmail.'</ebl:BuyerMarketingEmail>';
@@ -6302,43 +6278,41 @@ Information about the transaction 	 *
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Token';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Token = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='token') {
+				$this->Token = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("PaymentInfo[$i]" ,$arr) ) {
-					$newArray = $arr["PaymentInfo"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="paymentinfo[$i]") {
 				$this->PaymentInfo[$i] = new PaymentInfoType();
-				$this->PaymentInfo[$i]->init($newArray[$i]);
+				$this->PaymentInfo[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("PaymentInfo", $arr) ) {
-					$newArray = $arr["PaymentInfo"];
+				else if($arry["name"]=="paymentinfo") {
 				$this->PaymentInfo = new PaymentInfoType();
-				$this->PaymentInfo->init($newArray);
+				$this->PaymentInfo->init($arry["children"]);
+					}
 			}
 			 }
-			$arrKeyName =  'BillingAgreementID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BillingAgreementID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='billingagreementid') {
+				$this->BillingAgreementID = $arry["text"];
 			}
-			$arrKeyName =  'RedirectRequired';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->RedirectRequired = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='redirectrequired') {
+				$this->RedirectRequired = $arry["text"];
 			}
-			$arrKeyName =  'Note';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Note = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='note') {
+				$this->Note = $arry["text"];
 			}
-			$arrKeyName =  'SuccessPageRedirectRequested';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SuccessPageRedirectRequested = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='successpageredirectrequested') {
+				$this->SuccessPageRedirectRequested = $arry["text"];
 			}
-			if( array_key_exists("UserSelectedOptions", $arr) ) {
-				$newArray = "UserSelectedOptions";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="userselectedoptions") {
 				$this->UserSelectedOptions = new UserSelectedOptionType();
-				$this->UserSelectedOptions->init($arr[$newArray]);
+				$this->UserSelectedOptions->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -6370,15 +6344,17 @@ Information about the transaction 	 *
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'AuthorizationID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->AuthorizationID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='authorizationid') {
+				$this->AuthorizationID = $arry["text"];
 			}
-			if( array_key_exists("PaymentInfo", $arr) ) {
-				$newArray = "PaymentInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="paymentinfo") {
 				$this->PaymentInfo = new PaymentInfoType();
-				$this->PaymentInfo->init($arr[$newArray]);
+				$this->PaymentInfo->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -6677,19 +6653,19 @@ class CreateMobilePaymentRequestDetailsType {
 			$str .=  '</ebl:RecipientPhone>';
 		 }
 		if($this->ItemAmount != null ) {
-			$str .='<cc:ItemAmount>';
+			$str .='<ebl:ItemAmount>';
 			$str .= $this->ItemAmount->toXMLString();
-			$str .=  '</cc:ItemAmount>';
+			$str .=  '</ebl:ItemAmount>';
 		 }
 		if($this->Tax != null ) {
-			$str .='<cc:Tax>';
+			$str .='<ebl:Tax>';
 			$str .= $this->Tax->toXMLString();
-			$str .=  '</cc:Tax>';
+			$str .=  '</ebl:Tax>';
 		 }
 		if($this->Shipping != null ) {
-			$str .='<cc:Shipping>';
+			$str .='<ebl:Shipping>';
 			$str .= $this->Shipping->toXMLString();
-			$str .=  '</cc:Shipping>';
+			$str .=  '</ebl:Shipping>';
 		 }
 		if($this->ItemName != null ) {
 			$str .= '<ebl:ItemName>'.$this->ItemName.'</ebl:ItemName>';
@@ -7085,22 +7061,20 @@ class GetAuthDetailsResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'FirstName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->FirstName = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='firstname') {
+				$this->FirstName = $arry["text"];
 			}
-			$arrKeyName =  'LastName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->LastName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='lastname') {
+				$this->LastName = $arry["text"];
 			}
-			$arrKeyName =  'Email';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Email = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='email') {
+				$this->Email = $arry["text"];
 			}
-			$arrKeyName =  'PayerID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PayerID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='payerid') {
+				$this->PayerID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -7437,26 +7411,24 @@ class GetAccessPermissionDetailsResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'FirstName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->FirstName = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='firstname') {
+				$this->FirstName = $arry["text"];
 			}
-			$arrKeyName =  'LastName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->LastName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='lastname') {
+				$this->LastName = $arry["text"];
 			}
-			$arrKeyName =  'Email';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Email = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='email') {
+				$this->Email = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
 			 }
 			for($i=0; $i<10;$i++) {
 			 }
-			$arrKeyName =  'PayerID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PayerID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='payerid') {
+				$this->PayerID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -7524,37 +7496,38 @@ class BAUpdateResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'BillingAgreementID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BillingAgreementID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='billingagreementid') {
+				$this->BillingAgreementID = $arry["text"];
 			}
-			$arrKeyName =  'BillingAgreementDescription';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BillingAgreementDescription = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='billingagreementdescription') {
+				$this->BillingAgreementDescription = $arry["text"];
 			}
-			$arrKeyName =  'BillingAgreementStatus';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BillingAgreementStatus = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='billingagreementstatus') {
+				$this->BillingAgreementStatus = $arry["text"];
 			}
-			$arrKeyName =  'BillingAgreementCustom';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BillingAgreementCustom = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='billingagreementcustom') {
+				$this->BillingAgreementCustom = $arry["text"];
 			}
-			if( array_key_exists("PayerInfo", $arr) ) {
-				$newArray = "PayerInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="payerinfo") {
 				$this->PayerInfo = new PayerInfoType();
-				$this->PayerInfo->init($arr[$newArray]);
+				$this->PayerInfo->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("BillingAgreementMax", $arr) ) {
-				$newArray = "BillingAgreementMax";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="billingagreementmax") {
 				$this->BillingAgreementMax = new BasicAmountType();
-				$this->BillingAgreementMax->init($arr[$newArray]);
+				$this->BillingAgreementMax->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("BillingAddress", $arr) ) {
-				$newArray = "BillingAddress";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="billingaddress") {
 				$this->BillingAddress = new AddressType();
-				$this->BillingAddress->init($arr[$newArray]);
+				$this->BillingAddress->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -7589,21 +7562,26 @@ Information about the transaction 	 *
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( array_key_exists("PayerInfo", $arr) ) {
-				$newArray = "PayerInfo";
+			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="payerinfo") {
 				$this->PayerInfo = new PayerInfoType();
-				$this->PayerInfo->init($arr[$newArray]);
+				$this->PayerInfo->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("PaymentInfo", $arr) ) {
-				$newArray = "PaymentInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="paymentinfo") {
 				$this->PaymentInfo = new PaymentInfoType();
-				$this->PaymentInfo->init($arr[$newArray]);
+				$this->PaymentInfo->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("MerchantPullInfo", $arr) ) {
-				$newArray = "MerchantPullInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="merchantpullinfo") {
 				$this->MerchantPullInfo = new MerchantPullInfoType();
-				$this->MerchantPullInfo->init($arr[$newArray]);
+				$this->MerchantPullInfo->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -7675,35 +7653,32 @@ Note: This field is no longer used and is always
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'MpStatus';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->MpStatus = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='mpstatus') {
+				$this->MpStatus = $arry["text"];
 			}
-			if( array_key_exists("MpMax", $arr) ) {
-				$newArray = "MpMax";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="mpmax") {
 				$this->MpMax = new BasicAmountType();
-				$this->MpMax->init($arr[$newArray]);
+				$this->MpMax->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'MpCustom';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->MpCustom = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='mpcustom') {
+				$this->MpCustom = $arry["text"];
 			}
-			$arrKeyName =  'Desc';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Desc = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='desc') {
+				$this->Desc = $arry["text"];
 			}
-			$arrKeyName =  'Invoice';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Invoice = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='invoice') {
+				$this->Invoice = $arry["text"];
 			}
-			$arrKeyName =  'Custom';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Custom = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='custom') {
+				$this->Custom = $arry["text"];
 			}
-			$arrKeyName =  'PaymentSourceID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PaymentSourceID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='paymentsourceid') {
+				$this->PaymentSourceID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -7790,49 +7765,47 @@ The net amount of the transaction 	 *
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Timestamp';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Timestamp = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='timestamp') {
+				$this->Timestamp = $arry["text"];
 			}
-			$arrKeyName =  'Timezone';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Timezone = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='timezone') {
+				$this->Timezone = $arry["text"];
 			}
-			$arrKeyName =  'Type';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Type = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='type') {
+				$this->Type = $arry["text"];
 			}
-			$arrKeyName =  'Payer';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Payer = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='payer') {
+				$this->Payer = $arry["text"];
 			}
-			$arrKeyName =  'PayerDisplayName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PayerDisplayName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='payerdisplayname') {
+				$this->PayerDisplayName = $arry["text"];
 			}
-			$arrKeyName =  'TransactionID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TransactionID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
+				$this->TransactionID = $arry["text"];
 			}
-			$arrKeyName =  'Status';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Status = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='status') {
+				$this->Status = $arry["text"];
 			}
-			if( array_key_exists("GrossAmount", $arr) ) {
-				$newArray = "GrossAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="grossamount") {
 				$this->GrossAmount = new BasicAmountType();
-				$this->GrossAmount->init($arr[$newArray]);
+				$this->GrossAmount->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("FeeAmount", $arr) ) {
-				$newArray = "FeeAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="feeamount") {
 				$this->FeeAmount = new BasicAmountType();
-				$this->FeeAmount->init($arr[$newArray]);
+				$this->FeeAmount->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("NetAmount", $arr) ) {
-				$newArray = "NetAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="netamount") {
 				$this->NetAmount = new BasicAmountType();
-				$this->NetAmount->init($arr[$newArray]);
+				$this->NetAmount->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -8048,9 +8021,9 @@ class MerchantPullPaymentType {
 	public function toXMLString()  {
 		$str = '';
 		if($this->Amount != null ) {
-			$str .='<cc:Amount>';
+			$str .='<ebl:Amount>';
 			$str .= $this->Amount->toXMLString();
-			$str .=  '</cc:Amount>';
+			$str .=  '</ebl:Amount>';
 		 }
 		if($this->MpID != null ) {
 			$str .= '<ebl:MpID>'.$this->MpID.'</ebl:MpID>';
@@ -8065,19 +8038,19 @@ class MerchantPullPaymentType {
 			$str .= '<ebl:EmailSubject>'.$this->EmailSubject.'</ebl:EmailSubject>';
 		 }
 		if($this->Tax != null ) {
-			$str .='<cc:Tax>';
+			$str .='<ebl:Tax>';
 			$str .= $this->Tax->toXMLString();
-			$str .=  '</cc:Tax>';
+			$str .=  '</ebl:Tax>';
 		 }
 		if($this->Shipping != null ) {
-			$str .='<cc:Shipping>';
+			$str .='<ebl:Shipping>';
 			$str .= $this->Shipping->toXMLString();
-			$str .=  '</cc:Shipping>';
+			$str .=  '</ebl:Shipping>';
 		 }
 		if($this->Handling != null ) {
-			$str .='<cc:Handling>';
+			$str .='<ebl:Handling>';
 			$str .= $this->Handling->toXMLString();
-			$str .=  '</cc:Handling>';
+			$str .=  '</ebl:Handling>';
 		 }
 		if($this->ItemName != null ) {
 			$str .= '<ebl:ItemName>'.$this->ItemName.'</ebl:ItemName>';
@@ -8207,58 +8180,61 @@ Information about an individual item in the
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( array_key_exists("ReceiverInfo", $arr) ) {
-				$newArray = "ReceiverInfo";
+			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="receiverinfo") {
 				$this->ReceiverInfo = new ReceiverInfoType();
-				$this->ReceiverInfo->init($arr[$newArray]);
+				$this->ReceiverInfo->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("PayerInfo", $arr) ) {
-				$newArray = "PayerInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="payerinfo") {
 				$this->PayerInfo = new PayerInfoType();
-				$this->PayerInfo->init($arr[$newArray]);
+				$this->PayerInfo->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("PaymentInfo", $arr) ) {
-				$newArray = "PaymentInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="paymentinfo") {
 				$this->PaymentInfo = new PaymentInfoType();
-				$this->PaymentInfo->init($arr[$newArray]);
+				$this->PaymentInfo->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("PaymentItemInfo", $arr) ) {
-				$newArray = "PaymentItemInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="paymentiteminfo") {
 				$this->PaymentItemInfo = new PaymentItemInfoType();
-				$this->PaymentItemInfo->init($arr[$newArray]);
+				$this->PaymentItemInfo->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("UserSelectedOptions", $arr) ) {
-				$newArray = "UserSelectedOptions";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="userselectedoptions") {
 				$this->UserSelectedOptions = new UserSelectedOptionType();
-				$this->UserSelectedOptions->init($arr[$newArray]);
+				$this->UserSelectedOptions->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'GiftMessage';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->GiftMessage = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='giftmessage') {
+				$this->GiftMessage = $arry["text"];
 			}
-			$arrKeyName =  'GiftReceipt';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->GiftReceipt = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='giftreceipt') {
+				$this->GiftReceipt = $arry["text"];
 			}
-			$arrKeyName =  'GiftWrapName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->GiftWrapName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='giftwrapname') {
+				$this->GiftWrapName = $arry["text"];
 			}
-			if( array_key_exists("GiftWrapAmount", $arr) ) {
-				$newArray = "GiftWrapAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="giftwrapamount") {
 				$this->GiftWrapAmount = new BasicAmountType();
-				$this->GiftWrapAmount->init($arr[$newArray]);
+				$this->GiftWrapAmount->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'BuyerEmailOptIn';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BuyerEmailOptIn = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='buyeremailoptin') {
+				$this->BuyerEmailOptIn = $arry["text"];
 			}
-			$arrKeyName =  'SurveyQuestion';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SurveyQuestion = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='surveyquestion') {
+				$this->SurveyQuestion = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
 			 }
+		}
 		}
 	}
 }
@@ -8306,18 +8282,17 @@ Unique account ID of the payment recipient (the
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Business';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Business = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='business') {
+				$this->Business = $arry["text"];
 			}
-			$arrKeyName =  'Receiver';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Receiver = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='receiver') {
+				$this->Receiver = $arry["text"];
 			}
-			$arrKeyName =  'ReceiverID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ReceiverID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='receiverid') {
+				$this->ReceiverID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -8414,50 +8389,50 @@ Holds any enhanced information about the payer
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Payer';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Payer = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='payer') {
+				$this->Payer = $arry["text"];
 			}
-			$arrKeyName =  'PayerID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PayerID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='payerid') {
+				$this->PayerID = $arry["text"];
 			}
-			$arrKeyName =  'PayerStatus';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PayerStatus = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='payerstatus') {
+				$this->PayerStatus = $arry["text"];
 			}
-			if( array_key_exists("PayerName", $arr) ) {
-				$newArray = "PayerName";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="payername") {
 				$this->PayerName = new PersonNameType();
-				$this->PayerName->init($arr[$newArray]);
+				$this->PayerName->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'PayerCountry';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PayerCountry = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='payercountry') {
+				$this->PayerCountry = $arry["text"];
 			}
-			$arrKeyName =  'PayerBusiness';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PayerBusiness = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='payerbusiness') {
+				$this->PayerBusiness = $arry["text"];
 			}
-			if( array_key_exists("Address", $arr) ) {
-				$newArray = "Address";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="address") {
 				$this->Address = new AddressType();
-				$this->Address->init($arr[$newArray]);
+				$this->Address->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'ContactPhone';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ContactPhone = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='contactphone') {
+				$this->ContactPhone = $arry["text"];
 			}
-			if( array_key_exists("TaxIdDetails", $arr) ) {
-				$newArray = "TaxIdDetails";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="taxiddetails") {
 				$this->TaxIdDetails = new TaxIdDetailsType();
-				$this->TaxIdDetails->init($arr[$newArray]);
+				$this->TaxIdDetails->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("EnhancedPayerInfo", $arr) ) {
-				$newArray = "EnhancedPayerInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="enhancedpayerinfo") {
 				$this->EnhancedPayerInfo = new EnhancedPayerInfoType();
-				$this->EnhancedPayerInfo->init($arr[$newArray]);
+				$this->EnhancedPayerInfo->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 
@@ -8497,9 +8472,9 @@ Holds any enhanced information about the payer
 			$str .=  '</ebl:TaxIdDetails>';
 		 }
 		if($this->EnhancedPayerInfo != null ) {
-			$str .='<ed:EnhancedPayerInfo>';
+			$str .='<ebl:EnhancedPayerInfo>';
 			$str .= $this->EnhancedPayerInfo->toXMLString();
-			$str .=  '</ed:EnhancedPayerInfo>';
+			$str .=  '</ebl:EnhancedPayerInfo>';
 		 }
 
 		return $str;
@@ -8525,10 +8500,11 @@ class InstrumentDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'InstrumentCategory';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->InstrumentCategory = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='instrumentcategory') {
+				$this->InstrumentCategory = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -8550,10 +8526,11 @@ class BMLOfferInfoType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'OfferTrackingID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OfferTrackingID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='offertrackingid') {
+				$this->OfferTrackingID = $arry["text"];
 			}
+		}
 		}
 	}
 
@@ -8595,15 +8572,17 @@ class OfferDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'OfferCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OfferCode = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='offercode') {
+				$this->OfferCode = $arry["text"];
 			}
-			if( array_key_exists("BMLOfferInfo", $arr) ) {
-				$newArray = "BMLOfferInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="bmlofferinfo") {
 				$this->BMLOfferInfo = new BMLOfferInfoType();
-				$this->BMLOfferInfo->init($arr[$newArray]);
+				$this->BMLOfferInfo->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 
@@ -8996,148 +8975,137 @@ Amount deposited into the account's primary
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'TransactionID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TransactionID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
+				$this->TransactionID = $arry["text"];
 			}
-			$arrKeyName =  'EbayTransactionID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->EbayTransactionID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='ebaytransactionid') {
+				$this->EbayTransactionID = $arry["text"];
 			}
-			$arrKeyName =  'ParentTransactionID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ParentTransactionID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='parenttransactionid') {
+				$this->ParentTransactionID = $arry["text"];
 			}
-			$arrKeyName =  'ReceiptID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ReceiptID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='receiptid') {
+				$this->ReceiptID = $arry["text"];
 			}
-			$arrKeyName =  'TransactionType';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TransactionType = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='transactiontype') {
+				$this->TransactionType = $arry["text"];
 			}
-			$arrKeyName =  'PaymentType';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PaymentType = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='paymenttype') {
+				$this->PaymentType = $arry["text"];
 			}
-			$arrKeyName =  'RefundSourceCodeType';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->RefundSourceCodeType = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='refundsourcecodetype') {
+				$this->RefundSourceCodeType = $arry["text"];
 			}
-			$arrKeyName =  'ExpectedeCheckClearDate';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ExpectedeCheckClearDate = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='expectedecheckcleardate') {
+				$this->ExpectedeCheckClearDate = $arry["text"];
 			}
-			$arrKeyName =  'PaymentDate';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PaymentDate = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='paymentdate') {
+				$this->PaymentDate = $arry["text"];
 			}
-			if( array_key_exists("GrossAmount", $arr) ) {
-				$newArray = "GrossAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="grossamount") {
 				$this->GrossAmount = new BasicAmountType();
-				$this->GrossAmount->init($arr[$newArray]);
+				$this->GrossAmount->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("FeeAmount", $arr) ) {
-				$newArray = "FeeAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="feeamount") {
 				$this->FeeAmount = new BasicAmountType();
-				$this->FeeAmount->init($arr[$newArray]);
+				$this->FeeAmount->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("SettleAmount", $arr) ) {
-				$newArray = "SettleAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="settleamount") {
 				$this->SettleAmount = new BasicAmountType();
-				$this->SettleAmount->init($arr[$newArray]);
+				$this->SettleAmount->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("TaxAmount", $arr) ) {
-				$newArray = "TaxAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="taxamount") {
 				$this->TaxAmount = new BasicAmountType();
-				$this->TaxAmount->init($arr[$newArray]);
+				$this->TaxAmount->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'ExchangeRate';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ExchangeRate = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='exchangerate') {
+				$this->ExchangeRate = $arry["text"];
 			}
-			$arrKeyName =  'PaymentStatus';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PaymentStatus = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='paymentstatus') {
+				$this->PaymentStatus = $arry["text"];
 			}
-			$arrKeyName =  'PendingReason';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PendingReason = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='pendingreason') {
+				$this->PendingReason = $arry["text"];
 			}
-			$arrKeyName =  'ReasonCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ReasonCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='reasoncode') {
+				$this->ReasonCode = $arry["text"];
 			}
-			$arrKeyName =  'HoldDecision';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->HoldDecision = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='holddecision') {
+				$this->HoldDecision = $arry["text"];
 			}
-			$arrKeyName =  'ShippingMethod';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ShippingMethod = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='shippingmethod') {
+				$this->ShippingMethod = $arry["text"];
 			}
-			$arrKeyName =  'ProtectionEligibility';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProtectionEligibility = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='protectioneligibility') {
+				$this->ProtectionEligibility = $arry["text"];
 			}
-			$arrKeyName =  'ProtectionEligibilityType';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProtectionEligibilityType = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='protectioneligibilitytype') {
+				$this->ProtectionEligibilityType = $arry["text"];
 			}
-			$arrKeyName =  'ShipAmount';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ShipAmount = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='shipamount') {
+				$this->ShipAmount = $arry["text"];
 			}
-			$arrKeyName =  'ShipHandleAmount';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ShipHandleAmount = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='shiphandleamount') {
+				$this->ShipHandleAmount = $arry["text"];
 			}
-			$arrKeyName =  'ShipDiscount';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ShipDiscount = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='shipdiscount') {
+				$this->ShipDiscount = $arry["text"];
 			}
-			$arrKeyName =  'InsuranceAmount';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->InsuranceAmount = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='insuranceamount') {
+				$this->InsuranceAmount = $arry["text"];
 			}
-			$arrKeyName =  'Subject';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Subject = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='subject') {
+				$this->Subject = $arry["text"];
 			}
-			if( array_key_exists("SellerDetails", $arr) ) {
-				$newArray = "SellerDetails";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="sellerdetails") {
 				$this->SellerDetails = new SellerDetailsType();
-				$this->SellerDetails->init($arr[$newArray]);
+				$this->SellerDetails->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'PaymentRequestID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PaymentRequestID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='paymentrequestid') {
+				$this->PaymentRequestID = $arry["text"];
 			}
-			if( array_key_exists("FMFDetails", $arr) ) {
-				$newArray = "FMFDetails";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="fmfdetails") {
 				$this->FMFDetails = new FMFDetailsType();
-				$this->FMFDetails->init($arr[$newArray]);
+				$this->FMFDetails->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("EnhancedPaymentInfo", $arr) ) {
-				$newArray = "EnhancedPaymentInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="enhancedpaymentinfo") {
 				$this->EnhancedPaymentInfo = new EnhancedPaymentInfoType();
-				$this->EnhancedPaymentInfo->init($arr[$newArray]);
+				$this->EnhancedPaymentInfo->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("PaymentError", $arr) ) {
-				$newArray = "PaymentError";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="paymenterror") {
 				$this->PaymentError = new ErrorType();
-				$this->PaymentError->init($arr[$newArray]);
+				$this->PaymentError->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("InstrumentDetails", $arr) ) {
-				$newArray = "InstrumentDetails";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="instrumentdetails") {
 				$this->InstrumentDetails = new InstrumentDetailsType();
-				$this->InstrumentDetails->init($arr[$newArray]);
+				$this->InstrumentDetails->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("OfferDetails", $arr) ) {
-				$newArray = "OfferDetails";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="offerdetails") {
 				$this->OfferDetails = new OfferDetailsType();
-				$this->OfferDetails->init($arr[$newArray]);
+				$this->OfferDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -9157,11 +9125,14 @@ class SubscriptionTermsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( array_key_exists("Amount", $arr) ) {
-				$newArray = "Amount";
+			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="amount") {
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arr[$newArray]);
+				$this->Amount->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -9242,46 +9213,41 @@ class SubscriptionInfoType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'SubscriptionID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SubscriptionID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='subscriptionid') {
+				$this->SubscriptionID = $arry["text"];
 			}
-			$arrKeyName =  'SubscriptionDate';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SubscriptionDate = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='subscriptiondate') {
+				$this->SubscriptionDate = $arry["text"];
 			}
-			$arrKeyName =  'EffectiveDate';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->EffectiveDate = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='effectivedate') {
+				$this->EffectiveDate = $arry["text"];
 			}
-			$arrKeyName =  'RetryTime';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->RetryTime = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='retrytime') {
+				$this->RetryTime = $arry["text"];
 			}
-			$arrKeyName =  'Username';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Username = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='username') {
+				$this->Username = $arry["text"];
 			}
-			$arrKeyName =  'Password';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Password = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='password') {
+				$this->Password = $arry["text"];
 			}
-			$arrKeyName =  'Recurrences';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Recurrences = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='recurrences') {
+				$this->Recurrences = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("Terms[$i]" ,$arr) ) {
-					$newArray = $arr["Terms"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="terms[$i]") {
 				$this->Terms[$i] = new SubscriptionTermsType();
-				$this->Terms[$i]->init($newArray[$i]);
+				$this->Terms[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("Terms", $arr) ) {
-					$newArray = $arr["Terms"];
+				else if($arry["name"]=="terms") {
 				$this->Terms = new SubscriptionTermsType();
-				$this->Terms->init($newArray);
+				$this->Terms->init($arry["children"]);
+					}
 			}
 			 }
+		}
 		}
 	}
 }
@@ -9309,14 +9275,14 @@ class AuctionInfoType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'BuyerID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BuyerID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='buyerid') {
+				$this->BuyerID = $arry["text"];
 			}
-			$arrKeyName =  'ClosingDate';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ClosingDate = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='closingdate') {
+				$this->ClosingDate = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -9330,6 +9296,8 @@ class OptionType {
 
 	public function init($arr = null) {
 		if($arr != null) {
+			foreach ($arr as $arry){
+		}
 		}
 	}
 }
@@ -9383,22 +9351,20 @@ class EbayItemPaymentDetailsItemType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'ItemNumber';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ItemNumber = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='itemnumber') {
+				$this->ItemNumber = $arry["text"];
 			}
-			$arrKeyName =  'AuctionTransactionId';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->AuctionTransactionId = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='auctiontransactionid') {
+				$this->AuctionTransactionId = $arry["text"];
 			}
-			$arrKeyName =  'OrderId';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OrderId = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='orderid') {
+				$this->OrderId = $arry["text"];
 			}
-			$arrKeyName =  'CartID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->CartID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='cartid') {
+				$this->CartID = $arry["text"];
 			}
+		}
 		}
 	}
 
@@ -9581,78 +9547,80 @@ class PaymentDetailsItemType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Name';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Name = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='name') {
+				$this->Name = $arry["text"];
 			}
-			$arrKeyName =  'Number';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Number = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='number') {
+				$this->Number = $arry["text"];
 			}
-			$arrKeyName =  'Quantity';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Quantity = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='quantity') {
+				$this->Quantity = $arry["text"];
 			}
-			if( array_key_exists("Tax", $arr) ) {
-				$newArray = "Tax";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="tax") {
 				$this->Tax = new BasicAmountType();
-				$this->Tax->init($arr[$newArray]);
+				$this->Tax->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("Amount", $arr) ) {
-				$newArray = "Amount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="amount") {
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arr[$newArray]);
+				$this->Amount->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("EbayItemPaymentDetailsItem", $arr) ) {
-				$newArray = "EbayItemPaymentDetailsItem";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="ebayitempaymentdetailsitem") {
 				$this->EbayItemPaymentDetailsItem = new EbayItemPaymentDetailsItemType();
-				$this->EbayItemPaymentDetailsItem->init($arr[$newArray]);
+				$this->EbayItemPaymentDetailsItem->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'PromoCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PromoCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='promocode') {
+				$this->PromoCode = $arry["text"];
 			}
-			$arrKeyName =  'ProductCategory';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProductCategory = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='productcategory') {
+				$this->ProductCategory = $arry["text"];
 			}
-			$arrKeyName =  'Description';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Description = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='description') {
+				$this->Description = $arry["text"];
 			}
-			if( array_key_exists("ItemWeight", $arr) ) {
-				$newArray = "ItemWeight";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="itemweight") {
 				$this->ItemWeight = new MeasureType();
-				$this->ItemWeight->init($arr[$newArray]);
+				$this->ItemWeight->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("ItemLength", $arr) ) {
-				$newArray = "ItemLength";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="itemlength") {
 				$this->ItemLength = new MeasureType();
-				$this->ItemLength->init($arr[$newArray]);
+				$this->ItemLength->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("ItemWidth", $arr) ) {
-				$newArray = "ItemWidth";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="itemwidth") {
 				$this->ItemWidth = new MeasureType();
-				$this->ItemWidth->init($arr[$newArray]);
+				$this->ItemWidth->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("ItemHeight", $arr) ) {
-				$newArray = "ItemHeight";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="itemheight") {
 				$this->ItemHeight = new MeasureType();
-				$this->ItemHeight->init($arr[$newArray]);
+				$this->ItemHeight->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'ItemURL';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ItemURL = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='itemurl') {
+				$this->ItemURL = $arry["text"];
 			}
-			if( array_key_exists("EnhancedItemData", $arr) ) {
-				$newArray = "EnhancedItemData";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="enhanceditemdata") {
 				$this->EnhancedItemData = new EnhancedItemDataType();
-				$this->EnhancedItemData->init($arr[$newArray]);
+				$this->EnhancedItemData->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'ItemCategory';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ItemCategory = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='itemcategory') {
+				$this->ItemCategory = $arry["text"];
 			}
+		}
 		}
 	}
 
@@ -9668,14 +9636,14 @@ class PaymentDetailsItemType {
 			$str .= '<ebl:Quantity>'.$this->Quantity.'</ebl:Quantity>';
 		 }
 		if($this->Tax != null ) {
-			$str .='<cc:Tax>';
+			$str .='<ebl:Tax>';
 			$str .= $this->Tax->toXMLString();
-			$str .=  '</cc:Tax>';
+			$str .=  '</ebl:Tax>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<cc:Amount>';
+			$str .='<ebl:Amount>';
 			$str .= $this->Amount->toXMLString();
-			$str .=  '</cc:Amount>';
+			$str .=  '</ebl:Amount>';
 		 }
 		if($this->EbayItemPaymentDetailsItem != null ) {
 			$str .='<ebl:EbayItemPaymentDetailsItem>';
@@ -9692,32 +9660,32 @@ class PaymentDetailsItemType {
 			$str .= '<ebl:Description>'.$this->Description.'</ebl:Description>';
 		 }
 		if($this->ItemWeight != null ) {
-			$str .='<cc:ItemWeight>';
+			$str .='<ebl:ItemWeight>';
 			$str .= $this->ItemWeight->toXMLString();
-			$str .=  '</cc:ItemWeight>';
+			$str .=  '</ebl:ItemWeight>';
 		 }
 		if($this->ItemLength != null ) {
-			$str .='<cc:ItemLength>';
+			$str .='<ebl:ItemLength>';
 			$str .= $this->ItemLength->toXMLString();
-			$str .=  '</cc:ItemLength>';
+			$str .=  '</ebl:ItemLength>';
 		 }
 		if($this->ItemWidth != null ) {
-			$str .='<cc:ItemWidth>';
+			$str .='<ebl:ItemWidth>';
 			$str .= $this->ItemWidth->toXMLString();
-			$str .=  '</cc:ItemWidth>';
+			$str .=  '</ebl:ItemWidth>';
 		 }
 		if($this->ItemHeight != null ) {
-			$str .='<cc:ItemHeight>';
+			$str .='<ebl:ItemHeight>';
 			$str .= $this->ItemHeight->toXMLString();
-			$str .=  '</cc:ItemHeight>';
+			$str .=  '</ebl:ItemHeight>';
 		 }
 		if($this->ItemURL != null ) {
 			$str .= '<ebl:ItemURL>'.$this->ItemURL.'</ebl:ItemURL>';
 		 }
 		if($this->EnhancedItemData != null ) {
-			$str .='<ed:EnhancedItemData>';
+			$str .='<ebl:EnhancedItemData>';
 			$str .= $this->EnhancedItemData->toXMLString();
-			$str .=  '</ed:EnhancedItemData>';
+			$str .=  '</ebl:EnhancedItemData>';
 		 }
 		if($this->ItemCategory != null ) {
 			$str .= '<ebl:ItemCategory>'.$this->ItemCategory.'</ebl:ItemCategory>';
@@ -9812,51 +9780,47 @@ class PaymentItemType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'EbayItemTxnId';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->EbayItemTxnId = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='ebayitemtxnid') {
+				$this->EbayItemTxnId = $arry["text"];
 			}
-			$arrKeyName =  'Name';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Name = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='name') {
+				$this->Name = $arry["text"];
 			}
-			$arrKeyName =  'Number';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Number = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='number') {
+				$this->Number = $arry["text"];
 			}
-			$arrKeyName =  'Quantity';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Quantity = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='quantity') {
+				$this->Quantity = $arry["text"];
 			}
-			$arrKeyName =  'SalesTax';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SalesTax = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='salestax') {
+				$this->SalesTax = $arry["text"];
 			}
-			$arrKeyName =  'ShippingAmount';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ShippingAmount = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='shippingamount') {
+				$this->ShippingAmount = $arry["text"];
 			}
-			$arrKeyName =  'HandlingAmount';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->HandlingAmount = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='handlingamount') {
+				$this->HandlingAmount = $arry["text"];
 			}
-			if( array_key_exists("Amount", $arr) ) {
-				$newArray = "Amount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="amount") {
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arr[$newArray]);
+				$this->Amount->init($arry["children"]);
+					}
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("Options[$i]" ,$arr) ) {
-					$newArray = $arr["Options"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="options[$i]") {
 				$this->Options[$i] = new OptionType();
-				$this->Options[$i]->init($newArray[$i]);
+				$this->Options[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("Options", $arr) ) {
-					$newArray = $arr["Options"];
+				else if($arry["name"]=="options") {
 				$this->Options = new OptionType();
-				$this->Options->init($newArray);
+				$this->Options->init($arry["children"]);
+					}
 			}
 			 }
+		}
 		}
 	}
 }
@@ -9932,44 +9896,44 @@ class PaymentItemInfoType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'InvoiceID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->InvoiceID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='invoiceid') {
+				$this->InvoiceID = $arry["text"];
 			}
-			$arrKeyName =  'Custom';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Custom = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='custom') {
+				$this->Custom = $arry["text"];
 			}
-			$arrKeyName =  'Memo';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Memo = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='memo') {
+				$this->Memo = $arry["text"];
 			}
-			$arrKeyName =  'SalesTax';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SalesTax = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='salestax') {
+				$this->SalesTax = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("PaymentItem[$i]" ,$arr) ) {
-					$newArray = $arr["PaymentItem"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="paymentitem[$i]") {
 				$this->PaymentItem[$i] = new PaymentItemType();
-				$this->PaymentItem[$i]->init($newArray[$i]);
+				$this->PaymentItem[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("PaymentItem", $arr) ) {
-					$newArray = $arr["PaymentItem"];
+				else if($arry["name"]=="paymentitem") {
 				$this->PaymentItem = new PaymentItemType();
-				$this->PaymentItem->init($newArray);
+				$this->PaymentItem->init($arry["children"]);
+					}
 			}
 			 }
-			if( array_key_exists("Subscription", $arr) ) {
-				$newArray = "Subscription";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="subscription") {
 				$this->Subscription = new SubscriptionInfoType();
-				$this->Subscription->init($arr[$newArray]);
+				$this->Subscription->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("Auction", $arr) ) {
-				$newArray = "Auction";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="auction") {
 				$this->Auction = new AuctionInfoType();
-				$this->Auction->init($arr[$newArray]);
+				$this->Auction->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -10301,170 +10265,166 @@ class PaymentDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( array_key_exists("OrderTotal", $arr) ) {
-				$newArray = "OrderTotal";
+			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="ordertotal") {
 				$this->OrderTotal = new BasicAmountType();
-				$this->OrderTotal->init($arr[$newArray]);
+				$this->OrderTotal->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("ItemTotal", $arr) ) {
-				$newArray = "ItemTotal";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="itemtotal") {
 				$this->ItemTotal = new BasicAmountType();
-				$this->ItemTotal->init($arr[$newArray]);
+				$this->ItemTotal->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("ShippingTotal", $arr) ) {
-				$newArray = "ShippingTotal";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="shippingtotal") {
 				$this->ShippingTotal = new BasicAmountType();
-				$this->ShippingTotal->init($arr[$newArray]);
+				$this->ShippingTotal->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("HandlingTotal", $arr) ) {
-				$newArray = "HandlingTotal";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="handlingtotal") {
 				$this->HandlingTotal = new BasicAmountType();
-				$this->HandlingTotal->init($arr[$newArray]);
+				$this->HandlingTotal->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("TaxTotal", $arr) ) {
-				$newArray = "TaxTotal";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="taxtotal") {
 				$this->TaxTotal = new BasicAmountType();
-				$this->TaxTotal->init($arr[$newArray]);
+				$this->TaxTotal->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'OrderDescription';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OrderDescription = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='orderdescription') {
+				$this->OrderDescription = $arry["text"];
 			}
-			$arrKeyName =  'Custom';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Custom = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='custom') {
+				$this->Custom = $arry["text"];
 			}
-			$arrKeyName =  'InvoiceID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->InvoiceID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='invoiceid') {
+				$this->InvoiceID = $arry["text"];
 			}
-			$arrKeyName =  'ButtonSource';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ButtonSource = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='buttonsource') {
+				$this->ButtonSource = $arry["text"];
 			}
-			$arrKeyName =  'NotifyURL';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->NotifyURL = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='notifyurl') {
+				$this->NotifyURL = $arry["text"];
 			}
-			if( array_key_exists("ShipToAddress", $arr) ) {
-				$newArray = "ShipToAddress";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="shiptoaddress") {
 				$this->ShipToAddress = new AddressType();
-				$this->ShipToAddress->init($arr[$newArray]);
+				$this->ShipToAddress->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'ShippingMethod';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ShippingMethod = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='shippingmethod') {
+				$this->ShippingMethod = $arry["text"];
 			}
-			$arrKeyName =  'ProfileAddressChangeDate';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProfileAddressChangeDate = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='profileaddresschangedate') {
+				$this->ProfileAddressChangeDate = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("PaymentDetailsItem[$i]" ,$arr) ) {
-					$newArray = $arr["PaymentDetailsItem"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="paymentdetailsitem[$i]") {
 				$this->PaymentDetailsItem[$i] = new PaymentDetailsItemType();
-				$this->PaymentDetailsItem[$i]->init($newArray[$i]);
+				$this->PaymentDetailsItem[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("PaymentDetailsItem", $arr) ) {
-					$newArray = $arr["PaymentDetailsItem"];
+				else if($arry["name"]=="paymentdetailsitem") {
 				$this->PaymentDetailsItem = new PaymentDetailsItemType();
-				$this->PaymentDetailsItem->init($newArray);
+				$this->PaymentDetailsItem->init($arry["children"]);
+					}
 			}
 			 }
-			if( array_key_exists("InsuranceTotal", $arr) ) {
-				$newArray = "InsuranceTotal";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="insurancetotal") {
 				$this->InsuranceTotal = new BasicAmountType();
-				$this->InsuranceTotal->init($arr[$newArray]);
+				$this->InsuranceTotal->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("ShippingDiscount", $arr) ) {
-				$newArray = "ShippingDiscount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="shippingdiscount") {
 				$this->ShippingDiscount = new BasicAmountType();
-				$this->ShippingDiscount->init($arr[$newArray]);
+				$this->ShippingDiscount->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'InsuranceOptionOffered';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->InsuranceOptionOffered = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='insuranceoptionoffered') {
+				$this->InsuranceOptionOffered = $arry["text"];
 			}
-			$arrKeyName =  'AllowedPaymentMethod';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->AllowedPaymentMethod = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='allowedpaymentmethod') {
+				$this->AllowedPaymentMethod = $arry["text"];
 			}
-			if( array_key_exists("EnhancedPaymentData", $arr) ) {
-				$newArray = "EnhancedPaymentData";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="enhancedpaymentdata") {
 				$this->EnhancedPaymentData = new EnhancedPaymentDataType();
-				$this->EnhancedPaymentData->init($arr[$newArray]);
+				$this->EnhancedPaymentData->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("SellerDetails", $arr) ) {
-				$newArray = "SellerDetails";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="sellerdetails") {
 				$this->SellerDetails = new SellerDetailsType();
-				$this->SellerDetails->init($arr[$newArray]);
+				$this->SellerDetails->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'NoteText';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->NoteText = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='notetext') {
+				$this->NoteText = $arry["text"];
 			}
-			$arrKeyName =  'TransactionId';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TransactionId = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
+				$this->TransactionId = $arry["text"];
 			}
-			$arrKeyName =  'PaymentAction';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PaymentAction = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='paymentaction') {
+				$this->PaymentAction = $arry["text"];
 			}
-			$arrKeyName =  'PaymentRequestID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PaymentRequestID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='paymentrequestid') {
+				$this->PaymentRequestID = $arry["text"];
 			}
-			$arrKeyName =  'OrderURL';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OrderURL = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='orderurl') {
+				$this->OrderURL = $arry["text"];
 			}
-			$arrKeyName =  'SoftDescriptor';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SoftDescriptor = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='softdescriptor') {
+				$this->SoftDescriptor = $arry["text"];
 			}
-			$arrKeyName =  'BranchLevel';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BranchLevel = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='branchlevel') {
+				$this->BranchLevel = $arry["text"];
 			}
-			if( array_key_exists("OfferDetails", $arr) ) {
-				$newArray = "OfferDetails";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="offerdetails") {
 				$this->OfferDetails = new OfferDetailsType();
-				$this->OfferDetails->init($arr[$newArray]);
+				$this->OfferDetails->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'Recurring';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Recurring = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='recurring') {
+				$this->Recurring = $arry["text"];
 			}
+		}
 		}
 	}
 
 	public function toXMLString()  {
 		$str = '';
 		if($this->OrderTotal != null ) {
-			$str .='<cc:OrderTotal>';
+			$str .='<ebl:OrderTotal>';
 			$str .= $this->OrderTotal->toXMLString();
-			$str .=  '</cc:OrderTotal>';
+			$str .=  '</ebl:OrderTotal>';
 		 }
 		if($this->ItemTotal != null ) {
-			$str .='<cc:ItemTotal>';
+			$str .='<ebl:ItemTotal>';
 			$str .= $this->ItemTotal->toXMLString();
-			$str .=  '</cc:ItemTotal>';
+			$str .=  '</ebl:ItemTotal>';
 		 }
 		if($this->ShippingTotal != null ) {
-			$str .='<cc:ShippingTotal>';
+			$str .='<ebl:ShippingTotal>';
 			$str .= $this->ShippingTotal->toXMLString();
-			$str .=  '</cc:ShippingTotal>';
+			$str .=  '</ebl:ShippingTotal>';
 		 }
 		if($this->HandlingTotal != null ) {
-			$str .='<cc:HandlingTotal>';
+			$str .='<ebl:HandlingTotal>';
 			$str .= $this->HandlingTotal->toXMLString();
-			$str .=  '</cc:HandlingTotal>';
+			$str .=  '</ebl:HandlingTotal>';
 		 }
 		if($this->TaxTotal != null ) {
-			$str .='<cc:TaxTotal>';
+			$str .='<ebl:TaxTotal>';
 			$str .= $this->TaxTotal->toXMLString();
-			$str .=  '</cc:TaxTotal>';
+			$str .=  '</ebl:TaxTotal>';
 		 }
 		if($this->OrderDescription != null ) {
 			$str .= '<ebl:OrderDescription>'.$this->OrderDescription.'</ebl:OrderDescription>';
@@ -10500,14 +10460,14 @@ class PaymentDetailsType {
 		 }
 		 }
 		if($this->InsuranceTotal != null ) {
-			$str .='<cc:InsuranceTotal>';
+			$str .='<ebl:InsuranceTotal>';
 			$str .= $this->InsuranceTotal->toXMLString();
-			$str .=  '</cc:InsuranceTotal>';
+			$str .=  '</ebl:InsuranceTotal>';
 		 }
 		if($this->ShippingDiscount != null ) {
-			$str .='<cc:ShippingDiscount>';
+			$str .='<ebl:ShippingDiscount>';
 			$str .= $this->ShippingDiscount->toXMLString();
-			$str .=  '</cc:ShippingDiscount>';
+			$str .=  '</ebl:ShippingDiscount>';
 		 }
 		if($this->InsuranceOptionOffered != null ) {
 			$str .= '<ebl:InsuranceOptionOffered>'.$this->InsuranceOptionOffered.'</ebl:InsuranceOptionOffered>';
@@ -10516,9 +10476,9 @@ class PaymentDetailsType {
 			$str .= '<ebl:AllowedPaymentMethod>'.$this->AllowedPaymentMethod.'</ebl:AllowedPaymentMethod>';
 		 }
 		if($this->EnhancedPaymentData != null ) {
-			$str .='<ed:EnhancedPaymentData>';
+			$str .='<ebl:EnhancedPaymentData>';
 			$str .= $this->EnhancedPaymentData->toXMLString();
-			$str .=  '</ed:EnhancedPaymentData>';
+			$str .=  '</ebl:EnhancedPaymentData>';
 		 }
 		if($this->SellerDetails != null ) {
 			$str .='<ebl:SellerDetails>';
@@ -10622,39 +10582,38 @@ class IncentiveDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'UniqueIdentifier';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->UniqueIdentifier = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='uniqueidentifier') {
+				$this->UniqueIdentifier = $arry["text"];
 			}
-			$arrKeyName =  'SiteAppliedOn';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SiteAppliedOn = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='siteappliedon') {
+				$this->SiteAppliedOn = $arry["text"];
 			}
-			if( array_key_exists("TotalDiscountAmount", $arr) ) {
-				$newArray = "TotalDiscountAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="totaldiscountamount") {
 				$this->TotalDiscountAmount = new BasicAmountType();
-				$this->TotalDiscountAmount->init($arr[$newArray]);
+				$this->TotalDiscountAmount->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'Status';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Status = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='status') {
+				$this->Status = $arry["text"];
 			}
-			$arrKeyName =  'ErrorCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ErrorCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='errorcode') {
+				$this->ErrorCode = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("IncentiveAppliedDetails[$i]" ,$arr) ) {
-					$newArray = $arr["IncentiveAppliedDetails"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="incentiveapplieddetails[$i]") {
 				$this->IncentiveAppliedDetails[$i] = new IncentiveAppliedDetailsType();
-				$this->IncentiveAppliedDetails[$i]->init($newArray[$i]);
+				$this->IncentiveAppliedDetails[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("IncentiveAppliedDetails", $arr) ) {
-					$newArray = $arr["IncentiveAppliedDetails"];
+				else if($arry["name"]=="incentiveapplieddetails") {
 				$this->IncentiveAppliedDetails = new IncentiveAppliedDetailsType();
-				$this->IncentiveAppliedDetails->init($newArray);
+				$this->IncentiveAppliedDetails->init($arry["children"]);
+					}
 			}
 			 }
+		}
 		}
 	}
 }
@@ -10708,27 +10667,26 @@ class IncentiveAppliedDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'PaymentRequestID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PaymentRequestID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='paymentrequestid') {
+				$this->PaymentRequestID = $arry["text"];
 			}
-			$arrKeyName =  'ItemId';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ItemId = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='itemid') {
+				$this->ItemId = $arry["text"];
 			}
-			$arrKeyName =  'ExternalTxnId';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ExternalTxnId = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='externaltxnid') {
+				$this->ExternalTxnId = $arry["text"];
 			}
-			if( array_key_exists("DiscountAmount", $arr) ) {
-				$newArray = "DiscountAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="discountamount") {
 				$this->DiscountAmount = new BasicAmountType();
-				$this->DiscountAmount->init($arr[$newArray]);
+				$this->DiscountAmount->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'SubType';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SubType = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='subtype') {
+				$this->SubType = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -10787,26 +10745,23 @@ class SellerDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'SellerId';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SellerId = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='sellerid') {
+				$this->SellerId = $arry["text"];
 			}
-			$arrKeyName =  'SellerUserName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SellerUserName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='sellerusername') {
+				$this->SellerUserName = $arry["text"];
 			}
-			$arrKeyName =  'SellerRegistrationDate';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SellerRegistrationDate = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='sellerregistrationdate') {
+				$this->SellerRegistrationDate = $arry["text"];
 			}
-			$arrKeyName =  'PayPalAccountID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PayPalAccountID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='paypalaccountid') {
+				$this->PayPalAccountID = $arry["text"];
 			}
-			$arrKeyName =  'SecureMerchantAccountID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SecureMerchantAccountID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='securemerchantaccountid') {
+				$this->SecureMerchantAccountID = $arry["text"];
 			}
+		}
 		}
 	}
 
@@ -11043,14 +10998,14 @@ class TaxIdDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'TaxIdType';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TaxIdType = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='taxidtype') {
+				$this->TaxIdType = $arry["text"];
 			}
-			$arrKeyName =  'TaxId';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TaxId = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='taxid') {
+				$this->TaxId = $arry["text"];
 			}
+		}
 		}
 	}
 
@@ -11106,26 +11061,23 @@ class ThreeDSecureRequestType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Eci3ds';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Eci3ds = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='eci3ds') {
+				$this->Eci3ds = $arry["text"];
 			}
-			$arrKeyName =  'Cavv';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Cavv = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='cavv') {
+				$this->Cavv = $arry["text"];
 			}
-			$arrKeyName =  'Xid';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Xid = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='xid') {
+				$this->Xid = $arry["text"];
 			}
-			$arrKeyName =  'MpiVendor3ds';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->MpiVendor3ds = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='mpivendor3ds') {
+				$this->MpiVendor3ds = $arry["text"];
 			}
-			$arrKeyName =  'AuthStatus3ds';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->AuthStatus3ds = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='authstatus3ds') {
+				$this->AuthStatus3ds = $arry["text"];
 			}
+		}
 		}
 	}
 
@@ -11172,14 +11124,14 @@ class ThreeDSecureResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Vpas';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Vpas = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='vpas') {
+				$this->Vpas = $arry["text"];
 			}
-			$arrKeyName =  'EciSubmitted3DS';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->EciSubmitted3DS = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='ecisubmitted3ds') {
+				$this->EciSubmitted3DS = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -11205,16 +11157,20 @@ class ThreeDSecureInfoType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( array_key_exists("ThreeDSecureRequest", $arr) ) {
-				$newArray = "ThreeDSecureRequest";
+			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="threedsecurerequest") {
 				$this->ThreeDSecureRequest = new ThreeDSecureRequestType();
-				$this->ThreeDSecureRequest->init($arr[$newArray]);
+				$this->ThreeDSecureRequest->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("ThreeDSecureResponse", $arr) ) {
-				$newArray = "ThreeDSecureResponse";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="threedsecureresponse") {
 				$this->ThreeDSecureResponse = new ThreeDSecureResponseType();
-				$this->ThreeDSecureResponse->init($arr[$newArray]);
+				$this->ThreeDSecureResponse->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -11288,48 +11244,44 @@ class CreditCardDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'CreditCardType';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->CreditCardType = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='creditcardtype') {
+				$this->CreditCardType = $arry["text"];
 			}
-			$arrKeyName =  'CreditCardNumber';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->CreditCardNumber = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='creditcardnumber') {
+				$this->CreditCardNumber = $arry["text"];
 			}
-			$arrKeyName =  'ExpMonth';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ExpMonth = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='expmonth') {
+				$this->ExpMonth = $arry["text"];
 			}
-			$arrKeyName =  'ExpYear';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ExpYear = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='expyear') {
+				$this->ExpYear = $arry["text"];
 			}
-			if( array_key_exists("CardOwner", $arr) ) {
-				$newArray = "CardOwner";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="cardowner") {
 				$this->CardOwner = new PayerInfoType();
-				$this->CardOwner->init($arr[$newArray]);
+				$this->CardOwner->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'CVV2';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->CVV2 = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='cvv2') {
+				$this->CVV2 = $arry["text"];
 			}
-			$arrKeyName =  'StartMonth';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->StartMonth = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='startmonth') {
+				$this->StartMonth = $arry["text"];
 			}
-			$arrKeyName =  'StartYear';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->StartYear = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='startyear') {
+				$this->StartYear = $arry["text"];
 			}
-			$arrKeyName =  'IssueNumber';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->IssueNumber = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='issuenumber') {
+				$this->IssueNumber = $arry["text"];
 			}
-			if( array_key_exists("ThreeDSecureRequest", $arr) ) {
-				$newArray = "ThreeDSecureRequest";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="threedsecurerequest") {
 				$this->ThreeDSecureRequest = new ThreeDSecureRequestType();
-				$this->ThreeDSecureRequest->init($arr[$newArray]);
+				$this->ThreeDSecureRequest->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 
@@ -11405,9 +11357,9 @@ class ShippingOptionType {
 			$str .= '<ebl:ShippingOptionIsDefault>'.$this->ShippingOptionIsDefault.'</ebl:ShippingOptionIsDefault>';
 		 }
 		if($this->ShippingOptionAmount != null ) {
-			$str .='<cc:ShippingOptionAmount>';
+			$str .='<ebl:ShippingOptionAmount>';
 			$str .= $this->ShippingOptionAmount->toXMLString();
-			$str .=  '</cc:ShippingOptionAmount>';
+			$str .=  '</ebl:ShippingOptionAmount>';
 		 }
 		if($this->ShippingOptionName != null ) {
 			$str .= '<ebl:ShippingOptionName>'.$this->ShippingOptionName.'</ebl:ShippingOptionName>';
@@ -11456,27 +11408,26 @@ class UserSelectedOptionType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'ShippingCalculationMode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ShippingCalculationMode = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='shippingcalculationmode') {
+				$this->ShippingCalculationMode = $arry["text"];
 			}
-			$arrKeyName =  'InsuranceOptionSelected';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->InsuranceOptionSelected = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='insuranceoptionselected') {
+				$this->InsuranceOptionSelected = $arry["text"];
 			}
-			$arrKeyName =  'ShippingOptionIsDefault';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ShippingOptionIsDefault = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='shippingoptionisdefault') {
+				$this->ShippingOptionIsDefault = $arry["text"];
 			}
-			if( array_key_exists("ShippingOptionAmount", $arr) ) {
-				$newArray = "ShippingOptionAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="shippingoptionamount") {
 				$this->ShippingOptionAmount = new BasicAmountType();
-				$this->ShippingOptionAmount->init($arr[$newArray]);
+				$this->ShippingOptionAmount->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'ShippingOptionName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ShippingOptionName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='shippingoptionname') {
+				$this->ShippingOptionName = $arry["text"];
 			}
+		}
 		}
 	}
 
@@ -11492,9 +11443,9 @@ class UserSelectedOptionType {
 			$str .= '<ebl:ShippingOptionIsDefault>'.$this->ShippingOptionIsDefault.'</ebl:ShippingOptionIsDefault>';
 		 }
 		if($this->ShippingOptionAmount != null ) {
-			$str .='<cc:ShippingOptionAmount>';
+			$str .='<ebl:ShippingOptionAmount>';
 			$str .= $this->ShippingOptionAmount->toXMLString();
-			$str .=  '</cc:ShippingOptionAmount>';
+			$str .=  '</ebl:ShippingOptionAmount>';
 		 }
 		if($this->ShippingOptionName != null ) {
 			$str .= '<ebl:ShippingOptionName>'.$this->ShippingOptionName.'</ebl:ShippingOptionName>';
@@ -11899,16 +11850,20 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( array_key_exists("PayerInfo", $arr) ) {
-				$newArray = "PayerInfo";
+			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="payerinfo") {
 				$this->PayerInfo = new PayerInfoType();
-				$this->PayerInfo->init($arr[$newArray]);
+				$this->PayerInfo->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("BillingAddress", $arr) ) {
-				$newArray = "BillingAddress";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="billingaddress") {
 				$this->BillingAddress = new AddressType();
-				$this->BillingAddress->init($arr[$newArray]);
+				$this->BillingAddress->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -12075,32 +12030,32 @@ class DoReferenceTransactionResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'BillingAgreementID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BillingAgreementID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='billingagreementid') {
+				$this->BillingAgreementID = $arry["text"];
 			}
-			if( array_key_exists("PaymentInfo", $arr) ) {
-				$newArray = "PaymentInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="paymentinfo") {
 				$this->PaymentInfo = new PaymentInfoType();
-				$this->PaymentInfo->init($arr[$newArray]);
+				$this->PaymentInfo->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("Amount", $arr) ) {
-				$newArray = "Amount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="amount") {
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arr[$newArray]);
+				$this->Amount->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'AVSCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->AVSCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='avscode') {
+				$this->AVSCode = $arry["text"];
 			}
-			$arrKeyName =  'CVV2Code';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->CVV2Code = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='cvv2code') {
+				$this->CVV2Code = $arry["text"];
 			}
-			$arrKeyName =  'TransactionID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TransactionID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
+				$this->TransactionID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -12162,24 +12117,24 @@ class DoNonReferencedCreditRequestDetailsType {
 	public function toXMLString()  {
 		$str = '';
 		if($this->Amount != null ) {
-			$str .='<cc:Amount>';
+			$str .='<ebl:Amount>';
 			$str .= $this->Amount->toXMLString();
-			$str .=  '</cc:Amount>';
+			$str .=  '</ebl:Amount>';
 		 }
 		if($this->NetAmount != null ) {
-			$str .='<cc:NetAmount>';
+			$str .='<ebl:NetAmount>';
 			$str .= $this->NetAmount->toXMLString();
-			$str .=  '</cc:NetAmount>';
+			$str .=  '</ebl:NetAmount>';
 		 }
 		if($this->TaxAmount != null ) {
-			$str .='<cc:TaxAmount>';
+			$str .='<ebl:TaxAmount>';
 			$str .= $this->TaxAmount->toXMLString();
-			$str .=  '</cc:TaxAmount>';
+			$str .=  '</ebl:TaxAmount>';
 		 }
 		if($this->ShippingAmount != null ) {
-			$str .='<cc:ShippingAmount>';
+			$str .='<ebl:ShippingAmount>';
 			$str .= $this->ShippingAmount->toXMLString();
-			$str .=  '</cc:ShippingAmount>';
+			$str .=  '</ebl:ShippingAmount>';
 		 }
 		if($this->CreditCard != null ) {
 			$str .='<ebl:CreditCard>';
@@ -12219,15 +12174,17 @@ class DoNonReferencedCreditResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( array_key_exists("Amount", $arr) ) {
-				$newArray = "Amount";
+			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="amount") {
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arr[$newArray]);
+				$this->Amount->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'TransactionID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TransactionID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
+				$this->TransactionID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -12300,7 +12257,7 @@ class EnterBoardingRequestDetailsType {
 	public $MarketingCategory;
 
 	/**
-	 * Information about the merchant’s business	 *
+	 * Information about the merchantâ€™s business	 *
 	 * @access public
 	 * @var BusinessInfoType
 	 */
@@ -12382,14 +12339,14 @@ class BusinessInfoType {
 	public $Name;
 
 	/**
-	 * Merchant’s business postal address	 *
+	 * Merchantâ€™s business postal address	 *
 	 * @access public
 	 * @var AddressType
 	 */
 	public $Address;
 
 	/**
-	 * Business’s primary telephone number
+	 * Businessâ€™s primary telephone number
 	 * Character length and limitations: 20 alphanumeric characters
 	 *
 	 * @access public
@@ -12502,14 +12459,14 @@ class BusinessInfoType {
 	public $RevenueFromOnlineSales;
 
 	/**
-	 * Date the merchant’s business was established	 *
+	 * Date the merchantâ€™s business was established	 *
 	 * @access public
 	 * @var dateTime
 	 */
 	public $BusinessEstablished;
 
 	/**
-	 * Email address to contact business’s customer service
+	 * Email address to contact businessâ€™s customer service
 	 * Character length and limitations: 127 alphanumeric characters
 	 *
 	 * @access public
@@ -12518,7 +12475,7 @@ class BusinessInfoType {
 	public $CustomerServiceEmail;
 
 	/**
-	 * Telephone number to contact business’s customer service
+	 * Telephone number to contact businessâ€™s customer service
 	 * Character length and limitations: 32 alphanumeric characters
 	 *
 	 * @access public
@@ -12592,7 +12549,7 @@ class BusinessOwnerInfoType {
 	public $Owner;
 
 	/**
-	 * Business owner’s home telephone number
+	 * Business ownerâ€™s home telephone number
 	 * Character length and limitations: 32 alphanumeric characters
 	 *
 	 * @access public
@@ -12601,7 +12558,7 @@ class BusinessOwnerInfoType {
 	public $HomePhone;
 
 	/**
-	 * Business owner’s mobile telephone number
+	 * Business ownerâ€™s mobile telephone number
 	 * Character length and limitations: 32 alphanumeric characters
 	 *
 	 * @access public
@@ -12610,7 +12567,7 @@ class BusinessOwnerInfoType {
 	public $MobilePhone;
 
 	/**
-	 * Business owner’s social security number
+	 * Business ownerâ€™s social security number
 	 * Character length and limitations: 9 alphanumeric characters
 	 *
 	 * @access public
@@ -12663,7 +12620,7 @@ class BankAccountDetailsType {
 	public $Type;
 
 	/**
-	 * Merchant’s bank routing number
+	 * Merchantâ€™s bank routing number
 	 * Character length and limitations: 23 alphanumeric characters
 	 *
 	 * @access public
@@ -12672,7 +12629,7 @@ class BankAccountDetailsType {
 	public $RoutingNumber;
 
 	/**
-	 * Merchant’s bank account number
+	 * Merchantâ€™s bank account number
 	 * Character length and limitations: 256 alphanumeric characters
 	 *
 	 * @access public
@@ -12730,7 +12687,7 @@ class GetBoardingDetailsResponseDetailsType {
 	public $StartDate;
 
 	/**
-	 * Date the merchant’s status or progress was last updated
+	 * Date the merchantâ€™s status or progress was last updated
 	 *
 	 * @access public
 	 * @var dateTime
@@ -12738,7 +12695,7 @@ class GetBoardingDetailsResponseDetailsType {
 	public $LastUpdated;
 
 	/**
-	 * Reason for merchant’s cancellation of sign-up.
+	 * Reason for merchantâ€™s cancellation of sign-up.
 	 * Character length and limitations: 1,024 alphanumeric characters
 	 *
 	 * @access public
@@ -12789,7 +12746,7 @@ class GetBoardingDetailsResponseDetailsType {
 	public $AccountOwner;
 
 	/**
-	 * Merchant’s PayPal API credentials	 *
+	 * Merchantâ€™s PayPal API credentials	 *
 	 * @access public
 	 * @var APICredentialsType
 	 */
@@ -12835,68 +12792,59 @@ class GetBoardingDetailsResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Status';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Status = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='status') {
+				$this->Status = $arry["text"];
 			}
-			$arrKeyName =  'StartDate';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->StartDate = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='startdate') {
+				$this->StartDate = $arry["text"];
 			}
-			$arrKeyName =  'LastUpdated';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->LastUpdated = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='lastupdated') {
+				$this->LastUpdated = $arry["text"];
 			}
-			$arrKeyName =  'Reason';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Reason = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='reason') {
+				$this->Reason = $arry["text"];
 			}
-			$arrKeyName =  'ProgramName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProgramName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='programname') {
+				$this->ProgramName = $arry["text"];
 			}
-			$arrKeyName =  'ProgramCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProgramCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='programcode') {
+				$this->ProgramCode = $arry["text"];
 			}
-			$arrKeyName =  'CampaignID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->CampaignID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='campaignid') {
+				$this->CampaignID = $arry["text"];
 			}
-			$arrKeyName =  'UserWithdrawalLimit';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->UserWithdrawalLimit = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='userwithdrawallimit') {
+				$this->UserWithdrawalLimit = $arry["text"];
 			}
-			$arrKeyName =  'PartnerCustom';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PartnerCustom = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='partnercustom') {
+				$this->PartnerCustom = $arry["text"];
 			}
-			if( array_key_exists("AccountOwner", $arr) ) {
-				$newArray = "AccountOwner";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="accountowner") {
 				$this->AccountOwner = new PayerInfoType();
-				$this->AccountOwner->init($arr[$newArray]);
+				$this->AccountOwner->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("Credentials", $arr) ) {
-				$newArray = "Credentials";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="credentials") {
 				$this->Credentials = new APICredentialsType();
-				$this->Credentials->init($arr[$newArray]);
+				$this->Credentials->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'ConfigureAPIs';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ConfigureAPIs = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='configureapis') {
+				$this->ConfigureAPIs = $arry["text"];
 			}
-			$arrKeyName =  'EmailVerificationStatus';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->EmailVerificationStatus = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='emailverificationstatus') {
+				$this->EmailVerificationStatus = $arry["text"];
 			}
-			$arrKeyName =  'VettingStatus';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->VettingStatus = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='vettingstatus') {
+				$this->VettingStatus = $arry["text"];
 			}
-			$arrKeyName =  'BankAccountVerificationStatus';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BankAccountVerificationStatus = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='bankaccountverificationstatus') {
+				$this->BankAccountVerificationStatus = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -12907,7 +12855,7 @@ class GetBoardingDetailsResponseDetailsType {
  */
 class APICredentialsType {
 	/**
-	 * Merchant’s PayPal API username
+	 * Merchantâ€™s PayPal API username
 	 * Character length and limitations: 128 alphanumeric characters
 	 *
 	 * @access public
@@ -12916,7 +12864,7 @@ class APICredentialsType {
 	public $Username;
 
 	/**
-	 * Merchant’s PayPal API password
+	 * Merchantâ€™s PayPal API password
 	 * Character length and limitations: 40 alphanumeric characters
 	 *
 	 * @access public
@@ -12925,7 +12873,7 @@ class APICredentialsType {
 	public $Password;
 
 	/**
-	 * Merchant’s PayPal API signature, if one exists.
+	 * Merchantâ€™s PayPal API signature, if one exists.
 	 * Character length and limitations: 256 alphanumeric characters
 	 *
 	 * @access public
@@ -12934,7 +12882,7 @@ class APICredentialsType {
 	public $Signature;
 
 	/**
-	 * Merchant’s PayPal API certificate in PEM format, if one exists
+	 * Merchantâ€™s PayPal API certificate in PEM format, if one exists
 	 * The certificate consists of two parts: the private key (2,048
 	 * bytes) and the certificate proper (4,000 bytes).
 	 * Character length and limitations: 6,048 alphanumeric characters
@@ -12945,7 +12893,7 @@ class APICredentialsType {
 	public $Certificate;
 
 	/**
-	 * Merchant’s PayPal API authentication mechanism.
+	 * Merchantâ€™s PayPal API authentication mechanism.
 	 * Auth-None: no authentication mechanism on file
 	 * Cert: API certificate
 	 * Sign: API signature
@@ -12959,26 +12907,23 @@ class APICredentialsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Username';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Username = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='username') {
+				$this->Username = $arry["text"];
 			}
-			$arrKeyName =  'Password';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Password = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='password') {
+				$this->Password = $arry["text"];
 			}
-			$arrKeyName =  'Signature';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Signature = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='signature') {
+				$this->Signature = $arry["text"];
 			}
-			$arrKeyName =  'Certificate';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Certificate = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='certificate') {
+				$this->Certificate = $arry["text"];
 			}
-			$arrKeyName =  'Type';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Type = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='type') {
+				$this->Type = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -13162,19 +13107,19 @@ class SetMobileCheckoutRequestDetailsType {
 			$str .=  '</ebl:BuyerPhone>';
 		 }
 		if($this->ItemAmount != null ) {
-			$str .='<cc:ItemAmount>';
+			$str .='<ebl:ItemAmount>';
 			$str .= $this->ItemAmount->toXMLString();
-			$str .=  '</cc:ItemAmount>';
+			$str .=  '</ebl:ItemAmount>';
 		 }
 		if($this->Tax != null ) {
-			$str .='<cc:Tax>';
+			$str .='<ebl:Tax>';
 			$str .= $this->Tax->toXMLString();
-			$str .=  '</cc:Tax>';
+			$str .=  '</ebl:Tax>';
 		 }
 		if($this->Shipping != null ) {
-			$str .='<cc:Shipping>';
+			$str .='<ebl:Shipping>';
 			$str .= $this->Shipping->toXMLString();
-			$str .=  '</cc:Shipping>';
+			$str .=  '</ebl:Shipping>';
 		 }
 		if($this->ItemName != null ) {
 			$str .= '<ebl:ItemName>'.$this->ItemName.'</ebl:ItemName>';
@@ -13263,24 +13208,26 @@ Information about the transaction	 *
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Custom';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Custom = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='custom') {
+				$this->Custom = $arry["text"];
 			}
-			$arrKeyName =  'InvoiceID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->InvoiceID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='invoiceid') {
+				$this->InvoiceID = $arry["text"];
 			}
-			if( array_key_exists("PayerInfo", $arr) ) {
-				$newArray = "PayerInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="payerinfo") {
 				$this->PayerInfo = new PayerInfoType();
-				$this->PayerInfo->init($arr[$newArray]);
+				$this->PayerInfo->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("PaymentInfo", $arr) ) {
-				$newArray = "PaymentInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="paymentinfo") {
 				$this->PaymentInfo = new PaymentInfoType();
-				$this->PaymentInfo->init($arr[$newArray]);
+				$this->PaymentInfo->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -13456,18 +13403,17 @@ UATP Card Number	 *
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'UATPNumber';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->UATPNumber = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='uatpnumber') {
+				$this->UATPNumber = $arry["text"];
 			}
-			$arrKeyName =  'ExpMonth';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ExpMonth = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='expmonth') {
+				$this->ExpMonth = $arry["text"];
 			}
-			$arrKeyName =  'ExpYear';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ExpYear = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='expyear') {
+				$this->ExpYear = $arry["text"];
 			}
+		}
 		}
 	}
 
@@ -13544,36 +13490,35 @@ class RecurringPaymentsSummaryType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'NextBillingDate';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->NextBillingDate = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='nextbillingdate') {
+				$this->NextBillingDate = $arry["text"];
 			}
-			$arrKeyName =  'NumberCyclesCompleted';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->NumberCyclesCompleted = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='numbercyclescompleted') {
+				$this->NumberCyclesCompleted = $arry["text"];
 			}
-			$arrKeyName =  'NumberCyclesRemaining';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->NumberCyclesRemaining = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='numbercyclesremaining') {
+				$this->NumberCyclesRemaining = $arry["text"];
 			}
-			if( array_key_exists("OutstandingBalance", $arr) ) {
-				$newArray = "OutstandingBalance";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="outstandingbalance") {
 				$this->OutstandingBalance = new BasicAmountType();
-				$this->OutstandingBalance->init($arr[$newArray]);
+				$this->OutstandingBalance->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'FailedPaymentCount';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->FailedPaymentCount = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='failedpaymentcount') {
+				$this->FailedPaymentCount = $arry["text"];
 			}
-			$arrKeyName =  'LastPaymentDate';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->LastPaymentDate = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='lastpaymentdate') {
+				$this->LastPaymentDate = $arry["text"];
 			}
-			if( array_key_exists("LastPaymentAmount", $arr) ) {
-				$newArray = "LastPaymentAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="lastpaymentamount") {
 				$this->LastPaymentAmount = new BasicAmountType();
-				$this->LastPaymentAmount->init($arr[$newArray]);
+				$this->LastPaymentAmount->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -13604,9 +13549,9 @@ class ActivationDetailsType {
 	public function toXMLString()  {
 		$str = '';
 		if($this->InitialAmount != null ) {
-			$str .='<cc:InitialAmount>';
+			$str .='<ebl:InitialAmount>';
 			$str .= $this->InitialAmount->toXMLString();
-			$str .=  '</cc:InitialAmount>';
+			$str .=  '</ebl:InitialAmount>';
 		 }
 		if($this->FailedInitialAmountAction != null ) {
 			$str .= '<ebl:FailedInitialAmountAction>'.$this->FailedInitialAmountAction.'</ebl:FailedInitialAmountAction>';
@@ -13673,33 +13618,35 @@ class BillingPeriodDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'BillingPeriod';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BillingPeriod = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='billingperiod') {
+				$this->BillingPeriod = $arry["text"];
 			}
-			$arrKeyName =  'BillingFrequency';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BillingFrequency = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='billingfrequency') {
+				$this->BillingFrequency = $arry["text"];
 			}
-			$arrKeyName =  'TotalBillingCycles';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TotalBillingCycles = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='totalbillingcycles') {
+				$this->TotalBillingCycles = $arry["text"];
 			}
-			if( array_key_exists("Amount", $arr) ) {
-				$newArray = "Amount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="amount") {
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arr[$newArray]);
+				$this->Amount->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("ShippingAmount", $arr) ) {
-				$newArray = "ShippingAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="shippingamount") {
 				$this->ShippingAmount = new BasicAmountType();
-				$this->ShippingAmount->init($arr[$newArray]);
+				$this->ShippingAmount->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("TaxAmount", $arr) ) {
-				$newArray = "TaxAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="taxamount") {
 				$this->TaxAmount = new BasicAmountType();
-				$this->TaxAmount->init($arr[$newArray]);
+				$this->TaxAmount->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 
@@ -13721,19 +13668,19 @@ class BillingPeriodDetailsType {
 			$str .= '<ebl:TotalBillingCycles>'.$this->TotalBillingCycles.'</ebl:TotalBillingCycles>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<cc:Amount>';
+			$str .='<ebl:Amount>';
 			$str .= $this->Amount->toXMLString();
-			$str .=  '</cc:Amount>';
+			$str .=  '</ebl:Amount>';
 		 }
 		if($this->ShippingAmount != null ) {
-			$str .='<cc:ShippingAmount>';
+			$str .='<ebl:ShippingAmount>';
 			$str .= $this->ShippingAmount->toXMLString();
-			$str .=  '</cc:ShippingAmount>';
+			$str .=  '</ebl:ShippingAmount>';
 		 }
 		if($this->TaxAmount != null ) {
-			$str .='<cc:TaxAmount>';
+			$str .='<ebl:TaxAmount>';
 			$str .= $this->TaxAmount->toXMLString();
-			$str .=  '</cc:TaxAmount>';
+			$str .=  '</ebl:TaxAmount>';
 		 }
 
 		return $str;
@@ -13807,19 +13754,19 @@ class BillingPeriodDetailsType_Update {
 			$str .= '<ebl:TotalBillingCycles>'.$this->TotalBillingCycles.'</ebl:TotalBillingCycles>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<cc:Amount>';
+			$str .='<ebl:Amount>';
 			$str .= $this->Amount->toXMLString();
-			$str .=  '</cc:Amount>';
+			$str .=  '</ebl:Amount>';
 		 }
 		if($this->ShippingAmount != null ) {
-			$str .='<cc:ShippingAmount>';
+			$str .='<ebl:ShippingAmount>';
 			$str .= $this->ShippingAmount->toXMLString();
-			$str .=  '</cc:ShippingAmount>';
+			$str .=  '</ebl:ShippingAmount>';
 		 }
 		if($this->TaxAmount != null ) {
-			$str .='<cc:TaxAmount>';
+			$str .='<ebl:TaxAmount>';
 			$str .= $this->TaxAmount->toXMLString();
-			$str .=  '</cc:TaxAmount>';
+			$str .=  '</ebl:TaxAmount>';
 		 }
 
 		return $str;
@@ -13959,23 +13906,23 @@ class RecurringPaymentsProfileDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'SubscriberName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SubscriberName = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='subscribername') {
+				$this->SubscriberName = $arry["text"];
 			}
-			if( array_key_exists("SubscriberShippingAddress", $arr) ) {
-				$newArray = "SubscriberShippingAddress";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="subscribershippingaddress") {
 				$this->SubscriberShippingAddress = new AddressType();
-				$this->SubscriberShippingAddress->init($arr[$newArray]);
+				$this->SubscriberShippingAddress->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'BillingStartDate';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BillingStartDate = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='billingstartdate') {
+				$this->BillingStartDate = $arry["text"];
 			}
-			$arrKeyName =  'ProfileReference';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProfileReference = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='profilereference') {
+				$this->ProfileReference = $arry["text"];
 			}
+		}
 		}
 	}
 
@@ -14139,26 +14086,23 @@ class CreateRecurringPaymentsProfileResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'ProfileID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProfileID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='profileid') {
+				$this->ProfileID = $arry["text"];
 			}
-			$arrKeyName =  'ProfileStatus';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProfileStatus = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='profilestatus') {
+				$this->ProfileStatus = $arry["text"];
 			}
-			$arrKeyName =  'TransactionID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TransactionID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
+				$this->TransactionID = $arry["text"];
 			}
-			$arrKeyName =  'DCCProcessorResponse';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->DCCProcessorResponse = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='dccprocessorresponse') {
+				$this->DCCProcessorResponse = $arry["text"];
 			}
-			$arrKeyName =  'DCCReturnCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->DCCReturnCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='dccreturncode') {
+				$this->DCCReturnCode = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -14284,80 +14228,86 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'ProfileID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProfileID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='profileid') {
+				$this->ProfileID = $arry["text"];
 			}
-			$arrKeyName =  'ProfileStatus';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProfileStatus = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='profilestatus') {
+				$this->ProfileStatus = $arry["text"];
 			}
-			$arrKeyName =  'Description';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Description = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='description') {
+				$this->Description = $arry["text"];
 			}
-			$arrKeyName =  'AutoBillOutstandingAmount';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->AutoBillOutstandingAmount = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='autobilloutstandingamount') {
+				$this->AutoBillOutstandingAmount = $arry["text"];
 			}
-			$arrKeyName =  'MaxFailedPayments';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->MaxFailedPayments = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='maxfailedpayments') {
+				$this->MaxFailedPayments = $arry["text"];
 			}
-			if( array_key_exists("RecurringPaymentsProfileDetails", $arr) ) {
-				$newArray = "RecurringPaymentsProfileDetails";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="recurringpaymentsprofiledetails") {
 				$this->RecurringPaymentsProfileDetails = new RecurringPaymentsProfileDetailsType();
-				$this->RecurringPaymentsProfileDetails->init($arr[$newArray]);
+				$this->RecurringPaymentsProfileDetails->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("CurrentRecurringPaymentsPeriod", $arr) ) {
-				$newArray = "CurrentRecurringPaymentsPeriod";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="currentrecurringpaymentsperiod") {
 				$this->CurrentRecurringPaymentsPeriod = new BillingPeriodDetailsType();
-				$this->CurrentRecurringPaymentsPeriod->init($arr[$newArray]);
+				$this->CurrentRecurringPaymentsPeriod->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("RecurringPaymentsSummary", $arr) ) {
-				$newArray = "RecurringPaymentsSummary";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="recurringpaymentssummary") {
 				$this->RecurringPaymentsSummary = new RecurringPaymentsSummaryType();
-				$this->RecurringPaymentsSummary->init($arr[$newArray]);
+				$this->RecurringPaymentsSummary->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("CreditCard", $arr) ) {
-				$newArray = "CreditCard";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="creditcard") {
 				$this->CreditCard = new CreditCardDetailsType();
-				$this->CreditCard->init($arr[$newArray]);
+				$this->CreditCard->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("TrialRecurringPaymentsPeriod", $arr) ) {
-				$newArray = "TrialRecurringPaymentsPeriod";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="trialrecurringpaymentsperiod") {
 				$this->TrialRecurringPaymentsPeriod = new BillingPeriodDetailsType();
-				$this->TrialRecurringPaymentsPeriod->init($arr[$newArray]);
+				$this->TrialRecurringPaymentsPeriod->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("RegularRecurringPaymentsPeriod", $arr) ) {
-				$newArray = "RegularRecurringPaymentsPeriod";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="regularrecurringpaymentsperiod") {
 				$this->RegularRecurringPaymentsPeriod = new BillingPeriodDetailsType();
-				$this->RegularRecurringPaymentsPeriod->init($arr[$newArray]);
+				$this->RegularRecurringPaymentsPeriod->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("TrialAmountPaid", $arr) ) {
-				$newArray = "TrialAmountPaid";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="trialamountpaid") {
 				$this->TrialAmountPaid = new BasicAmountType();
-				$this->TrialAmountPaid->init($arr[$newArray]);
+				$this->TrialAmountPaid->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("RegularAmountPaid", $arr) ) {
-				$newArray = "RegularAmountPaid";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="regularamountpaid") {
 				$this->RegularAmountPaid = new BasicAmountType();
-				$this->RegularAmountPaid->init($arr[$newArray]);
+				$this->RegularAmountPaid->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("AggregateAmount", $arr) ) {
-				$newArray = "AggregateAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="aggregateamount") {
 				$this->AggregateAmount = new BasicAmountType();
-				$this->AggregateAmount->init($arr[$newArray]);
+				$this->AggregateAmount->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("AggregateOptionalAmount", $arr) ) {
-				$newArray = "AggregateOptionalAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="aggregateoptionalamount") {
 				$this->AggregateOptionalAmount = new BasicAmountType();
-				$this->AggregateOptionalAmount->init($arr[$newArray]);
+				$this->AggregateOptionalAmount->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'FinalPaymentDueDate';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->FinalPaymentDueDate = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='finalpaymentduedate') {
+				$this->FinalPaymentDueDate = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -14424,10 +14374,11 @@ class ManageRecurringPaymentsProfileStatusResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'ProfileID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProfileID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='profileid') {
+				$this->ProfileID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -14468,9 +14419,9 @@ class BillOutstandingAmountRequestDetailsType {
 			$str .= '<ebl:ProfileID>'.$this->ProfileID.'</ebl:ProfileID>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<cc:Amount>';
+			$str .='<ebl:Amount>';
 			$str .= $this->Amount->toXMLString();
-			$str .=  '</cc:Amount>';
+			$str .=  '</ebl:Amount>';
 		 }
 		if($this->Note != null ) {
 			$str .= '<ebl:Note>'.$this->Note.'</ebl:Note>';
@@ -14495,10 +14446,11 @@ class BillOutstandingAmountResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'ProfileID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProfileID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='profileid') {
+				$this->ProfileID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -14661,24 +14613,24 @@ class UpdateRecurringPaymentsProfileRequestDetailsType {
 			$str .= '<ebl:AdditionalBillingCycles>'.$this->AdditionalBillingCycles.'</ebl:AdditionalBillingCycles>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<cc:Amount>';
+			$str .='<ebl:Amount>';
 			$str .= $this->Amount->toXMLString();
-			$str .=  '</cc:Amount>';
+			$str .=  '</ebl:Amount>';
 		 }
 		if($this->ShippingAmount != null ) {
-			$str .='<cc:ShippingAmount>';
+			$str .='<ebl:ShippingAmount>';
 			$str .= $this->ShippingAmount->toXMLString();
-			$str .=  '</cc:ShippingAmount>';
+			$str .=  '</ebl:ShippingAmount>';
 		 }
 		if($this->TaxAmount != null ) {
-			$str .='<cc:TaxAmount>';
+			$str .='<ebl:TaxAmount>';
 			$str .= $this->TaxAmount->toXMLString();
-			$str .=  '</cc:TaxAmount>';
+			$str .=  '</ebl:TaxAmount>';
 		 }
 		if($this->OutstandingBalance != null ) {
-			$str .='<cc:OutstandingBalance>';
+			$str .='<ebl:OutstandingBalance>';
 			$str .= $this->OutstandingBalance->toXMLString();
-			$str .=  '</cc:OutstandingBalance>';
+			$str .=  '</ebl:OutstandingBalance>';
 		 }
 		if($this->AutoBillOutstandingAmount != null ) {
 			$str .= '<ebl:AutoBillOutstandingAmount>'.$this->AutoBillOutstandingAmount.'</ebl:AutoBillOutstandingAmount>';
@@ -14724,10 +14676,11 @@ class UpdateRecurringPaymentsProfileResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'ProfileID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProfileID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='profileid') {
+				$this->ProfileID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -14758,18 +14711,17 @@ class RiskFilterDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'Id';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Id = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='id') {
+				$this->Id = $arry["text"];
 			}
-			$arrKeyName =  'Name';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Name = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='name') {
+				$this->Name = $arry["text"];
 			}
-			$arrKeyName =  'Description';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Description = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='description') {
+				$this->Description = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -14789,18 +14741,20 @@ class RiskFilterListType {
 
 	public function init($arr = null) {
 		if($arr != null) {
+			foreach ($arr as $arry){
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("Filters[$i]" ,$arr) ) {
-					$newArray = $arr["Filters"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="filters[$i]") {
 				$this->Filters[$i] = new RiskFilterDetailsType();
-				$this->Filters[$i]->init($newArray[$i]);
+				$this->Filters[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("Filters", $arr) ) {
-					$newArray = $arr["Filters"];
+				else if($arry["name"]=="filters") {
 				$this->Filters = new RiskFilterDetailsType();
-				$this->Filters->init($newArray);
+				$this->Filters->init($arry["children"]);
+					}
 			}
 			 }
+		}
 		}
 	}
 }
@@ -14838,26 +14792,32 @@ class FMFDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			if( array_key_exists("AcceptFilters", $arr) ) {
-				$newArray = "AcceptFilters";
+			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="acceptfilters") {
 				$this->AcceptFilters = new RiskFilterListType();
-				$this->AcceptFilters->init($arr[$newArray]);
+				$this->AcceptFilters->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("PendingFilters", $arr) ) {
-				$newArray = "PendingFilters";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="pendingfilters") {
 				$this->PendingFilters = new RiskFilterListType();
-				$this->PendingFilters->init($arr[$newArray]);
+				$this->PendingFilters->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("DenyFilters", $arr) ) {
-				$newArray = "DenyFilters";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="denyfilters") {
 				$this->DenyFilters = new RiskFilterListType();
-				$this->DenyFilters->init($arr[$newArray]);
+				$this->DenyFilters->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("ReportFilters", $arr) ) {
-				$newArray = "ReportFilters";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="reportfilters") {
 				$this->ReportFilters = new RiskFilterListType();
-				$this->ReportFilters->init($arr[$newArray]);
+				$this->ReportFilters->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -15002,19 +14962,19 @@ class AirlineItineraryType {
 			$str .= '<ebl:CustomerCode>'.$this->CustomerCode.'</ebl:CustomerCode>';
 		 }
 		if($this->TotalFare != null ) {
-			$str .='<cc:TotalFare>';
+			$str .='<ebl:TotalFare>';
 			$str .= $this->TotalFare->toXMLString();
-			$str .=  '</cc:TotalFare>';
+			$str .=  '</ebl:TotalFare>';
 		 }
 		if($this->TotalTaxes != null ) {
-			$str .='<cc:TotalTaxes>';
+			$str .='<ebl:TotalTaxes>';
 			$str .= $this->TotalTaxes->toXMLString();
-			$str .=  '</cc:TotalTaxes>';
+			$str .=  '</ebl:TotalTaxes>';
 		 }
 		if($this->TotalFee != null ) {
-			$str .='<cc:TotalFee>';
+			$str .='<ebl:TotalFee>';
 			$str .= $this->TotalFee->toXMLString();
-			$str .=  '</cc:TotalFee>';
+			$str .=  '</ebl:TotalFee>';
 		 }
 		if($this->RestrictedTicket != null ) {
 			$str .= '<ebl:RestrictedTicket>'.$this->RestrictedTicket.'</ebl:RestrictedTicket>';
@@ -15188,19 +15148,19 @@ class FlightDetailsType {
 			$str .= '<ebl:FareBasisCode>'.$this->FareBasisCode.'</ebl:FareBasisCode>';
 		 }
 		if($this->Fare != null ) {
-			$str .='<cc:Fare>';
+			$str .='<ebl:Fare>';
 			$str .= $this->Fare->toXMLString();
-			$str .=  '</cc:Fare>';
+			$str .=  '</ebl:Fare>';
 		 }
 		if($this->Taxes != null ) {
-			$str .='<cc:Taxes>';
+			$str .='<ebl:Taxes>';
 			$str .= $this->Taxes->toXMLString();
-			$str .=  '</cc:Taxes>';
+			$str .=  '</ebl:Taxes>';
 		 }
 		if($this->Fee != null ) {
-			$str .='<cc:Fee>';
+			$str .='<ebl:Fee>';
 			$str .= $this->Fee->toXMLString();
-			$str .=  '</cc:Fee>';
+			$str .=  '</ebl:Fee>';
 		 }
 		if($this->EndorsementOrRestrictions != null ) {
 			$str .= '<ebl:EndorsementOrRestrictions>'.$this->EndorsementOrRestrictions.'</ebl:EndorsementOrRestrictions>';
@@ -15284,22 +15244,20 @@ class AuthorizationInfoType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'PaymentStatus';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PaymentStatus = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='paymentstatus') {
+				$this->PaymentStatus = $arry["text"];
 			}
-			$arrKeyName =  'PendingReason';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PendingReason = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='pendingreason') {
+				$this->PendingReason = $arry["text"];
 			}
-			$arrKeyName =  'ProtectionEligibility';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProtectionEligibility = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='protectioneligibility') {
+				$this->ProtectionEligibility = $arry["text"];
 			}
-			$arrKeyName =  'ProtectionEligibilityType';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ProtectionEligibilityType = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='protectioneligibilitytype') {
+				$this->ProtectionEligibilityType = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -15367,30 +15325,26 @@ class OptionTrackingDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'OptionNumber';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OptionNumber = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='optionnumber') {
+				$this->OptionNumber = $arry["text"];
 			}
-			$arrKeyName =  'OptionQty';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OptionQty = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='optionqty') {
+				$this->OptionQty = $arry["text"];
 			}
-			$arrKeyName =  'OptionSelect';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OptionSelect = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='optionselect') {
+				$this->OptionSelect = $arry["text"];
 			}
-			$arrKeyName =  'OptionQtyDelta';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OptionQtyDelta = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='optionqtydelta') {
+				$this->OptionQtyDelta = $arry["text"];
 			}
-			$arrKeyName =  'OptionAlert';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OptionAlert = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='optionalert') {
+				$this->OptionAlert = $arry["text"];
 			}
-			$arrKeyName =  'OptionCost';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OptionCost = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='optioncost') {
+				$this->OptionCost = $arry["text"];
 			}
+		}
 		}
 	}
 
@@ -15474,26 +15428,23 @@ class ItemTrackingDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'ItemNumber';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ItemNumber = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='itemnumber') {
+				$this->ItemNumber = $arry["text"];
 			}
-			$arrKeyName =  'ItemQty';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ItemQty = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='itemqty') {
+				$this->ItemQty = $arry["text"];
 			}
-			$arrKeyName =  'ItemQtyDelta';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ItemQtyDelta = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='itemqtydelta') {
+				$this->ItemQtyDelta = $arry["text"];
 			}
-			$arrKeyName =  'ItemAlert';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ItemAlert = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='itemalert') {
+				$this->ItemAlert = $arry["text"];
 			}
-			$arrKeyName =  'ItemCost';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ItemCost = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='itemcost') {
+				$this->ItemCost = $arry["text"];
 			}
+		}
 		}
 	}
 
@@ -15551,22 +15502,20 @@ class ButtonSearchResultType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'HostedButtonID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->HostedButtonID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='hostedbuttonid') {
+				$this->HostedButtonID = $arry["text"];
 			}
-			$arrKeyName =  'ButtonType';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ButtonType = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='buttontype') {
+				$this->ButtonType = $arry["text"];
 			}
-			$arrKeyName =  'ItemName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ItemName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='itemname') {
+				$this->ItemName = $arry["text"];
 			}
-			$arrKeyName =  'ModifyDate';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ModifyDate = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='modifydate') {
+				$this->ModifyDate = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -15631,14 +15580,14 @@ class ReverseTransactionResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'ReverseTransactionID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ReverseTransactionID = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='reversetransactionid') {
+				$this->ReverseTransactionID = $arry["text"];
 			}
-			$arrKeyName =  'Status';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Status = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='status') {
+				$this->Status = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -15752,19 +15701,20 @@ class PaymentRequestInfoType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'TransactionId';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TransactionId = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
+				$this->TransactionId = $arry["text"];
 			}
-			$arrKeyName =  'PaymentRequestID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PaymentRequestID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='paymentrequestid') {
+				$this->PaymentRequestID = $arry["text"];
 			}
-			if( array_key_exists("PaymentError", $arr) ) {
-				$newArray = "PaymentError";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="paymenterror") {
 				$this->PaymentError = new ErrorType();
-				$this->PaymentError->init($arr[$newArray]);
+				$this->PaymentError->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -15965,14 +15915,14 @@ class ExternalRememberMeStatusDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'ExternalRememberMeStatus';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ExternalRememberMeStatus = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='externalremembermestatus') {
+				$this->ExternalRememberMeStatus = $arry["text"];
 			}
-			$arrKeyName =  'ExternalRememberMeID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ExternalRememberMeID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='externalremembermeid') {
+				$this->ExternalRememberMeID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -16026,6 +15976,8 @@ class EnhancedPaymentDataType {
 
 	public function init($arr = null) {
 		if($arr != null) {
+			foreach ($arr as $arry){
+		}
 		}
 	}
 
@@ -16044,6 +15996,8 @@ class EnhancedItemDataType {
 
 	public function init($arr = null) {
 		if($arr != null) {
+			foreach ($arr as $arry){
+		}
 		}
 	}
 
@@ -16062,6 +16016,8 @@ class EnhancedPaymentInfoType {
 
 	public function init($arr = null) {
 		if($arr != null) {
+			foreach ($arr as $arry){
+		}
 		}
 	}
 }
@@ -16099,6 +16055,8 @@ class EnhancedCompleteRecoupResponseDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
+			foreach ($arr as $arry){
+		}
 		}
 	}
 }
@@ -16123,6 +16081,8 @@ class EnhancedPayerInfoType {
 
 	public function init($arr = null) {
 		if($arr != null) {
+			foreach ($arr as $arry){
+		}
 		}
 	}
 
@@ -16140,15 +16100,15 @@ class EnhancedPayerInfoType {
 class AmountType {
 	/**
 	 * @access public
-	 * @var double
-	 */
-	public $value;
-
-	/**
-	 * @access public
 	 * @var CurrencyCodeType
 	 */
 	public $currencyID;
+
+	/**
+	 * @access public
+	 * @var double
+	 */
+	public $value;
 
 }
 
@@ -16164,43 +16124,43 @@ class AmountType {
 class BasicAmountType {
 	/**
 	 * @access public
-	 * @var string
-	 */
-	public $value;
-
-	/**
-	 * @access public
 	 * @var CurrencyCodeType
 	 */
 	public $currencyID;
 
+	/**
+	 * @access public
+	 * @var string
+	 */
+	public $value;
+
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'value';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->value = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='currencyid') {
+				$this->currencyID = $arry["text"];
 			}
-			$arrKeyName =  'currencyID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->currencyID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='value') {
+				$this->value = $arry["text"];
 			}
+		}
 		}
 	}
 
-	public function __construct($value = null, $currencyID = null) {
-		$this->value  = $value;
+	public function __construct($currencyID = null, $value = null) {
 		$this->currencyID  = $currencyID;
+		$this->value  = $value;
 	}
 
 	public function toXMLString()  {
 		$str = '';
-		if($this->value != null ) {
-			$str .= '<cc:value>'.$this->value.'</cc:value>';
-		 }
 		if($this->currencyID != null ) {
-			$str .= '<ebl:currencyID>'.$this->currencyID.'</ebl:currencyID>';
+			$str .= '<cc:currencyID>'.$this->currencyID.'</cc:currencyID>';
 		 }
+		/*if($this->value != null ) {
+value
+		 }*/
 
 		return $str;
 	}
@@ -16213,43 +16173,43 @@ class BasicAmountType {
 class MeasureType {
 	/**
 	 * @access public
-	 * @var double
-	 */
-	public $value;
-
-	/**
-	 * @access public
 	 * @var token
 	 */
 	public $unit;
 
+	/**
+	 * @access public
+	 * @var double
+	 */
+	public $value;
+
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'value';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->value = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='unit') {
+				$this->unit = $arry["text"];
 			}
-			$arrKeyName =  'unit';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->unit = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='value') {
+				$this->value = $arry["text"];
 			}
+		}
 		}
 	}
 
-	public function __construct($value = null, $unit = null) {
-		$this->value  = $value;
+	public function __construct($unit = null, $value = null) {
 		$this->unit  = $unit;
+		$this->value  = $value;
 	}
 
 	public function toXMLString()  {
 		$str = '';
-		if($this->value != null ) {
-			$str .= '<cc:value>'.$this->value.'</cc:value>';
-		 }
 		if($this->unit != null ) {
 			$str .= '<cc:unit>'.$this->unit.'</cc:unit>';
 		 }
+		/*if($this->value != null ) {
+value
+		 }*/
 
 		return $str;
 	}
@@ -16262,15 +16222,15 @@ class MeasureType {
 class QuantityType {
 	/**
 	 * @access public
-	 * @var double
-	 */
-	public $value;
-
-	/**
-	 * @access public
 	 * @var token
 	 */
 	public $unit;
+
+	/**
+	 * @access public
+	 * @var double
+	 */
+	public $value;
 
 }
 
@@ -16337,37 +16297,33 @@ class InstallmentDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'BillingPeriod';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BillingPeriod = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='billingperiod') {
+				$this->BillingPeriod = $arry["text"];
 			}
-			$arrKeyName =  'BillingFrequency';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BillingFrequency = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='billingfrequency') {
+				$this->BillingFrequency = $arry["text"];
 			}
-			$arrKeyName =  'TotalBillingCycles';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TotalBillingCycles = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='totalbillingcycles') {
+				$this->TotalBillingCycles = $arry["text"];
 			}
-			$arrKeyName =  'Amount';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Amount = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='amount') {
+				$this->Amount = $arry["text"];
 			}
-			$arrKeyName =  'ShippingAmount';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ShippingAmount = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='shippingamount') {
+				$this->ShippingAmount = $arry["text"];
 			}
-			$arrKeyName =  'TaxAmount';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TaxAmount = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='taxamount') {
+				$this->TaxAmount = $arry["text"];
 			}
+		}
 		}
 	}
 
 	public function toXMLString()  {
 		$str = '';
 		if($this->BillingPeriod != null ) {
-			$str .= '<ebl:BillingPeriod>'.$this->BillingPeriod.'</ebl:BillingPeriod>';
+			$str .= '<urn:BillingPeriod>'.$this->BillingPeriod.'</urn:BillingPeriod>';
 		 }
 		if($this->BillingFrequency != null ) {
 			$str .= '<urn:BillingFrequency>'.$this->BillingFrequency.'</urn:BillingFrequency>';
@@ -16437,30 +16393,29 @@ class OptionSelectionDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'OptionSelection';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OptionSelection = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='optionselection') {
+				$this->OptionSelection = $arry["text"];
 			}
-			$arrKeyName =  'Price';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Price = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='price') {
+				$this->Price = $arry["text"];
 			}
-			$arrKeyName =  'OptionType';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OptionType = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='optiontype') {
+				$this->OptionType = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("PaymentPeriod[$i]" ,$arr) ) {
-					$newArray = $arr["PaymentPeriod"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="paymentperiod[$i]") {
 				$this->PaymentPeriod[$i] = new InstallmentDetailsType();
-				$this->PaymentPeriod[$i]->init($newArray[$i]);
+				$this->PaymentPeriod[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("PaymentPeriod", $arr) ) {
-					$newArray = $arr["PaymentPeriod"];
+				else if($arry["name"]=="paymentperiod") {
 				$this->PaymentPeriod = new InstallmentDetailsType();
-				$this->PaymentPeriod->init($newArray);
+				$this->PaymentPeriod->init($arry["children"]);
+					}
 			}
 			 }
+		}
 		}
 	}
 
@@ -16477,7 +16432,7 @@ class OptionSelectionDetailsType {
 			$str .= '<urn:Price>'.$this->Price.'</urn:Price>';
 		 }
 		if($this->OptionType != null ) {
-			$str .= '<ebl:OptionType>'.$this->OptionType.'</ebl:OptionType>';
+			$str .= '<urn:OptionType>'.$this->OptionType.'</urn:OptionType>';
 		 }
 		if($this->PaymentPeriod != null ) {
 		for($i=0; $i<count($this->PaymentPeriod);$i++) {
@@ -16517,22 +16472,23 @@ class OptionDetailsType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			$arrKeyName =  'OptionName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OptionName = $arr[$arrKeyName];
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='optionname') {
+				$this->OptionName = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("OptionSelectionDetails[$i]" ,$arr) ) {
-					$newArray = $arr["OptionSelectionDetails"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="optionselectiondetails[$i]") {
 				$this->OptionSelectionDetails[$i] = new OptionSelectionDetailsType();
-				$this->OptionSelectionDetails[$i]->init($newArray[$i]);
+				$this->OptionSelectionDetails[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("OptionSelectionDetails", $arr) ) {
-					$newArray = $arr["OptionSelectionDetails"];
+				else if($arry["name"]=="optionselectiondetails") {
 				$this->OptionSelectionDetails = new OptionSelectionDetailsType();
-				$this->OptionSelectionDetails->init($newArray);
+				$this->OptionSelectionDetails->init($arry["children"]);
+					}
 			}
 			 }
+		}
 		}
 	}
 
@@ -16721,13 +16677,13 @@ class BMCreateButtonRequestType extends AbstractRequestType {
 		$str = '';
 $str.=parent::toXMLString();
 		if($this->ButtonType != null ) {
-			$str .= '<ebl:ButtonType>'.$this->ButtonType.'</ebl:ButtonType>';
+			$str .= '<urn:ButtonType>'.$this->ButtonType.'</urn:ButtonType>';
 		 }
 		if($this->ButtonCode != null ) {
-			$str .= '<ebl:ButtonCode>'.$this->ButtonCode.'</ebl:ButtonCode>';
+			$str .= '<urn:ButtonCode>'.$this->ButtonCode.'</urn:ButtonCode>';
 		 }
 		if($this->ButtonSubType != null ) {
-			$str .= '<ebl:ButtonSubType>'.$this->ButtonSubType.'</ebl:ButtonSubType>';
+			$str .= '<urn:ButtonSubType>'.$this->ButtonSubType.'</urn:ButtonSubType>';
 		 }
 		if($this->ButtonVar != null ) {
 		for($i=0; $i<count($this->ButtonVar);$i++) {
@@ -16747,19 +16703,19 @@ $str.=parent::toXMLString();
 		 }
 		 }
 		if($this->ButtonImage != null ) {
-			$str .= '<ebl:ButtonImage>'.$this->ButtonImage.'</ebl:ButtonImage>';
+			$str .= '<urn:ButtonImage>'.$this->ButtonImage.'</urn:ButtonImage>';
 		 }
 		if($this->ButtonImageURL != null ) {
 			$str .= '<urn:ButtonImageURL>'.$this->ButtonImageURL.'</urn:ButtonImageURL>';
 		 }
 		if($this->BuyNowText != null ) {
-			$str .= '<ebl:BuyNowText>'.$this->BuyNowText.'</ebl:BuyNowText>';
+			$str .= '<urn:BuyNowText>'.$this->BuyNowText.'</urn:BuyNowText>';
 		 }
 		if($this->SubscribeText != null ) {
-			$str .= '<ebl:SubscribeText>'.$this->SubscribeText.'</ebl:SubscribeText>';
+			$str .= '<urn:SubscribeText>'.$this->SubscribeText.'</urn:SubscribeText>';
 		 }
 		if($this->ButtonCountry != null ) {
-			$str .= '<ebl:ButtonCountry>'.$this->ButtonCountry.'</ebl:ButtonCountry>';
+			$str .= '<urn:ButtonCountry>'.$this->ButtonCountry.'</urn:ButtonCountry>';
 		 }
 		if($this->ButtonLanguage != null ) {
 			$str .= '<urn:ButtonLanguage>'.$this->ButtonLanguage.'</urn:ButtonLanguage>';
@@ -16801,22 +16757,20 @@ class BMCreateButtonResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'Website';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Website = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='website') {
+				$this->Website = $arry["text"];
 			}
-			$arrKeyName =  'Email';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Email = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='email') {
+				$this->Email = $arry["text"];
 			}
-			$arrKeyName =  'Mobile';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Mobile = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='mobile') {
+				$this->Mobile = $arry["text"];
 			}
-			$arrKeyName =  'HostedButtonID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->HostedButtonID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='hostedbuttonid') {
+				$this->HostedButtonID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -17001,13 +16955,13 @@ $str.=parent::toXMLString();
 			$str .= '<urn:HostedButtonID>'.$this->HostedButtonID.'</urn:HostedButtonID>';
 		 }
 		if($this->ButtonType != null ) {
-			$str .= '<ebl:ButtonType>'.$this->ButtonType.'</ebl:ButtonType>';
+			$str .= '<urn:ButtonType>'.$this->ButtonType.'</urn:ButtonType>';
 		 }
 		if($this->ButtonCode != null ) {
-			$str .= '<ebl:ButtonCode>'.$this->ButtonCode.'</ebl:ButtonCode>';
+			$str .= '<urn:ButtonCode>'.$this->ButtonCode.'</urn:ButtonCode>';
 		 }
 		if($this->ButtonSubType != null ) {
-			$str .= '<ebl:ButtonSubType>'.$this->ButtonSubType.'</ebl:ButtonSubType>';
+			$str .= '<urn:ButtonSubType>'.$this->ButtonSubType.'</urn:ButtonSubType>';
 		 }
 		if($this->ButtonVar != null ) {
 		for($i=0; $i<count($this->ButtonVar);$i++) {
@@ -17027,19 +16981,19 @@ $str.=parent::toXMLString();
 		 }
 		 }
 		if($this->ButtonImage != null ) {
-			$str .= '<ebl:ButtonImage>'.$this->ButtonImage.'</ebl:ButtonImage>';
+			$str .= '<urn:ButtonImage>'.$this->ButtonImage.'</urn:ButtonImage>';
 		 }
 		if($this->ButtonImageURL != null ) {
 			$str .= '<urn:ButtonImageURL>'.$this->ButtonImageURL.'</urn:ButtonImageURL>';
 		 }
 		if($this->BuyNowText != null ) {
-			$str .= '<ebl:BuyNowText>'.$this->BuyNowText.'</ebl:BuyNowText>';
+			$str .= '<urn:BuyNowText>'.$this->BuyNowText.'</urn:BuyNowText>';
 		 }
 		if($this->SubscribeText != null ) {
-			$str .= '<ebl:SubscribeText>'.$this->SubscribeText.'</ebl:SubscribeText>';
+			$str .= '<urn:SubscribeText>'.$this->SubscribeText.'</urn:SubscribeText>';
 		 }
 		if($this->ButtonCountry != null ) {
-			$str .= '<ebl:ButtonCountry>'.$this->ButtonCountry.'</ebl:ButtonCountry>';
+			$str .= '<urn:ButtonCountry>'.$this->ButtonCountry.'</urn:ButtonCountry>';
 		 }
 		if($this->ButtonLanguage != null ) {
 			$str .= '<urn:ButtonLanguage>'.$this->ButtonLanguage.'</urn:ButtonLanguage>';
@@ -17081,22 +17035,20 @@ class BMUpdateButtonResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'Website';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Website = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='website') {
+				$this->Website = $arry["text"];
 			}
-			$arrKeyName =  'Email';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Email = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='email') {
+				$this->Email = $arry["text"];
 			}
-			$arrKeyName =  'Mobile';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Mobile = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='mobile') {
+				$this->Mobile = $arry["text"];
 			}
-			$arrKeyName =  'HostedButtonID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->HostedButtonID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='hostedbuttonid') {
+				$this->HostedButtonID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -17165,7 +17117,7 @@ $str.=parent::toXMLString();
 			$str .= '<urn:HostedButtonID>'.$this->HostedButtonID.'</urn:HostedButtonID>';
 		 }
 		if($this->ButtonStatus != null ) {
-			$str .= '<ebl:ButtonStatus>'.$this->ButtonStatus.'</ebl:ButtonStatus>';
+			$str .= '<urn:ButtonStatus>'.$this->ButtonStatus.'</urn:ButtonStatus>';
 		 }
 
 		return $str;
@@ -17180,7 +17132,9 @@ class BMManageButtonStatusResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);		}
+			parent::init($arr);			foreach ($arr as $arry){
+		}
+		}
 	}
 }
 
@@ -17392,74 +17346,63 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'Website';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Website = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='website') {
+				$this->Website = $arry["text"];
 			}
-			$arrKeyName =  'Email';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Email = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='email') {
+				$this->Email = $arry["text"];
 			}
-			$arrKeyName =  'Mobile';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Mobile = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='mobile') {
+				$this->Mobile = $arry["text"];
 			}
-			$arrKeyName =  'HostedButtonID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->HostedButtonID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='hostedbuttonid') {
+				$this->HostedButtonID = $arry["text"];
 			}
-			$arrKeyName =  'ButtonType';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ButtonType = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='buttontype') {
+				$this->ButtonType = $arry["text"];
 			}
-			$arrKeyName =  'ButtonCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ButtonCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='buttoncode') {
+				$this->ButtonCode = $arry["text"];
 			}
-			$arrKeyName =  'ButtonSubType';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ButtonSubType = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='buttonsubtype') {
+				$this->ButtonSubType = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
 			 }
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("OptionDetails[$i]" ,$arr) ) {
-					$newArray = $arr["OptionDetails"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="optiondetails[$i]") {
 				$this->OptionDetails[$i] = new OptionDetailsType();
-				$this->OptionDetails[$i]->init($newArray[$i]);
+				$this->OptionDetails[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("OptionDetails", $arr) ) {
-					$newArray = $arr["OptionDetails"];
+				else if($arry["name"]=="optiondetails") {
 				$this->OptionDetails = new OptionDetailsType();
-				$this->OptionDetails->init($newArray);
+				$this->OptionDetails->init($arry["children"]);
+					}
 			}
 			 }
 			for($i=0; $i<10;$i++) {
 			 }
-			$arrKeyName =  'ButtonImage';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ButtonImage = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='buttonimage') {
+				$this->ButtonImage = $arry["text"];
 			}
-			$arrKeyName =  'ButtonImageURL';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ButtonImageURL = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='buttonimageurl') {
+				$this->ButtonImageURL = $arry["text"];
 			}
-			$arrKeyName =  'BuyNowText';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BuyNowText = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='buynowtext') {
+				$this->BuyNowText = $arry["text"];
 			}
-			$arrKeyName =  'SubscribeText';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SubscribeText = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='subscribetext') {
+				$this->SubscribeText = $arry["text"];
 			}
-			$arrKeyName =  'ButtonCountry';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ButtonCountry = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='buttoncountry') {
+				$this->ButtonCountry = $arry["text"];
 			}
-			$arrKeyName =  'ButtonLanguage';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ButtonLanguage = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='buttonlanguage') {
+				$this->ButtonLanguage = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -17662,10 +17605,11 @@ class BMSetInventoryResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'TransactionID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TransactionID = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
+				$this->TransactionID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -17795,49 +17739,46 @@ class BMGetInventoryResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'HostedButtonID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->HostedButtonID = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='hostedbuttonid') {
+				$this->HostedButtonID = $arry["text"];
 			}
-			$arrKeyName =  'TrackInv';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TrackInv = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='trackinv') {
+				$this->TrackInv = $arry["text"];
 			}
-			$arrKeyName =  'TrackPnl';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TrackPnl = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='trackpnl') {
+				$this->TrackPnl = $arry["text"];
 			}
-			if( array_key_exists("ItemTrackingDetails", $arr) ) {
-				$newArray = "ItemTrackingDetails";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="itemtrackingdetails") {
 				$this->ItemTrackingDetails = new ItemTrackingDetailsType();
-				$this->ItemTrackingDetails->init($arr[$newArray]);
+				$this->ItemTrackingDetails->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'OptionIndex';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OptionIndex = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='optionindex') {
+				$this->OptionIndex = $arry["text"];
 			}
-			$arrKeyName =  'OptionName';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->OptionName = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='optionname') {
+				$this->OptionName = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("OptionTrackingDetails[$i]" ,$arr) ) {
-					$newArray = $arr["OptionTrackingDetails"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="optiontrackingdetails[$i]") {
 				$this->OptionTrackingDetails[$i] = new OptionTrackingDetailsType();
-				$this->OptionTrackingDetails[$i]->init($newArray[$i]);
+				$this->OptionTrackingDetails[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("OptionTrackingDetails", $arr) ) {
-					$newArray = $arr["OptionTrackingDetails"];
+				else if($arry["name"]=="optiontrackingdetails") {
 				$this->OptionTrackingDetails = new OptionTrackingDetailsType();
-				$this->OptionTrackingDetails->init($newArray);
+				$this->OptionTrackingDetails->init($arry["children"]);
+					}
 			}
 			 }
-			$arrKeyName =  'SoldoutURL';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->SoldoutURL = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='soldouturl') {
+				$this->SoldoutURL = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
 			 }
+		}
 		}
 	}
 }
@@ -17924,18 +17865,20 @@ class BMButtonSearchResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			for($i=0; $i<10;$i++) {
-				if( array_key_exists("ButtonSearchResult[$i]" ,$arr) ) {
-					$newArray = $arr["ButtonSearchResult"];
+			parent::init($arr);			foreach ($arr as $arry){
+			for($i=0; $i<10;$i++) {
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="buttonsearchresult[$i]") {
 				$this->ButtonSearchResult[$i] = new ButtonSearchResultType();
-				$this->ButtonSearchResult[$i]->init($newArray[$i]);
+				$this->ButtonSearchResult[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("ButtonSearchResult", $arr) ) {
-					$newArray = $arr["ButtonSearchResult"];
+				else if($arry["name"]=="buttonsearchresult") {
 				$this->ButtonSearchResult = new ButtonSearchResultType();
-				$this->ButtonSearchResult->init($newArray);
+				$this->ButtonSearchResult->init($arry["children"]);
+					}
 			}
 			 }
+		}
 		}
 	}
 }
@@ -18053,18 +17996,18 @@ class RefundTransactionRequestType extends AbstractRequestType {
 		$str = '';
 $str.=parent::toXMLString();
 		if($this->TransactionID != null ) {
-			$str .= '<ebl:TransactionID>'.$this->TransactionID.'</ebl:TransactionID>';
+			$str .= '<urn:TransactionID>'.$this->TransactionID.'</urn:TransactionID>';
 		 }
 		if($this->InvoiceID != null ) {
 			$str .= '<urn:InvoiceID>'.$this->InvoiceID.'</urn:InvoiceID>';
 		 }
 		if($this->RefundType != null ) {
-			$str .= '<ebl:RefundType>'.$this->RefundType.'</ebl:RefundType>';
+			$str .= '<urn:RefundType>'.$this->RefundType.'</urn:RefundType>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<cc:Amount>';
+			$str .='<urn:Amount>';
 			$str .= $this->Amount->toXMLString();
-			$str .=  '</cc:Amount>';
+			$str .=  '</urn:Amount>';
 		 }
 		if($this->Memo != null ) {
 			$str .= '<urn:Memo>'.$this->Memo.'</urn:Memo>';
@@ -18073,7 +18016,7 @@ $str.=parent::toXMLString();
 			$str .= '<urn:RetryUntil>'.$this->RetryUntil.'</urn:RetryUntil>';
 		 }
 		if($this->RefundSource != null ) {
-			$str .= '<ebl:RefundSource>'.$this->RefundSource.'</ebl:RefundSource>';
+			$str .= '<urn:RefundSource>'.$this->RefundSource.'</urn:RefundSource>';
 		 }
 
 		return $str;
@@ -18132,30 +18075,35 @@ Total of all previous refunds	 *
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'RefundTransactionID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->RefundTransactionID = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='refundtransactionid') {
+				$this->RefundTransactionID = $arry["text"];
 			}
-			if( array_key_exists("NetRefundAmount", $arr) ) {
-				$newArray = "NetRefundAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="netrefundamount") {
 				$this->NetRefundAmount = new BasicAmountType();
-				$this->NetRefundAmount->init($arr[$newArray]);
+				$this->NetRefundAmount->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("FeeRefundAmount", $arr) ) {
-				$newArray = "FeeRefundAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="feerefundamount") {
 				$this->FeeRefundAmount = new BasicAmountType();
-				$this->FeeRefundAmount->init($arr[$newArray]);
+				$this->FeeRefundAmount->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("GrossRefundAmount", $arr) ) {
-				$newArray = "GrossRefundAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="grossrefundamount") {
 				$this->GrossRefundAmount = new BasicAmountType();
-				$this->GrossRefundAmount->init($arr[$newArray]);
+				$this->GrossRefundAmount->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("TotalRefundedAmount", $arr) ) {
-				$newArray = "TotalRefundedAmount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="totalrefundedamount") {
 				$this->TotalRefundedAmount = new BasicAmountType();
-				$this->TotalRefundedAmount->init($arr[$newArray]);
+				$this->TotalRefundedAmount->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -18222,7 +18170,9 @@ class InitiateRecoupResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);		}
+			parent::init($arr);			foreach ($arr as $arry){
+		}
+		}
 	}
 }
 
@@ -18294,11 +18244,14 @@ class CompleteRecoupResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("EnhancedCompleteRecoupResponseDetails", $arr) ) {
-				$newArray = "EnhancedCompleteRecoupResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="enhancedcompleterecoupresponsedetails") {
 				$this->EnhancedCompleteRecoupResponseDetails = new EnhancedCompleteRecoupResponseDetailsType();
-				$this->EnhancedCompleteRecoupResponseDetails->init($arr[$newArray]);
+				$this->EnhancedCompleteRecoupResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -18365,7 +18318,9 @@ class CancelRecoupResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);		}
+			parent::init($arr);			foreach ($arr as $arry){
+		}
+		}
 	}
 }
 
@@ -18425,7 +18380,7 @@ class GetTransactionDetailsRequestType extends AbstractRequestType {
 		$str = '';
 $str.=parent::toXMLString();
 		if($this->TransactionID != null ) {
-			$str .= '<ebl:TransactionID>'.$this->TransactionID.'</ebl:TransactionID>';
+			$str .= '<urn:TransactionID>'.$this->TransactionID.'</urn:TransactionID>';
 		 }
 
 		return $str;
@@ -18452,16 +18407,20 @@ class GetTransactionDetailsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("PaymentTransactionDetails", $arr) ) {
-				$newArray = "PaymentTransactionDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="paymenttransactiondetails") {
 				$this->PaymentTransactionDetails = new PaymentTransactionType();
-				$this->PaymentTransactionDetails->init($arr[$newArray]);
+				$this->PaymentTransactionDetails->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("ThreeDSecureDetails", $arr) ) {
-				$newArray = "ThreeDSecureDetails";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="threedsecuredetails") {
 				$this->ThreeDSecureDetails = new ThreeDSecureInfoType();
-				$this->ThreeDSecureDetails->init($arr[$newArray]);
+				$this->ThreeDSecureDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -18549,16 +18508,20 @@ class BillUserResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("BillUserResponseDetails", $arr) ) {
-				$newArray = "BillUserResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="billuserresponsedetails") {
 				$this->BillUserResponseDetails = new MerchantPullPaymentResponseType();
-				$this->BillUserResponseDetails->init($arr[$newArray]);
+				$this->BillUserResponseDetails->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("FMFDetails", $arr) ) {
-				$newArray = "FMFDetails";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="fmfdetails") {
 				$this->FMFDetails = new FMFDetailsType();
-				$this->FMFDetails->init($arr[$newArray]);
+				$this->FMFDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -18809,24 +18772,24 @@ $str.=parent::toXMLString();
 			$str .= '<urn:EndDate>'.$this->EndDate.'</urn:EndDate>';
 		 }
 		if($this->Payer != null ) {
-			$str .= '<ebl:Payer>'.$this->Payer.'</ebl:Payer>';
+			$str .= '<urn:Payer>'.$this->Payer.'</urn:Payer>';
 		 }
 		if($this->Receiver != null ) {
-			$str .= '<ebl:Receiver>'.$this->Receiver.'</ebl:Receiver>';
+			$str .= '<urn:Receiver>'.$this->Receiver.'</urn:Receiver>';
 		 }
 		if($this->ReceiptID != null ) {
 			$str .= '<urn:ReceiptID>'.$this->ReceiptID.'</urn:ReceiptID>';
 		 }
 		if($this->TransactionID != null ) {
-			$str .= '<ebl:TransactionID>'.$this->TransactionID.'</ebl:TransactionID>';
+			$str .= '<urn:TransactionID>'.$this->TransactionID.'</urn:TransactionID>';
 		 }
 		if($this->ProfileID != null ) {
 			$str .= '<urn:ProfileID>'.$this->ProfileID.'</urn:ProfileID>';
 		 }
 		if($this->PayerName != null ) {
-			$str .='<ebl:PayerName>';
+			$str .='<urn:PayerName>';
 			$str .= $this->PayerName->toXMLString();
-			$str .=  '</ebl:PayerName>';
+			$str .=  '</urn:PayerName>';
 		 }
 		if($this->AuctionItemNumber != null ) {
 			$str .= '<urn:AuctionItemNumber>'.$this->AuctionItemNumber.'</urn:AuctionItemNumber>';
@@ -18838,18 +18801,18 @@ $str.=parent::toXMLString();
 			$str .= '<urn:CardNumber>'.$this->CardNumber.'</urn:CardNumber>';
 		 }
 		if($this->TransactionClass != null ) {
-			$str .= '<ebl:TransactionClass>'.$this->TransactionClass.'</ebl:TransactionClass>';
+			$str .= '<urn:TransactionClass>'.$this->TransactionClass.'</urn:TransactionClass>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<cc:Amount>';
+			$str .='<urn:Amount>';
 			$str .= $this->Amount->toXMLString();
-			$str .=  '</cc:Amount>';
+			$str .=  '</urn:Amount>';
 		 }
 		if($this->CurrencyCode != null ) {
-			$str .= '<ebl:CurrencyCode>'.$this->CurrencyCode.'</ebl:CurrencyCode>';
+			$str .= '<urn:CurrencyCode>'.$this->CurrencyCode.'</urn:CurrencyCode>';
 		 }
 		if($this->Status != null ) {
-			$str .= '<ebl:Status>'.$this->Status.'</ebl:Status>';
+			$str .= '<urn:Status>'.$this->Status.'</urn:Status>';
 		 }
 
 		return $str;
@@ -18873,18 +18836,20 @@ Results of a Transaction Search.	 *
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			for($i=0; $i<10;$i++) {
-				if( array_key_exists("PaymentTransactions[$i]" ,$arr) ) {
-					$newArray = $arr["PaymentTransactions"];
+			parent::init($arr);			foreach ($arr as $arry){
+			for($i=0; $i<10;$i++) {
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="paymenttransactions[$i]") {
 				$this->PaymentTransactions[$i] = new PaymentTransactionSearchResultType();
-				$this->PaymentTransactions[$i]->init($newArray[$i]);
+				$this->PaymentTransactions[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("PaymentTransactions", $arr) ) {
-					$newArray = $arr["PaymentTransactions"];
+				else if($arry["name"]=="paymenttransactions") {
 				$this->PaymentTransactions = new PaymentTransactionSearchResultType();
-				$this->PaymentTransactions->init($newArray);
+				$this->PaymentTransactions->init($arry["children"]);
+					}
 			}
 			 }
+		}
 		}
 	}
 }
@@ -18986,7 +18951,7 @@ $str.=parent::toXMLString();
 			$str .= '<urn:EmailSubject>'.$this->EmailSubject.'</urn:EmailSubject>';
 		 }
 		if($this->ReceiverType != null ) {
-			$str .= '<ebl:ReceiverType>'.$this->ReceiverType.'</ebl:ReceiverType>';
+			$str .= '<urn:ReceiverType>'.$this->ReceiverType.'</urn:ReceiverType>';
 		 }
 		if($this->ButtonSource != null ) {
 			$str .= '<urn:ButtonSource>'.$this->ButtonSource.'</urn:ButtonSource>';
@@ -19011,7 +18976,9 @@ class MassPayResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);		}
+			parent::init($arr);			foreach ($arr as $arry){
+		}
+		}
 	}
 }
 
@@ -19105,18 +19072,18 @@ class MassPayRequestItemType {
 	public function toXMLString()  {
 		$str = '';
 		if($this->ReceiverEmail != null ) {
-			$str .= '<ebl:ReceiverEmail>'.$this->ReceiverEmail.'</ebl:ReceiverEmail>';
+			$str .= '<urn:ReceiverEmail>'.$this->ReceiverEmail.'</urn:ReceiverEmail>';
 		 }
 		if($this->ReceiverPhone != null ) {
 			$str .= '<urn:ReceiverPhone>'.$this->ReceiverPhone.'</urn:ReceiverPhone>';
 		 }
 		if($this->ReceiverID != null ) {
-			$str .= '<ebl:ReceiverID>'.$this->ReceiverID.'</ebl:ReceiverID>';
+			$str .= '<urn:ReceiverID>'.$this->ReceiverID.'</urn:ReceiverID>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<cc:Amount>';
+			$str .='<urn:Amount>';
 			$str .= $this->Amount->toXMLString();
-			$str .=  '</cc:Amount>';
+			$str .=  '</urn:Amount>';
 		 }
 		if($this->UniqueId != null ) {
 			$str .= '<urn:UniqueId>'.$this->UniqueId.'</urn:UniqueId>';
@@ -19203,7 +19170,7 @@ $str.=parent::toXMLString();
 			$str .= '<urn:BillingAgreementDescription>'.$this->BillingAgreementDescription.'</urn:BillingAgreementDescription>';
 		 }
 		if($this->BillingAgreementStatus != null ) {
-			$str .= '<ebl:BillingAgreementStatus>'.$this->BillingAgreementStatus.'</ebl:BillingAgreementStatus>';
+			$str .= '<urn:BillingAgreementStatus>'.$this->BillingAgreementStatus.'</urn:BillingAgreementStatus>';
 		 }
 		if($this->BillingAgreementCustom != null ) {
 			$str .= '<urn:BillingAgreementCustom>'.$this->BillingAgreementCustom.'</urn:BillingAgreementCustom>';
@@ -19227,11 +19194,14 @@ class BAUpdateResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("BAUpdateResponseDetails", $arr) ) {
-				$newArray = "BAUpdateResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="baupdateresponsedetails") {
 				$this->BAUpdateResponseDetails = new BAUpdateResponseDetailsType();
-				$this->BAUpdateResponseDetails->init($arr[$newArray]);
+				$this->BAUpdateResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -19282,14 +19252,14 @@ class AddressVerifyRequestType extends AbstractRequestType {
 	public $Email;
 
 	/**
-	 * First line of buyer’s billing or shipping street address to be
+	 * First line of buyerâ€™s billing or shipping street address to be
 	 * verified.
 	 * Required
 	 * For verification, input value of street address must match the
 	 * first three single-byte characters of the street address on
 	 * file for the PayPal account.
 	 * Maximum string length: 35 single-byte characters Alphanumeric
-	 * plus - , . ‘ # \ Whitespace and case of input value are
+	 * plus - , . â€˜ # \ Whitespace and case of input value are
 	 * ignored.
 	 *
 	 * @access public
@@ -19322,7 +19292,7 @@ class AddressVerifyRequestType extends AbstractRequestType {
 		$str = '';
 $str.=parent::toXMLString();
 		if($this->Email != null ) {
-			$str .= '<ebl:Email>'.$this->Email.'</ebl:Email>';
+			$str .= '<urn:Email>'.$this->Email.'</urn:Email>';
 		 }
 		if($this->Street != null ) {
 			$str .= '<urn:Street>'.$this->Street.'</urn:Street>';
@@ -19404,7 +19374,7 @@ Two-character country code (ISO 3166) on file
 	 * The token prevents a buyer from using any street address other
 	 * than the address on file at PayPal during additional purchases
 	 * he might make from the merchant. It contains encrypted
-	 * information about the user’s street address and email address.
+	 * information about the userâ€™s street address and email address.
 	 * You can pass the value of the token with the Buy Now button
 	 * HTML address_api_token variable so that PayPal prevents the
 	 * buyer from using any street address or email address other
@@ -19420,26 +19390,23 @@ Two-character country code (ISO 3166) on file
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'ConfirmationCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ConfirmationCode = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='confirmationcode') {
+				$this->ConfirmationCode = $arry["text"];
 			}
-			$arrKeyName =  'StreetMatch';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->StreetMatch = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='streetmatch') {
+				$this->StreetMatch = $arry["text"];
 			}
-			$arrKeyName =  'ZipMatch';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->ZipMatch = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='zipmatch') {
+				$this->ZipMatch = $arry["text"];
 			}
-			$arrKeyName =  'CountryCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->CountryCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='countrycode') {
+				$this->CountryCode = $arry["text"];
 			}
-			$arrKeyName =  'PayPalToken';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PayPalToken = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='paypaltoken') {
+				$this->PayPalToken = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -19525,10 +19492,11 @@ class EnterBoardingResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'Token';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Token = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='token') {
+				$this->Token = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -19591,7 +19559,7 @@ class GetBoardingDetailsRequestType extends AbstractRequestType {
 		$str = '';
 $str.=parent::toXMLString();
 		if($this->Token != null ) {
-			$str .= '<ebl:Token>'.$this->Token.'</ebl:Token>';
+			$str .= '<urn:Token>'.$this->Token.'</urn:Token>';
 		 }
 
 		return $str;
@@ -19612,11 +19580,14 @@ class GetBoardingDetailsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("GetBoardingDetailsResponseDetails", $arr) ) {
-				$newArray = "GetBoardingDetailsResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="getboardingdetailsresponsedetails") {
 				$this->GetBoardingDetailsResponseDetails = new GetBoardingDetailsResponseDetailsType();
-				$this->GetBoardingDetailsResponseDetails->init($arr[$newArray]);
+				$this->GetBoardingDetailsResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -19696,10 +19667,11 @@ class SetAuthFlowParamResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'Token';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Token = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='token') {
+				$this->Token = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -19758,7 +19730,7 @@ class GetAuthDetailsRequestType extends AbstractRequestType {
 		$str = '';
 $str.=parent::toXMLString();
 		if($this->Token != null ) {
-			$str .= '<ebl:Token>'.$this->Token.'</ebl:Token>';
+			$str .= '<urn:Token>'.$this->Token.'</urn:Token>';
 		 }
 
 		return $str;
@@ -19779,11 +19751,14 @@ class GetAuthDetailsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("GetAuthDetailsResponseDetails", $arr) ) {
-				$newArray = "GetAuthDetailsResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="getauthdetailsresponsedetails") {
 				$this->GetAuthDetailsResponseDetails = new GetAuthDetailsResponseDetailsType();
-				$this->GetAuthDetailsResponseDetails->init($arr[$newArray]);
+				$this->GetAuthDetailsResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -19863,10 +19838,11 @@ class SetAccessPermissionsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'Token';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Token = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='token') {
+				$this->Token = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -19925,7 +19901,7 @@ class UpdateAccessPermissionsRequestType extends AbstractRequestType {
 		$str = '';
 $str.=parent::toXMLString();
 		if($this->PayerID != null ) {
-			$str .= '<ebl:PayerID>'.$this->PayerID.'</ebl:PayerID>';
+			$str .= '<urn:PayerID>'.$this->PayerID.'</urn:PayerID>';
 		 }
 
 		return $str;
@@ -19951,10 +19927,11 @@ class UpdateAccessPermissionsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'Status';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Status = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='status') {
+				$this->Status = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -20013,7 +19990,7 @@ class GetAccessPermissionDetailsRequestType extends AbstractRequestType {
 		$str = '';
 $str.=parent::toXMLString();
 		if($this->Token != null ) {
-			$str .= '<ebl:Token>'.$this->Token.'</ebl:Token>';
+			$str .= '<urn:Token>'.$this->Token.'</urn:Token>';
 		 }
 
 		return $str;
@@ -20034,11 +20011,14 @@ class GetAccessPermissionDetailsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("GetAccessPermissionDetailsResponseDetails", $arr) ) {
-				$newArray = "GetAccessPermissionDetailsResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="getaccesspermissiondetailsresponsedetails") {
 				$this->GetAccessPermissionDetailsResponseDetails = new GetAccessPermissionDetailsResponseDetailsType();
-				$this->GetAccessPermissionDetailsResponseDetails->init($arr[$newArray]);
+				$this->GetAccessPermissionDetailsResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -20111,11 +20091,14 @@ class GetIncentiveEvaluationResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("GetIncentiveEvaluationResponseDetails", $arr) ) {
-				$newArray = "GetIncentiveEvaluationResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="getincentiveevaluationresponsedetails") {
 				$this->GetIncentiveEvaluationResponseDetails = new GetIncentiveEvaluationResponseDetailsType();
-				$this->GetIncentiveEvaluationResponseDetails->init($arr[$newArray]);
+				$this->GetIncentiveEvaluationResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -20201,10 +20184,11 @@ class SetExpressCheckoutResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'Token';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Token = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='token') {
+				$this->Token = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -20277,11 +20261,14 @@ class ExecuteCheckoutOperationsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("ExecuteCheckoutOperationsResponseDetails", $arr) ) {
-				$newArray = "ExecuteCheckoutOperationsResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="executecheckoutoperationsresponsedetails") {
 				$this->ExecuteCheckoutOperationsResponseDetails = new ExecuteCheckoutOperationsResponseDetailsType();
-				$this->ExecuteCheckoutOperationsResponseDetails->init($arr[$newArray]);
+				$this->ExecuteCheckoutOperationsResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -20340,7 +20327,7 @@ class GetExpressCheckoutDetailsRequestType extends AbstractRequestType {
 		$str = '';
 $str.=parent::toXMLString();
 		if($this->Token != null ) {
-			$str .= '<ebl:Token>'.$this->Token.'</ebl:Token>';
+			$str .= '<urn:Token>'.$this->Token.'</urn:Token>';
 		 }
 
 		return $str;
@@ -20361,11 +20348,14 @@ class GetExpressCheckoutDetailsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("GetExpressCheckoutDetailsResponseDetails", $arr) ) {
-				$newArray = "GetExpressCheckoutDetailsResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="getexpresscheckoutdetailsresponsedetails") {
 				$this->GetExpressCheckoutDetailsResponseDetails = new GetExpressCheckoutDetailsResponseDetailsType();
-				$this->GetExpressCheckoutDetailsResponseDetails->init($arr[$newArray]);
+				$this->GetExpressCheckoutDetailsResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -20457,16 +20447,20 @@ class DoExpressCheckoutPaymentResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("DoExpressCheckoutPaymentResponseDetails", $arr) ) {
-				$newArray = "DoExpressCheckoutPaymentResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="doexpresscheckoutpaymentresponsedetails") {
 				$this->DoExpressCheckoutPaymentResponseDetails = new DoExpressCheckoutPaymentResponseDetailsType();
-				$this->DoExpressCheckoutPaymentResponseDetails->init($arr[$newArray]);
+				$this->DoExpressCheckoutPaymentResponseDetails->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("FMFDetails", $arr) ) {
-				$newArray = "FMFDetails";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="fmfdetails") {
 				$this->FMFDetails = new FMFDetailsType();
-				$this->FMFDetails->init($arr[$newArray]);
+				$this->FMFDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -20524,11 +20518,14 @@ class DoUATPExpressCheckoutPaymentResponseType extends DoExpressCheckoutPaymentR
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("UATPDetails", $arr) ) {
-				$newArray = "UATPDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="uatpdetails") {
 				$this->UATPDetails = new UATPDetailsType();
-				$this->UATPDetails->init($arr[$newArray]);
+				$this->UATPDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -20585,10 +20582,10 @@ class ManagePendingTransactionStatusRequestType extends AbstractRequestType {
 		$str = '';
 $str.=parent::toXMLString();
 		if($this->TransactionID != null ) {
-			$str .= '<ebl:TransactionID>'.$this->TransactionID.'</ebl:TransactionID>';
+			$str .= '<urn:TransactionID>'.$this->TransactionID.'</urn:TransactionID>';
 		 }
 		if($this->Action != null ) {
-			$str .= '<ebl:Action>'.$this->Action.'</ebl:Action>';
+			$str .= '<urn:Action>'.$this->Action.'</urn:Action>';
 		 }
 
 		return $str;
@@ -20615,14 +20612,14 @@ class ManagePendingTransactionStatusResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'TransactionID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TransactionID = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
+				$this->TransactionID = $arry["text"];
 			}
-			$arrKeyName =  'Status';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Status = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='status') {
+				$this->Status = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -20719,19 +20716,19 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 	 * Address
 	 * Address only (no ZIP) 
 	 * B 
-	 * International “A”
+	 * International â€œAâ€�
 	 * Address only (no ZIP)
 	 * C
-	 * International “N”
+	 * International â€œNâ€�
 	 * None 
 	 * D
-	 * International “X” 
+	 * International â€œXâ€� 
 	 * Address and Postal Code
 	 * E 
 	 * Not allowed for MOTO (Internet/Phone) transactions 
 	 * Not applicable
 	 * F 
-	 * UK-specific “X”
+	 * UK-specific â€œXâ€�
 	 * Address and Postal Code 
 	 * G 
 	 * Global Unavailable
@@ -20743,7 +20740,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 	 * No
 	 * None
 	 * P
-	 * Postal (International “Z”)
+	 * Postal (International â€œZâ€�)
 	 * Postal Code only (no Address) 
 	 * R
 	 * Retry
@@ -20858,45 +20855,44 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("Amount", $arr) ) {
-				$newArray = "Amount";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="amount") {
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arr[$newArray]);
+				$this->Amount->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'AVSCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->AVSCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='avscode') {
+				$this->AVSCode = $arry["text"];
 			}
-			$arrKeyName =  'CVV2Code';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->CVV2Code = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='cvv2code') {
+				$this->CVV2Code = $arry["text"];
 			}
-			$arrKeyName =  'TransactionID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TransactionID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
+				$this->TransactionID = $arry["text"];
 			}
-			$arrKeyName =  'PendingReason';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PendingReason = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='pendingreason') {
+				$this->PendingReason = $arry["text"];
 			}
-			$arrKeyName =  'PaymentStatus';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PaymentStatus = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='paymentstatus') {
+				$this->PaymentStatus = $arry["text"];
 			}
-			if( array_key_exists("FMFDetails", $arr) ) {
-				$newArray = "FMFDetails";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="fmfdetails") {
 				$this->FMFDetails = new FMFDetailsType();
-				$this->FMFDetails->init($arr[$newArray]);
+				$this->FMFDetails->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("ThreeDSecureResponse", $arr) ) {
-				$newArray = "ThreeDSecureResponse";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="threedsecureresponse") {
 				$this->ThreeDSecureResponse = new ThreeDSecureResponseType();
-				$this->ThreeDSecureResponse->init($arr[$newArray]);
+				$this->ThreeDSecureResponse->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'PaymentAdviceCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PaymentAdviceCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='paymentadvicecode') {
+				$this->PaymentAdviceCode = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -21031,15 +21027,15 @@ class DoCaptureRequestType extends AbstractRequestType {
 		$str = '';
 $str.=parent::toXMLString();
 		if($this->AuthorizationID != null ) {
-			$str .= '<ebl:AuthorizationID>'.$this->AuthorizationID.'</ebl:AuthorizationID>';
+			$str .= '<urn:AuthorizationID>'.$this->AuthorizationID.'</urn:AuthorizationID>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<cc:Amount>';
+			$str .='<urn:Amount>';
 			$str .= $this->Amount->toXMLString();
-			$str .=  '</cc:Amount>';
+			$str .=  '</urn:Amount>';
 		 }
 		if($this->CompleteType != null ) {
-			$str .= '<ebl:CompleteType>'.$this->CompleteType.'</ebl:CompleteType>';
+			$str .= '<urn:CompleteType>'.$this->CompleteType.'</urn:CompleteType>';
 		 }
 		if($this->Note != null ) {
 			$str .= '<urn:Note>'.$this->Note.'</urn:Note>';
@@ -21074,11 +21070,14 @@ class DoCaptureResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("DoCaptureResponseDetails", $arr) ) {
-				$newArray = "DoCaptureResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="docaptureresponsedetails") {
 				$this->DoCaptureResponseDetails = new DoCaptureResponseDetailsType();
-				$this->DoCaptureResponseDetails->init($arr[$newArray]);
+				$this->DoCaptureResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -21159,9 +21158,9 @@ $str.=parent::toXMLString();
 			$str .= '<urn:AuthorizationID>'.$this->AuthorizationID.'</urn:AuthorizationID>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<cc:Amount>';
+			$str .='<urn:Amount>';
 			$str .= $this->Amount->toXMLString();
-			$str .=  '</cc:Amount>';
+			$str .=  '</urn:Amount>';
 		 }
 
 		return $str;
@@ -21193,15 +21192,17 @@ class DoReauthorizationResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'AuthorizationID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->AuthorizationID = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='authorizationid') {
+				$this->AuthorizationID = $arry["text"];
 			}
-			if( array_key_exists("AuthorizationInfo", $arr) ) {
-				$newArray = "AuthorizationInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="authorizationinfo") {
 				$this->AuthorizationInfo = new AuthorizationInfoType();
-				$this->AuthorizationInfo->init($arr[$newArray]);
+				$this->AuthorizationInfo->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -21308,10 +21309,11 @@ class DoVoidResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'AuthorizationID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->AuthorizationID = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='authorizationid') {
+				$this->AuthorizationID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -21344,14 +21346,14 @@ $str.='</urn:DoAuthorizationReq>';
 
 /**
  * DoAuthorizationRequestType
- * The value of the order’s transaction identification number
+ * The value of the orderâ€™s transaction identification number
  * returned by a PayPal product.
  * Required
  * Character length and limits: 19 single-byte characters maximum
  */
 class DoAuthorizationRequestType extends AbstractRequestType {
 	/**
-	 * The value of the order’s transaction identification number
+	 * The value of the orderâ€™s transaction identification number
 	 * returned by a PayPal product.
 	 * Required
 	 * Character length and limits: 19 single-byte characters maximum
@@ -21398,12 +21400,12 @@ $str.=parent::toXMLString();
 			$str .= '<urn:TransactionID>'.$this->TransactionID.'</urn:TransactionID>';
 		 }
 		if($this->TransactionEntity != null ) {
-			$str .= '<ebl:TransactionEntity>'.$this->TransactionEntity.'</ebl:TransactionEntity>';
+			$str .= '<urn:TransactionEntity>'.$this->TransactionEntity.'</urn:TransactionEntity>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<cc:Amount>';
+			$str .='<urn:Amount>';
 			$str .= $this->Amount->toXMLString();
-			$str .=  '</cc:Amount>';
+			$str .=  '</urn:Amount>';
 		 }
 
 		return $str;
@@ -21444,20 +21446,23 @@ The amount and currency you specified in the
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'TransactionID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->TransactionID = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
+				$this->TransactionID = $arry["text"];
 			}
-			if( array_key_exists("Amount", $arr) ) {
-				$newArray = "Amount";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="amount") {
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arr[$newArray]);
+				$this->Amount->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("AuthorizationInfo", $arr) ) {
-				$newArray = "AuthorizationInfo";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="authorizationinfo") {
 				$this->AuthorizationInfo = new AuthorizationInfoType();
-				$this->AuthorizationInfo->init($arr[$newArray]);
+				$this->AuthorizationInfo->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -21550,12 +21555,12 @@ $str.=parent::toXMLString();
 			$str .=  '</ebl:UATPDetails>';
 		 }
 		if($this->TransactionEntity != null ) {
-			$str .= '<ebl:TransactionEntity>'.$this->TransactionEntity.'</ebl:TransactionEntity>';
+			$str .= '<urn:TransactionEntity>'.$this->TransactionEntity.'</urn:TransactionEntity>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<cc:Amount>';
+			$str .='<urn:Amount>';
 			$str .= $this->Amount->toXMLString();
-			$str .=  '</cc:Amount>';
+			$str .=  '</urn:Amount>';
 		 }
 		if($this->InvoiceID != null ) {
 			$str .= '<urn:InvoiceID>'.$this->InvoiceID.'</urn:InvoiceID>';
@@ -21596,19 +21601,20 @@ class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("UATPDetails", $arr) ) {
-				$newArray = "UATPDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="uatpdetails") {
 				$this->UATPDetails = new UATPDetailsType();
-				$this->UATPDetails->init($arr[$newArray]);
+				$this->UATPDetails->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'AuthorizationCode';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->AuthorizationCode = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='authorizationcode') {
+				$this->AuthorizationCode = $arry["text"];
 			}
-			$arrKeyName =  'InvoiceID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->InvoiceID = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='invoiceid') {
+				$this->InvoiceID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -21675,7 +21681,9 @@ class CreateMobilePaymentResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);		}
+			parent::init($arr);			foreach ($arr as $arry){
+		}
+		}
 	}
 }
 
@@ -21758,14 +21766,14 @@ class GetMobileStatusResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'IsActivated';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->IsActivated = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='isactivated') {
+				$this->IsActivated = $arry["text"];
 			}
-			$arrKeyName =  'PaymentPending';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->PaymentPending = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='paymentpending') {
+				$this->PaymentPending = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -21847,10 +21855,11 @@ class SetMobileCheckoutResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'Token';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Token = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='token') {
+				$this->Token = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -21930,11 +21939,14 @@ class DoMobileCheckoutPaymentResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("DoMobileCheckoutPaymentResponseDetails", $arr) ) {
-				$newArray = "DoMobileCheckoutPaymentResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="domobilecheckoutpaymentresponsedetails") {
 				$this->DoMobileCheckoutPaymentResponseDetails = new DoMobileCheckoutPaymentResponseDetailsType();
-				$this->DoMobileCheckoutPaymentResponseDetails->init($arr[$newArray]);
+				$this->DoMobileCheckoutPaymentResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -22014,27 +22026,29 @@ class GetBalanceResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("Balance", $arr) ) {
-				$newArray = "Balance";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="balance") {
 				$this->Balance = new BasicAmountType();
-				$this->Balance->init($arr[$newArray]);
+				$this->Balance->init($arry["children"]);
+					}
 			}
-			$arrKeyName =  'BalanceTimeStamp';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BalanceTimeStamp = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='balancetimestamp') {
+				$this->BalanceTimeStamp = $arry["text"];
 			}
 			for($i=0; $i<10;$i++) {
-				if( array_key_exists("BalanceHoldings[$i]" ,$arr) ) {
-					$newArray = $arr["BalanceHoldings"];
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if($arry["name"]=="balanceholdings[$i]") {
 				$this->BalanceHoldings[$i] = new BasicAmountType();
-				$this->BalanceHoldings[$i]->init($newArray[$i]);
+				$this->BalanceHoldings[$i]->init($arry["children"]);
 			}
-				else if( array_key_exists("BalanceHoldings", $arr) ) {
-					$newArray = $arr["BalanceHoldings"];
+				else if($arry["name"]=="balanceholdings") {
 				$this->BalanceHoldings = new BasicAmountType();
-				$this->BalanceHoldings->init($newArray);
+				$this->BalanceHoldings->init($arry["children"]);
+					}
 			}
 			 }
+		}
 		}
 	}
 }
@@ -22108,10 +22122,11 @@ class SetCustomerBillingAgreementResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'Token';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Token = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='token') {
+				$this->Token = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -22162,7 +22177,7 @@ class GetBillingAgreementCustomerDetailsRequestType extends AbstractRequestType 
 		$str = '';
 $str.=parent::toXMLString();
 		if($this->Token != null ) {
-			$str .= '<ebl:Token>'.$this->Token.'</ebl:Token>';
+			$str .= '<urn:Token>'.$this->Token.'</urn:Token>';
 		 }
 
 		return $str;
@@ -22183,11 +22198,14 @@ class GetBillingAgreementCustomerDetailsResponseType extends AbstractResponseTyp
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("GetBillingAgreementCustomerDetailsResponseDetails", $arr) ) {
-				$newArray = "GetBillingAgreementCustomerDetailsResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="getbillingagreementcustomerdetailsresponsedetails") {
 				$this->GetBillingAgreementCustomerDetailsResponseDetails = new GetBillingAgreementCustomerDetailsResponseDetailsType();
-				$this->GetBillingAgreementCustomerDetailsResponseDetails->init($arr[$newArray]);
+				$this->GetBillingAgreementCustomerDetailsResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -22238,7 +22256,7 @@ class CreateBillingAgreementRequestType extends AbstractRequestType {
 		$str = '';
 $str.=parent::toXMLString();
 		if($this->Token != null ) {
-			$str .= '<ebl:Token>'.$this->Token.'</ebl:Token>';
+			$str .= '<urn:Token>'.$this->Token.'</urn:Token>';
 		 }
 
 		return $str;
@@ -22260,10 +22278,11 @@ class CreateBillingAgreementResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'BillingAgreementID';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->BillingAgreementID = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='billingagreementid') {
+				$this->BillingAgreementID = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -22355,16 +22374,20 @@ class DoReferenceTransactionResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("DoReferenceTransactionResponseDetails", $arr) ) {
-				$newArray = "DoReferenceTransactionResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="doreferencetransactionresponsedetails") {
 				$this->DoReferenceTransactionResponseDetails = new DoReferenceTransactionResponseDetailsType();
-				$this->DoReferenceTransactionResponseDetails->init($arr[$newArray]);
+				$this->DoReferenceTransactionResponseDetails->init($arry["children"]);
+					}
 			}
-			if( array_key_exists("FMFDetails", $arr) ) {
-				$newArray = "FMFDetails";
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="fmfdetails") {
 				$this->FMFDetails = new FMFDetailsType();
-				$this->FMFDetails->init($arr[$newArray]);
+				$this->FMFDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -22437,11 +22460,14 @@ class DoNonReferencedCreditResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("DoNonReferencedCreditResponseDetails", $arr) ) {
-				$newArray = "DoNonReferencedCreditResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="dononreferencedcreditresponsedetails") {
 				$this->DoNonReferencedCreditResponseDetails = new DoNonReferencedCreditResponseDetailsType();
-				$this->DoNonReferencedCreditResponseDetails->init($arr[$newArray]);
+				$this->DoNonReferencedCreditResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -22510,11 +22536,14 @@ class CreateRecurringPaymentsProfileResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("CreateRecurringPaymentsProfileResponseDetails", $arr) ) {
-				$newArray = "CreateRecurringPaymentsProfileResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="createrecurringpaymentsprofileresponsedetails") {
 				$this->CreateRecurringPaymentsProfileResponseDetails = new CreateRecurringPaymentsProfileResponseDetailsType();
-				$this->CreateRecurringPaymentsProfileResponseDetails->init($arr[$newArray]);
+				$this->CreateRecurringPaymentsProfileResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -22586,11 +22615,14 @@ class GetRecurringPaymentsProfileDetailsResponseType extends AbstractResponseTyp
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("GetRecurringPaymentsProfileDetailsResponseDetails", $arr) ) {
-				$newArray = "GetRecurringPaymentsProfileDetailsResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="getrecurringpaymentsprofiledetailsresponsedetails") {
 				$this->GetRecurringPaymentsProfileDetailsResponseDetails = new GetRecurringPaymentsProfileDetailsResponseDetailsType();
-				$this->GetRecurringPaymentsProfileDetailsResponseDetails->init($arr[$newArray]);
+				$this->GetRecurringPaymentsProfileDetailsResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -22659,11 +22691,14 @@ class ManageRecurringPaymentsProfileStatusResponseType extends AbstractResponseT
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("ManageRecurringPaymentsProfileStatusResponseDetails", $arr) ) {
-				$newArray = "ManageRecurringPaymentsProfileStatusResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="managerecurringpaymentsprofilestatusresponsedetails") {
 				$this->ManageRecurringPaymentsProfileStatusResponseDetails = new ManageRecurringPaymentsProfileStatusResponseDetailsType();
-				$this->ManageRecurringPaymentsProfileStatusResponseDetails->init($arr[$newArray]);
+				$this->ManageRecurringPaymentsProfileStatusResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -22732,11 +22767,14 @@ class BillOutstandingAmountResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("BillOutstandingAmountResponseDetails", $arr) ) {
-				$newArray = "BillOutstandingAmountResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="billoutstandingamountresponsedetails") {
 				$this->BillOutstandingAmountResponseDetails = new BillOutstandingAmountResponseDetailsType();
-				$this->BillOutstandingAmountResponseDetails->init($arr[$newArray]);
+				$this->BillOutstandingAmountResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -22805,11 +22843,14 @@ class UpdateRecurringPaymentsProfileResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("UpdateRecurringPaymentsProfileResponseDetails", $arr) ) {
-				$newArray = "UpdateRecurringPaymentsProfileResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="updaterecurringpaymentsprofileresponsedetails") {
 				$this->UpdateRecurringPaymentsProfileResponseDetails = new UpdateRecurringPaymentsProfileResponseDetailsType();
-				$this->UpdateRecurringPaymentsProfileResponseDetails->init($arr[$newArray]);
+				$this->UpdateRecurringPaymentsProfileResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -22873,14 +22914,14 @@ class GetPalDetailsResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			$arrKeyName =  'Pal';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Pal = $arr[$arrKeyName];
+			parent::init($arr);			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='pal') {
+				$this->Pal = $arry["text"];
 			}
-			$arrKeyName =  'Locale';
-			if($arr != null && array_key_exists($arrKeyName, $arr)) {
-				$this->Locale = $arr[$arrKeyName];
+			if($arry != null && isset($arry['text']) && $arry['name']=='locale') {
+				$this->Locale = $arry["text"];
 			}
+		}
 		}
 	}
 }
@@ -22953,11 +22994,14 @@ class ReverseTransactionResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);			if( array_key_exists("ReverseTransactionResponseDetails", $arr) ) {
-				$newArray = "ReverseTransactionResponseDetails";
+			parent::init($arr);			foreach ($arr as $arry){
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="reversetransactionresponsedetails") {
 				$this->ReverseTransactionResponseDetails = new ReverseTransactionResponseDetailsType();
-				$this->ReverseTransactionResponseDetails->init($arr[$newArray]);
+				$this->ReverseTransactionResponseDetails->init($arry["children"]);
+					}
 			}
+		}
 		}
 	}
 }
@@ -23035,9 +23079,9 @@ $str.=parent::toXMLString();
 			$str .= '<urn:ExternalRememberMeID>'.$this->ExternalRememberMeID.'</urn:ExternalRememberMeID>';
 		 }
 		if($this->ExternalRememberMeOwnerDetails != null ) {
-			$str .='<ebl:ExternalRememberMeOwnerDetails>';
+			$str .='<urn:ExternalRememberMeOwnerDetails>';
 			$str .= $this->ExternalRememberMeOwnerDetails->toXMLString();
-			$str .=  '</ebl:ExternalRememberMeOwnerDetails>';
+			$str .=  '</urn:ExternalRememberMeOwnerDetails>';
 		 }
 
 		return $str;
@@ -23052,9 +23096,10 @@ class ExternalRememberMeOptOutResponseType extends AbstractResponseType {
 
 	public function init($arr = null) {
 		if($arr != null) {
-			parent::init($arr);		}
+			parent::init($arr);			foreach ($arr as $arry){
+		}
+		}
 	}
 }
 
 ?>
-

@@ -36,7 +36,7 @@ $trans->GetTransactionDetailsRequest = $req;
 <form method="POST">
 <div class="params">
 <div class="param_name">TransactionID</div>
-<div class="param_value"><input type="text" name="TransactionID<"
+<div class="param_value"><input type="text" name="TransactionID"
 	value="67B06465K3836742U" size="50" maxlength="260" /></div>
 
 
