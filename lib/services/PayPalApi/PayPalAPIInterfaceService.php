@@ -3621,7 +3621,7 @@ class IncentiveItemType {
 			$str .= '<ebl:ItemCategoryList>'.$this->ItemCategoryList.'</ebl:ItemCategoryList>';
 		 }
 		if($this->ItemPrice != null ) {
-			$str .='<ebl:ItemPrice>';
+			$str .='<ebl:ItemPrice';
 			$str .= $this->ItemPrice->toXMLString();
 			$str .=  '</ebl:ItemPrice>';
 		 }
@@ -3713,27 +3713,27 @@ class IncentiveBucketType {
 			$str .= '<ebl:ExternalSellerId>'.$this->ExternalSellerId.'</ebl:ExternalSellerId>';
 		 }
 		if($this->BucketSubtotalAmt != null ) {
-			$str .='<ebl:BucketSubtotalAmt>';
+			$str .='<ebl:BucketSubtotalAmt';
 			$str .= $this->BucketSubtotalAmt->toXMLString();
 			$str .=  '</ebl:BucketSubtotalAmt>';
 		 }
 		if($this->BucketShippingAmt != null ) {
-			$str .='<ebl:BucketShippingAmt>';
+			$str .='<ebl:BucketShippingAmt';
 			$str .= $this->BucketShippingAmt->toXMLString();
 			$str .=  '</ebl:BucketShippingAmt>';
 		 }
 		if($this->BucketInsuranceAmt != null ) {
-			$str .='<ebl:BucketInsuranceAmt>';
+			$str .='<ebl:BucketInsuranceAmt';
 			$str .= $this->BucketInsuranceAmt->toXMLString();
 			$str .=  '</ebl:BucketInsuranceAmt>';
 		 }
 		if($this->BucketSalesTaxAmt != null ) {
-			$str .='<ebl:BucketSalesTaxAmt>';
+			$str .='<ebl:BucketSalesTaxAmt';
 			$str .= $this->BucketSalesTaxAmt->toXMLString();
 			$str .=  '</ebl:BucketSalesTaxAmt>';
 		 }
 		if($this->BucketTotalAmt != null ) {
-			$str .='<ebl:BucketTotalAmt>';
+			$str .='<ebl:BucketTotalAmt';
 			$str .= $this->BucketTotalAmt->toXMLString();
 			$str .=  '</ebl:BucketTotalAmt>';
 		 }
@@ -3852,7 +3852,7 @@ class GetIncentiveEvaluationRequestDetailsType {
 		 }
 		 }
 		if($this->CartTotalAmt != null ) {
-			$str .='<ebl:CartTotalAmt>';
+			$str .='<ebl:CartTotalAmt';
 			$str .= $this->CartTotalAmt->toXMLString();
 			$str .=  '</ebl:CartTotalAmt>';
 		 }
@@ -4643,7 +4643,7 @@ class SetExpressCheckoutRequestDetailsType {
 	public function toXMLString()  {
 		$str = '';
 		if($this->OrderTotal != null ) {
-			$str .='<ebl:OrderTotal>';
+			$str .='<ebl:OrderTotal';
 			$str .= $this->OrderTotal->toXMLString();
 			$str .=  '</ebl:OrderTotal>';
 		 }
@@ -4669,7 +4669,7 @@ class SetExpressCheckoutRequestDetailsType {
 			$str .= '<ebl:Token>'.$this->Token.'</ebl:Token>';
 		 }
 		if($this->MaxAmount != null ) {
-			$str .='<ebl:MaxAmount>';
+			$str .='<ebl:MaxAmount';
 			$str .= $this->MaxAmount->toXMLString();
 			$str .=  '</ebl:MaxAmount>';
 		 }
@@ -4834,7 +4834,7 @@ class SetExpressCheckoutRequestDetailsType {
 			$str .= '<ebl:GiftWrapName>'.$this->GiftWrapName.'</ebl:GiftWrapName>';
 		 }
 		if($this->GiftWrapAmount != null ) {
-			$str .='<ebl:GiftWrapAmount>';
+			$str .='<ebl:GiftWrapAmount';
 			$str .= $this->GiftWrapAmount->toXMLString();
 			$str .=  '</ebl:GiftWrapAmount>';
 		 }
@@ -5182,7 +5182,7 @@ Expected maximum amount that the merchant may pull
 			$str .= '<ebl:Description>'.$this->Description.'</ebl:Description>';
 		 }
 		if($this->MaxAmount != null ) {
-			$str .='<ebl:MaxAmount>';
+			$str .='<ebl:MaxAmount';
 			$str .= $this->MaxAmount->toXMLString();
 			$str .=  '</ebl:MaxAmount>';
 		 }
@@ -6180,7 +6180,7 @@ class DoExpressCheckoutPaymentRequestDetailsType {
 			$str .= '<ebl:GiftWrapName>'.$this->GiftWrapName.'</ebl:GiftWrapName>';
 		 }
 		if($this->GiftWrapAmount != null ) {
-			$str .='<ebl:GiftWrapAmount>';
+			$str .='<ebl:GiftWrapAmount';
 			$str .= $this->GiftWrapAmount->toXMLString();
 			$str .=  '</ebl:GiftWrapAmount>';
 		 }
@@ -6653,17 +6653,17 @@ class CreateMobilePaymentRequestDetailsType {
 			$str .=  '</ebl:RecipientPhone>';
 		 }
 		if($this->ItemAmount != null ) {
-			$str .='<ebl:ItemAmount>';
+			$str .='<ebl:ItemAmount';
 			$str .= $this->ItemAmount->toXMLString();
 			$str .=  '</ebl:ItemAmount>';
 		 }
 		if($this->Tax != null ) {
-			$str .='<ebl:Tax>';
+			$str .='<ebl:Tax';
 			$str .= $this->Tax->toXMLString();
 			$str .=  '</ebl:Tax>';
 		 }
 		if($this->Shipping != null ) {
-			$str .='<ebl:Shipping>';
+			$str .='<ebl:Shipping';
 			$str .= $this->Shipping->toXMLString();
 			$str .=  '</ebl:Shipping>';
 		 }
@@ -8021,7 +8021,7 @@ class MerchantPullPaymentType {
 	public function toXMLString()  {
 		$str = '';
 		if($this->Amount != null ) {
-			$str .='<ebl:Amount>';
+			$str .='<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .=  '</ebl:Amount>';
 		 }
@@ -8038,17 +8038,17 @@ class MerchantPullPaymentType {
 			$str .= '<ebl:EmailSubject>'.$this->EmailSubject.'</ebl:EmailSubject>';
 		 }
 		if($this->Tax != null ) {
-			$str .='<ebl:Tax>';
+			$str .='<ebl:Tax';
 			$str .= $this->Tax->toXMLString();
 			$str .=  '</ebl:Tax>';
 		 }
 		if($this->Shipping != null ) {
-			$str .='<ebl:Shipping>';
+			$str .='<ebl:Shipping';
 			$str .= $this->Shipping->toXMLString();
 			$str .=  '</ebl:Shipping>';
 		 }
 		if($this->Handling != null ) {
-			$str .='<ebl:Handling>';
+			$str .='<ebl:Handling';
 			$str .= $this->Handling->toXMLString();
 			$str .=  '</ebl:Handling>';
 		 }
@@ -9636,12 +9636,12 @@ class PaymentDetailsItemType {
 			$str .= '<ebl:Quantity>'.$this->Quantity.'</ebl:Quantity>';
 		 }
 		if($this->Tax != null ) {
-			$str .='<ebl:Tax>';
+			$str .='<ebl:Tax';
 			$str .= $this->Tax->toXMLString();
 			$str .=  '</ebl:Tax>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<ebl:Amount>';
+			$str .='<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .=  '</ebl:Amount>';
 		 }
@@ -9660,22 +9660,22 @@ class PaymentDetailsItemType {
 			$str .= '<ebl:Description>'.$this->Description.'</ebl:Description>';
 		 }
 		if($this->ItemWeight != null ) {
-			$str .='<ebl:ItemWeight>';
+			$str .='<ebl:ItemWeight';
 			$str .= $this->ItemWeight->toXMLString();
 			$str .=  '</ebl:ItemWeight>';
 		 }
 		if($this->ItemLength != null ) {
-			$str .='<ebl:ItemLength>';
+			$str .='<ebl:ItemLength';
 			$str .= $this->ItemLength->toXMLString();
 			$str .=  '</ebl:ItemLength>';
 		 }
 		if($this->ItemWidth != null ) {
-			$str .='<ebl:ItemWidth>';
+			$str .='<ebl:ItemWidth';
 			$str .= $this->ItemWidth->toXMLString();
 			$str .=  '</ebl:ItemWidth>';
 		 }
 		if($this->ItemHeight != null ) {
-			$str .='<ebl:ItemHeight>';
+			$str .='<ebl:ItemHeight';
 			$str .= $this->ItemHeight->toXMLString();
 			$str .=  '</ebl:ItemHeight>';
 		 }
@@ -10402,27 +10402,27 @@ class PaymentDetailsType {
 	public function toXMLString()  {
 		$str = '';
 		if($this->OrderTotal != null ) {
-			$str .='<ebl:OrderTotal>';
+			$str .='<ebl:OrderTotal';
 			$str .= $this->OrderTotal->toXMLString();
 			$str .=  '</ebl:OrderTotal>';
 		 }
 		if($this->ItemTotal != null ) {
-			$str .='<ebl:ItemTotal>';
+			$str .='<ebl:ItemTotal';
 			$str .= $this->ItemTotal->toXMLString();
 			$str .=  '</ebl:ItemTotal>';
 		 }
 		if($this->ShippingTotal != null ) {
-			$str .='<ebl:ShippingTotal>';
+			$str .='<ebl:ShippingTotal';
 			$str .= $this->ShippingTotal->toXMLString();
 			$str .=  '</ebl:ShippingTotal>';
 		 }
 		if($this->HandlingTotal != null ) {
-			$str .='<ebl:HandlingTotal>';
+			$str .='<ebl:HandlingTotal';
 			$str .= $this->HandlingTotal->toXMLString();
 			$str .=  '</ebl:HandlingTotal>';
 		 }
 		if($this->TaxTotal != null ) {
-			$str .='<ebl:TaxTotal>';
+			$str .='<ebl:TaxTotal';
 			$str .= $this->TaxTotal->toXMLString();
 			$str .=  '</ebl:TaxTotal>';
 		 }
@@ -10460,12 +10460,12 @@ class PaymentDetailsType {
 		 }
 		 }
 		if($this->InsuranceTotal != null ) {
-			$str .='<ebl:InsuranceTotal>';
+			$str .='<ebl:InsuranceTotal';
 			$str .= $this->InsuranceTotal->toXMLString();
 			$str .=  '</ebl:InsuranceTotal>';
 		 }
 		if($this->ShippingDiscount != null ) {
-			$str .='<ebl:ShippingDiscount>';
+			$str .='<ebl:ShippingDiscount';
 			$str .= $this->ShippingDiscount->toXMLString();
 			$str .=  '</ebl:ShippingDiscount>';
 		 }
@@ -11357,7 +11357,7 @@ class ShippingOptionType {
 			$str .= '<ebl:ShippingOptionIsDefault>'.$this->ShippingOptionIsDefault.'</ebl:ShippingOptionIsDefault>';
 		 }
 		if($this->ShippingOptionAmount != null ) {
-			$str .='<ebl:ShippingOptionAmount>';
+			$str .='<ebl:ShippingOptionAmount';
 			$str .= $this->ShippingOptionAmount->toXMLString();
 			$str .=  '</ebl:ShippingOptionAmount>';
 		 }
@@ -11443,7 +11443,7 @@ class UserSelectedOptionType {
 			$str .= '<ebl:ShippingOptionIsDefault>'.$this->ShippingOptionIsDefault.'</ebl:ShippingOptionIsDefault>';
 		 }
 		if($this->ShippingOptionAmount != null ) {
-			$str .='<ebl:ShippingOptionAmount>';
+			$str .='<ebl:ShippingOptionAmount';
 			$str .= $this->ShippingOptionAmount->toXMLString();
 			$str .=  '</ebl:ShippingOptionAmount>';
 		 }
@@ -12117,22 +12117,22 @@ class DoNonReferencedCreditRequestDetailsType {
 	public function toXMLString()  {
 		$str = '';
 		if($this->Amount != null ) {
-			$str .='<ebl:Amount>';
+			$str .='<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .=  '</ebl:Amount>';
 		 }
 		if($this->NetAmount != null ) {
-			$str .='<ebl:NetAmount>';
+			$str .='<ebl:NetAmount';
 			$str .= $this->NetAmount->toXMLString();
 			$str .=  '</ebl:NetAmount>';
 		 }
 		if($this->TaxAmount != null ) {
-			$str .='<ebl:TaxAmount>';
+			$str .='<ebl:TaxAmount';
 			$str .= $this->TaxAmount->toXMLString();
 			$str .=  '</ebl:TaxAmount>';
 		 }
 		if($this->ShippingAmount != null ) {
-			$str .='<ebl:ShippingAmount>';
+			$str .='<ebl:ShippingAmount';
 			$str .= $this->ShippingAmount->toXMLString();
 			$str .=  '</ebl:ShippingAmount>';
 		 }
@@ -12257,7 +12257,7 @@ class EnterBoardingRequestDetailsType {
 	public $MarketingCategory;
 
 	/**
-	 * Information about the merchantâ€™s business	 *
+	 * Information about the merchant’s business	 *
 	 * @access public
 	 * @var BusinessInfoType
 	 */
@@ -12339,14 +12339,14 @@ class BusinessInfoType {
 	public $Name;
 
 	/**
-	 * Merchantâ€™s business postal address	 *
+	 * Merchant’s business postal address	 *
 	 * @access public
 	 * @var AddressType
 	 */
 	public $Address;
 
 	/**
-	 * Businessâ€™s primary telephone number
+	 * Business’s primary telephone number
 	 * Character length and limitations: 20 alphanumeric characters
 	 *
 	 * @access public
@@ -12459,14 +12459,14 @@ class BusinessInfoType {
 	public $RevenueFromOnlineSales;
 
 	/**
-	 * Date the merchantâ€™s business was established	 *
+	 * Date the merchant’s business was established	 *
 	 * @access public
 	 * @var dateTime
 	 */
 	public $BusinessEstablished;
 
 	/**
-	 * Email address to contact businessâ€™s customer service
+	 * Email address to contact business’s customer service
 	 * Character length and limitations: 127 alphanumeric characters
 	 *
 	 * @access public
@@ -12475,7 +12475,7 @@ class BusinessInfoType {
 	public $CustomerServiceEmail;
 
 	/**
-	 * Telephone number to contact businessâ€™s customer service
+	 * Telephone number to contact business’s customer service
 	 * Character length and limitations: 32 alphanumeric characters
 	 *
 	 * @access public
@@ -12549,7 +12549,7 @@ class BusinessOwnerInfoType {
 	public $Owner;
 
 	/**
-	 * Business ownerâ€™s home telephone number
+	 * Business owner’s home telephone number
 	 * Character length and limitations: 32 alphanumeric characters
 	 *
 	 * @access public
@@ -12558,7 +12558,7 @@ class BusinessOwnerInfoType {
 	public $HomePhone;
 
 	/**
-	 * Business ownerâ€™s mobile telephone number
+	 * Business owner’s mobile telephone number
 	 * Character length and limitations: 32 alphanumeric characters
 	 *
 	 * @access public
@@ -12567,7 +12567,7 @@ class BusinessOwnerInfoType {
 	public $MobilePhone;
 
 	/**
-	 * Business ownerâ€™s social security number
+	 * Business owner’s social security number
 	 * Character length and limitations: 9 alphanumeric characters
 	 *
 	 * @access public
@@ -12620,7 +12620,7 @@ class BankAccountDetailsType {
 	public $Type;
 
 	/**
-	 * Merchantâ€™s bank routing number
+	 * Merchant’s bank routing number
 	 * Character length and limitations: 23 alphanumeric characters
 	 *
 	 * @access public
@@ -12629,7 +12629,7 @@ class BankAccountDetailsType {
 	public $RoutingNumber;
 
 	/**
-	 * Merchantâ€™s bank account number
+	 * Merchant’s bank account number
 	 * Character length and limitations: 256 alphanumeric characters
 	 *
 	 * @access public
@@ -12687,7 +12687,7 @@ class GetBoardingDetailsResponseDetailsType {
 	public $StartDate;
 
 	/**
-	 * Date the merchantâ€™s status or progress was last updated
+	 * Date the merchant’s status or progress was last updated
 	 *
 	 * @access public
 	 * @var dateTime
@@ -12695,7 +12695,7 @@ class GetBoardingDetailsResponseDetailsType {
 	public $LastUpdated;
 
 	/**
-	 * Reason for merchantâ€™s cancellation of sign-up.
+	 * Reason for merchant’s cancellation of sign-up.
 	 * Character length and limitations: 1,024 alphanumeric characters
 	 *
 	 * @access public
@@ -12746,7 +12746,7 @@ class GetBoardingDetailsResponseDetailsType {
 	public $AccountOwner;
 
 	/**
-	 * Merchantâ€™s PayPal API credentials	 *
+	 * Merchant’s PayPal API credentials	 *
 	 * @access public
 	 * @var APICredentialsType
 	 */
@@ -12855,7 +12855,7 @@ class GetBoardingDetailsResponseDetailsType {
  */
 class APICredentialsType {
 	/**
-	 * Merchantâ€™s PayPal API username
+	 * Merchant’s PayPal API username
 	 * Character length and limitations: 128 alphanumeric characters
 	 *
 	 * @access public
@@ -12864,7 +12864,7 @@ class APICredentialsType {
 	public $Username;
 
 	/**
-	 * Merchantâ€™s PayPal API password
+	 * Merchant’s PayPal API password
 	 * Character length and limitations: 40 alphanumeric characters
 	 *
 	 * @access public
@@ -12873,7 +12873,7 @@ class APICredentialsType {
 	public $Password;
 
 	/**
-	 * Merchantâ€™s PayPal API signature, if one exists.
+	 * Merchant’s PayPal API signature, if one exists.
 	 * Character length and limitations: 256 alphanumeric characters
 	 *
 	 * @access public
@@ -12882,7 +12882,7 @@ class APICredentialsType {
 	public $Signature;
 
 	/**
-	 * Merchantâ€™s PayPal API certificate in PEM format, if one exists
+	 * Merchant’s PayPal API certificate in PEM format, if one exists
 	 * The certificate consists of two parts: the private key (2,048
 	 * bytes) and the certificate proper (4,000 bytes).
 	 * Character length and limitations: 6,048 alphanumeric characters
@@ -12893,7 +12893,7 @@ class APICredentialsType {
 	public $Certificate;
 
 	/**
-	 * Merchantâ€™s PayPal API authentication mechanism.
+	 * Merchant’s PayPal API authentication mechanism.
 	 * Auth-None: no authentication mechanism on file
 	 * Cert: API certificate
 	 * Sign: API signature
@@ -13107,17 +13107,17 @@ class SetMobileCheckoutRequestDetailsType {
 			$str .=  '</ebl:BuyerPhone>';
 		 }
 		if($this->ItemAmount != null ) {
-			$str .='<ebl:ItemAmount>';
+			$str .='<ebl:ItemAmount';
 			$str .= $this->ItemAmount->toXMLString();
 			$str .=  '</ebl:ItemAmount>';
 		 }
 		if($this->Tax != null ) {
-			$str .='<ebl:Tax>';
+			$str .='<ebl:Tax';
 			$str .= $this->Tax->toXMLString();
 			$str .=  '</ebl:Tax>';
 		 }
 		if($this->Shipping != null ) {
-			$str .='<ebl:Shipping>';
+			$str .='<ebl:Shipping';
 			$str .= $this->Shipping->toXMLString();
 			$str .=  '</ebl:Shipping>';
 		 }
@@ -13549,7 +13549,7 @@ class ActivationDetailsType {
 	public function toXMLString()  {
 		$str = '';
 		if($this->InitialAmount != null ) {
-			$str .='<ebl:InitialAmount>';
+			$str .='<ebl:InitialAmount';
 			$str .= $this->InitialAmount->toXMLString();
 			$str .=  '</ebl:InitialAmount>';
 		 }
@@ -13668,17 +13668,17 @@ class BillingPeriodDetailsType {
 			$str .= '<ebl:TotalBillingCycles>'.$this->TotalBillingCycles.'</ebl:TotalBillingCycles>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<ebl:Amount>';
+			$str .='<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .=  '</ebl:Amount>';
 		 }
 		if($this->ShippingAmount != null ) {
-			$str .='<ebl:ShippingAmount>';
+			$str .='<ebl:ShippingAmount';
 			$str .= $this->ShippingAmount->toXMLString();
 			$str .=  '</ebl:ShippingAmount>';
 		 }
 		if($this->TaxAmount != null ) {
-			$str .='<ebl:TaxAmount>';
+			$str .='<ebl:TaxAmount';
 			$str .= $this->TaxAmount->toXMLString();
 			$str .=  '</ebl:TaxAmount>';
 		 }
@@ -13754,17 +13754,17 @@ class BillingPeriodDetailsType_Update {
 			$str .= '<ebl:TotalBillingCycles>'.$this->TotalBillingCycles.'</ebl:TotalBillingCycles>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<ebl:Amount>';
+			$str .='<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .=  '</ebl:Amount>';
 		 }
 		if($this->ShippingAmount != null ) {
-			$str .='<ebl:ShippingAmount>';
+			$str .='<ebl:ShippingAmount';
 			$str .= $this->ShippingAmount->toXMLString();
 			$str .=  '</ebl:ShippingAmount>';
 		 }
 		if($this->TaxAmount != null ) {
-			$str .='<ebl:TaxAmount>';
+			$str .='<ebl:TaxAmount';
 			$str .= $this->TaxAmount->toXMLString();
 			$str .=  '</ebl:TaxAmount>';
 		 }
@@ -14419,7 +14419,7 @@ class BillOutstandingAmountRequestDetailsType {
 			$str .= '<ebl:ProfileID>'.$this->ProfileID.'</ebl:ProfileID>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<ebl:Amount>';
+			$str .='<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .=  '</ebl:Amount>';
 		 }
@@ -14613,22 +14613,22 @@ class UpdateRecurringPaymentsProfileRequestDetailsType {
 			$str .= '<ebl:AdditionalBillingCycles>'.$this->AdditionalBillingCycles.'</ebl:AdditionalBillingCycles>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<ebl:Amount>';
+			$str .='<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .=  '</ebl:Amount>';
 		 }
 		if($this->ShippingAmount != null ) {
-			$str .='<ebl:ShippingAmount>';
+			$str .='<ebl:ShippingAmount';
 			$str .= $this->ShippingAmount->toXMLString();
 			$str .=  '</ebl:ShippingAmount>';
 		 }
 		if($this->TaxAmount != null ) {
-			$str .='<ebl:TaxAmount>';
+			$str .='<ebl:TaxAmount';
 			$str .= $this->TaxAmount->toXMLString();
 			$str .=  '</ebl:TaxAmount>';
 		 }
 		if($this->OutstandingBalance != null ) {
-			$str .='<ebl:OutstandingBalance>';
+			$str .='<ebl:OutstandingBalance';
 			$str .= $this->OutstandingBalance->toXMLString();
 			$str .=  '</ebl:OutstandingBalance>';
 		 }
@@ -14962,17 +14962,17 @@ class AirlineItineraryType {
 			$str .= '<ebl:CustomerCode>'.$this->CustomerCode.'</ebl:CustomerCode>';
 		 }
 		if($this->TotalFare != null ) {
-			$str .='<ebl:TotalFare>';
+			$str .='<ebl:TotalFare';
 			$str .= $this->TotalFare->toXMLString();
 			$str .=  '</ebl:TotalFare>';
 		 }
 		if($this->TotalTaxes != null ) {
-			$str .='<ebl:TotalTaxes>';
+			$str .='<ebl:TotalTaxes';
 			$str .= $this->TotalTaxes->toXMLString();
 			$str .=  '</ebl:TotalTaxes>';
 		 }
 		if($this->TotalFee != null ) {
-			$str .='<ebl:TotalFee>';
+			$str .='<ebl:TotalFee';
 			$str .= $this->TotalFee->toXMLString();
 			$str .=  '</ebl:TotalFee>';
 		 }
@@ -15148,17 +15148,17 @@ class FlightDetailsType {
 			$str .= '<ebl:FareBasisCode>'.$this->FareBasisCode.'</ebl:FareBasisCode>';
 		 }
 		if($this->Fare != null ) {
-			$str .='<ebl:Fare>';
+			$str .='<ebl:Fare';
 			$str .= $this->Fare->toXMLString();
 			$str .=  '</ebl:Fare>';
 		 }
 		if($this->Taxes != null ) {
-			$str .='<ebl:Taxes>';
+			$str .='<ebl:Taxes';
 			$str .= $this->Taxes->toXMLString();
 			$str .=  '</ebl:Taxes>';
 		 }
 		if($this->Fee != null ) {
-			$str .='<ebl:Fee>';
+			$str .='<ebl:Fee';
 			$str .= $this->Fee->toXMLString();
 			$str .=  '</ebl:Fee>';
 		 }
@@ -16156,11 +16156,11 @@ class BasicAmountType {
 	public function toXMLString()  {
 		$str = '';
 		if($this->currencyID != null ) {
-			$str .= '<cc:currencyID>'.$this->currencyID.'</cc:currencyID>';
+			$str .='currencyID='. $this->currencyID.'>';
 		 }
-		/*if($this->value != null ) {
-value
-		 }*/
+		if($this->value != null ) {
+			$str .='value';
+		 }
 
 		return $str;
 	}
@@ -16207,9 +16207,9 @@ class MeasureType {
 		if($this->unit != null ) {
 			$str .= '<cc:unit>'.$this->unit.'</cc:unit>';
 		 }
-		/*if($this->value != null ) {
-value
-		 }*/
+		if($this->value != null ) {
+			$str .='value';
+		 }
 
 		return $str;
 	}
@@ -18005,7 +18005,7 @@ $str.=parent::toXMLString();
 			$str .= '<urn:RefundType>'.$this->RefundType.'</urn:RefundType>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<urn:Amount>';
+			$str .='<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .=  '</urn:Amount>';
 		 }
@@ -18804,7 +18804,7 @@ $str.=parent::toXMLString();
 			$str .= '<urn:TransactionClass>'.$this->TransactionClass.'</urn:TransactionClass>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<urn:Amount>';
+			$str .='<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .=  '</urn:Amount>';
 		 }
@@ -19081,7 +19081,7 @@ class MassPayRequestItemType {
 			$str .= '<urn:ReceiverID>'.$this->ReceiverID.'</urn:ReceiverID>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<urn:Amount>';
+			$str .='<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .=  '</urn:Amount>';
 		 }
@@ -19252,14 +19252,14 @@ class AddressVerifyRequestType extends AbstractRequestType {
 	public $Email;
 
 	/**
-	 * First line of buyerâ€™s billing or shipping street address to be
+	 * First line of buyer’s billing or shipping street address to be
 	 * verified.
 	 * Required
 	 * For verification, input value of street address must match the
 	 * first three single-byte characters of the street address on
 	 * file for the PayPal account.
 	 * Maximum string length: 35 single-byte characters Alphanumeric
-	 * plus - , . â€˜ # \ Whitespace and case of input value are
+	 * plus - , . ‘ # \ Whitespace and case of input value are
 	 * ignored.
 	 *
 	 * @access public
@@ -19374,7 +19374,7 @@ Two-character country code (ISO 3166) on file
 	 * The token prevents a buyer from using any street address other
 	 * than the address on file at PayPal during additional purchases
 	 * he might make from the merchant. It contains encrypted
-	 * information about the userâ€™s street address and email address.
+	 * information about the user’s street address and email address.
 	 * You can pass the value of the token with the Buy Now button
 	 * HTML address_api_token variable so that PayPal prevents the
 	 * buyer from using any street address or email address other
@@ -20716,19 +20716,19 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 	 * Address
 	 * Address only (no ZIP) 
 	 * B 
-	 * International â€œAâ€�
+	 * International “A”
 	 * Address only (no ZIP)
 	 * C
-	 * International â€œNâ€�
+	 * International “N”
 	 * None 
 	 * D
-	 * International â€œXâ€� 
+	 * International “X” 
 	 * Address and Postal Code
 	 * E 
 	 * Not allowed for MOTO (Internet/Phone) transactions 
 	 * Not applicable
 	 * F 
-	 * UK-specific â€œXâ€�
+	 * UK-specific “X”
 	 * Address and Postal Code 
 	 * G 
 	 * Global Unavailable
@@ -20740,7 +20740,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 	 * No
 	 * None
 	 * P
-	 * Postal (International â€œZâ€�)
+	 * Postal (International “Z”)
 	 * Postal Code only (no Address) 
 	 * R
 	 * Retry
@@ -21030,7 +21030,7 @@ $str.=parent::toXMLString();
 			$str .= '<urn:AuthorizationID>'.$this->AuthorizationID.'</urn:AuthorizationID>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<urn:Amount>';
+			$str .='<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .=  '</urn:Amount>';
 		 }
@@ -21158,7 +21158,7 @@ $str.=parent::toXMLString();
 			$str .= '<urn:AuthorizationID>'.$this->AuthorizationID.'</urn:AuthorizationID>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<urn:Amount>';
+			$str .='<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .=  '</urn:Amount>';
 		 }
@@ -21346,14 +21346,14 @@ $str.='</urn:DoAuthorizationReq>';
 
 /**
  * DoAuthorizationRequestType
- * The value of the orderâ€™s transaction identification number
+ * The value of the order’s transaction identification number
  * returned by a PayPal product.
  * Required
  * Character length and limits: 19 single-byte characters maximum
  */
 class DoAuthorizationRequestType extends AbstractRequestType {
 	/**
-	 * The value of the orderâ€™s transaction identification number
+	 * The value of the order’s transaction identification number
 	 * returned by a PayPal product.
 	 * Required
 	 * Character length and limits: 19 single-byte characters maximum
@@ -21403,7 +21403,7 @@ $str.=parent::toXMLString();
 			$str .= '<urn:TransactionEntity>'.$this->TransactionEntity.'</urn:TransactionEntity>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<urn:Amount>';
+			$str .='<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .=  '</urn:Amount>';
 		 }
@@ -21558,7 +21558,7 @@ $str.=parent::toXMLString();
 			$str .= '<urn:TransactionEntity>'.$this->TransactionEntity.'</urn:TransactionEntity>';
 		 }
 		if($this->Amount != null ) {
-			$str .='<urn:Amount>';
+			$str .='<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .=  '</urn:Amount>';
 		 }
@@ -23103,3 +23103,4 @@ class ExternalRememberMeOptOutResponseType extends AbstractResponseType {
 }
 
 ?>
+
