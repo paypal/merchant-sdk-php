@@ -30,7 +30,7 @@ class PPHttpConnection
 	/**
 	 * HTTP status codes for which a retry must be attempted
 	 */
-	private static $retryCodes = array('401', '403', '404', '500');
+	private static $retryCodes = array('401', '403', '404', );
 	
 	private $logger;	
 	
@@ -175,10 +175,10 @@ class PPHttpConnection
 
 		curl_close($ch);
 		
-		/*if(in_array($httpStatus, self::$retryCodes))
+		if(in_array($httpStatus, self::$retryCodes))
 			{
 				throw new PPConnectionException($url ,"Retried ".$retries." times, Http Response code ".$httpStatus);
-			}*/
+			}
 		return $result;
 	}
 
