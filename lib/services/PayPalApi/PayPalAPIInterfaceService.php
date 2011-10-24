@@ -3462,10 +3462,18 @@ class IncentiveAppliedToType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='itemid') {
 				$this->ItemId = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="incentiveamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->IncentiveAmount = new BasicAmountType();
-				$this->IncentiveAmount->init($arry["children"]);
+				$this->IncentiveAmount->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='subtype') {
@@ -5711,10 +5719,18 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='checkoutstatus') {
 				$this->CheckoutStatus = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="paypaladjustment") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->PayPalAdjustment = new BasicAmountType();
-				$this->PayPalAdjustment->init($arry["children"]);
+				$this->PayPalAdjustment->init($atr);
 					}
 			}
 			for($i=0; $i<10;$i++) {
@@ -5756,10 +5772,18 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='giftwrapname') {
 				$this->GiftWrapName = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="giftwrapamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->GiftWrapAmount = new BasicAmountType();
-				$this->GiftWrapAmount->init($arry["children"]);
+				$this->GiftWrapAmount->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='buyermarketingemail') {
@@ -7509,10 +7533,18 @@ class BAUpdateResponseDetailsType {
 				$this->PayerInfo->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="billingagreementmax") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->BillingAgreementMax = new BasicAmountType();
-				$this->BillingAgreementMax->init($arry["children"]);
+				$this->BillingAgreementMax->init($atr);
 					}
 			}
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
@@ -7650,10 +7682,18 @@ Note: This field is no longer used and is always
 			foreach ($arr as $arry){
 			if($arry != null && isset($arry['text']) && $arry['name']=='mpstatus') {
 				$this->MpStatus = $arry["text"];			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="mpmax") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->MpMax = new BasicAmountType();
-				$this->MpMax->init($arry["children"]);
+				$this->MpMax->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='mpcustom') {
@@ -7780,22 +7820,46 @@ The net amount of the transaction 	 *
 			if($arry != null && isset($arry['text']) && $arry['name']=='status') {
 				$this->Status = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="grossamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->GrossAmount = new BasicAmountType();
-				$this->GrossAmount->init($arry["children"]);
+				$this->GrossAmount->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="feeamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->FeeAmount = new BasicAmountType();
-				$this->FeeAmount->init($arry["children"]);
+				$this->FeeAmount->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="netamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->NetAmount = new BasicAmountType();
-				$this->NetAmount->init($arry["children"]);
+				$this->NetAmount->init($atr);
 					}
 			}
 		}
@@ -8213,10 +8277,18 @@ Information about an individual item in the
 			if($arry != null && isset($arry['text']) && $arry['name']=='giftwrapname') {
 				$this->GiftWrapName = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="giftwrapamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->GiftWrapAmount = new BasicAmountType();
-				$this->GiftWrapAmount->init($arry["children"]);
+				$this->GiftWrapAmount->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='buyeremailoptin') {
@@ -8991,28 +9063,60 @@ Amount deposited into the account's primary
 			if($arry != null && isset($arry['text']) && $arry['name']=='paymentdate') {
 				$this->PaymentDate = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="grossamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->GrossAmount = new BasicAmountType();
-				$this->GrossAmount->init($arry["children"]);
+				$this->GrossAmount->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="feeamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->FeeAmount = new BasicAmountType();
-				$this->FeeAmount->init($arry["children"]);
+				$this->FeeAmount->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="settleamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->SettleAmount = new BasicAmountType();
-				$this->SettleAmount->init($arry["children"]);
+				$this->SettleAmount->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="taxamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->TaxAmount = new BasicAmountType();
-				$this->TaxAmount->init($arry["children"]);
+				$this->TaxAmount->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='exchangerate') {
@@ -9111,10 +9215,18 @@ class SubscriptionTermsType {
 	public function init($arr = null) {
 		if($arr != null) {
 			foreach ($arr as $arry){
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="amount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arry["children"]);
+				$this->Amount->init($atr);
 					}
 			}
 		}
@@ -9542,16 +9654,32 @@ class PaymentDetailsItemType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='quantity') {
 				$this->Quantity = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="tax") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->Tax = new BasicAmountType();
-				$this->Tax->init($arry["children"]);
+				$this->Tax->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="amount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arry["children"]);
+				$this->Amount->init($atr);
 					}
 			}
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
@@ -9568,28 +9696,60 @@ class PaymentDetailsItemType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='description') {
 				$this->Description = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="itemweight") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->ItemWeight = new MeasureType();
-				$this->ItemWeight->init($arry["children"]);
+				$this->ItemWeight->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="itemlength") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->ItemLength = new MeasureType();
-				$this->ItemLength->init($arry["children"]);
+				$this->ItemLength->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="itemwidth") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->ItemWidth = new MeasureType();
-				$this->ItemWidth->init($arry["children"]);
+				$this->ItemWidth->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="itemheight") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->ItemHeight = new MeasureType();
-				$this->ItemHeight->init($arry["children"]);
+				$this->ItemHeight->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='itemurl') {
@@ -9785,10 +9945,18 @@ class PaymentItemType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='handlingamount') {
 				$this->HandlingAmount = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="amount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arry["children"]);
+				$this->Amount->init($atr);
 					}
 			}
 			for($i=0; $i<10;$i++) {
@@ -10249,34 +10417,74 @@ class PaymentDetailsType {
 	public function init($arr = null) {
 		if($arr != null) {
 			foreach ($arr as $arry){
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="ordertotal") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->OrderTotal = new BasicAmountType();
-				$this->OrderTotal->init($arry["children"]);
+				$this->OrderTotal->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="itemtotal") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->ItemTotal = new BasicAmountType();
-				$this->ItemTotal->init($arry["children"]);
+				$this->ItemTotal->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="shippingtotal") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->ShippingTotal = new BasicAmountType();
-				$this->ShippingTotal->init($arry["children"]);
+				$this->ShippingTotal->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="handlingtotal") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->HandlingTotal = new BasicAmountType();
-				$this->HandlingTotal->init($arry["children"]);
+				$this->HandlingTotal->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="taxtotal") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->TaxTotal = new BasicAmountType();
-				$this->TaxTotal->init($arry["children"]);
+				$this->TaxTotal->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='orderdescription') {
@@ -10317,16 +10525,32 @@ class PaymentDetailsType {
 					}
 			}
 			 }
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="insurancetotal") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->InsuranceTotal = new BasicAmountType();
-				$this->InsuranceTotal->init($arry["children"]);
+				$this->InsuranceTotal->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="shippingdiscount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->ShippingDiscount = new BasicAmountType();
-				$this->ShippingDiscount->init($arry["children"]);
+				$this->ShippingDiscount->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='insuranceoptionoffered') {
@@ -10567,10 +10791,18 @@ class IncentiveDetailsType {
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='siteappliedon') {
 				$this->SiteAppliedOn = $arry["text"];			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="totaldiscountamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->TotalDiscountAmount = new BasicAmountType();
-				$this->TotalDiscountAmount->init($arry["children"]);
+				$this->TotalDiscountAmount->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='status') {
@@ -10654,10 +10886,18 @@ class IncentiveAppliedDetailsType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='externaltxnid') {
 				$this->ExternalTxnId = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="discountamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->DiscountAmount = new BasicAmountType();
-				$this->DiscountAmount->init($arry["children"]);
+				$this->DiscountAmount->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='subtype') {
@@ -11394,10 +11634,18 @@ class UserSelectedOptionType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='shippingoptionisdefault') {
 				$this->ShippingOptionIsDefault = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="shippingoptionamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->ShippingOptionAmount = new BasicAmountType();
-				$this->ShippingOptionAmount->init($arry["children"]);
+				$this->ShippingOptionAmount->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='shippingoptionname') {
@@ -12016,10 +12264,18 @@ class DoReferenceTransactionResponseDetailsType {
 				$this->PaymentInfo->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="amount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arry["children"]);
+				$this->Amount->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='avscode') {
@@ -12151,10 +12407,18 @@ class DoNonReferencedCreditResponseDetailsType {
 	public function init($arr = null) {
 		if($arr != null) {
 			foreach ($arr as $arry){
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="amount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arry["children"]);
+				$this->Amount->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
@@ -12233,7 +12497,7 @@ class EnterBoardingRequestDetailsType {
 	public $MarketingCategory;
 
 	/**
-	 * Information about the merchant’s business	 *
+	 * Information about the merchantâ€™s business	 *
 	 * @access public
 	 * @var BusinessInfoType
 	 */
@@ -12315,14 +12579,14 @@ class BusinessInfoType {
 	public $Name;
 
 	/**
-	 * Merchant’s business postal address	 *
+	 * Merchantâ€™s business postal address	 *
 	 * @access public
 	 * @var AddressType
 	 */
 	public $Address;
 
 	/**
-	 * Business’s primary telephone number
+	 * Businessâ€™s primary telephone number
 	 * Character length and limitations: 20 alphanumeric characters
 	 *
 	 * @access public
@@ -12435,14 +12699,14 @@ class BusinessInfoType {
 	public $RevenueFromOnlineSales;
 
 	/**
-	 * Date the merchant’s business was established	 *
+	 * Date the merchantâ€™s business was established	 *
 	 * @access public
 	 * @var dateTime
 	 */
 	public $BusinessEstablished;
 
 	/**
-	 * Email address to contact business’s customer service
+	 * Email address to contact businessâ€™s customer service
 	 * Character length and limitations: 127 alphanumeric characters
 	 *
 	 * @access public
@@ -12451,7 +12715,7 @@ class BusinessInfoType {
 	public $CustomerServiceEmail;
 
 	/**
-	 * Telephone number to contact business’s customer service
+	 * Telephone number to contact businessâ€™s customer service
 	 * Character length and limitations: 32 alphanumeric characters
 	 *
 	 * @access public
@@ -12525,7 +12789,7 @@ class BusinessOwnerInfoType {
 	public $Owner;
 
 	/**
-	 * Business owner’s home telephone number
+	 * Business ownerâ€™s home telephone number
 	 * Character length and limitations: 32 alphanumeric characters
 	 *
 	 * @access public
@@ -12534,7 +12798,7 @@ class BusinessOwnerInfoType {
 	public $HomePhone;
 
 	/**
-	 * Business owner’s mobile telephone number
+	 * Business ownerâ€™s mobile telephone number
 	 * Character length and limitations: 32 alphanumeric characters
 	 *
 	 * @access public
@@ -12543,7 +12807,7 @@ class BusinessOwnerInfoType {
 	public $MobilePhone;
 
 	/**
-	 * Business owner’s social security number
+	 * Business ownerâ€™s social security number
 	 * Character length and limitations: 9 alphanumeric characters
 	 *
 	 * @access public
@@ -12596,7 +12860,7 @@ class BankAccountDetailsType {
 	public $Type;
 
 	/**
-	 * Merchant’s bank routing number
+	 * Merchantâ€™s bank routing number
 	 * Character length and limitations: 23 alphanumeric characters
 	 *
 	 * @access public
@@ -12605,7 +12869,7 @@ class BankAccountDetailsType {
 	public $RoutingNumber;
 
 	/**
-	 * Merchant’s bank account number
+	 * Merchantâ€™s bank account number
 	 * Character length and limitations: 256 alphanumeric characters
 	 *
 	 * @access public
@@ -12663,7 +12927,7 @@ class GetBoardingDetailsResponseDetailsType {
 	public $StartDate;
 
 	/**
-	 * Date the merchant’s status or progress was last updated
+	 * Date the merchantâ€™s status or progress was last updated
 	 *
 	 * @access public
 	 * @var dateTime
@@ -12671,7 +12935,7 @@ class GetBoardingDetailsResponseDetailsType {
 	public $LastUpdated;
 
 	/**
-	 * Reason for merchant’s cancellation of sign-up.
+	 * Reason for merchantâ€™s cancellation of sign-up.
 	 * Character length and limitations: 1,024 alphanumeric characters
 	 *
 	 * @access public
@@ -12722,7 +12986,7 @@ class GetBoardingDetailsResponseDetailsType {
 	public $AccountOwner;
 
 	/**
-	 * Merchant’s PayPal API credentials	 *
+	 * Merchantâ€™s PayPal API credentials	 *
 	 * @access public
 	 * @var APICredentialsType
 	 */
@@ -12829,7 +13093,7 @@ class GetBoardingDetailsResponseDetailsType {
  */
 class APICredentialsType {
 	/**
-	 * Merchant’s PayPal API username
+	 * Merchantâ€™s PayPal API username
 	 * Character length and limitations: 128 alphanumeric characters
 	 *
 	 * @access public
@@ -12838,7 +13102,7 @@ class APICredentialsType {
 	public $Username;
 
 	/**
-	 * Merchant’s PayPal API password
+	 * Merchantâ€™s PayPal API password
 	 * Character length and limitations: 40 alphanumeric characters
 	 *
 	 * @access public
@@ -12847,7 +13111,7 @@ class APICredentialsType {
 	public $Password;
 
 	/**
-	 * Merchant’s PayPal API signature, if one exists.
+	 * Merchantâ€™s PayPal API signature, if one exists.
 	 * Character length and limitations: 256 alphanumeric characters
 	 *
 	 * @access public
@@ -12856,7 +13120,7 @@ class APICredentialsType {
 	public $Signature;
 
 	/**
-	 * Merchant’s PayPal API certificate in PEM format, if one exists
+	 * Merchantâ€™s PayPal API certificate in PEM format, if one exists
 	 * The certificate consists of two parts: the private key (2,048
 	 * bytes) and the certificate proper (4,000 bytes).
 	 * Character length and limitations: 6,048 alphanumeric characters
@@ -12867,7 +13131,7 @@ class APICredentialsType {
 	public $Certificate;
 
 	/**
-	 * Merchant’s PayPal API authentication mechanism.
+	 * Merchantâ€™s PayPal API authentication mechanism.
 	 * Auth-None: no authentication mechanism on file
 	 * Cert: API certificate
 	 * Sign: API signature
@@ -13473,10 +13737,18 @@ class RecurringPaymentsSummaryType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='numbercyclesremaining') {
 				$this->NumberCyclesRemaining = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="outstandingbalance") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->OutstandingBalance = new BasicAmountType();
-				$this->OutstandingBalance->init($arry["children"]);
+				$this->OutstandingBalance->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='failedpaymentcount') {
@@ -13485,10 +13757,18 @@ class RecurringPaymentsSummaryType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='lastpaymentdate') {
 				$this->LastPaymentDate = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="lastpaymentamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->LastPaymentAmount = new BasicAmountType();
-				$this->LastPaymentAmount->init($arry["children"]);
+				$this->LastPaymentAmount->init($atr);
 					}
 			}
 		}
@@ -13600,22 +13880,46 @@ class BillingPeriodDetailsType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='totalbillingcycles') {
 				$this->TotalBillingCycles = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="amount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arry["children"]);
+				$this->Amount->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="shippingamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->ShippingAmount = new BasicAmountType();
-				$this->ShippingAmount->init($arry["children"]);
+				$this->ShippingAmount->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="taxamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->TaxAmount = new BasicAmountType();
-				$this->TaxAmount->init($arry["children"]);
+				$this->TaxAmount->init($atr);
 					}
 			}
 		}
@@ -14249,28 +14553,60 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType {
 				$this->RegularRecurringPaymentsPeriod->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="trialamountpaid") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->TrialAmountPaid = new BasicAmountType();
-				$this->TrialAmountPaid->init($arry["children"]);
+				$this->TrialAmountPaid->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="regularamountpaid") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->RegularAmountPaid = new BasicAmountType();
-				$this->RegularAmountPaid->init($arry["children"]);
+				$this->RegularAmountPaid->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="aggregateamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->AggregateAmount = new BasicAmountType();
-				$this->AggregateAmount->init($arry["children"]);
+				$this->AggregateAmount->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="aggregateoptionalamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->AggregateOptionalAmount = new BasicAmountType();
-				$this->AggregateOptionalAmount->init($arry["children"]);
+				$this->AggregateOptionalAmount->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='finalpaymentduedate') {
@@ -18036,28 +18372,60 @@ Total of all previous refunds	 *
 			if($arry != null && isset($arry['text']) && $arry['name']=='refundtransactionid') {
 				$this->RefundTransactionID = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="netrefundamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->NetRefundAmount = new BasicAmountType();
-				$this->NetRefundAmount->init($arry["children"]);
+				$this->NetRefundAmount->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="feerefundamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->FeeRefundAmount = new BasicAmountType();
-				$this->FeeRefundAmount->init($arry["children"]);
+				$this->FeeRefundAmount->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="grossrefundamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->GrossRefundAmount = new BasicAmountType();
-				$this->GrossRefundAmount->init($arry["children"]);
+				$this->GrossRefundAmount->init($atr);
 					}
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="totalrefundedamount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->TotalRefundedAmount = new BasicAmountType();
-				$this->TotalRefundedAmount->init($arry["children"]);
+				$this->TotalRefundedAmount->init($atr);
 					}
 			}
 		}
@@ -19209,14 +19577,14 @@ class AddressVerifyRequestType extends AbstractRequestType {
 	public $Email;
 
 	/**
-	 * First line of buyer’s billing or shipping street address to be
+	 * First line of buyerâ€™s billing or shipping street address to be
 	 * verified.
 	 * Required
 	 * For verification, input value of street address must match the
 	 * first three single-byte characters of the street address on
 	 * file for the PayPal account.
 	 * Maximum string length: 35 single-byte characters Alphanumeric
-	 * plus - , . ‘ # \ Whitespace and case of input value are
+	 * plus - , . â€˜ # \ Whitespace and case of input value are
 	 * ignored.
 	 *
 	 * @access public
@@ -19331,7 +19699,7 @@ Two-character country code (ISO 3166) on file
 	 * The token prevents a buyer from using any street address other
 	 * than the address on file at PayPal during additional purchases
 	 * he might make from the merchant. It contains encrypted
-	 * information about the user’s street address and email address.
+	 * information about the userâ€™s street address and email address.
 	 * You can pass the value of the token with the Buy Now button
 	 * HTML address_api_token variable so that PayPal prevents the
 	 * buyer from using any street address or email address other
@@ -20669,19 +21037,19 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 	 * Address
 	 * Address only (no ZIP) 
 	 * B 
-	 * International “A”
+	 * International â€œAâ€�
 	 * Address only (no ZIP)
 	 * C
-	 * International “N”
+	 * International â€œNâ€�
 	 * None 
 	 * D
-	 * International “X” 
+	 * International â€œXâ€� 
 	 * Address and Postal Code
 	 * E 
 	 * Not allowed for MOTO (Internet/Phone) transactions 
 	 * Not applicable
 	 * F 
-	 * UK-specific “X”
+	 * UK-specific â€œXâ€�
 	 * Address and Postal Code 
 	 * G 
 	 * Global Unavailable
@@ -20693,7 +21061,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 	 * No
 	 * None
 	 * P
-	 * Postal (International “Z”)
+	 * Postal (International â€œZâ€�)
 	 * Postal Code only (no Address) 
 	 * R
 	 * Retry
@@ -20809,10 +21177,18 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 	public function init($arr = null) {
 		if($arr != null) {
 			parent::init($arr);			foreach ($arr as $arry){
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="amount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arry["children"]);
+				$this->Amount->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='avscode') {
@@ -21297,14 +21673,14 @@ $str.='</urn:DoAuthorizationReq>';
 
 /**
  * DoAuthorizationRequestType
- * The value of the order’s transaction identification number
+ * The value of the orderâ€™s transaction identification number
  * returned by a PayPal product.
  * Required
  * Character length and limits: 19 single-byte characters maximum
  */
 class DoAuthorizationRequestType extends AbstractRequestType {
 	/**
-	 * The value of the order’s transaction identification number
+	 * The value of the orderâ€™s transaction identification number
 	 * returned by a PayPal product.
 	 * Required
 	 * Character length and limits: 19 single-byte characters maximum
@@ -21401,10 +21777,18 @@ The amount and currency you specified in the
 			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
 				$this->TransactionID = $arry["text"];
 			}
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="amount") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($arry["children"]);
+				$this->Amount->init($atr);
 					}
 			}
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
@@ -21978,10 +22362,18 @@ class GetBalanceResponseType extends AbstractResponseType {
 	public function init($arr = null) {
 		if($arr != null) {
 			parent::init($arr);			foreach ($arr as $arry){
-			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
 			if( $arry["name"]=="balance") {
+			$tmp =  array();
+			$atr =  array();
+			foreach($arry["attributes"] as $key => $val){
+				$atr[0]["name"] =$key;
+				$atr[0]["text"] =$val;
+			}
+			$atr[1]["name"] ="value";
+			$atr[1]["text"] =$arry["text"];
 				$this->Balance = new BasicAmountType();
-				$this->Balance->init($arry["children"]);
+				$this->Balance->init($atr);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='balancetimestamp') {

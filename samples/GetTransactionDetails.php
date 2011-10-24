@@ -15,7 +15,7 @@ $req = new GetTransactionDetailsRequestType();
 $req->TransactionID = $_POST['TransactionID'];
 
 
-$req->Version = 78;
+$req->Version = 78.0;
 $trans = new GetTransactionDetailsReq();
 $trans->GetTransactionDetailsRequest = $req;
 	
@@ -37,7 +37,7 @@ $trans->GetTransactionDetailsRequest = $req;
 <div class="params">
 <div class="param_name">TransactionID</div>
 <div class="param_value"><input type="text" name="TransactionID"
-	value="67B06465K3836742U" size="50" maxlength="260" /></div>
+	value="6MS29234D79035902" size="50" maxlength="260" /></div>
 
 
 <input type="submit" name="Merchant" value="Get Details" /></div>
