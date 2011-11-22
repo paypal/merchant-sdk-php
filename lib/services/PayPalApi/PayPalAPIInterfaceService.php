@@ -4805,7 +4805,7 @@ class SetExpressCheckoutRequestDetailsType {
 		if($this->PaymentDetails != null ) {
 		for($i=0; $i<count($this->PaymentDetails);$i++) {
 			$str .= '<ebl:PaymentDetails>';
-			$str .= $this->PaymentDetails[$i]->toXMLString();
+			$str .= $this->PaymentDetails->toXMLString();
 			$str .=  '</ebl:PaymentDetails>';
 		 }
 		 }
