@@ -28,7 +28,7 @@ transactions processed through other acquirers</p>
 </tr>
 <tr>
 <td><div class="param_value">
-<input type="text" name="creditCardNumber" id="creditCardNumber"
+<input type="text" name="creditCard" id="creditCardNumber"
 value="" />
 </div>
 </td>
@@ -78,18 +78,14 @@ value="NonReferencedCredit">
 </div>
 <table class="params">
 <tr>
-<th class="param_name">Item Cost</th>
-<th class="param_name">Shipping cost</th>
-<th class="param_name">Tax Amount</th>
+<th class="param_name">Net Amount</th>
+
 <th class="param_name">Currency Code</th>
 </tr>
 <tr>
-<td class="param_value"><input type="text" name="itemAmount"
-value="0.50" /></td>
-<td class="param_value"><input type="text"
-name="shippingAmount" value="0.50" /></td>
-<td class="param_value"><input type="text" name="taxAmount"
-value="0.0" /></td>
+<td class="param_value"><input type="text" name="netAmount"
+value="1" /></td>
+
 <td class="param_value"><input type="text" name="currencyID"
 value="USD" /></td>
 </tr>

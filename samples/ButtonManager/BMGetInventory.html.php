@@ -15,7 +15,7 @@ inventory levels and other inventory-related information for a
 button and menu items associated with the button</p>
 </div>
 </div>
-<form method="POST">
+<form method="POST" action = "BMGetInventory.php">
 <div id="request_form">
 <div class="params">
 <div class="param_name">HostedID*(Get hosted ID via <a href='BMCreateButton'>BMCreateButton</a>)</div>

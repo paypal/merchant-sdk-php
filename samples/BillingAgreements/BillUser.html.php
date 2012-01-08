@@ -51,20 +51,11 @@ value="1" /></td>
 <table class="params">
 <tr>
 <th class="param_name">Amount to be charged</th>
-<th class="param_name">Shipping cost</th>
-<th class="param_name">Handling cost</th>
-<th class="param_name">Tax Amount</th>
 <th class="param_name">Currency Code</th>
 </tr>
 <tr>
 <td class="param_value"><input type="text" name="amt"
 value="0.50" /></td>
-<td class="param_value"><input type="text" name="shipping"
-value="0.50" /></td>
-<td class="param_value"><input type="text" name="handling"
-value="0.00" /></td>
-<td class="param_value"><input type="text" name="tax"
-value="0.0" /></td>
 <td class="param_value"><input type="text" name="currencyID"
 value="USD" /></td>
 </tr>

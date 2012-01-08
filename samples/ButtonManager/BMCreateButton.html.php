@@ -3,15 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>PayPal SDK-BMCreateButton</title>
-<%
-StringBuilder url = new StringBuilder();
-url.append("http://");
-url.append(request.getServerName());
-url.append(":");
-url.append(request.getServerPort());
-url.append(request.getContextPath());
-String returnURL = url.toString() + "/index.html";
-%>
+<?php 
+$serverName = $_SERVER['SERVER_NAME'];
+$serverPort = $_SERVER['SERVER_PORT'];
+$url=dirname('http://'.$serverName.':'.$serverPort.$_SERVER['REQUEST_URI']);
+$returnUrl = $url."BMButtonSearch.html.php";
+?>
 </head>
 <body>
 <div id="wrapper">
@@ -23,7 +20,7 @@ Payments Standard button. You an create either a button that is
 hosted on PayPal or a non-hosted button</p>
 </div>
 </div>
-<form method="POST">
+<form method="POST" action = "BMCreateButton.php">
 <div id="request_form">
 <div class="params">
 <div class="param_name">ButtonType*</div>
@@ -56,8 +53,7 @@ hosted on PayPal or a non-hosted button</p>
 <div class="params">
 <div class="param_name">ReturnURL</div>
 <div class="param_value">
-<input type="text" name="returnURL" value="<%=returnURL%>"
-size="50" maxlength="260" />
+<input type="text" name="returnURL" value="<?php echo $returnUrl?>" size="50" maxlength="260" />
 </div>
 </div>
 <div class="params">

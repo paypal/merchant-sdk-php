@@ -18,7 +18,7 @@ from a buyers account, which is identified by a previous
 transaction.</p>
 </div>
 </div>
-<form id="form1" method="post">
+<form id="form1" method="post"action = "DoReferenceTransaction.php">
 <div id="request_form">
 <div class="params">
 <div class="param_name">Payment Action</div>
@@ -57,7 +57,7 @@ transaction.</p>
 </div>
 </div>
 <div class="params">
-<div class="param_name">Address</div>
+<div class="param_name">Shipping Address</div>
 </div>
 
 <div class="params">
@@ -82,12 +82,6 @@ value="1 Main St" />
 </div>
 </div>
 
-<div class="params">
-<div class="param_name">Address Line 2</div>
-<div class="param_value">
-<input type="text" name="address2" id="address2" />
-</div>
-</div>
 
 <div class="params">
 <div class="param_name">City</div>
@@ -98,7 +92,8 @@ value="1 Main St" />
 
 <div class="params">
 <div class="param_name">Country</div>
-<div class="param_value">United States</div>
+<div class="param_value"><input type="text" name="country" id="country" value="USA" />
+</div>
 </div>
 
 <div class="params">
@@ -207,14 +202,14 @@ name="ReferenceCreditCardDetails" value="ON" onclick="display()" />
 <div class="params">
 <div class="param_name">First Name</div>
 <div class="param_value">
-<input type="text" name="firstName" id="firstName" value="John" />
+<input type="text" name="OfirstName" id="firstName" value="John" />
 </div>
 </div>
 
 <div class="params">
 <div class="param_name">Last Name</div>
 <div class="param_value">
-<input type="text" name="lastName" id="lastName" value="Doe" />
+<input type="text" name="OlastName" id="lastName" value="Doe" />
 </div>
 </div>
 
@@ -266,20 +261,20 @@ value="4904969011809253" />
 <div class="params">
 <div class="param_name">First Name</div>
 <div class="param_value">
-<input type="text" name="firstName" id="firstName" value="John" />
+<input type="text" name="BfirstName" id="firstName" value="John" />
 </div>
 </div>
 
 <div class="params">
 <div class="param_name">Last Name</div>
 <div class="param_value">
-<input type="text" name="lastName" id="lastName" value="Doe" />
+<input type="text" name="BlastName" id="lastName" value="Doe" />
 </div>
 </div>
 <div class="params">
 <div class="param_name">Address Line 1</div>
 <div class="param_value">
-<input type="text" name="address1" id="address1"
+<input type="text" name="Baddress1" id="address1"
 value="1 Main St" />
 </div>
 </div>
@@ -287,23 +282,24 @@ value="1 Main St" />
 <div class="params">
 <div class="param_name">Address Line 2</div>
 <div class="param_value">
-<input type="text" name="address2" id="address2" />
+<input type="text" name="Baddress2" id="address2" />
 </div>
 </div>
 <div class="params">
 <div class="param_name">City</div>
 <div class="param_value">
-<input type="text" name="city" id="city" value="San Jose" />
+<input type="text" name="Bcity" id="city" value="San Jose" />
 </div>
 </div>
 <div class="params">
 <div class="param_name">Country</div>
-<div class="param_value">United States</div>
+<div class="param_value"><input type="text" name="Bcountry" id="country" value="USA" />
+</div>
 </div>
 <div class="params">
 <div class="param_name">State</div>
 <div class="param_value">
-<select id=state name=state>
+<select id=state name=Bstate>
 <option value=></option>
 <option value=AK>AK</option>
 <option value=AL>AL</option>
@@ -373,7 +369,7 @@ value="1 Main St" />
 <div class="params">
 <div class="param_name">Postal Code</div>
 <div class="param_value">
-<input type="text" name="zip" id="zip" value="95131" />
+<input type="text" name="Bzip" id="Bzip" value="95131" />
 </div>
 </div>
 </div>
@@ -397,5 +393,6 @@ See also:
 </ul>
 </div>
 </div>
+
 </body>
 </html>

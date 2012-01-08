@@ -5,3 +5,29 @@ require_once('services/PayPalApi/PayPalAPIInterfaceServiceService.php');
 require_once('PPLoggingManager.php');
 
 $logger = new PPLoggingManager('Bill User');
+
+$amount = new BasicAmountType();
+$amount->currencyID = $_REQUEST['currencyID'];
+$amount->value = $_REQUEST['amt'];
+
+$MPPaymentDetails = new MerchantPullPaymentType();
+$MPPaymentDetails->Amount = $amount;
+$MPPaymentDetails->PaymentType = $_REQUEST['paymentCodeType'];
+$MPPaymentDetails->EmailSubject = $_REQUEST['mailSubject'];
+$MPPaymentDetails->ItemName = $_REQUEST['itemName'];
+$MPPaymentDetails->ItemNumber = $_REQUEST['itemNum'];
+$MPPaymentDetails->Memo = $_REQUEST['memo'];
+$MPPaymentDetails->MpID = $_REQUEST['billingAgreementID'];
+
+$billUserReqest = new BillUserRequestType();
+$billUserReqest->MerchantPullPaymentDetails = $MPPaymentDetails;
+$billUserReqest->Version = 78;
+
+$billUserReq = new BillUserReq();
+$billUserReq->BillUserRequest = $billUserReqest;
+
+$PayPalService = new PayPalAPIInterfaceServiceService();
+$billUserResponse = $PayPalService->BillUser($billUserReq);
+echo "<pre>";
+var_dump($billUserResponse);
+echo "</pre>";

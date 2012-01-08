@@ -12,7 +12,7 @@ information about a billing agreement's PayPal account holder.</b>
 </p>
 </div>
 </div>
-<form id="form1" method="post">
+<form id="form1" method="post" action = "GetBillingAgreementCustomerDetails.php">
 <div id="request_form">
 <div class="params">
 <div class="param_name">

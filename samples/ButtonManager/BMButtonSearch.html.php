@@ -3,12 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>PayPal SDK - BMButtonSearch</title>
-<%
-DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-Calendar startDate = Calendar.getInstance();
-startDate.add(Calendar.DATE, -1);
-Calendar endDate = Calendar.getInstance();
-%>
+
 </head>
 <body>
 <div id="wrapper">
@@ -21,8 +16,7 @@ Calendar endDate = Calendar.getInstance();
 <div class="params">
 <div class="param_name">StartDate</div>
 <div class="param_value">
-<input type="text" name="startDate"
-value=<%=df.format(startDate.getTime())%> size="50"
+<input type="text" name="startDate" value=<?php echo date(DATE_ATOM)?> size="50"
 maxlength="260" />
 </div>
 </div>
@@ -30,7 +24,7 @@ maxlength="260" />
 <div class="param_name">EndDate</div>
 <div class="param_value">
 <input type="text" name="endDate"
-value=<%=df.format(endDate.getTime())%> size="50" maxlength="260" />(Optional)
+value="" />(Optional)
 </div>
 </div>
 <div class="submit">

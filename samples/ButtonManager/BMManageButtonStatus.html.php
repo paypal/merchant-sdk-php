@@ -14,7 +14,7 @@
 status of a hosted button. Currently, you can only delete a button</p>
 </div>
 </div>
-<form method="POST">
+<form method="POST" action = "BMManageButtonStatus.php">
 <div id="request_form">
 <div class="params">
 <div class="param_name">HostedID*(Get hosted ID via <a href='BMCreateButton'>BMCreateButton</a>)</div>

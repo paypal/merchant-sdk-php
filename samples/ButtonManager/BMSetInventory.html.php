@@ -1,4 +1,3 @@
-<?php
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,7 +18,7 @@ you an alert when inventory drops below a specified quantity, and
 manage sold out conditions.</p>
 </div>
 </div>
-<form method="POST">
+<form method="POST" action = "BMSetInventory.html.php">
 <div id="request_form">
 <div class="params">
 <div class="param_name">HostedID*(Get hosted ID via <a href='BMCreateButton'>BMCreateButton</a>)</div>

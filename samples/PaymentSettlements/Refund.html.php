@@ -66,20 +66,7 @@ maxlength="260" />
 </div>
 </div>
 <div class="section_header"></div>
-<div class="params">
-<div class="param_name">Store ID of merchant</div>
-<div class="param_value">
-<input type="text" name="storeID" value="" size="50"
-maxlength="260" />
-</div>
-</div>
-<div class="params">
-<div class="param_name">Terminal ID of merchant</div>
-<div class="param_value">
-<input type="text" name="terminalID" value="" size="50"
-maxlength="260" />
-</div>
-</div>
+
 <div class="submit">
 <input type="submit" name="RefundBtn" value="Refund" /><br />
 </div>

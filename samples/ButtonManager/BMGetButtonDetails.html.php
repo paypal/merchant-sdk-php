@@ -14,7 +14,7 @@
 information about a hosted Website Payments Standard button.</p>
 </div>
 </div>
-<form method="POST">
+<form method="POST" action = "BMGetButtonDetails.php">
 <div id="request_form">
 <div class="params">
 <div class="param_name">
