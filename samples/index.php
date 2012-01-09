@@ -16,7 +16,7 @@
 				<th>Button Manager</th>
 			</tr>
 			<tr>
-				<td><a href="ButtonManager/BMButtonSearch.html.php">BMCreateButton</a></td>
+				<td><a href="ButtonManager/BMCreateButton.html.php">BMCreateButton</a></td>
 				<td></td>
 			</tr>
 				<tr>
