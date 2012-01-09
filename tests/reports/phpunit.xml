@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="tests" tests="40" assertions="53" failures="0" errors="0" time="0.170419">
+    <testsuite name="PPAPIServiceTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPAPIServiceTest.php" tests="2" assertions="2" failures="0" errors="0" time="0.050817">
+      <testcase name="testSetServiceName" class="PPAPIServiceTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPAPIServiceTest.php" line="35" assertions="2" time="0.049251"/>
+      <testcase name="testMakeRequest" class="PPAPIServiceTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPAPIServiceTest.php" line="46" assertions="0" time="0.001566"/>
+    </testsuite>
+    <testsuite name="PPBaseServiceTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPBaseServiceTest.php" tests="1" assertions="3" failures="0" errors="0" time="0.002634">
+      <testcase name="testGetServiceName" class="PPBaseServiceTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPBaseServiceTest.php" line="37" assertions="3" time="0.002634"/>
+    </testsuite>
+    <testsuite name="PPCertificateCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPCertificateCredentialTest.php" tests="8" assertions="8" failures="0" errors="0" time="0.018611">
+      <testcase name="testValidateUname" class="PPCertificateCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPCertificateCredentialTest.php" line="34" assertions="1" time="0.005534"/>
+      <testcase name="testValidatePwd" class="PPCertificateCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPCertificateCredentialTest.php" line="47" assertions="1" time="0.001984"/>
+      <testcase name="testValidateCertPath" class="PPCertificateCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPCertificateCredentialTest.php" line="57" assertions="1" time="0.002151"/>
+      <testcase name="testValidateAppId" class="PPCertificateCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPCertificateCredentialTest.php" line="66" assertions="1" time="0.001924"/>
+      <testcase name="testGetUserName" class="PPCertificateCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPCertificateCredentialTest.php" line="76" assertions="1" time="0.001781"/>
+      <testcase name="testGetPassword" class="PPCertificateCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPCertificateCredentialTest.php" line="85" assertions="1" time="0.001767"/>
+      <testcase name="testGetCertificatePath" class="PPCertificateCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPCertificateCredentialTest.php" line="93" assertions="1" time="0.001741"/>
+      <testcase name="testGetApplicationId" class="PPCertificateCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPCertificateCredentialTest.php" line="100" assertions="1" time="0.001729"/>
+    </testsuite>
+    <testsuite name="PPConfigManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPConfigManagerTest.php" tests="3" assertions="9" failures="0" errors="0" time="0.015083">
+      <testcase name="testGetInstance" class="PPConfigManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPConfigManagerTest.php" line="37" assertions="1" time="0.004333"/>
+      <testcase name="testGet" class="PPConfigManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPConfigManagerTest.php" line="47" assertions="5" time="0.008316"/>
+      <testcase name="testGetIniPrefix" class="PPConfigManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPConfigManagerTest.php" line="63" assertions="3" time="0.002434"/>
+    </testsuite>
+    <testsuite name="PPConfigurationExceptionTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPConfigurationExceptionTest.php" tests="1" assertions="1" failures="0" errors="0" time="0.001931">
+      <testcase name="testPPConfigurationException" class="PPConfigurationExceptionTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPConfigurationExceptionTest.php" line="31" assertions="1" time="0.001931"/>
+    </testsuite>
+    <testsuite name="PPConnectionExceptionTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPConnectionExceptionTest.php" tests="2" assertions="2" failures="0" errors="0" time="0.003801">
+      <testcase name="testGetUrl" class="PPConnectionExceptionTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPConnectionExceptionTest.php" line="36" assertions="1" time="0.001825"/>
+      <testcase name="testPPConnectionException" class="PPConnectionExceptionTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPConnectionExceptionTest.php" line="43" assertions="1" time="0.001976"/>
+    </testsuite>
+    <testsuite name="PPConnectionManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPConnectionManagerTest.php" tests="2" assertions="4" failures="0" errors="0" time="0.009457">
+      <testcase name="testGetInstance" class="PPConnectionManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPConnectionManagerTest.php" line="36" assertions="1" time="0.001603"/>
+      <testcase name="testGetConnection" class="PPConnectionManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPConnectionManagerTest.php" line="45" assertions="3" time="0.007854"/>
+    </testsuite>
+    <testsuite name="PPCredentialManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPCredentialManagerTest.php" tests="2" assertions="8" failures="0" errors="0" time="0.005455">
+      <testcase name="testGetInstance" class="PPCredentialManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPCredentialManagerTest.php" line="36" assertions="1" time="0.002351"/>
+      <testcase name="testGetCredentialObject" class="PPCredentialManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPCredentialManagerTest.php" line="46" assertions="7" time="0.003104"/>
+    </testsuite>
+    <testsuite name="PPInvalidCredentialExceptionTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPInvalidCredentialExceptionTest.php" tests="1" assertions="1" failures="0" errors="0" time="0.004652">
+      <testcase name="testErrorMessage" class="PPInvalidCredentialExceptionTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPInvalidCredentialExceptionTest.php" line="36" assertions="1" time="0.004652"/>
+    </testsuite>
+    <testsuite name="PPLoggingManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPLoggingManagerTest.php" tests="5" assertions="0" failures="0" errors="0" time="0.007995">
+      <testcase name="testLog" class="PPLoggingManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPLoggingManagerTest.php" line="36" assertions="0" time="0.001571"/>
+      <testcase name="testError" class="PPLoggingManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPLoggingManagerTest.php" line="44" assertions="0" time="0.001510"/>
+      <testcase name="testWarning" class="PPLoggingManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPLoggingManagerTest.php" line="53" assertions="0" time="0.001497"/>
+      <testcase name="testInfo" class="PPLoggingManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPLoggingManagerTest.php" line="61" assertions="0" time="0.001883"/>
+      <testcase name="testFine" class="PPLoggingManagerTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPLoggingManagerTest.php" line="69" assertions="0" time="0.001534"/>
+    </testsuite>
+    <testsuite name="PPMissingCredentialExceptionTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPMissingCredentialExceptionTest.php" tests="1" assertions="1" failures="0" errors="0" time="0.001714">
+      <testcase name="testErrorMessage" class="PPMissingCredentialExceptionTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPMissingCredentialExceptionTest.php" line="36" assertions="1" time="0.001714"/>
+    </testsuite>
+    <testsuite name="PPSignatureCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPSignatureCredentialTest.php" tests="8" assertions="8" failures="0" errors="0" time="0.016848">
+      <testcase name="testValidateSignature" class="PPSignatureCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPSignatureCredentialTest.php" line="36" assertions="1" time="0.001991"/>
+      <testcase name="testValidateUsername" class="PPSignatureCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPSignatureCredentialTest.php" line="45" assertions="1" time="0.001988"/>
+      <testcase name="testValidatepwd" class="PPSignatureCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPSignatureCredentialTest.php" line="54" assertions="1" time="0.002368"/>
+      <testcase name="testValidateAppId" class="PPSignatureCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPSignatureCredentialTest.php" line="63" assertions="1" time="0.002105"/>
+      <testcase name="testGetSignature" class="PPSignatureCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPSignatureCredentialTest.php" line="72" assertions="1" time="0.002308"/>
+      <testcase name="testGetUserName" class="PPSignatureCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPSignatureCredentialTest.php" line="79" assertions="1" time="0.001956"/>
+      <testcase name="testGetPassword" class="PPSignatureCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPSignatureCredentialTest.php" line="86" assertions="1" time="0.001981"/>
+      <testcase name="testGetAppId" class="PPSignatureCredentialTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPSignatureCredentialTest.php" line="93" assertions="1" time="0.002151"/>
+    </testsuite>
+    <testsuite name="PPUtilsTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPUtilsTest.php" tests="4" assertions="6" failures="0" errors="0" time="0.031421">
+      <testcase name="testNvpToMap" class="PPUtilsTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPUtilsTest.php" line="35" assertions="3" time="0.002476"/>
+      <testcase name="testArray_match_key" class="PPUtilsTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPUtilsTest.php" line="46" assertions="2" time="0.003125"/>
+      <testcase name="testGetLocalIPAddress" class="PPUtilsTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPUtilsTest.php" line="57" assertions="0" time="0.023950"/>
+      <testcase name="testGetRequestSource" class="PPUtilsTest" file="C:\wamp\www\DevTools\merchant-php-sdk_new\tests\PPUtilsTest.php" line="66" assertions="1" time="0.001870"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

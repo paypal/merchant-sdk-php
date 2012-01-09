@@ -10,8 +10,23 @@ class PPBaseService {
  */
 	protected $accessToken;
 	protected $tokenSecret;
+	protected $lastRequest;
+	protected $lastResponse;
+	
 	public function getAccessToken() {
 		return $this->accessToken;
+	}
+public function getLastRequest() {
+		return $this->lastRequest;
+	}
+public function setLastRequest($lastRqst) {
+		$this->lastRequest = $lastRqst;
+	}
+public function getLastResponse() {
+		return $this->lastResponse;
+	}
+public function setLastResponse($lastRspns) {
+		$this->lastResponse = $lastRspns;
 	}
 
 	public function setAccessToken($accessToken) {
@@ -34,10 +49,20 @@ class PPBaseService {
 	}
 	
 	public function call($method, $requestObject, $apiUsername = null, $accessToken = null, $tokenSecret = null) {
+		$params = $this->marshall($requestObject);
 		$service = new PPAPIService();
 		$service->setServiceName($this->serviceName);
-		return $service->makeRequest($method, $requestObject, $apiUsername ,$accessToken, $tokenSecret);
+		$response = $service->makeRequest($method, $params, $apiUsername ,$accessToken, $tokenSecret);
 		
+		$this->lastRequest = $params;
+		$this->lastResponse = $response;
+		return $response;
+		
+	}
+private function marshall($object)
+	{
+		$transformer = new PPObjectTransformer();
+		return $transformer->toString($object);
 	}
 }
 ?>

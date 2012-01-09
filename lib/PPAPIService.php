@@ -28,7 +28,7 @@ class PPAPIService
 
 	public function makeRequest($apiMethod, $params, $apiUsername = null, $accessToken = null, $tokenSecret = null)
 	{
-		$params = $this->marshall($params);
+		
 		$authentication = new PPAuthenticationManager();
 		$connectionMgr = PPConnectionManager::getInstance();
 		$connection = $connectionMgr->getConnection();
@@ -67,10 +67,6 @@ class PPAPIService
 		return $response;
 	}
 
-	private function marshall($object)
-	{
-		$transformer = new PPObjectTransformer();
-		return $transformer->toString($object);
-	}
+	
 
 }
