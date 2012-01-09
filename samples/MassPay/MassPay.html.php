@@ -11,7 +11,7 @@
 <div id="apidetails">MassPay API operation makes a payment to
 one or more PayPal account holders.</div>
 </div>
-<form method="POST">
+<form method="POST" action ="MassPay.php">
 <div class="params">
 <div id="request_form">
 <div class="params">
@@ -71,15 +71,11 @@ name="currencyCode3" value="USD" size="25" maxlength="260" /></td>
 </table>
 <input type="submit" name="MassPayBtn" value="MassPay" /><br />
 </div>
-<a href="index.html">Home</a>
+<a href="../index.php">Home</a>
 </div>
 </form>
-<div id="relatedcalls">
-See also
-<ul>
-<li></li>
-</ul>
-</div>
+
+
 </div>
 </body>
 </html>

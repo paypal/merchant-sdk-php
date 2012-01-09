@@ -11,10 +11,10 @@
 <div id="apidetails">Used to get checkout details by checkout
 token</div>
 </div>
-<form method="POST">
+<form method="POST" action = "GetExpressCheckout.php">
 <div id="request_form">
 <div class="params">
-<div class="param_name">Token(Get Token via <a href="SetExpressCheckout">SetExpressCheckout</a>)</div>
+<div class="param_name">Token(Get Token via <a href="SetExpressCheckout.html.php">SetExpressCheckout</a>)</div>
 <div class="param_value">
 <input type="text" name="token" value="" size="50" maxlength="260" />
 </div>
@@ -24,21 +24,11 @@ token</div>
 <input type="submit" name="GetExpressCheckoutBtn"
 value="GetExpressCheckout" /> <br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../index.php">Home</a>
 </div>
 </form>
 
-<div id="relatedcalls">
-See also
-<ul>
-<li><a href="SetExpressCheckout">SetExpressCheckout</a>
-</li>
-<li><a href="DoExpressCheckout">DoExpressCheckout</a>
-</li>
-<li><a href="DoUATPExpressCheckoutPayment">DoUATPExpressCheckout</a>
-</li>
-</ul>
-</div>
+
 </div>
 </body>
 </html>

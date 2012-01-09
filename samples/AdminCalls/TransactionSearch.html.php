@@ -42,8 +42,8 @@ value=<?php echo $endDate?> />(Optional)
 <div class="params">
 <div class="param_name">
 Transaction ID(Get Transaction ID via <a
-href="../DCC/DirectPayment">Direct Payment</a> or <a
-href="../EC/SetExpressCheckout">ExpressCheckout</a>)
+href="../DirectPayment/DoDirectPayment.html.php">Direct Payment</a> or <a
+href="../ExpressCheckout/SetExpressCheckout.html.php">ExpressCheckout</a>)
 </div>
 <div class="param_value">
 <input type="text" name="transactionID" value="" size="50"
@@ -54,22 +54,12 @@ maxlength="260" />(Optional)
 <input type="submit" name="TransactionSearchBtn"
 value="TransactionSearch" /><br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../Index.php">Home</a>
 
 </div>
 </form>
 
-<div id="relatedcalls">
-See also
-<ul>
-<li><a href="GetTransactionDetails">GetTransactionDetails</a>
-</li>
-<li><a href="GetPalDetails">GetPalDetails</a></li>
-<li><a href="GetBalance">GetBalance</a>
-</li>
-<li><a href="AddressVerify">AddressVerify</a></li>
-</ul>
-</div>
+
 </div>
 </body>
 </html>

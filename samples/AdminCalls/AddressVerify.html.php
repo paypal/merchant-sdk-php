@@ -12,7 +12,7 @@
 whether a postal address and postal code match those of the
 specified PayPal account holder.</div>
 </div>
-<form method="POST">
+<form method="POST" action = "AddressVerify.php">
 <div id="request_form">
 <div class="params">
 <div class="param_name">Mail</div>
@@ -36,20 +36,10 @@ maxlength="260" />
 <div class="submit">
 <input type="submit" name="AddressVerifyBtn" value="AddressVerify" /><br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../Index.php">Home</a>
 </div>
 </form>
-<div id="relatedcalls">
-See also
-<ul>
-<li><a href="TransactionSearch">TransactionSearch</a>
-</li>
-<li><a href="GetPalDetails">GetPalDetails</a>
-</li>
-<li><a href="GetBalance">GetBalance</a></li>
-<li><a href="GetTransactionDetails">GetTransactionDetails</a></li>
-</ul>
-</div>
+
 </div>
 </body>
 </html>

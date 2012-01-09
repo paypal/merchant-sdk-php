@@ -5,7 +5,7 @@
 <title>PayPal SDK - GetPalDetails</title>
 </head>
 <body>
-<div id="wrapper">
+
 <div id="header">
 <h3>GetPalDetails</h3>
 <div id="apidetails">GetPalDetails API operation gets the
@@ -16,20 +16,10 @@ information about the partner of the requested Merchant.</div>
 <div class="submit">
 <input type="submit" name="GetPalDetailsBtn" value="GetPalDetails" /><br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../Index.php">Home</a>
 </div>
 </form>
 
-<div id="relatedcalls">
-See also
-<ul>
-<li><a href="TransactionSearch">TransactionSearch</a>
-</li>
-<li><a href="GetTransactionDetails">GetTransactionDetails</a></li>
-<li><a href="GetBalance">GetBalance</a></li>
-<li><a href="AddressVerify">AddressVerify</a></li>
-</ul>
-</div>
-</div>
+
 </body>
 </html>

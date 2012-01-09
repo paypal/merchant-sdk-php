@@ -10,12 +10,13 @@ $addressVerifyRequest = new AddressVerifyRequestType();
 $addressVerifyRequest->Email = $_REQUEST['mail'];
 $addressVerifyRequest->Street =$_REQUEST['street'];
 $addressVerifyRequest->Zip = $_REQUEST['zip'];
-$addressVerifyRequest->Version = 78.0;
+$addressVerifyRequest->Version = 84.0;
 $addrVerifyReq = new AddressVerifyReq();
-$addrVerifyReq->AddressVerifyRequest = $AddressVerifyRequest;
+$addrVerifyReq->AddressVerifyRequest = $addressVerifyRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $addrVerifyResponse = $paypalService->AddressVerify($addrVerifyReq);
 echo "<pre>";
 var_dump($addrVerifyResponse);
 echo "</pre>";
+require_once '../Response.php';

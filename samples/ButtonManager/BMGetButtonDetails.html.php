@@ -18,7 +18,7 @@ information about a hosted Website Payments Standard button.</p>
 <div id="request_form">
 <div class="params">
 <div class="param_name">
-HostedID*(Get hosted ID via <a href='BMCreateButton'>BMCreateButton</a>)
+HostedID*(Get hosted ID via <a href="BMCreateButton.html.php">BMCreateButton</a>)
 </div>
 <div class="param_value">
 <input type="text" name="hostedID" value="" size="50"
@@ -29,18 +29,27 @@ maxlength="260" />
 <input type="submit" name="BMGetButtonDetailsBtn"
 value="BMGetButtonDetails" /><br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../index.php">Home</a>
 </div>
 </form>
 <div id="relatedcalls">
 See also
+
 <ul>
-<li><a href="BMCreateButton">BMCreateButton</a></li>
-<li><a href="BMUpdateButton">BMUpdateButton</a></li>
-<li><a href="BMButtonSearch">BMButtonSearch</a></li>
-<li><a href="BMManageButtonStatus">BMManageButtonStatus</a></li>
-<li><a href="BMSetInventory">BMSetInventory</a></li>
-<li><a href="BMGetInventory">BMGetInventory</a></li>
+<!--
+<li><a href="BMUpdateButton">BMUpdateButton</a>
+</li>
+--><li><a href="BMCreateButton.html.php">BMCreateButton</a>
+</li>
+<li><a href="BMButtonSearch.html.php">BMButtonSearch</a></li>
+
+
+<li><a href="BMManageButtonStatus.html.php">BMManageButtonStatus</a>
+</li>
+<li><a href="BMSetInventory.html.php">BMSetInventory</a>
+</li>
+<li><a href="BMGetInventory.html.php">BMGetInventory</a>
+</li>
 </ul>
 </div>
 </div>

@@ -18,7 +18,7 @@ established billing agreement.</div>
 <div class="params">
 <div class="param_name">
 Billing Agreement ID*(Get Billing Agreement ID via <a
-href="../EC/SetExpressCheckout">ExpressCheckout</a>)
+href="../ExpressCheckout/SetExpressCheckout.html.php">ExpressCheckout</a>)
 </div>
 <div class="param_value">
 <input type="text" name="billingAgreementID" value="" size="50"
@@ -75,21 +75,10 @@ value="USD" /></td>
 <div class="submit">
 <input type="submit" name="BillUserBtn" value="BillUser" /><br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../Index.php">Home</a>
 </div>
 </form>
-<div id="relatedcalls">
-See also:
-<ul>
-<li><a href="EC/SetExpressCheckout">SetExpressCheckout</a>
-</li>
-<li><a href="RT/GetBillingAgreementCustomerDetails"></a>GetBillingAgreementCustomerDetails</li>
-<li><a href="RT/BillAgreementUpdate">BillAgreementUpdate</a>
-</li>
-<li><a href="RT/DoReferenceTransaction">DoReferenceTransaction</a>
-</li>
-</ul>
-</div>
+
 </div>
 </body>
 </html>

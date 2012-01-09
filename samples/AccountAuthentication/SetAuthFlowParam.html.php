@@ -38,9 +38,6 @@ $serverName = $_SERVER['SERVER_NAME'];
         </div>
     </form>
     </div>
-    <div id="relatedcalls">
-    See also
-            <ul><li></li></ul>
-    </div>
+    
 </body>
 </html>

@@ -16,7 +16,7 @@ information about a billing agreement's PayPal account holder.</b>
 <div id="request_form">
 <div class="params">
 <div class="param_name">
-Token:(Get Token via <a href="../EC/SetExpressCheckout">ExpressCheckout</a>)
+Token:(Get Token via <a href="../ExpressCheckout/SetExpressCheckout.html.php">ExpressCheckout</a>)
 </div>
 <div class="param_value">
 <input type="text" name="token" value="" />
@@ -26,20 +26,10 @@ Token:(Get Token via <a href="../EC/SetExpressCheckout">ExpressCheckout</a>)
 <input type="submit" name="GetBillingAgreementCustomerDetailsBtn"
 value="GetBillingAgreementCustomerDetails" /><br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../Index.php">Home</a>
 </div>
 </form>
-<div id="relatedcalls">
-See also:
-<ul>
-<li><a href="RT/BillAgreementUpdate">BillAgreementUpdate</a>
-</li>
-<li><a href="RT/DoReferenceTransaction">DoReferenceTransaction</a>
-</li>
-<li><a href="RT/BillUser">BillUser</a>
-</li>
-</ul>
-</div>
+
 </div>
 </body>
 </html>

@@ -18,8 +18,8 @@ agreement.</b>
 <div class="params">
 <div class="param_name">
 ReferenceID:(Billing agreement ID or a reference transaction ID
-that is associated with a billing agreement, get it via <a
-href="../EC/SetExpressCheckout">ExpressCheckout</a>)
+that is associated with a billing agreement, get it via  <a
+href="../ExpressCheckout/SetExpressCheckout.html.php">ExpressCheckout</a>)
 </div>
 <div class="param_value">
 <input type="text" name="referenceID" value="" />
@@ -44,19 +44,10 @@ href="../EC/SetExpressCheckout">ExpressCheckout</a>)
 <input type="submit" name="BillAgreementUpdateBtn"
 value="BillAgreementUpdate" /><br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../Index.php">Home</a>
 </div>
 </form>
-<div id="relatedcalls">
-See also:
-<ul>
-<li><a href="RT/GetBillingAgreementCustomerDetails"></a>GetBillingAgreementCustomerDetails</li>
 
-<li><a href="RT/BillUser">BillUser</a></li>
-<li><a href="RT/DoReferenceTransaction">DoReferenceTransaction</a>
-</li>
-</ul>
-</div>
 </div>
 </body>
 </html>

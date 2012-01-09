@@ -16,7 +16,7 @@ who recently migrated from other acquirers and need to refund
 transactions processed through other acquirers</p>
 </div>
 </div>
-<form method="POST">
+<form method="POST" action = "DoNonReferencedCredit.php">
 <div id="request_form">
 <div id="section_header">Credit Card Details</div>
 <table class="params">
@@ -94,23 +94,24 @@ value="USD" /></td>
 <input type="submit" name="DoNonReferencedCreditBtn"
 value="DoNonReferencedCredit" /><br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../index.php">Home</a>
 </div>
 </form>
 <div id="relatedcalls">
 See also
 <ul>
-<li><a href="DoAuthorization">DoAuthorization</a></li>
-<li><a href="DoVoid">DoVoid</a></li>
-<li><a href="DoReauthorization">DoReauthorization</a></li>
-<li><a href="Refund">Refund</a>
+<li><a href="DoCapture.html.php">DoCapture</a>
 </li>
-<li><a href="DoUATPAuthorization">DoUATPAuthorization</a>
+
+<li><a href="Refund.html.php">Refund</a>
 </li>
-<li><a href="ReverseTransaction">ReverseTransaction</a></li>
-<li><a href="DoCapture">DoCapture</a>
+
+<li><a href="DoAuthorization.html.php">DoAuthorization</a></li>
+
+<li><a href="ReverseTransaction.html.php">ReverseTransaction</a>
 </li>
-<li><a href="ManagePendingTransactionStatus">ManagePendingTransactionStatus</a>
+
+<li><a href="ManagePendingTransactionStatus.html.php">ManagePendingTransactionStatus</a>
 </li>
 </ul>
 </div>

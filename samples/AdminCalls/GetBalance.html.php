@@ -26,17 +26,9 @@ all currencies)</div>
 <div class="submit"><input type="submit" name="GetBalanceBtn"
 	value="GetBalance" /><br />
 </div>
-<a href="/merchant-sample/index.html">Home</a></div>
+<a href="../Index.php">Home</a></div>
 </form>
 
-<div id="relatedcalls">See also
-<ul>
-	<li><a href="TransactionSearch">TransactionSearch</a></li>
-	<li><a href="GetTransactionDetails">GetTransactionDetails</a></li>
-	<li><a href="GetPalDetails">GetPalDetails</a></li>
-	<li><a href="AddressVerify">AddressVerify</a></li>
-</ul>
-</div>
 </div>
 </body>
 </html>

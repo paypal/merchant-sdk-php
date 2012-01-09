@@ -158,7 +158,7 @@ value="3" size="25" maxlength="260" /></td>
 <input type="submit" name="BMCreateButtonBtn"
 value="BMCreateButton" /><br />
 </div>
-<a href="/merchant-sample/index.html">Home</a> <br /> <br />
+<a href="../index.php">Home</a> <br /> <br />
 <p>
 Note:All Button Types will not work with all Button Code types.In
 order to know the details see <a
@@ -170,13 +170,23 @@ details for that also will be in the above link
 </form>
 <div id="relatedcalls">
 See also
+
+
 <ul>
-<li><a href="BMUpdateButton">BMUpdateButton</a></li>
-<li><a href="BMButtonSearch">BMButtonSearch</a></li>
-<li><a href="BMGetButtonDetails">BMGetButtonDetails</a></li>
-<li><a href="BMManageButtonStatus">BMManageButtonStatus</a></li>
-<li><a href="BMSetInventory">BMSetInventory</a></li>
-<li><a href="BMGetInventory">BMGetInventory</a></li>
+<!--
+<li><a href="BMUpdateButton">BMUpdateButton</a>
+</li>
+-->
+
+<li><a href="BMButtonSearch.html.php">BMButtonSearch</a></li>
+<li><a href="BMGetButtonDetails.html.php">BMGetButtonDetails</a>
+</li>
+<li><a href="BMManageButtonStatus.html.php">BMManageButtonStatus</a>
+</li>
+<li><a href="BMSetInventory.html.php">BMSetInventory</a>
+</li>
+<li><a href="BMGetInventory.html.php">BMGetInventory</a>
+</li>
 </ul>
 </div>
 </div>

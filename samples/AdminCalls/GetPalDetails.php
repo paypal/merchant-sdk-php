@@ -7,12 +7,14 @@ require_once('PPLoggingManager.php');
 $logger = new PPLoggingManager('GetPlaDetails');
 
 $getPalDetailsRequest = new GetPalDetailsRequestType();
-$getPalDetailsRequest->Version = 78.0;
+$getPalDetailsRequest->Version = 84.0;
 
 $getPalDetailsReq = new GetPalDetailsReq();
 $getPalDetailsReq->GetPalDetailsRequest = $getPalDetailsRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $getPalDetailsResponse = $paypalService->GetPalDetails($getPalDetailsReq);
-
+echo "<pre>";
 var_dump($getPalDetailsResponse);
+echo "</pre>";
+require_once '../Response.php';

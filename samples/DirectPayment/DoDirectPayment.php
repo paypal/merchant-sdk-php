@@ -90,15 +90,17 @@ $ddReqDetails->CreditCard = $cardDetails;
 $ddReqDetails->PaymentDetails =$PaymentDetails;
 
 $ddReq= new DoDirectPaymentRequestType($ddReqDetails);
-$ddReq->Version = 78.0;
+$ddReq->Version = 84.0;
 
 $doDirectPaymentReq = new DoDirectPaymentReq();
 $doDirectPaymentReq->DoDirectPaymentRequest = $ddReq;
 
 	
 	$logger->error("created doDirectPaymentReq Object");
-	$PayPal_service = new PayPalAPIInterfaceServiceService();
-	$doDirectPaymentResponse = $PayPal_service->DoDirectPayment($doDirectPaymentReq);
-	
+	$paypalService = new PayPalAPIInterfaceServiceService();
+	$doDirectPaymentResponse = $paypalService->DoDirectPayment($doDirectPaymentReq);
+	echo "<pre>";
 	var_dump($doDirectPaymentResponse);
+	echo "</pre>";
+	require_once '../Response.php';
 ?>

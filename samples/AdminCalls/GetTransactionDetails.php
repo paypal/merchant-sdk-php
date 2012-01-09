@@ -12,14 +12,17 @@ $req = new GetTransactionDetailsRequestType();
 $req->TransactionID = $_POST['transID'];
 
 
-$req->Version = 78.0;
+$req->Version = 84.0;
 $trans = new GetTransactionDetailsReq();
 $trans->GetTransactionDetailsRequest = $req;
 
 $logger->error("created transDetailRequest Object");
-$trans_service = new PayPalAPIInterfaceServiceService();
-$TransDetailsResponse = $trans_service->GetTransactionDetails($trans);
+$paypalService = new PayPalAPIInterfaceServiceService();
+$TransDetailsResponse = $paypalService->GetTransactionDetails($trans);
 //$logger->error("Received $createTransDetailsResponse:");
+echo "<pre>";
 var_dump($TransDetailsResponse);
+echo "</pre>";
+require_once '../Response.php';
 
 ?>

@@ -20,90 +20,16 @@ break;
 <div id="wrapper">
 <div id="header">
 <h3>SetExpressCheckout</h3>
-<div id="apidetails">Set the details for express checkout, can
-set up billing agreements for reference transactions and recurring
-payments. It only initiates an Express Checkout transaction.</div>
-</div>
-<form method="POST">
+
+<br>
+<form method="POST" action ="SetExpressCheckout.php">
 <div id="request_form">
-<div class="params">
-<div class="param_name">BuyerMail</div>
-<div class="param_value">
-<input type="text" name="buyerMail"
-value="platfo_1255077030_biz@gmail.com" size="50" maxlength="260" />
-</div>
-</div>
-<div class="params">
-<div class="param_name">Requires shipping</div>
-<div class="param_value">
-<select name="noShipping">
-<option value="0">Display shipping address in PayPal
-pages</option>
-<option value="1">Do not display shipping address in
-PayPal pages</option>
-<option value="2">If shipping address not passed, use
-value in buyer's profile</option>
-</select>
-</div>
-</div>
-<div class="section_header">Payment Details</div>
-<div class="params">
-<div class="param_name">Total Shipping costs</div>
-<div class="param_value">
-<input type="text" name="shippingTotal" id="shippingTotal"
-value="0.50" />
-</div>
-</div>
-<div class="params">
-<div class="param_name">Total insurance cost</div>
-<div class="param_value">
-<input type="text" name="insuranceTotal" id="insuranceTotal"
-value="0.00" />
-</div>
-</div>
-<div class="params">
-<div class="param_name">Total handling cost</div>
-<div class="param_value">
-<input type="text" name="handlingTotal" id="handlingTotal"
-value="0.00" />
-</div>
-</div>
-<div class="params">
-<div class="param_name">Total Tax</div>
-<div class="param_value">
-<input type="text" name="taxTotal" id="taxTotal" value="0.0" />
-</div>
-</div>
-<div class="params">
-<div class="param_name">Order description</div>
-<div class="param_value">
-<textarea cols="40" rows="5" name="orderDescription"></textarea>
-</div>
-</div>
-<div class="params">
-<div class="param_name">CurrencyCode</div>
-<div class="param_value">
-<input type="text" name="currencyCode" value="USD" size="50"
-maxlength="260" />
-</div>
-</div>
-<div class="params">
-<div class="param_name">PaymentType</div>
-<div class="param_value">
-<select name="paymentType">
-<option value="Sale">Sale</option>
-<option value="Authorization">Authorization</option>
-<option value="Order">Order</option>
-</select>
-</div>
-</div>
 <div class="param_name">Item Details</div>
 <table class="line_item">
 <tr>
 <th class="param_name">Name</th>
 <th class="param_name">Cost</th>
 <th class="param_name">Quantity</th>
-<th class="param_name">Sales tax</th>
 <th class="param_name">Item Category</th>
 <th class="param_name">Description (optional)</th>
 </tr>
@@ -123,14 +49,10 @@ value="5.27" />
 
 <td><div class="param_value">
 <input type="text" name="itemQuantity" id="itemQuantity"
-value="2" />
+value="1" />
 </div>
 </td>
 
-<td><div class="param_value">
-<input type="text" name="salesTax" id="salesTax" value="" />
-</div>
-</td>
 
 <td><div class="param_value">
 <select name="itemCategory">
@@ -147,6 +69,55 @@ value="" />
 </td>
 </tr>
 </table>
+<div class="params">
+<div class="param_name">Requires shipping</div>
+<div class="param_value">
+<select name="noShipping">
+<option value="0">Display shipping address in PayPal
+pages</option>
+<option value="1">Do not display shipping address in
+PayPal pages</option>
+<option value="2">If shipping address not passed, use
+value in buyer's profile</option>
+</select>
+</div>
+</div>
+<div class="params">
+<div class="param_name">PaymentType</div>
+<div class="param_value">
+<select name="paymentType">
+<option value="Sale">Sale</option>
+<option value="Authorization">Authorization</option>
+<option value="Order">Order</option>
+</select>
+</div>
+</div>
+<div class="params">
+<div class="param_name">Order description</div>
+<div class="param_value">
+<textarea cols="40" rows="5" name="orderDescription"></textarea>
+</div>
+</div>
+<div class="section_header">Payment Details</div>
+<div class="params">
+</div>
+
+<div class="params">
+<div class="param_name">CurrencyCode</div>
+<div class="param_value">
+<input type="text" name="currencyCode" value="USD" size="50"
+maxlength="260" />
+</div>
+</div>
+<div class="params">
+<div class="param_name">Total Tax</div>
+<div class="param_value">
+<input type="text" name="taxTotal" id="taxTotal" value="0.0" />
+</div>
+</div>
+
+
+
 <div class="section_header">Ship To Address:</div>
 <table class="params">
 <tr>
@@ -197,7 +168,7 @@ maxlength="260" />
 <div class="params">
 <div class="param_name">PostalCode</div>
 <div class="param_value">
-<input type="text" name="postalCode" value="78750" size="50"
+<input type="text" name="postalCode" value="84750" size="50"
 maxlength="260" />
 </div>
 </div>
@@ -209,91 +180,18 @@ maxlength="260" />
 maxlength="260" />
 </div>
 </div>
-<div class="section_header">Billing Agreement (Required for
-Recurring payments/Reference transactions only)</div>
-<div class="param_name">Billing Agreement Description *</div>
-<div class="param_value">
-<textarea cols="80" rows="10" name="billingAgreementText"></textarea>
-</div>
-<div class="param_name">Billing type *</div>
-<div class="param_value">
-<select name="billingType">
-<option value="None">None</option>
-<option value="MerchantInitiatedBilling">Merchant
-Initiated Billing</option>
-<option value="RecurringPayments">Recurring Payments</option>
-<option value="MerchantInitiatedBillingSingleAgreement">Merchant
-Initiated Billing Single Agreement</option>
-<option value="ChannelInitiatedBilling">Channel Initiated
-Billing</option>
-</select>
-</div>
-
-<!-- PayPal page styling attributes -->
-<div class="section_header">PayPal page styling attributes
-(optional)</div>
-<div class="param_name">Business name to display in the PayPal
-account on the PayPal hosted checkout pages</div>
-<div class="param_value">
-<input type="text" name="brandName" id="brandName" value="" />
-</div>
-<div class="param_name">Custom page style for payment pages
-(as configured in Merchant's account profile)</div>
-<div class="param_value">
-<input type="text" name="pageStyle" id="pageStyle" value="" />
-</div>
-<div class="param_name">URL for header image</div>
-<div class="param_value">
-<input type="text" name="cppheaderimage" id="cppheaderimage"
-value="" />
-</div>
-<div class="param_name">Border color around header</div>
-<div class="param_value">
-<input type="text" name="cppheaderbordercolor"
-id="cppheaderbordercolor" value="" />
-</div>
-<div class="param_name">Background color for header</div>
-<div class="param_value">
-<input type="text" name="cppheaderbackcolor"
-id="cppheaderbackcolor" value="" />
-</div>
-<div class="param_name">Background color for payment page</div>
-<div class="param_value">
-<input type="text" name="cpppayflowcolor" id="cpppayflowcolor"
-value="" />
-</div>
 
 
 
-<!-- Advanced features -->
-<div class="section_header">Advanced features (optional)</div>
-<div class="param_name">Allow buyer to enter note to merchant
-on PayPal pages</div>
-<div class="param_value">
-<select name="allowNote">
-<option value="0">False</option>
-<option value="1">True</option>
-</select>
-</div>
 <div class="submit">
 <input type="submit" name="SetExpressCheckoutBtn"
 value="SetExpressCheckout" /> <br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../index.php">Home</a>
 </div>
 </form>
 
-<div id="relatedcalls">
-See also
-<ul>
-<li><a href="GetExpressCheckout">GetExpressCheckout</a>
-</li>
-<li><a href="DoExpressCheckout">DoExpressCheckout</a>
-</li>
-<li><a href="DoUATPExpressCheckoutPayment">DoUATPExpressCheckout</a>
-</li>
-</ul>
-</div>
+
 </div>
 </body>
 </html>

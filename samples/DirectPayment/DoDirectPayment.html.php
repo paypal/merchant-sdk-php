@@ -263,7 +263,7 @@ session_unset();
 </table>
 </form>
 </center>
-<a id="CallsLink" href="index.html">Home</a>
+<a id="CallsLink" href="../Index.php">Home</a>
 <script language="javascript">
 	generateCC();
 </script>

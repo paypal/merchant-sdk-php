@@ -12,13 +12,13 @@ $reqDetails->ReturnURL = $_REQUEST['returnURL'];
 $reqDetails->LogoutURL = $_REQUEST['logoutURL'];
 
 $reqType = new SetAuthFlowParamRequestType();
-$reqType->Version = 78.0;
+$reqType->Version = 84.0;
 $reqType->SetAuthFlowParamRequestDetails = $reqDetails;
 $req = new SetAuthFlowParamReq();
 $req->SetAuthFlowParamRequest = $reqType;
 
-$auth_service = new PayPalAPIInterfaceServiceService();
-$setAuthFlowParamResponse = $auth_service->SetAuthFlowParam($req);
+$paypalService = new PayPalAPIInterfaceServiceService();
+$setAuthFlowParamResponse = $paypalService->SetAuthFlowParam($req);
 var_dump($setAuthFlowParamResponse);
 
 if($setAuthFlowParamResponse->Ack == 'Success')
@@ -28,3 +28,4 @@ $payPalURL = 'https://www.sandbox.paypal.com/webscr&cmd=_account-authenticate-lo
 
 echo"<a href=$payPalURL><b>* Redirect to paypal to login</b></a><br>";
 }
+require_once '../Response.php';

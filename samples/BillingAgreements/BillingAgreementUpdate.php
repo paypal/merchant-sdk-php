@@ -7,7 +7,7 @@ require_once('PPLoggingManager.php');
 $logger = new PPLoggingManager('billing agreement update');
 
 $BAUpdateRequest = new BAUpdateRequestType();
-$BAUpdateRequest->Version = 78.0;
+$BAUpdateRequest->Version = 84.0;
 $BAUpdateRequest->ReferenceID = $_REQUEST['referenceID'];
 $BAUpdateRequest->BillingAgreementStatus = $_REQUEST['billingAgreementStatus'];
 $BAUpdateRequest->BillingAgreementDescription = $_REQUEST['billingAgreementDescription'];
@@ -17,4 +17,7 @@ $billingAgreementUpdateReq->BAUpdateRequest = $BAUpdateRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $BAUpdatResponse = $paypalService->BillAgreementUpdate($billingAgreementUpdateReq);
+echo "<pre>";
 var_dump($BAUpdatResponse);
+echo "</pre>";
+require_once '../Response.php';

@@ -177,7 +177,7 @@ value="1 Main St" />
 <div class="param_name">
 <b>Reference TransactionID(Billing agreement ID or a
 reference transaction ID that is associated with a billing
-agreement, get it via <a href="../EC/SetExpressCheckout">ExpressCheckout</a>)</b>
+agreement, get it via <a href="../ExpressCheckout/SetExpressCheckout.html.php">ExpressCheckout</a>)</b>
 </div>
 <div class="param_value">
 <input type="text" name="referenceID" id="referenceID" />
@@ -377,21 +377,11 @@ value="1 Main St" />
 <input type="submit" name="DoReferenceTransactionBtn"
 value="DoReferenceTransaction" /><br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../Index.php">Home</a>
 </div>
 </div>
 </form>
-<div id="relatedcalls">
-See also:
-<ul>
-<li><a href="RP/CreateRecurringPaymentsProfile">RecurringPayments</a>
-</li>
-<li><a href="RT/BillAgreementUpdate">BillAgreementUpdate</a></li>
-<li><a href="RT/GetBillingAgreementCustomerDetails">GetBillingAgreementCustomerDetails</a>
-</li>
-<li><a href="RT/BillUser">BillUser</a></li>
-</ul>
-</div>
+
 </div>
 
 </body>

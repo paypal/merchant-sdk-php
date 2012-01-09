@@ -18,7 +18,7 @@ button and menu items associated with the button</p>
 <form method="POST" action = "BMGetInventory.php">
 <div id="request_form">
 <div class="params">
-<div class="param_name">HostedID*(Get hosted ID via <a href='BMCreateButton'>BMCreateButton</a>)</div>
+<div class="param_name">HostedID*(Get hosted ID via <a href="BMCreateButton.html.php">BMCreateButton</a>)</div>
 <div class="param_value">
 <input type="text" name="hostedID" value="" size="50"
 maxlength="260" />
@@ -29,19 +29,26 @@ maxlength="260" />
 <input type="submit" name="BMGetInventoryBtn"
 value="BMGetInventory" /><br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../index.php">Home</a>
 </div>
 </form>
 <div id="relatedcalls">
 See also
 <ul>
-<li><a href="BMCreateButton">BMCreateButton</a>
+<!--
+<li><a href="BMUpdateButton">BMUpdateButton</a>
 </li>
-<li><a href="BMUpdateButton">BMUpdateButton</a></li>
-<li><a href="BMButtonSearch">BMButtonSearch</a></li>
-<li><a href="BMGetButtonDetails">BMGetButtonDetails</a></li>
-<li><a href="BMManageButtonStatus">BMManageButtonStatus</a></li>
-<li><a href="BMSetInventory">BMSetInventory</a></li>
+--><li><a href="BMCreateButton.html.php">BMCreateButton</a>
+</li>
+<li><a href="BMButtonSearch.html.php">BMButtonSearch</a></li>
+
+<li><a href="BMGetButtonDetails.html.php">BMGetButtonDetails</a>
+</li>
+<li><a href="BMManageButtonStatus.html.php">BMManageButtonStatus</a>
+</li>
+<li><a href="BMSetInventory.html.php">BMSetInventory</a>
+</li>
+
 </ul>
 </div>
 </div>

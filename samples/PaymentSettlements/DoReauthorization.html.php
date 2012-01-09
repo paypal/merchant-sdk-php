@@ -12,7 +12,7 @@
 <div id="apidetails">Used to reauthorize transaction for a
 different amount</div>
 </div>
-<form method="POST">
+<form method="POST" action = "DoReauthorization.php">
 <div id="request_form">
 <div class="params">
 <div class="param_name">AuthorizationID</div>
@@ -39,25 +39,27 @@ maxlength="260" />
 <input type="submit" name="DoReauthorizationBtn"
 value="DoReauthorization" /> <br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../index.php">Home</a>
 </div>
 </form>
 <div id="relatedcalls">
 See also
 <ul>
-<li><a href="DoCapture">DoCapture</a>
+<li><a href="DoCapture.html.php">DoCapture</a>
 </li>
-<li><a href="DoVoid">DoVoid</a>
+<li><a href="DoVoid.html.php">DoVoid</a>
 </li>
-<li><a href="DoAuthorization">DoAuthorization</a>
+<li><a href="Refund.html.php">Refund</a>
 </li>
-<li><a href="Refund">Refund</a></li>
-<li><a href="DoUATPAuthorization">DoUATPAuthorization</a></li>
-<li><a href="ReverseTransaction">ReverseTransaction</a>
-<li><a href="DoNonReferencedCredit">DoNonReferencedCredit</a>
+<li><a href="DoReauthorization.html.php">DoReauthorization</a>
 </li>
-<li><a href="ManagePendingTransactionStatus">ManagePendingTransactionStatus</a>
+<li><a href="DoAuthorization.html.php">DoAuthorization</a></li>
+
+<li><a href="ReverseTransaction.html.php">ReverseTransaction</a>
 </li>
+<li><a href="DoNonReferencedCredit.html.php">DoNonReferencedCredit</a>
+</li>
+<li><a href="ManagePendingTransactionStatus.html.php">ManagePendingTransactionStatus</a>
 </li>
 </ul>
 </div>

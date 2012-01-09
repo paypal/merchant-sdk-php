@@ -11,7 +11,7 @@
 <h3>BMButtonSearch</h3>
 <div id="apidetails">Used to search the buttons created</div>
 </div>
-<form method="POST">
+<form method="POST" action = "BMButtonSearch.php">
 <div id="request_form">
 <div class="params">
 <div class="param_name">StartDate</div>
@@ -31,7 +31,7 @@ value="" />(Optional)
 <input type="submit" name="BMButtonSearchBtn"
 value="BMButtonSearch" /> <br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../index.php">Home</a>
 
 </div>
 </form>
@@ -39,17 +39,18 @@ value="BMButtonSearch" /> <br />
 <div id="relatedcalls">
 See also
 <ul>
+<!--
 <li><a href="BMUpdateButton">BMUpdateButton</a>
 </li>
-<li><a href="BMUpdateButton">BMUpdateButton</a>
+--><li><a href="BMCreateButton.html.php">BMCreateButton</a>
 </li>
-<li><a href="BMGetButtonDetails">BMGetButtonDetails</a>
+<li><a href="BMGetButtonDetails.html.php">BMGetButtonDetails</a>
 </li>
-<li><a href="BMManageButtonStatus">BMManageButtonStatus</a>
+<li><a href="BMManageButtonStatus.html.php">BMManageButtonStatus</a>
 </li>
-<li><a href="BMSetInventory">BMSetInventory</a>
+<li><a href="BMSetInventory.html.php">BMSetInventory</a>
 </li>
-<li><a href="BMGetInventory">BMGetInventory</a>
+<li><a href="BMGetInventory.html.php">BMGetInventory</a>
 </li>
 </ul>
 </div>

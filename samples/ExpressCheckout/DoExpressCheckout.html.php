@@ -10,11 +10,11 @@
 <h3>DoExpressCheckout</h3>
 <div id="apidetails">Used to make checkout payment</div>
 </div>
-<form method="POST">
+<form method="POST" action ="DoExpressCheckout.php">
 <div id="request_form">
 <div class="params">
 <div class="param_name">
-Token(Get Token via <a href="SetExpressCheckout">SetExpressCheckout</a>)
+Token(Get Token via <a href="SetExpressCheckout.html.php">SetExpressCheckout</a>)
 </div>
 <div class="param_value">
 <input type="text" name="token" value="" size="50" maxlength="260" />
@@ -56,18 +56,12 @@ maxlength="260" />
 <input type="submit" name="DoExpressCheckoutBtn"
 value="DoExpressCheckout" /> <br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../index.php">Home</a>
 </div>
 </form>
 </div>
 <div id="relatedcalls">
-See also
-<ul>
-<li><a href="SetExpressCheckout">SetExpressCheckout</a></li>
-<li><a href="GetExpressCheckout">GetExpressCheckout</a></li>
-<li><a href="DoUATPExpressCheckoutPayment">DoUATPExpressCheckout</a>
-</li>
-</ul>
+
 </div>
 </div>
 </body>
