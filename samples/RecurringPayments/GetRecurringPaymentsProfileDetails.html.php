@@ -14,11 +14,11 @@
 about a recurring payments profile.</p>
 </div>
 </div>
-<form method="POST">
+<form method="POST" action = "GetRecurringPaymentsProfileDetails.php">
 <div id="request_form">
 <div class="params">
 <div class="param_name">Profile ID*(Get Profile ID via <a
-href='CreateRecurringPaymentsProfile'>CreateRecurringPaymentsProfile</a>)</div>
+href='CreateRecurringPaymentsProfile.html.php'>CreateRecurringPaymentsProfile</a>)</div>
 <div class="param_value">
 <input type="text" name="profileID" value="" size="50"
 maxlength="260" />
@@ -28,22 +28,10 @@ maxlength="260" />
 <input type="submit" name="GetRecurringPaymentsProfileDetailsBtn"
 value="GetRecurringPaymentsProfileDetails" /><br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../index.php">Home</a>
 </div>
 </form>
-<div id="relatedcalls">
-See also
-<ul>
-<li><a href="CreateRecurringPaymentsProfile">CreateRecurringPaymentsProfile</a>
-</li>
-<li><a href="ManageRecurringPaymentsProfileStatus">ManageRecurringPaymentsProfileStatus</a>
-</li>
-<li><a href="UpdateRecurringPaymentsProfile">UpdateRecurringPaymentsProfile</a>
-</li>
-<li><a href="BillOutstandingAmount">BillOutstandingAmount</a>
-</li>
-</ul>
-</div>
+
 </div>
 </body>
 </html>

@@ -73,6 +73,6 @@ $RTReq->DoReferenceTransactionRequest = $RTRequest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $RTResponse = $paypalService->DoReferenceTransaction($RTReq);
 echo "<pre>";
-var_dump($RTResponse);
+print_r($RTResponse);
 echo "</pre>";
 require_once '../Response.php';

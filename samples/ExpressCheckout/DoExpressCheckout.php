@@ -31,6 +31,6 @@ $DoECReq->DoExpressCheckoutPaymentRequest = $DoECRequest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $DoECResponse = $paypalService->DoExpressCheckoutPayment($DoECReq);
 echo "<pre>";
-var_dump($DoECResponse);
+print_r($DoECResponse);
 echo "</pre>";
 require_once '../Response.php';

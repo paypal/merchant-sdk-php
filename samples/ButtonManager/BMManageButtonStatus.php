@@ -17,6 +17,6 @@ $BMManageButtonStatusReq->BMManageButtonStatusRequest = $BMManageButtonStatusReq
 $paypalService = new PayPalAPIInterfaceServiceService();
 $BMManageButtonStatusResponse = $paypalService->BMManageButtonStatus($BMManageButtonStatusReq);
 echo "<pre>";
-var_dump($BMManageButtonStatusResponse);
+print_r($BMManageButtonStatusResponse);
 echo "</pre>";
 require_once '../Response.php';

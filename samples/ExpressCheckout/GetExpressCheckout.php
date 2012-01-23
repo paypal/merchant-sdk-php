@@ -9,10 +9,6 @@ $logger = new PPLoggingManager('GetExpressCheckout');
 
 $token = $_REQUEST['token'];
 
-//to use in DoExpressCheckout
-$_SESSION['token'] = $token;
-$_SESSION['payerId'] = $_REQUEST['PayerID'];
-
 $getExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType($token);
 $getExpressCheckoutDetailsRequest->Version = 84.0;
 $getExpressCheckoutReq = new GetExpressCheckoutDetailsReq();
@@ -20,7 +16,22 @@ $getExpressCheckoutReq->GetExpressCheckoutDetailsRequest = $getExpressCheckoutDe
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $getECResponse = $paypalService->GetExpressCheckoutDetails($getExpressCheckoutReq);
-var_dump($getECResponse);
+echo '<pre>';
+print_r($getECResponse);
+echo '</pre>';
+
+//to use in DoExpressCheckout
+$_SESSION['token'] = $token;
+if(isset($_REQUEST['PayerID']))
+{
+	$_SESSION['payerId'] = $_REQUEST['PayerID'];
+}
+else 
+{
+		$_SESSION['payerId'] = $getECResponse->GetExpressCheckoutDetailsResponseDetails->PayerInfo->PayerID;
+}
+$_SESSION['amount'] =$getECResponse->GetExpressCheckoutDetailsResponseDetails->PaymentDetails->OrderTotal->value;
+$_SESSION['currencyCode'] = $getECResponse->GetExpressCheckoutDetailsResponseDetails->PaymentDetails->OrderTotal->currencyID;
 
 if($getECResponse->Ack =='Success')
 {

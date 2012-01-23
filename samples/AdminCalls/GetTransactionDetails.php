@@ -21,7 +21,7 @@ $paypalService = new PayPalAPIInterfaceServiceService();
 $TransDetailsResponse = $paypalService->GetTransactionDetails($trans);
 //$logger->error("Received $createTransDetailsResponse:");
 echo "<pre>";
-var_dump($TransDetailsResponse);
+print_r($TransDetailsResponse);
 echo "</pre>";
 require_once '../Response.php';
 

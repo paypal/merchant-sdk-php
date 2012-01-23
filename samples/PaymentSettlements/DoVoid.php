@@ -18,7 +18,7 @@ $doVoidReq->DoVoidRequest =$doVoidRequest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $doVoidResponse = $paypalService->DoVoid($doVoidReq);
 echo "<pre>";
-var_dump($doVoidResponse);
+print_r($doVoidResponse);
 echo "</pre>";
 require_once '../Response.php';
 ?>

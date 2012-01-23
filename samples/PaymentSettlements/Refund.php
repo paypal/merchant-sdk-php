@@ -29,6 +29,6 @@ $refundReq->RefundTransactionRequest = $refundReqest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $refundResponse = $paypalService->RefundTransaction($refundReq);
 echo "<pre>";
-var_dump($refundResponse);
+print_r($refundResponse);
 echo "</pre>";
 require_once '../Response.php';

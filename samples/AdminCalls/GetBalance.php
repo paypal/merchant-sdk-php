@@ -16,6 +16,6 @@ $getBalanceReq->GetBalanceRequest = $getBalanceRequest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $getBalanceResponse = $paypalService->GetBalance($getBalanceReq);
 echo "<pre>";
-var_dump($getBalanceResponse);
+print_r($getBalanceResponse);
 echo "</pre>";
 require_once '../Response.php';

@@ -15,6 +15,6 @@ $getPalDetailsReq->GetPalDetailsRequest = $getPalDetailsRequest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $getPalDetailsResponse = $paypalService->GetPalDetails($getPalDetailsReq);
 echo "<pre>";
-var_dump($getPalDetailsResponse);
+print_r($getPalDetailsResponse);
 echo "</pre>";
 require_once '../Response.php';

@@ -18,6 +18,6 @@ $tranSearchReq->TransactionSearchRequest = $transactionSearchRequest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $transactionSearchResponse = $paypalService->TransactionSearch($tranSearchReq);
 echo "<pre>";
-var_dump($transactionSearchResponse);
+print_r($transactionSearchResponse);
 echo "</pre>";
 require_once '../Response.php';

@@ -19,7 +19,10 @@ $req->SetAuthFlowParamRequest = $reqType;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $setAuthFlowParamResponse = $paypalService->SetAuthFlowParam($req);
-var_dump($setAuthFlowParamResponse);
+
+echo "<pre>";
+print_r($setAuthFlowParamResponse);
+echo "</pre>";
 
 if($setAuthFlowParamResponse->Ack == 'Success')
 {

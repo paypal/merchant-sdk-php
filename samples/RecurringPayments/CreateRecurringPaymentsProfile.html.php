@@ -3,6 +3,57 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>PayPal SDK - CreateRecurringPaymentsProfile</title>
+<script language="JavaScript">
+	function generateCC(){
+		var cc_number = new Array(16);
+		var cc_len = 16;
+		var start = 0;
+		var rand_number = Math.random();
+
+		switch(document.CreateRPProfileForm.creditCardType.value)
+        {
+			case "Visa":
+				cc_number[start++] = 4;
+				break;
+			case "Discover":
+				cc_number[start++] = 6;
+				cc_number[start++] = 0;
+				cc_number[start++] = 1;
+				cc_number[start++] = 1;
+				break;
+			case "MasterCard":
+				cc_number[start++] = 5;
+				cc_number[start++] = Math.floor(Math.random() * 5) + 1;
+				break;
+			case "Amex":
+				cc_number[start++] = 3;
+				cc_number[start++] = Math.round(Math.random()) ? 7 : 4 ;
+				cc_len = 15;
+				break;
+        }
+
+        for (var i = start; i < (cc_len - 1); i++) {
+			cc_number[i] = Math.floor(Math.random() * 10);
+        }
+
+		var sum = 0;
+		for (var j = 0; j < (cc_len - 1); j++) {
+			var digit = cc_number[j];
+			if ((j & 1) == (cc_len & 1)) digit *= 2;
+			if (digit > 9) digit -= 9;
+			sum += digit;
+		}
+
+		var check_digit = new Array(0, 9, 8, 7, 6, 5, 4, 3, 2, 1);
+		cc_number[cc_len - 1] = check_digit[sum % 10];
+
+		document.CreateRPProfileForm.creditCardNumber.value = "";
+		for (var k = 0; k < cc_len; k++) {
+			document.CreateRPProfileForm.creditCardNumber.value += cc_number[k];
+		}
+	}
+</script>
+
 </head>
 <body>
 <center>
@@ -17,7 +68,7 @@ operation for each profile you want to create. The API operation creates
 a profile and an associated billing agreement.</p>
 </div>
 </div>
-<form method="POST">
+<form method="POST" name="CreateRPProfileForm" action = "CreateRecurringPaymentsProfile.php">
 <div id="request_form">
 <div class="note">You must set either Token or Credit Card number</div>
 <div class="params">
@@ -56,10 +107,9 @@ a profile and an associated billing agreement.</p>
 			<option value="11">Nov</option>
 			<option value="12">Dec</option>
 		</select> <select name="expYear">
-			<option value="2011">2011</option>
-			<option value="2012">2012</option>
-			<option value="2013">2013</option>
-			<option value="2014">2014</option>
+			<option value="2012">2013</option>
+			<option value="2013">2014</option>
+			<option value="2014">2015</option>
 		</select></div>
 		</td>
 		<td>
@@ -67,7 +117,7 @@ a profile and an associated billing agreement.</p>
 			id="cardOnName" value="" /></div>
 		</td>
 		<td>
-		<div class="param_value"><select name="creditCardType">
+		<div class="param_value"><select name="creditCardType" onChange="javascript:generateCC(); return false;">
 			<option value="Visa">Visa</option>
 			<option value="MasterCard">MasterCard</option>
 			<option value="Discover">Discover</option>
@@ -75,7 +125,7 @@ a profile and an associated billing agreement.</p>
 		</select></div>
 		</td>
 		<td>
-		<div class="param_value"><input type="text" name="cvv" id="cvv" /></div>
+		<div class="param_value"><input type="text" name="cvv" id="cvv"  value="962"/></div>
 		</td>
 	</tr>
 </table>
@@ -83,10 +133,10 @@ a profile and an associated billing agreement.</p>
 <div class="section_header">Recurring payments profile details</div>
 <div class="param_name">Subscriber Name</div>
 <div class="param_value"><input type="text" name="subscriberName"
-	id="subscriberName" value="" value="" /></div>
-<div class="param_name">Billing start date</div>
+	id="subscriberName" value="" value="" /> </div>
+<div class="param_name">Billing start date </div>
 <div class="param_value"><input type="text" name="billingStartDate"
-	id="billingStartDate" value= /></div>
+	id="billingStartDate" value="<?php echo date(DATE_ATOM)?>" /></div>
 <div class="param_name">Subscriber shipping address (if different from
 buyer's PayPal account address)</div>
 <table class="line_item">
@@ -105,8 +155,7 @@ buyer's PayPal account address)</div>
 			name="shippingName" value="" /> </span></td>
 		<td><span class="param_value"> <input type="text" id="shippingStreet1"
 			name="shippingStreet1" value="" /> </span></td>
-		<td><span class="param_value"> <input type="text" id="shippingStreet2"
-			name="shippingStreet2" value="" /> </span></td>
+		
 		<td><span class="param_value"> <input type="text" id="shippingCity"
 			name="shippingCity" value="" /> </span></td>
 		<td><span class="param_value"> <input type="text" id="shippingState"
@@ -125,7 +174,7 @@ buyer's PayPal account address)</div>
 <div class="param_name">Description (must match billing agreement if
 using Express Checkout token)</div>
 <div class="param_value"><textarea rows="5" cols="60"
-	name="profileDescription"></textarea></div>
+	name="profileDescription">Welcome to the world of shopping where you get everything</textarea></div>
 </div>
 <div class="section_header">Activation Details</div>
 <table class="params">
@@ -171,12 +220,7 @@ using Express Checkout token)</div>
 		<td><span class="param_value"> <input type="text"
 			id="trialBillingAmount" name="trialBillingAmount" value="2.0" /> </span>
 		</td>
-		<td><span class="param_value"> <input type="text"
-			id="trialShippingAmount" name="trialShippingAmount" value="0.0" /> </span>
-		</td>
-		<td><span class="param_value"> <input type="text" id="trialTaxAmount"
-			name="trialTaxAmount" value="0.0" /> </span></td>
-	</tr>
+		
 </table>
 
 <div class="section_header">Payment Period</div>
@@ -204,11 +248,7 @@ using Express Checkout token)</div>
 		</td>
 		<td><span class="param_value"> <input type="text" id="billingAmount"
 			name="billingAmount" value="5.0" /> </span></td>
-		<td><span class="param_value"> <input type="text" id="shippingAmount"
-			name="shippingAmount" value="1.0" /> </span></td>
-		<td><span class="param_value"> <input type="text" id="taxAmount"
-			name="taxAmount" value="0.0" /> </span></td>
-	</tr>
+			</tr>
 </table>
 <div class="params">
 <div class="param_name">Maximum failed payments before profile
@@ -226,22 +266,14 @@ suspension</div>
 	name="CreateRecurringPaymentsProfileBtn"
 	value="CreateRecurringPaymentsProfile" /><br />
 </div>
-<a href="/merchant-sample/index.html">Home</a> <br />
+<a href="../index.php">Home</a> <br />
 <br />
 </div>
 </form>
-<div id="relatedcalls">See also
-<ul>
-	<li><a href="GetRecurringPaymentsProfileDetails">GetRecurringPaymentsProfileDetails</a>
-	</li>
-	<li><a href="ManageRecurringPaymentsProfileStatus">ManageRecurringPaymentsProfileStatus</a>
-	</li>
-	<li><a href="UpdateRecurringPaymentsProfile">UpdateRecurringPaymentsProfile</a>
-	</li>
-	<li><a href="BillOutstandingAmount">BillOutstandingAmount</a></li>
-</ul>
-</div>
 </div>
 </center>
+<script language="javascript">
+	generateCC();
+</script>
 </body>
 </html>

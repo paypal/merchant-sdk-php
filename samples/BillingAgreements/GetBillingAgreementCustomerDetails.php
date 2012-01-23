@@ -18,6 +18,6 @@ $BACustomerDetailReq->GetBillingAgreementCustomerDetailsRequest = $BACustomerDet
 $paypalService = new PayPalAPIInterfaceServiceService();
 $BACustomerDetailResponse = $paypalService->GetBillingAgreementCustomerDetails($BACustomerDetailReq);
 echo "<pre>";
-var_dump($BACustomerDetailResponse);
+print_r($BACustomerDetailResponse);
 echo "</pre>";
 require_once '../Response.php';

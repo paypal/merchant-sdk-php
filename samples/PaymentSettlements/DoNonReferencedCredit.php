@@ -35,6 +35,6 @@ $doNonRefCreditReq->DoNonReferencedCreditRequest = $doNonRefCreditRequest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $doNonRefCreditResponse = $paypalService->DoNonReferencedCredit($doNonRefCreditReq);
 echo "<pre>";
-var_dump($doNonRefCreditResponse);
+print_r($doNonRefCreditResponse);
 echo "</pre>";
 require_once '../Response.php';

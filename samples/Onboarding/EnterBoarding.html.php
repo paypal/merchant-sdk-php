@@ -11,7 +11,7 @@
 <div id="apidetails">EnterBoarding establishes an integration
 program with a merchant, specifies a merchant information</div>
 </div>
-<form method="POST">
+<form method="POST" action = "EnterBoarding.php">
 <div id="request_form">
 <div class="params">
 <div class="param_name">Program Code which is given by PayPal
@@ -221,15 +221,9 @@ value="" maxlength="260" /></td>
 <input type="submit" name="EnterBoardingBtn" value="EnterBoarding" />
 <br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../index.php">Home</a>
 </div>
 </form>
-<div id="relatedcalls">
-See also
-<ul>
-<li><a href="GetBoardingDetails">GetBoardingDetails</a></li>
-</ul>
-</div>
 </div>
 </body>
 </html>

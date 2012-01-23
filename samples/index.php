@@ -149,7 +149,7 @@
 				</table>
 			</td>
 		
-			<!--<td valign="top"><table align="left">
+			<td valign="top"><table align="left">
 					<tr>
 						<th>Recurring Payments</th>
 					</tr>
@@ -170,11 +170,7 @@
 						</td>
 						<td></td>
 					</tr>
-					<tr>
-						<td align="left"><a href="RecurringPayments/UpdateRecurringPaymentsProfile.html.php">UpdateRecurringPaymentsProfile</a>
-						</td>
-						<td></td>
-					</tr>
+				
 					<tr>
 						<td align="left"><a href="RecurringPayments/BillOutstandingAmount.html.php">BillOutstandingAmount</a>
 						</td>
@@ -184,7 +180,7 @@
 				</table></td>
 
 
-			--><td valign="top"><table align="center">
+			<td valign="top"><table align="center">
 					<tr>
 						<th>Reference Transactions and Billing Agreement</th>
 					</tr>
@@ -273,7 +269,7 @@
 					</tr>
 				</table>
 			</td>
-			<!--<td valign="top"><table align="right">
+			<td valign="top"><table align="right">
 					<tr>
 						<th>Onboarding</th>
 					</tr>
@@ -288,7 +284,7 @@
 						<td></td>
 					</tr>
 				</table></td>
-		--></tr>
+		</tr>
 	</table>
 </body>
 </html>

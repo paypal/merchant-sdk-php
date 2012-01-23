@@ -23,6 +23,6 @@ $BMSetInventoryReq->BMSetInventoryRequest = $BMSetInventoryReqest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $BMSetInventoryResponse = $paypalService->BMSetInventory($BMSetInventoryReq);
 echo "<pre>";
-var_dump($BMSetInventoryResponse);
+print_r($BMSetInventoryResponse);
 echo "</pre>";
 require_once '../Response.php';

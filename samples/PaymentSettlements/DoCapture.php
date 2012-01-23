@@ -24,6 +24,6 @@ $doCaptureReq->DoCaptureRequest = $doCaptureReqest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $doCaptureResponse = $paypalService->DoCapture($doCaptureReq);
 echo "<pre>";
-var_dump($doCaptureResponse);
+print_r($doCaptureResponse);
 echo "</pre>";
 require_once '../Response.php';

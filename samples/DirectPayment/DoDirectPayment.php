@@ -1,25 +1,25 @@
 <?php
 /***********************************************************
-DoDirectPayment.php
+ DoDirectPayment.php
 
-Submits a credit card transaction to PayPal using a
-DoDirectPayment request.
+ Submits a credit card transaction to PayPal using a
+ DoDirectPayment request.
 
-The code collects transaction parameters from the form
-displayed by DoDirectPayment.php then constructs and sends
-the DoDirectPayment request string to the PayPal server.
-The paymentType variable becomes the PAYMENTACTION parameter
-of the request string.
+ The code collects transaction parameters from the form
+ displayed by DoDirectPayment.php then constructs and sends
+ the DoDirectPayment request string to the PayPal server.
+ The paymentType variable becomes the PAYMENTACTION parameter
+ of the request string.
 
-After the PayPal server returns the response, the code
-displays the API request and response in the browser.
-If the response from PayPal was a success, it displays the
-response parameters. If the response was an error, it
-displays the errors.
+ After the PayPal server returns the response, the code
+ displays the API request and response in the browser.
+ If the response from PayPal was a success, it displays the
+ response parameters. If the response was an error, it
+ displays the errors.
 
-Called by DoDirectPayment.html.php.
+ Called by DoDirectPayment.html.php.
 
-***********************************************************/
+ ***********************************************************/
 session_start();
 $path = '../../lib';
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
@@ -95,12 +95,12 @@ $ddReq->Version = 84.0;
 $doDirectPaymentReq = new DoDirectPaymentReq();
 $doDirectPaymentReq->DoDirectPaymentRequest = $ddReq;
 
-	
-	$logger->error("created doDirectPaymentReq Object");
-	$paypalService = new PayPalAPIInterfaceServiceService();
-	$doDirectPaymentResponse = $paypalService->DoDirectPayment($doDirectPaymentReq);
-	echo "<pre>";
-	var_dump($doDirectPaymentResponse);
-	echo "</pre>";
-	require_once '../Response.php';
+
+$logger->error("created doDirectPaymentReq Object");
+$paypalService = new PayPalAPIInterfaceServiceService();
+$doDirectPaymentResponse = $paypalService->DoDirectPayment($doDirectPaymentReq);
+echo "<pre>";
+print_r($doDirectPaymentResponse);
+echo "</pre>";
+require_once '../Response.php';
 ?>

@@ -21,6 +21,6 @@ $reverseTransactionReq->ReverseTransactionRequest = $reverseTransactionReqest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $reverseTransactionResponse = $paypalService->ReverseTransaction($reverseTransactionReq);
 echo "<pre>";
-var_dump($reverseTransactionResponse);
+print_r($reverseTransactionResponse);
 echo "</pre>";
 require_once '../Response.php';

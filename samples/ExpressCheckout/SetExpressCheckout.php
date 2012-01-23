@@ -71,8 +71,7 @@ $setECReq = new SetExpressCheckoutReq();
 $setECReq->SetExpressCheckoutRequest = $setECReqType;
 
 // storing in session to use in DoExpressCheckout
-$_SESSION['amount'] =$orderTotal->value ;
-$_SESSION['currencyCode'] = $_REQUEST['currencyCode'];
+
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $setECResponse = $paypalService->SetExpressCheckout($setECReq);

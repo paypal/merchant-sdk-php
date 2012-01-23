@@ -12,11 +12,11 @@
 merchant's account and retrieves a merchant's PayPal API
 credentials.</div>
 </div>
-<form method="POST">
+<form method="POST" action ="GetBoardingDetails.php">
 <div id="request_form">
 <div class="params">
 <div class="param_name">
-Onboarding Token: (Get OnboardingToken via <a href="EnterBoarding">EnterBoarding</a>
+Onboarding Token: (Get OnboardingToken via <a href="EnterBoarding.html.php">EnterBoarding</a>
 </div>
 <div class="param_value">
 <input type="text" name="onboardingToken" value="" maxlength="260" />
@@ -27,15 +27,10 @@ Onboarding Token: (Get OnboardingToken via <a href="EnterBoarding">EnterBoarding
 <input type="submit" name="GetBoardingDetails"
 value="GetBoardingDetails" /> <br />
 </div>
-<a href="/merchant-sample/index.html">Home</a>
+<a href="../index.php">Home</a>
 </div>
 </form>
-<div id="relatedcalls">
-See also
-<ul>
-<li><a href="EnterBoarding">EnterBoarding</a></li>
-</ul>
-</div>
+
 </div>
 </body>
 </html>

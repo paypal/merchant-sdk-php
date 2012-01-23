@@ -23,7 +23,7 @@ $doAuthReq->DoAuthorizationRequest =$doAuthRequest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $doAuthResponse = $paypalService->DoAuthorization($doAuthReq);
 echo "<pre>";
-var_dump($doAuthResponse);
+print_r($doAuthResponse);
 echo "</pre>";
 require_once '../Response.php';
 ?>

@@ -17,6 +17,6 @@ $addrVerifyReq->AddressVerifyRequest = $addressVerifyRequest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $addrVerifyResponse = $paypalService->AddressVerify($addrVerifyReq);
 echo "<pre>";
-var_dump($addrVerifyResponse);
+print_r($addrVerifyResponse);
 echo "</pre>";
 require_once '../Response.php';

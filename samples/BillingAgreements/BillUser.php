@@ -29,6 +29,6 @@ $billUserReq->BillUserRequest = $billUserReqest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $billUserResponse = $paypalService->BillUser($billUserReq);
 echo "<pre>";
-var_dump($billUserResponse);
+print_r($billUserResponse);
 echo "</pre>";
 require_once '../Response.php';

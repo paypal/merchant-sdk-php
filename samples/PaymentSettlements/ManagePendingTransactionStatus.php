@@ -19,7 +19,7 @@ $MPTranStatusReq->ManagePendingTransactionStatusRequest = $MPTranStatusReqest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $MPTranStatusResponse = $paypalService->ManagePendingTransactionStatus($MPTranStatusReq);
 echo "<pre>";
-var_dump($MPTranStatusResponse);
+print_r($MPTranStatusResponse);
 echo "</pre>";
 require_once '../Response.php';
 ?>

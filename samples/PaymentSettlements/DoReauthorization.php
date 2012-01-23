@@ -22,6 +22,6 @@ $doReAuthReq->DoReauthorizationRequest =$doReAuthRequest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $doReAuthResponse = $paypalService->DoReauthorization($doReAuthReq);
 echo "<pre>";
-var_dump($doReAuthResponse);
+print_r($doReAuthResponse);
 echo "</pre>";
 require_once '../Response.php';

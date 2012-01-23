@@ -18,6 +18,6 @@ $billingAgreementUpdateReq->BAUpdateRequest = $BAUpdateRequest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $BAUpdatResponse = $paypalService->BillAgreementUpdate($billingAgreementUpdateReq);
 echo "<pre>";
-var_dump($BAUpdatResponse);
+print_r($BAUpdatResponse);
 echo "</pre>";
 require_once '../Response.php';

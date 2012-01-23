@@ -3,10 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>PayPal SDK - UpdateRecurringPaymentsProfile</title>
-<%
-DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-Calendar startDate = Calendar.getInstance();
-%>
+
 </head>
 <body>
 <div id="wrapper">
@@ -90,7 +87,7 @@ value="" value="" />
 <div class="param_name">Billing start date</div>
 <div class="param_value">
 <input type="text" name="billingStartDate" id="billingStartDate"
-value=<%=df.format(startDate.getTime())%> />
+value=/>
 </div>
 <div class="param_name">Subscriber shipping address (if
 different from buyer's PayPal account address)</div>

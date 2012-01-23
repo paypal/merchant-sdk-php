@@ -17,7 +17,9 @@ $logger->error("created GetAuthDetailsRequest Object");
 $paypalService = new PayPalAPIInterfaceServiceService();
 $getAuthDetailsResponse = $paypalService->GetAuthDetails($req);
 //$logger->error("");
-var_dump($getAuthDetailsResponse);
+echo "<pre>";
+print_r($getAuthDetailsResponse);
+echo "</pre>";
 if($getAuthDetailsResponse->Ack == 'Success')
 {
 

@@ -57,6 +57,6 @@ $paypalService = new PayPalAPIInterfaceServiceService();
 $massPayResponse = $paypalService->MassPay($massPayReq);
 
 echo "<pre>";
-var_dump($massPayResponse);
+print_r($massPayResponse);
 echo "</pre>";
 require_once '../Response.php';
