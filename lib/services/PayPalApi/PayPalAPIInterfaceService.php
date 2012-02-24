@@ -5,6 +5,141 @@
  * 
  */
 /**
+ * AmountType
+ */
+class AmountType {
+	/**
+	 * @access public
+	 * @var CurrencyCodeType
+	 */
+	public $currencyID;
+
+	/**
+	 * @access public
+	 * @var double
+	 */
+	public $value;
+
+}
+
+/**
+ * BasicAmountType
+On requests, you must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. 
+ * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
+ */
+class BasicAmountType {
+	/**
+	 * @access public
+	 * @var CurrencyCodeType
+	 */
+	public $currencyID;
+
+	/**
+	 * @access public
+	 * @var string
+	 */
+	public $value;
+
+
+	public function init($arr = null) {
+		if($arr != null) {
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='currencyid') {
+				$this->currencyID = $arry["text"];			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='value') {
+				$this->value = $arry["text"];
+			}
+		}
+		}
+	}
+
+	public function __construct($currencyID = null, $value = null) {
+		$this->currencyID  = $currencyID;
+		$this->value  = $value;
+	}
+
+	public function toXMLString()  {
+		$str = '';
+		if($this->currencyID != null ) {
+			$str .= '	currencyID="'.$this->currencyID.'">';
+		 }
+		if($this->value != null ) {
+			$str .=$this->value;
+		 }
+
+		return $str;
+	}
+
+}
+
+/**
+ * MeasureType
+ */
+class MeasureType {
+	/**
+	 * @access public
+	 * @var token
+	 */
+	public $unit;
+
+	/**
+	 * @access public
+	 * @var double
+	 */
+	public $value;
+
+
+	public function init($arr = null) {
+		if($arr != null) {
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='unit') {
+				$this->unit = $arry["text"];
+			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='value') {
+				$this->value = $arry["text"];
+			}
+		}
+		}
+	}
+
+	public function __construct($unit = null, $value = null) {
+		$this->unit  = $unit;
+		$this->value  = $value;
+	}
+
+	public function toXMLString()  {
+		$str = '';
+		if($this->unit != null ) {
+			$str .= '<cc:unit>'.$this->unit.'</cc:unit>';
+		 }
+		if($this->value != null ) {
+			$str .=$this->value;
+		 }
+
+		return $str;
+	}
+
+}
+
+/**
+ * QuantityType
+ */
+class QuantityType {
+	/**
+	 * @access public
+	 * @var token
+	 */
+	public $unit;
+
+	/**
+	 * @access public
+	 * @var double
+	 */
+	public $value;
+
+}
+
+/**
  * AccountEntryType
  * Balance as of a given entry, can be 0.00.
  */
@@ -42,7 +177,7 @@ class AccountEntryType {
 	public $Debit;
 
 	/**
-	 * Item number if transaction is associated with an auction or 0
+	 * Item number if transaction is associated with an auction or 0 
 	 * if no item is associated with an account entry.      
 	 *
 	 * @access public
@@ -68,7 +203,7 @@ class AccountEntryType {
 
 	/**
 	 * Integer code for account details entry type. This element
-	 * element specifies an index to a table of explanations for
+	 * element specifies an index to a table of explanations for 
 	 * accounting charges. 
 	 *
 	 * @access public
@@ -80,18 +215,16 @@ class AccountEntryType {
 
 /**
  * AdditionalAccountType
- * The AdditionalAccount component represents historical data related to
- * accounts that the user held with a country of residency other than
- * the current one. eBay users can have one active account at a time.
- * For users who change their country of residency and modify their
- * eBay registration to reflect this change, the new country of
- * residence
- * becomes the currently active account. Any account associated with
- * a previous country is treated as an additional account. Because the
- * currency for these additional accounts are different than the
- * active
- * account, each additional account includes an indicator of the currency
- * for that account. Users who never change their country of residence
+ * The AdditionalAccount component represents historical data related to 
+ * accounts that the user held with a country of residency other than 
+ * the current one. eBay users can have one active account at a time. 
+ * For users who change their country of residency and modify their 
+ * eBay registration to reflect this change, the new country of residence 
+ * becomes the currently active account. Any account associated with 
+ * a previous country is treated as an additional account. Because the 
+ * currency for these additional accounts are different than the active 
+ * account, each additional account includes an indicator of the currency 
+ * for that account. Users who never change their country of residence 
  * will not have any additional accounts.
  */
 class AdditionalAccountType {
@@ -122,9 +255,8 @@ class AdditionalAccountType {
  */
 class PromotedItemType {
 	/**
-	 * Item ID for the base item. Based on this item other items are
-	 * promoted. it is teh only tag that would show up in all calls
-	 * that use promoted item type.
+	 * Item ID for the base item. Based on this item other items are 
+	 * promoted. it is teh only tag that would show up in all calls that use promoted item type. 
 	 * some are not in soap yet, such as get and ser promotion rules
 	 *
 	 * @access public
@@ -141,8 +273,7 @@ class PromotedItemType {
 	public $PictureURL;
 
 	/**
-	 * Where to display in the list of items.currentl y even forget and set
-	 * does not have to be minoccur =0
+	 * Where to display in the list of items.currentl y even forget and set does not have to be minoccur =0 
 	 * but if we ever were to do revise promotion tems, it can be omitted
 	 *
 	 * @access public
@@ -195,7 +326,7 @@ class PromotedItemType {
  */
 class CrossPromotionsType {
 	/**
-	 * Item ID for the base item. Based on this item other items are
+	 * Item ID for the base item. Based on this item other items are 
 	 * promoted.
 	 *
 	 * @access public
@@ -291,8 +422,8 @@ class AccountSummaryType {
 	public $AmountPastDue;
 
 	/**
-	 * First four digits (with remainder Xed-out). This may be an empty
-	 * string depending upon the value of the payment type for the
+	 * First four digits (with remainder Xed-out). This may be an empty 
+	 * string depending upon the value of the payment type for the 
 	 * user account (e.g, if no debit-card specified).
 	 *
 	 * @access public
@@ -301,9 +432,9 @@ class AccountSummaryType {
 	public $BankAccountInfo;
 
 	/**
-	 * Last time/day BankAccountInfo and/or BankRoutingInfo was
-	 * modified, in GMT. This may be an empty string depending
-	 * upon the value of the payment type for the user account
+	 * Last time/day BankAccountInfo and/or BankRoutingInfo was 
+	 * modified, in GMT. This may be an empty string depending 
+	 * upon the value of the payment type for the user account 
 	 * (e.g, if no debit-card specified).
 	 *
 	 * @access public
@@ -312,7 +443,7 @@ class AccountSummaryType {
 	public $BankModifyDate;
 
 	/**
-	 * Indicates the billing cycle in which eBay sends a billing
+	 * Indicates the billing cycle in which eBay sends a billing 
 	 * invoice to the specified user. Possible values:
 	 * 0 = On the last day of the month.
 	 * 15 = On the 15th day of the month. 
@@ -323,7 +454,7 @@ class AccountSummaryType {
 	public $BillingCycleDate;
 
 	/**
-	 * Expiration date for the credit card selected as payment method,
+	 * Expiration date for the credit card selected as payment method, 
 	 * in GMT. Empty string if no credit card is on file or if account is
 	 * inactive -- even if there is a credit card on file.
 	 *
@@ -334,8 +465,8 @@ class AccountSummaryType {
 
 	/**
 	 * Last four digits of user's credit card selected as payment
-	 * type. Empty string if no credit is on file. This may be an empty
-	 * string depending upon the value of the payment type for the
+	 * type. Empty string if no credit is on file. This may be an empty 
+	 * string depending upon the value of the payment type for the 
 	 * user account (e.g, if no debit-card specified).
 	 *
 	 * @access public
@@ -344,9 +475,9 @@ class AccountSummaryType {
 	public $CCInfo;
 
 	/**
-	 * Last date credit card or credit card expiration date was
-	 * modified, in GMT. This may be an empty string depending
-	 * upon the value of the payment type for the user account
+	 * Last date credit card or credit card expiration date was 
+	 * modified, in GMT. This may be an empty string depending 
+	 * upon the value of the payment type for the user account 
 	 * (e.g, Empty string if no credit card is on file.
 	 *
 	 * @access public
@@ -355,7 +486,7 @@ class AccountSummaryType {
 	public $CCModifyDate;
 
 	/**
-	 * User's current balance. Can be 0.00, positive, or negative.
+	 * User's current balance. Can be 0.00, positive, or negative. 
 	 *
 	 * @access public
 	 * @var AmountType
@@ -363,7 +494,7 @@ class AccountSummaryType {
 	public $CurrentBalance;
 
 	/**
-	 * Amount of last payment posted, 0.00 if no payments posted.
+	 * Amount of last payment posted, 0.00 if no payments posted. 
 	 *
 	 * @access public
 	 * @var AmountType
@@ -371,7 +502,7 @@ class AccountSummaryType {
 	public $LastAmountPaid;
 
 	/**
-	 * Amount of last invoice. 0.00 if account not yet invoiced.
+	 * Amount of last invoice. 0.00 if account not yet invoiced. 
 	 *
 	 * @access public
 	 * @var AmountType
@@ -379,8 +510,8 @@ class AccountSummaryType {
 	public $LastInvoiceAmount;
 
 	/**
-	 * Date of last invoice sent by eBay to the user, in GMT.
-	 * Empty string if this account has not been invoiced yet.
+	 * Date of last invoice sent by eBay to the user, in GMT. 
+	 * Empty string if this account has not been invoiced yet. 
 	 *
 	 * @access public
 	 * @var dateTime
@@ -388,7 +519,7 @@ class AccountSummaryType {
 	public $LastInvoiceDate;
 
 	/**
-	 * Date of last payment by specified user to eBay, in GMT.
+	 * Date of last payment by specified user to eBay, in GMT. 
 	 * Empty string if no payments posted. 
 	 *
 	 * @access public
@@ -397,7 +528,7 @@ class AccountSummaryType {
 	public $LastPaymentDate;
 
 	/**
-	 * Indicates whether the account has past due amounts
+	 * Indicates whether the account has past due amounts 
 	 * outstanding. Possible values:
 	 * true = Account is past due.
 	 * false = Account is current. 
@@ -408,8 +539,8 @@ class AccountSummaryType {
 	public $PastDue;
 
 	/**
-	 * Indicates the method the specified user selected for paying
-	 * eBay. The values for PaymentType vary for each SiteID.
+	 * Indicates the method the specified user selected for paying 
+	 * eBay. The values for PaymentType vary for each SiteID. 
 	 *
 	 * @access public
 	 * @var SellerPaymentMethodCodeType
@@ -434,10 +565,8 @@ class BuyerType {
 /**
  * SellerType
  * Information about user used by selling applications
- * there are number of required elements - they will always show up for
- * seller node
- * there is not such a call to do revise seller info. only added
- * minoccur=0 to elements that will not show up in every
+ * there are number of required elements - they will always show up for seller node
+ * there is not such a call to do revise seller info. only added minoccur=0 to elements that will not show up in every 
  * type of request/responce
  */
 class SellerType {
@@ -478,7 +607,7 @@ class SellerType {
 	public $LiveAuctionAuthorized;
 
 	/**
-	 * Indicates whether the user has elected to participate
+	 * Indicates whether the user has elected to participate 
 	 * as a seller in the Merchandising Manager feature. 
 	 *
 	 * @access public
@@ -578,13 +707,13 @@ class FeesType {
 
 /**
  * ShippingCarrierDetailsType
- * Calculated cost of shipping, based on shipping parameters and
+ * Calculated cost of shipping, based on shipping parameters and 
  * selected shipping service. Only returned if ShippingType = 2
  * (i.e., calculated shipping rate).
  */
 class ShippingCarrierDetailsType {
 	/**
-	 * Calculated cost of shipping, based on shipping parameters and
+	 * Calculated cost of shipping, based on shipping parameters and 
 	 * selected shipping service. Only returned if ShippingType = 2
 	 * (i.e., calculated shipping rate).
 	 *
@@ -606,7 +735,7 @@ class ShippingCarrierDetailsType {
 	public $InsuranceOption;
 
 	/**
-	 * Optional fees a seller might assess for the shipping of the item.
+	 * Optional fees a seller might assess for the shipping of the item. 
 	 *
 	 * @access public
 	 * @var AmountType
@@ -614,8 +743,8 @@ class ShippingCarrierDetailsType {
 	public $PackagingHandlingCosts;
 
 	/**
-	 * Describes any error message associated with the attempt
-	 * to calculate shipping rates. If there was no error, returns
+	 * Describes any error message associated with the attempt 
+	 * to calculate shipping rates. If there was no error, returns 
 	 * "No Error" (without the quotation marks).
 	 *
 	 * @access public
@@ -624,8 +753,7 @@ class ShippingCarrierDetailsType {
 	public $ShippingRateErrorMessage;
 
 	/**
-	 * is unique identified of shipping carrier, without this element the
-	 * whole node makes no sence
+	 * is unique identified of shipping carrier, without this element the whole node makes no sence
 	 *
 	 * @access public
 	 * @var ShippingServiceCodeType
@@ -648,9 +776,9 @@ class CalculatedShippingRateType {
 	public $OriginatingPostalCode;
 
 	/**
-	 * Indicates an item that cannot go through the stamping machine
-	 * at the shipping service office (a value of True) and requires
-	 * special or fragile handling. Only returned if ShippingType = 2.
+	 * Indicates an item that cannot go through the stamping machine 
+	 * at the shipping service office (a value of True) and requires 
+	 * special or fragile handling. Only returned if ShippingType = 2. 
 	 *
 	 * @access public
 	 * @var boolean
@@ -658,8 +786,7 @@ class CalculatedShippingRateType {
 	public $ShippingIrregular;
 
 	/**
-	 * contains information about shipping fees per each shipping service
-	 * chosen by the seller
+	 * contains information about shipping fees per each shipping service chosen by the seller
 	 *
 	 * array
 	 * @access public
@@ -668,8 +795,7 @@ class CalculatedShippingRateType {
 	public $CarrierDetails;
 
 	/**
-	 * May need to be moved into details - wait for George! The size of
-	 * the package to be shipped. Possible values are:
+	 * May need to be moved into details - wait for George! The size of the package to be shipped. Possible values are:
 	 * None
 	 * Letter
 	 * Large envelope
@@ -685,10 +811,9 @@ class CalculatedShippingRateType {
 	public $ShippingPackage;
 
 	/**
-	 * Shipping weight unit of measure (major). If unit of weight is kilogram
-	 * (i.e., metric system) this would be the exact weight value in
-	 * kilogram
-	 * (i.e., complete decimal number, e.g., 2.23 kg). Only returned if
+	 * Shipping weight unit of measure (major). If unit of weight is kilogram 
+	 * (i.e., metric system) this would be the exact weight value in kilogram 
+	 * (i.e., complete decimal number, e.g., 2.23 kg). Only returned if 
 	 * ShippingType is 2. 
 	 *
 	 * @access public
@@ -697,11 +822,9 @@ class CalculatedShippingRateType {
 	public $WeightMajor;
 
 	/**
-	 * Shipping weight unit of measure (minor). If unit of weight is in pounds
-	 * and/or
-	 * ounces, this would be the exact weight value in ounces (i.e., complete
-	 * decimal number, e.g., 8.2 or 8.0 ounces). Only returned if
-	 * ShippingType is 2. 
+	 * Shipping weight unit of measure (minor). If unit of weight is  in pounds and/or
+	 * ounces, this would be the exact weight value in ounces (i.e., complete 
+	 * decimal number, e.g., 8.2 or 8.0 ounces). Only returned if ShippingType is 2. 
 	 *
 	 * @access public
 	 * @var MeasureType
@@ -751,12 +874,12 @@ class FlatShippingRateType {
 
 /**
  * SalesTaxType
- * Amount of the sales tax to be collected for the transaction.
+ * Amount of the sales tax to be collected for the transaction. 
  * Sales tax is only for US. 
  */
 class SalesTaxType {
 	/**
-	 * Amount of the sales tax to be collected for the transaction.
+	 * Amount of the sales tax to be collected for the transaction. 
 	 * Sales tax is only for US. 
 	 *
 	 * @access public
@@ -765,8 +888,8 @@ class SalesTaxType {
 	public $SalesTaxPercent;
 
 	/**
-	 * Sales tax for the transaction, expressed as a percentage. Should
-	 * be empty for items listed on international sites (hence, this is
+	 * Sales tax for the transaction, expressed as a percentage. Should 
+	 * be empty for items listed on international sites (hence, this is 
 	 * US-only element).
 	 *
 	 * @access public
@@ -775,7 +898,7 @@ class SalesTaxType {
 	public $SalesTaxState;
 
 	/**
-	 * Indicates whether shipping is included in the tax. Applicable if
+	 * Indicates whether shipping is included in the tax. Applicable if 
 	 * ShippingType = 1 or 2. This element is used for US-only.
 	 *
 	 * @access public
@@ -799,8 +922,7 @@ class ShippingDetailsType {
 	public $AllowPaymentEdit;
 
 	/**
-	 * Calculated shipping rate details. If present, then the calculated shipping
-	 * rate option was used. 
+	 * Calculated shipping rate details.  If present, then the calculated shipping rate option was used. 
 	 *
 	 * @access public
 	 * @var CalculatedShippingRateType
@@ -808,8 +930,7 @@ class ShippingDetailsType {
 	public $CalculatedShippingRate;
 
 	/**
-	 * Indicates whether the payment instructions are included (e.g., for
-	 * updating the
+	 * Indicates whether the payment instructions are included (e.g., for updating the
 	 * details of a transaction).
 	 *
 	 * @access public
@@ -818,8 +939,7 @@ class ShippingDetailsType {
 	public $ChangePaymentInstructions;
 
 	/**
-	 * Flat shipping rate details. If present, then the flat shipping rate
-	 * option was used. 
+	 * Flat shipping rate details. If present, then the flat shipping rate option was used. 
 	 *
 	 * array
 	 * @access public
@@ -885,7 +1005,7 @@ class SiteHostedPictureType {
 	public $PictureURL;
 
 	/**
-	 * Type of display for photos used for PhotoHosting slide show.
+	 * Type of display for photos used for PhotoHosting slide show. 
 	 * Here are display options:
 	 * None = No special Picture Services features.
 	 * SlideShow = Slideshow of multiple pictures.
@@ -922,18 +1042,18 @@ class VendorHostedPictureType {
 	public $PictureURL;
 
 	/**
-	 * URL for a picture for the gallery. If the GalleryFeatured
-	 * argument is true, a value must be supplied for either
-	 * the GalleryURL or the PictureURL argument.
+	 * URL for a picture for the gallery. If the GalleryFeatured 
+	 * argument is true, a value must be supplied for either 
+	 * the GalleryURL or the PictureURL argument. 
 	 * In either case:
-	 * (a) If a URL is provided for only PictureURL, it is used
-	 * as the Gallery thumbnail.
-	 * (b) If a URL is provided for both GalleryURL and
-	 * PictureURL, then the picture indicated in GalleryURL
-	 * is used as the thumbnail.
-	 * The image used for the Gallery thumbnail (specified
-	 * in the GalleryURL or PictureURL argument) must be
-	 * in one of the graphics formats JPEG, BMP, TIF, or GIF.
+	 * (a) If a URL is provided for only PictureURL, it is used 
+	 * as the Gallery thumbnail. 
+	 * (b) If a URL is provided for both GalleryURL and 
+	 * PictureURL, then the picture indicated in GalleryURL 
+	 * is used as the thumbnail. 
+	 * The image used for the Gallery thumbnail (specified 
+	 * in the GalleryURL or PictureURL argument) must be 
+	 * in one of the graphics formats JPEG, BMP, TIF, or GIF. 
 	 *
 	 * @access public
 	 * @var anyURI
@@ -1097,18 +1217,16 @@ class CategoryType {
 
 /**
  * StorefrontType
- * Contains the eBay Stores-specific item attributes
- * department number and store location. StorefrontInfo
- * is shown for any item that belongs to an eBay Store
- * owner, regardless of whether it is fixed price or
- * auction type. Returned as null for international
+ * Contains the eBay Stores-specific item attributes 
+ * department number and store location. StorefrontInfo 
+ * is shown for any item that belongs to an eBay Store 
+ * owner, regardless of whether it is fixed price or 
+ * auction type. Returned as null for international 
  * fixed price items.
  */
 class StorefrontType {
 	/**
-	 * assumed this type is specific to add/get/revise item, then each
-	 * StorefrontType nust have category id, for store details this
-	 * node makes no sense to use
+	 * assumed this type is specific to add/get/revise item, then each StorefrontType nust have category id, for store details this node makes no sense to use
 	 *
 	 * @access public
 	 * @var int
@@ -1116,9 +1234,7 @@ class StorefrontType {
 	public $StoreCategoryID;
 
 	/**
-	 * in case or revise item for example - to change store category
-	 * (department) you do not need to change store URL, so it will
-	 * notbe in request
+	 * in case or revise item for example - to change store category (department) you do not need to change store URL, so it will notbe in request
 	 *
 	 * @access public
 	 * @var anyURI
@@ -1129,9 +1245,8 @@ class StorefrontType {
 
 /**
  * ListingDesignerType
- * Identifies the Layout and the Theme template
- * associated with the item. in case of revision - all data can be min occur =
- * 0
+ * Identifies the Layout and the Theme template 
+ * associated with the item. in case of revision - all data can be min occur = 0
  */
 class ListingDesignerType {
 	/**
@@ -1143,7 +1258,7 @@ class ListingDesignerType {
 	public $LayoutID;
 
 	/**
-	 * A value of true for OptimalPictureSize indicates that the picture
+	 * A value of true for OptimalPictureSize indicates that the picture 
 	 * URL will be enlarged to fit description of the item.
 	 *
 	 * @access public
@@ -1163,8 +1278,7 @@ class ListingDesignerType {
 
 /**
  * CharityType
- * Contains information about a Charity listing.in case of revision - all
- * data can be min occur = 0
+ * Contains information about a Charity listing.in case of revision - all data can be min occur = 0
  */
 class CharityType {
 	/**
@@ -1191,9 +1305,8 @@ class CharityType {
  * SellingStatusType
  * Contains the listed items price details which consists of
  * following information: BuyItNowPrice, ConvertedBuyItNowPrice,
- * ConvertedPrice, ConvertedStartPrice, CurrentPrice, MinimumToBid,
- * ReservePrice, and StartPrice. need to take in account get seller
- * events when defining minoccurs = 0       
+ * ConvertedPrice, ConvertedStartPrice, CurrentPrice, MinimumToBid, 
+ * ReservePrice, and StartPrice.  need to take in account get seller events when defining minoccurs = 0       
  */
 class SellingStatusType {
 	/**
@@ -1206,7 +1319,7 @@ class SellingStatusType {
 	public $BidCount;
 
 	/**
-	 * Smallest amount a bid must be above the current high
+	 * Smallest amount a bid must be above the current high 
 	 * bid. Not returned International Fixed Price items.
 	 *
 	 * @access public
@@ -1223,12 +1336,12 @@ class SellingStatusType {
 	public $ConvertedCurrentPrice;
 
 	/**
-	 * For auction-format listings, current minimum asking price
-	 * or the current highest bid for the item if bids have been
-	 * placed. Shows minimum bid if no bids have been placed
-	 * against the item. This field does not reflect the actual current
-	 * price of the item if it's a Type=7 or Type=9 (Fixed Price)
-	 * item and the price has been revised. (See StartPrice for
+	 * For auction-format listings, current minimum asking price 
+	 * or the current highest bid for the item if bids have been 
+	 * placed. Shows minimum bid if no bids have been placed 
+	 * against the item. This field does not reflect the actual current 
+	 * price of the item if it's a Type=7 or Type=9 (Fixed Price) 
+	 * item and the price has been revised. (See StartPrice for 
 	 * revised asking price.) 
 	 *
 	 * @access public
@@ -1237,11 +1350,11 @@ class SellingStatusType {
 	public $CurrentPrice;
 
 	/**
-	 * Contains one User node representing the current high
-	 * bidder. GetItem returns a high bidder for auctions that have
-	 * ended and have a winning bidder. For Fixed Price listings,
-	 * in-progress auctions, or auction items that received no
-	 * bids, GetItem returns a HighBidder node with empty tags.
+	 * Contains one User node representing the current high 
+	 * bidder. GetItem returns a high bidder for auctions that have 
+	 * ended and have a winning bidder. For Fixed Price listings, 
+	 * in-progress auctions, or auction items that received no 
+	 * bids, GetItem returns a HighBidder node with empty tags. 
 	 *
 	 * @access public
 	 * @var UserType
@@ -1249,8 +1362,8 @@ class SellingStatusType {
 	public $HighBidder;
 
 	/**
-	 * Applicable to ad-format items only. Indicates how many
-	 * leads to potential buyers are associated with this item.
+	 * Applicable to ad-format items only. Indicates how many 
+	 * leads to potential buyers are associated with this item. 
 	 * For other item types (other than ad-format items), returns
 	 * a value of 0 (zero).
 	 *
@@ -1260,7 +1373,7 @@ class SellingStatusType {
 	public $LeadCount;
 
 	/**
-	 * Minimum acceptable bid for the item. Not returned for
+	 * Minimum acceptable bid for the item. Not returned for 
 	 * International Fixed Price items.     
 	 *
 	 * @access public
@@ -1297,15 +1410,13 @@ class SellingStatusType {
 
 /**
  * ReviseStatusType
- * Contains the revise status information details (e.g., item properties
- * information). ths node contains system set data only - always
- * output and always all data. no minccurs needed,
- * except for motors specific data, since it wil lnot be retruned for non
- * motors items
+ * Contains the revise status information details (e.g., item properties 
+ * information). ths node contains system set data only - always output and always all data. no minccurs needed,
+ * except for motors specific data, since it wil lnot be retruned for non motors items
  */
 class ReviseStatusType {
 	/**
-	 * Indicates whether the item was revised since the auction started.
+	 * Indicates whether the item was revised since the auction started. 
 	 *
 	 * @access public
 	 * @var boolean
@@ -1353,8 +1464,7 @@ class ReviseStatusType {
 
 /**
  * ListingDetailsType
- * Contains the listed item details which consists of following information:
- * .         
+ * Contains the listed item details which consists of following information: .         
  */
 class ListingDetailsType {
 	/**
@@ -1379,8 +1489,8 @@ class ListingDetailsType {
 	public $CheckoutEnabled;
 
 	/**
-	 * Converted value of the BuyItNowPrice in the currency
-	 * indicated by SiteCurrency. This value must be refreshed
+	 * Converted value of the BuyItNowPrice in the currency 
+	 * indicated by SiteCurrency. This value must be refreshed 
 	 * every 24 hours to pick up the current conversion rates.
 	 *
 	 * @access public
@@ -1389,8 +1499,8 @@ class ListingDetailsType {
 	public $ConvertedBuyItNowPrice;
 
 	/**
-	 * Converted value of the StartPrice field in the currency
-	 * indicated by SiteCurrency. This value must be refreshed
+	 * Converted value of the StartPrice field in the currency 
+	 * indicated by SiteCurrency. This value must be refreshed 
 	 * every 24 hours to pick up the current conversion rates.
 	 *
 	 * @access public
@@ -1399,15 +1509,11 @@ class ListingDetailsType {
 	public $ConvertedStartPrice;
 
 	/**
-	 * Indicates the converted reserve price for a reserve auction. Returned
-	 * only if DetailLevel = 4. ReservePrice is only returned for
-	 * auctions with
-	 * a reserve price where the user calling GetItem is the item's
-	 * seller.
-	 * Returned as null for International Fixed Price items. For more
-	 * information
-	 * on reserve price auctions, see
-	 * http://pages.ebay.com/help/basics/f-format.html#1.
+	 * Indicates the converted reserve price for a reserve auction. Returned 
+	 * only if DetailLevel = 4. ReservePrice is only returned for auctions with 
+	 * a reserve price where the user calling GetItem is the item's seller. 
+	 * Returned as null for International Fixed Price items. For more information 
+	 * on reserve price auctions, see http://pages.ebay.com/help/basics/f-format.html#1. 
 	 *
 	 * @access public
 	 * @var AmountType
@@ -1429,9 +1535,9 @@ class ListingDetailsType {
 	public $RegionName;
 
 	/**
-	 * Indicates the new ItemID for a relisted item. When an item is
-	 * relisted, the old (expired) listing is annotated with the new
-	 * (relist) ItemID. This field only appears when the old listing is
+	 * Indicates the new ItemID for a relisted item. When an item is 
+	 * relisted, the old (expired) listing is annotated with the new 
+	 * (relist) ItemID. This field only appears when the old listing is 
 	 * retrieved.
 	 *
 	 * @access public
@@ -1440,7 +1546,7 @@ class ListingDetailsType {
 	public $RelistedItemID;
 
 	/**
-	 * The ItemID for the original listing (i.e., OriginalItemID specific
+	 * The ItemID for the original listing (i.e., OriginalItemID specific 
 	 * to Second Chance Offer items). 
 	 *
 	 * @access public
@@ -1449,7 +1555,7 @@ class ListingDetailsType {
 	public $SecondChanceOriginalItemID;
 
 	/**
-	 * Time stamp for the start of the listing (in GMT). For regular items,
+	 * Time stamp for the start of the listing (in GMT). For regular items, 
 	 * StartTime is not sent in at listing time.
 	 *
 	 * @access public
@@ -1476,18 +1582,18 @@ class ListingDetailsType {
 
 /**
  * ItemType
- * Returns custom, application-specific data associated
- * with the item. The data in this field is stored with the item
- * in the items table at eBay, but is not used in any way by
- * eBay. Use ApplicationData to store such special information
+ * Returns custom, application-specific data associated 
+ * with the item. The data in this field is stored with the item 
+ * in the items table at eBay, but is not used in any way by 
+ * eBay. Use ApplicationData to store such special information 
  * as a part or SKU number. Maximum 32 characters in length.
  */
 class ItemType {
 	/**
-	 * Returns custom, application-specific data associated
-	 * with the item. The data in this field is stored with the item
-	 * in the items table at eBay, but is not used in any way by
-	 * eBay. Use ApplicationData to store such special information
+	 * Returns custom, application-specific data associated 
+	 * with the item. The data in this field is stored with the item 
+	 * in the items table at eBay, but is not used in any way by 
+	 * eBay. Use ApplicationData to store such special information 
 	 * as a part or SKU number. Maximum 32 characters in length.
 	 *
 	 * @access public
@@ -1504,12 +1610,12 @@ class ItemType {
 	public $ListOfAttributeSets;
 
 	/**
-	 * If true (1), indicates that the seller requested immediate
-	 * payment for the item. False (0) if immediate payment was
-	 * not requested. (Does not indicate whether the item is
-	 * still a candidate for puchase via immediate payment.)
-	 * Only applicable for items listed on US and UK sites in
-	 * categories that support immediate payment, when seller
+	 * If true (1), indicates that the seller requested immediate 
+	 * payment for the item. False (0) if immediate payment was 
+	 * not requested. (Does not indicate whether the item is 
+	 * still a candidate for puchase via immediate payment.) 
+	 * Only applicable for items listed on US and UK sites in 
+	 * categories that support immediate payment, when seller 
 	 * has a Premier or Business PayPal account.
 	 *
 	 * @access public
@@ -1518,15 +1624,14 @@ class ItemType {
 	public $AutoPay;
 
 	/**
-	 * Indicates the status of the item's eligibility for the Buyer
+	 * Indicates the status of the item's eligibility for the Buyer 
 	 * Protection Program. Possible values:
 	 * ItemIneligible - Item is ineligible (e.g., category not applicable)
-	 * ItemEligible - Item is eligible per standard criteria
-	 * ItemMarkedIneligible - Item marked ineligible per special
-	 * criteria (e.g., seller's account closed)
+	 * ItemEligible - Item is eligible per standard criteria 
+	 * ItemMarkedIneligible - Item marked ineligible per special criteria (e.g., seller's account closed)
 	 * ItemMarkedIneligible - Item marked elegible per other criteria
-	 * Applicable for items listed to the US site and for the Parts
-	 * and Accessories category (6028) or Everything Else category
+	 * Applicable for items listed to the US site and for the Parts 
+	 * and Accessories category (6028) or Everything Else category 
 	 * (10368) (or their subcategories) on the eBay Motors site.
 	 *
 	 * @access public
@@ -1535,9 +1640,9 @@ class ItemType {
 	public $BuyerProtection;
 
 	/**
-	 * Amount a Buyer would need to bid to take advantage
-	 * of the Buy It Now feature. Not applicable to Fixed-Price
-	 * items (Type = 7 or 9) or AdFormat-type listings. For
+	 * Amount a Buyer would need to bid to take advantage 
+	 * of the Buy It Now feature. Not applicable to Fixed-Price 
+	 * items (Type = 7 or 9) or AdFormat-type listings. For 
 	 * Fixed-Price items, see StartPrice instead. 
 	 *
 	 * @access public
@@ -1586,14 +1691,14 @@ class ItemType {
 	public $Description;
 
 	/**
-	 * Online Escrow paid for by buyer or seller. Cannot use
-	 * with real estate auctions. Escrow is recommended for
-	 * for transactions over $500. Escrow service,
-	 * available via Escrow.com, protects both buyer and
-	 * seller by acting as a trusted third-party during the
+	 * Online Escrow paid for by buyer or seller. Cannot use 
+	 * with real estate auctions. Escrow is recommended for 
+	 * for transactions over $500. Escrow service, 
+	 * available via Escrow.com, protects both buyer and 
+	 * seller by acting as a trusted third-party during the 
 	 * transaction and managing the payment process
 	 * from start to finish. Also, if escrow by seller option used,
-	 * then for Motors, this means that Escrow will be
+	 * then for Motors, this means that Escrow will be 
 	 * negotiated at the end of the auction.
 	 *
 	 * @access public
@@ -1602,9 +1707,9 @@ class ItemType {
 	public $Escrow;
 
 	/**
-	 * If set, a generic gift icon displays in the listing's
-	 * Title. GiftIcon must be set to to be able to use
-	 * GiftServices options (e.g., GiftExpressShipping,
+	 * If set, a generic gift icon displays in the listing's 
+	 * Title. GiftIcon must be set to to be able to use 
+	 * GiftServices options (e.g., GiftExpressShipping, 
 	 * GiftShipToRecipient, or GiftWrap).
 	 *
 	 * @access public
@@ -1613,7 +1718,7 @@ class ItemType {
 	public $GiftIcon;
 
 	/**
-	 * Gift service options offered by the seller of
+	 * Gift service options offered by the seller of 
 	 * the listed item.    
 	 *
 	 * array
@@ -1623,11 +1728,11 @@ class ItemType {
 	public $GiftServices;
 
 	/**
-	 * Optional hit counter for the item's listing page. Possible
+	 * Optional hit counter for the item's listing page. Possible 
 	 * values are:
-	 * "NoHitCounter"
-	 * "HonestyStyle"
-	 * "GreenLED"
+	 * "NoHitCounter"  
+	 * "HonestyStyle"  
+	 * "GreenLED"  
 	 * "Hidden"  
 	 *
 	 * @access public
@@ -1644,8 +1749,8 @@ class ItemType {
 	public $ItemID;
 
 	/**
-	 * Includes listing details in terms of start and
-	 * end time of listing (in GMT) as well as other
+	 * Includes listing details in terms of start and 
+	 * end time of listing (in GMT) as well as other 
 	 * details (e.g., orginal item for second chance,
 	 * converted start price, etc.).
 	 *
@@ -1655,11 +1760,11 @@ class ItemType {
 	public $ListingDetails;
 
 	/**
-	 * When an item is first listed (using AddItem), a Layout template
-	 * or a Theme template (or both) can be assigned to the item.
-	 * A Layout template is assigned to a new item by specifying
-	 * the Layout template ID (in the AddItem input argument
-	 * LayoutID). Similarly, a Theme template is assigned to the
+	 * When an item is first listed (using AddItem), a Layout template 
+	 * or a Theme template (or both) can be assigned to the item. 
+	 * A Layout template is assigned to a new item by specifying 
+	 * the Layout template ID (in the AddItem input argument 
+	 * LayoutID). Similarly, a Theme template is assigned to the 
 	 * item using the ThemeID argument.      
 	 *
 	 * @access public
@@ -1686,8 +1791,8 @@ class ItemType {
 	public $ListingEnhancement;
 
 	/**
-	 * Describes the type of listing for the item a seller
-	 * has chosen (e.g., Chinese, Dutch, FixedPrice, etc.).
+	 * Describes the type of listing for the item a seller 
+	 * has chosen (e.g., Chinese, Dutch, FixedPrice, etc.).    
 	 *
 	 * @access public
 	 * @var ListingTypeCodeType
@@ -1719,7 +1824,7 @@ class ItemType {
 	public $PartnerName;
 
 	/**
-	 * List of payment methods accepted by a seller from a buyer for
+	 * List of payment methods accepted by a seller from a buyer for 
 	 * a (checkout) transaction.
 	 *
 	 * array
@@ -1729,7 +1834,7 @@ class ItemType {
 	public $PaymentMethods;
 
 	/**
-	 * Valid PayPal e-mail address if seller has chosen PayPal
+	 * Valid PayPal e-mail address if seller has chosen PayPal 
 	 * as a payment method for the listed item.
 	 *
 	 * @access public
@@ -1762,9 +1867,9 @@ class ItemType {
 	public $Quantity;
 
 	/**
-	 * Region where the item is listed. See Region Table for values.
-	 * If the item is listed with a Region of 0 (zero), then this return
-	 * field denotes no region association with the item, meaning
+	 * Region where the item is listed. See Region Table for values. 
+	 * If the item is listed with a Region of 0 (zero), then this return 
+	 * field denotes no region association with the item, meaning 
 	 * that it is not listing the item regionally.
 	 *
 	 * @access public
@@ -1773,14 +1878,12 @@ class ItemType {
 	public $RegionID;
 
 	/**
-	 * If true, creates a link from the old listing for the item to the
-	 * new
-	 * relist page, which accommodates users who might still look for
-	 * the item under its old item ID. Also adds the relist ID to the old
-	 * listing's record in the eBay database, which can be returned by
-	 * calling GetItem for the old ItemId. If your application creates
-	 * the
-	 * listing page for the user, you need to add the relist link option to
+	 * If true, creates a link from the old listing for the item to the new 
+	 * relist page, which accommodates users who might still look for 
+	 * the item under its old item ID. Also adds the relist ID to the old 
+	 * listing's record in the eBay database, which can be returned by 
+	 * calling GetItem for the old ItemId. If your application creates the 
+	 * listing page for the user, you need to add the relist link option to 
 	 * your application for your users.
 	 *
 	 * @access public
@@ -1789,12 +1892,12 @@ class ItemType {
 	public $RelistLink;
 
 	/**
-	 * Indicates the reserve price for a reserve auction. Returned
-	 * only if DetailLevel = 4. ReservePrice is only returned for
-	 * auctions with a reserve price where the user calling GetItem
-	 * is the item's seller. Returned as null for International Fixed
-	 * Price items. For more information on reserve price auctions,
-	 * see http://pages.ebay.com/help/basics/f-format.html#1.
+	 * Indicates the reserve price for a reserve auction. Returned 
+	 * only if DetailLevel = 4. ReservePrice is only returned for 
+	 * auctions with a reserve price where the user calling GetItem 
+	 * is the item's seller. Returned as null for International Fixed 
+	 * Price items. For more information on reserve price auctions, 
+	 * see http://pages.ebay.com/help/basics/f-format.html#1. 
 	 *
 	 * @access public
 	 * @var AmountType
@@ -1817,7 +1920,7 @@ class ItemType {
 	public $ScheduleTime;
 
 	/**
-	 * Container for data on the secondary category of listing.
+	 * Container for data on the secondary category of listing. 
 	 * Secondary category is optional.
 	 *
 	 * @access public
@@ -1851,14 +1954,14 @@ class ItemType {
 	public $SellingStatus;
 
 	/**
-	 * Specifies where the seller is willing to ship the item.
-	 * Default "SiteOnly". Valid values are:
+	 * Specifies where the seller is willing to ship the item. 
+	 * Default "SiteOnly". Valid values are: 
 	 * SiteOnly (the default)
 	 * WorldWide
 	 * SitePlusRegions
 	 * WillNotShip
-	 * If SitePlusRegions is selected, then at least one
-	 * regions argument (ShipToNorthAmerica, ShipToEurope,
+	 * If SitePlusRegions is selected, then at least one 
+	 * regions argument (ShipToNorthAmerica, ShipToEurope, 
 	 * etc.) must also be set.
 	 *
 	 * @access public
@@ -1867,7 +1970,7 @@ class ItemType {
 	public $ShippingOption;
 
 	/**
-	 * Contains the shipping payment related information for the
+	 * Contains the shipping payment related information for the 
 	 * listed item.
 	 *
 	 * @access public
@@ -1885,7 +1988,7 @@ class ItemType {
 	public $ShippingRegions;
 
 	/**
-	 * Describes who pays for the delivery of an item (e.g., buyer
+	 * Describes who pays for the delivery of an item (e.g., buyer 
 	 * or seller). 
 	 *
 	 * @access public
@@ -1902,8 +2005,8 @@ class ItemType {
 	public $Site;
 
 	/**
-	 * Starting price for the item. For Type=7 or Type=9 (Fixed Price)
-	 * items, if the item price (MinimumBid) is revised, this field
+	 * Starting price for the item. For Type=7 or Type=9 (Fixed Price) 
+	 * items, if the item price (MinimumBid) is revised, this field 
 	 * returns the new price. 
 	 *
 	 * @access public
@@ -1912,9 +2015,9 @@ class ItemType {
 	public $StartPrice;
 
 	/**
-	 * Storefront is shown for any item that
-	 * belongs to an eBay Store owner, regardless of
-	 * whether it is fixed price or auction type. Not
+	 * Storefront is shown for any item that 
+	 * belongs to an eBay Store owner, regardless of 
+	 * whether it is fixed price or auction type.  Not 
 	 * returned for International Fixed Price items.     
 	 *
 	 * @access public
@@ -1923,8 +2026,7 @@ class ItemType {
 	public $Storefront;
 
 	/**
-	 * Subtitle to use in addition to the title. Provides more keywords when
-	 * buyers search in titles and descriptions.
+	 * Subtitle to use in addition to the title. Provides more keywords when buyers search in titles and descriptions.
 	 *
 	 * @access public
 	 * @var string
@@ -1932,7 +2034,7 @@ class ItemType {
 	public $SubTitle;
 
 	/**
-	 * Time until the the end of the listing (e.g., the amount of time left
+	 * Time until the the end of the listing (e.g., the amount of time left 
 	 * in an active auction).
 	 *
 	 * @access public
@@ -1965,8 +2067,7 @@ class ItemType {
 	public $VATDetails;
 
 	/**
-	 * Item picture information for pictures hosted at vendor (i.e.,
-	 * remote) site.
+	 * Item picture information for pictures hosted at vendor (i.e., remote) site.
 	 *
 	 * @access public
 	 * @var VendorHostedPictureType
@@ -1991,14 +2092,10 @@ class TransactionsType {
 
 /**
  * TransactionType
- * Contains information about a single transaction. A transaction contains
- * information
- * about the sale of a particular item. The system creates a transaction
- * when a buyer
- * has made a purchase (Fixed Price items) or is the winning bidder (BIN
- * and auction
- * items). A listing can be associated with one or more transactions in
- * these cases:
+ * Contains information about a single transaction. A transaction contains information 
+ * about the sale of a particular item. The system creates a transaction when a buyer 
+ * has made a purchase (Fixed Price items) or is the winning bidder (BIN and auction 
+ * items). A listing can be associated with one or more transactions in these cases:
  * Multi-Item Fixed Price Listings
  * Dutch Auction Listings
  * A listing is associated with a single transaction in these cases:
@@ -2007,15 +2104,14 @@ class TransactionsType {
  */
 class TransactionType {
 	/**
-	 * The amount the buyer paid for the item or agreed to pay,
-	 * depending on how far into the checkout process the item is.
-	 * If the seller allowed the buyer to change the item total, the
-	 * buyer
-	 * is able to change the total until the time that the transaction's
-	 * status moves to Complete. Determine whether the buyer
-	 * changed the amount by calling GetSellerTransactions or
-	 * GetSellerTransactions and comparing the AmountPaid value
-	 * to what the seller expected. For Motors items, AmountPaid is
+	 * The amount the buyer paid for the item or agreed to pay, 
+	 * depending on how far into the checkout process the item is. 
+	 * If the seller allowed the buyer to change the item total, the buyer 
+	 * is able to change the total until the time that the transaction's 
+	 * status moves to Complete. Determine whether the buyer 
+	 * changed the amount by calling GetSellerTransactions or 
+	 * GetSellerTransactions and comparing the AmountPaid value 
+	 * to what the seller expected. For Motors items, AmountPaid is 
 	 * the amount paid by the buyer for the deposit.
 	 *
 	 * @access public
@@ -2040,7 +2136,7 @@ class TransactionType {
 	public $ShippingDetails;
 
 	/**
-	 * Value returned in the Transaction/AmountPaid element, converted
+	 * Value returned in the Transaction/AmountPaid element, converted 
 	 * to the currency indicated by SiteCurrency.
 	 *
 	 * @access public
@@ -2049,7 +2145,7 @@ class TransactionType {
 	public $ConvertedAmountPaid;
 
 	/**
-	 * Value returned in the Transaction/TransactionPrice element,
+	 * Value returned in the Transaction/TransactionPrice element, 
 	 * converted to the currency indicated by SiteCurrency.
 	 *
 	 * @access public
@@ -2058,9 +2154,9 @@ class TransactionType {
 	public $ConvertedTransactionPrice;
 
 	/**
-	 * For fixed-price, Stores, and BIN items indicates when the
-	 * purchase (or BIN) occurred. For all other item types indicates
-	 * when the transaction was created (the time when checkout
+	 * For fixed-price, Stores, and BIN items indicates when the 
+	 * purchase (or BIN) occurred. For all other item types indicates 
+	 * when the transaction was created (the time when checkout 
 	 * was initiated).
 	 *
 	 * @access public
@@ -2069,7 +2165,7 @@ class TransactionType {
 	public $CreatedDate;
 
 	/**
-	 * Deposit type for Motors items. If item is not a Motors item,
+	 * Deposit type for Motors items. If item is not a Motors item, 
 	 * then returns a DepositType of None. Possible values:
 	 * None
 	 * Other Method
@@ -2089,7 +2185,7 @@ class TransactionType {
 	public $Item;
 
 	/**
-	 * Contains the number of individual items the buyer purchased in
+	 * Contains the number of individual items the buyer purchased in 
 	 * the transaction. 
 	 *
 	 * @access public
@@ -2098,7 +2194,7 @@ class TransactionType {
 	public $QuantityPurchased;
 
 	/**
-	 * Shipping cost totals shown to user (for both flat and calculated
+	 * Shipping cost totals shown to user (for both flat and calculated 
 	 * rates).		
 	 *
 	 * @access public
@@ -2115,9 +2211,9 @@ class TransactionType {
 	public $Status;
 
 	/**
-	 * Unique identifier for a transaction. Returns 0 when Type=1
-	 * (Chinese auction). Typically, an ItemID and a TransactionID
-	 * uniquely identify a checkout transaction.
+	 * Unique identifier for a transaction. Returns 0 when Type=1 
+	 * (Chinese auction). Typically, an ItemID and a TransactionID 
+	 * uniquely identify a checkout  transaction.
 	 *
 	 * @access public
 	 * @var string
@@ -2133,7 +2229,7 @@ class TransactionType {
 	public $AuthorizationID;
 
 	/**
-	 * Price of the item, before shipping and sales tax. For Motors,
+	 * Price of the item, before shipping and sales tax. For Motors, 
 	 * TransactionPrice is the deposit amount.
 	 *
 	 * @access public
@@ -2142,11 +2238,11 @@ class TransactionType {
 	public $TransactionPrice;
 
 	/**
-	 * VAT rate for the item, if the item price includes the VAT rate.
-	 * Specify the VATPercent if you want include the net price in
-	 * addition to the gross price in the listing. VAT rates vary
-	 * depending on the item and on the user's country of residence;
-	 * therefore a business seller is responsible for entering the
+	 * VAT rate for the item, if the item price includes the VAT rate. 
+	 * Specify the VATPercent if you want include the net price in 
+	 * addition to the gross price in the listing. VAT rates vary 
+	 * depending on the item and on the user's country of residence; 
+	 * therefore a business seller is responsible for entering the 
 	 * correct VAT rate (it will not be calculated by eBay).
 	 *
 	 * @access public
@@ -2182,29 +2278,25 @@ class PaymentType {
 
 /**
  * TransactionStatusType
- * Indicates the success or failure of an eBay Online Payment for
- * the transaction. If the payment failed, the value returned
- * indicates
+ * Indicates the success or failure of an eBay Online Payment for 
+ * the transaction. If the payment failed, the value returned indicates 
  * the reason for the failure. Possible values:
  * 0 = No payment failure.
  * 3 = Buyer's eCheck bounced.
  * 4 = Buyer's credit card failed.
  * 5 = Buyer failed payment as reported by seller.
- * 7 = Payment from buyer to seller is in PayPal process, but has
- * not yet been completed.
+ * 7 = Payment from buyer to seller is in PayPal process, but has not yet been completed.
  */
 class TransactionStatusType {
 	/**
-	 * Indicates the success or failure of an eBay Online Payment for
-	 * the transaction. If the payment failed, the value returned
-	 * indicates
+	 * Indicates the success or failure of an eBay Online Payment for 
+	 * the transaction. If the payment failed, the value returned indicates 
 	 * the reason for the failure. Possible values:
 	 * 0 = No payment failure.
 	 * 3 = Buyer's eCheck bounced.
 	 * 4 = Buyer's credit card failed.
 	 * 5 = Buyer failed payment as reported by seller.
-	 * 7 = Payment from buyer to seller is in PayPal process, but has
-	 * not yet been completed.
+	 * 7 = Payment from buyer to seller is in PayPal process, but has not yet been completed.
 	 *
 	 * @access public
 	 * @var int
@@ -2212,8 +2304,7 @@ class TransactionStatusType {
 	public $eBayPaymentStatus;
 
 	/**
-	 * Indicates the current state of the checkout process for the transaction.
-	 * Possible values:
+	 * Indicates the current state of the checkout process for the transaction. Possible values:
 	 * 0 = Checkout complete.
 	 * 1 = Checkout incomplete. No details specified.
 	 * 2 = Buyer requests total.
@@ -2225,8 +2316,7 @@ class TransactionStatusType {
 	public $IncompleteState;
 
 	/**
-	 * Indicates last date and time checkout status or incomplete state was
-	 * updated
+	 * Indicates last date and time checkout status or incomplete state was updated 
 	 * (in GMT). 
 	 *
 	 * @access public
@@ -2243,7 +2333,7 @@ class TransactionStatusType {
 	public $PaymentMethodUsed;
 
 	/**
-	 * Indicates whether the transaction process complete or incomplete.
+	 * Indicates whether the transaction process complete or incomplete. 
 	 * Possible values:
 	 * 1 = Incomplete
 	 * 2 = Complete
@@ -2257,21 +2347,14 @@ class TransactionStatusType {
 
 /**
  * UserType
- * Feedback scores are a quantitative expression of the desirability of
- * dealing
- * with that person as a Buyer or a Seller in auction transactions.
- * Each
- * auction transaction can result in one feedback entry for a given user
- * (the Buyer can leave one feedback about the Seller and the
- * Seller can leave
- * one feedback about the Buyer). That one feedback can be positive,
- * negative,
- * or neutral. The aggregated feedback counts for a particular user
- * represent
- * that user's overall feedback score (referred to as a "feedback
- * rating" on the
- * eBay site). This rating is commonly expressed as the eBay Feedback
- * score
+ * Feedback scores are a quantitative expression of the desirability of dealing 
+ * with that person as a Buyer or a Seller in auction transactions. Each 
+ * auction transaction can result in one feedback entry for a given user 
+ * (the Buyer can leave one feedback about the Seller and the Seller can leave 
+ * one feedback about the Buyer). That one feedback can be positive, negative, 
+ * or neutral. The aggregated feedback counts for a particular user represent 
+ * that user's overall feedback score (referred to as a "feedback rating" on the 
+ * eBay site). This rating is commonly expressed as the eBay Feedback score
  * for the user. 
  */
 class UserType {
@@ -2294,21 +2377,14 @@ class UserType {
 	public $Email;
 
 	/**
-	 * Feedback scores are a quantitative expression of the desirability of
-	 * dealing
-	 * with that person as a Buyer or a Seller in auction transactions.
-	 * Each
-	 * auction transaction can result in one feedback entry for a given user
-	 * (the Buyer can leave one feedback about the Seller and the
-	 * Seller can leave
-	 * one feedback about the Buyer). That one feedback can be positive,
-	 * negative,
-	 * or neutral. The aggregated feedback counts for a particular user
-	 * represent
-	 * that user's overall feedback score (referred to as a "feedback
-	 * rating" on the
-	 * eBay site). This rating is commonly expressed as the eBay Feedback
-	 * score
+	 * Feedback scores are a quantitative expression of the desirability of dealing 
+	 * with that person as a Buyer or a Seller in auction transactions. Each 
+	 * auction transaction can result in one feedback entry for a given user 
+	 * (the Buyer can leave one feedback about the Seller and the Seller can leave 
+	 * one feedback about the Buyer). That one feedback can be positive, negative, 
+	 * or neutral. The aggregated feedback counts for a particular user represent 
+	 * that user's overall feedback score (referred to as a "feedback rating" on the 
+	 * eBay site). This rating is commonly expressed as the eBay Feedback score
 	 * for the user. 
 	 *
 	 * @access public
@@ -2383,14 +2459,13 @@ class UserType {
 	public $UserIDLastChanged;
 
 	/**
-	 * If present, indicates whether or not the user is subject to VAT.
-	 * Users who have registered with eBay as VAT-exempt are not
-	 * subject to VAT. See Value-Added Tax (VAT). Not returned for
-	 * users whose country of residence is outside the EU.
+	 * If present, indicates whether or not the user is subject to VAT. 
+	 * Users who have registered with eBay as VAT-exempt are not 
+	 * subject to VAT. See Value-Added Tax (VAT). Not returned for 
+	 * users whose country of residence is outside the EU. 
 	 * Possible values for the user's status:
 	 * 2 = Residence in an EU country but user registered as VAT-exempt
-	 * 3 = Residence in an EU country and user not registered as
-	 * VAT-exempt 
+	 * 3 = Residence in an EU country and user not registered as VAT-exempt 
 	 *
 	 * @access public
 	 * @var VATStatusCodeType
@@ -2414,8 +2489,7 @@ class UserType {
 /**
  * VATDetailsType
  * Contains information required To list a business item.
- * BusinessSeller - only for add item, the RestrictedToBusiness and VATPercent for
- * both get and add,
+ * BusinessSeller - only for add item, the RestrictedToBusiness and VATPercent for both get and add,
  * for revise all must be optional
  */
 class VATDetailsType {
@@ -2441,8 +2515,7 @@ class VATDetailsType {
 
 /**
  * SchedulingInfoType
- * Contains information for Scheduling limits for the user. All dtails must
- * be present,unless we will have revise call one day,
+ * Contains information for Scheduling limits for the user. All dtails must be present,unless we will have revise call one day,
  * just in case we might let's make min occur = 0
  */
 class SchedulingInfoType {
@@ -2573,10 +2646,8 @@ class ErrorParameterType {
 
 /**
  * ErrorType
- * Error code can be used by a receiving application to debugging a
- * response
- * message. These codes will need to be uniquely defined for each
- * application. 
+ * Error code can be used by a receiving application to debugging a response 
+ * message. These codes will need to be uniquely defined for each application. 
  */
 class ErrorType {
 	/**
@@ -2592,10 +2663,8 @@ class ErrorType {
 	public $LongMessage;
 
 	/**
-	 * Error code can be used by a receiving application to debugging a
-	 * response
-	 * message. These codes will need to be uniquely defined for each
-	 * application. 
+	 * Error code can be used by a receiving application to debugging a response 
+	 * message. These codes will need to be uniquely defined for each application. 
 	 *
 	 * @access public
 	 * @var token
@@ -2612,12 +2681,9 @@ class ErrorType {
 	public $SeverityCode;
 
 	/**
-	 * This optional element may carry additional application-specific
-	 * error variables
-	 * that indicate specific information about the error condition
-	 * particularly in the
-	 * cases where there are multiple instances of the ErrorType which
-	 * require
+	 * This optional element may carry additional application-specific error variables 
+	 * that indicate specific information about the error condition particularly in the 
+	 * cases where there are multiple instances of the ErrorType which require 
 	 * additional context.
 	 *
 	 * array
@@ -2660,18 +2726,14 @@ class ErrorType {
 
 /**
  * FaultDetailsType
- * Error code can be used by a receiving application to debugging a SOAP
- * response
- * message that contain one or more SOAP Fault detail objects, i.e., fault
- * detail sub-elements.
+ * Error code can be used by a receiving application to debugging a SOAP response 
+ * message that contain one or more SOAP Fault detail objects, i.e., fault detail sub-elements. 
  * These codes will need to be uniquely defined for each fault scenario.
  */
 class FaultDetailsType {
 	/**
-	 * Error code can be used by a receiving application to debugging a SOAP
-	 * response
-	 * message that contain one or more SOAP Fault detail objects, i.e., fault
-	 * detail sub-elements.
+	 * Error code can be used by a receiving application to debugging a SOAP response 
+	 * message that contain one or more SOAP Fault detail objects, i.e., fault detail sub-elements. 
 	 * These codes will need to be uniquely defined for each fault scenario.
 	 *
 	 * @access public
@@ -2698,19 +2760,15 @@ class FaultDetailsType {
 
 /**
  * AbstractRequestType
- * Base type definition of request payload that can carry any type
- * of payload content with optional versioning information and detail
- * level
+ * Base type definition of request payload that can carry any type 
+ * of payload content with optional versioning information and detail level
  * requirements.
  */
 class AbstractRequestType {
 	/**
-	 * This specifies the required detail level that is needed by a client
-	 * application pertaining to
-	 * a particular data component (e.g., Item, Transaction, etc.). The
-	 * detail level is specified in
-	 * the DetailLevelCodeType which has all the enumerated values of the
-	 * detail level for
+	 * This specifies the required detail level that is needed by a client application pertaining to
+	 * a particular data component (e.g., Item, Transaction, etc.). The detail level is specified in
+	 * the DetailLevelCodeType which has all the enumerated values of the detail level for 
 	 * each component.  
 	 *
 	 * array
@@ -2720,8 +2778,7 @@ class AbstractRequestType {
 	public $DetailLevel;
 
 	/**
-	 * This should be the standard RFC 3066 language identification tag,
-	 * e.g., en_US.
+	 * This should be the standard RFC 3066 language identification tag, e.g., en_US.
 	 *
 	 * @access public
 	 * @var string
@@ -2760,16 +2817,16 @@ class AbstractRequestType {
 
 /**
  * AbstractResponseType
- * Base type definition of a response payload that can carry any
+ * Base type definition of a response payload that can carry any 
  * type of payload content with following optional elements:
- * - timestamp of response message,
- * - application level acknowledgement, and
+ * - timestamp of response message, 
+ * - application level acknowledgement, and 
  * - application-level errors and warnings.
  */
 class AbstractResponseType {
 	/**
-	 * This value represents the date and time (GMT) when the response
-	 * was generated by a service provider (as a result of processing
+	 * This value represents the date and time (GMT) when the response 
+	 * was generated by a service provider (as a result of processing 
 	 * of a request). 
 	 *
 	 * @access public
@@ -2786,7 +2843,7 @@ class AbstractResponseType {
 	public $Ack;
 
 	/**
-	 * CorrelationID may be used optionally with an application
+	 * CorrelationID may be used optionally with an application 
 	 * level acknowledgement.
 	 *
 	 * @access public
@@ -2810,8 +2867,7 @@ class AbstractResponseType {
 	public $Version;
 
 	/**
-	 * This refers to the specific software build that was used in the
-	 * deployment
+	 * This refers to the specific software build that was used in the deployment 
 	 * for processing the request and generating the response.
 	 *
 	 * @access public
@@ -2903,15 +2959,13 @@ class PhoneNumberType {
 
 /**
  * AddressType
- * Person's name associated with this address.
- * Character length and limitations: 32 single-byte alphanumeric
- * characters
+ * Person's name associated with this address. 
+Character length and limitations: 32 single-byte alphanumeric characters
  */
 class AddressType {
 	/**
-	 * Person's name associated with this address.
-	 * Character length and limitations: 32 single-byte alphanumeric
-	 * characters
+	 * Person's name associated with this address. 
+Character length and limitations: 32 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -2919,9 +2973,8 @@ class AddressType {
 	public $Name;
 
 	/**
-	 * First street address.
-	 * Character length and limitations: 300 single-byte alphanumeric
-	 * characters
+	 * First street address. 
+Character length and limitations: 300 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -2929,9 +2982,8 @@ class AddressType {
 	public $Street1;
 
 	/**
-	 * Second street address.
-	 * Character length and limitations: 300 single-byte alphanumeric
-	 * characters
+	 * Second street address. 
+Character length and limitations: 300 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -2939,21 +2991,17 @@ class AddressType {
 	public $Street2;
 
 	/**
-	 * Name of city.
-	 * Character length and limitations: 120 single-byte alphanumeric
-	 * characters
-	 *
+	 * Name of city. 
+Character length and limitations: 120 single-byte alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
 	public $CityName;
 
 	/**
-	 * State or province.
-	 * Character length and limitations: 120 single-byte alphanumeric
-	 * characters
-	 * For Canada and the USA, StateOrProvince must be the standard
-	 * 2-character abbreviation of a state or province.
+	 * State or province. 
+Character length and limitations: 120 single-byte alphanumeric characters
+	 * For Canada and the USA, StateOrProvince must be the standard 2-character abbreviation of a state or province.
 	 * Canadian Provinces
 	 * Alberta
 	 * AB 
@@ -2983,7 +3031,7 @@ class AddressType {
 	 * YK
 	 * United States
 	 * Alabama
-	 * AL
+	 * AL 
 	 * Alaska
 	 * AK
 	 * American_Samoa
@@ -3114,23 +3162,18 @@ class AddressType {
 
 	/**
 	 * ISO 3166 standard country code
-	 * Character limit: Two single-byte characters.
-	 *
+	 * Character limit: Two single-byte characters. 	 *
 	 * @access public
 	 * @var CountryCodeType
 	 */
 	public $Country;
 
 	/**
-	 * IMPORTANT: Do not set this element for SetExpressCheckout,
-	 * DoExpressCheckoutPayment, DoDirectPayment,
-	 * CreateRecurringPaymentsProfile or
-	 * UpdateRecurringPaymentsProfile.
-	 * This element should only be used in response elements and
-	 * typically
-	 * should not be used in creating request messages which specify the
+	 * IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile or UpdateRecurringPaymentsProfile.
+	 * This element should only be used in response elements and typically
+	 * should not be used in creating request messages which specify the 
 	 * name of a country using the Country element (which refers to a
-	 * 2-letter country code).
+	 * 2-letter country code).      
 	 *
 	 * @access public
 	 * @var string
@@ -3151,10 +3194,7 @@ class AddressType {
 	public $PostalCode;
 
 	/**
-	 * IMPORTANT: Do not set this element for SetExpressCheckout,
-	 * DoExpressCheckoutPayment, DoDirectPayment,
-	 * CreateRecurringPaymentsProfile, or
-	 * UpdateRecurringPaymentsProfile.
+	 * IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile, or UpdateRecurringPaymentsProfile.
 	 *
 	 * @access public
 	 * @var string
@@ -3162,10 +3202,7 @@ class AddressType {
 	public $AddressID;
 
 	/**
-	 * IMPORTANT: Do not set this element for SetExpressCheckout,
-	 * DoExpressCheckoutPayment, DoDirectPayment,
-	 * CreateRecurringPaymentsProfile or
-	 * UpdateRecurringPaymentsProfile.
+	 * IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile or UpdateRecurringPaymentsProfile.
 	 *
 	 * @access public
 	 * @var AddressOwnerCodeType
@@ -3173,10 +3210,7 @@ class AddressType {
 	public $AddressOwner;
 
 	/**
-	 * IMPORTANT: Do not set this element for SetExpressCheckout,
-	 * DoExpressCheckoutPayment, DoDirectPayment,
-	 * CreateRecurringPaymentsProfile or
-	 * UpdateRecurringPaymentsProfile.
+	 * IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile or UpdateRecurringPaymentsProfile.
 	 *
 	 * @access public
 	 * @var string
@@ -3184,12 +3218,8 @@ class AddressType {
 	public $ExternalAddressID;
 
 	/**
-	 * IMPORTANT: Do not set this element for SetExpressCheckout,
-	 * DoExpressCheckoutPayment, DoDirectPayment,
-	 * CreateRecurringPaymentsProfile or
-	 * UpdateRecurringPaymentsProfile.
-	 * Only applicable to SellerPaymentAddress today. Seller's
-	 * international name that is associated with the payment address.
+	 * IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile or UpdateRecurringPaymentsProfile.
+	 * Only applicable to SellerPaymentAddress today. Seller's international name that is associated with the payment address. 
 	 *
 	 * @access public
 	 * @var string
@@ -3197,12 +3227,8 @@ class AddressType {
 	public $InternationalName;
 
 	/**
-	 * IMPORTANT: Do not set this element for SetExpressCheckout,
-	 * DoExpressCheckoutPayment, DoDirectPayment,
-	 * CreateRecurringPaymentsProfile or
-	 * UpdateRecurringPaymentsProfile.
-	 * Only applicable to SellerPaymentAddress today. International
-	 * state and city for the seller's payment address.
+	 * IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile or UpdateRecurringPaymentsProfile.
+	 * Only applicable to SellerPaymentAddress today. International state and city for the seller's payment address. 
 	 *
 	 * @access public
 	 * @var string
@@ -3210,13 +3236,8 @@ class AddressType {
 	public $InternationalStateAndCity;
 
 	/**
-	 * IMPORTANT: Do not set this element for SetExpressCheckout,
-	 * DoExpressCheckoutPayment, DoDirectPayment,
-	 * CreateRecurringPaymentsProfile or
-	 * UpdateRecurringPaymentsProfile.
-	 * Only applicable to SellerPaymentAddress today. Seller's
-	 * international street address that is associated with the payment
-	 * address.
+	 * IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile or UpdateRecurringPaymentsProfile.
+	 * Only applicable to SellerPaymentAddress today. Seller's international street address that is associated with the payment address.
 	 *
 	 * @access public
 	 * @var string
@@ -3225,10 +3246,7 @@ class AddressType {
 
 	/**
 	 * Status of the address on file with PayPal.
-	 * IMPORTANT: Do not set this element for SetExpressCheckout,
-	 * DoExpressCheckoutPayment, DoDirectPayment,
-	 * CreateRecurringPaymentsProfile or
-	 * UpdateRecurringPaymentsProfile.
+	 * IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile or UpdateRecurringPaymentsProfile.
 	 *
 	 * @access public
 	 * @var AddressStatusCodeType
@@ -3462,18 +3480,10 @@ class IncentiveAppliedToType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='itemid') {
 				$this->ItemId = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="incentiveamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->IncentiveAmount = new BasicAmountType();
-				$this->IncentiveAmount->init($atr);
+				$this->IncentiveAmount->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='subtype') {
@@ -3914,27 +3924,15 @@ class GetIncentiveEvaluationResponseDetailsType {
 
 /**
  * SetExpressCheckoutRequestDetailsType
- * The total cost of the order to the customer. If shipping cost
- * and tax charges are known, include them in OrderTotal; if not,
- * OrderTotal should be the current sub-total of the order.
- * You must set the currencyID attribute to one of the
- * three-character currency codes for any of the supported PayPal
- * currencies.
- * Limitations: Must not exceed $10,000 USD in any currency. No
- * currency symbol. Decimal separator must be a period (.), and the
- * thousands separator must be a comma (,).
+ * The total cost of the order to the customer. If shipping cost and tax charges are known, include them in OrderTotal; if not, OrderTotal should be the current sub-total of the order. 
+ * You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. 
+ * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
  */
 class SetExpressCheckoutRequestDetailsType {
 	/**
-	 * The total cost of the order to the customer. If shipping cost
-	 * and tax charges are known, include them in OrderTotal; if not,
-	 * OrderTotal should be the current sub-total of the order.
-	 * You must set the currencyID attribute to one of the
-	 * three-character currency codes for any of the supported PayPal
-	 * currencies.
-	 * Limitations: Must not exceed $10,000 USD in any currency. No
-	 * currency symbol. Decimal separator must be a period (.), and the
-	 * thousands separator must be a comma (,).
+The total cost of the order to the customer. If shipping cost and tax charges are known, include them in OrderTotal; if not, OrderTotal should be the current sub-total of the order. 
+	 * You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. 
+	 * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -3942,23 +3940,16 @@ class SetExpressCheckoutRequestDetailsType {
 	public $OrderTotal;
 
 	/**
-	 * URL to which the customer's browser is returned after choosing
-	 * to pay with PayPal. PayPal recommends that the value of
-	 * ReturnURL be the final review page on which the customer
-	 * confirms the order and payment.
+URL to which the customer's browser is returned after choosing to pay with PayPal. PayPal recommends that the value of ReturnURL be the final review page on which the customer confirms the order and payment. 
 	 * Required
-	 * Character length and limitations: no limit.
-	 *
+	 * Character length and limitations: no limit. 	 *
 	 * @access public
 	 * @var string
 	 */
 	public $ReturnURL;
 
 	/**
-	 * URL to which the customer is returned if he does not approve the
-	 * use of PayPal to pay you. PayPal recommends that the value of
-	 * CancelURL be the original page on which the customer chose to
-	 * pay with PayPal.
+URL to which the customer is returned if he does not approve the use of PayPal to pay you. PayPal recommends that the value of CancelURL be the original page on which the customer chose to pay with PayPal. 
 	 * Required
 	 * Character length and limitations: no limit
 	 *
@@ -3968,7 +3959,7 @@ class SetExpressCheckoutRequestDetailsType {
 	public $CancelURL;
 
 	/**
-	 * Tracking URL for ebay.
+Tracking URL for ebay. 
 	 * Required
 	 * Character length and limitations: no limit
 	 *
@@ -3978,8 +3969,7 @@ class SetExpressCheckoutRequestDetailsType {
 	public $TrackingImageURL;
 
 	/**
-	 * URL to which the customer's browser is returned after paying
-	 * with giropay online.
+URL to which the customer's browser is returned after paying with giropay online. 
 	 * Optional
 	 * Character length and limitations: no limit.
 	 *
@@ -3989,8 +3979,7 @@ class SetExpressCheckoutRequestDetailsType {
 	public $giropaySuccessURL;
 
 	/**
-	 * URL to which the customer's browser is returned after fail to
-	 * pay with giropay online.
+URL to which the customer's browser is returned after fail to pay with giropay online. 
 	 * Optional
 	 * Character length and limitations: no limit.
 	 *
@@ -4000,8 +3989,7 @@ class SetExpressCheckoutRequestDetailsType {
 	public $giropayCancelURL;
 
 	/**
-	 * URL to which the customer's browser can be returned in the mEFT
-	 * done page.
+URL to which the customer's browser can be returned in the mEFT done page. 
 	 * Optional
 	 * Character length and limitations: no limit.
 	 *
@@ -4011,13 +3999,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $BanktxnPendingURL;
 
 	/**
-	 * On your first invocation of SetExpressCheckoutRequest, the value
-	 * of this token is returned by SetExpressCheckoutResponse.
+On your first invocation of SetExpressCheckoutRequest, the value of this token is returned by SetExpressCheckoutResponse. 
 	 * Optional
-	 * Include this element and its value only if you want to modify an
-	 * existing checkout session with another invocation of
-	 * SetExpressCheckoutRequest; for example, if you want the customer
-	 * to edit his shipping address on PayPal.
+	 * Include this element and its value only if you want to modify an existing checkout session with another invocation of SetExpressCheckoutRequest; for example, if you want the customer to edit his shipping address on PayPal. 
 	 * Character length and limitations: 20 single-byte characters
 	 *
 	 * @access public
@@ -4026,15 +4010,10 @@ class SetExpressCheckoutRequestDetailsType {
 	public $Token;
 
 	/**
-	 * The expected maximum total amount of the complete order,
-	 * including shipping cost and tax charges.
+The expected maximum total amount of the complete order, including shipping cost and tax charges. 
 	 * Optional
-	 * You must set the currencyID attribute to one of the
-	 * three-character currency codes for any of the supported PayPal
-	 * currencies.
-	 * Limitations: Must not exceed $10,000 USD in any currency. No
-	 * currency symbol. Decimal separator must be a period (.), and the
-	 * thousands separator must be a comma (,).
+	 * You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. 
+	 * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -4042,10 +4021,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $MaxAmount;
 
 	/**
-	 * Description of items the customer is purchasing.
+Description of items the customer is purchasing. 
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -4053,13 +4031,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $OrderDescription;
 
 	/**
-	 * A free-form field for your own use, such as a tracking number or
-	 * other value you want PayPal to return on
-	 * GetExpressCheckoutDetailsResponse and
-	 * DoExpressCheckoutPaymentResponse.
+A free-form field for your own use, such as a tracking number or other value you want PayPal to return on GetExpressCheckoutDetailsResponse and DoExpressCheckoutPaymentResponse. 
 	 * Optional
-	 * Character length and limitations: 256 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 256 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -4067,11 +4041,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $Custom;
 
 	/**
-	 * Your own unique invoice or tracking number. PayPal returns this
-	 * value to you on DoExpressCheckoutPaymentResponse.
+Your own unique invoice or tracking number. PayPal returns this value to you on DoExpressCheckoutPaymentResponse. 
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -4079,15 +4051,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $InvoiceID;
 
 	/**
-	 * The value 1 indicates that you require that the customer's
-	 * shipping address on file with PayPal be a confirmed address. Any
-	 * value other than 1 indicates that the customer's shipping
-	 * address on file with PayPal need NOT be a confirmed address.
-	 * Setting this element overrides the setting you have specified in
-	 * the recipient's Merchant Account Profile.
+The value 1 indicates that you require that the customer's shipping address on file with PayPal be a confirmed address. Any value other than 1 indicates that the customer's shipping address on file with PayPal need NOT be a confirmed address. Setting this element overrides the setting you have specified in the recipient's Merchant Account Profile. 
 	 * Optional
-	 * Character length and limitations: One single-byte numeric
-	 * character.
+	 * Character length and limitations: One single-byte numeric character.
 	 *
 	 * @access public
 	 * @var string
@@ -4095,12 +4061,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $ReqConfirmShipping;
 
 	/**
-	 * The value 1 indicates that you require that the customer's
-	 * billing address on file. Setting this element overrides the
-	 * setting you have specified in Admin.
+The value 1 indicates that you require that the customer's billing address on file. Setting this element overrides the setting you have specified in Admin.
 	 * Optional
-	 * Character length and limitations: One single-byte numeric
-	 * character.
+	 * Character length and limitations: One single-byte numeric character.
 	 *
 	 * @access public
 	 * @var string
@@ -4110,8 +4073,7 @@ class SetExpressCheckoutRequestDetailsType {
 	/**
 	 * The billing address for the buyer.
 	 * Optional
-	 * If you include the BillingAddress element, the AddressType
-	 * elements are required:
+	 * If you include the BillingAddress element, the AddressType elements are required:
 	 * Name
 	 * Street1
 	 * CityName
@@ -4124,11 +4086,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $BillingAddress;
 
 	/**
-	 * The value 1 indicates that on the PayPal pages, no shipping
-	 * address fields should be displayed whatsoever.
+The value 1 indicates that on the PayPal pages, no shipping address fields should be displayed whatsoever. 
 	 * Optional
-	 * Character length and limitations: Four single-byte numeric
-	 * characters.
+	 * Character length and limitations: Four single-byte numeric characters.
 	 *
 	 * @access public
 	 * @var string
@@ -4136,14 +4096,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $NoShipping;
 
 	/**
-	 * The value 1 indicates that the PayPal pages should display the
-	 * shipping address set by you in the Address element on this
-	 * SetExpressCheckoutRequest, not the shipping address on file with
-	 * PayPal for this customer. Displaying the PayPal street address
-	 * on file does not allow the customer to edit that address.
+The value 1 indicates that the PayPal pages should display the shipping address set by you in the Address element on this SetExpressCheckoutRequest, not the shipping address on file with PayPal for this customer. Displaying the PayPal street address on file does not allow the customer to edit that address. 
 	 * Optional
-	 * Character length and limitations: Four single-byte numeric
-	 * characters.
+	 * Character length and limitations: Four single-byte numeric characters.
 	 *
 	 * @access public
 	 * @var string
@@ -4151,11 +4106,10 @@ class SetExpressCheckoutRequestDetailsType {
 	public $AddressOverride;
 
 	/**
-	 * Locale of pages displayed by PayPal during Express Checkout.
+	 * Locale of pages displayed by PayPal during Express Checkout. 
 	 * Optional
-	 * Character length and limitations: Five single-byte alphabetic
-	 * characters, upper- or lowercase.
-	 * Allowable values:
+	 * Character length and limitations: Five single-byte alphabetic characters, upper- or lowercase. 
+	 * Allowable values: 
 	 * AU or en_AU
 	 * DE or de_DE
 	 * FR or fr_FR
@@ -4170,15 +4124,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $LocaleCode;
 
 	/**
-	 * Sets the Custom Payment Page Style for payment pages associated
-	 * with this button/link. PageStyle corresponds to the HTML
-	 * variable page_style for customizing payment pages. The value is
-	 * the same as the Page Style Name you chose when adding or editing
-	 * the page style from the Profile subtab of the My Account tab of
-	 * your PayPal account.
+Sets the Custom Payment Page Style for payment pages associated with this button/link. PageStyle corresponds to the HTML variable page_style for customizing payment pages. The value is the same as the Page Style Name you chose when adding or editing the page style from the Profile subtab of the My Account tab of your PayPal account. 
 	 * Optional
-	 * Character length and limitations: 30 single-byte alphabetic
-	 * characters.
+	 * Character length and limitations: 30 single-byte alphabetic characters.
 	 *
 	 * @access public
 	 * @var string
@@ -4186,10 +4134,7 @@ class SetExpressCheckoutRequestDetailsType {
 	public $PageStyle;
 
 	/**
-	 * A URL for the image you want to appear at the top left of the
-	 * payment page. The image has a maximum size of 750 pixels wide by
-	 * 90 pixels high. PayPal recommends that you provide an image that
-	 * is stored on a secure (https) server.
+	 * A URL for the image you want to appear at the top left of the payment page. The image has a maximum size of 750 pixels wide by 90 pixels high. PayPal recommends that you provide an image that is stored on a secure (https) server. 
 	 * Optional
 	 * Character length and limitations: 127
 	 *
@@ -4199,12 +4144,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $cppheaderimage;
 
 	/**
-	 * Sets the border color around the header of the payment page. The
-	 * border is a 2-pixel perimeter around the header space, which is
-	 * 750 pixels wide by 90 pixels high.
+	 * Sets the border color around the header of the payment page. The border is a 2-pixel perimeter around the header space, which is 750 pixels wide by 90 pixels high. 
 	 * Optional
-	 * Character length and limitations: Six character HTML hexadecimal
-	 * color code in ASCII
+	 * Character length and limitations: Six character HTML hexadecimal color code in ASCII
 	 *
 	 * @access public
 	 * @var string
@@ -4212,10 +4154,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $cppheaderbordercolor;
 
 	/**
-	 * Sets the background color for the header of the payment page.
+	 * Sets the background color for the header of the payment page. 
 	 * Optional
-	 * Character length and limitation: Six character HTML hexadecimal
-	 * color code in ASCII
+	 * Character length and limitation: Six character HTML hexadecimal color code in ASCII
 	 *
 	 * @access public
 	 * @var string
@@ -4223,10 +4164,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $cppheaderbackcolor;
 
 	/**
-	 * Sets the background color for the payment page.
+	 * Sets the background color for the payment page. 
 	 * Optional
-	 * Character length and limitation: Six character HTML hexadecimal
-	 * color code in ASCII
+	 * Character length and limitation: Six character HTML hexadecimal color code in ASCII
 	 *
 	 * @access public
 	 * @var string
@@ -4234,10 +4174,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $cpppayflowcolor;
 
 	/**
-	 * Sets the cart gradient color for the Mini Cart on 1X flow.
+	 * Sets the cart gradient color for the Mini Cart on 1X flow. 
 	 * Optional
-	 * Character length and limitation: Six character HTML hexadecimal
-	 * color code in ASCII
+	 * Character length and limitation: Six character HTML hexadecimal color code in ASCII
 	 *
 	 * @access public
 	 * @var string
@@ -4245,10 +4184,7 @@ class SetExpressCheckoutRequestDetailsType {
 	public $cppcartbordercolor;
 
 	/**
-	 * A URL for the image you want to appear above the mini-cart. The
-	 * image has a maximum size of 190 pixels wide by 60 pixels high.
-	 * PayPal recommends that you provide an image that is stored on a
-	 * secure (https) server.
+	 * A URL for the image you want to appear above the mini-cart. The image has a maximum size of 190 pixels wide by 60 pixels high. PayPal recommends that you provide an image that is stored on a secure (https) server. 
 	 * Optional
 	 * Character length and limitations: 127
 	 *
@@ -4258,11 +4194,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $cpplogoimage;
 
 	/**
-	 * Customer's shipping address.
+Customer's shipping address. 
 	 * Optional
-	 * If you include a shipping address and set the AddressOverride
-	 * element on the request, PayPal returns this same address in
-	 * GetExpressCheckoutDetailsResponse.
+	 * If you include a shipping address and set the AddressOverride element on the request, PayPal returns this same address in GetExpressCheckoutDetailsResponse. 
 	 *
 	 * @access public
 	 * @var AddressType
@@ -4270,21 +4204,13 @@ class SetExpressCheckoutRequestDetailsType {
 	public $Address;
 
 	/**
-	 * How you want to obtain payment.
+	 * How you want to obtain payment. 
 	 * Required
-	 * Authorization indicates that this payment is a basic
-	 * authorization subject to settlement with PayPal Authorization
-	 * and Capture.
-	 * Order indicates that this payment is is an order authorization
-	 * subject to settlement with PayPal Authorization and Capture.
-	 * Sale indicates that this is a final sale for which you are
-	 * requesting payment.
-	 * IMPORTANT: You cannot set PaymentAction to Sale or Order on
-	 * SetExpressCheckoutRequest and then change PaymentAction to
-	 * Authorization on the final Express Checkout API,
-	 * DoExpressCheckoutPaymentRequest.
-	 * Character length and limit: Up to 13 single-byte alphabetic
-	 * characters
+	 * Authorization indicates that this payment is a basic authorization subject to settlement with PayPal Authorization and Capture.
+	 * Order indicates that this payment is is an order authorization subject to settlement with PayPal Authorization and Capture.
+	 * Sale indicates that this is a final sale for which you are requesting payment.
+	 * IMPORTANT: You cannot set PaymentAction to Sale or Order on SetExpressCheckoutRequest and then change PaymentAction to Authorization on the final Express Checkout API, DoExpressCheckoutPaymentRequest.
+	 * Character length and limit: Up to 13 single-byte alphabetic characters
 	 *
 	 * @access public
 	 * @var PaymentActionCodeType
@@ -4292,8 +4218,7 @@ class SetExpressCheckoutRequestDetailsType {
 	public $PaymentAction;
 
 	/**
-	 * This will indicate which flow you are choosing
-	 * (expresschecheckout or expresscheckout optional)
+	 * This will indicate which flow you are choosing (expresschecheckout or expresscheckout optional)
 	 * Optional
 	 * None
 	 * Sole indicates that you are in the ExpressO flow
@@ -4305,8 +4230,7 @@ class SetExpressCheckoutRequestDetailsType {
 	public $SolutionType;
 
 	/**
-	 * This indicates Which page to display for ExpressO (Billing or
-	 * Login)
+	 * This indicates Which page to display for ExpressO (Billing or Login) 
 	 * Optional
 	 * None
 	 * Billing indicates that you are not a paypal account holder
@@ -4318,12 +4242,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $LandingPage;
 
 	/**
-	 * Email address of the buyer as entered during checkout. PayPal
-	 * uses this value to pre-fill the PayPal membership sign-up
-	 * portion of the PayPal login page.
+	 * Email address of the buyer as entered during checkout. PayPal uses this value to pre-fill the PayPal membership sign-up portion of the PayPal login page. 
 	 * Optional
-	 * Character length and limit: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limit: 127 single-byte alphanumeric characters 
 	 *
 	 * @access public
 	 * @var string
@@ -4346,8 +4267,7 @@ class SetExpressCheckoutRequestDetailsType {
 	/**
 	 * Promo Code
 	 * Optional
-	 * List of promo codes supplied by merchant. These promo codes
-	 * enable the Merchant Services Promotion Financing feature.
+	 * List of promo codes supplied by merchant. These promo codes enable the Merchant Services Promotion Financing feature.
 	 *
 	 * array
 	 * @access public
@@ -4378,8 +4298,7 @@ class SetExpressCheckoutRequestDetailsType {
 	public $ShippingMethod;
 
 	/**
-	 * Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at which
-	 * address was changed by the user. 
+	 * Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at which address was changed by the user. 
 	 *
 	 * @access public
 	 * @var dateTime
@@ -4387,14 +4306,10 @@ class SetExpressCheckoutRequestDetailsType {
 	public $ProfileAddressChangeDate;
 
 	/**
-	 * The value 1 indicates that the customer may enter a note to the
-	 * merchant on the PayPal page during checkout. The note is
-	 * returned in the GetExpressCheckoutDetails response and the
-	 * DoExpressCheckoutPayment response.
+	 * The value 1 indicates that the customer may enter a note to the merchant on the PayPal page during checkout. The note is returned in the GetExpressCheckoutDetails response and the DoExpressCheckoutPayment response.
 	 * Optional
-	 * Character length and limitations: One single-byte numeric
-	 * character.
-	 * Allowable values: 0,1
+	 * Character length and limitations: One single-byte numeric character.
+	 * Allowable values: 0,1 
 	 *
 	 * @access public
 	 * @var string
@@ -4410,11 +4325,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $FundingSourceDetails;
 
 	/**
-	 * The label that needs to be displayed on the cancel links in the
-	 * PayPal hosted checkout pages.
-	 * Optional
-	 * Character length and limit: 127 single-byte alphanumeric
-	 * characters
+	 * The label that needs to be displayed on the cancel links in the PayPal hosted checkout pages.  
+	 * Optional  
+	 * Character length and limit: 127 single-byte alphanumeric characters 
 	 *
 	 * @access public
 	 * @var string
@@ -4422,8 +4335,7 @@ class SetExpressCheckoutRequestDetailsType {
 	public $BrandName;
 
 	/**
-	 * URL for PayPal to use to retrieve shipping, handling, insurance,
-	 * and tax details from your website.
+	 * URL for PayPal to use to retrieve shipping, handling, insurance, and tax details from your website.
 	 * Optional
 	 * Character length and limitations: 2048 characters.
 	 *
@@ -4433,7 +4345,7 @@ class SetExpressCheckoutRequestDetailsType {
 	public $CallbackURL;
 
 	/**
-	 * Enhanced data for different industry segments.
+	 * Enhanced data for different industry segments. 
 	 * Optional
 	 *
 	 * @access public
@@ -4453,9 +4365,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $OtherPaymentMethods;
 
 	/**
-	 * Details about the buyer's account.
+	 * Details about the buyer's account. 
 	 * Optional
-	 * Refer to the BuyerDetailsType for more details.
+	 * Refer to the BuyerDetailsType for more details. 
 	 *
 	 * @access public
 	 * @var BuyerDetailsType
@@ -4584,8 +4496,7 @@ class SetExpressCheckoutRequestDetailsType {
 	public $TotalType;
 
 	/**
-	 * Any message the seller would like to be displayed in the Mini Cart
-	 * for UX.
+	 * Any message the seller would like to be displayed in the Mini Cart for UX.
 	 *
 	 * @access public
 	 * @var string
@@ -4604,8 +4515,7 @@ class SetExpressCheckoutRequestDetailsType {
 	public $Incentives;
 
 	/**
-	 * Merchant specified flag which indicates whether to return
-	 * Funding Instrument Details in DoEC or not.
+	 * Merchant specified flag which indicates whether to return Funding Instrument Details in DoEC or not.
 	 * Optional
 	 *
 	 * @access public
@@ -4614,12 +4524,9 @@ class SetExpressCheckoutRequestDetailsType {
 	public $ReqInstrumentDetails;
 
 	/**
-	 * This element contains information that allows the merchant to
-	 * request to
-	 * opt into external remember me on behalf of the buyer or to request
-	 * login
-	 * bypass using external remember me. Note the opt-in details are
-	 * silently
+	 * This element contains information that allows the merchant to request to
+	 * opt into external remember me on behalf of the buyer or to request login
+	 * bypass using external remember me.  Note the opt-in details are silently
 	 * ignored if the ExternalRememberMeID is present.
 	 *
 	 * @access public
@@ -4642,6 +4549,14 @@ class SetExpressCheckoutRequestDetailsType {
 	 * @var DisplayControlDetailsType
 	 */
 	public $DisplayControlDetails;
+
+	/**
+	 * An optional set of values related to tracking for external partner.
+	 *
+	 * @access public
+	 * @var ExternalPartnerTrackingDetailsType
+	 */
+	public $ExternalPartnerTrackingDetails;
 
 
 	public function toXMLString()  {
@@ -4805,7 +4720,7 @@ class SetExpressCheckoutRequestDetailsType {
 		if($this->PaymentDetails != null ) {
 		for($i=0; $i<count($this->PaymentDetails);$i++) {
 			$str .= '<ebl:PaymentDetails>';
-			$str .= $this->PaymentDetails->toXMLString();
+			$str .= $this->PaymentDetails[$i]->toXMLString();
 			$str .=  '</ebl:PaymentDetails>';
 		 }
 		 }
@@ -4887,6 +4802,11 @@ class SetExpressCheckoutRequestDetailsType {
 			$str .= $this->DisplayControlDetails->toXMLString();
 			$str .=  '</ebl:DisplayControlDetails>';
 		 }
+		if($this->ExternalPartnerTrackingDetails != null ) {
+			$str .='<ebl:ExternalPartnerTrackingDetails>';
+			$str .= $this->ExternalPartnerTrackingDetails->toXMLString();
+			$str .=  '</ebl:ExternalPartnerTrackingDetails>';
+		 }
 
 		return $str;
 	}
@@ -4895,26 +4815,16 @@ class SetExpressCheckoutRequestDetailsType {
 
 /**
  * ExecuteCheckoutOperationsRequestDetailsType
- * On your first invocation of ExecuteCheckoutOperationsRequest,
- * the value of this token is returned by
- * ExecuteCheckoutOperationsResponse.
+ * On your first invocation of ExecuteCheckoutOperationsRequest, the value of this token is returned by ExecuteCheckoutOperationsResponse.
  * Optional
- * Include this element and its value only if you want to modify an
- * existing checkout session with another invocation of
- * ExecuteCheckoutOperationsRequest; for example, if you want the
- * customer to edit his shipping address on PayPal.
+ * Include this element and its value only if you want to modify an existing checkout session with another invocation of ExecuteCheckoutOperationsRequest; for example, if you want the customer to edit his shipping address on PayPal.
  * Character length and limitations: 20 single-byte characters
  */
 class ExecuteCheckoutOperationsRequestDetailsType {
 	/**
-	 * On your first invocation of ExecuteCheckoutOperationsRequest,
-	 * the value of this token is returned by
-	 * ExecuteCheckoutOperationsResponse.
+	 * On your first invocation of ExecuteCheckoutOperationsRequest, the value of this token is returned by ExecuteCheckoutOperationsResponse.
 	 * Optional
-	 * Include this element and its value only if you want to modify an
-	 * existing checkout session with another invocation of
-	 * ExecuteCheckoutOperationsRequest; for example, if you want the
-	 * customer to edit his shipping address on PayPal.
+	 * Include this element and its value only if you want to modify an existing checkout session with another invocation of ExecuteCheckoutOperationsRequest; for example, if you want the customer to edit his shipping address on PayPal.
 	 * Character length and limitations: 20 single-byte characters
 	 *
 	 * @access public
@@ -4923,8 +4833,7 @@ class ExecuteCheckoutOperationsRequestDetailsType {
 	public $Token;
 
 	/**
-	 * All the Data required to initiate the checkout session is passed in
-	 * this element.
+	 * All the Data required to initiate the checkout session is passed in this element.
 	 *
 	 * @access public
 	 * @var SetDataRequestType
@@ -4932,8 +4841,7 @@ class ExecuteCheckoutOperationsRequestDetailsType {
 	public $SetDataRequest;
 
 	/**
-	 * If auto authorization is required, this should be passed in with
-	 * IsRequested set to yes.
+	 * If auto authorization is required, this should be passed in with IsRequested set to yes.
 	 *
 	 * @access public
 	 * @var AuthorizationRequestType
@@ -4981,8 +4889,7 @@ class SetDataRequestType {
 	public $BillingApprovalDetails;
 
 	/**
-	 * Only needed if Auto Authorization is requested. The authentication
-	 * session token will be passed in here.
+	 * Only needed if Auto Authorization is requested. The authentication session token will be passed in here.
 	 *
 	 * @access public
 	 * @var BuyerDetailType
@@ -4990,9 +4897,7 @@ class SetDataRequestType {
 	public $BuyerDetail;
 
 	/**
-	 * Requests for specific buyer information like Billing Address to be
-	 * returned through GetExpressCheckoutDetails should be specified
-	 * under this.
+	 * Requests for specific buyer information like Billing Address to be returned through GetExpressCheckoutDetails should be specified under this.
 	 *
 	 * @access public
 	 * @var InfoSharingDirectivesType
@@ -5054,22 +4959,18 @@ class AuthorizationRequestType {
 
 /**
  * BillingApprovalDetailsType
- * The Type of Approval requested - Billing Agreement
- * or Profile
+ * The Type of Approval requested - Billing Agreement or Profile
  */
 class BillingApprovalDetailsType {
 	/**
-The Type of Approval requested - Billing Agreement
-	 * or Profile	 *
+The Type of Approval requested - Billing Agreement or Profile	 *
 	 * @access public
 	 * @var ApprovalTypeType
 	 */
 	public $ApprovalType;
 
 	/**
-The Approval subtype - Must be
-	 * MerchantInitiatedBilling for BillingAgreement ApprovalType
-	 *
+The Approval subtype - Must be MerchantInitiatedBilling for BillingAgreement ApprovalType	 *
 	 * @access public
 	 * @var ApprovalSubTypeType
 	 */
@@ -5083,17 +4984,14 @@ Description about the Order	 *
 	public $OrderDetails;
 
 	/**
-Directives about the type of payment
-	 *
+Directives about the type of payment	 *
 	 * @access public
 	 * @var PaymentDirectivesType
 	 */
 	public $PaymentDirectives;
 
 	/**
-Client may pass in its identification of this
-	 * Billing Agreement. It used for the client's tracking purposes.
-	 *
+Client may pass in its identification of this Billing Agreement. It used for the client's tracking purposes.	 *
 	 * @access public
 	 * @var string
 	 */
@@ -5133,15 +5031,11 @@ Client may pass in its identification of this
 
 /**
  * InfoSharingDirectivesType
- * If Billing Address should be returned in
- * GetExpressCheckoutDetails response, this parameter should be set
- * to yes here
+ * If Billing Address should be returned in GetExpressCheckoutDetails response, this parameter should be set to yes here
  */
 class InfoSharingDirectivesType {
 	/**
-If Billing Address should be returned in
-	 * GetExpressCheckoutDetails response, this parameter should be set
-	 * to yes here	 *
+If Billing Address should be returned in GetExpressCheckoutDetails response, this parameter should be set to yes here	 *
 	 * @access public
 	 * @var string
 	 */
@@ -5172,8 +5066,7 @@ Description of the Order.	 *
 	public $Description;
 
 	/**
-Expected maximum amount that the merchant may pull
-	 * using DoReferenceTransaction	 *
+Expected maximum amount that the merchant may pull using DoReferenceTransaction	 *
 	 * @access public
 	 * @var BasicAmountType
 	 */
@@ -5198,13 +5091,11 @@ Expected maximum amount that the merchant may pull
 
 /**
  * PaymentDirectivesType
- * Type of the Payment is it Instant or Echeck or
- * Any.
+ * Type of the Payment is it Instant or Echeck or Any.
  */
 class PaymentDirectivesType {
 	/**
-Type of the Payment is it Instant or Echeck or
-	 * Any.	 *
+Type of the Payment is it Instant or Echeck or Any.	 *
 	 * @access public
 	 * @var MerchantPullPaymentCodeType
 	 */
@@ -5224,15 +5115,11 @@ Type of the Payment is it Instant or Echeck or
 
 /**
  * BuyerDetailType
- * Information that is used to indentify the Buyer.
- * This is used for auto authorization. Mandatory if Authorization
- * is requested.
+ * Information that is used to indentify the Buyer. This is used for auto authorization. Mandatory if Authorization is requested.
  */
 class BuyerDetailType {
 	/**
-Information that is used to indentify the Buyer.
-	 * This is used for auto authorization. Mandatory if Authorization
-	 * is requested.	 *
+Information that is used to indentify the Buyer. This is used for auto authorization. Mandatory if Authorization is requested.	 *
 	 * @access public
 	 * @var IdentificationInfoType
 	 */
@@ -5258,8 +5145,7 @@ Information that is used to indentify the Buyer.
  */
 class IdentificationInfoType {
 	/**
-Mobile specific buyer identification.
-	 *
+Mobile specific buyer identification.	 *
 	 * @access public
 	 * @var MobileIDInfoType
 	 */
@@ -5293,13 +5179,11 @@ Contains login bypass information.	 *
 
 /**
  * MobileIDInfoType
- * The Session token returned during buyer
- * authentication.
+ * The Session token returned during buyer authentication.
  */
 class MobileIDInfoType {
 	/**
-The Session token returned during buyer
-	 * authentication.	 *
+The Session token returned during buyer authentication.	 *
 	 * @access public
 	 * @var string
 	 */
@@ -5319,22 +5203,16 @@ The Session token returned during buyer
 
 /**
  * RememberMeIDInfoType
- * External remember-me ID returned by GetExpressCheckoutDetails on
- * successful opt-in. The
- * ExternalRememberMeID is a 17-character alphanumeric (encrypted) string that
- * identifies
- * the buyer's remembered login with a merchant and has meaning only
- * to the merchant. If
+ * External remember-me ID returned by GetExpressCheckoutDetails on successful opt-in. The
+ * ExternalRememberMeID is a 17-character alphanumeric (encrypted) string that identifies
+ * the buyer's remembered login with a merchant and has meaning only to the merchant.  If
  * present, requests that the web flow attempt bypass of login.
  */
 class RememberMeIDInfoType {
 	/**
-	 * External remember-me ID returned by GetExpressCheckoutDetails on
-	 * successful opt-in. The
-	 * ExternalRememberMeID is a 17-character alphanumeric (encrypted) string that
-	 * identifies
-	 * the buyer's remembered login with a merchant and has meaning only
-	 * to the merchant. If
+	 * External remember-me ID returned by GetExpressCheckoutDetails on successful opt-in. The
+	 * ExternalRememberMeID is a 17-character alphanumeric (encrypted) string that identifies
+	 * the buyer's remembered login with a merchant and has meaning only to the merchant.  If
 	 * present, requests that the web flow attempt bypass of login.
 	 *
 	 * @access public
@@ -5356,21 +5234,17 @@ class RememberMeIDInfoType {
 
 /**
  * FundingSourceDetailsType
- * Allowable values: 0,1
- * The value 1 indicates that the customer can accept push funding,
- * and 0 means they cannot.
+ * Allowable values: 0,1  
+ * The value 1 indicates that the customer can accept push funding, and 0 means they cannot.
  * Optional
- * Character length and limitations: One single-byte numeric
- * character.
+ * Character length and limitations: One single-byte numeric character.
  */
 class FundingSourceDetailsType {
 	/**
-	 * Allowable values: 0,1
-	 * The value 1 indicates that the customer can accept push funding,
-	 * and 0 means they cannot.
+	 * Allowable values: 0,1  
+	 * The value 1 indicates that the customer can accept push funding, and 0 means they cannot.
 	 * Optional
-	 * Character length and limitations: One single-byte numeric
-	 * character.
+	 * Character length and limitations: One single-byte numeric character.
 	 *
 	 * @access public
 	 * @var string
@@ -5378,11 +5252,10 @@ class FundingSourceDetailsType {
 	public $AllowPushFunding;
 
 	/**
-	 * Allowable values: ELV, CreditCard, ChinaUnionPay, BML
-	 * This element could be used to specify the perered funding option
-	 * for a guest users. It has effect only if LandingPage element is
-	 * set to Billing.
-	 * Otherwise it will be ignored.
+	 * Allowable values: ELV, CreditCard, ChinaUnionPay, BML 
+	 * This element could be used to specify the perered funding option 
+	 * for a guest users. It has effect only if LandingPage element is set to Billing. 
+	 * Otherwise it will be ignored. 
 	 *
 	 * @access public
 	 * @var UserSelectedFundingSourceType
@@ -5465,18 +5338,13 @@ class BillingAgreementDetailsType {
 
 /**
  * GetExpressCheckoutDetailsResponseDetailsType
- * The timestamped token value that was returned by
- * SetExpressCheckoutResponse and passed on
- * GetExpressCheckoutDetailsRequest.
+ * The timestamped token value that was returned by SetExpressCheckoutResponse and passed on GetExpressCheckoutDetailsRequest. 
  * Character length and limitations: 20 single-byte characters
  */
 class GetExpressCheckoutDetailsResponseDetailsType {
 	/**
-	 * The timestamped token value that was returned by
-	 * SetExpressCheckoutResponse and passed on
-	 * GetExpressCheckoutDetailsRequest.
-	 * Character length and limitations: 20 single-byte characters
-	 *
+	 * The timestamped token value that was returned by SetExpressCheckoutResponse and passed on GetExpressCheckoutDetailsRequest. 
+	 * Character length and limitations: 20 single-byte characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -5490,21 +5358,16 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 	public $PayerInfo;
 
 	/**
-	 * A free-form field for your own use, as set by you in the Custom
-	 * element of SetExpressCheckoutRequest.
-	 * Character length and limitations: 256 single-byte alphanumeric
-	 * characters
-	 *
+	 * A free-form field for your own use, as set by you in the Custom element of SetExpressCheckoutRequest. 
+	 * Character length and limitations: 256 single-byte alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
 	public $Custom;
 
 	/**
-	 * Your own invoice or tracking number, as set by you in the
-	 * InvoiceID element of SetExpressCheckoutRequest.
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Your own invoice or tracking number, as set by you in the InvoiceID element of SetExpressCheckoutRequest. 
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -5512,9 +5375,7 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 	public $InvoiceID;
 
 	/**
-	 * Payer's contact telephone number. PayPal returns a contact telephone
-	 * number only if your Merchant account profile settings require
-	 * that the buyer enter one.	 *
+	 * Payer's contact telephone number. PayPal returns a contact telephone number only if your Merchant account profile settings require that the buyer enter one.	 *
 	 * @access public
 	 * @var string
 	 */
@@ -5535,12 +5396,9 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 	public $RedirectRequired;
 
 	/**
-	 * Customer's billing address.
+Customer's billing address.
 	 * Optional
-	 * If you have credit card mapped in your account then billing
-	 * address of the credit card is returned otherwise your primary
-	 * address is returned , PayPal returns this address in
-	 * GetExpressCheckoutDetailsResponse.
+	 * If you have credit card mapped in your account then billing address of the credit card is returned otherwise your primary address is returned , PayPal returns this address in GetExpressCheckoutDetailsResponse.
 	 *
 	 * @access public
 	 * @var AddressType
@@ -5557,9 +5415,7 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 
 	/**
 	 * Returns the status of the EC checkout session.
-	 * Values include 'PaymentActionNotInitiated',
-	 * 'PaymentActionFailed', 'PaymentActionInProgress',
-	 * 'PaymentCompleted'.
+	 * Values include 'PaymentActionNotInitiated', 'PaymentActionFailed', 'PaymentActionInProgress', 'PaymentCompleted'.
 	 *
 	 * @access public
 	 * @var string
@@ -5567,10 +5423,7 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 	public $CheckoutStatus;
 
 	/**
-	 * PayPal may offer a discount or gift certificate to the buyer, which
-	 * will be represented by a negativeamount. If the buyer has a
-	 * negative balance, PayPal will add that amount to the current
-	 * charges, which will be represented as a positive amount.
+	 * PayPal may offer a discount or gift certificate to the buyer, which will be represented by a negativeamount. If the buyer has a negative balance, PayPal will add that amount to the current charges, which will be represented as a positive amount.
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -5595,8 +5448,7 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 	public $UserSelectedOptions;
 
 	/**
-	 * Information about the incentives that were applied from Ebay RYP page and
-	 * PayPal RYP page.
+	 * Information about the incentives that were applied from Ebay RYP page and PayPal RYP page.
 	 *
 	 * array
 	 * @access public
@@ -5671,8 +5523,7 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 	public $PaymentRequestInfo;
 
 	/**
-	 * Response information resulting from opt-in operation or current login
-	 * bypass status.
+	 * Response information resulting from opt-in operation or current login bypass status.
 	 *
 	 * @access public
 	 * @var ExternalRememberMeStatusDetailsType
@@ -5719,18 +5570,10 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='checkoutstatus') {
 				$this->CheckoutStatus = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="paypaladjustment") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->PayPalAdjustment = new BasicAmountType();
-				$this->PayPalAdjustment->init($atr);
+				$this->PayPalAdjustment->init($arry["children"]);
 					}
 			}
 			for($i=0; $i<10;$i++) {
@@ -5772,18 +5615,10 @@ class GetExpressCheckoutDetailsResponseDetailsType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='giftwrapname') {
 				$this->GiftWrapName = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="giftwrapamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->GiftWrapAmount = new BasicAmountType();
-				$this->GiftWrapAmount->init($atr);
+				$this->GiftWrapAmount->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='buyermarketingemail') {
@@ -5856,13 +5691,11 @@ class ExecuteCheckoutOperationsResponseDetailsType {
 
 /**
  * SetDataResponseType
- * If Checkout session was initialized successfully, the
- * corresponding token is returned in this element.
+ * If Checkout session was initialized successfully, the corresponding token is returned in this element.
  */
 class SetDataResponseType {
 	/**
-	 * If Checkout session was initialized successfully, the
-	 * corresponding token is returned in this element.
+	 * If Checkout session was initialized successfully, the corresponding token is returned in this element.
 	 *
 	 * @access public
 	 * @var string
@@ -5945,39 +5778,23 @@ class AuthorizationResponseType {
 
 /**
  * DoExpressCheckoutPaymentRequestDetailsType
- * How you want to obtain payment.
+ * How you want to obtain payment. 
  * Required
- * Authorization indicates that this payment is a basic
- * authorization subject to settlement with PayPal Authorization
- * and Capture.
- * Order indicates that this payment is is an order authorization
- * subject to settlement with PayPal Authorization and Capture.
- * Sale indicates that this is a final sale for which you are
- * requesting payment.
- * IMPORTANT: You cannot set PaymentAction to Sale on
- * SetExpressCheckoutRequest and then change PaymentAction to
- * Authorization on the final Express Checkout API,
- * DoExpressCheckoutPaymentRequest.
- * Character length and limit: Up to 13 single-byte alphabetic
- * characters
+ * Authorization indicates that this payment is a basic authorization subject to settlement with PayPal Authorization and Capture.
+ * Order indicates that this payment is is an order authorization subject to settlement with PayPal Authorization and Capture.
+ * Sale indicates that this is a final sale for which you are requesting payment.
+ * IMPORTANT: You cannot set PaymentAction to Sale on SetExpressCheckoutRequest and then change PaymentAction to Authorization on the final Express Checkout API, DoExpressCheckoutPaymentRequest.
+ * Character length and limit: Up to 13 single-byte alphabetic characters
  */
 class DoExpressCheckoutPaymentRequestDetailsType {
 	/**
-	 * How you want to obtain payment.
+	 * How you want to obtain payment. 
 	 * Required
-	 * Authorization indicates that this payment is a basic
-	 * authorization subject to settlement with PayPal Authorization
-	 * and Capture.
-	 * Order indicates that this payment is is an order authorization
-	 * subject to settlement with PayPal Authorization and Capture.
-	 * Sale indicates that this is a final sale for which you are
-	 * requesting payment.
-	 * IMPORTANT: You cannot set PaymentAction to Sale on
-	 * SetExpressCheckoutRequest and then change PaymentAction to
-	 * Authorization on the final Express Checkout API,
-	 * DoExpressCheckoutPaymentRequest.
-	 * Character length and limit: Up to 13 single-byte alphabetic
-	 * characters
+	 * Authorization indicates that this payment is a basic authorization subject to settlement with PayPal Authorization and Capture.
+	 * Order indicates that this payment is is an order authorization subject to settlement with PayPal Authorization and Capture.
+	 * Sale indicates that this is a final sale for which you are requesting payment.
+	 * IMPORTANT: You cannot set PaymentAction to Sale on SetExpressCheckoutRequest and then change PaymentAction to Authorization on the final Express Checkout API, DoExpressCheckoutPaymentRequest.
+	 * Character length and limit: Up to 13 single-byte alphabetic characters
 	 *
 	 * @access public
 	 * @var PaymentActionCodeType
@@ -5985,20 +5802,16 @@ class DoExpressCheckoutPaymentRequestDetailsType {
 	public $PaymentAction;
 
 	/**
-	 * The timestamped token value that was returned by
-	 * SetExpressCheckoutResponse and passed on
-	 * GetExpressCheckoutDetailsRequest.
+	 * The timestamped token value that was returned by SetExpressCheckoutResponse and passed on GetExpressCheckoutDetailsRequest. 
 	 * Required
-	 * Character length and limitations: 20 single-byte characters
-	 *
+	 * Character length and limitations: 20 single-byte characters	 *
 	 * @access public
 	 * @var string
 	 */
 	public $Token;
 
 	/**
-	 * Encrypted PayPal customer account identification number as
-	 * returned by GetExpressCheckoutDetailsResponse.
+	 * Encrypted PayPal customer account identification number as returned by GetExpressCheckoutDetailsResponse. 
 	 * Required
 	 * Character length and limitations: 127 single-byte characters.
 	 *
@@ -6008,7 +5821,7 @@ class DoExpressCheckoutPaymentRequestDetailsType {
 	public $PayerID;
 
 	/**
-	 * URL on Merchant site pertaining to this invoice.
+	 * URL on Merchant site pertaining to this invoice. 
 	 * Optional
 	 *
 	 * @access public
@@ -6017,7 +5830,7 @@ class DoExpressCheckoutPaymentRequestDetailsType {
 	public $OrderURL;
 
 	/**
-	 * Information about the payment
+	 * Information about the payment 
 	 * Required
 	 *
 	 * array
@@ -6027,8 +5840,7 @@ class DoExpressCheckoutPaymentRequestDetailsType {
 	public $PaymentDetails;
 
 	/**
-	 * Flag to indicate if previously set promoCode shall be overriden.
-	 * Value 1 indicates overriding.
+	 * Flag to indicate if previously set promoCode shall be overriden. Value 1 indicates overriding.
 	 *
 	 * @access public
 	 * @var string
@@ -6036,8 +5848,7 @@ class DoExpressCheckoutPaymentRequestDetailsType {
 	public $PromoOverrideFlag;
 
 	/**
-	 * Promotional financing code for item. Overrides any previous PromoCode
-	 * setting.
+	 * Promotional financing code for item. Overrides any previous PromoCode setting.
 	 *
 	 * @access public
 	 * @var string
@@ -6053,8 +5864,7 @@ class DoExpressCheckoutPaymentRequestDetailsType {
 	public $EnhancedData;
 
 	/**
-	 * Soft Descriptor supported for Sale and Auth in DEC only. For Order
-	 * this will be ignored.
+	 * Soft Descriptor supported for Sale and Auth in DEC only. For Order this will be ignored.
 	 *
 	 * @access public
 	 * @var string
@@ -6127,11 +5937,9 @@ class DoExpressCheckoutPaymentRequestDetailsType {
 	public $SurveyChoiceSelected;
 
 	/**
-	 * An identification code for use by third-party applications to
-	 * identify transactions.
+An identification code for use by third-party applications to identify transactions. 
 	 * Optional
-	 * Character length and limitations: 32 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 32 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -6139,8 +5947,7 @@ class DoExpressCheckoutPaymentRequestDetailsType {
 	public $ButtonSource;
 
 	/**
-	 * Merchant specified flag which indicates whether to create
-	 * billing agreement as part of DoEC or not.
+	 * Merchant specified flag which indicates whether to create billing agreement as part of DoEC or not.
 	 * Optional
 	 *
 	 * @access public
@@ -6228,16 +6035,12 @@ class DoExpressCheckoutPaymentRequestDetailsType {
 
 /**
  * DoExpressCheckoutPaymentResponseDetailsType
- * The timestamped token value that was returned by
- * SetExpressCheckoutResponse and passed on
- * GetExpressCheckoutDetailsRequest.
+ * The timestamped token value that was returned by SetExpressCheckoutResponse and passed on GetExpressCheckoutDetailsRequest. 
  * Character length and limitations:20 single-byte characters
  */
 class DoExpressCheckoutPaymentResponseDetailsType {
 	/**
-	 * The timestamped token value that was returned by
-	 * SetExpressCheckoutResponse and passed on
-	 * GetExpressCheckoutDetailsRequest.
+	 * The timestamped token value that was returned by SetExpressCheckoutResponse and passed on GetExpressCheckoutDetailsRequest. 
 	 * Character length and limitations:20 single-byte characters
 	 *
 	 * @access public
@@ -6268,10 +6071,9 @@ Information about the transaction 	 *
 	public $RedirectRequired;
 
 	/**
-	 * Memo entered by sender in PayPal Review Page note field.
+Memo entered by sender in PayPal Review Page note field.
 	 * Optional
-	 * Character length and limitations: 255 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 255 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -6279,7 +6081,7 @@ Information about the transaction 	 *
 	public $Note;
 
 	/**
-	 * Redirect back to PayPal, PayPal can host the success page.
+	 * Redirect back to PayPal, PayPal can host the success page. 	          
 	 *
 	 * @access public
 	 * @var string
@@ -6338,15 +6140,13 @@ Information about the transaction 	 *
 
 /**
  * DoCaptureResponseDetailsType
- * The authorization identification number you specified in the
- * request.
- * Character length and limits: 19 single-byte characters maximum
+ * The authorization identification number you specified in the request. 
+Character length and limits: 19 single-byte characters maximum
  */
 class DoCaptureResponseDetailsType {
 	/**
-	 * The authorization identification number you specified in the
-	 * request.
-	 * Character length and limits: 19 single-byte characters maximum
+The authorization identification number you specified in the request. 
+Character length and limits: 19 single-byte characters maximum
 	 *
 	 * @access public
 	 * @var string
@@ -6380,37 +6180,28 @@ Information about the transaction 	 *
 
 /**
  * DoDirectPaymentRequestDetailsType
- * How you want to obtain payment.
+ * How you want to obtain payment. 
  * Required
- * Authorization indicates that this payment is a basic
- * authorization subject to settlement with PayPal Authorization
- * and Capture.
- * Sale indicates that this is a final sale for which you are
- * requesting payment.
+ * Authorization indicates that this payment is a basic authorization subject to settlement with PayPal Authorization and Capture.
+ * Sale indicates that this is a final sale for which you are requesting payment.
  * NOTE: Order is not allowed for Direct Payment.
- * Character length and limit: Up to 13 single-byte alphabetic
- * characters
+ * Character length and limit: Up to 13 single-byte alphabetic characters
  */
 class DoDirectPaymentRequestDetailsType {
 	/**
-	 * How you want to obtain payment.
+	 * How you want to obtain payment. 
 	 * Required
-	 * Authorization indicates that this payment is a basic
-	 * authorization subject to settlement with PayPal Authorization
-	 * and Capture.
-	 * Sale indicates that this is a final sale for which you are
-	 * requesting payment.
+	 * Authorization indicates that this payment is a basic authorization subject to settlement with PayPal Authorization and Capture.
+	 * Sale indicates that this is a final sale for which you are requesting payment.
 	 * NOTE: Order is not allowed for Direct Payment.
-	 * Character length and limit: Up to 13 single-byte alphabetic
-	 * characters
-	 *
+	 * Character length and limit: Up to 13 single-byte alphabetic characters	 *
 	 * @access public
 	 * @var PaymentActionCodeType
 	 */
 	public $PaymentAction;
 
 	/**
-	 * Information about the payment
+	 * Information about the payment 
 	 * Required
 	 *
 	 * @access public
@@ -6419,7 +6210,7 @@ class DoDirectPaymentRequestDetailsType {
 	public $PaymentDetails;
 
 	/**
-	 * Information about the credit card to be charged.
+	 * Information about the credit card to be charged. 
 	 * Required
 	 *
 	 * @access public
@@ -6428,12 +6219,9 @@ class DoDirectPaymentRequestDetailsType {
 	public $CreditCard;
 
 	/**
-	 * IP address of the payer's browser as recorded in its HTTP
-	 * request to your website. PayPal records this IP addresses as a
-	 * means to detect possible fraud.
+	 * IP address of the payer's browser as recorded in its HTTP request to your website. PayPal records this IP addresses as a means to detect possible fraud. 
 	 * Required
-	 * Character length and limitations: 15 single-byte characters,
-	 * including periods, in dotted-quad format: ???.???.???.???
+	 * Character length and limitations: 15 single-byte characters, including periods, in dotted-quad format: ???.???.???.???
 	 *
 	 * @access public
 	 * @var string
@@ -6441,13 +6229,9 @@ class DoDirectPaymentRequestDetailsType {
 	public $IPAddress;
 
 	/**
-	 * Your customer session identification token. PayPal records this
-	 * optional session identification token as an additional means to
-	 * detect possible fraud.
+	 * Your customer session identification token. PayPal records this optional session identification token as an additional means to detect possible fraud. 
 	 * Optional
-	 * Character length and limitations: 64 single-byte numeric
-	 * characters
-	 *
+	 * Character length and limitations: 64 single-byte numeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -6498,7 +6282,7 @@ class DoDirectPaymentRequestDetailsType {
  */
 class CreateMobilePaymentRequestDetailsType {
 	/**
-	 * Type of the payment
+Type of the payment
 	 * Required
 	 *
 	 * @access public
@@ -6507,13 +6291,10 @@ class CreateMobilePaymentRequestDetailsType {
 	public $PaymentType;
 
 	/**
-	 * How you want to obtain payment. Defaults to Sale.
+	 * How you want to obtain payment.  Defaults to Sale.
 	 * Optional
-	 * Authorization indicates that this payment is a basic
-	 * authorization subject to settlement with PayPal Authorization
-	 * and Capture.
-	 * Sale indicates that this is a final sale for which you are
-	 * requesting payment.
+	 * Authorization indicates that this payment is a basic authorization subject to settlement with PayPal Authorization and Capture.
+	 * Sale indicates that this is a final sale for which you are requesting payment.
 	 *
 	 * @access public
 	 * @var PaymentActionCodeType
@@ -6521,7 +6302,7 @@ class CreateMobilePaymentRequestDetailsType {
 	public $PaymentAction;
 
 	/**
-	 * Phone number of the user making the payment.
+Phone number of the user making the payment.
 	 * Required
 	 *
 	 * @access public
@@ -6530,7 +6311,7 @@ class CreateMobilePaymentRequestDetailsType {
 	public $SenderPhone;
 
 	/**
-	 * Type of recipient specified, i.e., phone number or email address
+Type of recipient specified, i.e., phone number or email address
 	 * Required
 	 *
 	 * @access public
@@ -6539,7 +6320,7 @@ class CreateMobilePaymentRequestDetailsType {
 	public $RecipientType;
 
 	/**
-	 * Email address of the recipient
+Email address of the recipient
 	 *
 	 * @access public
 	 * @var string
@@ -6547,7 +6328,7 @@ class CreateMobilePaymentRequestDetailsType {
 	public $RecipientEmail;
 
 	/**
-	 * Phone number of the recipipent
+Phone number of the recipipent
 	 * Required
 	 *
 	 * @access public
@@ -6556,7 +6337,7 @@ class CreateMobilePaymentRequestDetailsType {
 	public $RecipientPhone;
 
 	/**
-	 * Amount of item before tax and shipping
+Amount of item before tax and shipping
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -6564,8 +6345,8 @@ class CreateMobilePaymentRequestDetailsType {
 	public $ItemAmount;
 
 	/**
-	 * The tax charged on the transaction
-	 * Tax
+The tax charged on the transaction
+Tax
 	 * Optional
 	 *
 	 * @access public
@@ -6574,7 +6355,7 @@ class CreateMobilePaymentRequestDetailsType {
 	public $Tax;
 
 	/**
-	 * Per-transaction shipping charge
+Per-transaction shipping charge
 	 * Optional
 	 *
 	 * @access public
@@ -6583,10 +6364,9 @@ class CreateMobilePaymentRequestDetailsType {
 	public $Shipping;
 
 	/**
-	 * Name of the item being ordered
+Name of the item being ordered
 	 * Optional
-	 * Character length and limitations: 255 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 255 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -6594,10 +6374,9 @@ class CreateMobilePaymentRequestDetailsType {
 	public $ItemName;
 
 	/**
-	 * SKU of the item being ordered
+SKU of the item being ordered
 	 * Optional
-	 * Character length and limitations: 255 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 255 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -6605,10 +6384,9 @@ class CreateMobilePaymentRequestDetailsType {
 	public $ItemNumber;
 
 	/**
-	 * Memo entered by sender in PayPal Website Payments note field.
+Memo entered by sender in PayPal Website Payments note field.
 	 * Optional
-	 * Character length and limitations: 255 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 255 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -6616,10 +6394,9 @@ class CreateMobilePaymentRequestDetailsType {
 	public $Note;
 
 	/**
-	 * Unique ID for the order. Required for non-P2P transactions
+Unique ID for the order.  Required for non-P2P transactions
 	 * Optional
-	 * Character length and limitations: 255 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 255 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -6627,8 +6404,7 @@ class CreateMobilePaymentRequestDetailsType {
 	public $CustomID;
 
 	/**
-	 * Indicates whether the sender's phone number will be shared with
-	 * recipient
+Indicates whether the sender's phone number will be shared with recipient
 	 * Optional
 	 *
 	 * @access public
@@ -6637,8 +6413,7 @@ class CreateMobilePaymentRequestDetailsType {
 	public $SharePhoneNumber;
 
 	/**
-	 * Indicates whether the sender's home address will be shared with
-	 * recipient
+Indicates whether the sender's home address will be shared with recipient
 	 * Optional
 	 *
 	 * @access public
@@ -6738,26 +6513,22 @@ Phone number for status inquiry 	 *
 
 /**
  * SetAuthFlowParamRequestDetailsType
- * URL to which the customer's browser is returned after choosing
- * to login with PayPal.
+ * URL to which the customer's browser is returned after choosing to login with PayPal.
  * Required
- * Character length and limitations: no limit.
+ * Character length and limitations: no limit. 
  */
 class SetAuthFlowParamRequestDetailsType {
 	/**
-	 * URL to which the customer's browser is returned after choosing
-	 * to login with PayPal.
+URL to which the customer's browser is returned after choosing to login with PayPal.
 	 * Required
-	 * Character length and limitations: no limit.
-	 *
+	 * Character length and limitations: no limit. 	 *
 	 * @access public
 	 * @var string
 	 */
 	public $ReturnURL;
 
 	/**
-	 * URL to which the customer is returned if he does not approve the
-	 * use of PayPal login.
+URL to which the customer is returned if he does not approve the use of PayPal login. 
 	 * Required
 	 * Character length and limitations: no limit
 	 *
@@ -6767,21 +6538,18 @@ class SetAuthFlowParamRequestDetailsType {
 	public $CancelURL;
 
 	/**
-	 * URL to which the customer's browser is returned after user logs
-	 * out from PayPal.
+URL to which the customer's browser is returned after user logs out from PayPal. 
 	 * Required
-	 * Character length and limitations: no limit.
-	 *
+	 * Character length and limitations: no limit. 	 *
 	 * @access public
 	 * @var string
 	 */
 	public $LogoutURL;
 
 	/**
-	 * The type of the flow.
+The type of the flow.
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -6789,10 +6557,9 @@ class SetAuthFlowParamRequestDetailsType {
 	public $InitFlowType;
 
 	/**
-	 * The used to decide SkipLogin allowed or not.
+The used to decide SkipLogin allowed or not.
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -6800,11 +6567,9 @@ class SetAuthFlowParamRequestDetailsType {
 	public $SkipLoginPage;
 
 	/**
-	 * The name of the field Merchant requires from PayPal after user's
-	 * login.
+The name of the field Merchant requires from PayPal after user's login.
 	 * Optional
-	 * Character length and limitations: 256 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 256 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -6812,10 +6577,9 @@ class SetAuthFlowParamRequestDetailsType {
 	public $ServiceName1;
 
 	/**
-	 * Whether the field is required, opt-in or opt-out.
+Whether the field is required, opt-in or opt-out.
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -6823,11 +6587,9 @@ class SetAuthFlowParamRequestDetailsType {
 	public $ServiceDefReq1;
 
 	/**
-	 * The name of the field Merchant requires from PayPal after user's
-	 * login.
+The name of the field Merchant requires from PayPal after user's login.
 	 * Optional
-	 * Character length and limitations: 256 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 256 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -6835,10 +6597,9 @@ class SetAuthFlowParamRequestDetailsType {
 	public $ServiceName2;
 
 	/**
-	 * Whether the field is required, opt-in or opt-out.
+Whether the field is required, opt-in or opt-out.
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -6848,9 +6609,8 @@ class SetAuthFlowParamRequestDetailsType {
 	/**
 	 * Locale of pages displayed by PayPal during Authentication Login.
 	 * Optional
-	 * Character length and limitations: Five single-byte alphabetic
-	 * characters, upper- or lowercase.
-	 * Allowable values:
+	 * Character length and limitations: Five single-byte alphabetic characters, upper- or lowercase. 
+	 * Allowable values: 
 	 * AU or en_AU
 	 * DE or de_DE
 	 * FR or fr_FR
@@ -6865,15 +6625,9 @@ class SetAuthFlowParamRequestDetailsType {
 	public $LocaleCode;
 
 	/**
-	 * Sets the Custom Payment Page Style for flow pages associated
-	 * with this button/link. PageStyle corresponds to the HTML
-	 * variable page_style for customizing flow pages. The value is the
-	 * same as the Page Style Name you chose when adding or editing the
-	 * page style from the Profile subtab of the My Account tab of your
-	 * PayPal account.
+Sets the Custom Payment Page Style for flow pages associated with this button/link. PageStyle corresponds to the HTML variable page_style for customizing flow pages. The value is the same as the Page Style Name you chose when adding or editing the page style from the Profile subtab of the My Account tab of your PayPal account. 
 	 * Optional
-	 * Character length and limitations: 30 single-byte alphabetic
-	 * characters.
+	 * Character length and limitations: 30 single-byte alphabetic characters.
 	 *
 	 * @access public
 	 * @var string
@@ -6881,10 +6635,7 @@ class SetAuthFlowParamRequestDetailsType {
 	public $PageStyle;
 
 	/**
-	 * A URL for the image you want to appear at the top left of the
-	 * flow page. The image has a maximum size of 750 pixels wide by 90
-	 * pixels high. PayPal recommends that you provide an image that is
-	 * stored on a secure (https) server.
+	 * A URL for the image you want to appear at the top left of the flow page. The image has a maximum size of 750 pixels wide by 90 pixels high. PayPal recommends that you provide an image that is stored on a secure (https) server. 
 	 * Optional
 	 * Character length and limitations: 127
 	 *
@@ -6894,12 +6645,9 @@ class SetAuthFlowParamRequestDetailsType {
 	public $cppheaderimage;
 
 	/**
-	 * Sets the border color around the header of the flow page. The
-	 * border is a 2-pixel perimeter around the header space, which is
-	 * 750 pixels wide by 90 pixels high.
+	 * Sets the border color around the header of the flow page. The border is a 2-pixel perimeter around the header space, which is 750 pixels wide by 90 pixels high. 
 	 * Optional
-	 * Character length and limitations: Six character HTML hexadecimal
-	 * color code in ASCII
+	 * Character length and limitations: Six character HTML hexadecimal color code in ASCII
 	 *
 	 * @access public
 	 * @var string
@@ -6907,10 +6655,9 @@ class SetAuthFlowParamRequestDetailsType {
 	public $cppheaderbordercolor;
 
 	/**
-	 * Sets the background color for the header of the flow page.
+	 * Sets the background color for the header of the flow page. 
 	 * Optional
-	 * Character length and limitation: Six character HTML hexadecimal
-	 * color code in ASCII
+	 * Character length and limitation: Six character HTML hexadecimal color code in ASCII
 	 *
 	 * @access public
 	 * @var string
@@ -6918,10 +6665,9 @@ class SetAuthFlowParamRequestDetailsType {
 	public $cppheaderbackcolor;
 
 	/**
-	 * Sets the background color for the payment page.
+	 * Sets the background color for the payment page. 
 	 * Optional
-	 * Character length and limitation: Six character HTML hexadecimal
-	 * color code in ASCII
+	 * Character length and limitation: Six character HTML hexadecimal color code in ASCII
 	 *
 	 * @access public
 	 * @var string
@@ -6929,11 +6675,9 @@ class SetAuthFlowParamRequestDetailsType {
 	public $cpppayflowcolor;
 
 	/**
-	 * First Name of the user, this information is used if user chooses
-	 * to signup with PayPal.
+First Name of the user, this information is used if user chooses to signup with PayPal.
 	 * Optional
-	 * Character length and limitation: Six character HTML hexadecimal
-	 * color code in ASCII
+	 * Character length and limitation: Six character HTML hexadecimal color code in ASCII
 	 *
 	 * @access public
 	 * @var string
@@ -6941,11 +6685,9 @@ class SetAuthFlowParamRequestDetailsType {
 	public $FirstName;
 
 	/**
-	 * Last Name of the user, this information is used if user chooses
-	 * to signup with PayPal.
+Last Name of the user, this information is used if user chooses to signup with PayPal.
 	 * Optional
-	 * Character length and limitation: Six character HTML hexadecimal
-	 * color code in ASCII
+	 * Character length and limitation: Six character HTML hexadecimal color code in ASCII
 	 *
 	 * @access public
 	 * @var string
@@ -6953,12 +6695,9 @@ class SetAuthFlowParamRequestDetailsType {
 	public $LastName;
 
 	/**
-	 * User address, this information is used when user chooses to
-	 * signup for PayPal.
+User address, this information is used when user chooses to signup for PayPal.
 	 * Optional
-	 * If you include a shipping address and set the AddressOverride
-	 * element on the request, PayPal returns this same address in
-	 * GetExpressCheckoutDetailsResponse.
+	 * If you include a shipping address and set the AddressOverride element on the request, PayPal returns this same address in GetExpressCheckoutDetailsResponse. 
 	 *
 	 * @access public
 	 * @var AddressType
@@ -7033,24 +6772,20 @@ class SetAuthFlowParamRequestDetailsType {
 /**
  * GetAuthDetailsResponseDetailsType
  * The first name of the User.
- * Character length and limitations: 127 single-byte alphanumeric
- * characters
+ * Character length and limitations: 127 single-byte alphanumeric characters
  */
 class GetAuthDetailsResponseDetailsType {
 	/**
-	 * The first name of the User.
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
-	 *
+The first name of the User.
+	 * Character length and limitations: 127 single-byte alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
 	public $FirstName;
 
 	/**
-	 * The Last name of the user.
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+The Last name of the user.
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -7059,8 +6794,7 @@ class GetAuthDetailsResponseDetailsType {
 
 	/**
 	 * The email address of the user.
-	 * Character length and limitations: 256 single-byte alphanumeric
-	 * characters.
+	 * Character length and limitations: 256 single-byte alphanumeric characters.
 	 *
 	 * @access public
 	 * @var string
@@ -7100,17 +6834,15 @@ class GetAuthDetailsResponseDetailsType {
 
 /**
  * SetAccessPermissionsRequestDetailsType
- * URL to which the customer's browser is returned after choosing
- * to login with PayPal.
+ * URL to which the customer's browser is returned after choosing to login with PayPal.
  * Required
- * Character length and limitations: no limit.
+ * Character length and limitations: no limit. 
  */
 class SetAccessPermissionsRequestDetailsType {
 	/**
-	 * URL to which the customer's browser is returned after choosing
-	 * to login with PayPal.
+URL to which the customer's browser is returned after choosing to login with PayPal.
 	 * Required
-	 * Character length and limitations: no limit.
+	 * Character length and limitations: no limit. 
 	 *
 	 * @access public
 	 * @var string
@@ -7118,8 +6850,7 @@ class SetAccessPermissionsRequestDetailsType {
 	public $ReturnURL;
 
 	/**
-	 * URL to which the customer is returned if he does not approve the
-	 * use of PayPal login.
+URL to which the customer is returned if he does not approve the use of PayPal login. 
 	 * Required
 	 * Character length and limitations: no limit
 	 *
@@ -7129,10 +6860,9 @@ class SetAccessPermissionsRequestDetailsType {
 	public $CancelURL;
 
 	/**
-	 * URL to which the customer's browser is returned after user logs
-	 * out from PayPal.
+URL to which the customer's browser is returned after user logs out from PayPal. 
 	 * Required
-	 * Character length and limitations: no limit.
+	 * Character length and limitations: no limit. 
 	 *
 	 * @access public
 	 * @var string
@@ -7140,10 +6870,9 @@ class SetAccessPermissionsRequestDetailsType {
 	public $LogoutURL;
 
 	/**
-	 * The type of the flow.
+The type of the flow.
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -7151,10 +6880,9 @@ class SetAccessPermissionsRequestDetailsType {
 	public $InitFlowType;
 
 	/**
-	 * The used to decide SkipLogin allowed or not.
+The used to decide SkipLogin allowed or not.
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -7182,9 +6910,8 @@ class SetAccessPermissionsRequestDetailsType {
 	/**
 	 * Locale of pages displayed by PayPal during Authentication Login.
 	 * Optional
-	 * Character length and limitations: Five single-byte alphabetic
-	 * characters, upper- or lowercase.
-	 * Allowable values:
+	 * Character length and limitations: Five single-byte alphabetic characters, upper- or lowercase. 
+	 * Allowable values: 
 	 * AU or en_AU
 	 * DE or de_DE
 	 * FR or fr_FR
@@ -7199,15 +6926,9 @@ class SetAccessPermissionsRequestDetailsType {
 	public $LocaleCode;
 
 	/**
-	 * Sets the Custom Payment Page Style for flow pages associated
-	 * with this button/link. PageStyle corresponds to the HTML
-	 * variable page_style for customizing flow pages. The value is the
-	 * same as the Page Style Name you chose when adding or editing the
-	 * page style from the Profile subtab of the My Account tab of your
-	 * PayPal account.
+Sets the Custom Payment Page Style for flow pages associated with this button/link. PageStyle corresponds to the HTML variable page_style for customizing flow pages. The value is the same as the Page Style Name you chose when adding or editing the page style from the Profile subtab of the My Account tab of your PayPal account. 
 	 * Optional
-	 * Character length and limitations: 30 single-byte alphabetic
-	 * characters.
+	 * Character length and limitations: 30 single-byte alphabetic characters.
 	 *
 	 * @access public
 	 * @var string
@@ -7215,10 +6936,7 @@ class SetAccessPermissionsRequestDetailsType {
 	public $PageStyle;
 
 	/**
-	 * A URL for the image you want to appear at the top left of the
-	 * flow page. The image has a maximum size of 750 pixels wide by 90
-	 * pixels high. PayPal recommends that you provide an image that is
-	 * stored on a secure (https) server.
+	 * A URL for the image you want to appear at the top left of the flow page. The image has a maximum size of 750 pixels wide by 90 pixels high. PayPal recommends that you provide an image that is stored on a secure (https) server. 
 	 * Optional
 	 * Character length and limitations: 127
 	 *
@@ -7228,12 +6946,9 @@ class SetAccessPermissionsRequestDetailsType {
 	public $cppheaderimage;
 
 	/**
-	 * Sets the border color around the header of the flow page. The
-	 * border is a 2-pixel perimeter around the header space, which is
-	 * 750 pixels wide by 90 pixels high.
+	 * Sets the border color around the header of the flow page. The border is a 2-pixel perimeter around the header space, which is 750 pixels wide by 90 pixels high. 
 	 * Optional
-	 * Character length and limitations: Six character HTML hexadecimal
-	 * color code in ASCII
+	 * Character length and limitations: Six character HTML hexadecimal color code in ASCII
 	 *
 	 * @access public
 	 * @var string
@@ -7241,10 +6956,9 @@ class SetAccessPermissionsRequestDetailsType {
 	public $cppheaderbordercolor;
 
 	/**
-	 * Sets the background color for the header of the flow page.
+	 * Sets the background color for the header of the flow page. 
 	 * Optional
-	 * Character length and limitation: Six character HTML hexadecimal
-	 * color code in ASCII
+	 * Character length and limitation: Six character HTML hexadecimal color code in ASCII
 	 *
 	 * @access public
 	 * @var string
@@ -7252,10 +6966,9 @@ class SetAccessPermissionsRequestDetailsType {
 	public $cppheaderbackcolor;
 
 	/**
-	 * Sets the background color for the payment page.
+	 * Sets the background color for the payment page. 
 	 * Optional
-	 * Character length and limitation: Six character HTML hexadecimal
-	 * color code in ASCII
+	 * Character length and limitation: Six character HTML hexadecimal color code in ASCII
 	 *
 	 * @access public
 	 * @var string
@@ -7263,11 +6976,9 @@ class SetAccessPermissionsRequestDetailsType {
 	public $cpppayflowcolor;
 
 	/**
-	 * First Name of the user, this information is used if user chooses
-	 * to signup with PayPal.
+First Name of the user, this information is used if user chooses to signup with PayPal.
 	 * Optional
-	 * Character length and limitation: Six character HTML hexadecimal
-	 * color code in ASCII
+	 * Character length and limitation: Six character HTML hexadecimal color code in ASCII
 	 *
 	 * @access public
 	 * @var string
@@ -7275,11 +6986,9 @@ class SetAccessPermissionsRequestDetailsType {
 	public $FirstName;
 
 	/**
-	 * Last Name of the user, this information is used if user chooses
-	 * to signup with PayPal.
+Last Name of the user, this information is used if user chooses to signup with PayPal.
 	 * Optional
-	 * Character length and limitation: Six character HTML hexadecimal
-	 * color code in ASCII
+	 * Character length and limitation: Six character HTML hexadecimal color code in ASCII
 	 *
 	 * @access public
 	 * @var string
@@ -7287,12 +6996,9 @@ class SetAccessPermissionsRequestDetailsType {
 	public $LastName;
 
 	/**
-	 * User address, this information is used when user chooses to
-	 * signup for PayPal.
+User address, this information is used when user chooses to signup for PayPal.
 	 * Optional
-	 * If you include a shipping address and set the AddressOverride
-	 * element on the request, PayPal returns this same address in
-	 * GetExpressCheckoutDetailsResponse.
+	 * If you include a shipping address and set the AddressOverride element on the request, PayPal returns this same address in GetExpressCheckoutDetailsResponse. 
 	 *
 	 * @access public
 	 * @var AddressType
@@ -7365,24 +7071,20 @@ class SetAccessPermissionsRequestDetailsType {
 /**
  * GetAccessPermissionDetailsResponseDetailsType
  * The first name of the User.
- * Character length and limitations: 127 single-byte alphanumeric
- * characters
+ * Character length and limitations: 127 single-byte alphanumeric characters
  */
 class GetAccessPermissionDetailsResponseDetailsType {
 	/**
-	 * The first name of the User.
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
-	 *
+The first name of the User.
+	 * Character length and limitations: 127 single-byte alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
 	public $FirstName;
 
 	/**
-	 * The Last name of the user.
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+The Last name of the user.
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -7391,8 +7093,7 @@ class GetAccessPermissionDetailsResponseDetailsType {
 
 	/**
 	 * The email address of the user.
-	 * Character length and limitations: 256 single-byte alphanumeric
-	 * characters.
+	 * Character length and limitations: 256 single-byte alphanumeric characters.
 	 *
 	 * @access public
 	 * @var string
@@ -7499,12 +7200,10 @@ class BAUpdateResponseDetailsType {
 	public $BillingAgreementMax;
 
 	/**
-	 * Customer's billing address.
+Customer's billing address.
 	 * Optional
-	 * If you have credit card mapped in your account then billing
-	 * address of the
-	 * credit card is returned otherwise your primary address is returned ,
-	 * PayPal
+	 * If you have credit card mapped in your account then billing address of the 
+	 * credit card is returned otherwise your primary address is returned , PayPal 
 	 * returns this address in BAUpdateResponseDetails.
 	 *
 	 * @access public
@@ -7533,18 +7232,10 @@ class BAUpdateResponseDetailsType {
 				$this->PayerInfo->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="billingagreementmax") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->BillingAgreementMax = new BasicAmountType();
-				$this->BillingAgreementMax->init($atr);
+				$this->BillingAgreementMax->init($arry["children"]);
 					}
 			}
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
@@ -7614,7 +7305,7 @@ Information about the transaction 	 *
 
 /**
  * MerchantPullInfoType
- * MerchantPullInfoType
+ * MerchantPullInfoType 
  * Information about the merchant pull.
  */
 class MerchantPullInfoType {
@@ -7634,9 +7325,7 @@ Monthly maximum payment amount	 *
 	public $MpMax;
 
 	/**
-The value of the mp_custom variable that you
-	 * specified in a FORM submission to PayPal during the creation or
-	 * updating of a customer billing agreement 
+The value of the mp_custom variable that you specified in a FORM submission to PayPal during the creation or updating of a customer billing agreement 
 	 *
 	 * @access public
 	 * @var string
@@ -7644,8 +7333,7 @@ The value of the mp_custom variable that you
 	public $MpCustom;
 
 	/**
-The value of the mp_desc variable (description of
-	 * goods or services) associated with the billing agreement
+The value of the mp_desc variable (description of goods or services) associated with the billing agreement 
 	 *
 	 * @access public
 	 * @var string
@@ -7653,24 +7341,21 @@ The value of the mp_desc variable (description of
 	public $Desc;
 
 	/**
-Invoice value as set by BillUserRequest API call
-	 *
+Invoice value as set by BillUserRequest API call 	 *
 	 * @access public
 	 * @var string
 	 */
 	public $Invoice;
 
 	/**
-Custom field as set by BillUserRequest API call
-	 *
+Custom field as set by BillUserRequest API call 	 *
 	 * @access public
 	 * @var string
 	 */
 	public $Custom;
 
 	/**
-Note: This field is no longer used and is always
-	 * empty.	 *
+Note: This field is no longer used and is always empty.	 *
 	 * @access public
 	 * @var string
 	 */
@@ -7682,18 +7367,10 @@ Note: This field is no longer used and is always
 			foreach ($arr as $arry){
 			if($arry != null && isset($arry['text']) && $arry['name']=='mpstatus') {
 				$this->MpStatus = $arry["text"];			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="mpmax") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->MpMax = new BasicAmountType();
-				$this->MpMax->init($atr);
+				$this->MpMax->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='mpcustom') {
@@ -7718,13 +7395,12 @@ Note: This field is no longer used and is always
 
 /**
  * PaymentTransactionSearchResultType
- * PaymentTransactionSearchResultType
+ * PaymentTransactionSearchResultType 
  * Results from a PaymentTransaction search
  */
 class PaymentTransactionSearchResultType {
 	/**
-The date and time (in UTC/GMT format) the
-	 * transaction occurred	 *
+The date and time (in UTC/GMT format) the transaction occurred	 *
 	 * @access public
 	 * @var dateTime
 	 */
@@ -7773,16 +7449,14 @@ The status of the transaction	 *
 	public $Status;
 
 	/**
-The total gross amount charged, including any
-	 * profile shipping cost and taxes	 *
+The total gross amount charged, including any profile shipping cost and taxes	 *
 	 * @access public
 	 * @var BasicAmountType
 	 */
 	public $GrossAmount;
 
 	/**
-The fee that PayPal charged for the transaction
-	 *
+The fee that PayPal charged for the transaction 	 *
 	 * @access public
 	 * @var BasicAmountType
 	 */
@@ -7820,46 +7494,22 @@ The net amount of the transaction 	 *
 			if($arry != null && isset($arry['text']) && $arry['name']=='status') {
 				$this->Status = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="grossamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->GrossAmount = new BasicAmountType();
-				$this->GrossAmount->init($atr);
+				$this->GrossAmount->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="feeamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->FeeAmount = new BasicAmountType();
-				$this->FeeAmount->init($atr);
+				$this->FeeAmount->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="netamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->NetAmount = new BasicAmountType();
-				$this->NetAmount->init($atr);
+				$this->NetAmount->init($arry["children"]);
 					}
 			}
 		}
@@ -7929,17 +7579,14 @@ class TaxInfoType {
 
 /**
  * MerchantPullPaymentType
- * MerchantPullPayment
+ * MerchantPullPayment 
  * Parameters to make initiate a pull payment
  */
 class MerchantPullPaymentType {
 	/**
-	 * The amount to charge to the customer.
+	 * The amount to charge to the customer. 
 	 * Required
-	 * Only numeric characters and a decimal separator are allowed.
-	 * Limit: 10 single-byte characters, including two for decimals You
-	 * must set the currencyID attribute to one of the three-character
-	 * currency code for any of the supported PayPal currencies.
+	 * Only numeric characters and a decimal separator are allowed. Limit: 10 single-byte characters, including two for decimals You must set the currencyID attribute to one of the three-character currency code for any of the supported PayPal currencies. 
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -7947,13 +7594,10 @@ class MerchantPullPaymentType {
 	public $Amount;
 
 	/**
-	 * Preapproved Payments billing agreement identification number
-	 * between the PayPal customer and you.
+	 * Preapproved Payments billing agreement identification number between the PayPal customer and you. 
 	 * Required
 	 * Character limit: 19 single-byte alphanumeric characters.
-	 * The format of a billing agreement identification number is the
-	 * single-character prefix B, followed by a hyphen and an
-	 * alphanumeric character string:
+	 * The format of a billing agreement identification number is the single-character prefix B, followed by a hyphen and an alphanumeric character string: 
 	 * B-unique_alphanumeric_string
 	 *
 	 * @access public
@@ -7962,7 +7606,7 @@ class MerchantPullPaymentType {
 	public $MpID;
 
 	/**
-	 * Specifies type of PayPal payment you require
+Specifies type of PayPal payment you require 
 	 * Optional
 	 *
 	 * @access public
@@ -7971,7 +7615,7 @@ class MerchantPullPaymentType {
 	public $PaymentType;
 
 	/**
-	 * Text entered by the customer in the Note field during enrollment
+Text entered by the customer in the Note field during enrollment 
 	 * Optional
 	 *
 	 * @access public
@@ -7980,7 +7624,7 @@ class MerchantPullPaymentType {
 	public $Memo;
 
 	/**
-	 * Subject line of confirmation email sent to recipient
+Subject line of confirmation email sent to recipient
 	 * Optional
 	 *
 	 * @access public
@@ -7989,7 +7633,7 @@ class MerchantPullPaymentType {
 	public $EmailSubject;
 
 	/**
-	 * The tax charged on the transaction
+The tax charged on the transaction
 	 * Optional
 	 *
 	 * @access public
@@ -7998,43 +7642,39 @@ class MerchantPullPaymentType {
 	public $Tax;
 
 	/**
-	 * Per-transaction shipping charge
-	 * Optional
-	 *
+Per-transaction shipping charge 
+	 * Optional	 *
 	 * @access public
 	 * @var BasicAmountType
 	 */
 	public $Shipping;
 
 	/**
-	 * Per-transaction handling charge
-	 * Optional
-	 *
+Per-transaction handling charge
+	 * Optional	 *
 	 * @access public
 	 * @var BasicAmountType
 	 */
 	public $Handling;
 
 	/**
-	 * Name of purchased item
-	 * Optional
-	 *
+Name of purchased item
+	 * Optional	 *
 	 * @access public
 	 * @var string
 	 */
 	public $ItemName;
 
 	/**
-	 * Reference number of purchased item
-	 * Optional
-	 *
+Reference number of purchased item
+	 * Optional	 *
 	 * @access public
 	 * @var string
 	 */
 	public $ItemNumber;
 
 	/**
-	 * Your invoice number
+Your invoice number  
 	 * Optional
 	 *
 	 * @access public
@@ -8043,7 +7683,7 @@ class MerchantPullPaymentType {
 	public $Invoice;
 
 	/**
-	 * Custom annotation field for tracking or other use
+Custom annotation field for tracking or other use
 	 * Optional
 	 *
 	 * @access public
@@ -8052,11 +7692,9 @@ class MerchantPullPaymentType {
 	public $Custom;
 
 	/**
-	 * An identification code for use by third-party applications to
-	 * identify transactions.
+An identification code for use by third-party applications to identify transactions. 
 	 * Optional
-	 * Character length and limitations: 32 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 32 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -8064,10 +7702,9 @@ class MerchantPullPaymentType {
 	public $ButtonSource;
 
 	/**
-	 * Passed in soft descriptor string to be appended.
+Passed in soft descriptor string to be appended. 
 	 * Optional
-	 * Character length and limitations: single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -8135,13 +7772,12 @@ class MerchantPullPaymentType {
 
 /**
  * PaymentTransactionType
- * PaymentTransactionType
+ * PaymentTransactionType 
  * Information about a PayPal payment from the seller side
  */
 class PaymentTransactionType {
 	/**
-Information about the recipient of the payment
-	 *
+Information about the recipient of the payment 	 *
 	 * @access public
 	 * @var ReceiverInfoType
 	 */
@@ -8162,8 +7798,7 @@ Information about the transaction 	 *
 	public $PaymentInfo;
 
 	/**
-Information about an individual item in the
-	 * transaction	 *
+Information about an individual item in the transaction	 *
 	 * @access public
 	 * @var PaymentItemInfoType
 	 */
@@ -8277,18 +7912,10 @@ Information about an individual item in the
 			if($arry != null && isset($arry['text']) && $arry['name']=='giftwrapname') {
 				$this->GiftWrapName = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="giftwrapamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->GiftWrapAmount = new BasicAmountType();
-				$this->GiftWrapAmount->init($atr);
+				$this->GiftWrapAmount->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='buyeremailoptin') {
@@ -8306,16 +7933,13 @@ Information about an individual item in the
 
 /**
  * ReceiverInfoType
- * ReceiverInfoType
+ * ReceiverInfoType 
  * Receiver information.
  */
 class ReceiverInfoType {
 	/**
-	 * Email address or account ID of the payment recipient (the
-	 * seller). Equivalent to Receiver if payment is sent to primary
-	 * account.
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Email address or account ID of the payment recipient (the seller). Equivalent to Receiver if payment is sent to primary account. 
+Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -8323,12 +7947,8 @@ class ReceiverInfoType {
 	public $Business;
 
 	/**
-	 * Primary email address of the payment recipient (the seller). If
-	 * you are the recipient of the payment and the payment is sent to
-	 * your non-primary email address, the value of Receiver is still
-	 * your primary email address.
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+Primary email address of the payment recipient (the seller). If you are the recipient of the payment and the payment is sent to your non-primary email address, the value of Receiver is still your primary email address. 
+Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -8336,9 +7956,7 @@ class ReceiverInfoType {
 	public $Receiver;
 
 	/**
-Unique account ID of the payment recipient (the
-	 * seller). This value is the same as the value of the recipient's
-	 * referral ID. 	 *
+Unique account ID of the payment recipient (the seller). This value is the same as the value of the recipient's referral ID. 	 *
 	 * @access public
 	 * @var string
 	 */
@@ -8364,13 +7982,13 @@ Unique account ID of the payment recipient (the
 
 /**
  * PayerInfoType
- * PayerInfoType
+ * PayerInfoType 
  * Payer information
  */
 class PayerInfoType {
 	/**
-	 * Email address of payer
-	 * Character length and limitations: 127 single-byte characters
+	 * Email address of payer 
+Character length and limitations: 127 single-byte characters
 	 *
 	 * @access public
 	 * @var string
@@ -8378,8 +7996,8 @@ class PayerInfoType {
 	public $Payer;
 
 	/**
-	 * Unique customer ID
-	 * Character length and limitations: 17 single-byte characters
+	 * Unique customer ID 
+Character length and limitations: 17 single-byte characters
 	 *
 	 * @access public
 	 * @var string
@@ -8402,9 +8020,8 @@ class PayerInfoType {
 	public $PayerName;
 
 	/**
-	 * Payment sender's country of residence using standard two-character ISO
-	 * 3166 country codes.
-	 * Character length and limitations: Two single-byte characters
+	 * Payment sender's country of residence using standard two-character ISO 3166 country codes. 
+Character length and limitations: Two single-byte characters
 	 *
 	 * @access public
 	 * @var CountryCodeType
@@ -8412,9 +8029,8 @@ class PayerInfoType {
 	public $PayerCountry;
 
 	/**
-	 * Payer's business name.
-	 * Character length and limitations: 127 single-byte characters
-	 *
+	 * Payer's business name. 
+Character length and limitations: 127 single-byte characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -8444,8 +8060,7 @@ Business contact telephone number	 *
 	public $TaxIdDetails;
 
 	/**
-Holds any enhanced information about the payer
-	 *
+Holds any enhanced information about the payer	 *
 	 * @access public
 	 * @var EnhancedPayerInfoType
 	 */
@@ -8552,8 +8167,7 @@ Holds any enhanced information about the payer
  */
 class InstrumentDetailsType {
 	/**
-	 * This field holds the category of the instrument only when it is
-	 * promotional. Return value 1 represents BML.
+	 * This field holds the category of the instrument only when it is promotional. Return value 1 represents BML.
 	 *
 	 * @access public
 	 * @var string
@@ -8623,8 +8237,7 @@ class OfferDetailsType {
 	public $OfferCode;
 
 	/**
-	 * Specific infromation for BML, Similar structure could be added
-	 * for sepcific
+	 * Specific infromation for BML, Similar structure could be added for sepcific
 	 * promotion needs like CrossPromotions
 	 *
 	 * @access public
@@ -8667,13 +8280,13 @@ class OfferDetailsType {
 
 /**
  * PaymentInfoType
- * PaymentInfoType
+ * PaymentInfoType 
  * Payment information.
  */
 class PaymentInfoType {
 	/**
-	 * A transaction identification number.
-	 * Character length and limits: 19 single-byte characters maximum
+A transaction identification number. 
+Character length and limits: 19 single-byte characters maximum
 	 *
 	 * @access public
 	 * @var string
@@ -8681,9 +8294,8 @@ class PaymentInfoType {
 	public $TransactionID;
 
 	/**
-	 * Its Ebay transaction id.
-	 * EbayTransactionID will returned for immediate pay item
-	 * transaction in ECA
+Its Ebay transaction id.
+	 * EbayTransactionID will returned for immediate pay item transaction in ECA 
 	 *
 	 * @access public
 	 * @var string
@@ -8691,53 +8303,39 @@ class PaymentInfoType {
 	public $EbayTransactionID;
 
 	/**
-	 * Parent or related transaction identification number. This field
-	 * is populated for the following transaction types:
+	 * Parent or related transaction identification number. This field is populated for the following transaction types: 
 	 * Reversal
 	 * Capture of an authorized transaction.
 	 * Reauthorization of a transaction.
-	 * Capture of an order. The value of ParentTransactionID is the
-	 * original OrderID.
-	 * Authorization of an order. The value of ParentTransactionID is
-	 * the original OrderID.
+	 * Capture of an order. The value of ParentTransactionID is the original OrderID.
+	 * Authorization of an order. The value of ParentTransactionID is the original OrderID.
 	 * Capture of an order authorization.
-	 * Void of an order. The value of ParentTransactionID is the
-	 * original OrderID.
-	 * Character length and limits: 19 single-byte characters maximum
-	 *
+	 * Void of an order. The value of ParentTransactionID is the original OrderID.
+	 * Character length and limits: 19 single-byte characters maximum	 *
 	 * @access public
 	 * @var string
 	 */
 	public $ParentTransactionID;
 
 	/**
-	 * Receipt ID
-	 * Character length and limitations: 16 digits in
-	 * xxxx-xxxx-xxxx-xxxx format
-	 *
+	 * Receipt ID 
+	 * Character length and limitations: 16 digits in xxxx-xxxx-xxxx-xxxx format	 *
 	 * @access public
 	 * @var string
 	 */
 	public $ReceiptID;
 
 	/**
-	 * The type of transaction
-	 * cart: Transaction created via the PayPal Shopping Cart feature
-	 * or by Express Checkout with multiple purchased item
-	 * express-checkout: Transaction created by Express Checkout with a
-	 * single purchased items
-	 * send-money: Transaction created by customer from the Send Money
-	 * tab on the PayPal website.
-	 * web-accept: Transaction created by customer via Buy Now,
-	 * Donation, or Auction Smart Logos.
-	 * subscr-*: Transaction created by customer via Subscription. eot
-	 * means "end of subscription term."
+	 * The type of transaction 
+	 * cart: Transaction created via the PayPal Shopping Cart feature or by Express Checkout with multiple purchased item
+	 * express-checkout: Transaction created by Express Checkout with a single purchased items
+	 * send-money: Transaction created by customer from the Send Money tab on the PayPal website.
+	 * web-accept: Transaction created by customer via Buy Now, Donation, or Auction Smart Logos.
+	 * subscr-*: Transaction created by customer via Subscription. eot means "end of subscription term."
 	 * merch-pmt: preapproved payment.
 	 * mass-pay: Transaction created via MassPay.
-	 * virtual-terminal: Transaction created via merchant virtual
-	 * terminal.
-	 * credit: Transaction created via merchant virtual terminal or API
-	 * to credit a customer.
+	 * virtual-terminal: Transaction created via merchant virtual terminal.
+	 * credit: Transaction created via merchant virtual terminal or API to credit a customer.
 	 *
 	 * @access public
 	 * @var PaymentTransactionCodeType
@@ -8773,8 +8371,7 @@ class PaymentInfoType {
 	public $PaymentDate;
 
 	/**
-	 * Full amount of the customer's payment, before transaction fee is
-	 * subtracted	 *
+	 * Full amount of the customer's payment, before transaction fee is subtracted	 *
 	 * @access public
 	 * @var BasicAmountType
 	 */
@@ -8788,11 +8385,7 @@ class PaymentInfoType {
 	public $FeeAmount;
 
 	/**
-Amount deposited into the account's primary
-	 * balance after a currency conversion from automatic conversion
-	 * through your Payment Receiving Preferences or manual conversion
-	 * through manually accepting a payment. This amount is calculated
-	 * after fees and taxes have been assessed. 	 *
+Amount deposited into the account's primary balance after a currency conversion from automatic conversion through your Payment Receiving Preferences or manual conversion through manually accepting a payment. This amount is calculated after fees and taxes have been assessed. 	 *
 	 * @access public
 	 * @var BasicAmountType
 	 */
@@ -8816,32 +8409,19 @@ Amount deposited into the account's primary
 	 * The status of the payment:
 	 * None: No status
 	 * Created: A giropay payment has been initiated.
-	 * Canceled-Reversal: A reversal has been canceled. For example,
-	 * you won a dispute with the customer, and the funds for the
-	 * transaction that was reversed have been returned to you.
-	 * Completed: The payment has been completed, and the funds have
-	 * been added successfully to your account balance.
-	 * Denied: You denied the payment. This happens only if the payment
-	 * was previously pending because of possible reasons described for
-	 * the PendingReason element.
+	 * Canceled-Reversal: A reversal has been canceled. For example, you won a dispute with the customer, and the funds for the transaction that was reversed have been returned to you.
+	 * Completed: The payment has been completed, and the funds have been added successfully to your account balance.
+	 * Denied: You denied the payment. This happens only if the payment was previously pending because of possible reasons described for the PendingReason element.
 	 * Expired: This authorization has expired and cannot be captured.
-	 * Failed: The payment has failed. This happens only if the payment
-	 * was made from your customer's bank account.
-	 * In-Progress: The transaction is in process of authorization and
-	 * capture.
+	 * Failed: The payment has failed. This happens only if the payment was made from your customer's bank account.
+	 * In-Progress: The transaction is in process of authorization and capture.
 	 * Partially-Refunded: The transaction has been partially refunded.
-	 * Pending: The payment is pending. See "PendingReason" for more
-	 * information.
+	 * Pending: The payment is pending. See "PendingReason" for more information.
 	 * Refunded: You refunded the payment.
-	 * Reversed: A payment was reversed due to a chargeback or other
-	 * type of reversal. The funds have been removed from your account
-	 * balance and returned to the buyer. The reason for the reversal
-	 * is specified in the ReasonCode element.
+	 * Reversed: A payment was reversed due to a chargeback or other type of reversal. The funds have been removed from your account balance and returned to the buyer. The reason for the reversal is specified in the ReasonCode element.
 	 * Processed: A payment has been accepted.
 	 * Voided: This authorization has been voided.
-	 * Completed-Funds-Held: The payment has been completed, and the
-	 * funds have been added successfully to your pending balance. See
-	 * the "HoldDecision" field for more information.
+	 * Completed-Funds-Held: The payment has been completed, and the funds have been added successfully to your pending balance. See the "HoldDecision" field for more information.
 	 *
 	 * @access public
 	 * @var PaymentStatusCodeType
@@ -8849,36 +8429,17 @@ Amount deposited into the account's primary
 	public $PaymentStatus;
 
 	/**
-	 * The reason the payment is pending:
-	 * none: No pending reason
-	 * address: The payment is pending because your customer did not
-	 * include a confirmed shipping address and your Payment Receiving
-	 * Preferences is set such that you want to manually accept or deny
-	 * each of these payments. To change your preference, go to the
-	 * Preferences section of your Profile.
-	 * authorization: You set PaymentAction to Authorization on
-	 * SetExpressCheckoutRequest and have not yet captured funds.
-	 * echeck: The payment is pending because it was made by an eCheck
-	 * that has not yet cleared.
-	 * intl: The payment is pending because you hold a non-U.S. account
-	 * and do not have a withdrawal mechanism. You must manually accept
-	 * or deny this payment from your Account Overview.
-	 * multi-currency: You do not have a balance in the currency sent,
-	 * and you do not have your Payment Receiving Preferences set to
-	 * automatically convert and accept this payment. You must manually
-	 * accept or deny this payment.
-	 * unilateral: The payment is pending because it was made to an
-	 * email address that is not yet registered or confirmed.
-	 * upgrade: The payment is pending because it was made via credit
-	 * card and you must upgrade your account to Business or Premier
-	 * status in order to receive the funds. upgrade can also mean that
-	 * you have reached the monthly limit for transactions on your
-	 * account.
-	 * verify: The payment is pending because you are not yet verified.
-	 * You must verify your account before you can accept this payment.
-	 * other: The payment is pending for a reason other than those
-	 * listed above. For more information, contact PayPal Customer
-	 * Service.
+	 * The reason the payment is pending: 
+none: No pending reason
+	 * address: The payment is pending because your customer did not include a confirmed shipping address and your Payment Receiving Preferences is set such that you want to manually accept or deny each of these payments. To change your preference, go to the Preferences section of your Profile.
+	 * authorization: You set PaymentAction to Authorization on SetExpressCheckoutRequest and have not yet captured funds.
+	 * echeck: The payment is pending because it was made by an eCheck that has not yet cleared.
+	 * intl: The payment is pending because you hold a non-U.S. account and do not have a withdrawal mechanism. You must manually accept or deny this payment from your Account Overview.
+	 * multi-currency: You do not have a balance in the currency sent, and you do not have your Payment Receiving Preferences set to automatically convert and accept this payment. You must manually accept or deny this payment.
+	 * unilateral: The payment is pending because it was made to an email address that is not yet registered or confirmed.
+	 * upgrade: The payment is pending because it was made via credit card and you must upgrade your account to Business or Premier status in order to receive the funds. upgrade can also mean that you have reached the monthly limit for transactions on your account.
+	 * verify: The payment is pending because you are not yet verified. You must verify your account before you can accept this payment.
+	 * other: The payment is pending for a reason other than those listed above. For more information, contact PayPal Customer Service.
 	 *
 	 * @access public
 	 * @var PendingStatusCodeType
@@ -8886,18 +8447,13 @@ Amount deposited into the account's primary
 	public $PendingReason;
 
 	/**
-	 * The reason for a reversal if TransactionType is reversal:
-	 * none: No reason code
-	 * chargeback: A reversal has occurred on this transaction due to a
-	 * chargeback by your customer.
-	 * guarantee: A reversal has occurred on this transaction due to
-	 * your customer triggering a money-back guarantee.
-	 * buyer-complaint: A reversal has occurred on this transaction due
-	 * to a complaint about the transaction from your customer.
-	 * refund: A reversal has occurred on this transaction because you
-	 * have given the customer a refund.
-	 * other: A reversal has occurred on this transaction due to a
-	 * reason not listed above.
+	 * The reason for a reversal if TransactionType is reversal: 
+none: No reason code
+	 * chargeback: A reversal has occurred on this transaction due to a chargeback by your customer.
+	 * guarantee: A reversal has occurred on this transaction due to your customer triggering a money-back guarantee.
+	 * buyer-complaint: A reversal has occurred on this transaction due to a complaint about the transaction from your customer.
+	 * refund: A reversal has occurred on this transaction because you have given the customer a refund.
+	 * other: A reversal has occurred on this transaction due to a reason not listed above.
 	 *
 	 * @access public
 	 * @var ReversalReasonCodeType
@@ -8905,12 +8461,9 @@ Amount deposited into the account's primary
 	public $ReasonCode;
 
 	/**
-	 * HoldDecision is returned in the response only if PaymentStatus
-	 * is Completed-Funds-Held. The reason the funds are kept in
-	 * pending balance:
-	 * newsellerpaymenthold: The seller is new.
-	 * paymenthold: A hold is placed on your transaction due to a
-	 * reason not listed above.
+	 * HoldDecision is returned in the response only if PaymentStatus is Completed-Funds-Held. The reason the funds are kept in pending balance: 
+newsellerpaymenthold: The seller is new.
+	 * paymenthold: A hold is placed on your transaction due to a reason not listed above.
 	 *
 	 * @access public
 	 * @var string
@@ -8934,7 +8487,7 @@ Amount deposited into the account's primary
 	public $ProtectionEligibility;
 
 	/**
-	 * Protection Eligibility details for this Transaction
+	 * Protection Eligibility details  for this Transaction
 	 *
 	 * @access public
 	 * @var string
@@ -8978,7 +8531,7 @@ Amount deposited into the account's primary
 
 	/**
 	 * Details about the seller.
-	 * Optional
+	 * Optional 
 	 *
 	 * @access public
 	 * @var SellerDetailsType
@@ -8986,8 +8539,7 @@ Amount deposited into the account's primary
 	public $SellerDetails;
 
 	/**
-	 * Unique identifier and mandatory for each bucket in case of split
-	 * payement
+	 * Unique identifier and mandatory for each bucket in case of split payement
 	 *
 	 * @access public
 	 * @var string
@@ -9011,8 +8563,7 @@ Amount deposited into the account's primary
 	public $EnhancedPaymentInfo;
 
 	/**
-	 * This will indicate the payment status for individual payment request
-	 * in case of split payment
+	 * This will indicate the payment status for individual payment request in case of split payment
 	 *
 	 * @access public
 	 * @var ErrorType
@@ -9063,60 +8614,28 @@ Amount deposited into the account's primary
 			if($arry != null && isset($arry['text']) && $arry['name']=='paymentdate') {
 				$this->PaymentDate = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="grossamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->GrossAmount = new BasicAmountType();
-				$this->GrossAmount->init($atr);
+				$this->GrossAmount->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="feeamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->FeeAmount = new BasicAmountType();
-				$this->FeeAmount->init($atr);
+				$this->FeeAmount->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="settleamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->SettleAmount = new BasicAmountType();
-				$this->SettleAmount->init($atr);
+				$this->SettleAmount->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="taxamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->TaxAmount = new BasicAmountType();
-				$this->TaxAmount->init($atr);
+				$this->TaxAmount->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='exchangerate') {
@@ -9201,7 +8720,7 @@ Amount deposited into the account's primary
 
 /**
  * SubscriptionTermsType
- * SubscriptionTermsType
+ * SubscriptionTermsType 
  * Terms of a PayPal subscription.
  */
 class SubscriptionTermsType {
@@ -9215,18 +8734,10 @@ class SubscriptionTermsType {
 	public function init($arr = null) {
 		if($arr != null) {
 			foreach ($arr as $arry){
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="amount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($atr);
+				$this->Amount->init($arry["children"]);
 					}
 			}
 		}
@@ -9236,13 +8747,13 @@ class SubscriptionTermsType {
 
 /**
  * SubscriptionInfoType
- * SubscriptionInfoType
+ * SubscriptionInfoType 
  * Information about a PayPal Subscription.
  */
 class SubscriptionInfoType {
 	/**
-	 * ID generated by PayPal for the subscriber.
-	 * Character length and limitations: no limit	 *
+	 * ID generated by PayPal for the subscriber. 
+Character length and limitations: no limit	 *
 	 * @access public
 	 * @var string
 	 */
@@ -9256,8 +8767,7 @@ class SubscriptionInfoType {
 	public $SubscriptionDate;
 
 	/**
-	 * Date when the subscription modification will be effective
-	 *
+	 * Date when the subscription modification will be effective 	 *
 	 * @access public
 	 * @var dateTime
 	 */
@@ -9271,29 +8781,24 @@ class SubscriptionInfoType {
 	public $RetryTime;
 
 	/**
-	 * Username generated by PayPal and given to subscriber to access the
-	 * subscription.
-	 * Character length and limitations: 64 alphanumeric single-byte characters
-	 *
+	 * Username generated by PayPal and given to subscriber to access the subscription. 
+Character length and limitations: 64 alphanumeric single-byte characters	 *
 	 * @access public
 	 * @var string
 	 */
 	public $Username;
 
 	/**
-	 * Password generated by PayPal and given to subscriber to access the
-	 * subscription. For security, the value of the password is hashed.
-	 * Character length and limitations: 128 alphanumeric single-byte
-	 * characters	 *
+	 * Password generated by PayPal and given to subscriber to access the subscription. For security, the value of the password is hashed. 
+Character length and limitations: 128 alphanumeric single-byte characters	 *
 	 * @access public
 	 * @var string
 	 */
 	public $Password;
 
 	/**
-	 * The number of payment installments that will occur at the regular
-	 * rate.
-	 * Character length and limitations: no limit	 *
+	 * The number of payment installments that will occur at the regular rate. 
+Character length and limitations: no limit	 *
 	 * @access public
 	 * @var string
 	 */
@@ -9351,7 +8856,7 @@ class SubscriptionInfoType {
 
 /**
  * AuctionInfoType
- * AuctionInfoType
+ * AuctionInfoType 
  * Basic information about an auction.
  */
 class AuctionInfoType {
@@ -9386,7 +8891,7 @@ class AuctionInfoType {
 
 /**
  * OptionType
- * OptionType
+ * OptionType 
  * PayPal item options for shopping cart.
  */
 class OptionType {
@@ -9406,7 +8911,7 @@ class OptionType {
  */
 class EbayItemPaymentDetailsItemType {
 	/**
-	 * Auction ItemNumber.
+	 * Auction ItemNumber. 
 	 * Optional
 	 * Character length and limitations: 765 single-byte characters
 	 *
@@ -9416,7 +8921,7 @@ class EbayItemPaymentDetailsItemType {
 	public $ItemNumber;
 
 	/**
-	 * Auction Transaction ID.
+	 * Auction Transaction ID. 
 	 * Optional
 	 * Character length and limitations: 255 single-byte characters
 	 *
@@ -9426,7 +8931,7 @@ class EbayItemPaymentDetailsItemType {
 	public $AuctionTransactionId;
 
 	/**
-	 * Ebay Order ID.
+	 * Ebay Order ID. 
 	 * Optional
 	 * Character length and limitations: 64 single-byte characters
 	 *
@@ -9487,12 +8992,12 @@ class EbayItemPaymentDetailsItemType {
 
 /**
  * PaymentDetailsItemType
- * PaymentDetailsItemType
+ * PaymentDetailsItemType 
  * Information about a Payment Item.
  */
 class PaymentDetailsItemType {
 	/**
-	 * Item name.
+	 * Item name. 
 	 * Optional
 	 * Character length and limitations: 127 single-byte characters
 	 *
@@ -9502,7 +9007,7 @@ class PaymentDetailsItemType {
 	public $Name;
 
 	/**
-	 * Item number.
+	 * Item number. 
 	 * Optional
 	 * Character length and limitations: 127 single-byte characters
 	 *
@@ -9512,20 +9017,18 @@ class PaymentDetailsItemType {
 	public $Number;
 
 	/**
-	 * Item quantity.
+	 * Item quantity. 
 	 * Optional
-	 * Character length and limitations: Any positive integer
-	 *
+	 * Character length and limitations: Any positive integer	 *
 	 * @access public
 	 * @var integer
 	 */
 	public $Quantity;
 
 	/**
-	 * Item sales tax.
+	 * Item sales tax. 
 	 * Optional
-	 * Character length and limitations: any valid currency amount;
-	 * currency code is set the same as for OrderTotal.
+	 * Character length and limitations: any valid currency amount; currency code is set the same as for OrderTotal.
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -9533,13 +9036,10 @@ class PaymentDetailsItemType {
 	public $Tax;
 
 	/**
-	 * Cost of item
-	 * You must set the currencyID attribute to one of the three-character
-	 * currency codes for any of the supported PayPal currencies.
+	 * Cost of item 
+You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. 
 	 * Optional
-	 * Limitations: Must not exceed $10,000 USD in any currency. No
-	 * currency symbol. Decimal separator must be a period (.), and the
-	 * thousands separator must be a comma (,).
+	 * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -9556,8 +9056,7 @@ class PaymentDetailsItemType {
 	public $EbayItemPaymentDetailsItem;
 
 	/**
-	 * Promotional financing code for item. Part of the Merchant Services
-	 * Promotion Financing feature.
+	 * Promotional financing code for item. Part of the Merchant Services Promotion Financing feature.
 	 *
 	 * @access public
 	 * @var string
@@ -9572,7 +9071,7 @@ class PaymentDetailsItemType {
 	public $ProductCategory;
 
 	/**
-	 * Item description.
+	 * Item description. 
 	 * Optional
 	 * Character length and limitations: 127 single-byte characters
 	 *
@@ -9633,7 +9132,7 @@ class PaymentDetailsItemType {
 	public $EnhancedItemData;
 
 	/**
-	 * Item category - physical or digital.
+	 * Item category - physical or digital. 
 	 * Optional
 	 *
 	 * @access public
@@ -9654,32 +9153,16 @@ class PaymentDetailsItemType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='quantity') {
 				$this->Quantity = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="tax") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->Tax = new BasicAmountType();
-				$this->Tax->init($atr);
+				$this->Tax->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="amount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($atr);
+				$this->Amount->init($arry["children"]);
 					}
 			}
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
@@ -9696,60 +9179,28 @@ class PaymentDetailsItemType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='description') {
 				$this->Description = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="itemweight") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->ItemWeight = new MeasureType();
-				$this->ItemWeight->init($atr);
+				$this->ItemWeight->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="itemlength") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->ItemLength = new MeasureType();
-				$this->ItemLength->init($atr);
+				$this->ItemLength->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="itemwidth") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->ItemWidth = new MeasureType();
-				$this->ItemWidth->init($atr);
+				$this->ItemWidth->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="itemheight") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->ItemHeight = new MeasureType();
-				$this->ItemHeight->init($atr);
+				$this->ItemHeight->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='itemurl') {
@@ -9841,12 +9292,12 @@ class PaymentDetailsItemType {
 
 /**
  * PaymentItemType
- * PaymentItemType
+ * PaymentItemType 
  * Information about a Payment Item.
  */
 class PaymentItemType {
 	/**
-	 * eBay Auction Transaction ID of the Item
+	 * eBay Auction Transaction ID of the Item 
 	 * Optional
 	 * Character length and limitations: 255 single-byte characters
 	 *
@@ -9856,9 +9307,8 @@ class PaymentItemType {
 	public $EbayItemTxnId;
 
 	/**
-	 * Item name set by you or entered by the customer.
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Item name set by you or entered by the customer. 
+Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -9866,19 +9316,16 @@ class PaymentItemType {
 	public $Name;
 
 	/**
-	 * Item number set by you.
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
-	 *
+	 * Item number set by you. 
+	 * Character length and limitations: 127 single-byte alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
 	public $Number;
 
 	/**
-	 * Quantity set by you or entered by the customer.
-	 * Character length and limitations: no limit
-	 *
+	 * Quantity set by you or entered by the customer. 
+	 * Character length and limitations: no limit	 *
 	 * @access public
 	 * @var string
 	 */
@@ -9945,18 +9392,10 @@ class PaymentItemType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='handlingamount') {
 				$this->HandlingAmount = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="amount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($atr);
+				$this->Amount->init($arry["children"]);
 					}
 			}
 			for($i=0; $i<10;$i++) {
@@ -9978,36 +9417,29 @@ class PaymentItemType {
 
 /**
  * PaymentItemInfoType
- * PaymentItemInfoType
+ * PaymentItemInfoType 
  * Information about a PayPal item.
  */
 class PaymentItemInfoType {
 	/**
 	 * Invoice number you set in the original transaction.
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
-	 *
+	 * Character length and limitations: 127 single-byte alphanumeric characters 	 *
 	 * @access public
 	 * @var string
 	 */
 	public $InvoiceID;
 
 	/**
-	 * Custom field you set in the original transaction.
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
-	 *
+	 * Custom field you set in the original transaction. 
+	 * Character length and limitations: 127 single-byte alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
 	public $Custom;
 
 	/**
-	 * Memo entered by your customer in PayPal Website Payments note
-	 * field.
-	 * Character length and limitations: 255 single-byte alphanumeric
-	 * characters
-	 *
+	 * Memo entered by your customer in PayPal Website Payments note field. 
+	 * Character length and limitations: 255 single-byte alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -10029,16 +9461,14 @@ class PaymentItemInfoType {
 	public $PaymentItem;
 
 	/**
-	 * Information about the transaction if it was created via PayPal Subcriptions
-	 *
+	 * Information about the transaction if it was created via PayPal Subcriptions	 *
 	 * @access public
 	 * @var SubscriptionInfoType
 	 */
 	public $Subscription;
 
 	/**
-	 * Information about the transaction if it was created via an auction
-	 *
+	 * Information about the transaction if it was created via an auction	 *
 	 * @access public
 	 * @var AuctionInfoType
 	 */
@@ -10091,27 +9521,22 @@ class PaymentItemInfoType {
 
 /**
  * PaymentDetailsType
- * PaymentDetailsType
- * Information about a payment. Used by DCC and Express Checkout.
+ * PaymentDetailsType 
+ * Information about a payment.  Used by DCC and Express Checkout.
  */
 class PaymentDetailsType {
 	/**
-	 * Total of order, including shipping, handling, and tax.
-	 * You must set the currencyID attribute to one of the three-character
-	 * currency codes for any of the supported PayPal currencies.
-	 * Limitations: Must not exceed $10,000 USD in any currency. No
-	 * currency symbol. Decimal separator must be a period (.), and the
-	 * thousands separator must be a comma (,).
-	 *
+	 * Total of order, including shipping, handling, and tax. 
+You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies.
+	 * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,). 	 *
 	 * @access public
 	 * @var BasicAmountType
 	 */
 	public $OrderTotal;
 
 	/**
-	 * Sum of cost of all items in this order.
-	 * You must set the currencyID attribute to one of the three-character
-	 * currency codes for any of the supported PayPal currencies.
+	 * Sum of cost of all items in this order. 
+You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies.
 	 * Optional
 	 * separator must be a comma (,).
 	 *
@@ -10121,13 +9546,10 @@ class PaymentDetailsType {
 	public $ItemTotal;
 
 	/**
-	 * Total shipping costs for this order.
-	 * You must set the currencyID attribute to one of the three-character
-	 * currency codes for any of the supported PayPal currencies.
+	 * Total shipping costs for this order. 
+You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies.
 	 * Optional
-	 * Limitations: Must not exceed $10,000 USD in any currency. No
-	 * currency symbol. Decimal separator must be a period (.), and the
-	 * thousands separator must be a comma (,).
+	 * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -10135,13 +9557,10 @@ class PaymentDetailsType {
 	public $ShippingTotal;
 
 	/**
-	 * Total handling costs for this order.
-	 * You must set the currencyID attribute to one of the three-character
-	 * currency codes for any of the supported PayPal currencies.
+	 * Total handling costs for this order. 
+You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies.
 	 * Optional
-	 * Limitations: Must not exceed $10,000 USD in any currency. No
-	 * currency symbol. Decimal separator must be a period (.), and the
-	 * thousands separator must be a comma (,).
+	 * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -10149,13 +9568,10 @@ class PaymentDetailsType {
 	public $HandlingTotal;
 
 	/**
-	 * Sum of tax for all items in this order.
-	 * You must set the currencyID attribute to one of the three-character
-	 * currency codes for any of the supported PayPal currencies.
+	 * Sum of tax for all items in this order. 
+You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies.
 	 * Optional
-	 * Limitations: Must not exceed $10,000 USD in any currency. No
-	 * currency symbol. Decimal separator must be a period (.), and the
-	 * thousands separator must be a comma (,).
+	 * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -10163,10 +9579,9 @@ class PaymentDetailsType {
 	public $TaxTotal;
 
 	/**
-	 * Description of items the customer is purchasing.
+	 * Description of items the customer is purchasing. 
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -10174,10 +9589,9 @@ class PaymentDetailsType {
 	public $OrderDescription;
 
 	/**
-	 * A free-form field for your own use.
+	 * A free-form field for your own use. 
 	 * Optional
-	 * Character length and limitations: 256 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 256 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -10185,10 +9599,9 @@ class PaymentDetailsType {
 	public $Custom;
 
 	/**
-	 * Your own invoice or tracking number.
+	 * Your own invoice or tracking number. 
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -10196,11 +9609,9 @@ class PaymentDetailsType {
 	public $InvoiceID;
 
 	/**
-	 * An identification code for use by third-party applications to
-	 * identify transactions.
+	 * An identification code for use by third-party applications to identify transactions. 
 	 * Optional
-	 * Character length and limitations: 32 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 32 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -10208,13 +9619,10 @@ class PaymentDetailsType {
 	public $ButtonSource;
 
 	/**
-	 * Your URL for receiving Instant Payment Notification (IPN) about
-	 * this transaction.
+	 * Your URL for receiving Instant Payment Notification (IPN) about this transaction. 
 	 * Optional
-	 * If you do not specify NotifyURL in the request, the notification
-	 * URL from your Merchant Profile is used, if one exists.
-	 * Character length and limitations: 2,048 single-byte alphanumeric
-	 * characters
+	 * If you do not specify NotifyURL in the request, the notification URL from your Merchant Profile is used, if one exists. 
+	 * Character length and limitations: 2,048 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -10222,10 +9630,9 @@ class PaymentDetailsType {
 	public $NotifyURL;
 
 	/**
-	 * Address the order will be shipped to.
+	 * Address the order will be shipped to. 
 	 * Optional
-	 * If you include the ShipToAddress element, the AddressType
-	 * elements are required:
+	 * If you include the ShipToAddress element, the AddressType elements are required: 
 	 * Name
 	 * Street1
 	 * CityName
@@ -10245,8 +9652,7 @@ class PaymentDetailsType {
 	public $ShippingMethod;
 
 	/**
-	 * Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at which
-	 * address was changed by the user. 
+	 * Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at which address was changed by the user. 
 	 *
 	 * @access public
 	 * @var dateTime
@@ -10271,8 +9677,7 @@ class PaymentDetailsType {
 	public $InsuranceTotal;
 
 	/**
-	 * Shipping discount for this order, specified as a negative
-	 * number.
+	 * Shipping discount for this order, specified as a negative number.
 	 * Optional
 	 *
 	 * @access public
@@ -10308,7 +9713,7 @@ class PaymentDetailsType {
 
 	/**
 	 * Details about the seller.
-	 * Optional
+	 * Optional 
 	 *
 	 * @access public
 	 * @var SellerDetailsType
@@ -10316,10 +9721,9 @@ class PaymentDetailsType {
 	public $SellerDetails;
 
 	/**
-	 * Note to recipient/seller.
-	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters.
+	 * Note to recipient/seller. 
+	 * Optional 
+	 * Character length and limitations: 127 single-byte alphanumeric characters.
 	 *
 	 * @access public
 	 * @var string
@@ -10327,8 +9731,7 @@ class PaymentDetailsType {
 	public $NoteText;
 
 	/**
-	 * PayPal Transaction Id, returned once DoExpressCheckout is
-	 * completed.
+	 * PayPal Transaction Id, returned once DoExpressCheckout is completed. 
 	 *
 	 * @access public
 	 * @var string
@@ -10338,19 +9741,11 @@ class PaymentDetailsType {
 	/**
 	 * How you want to obtain payment.
 	 * This payment action input will be used for split payments
-	 * Authorization indicates that this payment is a basic
-	 * authorization subject to settlement with PayPal Authorization
-	 * and Capture.
-	 * Order indicates that this payment is is an order authorization
-	 * subject to settlement with PayPal Authorization and Capture.
-	 * Sale indicates that this is a final sale for which you are
-	 * requesting payment.
-	 * IMPORTANT: You cannot set PaymentAction to Sale on
-	 * SetExpressCheckoutRequest and then change PaymentAction to
-	 * Authorization on the final Express Checkout API,
-	 * DoExpressCheckoutPaymentRequest.
-	 * Character length and limit: Up to 13 single-byte alphabetic
-	 * characters
+	 * Authorization indicates that this payment is a basic authorization subject to settlement with PayPal Authorization and Capture.
+	 * Order indicates that this payment is is an order authorization subject to settlement with PayPal Authorization and Capture.
+	 * Sale indicates that this is a final sale for which you are requesting payment.
+	 * IMPORTANT: You cannot set PaymentAction to Sale on SetExpressCheckoutRequest and then change PaymentAction to Authorization on the final Express Checkout API, DoExpressCheckoutPaymentRequest.
+	 * Character length and limit: Up to 13 single-byte alphabetic characters
 	 *
 	 * @access public
 	 * @var PaymentActionCodeType
@@ -10358,8 +9753,7 @@ class PaymentDetailsType {
 	public $PaymentAction;
 
 	/**
-	 * Unique identifier and mandatory for the particular payment request in
-	 * case of multiple payment
+	 * Unique identifier and mandatory for the particular payment request in case of multiple payment
 	 *
 	 * @access public
 	 * @var string
@@ -10367,7 +9761,7 @@ class PaymentDetailsType {
 	public $PaymentRequestID;
 
 	/**
-	 * URL on Merchant site pertaining to this invoice.
+	 * URL on Merchant site pertaining to this invoice. 
 	 * Optional
 	 *
 	 * @access public
@@ -10376,8 +9770,7 @@ class PaymentDetailsType {
 	public $OrderURL;
 
 	/**
-	 * Soft Descriptor supported for Sale and Auth in DEC only. For Order
-	 * this will be ignored.
+	 * Soft Descriptor supported for Sale and Auth in DEC only. For Order this will be ignored.
 	 *
 	 * @access public
 	 * @var string
@@ -10387,8 +9780,7 @@ class PaymentDetailsType {
 	/**
 	 * BranchLevel is used to identify chain payment.
 	 * If BranchLevel is 0 or 1, this payment is where money moves to.
-	 * If BranchLevel greater than 1, this payment contains the actual
-	 * seller info.
+	 * If BranchLevel greater than 1, this payment contains the actual seller info.	
 	 * Optional
 	 *
 	 * @access public
@@ -10397,8 +9789,7 @@ class PaymentDetailsType {
 	public $BranchLevel;
 
 	/**
-	 * Soft Descriptor supported for Sale and Auth in DEC only. For Order
-	 * this will be ignored.
+	 * Soft Descriptor supported for Sale and Auth in DEC only. For Order this will be ignored.
 	 *
 	 * @access public
 	 * @var OfferDetailsType
@@ -10725,15 +10116,12 @@ class PaymentDetailsType {
 
 /**
  * IncentiveDetailsType
- * Information about the incentives that were applied from Ebay RYP page and
- * PayPal RYP page.
+ * Information about the incentives that were applied from Ebay RYP page and PayPal RYP page.
  */
 class IncentiveDetailsType {
 	/**
-	 * Unique Identifier consisting of redemption code, user friendly
-	 * descripotion, incentive type, campaign code, incenitve
-	 * application order and site redeemed o
-	 * n.
+	 * Unique Identifier consisting of redemption code, user friendly descripotion, incentive type, campaign code, incenitve application order and site redeemed o
+n.
 	 *
 	 * @access public
 	 * @var string
@@ -10749,8 +10137,7 @@ class IncentiveDetailsType {
 	public $SiteAppliedOn;
 
 	/**
-	 * The total discount amount for the incentive, summation of discounts
-	 * up across all the buckets/items.
+	 * The total discount amount for the incentive, summation of discounts up across all the buckets/items.
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -10774,7 +10161,7 @@ class IncentiveDetailsType {
 	public $ErrorCode;
 
 	/**
-	 * Details of incentive application on individual bucket/item.
+	 * Details of incentive application on individual bucket/item.  
 	 *
 	 * array
 	 * @access public
@@ -10791,18 +10178,10 @@ class IncentiveDetailsType {
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='siteappliedon') {
 				$this->SiteAppliedOn = $arry["text"];			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="totaldiscountamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->TotalDiscountAmount = new BasicAmountType();
-				$this->TotalDiscountAmount->init($atr);
+				$this->TotalDiscountAmount->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='status') {
@@ -10829,12 +10208,11 @@ class IncentiveDetailsType {
 
 /**
  * IncentiveAppliedDetailsType
- * Details of incentive application on individual bucket/item.
+ * Details of incentive application on individual bucket/item.  
  */
 class IncentiveAppliedDetailsType {
 	/**
-	 * PaymentRequestID uniquely identifies a bucket. It is the "bucket id" in the
-	 * world of EC API.
+	 * PaymentRequestID uniquely identifies a bucket. It is the "bucket id" in the world of EC API.
 	 *
 	 * @access public
 	 * @var string
@@ -10850,7 +10228,7 @@ class IncentiveAppliedDetailsType {
 	public $ItemId;
 
 	/**
-	 * The item transaction id passed through by the merchant.
+	 * The item transaction id passed through by the merchant. 
 	 *
 	 * @access public
 	 * @var string
@@ -10886,18 +10264,10 @@ class IncentiveAppliedDetailsType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='externaltxnid') {
 				$this->ExternalTxnId = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="discountamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->DiscountAmount = new BasicAmountType();
-				$this->DiscountAmount->init($atr);
+				$this->DiscountAmount->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='subtype') {
@@ -10915,7 +10285,7 @@ class IncentiveAppliedDetailsType {
 class SellerDetailsType {
 	/**
 	 * Unique identifier for the seller.
-	 * Optional
+	 * Optional 
 	 *
 	 * @access public
 	 * @var string
@@ -10924,7 +10294,7 @@ class SellerDetailsType {
 
 	/**
 	 * The user name of the user at the marketplaces site.
-	 * Optional
+	 * Optional 
 	 *
 	 * @access public
 	 * @var string
@@ -10933,7 +10303,7 @@ class SellerDetailsType {
 
 	/**
 	 * Date when the user registered with the marketplace.
-	 * Optional
+	 * Optional 
 	 *
 	 * @access public
 	 * @var dateTime
@@ -10941,8 +10311,7 @@ class SellerDetailsType {
 	public $SellerRegistrationDate;
 
 	/**
-	 * Seller Paypal Account Id contains the seller EmailId or PayerId or
-	 * PhoneNo passed during the Request. 
+	 * Seller Paypal Account Id contains the seller EmailId or PayerId or PhoneNo passed during the Request. 
 	 *
 	 * @access public
 	 * @var string
@@ -10950,9 +10319,7 @@ class SellerDetailsType {
 	public $PayPalAccountID;
 
 	/**
-	 * Unique PayPal customer account identification number (of the seller).
-	 * This feild is meant for Response. This field is ignored, if
-	 * passed in the Request.
+	 * Unique PayPal customer account identification number (of the seller). This feild is meant for Response. This field is ignored, if passed in the Request.
 	 *
 	 * @access public
 	 * @var string
@@ -11007,8 +10374,7 @@ class SellerDetailsType {
 
 /**
  * OtherPaymentMethodDetailsType
- * Lists the Payment Methods (other than PayPal) that the use can pay
- * with e.g. Money Order.
+ * Lists the Payment Methods (other than PayPal) that the use can pay with e.g. Money Order. 
  * Optional.
  */
 class OtherPaymentMethodDetailsType {
@@ -11037,8 +10403,7 @@ class OtherPaymentMethodDetailsType {
 	public $OtherPaymentMethodLabel;
 
 	/**
-	 * The short description of the Payment Method, goes along with the
-	 * label.
+	 * The short description of the Payment Method, goes along with the label.
 	 *
 	 * @access public
 	 * @var string
@@ -11070,9 +10435,7 @@ class OtherPaymentMethodDetailsType {
 	public $OtherPaymentMethodIcon;
 
 	/**
-	 * If this flag is true, then OtherPaymentMethodIcon is required to
-	 * have a valid value; the label will be hidden and only ICON will
-	 * be shown.
+	 * If this flag is true, then OtherPaymentMethodIcon is required to have a valid value; the label will be hidden and only ICON will be shown.
 	 *
 	 * @access public
 	 * @var boolean
@@ -11114,8 +10477,7 @@ class OtherPaymentMethodDetailsType {
 
 /**
  * BuyerDetailsType
- * Details about the buyer's account passed in by the merchant or
- * partner.
+ * Details about the buyer's account passed in by the merchant or partner.
  * Optional.
  */
 class BuyerDetailsType {
@@ -11153,8 +10515,7 @@ class BuyerDetailsType {
 	public $TaxIdDetails;
 
 	/**
-	 * Contains information that identifies the buyer. e.g. email address or
-	 * the external remember me id.
+	 * Contains information that identifies the buyer. e.g. email address or the external remember me id.
 	 *
 	 * @access public
 	 * @var IdentificationInfoType
@@ -11191,8 +10552,7 @@ class BuyerDetailsType {
 
 /**
  * TaxIdDetailsType
- * Details about the payer's tax info passed in by the merchant or
- * partner.
+ * Details about the payer's tax info passed in by the merchant or partner.
  * Optional.
  */
 class TaxIdDetailsType {
@@ -11394,7 +10754,7 @@ class ThreeDSecureInfoType {
 
 /**
  * CreditCardDetailsType
- * CreditCardDetailsType
+ * CreditCardDetailsType 
  * Information about a Credit Card.
  */
 class CreditCardDetailsType {
@@ -11634,18 +10994,10 @@ class UserSelectedOptionType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='shippingoptionisdefault') {
 				$this->ShippingOptionIsDefault = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="shippingoptionamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->ShippingOptionAmount = new BasicAmountType();
-				$this->ShippingOptionAmount->init($atr);
+				$this->ShippingOptionAmount->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='shippingoptionname') {
@@ -11870,7 +11222,7 @@ class UserIdPasswordType {
 	public $Username;
 
 	/**
-	 * Password contains the current password associated with the username.
+	 * Password contains the current password associated with the username.  
 	 *
 	 * @access public
 	 * @var string
@@ -11886,14 +11238,10 @@ class UserIdPasswordType {
 	public $Signature;
 
 	/**
-	 * This field identifies an account (e.g., payment) on whose behalf the
-	 * operation is being performed.
-	 * For instance one account holder may delegate the abililty to
-	 * perform certain operations
-	 * to another account holder. This delegation is done through a
-	 * separate mechanism.
-	 * If the base username has not been authorized by the subject the
-	 * request will be rejected.
+	 * This field identifies an account (e.g., payment) on whose behalf the operation is being performed. 
+	 * For instance one account holder may delegate the abililty to perform certain operations 
+	 * to another account holder.  This delegation is done through a separate mechanism.  
+	 * If the base username has not been authorized by the subject the request will be rejected.
 	 *
 	 * @access public
 	 * @var string
@@ -11985,12 +11333,9 @@ class SetCustomerBillingAgreementRequestDetailsType {
 	public $BuyerEmail;
 
 	/**
-	 * The value 1 indicates that you require that the customer's
-	 * billing address on file. Setting this element overrides the
-	 * setting you have specified in Admin.
+The value 1 indicates that you require that the customer's billing address on file. Setting this element overrides the setting you have specified in Admin.
 	 * Optional
-	 * Character length and limitations: One single-byte numeric
-	 * character.
+	 * Character length and limitations: One single-byte numeric character.
 	 *
 	 * @access public
 	 * @var string
@@ -12059,12 +11404,9 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType {
 	public $PayerInfo;
 
 	/**
-	 * Customer's billing address.
+Customer's billing address.
 	 * Optional
-	 * If you have a credit card mapped in your PayPal account, PayPal
-	 * returns the billing address of the credit billing address
-	 * otherwise your primary address as billing address in
-	 * GetBillingAgreementCustomerDetails.
+	 * If you have a credit card mapped in your PayPal account, PayPal returns the billing address of the credit billing address otherwise your primary address as billing address in GetBillingAgreementCustomerDetails.
 	 *
 	 * @access public
 	 * @var AddressType
@@ -12090,6 +11432,60 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType {
 		}
 		}
 	}
+}
+
+/**
+ * DeviceDetailsType
+ * Device ID Optional
+ * Character length and limits: 256 single-byte characters 
+ * DeviceID length morethan 256 is truncated
+ */
+class DeviceDetailsType {
+	/**
+Device ID Optional
+	 * Character length and limits: 256 single-byte characters 
+	 * DeviceID length morethan 256 is truncated
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $DeviceID;
+
+
+	public function toXMLString()  {
+		$str = '';
+		if($this->DeviceID != null ) {
+			$str .= '<ebl:DeviceID>'.$this->DeviceID.'</ebl:DeviceID>';
+		 }
+
+		return $str;
+	}
+
+}
+
+/**
+ * SenderDetailsType
+ */
+class SenderDetailsType {
+	/**
+	 *
+	 * @access public
+	 * @var DeviceDetailsType
+	 */
+	public $DeviceDetails;
+
+
+	public function toXMLString()  {
+		$str = '';
+		if($this->DeviceDetails != null ) {
+			$str .='<ebl:DeviceDetails>';
+			$str .= $this->DeviceDetails->toXMLString();
+			$str .=  '</ebl:DeviceDetails>';
+		 }
+
+		return $str;
+	}
+
 }
 
 /**
@@ -12159,6 +11555,13 @@ class DoReferenceTransactionRequestDetailsType {
 	 */
 	public $SoftDescriptor;
 
+	/**
+	 *
+	 * @access public
+	 * @var SenderDetailsType
+	 */
+	public $SenderDetails;
+
 
 	public function __construct($ReferenceID = null, $PaymentAction = null, $PaymentDetails = null) {
 		$this->ReferenceID  = $ReferenceID;
@@ -12198,6 +11601,11 @@ class DoReferenceTransactionRequestDetailsType {
 		 }
 		if($this->SoftDescriptor != null ) {
 			$str .= '<ebl:SoftDescriptor>'.$this->SoftDescriptor.'</ebl:SoftDescriptor>';
+		 }
+		if($this->SenderDetails != null ) {
+			$str .='<ebl:SenderDetails>';
+			$str .= $this->SenderDetails->toXMLString();
+			$str .=  '</ebl:SenderDetails>';
 		 }
 
 		return $str;
@@ -12251,6 +11659,14 @@ class DoReferenceTransactionResponseDetailsType {
 	 */
 	public $TransactionID;
 
+	/**
+	 * Response code from the processor when a recurring transaction is declined
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $PaymentAdviceCode;
+
 
 	public function init($arr = null) {
 		if($arr != null) {
@@ -12264,18 +11680,10 @@ class DoReferenceTransactionResponseDetailsType {
 				$this->PaymentInfo->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="amount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($atr);
+				$this->Amount->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='avscode') {
@@ -12286,6 +11694,9 @@ class DoReferenceTransactionResponseDetailsType {
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
 				$this->TransactionID = $arry["text"];
+			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='paymentadvicecode') {
+				$this->PaymentAdviceCode = $arry["text"];
 			}
 		}
 		}
@@ -12407,18 +11818,10 @@ class DoNonReferencedCreditResponseDetailsType {
 	public function init($arr = null) {
 		if($arr != null) {
 			foreach ($arr as $arry){
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="amount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($atr);
+				$this->Amount->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
@@ -12439,29 +11842,20 @@ class EnterBoardingRequestDetailsType {
 	/**
 	 * Onboarding program code given to you by PayPal.
 	 * Required
-	 * Character length and limitations: 64 alphanumeric characters
-	 *
+	 * Character length and limitations: 64 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
 	public $ProgramCode;
 
 	/**
-	 * A list of comma-separated values that indicate the PayPal
-	 * products you are implementing for this merchant:
-	 * Direct Payment (dp) allows payments by credit card without
-	 * requiring the customer to have a PayPal account.
-	 * Express Checkout (ec) allows customers to fund transactions with
-	 * their PayPal account.
-	 * Authorization and Capture (auth_settle) allows merchants to
-	 * verify availability of funds in a PayPal account, but capture
-	 * them at a later time.
-	 * Administrative APIs (admin_api) is a collection of the PayPal
-	 * APIs for transaction searching, getting transaction details,
-	 * refunding, and mass payments.
+	 * A list of comma-separated values that indicate the PayPal products you are implementing for this merchant:
+	 * Direct Payment (dp) allows payments by credit card without requiring the customer to have a PayPal account. 
+	 * Express Checkout (ec) allows customers to fund transactions with their PayPal account. 
+	 * Authorization and Capture (auth_settle) allows merchants to verify availability of funds in a PayPal account, but capture them at a later time. 
+	 * Administrative APIs (admin_api) is a collection of the PayPal APIs for transaction searching, getting transaction details, refunding, and mass payments. 
 	 * Required
-	 * Character length and limitations: 64 alphanumeric characters
-	 *
+	 * Character length and limitations: 64 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -12470,27 +11864,23 @@ class EnterBoardingRequestDetailsType {
 	/**
 	 * Any custom information you want to store for this partner
 	 * Optional
-	 * Character length and limitations: 256 alphanumeric characters
-	 *
+	 * Character length and limitations: 256 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
 	public $PartnerCustom;
 
 	/**
-	 * The URL for the logo displayed on the PayPal Partner Welcome
-	 * Page.
+	 * The URL for the logo displayed on the PayPal Partner Welcome Page.
 	 * Optional
-	 * Character length and limitations: 2,048 alphanumeric characters
-	 *
+	 * Character length and limitations: 2,048 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
 	public $ImageUrl;
 
 	/**
-	 * Marketing category tha configures the graphic displayed n the PayPal
-	 * Partner Welcome page.	 *
+	 * Marketing category tha configures the graphic displayed n the PayPal Partner Welcome page.	 *
 	 * @access public
 	 * @var MarketingCategoryType
 	 */
@@ -12562,8 +11952,7 @@ class EnterBoardingRequestDetailsType {
  */
 class BusinessInfoType {
 	/**
-	 * Type of business, such as corporation or sole proprietorship
-	 *
+	 * Type of business, such as corporation or sole proprietorship	 *
 	 * @access public
 	 * @var BusinessTypeType
 	 */
@@ -12571,8 +11960,7 @@ class BusinessInfoType {
 
 	/**
 	 * Official name of business
-	 * Character length and limitations: 75 alphanumeric characters
-	 *
+	 * Character length and limitations: 75 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -12587,8 +11975,7 @@ class BusinessInfoType {
 
 	/**
 	 * Businessâ€™s primary telephone number
-	 * Character length and limitations: 20 alphanumeric characters
-	 *
+	 * Character length and limitations: 20 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -12612,7 +11999,7 @@ class BusinessInfoType {
 	 * Average transaction price, as defined by the enumerations.
 	 * Enumeration
 	 * Meaning
-	 * AverageTransactionPrice-Not-Applicable
+	 * AverageTransactionPrice-Not-Applicable	
 	 * AverageTransactionPrice-Range1
 	 * Less than $25 USD
 	 * AverageTransactionPrice-Range2
@@ -12671,19 +12058,17 @@ class BusinessInfoType {
 
 	/**
 	 * Primary URL of business
-	 * Character length and limitations: 2,048 alphanumeric characters
-	 *
+	 * Character length and limitations: 2,048 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
 	public $Website;
 
 	/**
-	 * Percentage of revenue attributable to online sales, as defined
-	 * by the enumerations
+	 * Percentage of revenue attributable to online sales, as defined by the enumerations
 	 * Enumeration
 	 * Meaning
-	 * PercentageRevenueFromOnlineSales-Not-Applicable
+	 * PercentageRevenueFromOnlineSales-Not-Applicable	
 	 * PercentageRevenueFromOnlineSales-Range1
 	 * Less than 25%
 	 * PercentageRevenueFromOnlineSales-Range2
@@ -12707,8 +12092,7 @@ class BusinessInfoType {
 
 	/**
 	 * Email address to contact businessâ€™s customer service
-	 * Character length and limitations: 127 alphanumeric characters
-	 *
+	 * Character length and limitations: 127 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -12716,8 +12100,7 @@ class BusinessInfoType {
 
 	/**
 	 * Telephone number to contact businessâ€™s customer service
-	 * Character length and limitations: 32 alphanumeric characters
-	 *
+	 * Character length and limitations: 32 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -12790,8 +12173,7 @@ class BusinessOwnerInfoType {
 
 	/**
 	 * Business ownerâ€™s home telephone number
-	 * Character length and limitations: 32 alphanumeric characters
-	 *
+	 * Character length and limitations: 32 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -12799,8 +12181,7 @@ class BusinessOwnerInfoType {
 
 	/**
 	 * Business ownerâ€™s mobile telephone number
-	 * Character length and limitations: 32 alphanumeric characters
-	 *
+	 * Character length and limitations: 32 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -12808,8 +12189,7 @@ class BusinessOwnerInfoType {
 
 	/**
 	 * Business ownerâ€™s social security number
-	 * Character length and limitations: 9 alphanumeric characters
-	 *
+	 * Character length and limitations: 9 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -12845,8 +12225,7 @@ class BusinessOwnerInfoType {
 class BankAccountDetailsType {
 	/**
 	 * Name of bank
-	 * Character length and limitations: 192 alphanumeric characters
-	 *
+	 * Character length and limitations: 192 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -12861,8 +12240,7 @@ class BankAccountDetailsType {
 
 	/**
 	 * Merchantâ€™s bank routing number
-	 * Character length and limitations: 23 alphanumeric characters
-	 *
+	 * Character length and limitations: 23 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -12870,8 +12248,7 @@ class BankAccountDetailsType {
 
 	/**
 	 * Merchantâ€™s bank account number
-	 * Character length and limitations: 256 alphanumeric characters
-	 *
+	 * Character length and limitations: 256 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -12902,18 +12279,17 @@ class BankAccountDetailsType {
  * GetBoardingDetailsResponseDetailsType
  * Status of merchant's onboarding process:
  * Completed
- * Cancelled
- * Pending
+Cancelled
+Pending
  * Character length and limitations: Eight alphabetic characters
  */
 class GetBoardingDetailsResponseDetailsType {
 	/**
 	 * Status of merchant's onboarding process:
 	 * Completed
-	 * Cancelled
-	 * Pending
-	 * Character length and limitations: Eight alphabetic characters
-	 *
+Cancelled
+Pending
+	 * Character length and limitations: Eight alphabetic characters	 *
 	 * @access public
 	 * @var BoardingStatusType
 	 */
@@ -12927,8 +12303,7 @@ class GetBoardingDetailsResponseDetailsType {
 	public $StartDate;
 
 	/**
-	 * Date the merchantâ€™s status or progress was last updated
-	 *
+	 * Date the merchantâ€™s status or progress was last updated	 *
 	 * @access public
 	 * @var dateTime
 	 */
@@ -12936,8 +12311,7 @@ class GetBoardingDetailsResponseDetailsType {
 
 	/**
 	 * Reason for merchantâ€™s cancellation of sign-up.
-	 * Character length and limitations: 1,024 alphanumeric characters
-	 *
+	 * Character length and limitations: 1,024 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -12962,8 +12336,7 @@ class GetBoardingDetailsResponseDetailsType {
 	public $CampaignID;
 
 	/**
-	 * Indicates if there is a limitation on the amount of money the business
-	 * can withdraw from PayPal	 *
+	 * Indicates if there is a limitation on the amount of money the business can withdraw from PayPal	 *
 	 * @access public
 	 * @var UserWithdrawalLimitTypeType
 	 */
@@ -12971,8 +12344,7 @@ class GetBoardingDetailsResponseDetailsType {
 
 	/**
 	 * Custom information you set on the EnterBoarding API call
-	 * Character length and limitations: 256 alphanumeric characters
-	 *
+	 * Character length and limitations: 256 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -12993,8 +12365,7 @@ class GetBoardingDetailsResponseDetailsType {
 	public $Credentials;
 
 	/**
-	 * The APIs that this merchant has granted the business partner
-	 * permission to call on his behalf.
+	 * The APIs that this merchant has granted the business partner permission to call on his behalf.
 	 * For example:
 	 * SetExpressCheckout,GetExpressCheckoutDetails,DoExpressCheckoutPayment
 	 *
@@ -13004,8 +12375,7 @@ class GetBoardingDetailsResponseDetailsType {
 	public $ConfigureAPIs;
 
 	/**
-	 * Primary email verification status. Confirmed, Unconfirmed
-	 *
+	 * Primary email verification status. Confirmed, Unconfirmed	 *
 	 * @access public
 	 * @var string
 	 */
@@ -13013,8 +12383,7 @@ class GetBoardingDetailsResponseDetailsType {
 
 	/**
 	 * Gives VettingStatus - Pending, Cancelled, Approved, UnderReview
-	 * Character length and limitations: 256 alphanumeric characters
-	 *
+	 * Character length and limitations: 256 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -13022,8 +12391,7 @@ class GetBoardingDetailsResponseDetailsType {
 
 	/**
 	 * Gives BankAccountVerificationStatus - Added, Confirmed
-	 * Character length and limitations: 256 alphanumeric characters
-	 *
+	 * Character length and limitations: 256 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -13094,8 +12462,7 @@ class GetBoardingDetailsResponseDetailsType {
 class APICredentialsType {
 	/**
 	 * Merchantâ€™s PayPal API username
-	 * Character length and limitations: 128 alphanumeric characters
-	 *
+Character length and limitations: 128 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -13103,8 +12470,7 @@ class APICredentialsType {
 
 	/**
 	 * Merchantâ€™s PayPal API password
-	 * Character length and limitations: 40 alphanumeric characters
-	 *
+Character length and limitations: 40 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -13112,8 +12478,7 @@ class APICredentialsType {
 
 	/**
 	 * Merchantâ€™s PayPal API signature, if one exists.
-	 * Character length and limitations: 256 alphanumeric characters
-	 *
+	 * Character length and limitations: 256 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -13121,10 +12486,8 @@ class APICredentialsType {
 
 	/**
 	 * Merchantâ€™s PayPal API certificate in PEM format, if one exists
-	 * The certificate consists of two parts: the private key (2,048
-	 * bytes) and the certificate proper (4,000 bytes).
-	 * Character length and limitations: 6,048 alphanumeric characters
-	 *
+	 * The certificate consists of two parts: the private key (2,048 bytes) and the certificate proper (4,000 bytes).
+	 * Character length and limitations: 6,048 alphanumeric characters	 *
 	 * @access public
 	 * @var string
 	 */
@@ -13135,8 +12498,7 @@ class APICredentialsType {
 	 * Auth-None: no authentication mechanism on file
 	 * Cert: API certificate
 	 * Sign: API signature
-	 * Character length and limitations: 9 alphanumeric characters
-	 *
+	 * Character length and limitations: 9 alphanumeric characters	 *
 	 * @access public
 	 * @var APIAuthenticationType
 	 */
@@ -13172,7 +12534,7 @@ class APICredentialsType {
  */
 class SetMobileCheckoutRequestDetailsType {
 	/**
-	 * The phone number of the buyer's mobile device, if available.
+The phone number of the buyer's mobile device, if available.
 	 * Optional
 	 *
 	 * @access public
@@ -13182,8 +12544,7 @@ class SetMobileCheckoutRequestDetailsType {
 
 	/**
 	 * Cost of this item before tax and shipping.
-	 * You must set the currencyID attribute to one of the three-character
-	 * currency codes for any of the supported PayPal currencies.
+You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies.
 	 * Required
 	 *
 	 * @access public
@@ -13193,8 +12554,7 @@ class SetMobileCheckoutRequestDetailsType {
 
 	/**
 	 * Tax amount for this item.
-	 * You must set the currencyID attribute to one of the three-character
-	 * currency codes for any of the supported PayPal currencies.
+You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies.
 	 * Optional
 	 *
 	 * @access public
@@ -13204,8 +12564,7 @@ class SetMobileCheckoutRequestDetailsType {
 
 	/**
 	 * Shipping amount for this item.
-	 * You must set the currencyID attribute to one of the three-character
-	 * currency codes for any of the supported PayPal currencies.
+You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies.
 	 * Optional
 	 *
 	 * @access public
@@ -13214,10 +12573,9 @@ class SetMobileCheckoutRequestDetailsType {
 	public $Shipping;
 
 	/**
-	 * Description of the item that the customer is purchasing.
+Description of the item that the customer is purchasing. 
 	 * Required
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -13225,10 +12583,9 @@ class SetMobileCheckoutRequestDetailsType {
 	public $ItemName;
 
 	/**
-	 * Reference number of the item that the customer is purchasing.
+Reference number of the item that the customer is purchasing. 
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -13236,11 +12593,9 @@ class SetMobileCheckoutRequestDetailsType {
 	public $ItemNumber;
 
 	/**
-	 * A free-form field for your own use, such as a tracking number or
-	 * other value you want returned to you in IPN.
+A free-form field for your own use, such as a tracking number or other value you want returned to you in IPN.
 	 * Optional
-	 * Character length and limitations: 256 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 256 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -13248,10 +12603,9 @@ class SetMobileCheckoutRequestDetailsType {
 	public $Custom;
 
 	/**
-	 * Your own unique invoice or tracking number.
+Your own unique invoice or tracking number.
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -13259,23 +12613,16 @@ class SetMobileCheckoutRequestDetailsType {
 	public $InvoiceID;
 
 	/**
-	 * URL to which the customer's browser is returned after choosing
-	 * to pay with PayPal. PayPal recommends that the value of
-	 * ReturnURL be the final review page on which the customer
-	 * confirms the order and payment.
+URL to which the customer's browser is returned after choosing to pay with PayPal. PayPal recommends that the value of ReturnURL be the final review page on which the customer confirms the order and payment. 
 	 * Required
-	 * Character length and limitations: no limit.
-	 *
+	 * Character length and limitations: no limit. 	 *
 	 * @access public
 	 * @var string
 	 */
 	public $ReturnURL;
 
 	/**
-	 * URL to which the customer is returned if he does not approve the
-	 * use of PayPal to pay you. PayPal recommends that the value of
-	 * CancelURL be the original page on which the customer chose to
-	 * pay with PayPal.
+URL to which the customer is returned if he does not approve the use of PayPal to pay you. PayPal recommends that the value of CancelURL be the original page on which the customer chose to pay with PayPal. 
 	 * Optional
 	 * Character length and limitations: no limit
 	 *
@@ -13285,10 +12632,7 @@ class SetMobileCheckoutRequestDetailsType {
 	public $CancelURL;
 
 	/**
-	 * The value 1 indicates that you require that the customer's
-	 * shipping address on file with PayPal be a confirmed address.
-	 * Setting this element overrides the setting you have specified in
-	 * your Merchant Account Profile.
+The value 1 indicates that you require that the customer's shipping address on file with PayPal be a confirmed address. Setting this element overrides the setting you have specified in your Merchant Account Profile. 
 	 * Optional
 	 *
 	 * @access public
@@ -13297,9 +12641,7 @@ class SetMobileCheckoutRequestDetailsType {
 	public $AddressDisplayOptions;
 
 	/**
-	 * The value 1 indicates that you require that the customer
-	 * specifies a contact phone for the transactxion. Default is 0 /
-	 * none required.
+The value 1 indicates that you require that the customer specifies a contact phone for the transactxion.  Default is 0 / none required.
 	 * Optional
 	 *
 	 * @access public
@@ -13308,7 +12650,7 @@ class SetMobileCheckoutRequestDetailsType {
 	public $SharePhone;
 
 	/**
-	 * Customer's shipping address.
+Customer's shipping address. 
 	 * Optional
 	 *
 	 * @access public
@@ -13317,12 +12659,9 @@ class SetMobileCheckoutRequestDetailsType {
 	public $ShipToAddress;
 
 	/**
-	 * Email address of the buyer as entered during checkout. PayPal
-	 * uses this value to pre-fill the login portion of the PayPal
-	 * login page.
+	 * Email address of the buyer as entered during checkout. PayPal uses this value to pre-fill the login portion of the PayPal login page. 
 	 * Optional
-	 * Character length and limit: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limit: 127 single-byte alphanumeric characters 
 	 *
 	 * @access public
 	 * @var string
@@ -13398,19 +12737,15 @@ class SetMobileCheckoutRequestDetailsType {
 
 /**
  * DoMobileCheckoutPaymentResponseDetailsType
- * A free-form field for your own use, such as a tracking number or
- * other value you want returned to you in IPN.
+ * A free-form field for your own use, such as a tracking number or other value you want returned to you in IPN.
  * Optional
- * Character length and limitations: 256 single-byte alphanumeric
- * characters
+ * Character length and limitations: 256 single-byte alphanumeric characters
  */
 class DoMobileCheckoutPaymentResponseDetailsType {
 	/**
-	 * A free-form field for your own use, such as a tracking number or
-	 * other value you want returned to you in IPN.
+A free-form field for your own use, such as a tracking number or other value you want returned to you in IPN.
 	 * Optional
-	 * Character length and limitations: 256 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 256 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -13418,10 +12753,9 @@ class DoMobileCheckoutPaymentResponseDetailsType {
 	public $Custom;
 
 	/**
-	 * Your own unique invoice or tracking number.
+Your own unique invoice or tracking number.
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -13471,24 +12805,12 @@ Information about the transaction	 *
 
 /**
  * SetEbayMobileCheckoutRequestDetailsType
- * The value 'Auction' indicates that user is coming to checkout
- * after an auction ended. A value of 'BuyItNow' indicates if the
- * user is coming to checkout by clicking on the 'buy it now'
- * button in a chinese auction. A value of 'FixedPriceItem'
- * indicates that user clicked on 'Buy it now' on a fixed price
- * item. A value of Autopay indicates autopay (or immediate pay)
- * which is not supported at the moment.
+ * The value 'Auction' indicates that user is coming to checkout after an auction ended. A value of 'BuyItNow' indicates if the user is coming to checkout by clicking on the 'buy it now' button in a chinese auction. A value of 'FixedPriceItem' indicates that user clicked on 'Buy it now' on  a fixed price item. A value of Autopay indicates autopay (or immediate pay) which is not supported at the moment.
  * Required
  */
 class SetEbayMobileCheckoutRequestDetailsType {
 	/**
-	 * The value 'Auction' indicates that user is coming to checkout
-	 * after an auction ended. A value of 'BuyItNow' indicates if the
-	 * user is coming to checkout by clicking on the 'buy it now'
-	 * button in a chinese auction. A value of 'FixedPriceItem'
-	 * indicates that user clicked on 'Buy it now' on a fixed price
-	 * item. A value of Autopay indicates autopay (or immediate pay)
-	 * which is not supported at the moment.
+The value 'Auction' indicates that user is coming to checkout after an auction ended. A value of 'BuyItNow' indicates if the user is coming to checkout by clicking on the 'buy it now' button in a chinese auction. A value of 'FixedPriceItem' indicates that user clicked on 'Buy it now' on  a fixed price item. A value of Autopay indicates autopay (or immediate pay) which is not supported at the moment.
 	 * Required
 	 *
 	 * @access public
@@ -13497,10 +12819,9 @@ class SetEbayMobileCheckoutRequestDetailsType {
 	public $CheckoutType;
 
 	/**
-	 * An item number assigned to the item in eBay database.
+An item number assigned to the item in eBay database. 
 	 * Required
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -13508,12 +12829,9 @@ class SetEbayMobileCheckoutRequestDetailsType {
 	public $ItemId;
 
 	/**
-	 * An Transaction id assigned to the item in eBay database. In case
-	 * of Chinese auction Item Id itself indicates Transaction Id.
-	 * Transaction Id in this case is Zero.
+An Transaction id assigned to the item in eBay database. In case of Chinese auction Item Id itself indicates Transaction Id. Transaction Id in this case is Zero.
 	 * Required
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -13521,7 +12839,7 @@ class SetEbayMobileCheckoutRequestDetailsType {
 	public $TransactionId;
 
 	/**
-	 * An id indicating the site on which the item was listed.
+An id indicating the site on which the item was listed. 
 	 * Required
 	 * Character length and limitations: 2 alphanumeric characters
 	 *
@@ -13531,10 +12849,9 @@ class SetEbayMobileCheckoutRequestDetailsType {
 	public $SiteId;
 
 	/**
-	 * Buyers ebay Id.
+Buyers ebay Id. 
 	 * Required
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -13542,9 +12859,7 @@ class SetEbayMobileCheckoutRequestDetailsType {
 	public $BuyerId;
 
 	/**
-	 * Indicating the client type. Weather it is WAP or J2ME. A value
-	 * of 'WAP' indicates WAP. A value of 'J2MEClient' indicates J2ME
-	 * client.
+Indicating the client type. Weather it is WAP or J2ME. A value of 'WAP' indicates WAP. A value of 'J2MEClient' indicates J2ME client. 
 	 * Required
 	 *
 	 * @access public
@@ -13553,7 +12868,7 @@ class SetEbayMobileCheckoutRequestDetailsType {
 	public $ClientType;
 
 	/**
-	 * The phone number of the buyer's mobile device, if available.
+The phone number of the buyer's mobile device, if available.
 	 * Optional
 	 *
 	 * @access public
@@ -13562,12 +12877,9 @@ class SetEbayMobileCheckoutRequestDetailsType {
 	public $BuyerPhone;
 
 	/**
-	 * URL to which the customer's browser is returned after choosing
-	 * to pay with PayPal. PayPal recommends that the value of
-	 * ReturnURL be the final review page on which the customer
-	 * confirms the order and payment.
+URL to which the customer's browser is returned after choosing to pay with PayPal. PayPal recommends that the value of ReturnURL be the final review page on which the customer confirms the order and payment. 
 	 * Optional
-	 * Character length and limitations: no limit.
+	 * Character length and limitations: no limit. 
 	 *
 	 * @access public
 	 * @var string
@@ -13575,10 +12887,7 @@ class SetEbayMobileCheckoutRequestDetailsType {
 	public $ReturnURL;
 
 	/**
-	 * URL to which the customer is returned if he does not approve the
-	 * use of PayPal to pay you. PayPal recommends that the value of
-	 * CancelURL be the original page on which the customer chose to
-	 * pay with PayPal.
+URL to which the customer is returned if he does not approve the use of PayPal to pay you. PayPal recommends that the value of CancelURL be the original page on which the customer chose to pay with PayPal. 
 	 * Optional
 	 * Character length and limitations: no limit
 	 *
@@ -13588,8 +12897,7 @@ class SetEbayMobileCheckoutRequestDetailsType {
 	public $CancelURL;
 
 	/**
-	 * Specify quantity in case it is an immediate pay (or autopay)
-	 * item.
+Specify quantity in case it is an immediate pay (or autopay) item. 
 	 * Optional
 	 *
 	 * @access public
@@ -13598,10 +12906,7 @@ class SetEbayMobileCheckoutRequestDetailsType {
 	public $Quantity;
 
 	/**
-	 * Cost of this item before tax and shipping.You must set the
-	 * currencyID attribute to one of the three-character currency
-	 * codes for any of the supported PayPal currencies.Used only for
-	 * autopay items.
+Cost of this item before tax and shipping.You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies.Used only for autopay items.
 	 * Optional
 	 *
 	 * @access public
@@ -13737,18 +13042,10 @@ class RecurringPaymentsSummaryType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='numbercyclesremaining') {
 				$this->NumberCyclesRemaining = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="outstandingbalance") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->OutstandingBalance = new BasicAmountType();
-				$this->OutstandingBalance->init($atr);
+				$this->OutstandingBalance->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='failedpaymentcount') {
@@ -13757,18 +13054,10 @@ class RecurringPaymentsSummaryType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='lastpaymentdate') {
 				$this->LastPaymentDate = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="lastpaymentamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->LastPaymentAmount = new BasicAmountType();
-				$this->LastPaymentAmount->init($atr);
+				$this->LastPaymentAmount->init($arry["children"]);
 					}
 			}
 		}
@@ -13880,46 +13169,22 @@ class BillingPeriodDetailsType {
 			if($arry != null && isset($arry['text']) && $arry['name']=='totalbillingcycles') {
 				$this->TotalBillingCycles = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="amount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($atr);
+				$this->Amount->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="shippingamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->ShippingAmount = new BasicAmountType();
-				$this->ShippingAmount->init($atr);
+				$this->ShippingAmount->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="taxamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->TaxAmount = new BasicAmountType();
-				$this->TaxAmount->init($atr);
+				$this->TaxAmount->init($arry["children"]);
 					}
 			}
 		}
@@ -14079,8 +13344,7 @@ class ScheduleDetailsType {
 	public $PaymentPeriod;
 
 	/**
-	 * The max number of payments the buyer can fail before this Recurring
-	 * Payments profile is cancelled
+	 * The max number of payments the buyer can fail before this Recurring Payments profile is cancelled
 	 *
 	 * @access public
 	 * @var int
@@ -14141,11 +13405,11 @@ class ScheduleDetailsType {
 
 /**
  * RecurringPaymentsProfileDetailsType
- * Subscriber name - if missing, will use name in buyer's account
+ * Subscriber name - if missing, will use name in buyer's account 
  */
 class RecurringPaymentsProfileDetailsType {
 	/**
-	 * Subscriber name - if missing, will use name in buyer's account
+	 * Subscriber name - if missing, will use name in buyer's account 
 	 *
 	 * @access public
 	 * @var string
@@ -14169,10 +13433,9 @@ class RecurringPaymentsProfileDetailsType {
 	public $BillingStartDate;
 
 	/**
-	 * Your own unique invoice or tracking number.
+Your own unique invoice or tracking number.
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -14242,8 +13505,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType {
 	public $Token;
 
 	/**
-	 * Information about the credit card to be charged (required if Direct
-	 * Payment)
+	 * Information about the credit card to be charged (required if Direct Payment)
 	 *
 	 * @access public
 	 * @var CreditCardDetailsType
@@ -14553,60 +13815,28 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType {
 				$this->RegularRecurringPaymentsPeriod->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="trialamountpaid") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->TrialAmountPaid = new BasicAmountType();
-				$this->TrialAmountPaid->init($atr);
+				$this->TrialAmountPaid->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="regularamountpaid") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->RegularAmountPaid = new BasicAmountType();
-				$this->RegularAmountPaid->init($atr);
+				$this->RegularAmountPaid->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="aggregateamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->AggregateAmount = new BasicAmountType();
-				$this->AggregateAmount->init($atr);
+				$this->AggregateAmount->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="aggregateoptionalamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->AggregateOptionalAmount = new BasicAmountType();
-				$this->AggregateOptionalAmount->init($atr);
+				$this->AggregateOptionalAmount->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='finalpaymentduedate') {
@@ -14856,8 +14086,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType {
 	public $MaxFailedPayments;
 
 	/**
-	 * Information about the credit card to be charged (required if Direct
-	 * Payment)
+	 * Information about the credit card to be charged (required if Direct Payment)
 	 *
 	 * @access public
 	 * @var CreditCardDetailsType
@@ -15066,8 +14295,7 @@ class RiskFilterListType {
 
 /**
  * FMFDetailsType
- * Thes are filters that could result in
- * accept/deny/pending action.
+ * Thes are filters that could result in accept/deny/pending action.
  */
 class FMFDetailsType {
 	/**
@@ -15483,8 +14711,7 @@ class FlightDetailsType {
 class AuthorizationInfoType {
 	/**
 	 * The status of the payment:
-	 * Pending: The payment is pending. See "PendingReason" for more
-	 * information.
+	 * Pending: The payment is pending. See "PendingReason" for more information.
 	 *
 	 * @access public
 	 * @var PaymentStatusCodeType
@@ -15493,37 +14720,17 @@ class AuthorizationInfoType {
 
 	/**
 	 * The reason the payment is pending:
-	 * none: No pending reason
-	 * address: The payment is pending because your customer did not
-	 * include a confirmed shipping address and your Payment Receiving
-	 * Preferences is set such that you want to manually accept or deny
-	 * each of these payments. To change your preference, go to the
-	 * Preferences section of your Profile.
-	 * authorization: The authorization is pending at time of creation
-	 * if payment is not under review
-	 * echeck: The payment is pending because it was made by an eCheck
-	 * that has not yet cleared.
-	 * intl: The payment is pending because you hold a non-U.S. account
-	 * and do not have a withdrawal mechanism. You must manually accept
-	 * or deny this payment from your Account Overview.
-	 * multi-currency: You do not have a balance in the currency sent,
-	 * and you do not have your Payment Receiving Preferences set to
-	 * automatically convert and accept this payment. You must manually
-	 * accept or deny this payment.
-	 * unilateral: The payment is pending because it was made to an
-	 * email address that is not yet registered or confirmed.
-	 * upgrade: The payment is pending because it was made via credit
-	 * card and you must upgrade your account to Business or Premier
-	 * status in order to receive the funds. upgrade can also mean that
-	 * you have reached the monthly limit for transactions on your
-	 * account.
-	 * verify: The payment is pending because you are not yet verified.
-	 * You must verify your account before you can accept this payment.
-	 * payment_review: The payment is pending because it is under
-	 * payment review.
-	 * other: The payment is pending for a reason other than those
-	 * listed above. For more information, contact PayPal Customer
-	 * Service.
+none: No pending reason
+	 * address: The payment is pending because your customer did not include a confirmed shipping address and your Payment Receiving Preferences is set such that you want to manually accept or deny each of these payments. To change your preference, go to the Preferences section of your Profile.
+	 * authorization: The authorization is pending at time of creation if payment is not under review
+	 * echeck: The payment is pending because it was made by an eCheck that has not yet cleared.
+	 * intl: The payment is pending because you hold a non-U.S. account and do not have a withdrawal mechanism. You must manually accept or deny this payment from your Account Overview.
+	 * multi-currency: You do not have a balance in the currency sent, and you do not have your Payment Receiving Preferences set to automatically convert and accept this payment. You must manually accept or deny this payment.
+	 * unilateral: The payment is pending because it was made to an email address that is not yet registered or confirmed.
+	 * upgrade: The payment is pending because it was made via credit card and you must upgrade your account to Business or Premier status in order to receive the funds. upgrade can also mean that you have reached the monthly limit for transactions on your account.
+	 * verify: The payment is pending because you are not yet verified. You must verify your account before you can accept this payment.
+	 * payment_review: The payment is pending because it is under payment review.
+	 * other: The payment is pending for a reason other than those listed above. For more information, contact PayPal Customer Service.
 	 *
 	 * @access public
 	 * @var PendingStatusCodeType
@@ -15539,7 +14746,7 @@ class AuthorizationInfoType {
 	public $ProtectionEligibility;
 
 	/**
-	 * Protection Eligibility Type for this Transaction
+	 * Protection Eligibility Type  for this Transaction
 	 *
 	 * @access public
 	 * @var string
@@ -15827,15 +15034,13 @@ class ButtonSearchResultType {
  * ReverseTransactionRequestDetailsType
  * Identifier of the transaction to reverse.
  * Required
- * Character length and limitations: 17 single-byte alphanumeric
- * characters
+ * Character length and limitations: 17 single-byte alphanumeric characters
  */
 class ReverseTransactionRequestDetailsType {
 	/**
-	 * Identifier of the transaction to reverse.
+Identifier of the transaction to reverse.
 	 * Required
-	 * Character length and limitations: 17 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 17 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -15856,14 +15061,12 @@ class ReverseTransactionRequestDetailsType {
 
 /**
  * ReverseTransactionResponseDetailsType
- * Unique transaction identifier of the reversal transaction
- * created.
+ * Unique transaction identifier of the reversal transaction created.
  * Character length and limitations:17 single-byte characters
  */
 class ReverseTransactionResponseDetailsType {
 	/**
-	 * Unique transaction identifier of the reversal transaction
-	 * created.
+Unique transaction identifier of the reversal transaction created.
 	 * Character length and limitations:17 single-byte characters
 	 *
 	 * @access public
@@ -15872,7 +15075,7 @@ class ReverseTransactionResponseDetailsType {
 	public $ReverseTransactionID;
 
 	/**
-	 * Status of reversal request.
+Status of reversal request.
 	 * Required
 	 *
 	 * @access public
@@ -15909,7 +15112,7 @@ class IncentiveInfoType {
 	public $IncentiveCode;
 
 	/**
-	 * Defines which bucket or item that the incentive should be applied to.
+	 * Defines which bucket or item that the incentive should be applied to. 
 	 *
 	 * array
 	 * @access public
@@ -15938,7 +15141,7 @@ class IncentiveInfoType {
 
 /**
  * IncentiveApplyIndicationType
- * Defines which bucket or item that the incentive should be applied to.
+ * Defines which bucket or item that the incentive should be applied to.  
  */
 class IncentiveApplyIndicationType {
 	/**
@@ -16024,25 +15227,17 @@ class PaymentRequestInfoType {
 
 /**
  * ExternalRememberMeOwnerDetailsType
- * E-mail address or secure merchant account ID of
- * merchant to associate with new external remember-me.
+ * E-mail address or secure merchant account ID of merchant to associate with new external remember-me.
  */
 class ExternalRememberMeOwnerDetailsType {
 	/**
-	 * A discriminant that tells SetEC what kind of data
-	 * the ExternalRememberMeOwnerID parameter contains.
-	 * Currently, the
-	 * owner must be either the API actor or omitted/none. In the
-	 * future, we may allow the
-	 * owner to be a 3rd party merchant
-	 * account.
+	 * A discriminant that tells SetEC what kind of data the ExternalRememberMeOwnerID parameter contains.
+	 * Currently, the owner must be either the API actor or omitted/none.  In the future, we may allow the
+	 * owner to be a 3rd party merchant account.
 	 * Possible values are:
-	 * None, ignore the
-	 * ExternalRememberMeOwnerID. An empty value for this field also
-	 * signifies None.
+	 * None, ignore the ExternalRememberMeOwnerID.  An empty value for this field also signifies None.
 	 * Email, the owner ID is an email address
-	 * SecureMerchantAccountID, the owner id is a string representing
-	 * the secure merchant account ID
+	 * SecureMerchantAccountID, the owner id is a string representing the secure merchant account ID
 	 *
 	 * @access public
 	 * @var string
@@ -16050,15 +15245,10 @@ class ExternalRememberMeOwnerDetailsType {
 	public $ExternalRememberMeOwnerIDType;
 
 	/**
-	 * When opting in to bypass login via remember me,
-	 * this parameter specifies the merchant account
-	 * associated with the
-	 * remembered login. Currentl, the owner must be either the API
-	 * actor or omitted/none.
-	 * In the future, we may allow the owner to
-	 * be a 3rd party merchant account.
-	 * If the Owner ID Type field is
-	 * not present or "None", this parameter is ignored.
+	 * When opting in to bypass login via remember me, this parameter specifies the merchant account
+	 * associated with the remembered login.  Currentl, the owner must be either the API actor or omitted/none.
+	 * In the future, we may allow the owner to be a 3rd party merchant account.
+	 * If the Owner ID Type field is not present or "None", this parameter is ignored.
 	 *
 	 * @access public
 	 * @var string
@@ -16082,17 +15272,14 @@ class ExternalRememberMeOwnerDetailsType {
 
 /**
  * ExternalRememberMeOptInDetailsType
- * This element contains information that allows the
- * merchant to request to
- * opt into external remember me on behalf of
- * the buyer or to request login
+ * This element contains information that allows the merchant to request to
+ * opt into external remember me on behalf of the buyer or to request login
  * bypass using external remember me.
  */
 class ExternalRememberMeOptInDetailsType {
 	/**
 	 * 1 = opt in to external remember me.
-	 * 0 or omitted =
-	 * no opt-in
+	 * 0 or omitted = no opt-in
 	 * Other values are invalid
 	 *
 	 * @access public
@@ -16101,12 +15288,9 @@ class ExternalRememberMeOptInDetailsType {
 	public $ExternalRememberMeOptIn;
 
 	/**
-	 * E-mail address or secure merchant account ID of
-	 * merchant to associate with new external remember-me. Currently,
-	 * the owner must be either the API actor or omitted/none. In the
-	 * future, we may allow the owner to be a 3rd party
-	 * merchant
-	 * account.
+	 * E-mail address or secure merchant account ID of merchant to associate with new external remember-me. Currently,
+	 * the owner must be either the API actor or omitted/none.  In the future, we may allow the owner to be a 3rd party
+	 * merchant account.
 	 *
 	 * @access public
 	 * @var ExternalRememberMeOwnerDetailsType
@@ -16132,15 +15316,12 @@ class ExternalRememberMeOptInDetailsType {
 
 /**
  * FlowControlDetailsType
- * An optional set of values related to flow-specific
- * details.
+ * An optional set of values related to flow-specific details.
  */
 class FlowControlDetailsType {
 	/**
-	 * The URL to redirect to for an unpayable
-	 * transaction. This field is currently used only
-	 * for the inline
-	 * checkout flow.
+	 * The URL to redirect to for an unpayable transaction.  This field is currently used only
+	 * for the inline checkout flow.
 	 *
 	 * @access public
 	 * @var string
@@ -16148,10 +15329,8 @@ class FlowControlDetailsType {
 	public $ErrorURL;
 
 	/**
-	 * The URL to redirect to after a user clicks the
-	 * "Pay" or "Continue" button on the merchant's
-	 * site. This field is
-	 * currently used only for the inline checkout flow.
+	 * The URL to redirect to after a user clicks the "Pay" or "Continue" button on the merchant's
+	 * site.  This field is currently used only for the inline checkout flow.
 	 *
 	 * @access public
 	 * @var string
@@ -16175,25 +15354,18 @@ class FlowControlDetailsType {
 
 /**
  * ExternalRememberMeStatusDetailsType
- * Response information resulting from opt-in
- * operation or current login bypass status.
+ * Response information resulting from opt-in operation or current login bypass status.
  */
 class ExternalRememberMeStatusDetailsType {
 	/**
-	 * Required field that reports status of opt-in or
-	 * login bypass attempt.
-	 * 0 = Success - successful opt-in or
-	 * ExternalRememberMeID specified in SetExpressCheckout
+	 * Required field that reports status of opt-in or login bypass attempt.
+	 * 0 = Success - successful opt-in or ExternalRememberMeID specified in SetExpressCheckout
 	 * is valid.
-	 * 1 = Invalid ID - ExternalRememberMeID specified in
-	 * SetExpressCheckout is invalid.
-	 * 2 = Internal Error - System error
-	 * or outage during opt-in or login bypass. Can retry
-	 * opt-in or login bypass next time. Flow will force full authentication
-	 * and allow buyer
+	 * 1 = Invalid ID - ExternalRememberMeID specified in SetExpressCheckout is invalid.
+	 * 2 = Internal Error - System error or outage during opt-in or login bypass.  Can retry
+	 * opt-in or login bypass next time.  Flow will force full authentication and allow buyer
 	 * to complete transaction.
-	 * -1 = None - the return value does not
-	 * signify any valid remember me status.
+	 * -1 = None - the return value does not signify any valid remember me status.
 	 *
 	 * @access public
 	 * @var integer
@@ -16201,14 +15373,10 @@ class ExternalRememberMeStatusDetailsType {
 	public $ExternalRememberMeStatus;
 
 	/**
-	 * Identifier returned on external-remember-me-opt-in
-	 * to allow the merchant to request
-	 * bypass of PayPal login through
-	 * external remember me on behalf of the buyer in future
-	 * transactions. The ExternalRememberMeID is a 17-character
-	 * alphanumeric (encrypted)
-	 * string. This field has meaning only to
-	 * the merchant.
+	 * Identifier returned on external-remember-me-opt-in to allow the merchant to request
+	 * bypass of PayPal login through external remember me on behalf of the buyer in future
+	 * transactions.  The ExternalRememberMeID is a 17-character alphanumeric (encrypted)
+	 * string.  This field has meaning only to the merchant.
 	 *
 	 * @access public
 	 * @var string
@@ -16232,15 +15400,12 @@ class ExternalRememberMeStatusDetailsType {
 
 /**
  * DisplayControlDetailsType
- * Contains elements that allows customization of
- * display (user interface) elements.
+ * Contains elements that allows customization of display (user interface) elements.
  */
 class DisplayControlDetailsType {
 	/**
-	 * Optional URL to pay button image for the inline
-	 * checkout flow. Currently applicable
-	 * only to the inline checkout
-	 * flow when the FlowControlDetails/InlineReturnURL is present.
+	 * Optional URL to pay button image for the inline checkout flow.  Currently applicable
+	 * only to the inline checkout flow when the FlowControlDetails/InlineReturnURL is present.
 	 *
 	 * @access public
 	 * @var string
@@ -16257,6 +15422,480 @@ class DisplayControlDetailsType {
 		return $str;
 	}
 
+}
+
+/**
+ * ExternalPartnerTrackingDetailsType
+ * Contains elements that allow tracking for an external partner.
+ */
+class ExternalPartnerTrackingDetailsType {
+	/**
+	 * PayPal will just log this string. There will NOT be any business logic around it, nor any decisions made based on the value of the string that is passed in.
+	 * From a tracking/analytical perspective, PayPal would not infer any meaning to any specific value.
+	 * We would just segment the traffic based on the value passed (Cart and None as an example) and track different
+	 * metrics like risk/conversion etc based on these segments.
+	 * The external partner would control the value of what gets passed and we take that value as is and generate data based on it. 
+	 * Optional 
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $ExternalPartnerSegmentID;
+
+
+	public function toXMLString()  {
+		$str = '';
+		if($this->ExternalPartnerSegmentID != null ) {
+			$str .= '<ebl:ExternalPartnerSegmentID>'.$this->ExternalPartnerSegmentID.'</ebl:ExternalPartnerSegmentID>';
+		 }
+
+		return $str;
+	}
+
+}
+
+/**
+ * MerchantStoreDetailsType
+ * Store IDOptional
+ * Character length and limits: 50 single-byte characters
+ */
+class MerchantStoreDetailsType {
+	/**
+Store IDOptional
+	 * Character length and limits: 50 single-byte characters
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $StoreID;
+
+	/**
+Terminal IDOptional
+	 * Character length and limits: 50 single-byte characters
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $TerminalID;
+
+
+	public function __construct($StoreID = null) {
+		$this->StoreID  = $StoreID;
+	}
+
+	public function toXMLString()  {
+		$str = '';
+		if($this->StoreID != null ) {
+			$str .= '<ebl:StoreID>'.$this->StoreID.'</ebl:StoreID>';
+		 }
+		if($this->TerminalID != null ) {
+			$str .= '<ebl:TerminalID>'.$this->TerminalID.'</ebl:TerminalID>';
+		 }
+
+		return $str;
+	}
+
+}
+
+/**
+ * AdditionalFeeType
+ */
+class AdditionalFeeType {
+	/**
+	 * @access public
+	 * @var string
+	 */
+	public $Type;
+
+	/**
+	 * @access public
+	 * @var BasicAmountType
+	 */
+	public $Amount;
+
+
+	public function toXMLString()  {
+		$str = '';
+		if($this->Type != null ) {
+			$str .= '<ebl:Type>'.$this->Type.'</ebl:Type>';
+		 }
+		if($this->Amount != null ) {
+			$str .='<ebl:Amount';
+			$str .= $this->Amount->toXMLString();
+			$str .=  '</ebl:Amount>';
+		 }
+
+		return $str;
+	}
+
+}
+
+/**
+ * DiscountType
+ * Describes discount information
+ */
+class DiscountType {
+	/**
+Item nameOptional
+	 * Character length and limits: 127 single-byte characters
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $Name;
+
+	/**
+description of the discountOptional
+	 * Character length and limits: 127 single-byte characters
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $Description;
+
+	/**
+amount discountedOptional
+	 *
+	 * @access public
+	 * @var BasicAmountType
+	 */
+	public $Amount;
+
+	/**
+offer typeOptional
+	 *
+	 * @access public
+	 * @var RedeemedOfferType
+	 */
+	public $RedeemedOfferType;
+
+	/**
+offer IDOptional
+	 * Character length and limits: 64 single-byte characters
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $RedeemedOfferID;
+
+
+	public function __construct($Amount = null) {
+		$this->Amount  = $Amount;
+	}
+
+	public function toXMLString()  {
+		$str = '';
+		if($this->Name != null ) {
+			$str .= '<ebl:Name>'.$this->Name.'</ebl:Name>';
+		 }
+		if($this->Description != null ) {
+			$str .= '<ebl:Description>'.$this->Description.'</ebl:Description>';
+		 }
+		if($this->Amount != null ) {
+			$str .='<ebl:Amount';
+			$str .= $this->Amount->toXMLString();
+			$str .=  '</ebl:Amount>';
+		 }
+		if($this->RedeemedOfferType != null ) {
+			$str .= '<ebl:RedeemedOfferType>'.$this->RedeemedOfferType.'</ebl:RedeemedOfferType>';
+		 }
+		if($this->RedeemedOfferID != null ) {
+			$str .= '<ebl:RedeemedOfferID>'.$this->RedeemedOfferID.'</ebl:RedeemedOfferID>';
+		 }
+
+		return $str;
+	}
+
+}
+
+/**
+ * InvoiceItemType
+ * Describes an individual item for an invoice.
+ */
+class InvoiceItemType {
+	/**
+a human readable item nameOptional
+	 * Character length and limits: 127 single-byte characters
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $Name;
+
+	/**
+a human readable item descriptionOptional
+	 * Character length and limits: 127 single-byte characters
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $Description;
+
+	/**
+	 * The International Article Number or 
+	 * Universal Product Code (UPC) for the item.
+	 * Empty string is allowed.
+	 * Character length and limits: 17 single-byte characters
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $EAN;
+
+	/**
+	 * The Stock-Keeping Unit or other identification 
+	 * code assigned to the item.
+	 * Character length and limits: 64 single-byte characters
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $SKU;
+
+	/**
+	 * A retailer could apply different return policies on different items.
+	 * Each return policy would be identified using a label or identifier.
+	 * This return policy identifier should be set here.  
+	 * This identifier will be displayed next to the item in the e-Receipt.
+	 * Character length and limits: 8 single-byte characters
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $ReturnPolicyIdentifier;
+
+	/**
+	 * total price of this item
+	 *
+	 * @access public
+	 * @var BasicAmountType
+	 */
+	public $Price;
+
+	/**
+	 * price per item quantity
+	 *
+	 * @access public
+	 * @var BasicAmountType
+	 */
+	public $ItemPrice;
+
+	/**
+	 * quantity of the item (non-negative)
+	 *
+	 * @access public
+	 * @var double
+	 */
+	public $ItemCount;
+
+	/**
+	 * Unit of measure for the itemCount
+	 *
+	 * @access public
+	 * @var UnitOfMeasure
+	 */
+	public $ItemCountUnit;
+
+	/**
+	 * discount applied to this item
+	 *
+	 * array
+	 * @access public
+	 * @var DiscountType
+	 */
+	public $Discount;
+
+	/**
+	 * identifies whether this item is taxable or not.  
+	 * If not passed, this will be assumed to be true.
+	 *
+	 * @access public
+	 * @var boolean
+	 */
+	public $Taxable;
+
+	/**
+	 * The tax percentage applied to the item.
+	 * This is only used for displaying in the receipt, it is not used in pricing calculations.
+	 * Note: we have totalTax at invoice level. It's up to the caller to do the calculations for setting that other element.
+	 *
+	 * @access public
+	 * @var double
+	 */
+	public $TaxRate;
+
+	/**
+	 * Additional fees to this item
+	 *
+	 * array
+	 * @access public
+	 * @var AdditionalFeeType
+	 */
+	public $AdditionalFees;
+
+	/**
+	 * identifies whether this is reimbursable or not.
+	 * If not pass, this will be assumed to be true.
+	 *
+	 * @access public
+	 * @var boolean
+	 */
+	public $Reimbursable;
+
+	/**
+	 * Manufacturer part number.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $MPN;
+
+	/**
+	 * International Standard Book Number.
+	 * Reference http://en.wikipedia.org/wiki/ISBN
+	 * Character length and limits: 32 single-byte characters
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $ISBN;
+
+	/**
+	 * Price Look-Up code
+	 * Reference http://en.wikipedia.org/wiki/Price_Look-Up_code
+	 * Character length and limits: 5 single-byte characters
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $PLU;
+
+	/**
+	 * Character length and limits: 32 single-byte characters
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $ModelNumber;
+
+	/**
+	 * Character length and limits: 32 single-byte characters
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $StyleNumber;
+
+
+	public function toXMLString()  {
+		$str = '';
+		if($this->Name != null ) {
+			$str .= '<ebl:Name>'.$this->Name.'</ebl:Name>';
+		 }
+		if($this->Description != null ) {
+			$str .= '<ebl:Description>'.$this->Description.'</ebl:Description>';
+		 }
+		if($this->EAN != null ) {
+			$str .= '<ebl:EAN>'.$this->EAN.'</ebl:EAN>';
+		 }
+		if($this->SKU != null ) {
+			$str .= '<ebl:SKU>'.$this->SKU.'</ebl:SKU>';
+		 }
+		if($this->ReturnPolicyIdentifier != null ) {
+			$str .= '<ebl:ReturnPolicyIdentifier>'.$this->ReturnPolicyIdentifier.'</ebl:ReturnPolicyIdentifier>';
+		 }
+		if($this->Price != null ) {
+			$str .='<ebl:Price';
+			$str .= $this->Price->toXMLString();
+			$str .=  '</ebl:Price>';
+		 }
+		if($this->ItemPrice != null ) {
+			$str .='<ebl:ItemPrice';
+			$str .= $this->ItemPrice->toXMLString();
+			$str .=  '</ebl:ItemPrice>';
+		 }
+		if($this->ItemCount != null ) {
+			$str .= '<ebl:ItemCount>'.$this->ItemCount.'</ebl:ItemCount>';
+		 }
+		if($this->ItemCountUnit != null ) {
+			$str .= '<ebl:ItemCountUnit>'.$this->ItemCountUnit.'</ebl:ItemCountUnit>';
+		 }
+		if($this->Discount != null ) {
+		for($i=0; $i<count($this->Discount);$i++) {
+			$str .= '<ebl:Discount>';
+			$str .= $this->Discount[$i]->toXMLString();
+			$str .=  '</ebl:Discount>';
+		 }
+		 }
+		if($this->Taxable != null ) {
+			$str .= '<ebl:Taxable>'.$this->Taxable.'</ebl:Taxable>';
+		 }
+		if($this->TaxRate != null ) {
+			$str .= '<ebl:TaxRate>'.$this->TaxRate.'</ebl:TaxRate>';
+		 }
+		if($this->AdditionalFees != null ) {
+		for($i=0; $i<count($this->AdditionalFees);$i++) {
+			$str .= '<ebl:AdditionalFees>';
+			$str .= $this->AdditionalFees[$i]->toXMLString();
+			$str .=  '</ebl:AdditionalFees>';
+		 }
+		 }
+		if($this->Reimbursable != null ) {
+			$str .= '<ebl:Reimbursable>'.$this->Reimbursable.'</ebl:Reimbursable>';
+		 }
+		if($this->MPN != null ) {
+			$str .= '<ebl:MPN>'.$this->MPN.'</ebl:MPN>';
+		 }
+		if($this->ISBN != null ) {
+			$str .= '<ebl:ISBN>'.$this->ISBN.'</ebl:ISBN>';
+		 }
+		if($this->PLU != null ) {
+			$str .= '<ebl:PLU>'.$this->PLU.'</ebl:PLU>';
+		 }
+		if($this->ModelNumber != null ) {
+			$str .= '<ebl:ModelNumber>'.$this->ModelNumber.'</ebl:ModelNumber>';
+		 }
+		if($this->StyleNumber != null ) {
+			$str .= '<ebl:StyleNumber>'.$this->StyleNumber.'</ebl:StyleNumber>';
+		 }
+
+		return $str;
+	}
+
+}
+
+/**
+ * RefundInfoType
+ * Holds refunds payment status information
+ */
+class RefundInfoType {
+	/**
+	 * Refund status whether it is Instant or Delayed.
+	 *
+	 * @access public
+	 * @var PaymentStatusCodeType
+	 */
+	public $RefundStatus;
+
+	/**
+	 * Tells us the reason when refund payment status is Delayed.
+	 *
+	 * @access public
+	 * @var PendingStatusCodeType
+	 */
+	public $PendingReason;
+
+
+	public function init($arr = null) {
+		if($arr != null) {
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='refundstatus') {
+				$this->RefundStatus = $arry["text"];			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='pendingreason') {
+				$this->PendingReason = $arry["text"];			}
+		}
+		}
+	}
 }
 
 /**
@@ -16398,145 +16037,6 @@ class EnhancedPayerInfoType {
 }
 
 /**
- * AmountType
- */
-class AmountType {
-	/**
-	 * @access public
-	 * @var CurrencyCodeType
-	 */
-	public $currencyID;
-
-	/**
-	 * @access public
-	 * @var double
-	 */
-	public $value;
-
-}
-
-/**
- * BasicAmountType
- * On requests, you must set the currencyID attribute to one of the
- * three-character currency codes for any of the supported PayPal
- * currencies.
- * Limitations: Must not exceed $10,000 USD in any currency. No
- * currency symbol. Decimal separator must be a period (.), and the
- * thousands separator must be a comma (,).
- */
-class BasicAmountType {
-	/**
-	 * @access public
-	 * @var CurrencyCodeType
-	 */
-	public $currencyID;
-
-	/**
-	 * @access public
-	 * @var string
-	 */
-	public $value;
-
-
-	public function init($arr = null) {
-		if($arr != null) {
-			foreach ($arr as $arry){
-			if($arry != null && isset($arry['text']) && $arry['name']=='currencyid') {
-				$this->currencyID = $arry["text"];			}
-			if($arry != null && isset($arry['text']) && $arry['name']=='value') {
-				$this->value = $arry["text"];
-			}
-		}
-		}
-	}
-
-	public function __construct($currencyID = null, $value = null) {
-		$this->currencyID  = $currencyID;
-		$this->value  = $value;
-	}
-
-	public function toXMLString()  {
-		$str = '';
-		if($this->currencyID != null ) {
-			$str .= '	currencyID="'.$this->currencyID.'">';
-		 }
-		if($this->value != null ) {
-			$str .=$this->value;
-		 }
-
-		return $str;
-	}
-
-}
-
-/**
- * MeasureType
- */
-class MeasureType {
-	/**
-	 * @access public
-	 * @var token
-	 */
-	public $unit;
-
-	/**
-	 * @access public
-	 * @var double
-	 */
-	public $value;
-
-
-	public function init($arr = null) {
-		if($arr != null) {
-			foreach ($arr as $arry){
-			if($arry != null && isset($arry['text']) && $arry['name']=='unit') {
-				$this->unit = $arry["text"];
-			}
-			if($arry != null && isset($arry['text']) && $arry['name']=='value') {
-				$this->value = $arry["text"];
-			}
-		}
-		}
-	}
-
-	public function __construct($unit = null, $value = null) {
-		$this->unit  = $unit;
-		$this->value  = $value;
-	}
-
-	public function toXMLString()  {
-		$str = '';
-		if($this->unit != null ) {
-			$str .= '<cc:unit>'.$this->unit.'</cc:unit>';
-		 }
-		if($this->value != null ) {
-			$str .=$this->value;
-		 }
-
-		return $str;
-	}
-
-}
-
-/**
- * QuantityType
- */
-class QuantityType {
-	/**
-	 * @access public
-	 * @var token
-	 */
-	public $unit;
-
-	/**
-	 * @access public
-	 * @var double
-	 */
-	public $value;
-
-}
-
-/**
  * InstallmentDetailsType
  * Installment Period.
  * Optional
@@ -16553,7 +16053,7 @@ class InstallmentDetailsType {
 
 	/**
 	 * Installment Frequency.
-	 * Optional
+	 * Optional     
 	 *
 	 * @access public
 	 * @var int
@@ -16562,7 +16062,7 @@ class InstallmentDetailsType {
 
 	/**
 	 * Installment Cycles.
-	 * Optional
+	 * Optional     
 	 *
 	 * @access public
 	 * @var int
@@ -16571,7 +16071,7 @@ class InstallmentDetailsType {
 
 	/**
 	 * Installment Amount.
-	 * Optional
+	 * Optional     
 	 *
 	 * @access public
 	 * @var string
@@ -16580,7 +16080,7 @@ class InstallmentDetailsType {
 
 	/**
 	 * Installment Amount.
-	 * Optional
+	 * Optional     
 	 *
 	 * @access public
 	 * @var string
@@ -16589,7 +16089,7 @@ class InstallmentDetailsType {
 
 	/**
 	 * Installment Amount.
-	 * Optional
+	 * Optional     
 	 *
 	 * @access public
 	 * @var string
@@ -16651,15 +16151,13 @@ class InstallmentDetailsType {
  * OptionSelectionDetailsType
  * Option Selection.
  * Required
- * Character length and limitations: 12 single-byte alphanumeric
- * characters
+ * Character length and limitations: 12 single-byte alphanumeric characters
  */
 class OptionSelectionDetailsType {
 	/**
 	 * Option Selection.
 	 * Required
-	 * Character length and limitations: 12 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 12 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -16668,7 +16166,7 @@ class OptionSelectionDetailsType {
 
 	/**
 	 * Option Price.
-	 * Optional
+	 * Optional     
 	 *
 	 * @access public
 	 * @var string
@@ -16844,17 +16342,13 @@ $str.='</urn:BMCreateButtonReq>';
  * BMCreateButtonRequestType
  * Type of Button to create.
  * Required
- * Must be one of the following: BUYNOW, CART, GIFTCERTIFICATE.
- * SUBSCRIBE, PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or
- * UNSUBSCRIBE
+ * Must be one of the following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE
  */
 class BMCreateButtonRequestType extends AbstractRequestType {
 	/**
 	 * Type of Button to create.
 	 * Required
-	 * Must be one of the following: BUYNOW, CART, GIFTCERTIFICATE.
-	 * SUBSCRIBE, PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or
-	 * UNSUBSCRIBE
+	 * Must be one of the following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE
 	 *
 	 * @access public
 	 * @var ButtonTypeType
@@ -16884,8 +16378,7 @@ class BMCreateButtonRequestType extends AbstractRequestType {
 	/**
 	 * Button Variable information
 	 * At least one required recurring
-	 * Character length and limitations: 63 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 63 single-byte alphanumeric characters
 	 *
 	 * array
 	 * @access public
@@ -16923,8 +16416,7 @@ class BMCreateButtonRequestType extends AbstractRequestType {
 	/**
 	 * Button URL for custom button image.
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -16964,8 +16456,7 @@ class BMCreateButtonRequestType extends AbstractRequestType {
 	/**
 	 * Button language code.
 	 * Optional
-	 * Character length and limitations: 3 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 3 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -17105,15 +16596,13 @@ $str.='</urn:BMUpdateButtonReq>';
  * BMUpdateButtonRequestType
  * Hosted Button id of the button to update.
  * Required
- * Character length and limitations: 10 single-byte numeric
- * characters
+ * Character length and limitations: 10 single-byte numeric characters
  */
 class BMUpdateButtonRequestType extends AbstractRequestType {
 	/**
 	 * Hosted Button id of the button to update.
 	 * Required
-	 * Character length and limitations: 10 single-byte numeric
-	 * characters
+	 * Character length and limitations: 10 single-byte numeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -17123,9 +16612,7 @@ class BMUpdateButtonRequestType extends AbstractRequestType {
 	/**
 	 * Type of Button to create.
 	 * Required
-	 * Must be one of the following: BUYNOW, CART, GIFTCERTIFICATE.
-	 * SUBSCRIBE, PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or
-	 * UNSUBSCRIBE
+	 * Must be one of the following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE
 	 *
 	 * @access public
 	 * @var ButtonTypeType
@@ -17155,8 +16642,7 @@ class BMUpdateButtonRequestType extends AbstractRequestType {
 	/**
 	 * Button Variable information
 	 * At least one required recurring
-	 * Character length and limitations: 63 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 63 single-byte alphanumeric characters
 	 *
 	 * array
 	 * @access public
@@ -17194,8 +16680,7 @@ class BMUpdateButtonRequestType extends AbstractRequestType {
 	/**
 	 * Button URL for custom button image.
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -17235,8 +16720,7 @@ class BMUpdateButtonRequestType extends AbstractRequestType {
 	/**
 	 * Button language code.
 	 * Optional
-	 * Character length and limitations: 2 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 2 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -17383,15 +16867,13 @@ $str.='</urn:BMManageButtonStatusReq>';
  * BMManageButtonStatusRequestType
  * Button ID of Hosted button.
  * Required
- * Character length and limitations: 10 single-byte numeric
- * characters
+ * Character length and limitations: 10 single-byte numeric characters
  */
 class BMManageButtonStatusRequestType extends AbstractRequestType {
 	/**
 	 * Button ID of Hosted button.
 	 * Required
-	 * Character length and limitations: 10 single-byte numeric
-	 * characters
+	 * Character length and limitations: 10 single-byte numeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -17401,8 +16883,7 @@ class BMManageButtonStatusRequestType extends AbstractRequestType {
 	/**
 	 * Requested Status change for hosted button.
 	 * Required
-	 * Character length and limitations: 1 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 1 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var ButtonStatusType
@@ -17468,15 +16949,13 @@ $str.='</urn:BMGetButtonDetailsReq>';
  * BMGetButtonDetailsRequestType
  * Button ID of button to return.
  * Required
- * Character length and limitations: 10 single-byte numeric
- * characters
+ * Character length and limitations: 10 single-byte numeric characters
  */
 class BMGetButtonDetailsRequestType extends AbstractRequestType {
 	/**
 	 * Button ID of button to return.
 	 * Required
-	 * Character length and limitations: 10 single-byte numeric
-	 * characters
+	 * Character length and limitations: 10 single-byte numeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -17503,9 +16982,7 @@ $str.=parent::toXMLString();
 /**
  * BMGetButtonDetailsResponseType
  * Type of button.
- * One of the following: BUYNOW, CART, GIFTCERTIFICATE.
- * SUBSCRIBE, PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or
- * UNSUBSCRIBE
+ * One of the following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE
  */
 class BMGetButtonDetailsResponseType extends AbstractResponseType {
 	/**
@@ -17534,9 +17011,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType {
 
 	/**
 	 * Type of button.
-	 * One of the following: BUYNOW, CART, GIFTCERTIFICATE.
-	 * SUBSCRIBE, PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or
-	 * UNSUBSCRIBE
+	 * One of the following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE
 	 *
 	 * @access public
 	 * @var ButtonTypeType
@@ -17564,8 +17039,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType {
 
 	/**
 	 * Button Variable information
-	 * Character length and limitations: 63 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 63 single-byte alphanumeric characters
 	 *
 	 * array
 	 * @access public
@@ -17635,8 +17109,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType {
 
 	/**
 	 * Button language code.
-	 * Character length and limitations: 3 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 3 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -17730,15 +17203,13 @@ $str.='</urn:BMSetInventoryReq>';
  * BMSetInventoryRequestType
  * Hosted Button ID of button you wish to change.
  * Required
- * Character length and limitations: 10 single-byte numeric
- * characters
+ * Character length and limitations: 10 single-byte numeric characters
  */
 class BMSetInventoryRequestType extends AbstractRequestType {
 	/**
 	 * Hosted Button ID of button you wish to change.
 	 * Required
-	 * Character length and limitations: 10 single-byte numeric
-	 * characters
+	 * Character length and limitations: 10 single-byte numeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -17774,8 +17245,7 @@ class BMSetInventoryRequestType extends AbstractRequestType {
 	/**
 	 * Option Index.
 	 * Optional
-	 * Character length and limitations: 1 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 1 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -17792,8 +17262,7 @@ class BMSetInventoryRequestType extends AbstractRequestType {
 	/**
 	 * URL of page to display when an item is soldout.
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -17819,11 +17288,9 @@ class BMSetInventoryRequestType extends AbstractRequestType {
 	public $AppendDigitalDownloadKeys;
 
 	/**
-	 * Zero or more digital download keys to distribute to customers
-	 * after transaction is completed.
+	 * Zero or more digital download keys to distribute to customers after transaction is completed.
 	 * Optional
-	 * Character length and limitations: 1000 single-byte
-	 * alphanumeric characters
+	 * Character length and limitations: 1000 single-byte alphanumeric characters
 	 *
 	 * array
 	 * @access public
@@ -17889,19 +17356,10 @@ $str.=parent::toXMLString();
  * BMSetInventoryResponseType
  */
 class BMSetInventoryResponseType extends AbstractResponseType {
-	/**
-	 * @access public
-	 * @var string
-	 */
-	public $TransactionID;
-
 
 	public function init($arr = null) {
 		if($arr != null) {
 			parent::init($arr);			foreach ($arr as $arry){
-			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
-				$this->TransactionID = $arry["text"];
-			}
 		}
 		}
 	}
@@ -17937,15 +17395,13 @@ $str.='</urn:BMGetInventoryReq>';
  * BMGetInventoryRequestType
  * Hosted Button ID of the button to return inventory for.
  * Required
- * Character length and limitations: 10 single-byte numeric
- * characters
+ * Character length and limitations: 10 single-byte numeric characters
  */
 class BMGetInventoryRequestType extends AbstractRequestType {
 	/**
 	 * Hosted Button ID of the button to return inventory for.
 	 * Required
-	 * Character length and limitations: 10 single-byte numeric
-	 * characters
+	 * Character length and limitations: 10 single-byte numeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -18104,14 +17560,12 @@ $str.='</urn:BMButtonSearchReq>';
 
 /**
  * BMButtonSearchRequestType
- * The earliest transaction date at which to start the search. No
- * wildcards are allowed.
+ * The earliest transaction date at which to start the search. No wildcards are allowed. 
  * Required
  */
 class BMButtonSearchRequestType extends AbstractRequestType {
 	/**
-	 * The earliest transaction date at which to start the search. No
-	 * wildcards are allowed.
+	 * The earliest transaction date at which to start the search. No wildcards are allowed. 
 	 * Required
 	 *
 	 * @access public
@@ -18120,7 +17574,7 @@ class BMButtonSearchRequestType extends AbstractRequestType {
 	public $StartDate;
 
 	/**
-	 * The latest transaction date to be included in the search
+	 * The latest transaction date to be included in the search 
 	 * Optional
 	 *
 	 * @access public
@@ -18204,17 +17658,15 @@ $str.='</urn:RefundTransactionReq>';
 
 /**
  * RefundTransactionRequestType
- * Unique identifier of the transaction you are refunding.
+ * Unique identifier of the  transaction you are refunding.
  * Required
- * Character length and limitations: 17 single-byte alphanumeric
- * characters
+ * Character length and limitations: 17 single-byte alphanumeric characters 
  */
 class RefundTransactionRequestType extends AbstractRequestType {
 	/**
-	 * Unique identifier of the transaction you are refunding.
+Unique identifier of the  transaction you are refunding.
 	 * Required
-	 * Character length and limitations: 17 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 17 single-byte alphanumeric characters 
 	 *
 	 * @access public
 	 * @var string
@@ -18222,11 +17674,7 @@ class RefundTransactionRequestType extends AbstractRequestType {
 	public $TransactionID;
 
 	/**
-	 * Invoice number corresponding to transaction details for
-	 * tracking the refund of a payment. This parameter is passed by
-	 * the merchant or recipient while refunding the transaction.
-	 * This parameter does not affect the business logic, it is
-	 * persisted in the DB for transaction reference
+Invoice number corresponding to transaction details for tracking the refund of a payment. This parameter is passed by the merchant or recipient while refunding the transaction. This parameter does not affect the business logic, it is persisted in the DB for transaction reference
 	 * Optional
 	 *
 	 * @access public
@@ -18235,7 +17683,7 @@ class RefundTransactionRequestType extends AbstractRequestType {
 	public $InvoiceID;
 
 	/**
-	 * Type of refund you are making
+Type of refund you are making
 	 * Required
 	 *
 	 * @access public
@@ -18244,10 +17692,8 @@ class RefundTransactionRequestType extends AbstractRequestType {
 	public $RefundType;
 
 	/**
-	 * Refund amount.
-	 * Amount is
-	 * required
-	 * if RefundType is Partial.
+Refund amount. 
+	 * Amount is required  if RefundType is Partial.
 	 * NOTE: If RefundType is Full, do not set Amount.
 	 *
 	 * @access public
@@ -18256,10 +17702,9 @@ class RefundTransactionRequestType extends AbstractRequestType {
 	public $Amount;
 
 	/**
-	 * Custom memo about the refund.
+Custom memo about the refund. 
 	 * Optional
-	 * Character length and limitations: 255 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 255 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -18267,7 +17712,7 @@ class RefundTransactionRequestType extends AbstractRequestType {
 	public $Memo;
 
 	/**
-	 * The maximum time till which refund must be tried.
+The maximum time till which refund must be tried.
 	 * Optional
 	 *
 	 * @access public
@@ -18276,13 +17721,39 @@ class RefundTransactionRequestType extends AbstractRequestType {
 	public $RetryUntil;
 
 	/**
-	 * The type of funding source for refund.
+The type of funding source for refund.
 	 * Optional
 	 *
 	 * @access public
 	 * @var RefundSourceCodeType
 	 */
 	public $RefundSource;
+
+	/**
+Flag to indicate that the customer was already given store credit for a given transaction. This will allow us to make sure we do not double refund.
+	 * Optional
+	 *
+	 * @access public
+	 * @var boolean
+	 */
+	public $RefundAdvice;
+
+	/**
+To pass the Merchant store informationOptional
+	 *
+	 * @access public
+	 * @var MerchantStoreDetailsType
+	 */
+	public $MerchantStoreDetails;
+
+	/**
+Information about the individual details of the items to be refunded.Optional
+	 *
+	 * array
+	 * @access public
+	 * @var InvoiceItemType
+	 */
+	public $RefundItemDetails;
 
 
 	public function toXMLString()  {
@@ -18311,6 +17782,21 @@ $str.=parent::toXMLString();
 		if($this->RefundSource != null ) {
 			$str .= '<urn:RefundSource>'.$this->RefundSource.'</urn:RefundSource>';
 		 }
+		if($this->RefundAdvice != null ) {
+			$str .= '<urn:RefundAdvice>'.$this->RefundAdvice.'</urn:RefundAdvice>';
+		 }
+		if($this->MerchantStoreDetails != null ) {
+			$str .='<ebl:MerchantStoreDetails>';
+			$str .= $this->MerchantStoreDetails->toXMLString();
+			$str .=  '</ebl:MerchantStoreDetails>';
+		 }
+		if($this->RefundItemDetails != null ) {
+		for($i=0; $i<count($this->RefundItemDetails);$i++) {
+			$str .= '<ebl:RefundItemDetails>';
+			$str .= $this->RefundItemDetails[$i]->toXMLString();
+			$str .=  '</ebl:RefundItemDetails>';
+		 }
+		 }
 
 		return $str;
 	}
@@ -18319,12 +17805,12 @@ $str.=parent::toXMLString();
 
 /**
  * RefundTransactionResponseType
- * Unique transaction ID of the refund.
+ * Unique transaction ID of the refund. 
  * Character length and limitations:17 single-byte characters
  */
 class RefundTransactionResponseType extends AbstractResponseType {
 	/**
-	 * Unique transaction ID of the refund.
+Unique transaction ID of the refund. 
 	 * Character length and limitations:17 single-byte characters
 	 *
 	 * @access public
@@ -18333,8 +17819,7 @@ class RefundTransactionResponseType extends AbstractResponseType {
 	public $RefundTransactionID;
 
 	/**
-Amount subtracted from PayPal balance of
-	 * original recipient of payment to make this refund
+Amount subtracted from PayPal balance of original recipient of payment to make this refund 
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -18342,8 +17827,7 @@ Amount subtracted from PayPal balance of
 	public $NetRefundAmount;
 
 	/**
-Transaction fee refunded to original recipient
-	 * of payment 
+Transaction fee refunded to original recipient of payment 
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -18351,8 +17835,7 @@ Transaction fee refunded to original recipient
 	public $FeeRefundAmount;
 
 	/**
-Amount of money refunded to original payer
-	 *
+Amount of money refunded to original payer 	 *
 	 * @access public
 	 * @var BasicAmountType
 	 */
@@ -18365,6 +17848,20 @@ Total of all previous refunds	 *
 	 */
 	public $TotalRefundedAmount;
 
+	/**
+Contains Refund Payment status information.	 *
+	 * @access public
+	 * @var RefundInfoType
+	 */
+	public $RefundInfo;
+
+	/**
+Any general information like offer details that is reinstated or any other marketing data	 *
+	 * @access public
+	 * @var string
+	 */
+	public $ReceiptData;
+
 
 	public function init($arr = null) {
 		if($arr != null) {
@@ -18372,61 +17869,38 @@ Total of all previous refunds	 *
 			if($arry != null && isset($arry['text']) && $arry['name']=='refundtransactionid') {
 				$this->RefundTransactionID = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="netrefundamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->NetRefundAmount = new BasicAmountType();
-				$this->NetRefundAmount->init($atr);
+				$this->NetRefundAmount->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="feerefundamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->FeeRefundAmount = new BasicAmountType();
-				$this->FeeRefundAmount->init($atr);
+				$this->FeeRefundAmount->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="grossrefundamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->GrossRefundAmount = new BasicAmountType();
-				$this->GrossRefundAmount->init($atr);
+				$this->GrossRefundAmount->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="totalrefundedamount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->TotalRefundedAmount = new BasicAmountType();
-				$this->TotalRefundedAmount->init($atr);
+				$this->TotalRefundedAmount->init($arry["children"]);
 					}
+			}
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="refundinfo") {
+				$this->RefundInfo = new RefundInfoType();
+				$this->RefundInfo->init($arry["children"]);
+					}
+			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='receiptdata') {
+				$this->ReceiptData = $arry["text"];
 			}
 		}
 		}
@@ -18677,23 +18151,17 @@ $str.='</urn:GetTransactionDetailsReq>';
 
 /**
  * GetTransactionDetailsRequestType
- * Unique identifier of a transaction.
+Unique identifier of a transaction. 
  * Required
- * The details for some kinds of transactions cannot be retrieved
- * with GetTransactionDetailsRequest. You cannot obtain details
- * of bank transfer withdrawals, for example.
- * Character length and limitations: 17 single-byte alphanumeric
- * characters
+ * The details for some kinds of transactions cannot be retrieved with GetTransactionDetailsRequest. You cannot obtain details of bank transfer withdrawals, for example. 
+ * Character length and limitations: 17 single-byte alphanumeric characters
  */
 class GetTransactionDetailsRequestType extends AbstractRequestType {
 	/**
-	 * Unique identifier of a transaction.
+Unique identifier of a transaction. 
 	 * Required
-	 * The details for some kinds of transactions cannot be retrieved
-	 * with GetTransactionDetailsRequest. You cannot obtain details
-	 * of bank transfer withdrawals, for example.
-	 * Character length and limitations: 17 single-byte alphanumeric
-	 * characters
+	 * The details for some kinds of transactions cannot be retrieved with GetTransactionDetailsRequest. You cannot obtain details of bank transfer withdrawals, for example. 
+	 * Character length and limitations: 17 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -18778,8 +18246,7 @@ $str.='</urn:BillUserReq>';
 
 /**
  * BillUserRequestType
- * This flag indicates that the response should
- * include FMFDetails
+ * This flag indicates that the response should include FMFDetails
  */
 class BillUserRequestType extends AbstractRequestType {
 	/**
@@ -18789,8 +18256,7 @@ class BillUserRequestType extends AbstractRequestType {
 	public $MerchantPullPaymentDetails;
 
 	/**
-This flag indicates that the response should
-	 * include FMFDetails	 *
+This flag indicates that the response should include FMFDetails	 *
 	 * @access public
 	 * @var int
 	 */
@@ -18879,14 +18345,12 @@ $str.='</urn:TransactionSearchReq>';
 
 /**
  * TransactionSearchRequestType
- * The earliest transaction date at which to start the search. No
- * wildcards are allowed.
+The earliest transaction date at which to start the search. No wildcards are allowed. 
  * Required
  */
 class TransactionSearchRequestType extends AbstractRequestType {
 	/**
-	 * The earliest transaction date at which to start the search. No
-	 * wildcards are allowed.
+The earliest transaction date at which to start the search. No wildcards are allowed. 
 	 * Required
 	 *
 	 * @access public
@@ -18895,7 +18359,7 @@ class TransactionSearchRequestType extends AbstractRequestType {
 	public $StartDate;
 
 	/**
-	 * The latest transaction date to be included in the search
+The latest transaction date to be included in the search 
 	 * Optional
 	 *
 	 * @access public
@@ -18904,10 +18368,9 @@ class TransactionSearchRequestType extends AbstractRequestType {
 	public $EndDate;
 
 	/**
-	 * Search by the buyer's email address
+Search by the buyer's email address 
 	 * Optional
-	 * Character length and limitations: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -18915,9 +18378,7 @@ class TransactionSearchRequestType extends AbstractRequestType {
 	public $Payer;
 
 	/**
-	 * Search by the receiver's email address. If the merchant
-	 * account has only one email, this is the primary email. Can
-	 * also be a non-primary email.
+Search by the receiver's email address. If the merchant account has only one email, this is the primary email. Can also be a non-primary email.
 	 * Optional
 	 *
 	 * @access public
@@ -18926,7 +18387,7 @@ class TransactionSearchRequestType extends AbstractRequestType {
 	public $Receiver;
 
 	/**
-	 * Search by the PayPal Account Optional receipt ID
+Search by the PayPal Account Optional receipt ID
 	 * Optional
 	 *
 	 * @access public
@@ -18935,12 +18396,10 @@ class TransactionSearchRequestType extends AbstractRequestType {
 	public $ReceiptID;
 
 	/**
-	 * Search by the transaction ID.
+Search by the transaction ID. 
 	 * Optional
-	 * The returned results are from the merchant's transaction
-	 * records.
-	 * Character length and limitations: 19 single-byte characters
-	 * maximum
+	 * The returned results are from the merchant's transaction records. 
+	 * Character length and limitations: 19 single-byte characters maximum
 	 *
 	 * @access public
 	 * @var string
@@ -18948,9 +18407,7 @@ class TransactionSearchRequestType extends AbstractRequestType {
 	public $TransactionID;
 
 	/**
-	 * Search by Recurring Payment Profile id. The ProfileID is
-	 * returned as part of the CreateRecurringPaymentsProfile API
-	 * response.
+Search by Recurring Payment Profile id.  The ProfileID is returned as part of the CreateRecurringPaymentsProfile API response. 
 	 * Optional
 	 *
 	 * @access public
@@ -18959,7 +18416,7 @@ class TransactionSearchRequestType extends AbstractRequestType {
 	public $ProfileID;
 
 	/**
-	 * Search by the buyer's name
+Search by the buyer's name 
 	 * Optional
 	 * Salutation: 20 single-byte character limit.
 	 * FirstName: 25 single-byte character limit.
@@ -18973,28 +18430,19 @@ class TransactionSearchRequestType extends AbstractRequestType {
 	public $PayerName;
 
 	/**
-	 * Search by item number of the purchased goods.
+Search by item number of the purchased goods.
 	 * Optional
-	 * To search for purchased items not related to auctions, set the
-	 * AuctionItemNumber element to the value of the HTML item_number
-	 * variable set in the shopping cart for the original
-	 * transaction.
-	 *
+	 * To search for purchased items not related to auctions, set the AuctionItemNumber element to the value of the HTML item_number variable set in the shopping cart for the original transaction.	 *
 	 * @access public
 	 * @var string
 	 */
 	public $AuctionItemNumber;
 
 	/**
-	 * Search by invoice identification key, as set by you for the
-	 * original transaction. InvoiceID searches the invoice records
-	 * for items sold by the merchant, not the items purchased.
+Search by invoice identification key, as set by you for the original transaction. InvoiceID searches the invoice records for items sold by the merchant, not the items purchased. 
 	 * Optional
-	 * The value for InvoiceID must exactly match an invoice
-	 * identification number. No wildcards are allowed.
-	 * Character length and limitations: 127 single-byte characters
-	 * maximum
-	 *
+	 * The value for InvoiceID must exactly match an invoice identification number. No wildcards are allowed. 
+	 * Character length and limitations: 127 single-byte characters maximum	 *
 	 * @access public
 	 * @var string
 	 */
@@ -19007,10 +18455,7 @@ class TransactionSearchRequestType extends AbstractRequestType {
 	public $CardNumber;
 
 	/**
-	 * Search by classification of transaction. Some kinds of
-	 * possible classes of transactions are not searchable with
-	 * TransactionSearchRequest. You cannot search for bank transfer
-	 * withdrawals, for example.
+	 * Search by classification of transaction. Some kinds of possible classes of transactions are not searchable with TransactionSearchRequest. You cannot search for bank transfer withdrawals, for example. 
 	 * Optional
 	 * All: all transaction classifications.
 	 * Sent: only payments sent.
@@ -19025,14 +18470,11 @@ class TransactionSearchRequestType extends AbstractRequestType {
 	 * Dividend: only transactions involving dividends.
 	 * Billpay: only transactions involving BillPay Transactions.
 	 * Refund: only transactions involving funds.
-	 * CurrencyConversions: only transactions involving currency
-	 * conversions.
-	 * BalanceTransfer: only transactions involving balance
-	 * transfers.
+	 * CurrencyConversions: only transactions involving currency conversions.
+	 * BalanceTransfer: only transactions involving balance transfers.
 	 * Reversal: only transactions involving BillPay reversals.
 	 * Shipping: only transactions involving UPS shipping fees.
-	 * BalanceAffecting: only transactions that affect the account
-	 * balance.
+	 * BalanceAffecting: only transactions that affect the account balance.
 	 * ECheck: only transactions involving eCheck
 	 *
 	 * @access public
@@ -19041,19 +18483,16 @@ class TransactionSearchRequestType extends AbstractRequestType {
 	public $TransactionClass;
 
 	/**
-	 * Search by transaction amount
+Search by transaction amount 
 	 * Optional
-	 * You must set the currencyID attribute to one of the
-	 * three-character currency codes for any of the supported PayPal
-	 * currencies.
-	 *
+	 * You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. 	 *
 	 * @access public
 	 * @var BasicAmountType
 	 */
 	public $Amount;
 
 	/**
-	 * Search by currency code
+Search by currency code
 	 * Optional
 	 *
 	 * @access public
@@ -19062,20 +18501,13 @@ class TransactionSearchRequestType extends AbstractRequestType {
 	public $CurrencyCode;
 
 	/**
-	 * Search by transaction status
+Search by transaction status 
 	 * Optional
-	 * Pending: The payment is pending. The specific reason the
-	 * payment is pending is returned by the GetTransactionDetails
-	 * APIPendingReason element. For more information, see
-	 * PendingReason.
+	 * Pending: The payment is pending. The specific reason the payment is pending is returned by the GetTransactionDetails APIPendingReason element. For more information, see PendingReason.
 	 * Processing: The payment is being processed.
-	 * Success: The payment has been completed and the funds have
-	 * been added successfully to your account balance.
-	 * Denied: You denied the payment. This happens only if the
-	 * payment was previously pending.
-	 * Reversed: A payment was reversed due to a chargeback or other
-	 * type of reversal. The funds have been removed from your
-	 * account balance and returned to the buyer.
+	 * Success: The payment has been completed and the funds have been added successfully to your account balance.
+	 * Denied: You denied the payment. This happens only if the payment was previously pending.
+	 * Reversed: A payment was reversed due to a chargeback or other type of reversal. The funds have been removed from your account balance and returned to the buyer.
 	 *
 	 * @access public
 	 * @var PaymentTransactionStatusCodeType
@@ -19147,8 +18579,7 @@ $str.=parent::toXMLString();
 
 /**
  * TransactionSearchResponseType
- * Results of a Transaction Search.
- */
+Results of a Transaction Search. */
 class TransactionSearchResponseType extends AbstractResponseType {
 	/**
 Results of a Transaction Search.	 *
@@ -19207,21 +18638,15 @@ $str.='</urn:MassPayReq>';
 
 /**
  * MassPayRequestType
- * Subject line of the email sent to all recipients. This subject
- * is not contained in the input file; you must create it with
- * your application.
+ * Subject line of the email sent to all recipients. This subject is not contained in the input file; you must create it with your application. 
  * Optional
- * Character length and limitations: 255 single-byte alphanumeric
- * characters
+ * Character length and limitations: 255 single-byte alphanumeric characters
  */
 class MassPayRequestType extends AbstractRequestType {
 	/**
-	 * Subject line of the email sent to all recipients. This subject
-	 * is not contained in the input file; you must create it with
-	 * your application.
+Subject line of the email sent to all recipients. This subject is not contained in the input file; you must create it with your application. 
 	 * Optional
-	 * Character length and limitations: 255 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 255 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -19229,12 +18654,8 @@ class MassPayRequestType extends AbstractRequestType {
 	public $EmailSubject;
 
 	/**
-	 * Indicates how you identify the recipients of payments in all
-	 * MassPayItems: either by EmailAddress (ReceiverEmail in
-	 * MassPayItem), PhoneNumber (ReceiverPhone in MassPayItem), or
-	 * by UserID (ReceiverID in MassPayItem).
-	 * Required. 
-	 * You must specify one or the other of EmailAddress or UserID.
+Indicates how you identify the recipients of payments in all MassPayItems: either by EmailAddress (ReceiverEmail in MassPayItem), PhoneNumber (ReceiverPhone in MassPayItem), or by UserID (ReceiverID in MassPayItem). 
+	 * Required. You must specify one or the other of EmailAddress or UserID.
 	 *
 	 * @access public
 	 * @var ReceiverInfoCodeType
@@ -19242,11 +18663,9 @@ class MassPayRequestType extends AbstractRequestType {
 	public $ReceiverType;
 
 	/**
-	 * Known as BN code, to track the partner referred merchant
-	 * transactions.
+Known as BN code, to track the partner referred merchant transactions. 
 	 * Optional
-	 * Character length and limitations: 32 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 32 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -19254,8 +18673,7 @@ class MassPayRequestType extends AbstractRequestType {
 	public $ButtonSource;
 
 	/**
-	 * Details of each payment. A single MassPayRequest can include
-	 * up to 250 MassPayItems.
+Details of each payment. A single MassPayRequest can include up to 250 MassPayItems. 
 	 * Required
 	 *
 	 * array
@@ -19313,13 +18731,10 @@ class MassPayResponseType extends AbstractResponseType {
  */
 class MassPayRequestItemType {
 	/**
-	 * Email address of recipient.
+Email address of recipient. 
 	 * Required
-	 * You must specify ReceiverEmail, ReceiverPhone, or ReceiverID,
-	 * but all MassPayItems in a request must use the same field to
-	 * specify recipients.
-	 * Character length and limitations: 127 single-byte characters
-	 * maximum.
+	 * You must specify ReceiverEmail, ReceiverPhone, or ReceiverID, but all MassPayItems in a request must use the same field to specify recipients.
+	 * Character length and limitations: 127 single-byte characters maximum.
 	 *
 	 * @access public
 	 * @var string
@@ -19327,11 +18742,9 @@ class MassPayRequestItemType {
 	public $ReceiverEmail;
 
 	/**
-	 * Phone number of recipient.
+Phone number of recipient. 
 	 * Required
-	 * You must specify ReceiverEmail, ReceiverPhone, or ReceiverID,
-	 * but all MassPayItems in a request must use the same field to
-	 * specify recipients.
+	 * You must specify ReceiverEmail, ReceiverPhone, or ReceiverID, but all MassPayItems in a request must use the same field to specify recipients.
 	 *
 	 * @access public
 	 * @var string
@@ -19339,14 +18752,10 @@ class MassPayRequestItemType {
 	public $ReceiverPhone;
 
 	/**
-	 * Unique PayPal customer account number. This value corresponds to
-	 * the value of PayerID returned by GetTransactionDetails.
+Unique PayPal customer account number. This value corresponds to the value of PayerID returned by GetTransactionDetails. 
 	 * Required
-	 * You must specify ReceiverEmail, ReceiverPhone, or ReceiverID,
-	 * but all MassPayItems in a request must use the same field to
-	 * specify recipients.
-	 * Character length and limitations: 17 single-byte characters
-	 * maximum.
+	 * You must specify ReceiverEmail, ReceiverPhone, or ReceiverID, but all MassPayItems in a request must use the same field to specify recipients.
+	 * Character length and limitations: 17 single-byte characters maximum.
 	 *
 	 * @access public
 	 * @var string
@@ -19354,12 +18763,9 @@ class MassPayRequestItemType {
 	public $ReceiverID;
 
 	/**
-	 * Payment amount. You must set the currencyID attribute to one of
-	 * the three-character currency codes for any of the supported
-	 * PayPal currencies.
+Payment amount. You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. 
 	 * Required
-	 * You cannot mix currencies in a single MassPayRequest. A single
-	 * request must include items that are of the same currency.
+	 * You cannot mix currencies in a single MassPayRequest. A single request must include items that are of the same currency.
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -19367,11 +18773,9 @@ class MassPayRequestItemType {
 	public $Amount;
 
 	/**
-	 * Transaction-specific identification number for tracking in an
-	 * accounting system.
+Transaction-specific identification number for tracking in an accounting system. 
 	 * Optional
-	 * Character length and limitations: 30 single-byte characters. No
-	 * whitespace allowed.
+	 * Character length and limitations: 30 single-byte characters. No whitespace allowed.
 	 *
 	 * @access public
 	 * @var string
@@ -19379,10 +18783,9 @@ class MassPayRequestItemType {
 	public $UniqueId;
 
 	/**
-	 * Custom note for each recipient.
+Custom note for each recipient. 
 	 * Optional
-	 * Character length and limitations: 4,000 single-byte alphanumeric
-	 * characters
+	 * Character length and limitations: 4,000 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -19559,17 +18962,15 @@ $str.='</urn:AddressVerifyReq>';
 
 /**
  * AddressVerifyRequestType
- * Email address of buyer to be verified.
+ * Email address of buyer to be verified. 
  * Required
- * Maximum string length: 255 single-byte characters Input mask:
- * ?@?.??
+ * Maximum string length: 255 single-byte characters Input mask: ?@?.??
  */
 class AddressVerifyRequestType extends AbstractRequestType {
 	/**
-	 * Email address of buyer to be verified.
+Email address of buyer to be verified. 
 	 * Required
-	 * Maximum string length: 255 single-byte characters Input mask:
-	 * ?@?.??
+	 * Maximum string length: 255 single-byte characters Input mask: ?@?.??
 	 *
 	 * @access public
 	 * @var string
@@ -19577,15 +18978,10 @@ class AddressVerifyRequestType extends AbstractRequestType {
 	public $Email;
 
 	/**
-	 * First line of buyerâ€™s billing or shipping street address to be
-	 * verified.
+First line of buyerâ€™s billing or shipping street address to be verified. 
 	 * Required
-	 * For verification, input value of street address must match the
-	 * first three single-byte characters of the street address on
-	 * file for the PayPal account.
-	 * Maximum string length: 35 single-byte characters Alphanumeric
-	 * plus - , . â€˜ # \ Whitespace and case of input value are
-	 * ignored.
+	 * For verification, input value of street address must match the first three single-byte characters of the street address on file for the PayPal account.
+	 * Maximum string length: 35 single-byte characters Alphanumeric plus - , . â€˜ # \ Whitespace and case of input value are ignored.
 	 *
 	 * @access public
 	 * @var string
@@ -19593,13 +18989,10 @@ class AddressVerifyRequestType extends AbstractRequestType {
 	public $Street;
 
 	/**
-	 * Postal code to be verified.
+Postal code to be verified. 
 	 * Required
-	 * For verification, input value of postal code must match the
-	 * first five single-byte characters of the postal code on file
-	 * for the PayPal account.
-	 * Maximum string length: 16 single-byte characters Whitespace
-	 * and case of input value are ignored.
+	 * For verification, input value of postal code must match the first five single-byte characters of the postal code on file for the PayPal account.
+	 * Maximum string length: 16 single-byte characters Whitespace and case of input value are ignored.
 	 *
 	 * @access public
 	 * @var string
@@ -19634,39 +19027,26 @@ $str.=parent::toXMLString();
 /**
  * AddressVerifyResponseType
  * Confirmation of a match, with one of the following tokens:
- * None: The input value of the Email object does not match any
- * email address on file at PayPal.
- * Confirmed: If the value of the StreetMatch object is Matched,
- * PayPal responds that the entire postal address is confirmed.
- * Unconfirmed: PayPal responds that the postal address is
- * unconfirmed
+ * None: The input value of the Email object does not match any email address on file at PayPal.
+ * Confirmed: If the value of the StreetMatch object is Matched, PayPal responds that the entire postal address is confirmed.
+ * Unconfirmed: PayPal responds that the postal address is unconfirmed
  */
 class AddressVerifyResponseType extends AbstractResponseType {
 	/**
-	 * Confirmation of a match, with one of the following tokens:
-	 * None: The input value of the Email object does not match any
-	 * email address on file at PayPal.
-	 * Confirmed: If the value of the StreetMatch object is Matched,
-	 * PayPal responds that the entire postal address is confirmed.
-	 * Unconfirmed: PayPal responds that the postal address is
-	 * unconfirmed
-	 *
+Confirmation of a match, with one of the following tokens:
+	 * None: The input value of the Email object does not match any email address on file at PayPal.
+	 * Confirmed: If the value of the StreetMatch object is Matched, PayPal responds that the entire postal address is confirmed.
+	 * Unconfirmed: PayPal responds that the postal address is unconfirmed	 *
 	 * @access public
 	 * @var AddressStatusCodeType
 	 */
 	public $ConfirmationCode;
 
 	/**
-	 * PayPal has compared the postal address you want to verify with
-	 * the postal address on file at PayPal.
-	 * None: The input value of the Email object does not match any
-	 * email address on file at PayPal. In addition, an error
-	 * response is returned. No further comparison of other input
-	 * values has been made.
-	 * Matched: The street address matches the street address on file
-	 * at PayPal.
-	 * Unmatched: The street address does not match the street
-	 * address on file at PayPal.
+PayPal has compared the postal address you want to verify with the postal address on file at PayPal.
+	 * None: The input value of the Email object does not match any email address on file at PayPal. In addition, an error response is returned. No further comparison of other input values has been made.
+	 * Matched: The street address matches the street address on file at PayPal.
+	 * Unmatched: The street address does not match the street address on file at PayPal. 
 	 *
 	 * @access public
 	 * @var MatchStatusCodeType
@@ -19674,13 +19054,10 @@ class AddressVerifyResponseType extends AbstractResponseType {
 	public $StreetMatch;
 
 	/**
-	 * PayPal has compared the zip code you want to verify with the
-	 * zip code on file for the email address.
-	 * None: The street address was unmatched. No further comparison
-	 * of other input values has been made.
+PayPal has compared the zip code you want to verify with the zip code on file for the email address. 
+	 * None: The street address was unmatched. No further comparison of other input values has been made.
 	 * Matched: The zip code matches the zip code on file at PayPal.
-	 * Unmatched: The zip code does not match the zip code on file at
-	 * PayPal.
+	 * Unmatched: The zip code does not match the zip code on file at PayPal. 
 	 *
 	 * @access public
 	 * @var MatchStatusCodeType
@@ -19688,23 +19065,14 @@ class AddressVerifyResponseType extends AbstractResponseType {
 	public $ZipMatch;
 
 	/**
-Two-character country code (ISO 3166) on file
-	 * for the PayPal email address. 	 *
+Two-character country code (ISO 3166) on file for the PayPal email address. 	 *
 	 * @access public
 	 * @var CountryCodeType
 	 */
 	public $CountryCode;
 
 	/**
-	 * The token prevents a buyer from using any street address other
-	 * than the address on file at PayPal during additional purchases
-	 * he might make from the merchant. It contains encrypted
-	 * information about the userâ€™s street address and email address.
-	 * You can pass the value of the token with the Buy Now button
-	 * HTML address_api_token variable so that PayPal prevents the
-	 * buyer from using any street address or email address other
-	 * than those verified by PayPal. The token is valid for 24
-	 * hours.
+The token prevents a buyer from using any street address other than the address on file at PayPal during additional purchases he might make from the merchant. It contains encrypted information about the userâ€™s street address and email address. You can pass the value of the token with the Buy Now button HTML address_api_token variable so that PayPal prevents the buyer from using any street address or email address other than those verified by PayPal. The token is valid for 24 hours. 
 	 * Character length and limitations: 94 single-byte characters
 	 *
 	 * @access public
@@ -19789,22 +19157,16 @@ $str.=parent::toXMLString();
 
 /**
  * EnterBoardingResponseType
- * A unique token that identifies this boarding session.
- * Use this
- * token with the GetBoarding Details API call.
- * Character length and limitations: 64 alphanumeric characters.
- * The token has the following format:
- * OB-61characterstring
- */
+ * A unique token that identifies this boarding session. 
+Use this token with the GetBoarding Details API call.
+ * Character length and limitations: 64 alphanumeric characters. The token has the following format:
+ * OB-61characterstring */
 class EnterBoardingResponseType extends AbstractResponseType {
 	/**
-	 * A unique token that identifies this boarding session.
-	 * Use this
-	 * token with the GetBoarding Details API call.
-	 * Character length and limitations: 64 alphanumeric characters.
-	 * The token has the following format:
-	 * OB-61characterstring
-	 *
+	 * A unique token that identifies this boarding session. 
+Use this token with the GetBoarding Details API call.
+	 * Character length and limitations: 64 alphanumeric characters. The token has the following format:
+	 * OB-61characterstring	 *
 	 * @access public
 	 * @var string
 	 */
@@ -19850,22 +19212,16 @@ $str.='</urn:GetBoardingDetailsReq>';
 
 /**
  * GetBoardingDetailsRequestType
- * A unique token returned by the EnterBoarding API call that
- * identifies this boarding session.
+ * A unique token returned by the EnterBoarding API call that identifies this boarding session. 
  * Required
- * Character length and limitations: 64 alphanumeric characters.
- * The token has the following format:
- * OB-61characterstring
- */
+ * Character length and limitations: 64 alphanumeric characters. The token has the following format:
+ * OB-61characterstring */
 class GetBoardingDetailsRequestType extends AbstractRequestType {
 	/**
-	 * A unique token returned by the EnterBoarding API call that
-	 * identifies this boarding session.
+	 * A unique token returned by the EnterBoarding API call that identifies this boarding session. 
 	 * Required
-	 * Character length and limitations: 64 alphanumeric characters.
-	 * The token has the following format:
-	 * OB-61characterstring
-	 *
+	 * Character length and limitations: 64 alphanumeric characters. The token has the following format:
+	 * OB-61characterstring	 *
 	 * @access public
 	 * @var string
 	 */
@@ -19970,14 +19326,12 @@ $str.=parent::toXMLString();
 
 /**
  * SetAuthFlowParamResponseType
- * A timestamped token by which you identify to PayPal that you
- * are processing this user. The token expires after three hours.
+A timestamped token by which you identify to PayPal that you are processing this user. The token expires after three hours.
  * Character length and limitations: 20 single-byte characters
  */
 class SetAuthFlowParamResponseType extends AbstractResponseType {
 	/**
-	 * A timestamped token by which you identify to PayPal that you
-	 * are processing this user. The token expires after three hours.
+A timestamped token by which you identify to PayPal that you are processing this user. The token expires after three hours.
 	 * Character length and limitations: 20 single-byte characters
 	 *
 	 * @access public
@@ -20025,15 +19379,13 @@ $str.='</urn:GetAuthDetailsReq>';
 
 /**
  * GetAuthDetailsRequestType
- * A timestamped token, the value of which was returned by
- * SetAuthFlowParam Response.
+A timestamped token, the value of which was returned by SetAuthFlowParam Response. 
  * Required
  * Character length and limitations: 20 single-byte characters
  */
 class GetAuthDetailsRequestType extends AbstractRequestType {
 	/**
-	 * A timestamped token, the value of which was returned by
-	 * SetAuthFlowParam Response.
+A timestamped token, the value of which was returned by SetAuthFlowParam Response. 
 	 * Required
 	 * Character length and limitations: 20 single-byte characters
 	 *
@@ -20141,14 +19493,12 @@ $str.=parent::toXMLString();
 
 /**
  * SetAccessPermissionsResponseType
- * A timestamped token by which you identify to PayPal that you
- * are processing this user. The token expires after three hours.
+A timestamped token by which you identify to PayPal that you are processing this user. The token expires after three hours.
  * Character length and limitations: 20 single-byte characters
  */
 class SetAccessPermissionsResponseType extends AbstractResponseType {
 	/**
-	 * A timestamped token by which you identify to PayPal that you
-	 * are processing this user. The token expires after three hours.
+A timestamped token by which you identify to PayPal that you are processing this user. The token expires after three hours.
 	 * Character length and limitations: 20 single-byte characters
 	 *
 	 * @access public
@@ -20196,15 +19546,13 @@ $str.='</urn:UpdateAccessPermissionsReq>';
 
 /**
  * UpdateAccessPermissionsRequestType
- * Unique PayPal customer account number, the value of which was
- * returned by GetAuthDetails Response.
+ * Unique PayPal customer account number, the value of which was returned by GetAuthDetails Response.
  * Required
  * Character length and limitations: 20 single-byte characters
  */
 class UpdateAccessPermissionsRequestType extends AbstractRequestType {
 	/**
-	 * Unique PayPal customer account number, the value of which was
-	 * returned by GetAuthDetails Response.
+Unique PayPal customer account number, the value of which was returned by GetAuthDetails Response.
 	 * Required
 	 * Character length and limitations: 20 single-byte characters
 	 *
@@ -20237,7 +19585,7 @@ $str.=parent::toXMLString();
  */
 class UpdateAccessPermissionsResponseType extends AbstractResponseType {
 	/**
-	 * The status of the update call, Success/Failure.
+The status of the update call, Success/Failure.
 	 * Character length and limitations: 20 single-byte characters
 	 *
 	 * @access public
@@ -20285,15 +19633,13 @@ $str.='</urn:GetAccessPermissionDetailsReq>';
 
 /**
  * GetAccessPermissionDetailsRequestType
- * A timestamped token, the value of which was returned by
- * SetAuthFlowParam Response.
+A timestamped token, the value of which was returned by SetAuthFlowParam Response. 
  * Required
  * Character length and limitations: 20 single-byte characters
  */
 class GetAccessPermissionDetailsRequestType extends AbstractRequestType {
 	/**
-	 * A timestamped token, the value of which was returned by
-	 * SetAuthFlowParam Response.
+A timestamped token, the value of which was returned by SetAuthFlowParam Response. 
 	 * Required
 	 * Character length and limitations: 20 single-byte characters
 	 *
@@ -20481,20 +19827,12 @@ $str.=parent::toXMLString();
 
 /**
  * SetExpressCheckoutResponseType
- * A timestamped token by which you identify to PayPal that you
- * are processing this payment with Express Checkout. The token
- * expires after three hours. If you set Token in the
- * SetExpressCheckoutRequest, the value of Token in the response
- * is identical to the value in the request.
+A timestamped token by which you identify to PayPal that you are processing this payment with Express Checkout. The token expires after three hours. If you set Token in the SetExpressCheckoutRequest, the value of Token in the response is identical to the value in the request. 
  * Character length and limitations: 20 single-byte characters
  */
 class SetExpressCheckoutResponseType extends AbstractResponseType {
 	/**
-	 * A timestamped token by which you identify to PayPal that you
-	 * are processing this payment with Express Checkout. The token
-	 * expires after three hours. If you set Token in the
-	 * SetExpressCheckoutRequest, the value of Token in the response
-	 * is identical to the value in the request.
+A timestamped token by which you identify to PayPal that you are processing this payment with Express Checkout. The token expires after three hours. If you set Token in the SetExpressCheckoutRequest, the value of Token in the response is identical to the value in the request. 
 	 * Character length and limitations: 20 single-byte characters
 	 *
 	 * @access public
@@ -20622,15 +19960,13 @@ $str.='</urn:GetExpressCheckoutDetailsReq>';
 
 /**
  * GetExpressCheckoutDetailsRequestType
- * A timestamped token, the value of which was returned by
- * SetExpressCheckoutResponse.
+A timestamped token, the value of which was returned by SetExpressCheckoutResponse. 
  * Required
  * Character length and limitations: 20 single-byte characters
  */
 class GetExpressCheckoutDetailsRequestType extends AbstractRequestType {
 	/**
-	 * A timestamped token, the value of which was returned by
-	 * SetExpressCheckoutResponse.
+A timestamped token, the value of which was returned by SetExpressCheckoutResponse. 
 	 * Required
 	 * Character length and limitations: 20 single-byte characters
 	 *
@@ -20709,8 +20045,7 @@ $str.='</urn:DoExpressCheckoutPaymentReq>';
 
 /**
  * DoExpressCheckoutPaymentRequestType
- * This flag indicates that the response should
- * include FMFDetails
+ * This flag indicates that the response should include FMFDetails
  */
 class DoExpressCheckoutPaymentRequestType extends AbstractRequestType {
 	/**
@@ -20720,8 +20055,7 @@ class DoExpressCheckoutPaymentRequestType extends AbstractRequestType {
 	public $DoExpressCheckoutPaymentRequestDetails;
 
 	/**
-This flag indicates that the response should
-	 * include FMFDetails	 *
+This flag indicates that the response should include FMFDetails	 *
 	 * @access public
 	 * @var int
 	 */
@@ -20973,8 +20307,7 @@ $str.='</urn:DoDirectPaymentReq>';
 
 /**
  * DoDirectPaymentRequestType
- * This flag indicates that the response should
- * include FMFDetails
+ * This flag indicates that the response should include FMFDetails
  */
 class DoDirectPaymentRequestType extends AbstractRequestType {
 	/**
@@ -20984,8 +20317,7 @@ class DoDirectPaymentRequestType extends AbstractRequestType {
 	public $DoDirectPaymentRequestDetails;
 
 	/**
-This flag indicates that the response should
-	 * include FMFDetails	 *
+This flag indicates that the response should include FMFDetails	 *
 	 * @access public
 	 * @var int
 	 */
@@ -21015,77 +20347,36 @@ $str.=parent::toXMLString();
 
 /**
  * DoDirectPaymentResponseType
- * The amount of the payment as specified by you on
- * DoDirectPaymentRequest.
- */
+ * The amount of the payment as specified by you on DoDirectPaymentRequest. */
 class DoDirectPaymentResponseType extends AbstractResponseType {
 	/**
-	 * The amount of the payment as specified by you on
-	 * DoDirectPaymentRequest.	 *
+	 * The amount of the payment as specified by you on DoDirectPaymentRequest.	 *
 	 * @access public
 	 * @var BasicAmountType
 	 */
 	public $Amount;
 
 	/**
-	 * Address Verification System response code. Character limit:
-	 * One single-byte alphanumeric character
-	 * AVS Code
-	 * Meaning
-	 * Matched Details
-	 * A 
-	 * Address
-	 * Address only (no ZIP) 
-	 * B 
-	 * International â€œAâ€�
-	 * Address only (no ZIP)
-	 * C
-	 * International â€œNâ€�
-	 * None 
-	 * D
-	 * International â€œXâ€� 
-	 * Address and Postal Code
-	 * E 
-	 * Not allowed for MOTO (Internet/Phone) transactions 
-	 * Not applicable
-	 * F 
-	 * UK-specific â€œXâ€�
-	 * Address and Postal Code 
-	 * G 
-	 * Global Unavailable
-	 * Not applicable 
-	 * I 
-	 * International Unavailable
-	 * Not applicable 
-	 * N 
-	 * No
-	 * None
-	 * P
-	 * Postal (International â€œZâ€�)
-	 * Postal Code only (no Address) 
-	 * R
-	 * Retry
-	 * Not applicable
-	 * S 
-	 * Service not Supported 
-	 * Not applicable 
-	 * U 
-	 * Unavailable
-	 * Not applicable 
-	 * W 
-	 * Whole ZIP
-	 * Nine-digit ZIP code (no Address) 
-	 * X 
-	 * Exact match 
-	 * Address and nine-digit ZIP code
-	 * Y 
-	 * Yes
-	 * Address and five-digit ZIP
-	 * Z 
-	 * ZIP
-	 * Five-digit ZIP code (no Address)
-	 * All others 
-	 * Error Not applicable
+	 * Address Verification System response code. Character limit: One single-byte alphanumeric character
+	 * AVS CodeMeaningMatched Details 
+A AddressAddress only (no ZIP)  
+B International â€œAâ€�Address only (no ZIP)  
+CInternational â€œNâ€� None  
+DInternational â€œXâ€� Address and Postal Code  
+E Not allowed for MOTO (Internet/Phone) transactions Not applicable 
+F UK-specific â€œXâ€�Address and Postal Code  
+G Global Unavailable Not applicable 
+I International UnavailableNot applicable  
+N NoNone  
+PPostal (International â€œZâ€�)Postal Code only (no Address)   
+RRetryNot applicable   
+S Service not Supported Not applicable 
+U UnavailableNot applicable  
+W Whole ZIPNine-digit ZIP code (no Address)  
+X Exact match Address and nine-digit ZIP code 
+Y YesAddress and five-digit ZIP  
+Z ZIP Five-digit ZIP code (no Address) 
+All others Error Not applicable
 	 *
 	 * @access public
 	 * @var string
@@ -21094,30 +20385,14 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 
 	/**
 	 * Result of the CVV2 check by PayPal.
-	 * CVV2 Code
-	 * Meaning
-	 * Matched Details
-	 * M 
-	 * Match
-	 * CVV2 
-	 * N 
-	 * No match 
-	 * None
-	 * P 
-	 * Not Processed
-	 * Not applicable
-	 * S
-	 * Service not Supported
-	 * Not applicable
-	 * U 
-	 * Unavailable
-	 * Not applicable
-	 * X
-	 * No response
-	 * Not applicable
-	 * All others 
-	 * Error
-	 * Not applicable 
+	 * CVV2 CodeMeaningMatched Details   
+M MatchCVV2  
+N No match None 
+P Not ProcessedNot applicable  
+SService not SupportedNot applicable   
+U UnavailableNot applicable  
+XNo response  Not applicable 
+All others ErrorNot applicable  
 	 *
 	 * @access public
 	 * @var string
@@ -21126,16 +20401,14 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 
 	/**
 	 * Transaction identification number.
-	 * Character length and limitations: 19 characters maximum.
-	 *
+	 * Character length and limitations: 19 characters maximum.	 *
 	 * @access public
 	 * @var string
 	 */
 	public $TransactionID;
 
 	/**
-	 * The reason why a particular transaction went in
-	 * pending.
+	 * The reason why a particular transaction went in pending.
 	 *
 	 * @access public
 	 * @var PendingStatusCodeType
@@ -21143,8 +20416,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 	public $PendingReason;
 
 	/**
-	 * This will identify the actual transaction
-	 * status.
+	 * This will identify the actual transaction status.
 	 *
 	 * @access public
 	 * @var PaymentStatusCodeType
@@ -21164,9 +20436,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 	public $ThreeDSecureResponse;
 
 	/**
-	 * Response code from the processor when a
-	 * recurring transaction is
-	 * declined.
+	 * Response code from the processor when a recurring transaction is declined.
 	 *
 	 * @access public
 	 * @var string
@@ -21177,18 +20447,10 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 	public function init($arr = null) {
 		if($arr != null) {
 			parent::init($arr);			foreach ($arr as $arry){
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="amount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($atr);
+				$this->Amount->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='avscode') {
@@ -21225,6 +20487,85 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 }
 
 /**
+ * DoCancelReq
+ */
+class DoCancelReq {
+	/**
+	 * @access public
+	 * @var DoCancelRequestType
+	 */
+	public $DoCancelRequest;
+
+
+	public function toXMLString()  {
+		$str = '';
+$str.='<urn:DoCancelReq>';
+		if($this->DoCancelRequest != null ) {
+			$str .='<urn:DoCancelRequest>';
+			$str .= $this->DoCancelRequest->toXMLString();
+			$str .=  '</urn:DoCancelRequest>';
+		 }
+$str.='</urn:DoCancelReq>';
+
+		return $str;
+	}
+
+}
+
+/**
+ * DoCancelRequestType
+ * Msg Sub Id that was used for the orginal operation. 
+ */
+class DoCancelRequestType extends AbstractRequestType {
+	/**
+Msg Sub Id that was used for the orginal operation. 	 *
+	 * @access public
+	 * @var string
+	 */
+	public $CancelMsgSubID;
+
+	/**
+Original API's type	 *
+	 * @access public
+	 * @var APIType
+	 */
+	public $APIType;
+
+
+	public function __construct($CancelMsgSubID = null, $APIType = null) {
+		$this->CancelMsgSubID  = $CancelMsgSubID;
+		$this->APIType  = $APIType;
+	}
+
+	public function toXMLString()  {
+		$str = '';
+$str.=parent::toXMLString();
+		if($this->CancelMsgSubID != null ) {
+			$str .= '<urn:CancelMsgSubID>'.$this->CancelMsgSubID.'</urn:CancelMsgSubID>';
+		 }
+		if($this->APIType != null ) {
+			$str .= '<urn:APIType>'.$this->APIType.'</urn:APIType>';
+		 }
+
+		return $str;
+	}
+
+}
+
+/**
+ * DoCancelResponseType
+ */
+class DoCancelResponseType extends AbstractResponseType {
+
+	public function init($arr = null) {
+		if($arr != null) {
+			parent::init($arr);			foreach ($arr as $arry){
+		}
+		}
+	}
+}
+
+/**
  * DoCaptureReq
  */
 class DoCaptureReq {
@@ -21252,15 +20593,13 @@ $str.='</urn:DoCaptureReq>';
 
 /**
  * DoCaptureRequestType
- * The authorization identification number of the payment you
- * want to capture.
+ * The authorization identification number of the payment you want to capture. 
  * Required
  * Character length and limits: 19 single-byte characters maximum
  */
 class DoCaptureRequestType extends AbstractRequestType {
 	/**
-	 * The authorization identification number of the payment you
-	 * want to capture.
+The authorization identification number of the payment you want to capture. 
 	 * Required
 	 * Character length and limits: 19 single-byte characters maximum
 	 *
@@ -21270,12 +20609,9 @@ class DoCaptureRequestType extends AbstractRequestType {
 	public $AuthorizationID;
 
 	/**
-	 * Amount to authorize. You must set the currencyID attribute to
-	 * USD.
+Amount to authorize. You must set the currencyID attribute to USD. 
 	 * Required
-	 * Limitations: Must not exceed $10,000 USD in any currency. No
-	 * currency symbol. Decimal separator must be a period (.), and
-	 * the thousands separator must be a comma (,)
+	 * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,)
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -21283,13 +20619,9 @@ class DoCaptureRequestType extends AbstractRequestType {
 	public $Amount;
 
 	/**
-	 * Indicates if this capture is the last capture you intend to
-	 * make. The default is Complete. If CompleteType is Complete,
-	 * any remaining amount of the original reauthorized transaction
-	 * is automatically voided.
+Indicates if this capture is the last capture you intend to make. The default is Complete. If CompleteType is Complete, any remaining amount of the original reauthorized transaction is automatically voided. 
 	 * Required
-	 * Character length and limits: 12 single-byte alphanumeric
-	 * characters
+	 * Character length and limits: 12 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var CompleteCodeType
@@ -21297,8 +20629,7 @@ class DoCaptureRequestType extends AbstractRequestType {
 	public $CompleteType;
 
 	/**
-	 * An informational note about this settlement that is displayed
-	 * to the payer in email and in transaction history.
+An informational note about this settlement that is displayed to the payer in email and in  transaction history. 
 	 * Optional
 	 * Character length and limits: 255 single-byte characters
 	 *
@@ -21308,13 +20639,10 @@ class DoCaptureRequestType extends AbstractRequestType {
 	public $Note;
 
 	/**
-	 * Your invoice number or other identification number.
-	 * The InvoiceID value is recorded only if the authorization you
-	 * are capturing is an order authorization, not a basic
-	 * authorization.
+Your invoice number or other identification number. 
+	 * The InvoiceID value is recorded only if the authorization you are capturing is an order authorization, not a basic authorization.
 	 * Optional
-	 * Character length and limits: 127 single-byte alphanumeric
-	 * characters
+	 * Character length and limits: 127 single-byte alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
@@ -21322,7 +20650,7 @@ class DoCaptureRequestType extends AbstractRequestType {
 	public $InvoiceID;
 
 	/**
-	 * Contains enhanced data like airline itinerary information.
+Contains enhanced data like airline itinerary information.
 	 * Not Required
 	 *
 	 * @access public
@@ -21331,17 +20659,23 @@ class DoCaptureRequestType extends AbstractRequestType {
 	public $EnhancedData;
 
 	/**
-	 * dynamic descriptor
-	 * Dynamic descriptor is used for merchant to provide detail of a
-	 * transaction appears on statement
+dynamic descriptor
+	 * Dynamic descriptor is used for merchant to provide detail of a transaction appears on statement
 	 * Optional
-	 * Character length and limits: <18 characters alphanumeric
-	 * characters
+	 * Character length and limits: <18 characters alphanumeric characters
 	 *
 	 * @access public
 	 * @var string
 	 */
 	public $Descriptor;
+
+	/**
+To pass the Merchant store informationOptional
+	 *
+	 * @access public
+	 * @var MerchantStoreDetailsType
+	 */
+	public $MerchantStoreDetails;
 
 
 	public function __construct($AuthorizationID = null, $Amount = null, $CompleteType = null) {
@@ -21377,6 +20711,11 @@ $str.=parent::toXMLString();
 		 }
 		if($this->Descriptor != null ) {
 			$str .= '<urn:Descriptor>'.$this->Descriptor.'</urn:Descriptor>';
+		 }
+		if($this->MerchantStoreDetails != null ) {
+			$str .='<ebl:MerchantStoreDetails>';
+			$str .= $this->MerchantStoreDetails->toXMLString();
+			$str .=  '</ebl:MerchantStoreDetails>';
 		 }
 
 		return $str;
@@ -21437,21 +20776,13 @@ $str.='</urn:DoReauthorizationReq>';
 
 /**
  * DoReauthorizationRequestType
- * The value of a previously authorized transaction
- * identification number returned by a PayPal product. You can
- * obtain a buyer's transaction number from the TransactionID
- * element of the PayerInfo structure returned by
- * GetTransactionDetailsResponse.
+ * The value of a previously authorized transaction identification number returned by a PayPal product. You can obtain a buyer's transaction number from the TransactionID element of the PayerInfo structure returned by GetTransactionDetailsResponse. 
  * Required
  * Character length and limits: 19 single-byte characters maximum
  */
 class DoReauthorizationRequestType extends AbstractRequestType {
 	/**
-	 * The value of a previously authorized transaction
-	 * identification number returned by a PayPal product. You can
-	 * obtain a buyer's transaction number from the TransactionID
-	 * element of the PayerInfo structure returned by
-	 * GetTransactionDetailsResponse.
+The value of a previously authorized transaction identification number returned by a PayPal product. You can obtain a buyer's transaction number from the TransactionID element of the PayerInfo structure returned by GetTransactionDetailsResponse. 
 	 * Required
 	 * Character length and limits: 19 single-byte characters maximum
 	 *
@@ -21461,11 +20792,9 @@ class DoReauthorizationRequestType extends AbstractRequestType {
 	public $AuthorizationID;
 
 	/**
-	 * Amount to reauthorize.
+Amount to reauthorize. 
 	 * Required
-	 * Limitations: Must not exceed $10,000 USD in any currency. No
-	 * currency symbol. Decimal separator must be a period (.), and
-	 * the thousands separator must be a comma (,).
+	 * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -21498,12 +20827,12 @@ $str.=parent::toXMLString();
 /**
  * DoReauthorizationResponseType
  * A new authorization identification number.
- * Character length and limits: 19 single-byte characters
+ * Character length and limits: 19 single-byte characters 
  */
 class DoReauthorizationResponseType extends AbstractResponseType {
 	/**
-	 * A new authorization identification number.
-	 * Character length and limits: 19 single-byte characters
+A new authorization identification number.
+	 * Character length and limits: 19 single-byte characters 
 	 *
 	 * @access public
 	 * @var string
@@ -21562,21 +20891,15 @@ $str.='</urn:DoVoidReq>';
 
 /**
  * DoVoidRequestType
- * The value of the original authorization identification number
- * returned by a PayPal product.
- * If you are voiding a transaction that has been reauthorized,
- * use the ID from the original authorization, and not the
- * reauthorization.
+ * The value of the original authorization identification number returned by a PayPal product. 
+ * If you are voiding a transaction that has been reauthorized, use the ID from the original authorization, and not the reauthorization.
  * Required
  * Character length and limits: 19 single-byte characters
  */
 class DoVoidRequestType extends AbstractRequestType {
 	/**
-	 * The value of the original authorization identification number
-	 * returned by a PayPal product.
-	 * If you are voiding a transaction that has been reauthorized,
-	 * use the ID from the original authorization, and not the
-	 * reauthorization.
+The value of the original authorization identification number returned by a PayPal product. 
+	 * If you are voiding a transaction that has been reauthorized, use the ID from the original authorization, and not the reauthorization.
 	 * Required
 	 * Character length and limits: 19 single-byte characters
 	 *
@@ -21586,8 +20909,7 @@ class DoVoidRequestType extends AbstractRequestType {
 	public $AuthorizationID;
 
 	/**
-	 * An informational note about this settlement that is displayed
-	 * to the payer in email and in transaction history.
+An informational note about this settlement that is displayed to the payer in email and in  transaction history. 
 	 * Optional
 	 * Character length and limits: 255 single-byte characters
 	 *
@@ -21618,14 +20940,12 @@ $str.=parent::toXMLString();
 
 /**
  * DoVoidResponseType
- * The authorization identification number you specified in the
- * request.
+ * The authorization identification number you specified in the request. 
  * Character length and limits: 19 single-byte characters
  */
 class DoVoidResponseType extends AbstractResponseType {
 	/**
-	 * The authorization identification number you specified in the
-	 * request.
+The authorization identification number you specified in the request. 
 	 * Character length and limits: 19 single-byte characters
 	 *
 	 * @access public
@@ -21673,15 +20993,13 @@ $str.='</urn:DoAuthorizationReq>';
 
 /**
  * DoAuthorizationRequestType
- * The value of the orderâ€™s transaction identification number
- * returned by a PayPal product.
+ * The value of the orderâ€™s transaction identification number returned by a PayPal product. 
  * Required
  * Character length and limits: 19 single-byte characters maximum
  */
 class DoAuthorizationRequestType extends AbstractRequestType {
 	/**
-	 * The value of the orderâ€™s transaction identification number
-	 * returned by a PayPal product.
+The value of the orderâ€™s transaction identification number returned by a PayPal product. 
 	 * Required
 	 * Character length and limits: 19 single-byte characters maximum
 	 *
@@ -21691,10 +21009,7 @@ class DoAuthorizationRequestType extends AbstractRequestType {
 	public $TransactionID;
 
 	/**
-	 * Type of transaction to authorize. The only allowable value is
-	 * Order
-	 * , which means that the transaction represents a customer order
-	 * that can be fulfilled over 29 days.
+Type of transaction to authorize. The only allowable value is Order, which means that the transaction represents a customer order that can be fulfilled over 29 days. 
 	 * Optional
 	 *
 	 * @access public
@@ -21703,11 +21018,9 @@ class DoAuthorizationRequestType extends AbstractRequestType {
 	public $TransactionEntity;
 
 	/**
-	 * Amount to authorize.
+Amount to authorize. 
 	 * Required
-	 * Limitations: Must not exceed $10,000 USD in any currency. No
-	 * currency symbol. Decimal separator must be a period (.), and
-	 * the thousands separator must be a comma (,).
+	 * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -21742,12 +21055,12 @@ $str.=parent::toXMLString();
 
 /**
  * DoAuthorizationResponseType
- * An authorization identification number.
+ * An authorization identification number. 
  * Character length and limits: 19 single-byte characters
  */
 class DoAuthorizationResponseType extends AbstractResponseType {
 	/**
-	 * An authorization identification number.
+An authorization identification number. 
 	 * Character length and limits: 19 single-byte characters
 	 *
 	 * @access public
@@ -21756,8 +21069,7 @@ class DoAuthorizationResponseType extends AbstractResponseType {
 	public $TransactionID;
 
 	/**
-The amount and currency you specified in the
-	 * request. 
+The amount and currency you specified in the request. 
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -21777,18 +21089,10 @@ The amount and currency you specified in the
 			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
 				$this->TransactionID = $arry["text"];
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="amount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->Amount = new BasicAmountType();
-				$this->Amount->init($atr);
+				$this->Amount->init($arry["children"]);
 					}
 			}
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
@@ -21835,7 +21139,7 @@ $str.='</urn:DoUATPAuthorizationReq>';
  */
 class DoUATPAuthorizationRequestType extends AbstractRequestType {
 	/**
-	 * UATP card details
+UATP card details
 	 * Required
 	 *
 	 * @access public
@@ -21844,10 +21148,7 @@ class DoUATPAuthorizationRequestType extends AbstractRequestType {
 	public $UATPDetails;
 
 	/**
-	 * Type of transaction to authorize. The only allowable value is
-	 * Order
-	 * , which means that the transaction represents a customer order
-	 * that can be fulfilled over 29 days.
+Type of transaction to authorize. The only allowable value is Order, which means that the transaction represents a customer order that can be fulfilled over 29 days. 
 	 * Optional
 	 *
 	 * @access public
@@ -21856,11 +21157,9 @@ class DoUATPAuthorizationRequestType extends AbstractRequestType {
 	public $TransactionEntity;
 
 	/**
-	 * Amount to authorize.
+Amount to authorize. 
 	 * Required
-	 * Limitations: Must not exceed $10,000 USD in any currency. No
-	 * currency symbol. Decimal separator must be a period (.), and
-	 * the thousands separator must be a comma (,).
+	 * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -22083,7 +21382,7 @@ $str.=parent::toXMLString();
  */
 class GetMobileStatusResponseType extends AbstractResponseType {
 	/**
-	 * Indicates whether the phone is activated for mobile payments
+Indicates whether the phone is activated for mobile payments
 	 *
 	 * @access public
 	 * @var integer
@@ -22091,7 +21390,7 @@ class GetMobileStatusResponseType extends AbstractResponseType {
 	public $IsActivated;
 
 	/**
-	 * Indicates whether there is a payment pending from the phone
+Indicates whether there is a payment pending from the phone
 	 *
 	 * @access public
 	 * @var integer
@@ -22170,16 +21469,12 @@ $str.=parent::toXMLString();
 
 /**
  * SetMobileCheckoutResponseType
- * A timestamped token by which you identify to PayPal that you
- * are processing this payment with Mobile Checkout. The token
- * expires after three hours.
+A timestamped token by which you identify to PayPal that you are processing this payment with Mobile Checkout. The token expires after three hours.
  * Character length and limitations: 20 single-byte characters
  */
 class SetMobileCheckoutResponseType extends AbstractResponseType {
 	/**
-	 * A timestamped token by which you identify to PayPal that you
-	 * are processing this payment with Mobile Checkout. The token
-	 * expires after three hours.
+A timestamped token by which you identify to PayPal that you are processing this payment with Mobile Checkout. The token expires after three hours.
 	 * Character length and limitations: 20 single-byte characters
 	 *
 	 * @access public
@@ -22227,15 +21522,13 @@ $str.='</urn:DoMobileCheckoutPaymentReq>';
 
 /**
  * DoMobileCheckoutPaymentRequestType
- * A timestamped token, the value of which was returned by
- * SetMobileCheckoutResponse.
+A timestamped token, the value of which was returned by SetMobileCheckoutResponse. 
  * Required
  * Character length and limitations: 20 single-byte characters
  */
 class DoMobileCheckoutPaymentRequestType extends AbstractRequestType {
 	/**
-	 * A timestamped token, the value of which was returned by
-	 * SetMobileCheckoutResponse.
+A timestamped token, the value of which was returned by SetMobileCheckoutResponse. 
 	 * Required
 	 * Character length and limitations: 20 single-byte characters
 	 *
@@ -22362,18 +21655,10 @@ class GetBalanceResponseType extends AbstractResponseType {
 	public function init($arr = null) {
 		if($arr != null) {
 			parent::init($arr);			foreach ($arr as $arry){
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="balance") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->Balance = new BasicAmountType();
-				$this->Balance->init($atr);
+				$this->Balance->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='balancetimestamp') {
@@ -22658,8 +21943,7 @@ $str.='</urn:DoReferenceTransactionReq>';
 
 /**
  * DoReferenceTransactionRequestType
- * This flag indicates that the response should
- * include FMFDetails
+ * This flag indicates that the response should include FMFDetails
  */
 class DoReferenceTransactionRequestType extends AbstractRequestType {
 	/**
@@ -22669,8 +21953,7 @@ class DoReferenceTransactionRequestType extends AbstractRequestType {
 	public $DoReferenceTransactionRequestDetails;
 
 	/**
-This flag indicates that the response should
-	 * include FMFDetails	 *
+This flag indicates that the response should include FMFDetails	 *
 	 * @access public
 	 * @var int
 	 */
@@ -23377,21 +22660,15 @@ $str.='</urn:ExternalRememberMeOptOutReq>';
 
 /**
  * ExternalRememberMeOptOutRequestType
- * The merchant passes in the ExternalRememberMeID to identify
- * the user to opt out. This is a 17-character
- * alphanumeric
- * (encrypted) string that identifies the buyer's remembered
- * login with a merchant and has
+ * The merchant passes in the ExternalRememberMeID to identify the user to opt out.  This is a 17-character
+ * alphanumeric (encrypted) string that identifies the buyer's remembered login with a merchant and has
  * meaning only to the merchant.
  * Required
  */
 class ExternalRememberMeOptOutRequestType extends AbstractRequestType {
 	/**
-	 * The merchant passes in the ExternalRememberMeID to identify
-	 * the user to opt out. This is a 17-character
-	 * alphanumeric
-	 * (encrypted) string that identifies the buyer's remembered
-	 * login with a merchant and has
+	 * The merchant passes in the ExternalRememberMeID to identify the user to opt out.  This is a 17-character
+	 * alphanumeric (encrypted) string that identifies the buyer's remembered login with a merchant and has
 	 * meaning only to the merchant.
 	 * Required
 	 *
@@ -23401,8 +22678,7 @@ class ExternalRememberMeOptOutRequestType extends AbstractRequestType {
 	public $ExternalRememberMeID;
 
 	/**
-	 * E-mail address or secure merchant account ID of
-	 * merchant to associate with
+	 * E-mail address or secure merchant account ID of merchant to associate with
 	 * external remember-me.
 	 *
 	 * @access public
@@ -23446,3 +22722,4 @@ class ExternalRememberMeOptOutResponseType extends AbstractResponseType {
 }
 
 ?>
+

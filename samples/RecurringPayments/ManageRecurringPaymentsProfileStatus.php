@@ -12,7 +12,7 @@ $manageRPPStatusReqestDetails->ProfileID =  $_REQUEST['profileID'];
 
 $manageRPPStatusReqest = new ManageRecurringPaymentsProfileStatusRequestType();
 $manageRPPStatusReqest->ManageRecurringPaymentsProfileStatusRequestDetails = $manageRPPStatusReqestDetails;
-$manageRPPStatusReqest->Version = 84;
+$manageRPPStatusReqest->Version = 86;
 
 $manageRPPStatusReq = new ManageRecurringPaymentsProfileStatusReq();
 $manageRPPStatusReq->ManageRecurringPaymentsProfileStatusRequest = $manageRPPStatusReqest;

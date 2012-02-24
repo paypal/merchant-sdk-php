@@ -69,7 +69,7 @@ $createRPProfileRequestDetail->ScheduleDetails = $scheduleDetails;
 $createRPProfileRequestDetail->RecurringPaymentsProfileDetails = $RPProfileDetails;
 $createRPProfileRequest = new CreateRecurringPaymentsProfileRequestType();
 $createRPProfileRequest->CreateRecurringPaymentsProfileRequestDetails = $createRPProfileRequestDetail;
-$createRPProfileRequest->Version = 84;
+$createRPProfileRequest->Version = 86;
 
 $createRPProfileReq =  new CreateRecurringPaymentsProfileReq();
 $createRPProfileReq->CreateRecurringPaymentsProfileRequest = $createRPProfileRequest;

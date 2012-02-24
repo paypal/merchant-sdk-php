@@ -8,7 +8,7 @@ $logger = new PPLoggingManager('GetBoardingDetails');
 
 $getBoardingDetailsReqest = new GetBoardingDetailsRequestType();
 $getBoardingDetailsReqest->Token = $_REQUEST['onboardingToken'];
-$getBoardingDetailsReqest->Version = 84;
+$getBoardingDetailsReqest->Version = 86;
 
 $getBoardingDetailsReq =  new GetBoardingDetailsReq();
 $getBoardingDetailsReq->GetBoardingDetailsRequest = $getBoardingDetailsReqest;

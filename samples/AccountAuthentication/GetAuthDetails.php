@@ -8,7 +8,7 @@ $logger = new PPLoggingManager('GetAuthDetails');
 $token = $_REQUEST['token'];
 $reqType = new GetAuthDetailsRequestType();
 $reqType->Token = $token;
-$reqType->Version = 84.0;
+$reqType->Version = 86.0;
 
 $req = new GetAuthDetailsReq();
 $req->GetAuthDetailsRequest = $reqType;

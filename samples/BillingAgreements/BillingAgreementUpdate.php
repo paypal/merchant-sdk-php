@@ -7,7 +7,7 @@ require_once('PPLoggingManager.php');
 $logger = new PPLoggingManager('billing agreement update');
 
 $BAUpdateRequest = new BAUpdateRequestType();
-$BAUpdateRequest->Version = 84.0;
+$BAUpdateRequest->Version = 86.0;
 $BAUpdateRequest->ReferenceID = $_REQUEST['referenceID'];
 $BAUpdateRequest->BillingAgreementStatus = $_REQUEST['billingAgreementStatus'];
 $BAUpdateRequest->BillingAgreementDescription = $_REQUEST['billingAgreementDescription'];

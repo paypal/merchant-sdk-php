@@ -16,7 +16,7 @@ $doCaptureReqest = new DoCaptureRequestType();
 $doCaptureReqest->AuthorizationID = $_REQUEST['authID']; 
 $doCaptureReqest->Amount = $amount;
 $doCaptureReqest->CompleteType = $_REQUEST['completeCodeType'];
-$doCaptureReqest->Version = 84;
+$doCaptureReqest->Version = 86;
 
 $doCaptureReq = new DoCaptureReq();
 $doCaptureReq->DoCaptureRequest = $doCaptureReqest;

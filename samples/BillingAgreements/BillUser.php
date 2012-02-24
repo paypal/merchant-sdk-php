@@ -21,7 +21,7 @@ $MPPaymentDetails->MpID = $_REQUEST['billingAgreementID'];
 
 $billUserReqest = new BillUserRequestType();
 $billUserReqest->MerchantPullPaymentDetails = $MPPaymentDetails;
-$billUserReqest->Version = 84;
+$billUserReqest->Version = 86;
 
 $billUserReq = new BillUserReq();
 $billUserReq->BillUserRequest = $billUserReqest;

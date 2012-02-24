@@ -65,7 +65,7 @@ $RTRequestDetails->PaymentType = $_REQUEST['paymentType'];
 
 $RTRequest = new DoReferenceTransactionRequestType();
 $RTRequest->DoReferenceTransactionRequestDetails  = $RTRequestDetails;
-$RTRequest->Version = 84;
+$RTRequest->Version = 86;
 
 $RTReq = new DoReferenceTransactionReq();
 $RTReq->DoReferenceTransactionRequest = $RTRequest;

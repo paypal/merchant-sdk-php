@@ -7,12 +7,24 @@ session_start();
 
 $logger = new PPLoggingManager('DoExpressCheckout');
 
-$token =urlencode( $_SESSION['token']);
-$payerId=urlencode(  $_SESSION['payerId']);
+$token =urlencode( $_REQUEST['token']);
+$payerId=urlencode(  $_REQUEST['payerID']);
+
+// ------------------------------------------------------------------
+// this section is optional if parameters required for DoExpressCheckout is retrieved from your database
+$getExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType($token);
+$getExpressCheckoutDetailsRequest->Version = 86.0;
+$getExpressCheckoutReq = new GetExpressCheckoutDetailsReq();
+$getExpressCheckoutReq->GetExpressCheckoutDetailsRequest = $getExpressCheckoutDetailsRequest;
+
+$paypalService = new PayPalAPIInterfaceServiceService();
+$getECResponse = $paypalService->GetExpressCheckoutDetails($getExpressCheckoutReq);
+
+//----------------------------------------------------------------------------
 
 $orderTotal = new BasicAmountType();
-$orderTotal->currencyID = $_SESSION['currencyCode'];
-$orderTotal->value = $_SESSION['amount'];
+$orderTotal->currencyID = $_REQUEST['currencyCode'];
+$orderTotal->value = $_REQUEST['amt'];
 
 $PaymentDetails= new PaymentDetailsType();
 $PaymentDetails->OrderTotal = $orderTotal;
@@ -24,11 +36,11 @@ $DoECRequestDetails->PaymentDetails[0] = $PaymentDetails;
 
 $DoECRequest = new DoExpressCheckoutPaymentRequestType();
 $DoECRequest->DoExpressCheckoutPaymentRequestDetails = $DoECRequestDetails;
-$DoECRequest->Version = '84.0';
+$DoECRequest->Version = '86.0';
 
 $DoECReq = new DoExpressCheckoutPaymentReq();
 $DoECReq->DoExpressCheckoutPaymentRequest = $DoECRequest;
-$paypalService = new PayPalAPIInterfaceServiceService();
+
 $DoECResponse = $paypalService->DoExpressCheckoutPayment($DoECReq);
 echo "<pre>";
 print_r($DoECResponse);

@@ -15,7 +15,7 @@ $amount->value = $_REQUEST['amt'];
 $doAuthRequest = new DoAuthorizationRequestType();
 $doAuthRequest->Amount = $amount;
 $doAuthRequest->TransactionID = $_REQUEST['transID'];
-$doAuthRequest->Version = '84.0';
+$doAuthRequest->Version = '86.0';
 
 $doAuthReq = new DoAuthorizationReq();
 $doAuthReq->DoAuthorizationRequest =$doAuthRequest;

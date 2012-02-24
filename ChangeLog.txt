@@ -1,0 +1,6 @@
+PayPal Merchant PHP SDK - 0.6.86
+----------------------------------------
+
+Release Date - 27-Feb-2012
+
+	- Initial release

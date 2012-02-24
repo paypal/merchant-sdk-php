@@ -39,7 +39,7 @@ $logger = new PPLoggingManager('SetExpressCheckout');
 	$PaymentDetails->TaxTotal = $taxTotal;
 
 	$setECReqDetails = new SetExpressCheckoutRequestDetailsType();
-	$setECReqDetails->PaymentDetails = $PaymentDetails;
+	$setECReqDetails->PaymentDetails[0] = $PaymentDetails;
 	$setECReqDetails->CancelURL = $cancelUrl;
 	$setECReqDetails->ReturnURL = $returnUrl;
 	$setECReqDetails->ReqConfirmShipping = 0;
@@ -47,7 +47,7 @@ $logger = new PPLoggingManager('SetExpressCheckout');
 
 	$setECReqType = new SetExpressCheckoutRequestType();
 	$setECReqType->SetExpressCheckoutRequestDetails = $setECReqDetails;
-	$setECReqType->Version = '84.0';
+	$setECReqType->Version = '86.0';
 	$setECReq = new SetExpressCheckoutReq();
 	$setECReq->SetExpressCheckoutRequest = $setECReqType;
 

@@ -3,16 +3,29 @@ $path = '../../lib';
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 require_once('services/PayPalApi/PayPalAPIInterfaceServiceService.php');
 require_once('PPLoggingManager.php');
-session_start();
 
 $logger = new PPLoggingManager('DoExpressCheckout');
 
 $token =urlencode( $_REQUEST['token']);
 $payerId=urlencode( $_REQUEST['PayerID']);
 
+//--------------------------------------------------------------
+// this section is optional if values are retrieved from your database
+$token = $_REQUEST['token'];
+
+$getExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType($token);
+$getExpressCheckoutDetailsRequest->Version = 86.0;
+$getExpressCheckoutReq = new GetExpressCheckoutDetailsReq();
+$getExpressCheckoutReq->GetExpressCheckoutDetailsRequest = $getExpressCheckoutDetailsRequest;
+
+$paypalService = new PayPalAPIInterfaceServiceService();
+$getECResponse = $paypalService->GetExpressCheckoutDetails($getExpressCheckoutReq);
+
+//--------------------------------------------------------------------
+
 $orderTotal = new BasicAmountType();
-$orderTotal->currencyID = $_SESSION['currencyID'];
-$orderTotal->value = $_SESSION['amount'];
+$orderTotal->currencyID = $getECResponse->GetExpressCheckoutDetailsResponseDetails->PaymentDetails->OrderTotal->currencyID;
+$orderTotal->value = $getECResponse->GetExpressCheckoutDetailsResponseDetails->PaymentDetails->OrderTotal->value;
 
 $itemDetails = new PaymentDetailsItemType();
 $itemDetails->Name = 'sample item';
@@ -35,7 +48,7 @@ $DoECRequestDetails->PaymentDetails[0] = $PaymentDetails;
 
 $DoECRequest = new DoExpressCheckoutPaymentRequestType();
 $DoECRequest->DoExpressCheckoutPaymentRequestDetails = $DoECRequestDetails;
-$DoECRequest->Version = '84.0';
+$DoECRequest->Version = '86.0';
 
 $DoECReq = new DoExpressCheckoutPaymentReq();
 $DoECReq->DoExpressCheckoutPaymentRequest = $DoECRequest;

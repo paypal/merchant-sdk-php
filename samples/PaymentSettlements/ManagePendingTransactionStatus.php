@@ -11,7 +11,7 @@ $logger = new PPLoggingManager('ManagePendingTransactionStatus');
 $MPTranStatusReqest= new ManagePendingTransactionStatusRequestType();
 $MPTranStatusReqest->TransactionID = $_REQUEST['transactionID'];
 $MPTranStatusReqest->Action = $_REQUEST['action'];
-$MPTranStatusReqest->Version = 84;
+$MPTranStatusReqest->Version = 86;
 
 $MPTranStatusReq = new ManagePendingTransactionStatusReq();
 $MPTranStatusReq->ManagePendingTransactionStatusRequest = $MPTranStatusReqest;

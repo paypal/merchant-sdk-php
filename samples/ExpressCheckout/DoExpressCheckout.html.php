@@ -17,13 +17,13 @@
 Token(Get Token via <a href="SetExpressCheckout.html.php">SetExpressCheckout</a>)
 </div>
 <div class="param_value">
-<input type="text" name="token" value="" size="50" maxlength="260" />
+<input type="text" name="token" value="EC-8UT96070TG172711X" size="50" maxlength="260" />
 </div>
 </div>
 <div class="params">
 <div class="param_name">Payer ID</div>
 <div class="param_value">
-<input type="text" name="payerID" value="" size="50"
+<input type="text" name="payerID" value="TWLK53YN7GDM6" size="50"
 maxlength="260" />
 </div>
 </div>

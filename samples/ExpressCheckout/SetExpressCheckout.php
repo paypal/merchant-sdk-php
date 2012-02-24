@@ -59,14 +59,14 @@ $PaymentDetails->ItemTotal = $itemAmount;
 $PaymentDetails->ShippingTotal = $shippingTotal;
 
 $setECReqDetails = new SetExpressCheckoutRequestDetailsType();
-$setECReqDetails->PaymentDetails = $PaymentDetails;
+$setECReqDetails->PaymentDetails[0] = $PaymentDetails;
 $setECReqDetails->CancelURL = $cancelUrl;
 $setECReqDetails->ReturnURL = $returnUrl;
 //$setECReqDetails->NoShipping = $_REQUEST['noShipping'];;
 
 $setECReqType = new SetExpressCheckoutRequestType();
 $setECReqType->SetExpressCheckoutRequestDetails = $setECReqDetails;
-$setECReqType->Version = '84.0';
+$setECReqType->Version = '86.0';
 $setECReq = new SetExpressCheckoutReq();
 $setECReq->SetExpressCheckoutRequest = $setECReqType;
 

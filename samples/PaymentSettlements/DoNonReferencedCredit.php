@@ -27,7 +27,7 @@ $doNonRefCreditRequestDetails->NetAmount =$amount;
 
 $doNonRefCreditRequest = new DoNonReferencedCreditRequestType();
 $doNonRefCreditRequest->DoNonReferencedCreditRequestDetails =$doNonRefCreditRequestDetails ;
-$doNonRefCreditRequest->Version = 84;
+$doNonRefCreditRequest->Version = 86;
 
 $doNonRefCreditReq = new DoNonReferencedCreditReq();
 $doNonRefCreditReq->DoNonReferencedCreditRequest = $doNonRefCreditRequest;

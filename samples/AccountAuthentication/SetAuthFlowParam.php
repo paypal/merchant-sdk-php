@@ -12,7 +12,7 @@ $reqDetails->ReturnURL = $_REQUEST['returnURL'];
 $reqDetails->LogoutURL = $_REQUEST['logoutURL'];
 
 $reqType = new SetAuthFlowParamRequestType();
-$reqType->Version = 84.0;
+$reqType->Version = 86.0;
 $reqType->SetAuthFlowParamRequestDetails = $reqDetails;
 $req = new SetAuthFlowParamReq();
 $req->SetAuthFlowParamRequest = $reqType;

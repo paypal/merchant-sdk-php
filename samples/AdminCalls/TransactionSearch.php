@@ -8,7 +8,7 @@ require_once('PPLoggingManager.php');
 $logger = new PPLoggingManager('TransactionSearch');
 
 $transactionSearchRequest = new TransactionSearchRequestType();
-$transactionSearchRequest->Version = 84.0;
+$transactionSearchRequest->Version = 86.0;
 $transactionSearchRequest->StartDate = $_REQUEST['startDate'];
 $transactionSearchRequest->EndDate = $_REQUEST['endDate'];
 

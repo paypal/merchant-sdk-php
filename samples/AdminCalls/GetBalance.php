@@ -7,7 +7,7 @@ require_once('PPLoggingManager.php');
 $logger = new PPLoggingManager('Get Balance');
 
 $getBalanceRequest = new GetBalanceRequestType();
-$getBalanceRequest->Version = 84.0;
+$getBalanceRequest->Version = 86.0;
 $getBalanceRequest->ReturnAllCurrencies = $_REQUEST['returnAllCurrencies'];
 
 $getBalanceReq = new GetBalanceReq();

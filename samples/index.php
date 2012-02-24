@@ -11,35 +11,7 @@
 	</center>
 	<table>
 		<tr>
-			<td valign="top">		<table>
-			<tr>
-				<th>Button Manager</th>
-			</tr>
-			<tr>
-				<td><a href="ButtonManager/BMCreateButton.html.php">BMCreateButton</a></td>
-				<td></td>
-			</tr>
-				<tr>
-				<td><a href="ButtonManager/BMManageButtonStatus.html.php">BMManageButtonStatus</a></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td><a href="ButtonManager/BMGetButtonDetails.html.php">BMGetButtonDetails</a></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td><a href="ButtonManager/BMButtonSearch.html.php">BMButtonSearch</a></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td><a href="ButtonManager/BMSetInventory.html.php">BMSetInventory</a></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td><a href="ButtonManager/BMGetInventory.html.php">BMGetInventory</a></td>
-				<td></td>
-			</tr>
-		</table>
+			<td valign="top">	
 			</td>
 			<td valign="top"><table align="center">
 

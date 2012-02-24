@@ -168,7 +168,7 @@ maxlength="260" />
 <div class="params">
 <div class="param_name">PostalCode</div>
 <div class="param_value">
-<input type="text" name="postalCode" value="84750" size="50"
+<input type="text" name="postalCode" value="86750" size="50"
 maxlength="260" />
 </div>
 </div>
