@@ -102,8 +102,16 @@ class PPHttpConnection
 	 */
 	public function setHttpTrustAllConnection($trustAllConnection)
 	{
-		$this->curlOpt[CURLOPT_SSL_VERIFYPEER] = !$trustAllConnection;
-		$this->curlOpt[CURLOPT_SSL_VERIFYHOST] = !$trustAllConnection;
+		if(strtoupper($trustAllConnection) =='FALSE'| $trustAllConnection == 0)
+		{
+			$verifypeer = 1;
+			$verifyhost = 2;
+		}
+		else if (strtoupper($trustAllConnection) =='TRUE'| $trustAllConnection == 1)
+		{
+			$this->curlOpt[CURLOPT_SSL_VERIFYPEER] = 0;
+			$this->curlOpt[CURLOPT_SSL_VERIFYHOST] = 0;
+		}
 	}
 
 	public function setHttpHeaders($headers)
