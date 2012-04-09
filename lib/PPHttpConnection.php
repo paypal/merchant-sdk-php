@@ -104,8 +104,8 @@ class PPHttpConnection
 	{
 		if(strtoupper($trustAllConnection) =='FALSE'| $trustAllConnection == 0)
 		{
-			$verifypeer = 1;
-			$verifyhost = 2;
+			$this->curlOpt[CURLOPT_SSL_VERIFYPEER] = 1;
+			$this->curlOpt[CURLOPT_SSL_VERIFYHOST] = 2;
 		}
 		else if (strtoupper($trustAllConnection) =='TRUE'| $trustAllConnection == 1)
 		{
