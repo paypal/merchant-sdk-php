@@ -1,3 +1,10 @@
+PayPal Merchant PHP SDK - 0.6.88
+----------------------------------------
+
+Release Date - 13-Mar-2012
+
+	- This release contains wsdl update version 88.0
+	
 PayPal Merchant PHP SDK - 0.6.86
 ----------------------------------------
 

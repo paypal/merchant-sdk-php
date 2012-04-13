@@ -5158,6 +5158,13 @@ Contains login bypass information.	 *
 	 */
 	public $RememberMeIDInfo;
 
+	/**
+Identity Access Token.	 *
+	 * @access public
+	 * @var IdentityTokenInfoType
+	 */
+	public $IdentityTokenInfo;
+
 
 	public function toXMLString()  {
 		$str = '';
@@ -5170,6 +5177,11 @@ Contains login bypass information.	 *
 			$str .='<ebl:RememberMeIDInfo>';
 			$str .= $this->RememberMeIDInfo->toXMLString();
 			$str .=  '</ebl:RememberMeIDInfo>';
+		 }
+		if($this->IdentityTokenInfo != null ) {
+			$str .='<ebl:IdentityTokenInfo>';
+			$str .= $this->IdentityTokenInfo->toXMLString();
+			$str .=  '</ebl:IdentityTokenInfo>';
 		 }
 
 		return $str;
@@ -5225,6 +5237,34 @@ class RememberMeIDInfoType {
 		$str = '';
 		if($this->ExternalRememberMeID != null ) {
 			$str .= '<ebl:ExternalRememberMeID>'.$this->ExternalRememberMeID.'</ebl:ExternalRememberMeID>';
+		 }
+
+		return $str;
+	}
+
+}
+
+/**
+ * IdentityTokenInfoType
+ * Identity Access token from merchant
+ */
+class IdentityTokenInfoType {
+	/**
+Identity Access token from merchant	 *
+	 * @access public
+	 * @var string
+	 */
+	public $AccessToken;
+
+
+	public function __construct($AccessToken = null) {
+		$this->AccessToken  = $AccessToken;
+	}
+
+	public function toXMLString()  {
+		$str = '';
+		if($this->AccessToken != null ) {
+			$str .= '<ebl:AccessToken>'.$this->AccessToken.'</ebl:AccessToken>';
 		 }
 
 		return $str;
@@ -7805,6 +7845,13 @@ Information about an individual item in the transaction	 *
 	public $PaymentItemInfo;
 
 	/**
+Information about an individual Offer and Coupon information in the transaction	 *
+	 * @access public
+	 * @var OfferCouponInfoType
+	 */
+	public $OfferCouponInfo;
+
+	/**
 	 * Information about the user selected options.
 	 *
 	 * @access public
@@ -7895,6 +7942,12 @@ Information about an individual item in the transaction	 *
 			if( $arry["name"]=="paymentiteminfo") {
 				$this->PaymentItemInfo = new PaymentItemInfoType();
 				$this->PaymentItemInfo->init($arry["children"]);
+					}
+			}
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+			if( $arry["name"]=="offercouponinfo") {
+				$this->OfferCouponInfo = new OfferCouponInfoType();
+				$this->OfferCouponInfo->init($arry["children"]);
 					}
 			}
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
@@ -8530,6 +8583,20 @@ newsellerpaymenthold: The seller is new.
 	public $Subject;
 
 	/**
+	 * StoreID as entered in the transaction	 *
+	 * @access public
+	 * @var string
+	 */
+	public $StoreID;
+
+	/**
+	 * TerminalID as entered in the transaction	 *
+	 * @access public
+	 * @var string
+	 */
+	public $TerminalID;
+
+	/**
 	 * Details about the seller.
 	 * Optional 
 	 *
@@ -8673,6 +8740,12 @@ newsellerpaymenthold: The seller is new.
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='subject') {
 				$this->Subject = $arry["text"];
+			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='storeid') {
+				$this->StoreID = $arry["text"];
+			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='terminalid') {
+				$this->TerminalID = $arry["text"];
 			}
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="sellerdetails") {
@@ -9353,6 +9426,41 @@ Character length and limitations: 127 single-byte alphanumeric characters
 	public $HandlingAmount;
 
 	/**
+	 * Coupon ID Number 	 *
+	 * @access public
+	 * @var string
+	 */
+	public $CouponID;
+
+	/**
+	 * Amount Value of The Coupon 	 *
+	 * @access public
+	 * @var string
+	 */
+	public $CouponAmount;
+
+	/**
+	 * Currency of the Coupon Amount 	 *
+	 * @access public
+	 * @var string
+	 */
+	public $CouponAmountCurrency;
+
+	/**
+	 * Amount of Discount on this Loyality Card	 *
+	 * @access public
+	 * @var string
+	 */
+	public $LoyalityCardDiscountAmount;
+
+	/**
+	 * Currency of the Discount	 *
+	 * @access public
+	 * @var string
+	 */
+	public $LoyalityCardDiscountCurrency;
+
+	/**
 	 * Cost of item 	 *
 	 * @access public
 	 * @var BasicAmountType
@@ -9391,6 +9499,21 @@ Character length and limitations: 127 single-byte alphanumeric characters
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='handlingamount') {
 				$this->HandlingAmount = $arry["text"];
+			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='couponid') {
+				$this->CouponID = $arry["text"];
+			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='couponamount') {
+				$this->CouponAmount = $arry["text"];
+			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='couponamountcurrency') {
+				$this->CouponAmountCurrency = $arry["text"];
+			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='loyalitycarddiscountamount') {
+				$this->LoyalityCardDiscountAmount = $arry["text"];
+			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='loyalitycarddiscountcurrency') {
+				$this->LoyalityCardDiscountCurrency = $arry["text"];
 			}
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="amount") {
@@ -9513,6 +9636,61 @@ class PaymentItemInfoType {
 				$this->Auction = new AuctionInfoType();
 				$this->Auction->init($arry["children"]);
 					}
+			}
+		}
+		}
+	}
+}
+
+/**
+ * OfferCouponInfoType
+ * OffersAndCouponsInfoType
+ * Information about a Offers and Coupons.
+ */
+class OfferCouponInfoType {
+	/**
+	 * Type of the incentive 	 *
+	 * @access public
+	 * @var string
+	 */
+	public $Type;
+
+	/**
+	 * ID of the Incentive used in transaction	 *
+	 * @access public
+	 * @var string
+	 */
+	public $ID;
+
+	/**
+	 * Amount used on transaction	 *
+	 * @access public
+	 * @var string
+	 */
+	public $Amount;
+
+	/**
+	 * Amount Currency	 *
+	 * @access public
+	 * @var string
+	 */
+	public $AmountCurrency;
+
+
+	public function init($arr = null) {
+		if($arr != null) {
+			foreach ($arr as $arry){
+			if($arry != null && isset($arry['text']) && $arry['name']=='type') {
+				$this->Type = $arry["text"];
+			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='id') {
+				$this->ID = $arry["text"];
+			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='amount') {
+				$this->Amount = $arry["text"];
+			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='amountcurrency') {
+				$this->AmountCurrency = $arry["text"];
 			}
 		}
 		}
@@ -9808,74 +9986,34 @@ You must set the currencyID attribute to one of the three-character currency cod
 	public function init($arr = null) {
 		if($arr != null) {
 			foreach ($arr as $arry){
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="ordertotal") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->OrderTotal = new BasicAmountType();
-				$this->OrderTotal->init($atr);
+				$this->OrderTotal->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="itemtotal") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->ItemTotal = new BasicAmountType();
-				$this->ItemTotal->init($atr);
+				$this->ItemTotal->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="shippingtotal") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->ShippingTotal = new BasicAmountType();
-				$this->ShippingTotal->init($atr);
+				$this->ShippingTotal->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="handlingtotal") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->HandlingTotal = new BasicAmountType();
-				$this->HandlingTotal->init($atr);
+				$this->HandlingTotal->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="taxtotal") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->TaxTotal = new BasicAmountType();
-				$this->TaxTotal->init($atr);
+				$this->TaxTotal->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='orderdescription') {
@@ -9916,32 +10054,16 @@ You must set the currencyID attribute to one of the three-character currency cod
 					}
 			}
 			 }
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="insurancetotal") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->InsuranceTotal = new BasicAmountType();
-				$this->InsuranceTotal->init($atr);
+				$this->InsuranceTotal->init($arry["children"]);
 					}
 			}
-			if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="shippingdiscount") {
-			$tmp =  array();
-			$atr =  array();
-			foreach($arry["attributes"] as $key => $val){
-				$atr[0]["name"] =$key;
-				$atr[0]["text"] =$val;
-			}
-			$atr[1]["name"] ="value";
-			$atr[1]["text"] =$arry["text"];
 				$this->ShippingDiscount = new BasicAmountType();
-				$this->ShippingDiscount->init($atr);
+				$this->ShippingDiscount->init($arry["children"]);
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='insuranceoptionoffered') {
@@ -11887,7 +12009,7 @@ class EnterBoardingRequestDetailsType {
 	public $MarketingCategory;
 
 	/**
-	 * Information about the merchantâ€™s business	 *
+	 * Information about the merchant’s business	 *
 	 * @access public
 	 * @var BusinessInfoType
 	 */
@@ -11967,14 +12089,14 @@ class BusinessInfoType {
 	public $Name;
 
 	/**
-	 * Merchantâ€™s business postal address	 *
+	 * Merchant’s business postal address	 *
 	 * @access public
 	 * @var AddressType
 	 */
 	public $Address;
 
 	/**
-	 * Businessâ€™s primary telephone number
+	 * Business’s primary telephone number
 	 * Character length and limitations: 20 alphanumeric characters	 *
 	 * @access public
 	 * @var string
@@ -12084,14 +12206,14 @@ class BusinessInfoType {
 	public $RevenueFromOnlineSales;
 
 	/**
-	 * Date the merchantâ€™s business was established	 *
+	 * Date the merchant’s business was established	 *
 	 * @access public
 	 * @var dateTime
 	 */
 	public $BusinessEstablished;
 
 	/**
-	 * Email address to contact businessâ€™s customer service
+	 * Email address to contact business’s customer service
 	 * Character length and limitations: 127 alphanumeric characters	 *
 	 * @access public
 	 * @var string
@@ -12099,7 +12221,7 @@ class BusinessInfoType {
 	public $CustomerServiceEmail;
 
 	/**
-	 * Telephone number to contact businessâ€™s customer service
+	 * Telephone number to contact business’s customer service
 	 * Character length and limitations: 32 alphanumeric characters	 *
 	 * @access public
 	 * @var string
@@ -12172,7 +12294,7 @@ class BusinessOwnerInfoType {
 	public $Owner;
 
 	/**
-	 * Business ownerâ€™s home telephone number
+	 * Business owner’s home telephone number
 	 * Character length and limitations: 32 alphanumeric characters	 *
 	 * @access public
 	 * @var string
@@ -12180,7 +12302,7 @@ class BusinessOwnerInfoType {
 	public $HomePhone;
 
 	/**
-	 * Business ownerâ€™s mobile telephone number
+	 * Business owner’s mobile telephone number
 	 * Character length and limitations: 32 alphanumeric characters	 *
 	 * @access public
 	 * @var string
@@ -12188,7 +12310,7 @@ class BusinessOwnerInfoType {
 	public $MobilePhone;
 
 	/**
-	 * Business ownerâ€™s social security number
+	 * Business owner’s social security number
 	 * Character length and limitations: 9 alphanumeric characters	 *
 	 * @access public
 	 * @var string
@@ -12239,7 +12361,7 @@ class BankAccountDetailsType {
 	public $Type;
 
 	/**
-	 * Merchantâ€™s bank routing number
+	 * Merchant’s bank routing number
 	 * Character length and limitations: 23 alphanumeric characters	 *
 	 * @access public
 	 * @var string
@@ -12247,7 +12369,7 @@ class BankAccountDetailsType {
 	public $RoutingNumber;
 
 	/**
-	 * Merchantâ€™s bank account number
+	 * Merchant’s bank account number
 	 * Character length and limitations: 256 alphanumeric characters	 *
 	 * @access public
 	 * @var string
@@ -12303,14 +12425,14 @@ Pending
 	public $StartDate;
 
 	/**
-	 * Date the merchantâ€™s status or progress was last updated	 *
+	 * Date the merchant’s status or progress was last updated	 *
 	 * @access public
 	 * @var dateTime
 	 */
 	public $LastUpdated;
 
 	/**
-	 * Reason for merchantâ€™s cancellation of sign-up.
+	 * Reason for merchant’s cancellation of sign-up.
 	 * Character length and limitations: 1,024 alphanumeric characters	 *
 	 * @access public
 	 * @var string
@@ -12358,7 +12480,7 @@ Pending
 	public $AccountOwner;
 
 	/**
-	 * Merchantâ€™s PayPal API credentials	 *
+	 * Merchant’s PayPal API credentials	 *
 	 * @access public
 	 * @var APICredentialsType
 	 */
@@ -12461,7 +12583,7 @@ Pending
  */
 class APICredentialsType {
 	/**
-	 * Merchantâ€™s PayPal API username
+	 * Merchant’s PayPal API username
 Character length and limitations: 128 alphanumeric characters	 *
 	 * @access public
 	 * @var string
@@ -12469,7 +12591,7 @@ Character length and limitations: 128 alphanumeric characters	 *
 	public $Username;
 
 	/**
-	 * Merchantâ€™s PayPal API password
+	 * Merchant’s PayPal API password
 Character length and limitations: 40 alphanumeric characters	 *
 	 * @access public
 	 * @var string
@@ -12477,7 +12599,7 @@ Character length and limitations: 40 alphanumeric characters	 *
 	public $Password;
 
 	/**
-	 * Merchantâ€™s PayPal API signature, if one exists.
+	 * Merchant’s PayPal API signature, if one exists.
 	 * Character length and limitations: 256 alphanumeric characters	 *
 	 * @access public
 	 * @var string
@@ -12485,7 +12607,7 @@ Character length and limitations: 40 alphanumeric characters	 *
 	public $Signature;
 
 	/**
-	 * Merchantâ€™s PayPal API certificate in PEM format, if one exists
+	 * Merchant’s PayPal API certificate in PEM format, if one exists
 	 * The certificate consists of two parts: the private key (2,048 bytes) and the certificate proper (4,000 bytes).
 	 * Character length and limitations: 6,048 alphanumeric characters	 *
 	 * @access public
@@ -12494,7 +12616,7 @@ Character length and limitations: 40 alphanumeric characters	 *
 	public $Certificate;
 
 	/**
-	 * Merchantâ€™s PayPal API authentication mechanism.
+	 * Merchant’s PayPal API authentication mechanism.
 	 * Auth-None: no authentication mechanism on file
 	 * Cert: API certificate
 	 * Sign: API signature
@@ -18416,6 +18538,24 @@ Search by Recurring Payment Profile id.  The ProfileID is returned as part of th
 	public $ProfileID;
 
 	/**
+Search by Store Id. It is mandatory field if Terminal Id is specified as one of the search parameters.
+	 * Optional
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $StoreID;
+
+	/**
+Search by Store Id and Terminal Id. If the Terminal Id field is specified as one of the search parameters, then there should be a valid Store Id value set in the StoreID field.
+	 * Optional
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $TerminalID;
+
+	/**
 Search by the buyer's name 
 	 * Optional
 	 * Salutation: 20 single-byte character limit.
@@ -18542,6 +18682,12 @@ $str.=parent::toXMLString();
 		 }
 		if($this->ProfileID != null ) {
 			$str .= '<urn:ProfileID>'.$this->ProfileID.'</urn:ProfileID>';
+		 }
+		if($this->StoreID != null ) {
+			$str .= '<urn:StoreID>'.$this->StoreID.'</urn:StoreID>';
+		 }
+		if($this->TerminalID != null ) {
+			$str .= '<urn:TerminalID>'.$this->TerminalID.'</urn:TerminalID>';
 		 }
 		if($this->PayerName != null ) {
 			$str .='<urn:PayerName>';
@@ -18978,10 +19124,10 @@ Email address of buyer to be verified.
 	public $Email;
 
 	/**
-First line of buyerâ€™s billing or shipping street address to be verified. 
+First line of buyer’s billing or shipping street address to be verified. 
 	 * Required
 	 * For verification, input value of street address must match the first three single-byte characters of the street address on file for the PayPal account.
-	 * Maximum string length: 35 single-byte characters Alphanumeric plus - , . â€˜ # \ Whitespace and case of input value are ignored.
+	 * Maximum string length: 35 single-byte characters Alphanumeric plus - , . ‘ # \ Whitespace and case of input value are ignored.
 	 *
 	 * @access public
 	 * @var string
@@ -19072,7 +19218,7 @@ Two-character country code (ISO 3166) on file for the PayPal email address. 	 *
 	public $CountryCode;
 
 	/**
-The token prevents a buyer from using any street address other than the address on file at PayPal during additional purchases he might make from the merchant. It contains encrypted information about the userâ€™s street address and email address. You can pass the value of the token with the Buy Now button HTML address_api_token variable so that PayPal prevents the buyer from using any street address or email address other than those verified by PayPal. The token is valid for 24 hours. 
+The token prevents a buyer from using any street address other than the address on file at PayPal during additional purchases he might make from the merchant. It contains encrypted information about the user’s street address and email address. You can pass the value of the token with the Buy Now button HTML address_api_token variable so that PayPal prevents the buyer from using any street address or email address other than those verified by PayPal. The token is valid for 24 hours. 
 	 * Character length and limitations: 94 single-byte characters
 	 *
 	 * @access public
@@ -20360,15 +20506,15 @@ class DoDirectPaymentResponseType extends AbstractResponseType {
 	 * Address Verification System response code. Character limit: One single-byte alphanumeric character
 	 * AVS CodeMeaningMatched Details 
 A AddressAddress only (no ZIP)  
-B International â€œAâ€�Address only (no ZIP)  
-CInternational â€œNâ€� None  
-DInternational â€œXâ€� Address and Postal Code  
+B International “A”Address only (no ZIP)  
+CInternational “N” None  
+DInternational “X” Address and Postal Code  
 E Not allowed for MOTO (Internet/Phone) transactions Not applicable 
-F UK-specific â€œXâ€�Address and Postal Code  
+F UK-specific “X”Address and Postal Code  
 G Global Unavailable Not applicable 
 I International UnavailableNot applicable  
 N NoNone  
-PPostal (International â€œZâ€�)Postal Code only (no Address)   
+PPostal (International “Z”)Postal Code only (no Address)   
 RRetryNot applicable   
 S Service not Supported Not applicable 
 U UnavailableNot applicable  
@@ -20993,13 +21139,13 @@ $str.='</urn:DoAuthorizationReq>';
 
 /**
  * DoAuthorizationRequestType
- * The value of the orderâ€™s transaction identification number returned by a PayPal product. 
+ * The value of the order’s transaction identification number returned by a PayPal product. 
  * Required
  * Character length and limits: 19 single-byte characters maximum
  */
 class DoAuthorizationRequestType extends AbstractRequestType {
 	/**
-The value of the orderâ€™s transaction identification number returned by a PayPal product. 
+The value of the order’s transaction identification number returned by a PayPal product. 
 	 * Required
 	 * Character length and limits: 19 single-byte characters maximum
 	 *
@@ -22722,3 +22868,4 @@ class ExternalRememberMeOptOutResponseType extends AbstractResponseType {
 }
 
 ?>
+
