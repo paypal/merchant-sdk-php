@@ -2,7 +2,7 @@
 class PPUtils {
 
 	const SDK_VERSION = "0.6";
-	const SDK_NAME = "PHP Invoice SDK ";
+	const SDK_NAME = "sdk-merchant-php";
 
 	/**
 	 *
@@ -79,13 +79,13 @@ class PPUtils {
 		$ret = PPUtils::convertXmlObjToArr($getChild, $array = array());
 		return $ret;
 	}
-	
+
 /*foreach ($ret as $arry)
 {
 	if (isset($arry['children']) && is_array($arry['children'])&& ($arry['children'])!=null) 	{
-		foreach ($arry['children'] as $novel) 
+		foreach ($arry['children'] as $novel)
 		{
-			
+
 		}
 	}
 	else if ($arry['name'] != null)
@@ -97,8 +97,8 @@ class PPUtils {
 			$c = $arry['attribute'];
 		}
 	}
-		
-	
+
+
 	}*/
 
 	/*public function xml2array ( $xmlObject, $out = array () )
@@ -137,7 +137,7 @@ function convertXmlObjToArr($obj, &$arr)
         PPutils::convertXmlObjToArr($node, $arr[$nextIdx]['children']);
     }
     return $arr;
-}  
+}
 
 }
 
@@ -159,20 +159,20 @@ function convertXmlObjToArr($obj, &$arr)
 
 class XmlToArray
 {
-	 
+
 	var $xml='';
-	 
+
 	/**
 	 * Default Constructor
 	 * @param $xml = xml data
 	 * @return none
 	 */
-	 
+
 	function XmlToArray($xml)
 	{
 		$this->xml = $xml;
 	}
-	 
+
 	/**
 	 * _struct_to_array($values, &$i)
 	 *
@@ -184,18 +184,18 @@ class XmlToArray
 	 * @param    int    $i  this is the current location in the array
 	 * @return    Array
 	 */
-	 
+
 	function _struct_to_array($values, &$i)
 	{
 		$child = array();
 		if (isset($values[$i]['value'])) array_push($child, $values[$i]['value']);
-		 
+
 		while ($i++ < count($values)) {
 			switch ($values[$i]['type']) {
 				case 'cdata':
 					array_push($child, $values[$i]['value']);
 					break;
-					 
+
 				case 'complete':
 					$name = $values[$i]['tag'];
 					if(!empty($name)){
@@ -205,13 +205,13 @@ class XmlToArray
 						}
 					}
 					break;
-					 
+
 				case 'open':
 					$name = $values[$i]['tag'];
 					$size = isset($child[$name]) ? sizeof($child[$name]) : 0;
 					$child[$name][$size] = $this->_struct_to_array($values, $i);
 					break;
-					 
+
 				case 'close':
 					return $child;
 					break;
@@ -219,7 +219,7 @@ class XmlToArray
 		}
 		return $child;
 	}//_struct_to_array
-	 
+
 	/**
 	 * createArray($data)
 	 *
@@ -246,7 +246,7 @@ class XmlToArray
 		$array[$name] = $this->_struct_to_array($values, $i);
 		return $array;
 	}//createArray
-	 
-	 
+
+
 }//XmlToArray
 ?>

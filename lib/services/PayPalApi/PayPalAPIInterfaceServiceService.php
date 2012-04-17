@@ -8,16 +8,16 @@ require_once('PPUtils.php');
  * Auto generated code
  */
 class PayPalAPIInterfaceServiceService extends PPBaseService {
-private static $SERVICE_VERSION='87.0';
+	private static $SERVICE_VERSION='87.0';
 	public function __construct() {
 		parent::__construct('PayPalAPIInterfaceService');
 	}
 
-private function setStandardParams(AbstractRequestType $request) {
-	if ($request->getVersion() == null) {
-	$request->setVersion($SERVICE_VERSION);
-}
-}
+	private function setStandardParams(AbstractRequestType $request) {
+		if ($request->getVersion() == null) {
+			$request->setVersion($SERVICE_VERSION);
+		}
+	}
 	/**
 	 * Service Call: RefundTransaction
 	 * @param RefundTransactionReq $refundTransactionReq
