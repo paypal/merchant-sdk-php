@@ -40,25 +40,16 @@ class PPAPIService
 		if($config->get('service.Binding') == 'SOAP' )
 		{
 			$url = $this->endpoint;
-			if(isset($accessToken)&& isset($tokenSecret))
-			{
+			if(isset($accessToken)&& isset($tokenSecret)) {
 				$headers = $authentication->getPayPalHeaders( $apIPPCredential, $connection , $accessToken, $tokenSecret, $url);
-
+			} else {
+			    $headers = null;
 			}
-			else
-			{
-			$headers = null;
 			$params = $authentication->appendSoapHeader($params, $apIPPCredential, $connection, $accessToken, $tokenSecret, $url);
-			}
-		}
-		else {
+		} else {
 			$url = $this->endpoint . $this->serviceName . '/' . $apiMethod;
 			$headers = $authentication->getPayPalHeaders($apIPPCredential, $connection , $accessToken, $tokenSecret, $url);
-
 		}
-
-
-		
 
 
 		$this->logger->info("Request: $params");
