@@ -45,7 +45,8 @@ class BasicAmountType {
 		if($arr != null) {
 			foreach ($arr as $arry){
 			if($arry != null && isset($arry['text']) && $arry['name']=='currencyid') {
-				$this->currencyID = $arry["text"];			}
+				$this->currencyID = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='value') {
 				$this->value = $arry["text"];
 			}
@@ -61,7 +62,7 @@ class BasicAmountType {
 	public function toXMLString()  {
 		$str = '';
 		if($this->currencyID != null ) {
-			$str .= '	currencyID="'.$this->currencyID.'">';
+			$str .= '<cc:currencyID>'.$this->currencyID.'</cc:currencyID>';
 		 }
 		if($this->value != null ) {
 			$str .=$this->value;
@@ -2706,7 +2707,8 @@ class ErrorType {
 				$this->ErrorCode = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='severitycode') {
-				$this->SeverityCode = $arry["text"];			}
+				$this->SeverityCode = $arry["text"];
+			}
 			$i=0;
 			while(true) {
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
@@ -2801,9 +2803,7 @@ class AbstractRequestType {
 		$str = '';
 		if($this->DetailLevel != null ) {
 		for($i=0; $i<count($this->DetailLevel);$i++) {
-			$str .= '<ebl:DetailLevel>';
-			$str .= $this->DetailLevel[$i]->toXMLString();
-			$str .=  '</ebl:DetailLevel>';
+			$str .= '<ebl:DetailLevel>'.$this->DetailLevel[$i].'</ebl:DetailLevel>';
 		 }
 		 }
 		if($this->ErrorLanguage != null ) {
@@ -2886,7 +2886,8 @@ class AbstractResponseType {
 				$this->Timestamp = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='ack') {
-				$this->Ack = $arry["text"];			}
+				$this->Ack = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='correlationid') {
 				$this->CorrelationID = $arry["text"];
 			}
@@ -3279,7 +3280,8 @@ Character length and limitations: 120 single-byte alphanumeric characters
 				$this->StateOrProvince = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='country') {
-				$this->Country = $arry["text"];			}
+				$this->Country = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='countryname') {
 				$this->CountryName = $arry["text"];
 			}
@@ -3293,7 +3295,8 @@ Character length and limitations: 120 single-byte alphanumeric characters
 				$this->AddressID = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='addressowner') {
-				$this->AddressOwner = $arry["text"];			}
+				$this->AddressOwner = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='externaladdressid') {
 				$this->ExternalAddressID = $arry["text"];
 			}
@@ -3307,7 +3310,8 @@ Character length and limitations: 120 single-byte alphanumeric characters
 				$this->InternationalStreet = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='addressstatus') {
-				$this->AddressStatus = $arry["text"];			}
+				$this->AddressStatus = $arry["text"];
+			}
 		}
 		}
 	}
@@ -3567,7 +3571,8 @@ class IncentiveDetailType {
 				$this->ProgramId = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='incentivetype') {
-				$this->IncentiveType = $arry["text"];			}
+				$this->IncentiveType = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='incentivedescription') {
 				$this->IncentiveDescription = $arry["text"];
 			}
@@ -5823,7 +5828,8 @@ class AuthorizationResponseType {
 		if($arr != null) {
 			foreach ($arr as $arry){
 			if($arry != null && isset($arry['text']) && $arry['name']=='status') {
-				$this->Status = $arry["text"];			}
+				$this->Status = $arry["text"];
+			}
 			$i=0;
 			while(true) {
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
@@ -7295,7 +7301,8 @@ Customer's billing address.
 				$this->BillingAgreementDescription = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='billingagreementstatus') {
-				$this->BillingAgreementStatus = $arry["text"];			}
+				$this->BillingAgreementStatus = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='billingagreementcustom') {
 				$this->BillingAgreementCustom = $arry["text"];
 			}
@@ -7439,7 +7446,8 @@ Note: This field is no longer used and is always empty.	 *
 		if($arr != null) {
 			foreach ($arr as $arry){
 			if($arry != null && isset($arry['text']) && $arry['name']=='mpstatus') {
-				$this->MpStatus = $arry["text"];			}
+				$this->MpStatus = $arry["text"];
+			}
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="mpmax") {
 				$this->MpMax = new BasicAmountType();
@@ -8164,7 +8172,8 @@ Holds any enhanced information about the payer	 *
 				$this->PayerID = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='payerstatus') {
-				$this->PayerStatus = $arry["text"];			}
+				$this->PayerStatus = $arry["text"];
+			}
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="payername") {
 				$this->PayerName = new PersonNameType();
@@ -8172,7 +8181,8 @@ Holds any enhanced information about the payer	 *
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='payercountry') {
-				$this->PayerCountry = $arry["text"];			}
+				$this->PayerCountry = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='payerbusiness') {
 				$this->PayerBusiness = $arry["text"];
 			}
@@ -8704,11 +8714,14 @@ newsellerpaymenthold: The seller is new.
 				$this->ReceiptID = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='transactiontype') {
-				$this->TransactionType = $arry["text"];			}
+				$this->TransactionType = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='paymenttype') {
-				$this->PaymentType = $arry["text"];			}
+				$this->PaymentType = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='refundsourcecodetype') {
-				$this->RefundSourceCodeType = $arry["text"];			}
+				$this->RefundSourceCodeType = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='expectedecheckcleardate') {
 				$this->ExpectedeCheckClearDate = $arry["text"];
 			}
@@ -8743,11 +8756,14 @@ newsellerpaymenthold: The seller is new.
 				$this->ExchangeRate = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='paymentstatus') {
-				$this->PaymentStatus = $arry["text"];			}
+				$this->PaymentStatus = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='pendingreason') {
-				$this->PendingReason = $arry["text"];			}
+				$this->PendingReason = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='reasoncode') {
-				$this->ReasonCode = $arry["text"];			}
+				$this->ReasonCode = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='holddecision') {
 				$this->HoldDecision = $arry["text"];
 			}
@@ -9285,7 +9301,8 @@ You must set the currencyID attribute to one of the three-character currency cod
 				$this->PromoCode = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='productcategory') {
-				$this->ProductCategory = $arry["text"];			}
+				$this->ProductCategory = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='description') {
 				$this->Description = $arry["text"];
 			}
@@ -9323,7 +9340,8 @@ You must set the currencyID attribute to one of the three-character currency cod
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='itemcategory') {
-				$this->ItemCategory = $arry["text"];			}
+				$this->ItemCategory = $arry["text"];
+			}
 		}
 		}
 	}
@@ -10081,7 +10099,8 @@ You must set the currencyID attribute to one of the three-character currency cod
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='shippingmethod') {
-				$this->ShippingMethod = $arry["text"];			}
+				$this->ShippingMethod = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='profileaddresschangedate') {
 				$this->ProfileAddressChangeDate = $arry["text"];
 			}
@@ -10116,7 +10135,8 @@ You must set the currencyID attribute to one of the three-character currency cod
 				$this->InsuranceOptionOffered = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='allowedpaymentmethod') {
-				$this->AllowedPaymentMethod = $arry["text"];			}
+				$this->AllowedPaymentMethod = $arry["text"];
+			}
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="enhancedpaymentdata") {
 				$this->EnhancedPaymentData = new EnhancedPaymentDataType();
@@ -10136,7 +10156,8 @@ You must set the currencyID attribute to one of the three-character currency cod
 				$this->TransactionId = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='paymentaction') {
-				$this->PaymentAction = $arry["text"];			}
+				$this->PaymentAction = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='paymentrequestid') {
 				$this->PaymentRequestID = $arry["text"];
 			}
@@ -10156,7 +10177,8 @@ You must set the currencyID attribute to one of the three-character currency cod
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='recurring') {
-				$this->Recurring = $arry["text"];			}
+				$this->Recurring = $arry["text"];
+			}
 		}
 		}
 	}
@@ -10345,7 +10367,8 @@ n.
 				$this->UniqueIdentifier = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='siteappliedon') {
-				$this->SiteAppliedOn = $arry["text"];			}
+				$this->SiteAppliedOn = $arry["text"];
+			}
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="totaldiscountamount") {
 				$this->TotalDiscountAmount = new BasicAmountType();
@@ -10353,7 +10376,8 @@ n.
 					}
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='status') {
-				$this->Status = $arry["text"];			}
+				$this->Status = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='errorcode') {
 				$this->ErrorCode = $arry["text"];
 			}
@@ -10994,7 +11018,8 @@ class CreditCardDetailsType {
 		if($arr != null) {
 			foreach ($arr as $arry){
 			if($arry != null && isset($arry['text']) && $arry['name']=='creditcardtype') {
-				$this->CreditCardType = $arry["text"];			}
+				$this->CreditCardType = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='creditcardnumber') {
 				$this->CreditCardNumber = $arry["text"];
 			}
@@ -12573,7 +12598,8 @@ Pending
 		if($arr != null) {
 			foreach ($arr as $arry){
 			if($arry != null && isset($arry['text']) && $arry['name']=='status') {
-				$this->Status = $arry["text"];			}
+				$this->Status = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='startdate') {
 				$this->StartDate = $arry["text"];
 			}
@@ -12593,7 +12619,8 @@ Pending
 				$this->CampaignID = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='userwithdrawallimit') {
-				$this->UserWithdrawalLimit = $arry["text"];			}
+				$this->UserWithdrawalLimit = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='partnercustom') {
 				$this->PartnerCustom = $arry["text"];
 			}
@@ -12692,7 +12719,8 @@ Character length and limitations: 40 alphanumeric characters	 *
 				$this->Certificate = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='type') {
-				$this->Type = $arry["text"];			}
+				$this->Type = $arry["text"];
+			}
 		}
 		}
 	}
@@ -13333,7 +13361,8 @@ class BillingPeriodDetailsType {
 		if($arr != null) {
 			foreach ($arr as $arry){
 			if($arry != null && isset($arry['text']) && $arry['name']=='billingperiod') {
-				$this->BillingPeriod = $arry["text"];			}
+				$this->BillingPeriod = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='billingfrequency') {
 				$this->BillingFrequency = $arry["text"];
 			}
@@ -13800,7 +13829,8 @@ class CreateRecurringPaymentsProfileResponseDetailsType {
 				$this->ProfileID = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='profilestatus') {
-				$this->ProfileStatus = $arry["text"];			}
+				$this->ProfileStatus = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='transactionid') {
 				$this->TransactionID = $arry["text"];
 			}
@@ -13941,12 +13971,14 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType {
 				$this->ProfileID = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='profilestatus') {
-				$this->ProfileStatus = $arry["text"];			}
+				$this->ProfileStatus = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='description') {
 				$this->Description = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='autobilloutstandingamount') {
-				$this->AutoBillOutstandingAmount = $arry["text"];			}
+				$this->AutoBillOutstandingAmount = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='maxfailedpayments') {
 				$this->MaxFailedPayments = $arry["text"];
 			}
@@ -14932,9 +14964,11 @@ none: No pending reason
 		if($arr != null) {
 			foreach ($arr as $arry){
 			if($arry != null && isset($arry['text']) && $arry['name']=='paymentstatus') {
-				$this->PaymentStatus = $arry["text"];			}
+				$this->PaymentStatus = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='pendingreason') {
-				$this->PendingReason = $arry["text"];			}
+				$this->PendingReason = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='protectioneligibility') {
 				$this->ProtectionEligibility = $arry["text"];
 			}
@@ -16064,9 +16098,11 @@ class RefundInfoType {
 		if($arr != null) {
 			foreach ($arr as $arry){
 			if($arry != null && isset($arry['text']) && $arry['name']=='refundstatus') {
-				$this->RefundStatus = $arry["text"];			}
+				$this->RefundStatus = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='pendingreason') {
-				$this->PendingReason = $arry["text"];			}
+				$this->PendingReason = $arry["text"];
+			}
 		}
 		}
 	}
@@ -16275,7 +16311,8 @@ class InstallmentDetailsType {
 		if($arr != null) {
 			foreach ($arr as $arry){
 			if($arry != null && isset($arry['text']) && $arry['name']=='billingperiod') {
-				$this->BillingPeriod = $arry["text"];			}
+				$this->BillingPeriod = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='billingfrequency') {
 				$this->BillingFrequency = $arry["text"];
 			}
@@ -16374,7 +16411,8 @@ class OptionSelectionDetailsType {
 				$this->Price = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='optiontype') {
-				$this->OptionType = $arry["text"];			}
+				$this->OptionType = $arry["text"];
+			}
 			$i=0;
 			while(true) {
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
@@ -17313,11 +17351,14 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType {
 				$this->HostedButtonID = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='buttontype') {
-				$this->ButtonType = $arry["text"];			}
+				$this->ButtonType = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='buttoncode') {
-				$this->ButtonCode = $arry["text"];			}
+				$this->ButtonCode = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='buttonsubtype') {
-				$this->ButtonSubType = $arry["text"];			}
+				$this->ButtonSubType = $arry["text"];
+			}
 			$i=0;
 			while(true) {
 			 }
@@ -17340,16 +17381,20 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType {
 			while(true) {
 			 }
 			if($arry != null && isset($arry['text']) && $arry['name']=='buttonimage') {
-				$this->ButtonImage = $arry["text"];			}
+				$this->ButtonImage = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='buttonimageurl') {
 				$this->ButtonImageURL = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='buynowtext') {
-				$this->BuyNowText = $arry["text"];			}
+				$this->BuyNowText = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='subscribetext') {
-				$this->SubscribeText = $arry["text"];			}
+				$this->SubscribeText = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='buttoncountry') {
-				$this->ButtonCountry = $arry["text"];			}
+				$this->ButtonCountry = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='buttonlanguage') {
 				$this->ButtonLanguage = $arry["text"];
 			}
@@ -19304,13 +19349,17 @@ The token prevents a buyer from using any street address other than the address 
 		if($arr != null) {
 			parent::init($arr);			foreach ($arr as $arry){
 			if($arry != null && isset($arry['text']) && $arry['name']=='confirmationcode') {
-				$this->ConfirmationCode = $arry["text"];			}
+				$this->ConfirmationCode = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='streetmatch') {
-				$this->StreetMatch = $arry["text"];			}
+				$this->StreetMatch = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='zipmatch') {
-				$this->ZipMatch = $arry["text"];			}
+				$this->ZipMatch = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='countrycode') {
-				$this->CountryCode = $arry["text"];			}
+				$this->CountryCode = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='paypaltoken') {
 				$this->PayPalToken = $arry["text"];
 			}
@@ -20682,9 +20731,11 @@ All others ErrorNot applicable
 				$this->TransactionID = $arry["text"];
 			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='pendingreason') {
-				$this->PendingReason = $arry["text"];			}
+				$this->PendingReason = $arry["text"];
+			}
 			if($arry != null && isset($arry['text']) && $arry['name']=='paymentstatus') {
-				$this->PaymentStatus = $arry["text"];			}
+				$this->PaymentStatus = $arry["text"];
+			}
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="fmfdetails") {
 				$this->FMFDetails = new FMFDetailsType();
