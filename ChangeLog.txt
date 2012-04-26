@@ -1,9 +1,8 @@
-PayPal Merchant PHP SDK - 0.6.88
+PayPal Adaptive Accounts PHP SDK - 0.6.87
 ----------------------------------------
-
-Release Date - 13-Mar-2012
-
-	- This release contains wsdl update version 88.0
+Date - 17-Apr-2012
+	- Fix to get SDK working with Permissions API token
+	- wsdl update version 88.0
 	
 PayPal Merchant PHP SDK - 0.6.86
 ----------------------------------------
@@ -11,3 +10,5 @@ PayPal Merchant PHP SDK - 0.6.86
 Release Date - 27-Feb-2012
 
 	- Initial release
+
+	

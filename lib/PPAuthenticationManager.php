@@ -5,18 +5,16 @@ require_once 'PPSignatureCredential.php';
 require_once 'PPCertificateCredential.php';
 require_once 'exceptions/PPInvalidCredentialException.php';
 require_once 'auth/PPAuth.php';
+
 class PPAuthenticationManager
 {
-
-
-
 	public function getPayPalHeaders($apiCred,  $connection,  $accessToken = null, $tokenSecret = null ,$url = null)
 	{
 		$config = PPConfigManager::getInstance();
 
 		if(isset($accessToken) && isset($tokenSecret))
 		{
-			$headers_arr[] = "X-PAYPAL-AUTHORIZATION:  " . $this->generateAuthString($apiCred, $accessToken, $tokenSecret, $url);
+			$headers_arr[] = "X-PP-AUTHORIZATION:  " . $this->generateAuthString($apiCred, $accessToken, $tokenSecret, $url);
 			//$headers_arr[] = "CLIENT-AUTH: No cert";
 		}
 		// Add headers required for service authentication
@@ -45,7 +43,7 @@ class PPAuthenticationManager
 	public function appendSoapHeader($payLoad, $apiCred,  $connection,  $accessToken = null, $tokenSecret = null ,$url = null)
 	{
 		$soapHeader = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:urn=\"urn:ebay:api:PayPalAPI\" xmlns:ebl=\"urn:ebay:apis:eBLBaseComponents\" xmlns:cc=\"urn:ebay:apis:CoreComponentTypes\" xmlns:ed=\"urn:ebay:apis:EnhancedDataTypes\">";
-					 
+
 		if(isset($accessToken)&& isset($tokenSecret))
 		{
 			$soapHeader .= "<soapenv:Header>";
@@ -76,10 +74,10 @@ class PPAuthenticationManager
 			$soapHeader .="</soapenv:Header>";
 		}
 		$soapHeader .="<soapenv:Body>";
-		$soapHeader .=$payLoad;
+		$soapHeader .= $payLoad;
 		$soapHeader .="</soapenv:Body>";
 		$soapHeader .="</soapenv:Envelope>";
-return $soapHeader;
+        return $soapHeader;
 
 	}
 
