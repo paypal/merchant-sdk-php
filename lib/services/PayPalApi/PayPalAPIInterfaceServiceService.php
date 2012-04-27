@@ -14,8 +14,8 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	}
 
 	private function setStandardParams(AbstractRequestType $request) {
-		if ($request->getVersion() == null) {
-			$request->setVersion($SERVICE_VERSION);
+		if ($request->Version == null) {
+			$request->Version=$SERVICE_VERSION;
 		}
 	}
 	/**
