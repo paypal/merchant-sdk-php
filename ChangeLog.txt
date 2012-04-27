@@ -1,4 +1,4 @@
-PayPal Adaptive Accounts PHP SDK - 0.6.87
+PayPal Adaptive Accounts PHP SDK - 0.6.88
 ----------------------------------------
 Date - 17-Apr-2012
 	- Fix to get SDK working with Permissions API token
