@@ -1,13 +1,10 @@
-PayPal Merchant PHP SDK - 0.7.86
---------------------------------
+PayPal Merchant PHP SDK - 0.7.88
+-----------------------------------------
+
+Release Date - 17-Apr-2012
+
+	- Fix to get SDK working with Permissions API token	
 
 Release Date - 27-Feb-2012
 
 	- Initial release
-	
-	
-Release Date - 17-Apr-2012
-
-	- Fix to get SDK working with Permissions API token	
-	
-	
