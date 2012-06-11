@@ -9490,18 +9490,18 @@ Character length and limitations: 127 single-byte alphanumeric characters
 	public $CouponAmountCurrency;
 
 	/**
-	 * Amount of Discount on this Loyality Card	 *
+	 * Amount of Discount on this Loyalty Card	 *
 	 * @access public
 	 * @var string
 	 */
-	public $LoyalityCardDiscountAmount;
+	public $LoyaltyCardDiscountAmount;
 
 	/**
 	 * Currency of the Discount	 *
 	 * @access public
 	 * @var string
 	 */
-	public $LoyalityCardDiscountCurrency;
+	public $LoyaltyCardDiscountCurrency;
 
 	/**
 	 * Cost of item 	 *
@@ -9552,11 +9552,11 @@ Character length and limitations: 127 single-byte alphanumeric characters
 			if($arry != null && isset($arry['text']) && $arry['name']=='couponamountcurrency') {
 				$this->CouponAmountCurrency = $arry["text"];
 			}
-			if($arry != null && isset($arry['text']) && $arry['name']=='loyalitycarddiscountamount') {
-				$this->LoyalityCardDiscountAmount = $arry["text"];
+			if($arry != null && isset($arry['text']) && $arry['name']=='loyaltycarddiscountamount') {
+				$this->LoyaltyCardDiscountAmount = $arry["text"];
 			}
-			if($arry != null && isset($arry['text']) && $arry['name']=='loyalitycarddiscountcurrency') {
-				$this->LoyalityCardDiscountCurrency = $arry["text"];
+			if($arry != null && isset($arry['text']) && $arry['name']=='loyaltycarddiscountcurrency') {
+				$this->LoyaltyCardDiscountCurrency = $arry["text"];
 			}
 			if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
 			if( $arry["name"]=="amount") {
@@ -10031,6 +10031,14 @@ You must set the currencyID attribute to one of the three-character currency cod
 	 */
 	public $Recurring;
 
+	/**
+	 * Indicates the purpose of this payment like Refund
+	 *
+	 * @access public
+	 * @var PaymentReasonType
+	 */
+	public $PaymentReason;
+
 
 	public function init($arr = null) {
 		if($arr != null) {
@@ -10167,6 +10175,9 @@ You must set the currencyID attribute to one of the three-character currency cod
 			if($arry != null && isset($arry['text']) && $arry['name']=='recurring') {
 				$this->Recurring = $arry["text"];
 			}
+			if($arry != null && isset($arry['text']) && $arry['name']=='paymentreason') {
+				$this->PaymentReason = $arry["text"];
+			}
 		}
 		}
 	}
@@ -10285,6 +10296,9 @@ You must set the currencyID attribute to one of the three-character currency cod
 		 }
 		if($this->Recurring != null ) {
 			$str .= '<ebl:Recurring>'.$this->Recurring.'</ebl:Recurring>';
+		 }
+		if($this->PaymentReason != null ) {
+			$str .= '<ebl:PaymentReason>'.$this->PaymentReason.'</ebl:PaymentReason>';
 		 }
 
 		return $str;

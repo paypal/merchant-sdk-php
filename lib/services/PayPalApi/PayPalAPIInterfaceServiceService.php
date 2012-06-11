@@ -8,7 +8,7 @@ require_once('PPUtils.php');
  * Auto generated code
  */
 class PayPalAPIInterfaceServiceService extends PPBaseService {
-	private static $SERVICE_VERSION='87.0';
+	private static $SERVICE_VERSION='89.0';
 	public function __construct() {
 		parent::__construct('PayPalAPIInterfaceService');
 	}
