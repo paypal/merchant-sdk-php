@@ -17,15 +17,15 @@ To use the SDK,
 
 * Copy the config and lib folders into your project.
 * Make sure that the lib folder in your project is available in PHP's include path
-* Include the services\PayPalApi\PayPalAPIInterfaceServiceService.php file in your code.
+* Include the services\PayPalAPIInterfaceService\PayPalAPIInterfaceServiceService.php file in your code.
 * Create a service wrapper object
-* Create a request object as per your project's needs. All the API request and response classes are available in services\PayPalApi\PayPalAPIInterfaceServiceService.php
+* Create a request object as per your project's needs. All the API request and response classes are available in services\PayPalAPIInterfaceService\PayPalAPIInterfaceServiceService.php
 * Invoke the appropriate method on the request object.
 
 
 For example,
 
-	require_once('services/PayPalApi/PayPalAPIInterfaceServiceService.php');	require_once('PPLoggingManager.php');
+	require_once('services/PayPalAPIInterfaceService/PayPalAPIInterfaceServiceService.php');	require_once('PPLoggingManager.php');
 	
 	$itemAmount = new BasicAmountType();
 	$itemAmount->currencyID = $_REQUEST['currencyCode'];
