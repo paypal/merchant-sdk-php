@@ -43,7 +43,7 @@ $enterBoardingRequestDetails->ProgramCode = $_REQUEST['programCode'];
 
 $enterBoardingRequest = new EnterBoardingRequestType();
 $enterBoardingRequest->EnterBoardingRequestDetails = $enterBoardingRequestDetails;
-$enterBoardingRequest->Version = 86;
+$enterBoardingRequest->Version = 92;
 
 $enterBoardingReq = new EnterBoardingReq();
 $enterBoardingReq->EnterBoardingRequest = $enterBoardingRequest;

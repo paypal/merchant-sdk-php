@@ -7,7 +7,7 @@ require_once('PPLoggingManager.php');
 $logger = new PPLoggingManager('GetPlaDetails');
 
 $getPalDetailsRequest = new GetPalDetailsRequestType();
-$getPalDetailsRequest->Version = 86.0;
+$getPalDetailsRequest->Version = 92.0;
 
 $getPalDetailsReq = new GetPalDetailsReq();
 $getPalDetailsReq->GetPalDetailsRequest = $getPalDetailsRequest;

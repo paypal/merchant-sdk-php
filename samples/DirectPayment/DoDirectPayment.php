@@ -90,7 +90,7 @@ $ddReqDetails->CreditCard = $cardDetails;
 $ddReqDetails->PaymentDetails =$PaymentDetails;
 
 $ddReq= new DoDirectPaymentRequestType($ddReqDetails);
-$ddReq->Version = 86.0;
+$ddReq->Version = 92.0;
 
 $doDirectPaymentReq = new DoDirectPaymentReq();
 $doDirectPaymentReq->DoDirectPaymentRequest = $ddReq;

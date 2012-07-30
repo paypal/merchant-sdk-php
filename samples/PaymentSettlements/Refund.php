@@ -13,7 +13,7 @@ $amount->currencyID = $_REQUEST['currencyID'];
 $amount->value = $_REQUEST['amt'];
 
 $refundReqest = new RefundTransactionRequestType();
-$refundReqest->Version = 86;
+$refundReqest->Version = 92;
 if(!empty($amount->value))
 {
 	$refundReqest->Amount = $amount;

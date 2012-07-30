@@ -14,7 +14,7 @@ $amount->value = $_REQUEST['amt'];
 $doReAuthRequest = new DoReauthorizationRequestType();
 $doReAuthRequest->Amount = $amount;
 $doReAuthRequest->TransactionID = $_REQUEST['authID'];
-$doReAuthRequest->Version = '86.0';
+$doReAuthRequest->Version = '92.0';
 
 $doReAuthReq = new DoReauthorizationReq();
 $doReAuthReq->DoReauthorizationRequest =$doReAuthRequest;

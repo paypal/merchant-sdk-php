@@ -60,13 +60,6 @@ class PPUtilsTest extends PHPUnit_Framework_TestCase
         //$this->assertEquals('127.0.0.1',$ip);
     }
 
-    /**
-     * @test
-     */
-    public function testGetRequestSource()
-    {
-       $version =  $this->object->getRequestSource();
-       $this->assertEquals('PHP_Invoice_SDK_0.6',$version);
-    }
+  
 }
 ?>

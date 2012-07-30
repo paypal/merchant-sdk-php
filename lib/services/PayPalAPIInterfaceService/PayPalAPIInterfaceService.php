@@ -15,14 +15,14 @@
 class BasicAmountType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var CurrencyCodeType
 	 */ 
 	public $currencyID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -72,19 +72,19 @@ class BasicAmountType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class MeasureType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $unit;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var double
 	 */ 
@@ -169,14 +169,14 @@ class ErrorParameterType  {
 class ErrorType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ShortMessage;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -352,7 +352,7 @@ class AbstractResponseType  {
 	public $CorrelationID;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ErrorType
@@ -571,7 +571,7 @@ class AddressType  {
 	public $Phone;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -816,40 +816,40 @@ class AddressType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class PersonNameType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Salutation;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $FirstName;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $MiddleName;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $LastName;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -918,33 +918,33 @@ class PersonNameType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class IncentiveAppliedToType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $BucketId;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ItemId;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $IncentiveAmount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -962,11 +962,22 @@ class IncentiveAppliedToType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'itemid') {
 					$this->ItemId = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "incentiveamount") {
-					$this->IncentiveAmount = new BasicAmountType();
-					$this->IncentiveAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='incentiveamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->IncentiveAmount= new BasicAmountType(); 
+								$this->IncentiveAmount->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'subtype') {
 					$this->SubType = $arry["text"];
@@ -979,47 +990,47 @@ class IncentiveAppliedToType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class IncentiveDetailType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $RedemptionCode;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $DisplayCode;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ProgramId;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var IncentiveTypeCodeType
 	 */ 
 	public $IncentiveType;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $IncentiveDescription;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var IncentiveAppliedToType
@@ -1027,14 +1038,14 @@ class IncentiveDetailType  {
 	public $AppliedTo;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Status;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -1091,40 +1102,40 @@ class IncentiveDetailType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class IncentiveItemType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ItemId;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var dateTime
 	 */ 
 	public $PurchaseTime;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ItemCategoryList;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $ItemPrice;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
@@ -1175,12 +1186,12 @@ class IncentiveItemType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class IncentiveBucketType  {
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var IncentiveItemType
@@ -1188,56 +1199,56 @@ class IncentiveBucketType  {
 	public $Items;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $BucketId;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $SellerId;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ExternalSellerId;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $BucketSubtotalAmt;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $BucketShippingAmt;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $BucketInsuranceAmt;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $BucketSalesTaxAmt;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
@@ -1328,26 +1339,26 @@ class IncentiveBucketType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class IncentiveRequestDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $RequestId;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var IncentiveRequestCodeType
 	 */ 
 	public $RequestType;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var IncentiveRequestDetailLevelCodeType
 	 */ 
@@ -1383,19 +1394,19 @@ class IncentiveRequestDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetIncentiveEvaluationRequestDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ExternalBuyerId;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var string
@@ -1403,7 +1414,7 @@ class GetIncentiveEvaluationRequestDetailsType  {
 	public $IncentiveCodes;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var IncentiveApplyIndicationType
@@ -1411,7 +1422,7 @@ class GetIncentiveEvaluationRequestDetailsType  {
 	public $ApplyIndication;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var IncentiveBucketType
@@ -1419,14 +1430,14 @@ class GetIncentiveEvaluationRequestDetailsType  {
 	public $Buckets;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $CartTotalAmt;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var IncentiveRequestDetailsType
 	 */ 
@@ -1496,12 +1507,12 @@ class GetIncentiveEvaluationRequestDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetIncentiveEvaluationResponseDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var IncentiveDetailType
@@ -1509,7 +1520,7 @@ class GetIncentiveEvaluationResponseDetailsType  {
 	public $IncentiveDetails;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -1889,14 +1900,14 @@ class SetExpressCheckoutRequestDetailsType  {
 	public $BuyerEmail;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ChannelType
 	 */ 
 	public $ChannelType;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var BillingAgreementDetailsType
@@ -1921,14 +1932,14 @@ class SetExpressCheckoutRequestDetailsType  {
 	public $PayPalCheckOutBtnType;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ProductCategoryType
 	 */ 
 	public $ProductCategory;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ShippingServiceCodeType
 	 */ 
@@ -2106,7 +2117,7 @@ class SetExpressCheckoutRequestDetailsType  {
 	public $SurveyChoice;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var TotalType
 	 */ 
@@ -2792,12 +2803,12 @@ class SetDataRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class AuthorizationRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var boolean
 	 */ 
@@ -3291,12 +3302,12 @@ class FundingSourceDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BillingAgreementDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BillingCodeType
 	 */ 
@@ -3310,7 +3321,7 @@ class BillingAgreementDetailsType  {
 	public $BillingAgreementDescription;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var MerchantPullPaymentCodeType
 	 */ 
@@ -3420,14 +3431,14 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	public $ContactPhone;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var boolean
 	 */ 
 	public $BillingAgreementAcceptedStatus;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -3571,11 +3582,13 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'token') {
 					$this->Token = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "payerinfo") {
-					$this->PayerInfo = new PayerInfoType();
-					$this->PayerInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='payerinfo'){
+                                    $this->PayerInfo = new PayerInfoType(); 
+                                    $this->PayerInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'custom') {
 					$this->Custom = $arry["text"];
@@ -3592,11 +3605,13 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'redirectrequired') {
 					$this->RedirectRequired = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "billingaddress") {
-					$this->BillingAddress = new AddressType();
-					$this->BillingAddress->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='billingaddress'){
+                                    $this->BillingAddress = new AddressType(); 
+                                    $this->BillingAddress->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'note') {
 					$this->Note = $arry["text"];
@@ -3604,11 +3619,22 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'checkoutstatus') {
 					$this->CheckoutStatus = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "paypaladjustment") {
-					$this->PayPalAdjustment = new BasicAmountType();
-					$this->PayPalAdjustment->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='paypaladjustment') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->PayPalAdjustment= new BasicAmountType(); 
+								$this->PayPalAdjustment->init($atr);
+							}
+							                            
 			}
 				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
 					$i = 0;
@@ -3626,11 +3652,13 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 					$this->PaymentDetails = new PaymentDetailsType();
 					$this->PaymentDetails->init($arry["children"]);
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "userselectedoptions") {
-					$this->UserSelectedOptions = new UserSelectedOptionType();
-					$this->UserSelectedOptions->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='userselectedoptions'){
+                                    $this->UserSelectedOptions = new UserSelectedOptionType(); 
+                                    $this->UserSelectedOptions->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
 					$i = 0;
@@ -3657,11 +3685,22 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'giftwrapname') {
 					$this->GiftWrapName = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "giftwrapamount") {
-					$this->GiftWrapAmount = new BasicAmountType();
-					$this->GiftWrapAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='giftwrapamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->GiftWrapAmount= new BasicAmountType(); 
+								$this->GiftWrapAmount->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'buyermarketingemail') {
 					$this->BuyerMarketingEmail = $arry["text"];
@@ -3685,11 +3724,13 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 					$this->PaymentRequestInfo = new PaymentRequestInfoType();
 					$this->PaymentRequestInfo->init($arry["children"]);
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "externalremembermestatusdetails") {
-					$this->ExternalRememberMeStatusDetails = new ExternalRememberMeStatusDetailsType();
-					$this->ExternalRememberMeStatusDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='externalremembermestatusdetails'){
+                                    $this->ExternalRememberMeStatusDetails = new ExternalRememberMeStatusDetailsType(); 
+                                    $this->ExternalRememberMeStatusDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -3699,19 +3740,19 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ExecuteCheckoutOperationsResponseDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var SetDataResponseType
 	 */ 
 	public $SetDataResponse;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var AuthorizationResponseType
 	 */ 
@@ -3723,17 +3764,21 @@ class ExecuteCheckoutOperationsResponseDetailsType  {
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "setdataresponse") {
-					$this->SetDataResponse = new SetDataResponseType();
-					$this->SetDataResponse->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='setdataresponse'){
+                                    $this->SetDataResponse = new SetDataResponseType(); 
+                                    $this->SetDataResponse->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "authorizationresponse") {
-					$this->AuthorizationResponse = new AuthorizationResponseType();
-					$this->AuthorizationResponse->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='authorizationresponse'){
+                                    $this->AuthorizationResponse = new AuthorizationResponseType(); 
+                                    $this->AuthorizationResponse->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -3757,7 +3802,7 @@ class SetDataResponseType  {
 	public $Token;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ErrorType
@@ -3811,7 +3856,7 @@ class AuthorizationResponseType  {
 	public $Status;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ErrorType
@@ -4190,14 +4235,14 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 	public $PaymentInfo;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $BillingAgreementID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -4263,11 +4308,13 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'successpageredirectrequested') {
 					$this->SuccessPageRedirectRequested = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "userselectedoptions") {
-					$this->UserSelectedOptions = new UserSelectedOptionType();
-					$this->UserSelectedOptions->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='userselectedoptions'){
+                                    $this->UserSelectedOptions = new UserSelectedOptionType(); 
+                                    $this->UserSelectedOptions->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -4299,6 +4346,13 @@ class DoCaptureResponseDetailsType  {
 	 */ 
 	public $PaymentInfo;
 
+	/**
+	 * Return msgsubid back to merchant 
+	 *@access public
+	 *@var string
+	 */ 
+	public $MsgSubID;
+
 
 
 
@@ -4308,12 +4362,17 @@ class DoCaptureResponseDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'authorizationid') {
 					$this->AuthorizationID = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "paymentinfo") {
-					$this->PaymentInfo = new PaymentInfoType();
-					$this->PaymentInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='paymentinfo'){
+                                    $this->PaymentInfo = new PaymentInfoType(); 
+                                    $this->PaymentInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
+				if($arry != null && isset($arry['text']) && $arry['name'] == 'msgsubid') {
+					$this->MsgSubID = $arry["text"];
+				}
 			}
 		}
 	}
@@ -4381,7 +4440,7 @@ class DoDirectPaymentRequestDetailsType  {
 	public $MerchantSessionId;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var boolean
 	 */ 
@@ -5438,47 +5497,47 @@ class GetAccessPermissionDetailsResponseDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BAUpdateResponseDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $BillingAgreementID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $BillingAgreementDescription;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var MerchantPullStatusCodeType
 	 */ 
 	public $BillingAgreementStatus;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $BillingAgreementCustom;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var PayerInfoType
 	 */ 
 	public $PayerInfo;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
@@ -5512,23 +5571,38 @@ class BAUpdateResponseDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingagreementcustom') {
 					$this->BillingAgreementCustom = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "payerinfo") {
-					$this->PayerInfo = new PayerInfoType();
-					$this->PayerInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='payerinfo'){
+                                    $this->PayerInfo = new PayerInfoType(); 
+                                    $this->PayerInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "billingagreementmax") {
-					$this->BillingAgreementMax = new BasicAmountType();
-					$this->BillingAgreementMax->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='billingagreementmax') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->BillingAgreementMax= new BasicAmountType(); 
+								$this->BillingAgreementMax->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "billingaddress") {
-					$this->BillingAddress = new AddressType();
-					$this->BillingAddress->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='billingaddress'){
+                                    $this->BillingAddress = new AddressType(); 
+                                    $this->BillingAddress->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -5570,23 +5644,29 @@ class MerchantPullPaymentResponseType  {
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "payerinfo") {
-					$this->PayerInfo = new PayerInfoType();
-					$this->PayerInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='payerinfo'){
+                                    $this->PayerInfo = new PayerInfoType(); 
+                                    $this->PayerInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "paymentinfo") {
-					$this->PaymentInfo = new PaymentInfoType();
-					$this->PaymentInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='paymentinfo'){
+                                    $this->PaymentInfo = new PaymentInfoType(); 
+                                    $this->PaymentInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "merchantpullinfo") {
-					$this->MerchantPullInfo = new MerchantPullInfoType();
-					$this->MerchantPullInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='merchantpullinfo'){
+                                    $this->MerchantPullInfo = new MerchantPullInfoType(); 
+                                    $this->MerchantPullInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -5661,11 +5741,22 @@ class MerchantPullInfoType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'mpstatus') {
 					$this->MpStatus = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "mpmax") {
-					$this->MpMax = new BasicAmountType();
-					$this->MpMax->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='mpmax') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->MpMax= new BasicAmountType(); 
+								$this->MpMax->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'mpcustom') {
 					$this->MpCustom = $arry["text"];
@@ -5794,23 +5885,56 @@ class PaymentTransactionSearchResultType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'status') {
 					$this->Status = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "grossamount") {
-					$this->GrossAmount = new BasicAmountType();
-					$this->GrossAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='grossamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->GrossAmount= new BasicAmountType(); 
+								$this->GrossAmount->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "feeamount") {
-					$this->FeeAmount = new BasicAmountType();
-					$this->FeeAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='feeamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->FeeAmount= new BasicAmountType(); 
+								$this->FeeAmount->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "netamount") {
-					$this->NetAmount = new BasicAmountType();
-					$this->NetAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='netamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->NetAmount= new BasicAmountType(); 
+								$this->NetAmount->init($atr);
+							}
+							                            
 			}
 			}
 		}
@@ -6150,41 +6274,53 @@ class PaymentTransactionType  {
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "receiverinfo") {
-					$this->ReceiverInfo = new ReceiverInfoType();
-					$this->ReceiverInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='receiverinfo'){
+                                    $this->ReceiverInfo = new ReceiverInfoType(); 
+                                    $this->ReceiverInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "payerinfo") {
-					$this->PayerInfo = new PayerInfoType();
-					$this->PayerInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='payerinfo'){
+                                    $this->PayerInfo = new PayerInfoType(); 
+                                    $this->PayerInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "paymentinfo") {
-					$this->PaymentInfo = new PaymentInfoType();
-					$this->PaymentInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='paymentinfo'){
+                                    $this->PaymentInfo = new PaymentInfoType(); 
+                                    $this->PaymentInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "paymentiteminfo") {
-					$this->PaymentItemInfo = new PaymentItemInfoType();
-					$this->PaymentItemInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='paymentiteminfo'){
+                                    $this->PaymentItemInfo = new PaymentItemInfoType(); 
+                                    $this->PaymentItemInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "offercouponinfo") {
-					$this->OfferCouponInfo = new OfferCouponInfoType();
-					$this->OfferCouponInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='offercouponinfo'){
+                                    $this->OfferCouponInfo = new OfferCouponInfoType(); 
+                                    $this->OfferCouponInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "userselectedoptions") {
-					$this->UserSelectedOptions = new UserSelectedOptionType();
-					$this->UserSelectedOptions->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='userselectedoptions'){
+                                    $this->UserSelectedOptions = new UserSelectedOptionType(); 
+                                    $this->UserSelectedOptions->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'giftmessage') {
 					$this->GiftMessage = $arry["text"];
@@ -6195,11 +6331,22 @@ class PaymentTransactionType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'giftwrapname') {
 					$this->GiftWrapName = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "giftwrapamount") {
-					$this->GiftWrapAmount = new BasicAmountType();
-					$this->GiftWrapAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='giftwrapamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->GiftWrapAmount= new BasicAmountType(); 
+								$this->GiftWrapAmount->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'buyeremailoptin') {
 					$this->BuyerEmailOptIn = $arry["text"];
@@ -6444,11 +6591,13 @@ class PayerInfoType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'payerstatus') {
 					$this->PayerStatus = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "payername") {
-					$this->PayerName = new PersonNameType();
-					$this->PayerName->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='payername'){
+                                    $this->PayerName = new PersonNameType(); 
+                                    $this->PayerName->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'payercountry') {
 					$this->PayerCountry = $arry["text"];
@@ -6456,26 +6605,32 @@ class PayerInfoType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'payerbusiness') {
 					$this->PayerBusiness = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "address") {
-					$this->Address = new AddressType();
-					$this->Address->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='address'){
+                                    $this->Address = new AddressType(); 
+                                    $this->Address->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'contactphone') {
 					$this->ContactPhone = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "taxiddetails") {
-					$this->TaxIdDetails = new TaxIdDetailsType();
-					$this->TaxIdDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='taxiddetails'){
+                                    $this->TaxIdDetails = new TaxIdDetailsType(); 
+                                    $this->TaxIdDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "enhancedpayerinfo") {
-					$this->EnhancedPayerInfo = new EnhancedPayerInfoType();
-					$this->EnhancedPayerInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='enhancedpayerinfo'){
+                                    $this->EnhancedPayerInfo = new EnhancedPayerInfoType(); 
+                                    $this->EnhancedPayerInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -6599,11 +6754,13 @@ class OfferDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'offercode') {
 					$this->OfferCode = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "bmlofferinfo") {
-					$this->BMLOfferInfo = new BMLOfferInfoType();
-					$this->BMLOfferInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='bmlofferinfo'){
+                                    $this->BMLOfferInfo = new BMLOfferInfoType(); 
+                                    $this->BMLOfferInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -6995,29 +7152,73 @@ class PaymentInfoType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentdate') {
 					$this->PaymentDate = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "grossamount") {
-					$this->GrossAmount = new BasicAmountType();
-					$this->GrossAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='grossamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->GrossAmount= new BasicAmountType(); 
+								$this->GrossAmount->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "feeamount") {
-					$this->FeeAmount = new BasicAmountType();
-					$this->FeeAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='feeamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->FeeAmount= new BasicAmountType(); 
+								$this->FeeAmount->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "settleamount") {
-					$this->SettleAmount = new BasicAmountType();
-					$this->SettleAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='settleamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->SettleAmount= new BasicAmountType(); 
+								$this->SettleAmount->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "taxamount") {
-					$this->TaxAmount = new BasicAmountType();
-					$this->TaxAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='taxamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->TaxAmount= new BasicAmountType(); 
+								$this->TaxAmount->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'exchangerate') {
 					$this->ExchangeRate = $arry["text"];
@@ -7064,44 +7265,56 @@ class PaymentInfoType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'terminalid') {
 					$this->TerminalID = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "sellerdetails") {
-					$this->SellerDetails = new SellerDetailsType();
-					$this->SellerDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='sellerdetails'){
+                                    $this->SellerDetails = new SellerDetailsType(); 
+                                    $this->SellerDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentrequestid') {
 					$this->PaymentRequestID = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "fmfdetails") {
-					$this->FMFDetails = new FMFDetailsType();
-					$this->FMFDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='fmfdetails'){
+                                    $this->FMFDetails = new FMFDetailsType(); 
+                                    $this->FMFDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "enhancedpaymentinfo") {
-					$this->EnhancedPaymentInfo = new EnhancedPaymentInfoType();
-					$this->EnhancedPaymentInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='enhancedpaymentinfo'){
+                                    $this->EnhancedPaymentInfo = new EnhancedPaymentInfoType(); 
+                                    $this->EnhancedPaymentInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "paymenterror") {
-					$this->PaymentError = new ErrorType();
-					$this->PaymentError->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='paymenterror'){
+                                    $this->PaymentError = new ErrorType(); 
+                                    $this->PaymentError->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "instrumentdetails") {
-					$this->InstrumentDetails = new InstrumentDetailsType();
-					$this->InstrumentDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='instrumentdetails'){
+                                    $this->InstrumentDetails = new InstrumentDetailsType(); 
+                                    $this->InstrumentDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "offerdetails") {
-					$this->OfferDetails = new OfferDetailsType();
-					$this->OfferDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='offerdetails'){
+                                    $this->OfferDetails = new OfferDetailsType(); 
+                                    $this->OfferDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -7116,7 +7329,7 @@ class PaymentInfoType  {
 class SubscriptionTermsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
@@ -7128,11 +7341,22 @@ class SubscriptionTermsType  {
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "amount") {
-					$this->Amount = new BasicAmountType();
-					$this->Amount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='amount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->Amount= new BasicAmountType(); 
+								$this->Amount->init($atr);
+							}
+							                            
 			}
 			}
 		}
@@ -7474,7 +7698,7 @@ class PaymentDetailsItemType  {
 	public $PromoCode;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ProductCategoryType
 	 */ 
@@ -7677,23 +7901,47 @@ class PaymentDetailsItemType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'quantity') {
 					$this->Quantity = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "tax") {
-					$this->Tax = new BasicAmountType();
-					$this->Tax->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='tax') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->Tax= new BasicAmountType(); 
+								$this->Tax->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "amount") {
-					$this->Amount = new BasicAmountType();
-					$this->Amount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='amount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->Amount= new BasicAmountType(); 
+								$this->Amount->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "ebayitempaymentdetailsitem") {
-					$this->EbayItemPaymentDetailsItem = new EbayItemPaymentDetailsItemType();
-					$this->EbayItemPaymentDetailsItem->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='ebayitempaymentdetailsitem'){
+                                    $this->EbayItemPaymentDetailsItem = new EbayItemPaymentDetailsItemType(); 
+                                    $this->EbayItemPaymentDetailsItem->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'promocode') {
 					$this->PromoCode = $arry["text"];
@@ -7704,38 +7952,84 @@ class PaymentDetailsItemType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'description') {
 					$this->Description = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "itemweight") {
-					$this->ItemWeight = new MeasureType();
-					$this->ItemWeight->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='itemweight') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->ItemWeight= new MeasureType(); 
+								$this->ItemWeight->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "itemlength") {
-					$this->ItemLength = new MeasureType();
-					$this->ItemLength->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='itemlength') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->ItemLength= new MeasureType(); 
+								$this->ItemLength->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "itemwidth") {
-					$this->ItemWidth = new MeasureType();
-					$this->ItemWidth->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='itemwidth') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->ItemWidth= new MeasureType(); 
+								$this->ItemWidth->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "itemheight") {
-					$this->ItemHeight = new MeasureType();
-					$this->ItemHeight->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='itemheight') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->ItemHeight= new MeasureType(); 
+								$this->ItemHeight->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'itemurl') {
 					$this->ItemURL = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "enhanceditemdata") {
-					$this->EnhancedItemData = new EnhancedItemDataType();
-					$this->EnhancedItemData->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='enhanceditemdata'){
+                                    $this->EnhancedItemData = new EnhancedItemDataType(); 
+                                    $this->EnhancedItemData->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'itemcategory') {
 					$this->ItemCategory = $arry["text"];
@@ -7898,11 +8192,22 @@ class PaymentItemType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'loyaltycarddiscountcurrency') {
 					$this->LoyaltyCardDiscountCurrency = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "amount") {
-					$this->Amount = new BasicAmountType();
-					$this->Amount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='amount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->Amount= new BasicAmountType(); 
+								$this->Amount->init($atr);
+							}
+							                            
 			}
 				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
 					$i = 0;
@@ -8024,17 +8329,21 @@ class PaymentItemInfoType  {
 					$this->PaymentItem = new PaymentItemType();
 					$this->PaymentItem->init($arry["children"]);
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "subscription") {
-					$this->Subscription = new SubscriptionInfoType();
-					$this->Subscription->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='subscription'){
+                                    $this->Subscription = new SubscriptionInfoType(); 
+                                    $this->Subscription->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "auction") {
-					$this->Auction = new AuctionInfoType();
-					$this->Auction->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='auction'){
+                                    $this->Auction = new AuctionInfoType(); 
+                                    $this->Auction->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -8225,7 +8534,7 @@ class PaymentDetailsType  {
 	public $ShipToAddress;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ShippingServiceCodeType
 	 */ 
@@ -8607,35 +8916,90 @@ class PaymentDetailsType  {
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "ordertotal") {
-					$this->OrderTotal = new BasicAmountType();
-					$this->OrderTotal->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='ordertotal') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->OrderTotal= new BasicAmountType(); 
+								$this->OrderTotal->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "itemtotal") {
-					$this->ItemTotal = new BasicAmountType();
-					$this->ItemTotal->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='itemtotal') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->ItemTotal= new BasicAmountType(); 
+								$this->ItemTotal->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "shippingtotal") {
-					$this->ShippingTotal = new BasicAmountType();
-					$this->ShippingTotal->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='shippingtotal') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->ShippingTotal= new BasicAmountType(); 
+								$this->ShippingTotal->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "handlingtotal") {
-					$this->HandlingTotal = new BasicAmountType();
-					$this->HandlingTotal->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='handlingtotal') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->HandlingTotal= new BasicAmountType(); 
+								$this->HandlingTotal->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "taxtotal") {
-					$this->TaxTotal = new BasicAmountType();
-					$this->TaxTotal->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='taxtotal') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->TaxTotal= new BasicAmountType(); 
+								$this->TaxTotal->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'orderdescription') {
 					$this->OrderDescription = $arry["text"];
@@ -8652,11 +9016,13 @@ class PaymentDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'notifyurl') {
 					$this->NotifyURL = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "shiptoaddress") {
-					$this->ShipToAddress = new AddressType();
-					$this->ShipToAddress->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='shiptoaddress'){
+                                    $this->ShipToAddress = new AddressType(); 
+                                    $this->ShipToAddress->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'shippingmethod') {
 					$this->ShippingMethod = $arry["text"];
@@ -8680,17 +9046,39 @@ class PaymentDetailsType  {
 					$this->PaymentDetailsItem = new PaymentDetailsItemType();
 					$this->PaymentDetailsItem->init($arry["children"]);
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "insurancetotal") {
-					$this->InsuranceTotal = new BasicAmountType();
-					$this->InsuranceTotal->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='insurancetotal') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->InsuranceTotal= new BasicAmountType(); 
+								$this->InsuranceTotal->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "shippingdiscount") {
-					$this->ShippingDiscount = new BasicAmountType();
-					$this->ShippingDiscount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='shippingdiscount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->ShippingDiscount= new BasicAmountType(); 
+								$this->ShippingDiscount->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'insuranceoptionoffered') {
 					$this->InsuranceOptionOffered = $arry["text"];
@@ -8698,17 +9086,21 @@ class PaymentDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'allowedpaymentmethod') {
 					$this->AllowedPaymentMethod = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "enhancedpaymentdata") {
-					$this->EnhancedPaymentData = new EnhancedPaymentDataType();
-					$this->EnhancedPaymentData->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='enhancedpaymentdata'){
+                                    $this->EnhancedPaymentData = new EnhancedPaymentDataType(); 
+                                    $this->EnhancedPaymentData->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "sellerdetails") {
-					$this->SellerDetails = new SellerDetailsType();
-					$this->SellerDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='sellerdetails'){
+                                    $this->SellerDetails = new SellerDetailsType(); 
+                                    $this->SellerDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'notetext') {
 					$this->NoteText = $arry["text"];
@@ -8731,11 +9123,13 @@ class PaymentDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'branchlevel') {
 					$this->BranchLevel = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "offerdetails") {
-					$this->OfferDetails = new OfferDetailsType();
-					$this->OfferDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='offerdetails'){
+                                    $this->OfferDetails = new OfferDetailsType(); 
+                                    $this->OfferDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'recurring') {
 					$this->Recurring = $arry["text"];
@@ -8815,11 +9209,22 @@ class IncentiveDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'siteappliedon') {
 					$this->SiteAppliedOn = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "totaldiscountamount") {
-					$this->TotalDiscountAmount = new BasicAmountType();
-					$this->TotalDiscountAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='totaldiscountamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->TotalDiscountAmount= new BasicAmountType(); 
+								$this->TotalDiscountAmount->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'status') {
 					$this->Status = $arry["text"];
@@ -8906,11 +9311,22 @@ class IncentiveAppliedDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'externaltxnid') {
 					$this->ExternalTxnId = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "discountamount") {
-					$this->DiscountAmount = new BasicAmountType();
-					$this->DiscountAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='discountamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->DiscountAmount= new BasicAmountType(); 
+								$this->DiscountAmount->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'subtype') {
 					$this->SubType = $arry["text"];
@@ -9304,35 +9720,35 @@ class TaxIdDetailsType  {
 class ThreeDSecureRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Eci3ds;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Cavv;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Xid;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $MpiVendor3ds;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -9406,14 +9822,14 @@ class ThreeDSecureRequestType  {
 class ThreeDSecureResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Vpas;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -9444,14 +9860,14 @@ class ThreeDSecureResponseType  {
 class ThreeDSecureInfoType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ThreeDSecureRequestType
 	 */ 
 	public $ThreeDSecureRequest;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ThreeDSecureResponseType
 	 */ 
@@ -9463,17 +9879,21 @@ class ThreeDSecureInfoType  {
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "threedsecurerequest") {
-					$this->ThreeDSecureRequest = new ThreeDSecureRequestType();
-					$this->ThreeDSecureRequest->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='threedsecurerequest'){
+                                    $this->ThreeDSecureRequest = new ThreeDSecureRequestType(); 
+                                    $this->ThreeDSecureRequest->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "threedsecureresponse") {
-					$this->ThreeDSecureResponse = new ThreeDSecureResponseType();
-					$this->ThreeDSecureResponse->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='threedsecureresponse'){
+                                    $this->ThreeDSecureResponse = new ThreeDSecureResponseType(); 
+                                    $this->ThreeDSecureResponse->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -9488,70 +9908,70 @@ class ThreeDSecureInfoType  {
 class CreditCardDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var CreditCardTypeType
 	 */ 
 	public $CreditCardType;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $CreditCardNumber;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
 	public $ExpMonth;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
 	public $ExpYear;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var PayerInfoType
 	 */ 
 	public $CardOwner;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $CVV2;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
 	public $StartMonth;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
 	public $StartYear;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $IssueNumber;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ThreeDSecureRequestType
 	 */ 
@@ -9645,11 +10065,13 @@ class CreditCardDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'expyear') {
 					$this->ExpYear = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "cardowner") {
-					$this->CardOwner = new PayerInfoType();
-					$this->CardOwner->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='cardowner'){
+                                    $this->CardOwner = new PayerInfoType(); 
+                                    $this->CardOwner->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'cvv2') {
 					$this->CVV2 = $arry["text"];
@@ -9663,11 +10085,13 @@ class CreditCardDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'issuenumber') {
 					$this->IssueNumber = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "threedsecurerequest") {
-					$this->ThreeDSecureRequest = new ThreeDSecureRequestType();
-					$this->ThreeDSecureRequest->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='threedsecurerequest'){
+                                    $this->ThreeDSecureRequest = new ThreeDSecureRequestType(); 
+                                    $this->ThreeDSecureRequest->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -9682,21 +10106,21 @@ class CreditCardDetailsType  {
 class ShippingOptionType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ShippingOptionIsDefault;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $ShippingOptionAmount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -9740,35 +10164,35 @@ class ShippingOptionType  {
 class UserSelectedOptionType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ShippingCalculationMode;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $InsuranceOptionSelected;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ShippingOptionIsDefault;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $ShippingOptionAmount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -9826,11 +10250,22 @@ class UserSelectedOptionType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'shippingoptionisdefault') {
 					$this->ShippingOptionIsDefault = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "shippingoptionamount") {
-					$this->ShippingOptionAmount = new BasicAmountType();
-					$this->ShippingOptionAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='shippingoptionamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->ShippingOptionAmount= new BasicAmountType(); 
+								$this->ShippingOptionAmount->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'shippingoptionname') {
 					$this->ShippingOptionName = $arry["text"];
@@ -9843,19 +10278,19 @@ class UserSelectedOptionType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class CreditCardNumberTypeType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var CreditCardTypeType
 	 */ 
 	public $CreditCardType;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -9891,63 +10326,63 @@ class CreditCardNumberTypeType  {
 class ReferenceCreditCardDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var CreditCardNumberTypeType
 	 */ 
 	public $CreditCardNumberType;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
 	public $ExpMonth;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
 	public $ExpYear;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var PersonNameType
 	 */ 
 	public $CardOwnerName;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var AddressType
 	 */ 
 	public $BillingAddress;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $CVV2;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
 	public $StartMonth;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
 	public $StartYear;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -10028,75 +10463,75 @@ class ReferenceCreditCardDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class SetCustomerBillingAgreementRequestDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BillingAgreementDetailsType
 	 */ 
 	public $BillingAgreementDetails;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ReturnURL;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $CancelURL;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $LocaleCode;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $PageStyle;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $cppheaderimage;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $cppheaderbordercolor;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $cppheaderbackcolor;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $cpppayflowcolor;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -10202,12 +10637,12 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetBillingAgreementCustomerDetailsResponseDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var PayerInfoType
 	 */ 
@@ -10230,17 +10665,21 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType  {
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "payerinfo") {
-					$this->PayerInfo = new PayerInfoType();
-					$this->PayerInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='payerinfo'){
+                                    $this->PayerInfo = new PayerInfoType(); 
+                                    $this->PayerInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "billingaddress") {
-					$this->BillingAddress = new AddressType();
-					$this->BillingAddress->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='billingaddress'){
+                                    $this->BillingAddress = new AddressType(); 
+                                    $this->BillingAddress->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -10283,12 +10722,12 @@ class DeviceDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class SenderDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DeviceDetailsType
 	 */ 
@@ -10315,79 +10754,88 @@ class SenderDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoReferenceTransactionRequestDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ReferenceID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var PaymentActionCodeType
 	 */ 
 	public $PaymentAction;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var MerchantPullPaymentCodeType
 	 */ 
 	public $PaymentType;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var PaymentDetailsType
 	 */ 
 	public $PaymentDetails;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ReferenceCreditCardDetailsType
 	 */ 
 	public $CreditCard;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $IPAddress;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $MerchantSessionId;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ReqConfirmShipping;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $SoftDescriptor;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var SenderDetailsType
 	 */ 
 	public $SenderDetails;
+
+	/**
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 
+	 *@access public
+	 *@var string
+	 */ 
+	public $MsgSubID;
 
 	/**
 	 * Constructor with arguments
@@ -10470,6 +10918,12 @@ class DoReferenceTransactionRequestDetailsType  {
 			$str .= $this->SenderDetails->toXMLString();
 			$str .= '</ebl:SenderDetails>';
 		}
+		if($this->MsgSubID != null) {
+			//prop is not a collection
+			//prop not complex
+			//prop is not value
+			$str .= '<ebl:MsgSubID>' . $this->MsgSubID . '</ebl:MsgSubID>';
+		}
 		return $str;
 	}
 
@@ -10479,47 +10933,47 @@ class DoReferenceTransactionRequestDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoReferenceTransactionResponseDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $BillingAgreementID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var PaymentInfoType
 	 */ 
 	public $PaymentInfo;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $AVSCode;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $CVV2Code;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -10533,6 +10987,13 @@ class DoReferenceTransactionResponseDetailsType  {
 	 */ 
 	public $PaymentAdviceCode;
 
+	/**
+	 * Return msgsubid back to merchant 
+	 *@access public
+	 *@var string
+	 */ 
+	public $MsgSubID;
+
 
 
 
@@ -10542,17 +11003,30 @@ class DoReferenceTransactionResponseDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingagreementid') {
 					$this->BillingAgreementID = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "paymentinfo") {
-					$this->PaymentInfo = new PaymentInfoType();
-					$this->PaymentInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='paymentinfo'){
+                                    $this->PaymentInfo = new PaymentInfoType(); 
+                                    $this->PaymentInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "amount") {
-					$this->Amount = new BasicAmountType();
-					$this->Amount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='amount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->Amount= new BasicAmountType(); 
+								$this->Amount->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'avscode') {
 					$this->AVSCode = $arry["text"];
@@ -10566,6 +11040,9 @@ class DoReferenceTransactionResponseDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentadvicecode') {
 					$this->PaymentAdviceCode = $arry["text"];
 				}
+				if($arry != null && isset($arry['text']) && $arry['name'] == 'msgsubid') {
+					$this->MsgSubID = $arry["text"];
+				}
 			}
 		}
 	}
@@ -10574,54 +11051,54 @@ class DoReferenceTransactionResponseDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoNonReferencedCreditRequestDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $NetAmount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $TaxAmount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $ShippingAmount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var CreditCardDetailsType
 	 */ 
 	public $CreditCard;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ReceiverEmail;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -10696,19 +11173,19 @@ class DoNonReferencedCreditRequestDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoNonReferencedCreditResponseDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -10720,11 +11197,22 @@ class DoNonReferencedCreditResponseDetailsType  {
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "amount") {
-					$this->Amount = new BasicAmountType();
-					$this->Amount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='amount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->Amount= new BasicAmountType(); 
+								$this->Amount->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'transactionid') {
 					$this->TransactionID = $arry["text"];
@@ -11300,21 +11788,21 @@ class GetBoardingDetailsResponseDetailsType  {
 	public $Reason;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ProgramName;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ProgramCode;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -11418,17 +11906,21 @@ class GetBoardingDetailsResponseDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'partnercustom') {
 					$this->PartnerCustom = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "accountowner") {
-					$this->AccountOwner = new PayerInfoType();
-					$this->AccountOwner->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='accountowner'){
+                                    $this->AccountOwner = new PayerInfoType(); 
+                                    $this->AccountOwner->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "credentials") {
-					$this->Credentials = new APICredentialsType();
-					$this->Credentials->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='credentials'){
+                                    $this->Credentials = new APICredentialsType(); 
+                                    $this->Credentials->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'configureapis') {
 					$this->ConfigureAPIs = $arry["text"];
@@ -11835,17 +12327,21 @@ class DoMobileCheckoutPaymentResponseDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'invoiceid') {
 					$this->InvoiceID = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "payerinfo") {
-					$this->PayerInfo = new PayerInfoType();
-					$this->PayerInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='payerinfo'){
+                                    $this->PayerInfo = new PayerInfoType(); 
+                                    $this->PayerInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "paymentinfo") {
-					$this->PaymentInfo = new PaymentInfoType();
-					$this->PaymentInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='paymentinfo'){
+                                    $this->PaymentInfo = new PaymentInfoType(); 
+                                    $this->PaymentInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -11925,54 +12421,54 @@ class UATPDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class RecurringPaymentsSummaryType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var dateTime
 	 */ 
 	public $NextBillingDate;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
 	public $NumberCyclesCompleted;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
 	public $NumberCyclesRemaining;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $OutstandingBalance;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
 	public $FailedPaymentCount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var dateTime
 	 */ 
 	public $LastPaymentDate;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
@@ -11993,11 +12489,22 @@ class RecurringPaymentsSummaryType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'numbercyclesremaining') {
 					$this->NumberCyclesRemaining = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "outstandingbalance") {
-					$this->OutstandingBalance = new BasicAmountType();
-					$this->OutstandingBalance->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='outstandingbalance') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->OutstandingBalance= new BasicAmountType(); 
+								$this->OutstandingBalance->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'failedpaymentcount') {
 					$this->FailedPaymentCount = $arry["text"];
@@ -12005,11 +12512,22 @@ class RecurringPaymentsSummaryType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'lastpaymentdate') {
 					$this->LastPaymentDate = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "lastpaymentamount") {
-					$this->LastPaymentAmount = new BasicAmountType();
-					$this->LastPaymentAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='lastpaymentamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->LastPaymentAmount= new BasicAmountType(); 
+								$this->LastPaymentAmount->init($atr);
+							}
+							                            
 			}
 			}
 		}
@@ -12019,19 +12537,19 @@ class RecurringPaymentsSummaryType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ActivationDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $InitialAmount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var FailedPaymentActionType
 	 */ 
@@ -12190,23 +12708,56 @@ class BillingPeriodDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'totalbillingcycles') {
 					$this->TotalBillingCycles = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "amount") {
-					$this->Amount = new BasicAmountType();
-					$this->Amount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='amount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->Amount= new BasicAmountType(); 
+								$this->Amount->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "shippingamount") {
-					$this->ShippingAmount = new BasicAmountType();
-					$this->ShippingAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='shippingamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->ShippingAmount= new BasicAmountType(); 
+								$this->ShippingAmount->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "taxamount") {
-					$this->TaxAmount = new BasicAmountType();
-					$this->TaxAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='taxamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->TaxAmount= new BasicAmountType(); 
+								$this->TaxAmount->init($atr);
+							}
+							                            
 			}
 			}
 		}
@@ -12338,7 +12889,7 @@ class ScheduleDetailsType  {
 	public $TrialPeriod;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BillingPeriodDetailsType
 	 */ 
@@ -12353,14 +12904,14 @@ class ScheduleDetailsType  {
 	public $MaxFailedPayments;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ActivationDetailsType
 	 */ 
 	public $ActivationDetails;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var AutoBillType
 	 */ 
@@ -12515,11 +13066,13 @@ class RecurringPaymentsProfileDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'subscribername') {
 					$this->SubscriberName = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "subscribershippingaddress") {
-					$this->SubscriberShippingAddress = new AddressType();
-					$this->SubscriberShippingAddress->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='subscribershippingaddress'){
+                                    $this->SubscriberShippingAddress = new AddressType(); 
+                                    $this->SubscriberShippingAddress->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingstartdate') {
 					$this->BillingStartDate = $arry["text"];
@@ -12719,105 +13272,105 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	public $ProfileID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RecurringPaymentsProfileStatusType
 	 */ 
 	public $ProfileStatus;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Description;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var AutoBillType
 	 */ 
 	public $AutoBillOutstandingAmount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
 	public $MaxFailedPayments;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RecurringPaymentsProfileDetailsType
 	 */ 
 	public $RecurringPaymentsProfileDetails;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BillingPeriodDetailsType
 	 */ 
 	public $CurrentRecurringPaymentsPeriod;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RecurringPaymentsSummaryType
 	 */ 
 	public $RecurringPaymentsSummary;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var CreditCardDetailsType
 	 */ 
 	public $CreditCard;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BillingPeriodDetailsType
 	 */ 
 	public $TrialRecurringPaymentsPeriod;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BillingPeriodDetailsType
 	 */ 
 	public $RegularRecurringPaymentsPeriod;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $TrialAmountPaid;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $RegularAmountPaid;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $AggregateAmount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $AggregateOptionalAmount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var dateTime
 	 */ 
@@ -12844,65 +13397,121 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'maxfailedpayments') {
 					$this->MaxFailedPayments = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "recurringpaymentsprofiledetails") {
-					$this->RecurringPaymentsProfileDetails = new RecurringPaymentsProfileDetailsType();
-					$this->RecurringPaymentsProfileDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='recurringpaymentsprofiledetails'){
+                                    $this->RecurringPaymentsProfileDetails = new RecurringPaymentsProfileDetailsType(); 
+                                    $this->RecurringPaymentsProfileDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "currentrecurringpaymentsperiod") {
-					$this->CurrentRecurringPaymentsPeriod = new BillingPeriodDetailsType();
-					$this->CurrentRecurringPaymentsPeriod->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='currentrecurringpaymentsperiod'){
+                                    $this->CurrentRecurringPaymentsPeriod = new BillingPeriodDetailsType(); 
+                                    $this->CurrentRecurringPaymentsPeriod->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "recurringpaymentssummary") {
-					$this->RecurringPaymentsSummary = new RecurringPaymentsSummaryType();
-					$this->RecurringPaymentsSummary->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='recurringpaymentssummary'){
+                                    $this->RecurringPaymentsSummary = new RecurringPaymentsSummaryType(); 
+                                    $this->RecurringPaymentsSummary->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "creditcard") {
-					$this->CreditCard = new CreditCardDetailsType();
-					$this->CreditCard->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='creditcard'){
+                                    $this->CreditCard = new CreditCardDetailsType(); 
+                                    $this->CreditCard->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "trialrecurringpaymentsperiod") {
-					$this->TrialRecurringPaymentsPeriod = new BillingPeriodDetailsType();
-					$this->TrialRecurringPaymentsPeriod->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='trialrecurringpaymentsperiod'){
+                                    $this->TrialRecurringPaymentsPeriod = new BillingPeriodDetailsType(); 
+                                    $this->TrialRecurringPaymentsPeriod->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "regularrecurringpaymentsperiod") {
-					$this->RegularRecurringPaymentsPeriod = new BillingPeriodDetailsType();
-					$this->RegularRecurringPaymentsPeriod->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='regularrecurringpaymentsperiod'){
+                                    $this->RegularRecurringPaymentsPeriod = new BillingPeriodDetailsType(); 
+                                    $this->RegularRecurringPaymentsPeriod->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "trialamountpaid") {
-					$this->TrialAmountPaid = new BasicAmountType();
-					$this->TrialAmountPaid->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='trialamountpaid') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->TrialAmountPaid= new BasicAmountType(); 
+								$this->TrialAmountPaid->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "regularamountpaid") {
-					$this->RegularAmountPaid = new BasicAmountType();
-					$this->RegularAmountPaid->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='regularamountpaid') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->RegularAmountPaid= new BasicAmountType(); 
+								$this->RegularAmountPaid->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "aggregateamount") {
-					$this->AggregateAmount = new BasicAmountType();
-					$this->AggregateAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='aggregateamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->AggregateAmount= new BasicAmountType(); 
+								$this->AggregateAmount->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "aggregateoptionalamount") {
-					$this->AggregateOptionalAmount = new BasicAmountType();
-					$this->AggregateOptionalAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='aggregateoptionalamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->AggregateOptionalAmount= new BasicAmountType(); 
+								$this->AggregateOptionalAmount->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'finalpaymentduedate') {
 					$this->FinalPaymentDueDate = $arry["text"];
@@ -12915,26 +13524,26 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ManageRecurringPaymentsProfileStatusRequestDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ProfileID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var StatusChangeActionType
 	 */ 
 	public $Action;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -12978,12 +13587,12 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ManageRecurringPaymentsProfileStatusResponseDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -13006,26 +13615,26 @@ class ManageRecurringPaymentsProfileStatusResponseDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BillOutstandingAmountRequestDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ProfileID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -13071,12 +13680,12 @@ class BillOutstandingAmountRequestDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BillOutstandingAmountResponseDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -13099,96 +13708,96 @@ class BillOutstandingAmountResponseDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class UpdateRecurringPaymentsProfileRequestDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ProfileID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Note;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Description;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $SubscriberName;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var AddressType
 	 */ 
 	public $SubscriberShippingAddress;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ProfileReference;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
 	public $AdditionalBillingCycles;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $ShippingAmount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $TaxAmount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $OutstandingBalance;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var AutoBillType
 	 */ 
 	public $AutoBillOutstandingAmount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
@@ -13217,7 +13826,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	public $TrialPeriod;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BillingPeriodDetailsType_Update
 	 */ 
@@ -13368,12 +13977,12 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class UpdateRecurringPaymentsProfileResponseDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -13401,21 +14010,21 @@ class UpdateRecurringPaymentsProfileResponseDetailsType  {
 class RiskFilterDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
 	public $Id;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Name;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -13449,7 +14058,7 @@ class RiskFilterDetailsType  {
 class RiskFilterListType  {
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var RiskFilterDetailsType
@@ -13492,28 +14101,28 @@ class RiskFilterListType  {
 class FMFDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RiskFilterListType
 	 */ 
 	public $AcceptFilters;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RiskFilterListType
 	 */ 
 	public $PendingFilters;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RiskFilterListType
 	 */ 
 	public $DenyFilters;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RiskFilterListType
 	 */ 
@@ -13525,29 +14134,37 @@ class FMFDetailsType  {
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "acceptfilters") {
-					$this->AcceptFilters = new RiskFilterListType();
-					$this->AcceptFilters->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='acceptfilters'){
+                                    $this->AcceptFilters = new RiskFilterListType(); 
+                                    $this->AcceptFilters->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "pendingfilters") {
-					$this->PendingFilters = new RiskFilterListType();
-					$this->PendingFilters->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='pendingfilters'){
+                                    $this->PendingFilters = new RiskFilterListType(); 
+                                    $this->PendingFilters->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "denyfilters") {
-					$this->DenyFilters = new RiskFilterListType();
-					$this->DenyFilters->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='denyfilters'){
+                                    $this->DenyFilters = new RiskFilterListType(); 
+                                    $this->DenyFilters->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "reportfilters") {
-					$this->ReportFilters = new RiskFilterListType();
-					$this->ReportFilters->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='reportfilters'){
+                                    $this->ReportFilters = new RiskFilterListType(); 
+                                    $this->ReportFilters->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -13562,7 +14179,7 @@ class FMFDetailsType  {
 class EnhancedDataType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var AirlineItineraryType
 	 */ 
@@ -13594,98 +14211,98 @@ class EnhancedDataType  {
 class AirlineItineraryType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $PassengerName;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $IssueDate;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $TravelAgencyName;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $TravelAgencyCode;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $TicketNumber;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $IssuingCarrierCode;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $CustomerCode;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $TotalFare;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $TotalTaxes;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $TotalFee;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $RestrictedTicket;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ClearingSequence;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ClearingCount;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var FlightDetailsType
@@ -13806,119 +14423,119 @@ class AirlineItineraryType  {
 class FlightDetailsType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ConjuctionTicket;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ExchangeTicket;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $CouponNumber;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ServiceClass;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $TravelDate;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $CarrierCode;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $StopOverPermitted;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $DepartureAirport;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ArrivalAirport;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $FlightNumber;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $DepartureTime;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ArrivalTime;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $FareBasisCode;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $Fare;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $Taxes;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $Fee;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -14355,33 +14972,33 @@ class ItemTrackingDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ButtonSearchResultType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $HostedButtonID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ButtonType;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ItemName;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var dateTime
 	 */ 
@@ -14617,11 +15234,13 @@ class PaymentRequestInfoType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentrequestid') {
 					$this->PaymentRequestID = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "paymenterror") {
-					$this->PaymentError = new ErrorType();
-					$this->PaymentError->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='paymenterror'){
+                                    $this->PaymentError = new ErrorType(); 
+                                    $this->PaymentError->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -14961,19 +15580,19 @@ class MerchantStoreDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class AdditionalFeeType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Type;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
@@ -15438,7 +16057,7 @@ class RefundInfoType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class EnhancedCheckoutDataType  {
 
@@ -15454,7 +16073,7 @@ class EnhancedCheckoutDataType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class EnhancedPaymentDataType  {
 
@@ -15476,7 +16095,7 @@ class EnhancedPaymentDataType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class EnhancedItemDataType  {
 
@@ -15498,7 +16117,7 @@ class EnhancedItemDataType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class EnhancedPaymentInfoType  {
 
@@ -15516,7 +16135,7 @@ class EnhancedPaymentInfoType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class EnhancedInitiateRecoupRequestDetailsType  {
 
@@ -15532,7 +16151,7 @@ class EnhancedInitiateRecoupRequestDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class EnhancedCompleteRecoupRequestDetailsType  {
 
@@ -15548,7 +16167,7 @@ class EnhancedCompleteRecoupRequestDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class EnhancedCompleteRecoupResponseDetailsType  {
 
@@ -15566,7 +16185,7 @@ class EnhancedCompleteRecoupResponseDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class EnhancedCancelRecoupRequestDetailsType  {
 
@@ -15582,7 +16201,7 @@ class EnhancedCancelRecoupRequestDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class EnhancedPayerInfoType  {
 
@@ -15750,7 +16369,7 @@ class OptionSelectionDetailsType  {
 	public $OptionType;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var InstallmentDetailsType
@@ -15847,7 +16466,7 @@ class OptionDetailsType  {
 	public $OptionName;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var OptionSelectionDetailsType
@@ -15914,12 +16533,12 @@ class OptionDetailsType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BMCreateButtonReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BMCreateButtonRequestType
 	 */ 
@@ -15990,7 +16609,7 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	public $ButtonVar;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var OptionDetailsType
@@ -16146,33 +16765,33 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BMCreateButtonResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Website;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Email;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Mobile;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -16205,12 +16824,12 @@ class BMCreateButtonResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BMUpdateButtonReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BMUpdateButtonRequestType
 	 */ 
@@ -16290,7 +16909,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	public $ButtonVar;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var OptionDetailsType
@@ -16459,33 +17078,33 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BMUpdateButtonResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Website;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Email;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Mobile;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -16518,12 +17137,12 @@ class BMUpdateButtonResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BMManageButtonStatusReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BMManageButtonStatusRequestType
 	 */ 
@@ -16599,7 +17218,7 @@ class BMManageButtonStatusRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BMManageButtonStatusResponseType  extends AbstractResponseType  {
 
@@ -16618,12 +17237,12 @@ class BMManageButtonStatusResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BMGetButtonDetailsReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BMGetButtonDetailsRequestType
 	 */ 
@@ -16698,28 +17317,28 @@ class BMGetButtonDetailsRequestType  extends AbstractRequestType  {
 class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Website;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Email;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Mobile;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -16760,7 +17379,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	public $ButtonVar;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var OptionDetailsType
@@ -16889,12 +17508,12 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BMSetInventoryReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BMSetInventoryRequestType
 	 */ 
@@ -16953,7 +17572,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	public $TrackPnl;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ItemTrackingDetailsType
 	 */ 
@@ -16968,7 +17587,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	public $OptionIndex;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var OptionTrackingDetailsType
@@ -17102,7 +17721,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BMSetInventoryResponseType  extends AbstractResponseType  {
 
@@ -17121,12 +17740,12 @@ class BMSetInventoryResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BMGetInventoryReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BMGetInventoryRequestType
 	 */ 
@@ -17196,54 +17815,54 @@ class BMGetInventoryRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BMGetInventoryResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $HostedButtonID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $TrackInv;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $TrackPnl;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ItemTrackingDetailsType
 	 */ 
 	public $ItemTrackingDetails;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $OptionIndex;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $OptionName;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var OptionTrackingDetailsType
@@ -17251,14 +17870,14 @@ class BMGetInventoryResponseType  extends AbstractResponseType  {
 	public $OptionTrackingDetails;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $SoldoutURL;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var string
@@ -17281,11 +17900,13 @@ class BMGetInventoryResponseType  extends AbstractResponseType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'trackpnl') {
 					$this->TrackPnl = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "itemtrackingdetails") {
-					$this->ItemTrackingDetails = new ItemTrackingDetailsType();
-					$this->ItemTrackingDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='itemtrackingdetails'){
+                                    $this->ItemTrackingDetails = new ItemTrackingDetailsType(); 
+                                    $this->ItemTrackingDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'optionindex') {
 					$this->OptionIndex = $arry["text"];
@@ -17320,12 +17941,12 @@ class BMGetInventoryResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BMButtonSearchReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BMButtonSearchRequestType
 	 */ 
@@ -17400,12 +18021,12 @@ class BMButtonSearchRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BMButtonSearchResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ButtonSearchResultType
@@ -17443,12 +18064,12 @@ class BMButtonSearchResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class RefundTransactionReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RefundTransactionRequestType
 	 */ 
@@ -17738,35 +18359,81 @@ class RefundTransactionResponseType  extends AbstractResponseType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'refundtransactionid') {
 					$this->RefundTransactionID = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "netrefundamount") {
-					$this->NetRefundAmount = new BasicAmountType();
-					$this->NetRefundAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='netrefundamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->NetRefundAmount= new BasicAmountType(); 
+								$this->NetRefundAmount->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "feerefundamount") {
-					$this->FeeRefundAmount = new BasicAmountType();
-					$this->FeeRefundAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='feerefundamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->FeeRefundAmount= new BasicAmountType(); 
+								$this->FeeRefundAmount->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "grossrefundamount") {
-					$this->GrossRefundAmount = new BasicAmountType();
-					$this->GrossRefundAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='grossrefundamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->GrossRefundAmount= new BasicAmountType(); 
+								$this->GrossRefundAmount->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "totalrefundedamount") {
-					$this->TotalRefundedAmount = new BasicAmountType();
-					$this->TotalRefundedAmount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='totalrefundedamount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->TotalRefundedAmount= new BasicAmountType(); 
+								$this->TotalRefundedAmount->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "refundinfo") {
-					$this->RefundInfo = new RefundInfoType();
-					$this->RefundInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='refundinfo'){
+                                    $this->RefundInfo = new RefundInfoType(); 
+                                    $this->RefundInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'receiptdata') {
 					$this->ReceiptData = $arry["text"];
@@ -17782,12 +18449,12 @@ class RefundTransactionResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class InitiateRecoupReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var InitiateRecoupRequestType
 	 */ 
@@ -17816,12 +18483,12 @@ class InitiateRecoupReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class InitiateRecoupRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var EnhancedInitiateRecoupRequestDetailsType
 	 */ 
@@ -17856,7 +18523,7 @@ class InitiateRecoupRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class InitiateRecoupResponseType  extends AbstractResponseType  {
 
@@ -17875,12 +18542,12 @@ class InitiateRecoupResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class CompleteRecoupReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var CompleteRecoupRequestType
 	 */ 
@@ -17909,12 +18576,12 @@ class CompleteRecoupReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class CompleteRecoupRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var EnhancedCompleteRecoupRequestDetailsType
 	 */ 
@@ -17949,12 +18616,12 @@ class CompleteRecoupRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class CompleteRecoupResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var EnhancedCompleteRecoupResponseDetailsType
 	 */ 
@@ -17967,11 +18634,13 @@ class CompleteRecoupResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "enhancedcompleterecoupresponsedetails") {
-					$this->EnhancedCompleteRecoupResponseDetails = new EnhancedCompleteRecoupResponseDetailsType();
-					$this->EnhancedCompleteRecoupResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='enhancedcompleterecoupresponsedetails'){
+                                    $this->EnhancedCompleteRecoupResponseDetails = new EnhancedCompleteRecoupResponseDetailsType(); 
+                                    $this->EnhancedCompleteRecoupResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -17981,12 +18650,12 @@ class CompleteRecoupResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class CancelRecoupReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var CancelRecoupRequestType
 	 */ 
@@ -18015,12 +18684,12 @@ class CancelRecoupReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class CancelRecoupRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var EnhancedCancelRecoupRequestDetailsType
 	 */ 
@@ -18055,7 +18724,7 @@ class CancelRecoupRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class CancelRecoupResponseType  extends AbstractResponseType  {
 
@@ -18074,12 +18743,12 @@ class CancelRecoupResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetTransactionDetailsReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetTransactionDetailsRequestType
 	 */ 
@@ -18146,19 +18815,19 @@ class GetTransactionDetailsRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetTransactionDetailsResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var PaymentTransactionType
 	 */ 
 	public $PaymentTransactionDetails;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ThreeDSecureInfoType
 	 */ 
@@ -18171,17 +18840,21 @@ class GetTransactionDetailsResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "paymenttransactiondetails") {
-					$this->PaymentTransactionDetails = new PaymentTransactionType();
-					$this->PaymentTransactionDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='paymenttransactiondetails'){
+                                    $this->PaymentTransactionDetails = new PaymentTransactionType(); 
+                                    $this->PaymentTransactionDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "threedsecuredetails") {
-					$this->ThreeDSecureDetails = new ThreeDSecureInfoType();
-					$this->ThreeDSecureDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='threedsecuredetails'){
+                                    $this->ThreeDSecureDetails = new ThreeDSecureInfoType(); 
+                                    $this->ThreeDSecureDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -18191,12 +18864,12 @@ class GetTransactionDetailsResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BillUserReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BillUserRequestType
 	 */ 
@@ -18231,7 +18904,7 @@ class BillUserReq  {
 class BillUserRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var MerchantPullPaymentType
 	 */ 
@@ -18273,19 +18946,19 @@ class BillUserRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BillUserResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var MerchantPullPaymentResponseType
 	 */ 
 	public $BillUserResponseDetails;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var FMFDetailsType
 	 */ 
@@ -18298,17 +18971,21 @@ class BillUserResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "billuserresponsedetails") {
-					$this->BillUserResponseDetails = new MerchantPullPaymentResponseType();
-					$this->BillUserResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='billuserresponsedetails'){
+                                    $this->BillUserResponseDetails = new MerchantPullPaymentResponseType(); 
+                                    $this->BillUserResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "fmfdetails") {
-					$this->FMFDetails = new FMFDetailsType();
-					$this->FMFDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='fmfdetails'){
+                                    $this->FMFDetails = new FMFDetailsType(); 
+                                    $this->FMFDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -18318,12 +18995,12 @@ class BillUserResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class TransactionSearchReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var TransactionSearchRequestType
 	 */ 
@@ -18451,7 +19128,7 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	public $InvoiceID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -18676,12 +19353,12 @@ class TransactionSearchResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class MassPayReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var MassPayRequestType
 	 */ 
@@ -18804,7 +19481,7 @@ class MassPayRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class MassPayResponseType  extends AbstractResponseType  {
 
@@ -18948,12 +19625,12 @@ class MassPayRequestItemType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BillAgreementUpdateReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BAUpdateRequestType
 	 */ 
@@ -18982,33 +19659,33 @@ class BillAgreementUpdateReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BAUpdateRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $ReferenceID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $BillingAgreementDescription;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var MerchantPullStatusCodeType
 	 */ 
 	public $BillingAgreementStatus;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -19058,12 +19735,12 @@ class BAUpdateRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BAUpdateResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BAUpdateResponseDetailsType
 	 */ 
@@ -19076,11 +19753,13 @@ class BAUpdateResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "baupdateresponsedetails") {
-					$this->BAUpdateResponseDetails = new BAUpdateResponseDetailsType();
-					$this->BAUpdateResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='baupdateresponsedetails'){
+                                    $this->BAUpdateResponseDetails = new BAUpdateResponseDetailsType(); 
+                                    $this->BAUpdateResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -19090,12 +19769,12 @@ class BAUpdateResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class AddressVerifyReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var AddressVerifyRequestType
 	 */ 
@@ -19303,12 +19982,12 @@ class AddressVerifyResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class EnterBoardingReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var EnterBoardingRequestType
 	 */ 
@@ -19337,12 +20016,12 @@ class EnterBoardingReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class EnterBoardingRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var EnterBoardingRequestDetailsType
 	 */ 
@@ -19412,12 +20091,12 @@ class EnterBoardingResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetBoardingDetailsReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetBoardingDetailsRequestType
 	 */ 
@@ -19489,12 +20168,12 @@ class GetBoardingDetailsRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetBoardingDetailsResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetBoardingDetailsResponseDetailsType
 	 */ 
@@ -19507,11 +20186,13 @@ class GetBoardingDetailsResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "getboardingdetailsresponsedetails") {
-					$this->GetBoardingDetailsResponseDetails = new GetBoardingDetailsResponseDetailsType();
-					$this->GetBoardingDetailsResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='getboardingdetailsresponsedetails'){
+                                    $this->GetBoardingDetailsResponseDetails = new GetBoardingDetailsResponseDetailsType(); 
+                                    $this->GetBoardingDetailsResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -19521,12 +20202,12 @@ class GetBoardingDetailsResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class SetAuthFlowParamReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var SetAuthFlowParamRequestType
 	 */ 
@@ -19555,12 +20236,12 @@ class SetAuthFlowParamReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class SetAuthFlowParamRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var SetAuthFlowParamRequestDetailsType
 	 */ 
@@ -19630,12 +20311,12 @@ class SetAuthFlowParamResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetAuthDetailsReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetAuthDetailsRequestType
 	 */ 
@@ -19705,12 +20386,12 @@ class GetAuthDetailsRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetAuthDetailsResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetAuthDetailsResponseDetailsType
 	 */ 
@@ -19723,11 +20404,13 @@ class GetAuthDetailsResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "getauthdetailsresponsedetails") {
-					$this->GetAuthDetailsResponseDetails = new GetAuthDetailsResponseDetailsType();
-					$this->GetAuthDetailsResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='getauthdetailsresponsedetails'){
+                                    $this->GetAuthDetailsResponseDetails = new GetAuthDetailsResponseDetailsType(); 
+                                    $this->GetAuthDetailsResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -19737,12 +20420,12 @@ class GetAuthDetailsResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class SetAccessPermissionsReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var SetAccessPermissionsRequestType
 	 */ 
@@ -19771,12 +20454,12 @@ class SetAccessPermissionsReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class SetAccessPermissionsRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var SetAccessPermissionsRequestDetailsType
 	 */ 
@@ -19846,12 +20529,12 @@ class SetAccessPermissionsResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class UpdateAccessPermissionsReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var UpdateAccessPermissionsRequestType
 	 */ 
@@ -19952,12 +20635,12 @@ class UpdateAccessPermissionsResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetAccessPermissionDetailsReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetAccessPermissionDetailsRequestType
 	 */ 
@@ -20027,12 +20710,12 @@ class GetAccessPermissionDetailsRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetAccessPermissionDetailsResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetAccessPermissionDetailsResponseDetailsType
 	 */ 
@@ -20045,11 +20728,13 @@ class GetAccessPermissionDetailsResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "getaccesspermissiondetailsresponsedetails") {
-					$this->GetAccessPermissionDetailsResponseDetails = new GetAccessPermissionDetailsResponseDetailsType();
-					$this->GetAccessPermissionDetailsResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='getaccesspermissiondetailsresponsedetails'){
+                                    $this->GetAccessPermissionDetailsResponseDetails = new GetAccessPermissionDetailsResponseDetailsType(); 
+                                    $this->GetAccessPermissionDetailsResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -20059,12 +20744,12 @@ class GetAccessPermissionDetailsResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetIncentiveEvaluationReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetIncentiveEvaluationRequestType
 	 */ 
@@ -20093,12 +20778,12 @@ class GetIncentiveEvaluationReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetIncentiveEvaluationRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetIncentiveEvaluationRequestDetailsType
 	 */ 
@@ -20133,12 +20818,12 @@ class GetIncentiveEvaluationRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetIncentiveEvaluationResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetIncentiveEvaluationResponseDetailsType
 	 */ 
@@ -20151,11 +20836,13 @@ class GetIncentiveEvaluationResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "getincentiveevaluationresponsedetails") {
-					$this->GetIncentiveEvaluationResponseDetails = new GetIncentiveEvaluationResponseDetailsType();
-					$this->GetIncentiveEvaluationResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='getincentiveevaluationresponsedetails'){
+                                    $this->GetIncentiveEvaluationResponseDetails = new GetIncentiveEvaluationResponseDetailsType(); 
+                                    $this->GetIncentiveEvaluationResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -20165,12 +20852,12 @@ class GetIncentiveEvaluationResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class SetExpressCheckoutReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var SetExpressCheckoutRequestType
 	 */ 
@@ -20199,12 +20886,12 @@ class SetExpressCheckoutReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class SetExpressCheckoutRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var SetExpressCheckoutRequestDetailsType
 	 */ 
@@ -20278,12 +20965,12 @@ class SetExpressCheckoutResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ExecuteCheckoutOperationsReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ExecuteCheckoutOperationsRequestType
 	 */ 
@@ -20312,12 +20999,12 @@ class ExecuteCheckoutOperationsReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ExecuteCheckoutOperationsRequestDetailsType
 	 */ 
@@ -20352,12 +21039,12 @@ class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ExecuteCheckoutOperationsResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ExecuteCheckoutOperationsResponseDetailsType
 	 */ 
@@ -20370,11 +21057,13 @@ class ExecuteCheckoutOperationsResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "executecheckoutoperationsresponsedetails") {
-					$this->ExecuteCheckoutOperationsResponseDetails = new ExecuteCheckoutOperationsResponseDetailsType();
-					$this->ExecuteCheckoutOperationsResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='executecheckoutoperationsresponsedetails'){
+                                    $this->ExecuteCheckoutOperationsResponseDetails = new ExecuteCheckoutOperationsResponseDetailsType(); 
+                                    $this->ExecuteCheckoutOperationsResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -20384,12 +21073,12 @@ class ExecuteCheckoutOperationsResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetExpressCheckoutDetailsReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetExpressCheckoutDetailsRequestType
 	 */ 
@@ -20459,12 +21148,12 @@ class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetExpressCheckoutDetailsResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetExpressCheckoutDetailsResponseDetailsType
 	 */ 
@@ -20477,11 +21166,13 @@ class GetExpressCheckoutDetailsResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "getexpresscheckoutdetailsresponsedetails") {
-					$this->GetExpressCheckoutDetailsResponseDetails = new GetExpressCheckoutDetailsResponseDetailsType();
-					$this->GetExpressCheckoutDetailsResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='getexpresscheckoutdetailsresponsedetails'){
+                                    $this->GetExpressCheckoutDetailsResponseDetails = new GetExpressCheckoutDetailsResponseDetailsType(); 
+                                    $this->GetExpressCheckoutDetailsResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -20491,12 +21182,12 @@ class GetExpressCheckoutDetailsResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoExpressCheckoutPaymentReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoExpressCheckoutPaymentRequestType
 	 */ 
@@ -20531,7 +21222,7 @@ class DoExpressCheckoutPaymentReq  {
 class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoExpressCheckoutPaymentRequestDetailsType
 	 */ 
@@ -20580,19 +21271,19 @@ class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoExpressCheckoutPaymentResponseDetailsType
 	 */ 
 	public $DoExpressCheckoutPaymentResponseDetails;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var FMFDetailsType
 	 */ 
@@ -20605,17 +21296,21 @@ class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "doexpresscheckoutpaymentresponsedetails") {
-					$this->DoExpressCheckoutPaymentResponseDetails = new DoExpressCheckoutPaymentResponseDetailsType();
-					$this->DoExpressCheckoutPaymentResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='doexpresscheckoutpaymentresponsedetails'){
+                                    $this->DoExpressCheckoutPaymentResponseDetails = new DoExpressCheckoutPaymentResponseDetailsType(); 
+                                    $this->DoExpressCheckoutPaymentResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "fmfdetails") {
-					$this->FMFDetails = new FMFDetailsType();
-					$this->FMFDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='fmfdetails'){
+                                    $this->FMFDetails = new FMFDetailsType(); 
+                                    $this->FMFDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -20625,12 +21320,12 @@ class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoUATPExpressCheckoutPaymentReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoUATPExpressCheckoutPaymentRequestType
 	 */ 
@@ -20659,7 +21354,7 @@ class DoUATPExpressCheckoutPaymentReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoUATPExpressCheckoutPaymentRequestType  extends DoExpressCheckoutPaymentRequestType  {
 
@@ -20676,12 +21371,12 @@ class DoUATPExpressCheckoutPaymentRequestType  extends DoExpressCheckoutPaymentR
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoUATPExpressCheckoutPaymentResponseType  extends DoExpressCheckoutPaymentResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var UATPDetailsType
 	 */ 
@@ -20694,11 +21389,13 @@ class DoUATPExpressCheckoutPaymentResponseType  extends DoExpressCheckoutPayment
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "uatpdetails") {
-					$this->UATPDetails = new UATPDetailsType();
-					$this->UATPDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='uatpdetails'){
+                                    $this->UATPDetails = new UATPDetailsType(); 
+                                    $this->UATPDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -20708,12 +21405,12 @@ class DoUATPExpressCheckoutPaymentResponseType  extends DoExpressCheckoutPayment
 
 
 /**
- * No Document Comments
+ * 
  */
 class ManagePendingTransactionStatusReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ManagePendingTransactionStatusRequestType
 	 */ 
@@ -20742,19 +21439,19 @@ class ManagePendingTransactionStatusReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ManagePendingTransactionStatusRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $TransactionID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var FMFPendingTransactionActionType
 	 */ 
@@ -20793,19 +21490,19 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ManagePendingTransactionStatusResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $TransactionID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -20832,12 +21529,12 @@ class ManagePendingTransactionStatusResponseType  extends AbstractResponseType  
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoDirectPaymentReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoDirectPaymentRequestType
 	 */ 
@@ -20872,7 +21569,7 @@ class DoDirectPaymentReq  {
 class DoDirectPaymentRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoDirectPaymentRequestDetailsType
 	 */ 
@@ -20989,14 +21686,14 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 	public $PaymentStatus;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var FMFDetailsType
 	 */ 
 	public $FMFDetails;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ThreeDSecureResponseType
 	 */ 
@@ -21017,11 +21714,22 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "amount") {
-					$this->Amount = new BasicAmountType();
-					$this->Amount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='amount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->Amount= new BasicAmountType(); 
+								$this->Amount->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'avscode') {
 					$this->AVSCode = $arry["text"];
@@ -21038,17 +21746,21 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentstatus') {
 					$this->PaymentStatus = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "fmfdetails") {
-					$this->FMFDetails = new FMFDetailsType();
-					$this->FMFDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='fmfdetails'){
+                                    $this->FMFDetails = new FMFDetailsType(); 
+                                    $this->FMFDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "threedsecureresponse") {
-					$this->ThreeDSecureResponse = new ThreeDSecureResponseType();
-					$this->ThreeDSecureResponse->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='threedsecureresponse'){
+                                    $this->ThreeDSecureResponse = new ThreeDSecureResponseType(); 
+                                    $this->ThreeDSecureResponse->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentadvicecode') {
 					$this->PaymentAdviceCode = $arry["text"];
@@ -21061,12 +21773,12 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoCancelReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoCancelRequestType
 	 */ 
@@ -21146,7 +21858,7 @@ class DoCancelRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoCancelResponseType  extends AbstractResponseType  {
 
@@ -21165,12 +21877,12 @@ class DoCancelResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoCaptureReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoCaptureRequestType
 	 */ 
@@ -21376,12 +22088,12 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoCaptureResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoCaptureResponseDetailsType
 	 */ 
@@ -21394,11 +22106,13 @@ class DoCaptureResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "docaptureresponsedetails") {
-					$this->DoCaptureResponseDetails = new DoCaptureResponseDetailsType();
-					$this->DoCaptureResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='docaptureresponsedetails'){
+                                    $this->DoCaptureResponseDetails = new DoCaptureResponseDetailsType(); 
+                                    $this->DoCaptureResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -21408,12 +22122,12 @@ class DoCaptureResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoReauthorizationReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoReauthorizationRequestType
 	 */ 
@@ -21523,7 +22237,7 @@ class DoReauthorizationResponseType  extends AbstractResponseType  {
 	public $AuthorizationID;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var AuthorizationInfoType
 	 */ 
@@ -21539,11 +22253,13 @@ class DoReauthorizationResponseType  extends AbstractResponseType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'authorizationid') {
 					$this->AuthorizationID = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "authorizationinfo") {
-					$this->AuthorizationInfo = new AuthorizationInfoType();
-					$this->AuthorizationInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='authorizationinfo'){
+                                    $this->AuthorizationInfo = new AuthorizationInfoType(); 
+                                    $this->AuthorizationInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -21553,12 +22269,12 @@ class DoReauthorizationResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoVoidReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoVoidRequestType
 	 */ 
@@ -21683,12 +22399,12 @@ class DoVoidResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoAuthorizationReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoAuthorizationRequestType
 	 */ 
@@ -21829,7 +22545,7 @@ class DoAuthorizationResponseType  extends AbstractResponseType  {
 	public $Amount;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var AuthorizationInfoType
 	 */ 
@@ -21852,17 +22568,30 @@ class DoAuthorizationResponseType  extends AbstractResponseType  {
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'transactionid') {
 					$this->TransactionID = $arry["text"];
 				}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "amount") {
-					$this->Amount = new BasicAmountType();
-					$this->Amount->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='amount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->Amount= new BasicAmountType(); 
+								$this->Amount->init($atr);
+							}
+							                            
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "authorizationinfo") {
-					$this->AuthorizationInfo = new AuthorizationInfoType();
-					$this->AuthorizationInfo->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='authorizationinfo'){
+                                    $this->AuthorizationInfo = new AuthorizationInfoType(); 
+                                    $this->AuthorizationInfo->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'msgsubid') {
 					$this->MsgSubID = $arry["text"];
@@ -21875,12 +22604,12 @@ class DoAuthorizationResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoUATPAuthorizationReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoUATPAuthorizationRequestType
 	 */ 
@@ -22017,7 +22746,7 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType  {
 class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var UATPDetailsType
 	 */ 
@@ -22053,11 +22782,13 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "uatpdetails") {
-					$this->UATPDetails = new UATPDetailsType();
-					$this->UATPDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='uatpdetails'){
+                                    $this->UATPDetails = new UATPDetailsType(); 
+                                    $this->UATPDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'authorizationcode') {
 					$this->AuthorizationCode = $arry["text"];
@@ -22076,12 +22807,12 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class CreateMobilePaymentReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var CreateMobilePaymentRequestType
 	 */ 
@@ -22110,12 +22841,12 @@ class CreateMobilePaymentReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class CreateMobilePaymentRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var CreateMobilePaymentRequestDetailsType
 	 */ 
@@ -22150,7 +22881,7 @@ class CreateMobilePaymentRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class CreateMobilePaymentResponseType  extends AbstractResponseType  {
 
@@ -22169,12 +22900,12 @@ class CreateMobilePaymentResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetMobileStatusReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetMobileStatusRequestType
 	 */ 
@@ -22203,12 +22934,12 @@ class GetMobileStatusReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetMobileStatusRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetMobileStatusRequestDetailsType
 	 */ 
@@ -22284,12 +23015,12 @@ class GetMobileStatusResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class SetMobileCheckoutReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var SetMobileCheckoutRequestType
 	 */ 
@@ -22318,12 +23049,12 @@ class SetMobileCheckoutReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class SetMobileCheckoutRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var SetMobileCheckoutRequestDetailsType
 	 */ 
@@ -22393,12 +23124,12 @@ class SetMobileCheckoutResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoMobileCheckoutPaymentReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoMobileCheckoutPaymentRequestType
 	 */ 
@@ -22468,12 +23199,12 @@ class DoMobileCheckoutPaymentRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoMobileCheckoutPaymentResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoMobileCheckoutPaymentResponseDetailsType
 	 */ 
@@ -22486,11 +23217,13 @@ class DoMobileCheckoutPaymentResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "domobilecheckoutpaymentresponsedetails") {
-					$this->DoMobileCheckoutPaymentResponseDetails = new DoMobileCheckoutPaymentResponseDetailsType();
-					$this->DoMobileCheckoutPaymentResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='domobilecheckoutpaymentresponsedetails'){
+                                    $this->DoMobileCheckoutPaymentResponseDetails = new DoMobileCheckoutPaymentResponseDetailsType(); 
+                                    $this->DoMobileCheckoutPaymentResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -22500,12 +23233,12 @@ class DoMobileCheckoutPaymentResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetBalanceReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetBalanceRequestType
 	 */ 
@@ -22534,12 +23267,12 @@ class GetBalanceReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetBalanceRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -22564,26 +23297,26 @@ class GetBalanceRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetBalanceResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BasicAmountType
 	 */ 
 	public $Balance;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var dateTime
 	 */ 
 	public $BalanceTimeStamp;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var BasicAmountType
@@ -22597,11 +23330,22 @@ class GetBalanceResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "balance") {
-					$this->Balance = new BasicAmountType();
-					$this->Balance->init($arry["children"]);
-				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+                        if( $arry["name"]=='balance') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->Balance= new BasicAmountType(); 
+								$this->Balance->init($atr);
+							}
+							                            
 			}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'balancetimestamp') {
 					$this->BalanceTimeStamp = $arry["text"];
@@ -22630,12 +23374,12 @@ class GetBalanceResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class SetCustomerBillingAgreementReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var SetCustomerBillingAgreementRequestType
 	 */ 
@@ -22664,12 +23408,12 @@ class SetCustomerBillingAgreementReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class SetCustomerBillingAgreementRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var SetCustomerBillingAgreementRequestDetailsType
 	 */ 
@@ -22704,12 +23448,12 @@ class SetCustomerBillingAgreementRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class SetCustomerBillingAgreementResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -22733,12 +23477,12 @@ class SetCustomerBillingAgreementResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetBillingAgreementCustomerDetailsReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetBillingAgreementCustomerDetailsRequestType
 	 */ 
@@ -22767,12 +23511,12 @@ class GetBillingAgreementCustomerDetailsReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetBillingAgreementCustomerDetailsRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -22804,12 +23548,12 @@ class GetBillingAgreementCustomerDetailsRequestType  extends AbstractRequestType
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetBillingAgreementCustomerDetailsResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetBillingAgreementCustomerDetailsResponseDetailsType
 	 */ 
@@ -22822,11 +23566,13 @@ class GetBillingAgreementCustomerDetailsResponseType  extends AbstractResponseTy
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "getbillingagreementcustomerdetailsresponsedetails") {
-					$this->GetBillingAgreementCustomerDetailsResponseDetails = new GetBillingAgreementCustomerDetailsResponseDetailsType();
-					$this->GetBillingAgreementCustomerDetailsResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='getbillingagreementcustomerdetailsresponsedetails'){
+                                    $this->GetBillingAgreementCustomerDetailsResponseDetails = new GetBillingAgreementCustomerDetailsResponseDetailsType(); 
+                                    $this->GetBillingAgreementCustomerDetailsResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -22836,12 +23582,12 @@ class GetBillingAgreementCustomerDetailsResponseType  extends AbstractResponseTy
 
 
 /**
- * No Document Comments
+ * 
  */
 class CreateBillingAgreementReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var CreateBillingAgreementRequestType
 	 */ 
@@ -22870,12 +23616,12 @@ class CreateBillingAgreementReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class CreateBillingAgreementRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -22907,12 +23653,12 @@ class CreateBillingAgreementRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class CreateBillingAgreementResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -22936,12 +23682,12 @@ class CreateBillingAgreementResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoReferenceTransactionReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoReferenceTransactionRequestType
 	 */ 
@@ -22976,7 +23722,7 @@ class DoReferenceTransactionReq  {
 class DoReferenceTransactionRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoReferenceTransactionRequestDetailsType
 	 */ 
@@ -23025,19 +23771,19 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoReferenceTransactionResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoReferenceTransactionResponseDetailsType
 	 */ 
 	public $DoReferenceTransactionResponseDetails;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var FMFDetailsType
 	 */ 
@@ -23050,17 +23796,21 @@ class DoReferenceTransactionResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "doreferencetransactionresponsedetails") {
-					$this->DoReferenceTransactionResponseDetails = new DoReferenceTransactionResponseDetailsType();
-					$this->DoReferenceTransactionResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='doreferencetransactionresponsedetails'){
+                                    $this->DoReferenceTransactionResponseDetails = new DoReferenceTransactionResponseDetailsType(); 
+                                    $this->DoReferenceTransactionResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "fmfdetails") {
-					$this->FMFDetails = new FMFDetailsType();
-					$this->FMFDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='fmfdetails'){
+                                    $this->FMFDetails = new FMFDetailsType(); 
+                                    $this->FMFDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -23070,12 +23820,12 @@ class DoReferenceTransactionResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoNonReferencedCreditReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoNonReferencedCreditRequestType
 	 */ 
@@ -23104,12 +23854,12 @@ class DoNonReferencedCreditReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoNonReferencedCreditRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoNonReferencedCreditRequestDetailsType
 	 */ 
@@ -23144,12 +23894,12 @@ class DoNonReferencedCreditRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class DoNonReferencedCreditResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var DoNonReferencedCreditResponseDetailsType
 	 */ 
@@ -23162,11 +23912,13 @@ class DoNonReferencedCreditResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "dononreferencedcreditresponsedetails") {
-					$this->DoNonReferencedCreditResponseDetails = new DoNonReferencedCreditResponseDetailsType();
-					$this->DoNonReferencedCreditResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='dononreferencedcreditresponsedetails'){
+                                    $this->DoNonReferencedCreditResponseDetails = new DoNonReferencedCreditResponseDetailsType(); 
+                                    $this->DoNonReferencedCreditResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -23176,12 +23928,12 @@ class DoNonReferencedCreditResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class CreateRecurringPaymentsProfileReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var CreateRecurringPaymentsProfileRequestType
 	 */ 
@@ -23210,12 +23962,12 @@ class CreateRecurringPaymentsProfileReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class CreateRecurringPaymentsProfileRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var CreateRecurringPaymentsProfileRequestDetailsType
 	 */ 
@@ -23243,12 +23995,12 @@ class CreateRecurringPaymentsProfileRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class CreateRecurringPaymentsProfileResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var CreateRecurringPaymentsProfileResponseDetailsType
 	 */ 
@@ -23261,11 +24013,13 @@ class CreateRecurringPaymentsProfileResponseType  extends AbstractResponseType  
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "createrecurringpaymentsprofileresponsedetails") {
-					$this->CreateRecurringPaymentsProfileResponseDetails = new CreateRecurringPaymentsProfileResponseDetailsType();
-					$this->CreateRecurringPaymentsProfileResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='createrecurringpaymentsprofileresponsedetails'){
+                                    $this->CreateRecurringPaymentsProfileResponseDetails = new CreateRecurringPaymentsProfileResponseDetailsType(); 
+                                    $this->CreateRecurringPaymentsProfileResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -23275,12 +24029,12 @@ class CreateRecurringPaymentsProfileResponseType  extends AbstractResponseType  
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetRecurringPaymentsProfileDetailsReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetRecurringPaymentsProfileDetailsRequestType
 	 */ 
@@ -23309,12 +24063,12 @@ class GetRecurringPaymentsProfileDetailsReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -23346,12 +24100,12 @@ class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetRecurringPaymentsProfileDetailsResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 */ 
@@ -23364,11 +24118,13 @@ class GetRecurringPaymentsProfileDetailsResponseType  extends AbstractResponseTy
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "getrecurringpaymentsprofiledetailsresponsedetails") {
-					$this->GetRecurringPaymentsProfileDetailsResponseDetails = new GetRecurringPaymentsProfileDetailsResponseDetailsType();
-					$this->GetRecurringPaymentsProfileDetailsResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='getrecurringpaymentsprofiledetailsresponsedetails'){
+                                    $this->GetRecurringPaymentsProfileDetailsResponseDetails = new GetRecurringPaymentsProfileDetailsResponseDetailsType(); 
+                                    $this->GetRecurringPaymentsProfileDetailsResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -23378,12 +24134,12 @@ class GetRecurringPaymentsProfileDetailsResponseType  extends AbstractResponseTy
 
 
 /**
- * No Document Comments
+ * 
  */
 class ManageRecurringPaymentsProfileStatusReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ManageRecurringPaymentsProfileStatusRequestType
 	 */ 
@@ -23412,12 +24168,12 @@ class ManageRecurringPaymentsProfileStatusReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ManageRecurringPaymentsProfileStatusRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ManageRecurringPaymentsProfileStatusRequestDetailsType
 	 */ 
@@ -23445,12 +24201,12 @@ class ManageRecurringPaymentsProfileStatusRequestType  extends AbstractRequestTy
 
 
 /**
- * No Document Comments
+ * 
  */
 class ManageRecurringPaymentsProfileStatusResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ManageRecurringPaymentsProfileStatusResponseDetailsType
 	 */ 
@@ -23463,11 +24219,13 @@ class ManageRecurringPaymentsProfileStatusResponseType  extends AbstractResponse
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "managerecurringpaymentsprofilestatusresponsedetails") {
-					$this->ManageRecurringPaymentsProfileStatusResponseDetails = new ManageRecurringPaymentsProfileStatusResponseDetailsType();
-					$this->ManageRecurringPaymentsProfileStatusResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='managerecurringpaymentsprofilestatusresponsedetails'){
+                                    $this->ManageRecurringPaymentsProfileStatusResponseDetails = new ManageRecurringPaymentsProfileStatusResponseDetailsType(); 
+                                    $this->ManageRecurringPaymentsProfileStatusResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -23477,12 +24235,12 @@ class ManageRecurringPaymentsProfileStatusResponseType  extends AbstractResponse
 
 
 /**
- * No Document Comments
+ * 
  */
 class BillOutstandingAmountReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BillOutstandingAmountRequestType
 	 */ 
@@ -23511,12 +24269,12 @@ class BillOutstandingAmountReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BillOutstandingAmountRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BillOutstandingAmountRequestDetailsType
 	 */ 
@@ -23544,12 +24302,12 @@ class BillOutstandingAmountRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class BillOutstandingAmountResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var BillOutstandingAmountResponseDetailsType
 	 */ 
@@ -23562,11 +24320,13 @@ class BillOutstandingAmountResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "billoutstandingamountresponsedetails") {
-					$this->BillOutstandingAmountResponseDetails = new BillOutstandingAmountResponseDetailsType();
-					$this->BillOutstandingAmountResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='billoutstandingamountresponsedetails'){
+                                    $this->BillOutstandingAmountResponseDetails = new BillOutstandingAmountResponseDetailsType(); 
+                                    $this->BillOutstandingAmountResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -23576,12 +24336,12 @@ class BillOutstandingAmountResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class UpdateRecurringPaymentsProfileReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var UpdateRecurringPaymentsProfileRequestType
 	 */ 
@@ -23610,12 +24370,12 @@ class UpdateRecurringPaymentsProfileReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class UpdateRecurringPaymentsProfileRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var UpdateRecurringPaymentsProfileRequestDetailsType
 	 */ 
@@ -23643,12 +24403,12 @@ class UpdateRecurringPaymentsProfileRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class UpdateRecurringPaymentsProfileResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var UpdateRecurringPaymentsProfileResponseDetailsType
 	 */ 
@@ -23661,11 +24421,13 @@ class UpdateRecurringPaymentsProfileResponseType  extends AbstractResponseType  
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "updaterecurringpaymentsprofileresponsedetails") {
-					$this->UpdateRecurringPaymentsProfileResponseDetails = new UpdateRecurringPaymentsProfileResponseDetailsType();
-					$this->UpdateRecurringPaymentsProfileResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='updaterecurringpaymentsprofileresponsedetails'){
+                                    $this->UpdateRecurringPaymentsProfileResponseDetails = new UpdateRecurringPaymentsProfileResponseDetailsType(); 
+                                    $this->UpdateRecurringPaymentsProfileResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -23675,12 +24437,12 @@ class UpdateRecurringPaymentsProfileResponseType  extends AbstractResponseType  
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetPalDetailsReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var GetPalDetailsRequestType
 	 */ 
@@ -23709,7 +24471,7 @@ class GetPalDetailsReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetPalDetailsRequestType  extends AbstractRequestType  {
 
@@ -23726,19 +24488,19 @@ class GetPalDetailsRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class GetPalDetailsResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $Pal;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -23765,12 +24527,12 @@ class GetPalDetailsResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ReverseTransactionReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ReverseTransactionRequestType
 	 */ 
@@ -23799,12 +24561,12 @@ class ReverseTransactionReq  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ReverseTransactionRequestType  extends AbstractRequestType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ReverseTransactionRequestDetailsType
 	 */ 
@@ -23839,12 +24601,12 @@ class ReverseTransactionRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ReverseTransactionResponseType  extends AbstractResponseType  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ReverseTransactionResponseDetailsType
 	 */ 
@@ -23857,11 +24619,13 @@ class ReverseTransactionResponseType  extends AbstractResponseType  {
 		if ($arr != null) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-			if (is_array($arry["children"]) && ($arry["children"]) != null) {
-				if($arry["name"] == "reversetransactionresponsedetails") {
-					$this->ReverseTransactionResponseDetails = new ReverseTransactionResponseDetailsType();
-					$this->ReverseTransactionResponseDetails->init($arry["children"]);
-				}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='reversetransactionresponsedetails'){
+                                    $this->ReverseTransactionResponseDetails = new ReverseTransactionResponseDetailsType(); 
+                                    $this->ReverseTransactionResponseDetails->init($arry["children"]);
+                                }                                                
+                                                
 			}
 			}
 		}
@@ -23871,12 +24635,12 @@ class ReverseTransactionResponseType  extends AbstractResponseType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ExternalRememberMeOptOutReq  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ExternalRememberMeOptOutRequestType
 	 */ 
@@ -23967,7 +24731,7 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ExternalRememberMeOptOutResponseType  extends AbstractResponseType  {
 

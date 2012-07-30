@@ -10,7 +10,7 @@ $addressVerifyRequest = new AddressVerifyRequestType();
 $addressVerifyRequest->Email = $_REQUEST['mail'];
 $addressVerifyRequest->Street =$_REQUEST['street'];
 $addressVerifyRequest->Zip = $_REQUEST['zip'];
-$addressVerifyRequest->Version = 86.0;
+$addressVerifyRequest->Version = 92.0;
 $addrVerifyReq = new AddressVerifyReq();
 $addrVerifyReq->AddressVerifyRequest = $addressVerifyRequest;
 

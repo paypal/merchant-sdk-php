@@ -13,7 +13,7 @@ $payerId=urlencode(  $_REQUEST['payerID']);
 // ------------------------------------------------------------------
 // this section is optional if parameters required for DoExpressCheckout is retrieved from your database
 $getExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType($token);
-$getExpressCheckoutDetailsRequest->Version = 86.0;
+$getExpressCheckoutDetailsRequest->Version = 92.0;
 $getExpressCheckoutReq = new GetExpressCheckoutDetailsReq();
 $getExpressCheckoutReq->GetExpressCheckoutDetailsRequest = $getExpressCheckoutDetailsRequest;
 
@@ -36,7 +36,7 @@ $DoECRequestDetails->PaymentDetails[0] = $PaymentDetails;
 
 $DoECRequest = new DoExpressCheckoutPaymentRequestType();
 $DoECRequest->DoExpressCheckoutPaymentRequestDetails = $DoECRequestDetails;
-$DoECRequest->Version = '86.0';
+$DoECRequest->Version = '92.0';
 
 $DoECReq = new DoExpressCheckoutPaymentReq();
 $DoECReq->DoExpressCheckoutPaymentRequest = $DoECRequest;
