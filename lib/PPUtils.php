@@ -1,7 +1,7 @@
 <?php
 class PPUtils {
 
-	const SDK_VERSION = "0.7.92";
+	const SDK_VERSION = "1.0.92";
 	const SDK_NAME = "sdk-merchant-php ";
 
 	/**
