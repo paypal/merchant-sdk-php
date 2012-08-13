@@ -18,7 +18,7 @@ $billOutstandingAmtReqestDetail->ProfileID = $_REQUEST['profileID'];
 
 $billOutstandingAmtReqest = new BillOutstandingAmountRequestType();
 $billOutstandingAmtReqest->BillOutstandingAmountRequestDetails = $billOutstandingAmtReqestDetail;
-$billOutstandingAmtReqest->Version = 92;
+
 
 $billOutstandingAmtReq =  new BillOutstandingAmountReq();
 $billOutstandingAmtReq->BillOutstandingAmountRequest = $billOutstandingAmtReqest;

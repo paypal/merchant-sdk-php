@@ -10,7 +10,7 @@ $logger = new PPLoggingManager('DoVoid');
 
 $doVoidRequest = new DoVoidRequestType();
 $doVoidRequest->AuthorizationID = $_REQUEST['authID'];
-$doVoidRequest->Version = '92.0';
+
 
 $doVoidReq = new DoVoidReq();
 $doVoidReq->DoVoidRequest =$doVoidRequest;

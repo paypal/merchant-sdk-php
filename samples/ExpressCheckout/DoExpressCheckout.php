@@ -9,11 +9,12 @@ $logger = new PPLoggingManager('DoExpressCheckout');
 
 $token =urlencode( $_REQUEST['token']);
 $payerId=urlencode(  $_REQUEST['payerID']);
+$paymentAction = urlencode(  $_REQUEST['paymentAction']);
 
 // ------------------------------------------------------------------
 // this section is optional if parameters required for DoExpressCheckout is retrieved from your database
 $getExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType($token);
-$getExpressCheckoutDetailsRequest->Version = 92.0;
+
 $getExpressCheckoutReq = new GetExpressCheckoutDetailsReq();
 $getExpressCheckoutReq->GetExpressCheckoutDetailsRequest = $getExpressCheckoutDetailsRequest;
 
@@ -32,11 +33,12 @@ $PaymentDetails->OrderTotal = $orderTotal;
 $DoECRequestDetails = new DoExpressCheckoutPaymentRequestDetailsType();
 $DoECRequestDetails->PayerID = $payerId;
 $DoECRequestDetails->Token = $token;
+$DoECRequestDetails->PaymentAction = $paymentAction;
 $DoECRequestDetails->PaymentDetails[0] = $PaymentDetails;
 
 $DoECRequest = new DoExpressCheckoutPaymentRequestType();
 $DoECRequest->DoExpressCheckoutPaymentRequestDetails = $DoECRequestDetails;
-$DoECRequest->Version = '92.0';
+
 
 $DoECReq = new DoExpressCheckoutPaymentReq();
 $DoECReq->DoExpressCheckoutPaymentRequest = $DoECRequest;

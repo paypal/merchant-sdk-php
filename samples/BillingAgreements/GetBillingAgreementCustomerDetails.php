@@ -10,7 +10,7 @@ $logger = new PPLoggingManager('GetBillingAgreementCustomerDetails');
 
 $BACustomerDetailRequest = new GetBillingAgreementCustomerDetailsRequestType();
 $BACustomerDetailRequest->Token = $_REQUEST['token'];
-$BACustomerDetailRequest->Version = 92;
+
 
 $BACustomerDetailReq = new GetBillingAgreementCustomerDetailsReq();
 $BACustomerDetailReq->GetBillingAgreementCustomerDetailsRequest = $BACustomerDetailRequest;

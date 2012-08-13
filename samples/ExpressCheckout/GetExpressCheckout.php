@@ -10,7 +10,7 @@ $logger = new PPLoggingManager('GetExpressCheckout');
 $token = $_REQUEST['token'];
 
 $getExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType($token);
-$getExpressCheckoutDetailsRequest->Version = 92.0;
+
 $getExpressCheckoutReq = new GetExpressCheckoutDetailsReq();
 $getExpressCheckoutReq->GetExpressCheckoutDetailsRequest = $getExpressCheckoutDetailsRequest;
 

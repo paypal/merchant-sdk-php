@@ -47,7 +47,7 @@ $logger = new PPLoggingManager('SetExpressCheckout');
 
 	$setECReqType = new SetExpressCheckoutRequestType();
 	$setECReqType->SetExpressCheckoutRequestDetails = $setECReqDetails;
-	$setECReqType->Version = '92.0';
+	
 	$setECReq = new SetExpressCheckoutReq();
 	$setECReq->SetExpressCheckoutRequest = $setECReqType;
 

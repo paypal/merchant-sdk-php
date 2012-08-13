@@ -13,7 +13,7 @@ $reverseTransactionReqestDetails->TransactionID = $_REQUEST['transID'];
 
 $reverseTransactionReqest = new ReverseTransactionRequestType();
 $reverseTransactionReqest->ReverseTransactionRequestDetails = $reverseTransactionReqestDetails;
-$reverseTransactionReqest->Version = 92;
+
 
 $reverseTransactionReq = new ReverseTransactionReq();
 $reverseTransactionReq->ReverseTransactionRequest = $reverseTransactionReqest;

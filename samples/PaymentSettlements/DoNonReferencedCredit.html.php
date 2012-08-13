@@ -83,11 +83,10 @@ value="NonReferencedCredit">
 <th class="param_name">Currency Code</th>
 </tr>
 <tr>
-<td class="param_value"><input type="text" name="netAmount"
-value="1" /></td>
 
-<td class="param_value"><input type="text" name="currencyID"
-value="USD" /></td>
+<td class="param_value"><input type="text" name="netAmount" value="1" /></td>
+
+<td class="param_value"><input type="text" name="currencyID" value="USD" /></td>
 </tr>
 </table>
 <div class="submit">

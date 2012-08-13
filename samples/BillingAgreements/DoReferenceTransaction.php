@@ -1,4 +1,5 @@
 <?php
+<?php
 $path = '../../lib';
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 require_once('services/PayPalAPIInterfaceService/PayPalAPIInterfaceServiceService.php');
@@ -65,7 +66,7 @@ $RTRequestDetails->PaymentType = $_REQUEST['paymentType'];
 
 $RTRequest = new DoReferenceTransactionRequestType();
 $RTRequest->DoReferenceTransactionRequestDetails  = $RTRequestDetails;
-$RTRequest->Version = 92;
+
 
 $RTReq = new DoReferenceTransactionReq();
 $RTReq->DoReferenceTransactionRequest = $RTRequest;

@@ -12,7 +12,7 @@ $req = new GetTransactionDetailsRequestType();
 $req->TransactionID = $_POST['transID'];
 
 
-$req->Version = 92.0;
+
 $trans = new GetTransactionDetailsReq();
 $trans->GetTransactionDetailsRequest = $req;
 

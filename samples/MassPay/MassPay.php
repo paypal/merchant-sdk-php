@@ -48,7 +48,7 @@ elseif ($_REQUEST['receiverInfoCode'] == 'PhoneNumber')
 
 $massPayRequest = new MassPayRequestType();
 $massPayRequest->MassPayItem = Array($masspayItem1,$masspayItem2,$masspayItem3);
-$massPayRequest->Version = 92;
+
 
 $massPayReq = new MassPayReq();
 $massPayReq->MassPayRequest = $massPayRequest;
