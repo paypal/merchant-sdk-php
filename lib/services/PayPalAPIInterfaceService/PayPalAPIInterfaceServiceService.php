@@ -10,7 +10,7 @@ require_once('PPUtils.php');
 class PayPalAPIInterfaceServiceService extends PPBaseService {
 
 	// Service Version
-	private static $SERVICE_VERSION = "92.0";
+	private static $SERVICE_VERSION = "93.0";
 
 	// Service Name
 	private static $SERVICE_NAME = "PayPalAPIInterfaceService";

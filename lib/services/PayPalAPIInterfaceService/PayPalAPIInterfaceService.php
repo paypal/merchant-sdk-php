@@ -2182,6 +2182,14 @@ class SetExpressCheckoutRequestDetailsType  {
 	 */ 
 	public $ExternalPartnerTrackingDetails;
 
+	/**
+	 * Optional element that defines relationship between buckets 
+     *@array
+	 *@access public
+	 *@var CoupledBucketsType
+	 */ 
+	public $CoupledBuckets;
+
 
 	public function toXMLString() {
 		$str = '';
@@ -2640,6 +2648,16 @@ class SetExpressCheckoutRequestDetailsType  {
 			$str .= '<ebl:ExternalPartnerTrackingDetails>';
 			$str .= $this->ExternalPartnerTrackingDetails->toXMLString();
 			$str .= '</ebl:ExternalPartnerTrackingDetails>';
+		}
+		if($this->CoupledBuckets != null) {
+			for($i = 0; $i < count($this->CoupledBuckets); $i++) { //property is collection
+				//prop.complex
+				//does not contain attribute or is attribute
+				$str .= '<ebl:CoupledBuckets>';
+				$str .= $this->CoupledBuckets[$i]->toXMLString();
+				$str .= '</ebl:CoupledBuckets>';
+		
+			}
 		}
 		return $str;
 	}
@@ -4068,6 +4086,14 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 */ 
 	public $SkipBACreation;
 
+	/**
+	 * Optional element that defines relationship between buckets 
+     *@array
+	 *@access public
+	 *@var CoupledBucketsType
+	 */ 
+	public $CoupledBuckets;
+
 
 	public function toXMLString() {
 		$str = '';
@@ -4200,6 +4226,16 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 			//prop is not value
 			$str .= '<ebl:SkipBACreation>' . $this->SkipBACreation . '</ebl:SkipBACreation>';
 		}
+		if($this->CoupledBuckets != null) {
+			for($i = 0; $i < count($this->CoupledBuckets); $i++) { //property is collection
+				//prop.complex
+				//does not contain attribute or is attribute
+				$str .= '<ebl:CoupledBuckets>';
+				$str .= $this->CoupledBuckets[$i]->toXMLString();
+				$str .= '</ebl:CoupledBuckets>';
+		
+			}
+		}
 		return $str;
 	}
 
@@ -4271,6 +4307,14 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 	 */ 
 	public $UserSelectedOptions;
 
+	/**
+	 * Information about Coupled Payment transactions. 
+     *@array
+	 *@access public
+	 *@var CoupledPaymentInfoType
+	 */ 
+	public $CoupledPaymentInfo;
+
 
 
 
@@ -4316,6 +4360,22 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
                                 }                                                
                                                 
 			}
+				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+					$i = 0;
+					while (true) {
+						if ($arry["name"] == "coupledpaymentinfo[$i]") {
+							$this->CoupledPaymentInfo[$i] = new CoupledPaymentInfoType();
+							$this->CoupledPaymentInfo[$i]->init($arry["children"]);
+						} else {
+							break;
+						}
+						$i++;
+					}
+				}
+				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "coupledpaymentinfo")) {
+					$this->CoupledPaymentInfo = new CoupledPaymentInfoType();
+					$this->CoupledPaymentInfo->init($arry["children"]);
+				}
 			}
 		}
 	}
@@ -6212,6 +6272,13 @@ class PaymentTransactionType  {
 	public $OfferCouponInfo;
 
 	/**
+	 * Information about Secondary Address
+	 *@access public
+	 *@var AddressType
+	 */ 
+	public $SecondaryAddress;
+
+	/**
 	 * Information about the user selected options.  
 	 *@access public
 	 *@var UserSelectedOptionType
@@ -6311,6 +6378,14 @@ class PaymentTransactionType  {
                                     if( $arry["name"]=='offercouponinfo'){
                                     $this->OfferCouponInfo = new OfferCouponInfoType(); 
                                     $this->OfferCouponInfo->init($arry["children"]);
+                                }                                                
+                                                
+			}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='secondaryaddress'){
+                                    $this->SecondaryAddress = new AddressType(); 
+                                    $this->SecondaryAddress->init($arry["children"]);
                                 }                                                
                                                 
 			}
@@ -8536,6 +8611,20 @@ class PaymentDetailsType  {
 	/**
 	 * 
 	 *@access public
+	 *@var AddressType
+	 */ 
+	public $FulfillmentAddress;
+
+	/**
+	 * 
+	 *@access public
+	 *@var PaymentCategoryType
+	 */ 
+	public $PaymentCategoryType;
+
+	/**
+	 * 
+	 *@access public
 	 *@var ShippingServiceCodeType
 	 */ 
 	public $ShippingMethod;
@@ -8775,6 +8864,21 @@ class PaymentDetailsType  {
 			$str .= '<ebl:ShipToAddress>';
 			$str .= $this->ShipToAddress->toXMLString();
 			$str .= '</ebl:ShipToAddress>';
+		}
+		if($this->FulfillmentAddress != null) {
+			//prop is not a collection
+			//prop is complex
+			//prop is not enum
+			//does not contain attribute or is attribute
+			$str .= '<ebl:FulfillmentAddress>';
+			$str .= $this->FulfillmentAddress->toXMLString();
+			$str .= '</ebl:FulfillmentAddress>';
+		}
+		if($this->PaymentCategoryType != null) {
+			//prop is not a collection
+			//prop not complex
+			//prop is not value
+			$str .= '<ebl:PaymentCategoryType>' . $this->PaymentCategoryType . '</ebl:PaymentCategoryType>';
 		}
 		if($this->ShippingMethod != null) {
 			//prop is not a collection
@@ -9024,6 +9128,17 @@ class PaymentDetailsType  {
                                 }                                                
                                                 
 			}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+                                    if( $arry["name"]=='fulfillmentaddress'){
+                                    $this->FulfillmentAddress = new AddressType(); 
+                                    $this->FulfillmentAddress->init($arry["children"]);
+                                }                                                
+                                                
+			}
+				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentcategorytype') {
+					$this->PaymentCategoryType = $arry["text"];
+				}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'shippingmethod') {
 					$this->ShippingMethod = $arry["text"];
 				}
@@ -16048,6 +16163,110 @@ class RefundInfoType  {
 				}
 				if($arry != null && isset($arry['text']) && $arry['name'] == 'pendingreason') {
 					$this->PendingReason = $arry["text"];
+				}
+			}
+		}
+	}
+} 
+
+
+
+/**
+ * Defines relationship between buckets 
+ */
+class CoupledBucketsType  {
+
+	/**
+	 * Relationship Type - LifeTime (default) 
+	 *@access public
+	 *@var CoupleType
+	 */ 
+	public $CoupleType;
+
+	/**
+	 * Identifier for this relation 
+	 *@access public
+	 *@var string
+	 */ 
+	public $CoupledPaymentRequestID;
+
+	/**
+	 * 
+     *@array
+	 *@access public
+	 *@var string
+	 */ 
+	public $PaymentRequestID;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($PaymentRequestID = null) {
+		$this->PaymentRequestID = $PaymentRequestID;
+	}
+
+
+	public function toXMLString() {
+		$str = '';
+		if($this->CoupleType != null) {
+			//prop is not a collection
+			//prop not complex
+			//prop is not value
+			$str .= '<ebl:CoupleType>' . $this->CoupleType . '</ebl:CoupleType>';
+		}
+		if($this->CoupledPaymentRequestID != null) {
+			//prop is not a collection
+			//prop not complex
+			//prop is not value
+			$str .= '<ebl:CoupledPaymentRequestID>' . $this->CoupledPaymentRequestID . '</ebl:CoupledPaymentRequestID>';
+		}
+		if($this->PaymentRequestID != null) {
+			for($i = 0; $i < count($this->PaymentRequestID); $i++) { //property is collection
+				//not a complex member
+				//prop is not a value
+				$str .= '<ebl:PaymentRequestID>'. $this->PaymentRequestID[$i] . '</ebl:PaymentRequestID>';
+		
+			}
+		}
+		return $str;
+	}
+
+
+} 
+
+
+
+/**
+ * Information about Coupled Payment transactions. 
+ */
+class CoupledPaymentInfoType  {
+
+	/**
+	 * ID received in the Coupled Payment Request
+	 *@access public
+	 *@var string
+	 */ 
+	public $CoupledPaymentRequestID;
+
+	/**
+	 * ID that uniquely identifies this CoupledPayment. Generated
+	 * by PP in Response
+	 *@access public
+	 *@var string
+	 */ 
+	public $CoupledPaymentID;
+
+
+
+
+	public function init($arr = null) {
+		if ($arr != null) {
+			foreach($arr as $arry) {
+				if($arry != null && isset($arry['text']) && $arry['name'] == 'coupledpaymentrequestid') {
+					$this->CoupledPaymentRequestID = $arry["text"];
+				}
+				if($arry != null && isset($arry['text']) && $arry['name'] == 'coupledpaymentid') {
+					$this->CoupledPaymentID = $arry["text"];
 				}
 			}
 		}
