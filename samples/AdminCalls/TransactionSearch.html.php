@@ -2,12 +2,12 @@
 $currDate = getdate();
 $endDate = $currDate['year'].'-'.$currDate['mon'].'-'.$currDate['mday'];
 $endDate = strtotime($endDate);
-$endDate = date(DATE_ATOM, mktime(0,0,0,date('m',$endDate),date('d',$endDate),date('Y',$endDate)));
+$endDate = date("Y-m-d\TH:i:sO", mktime(0,0,0,date('m',$endDate),date('d',$endDate),date('Y',$endDate)));
 $startDate = strtDate($endDate, 1);
 
 function strtDate($orgDate,$dy){
 	  $cd = strtotime($orgDate);
-	  $retDAY = date(DATE_ATOM, mktime(0,0,0,date('m',$cd),date('d',$cd)-$dy,date('Y',$cd)));
+	  $retDAY = date("Y-m-d\TH:i:sO", mktime(0,0,0,date('m',$cd),date('d',$cd)-$dy,date('Y',$cd)));
 	  return $retDAY;
 	}
 
