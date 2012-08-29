@@ -2,12 +2,12 @@
 $currDate = getdate();
 $endDate = $currDate['year'].'-'.$currDate['mon'].'-'.$currDate['mday'];
 $endDate = strtotime($endDate);
-$endDate = date('Y-m-d', mktime(0,0,0,date('m',$endDate),date('d',$endDate),date('Y',$endDate)));
+$endDate = date(DATE_ATOM, mktime(0,0,0,date('m',$endDate),date('d',$endDate),date('Y',$endDate)));
 $startDate = strtDate($endDate, 1);
 
-function strtDate($orgDate,$yr){
+function strtDate($orgDate,$dy){
 	  $cd = strtotime($orgDate);
-	  $retDAY = date('Y-m-d', mktime(0,0,0,date('m',$cd),date('d',$cd),date('Y',$cd)-$yr));
+	  $retDAY = date(DATE_ATOM, mktime(0,0,0,date('m',$cd),date('d',$cd)-$dy,date('Y',$cd)));
 	  return $retDAY;
 	}
 
@@ -28,15 +28,13 @@ history for transactions that meet the specified criteria.</div>
 <div class="params">
 <div class="param_name">StartDate*</div>
 <div class="param_value">
-<input type="text" name="startDate"
-value="<?php echo $startDate ?>" />
+<input type="text" name="startDate" size="30" value="<?php echo $startDate ?>" />
 </div>
 </div>
 <div class="params">
 <div class="param_name">EndDate</div>
 <div class="param_value">
-<input type="text" name="endDate"
-value=<?php echo $endDate?> />(Optional)
+<input type="text" name="endDate" size="30" value=<?php echo $endDate?> />(Optional)
 </div>
 </div>
 <div class="params">
