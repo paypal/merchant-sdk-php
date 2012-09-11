@@ -22,6 +22,12 @@ $doAuthReq->DoAuthorizationRequest =$doAuthRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $doAuthResponse = $paypalService->DoAuthorization($doAuthReq);
+
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>".$doAuthResponse->Ack."</div> </td></tr>";
+echo "<tr><td>TransactionID :</td><td><div id='TransactionID'>".$doAuthResponse->TransactionID."</div></td></tr>";
+echo "</table>";
+
 echo "<pre>";
 print_r($doAuthResponse);
 echo "</pre>";

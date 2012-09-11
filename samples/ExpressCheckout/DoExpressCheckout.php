@@ -44,6 +44,10 @@ $DoECReq = new DoExpressCheckoutPaymentReq();
 $DoECReq->DoExpressCheckoutPaymentRequest = $DoECRequest;
 
 $DoECResponse = $paypalService->DoExpressCheckoutPayment($DoECReq);
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$DoECResponse->Ack</div> </td></tr>";
+echo "<tr><td>TransactionID :</td><td><div id='TransactionID'>".$DoECResponse->DoExpressCheckoutPaymentResponseDetails->PaymentInfo->TransactionID."</div> </td></tr>";
+echo "</table>";
 echo "<pre>";
 print_r($DoECResponse);
 echo "</pre>";

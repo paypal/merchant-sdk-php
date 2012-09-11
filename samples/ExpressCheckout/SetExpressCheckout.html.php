@@ -180,7 +180,25 @@ maxlength="260" />
 maxlength="260" />
 </div>
 </div>
-
+<div class="section_header">Billing Agreement (Required for
+					Recurring payments/Reference transactions only)</div>
+	<div class="param_name">Billing Agreement Description *</div>
+	<div class="param_value">
+		<textarea cols="80" rows="10" name="billingAgreementText"></textarea>
+	</div>
+	<div class="param_name">Billing type *</div>
+	<div class="param_value">
+		<select name="billingType">
+			<option value="None">None</option>
+			<option value="MerchantInitiatedBilling">Merchant
+				Initiated Billing</option>
+			<option value="RecurringPayments">Recurring Payments</option>
+			<option value="MerchantInitiatedBillingSingleAgreement">Merchant
+				Initiated Billing Single Agreement</option>
+			<option value="ChannelInitiatedBilling">Channel Initiated
+				Billing</option>
+		</select>
+</div>
 
 
 <div class="submit">

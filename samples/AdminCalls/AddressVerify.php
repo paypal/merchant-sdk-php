@@ -16,6 +16,12 @@ $addrVerifyReq->AddressVerifyRequest = $addressVerifyRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $addrVerifyResponse = $paypalService->AddressVerify($addrVerifyReq);
+
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$addrVerifyResponse->Ack</div> </td></tr>";
+echo "<tr><td>StreetMatch :</td><td><div id='StreetMatch'>$addrVerifyResponse->StreetMatch</div> </td></tr>";
+echo "<tr><td>ZipMatch :</td><td><div id='ZipMatch'>$addrVerifyResponse->ZipMatch</div> </td></tr>";
+echo "</table>";
 echo "<pre>";
 print_r($addrVerifyResponse);
 echo "</pre>";

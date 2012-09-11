@@ -56,6 +56,10 @@ $massPayReq->MassPayRequest = $massPayRequest;
 $paypalService = new PayPalAPIInterfaceServiceService();
 $massPayResponse = $paypalService->MassPay($massPayReq);
 
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$massPayResponse->Ack</div> </td></tr>";
+echo "</table>";
+
 echo "<pre>";
 print_r($massPayResponse);
 echo "</pre>";

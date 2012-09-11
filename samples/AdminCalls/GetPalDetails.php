@@ -14,6 +14,10 @@ $getPalDetailsReq->GetPalDetailsRequest = $getPalDetailsRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $getPalDetailsResponse = $paypalService->GetPalDetails($getPalDetailsReq);
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$getPalDetailsResponse->Ack</div> </td></tr>";
+echo "<tr><td>Pal :</td><td><div id='Pal'>$getPalDetailsResponse->Pal</div> </td></tr>";
+echo "</table>";
 echo "<pre>";
 print_r($getPalDetailsResponse);
 echo "</pre>";

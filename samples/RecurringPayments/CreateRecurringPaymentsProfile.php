@@ -77,6 +77,11 @@ $createRPProfileReq->CreateRecurringPaymentsProfileRequest = $createRPProfileReq
 $paypalService = new PayPalAPIInterfaceServiceService();
 $createRPProfileResponse = $paypalService->CreateRecurringPaymentsProfile($createRPProfileReq);
 
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$createRPProfileResponse->Ack</div> </td></tr>";
+echo "<tr><td>ProfileID :</td><td><div id='ProfileID'>".$createRPProfileResponse->CreateRecurringPaymentsProfileResponseDetails->ProfileID ."</div> </td></tr>";
+echo "</table>";
+
 echo "<pre>";
 print_r($createRPProfileResponse);
 echo "</pre>";

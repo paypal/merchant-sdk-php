@@ -17,6 +17,11 @@ $billingAgreementUpdateReq->BAUpdateRequest = $BAUpdateRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $BAUpdatResponse = $paypalService->BillAgreementUpdate($billingAgreementUpdateReq);
+
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$BAUpdatResponse->Ack</div> </td></tr>";
+echo "</table>";
+
 echo "<pre>";
 print_r($BAUpdatResponse);
 echo "</pre>";

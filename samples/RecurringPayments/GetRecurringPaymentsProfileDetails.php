@@ -15,6 +15,12 @@ $getRPPDetailsReq->GetRecurringPaymentsProfileDetailsRequest = $getRPPDetailsReq
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $getRPPDetailsResponse = $paypalService->GetRecurringPaymentsProfileDetails($getRPPDetailsReq);
+
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$getRPPDetailsResponse->Ack</div> </td></tr>";
+echo "<tr><td>ProfileID :</td><td><div id='ProfileID'>". $getRPPDetailsResponse->GetRecurringPaymentsProfileDetailsResponseDetails->ProfileID ."</div> </td></tr>";
+echo "</table>";
+
 echo "<pre>";
 print_r($getRPPDetailsResponse);
 echo "</pre>";

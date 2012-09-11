@@ -72,6 +72,9 @@ $RTReq->DoReferenceTransactionRequest = $RTRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $RTResponse = $paypalService->DoReferenceTransaction($RTReq);
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$RTResponse->Ack</div> </td></tr>";
+echo "</table>";
 echo "<pre>";
 print_r($RTResponse);
 echo "</pre>";

@@ -58,11 +58,16 @@ $PaymentDetails->ItemTotal = $itemAmount;
 //$PaymentDetails->TaxTotal = $taxTotal;
 $PaymentDetails->ShippingTotal = $shippingTotal;
 
+$billingAgreementDetails = new BillingAgreementDetailsType($_REQUEST['billingType']);
+$billingAgreementDetails->BillingAgreementDescription = $_REQUEST['billingAgreementText'];
+$billAgreementArray = array($billingAgreementDetails);
 $setECReqDetails = new SetExpressCheckoutRequestDetailsType();
 $setECReqDetails->PaymentDetails[0] = $PaymentDetails;
 $setECReqDetails->CancelURL = $cancelUrl;
 $setECReqDetails->ReturnURL = $returnUrl;
+$setECReqDetails->BillingAgreementDetails = $billAgreementArray;
 //$setECReqDetails->NoShipping = $_REQUEST['noShipping'];;
+
 
 $setECReqType = new SetExpressCheckoutRequestType();
 $setECReqType->SetExpressCheckoutRequestDetails = $setECReqDetails;
@@ -74,9 +79,13 @@ $setECReq->SetExpressCheckoutRequest = $setECReqType;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $setECResponse = $paypalService->SetExpressCheckout($setECReq);
-  echo '<pre>';
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$setECResponse->Ack</div> </td></tr>";
+echo "<tr><td>Token :</td><td><div id='Token'>$setECResponse->Token</div> </td></tr>";
+echo "</table>";
+echo '<pre>';
 print_r($setECResponse);
-  echo '</pre>';
+echo '</pre>';
 
 
 if($setECResponse->Ack =='Success')
@@ -85,7 +94,7 @@ if($setECResponse->Ack =='Success')
 	// Redirect to paypal.com here
 	$payPalURL = 'https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&token=' . $token;
 
-
 	echo" <a href=$payPalURL><b>* Redirect to PayPal to login </b></a><br>";
 }
+
 require_once '../Response.php';

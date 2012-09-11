@@ -20,6 +20,10 @@ $reverseTransactionReq->ReverseTransactionRequest = $reverseTransactionReqest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $reverseTransactionResponse = $paypalService->ReverseTransaction($reverseTransactionReq);
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$reverseTransactionResponse->Ack</div> </td></tr>";
+//echo "<tr><td>Ack :</td><td><div id='Ack'>$reverseTransactionResponse->ReverseTransactionResponseDetails->ReverseTransactionID</div> </td></tr>";
+echo "</table>";
 echo "<pre>";
 print_r($reverseTransactionResponse);
 echo "</pre>";

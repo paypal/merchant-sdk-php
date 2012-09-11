@@ -19,6 +19,12 @@ $manageRPPStatusReq->ManageRecurringPaymentsProfileStatusRequest = $manageRPPSta
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $manageRPPStatusResponse = $paypalService->ManageRecurringPaymentsProfileStatus($manageRPPStatusReq);
+
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$manageRPPStatusResponse->Ack</div> </td></tr>";
+echo "<tr><td>ProfileID :</td><td><div id='ProfileID'>".$manageRPPStatusResponse->ManageRecurringPaymentsProfileStatusResponseDetails->ProfileID ."</div> </td></tr>";
+echo "</table>";
+
 echo "<pre>";
 print_r($manageRPPStatusResponse);
 echo "</pre>";

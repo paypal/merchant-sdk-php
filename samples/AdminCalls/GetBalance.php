@@ -15,6 +15,9 @@ $getBalanceReq->GetBalanceRequest = $getBalanceRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $getBalanceResponse = $paypalService->GetBalance($getBalanceReq);
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$getBalanceResponse->Ack</div> </td></tr>";
+echo "</table>";
 echo "<pre>";
 print_r($getBalanceResponse);
 echo "</pre>";

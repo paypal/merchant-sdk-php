@@ -99,6 +99,11 @@ $doDirectPaymentReq->DoDirectPaymentRequest = $ddReq;
 $logger->error("created doDirectPaymentReq Object");
 $paypalService = new PayPalAPIInterfaceServiceService();
 $doDirectPaymentResponse = $paypalService->DoDirectPayment($doDirectPaymentReq);
+
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$doDirectPaymentResponse->Ack</div> </td></tr>";
+echo "<tr><td>TransactionID :</td><td><div id='TransactionID'>$doDirectPaymentResponse->TransactionID</div> </td></tr>";
+echo "</table>";
 echo "<pre>";
 print_r($doDirectPaymentResponse);
 echo "</pre>";

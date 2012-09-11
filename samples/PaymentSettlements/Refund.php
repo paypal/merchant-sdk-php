@@ -28,6 +28,10 @@ $refundReq->RefundTransactionRequest = $refundReqest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 $refundResponse = $paypalService->RefundTransaction($refundReq);
+echo "<table>";
+echo "<tr><td>Ack :</td><td><div id='Ack'>$refundResponse->Ack</div> </td></tr>";
+//echo "<tr><td>RefundStatus :</td><td><div id='RefundStatus'>$refundResponse->RefundInfo->RefundStatus</div> </td></tr>";
+echo "</table>";
 echo "<pre>";
 print_r($refundResponse);
 echo "</pre>";
