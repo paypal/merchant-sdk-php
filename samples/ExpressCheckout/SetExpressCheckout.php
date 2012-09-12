@@ -49,7 +49,7 @@ $address->PostalCode = $_REQUEST['postalCode'];
 $address->countryCode = $_REQUEST['countryCode'];
 
 $PaymentDetails= new PaymentDetailsType();
-//$PaymentDetails->PaymentDetailsItem[0] = $itemDetails;
+$PaymentDetails->PaymentDetailsItem[0] = $itemDetails;
 $PaymentDetails->ShipToAddress = $address;
 
 $PaymentDetails->OrderTotal = $orderTotal;
