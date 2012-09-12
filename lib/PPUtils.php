@@ -138,6 +138,14 @@ function convertXmlObjToArr($obj, &$arr)
     }
     return $arr;
 }
+	/**
+	 * Escapes invalid xml characters
+	 * @param $textContent = xml data to be escaped
+	 */
+	public static function escapeInvalidXmlCharsRegex($textContent)
+	{
+		return htmlspecialchars($textContent, (1 | 2), 'UTF-8', false);
+	}
 
 }
 
@@ -246,6 +254,8 @@ class XmlToArray
 		$array[$name] = $this->_struct_to_array($values, $i);
 		return $array;
 	}//createArray
+
+	
 
 
 }//XmlToArray
