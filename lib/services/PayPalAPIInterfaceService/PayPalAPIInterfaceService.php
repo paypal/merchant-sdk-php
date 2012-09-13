@@ -4,6 +4,7 @@
   * Auto generated code 
   * 
   */
+require_once('PPUtils.php');
 /**
  * On requests, you must set the currencyID attribute to one of
  * the three-character currency codes for any of the supported
@@ -37,19 +38,16 @@ class BasicAmountType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->currencyID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is attribute
-			$str .= ' currencyID = "' . $this->currencyID . '">';
+		if($this->currencyID != null)
+		{
+			$str .= ' currencyID = "' . PPUtils::escapeInvalidXmlCharsRegex($this->currencyID) . '">';
 		}
-		if($this->value != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is value
-			$str .= $this->value;
+		if($this->value != null)
+		{
+			$str .= PPUtils::escapeInvalidXmlCharsRegex($this->value);
 		}
 		return $str;
 	}
@@ -99,19 +97,16 @@ class MeasureType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->unit != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is attribute
-			$str .= ' unit = "' . $this->unit . '">';
+		if($this->unit != null)
+		{
+			$str .= ' unit = "' . PPUtils::escapeInvalidXmlCharsRegex($this->unit) . '">';
 		}
-		if($this->value != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is value
-			$str .= $this->value;
+		if($this->value != null)
+		{
+			$str .= PPUtils::escapeInvalidXmlCharsRegex($this->value);
 		}
 		return $str;
 	}
@@ -288,27 +283,23 @@ class AbstractRequestType  {
 	public $Version;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->DetailLevel != null) {
-			for($i = 0; $i < count($this->DetailLevel); $i++) { //property is collection
-				//not a complex member
-				//prop is not a value
-				$str .= '<ebl:DetailLevel>'. $this->DetailLevel[$i] . '</ebl:DetailLevel>';
-		
+		if($this->DetailLevel != null)
+		{
+			for($i = 0; $i < count($this->DetailLevel); $i++)
+			{
+				$str .= '<ebl:DetailLevel>'. PPUtils::escapeInvalidXmlCharsRegex($this->DetailLevel[$i]) . '</ebl:DetailLevel>';
 			}
 		}
-		if($this->ErrorLanguage != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ErrorLanguage>' . $this->ErrorLanguage . '</ebl:ErrorLanguage>';
+		if($this->ErrorLanguage != null)
+		{
+			$str .= '<ebl:ErrorLanguage>' . PPUtils::escapeInvalidXmlCharsRegex($this->ErrorLanguage) . '</ebl:ErrorLanguage>';
 		}
-		if($this->Version != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Version>' . $this->Version . '</ebl:Version>';
+		if($this->Version != null)
+		{
+			$str .= '<ebl:Version>' . PPUtils::escapeInvalidXmlCharsRegex($this->Version) . '</ebl:Version>';
 		}
 		return $str;
 	}
@@ -446,25 +437,20 @@ class PhoneNumberType  {
 	public $Extension;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->CountryCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CountryCode>' . $this->CountryCode . '</ebl:CountryCode>';
+		if($this->CountryCode != null)
+		{
+			$str .= '<ebl:CountryCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->CountryCode) . '</ebl:CountryCode>';
 		}
-		if($this->PhoneNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PhoneNumber>' . $this->PhoneNumber . '</ebl:PhoneNumber>';
+		if($this->PhoneNumber != null)
+		{
+			$str .= '<ebl:PhoneNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->PhoneNumber) . '</ebl:PhoneNumber>';
 		}
-		if($this->Extension != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Extension>' . $this->Extension . '</ebl:Extension>';
+		if($this->Extension != null)
+		{
+			$str .= '<ebl:Extension>' . PPUtils::escapeInvalidXmlCharsRegex($this->Extension) . '</ebl:Extension>';
 		}
 		return $str;
 	}
@@ -655,103 +641,72 @@ class AddressType  {
 	public $AddressStatus;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Name != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Name>' . $this->Name . '</ebl:Name>';
+		if($this->Name != null)
+		{
+			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
 		}
-		if($this->Street1 != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Street1>' . $this->Street1 . '</ebl:Street1>';
+		if($this->Street1 != null)
+		{
+			$str .= '<ebl:Street1>' . PPUtils::escapeInvalidXmlCharsRegex($this->Street1) . '</ebl:Street1>';
 		}
-		if($this->Street2 != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Street2>' . $this->Street2 . '</ebl:Street2>';
+		if($this->Street2 != null)
+		{
+			$str .= '<ebl:Street2>' . PPUtils::escapeInvalidXmlCharsRegex($this->Street2) . '</ebl:Street2>';
 		}
-		if($this->CityName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CityName>' . $this->CityName . '</ebl:CityName>';
+		if($this->CityName != null)
+		{
+			$str .= '<ebl:CityName>' . PPUtils::escapeInvalidXmlCharsRegex($this->CityName) . '</ebl:CityName>';
 		}
-		if($this->StateOrProvince != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:StateOrProvince>' . $this->StateOrProvince . '</ebl:StateOrProvince>';
+		if($this->StateOrProvince != null)
+		{
+			$str .= '<ebl:StateOrProvince>' . PPUtils::escapeInvalidXmlCharsRegex($this->StateOrProvince) . '</ebl:StateOrProvince>';
 		}
-		if($this->Country != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Country>' . $this->Country . '</ebl:Country>';
+		if($this->Country != null)
+		{
+			$str .= '<ebl:Country>' . PPUtils::escapeInvalidXmlCharsRegex($this->Country) . '</ebl:Country>';
 		}
-		if($this->CountryName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CountryName>' . $this->CountryName . '</ebl:CountryName>';
+		if($this->CountryName != null)
+		{
+			$str .= '<ebl:CountryName>' . PPUtils::escapeInvalidXmlCharsRegex($this->CountryName) . '</ebl:CountryName>';
 		}
-		if($this->Phone != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Phone>' . $this->Phone . '</ebl:Phone>';
+		if($this->Phone != null)
+		{
+			$str .= '<ebl:Phone>' . PPUtils::escapeInvalidXmlCharsRegex($this->Phone) . '</ebl:Phone>';
 		}
-		if($this->PostalCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PostalCode>' . $this->PostalCode . '</ebl:PostalCode>';
+		if($this->PostalCode != null)
+		{
+			$str .= '<ebl:PostalCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->PostalCode) . '</ebl:PostalCode>';
 		}
-		if($this->AddressID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AddressID>' . $this->AddressID . '</ebl:AddressID>';
+		if($this->AddressID != null)
+		{
+			$str .= '<ebl:AddressID>' . PPUtils::escapeInvalidXmlCharsRegex($this->AddressID) . '</ebl:AddressID>';
 		}
-		if($this->AddressOwner != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AddressOwner>' . $this->AddressOwner . '</ebl:AddressOwner>';
+		if($this->AddressOwner != null)
+		{
+			$str .= '<ebl:AddressOwner>' . PPUtils::escapeInvalidXmlCharsRegex($this->AddressOwner) . '</ebl:AddressOwner>';
 		}
-		if($this->ExternalAddressID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ExternalAddressID>' . $this->ExternalAddressID . '</ebl:ExternalAddressID>';
+		if($this->ExternalAddressID != null)
+		{
+			$str .= '<ebl:ExternalAddressID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalAddressID) . '</ebl:ExternalAddressID>';
 		}
-		if($this->InternationalName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:InternationalName>' . $this->InternationalName . '</ebl:InternationalName>';
+		if($this->InternationalName != null)
+		{
+			$str .= '<ebl:InternationalName>' . PPUtils::escapeInvalidXmlCharsRegex($this->InternationalName) . '</ebl:InternationalName>';
 		}
-		if($this->InternationalStateAndCity != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:InternationalStateAndCity>' . $this->InternationalStateAndCity . '</ebl:InternationalStateAndCity>';
+		if($this->InternationalStateAndCity != null)
+		{
+			$str .= '<ebl:InternationalStateAndCity>' . PPUtils::escapeInvalidXmlCharsRegex($this->InternationalStateAndCity) . '</ebl:InternationalStateAndCity>';
 		}
-		if($this->InternationalStreet != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:InternationalStreet>' . $this->InternationalStreet . '</ebl:InternationalStreet>';
+		if($this->InternationalStreet != null)
+		{
+			$str .= '<ebl:InternationalStreet>' . PPUtils::escapeInvalidXmlCharsRegex($this->InternationalStreet) . '</ebl:InternationalStreet>';
 		}
-		if($this->AddressStatus != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AddressStatus>' . $this->AddressStatus . '</ebl:AddressStatus>';
+		if($this->AddressStatus != null)
+		{
+			$str .= '<ebl:AddressStatus>' . PPUtils::escapeInvalidXmlCharsRegex($this->AddressStatus) . '</ebl:AddressStatus>';
 		}
 		return $str;
 	}
@@ -856,37 +811,28 @@ class PersonNameType  {
 	public $Suffix;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Salutation != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Salutation>' . $this->Salutation . '</ebl:Salutation>';
+		if($this->Salutation != null)
+		{
+			$str .= '<ebl:Salutation>' . PPUtils::escapeInvalidXmlCharsRegex($this->Salutation) . '</ebl:Salutation>';
 		}
-		if($this->FirstName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:FirstName>' . $this->FirstName . '</ebl:FirstName>';
+		if($this->FirstName != null)
+		{
+			$str .= '<ebl:FirstName>' . PPUtils::escapeInvalidXmlCharsRegex($this->FirstName) . '</ebl:FirstName>';
 		}
-		if($this->MiddleName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:MiddleName>' . $this->MiddleName . '</ebl:MiddleName>';
+		if($this->MiddleName != null)
+		{
+			$str .= '<ebl:MiddleName>' . PPUtils::escapeInvalidXmlCharsRegex($this->MiddleName) . '</ebl:MiddleName>';
 		}
-		if($this->LastName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:LastName>' . $this->LastName . '</ebl:LastName>';
+		if($this->LastName != null)
+		{
+			$str .= '<ebl:LastName>' . PPUtils::escapeInvalidXmlCharsRegex($this->LastName) . '</ebl:LastName>';
 		}
-		if($this->Suffix != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Suffix>' . $this->Suffix . '</ebl:Suffix>';
+		if($this->Suffix != null)
+		{
+			$str .= '<ebl:Suffix>' . PPUtils::escapeInvalidXmlCharsRegex($this->Suffix) . '</ebl:Suffix>';
 		}
 		return $str;
 	}
@@ -1142,40 +1088,30 @@ class IncentiveItemType  {
 	public $ItemQuantity;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ItemId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemId>' . $this->ItemId . '</ebl:ItemId>';
+		if($this->ItemId != null)
+		{
+			$str .= '<ebl:ItemId>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemId) . '</ebl:ItemId>';
 		}
-		if($this->PurchaseTime != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PurchaseTime>' . $this->PurchaseTime . '</ebl:PurchaseTime>';
+		if($this->PurchaseTime != null)
+		{
+			$str .= '<ebl:PurchaseTime>' . PPUtils::escapeInvalidXmlCharsRegex($this->PurchaseTime) . '</ebl:PurchaseTime>';
 		}
-		if($this->ItemCategoryList != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemCategoryList>' . $this->ItemCategoryList . '</ebl:ItemCategoryList>';
+		if($this->ItemCategoryList != null)
+		{
+			$str .= '<ebl:ItemCategoryList>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemCategoryList) . '</ebl:ItemCategoryList>';
 		}
-		if($this->ItemPrice != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ItemPrice != null)
+		{
 			$str .= '<ebl:ItemPrice';
 			$str .= $this->ItemPrice->toXMLString();
 			$str .= '</ebl:ItemPrice>';
 		}
-		if($this->ItemQuantity != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemQuantity>' . $this->ItemQuantity . '</ebl:ItemQuantity>';
+		if($this->ItemQuantity != null)
+		{
+			$str .= '<ebl:ItemQuantity>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemQuantity) . '</ebl:ItemQuantity>';
 		}
 		return $str;
 	}
@@ -1255,77 +1191,56 @@ class IncentiveBucketType  {
 	public $BucketTotalAmt;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Items != null) {
-			for($i = 0; $i < count($this->Items); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->Items != null)
+		{
+			for($i = 0; $i < count($this->Items); $i++)
+			{
 				$str .= '<ebl:Items>';
 				$str .= $this->Items[$i]->toXMLString();
 				$str .= '</ebl:Items>';
-		
 			}
 		}
-		if($this->BucketId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BucketId>' . $this->BucketId . '</ebl:BucketId>';
+		if($this->BucketId != null)
+		{
+			$str .= '<ebl:BucketId>' . PPUtils::escapeInvalidXmlCharsRegex($this->BucketId) . '</ebl:BucketId>';
 		}
-		if($this->SellerId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SellerId>' . $this->SellerId . '</ebl:SellerId>';
+		if($this->SellerId != null)
+		{
+			$str .= '<ebl:SellerId>' . PPUtils::escapeInvalidXmlCharsRegex($this->SellerId) . '</ebl:SellerId>';
 		}
-		if($this->ExternalSellerId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ExternalSellerId>' . $this->ExternalSellerId . '</ebl:ExternalSellerId>';
+		if($this->ExternalSellerId != null)
+		{
+			$str .= '<ebl:ExternalSellerId>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalSellerId) . '</ebl:ExternalSellerId>';
 		}
-		if($this->BucketSubtotalAmt != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->BucketSubtotalAmt != null)
+		{
 			$str .= '<ebl:BucketSubtotalAmt';
 			$str .= $this->BucketSubtotalAmt->toXMLString();
 			$str .= '</ebl:BucketSubtotalAmt>';
 		}
-		if($this->BucketShippingAmt != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->BucketShippingAmt != null)
+		{
 			$str .= '<ebl:BucketShippingAmt';
 			$str .= $this->BucketShippingAmt->toXMLString();
 			$str .= '</ebl:BucketShippingAmt>';
 		}
-		if($this->BucketInsuranceAmt != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->BucketInsuranceAmt != null)
+		{
 			$str .= '<ebl:BucketInsuranceAmt';
 			$str .= $this->BucketInsuranceAmt->toXMLString();
 			$str .= '</ebl:BucketInsuranceAmt>';
 		}
-		if($this->BucketSalesTaxAmt != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->BucketSalesTaxAmt != null)
+		{
 			$str .= '<ebl:BucketSalesTaxAmt';
 			$str .= $this->BucketSalesTaxAmt->toXMLString();
 			$str .= '</ebl:BucketSalesTaxAmt>';
 		}
-		if($this->BucketTotalAmt != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->BucketTotalAmt != null)
+		{
 			$str .= '<ebl:BucketTotalAmt';
 			$str .= $this->BucketTotalAmt->toXMLString();
 			$str .= '</ebl:BucketTotalAmt>';
@@ -1365,25 +1280,20 @@ class IncentiveRequestDetailsType  {
 	public $RequestDetailLevel;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->RequestId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:RequestId>' . $this->RequestId . '</ebl:RequestId>';
+		if($this->RequestId != null)
+		{
+			$str .= '<ebl:RequestId>' . PPUtils::escapeInvalidXmlCharsRegex($this->RequestId) . '</ebl:RequestId>';
 		}
-		if($this->RequestType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:RequestType>' . $this->RequestType . '</ebl:RequestType>';
+		if($this->RequestType != null)
+		{
+			$str .= '<ebl:RequestType>' . PPUtils::escapeInvalidXmlCharsRegex($this->RequestType) . '</ebl:RequestType>';
 		}
-		if($this->RequestDetailLevel != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:RequestDetailLevel>' . $this->RequestDetailLevel . '</ebl:RequestDetailLevel>';
+		if($this->RequestDetailLevel != null)
+		{
+			$str .= '<ebl:RequestDetailLevel>' . PPUtils::escapeInvalidXmlCharsRegex($this->RequestDetailLevel) . '</ebl:RequestDetailLevel>';
 		}
 		return $str;
 	}
@@ -1444,56 +1354,46 @@ class GetIncentiveEvaluationRequestDetailsType  {
 	public $RequestDetails;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ExternalBuyerId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ExternalBuyerId>' . $this->ExternalBuyerId . '</ebl:ExternalBuyerId>';
+		if($this->ExternalBuyerId != null)
+		{
+			$str .= '<ebl:ExternalBuyerId>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalBuyerId) . '</ebl:ExternalBuyerId>';
 		}
-		if($this->IncentiveCodes != null) {
-			for($i = 0; $i < count($this->IncentiveCodes); $i++) { //property is collection
-				//not a complex member
-				//prop is not a value
-				$str .= '<ebl:IncentiveCodes>'. $this->IncentiveCodes[$i] . '</ebl:IncentiveCodes>';
-		
+		if($this->IncentiveCodes != null)
+		{
+			for($i = 0; $i < count($this->IncentiveCodes); $i++)
+			{
+				$str .= '<ebl:IncentiveCodes>'. PPUtils::escapeInvalidXmlCharsRegex($this->IncentiveCodes[$i]) . '</ebl:IncentiveCodes>';
 			}
 		}
-		if($this->ApplyIndication != null) {
-			for($i = 0; $i < count($this->ApplyIndication); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->ApplyIndication != null)
+		{
+			for($i = 0; $i < count($this->ApplyIndication); $i++)
+			{
 				$str .= '<ebl:ApplyIndication>';
 				$str .= $this->ApplyIndication[$i]->toXMLString();
 				$str .= '</ebl:ApplyIndication>';
-		
 			}
 		}
-		if($this->Buckets != null) {
-			for($i = 0; $i < count($this->Buckets); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->Buckets != null)
+		{
+			for($i = 0; $i < count($this->Buckets); $i++)
+			{
 				$str .= '<ebl:Buckets>';
 				$str .= $this->Buckets[$i]->toXMLString();
 				$str .= '</ebl:Buckets>';
-		
 			}
 		}
-		if($this->CartTotalAmt != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->CartTotalAmt != null)
+		{
 			$str .= '<ebl:CartTotalAmt';
 			$str .= $this->CartTotalAmt->toXMLString();
 			$str .= '</ebl:CartTotalAmt>';
 		}
-		if($this->RequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->RequestDetails != null)
+		{
 			$str .= '<ebl:RequestDetails>';
 			$str .= $this->RequestDetails->toXMLString();
 			$str .= '</ebl:RequestDetails>';
@@ -2191,472 +2091,335 @@ class SetExpressCheckoutRequestDetailsType  {
 	public $CoupledBuckets;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->OrderTotal != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->OrderTotal != null)
+		{
 			$str .= '<ebl:OrderTotal';
 			$str .= $this->OrderTotal->toXMLString();
 			$str .= '</ebl:OrderTotal>';
 		}
-		if($this->ReturnURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ReturnURL>' . $this->ReturnURL . '</ebl:ReturnURL>';
+		if($this->ReturnURL != null)
+		{
+			$str .= '<ebl:ReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnURL) . '</ebl:ReturnURL>';
 		}
-		if($this->CancelURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CancelURL>' . $this->CancelURL . '</ebl:CancelURL>';
+		if($this->CancelURL != null)
+		{
+			$str .= '<ebl:CancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelURL) . '</ebl:CancelURL>';
 		}
-		if($this->TrackingImageURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:TrackingImageURL>' . $this->TrackingImageURL . '</ebl:TrackingImageURL>';
+		if($this->TrackingImageURL != null)
+		{
+			$str .= '<ebl:TrackingImageURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->TrackingImageURL) . '</ebl:TrackingImageURL>';
 		}
-		if($this->giropaySuccessURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:giropaySuccessURL>' . $this->giropaySuccessURL . '</ebl:giropaySuccessURL>';
+		if($this->giropaySuccessURL != null)
+		{
+			$str .= '<ebl:giropaySuccessURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->giropaySuccessURL) . '</ebl:giropaySuccessURL>';
 		}
-		if($this->giropayCancelURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:giropayCancelURL>' . $this->giropayCancelURL . '</ebl:giropayCancelURL>';
+		if($this->giropayCancelURL != null)
+		{
+			$str .= '<ebl:giropayCancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->giropayCancelURL) . '</ebl:giropayCancelURL>';
 		}
-		if($this->BanktxnPendingURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BanktxnPendingURL>' . $this->BanktxnPendingURL . '</ebl:BanktxnPendingURL>';
+		if($this->BanktxnPendingURL != null)
+		{
+			$str .= '<ebl:BanktxnPendingURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->BanktxnPendingURL) . '</ebl:BanktxnPendingURL>';
 		}
-		if($this->Token != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Token>' . $this->Token . '</ebl:Token>';
+		if($this->Token != null)
+		{
+			$str .= '<ebl:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</ebl:Token>';
 		}
-		if($this->MaxAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->MaxAmount != null)
+		{
 			$str .= '<ebl:MaxAmount';
 			$str .= $this->MaxAmount->toXMLString();
 			$str .= '</ebl:MaxAmount>';
 		}
-		if($this->OrderDescription != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OrderDescription>' . $this->OrderDescription . '</ebl:OrderDescription>';
+		if($this->OrderDescription != null)
+		{
+			$str .= '<ebl:OrderDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->OrderDescription) . '</ebl:OrderDescription>';
 		}
-		if($this->Custom != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Custom>' . $this->Custom . '</ebl:Custom>';
+		if($this->Custom != null)
+		{
+			$str .= '<ebl:Custom>' . PPUtils::escapeInvalidXmlCharsRegex($this->Custom) . '</ebl:Custom>';
 		}
-		if($this->InvoiceID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:InvoiceID>' . $this->InvoiceID . '</ebl:InvoiceID>';
+		if($this->InvoiceID != null)
+		{
+			$str .= '<ebl:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</ebl:InvoiceID>';
 		}
-		if($this->ReqConfirmShipping != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ReqConfirmShipping>' . $this->ReqConfirmShipping . '</ebl:ReqConfirmShipping>';
+		if($this->ReqConfirmShipping != null)
+		{
+			$str .= '<ebl:ReqConfirmShipping>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqConfirmShipping) . '</ebl:ReqConfirmShipping>';
 		}
-		if($this->ReqBillingAddress != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ReqBillingAddress>' . $this->ReqBillingAddress . '</ebl:ReqBillingAddress>';
+		if($this->ReqBillingAddress != null)
+		{
+			$str .= '<ebl:ReqBillingAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqBillingAddress) . '</ebl:ReqBillingAddress>';
 		}
-		if($this->BillingAddress != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BillingAddress != null)
+		{
 			$str .= '<ebl:BillingAddress>';
 			$str .= $this->BillingAddress->toXMLString();
 			$str .= '</ebl:BillingAddress>';
 		}
-		if($this->NoShipping != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:NoShipping>' . $this->NoShipping . '</ebl:NoShipping>';
+		if($this->NoShipping != null)
+		{
+			$str .= '<ebl:NoShipping>' . PPUtils::escapeInvalidXmlCharsRegex($this->NoShipping) . '</ebl:NoShipping>';
 		}
-		if($this->AddressOverride != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AddressOverride>' . $this->AddressOverride . '</ebl:AddressOverride>';
+		if($this->AddressOverride != null)
+		{
+			$str .= '<ebl:AddressOverride>' . PPUtils::escapeInvalidXmlCharsRegex($this->AddressOverride) . '</ebl:AddressOverride>';
 		}
-		if($this->LocaleCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:LocaleCode>' . $this->LocaleCode . '</ebl:LocaleCode>';
+		if($this->LocaleCode != null)
+		{
+			$str .= '<ebl:LocaleCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->LocaleCode) . '</ebl:LocaleCode>';
 		}
-		if($this->PageStyle != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PageStyle>' . $this->PageStyle . '</ebl:PageStyle>';
+		if($this->PageStyle != null)
+		{
+			$str .= '<ebl:PageStyle>' . PPUtils::escapeInvalidXmlCharsRegex($this->PageStyle) . '</ebl:PageStyle>';
 		}
-		if($this->cppheaderimage != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-header-image>' . $this->cppheaderimage . '</ebl:cpp-header-image>';
+		if($this->cppheaderimage != null)
+		{
+			$str .= '<ebl:cppheaderimage>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cppheaderimage>';
 		}
-		if($this->cppheaderbordercolor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-header-border-color>' . $this->cppheaderbordercolor . '</ebl:cpp-header-border-color>';
+		if($this->cppheaderbordercolor != null)
+		{
+			$str .= '<ebl:cppheaderbordercolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cppheaderbordercolor>';
 		}
-		if($this->cppheaderbackcolor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-header-back-color>' . $this->cppheaderbackcolor . '</ebl:cpp-header-back-color>';
+		if($this->cppheaderbackcolor != null)
+		{
+			$str .= '<ebl:cppheaderbackcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cppheaderbackcolor>';
 		}
-		if($this->cpppayflowcolor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-payflow-color>' . $this->cpppayflowcolor . '</ebl:cpp-payflow-color>';
+		if($this->cpppayflowcolor != null)
+		{
+			$str .= '<ebl:cpppayflowcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpppayflowcolor>';
 		}
-		if($this->cppcartbordercolor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-cart-border-color>' . $this->cppcartbordercolor . '</ebl:cpp-cart-border-color>';
+		if($this->cppcartbordercolor != null)
+		{
+			$str .= '<ebl:cppcartbordercolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppcartbordercolor) . '</ebl:cppcartbordercolor>';
 		}
-		if($this->cpplogoimage != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-logo-image>' . $this->cpplogoimage . '</ebl:cpp-logo-image>';
+		if($this->cpplogoimage != null)
+		{
+			$str .= '<ebl:cpplogoimage>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpplogoimage) . '</ebl:cpplogoimage>';
 		}
-		if($this->Address != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->Address != null)
+		{
 			$str .= '<ebl:Address>';
 			$str .= $this->Address->toXMLString();
 			$str .= '</ebl:Address>';
 		}
-		if($this->PaymentAction != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PaymentAction>' . $this->PaymentAction . '</ebl:PaymentAction>';
+		if($this->PaymentAction != null)
+		{
+			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
 		}
-		if($this->SolutionType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SolutionType>' . $this->SolutionType . '</ebl:SolutionType>';
+		if($this->SolutionType != null)
+		{
+			$str .= '<ebl:SolutionType>' . PPUtils::escapeInvalidXmlCharsRegex($this->SolutionType) . '</ebl:SolutionType>';
 		}
-		if($this->LandingPage != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:LandingPage>' . $this->LandingPage . '</ebl:LandingPage>';
+		if($this->LandingPage != null)
+		{
+			$str .= '<ebl:LandingPage>' . PPUtils::escapeInvalidXmlCharsRegex($this->LandingPage) . '</ebl:LandingPage>';
 		}
-		if($this->BuyerEmail != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BuyerEmail>' . $this->BuyerEmail . '</ebl:BuyerEmail>';
+		if($this->BuyerEmail != null)
+		{
+			$str .= '<ebl:BuyerEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerEmail) . '</ebl:BuyerEmail>';
 		}
-		if($this->ChannelType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ChannelType>' . $this->ChannelType . '</ebl:ChannelType>';
+		if($this->ChannelType != null)
+		{
+			$str .= '<ebl:ChannelType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ChannelType) . '</ebl:ChannelType>';
 		}
-		if($this->BillingAgreementDetails != null) {
-			for($i = 0; $i < count($this->BillingAgreementDetails); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->BillingAgreementDetails != null)
+		{
+			for($i = 0; $i < count($this->BillingAgreementDetails); $i++)
+			{
 				$str .= '<ebl:BillingAgreementDetails>';
 				$str .= $this->BillingAgreementDetails[$i]->toXMLString();
 				$str .= '</ebl:BillingAgreementDetails>';
-		
 			}
 		}
-		if($this->PromoCodes != null) {
-			for($i = 0; $i < count($this->PromoCodes); $i++) { //property is collection
-				//not a complex member
-				//prop is not a value
-				$str .= '<ebl:PromoCodes>'. $this->PromoCodes[$i] . '</ebl:PromoCodes>';
-		
+		if($this->PromoCodes != null)
+		{
+			for($i = 0; $i < count($this->PromoCodes); $i++)
+			{
+				$str .= '<ebl:PromoCodes>'. PPUtils::escapeInvalidXmlCharsRegex($this->PromoCodes[$i]) . '</ebl:PromoCodes>';
 			}
 		}
-		if($this->PayPalCheckOutBtnType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PayPalCheckOutBtnType>' . $this->PayPalCheckOutBtnType . '</ebl:PayPalCheckOutBtnType>';
+		if($this->PayPalCheckOutBtnType != null)
+		{
+			$str .= '<ebl:PayPalCheckOutBtnType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayPalCheckOutBtnType) . '</ebl:PayPalCheckOutBtnType>';
 		}
-		if($this->ProductCategory != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ProductCategory>' . $this->ProductCategory . '</ebl:ProductCategory>';
+		if($this->ProductCategory != null)
+		{
+			$str .= '<ebl:ProductCategory>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProductCategory) . '</ebl:ProductCategory>';
 		}
-		if($this->ShippingMethod != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ShippingMethod>' . $this->ShippingMethod . '</ebl:ShippingMethod>';
+		if($this->ShippingMethod != null)
+		{
+			$str .= '<ebl:ShippingMethod>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingMethod) . '</ebl:ShippingMethod>';
 		}
-		if($this->ProfileAddressChangeDate != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ProfileAddressChangeDate>' . $this->ProfileAddressChangeDate . '</ebl:ProfileAddressChangeDate>';
+		if($this->ProfileAddressChangeDate != null)
+		{
+			$str .= '<ebl:ProfileAddressChangeDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileAddressChangeDate) . '</ebl:ProfileAddressChangeDate>';
 		}
-		if($this->AllowNote != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AllowNote>' . $this->AllowNote . '</ebl:AllowNote>';
+		if($this->AllowNote != null)
+		{
+			$str .= '<ebl:AllowNote>' . PPUtils::escapeInvalidXmlCharsRegex($this->AllowNote) . '</ebl:AllowNote>';
 		}
-		if($this->FundingSourceDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->FundingSourceDetails != null)
+		{
 			$str .= '<ebl:FundingSourceDetails>';
 			$str .= $this->FundingSourceDetails->toXMLString();
 			$str .= '</ebl:FundingSourceDetails>';
 		}
-		if($this->BrandName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BrandName>' . $this->BrandName . '</ebl:BrandName>';
+		if($this->BrandName != null)
+		{
+			$str .= '<ebl:BrandName>' . PPUtils::escapeInvalidXmlCharsRegex($this->BrandName) . '</ebl:BrandName>';
 		}
-		if($this->CallbackURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CallbackURL>' . $this->CallbackURL . '</ebl:CallbackURL>';
+		if($this->CallbackURL != null)
+		{
+			$str .= '<ebl:CallbackURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CallbackURL) . '</ebl:CallbackURL>';
 		}
-		if($this->EnhancedCheckoutData != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->EnhancedCheckoutData != null)
+		{
 			$str .= '<ebl:EnhancedCheckoutData>';
 			$str .= $this->EnhancedCheckoutData->toXMLString();
 			$str .= '</ebl:EnhancedCheckoutData>';
 		}
-		if($this->OtherPaymentMethods != null) {
-			for($i = 0; $i < count($this->OtherPaymentMethods); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->OtherPaymentMethods != null)
+		{
+			for($i = 0; $i < count($this->OtherPaymentMethods); $i++)
+			{
 				$str .= '<ebl:OtherPaymentMethods>';
 				$str .= $this->OtherPaymentMethods[$i]->toXMLString();
 				$str .= '</ebl:OtherPaymentMethods>';
-		
 			}
 		}
-		if($this->BuyerDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BuyerDetails != null)
+		{
 			$str .= '<ebl:BuyerDetails>';
 			$str .= $this->BuyerDetails->toXMLString();
 			$str .= '</ebl:BuyerDetails>';
 		}
-		if($this->PaymentDetails != null) {
-			for($i = 0; $i < count($this->PaymentDetails); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->PaymentDetails != null)
+		{
+			for($i = 0; $i < count($this->PaymentDetails); $i++)
+			{
 				$str .= '<ebl:PaymentDetails>';
 				$str .= $this->PaymentDetails[$i]->toXMLString();
 				$str .= '</ebl:PaymentDetails>';
-		
 			}
 		}
-		if($this->FlatRateShippingOptions != null) {
-			for($i = 0; $i < count($this->FlatRateShippingOptions); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->FlatRateShippingOptions != null)
+		{
+			for($i = 0; $i < count($this->FlatRateShippingOptions); $i++)
+			{
 				$str .= '<ebl:FlatRateShippingOptions>';
 				$str .= $this->FlatRateShippingOptions[$i]->toXMLString();
 				$str .= '</ebl:FlatRateShippingOptions>';
-		
 			}
 		}
-		if($this->CallbackTimeout != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CallbackTimeout>' . $this->CallbackTimeout . '</ebl:CallbackTimeout>';
+		if($this->CallbackTimeout != null)
+		{
+			$str .= '<ebl:CallbackTimeout>' . PPUtils::escapeInvalidXmlCharsRegex($this->CallbackTimeout) . '</ebl:CallbackTimeout>';
 		}
-		if($this->CallbackVersion != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CallbackVersion>' . $this->CallbackVersion . '</ebl:CallbackVersion>';
+		if($this->CallbackVersion != null)
+		{
+			$str .= '<ebl:CallbackVersion>' . PPUtils::escapeInvalidXmlCharsRegex($this->CallbackVersion) . '</ebl:CallbackVersion>';
 		}
-		if($this->CustomerServiceNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CustomerServiceNumber>' . $this->CustomerServiceNumber . '</ebl:CustomerServiceNumber>';
+		if($this->CustomerServiceNumber != null)
+		{
+			$str .= '<ebl:CustomerServiceNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->CustomerServiceNumber) . '</ebl:CustomerServiceNumber>';
 		}
-		if($this->GiftMessageEnable != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:GiftMessageEnable>' . $this->GiftMessageEnable . '</ebl:GiftMessageEnable>';
+		if($this->GiftMessageEnable != null)
+		{
+			$str .= '<ebl:GiftMessageEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftMessageEnable) . '</ebl:GiftMessageEnable>';
 		}
-		if($this->GiftReceiptEnable != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:GiftReceiptEnable>' . $this->GiftReceiptEnable . '</ebl:GiftReceiptEnable>';
+		if($this->GiftReceiptEnable != null)
+		{
+			$str .= '<ebl:GiftReceiptEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftReceiptEnable) . '</ebl:GiftReceiptEnable>';
 		}
-		if($this->GiftWrapEnable != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:GiftWrapEnable>' . $this->GiftWrapEnable . '</ebl:GiftWrapEnable>';
+		if($this->GiftWrapEnable != null)
+		{
+			$str .= '<ebl:GiftWrapEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftWrapEnable) . '</ebl:GiftWrapEnable>';
 		}
-		if($this->GiftWrapName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:GiftWrapName>' . $this->GiftWrapName . '</ebl:GiftWrapName>';
+		if($this->GiftWrapName != null)
+		{
+			$str .= '<ebl:GiftWrapName>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftWrapName) . '</ebl:GiftWrapName>';
 		}
-		if($this->GiftWrapAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->GiftWrapAmount != null)
+		{
 			$str .= '<ebl:GiftWrapAmount';
 			$str .= $this->GiftWrapAmount->toXMLString();
 			$str .= '</ebl:GiftWrapAmount>';
 		}
-		if($this->BuyerEmailOptInEnable != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BuyerEmailOptInEnable>' . $this->BuyerEmailOptInEnable . '</ebl:BuyerEmailOptInEnable>';
+		if($this->BuyerEmailOptInEnable != null)
+		{
+			$str .= '<ebl:BuyerEmailOptInEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerEmailOptInEnable) . '</ebl:BuyerEmailOptInEnable>';
 		}
-		if($this->SurveyEnable != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SurveyEnable>' . $this->SurveyEnable . '</ebl:SurveyEnable>';
+		if($this->SurveyEnable != null)
+		{
+			$str .= '<ebl:SurveyEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->SurveyEnable) . '</ebl:SurveyEnable>';
 		}
-		if($this->SurveyQuestion != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SurveyQuestion>' . $this->SurveyQuestion . '</ebl:SurveyQuestion>';
+		if($this->SurveyQuestion != null)
+		{
+			$str .= '<ebl:SurveyQuestion>' . PPUtils::escapeInvalidXmlCharsRegex($this->SurveyQuestion) . '</ebl:SurveyQuestion>';
 		}
-		if($this->SurveyChoice != null) {
-			for($i = 0; $i < count($this->SurveyChoice); $i++) { //property is collection
-				//not a complex member
-				//prop is not a value
-				$str .= '<ebl:SurveyChoice>'. $this->SurveyChoice[$i] . '</ebl:SurveyChoice>';
-		
+		if($this->SurveyChoice != null)
+		{
+			for($i = 0; $i < count($this->SurveyChoice); $i++)
+			{
+				$str .= '<ebl:SurveyChoice>'. PPUtils::escapeInvalidXmlCharsRegex($this->SurveyChoice[$i]) . '</ebl:SurveyChoice>';
 			}
 		}
-		if($this->TotalType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:TotalType>' . $this->TotalType . '</ebl:TotalType>';
+		if($this->TotalType != null)
+		{
+			$str .= '<ebl:TotalType>' . PPUtils::escapeInvalidXmlCharsRegex($this->TotalType) . '</ebl:TotalType>';
 		}
-		if($this->NoteToBuyer != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:NoteToBuyer>' . $this->NoteToBuyer . '</ebl:NoteToBuyer>';
+		if($this->NoteToBuyer != null)
+		{
+			$str .= '<ebl:NoteToBuyer>' . PPUtils::escapeInvalidXmlCharsRegex($this->NoteToBuyer) . '</ebl:NoteToBuyer>';
 		}
-		if($this->Incentives != null) {
-			for($i = 0; $i < count($this->Incentives); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->Incentives != null)
+		{
+			for($i = 0; $i < count($this->Incentives); $i++)
+			{
 				$str .= '<ebl:Incentives>';
 				$str .= $this->Incentives[$i]->toXMLString();
 				$str .= '</ebl:Incentives>';
-		
 			}
 		}
-		if($this->ReqInstrumentDetails != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ReqInstrumentDetails>' . $this->ReqInstrumentDetails . '</ebl:ReqInstrumentDetails>';
+		if($this->ReqInstrumentDetails != null)
+		{
+			$str .= '<ebl:ReqInstrumentDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqInstrumentDetails) . '</ebl:ReqInstrumentDetails>';
 		}
-		if($this->ExternalRememberMeOptInDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ExternalRememberMeOptInDetails != null)
+		{
 			$str .= '<ebl:ExternalRememberMeOptInDetails>';
 			$str .= $this->ExternalRememberMeOptInDetails->toXMLString();
 			$str .= '</ebl:ExternalRememberMeOptInDetails>';
 		}
-		if($this->FlowControlDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->FlowControlDetails != null)
+		{
 			$str .= '<ebl:FlowControlDetails>';
 			$str .= $this->FlowControlDetails->toXMLString();
 			$str .= '</ebl:FlowControlDetails>';
 		}
-		if($this->DisplayControlDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DisplayControlDetails != null)
+		{
 			$str .= '<ebl:DisplayControlDetails>';
 			$str .= $this->DisplayControlDetails->toXMLString();
 			$str .= '</ebl:DisplayControlDetails>';
 		}
-		if($this->ExternalPartnerTrackingDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ExternalPartnerTrackingDetails != null)
+		{
 			$str .= '<ebl:ExternalPartnerTrackingDetails>';
 			$str .= $this->ExternalPartnerTrackingDetails->toXMLString();
 			$str .= '</ebl:ExternalPartnerTrackingDetails>';
 		}
-		if($this->CoupledBuckets != null) {
-			for($i = 0; $i < count($this->CoupledBuckets); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->CoupledBuckets != null)
+		{
+			for($i = 0; $i < count($this->CoupledBuckets); $i++)
+			{
 				$str .= '<ebl:CoupledBuckets>';
 				$str .= $this->CoupledBuckets[$i]->toXMLString();
 				$str .= '</ebl:CoupledBuckets>';
-		
 			}
 		}
 		return $str;
@@ -2717,28 +2480,21 @@ class ExecuteCheckoutOperationsRequestDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Token != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Token>' . $this->Token . '</ebl:Token>';
+		if($this->Token != null)
+		{
+			$str .= '<ebl:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</ebl:Token>';
 		}
-		if($this->SetDataRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SetDataRequest != null)
+		{
 			$str .= '<ebl:SetDataRequest>';
 			$str .= $this->SetDataRequest->toXMLString();
 			$str .= '</ebl:SetDataRequest>';
 		}
-		if($this->AuthorizationRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->AuthorizationRequest != null)
+		{
 			$str .= '<ebl:AuthorizationRequest>';
 			$str .= $this->AuthorizationRequest->toXMLString();
 			$str .= '</ebl:AuthorizationRequest>';
@@ -2782,32 +2538,26 @@ class SetDataRequestType  {
 	public $InfoSharingDirectives;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->BillingApprovalDetails != null) {
-			for($i = 0; $i < count($this->BillingApprovalDetails); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->BillingApprovalDetails != null)
+		{
+			for($i = 0; $i < count($this->BillingApprovalDetails); $i++)
+			{
 				$str .= '<ebl:BillingApprovalDetails>';
 				$str .= $this->BillingApprovalDetails[$i]->toXMLString();
 				$str .= '</ebl:BillingApprovalDetails>';
-		
 			}
 		}
-		if($this->BuyerDetail != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BuyerDetail != null)
+		{
 			$str .= '<ebl:BuyerDetail>';
 			$str .= $this->BuyerDetail->toXMLString();
 			$str .= '</ebl:BuyerDetail>';
 		}
-		if($this->InfoSharingDirectives != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->InfoSharingDirectives != null)
+		{
 			$str .= '<ebl:InfoSharingDirectives>';
 			$str .= $this->InfoSharingDirectives->toXMLString();
 			$str .= '</ebl:InfoSharingDirectives>';
@@ -2840,13 +2590,12 @@ class AuthorizationRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->IsRequested != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:IsRequested>' . $this->IsRequested . '</ebl:IsRequested>';
+		if($this->IsRequested != null)
+		{
+			$str .= '<ebl:IsRequested>' . PPUtils::escapeInvalidXmlCharsRegex($this->IsRequested) . '</ebl:IsRequested>';
 		}
 		return $str;
 	}
@@ -2908,43 +2657,32 @@ class BillingApprovalDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ApprovalType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ApprovalType>' . $this->ApprovalType . '</ebl:ApprovalType>';
+		if($this->ApprovalType != null)
+		{
+			$str .= '<ebl:ApprovalType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ApprovalType) . '</ebl:ApprovalType>';
 		}
-		if($this->ApprovalSubType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ApprovalSubType>' . $this->ApprovalSubType . '</ebl:ApprovalSubType>';
+		if($this->ApprovalSubType != null)
+		{
+			$str .= '<ebl:ApprovalSubType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ApprovalSubType) . '</ebl:ApprovalSubType>';
 		}
-		if($this->OrderDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->OrderDetails != null)
+		{
 			$str .= '<ebl:OrderDetails>';
 			$str .= $this->OrderDetails->toXMLString();
 			$str .= '</ebl:OrderDetails>';
 		}
-		if($this->PaymentDirectives != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->PaymentDirectives != null)
+		{
 			$str .= '<ebl:PaymentDirectives>';
 			$str .= $this->PaymentDirectives->toXMLString();
 			$str .= '</ebl:PaymentDirectives>';
 		}
-		if($this->Custom != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Custom>' . $this->Custom . '</ebl:Custom>';
+		if($this->Custom != null)
+		{
+			$str .= '<ebl:Custom>' . PPUtils::escapeInvalidXmlCharsRegex($this->Custom) . '</ebl:Custom>';
 		}
 		return $str;
 	}
@@ -2971,13 +2709,12 @@ class InfoSharingDirectivesType  {
 	public $ReqBillingAddress;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ReqBillingAddress != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ReqBillingAddress>' . $this->ReqBillingAddress . '</ebl:ReqBillingAddress>';
+		if($this->ReqBillingAddress != null)
+		{
+			$str .= '<ebl:ReqBillingAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqBillingAddress) . '</ebl:ReqBillingAddress>';
 		}
 		return $str;
 	}
@@ -3008,19 +2745,15 @@ class OrderDetailsType  {
 	public $MaxAmount;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Description != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Description>' . $this->Description . '</ebl:Description>';
+		if($this->Description != null)
+		{
+			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
 		}
-		if($this->MaxAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->MaxAmount != null)
+		{
 			$str .= '<ebl:MaxAmount';
 			$str .= $this->MaxAmount->toXMLString();
 			$str .= '</ebl:MaxAmount>';
@@ -3046,13 +2779,12 @@ class PaymentDirectivesType  {
 	public $PaymentType;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->PaymentType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PaymentType>' . $this->PaymentType . '</ebl:PaymentType>';
+		if($this->PaymentType != null)
+		{
+			$str .= '<ebl:PaymentType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentType) . '</ebl:PaymentType>';
 		}
 		return $str;
 	}
@@ -3079,13 +2811,11 @@ class BuyerDetailType  {
 	public $IdentificationInfo;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->IdentificationInfo != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->IdentificationInfo != null)
+		{
 			$str .= '<ebl:IdentificationInfo>';
 			$str .= $this->IdentificationInfo->toXMLString();
 			$str .= '</ebl:IdentificationInfo>';
@@ -3125,31 +2855,23 @@ class IdentificationInfoType  {
 	public $IdentityTokenInfo;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->MobileIDInfo != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->MobileIDInfo != null)
+		{
 			$str .= '<ebl:MobileIDInfo>';
 			$str .= $this->MobileIDInfo->toXMLString();
 			$str .= '</ebl:MobileIDInfo>';
 		}
-		if($this->RememberMeIDInfo != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->RememberMeIDInfo != null)
+		{
 			$str .= '<ebl:RememberMeIDInfo>';
 			$str .= $this->RememberMeIDInfo->toXMLString();
 			$str .= '</ebl:RememberMeIDInfo>';
 		}
-		if($this->IdentityTokenInfo != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->IdentityTokenInfo != null)
+		{
 			$str .= '<ebl:IdentityTokenInfo>';
 			$str .= $this->IdentityTokenInfo->toXMLString();
 			$str .= '</ebl:IdentityTokenInfo>';
@@ -3175,13 +2897,12 @@ class MobileIDInfoType  {
 	public $SessionToken;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->SessionToken != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SessionToken>' . $this->SessionToken . '</ebl:SessionToken>';
+		if($this->SessionToken != null)
+		{
+			$str .= '<ebl:SessionToken>' . PPUtils::escapeInvalidXmlCharsRegex($this->SessionToken) . '</ebl:SessionToken>';
 		}
 		return $str;
 	}
@@ -3216,13 +2937,12 @@ class RememberMeIDInfoType  {
 	public $ExternalRememberMeID;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ExternalRememberMeID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ExternalRememberMeID>' . $this->ExternalRememberMeID . '</ebl:ExternalRememberMeID>';
+		if($this->ExternalRememberMeID != null)
+		{
+			$str .= '<ebl:ExternalRememberMeID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalRememberMeID) . '</ebl:ExternalRememberMeID>';
 		}
 		return $str;
 	}
@@ -3252,13 +2972,12 @@ class IdentityTokenInfoType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->AccessToken != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AccessToken>' . $this->AccessToken . '</ebl:AccessToken>';
+		if($this->AccessToken != null)
+		{
+			$str .= '<ebl:AccessToken>' . PPUtils::escapeInvalidXmlCharsRegex($this->AccessToken) . '</ebl:AccessToken>';
 		}
 		return $str;
 	}
@@ -3297,19 +3016,16 @@ class FundingSourceDetailsType  {
 	public $UserSelectedFundingSource;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->AllowPushFunding != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AllowPushFunding>' . $this->AllowPushFunding . '</ebl:AllowPushFunding>';
+		if($this->AllowPushFunding != null)
+		{
+			$str .= '<ebl:AllowPushFunding>' . PPUtils::escapeInvalidXmlCharsRegex($this->AllowPushFunding) . '</ebl:AllowPushFunding>';
 		}
-		if($this->UserSelectedFundingSource != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:UserSelectedFundingSource>' . $this->UserSelectedFundingSource . '</ebl:UserSelectedFundingSource>';
+		if($this->UserSelectedFundingSource != null)
+		{
+			$str .= '<ebl:UserSelectedFundingSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->UserSelectedFundingSource) . '</ebl:UserSelectedFundingSource>';
 		}
 		return $str;
 	}
@@ -3360,31 +3076,24 @@ class BillingAgreementDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->BillingType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BillingType>' . $this->BillingType . '</ebl:BillingType>';
+		if($this->BillingType != null)
+		{
+			$str .= '<ebl:BillingType>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingType) . '</ebl:BillingType>';
 		}
-		if($this->BillingAgreementDescription != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BillingAgreementDescription>' . $this->BillingAgreementDescription . '</ebl:BillingAgreementDescription>';
+		if($this->BillingAgreementDescription != null)
+		{
+			$str .= '<ebl:BillingAgreementDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingAgreementDescription) . '</ebl:BillingAgreementDescription>';
 		}
-		if($this->PaymentType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PaymentType>' . $this->PaymentType . '</ebl:PaymentType>';
+		if($this->PaymentType != null)
+		{
+			$str .= '<ebl:PaymentType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentType) . '</ebl:PaymentType>';
 		}
-		if($this->BillingAgreementCustom != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BillingAgreementCustom>' . $this->BillingAgreementCustom . '</ebl:BillingAgreementCustom>';
+		if($this->BillingAgreementCustom != null)
+		{
+			$str .= '<ebl:BillingAgreementCustom>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingAgreementCustom) . '</ebl:BillingAgreementCustom>';
 		}
 		return $str;
 	}
@@ -4095,145 +3804,106 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	public $CoupledBuckets;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->PaymentAction != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PaymentAction>' . $this->PaymentAction . '</ebl:PaymentAction>';
+		if($this->PaymentAction != null)
+		{
+			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
 		}
-		if($this->Token != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Token>' . $this->Token . '</ebl:Token>';
+		if($this->Token != null)
+		{
+			$str .= '<ebl:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</ebl:Token>';
 		}
-		if($this->PayerID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PayerID>' . $this->PayerID . '</ebl:PayerID>';
+		if($this->PayerID != null)
+		{
+			$str .= '<ebl:PayerID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerID) . '</ebl:PayerID>';
 		}
-		if($this->OrderURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OrderURL>' . $this->OrderURL . '</ebl:OrderURL>';
+		if($this->OrderURL != null)
+		{
+			$str .= '<ebl:OrderURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->OrderURL) . '</ebl:OrderURL>';
 		}
-		if($this->PaymentDetails != null) {
-			for($i = 0; $i < count($this->PaymentDetails); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->PaymentDetails != null)
+		{
+			for($i = 0; $i < count($this->PaymentDetails); $i++)
+			{
 				$str .= '<ebl:PaymentDetails>';
 				$str .= $this->PaymentDetails[$i]->toXMLString();
 				$str .= '</ebl:PaymentDetails>';
-		
 			}
 		}
-		if($this->PromoOverrideFlag != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PromoOverrideFlag>' . $this->PromoOverrideFlag . '</ebl:PromoOverrideFlag>';
+		if($this->PromoOverrideFlag != null)
+		{
+			$str .= '<ebl:PromoOverrideFlag>' . PPUtils::escapeInvalidXmlCharsRegex($this->PromoOverrideFlag) . '</ebl:PromoOverrideFlag>';
 		}
-		if($this->PromoCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PromoCode>' . $this->PromoCode . '</ebl:PromoCode>';
+		if($this->PromoCode != null)
+		{
+			$str .= '<ebl:PromoCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->PromoCode) . '</ebl:PromoCode>';
 		}
-		if($this->EnhancedData != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->EnhancedData != null)
+		{
 			$str .= '<ebl:EnhancedData>';
 			$str .= $this->EnhancedData->toXMLString();
 			$str .= '</ebl:EnhancedData>';
 		}
-		if($this->SoftDescriptor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SoftDescriptor>' . $this->SoftDescriptor . '</ebl:SoftDescriptor>';
+		if($this->SoftDescriptor != null)
+		{
+			$str .= '<ebl:SoftDescriptor>' . PPUtils::escapeInvalidXmlCharsRegex($this->SoftDescriptor) . '</ebl:SoftDescriptor>';
 		}
-		if($this->UserSelectedOptions != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->UserSelectedOptions != null)
+		{
 			$str .= '<ebl:UserSelectedOptions>';
 			$str .= $this->UserSelectedOptions->toXMLString();
 			$str .= '</ebl:UserSelectedOptions>';
 		}
-		if($this->GiftMessage != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:GiftMessage>' . $this->GiftMessage . '</ebl:GiftMessage>';
+		if($this->GiftMessage != null)
+		{
+			$str .= '<ebl:GiftMessage>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftMessage) . '</ebl:GiftMessage>';
 		}
-		if($this->GiftReceiptEnable != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:GiftReceiptEnable>' . $this->GiftReceiptEnable . '</ebl:GiftReceiptEnable>';
+		if($this->GiftReceiptEnable != null)
+		{
+			$str .= '<ebl:GiftReceiptEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftReceiptEnable) . '</ebl:GiftReceiptEnable>';
 		}
-		if($this->GiftWrapName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:GiftWrapName>' . $this->GiftWrapName . '</ebl:GiftWrapName>';
+		if($this->GiftWrapName != null)
+		{
+			$str .= '<ebl:GiftWrapName>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftWrapName) . '</ebl:GiftWrapName>';
 		}
-		if($this->GiftWrapAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->GiftWrapAmount != null)
+		{
 			$str .= '<ebl:GiftWrapAmount';
 			$str .= $this->GiftWrapAmount->toXMLString();
 			$str .= '</ebl:GiftWrapAmount>';
 		}
-		if($this->BuyerMarketingEmail != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BuyerMarketingEmail>' . $this->BuyerMarketingEmail . '</ebl:BuyerMarketingEmail>';
+		if($this->BuyerMarketingEmail != null)
+		{
+			$str .= '<ebl:BuyerMarketingEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerMarketingEmail) . '</ebl:BuyerMarketingEmail>';
 		}
-		if($this->SurveyQuestion != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SurveyQuestion>' . $this->SurveyQuestion . '</ebl:SurveyQuestion>';
+		if($this->SurveyQuestion != null)
+		{
+			$str .= '<ebl:SurveyQuestion>' . PPUtils::escapeInvalidXmlCharsRegex($this->SurveyQuestion) . '</ebl:SurveyQuestion>';
 		}
-		if($this->SurveyChoiceSelected != null) {
-			for($i = 0; $i < count($this->SurveyChoiceSelected); $i++) { //property is collection
-				//not a complex member
-				//prop is not a value
-				$str .= '<ebl:SurveyChoiceSelected>'. $this->SurveyChoiceSelected[$i] . '</ebl:SurveyChoiceSelected>';
-		
+		if($this->SurveyChoiceSelected != null)
+		{
+			for($i = 0; $i < count($this->SurveyChoiceSelected); $i++)
+			{
+				$str .= '<ebl:SurveyChoiceSelected>'. PPUtils::escapeInvalidXmlCharsRegex($this->SurveyChoiceSelected[$i]) . '</ebl:SurveyChoiceSelected>';
 			}
 		}
-		if($this->ButtonSource != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ButtonSource>' . $this->ButtonSource . '</ebl:ButtonSource>';
+		if($this->ButtonSource != null)
+		{
+			$str .= '<ebl:ButtonSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSource) . '</ebl:ButtonSource>';
 		}
-		if($this->SkipBACreation != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SkipBACreation>' . $this->SkipBACreation . '</ebl:SkipBACreation>';
+		if($this->SkipBACreation != null)
+		{
+			$str .= '<ebl:SkipBACreation>' . PPUtils::escapeInvalidXmlCharsRegex($this->SkipBACreation) . '</ebl:SkipBACreation>';
 		}
-		if($this->CoupledBuckets != null) {
-			for($i = 0; $i < count($this->CoupledBuckets); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->CoupledBuckets != null)
+		{
+			for($i = 0; $i < count($this->CoupledBuckets); $i++)
+			{
 				$str .= '<ebl:CoupledBuckets>';
 				$str .= $this->CoupledBuckets[$i]->toXMLString();
 				$str .= '</ebl:CoupledBuckets>';
-		
 			}
 		}
 		return $str;
@@ -4507,49 +4177,36 @@ class DoDirectPaymentRequestDetailsType  {
 	public $ReturnFMFDetails;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->PaymentAction != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PaymentAction>' . $this->PaymentAction . '</ebl:PaymentAction>';
+		if($this->PaymentAction != null)
+		{
+			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
 		}
-		if($this->PaymentDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->PaymentDetails != null)
+		{
 			$str .= '<ebl:PaymentDetails>';
 			$str .= $this->PaymentDetails->toXMLString();
 			$str .= '</ebl:PaymentDetails>';
 		}
-		if($this->CreditCard != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->CreditCard != null)
+		{
 			$str .= '<ebl:CreditCard>';
 			$str .= $this->CreditCard->toXMLString();
 			$str .= '</ebl:CreditCard>';
 		}
-		if($this->IPAddress != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:IPAddress>' . $this->IPAddress . '</ebl:IPAddress>';
+		if($this->IPAddress != null)
+		{
+			$str .= '<ebl:IPAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->IPAddress) . '</ebl:IPAddress>';
 		}
-		if($this->MerchantSessionId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:MerchantSessionId>' . $this->MerchantSessionId . '</ebl:MerchantSessionId>';
+		if($this->MerchantSessionId != null)
+		{
+			$str .= '<ebl:MerchantSessionId>' . PPUtils::escapeInvalidXmlCharsRegex($this->MerchantSessionId) . '</ebl:MerchantSessionId>';
 		}
-		if($this->ReturnFMFDetails != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ReturnFMFDetails>' . $this->ReturnFMFDetails . '</ebl:ReturnFMFDetails>';
+		if($this->ReturnFMFDetails != null)
+		{
+			$str .= '<ebl:ReturnFMFDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnFMFDetails) . '</ebl:ReturnFMFDetails>';
 		}
 		return $str;
 	}
@@ -4683,112 +4340,78 @@ class CreateMobilePaymentRequestDetailsType  {
 	public $ShareHomeAddress;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->PaymentType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PaymentType>' . $this->PaymentType . '</ebl:PaymentType>';
+		if($this->PaymentType != null)
+		{
+			$str .= '<ebl:PaymentType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentType) . '</ebl:PaymentType>';
 		}
-		if($this->PaymentAction != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PaymentAction>' . $this->PaymentAction . '</ebl:PaymentAction>';
+		if($this->PaymentAction != null)
+		{
+			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
 		}
-		if($this->SenderPhone != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SenderPhone != null)
+		{
 			$str .= '<ebl:SenderPhone>';
 			$str .= $this->SenderPhone->toXMLString();
 			$str .= '</ebl:SenderPhone>';
 		}
-		if($this->RecipientType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:RecipientType>' . $this->RecipientType . '</ebl:RecipientType>';
+		if($this->RecipientType != null)
+		{
+			$str .= '<ebl:RecipientType>' . PPUtils::escapeInvalidXmlCharsRegex($this->RecipientType) . '</ebl:RecipientType>';
 		}
-		if($this->RecipientEmail != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:RecipientEmail>' . $this->RecipientEmail . '</ebl:RecipientEmail>';
+		if($this->RecipientEmail != null)
+		{
+			$str .= '<ebl:RecipientEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->RecipientEmail) . '</ebl:RecipientEmail>';
 		}
-		if($this->RecipientPhone != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->RecipientPhone != null)
+		{
 			$str .= '<ebl:RecipientPhone>';
 			$str .= $this->RecipientPhone->toXMLString();
 			$str .= '</ebl:RecipientPhone>';
 		}
-		if($this->ItemAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ItemAmount != null)
+		{
 			$str .= '<ebl:ItemAmount';
 			$str .= $this->ItemAmount->toXMLString();
 			$str .= '</ebl:ItemAmount>';
 		}
-		if($this->Tax != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Tax != null)
+		{
 			$str .= '<ebl:Tax';
 			$str .= $this->Tax->toXMLString();
 			$str .= '</ebl:Tax>';
 		}
-		if($this->Shipping != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Shipping != null)
+		{
 			$str .= '<ebl:Shipping';
 			$str .= $this->Shipping->toXMLString();
 			$str .= '</ebl:Shipping>';
 		}
-		if($this->ItemName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemName>' . $this->ItemName . '</ebl:ItemName>';
+		if($this->ItemName != null)
+		{
+			$str .= '<ebl:ItemName>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemName) . '</ebl:ItemName>';
 		}
-		if($this->ItemNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemNumber>' . $this->ItemNumber . '</ebl:ItemNumber>';
+		if($this->ItemNumber != null)
+		{
+			$str .= '<ebl:ItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemNumber) . '</ebl:ItemNumber>';
 		}
-		if($this->Note != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Note>' . $this->Note . '</ebl:Note>';
+		if($this->Note != null)
+		{
+			$str .= '<ebl:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</ebl:Note>';
 		}
-		if($this->CustomID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CustomID>' . $this->CustomID . '</ebl:CustomID>';
+		if($this->CustomID != null)
+		{
+			$str .= '<ebl:CustomID>' . PPUtils::escapeInvalidXmlCharsRegex($this->CustomID) . '</ebl:CustomID>';
 		}
-		if($this->SharePhoneNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SharePhoneNumber>' . $this->SharePhoneNumber . '</ebl:SharePhoneNumber>';
+		if($this->SharePhoneNumber != null)
+		{
+			$str .= '<ebl:SharePhoneNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->SharePhoneNumber) . '</ebl:SharePhoneNumber>';
 		}
-		if($this->ShareHomeAddress != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ShareHomeAddress>' . $this->ShareHomeAddress . '</ebl:ShareHomeAddress>';
+		if($this->ShareHomeAddress != null)
+		{
+			$str .= '<ebl:ShareHomeAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShareHomeAddress) . '</ebl:ShareHomeAddress>';
 		}
 		return $str;
 	}
@@ -4811,13 +4434,11 @@ class GetMobileStatusRequestDetailsType  {
 	public $Phone;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Phone != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->Phone != null)
+		{
 			$str .= '<ebl:Phone>';
 			$str .= $this->Phone->toXMLString();
 			$str .= '</ebl:Phone>';
@@ -5014,115 +4635,79 @@ class SetAuthFlowParamRequestDetailsType  {
 	public $Address;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ReturnURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ReturnURL>' . $this->ReturnURL . '</ebl:ReturnURL>';
+		if($this->ReturnURL != null)
+		{
+			$str .= '<ebl:ReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnURL) . '</ebl:ReturnURL>';
 		}
-		if($this->CancelURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CancelURL>' . $this->CancelURL . '</ebl:CancelURL>';
+		if($this->CancelURL != null)
+		{
+			$str .= '<ebl:CancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelURL) . '</ebl:CancelURL>';
 		}
-		if($this->LogoutURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:LogoutURL>' . $this->LogoutURL . '</ebl:LogoutURL>';
+		if($this->LogoutURL != null)
+		{
+			$str .= '<ebl:LogoutURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->LogoutURL) . '</ebl:LogoutURL>';
 		}
-		if($this->InitFlowType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:InitFlowType>' . $this->InitFlowType . '</ebl:InitFlowType>';
+		if($this->InitFlowType != null)
+		{
+			$str .= '<ebl:InitFlowType>' . PPUtils::escapeInvalidXmlCharsRegex($this->InitFlowType) . '</ebl:InitFlowType>';
 		}
-		if($this->SkipLoginPage != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SkipLoginPage>' . $this->SkipLoginPage . '</ebl:SkipLoginPage>';
+		if($this->SkipLoginPage != null)
+		{
+			$str .= '<ebl:SkipLoginPage>' . PPUtils::escapeInvalidXmlCharsRegex($this->SkipLoginPage) . '</ebl:SkipLoginPage>';
 		}
-		if($this->ServiceName1 != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ServiceName1>' . $this->ServiceName1 . '</ebl:ServiceName1>';
+		if($this->ServiceName1 != null)
+		{
+			$str .= '<ebl:ServiceName1>' . PPUtils::escapeInvalidXmlCharsRegex($this->ServiceName1) . '</ebl:ServiceName1>';
 		}
-		if($this->ServiceDefReq1 != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ServiceDefReq1>' . $this->ServiceDefReq1 . '</ebl:ServiceDefReq1>';
+		if($this->ServiceDefReq1 != null)
+		{
+			$str .= '<ebl:ServiceDefReq1>' . PPUtils::escapeInvalidXmlCharsRegex($this->ServiceDefReq1) . '</ebl:ServiceDefReq1>';
 		}
-		if($this->ServiceName2 != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ServiceName2>' . $this->ServiceName2 . '</ebl:ServiceName2>';
+		if($this->ServiceName2 != null)
+		{
+			$str .= '<ebl:ServiceName2>' . PPUtils::escapeInvalidXmlCharsRegex($this->ServiceName2) . '</ebl:ServiceName2>';
 		}
-		if($this->ServiceDefReq2 != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ServiceDefReq2>' . $this->ServiceDefReq2 . '</ebl:ServiceDefReq2>';
+		if($this->ServiceDefReq2 != null)
+		{
+			$str .= '<ebl:ServiceDefReq2>' . PPUtils::escapeInvalidXmlCharsRegex($this->ServiceDefReq2) . '</ebl:ServiceDefReq2>';
 		}
-		if($this->LocaleCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:LocaleCode>' . $this->LocaleCode . '</ebl:LocaleCode>';
+		if($this->LocaleCode != null)
+		{
+			$str .= '<ebl:LocaleCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->LocaleCode) . '</ebl:LocaleCode>';
 		}
-		if($this->PageStyle != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PageStyle>' . $this->PageStyle . '</ebl:PageStyle>';
+		if($this->PageStyle != null)
+		{
+			$str .= '<ebl:PageStyle>' . PPUtils::escapeInvalidXmlCharsRegex($this->PageStyle) . '</ebl:PageStyle>';
 		}
-		if($this->cppheaderimage != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-header-image>' . $this->cppheaderimage . '</ebl:cpp-header-image>';
+		if($this->cppheaderimage != null)
+		{
+			$str .= '<ebl:cppheaderimage>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cppheaderimage>';
 		}
-		if($this->cppheaderbordercolor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-header-border-color>' . $this->cppheaderbordercolor . '</ebl:cpp-header-border-color>';
+		if($this->cppheaderbordercolor != null)
+		{
+			$str .= '<ebl:cppheaderbordercolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cppheaderbordercolor>';
 		}
-		if($this->cppheaderbackcolor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-header-back-color>' . $this->cppheaderbackcolor . '</ebl:cpp-header-back-color>';
+		if($this->cppheaderbackcolor != null)
+		{
+			$str .= '<ebl:cppheaderbackcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cppheaderbackcolor>';
 		}
-		if($this->cpppayflowcolor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-payflow-color>' . $this->cpppayflowcolor . '</ebl:cpp-payflow-color>';
+		if($this->cpppayflowcolor != null)
+		{
+			$str .= '<ebl:cpppayflowcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpppayflowcolor>';
 		}
-		if($this->FirstName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:FirstName>' . $this->FirstName . '</ebl:FirstName>';
+		if($this->FirstName != null)
+		{
+			$str .= '<ebl:FirstName>' . PPUtils::escapeInvalidXmlCharsRegex($this->FirstName) . '</ebl:FirstName>';
 		}
-		if($this->LastName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:LastName>' . $this->LastName . '</ebl:LastName>';
+		if($this->LastName != null)
+		{
+			$str .= '<ebl:LastName>' . PPUtils::escapeInvalidXmlCharsRegex($this->LastName) . '</ebl:LastName>';
 		}
-		if($this->Address != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->Address != null)
+		{
 			$str .= '<ebl:Address>';
 			$str .= $this->Address->toXMLString();
 			$str .= '</ebl:Address>';
@@ -5363,107 +4948,77 @@ class SetAccessPermissionsRequestDetailsType  {
 	public $Address;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ReturnURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ReturnURL>' . $this->ReturnURL . '</ebl:ReturnURL>';
+		if($this->ReturnURL != null)
+		{
+			$str .= '<ebl:ReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnURL) . '</ebl:ReturnURL>';
 		}
-		if($this->CancelURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CancelURL>' . $this->CancelURL . '</ebl:CancelURL>';
+		if($this->CancelURL != null)
+		{
+			$str .= '<ebl:CancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelURL) . '</ebl:CancelURL>';
 		}
-		if($this->LogoutURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:LogoutURL>' . $this->LogoutURL . '</ebl:LogoutURL>';
+		if($this->LogoutURL != null)
+		{
+			$str .= '<ebl:LogoutURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->LogoutURL) . '</ebl:LogoutURL>';
 		}
-		if($this->InitFlowType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:InitFlowType>' . $this->InitFlowType . '</ebl:InitFlowType>';
+		if($this->InitFlowType != null)
+		{
+			$str .= '<ebl:InitFlowType>' . PPUtils::escapeInvalidXmlCharsRegex($this->InitFlowType) . '</ebl:InitFlowType>';
 		}
-		if($this->SkipLoginPage != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SkipLoginPage>' . $this->SkipLoginPage . '</ebl:SkipLoginPage>';
+		if($this->SkipLoginPage != null)
+		{
+			$str .= '<ebl:SkipLoginPage>' . PPUtils::escapeInvalidXmlCharsRegex($this->SkipLoginPage) . '</ebl:SkipLoginPage>';
 		}
-		if($this->RequiredAccessPermissions != null) {
-			for($i = 0; $i < count($this->RequiredAccessPermissions); $i++) { //property is collection
-				//not a complex member
-				//prop is not a value
-				$str .= '<ebl:RequiredAccessPermissions>'. $this->RequiredAccessPermissions[$i] . '</ebl:RequiredAccessPermissions>';
-		
+		if($this->RequiredAccessPermissions != null)
+		{
+			for($i = 0; $i < count($this->RequiredAccessPermissions); $i++)
+			{
+				$str .= '<ebl:RequiredAccessPermissions>'. PPUtils::escapeInvalidXmlCharsRegex($this->RequiredAccessPermissions[$i]) . '</ebl:RequiredAccessPermissions>';
 			}
 		}
-		if($this->OptionalAccessPermissions != null) {
-			for($i = 0; $i < count($this->OptionalAccessPermissions); $i++) { //property is collection
-				//not a complex member
-				//prop is not a value
-				$str .= '<ebl:OptionalAccessPermissions>'. $this->OptionalAccessPermissions[$i] . '</ebl:OptionalAccessPermissions>';
-		
+		if($this->OptionalAccessPermissions != null)
+		{
+			for($i = 0; $i < count($this->OptionalAccessPermissions); $i++)
+			{
+				$str .= '<ebl:OptionalAccessPermissions>'. PPUtils::escapeInvalidXmlCharsRegex($this->OptionalAccessPermissions[$i]) . '</ebl:OptionalAccessPermissions>';
 			}
 		}
-		if($this->LocaleCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:LocaleCode>' . $this->LocaleCode . '</ebl:LocaleCode>';
+		if($this->LocaleCode != null)
+		{
+			$str .= '<ebl:LocaleCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->LocaleCode) . '</ebl:LocaleCode>';
 		}
-		if($this->PageStyle != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PageStyle>' . $this->PageStyle . '</ebl:PageStyle>';
+		if($this->PageStyle != null)
+		{
+			$str .= '<ebl:PageStyle>' . PPUtils::escapeInvalidXmlCharsRegex($this->PageStyle) . '</ebl:PageStyle>';
 		}
-		if($this->cppheaderimage != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-header-image>' . $this->cppheaderimage . '</ebl:cpp-header-image>';
+		if($this->cppheaderimage != null)
+		{
+			$str .= '<ebl:cppheaderimage>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cppheaderimage>';
 		}
-		if($this->cppheaderbordercolor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-header-border-color>' . $this->cppheaderbordercolor . '</ebl:cpp-header-border-color>';
+		if($this->cppheaderbordercolor != null)
+		{
+			$str .= '<ebl:cppheaderbordercolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cppheaderbordercolor>';
 		}
-		if($this->cppheaderbackcolor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-header-back-color>' . $this->cppheaderbackcolor . '</ebl:cpp-header-back-color>';
+		if($this->cppheaderbackcolor != null)
+		{
+			$str .= '<ebl:cppheaderbackcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cppheaderbackcolor>';
 		}
-		if($this->cpppayflowcolor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-payflow-color>' . $this->cpppayflowcolor . '</ebl:cpp-payflow-color>';
+		if($this->cpppayflowcolor != null)
+		{
+			$str .= '<ebl:cpppayflowcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpppayflowcolor>';
 		}
-		if($this->FirstName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:FirstName>' . $this->FirstName . '</ebl:FirstName>';
+		if($this->FirstName != null)
+		{
+			$str .= '<ebl:FirstName>' . PPUtils::escapeInvalidXmlCharsRegex($this->FirstName) . '</ebl:FirstName>';
 		}
-		if($this->LastName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:LastName>' . $this->LastName . '</ebl:LastName>';
+		if($this->LastName != null)
+		{
+			$str .= '<ebl:LastName>' . PPUtils::escapeInvalidXmlCharsRegex($this->LastName) . '</ebl:LastName>';
 		}
-		if($this->Address != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->Address != null)
+		{
 			$str .= '<ebl:Address>';
 			$str .= $this->Address->toXMLString();
 			$str .= '</ebl:Address>';
@@ -6123,103 +5678,72 @@ class MerchantPullPaymentType  {
 	public $SoftDescriptor;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->MpID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:MpID>' . $this->MpID . '</ebl:MpID>';
+		if($this->MpID != null)
+		{
+			$str .= '<ebl:MpID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MpID) . '</ebl:MpID>';
 		}
-		if($this->PaymentType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PaymentType>' . $this->PaymentType . '</ebl:PaymentType>';
+		if($this->PaymentType != null)
+		{
+			$str .= '<ebl:PaymentType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentType) . '</ebl:PaymentType>';
 		}
-		if($this->Memo != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Memo>' . $this->Memo . '</ebl:Memo>';
+		if($this->Memo != null)
+		{
+			$str .= '<ebl:Memo>' . PPUtils::escapeInvalidXmlCharsRegex($this->Memo) . '</ebl:Memo>';
 		}
-		if($this->EmailSubject != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:EmailSubject>' . $this->EmailSubject . '</ebl:EmailSubject>';
+		if($this->EmailSubject != null)
+		{
+			$str .= '<ebl:EmailSubject>' . PPUtils::escapeInvalidXmlCharsRegex($this->EmailSubject) . '</ebl:EmailSubject>';
 		}
-		if($this->Tax != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Tax != null)
+		{
 			$str .= '<ebl:Tax';
 			$str .= $this->Tax->toXMLString();
 			$str .= '</ebl:Tax>';
 		}
-		if($this->Shipping != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Shipping != null)
+		{
 			$str .= '<ebl:Shipping';
 			$str .= $this->Shipping->toXMLString();
 			$str .= '</ebl:Shipping>';
 		}
-		if($this->Handling != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Handling != null)
+		{
 			$str .= '<ebl:Handling';
 			$str .= $this->Handling->toXMLString();
 			$str .= '</ebl:Handling>';
 		}
-		if($this->ItemName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemName>' . $this->ItemName . '</ebl:ItemName>';
+		if($this->ItemName != null)
+		{
+			$str .= '<ebl:ItemName>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemName) . '</ebl:ItemName>';
 		}
-		if($this->ItemNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemNumber>' . $this->ItemNumber . '</ebl:ItemNumber>';
+		if($this->ItemNumber != null)
+		{
+			$str .= '<ebl:ItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemNumber) . '</ebl:ItemNumber>';
 		}
-		if($this->Invoice != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Invoice>' . $this->Invoice . '</ebl:Invoice>';
+		if($this->Invoice != null)
+		{
+			$str .= '<ebl:Invoice>' . PPUtils::escapeInvalidXmlCharsRegex($this->Invoice) . '</ebl:Invoice>';
 		}
-		if($this->Custom != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Custom>' . $this->Custom . '</ebl:Custom>';
+		if($this->Custom != null)
+		{
+			$str .= '<ebl:Custom>' . PPUtils::escapeInvalidXmlCharsRegex($this->Custom) . '</ebl:Custom>';
 		}
-		if($this->ButtonSource != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ButtonSource>' . $this->ButtonSource . '</ebl:ButtonSource>';
+		if($this->ButtonSource != null)
+		{
+			$str .= '<ebl:ButtonSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSource) . '</ebl:ButtonSource>';
 		}
-		if($this->SoftDescriptor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SoftDescriptor>' . $this->SoftDescriptor . '</ebl:SoftDescriptor>';
+		if($this->SoftDescriptor != null)
+		{
+			$str .= '<ebl:SoftDescriptor>' . PPUtils::escapeInvalidXmlCharsRegex($this->SoftDescriptor) . '</ebl:SoftDescriptor>';
 		}
 		return $str;
 	}
@@ -6576,76 +6100,53 @@ class PayerInfoType  {
 	public $EnhancedPayerInfo;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Payer != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Payer>' . $this->Payer . '</ebl:Payer>';
+		if($this->Payer != null)
+		{
+			$str .= '<ebl:Payer>' . PPUtils::escapeInvalidXmlCharsRegex($this->Payer) . '</ebl:Payer>';
 		}
-		if($this->PayerID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PayerID>' . $this->PayerID . '</ebl:PayerID>';
+		if($this->PayerID != null)
+		{
+			$str .= '<ebl:PayerID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerID) . '</ebl:PayerID>';
 		}
-		if($this->PayerStatus != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PayerStatus>' . $this->PayerStatus . '</ebl:PayerStatus>';
+		if($this->PayerStatus != null)
+		{
+			$str .= '<ebl:PayerStatus>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerStatus) . '</ebl:PayerStatus>';
 		}
-		if($this->PayerName != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->PayerName != null)
+		{
 			$str .= '<ebl:PayerName>';
 			$str .= $this->PayerName->toXMLString();
 			$str .= '</ebl:PayerName>';
 		}
-		if($this->PayerCountry != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PayerCountry>' . $this->PayerCountry . '</ebl:PayerCountry>';
+		if($this->PayerCountry != null)
+		{
+			$str .= '<ebl:PayerCountry>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerCountry) . '</ebl:PayerCountry>';
 		}
-		if($this->PayerBusiness != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PayerBusiness>' . $this->PayerBusiness . '</ebl:PayerBusiness>';
+		if($this->PayerBusiness != null)
+		{
+			$str .= '<ebl:PayerBusiness>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerBusiness) . '</ebl:PayerBusiness>';
 		}
-		if($this->Address != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->Address != null)
+		{
 			$str .= '<ebl:Address>';
 			$str .= $this->Address->toXMLString();
 			$str .= '</ebl:Address>';
 		}
-		if($this->ContactPhone != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ContactPhone>' . $this->ContactPhone . '</ebl:ContactPhone>';
+		if($this->ContactPhone != null)
+		{
+			$str .= '<ebl:ContactPhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->ContactPhone) . '</ebl:ContactPhone>';
 		}
-		if($this->TaxIdDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->TaxIdDetails != null)
+		{
 			$str .= '<ebl:TaxIdDetails>';
 			$str .= $this->TaxIdDetails->toXMLString();
 			$str .= '</ebl:TaxIdDetails>';
 		}
-		if($this->EnhancedPayerInfo != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->EnhancedPayerInfo != null)
+		{
 			$str .= '<ebl:EnhancedPayerInfo>';
 			$str .= $this->EnhancedPayerInfo->toXMLString();
 			$str .= '</ebl:EnhancedPayerInfo>';
@@ -6756,13 +6257,12 @@ class BMLOfferInfoType  {
 	public $OfferTrackingID;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->OfferTrackingID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OfferTrackingID>' . $this->OfferTrackingID . '</ebl:OfferTrackingID>';
+		if($this->OfferTrackingID != null)
+		{
+			$str .= '<ebl:OfferTrackingID>' . PPUtils::escapeInvalidXmlCharsRegex($this->OfferTrackingID) . '</ebl:OfferTrackingID>';
 		}
 		return $str;
 	}
@@ -6802,19 +6302,15 @@ class OfferDetailsType  {
 	public $BMLOfferInfo;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->OfferCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OfferCode>' . $this->OfferCode . '</ebl:OfferCode>';
+		if($this->OfferCode != null)
+		{
+			$str .= '<ebl:OfferCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->OfferCode) . '</ebl:OfferCode>';
 		}
-		if($this->BMLOfferInfo != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BMLOfferInfo != null)
+		{
 			$str .= '<ebl:BMLOfferInfo>';
 			$str .= $this->BMLOfferInfo->toXMLString();
 			$str .= '</ebl:BMLOfferInfo>';
@@ -7655,31 +7151,24 @@ class EbayItemPaymentDetailsItemType  {
 	public $CartID;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ItemNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemNumber>' . $this->ItemNumber . '</ebl:ItemNumber>';
+		if($this->ItemNumber != null)
+		{
+			$str .= '<ebl:ItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemNumber) . '</ebl:ItemNumber>';
 		}
-		if($this->AuctionTransactionId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AuctionTransactionId>' . $this->AuctionTransactionId . '</ebl:AuctionTransactionId>';
+		if($this->AuctionTransactionId != null)
+		{
+			$str .= '<ebl:AuctionTransactionId>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuctionTransactionId) . '</ebl:AuctionTransactionId>';
 		}
-		if($this->OrderId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OrderId>' . $this->OrderId . '</ebl:OrderId>';
+		if($this->OrderId != null)
+		{
+			$str .= '<ebl:OrderId>' . PPUtils::escapeInvalidXmlCharsRegex($this->OrderId) . '</ebl:OrderId>';
 		}
-		if($this->CartID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CartID>' . $this->CartID . '</ebl:CartID>';
+		if($this->CartID != null)
+		{
+			$str .= '<ebl:CartID>' . PPUtils::escapeInvalidXmlCharsRegex($this->CartID) . '</ebl:CartID>';
 		}
 		return $str;
 	}
@@ -7838,127 +7327,88 @@ class PaymentDetailsItemType  {
 	public $ItemCategory;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Name != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Name>' . $this->Name . '</ebl:Name>';
+		if($this->Name != null)
+		{
+			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
 		}
-		if($this->Number != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Number>' . $this->Number . '</ebl:Number>';
+		if($this->Number != null)
+		{
+			$str .= '<ebl:Number>' . PPUtils::escapeInvalidXmlCharsRegex($this->Number) . '</ebl:Number>';
 		}
-		if($this->Quantity != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Quantity>' . $this->Quantity . '</ebl:Quantity>';
+		if($this->Quantity != null)
+		{
+			$str .= '<ebl:Quantity>' . PPUtils::escapeInvalidXmlCharsRegex($this->Quantity) . '</ebl:Quantity>';
 		}
-		if($this->Tax != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Tax != null)
+		{
 			$str .= '<ebl:Tax';
 			$str .= $this->Tax->toXMLString();
 			$str .= '</ebl:Tax>';
 		}
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->EbayItemPaymentDetailsItem != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->EbayItemPaymentDetailsItem != null)
+		{
 			$str .= '<ebl:EbayItemPaymentDetailsItem>';
 			$str .= $this->EbayItemPaymentDetailsItem->toXMLString();
 			$str .= '</ebl:EbayItemPaymentDetailsItem>';
 		}
-		if($this->PromoCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PromoCode>' . $this->PromoCode . '</ebl:PromoCode>';
+		if($this->PromoCode != null)
+		{
+			$str .= '<ebl:PromoCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->PromoCode) . '</ebl:PromoCode>';
 		}
-		if($this->ProductCategory != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ProductCategory>' . $this->ProductCategory . '</ebl:ProductCategory>';
+		if($this->ProductCategory != null)
+		{
+			$str .= '<ebl:ProductCategory>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProductCategory) . '</ebl:ProductCategory>';
 		}
-		if($this->Description != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Description>' . $this->Description . '</ebl:Description>';
+		if($this->Description != null)
+		{
+			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
 		}
-		if($this->ItemWeight != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ItemWeight != null)
+		{
 			$str .= '<ebl:ItemWeight';
 			$str .= $this->ItemWeight->toXMLString();
 			$str .= '</ebl:ItemWeight>';
 		}
-		if($this->ItemLength != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ItemLength != null)
+		{
 			$str .= '<ebl:ItemLength';
 			$str .= $this->ItemLength->toXMLString();
 			$str .= '</ebl:ItemLength>';
 		}
-		if($this->ItemWidth != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ItemWidth != null)
+		{
 			$str .= '<ebl:ItemWidth';
 			$str .= $this->ItemWidth->toXMLString();
 			$str .= '</ebl:ItemWidth>';
 		}
-		if($this->ItemHeight != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ItemHeight != null)
+		{
 			$str .= '<ebl:ItemHeight';
 			$str .= $this->ItemHeight->toXMLString();
 			$str .= '</ebl:ItemHeight>';
 		}
-		if($this->ItemURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemURL>' . $this->ItemURL . '</ebl:ItemURL>';
+		if($this->ItemURL != null)
+		{
+			$str .= '<ebl:ItemURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemURL) . '</ebl:ItemURL>';
 		}
-		if($this->EnhancedItemData != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->EnhancedItemData != null)
+		{
 			$str .= '<ebl:EnhancedItemData>';
 			$str .= $this->EnhancedItemData->toXMLString();
 			$str .= '</ebl:EnhancedItemData>';
 		}
-		if($this->ItemCategory != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemCategory>' . $this->ItemCategory . '</ebl:ItemCategory>';
+		if($this->ItemCategory != null)
+		{
+			$str .= '<ebl:ItemCategory>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemCategory) . '</ebl:ItemCategory>';
 		}
 		return $str;
 	}
@@ -8779,239 +8229,165 @@ class PaymentDetailsType  {
 	public $PaymentReason;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->OrderTotal != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->OrderTotal != null)
+		{
 			$str .= '<ebl:OrderTotal';
 			$str .= $this->OrderTotal->toXMLString();
 			$str .= '</ebl:OrderTotal>';
 		}
-		if($this->ItemTotal != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ItemTotal != null)
+		{
 			$str .= '<ebl:ItemTotal';
 			$str .= $this->ItemTotal->toXMLString();
 			$str .= '</ebl:ItemTotal>';
 		}
-		if($this->ShippingTotal != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ShippingTotal != null)
+		{
 			$str .= '<ebl:ShippingTotal';
 			$str .= $this->ShippingTotal->toXMLString();
 			$str .= '</ebl:ShippingTotal>';
 		}
-		if($this->HandlingTotal != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->HandlingTotal != null)
+		{
 			$str .= '<ebl:HandlingTotal';
 			$str .= $this->HandlingTotal->toXMLString();
 			$str .= '</ebl:HandlingTotal>';
 		}
-		if($this->TaxTotal != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->TaxTotal != null)
+		{
 			$str .= '<ebl:TaxTotal';
 			$str .= $this->TaxTotal->toXMLString();
 			$str .= '</ebl:TaxTotal>';
 		}
-		if($this->OrderDescription != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OrderDescription>' . $this->OrderDescription . '</ebl:OrderDescription>';
+		if($this->OrderDescription != null)
+		{
+			$str .= '<ebl:OrderDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->OrderDescription) . '</ebl:OrderDescription>';
 		}
-		if($this->Custom != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Custom>' . $this->Custom . '</ebl:Custom>';
+		if($this->Custom != null)
+		{
+			$str .= '<ebl:Custom>' . PPUtils::escapeInvalidXmlCharsRegex($this->Custom) . '</ebl:Custom>';
 		}
-		if($this->InvoiceID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:InvoiceID>' . $this->InvoiceID . '</ebl:InvoiceID>';
+		if($this->InvoiceID != null)
+		{
+			$str .= '<ebl:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</ebl:InvoiceID>';
 		}
-		if($this->ButtonSource != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ButtonSource>' . $this->ButtonSource . '</ebl:ButtonSource>';
+		if($this->ButtonSource != null)
+		{
+			$str .= '<ebl:ButtonSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSource) . '</ebl:ButtonSource>';
 		}
-		if($this->NotifyURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:NotifyURL>' . $this->NotifyURL . '</ebl:NotifyURL>';
+		if($this->NotifyURL != null)
+		{
+			$str .= '<ebl:NotifyURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->NotifyURL) . '</ebl:NotifyURL>';
 		}
-		if($this->ShipToAddress != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ShipToAddress != null)
+		{
 			$str .= '<ebl:ShipToAddress>';
 			$str .= $this->ShipToAddress->toXMLString();
 			$str .= '</ebl:ShipToAddress>';
 		}
-		if($this->FulfillmentAddress != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->FulfillmentAddress != null)
+		{
 			$str .= '<ebl:FulfillmentAddress>';
 			$str .= $this->FulfillmentAddress->toXMLString();
 			$str .= '</ebl:FulfillmentAddress>';
 		}
-		if($this->PaymentCategoryType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PaymentCategoryType>' . $this->PaymentCategoryType . '</ebl:PaymentCategoryType>';
+		if($this->PaymentCategoryType != null)
+		{
+			$str .= '<ebl:PaymentCategoryType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentCategoryType) . '</ebl:PaymentCategoryType>';
 		}
-		if($this->ShippingMethod != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ShippingMethod>' . $this->ShippingMethod . '</ebl:ShippingMethod>';
+		if($this->ShippingMethod != null)
+		{
+			$str .= '<ebl:ShippingMethod>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingMethod) . '</ebl:ShippingMethod>';
 		}
-		if($this->ProfileAddressChangeDate != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ProfileAddressChangeDate>' . $this->ProfileAddressChangeDate . '</ebl:ProfileAddressChangeDate>';
+		if($this->ProfileAddressChangeDate != null)
+		{
+			$str .= '<ebl:ProfileAddressChangeDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileAddressChangeDate) . '</ebl:ProfileAddressChangeDate>';
 		}
-		if($this->PaymentDetailsItem != null) {
-			for($i = 0; $i < count($this->PaymentDetailsItem); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->PaymentDetailsItem != null)
+		{
+			for($i = 0; $i < count($this->PaymentDetailsItem); $i++)
+			{
 				$str .= '<ebl:PaymentDetailsItem>';
 				$str .= $this->PaymentDetailsItem[$i]->toXMLString();
 				$str .= '</ebl:PaymentDetailsItem>';
-		
 			}
 		}
-		if($this->InsuranceTotal != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->InsuranceTotal != null)
+		{
 			$str .= '<ebl:InsuranceTotal';
 			$str .= $this->InsuranceTotal->toXMLString();
 			$str .= '</ebl:InsuranceTotal>';
 		}
-		if($this->ShippingDiscount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ShippingDiscount != null)
+		{
 			$str .= '<ebl:ShippingDiscount';
 			$str .= $this->ShippingDiscount->toXMLString();
 			$str .= '</ebl:ShippingDiscount>';
 		}
-		if($this->InsuranceOptionOffered != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:InsuranceOptionOffered>' . $this->InsuranceOptionOffered . '</ebl:InsuranceOptionOffered>';
+		if($this->InsuranceOptionOffered != null)
+		{
+			$str .= '<ebl:InsuranceOptionOffered>' . PPUtils::escapeInvalidXmlCharsRegex($this->InsuranceOptionOffered) . '</ebl:InsuranceOptionOffered>';
 		}
-		if($this->AllowedPaymentMethod != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AllowedPaymentMethod>' . $this->AllowedPaymentMethod . '</ebl:AllowedPaymentMethod>';
+		if($this->AllowedPaymentMethod != null)
+		{
+			$str .= '<ebl:AllowedPaymentMethod>' . PPUtils::escapeInvalidXmlCharsRegex($this->AllowedPaymentMethod) . '</ebl:AllowedPaymentMethod>';
 		}
-		if($this->EnhancedPaymentData != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->EnhancedPaymentData != null)
+		{
 			$str .= '<ebl:EnhancedPaymentData>';
 			$str .= $this->EnhancedPaymentData->toXMLString();
 			$str .= '</ebl:EnhancedPaymentData>';
 		}
-		if($this->SellerDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SellerDetails != null)
+		{
 			$str .= '<ebl:SellerDetails>';
 			$str .= $this->SellerDetails->toXMLString();
 			$str .= '</ebl:SellerDetails>';
 		}
-		if($this->NoteText != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:NoteText>' . $this->NoteText . '</ebl:NoteText>';
+		if($this->NoteText != null)
+		{
+			$str .= '<ebl:NoteText>' . PPUtils::escapeInvalidXmlCharsRegex($this->NoteText) . '</ebl:NoteText>';
 		}
-		if($this->TransactionId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:TransactionId>' . $this->TransactionId . '</ebl:TransactionId>';
+		if($this->TransactionId != null)
+		{
+			$str .= '<ebl:TransactionId>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionId) . '</ebl:TransactionId>';
 		}
-		if($this->PaymentAction != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PaymentAction>' . $this->PaymentAction . '</ebl:PaymentAction>';
+		if($this->PaymentAction != null)
+		{
+			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
 		}
-		if($this->PaymentRequestID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PaymentRequestID>' . $this->PaymentRequestID . '</ebl:PaymentRequestID>';
+		if($this->PaymentRequestID != null)
+		{
+			$str .= '<ebl:PaymentRequestID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentRequestID) . '</ebl:PaymentRequestID>';
 		}
-		if($this->OrderURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OrderURL>' . $this->OrderURL . '</ebl:OrderURL>';
+		if($this->OrderURL != null)
+		{
+			$str .= '<ebl:OrderURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->OrderURL) . '</ebl:OrderURL>';
 		}
-		if($this->SoftDescriptor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SoftDescriptor>' . $this->SoftDescriptor . '</ebl:SoftDescriptor>';
+		if($this->SoftDescriptor != null)
+		{
+			$str .= '<ebl:SoftDescriptor>' . PPUtils::escapeInvalidXmlCharsRegex($this->SoftDescriptor) . '</ebl:SoftDescriptor>';
 		}
-		if($this->BranchLevel != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BranchLevel>' . $this->BranchLevel . '</ebl:BranchLevel>';
+		if($this->BranchLevel != null)
+		{
+			$str .= '<ebl:BranchLevel>' . PPUtils::escapeInvalidXmlCharsRegex($this->BranchLevel) . '</ebl:BranchLevel>';
 		}
-		if($this->OfferDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->OfferDetails != null)
+		{
 			$str .= '<ebl:OfferDetails>';
 			$str .= $this->OfferDetails->toXMLString();
 			$str .= '</ebl:OfferDetails>';
 		}
-		if($this->Recurring != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Recurring>' . $this->Recurring . '</ebl:Recurring>';
+		if($this->Recurring != null)
+		{
+			$str .= '<ebl:Recurring>' . PPUtils::escapeInvalidXmlCharsRegex($this->Recurring) . '</ebl:Recurring>';
 		}
-		if($this->PaymentReason != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PaymentReason>' . $this->PaymentReason . '</ebl:PaymentReason>';
+		if($this->PaymentReason != null)
+		{
+			$str .= '<ebl:PaymentReason>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentReason) . '</ebl:PaymentReason>';
 		}
 		return $str;
 	}
@@ -9499,37 +8875,28 @@ class SellerDetailsType  {
 	public $SecureMerchantAccountID;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->SellerId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SellerId>' . $this->SellerId . '</ebl:SellerId>';
+		if($this->SellerId != null)
+		{
+			$str .= '<ebl:SellerId>' . PPUtils::escapeInvalidXmlCharsRegex($this->SellerId) . '</ebl:SellerId>';
 		}
-		if($this->SellerUserName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SellerUserName>' . $this->SellerUserName . '</ebl:SellerUserName>';
+		if($this->SellerUserName != null)
+		{
+			$str .= '<ebl:SellerUserName>' . PPUtils::escapeInvalidXmlCharsRegex($this->SellerUserName) . '</ebl:SellerUserName>';
 		}
-		if($this->SellerRegistrationDate != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SellerRegistrationDate>' . $this->SellerRegistrationDate . '</ebl:SellerRegistrationDate>';
+		if($this->SellerRegistrationDate != null)
+		{
+			$str .= '<ebl:SellerRegistrationDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->SellerRegistrationDate) . '</ebl:SellerRegistrationDate>';
 		}
-		if($this->PayPalAccountID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PayPalAccountID>' . $this->PayPalAccountID . '</ebl:PayPalAccountID>';
+		if($this->PayPalAccountID != null)
+		{
+			$str .= '<ebl:PayPalAccountID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayPalAccountID) . '</ebl:PayPalAccountID>';
 		}
-		if($this->SecureMerchantAccountID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SecureMerchantAccountID>' . $this->SecureMerchantAccountID . '</ebl:SecureMerchantAccountID>';
+		if($this->SecureMerchantAccountID != null)
+		{
+			$str .= '<ebl:SecureMerchantAccountID>' . PPUtils::escapeInvalidXmlCharsRegex($this->SecureMerchantAccountID) . '</ebl:SecureMerchantAccountID>';
 		}
 		return $str;
 	}
@@ -9626,55 +8993,40 @@ class OtherPaymentMethodDetailsType  {
 	public $OtherPaymentMethodHideLabel;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->OtherPaymentMethodId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OtherPaymentMethodId>' . $this->OtherPaymentMethodId . '</ebl:OtherPaymentMethodId>';
+		if($this->OtherPaymentMethodId != null)
+		{
+			$str .= '<ebl:OtherPaymentMethodId>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodId) . '</ebl:OtherPaymentMethodId>';
 		}
-		if($this->OtherPaymentMethodType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OtherPaymentMethodType>' . $this->OtherPaymentMethodType . '</ebl:OtherPaymentMethodType>';
+		if($this->OtherPaymentMethodType != null)
+		{
+			$str .= '<ebl:OtherPaymentMethodType>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodType) . '</ebl:OtherPaymentMethodType>';
 		}
-		if($this->OtherPaymentMethodLabel != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OtherPaymentMethodLabel>' . $this->OtherPaymentMethodLabel . '</ebl:OtherPaymentMethodLabel>';
+		if($this->OtherPaymentMethodLabel != null)
+		{
+			$str .= '<ebl:OtherPaymentMethodLabel>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodLabel) . '</ebl:OtherPaymentMethodLabel>';
 		}
-		if($this->OtherPaymentMethodLabelDescription != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OtherPaymentMethodLabelDescription>' . $this->OtherPaymentMethodLabelDescription . '</ebl:OtherPaymentMethodLabelDescription>';
+		if($this->OtherPaymentMethodLabelDescription != null)
+		{
+			$str .= '<ebl:OtherPaymentMethodLabelDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodLabelDescription) . '</ebl:OtherPaymentMethodLabelDescription>';
 		}
-		if($this->OtherPaymentMethodLongDescriptionTitle != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OtherPaymentMethodLongDescriptionTitle>' . $this->OtherPaymentMethodLongDescriptionTitle . '</ebl:OtherPaymentMethodLongDescriptionTitle>';
+		if($this->OtherPaymentMethodLongDescriptionTitle != null)
+		{
+			$str .= '<ebl:OtherPaymentMethodLongDescriptionTitle>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodLongDescriptionTitle) . '</ebl:OtherPaymentMethodLongDescriptionTitle>';
 		}
-		if($this->OtherPaymentMethodLongDescription != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OtherPaymentMethodLongDescription>' . $this->OtherPaymentMethodLongDescription . '</ebl:OtherPaymentMethodLongDescription>';
+		if($this->OtherPaymentMethodLongDescription != null)
+		{
+			$str .= '<ebl:OtherPaymentMethodLongDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodLongDescription) . '</ebl:OtherPaymentMethodLongDescription>';
 		}
-		if($this->OtherPaymentMethodIcon != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OtherPaymentMethodIcon>' . $this->OtherPaymentMethodIcon . '</ebl:OtherPaymentMethodIcon>';
+		if($this->OtherPaymentMethodIcon != null)
+		{
+			$str .= '<ebl:OtherPaymentMethodIcon>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodIcon) . '</ebl:OtherPaymentMethodIcon>';
 		}
-		if($this->OtherPaymentMethodHideLabel != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OtherPaymentMethodHideLabel>' . $this->OtherPaymentMethodHideLabel . '</ebl:OtherPaymentMethodHideLabel>';
+		if($this->OtherPaymentMethodHideLabel != null)
+		{
+			$str .= '<ebl:OtherPaymentMethodHideLabel>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodHideLabel) . '</ebl:OtherPaymentMethodHideLabel>';
 		}
 		return $str;
 	}
@@ -9728,40 +9080,29 @@ class BuyerDetailsType  {
 	public $IdentificationInfo;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->BuyerId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BuyerId>' . $this->BuyerId . '</ebl:BuyerId>';
+		if($this->BuyerId != null)
+		{
+			$str .= '<ebl:BuyerId>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerId) . '</ebl:BuyerId>';
 		}
-		if($this->BuyerUserName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BuyerUserName>' . $this->BuyerUserName . '</ebl:BuyerUserName>';
+		if($this->BuyerUserName != null)
+		{
+			$str .= '<ebl:BuyerUserName>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerUserName) . '</ebl:BuyerUserName>';
 		}
-		if($this->BuyerRegistrationDate != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BuyerRegistrationDate>' . $this->BuyerRegistrationDate . '</ebl:BuyerRegistrationDate>';
+		if($this->BuyerRegistrationDate != null)
+		{
+			$str .= '<ebl:BuyerRegistrationDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerRegistrationDate) . '</ebl:BuyerRegistrationDate>';
 		}
-		if($this->TaxIdDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->TaxIdDetails != null)
+		{
 			$str .= '<ebl:TaxIdDetails>';
 			$str .= $this->TaxIdDetails->toXMLString();
 			$str .= '</ebl:TaxIdDetails>';
 		}
-		if($this->IdentificationInfo != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->IdentificationInfo != null)
+		{
 			$str .= '<ebl:IdentificationInfo>';
 			$str .= $this->IdentificationInfo->toXMLString();
 			$str .= '</ebl:IdentificationInfo>';
@@ -9795,19 +9136,16 @@ class TaxIdDetailsType  {
 	public $TaxId;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->TaxIdType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:TaxIdType>' . $this->TaxIdType . '</ebl:TaxIdType>';
+		if($this->TaxIdType != null)
+		{
+			$str .= '<ebl:TaxIdType>' . PPUtils::escapeInvalidXmlCharsRegex($this->TaxIdType) . '</ebl:TaxIdType>';
 		}
-		if($this->TaxId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:TaxId>' . $this->TaxId . '</ebl:TaxId>';
+		if($this->TaxId != null)
+		{
+			$str .= '<ebl:TaxId>' . PPUtils::escapeInvalidXmlCharsRegex($this->TaxId) . '</ebl:TaxId>';
 		}
 		return $str;
 	}
@@ -9870,37 +9208,28 @@ class ThreeDSecureRequestType  {
 	public $AuthStatus3ds;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Eci3ds != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Eci3ds>' . $this->Eci3ds . '</ebl:Eci3ds>';
+		if($this->Eci3ds != null)
+		{
+			$str .= '<ebl:Eci3ds>' . PPUtils::escapeInvalidXmlCharsRegex($this->Eci3ds) . '</ebl:Eci3ds>';
 		}
-		if($this->Cavv != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Cavv>' . $this->Cavv . '</ebl:Cavv>';
+		if($this->Cavv != null)
+		{
+			$str .= '<ebl:Cavv>' . PPUtils::escapeInvalidXmlCharsRegex($this->Cavv) . '</ebl:Cavv>';
 		}
-		if($this->Xid != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Xid>' . $this->Xid . '</ebl:Xid>';
+		if($this->Xid != null)
+		{
+			$str .= '<ebl:Xid>' . PPUtils::escapeInvalidXmlCharsRegex($this->Xid) . '</ebl:Xid>';
 		}
-		if($this->MpiVendor3ds != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:MpiVendor3ds>' . $this->MpiVendor3ds . '</ebl:MpiVendor3ds>';
+		if($this->MpiVendor3ds != null)
+		{
+			$str .= '<ebl:MpiVendor3ds>' . PPUtils::escapeInvalidXmlCharsRegex($this->MpiVendor3ds) . '</ebl:MpiVendor3ds>';
 		}
-		if($this->AuthStatus3ds != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AuthStatus3ds>' . $this->AuthStatus3ds . '</ebl:AuthStatus3ds>';
+		if($this->AuthStatus3ds != null)
+		{
+			$str .= '<ebl:AuthStatus3ds>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuthStatus3ds) . '</ebl:AuthStatus3ds>';
 		}
 		return $str;
 	}
@@ -10093,70 +9422,49 @@ class CreditCardDetailsType  {
 	public $ThreeDSecureRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->CreditCardType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CreditCardType>' . $this->CreditCardType . '</ebl:CreditCardType>';
+		if($this->CreditCardType != null)
+		{
+			$str .= '<ebl:CreditCardType>' . PPUtils::escapeInvalidXmlCharsRegex($this->CreditCardType) . '</ebl:CreditCardType>';
 		}
-		if($this->CreditCardNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CreditCardNumber>' . $this->CreditCardNumber . '</ebl:CreditCardNumber>';
+		if($this->CreditCardNumber != null)
+		{
+			$str .= '<ebl:CreditCardNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->CreditCardNumber) . '</ebl:CreditCardNumber>';
 		}
-		if($this->ExpMonth != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ExpMonth>' . $this->ExpMonth . '</ebl:ExpMonth>';
+		if($this->ExpMonth != null)
+		{
+			$str .= '<ebl:ExpMonth>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpMonth) . '</ebl:ExpMonth>';
 		}
-		if($this->ExpYear != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ExpYear>' . $this->ExpYear . '</ebl:ExpYear>';
+		if($this->ExpYear != null)
+		{
+			$str .= '<ebl:ExpYear>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpYear) . '</ebl:ExpYear>';
 		}
-		if($this->CardOwner != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->CardOwner != null)
+		{
 			$str .= '<ebl:CardOwner>';
 			$str .= $this->CardOwner->toXMLString();
 			$str .= '</ebl:CardOwner>';
 		}
-		if($this->CVV2 != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CVV2>' . $this->CVV2 . '</ebl:CVV2>';
+		if($this->CVV2 != null)
+		{
+			$str .= '<ebl:CVV2>' . PPUtils::escapeInvalidXmlCharsRegex($this->CVV2) . '</ebl:CVV2>';
 		}
-		if($this->StartMonth != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:StartMonth>' . $this->StartMonth . '</ebl:StartMonth>';
+		if($this->StartMonth != null)
+		{
+			$str .= '<ebl:StartMonth>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartMonth) . '</ebl:StartMonth>';
 		}
-		if($this->StartYear != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:StartYear>' . $this->StartYear . '</ebl:StartYear>';
+		if($this->StartYear != null)
+		{
+			$str .= '<ebl:StartYear>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartYear) . '</ebl:StartYear>';
 		}
-		if($this->IssueNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:IssueNumber>' . $this->IssueNumber . '</ebl:IssueNumber>';
+		if($this->IssueNumber != null)
+		{
+			$str .= '<ebl:IssueNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->IssueNumber) . '</ebl:IssueNumber>';
 		}
-		if($this->ThreeDSecureRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ThreeDSecureRequest != null)
+		{
 			$str .= '<ebl:ThreeDSecureRequest>';
 			$str .= $this->ThreeDSecureRequest->toXMLString();
 			$str .= '</ebl:ThreeDSecureRequest>';
@@ -10242,28 +9550,22 @@ class ShippingOptionType  {
 	public $ShippingOptionName;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ShippingOptionIsDefault != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ShippingOptionIsDefault>' . $this->ShippingOptionIsDefault . '</ebl:ShippingOptionIsDefault>';
+		if($this->ShippingOptionIsDefault != null)
+		{
+			$str .= '<ebl:ShippingOptionIsDefault>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingOptionIsDefault) . '</ebl:ShippingOptionIsDefault>';
 		}
-		if($this->ShippingOptionAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ShippingOptionAmount != null)
+		{
 			$str .= '<ebl:ShippingOptionAmount';
 			$str .= $this->ShippingOptionAmount->toXMLString();
 			$str .= '</ebl:ShippingOptionAmount>';
 		}
-		if($this->ShippingOptionName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ShippingOptionName>' . $this->ShippingOptionName . '</ebl:ShippingOptionName>';
+		if($this->ShippingOptionName != null)
+		{
+			$str .= '<ebl:ShippingOptionName>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingOptionName) . '</ebl:ShippingOptionName>';
 		}
 		return $str;
 	}
@@ -10314,40 +9616,30 @@ class UserSelectedOptionType  {
 	public $ShippingOptionName;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ShippingCalculationMode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ShippingCalculationMode>' . $this->ShippingCalculationMode . '</ebl:ShippingCalculationMode>';
+		if($this->ShippingCalculationMode != null)
+		{
+			$str .= '<ebl:ShippingCalculationMode>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingCalculationMode) . '</ebl:ShippingCalculationMode>';
 		}
-		if($this->InsuranceOptionSelected != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:InsuranceOptionSelected>' . $this->InsuranceOptionSelected . '</ebl:InsuranceOptionSelected>';
+		if($this->InsuranceOptionSelected != null)
+		{
+			$str .= '<ebl:InsuranceOptionSelected>' . PPUtils::escapeInvalidXmlCharsRegex($this->InsuranceOptionSelected) . '</ebl:InsuranceOptionSelected>';
 		}
-		if($this->ShippingOptionIsDefault != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ShippingOptionIsDefault>' . $this->ShippingOptionIsDefault . '</ebl:ShippingOptionIsDefault>';
+		if($this->ShippingOptionIsDefault != null)
+		{
+			$str .= '<ebl:ShippingOptionIsDefault>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingOptionIsDefault) . '</ebl:ShippingOptionIsDefault>';
 		}
-		if($this->ShippingOptionAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ShippingOptionAmount != null)
+		{
 			$str .= '<ebl:ShippingOptionAmount';
 			$str .= $this->ShippingOptionAmount->toXMLString();
 			$str .= '</ebl:ShippingOptionAmount>';
 		}
-		if($this->ShippingOptionName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ShippingOptionName>' . $this->ShippingOptionName . '</ebl:ShippingOptionName>';
+		if($this->ShippingOptionName != null)
+		{
+			$str .= '<ebl:ShippingOptionName>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingOptionName) . '</ebl:ShippingOptionName>';
 		}
 		return $str;
 	}
@@ -10412,19 +9704,16 @@ class CreditCardNumberTypeType  {
 	public $CreditCardNumber;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->CreditCardType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CreditCardType>' . $this->CreditCardType . '</ebl:CreditCardType>';
+		if($this->CreditCardType != null)
+		{
+			$str .= '<ebl:CreditCardType>' . PPUtils::escapeInvalidXmlCharsRegex($this->CreditCardType) . '</ebl:CreditCardType>';
 		}
-		if($this->CreditCardNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CreditCardNumber>' . $this->CreditCardNumber . '</ebl:CreditCardNumber>';
+		if($this->CreditCardNumber != null)
+		{
+			$str .= '<ebl:CreditCardNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->CreditCardNumber) . '</ebl:CreditCardNumber>';
 		}
 		return $str;
 	}
@@ -10504,70 +9793,50 @@ class ReferenceCreditCardDetailsType  {
 	public $IssueNumber;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->CreditCardNumberType != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->CreditCardNumberType != null)
+		{
 			$str .= '<ebl:CreditCardNumberType>';
 			$str .= $this->CreditCardNumberType->toXMLString();
 			$str .= '</ebl:CreditCardNumberType>';
 		}
-		if($this->ExpMonth != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ExpMonth>' . $this->ExpMonth . '</ebl:ExpMonth>';
+		if($this->ExpMonth != null)
+		{
+			$str .= '<ebl:ExpMonth>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpMonth) . '</ebl:ExpMonth>';
 		}
-		if($this->ExpYear != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ExpYear>' . $this->ExpYear . '</ebl:ExpYear>';
+		if($this->ExpYear != null)
+		{
+			$str .= '<ebl:ExpYear>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpYear) . '</ebl:ExpYear>';
 		}
-		if($this->CardOwnerName != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->CardOwnerName != null)
+		{
 			$str .= '<ebl:CardOwnerName>';
 			$str .= $this->CardOwnerName->toXMLString();
 			$str .= '</ebl:CardOwnerName>';
 		}
-		if($this->BillingAddress != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BillingAddress != null)
+		{
 			$str .= '<ebl:BillingAddress>';
 			$str .= $this->BillingAddress->toXMLString();
 			$str .= '</ebl:BillingAddress>';
 		}
-		if($this->CVV2 != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CVV2>' . $this->CVV2 . '</ebl:CVV2>';
+		if($this->CVV2 != null)
+		{
+			$str .= '<ebl:CVV2>' . PPUtils::escapeInvalidXmlCharsRegex($this->CVV2) . '</ebl:CVV2>';
 		}
-		if($this->StartMonth != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:StartMonth>' . $this->StartMonth . '</ebl:StartMonth>';
+		if($this->StartMonth != null)
+		{
+			$str .= '<ebl:StartMonth>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartMonth) . '</ebl:StartMonth>';
 		}
-		if($this->StartYear != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:StartYear>' . $this->StartYear . '</ebl:StartYear>';
+		if($this->StartYear != null)
+		{
+			$str .= '<ebl:StartYear>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartYear) . '</ebl:StartYear>';
 		}
-		if($this->IssueNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:IssueNumber>' . $this->IssueNumber . '</ebl:IssueNumber>';
+		if($this->IssueNumber != null)
+		{
+			$str .= '<ebl:IssueNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->IssueNumber) . '</ebl:IssueNumber>';
 		}
 		return $str;
 	}
@@ -10672,76 +9941,54 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->BillingAgreementDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BillingAgreementDetails != null)
+		{
 			$str .= '<ebl:BillingAgreementDetails>';
 			$str .= $this->BillingAgreementDetails->toXMLString();
 			$str .= '</ebl:BillingAgreementDetails>';
 		}
-		if($this->ReturnURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ReturnURL>' . $this->ReturnURL . '</ebl:ReturnURL>';
+		if($this->ReturnURL != null)
+		{
+			$str .= '<ebl:ReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnURL) . '</ebl:ReturnURL>';
 		}
-		if($this->CancelURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CancelURL>' . $this->CancelURL . '</ebl:CancelURL>';
+		if($this->CancelURL != null)
+		{
+			$str .= '<ebl:CancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelURL) . '</ebl:CancelURL>';
 		}
-		if($this->LocaleCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:LocaleCode>' . $this->LocaleCode . '</ebl:LocaleCode>';
+		if($this->LocaleCode != null)
+		{
+			$str .= '<ebl:LocaleCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->LocaleCode) . '</ebl:LocaleCode>';
 		}
-		if($this->PageStyle != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PageStyle>' . $this->PageStyle . '</ebl:PageStyle>';
+		if($this->PageStyle != null)
+		{
+			$str .= '<ebl:PageStyle>' . PPUtils::escapeInvalidXmlCharsRegex($this->PageStyle) . '</ebl:PageStyle>';
 		}
-		if($this->cppheaderimage != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-header-image>' . $this->cppheaderimage . '</ebl:cpp-header-image>';
+		if($this->cppheaderimage != null)
+		{
+			$str .= '<ebl:cppheaderimage>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cppheaderimage>';
 		}
-		if($this->cppheaderbordercolor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-header-border-color>' . $this->cppheaderbordercolor . '</ebl:cpp-header-border-color>';
+		if($this->cppheaderbordercolor != null)
+		{
+			$str .= '<ebl:cppheaderbordercolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cppheaderbordercolor>';
 		}
-		if($this->cppheaderbackcolor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-header-back-color>' . $this->cppheaderbackcolor . '</ebl:cpp-header-back-color>';
+		if($this->cppheaderbackcolor != null)
+		{
+			$str .= '<ebl:cppheaderbackcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cppheaderbackcolor>';
 		}
-		if($this->cpppayflowcolor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:cpp-payflow-color>' . $this->cpppayflowcolor . '</ebl:cpp-payflow-color>';
+		if($this->cpppayflowcolor != null)
+		{
+			$str .= '<ebl:cpppayflowcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpppayflowcolor>';
 		}
-		if($this->BuyerEmail != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BuyerEmail>' . $this->BuyerEmail . '</ebl:BuyerEmail>';
+		if($this->BuyerEmail != null)
+		{
+			$str .= '<ebl:BuyerEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerEmail) . '</ebl:BuyerEmail>';
 		}
-		if($this->ReqBillingAddress != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ReqBillingAddress>' . $this->ReqBillingAddress . '</ebl:ReqBillingAddress>';
+		if($this->ReqBillingAddress != null)
+		{
+			$str .= '<ebl:ReqBillingAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqBillingAddress) . '</ebl:ReqBillingAddress>';
 		}
 		return $str;
 	}
@@ -10820,13 +10067,12 @@ class DeviceDetailsType  {
 	public $DeviceID;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->DeviceID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:DeviceID>' . $this->DeviceID . '</ebl:DeviceID>';
+		if($this->DeviceID != null)
+		{
+			$str .= '<ebl:DeviceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->DeviceID) . '</ebl:DeviceID>';
 		}
 		return $str;
 	}
@@ -10849,13 +10095,11 @@ class SenderDetailsType  {
 	public $DeviceDetails;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->DeviceDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DeviceDetails != null)
+		{
 			$str .= '<ebl:DeviceDetails>';
 			$str .= $this->DeviceDetails->toXMLString();
 			$str .= '</ebl:DeviceDetails>';
@@ -10962,82 +10206,58 @@ class DoReferenceTransactionRequestDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ReferenceID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ReferenceID>' . $this->ReferenceID . '</ebl:ReferenceID>';
+		if($this->ReferenceID != null)
+		{
+			$str .= '<ebl:ReferenceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReferenceID) . '</ebl:ReferenceID>';
 		}
-		if($this->PaymentAction != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PaymentAction>' . $this->PaymentAction . '</ebl:PaymentAction>';
+		if($this->PaymentAction != null)
+		{
+			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
 		}
-		if($this->PaymentType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PaymentType>' . $this->PaymentType . '</ebl:PaymentType>';
+		if($this->PaymentType != null)
+		{
+			$str .= '<ebl:PaymentType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentType) . '</ebl:PaymentType>';
 		}
-		if($this->PaymentDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->PaymentDetails != null)
+		{
 			$str .= '<ebl:PaymentDetails>';
 			$str .= $this->PaymentDetails->toXMLString();
 			$str .= '</ebl:PaymentDetails>';
 		}
-		if($this->CreditCard != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->CreditCard != null)
+		{
 			$str .= '<ebl:CreditCard>';
 			$str .= $this->CreditCard->toXMLString();
 			$str .= '</ebl:CreditCard>';
 		}
-		if($this->IPAddress != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:IPAddress>' . $this->IPAddress . '</ebl:IPAddress>';
+		if($this->IPAddress != null)
+		{
+			$str .= '<ebl:IPAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->IPAddress) . '</ebl:IPAddress>';
 		}
-		if($this->MerchantSessionId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:MerchantSessionId>' . $this->MerchantSessionId . '</ebl:MerchantSessionId>';
+		if($this->MerchantSessionId != null)
+		{
+			$str .= '<ebl:MerchantSessionId>' . PPUtils::escapeInvalidXmlCharsRegex($this->MerchantSessionId) . '</ebl:MerchantSessionId>';
 		}
-		if($this->ReqConfirmShipping != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ReqConfirmShipping>' . $this->ReqConfirmShipping . '</ebl:ReqConfirmShipping>';
+		if($this->ReqConfirmShipping != null)
+		{
+			$str .= '<ebl:ReqConfirmShipping>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqConfirmShipping) . '</ebl:ReqConfirmShipping>';
 		}
-		if($this->SoftDescriptor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SoftDescriptor>' . $this->SoftDescriptor . '</ebl:SoftDescriptor>';
+		if($this->SoftDescriptor != null)
+		{
+			$str .= '<ebl:SoftDescriptor>' . PPUtils::escapeInvalidXmlCharsRegex($this->SoftDescriptor) . '</ebl:SoftDescriptor>';
 		}
-		if($this->SenderDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SenderDetails != null)
+		{
 			$str .= '<ebl:SenderDetails>';
 			$str .= $this->SenderDetails->toXMLString();
 			$str .= '</ebl:SenderDetails>';
 		}
-		if($this->MsgSubID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:MsgSubID>' . $this->MsgSubID . '</ebl:MsgSubID>';
+		if($this->MsgSubID != null)
+		{
+			$str .= '<ebl:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</ebl:MsgSubID>';
 		}
 		return $str;
 	}
@@ -11220,64 +10440,46 @@ class DoNonReferencedCreditRequestDetailsType  {
 	public $Comment;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->NetAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->NetAmount != null)
+		{
 			$str .= '<ebl:NetAmount';
 			$str .= $this->NetAmount->toXMLString();
 			$str .= '</ebl:NetAmount>';
 		}
-		if($this->TaxAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->TaxAmount != null)
+		{
 			$str .= '<ebl:TaxAmount';
 			$str .= $this->TaxAmount->toXMLString();
 			$str .= '</ebl:TaxAmount>';
 		}
-		if($this->ShippingAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ShippingAmount != null)
+		{
 			$str .= '<ebl:ShippingAmount';
 			$str .= $this->ShippingAmount->toXMLString();
 			$str .= '</ebl:ShippingAmount>';
 		}
-		if($this->CreditCard != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->CreditCard != null)
+		{
 			$str .= '<ebl:CreditCard>';
 			$str .= $this->CreditCard->toXMLString();
 			$str .= '</ebl:CreditCard>';
 		}
-		if($this->ReceiverEmail != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ReceiverEmail>' . $this->ReceiverEmail . '</ebl:ReceiverEmail>';
+		if($this->ReceiverEmail != null)
+		{
+			$str .= '<ebl:ReceiverEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiverEmail) . '</ebl:ReceiverEmail>';
 		}
-		if($this->Comment != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Comment>' . $this->Comment . '</ebl:Comment>';
+		if($this->Comment != null)
+		{
+			$str .= '<ebl:Comment>' . PPUtils::escapeInvalidXmlCharsRegex($this->Comment) . '</ebl:Comment>';
 		}
 		return $str;
 	}
@@ -11420,61 +10622,43 @@ class EnterBoardingRequestDetailsType  {
 	public $BankAccount;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ProgramCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ProgramCode>' . $this->ProgramCode . '</ebl:ProgramCode>';
+		if($this->ProgramCode != null)
+		{
+			$str .= '<ebl:ProgramCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProgramCode) . '</ebl:ProgramCode>';
 		}
-		if($this->ProductList != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ProductList>' . $this->ProductList . '</ebl:ProductList>';
+		if($this->ProductList != null)
+		{
+			$str .= '<ebl:ProductList>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProductList) . '</ebl:ProductList>';
 		}
-		if($this->PartnerCustom != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PartnerCustom>' . $this->PartnerCustom . '</ebl:PartnerCustom>';
+		if($this->PartnerCustom != null)
+		{
+			$str .= '<ebl:PartnerCustom>' . PPUtils::escapeInvalidXmlCharsRegex($this->PartnerCustom) . '</ebl:PartnerCustom>';
 		}
-		if($this->ImageUrl != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ImageUrl>' . $this->ImageUrl . '</ebl:ImageUrl>';
+		if($this->ImageUrl != null)
+		{
+			$str .= '<ebl:ImageUrl>' . PPUtils::escapeInvalidXmlCharsRegex($this->ImageUrl) . '</ebl:ImageUrl>';
 		}
-		if($this->MarketingCategory != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:MarketingCategory>' . $this->MarketingCategory . '</ebl:MarketingCategory>';
+		if($this->MarketingCategory != null)
+		{
+			$str .= '<ebl:MarketingCategory>' . PPUtils::escapeInvalidXmlCharsRegex($this->MarketingCategory) . '</ebl:MarketingCategory>';
 		}
-		if($this->BusinessInfo != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BusinessInfo != null)
+		{
 			$str .= '<ebl:BusinessInfo>';
 			$str .= $this->BusinessInfo->toXMLString();
 			$str .= '</ebl:BusinessInfo>';
 		}
-		if($this->OwnerInfo != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->OwnerInfo != null)
+		{
 			$str .= '<ebl:OwnerInfo>';
 			$str .= $this->OwnerInfo->toXMLString();
 			$str .= '</ebl:OwnerInfo>';
 		}
-		if($this->BankAccount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BankAccount != null)
+		{
 			$str .= '<ebl:BankAccount>';
 			$str .= $this->BankAccount->toXMLString();
 			$str .= '</ebl:BankAccount>';
@@ -11622,94 +10806,66 @@ class BusinessInfoType  {
 	public $CustomerServicePhone;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Type != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Type>' . $this->Type . '</ebl:Type>';
+		if($this->Type != null)
+		{
+			$str .= '<ebl:Type>' . PPUtils::escapeInvalidXmlCharsRegex($this->Type) . '</ebl:Type>';
 		}
-		if($this->Name != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Name>' . $this->Name . '</ebl:Name>';
+		if($this->Name != null)
+		{
+			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
 		}
-		if($this->Address != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->Address != null)
+		{
 			$str .= '<ebl:Address>';
 			$str .= $this->Address->toXMLString();
 			$str .= '</ebl:Address>';
 		}
-		if($this->WorkPhone != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:WorkPhone>' . $this->WorkPhone . '</ebl:WorkPhone>';
+		if($this->WorkPhone != null)
+		{
+			$str .= '<ebl:WorkPhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->WorkPhone) . '</ebl:WorkPhone>';
 		}
-		if($this->Category != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Category>' . $this->Category . '</ebl:Category>';
+		if($this->Category != null)
+		{
+			$str .= '<ebl:Category>' . PPUtils::escapeInvalidXmlCharsRegex($this->Category) . '</ebl:Category>';
 		}
-		if($this->SubCategory != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SubCategory>' . $this->SubCategory . '</ebl:SubCategory>';
+		if($this->SubCategory != null)
+		{
+			$str .= '<ebl:SubCategory>' . PPUtils::escapeInvalidXmlCharsRegex($this->SubCategory) . '</ebl:SubCategory>';
 		}
-		if($this->AveragePrice != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AveragePrice>' . $this->AveragePrice . '</ebl:AveragePrice>';
+		if($this->AveragePrice != null)
+		{
+			$str .= '<ebl:AveragePrice>' . PPUtils::escapeInvalidXmlCharsRegex($this->AveragePrice) . '</ebl:AveragePrice>';
 		}
-		if($this->AverageMonthlyVolume != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AverageMonthlyVolume>' . $this->AverageMonthlyVolume . '</ebl:AverageMonthlyVolume>';
+		if($this->AverageMonthlyVolume != null)
+		{
+			$str .= '<ebl:AverageMonthlyVolume>' . PPUtils::escapeInvalidXmlCharsRegex($this->AverageMonthlyVolume) . '</ebl:AverageMonthlyVolume>';
 		}
-		if($this->SalesVenue != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SalesVenue>' . $this->SalesVenue . '</ebl:SalesVenue>';
+		if($this->SalesVenue != null)
+		{
+			$str .= '<ebl:SalesVenue>' . PPUtils::escapeInvalidXmlCharsRegex($this->SalesVenue) . '</ebl:SalesVenue>';
 		}
-		if($this->Website != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Website>' . $this->Website . '</ebl:Website>';
+		if($this->Website != null)
+		{
+			$str .= '<ebl:Website>' . PPUtils::escapeInvalidXmlCharsRegex($this->Website) . '</ebl:Website>';
 		}
-		if($this->RevenueFromOnlineSales != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:RevenueFromOnlineSales>' . $this->RevenueFromOnlineSales . '</ebl:RevenueFromOnlineSales>';
+		if($this->RevenueFromOnlineSales != null)
+		{
+			$str .= '<ebl:RevenueFromOnlineSales>' . PPUtils::escapeInvalidXmlCharsRegex($this->RevenueFromOnlineSales) . '</ebl:RevenueFromOnlineSales>';
 		}
-		if($this->BusinessEstablished != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BusinessEstablished>' . $this->BusinessEstablished . '</ebl:BusinessEstablished>';
+		if($this->BusinessEstablished != null)
+		{
+			$str .= '<ebl:BusinessEstablished>' . PPUtils::escapeInvalidXmlCharsRegex($this->BusinessEstablished) . '</ebl:BusinessEstablished>';
 		}
-		if($this->CustomerServiceEmail != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CustomerServiceEmail>' . $this->CustomerServiceEmail . '</ebl:CustomerServiceEmail>';
+		if($this->CustomerServiceEmail != null)
+		{
+			$str .= '<ebl:CustomerServiceEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->CustomerServiceEmail) . '</ebl:CustomerServiceEmail>';
 		}
-		if($this->CustomerServicePhone != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CustomerServicePhone>' . $this->CustomerServicePhone . '</ebl:CustomerServicePhone>';
+		if($this->CustomerServicePhone != null)
+		{
+			$str .= '<ebl:CustomerServicePhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->CustomerServicePhone) . '</ebl:CustomerServicePhone>';
 		}
 		return $str;
 	}
@@ -11756,34 +10912,26 @@ class BusinessOwnerInfoType  {
 	public $SSN;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Owner != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->Owner != null)
+		{
 			$str .= '<ebl:Owner>';
 			$str .= $this->Owner->toXMLString();
 			$str .= '</ebl:Owner>';
 		}
-		if($this->HomePhone != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:HomePhone>' . $this->HomePhone . '</ebl:HomePhone>';
+		if($this->HomePhone != null)
+		{
+			$str .= '<ebl:HomePhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->HomePhone) . '</ebl:HomePhone>';
 		}
-		if($this->MobilePhone != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:MobilePhone>' . $this->MobilePhone . '</ebl:MobilePhone>';
+		if($this->MobilePhone != null)
+		{
+			$str .= '<ebl:MobilePhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->MobilePhone) . '</ebl:MobilePhone>';
 		}
-		if($this->SSN != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SSN>' . $this->SSN . '</ebl:SSN>';
+		if($this->SSN != null)
+		{
+			$str .= '<ebl:SSN>' . PPUtils::escapeInvalidXmlCharsRegex($this->SSN) . '</ebl:SSN>';
 		}
 		return $str;
 	}
@@ -11830,31 +10978,24 @@ class BankAccountDetailsType  {
 	public $AccountNumber;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Name != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Name>' . $this->Name . '</ebl:Name>';
+		if($this->Name != null)
+		{
+			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
 		}
-		if($this->Type != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Type>' . $this->Type . '</ebl:Type>';
+		if($this->Type != null)
+		{
+			$str .= '<ebl:Type>' . PPUtils::escapeInvalidXmlCharsRegex($this->Type) . '</ebl:Type>';
 		}
-		if($this->RoutingNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:RoutingNumber>' . $this->RoutingNumber . '</ebl:RoutingNumber>';
+		if($this->RoutingNumber != null)
+		{
+			$str .= '<ebl:RoutingNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->RoutingNumber) . '</ebl:RoutingNumber>';
 		}
-		if($this->AccountNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AccountNumber>' . $this->AccountNumber . '</ebl:AccountNumber>';
+		if($this->AccountNumber != null)
+		{
+			$str .= '<ebl:AccountNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->AccountNumber) . '</ebl:AccountNumber>';
 		}
 		return $str;
 	}
@@ -12280,106 +11421,74 @@ class SetMobileCheckoutRequestDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->BuyerPhone != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BuyerPhone != null)
+		{
 			$str .= '<ebl:BuyerPhone>';
 			$str .= $this->BuyerPhone->toXMLString();
 			$str .= '</ebl:BuyerPhone>';
 		}
-		if($this->ItemAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ItemAmount != null)
+		{
 			$str .= '<ebl:ItemAmount';
 			$str .= $this->ItemAmount->toXMLString();
 			$str .= '</ebl:ItemAmount>';
 		}
-		if($this->Tax != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Tax != null)
+		{
 			$str .= '<ebl:Tax';
 			$str .= $this->Tax->toXMLString();
 			$str .= '</ebl:Tax>';
 		}
-		if($this->Shipping != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Shipping != null)
+		{
 			$str .= '<ebl:Shipping';
 			$str .= $this->Shipping->toXMLString();
 			$str .= '</ebl:Shipping>';
 		}
-		if($this->ItemName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemName>' . $this->ItemName . '</ebl:ItemName>';
+		if($this->ItemName != null)
+		{
+			$str .= '<ebl:ItemName>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemName) . '</ebl:ItemName>';
 		}
-		if($this->ItemNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemNumber>' . $this->ItemNumber . '</ebl:ItemNumber>';
+		if($this->ItemNumber != null)
+		{
+			$str .= '<ebl:ItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemNumber) . '</ebl:ItemNumber>';
 		}
-		if($this->Custom != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Custom>' . $this->Custom . '</ebl:Custom>';
+		if($this->Custom != null)
+		{
+			$str .= '<ebl:Custom>' . PPUtils::escapeInvalidXmlCharsRegex($this->Custom) . '</ebl:Custom>';
 		}
-		if($this->InvoiceID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:InvoiceID>' . $this->InvoiceID . '</ebl:InvoiceID>';
+		if($this->InvoiceID != null)
+		{
+			$str .= '<ebl:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</ebl:InvoiceID>';
 		}
-		if($this->ReturnURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ReturnURL>' . $this->ReturnURL . '</ebl:ReturnURL>';
+		if($this->ReturnURL != null)
+		{
+			$str .= '<ebl:ReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnURL) . '</ebl:ReturnURL>';
 		}
-		if($this->CancelURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CancelURL>' . $this->CancelURL . '</ebl:CancelURL>';
+		if($this->CancelURL != null)
+		{
+			$str .= '<ebl:CancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelURL) . '</ebl:CancelURL>';
 		}
-		if($this->AddressDisplayOptions != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AddressDisplayOptions>' . $this->AddressDisplayOptions . '</ebl:AddressDisplayOptions>';
+		if($this->AddressDisplayOptions != null)
+		{
+			$str .= '<ebl:AddressDisplayOptions>' . PPUtils::escapeInvalidXmlCharsRegex($this->AddressDisplayOptions) . '</ebl:AddressDisplayOptions>';
 		}
-		if($this->SharePhone != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SharePhone>' . $this->SharePhone . '</ebl:SharePhone>';
+		if($this->SharePhone != null)
+		{
+			$str .= '<ebl:SharePhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->SharePhone) . '</ebl:SharePhone>';
 		}
-		if($this->ShipToAddress != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ShipToAddress != null)
+		{
 			$str .= '<ebl:ShipToAddress>';
 			$str .= $this->ShipToAddress->toXMLString();
 			$str .= '</ebl:ShipToAddress>';
 		}
-		if($this->BuyerEmail != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BuyerEmail>' . $this->BuyerEmail . '</ebl:BuyerEmail>';
+		if($this->BuyerEmail != null)
+		{
+			$str .= '<ebl:BuyerEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerEmail) . '</ebl:BuyerEmail>';
 		}
 		return $str;
 	}
@@ -12492,25 +11601,20 @@ class UATPDetailsType  {
 	public $ExpYear;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->UATPNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:UATPNumber>' . $this->UATPNumber . '</ebl:UATPNumber>';
+		if($this->UATPNumber != null)
+		{
+			$str .= '<ebl:UATPNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->UATPNumber) . '</ebl:UATPNumber>';
 		}
-		if($this->ExpMonth != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ExpMonth>' . $this->ExpMonth . '</ebl:ExpMonth>';
+		if($this->ExpMonth != null)
+		{
+			$str .= '<ebl:ExpMonth>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpMonth) . '</ebl:ExpMonth>';
 		}
-		if($this->ExpYear != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ExpYear>' . $this->ExpYear . '</ebl:ExpYear>';
+		if($this->ExpYear != null)
+		{
+			$str .= '<ebl:ExpYear>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpYear) . '</ebl:ExpYear>';
 		}
 		return $str;
 	}
@@ -12678,22 +11782,18 @@ class ActivationDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->InitialAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->InitialAmount != null)
+		{
 			$str .= '<ebl:InitialAmount';
 			$str .= $this->InitialAmount->toXMLString();
 			$str .= '</ebl:InitialAmount>';
 		}
-		if($this->FailedInitialAmountAction != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:FailedInitialAmountAction>' . $this->FailedInitialAmountAction . '</ebl:FailedInitialAmountAction>';
+		if($this->FailedInitialAmountAction != null)
+		{
+			$str .= '<ebl:FailedInitialAmountAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->FailedInitialAmountAction) . '</ebl:FailedInitialAmountAction>';
 		}
 		return $str;
 	}
@@ -12760,49 +11860,35 @@ class BillingPeriodDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->BillingPeriod != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BillingPeriod>' . $this->BillingPeriod . '</ebl:BillingPeriod>';
+		if($this->BillingPeriod != null)
+		{
+			$str .= '<ebl:BillingPeriod>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingPeriod) . '</ebl:BillingPeriod>';
 		}
-		if($this->BillingFrequency != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BillingFrequency>' . $this->BillingFrequency . '</ebl:BillingFrequency>';
+		if($this->BillingFrequency != null)
+		{
+			$str .= '<ebl:BillingFrequency>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingFrequency) . '</ebl:BillingFrequency>';
 		}
-		if($this->TotalBillingCycles != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:TotalBillingCycles>' . $this->TotalBillingCycles . '</ebl:TotalBillingCycles>';
+		if($this->TotalBillingCycles != null)
+		{
+			$str .= '<ebl:TotalBillingCycles>' . PPUtils::escapeInvalidXmlCharsRegex($this->TotalBillingCycles) . '</ebl:TotalBillingCycles>';
 		}
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->ShippingAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ShippingAmount != null)
+		{
 			$str .= '<ebl:ShippingAmount';
 			$str .= $this->ShippingAmount->toXMLString();
 			$str .= '</ebl:ShippingAmount>';
 		}
-		if($this->TaxAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->TaxAmount != null)
+		{
 			$str .= '<ebl:TaxAmount';
 			$str .= $this->TaxAmount->toXMLString();
 			$str .= '</ebl:TaxAmount>';
@@ -12929,49 +12015,35 @@ class BillingPeriodDetailsType_Update  {
 	public $TaxAmount;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->BillingPeriod != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BillingPeriod>' . $this->BillingPeriod . '</ebl:BillingPeriod>';
+		if($this->BillingPeriod != null)
+		{
+			$str .= '<ebl:BillingPeriod>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingPeriod) . '</ebl:BillingPeriod>';
 		}
-		if($this->BillingFrequency != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BillingFrequency>' . $this->BillingFrequency . '</ebl:BillingFrequency>';
+		if($this->BillingFrequency != null)
+		{
+			$str .= '<ebl:BillingFrequency>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingFrequency) . '</ebl:BillingFrequency>';
 		}
-		if($this->TotalBillingCycles != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:TotalBillingCycles>' . $this->TotalBillingCycles . '</ebl:TotalBillingCycles>';
+		if($this->TotalBillingCycles != null)
+		{
+			$str .= '<ebl:TotalBillingCycles>' . PPUtils::escapeInvalidXmlCharsRegex($this->TotalBillingCycles) . '</ebl:TotalBillingCycles>';
 		}
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->ShippingAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ShippingAmount != null)
+		{
 			$str .= '<ebl:ShippingAmount';
 			$str .= $this->ShippingAmount->toXMLString();
 			$str .= '</ebl:ShippingAmount>';
 		}
-		if($this->TaxAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->TaxAmount != null)
+		{
 			$str .= '<ebl:TaxAmount';
 			$str .= $this->TaxAmount->toXMLString();
 			$str .= '</ebl:TaxAmount>';
@@ -13041,52 +12113,38 @@ class ScheduleDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Description != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Description>' . $this->Description . '</ebl:Description>';
+		if($this->Description != null)
+		{
+			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
 		}
-		if($this->TrialPeriod != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->TrialPeriod != null)
+		{
 			$str .= '<ebl:TrialPeriod>';
 			$str .= $this->TrialPeriod->toXMLString();
 			$str .= '</ebl:TrialPeriod>';
 		}
-		if($this->PaymentPeriod != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->PaymentPeriod != null)
+		{
 			$str .= '<ebl:PaymentPeriod>';
 			$str .= $this->PaymentPeriod->toXMLString();
 			$str .= '</ebl:PaymentPeriod>';
 		}
-		if($this->MaxFailedPayments != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:MaxFailedPayments>' . $this->MaxFailedPayments . '</ebl:MaxFailedPayments>';
+		if($this->MaxFailedPayments != null)
+		{
+			$str .= '<ebl:MaxFailedPayments>' . PPUtils::escapeInvalidXmlCharsRegex($this->MaxFailedPayments) . '</ebl:MaxFailedPayments>';
 		}
-		if($this->ActivationDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ActivationDetails != null)
+		{
 			$str .= '<ebl:ActivationDetails>';
 			$str .= $this->ActivationDetails->toXMLString();
 			$str .= '</ebl:ActivationDetails>';
 		}
-		if($this->AutoBillOutstandingAmount != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AutoBillOutstandingAmount>' . $this->AutoBillOutstandingAmount . '</ebl:AutoBillOutstandingAmount>';
+		if($this->AutoBillOutstandingAmount != null)
+		{
+			$str .= '<ebl:AutoBillOutstandingAmount>' . PPUtils::escapeInvalidXmlCharsRegex($this->AutoBillOutstandingAmount) . '</ebl:AutoBillOutstandingAmount>';
 		}
 		return $str;
 	}
@@ -13142,34 +12200,26 @@ class RecurringPaymentsProfileDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->SubscriberName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SubscriberName>' . $this->SubscriberName . '</ebl:SubscriberName>';
+		if($this->SubscriberName != null)
+		{
+			$str .= '<ebl:SubscriberName>' . PPUtils::escapeInvalidXmlCharsRegex($this->SubscriberName) . '</ebl:SubscriberName>';
 		}
-		if($this->SubscriberShippingAddress != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SubscriberShippingAddress != null)
+		{
 			$str .= '<ebl:SubscriberShippingAddress>';
 			$str .= $this->SubscriberShippingAddress->toXMLString();
 			$str .= '</ebl:SubscriberShippingAddress>';
 		}
-		if($this->BillingStartDate != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BillingStartDate>' . $this->BillingStartDate . '</ebl:BillingStartDate>';
+		if($this->BillingStartDate != null)
+		{
+			$str .= '<ebl:BillingStartDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingStartDate) . '</ebl:BillingStartDate>';
 		}
-		if($this->ProfileReference != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ProfileReference>' . $this->ProfileReference . '</ebl:ProfileReference>';
+		if($this->ProfileReference != null)
+		{
+			$str .= '<ebl:ProfileReference>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileReference) . '</ebl:ProfileReference>';
 		}
 		return $str;
 	}
@@ -13253,49 +12303,38 @@ class CreateRecurringPaymentsProfileRequestDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Token != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Token>' . $this->Token . '</ebl:Token>';
+		if($this->Token != null)
+		{
+			$str .= '<ebl:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</ebl:Token>';
 		}
-		if($this->CreditCard != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->CreditCard != null)
+		{
 			$str .= '<ebl:CreditCard>';
 			$str .= $this->CreditCard->toXMLString();
 			$str .= '</ebl:CreditCard>';
 		}
-		if($this->RecurringPaymentsProfileDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->RecurringPaymentsProfileDetails != null)
+		{
 			$str .= '<ebl:RecurringPaymentsProfileDetails>';
 			$str .= $this->RecurringPaymentsProfileDetails->toXMLString();
 			$str .= '</ebl:RecurringPaymentsProfileDetails>';
 		}
-		if($this->ScheduleDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ScheduleDetails != null)
+		{
 			$str .= '<ebl:ScheduleDetails>';
 			$str .= $this->ScheduleDetails->toXMLString();
 			$str .= '</ebl:ScheduleDetails>';
 		}
-		if($this->PaymentDetailsItem != null) {
-			for($i = 0; $i < count($this->PaymentDetailsItem); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->PaymentDetailsItem != null)
+		{
+			for($i = 0; $i < count($this->PaymentDetailsItem); $i++)
+			{
 				$str .= '<ebl:PaymentDetailsItem>';
 				$str .= $this->PaymentDetailsItem[$i]->toXMLString();
 				$str .= '</ebl:PaymentDetailsItem>';
-		
 			}
 		}
 		return $str;
@@ -13673,25 +12712,20 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ProfileID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ProfileID>' . $this->ProfileID . '</ebl:ProfileID>';
+		if($this->ProfileID != null)
+		{
+			$str .= '<ebl:ProfileID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileID) . '</ebl:ProfileID>';
 		}
-		if($this->Action != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Action>' . $this->Action . '</ebl:Action>';
+		if($this->Action != null)
+		{
+			$str .= '<ebl:Action>' . PPUtils::escapeInvalidXmlCharsRegex($this->Action) . '</ebl:Action>';
 		}
-		if($this->Note != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Note>' . $this->Note . '</ebl:Note>';
+		if($this->Note != null)
+		{
+			$str .= '<ebl:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</ebl:Note>';
 		}
 		return $str;
 	}
@@ -13763,28 +12797,22 @@ class BillOutstandingAmountRequestDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ProfileID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ProfileID>' . $this->ProfileID . '</ebl:ProfileID>';
+		if($this->ProfileID != null)
+		{
+			$str .= '<ebl:ProfileID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileID) . '</ebl:ProfileID>';
 		}
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->Note != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Note>' . $this->Note . '</ebl:Note>';
+		if($this->Note != null)
+		{
+			$str .= '<ebl:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</ebl:Note>';
 		}
 		return $str;
 	}
@@ -13955,130 +12983,89 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ProfileID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ProfileID>' . $this->ProfileID . '</ebl:ProfileID>';
+		if($this->ProfileID != null)
+		{
+			$str .= '<ebl:ProfileID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileID) . '</ebl:ProfileID>';
 		}
-		if($this->Note != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Note>' . $this->Note . '</ebl:Note>';
+		if($this->Note != null)
+		{
+			$str .= '<ebl:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</ebl:Note>';
 		}
-		if($this->Description != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Description>' . $this->Description . '</ebl:Description>';
+		if($this->Description != null)
+		{
+			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
 		}
-		if($this->SubscriberName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SubscriberName>' . $this->SubscriberName . '</ebl:SubscriberName>';
+		if($this->SubscriberName != null)
+		{
+			$str .= '<ebl:SubscriberName>' . PPUtils::escapeInvalidXmlCharsRegex($this->SubscriberName) . '</ebl:SubscriberName>';
 		}
-		if($this->SubscriberShippingAddress != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SubscriberShippingAddress != null)
+		{
 			$str .= '<ebl:SubscriberShippingAddress>';
 			$str .= $this->SubscriberShippingAddress->toXMLString();
 			$str .= '</ebl:SubscriberShippingAddress>';
 		}
-		if($this->ProfileReference != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ProfileReference>' . $this->ProfileReference . '</ebl:ProfileReference>';
+		if($this->ProfileReference != null)
+		{
+			$str .= '<ebl:ProfileReference>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileReference) . '</ebl:ProfileReference>';
 		}
-		if($this->AdditionalBillingCycles != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AdditionalBillingCycles>' . $this->AdditionalBillingCycles . '</ebl:AdditionalBillingCycles>';
+		if($this->AdditionalBillingCycles != null)
+		{
+			$str .= '<ebl:AdditionalBillingCycles>' . PPUtils::escapeInvalidXmlCharsRegex($this->AdditionalBillingCycles) . '</ebl:AdditionalBillingCycles>';
 		}
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->ShippingAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ShippingAmount != null)
+		{
 			$str .= '<ebl:ShippingAmount';
 			$str .= $this->ShippingAmount->toXMLString();
 			$str .= '</ebl:ShippingAmount>';
 		}
-		if($this->TaxAmount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->TaxAmount != null)
+		{
 			$str .= '<ebl:TaxAmount';
 			$str .= $this->TaxAmount->toXMLString();
 			$str .= '</ebl:TaxAmount>';
 		}
-		if($this->OutstandingBalance != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->OutstandingBalance != null)
+		{
 			$str .= '<ebl:OutstandingBalance';
 			$str .= $this->OutstandingBalance->toXMLString();
 			$str .= '</ebl:OutstandingBalance>';
 		}
-		if($this->AutoBillOutstandingAmount != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:AutoBillOutstandingAmount>' . $this->AutoBillOutstandingAmount . '</ebl:AutoBillOutstandingAmount>';
+		if($this->AutoBillOutstandingAmount != null)
+		{
+			$str .= '<ebl:AutoBillOutstandingAmount>' . PPUtils::escapeInvalidXmlCharsRegex($this->AutoBillOutstandingAmount) . '</ebl:AutoBillOutstandingAmount>';
 		}
-		if($this->MaxFailedPayments != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:MaxFailedPayments>' . $this->MaxFailedPayments . '</ebl:MaxFailedPayments>';
+		if($this->MaxFailedPayments != null)
+		{
+			$str .= '<ebl:MaxFailedPayments>' . PPUtils::escapeInvalidXmlCharsRegex($this->MaxFailedPayments) . '</ebl:MaxFailedPayments>';
 		}
-		if($this->CreditCard != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->CreditCard != null)
+		{
 			$str .= '<ebl:CreditCard>';
 			$str .= $this->CreditCard->toXMLString();
 			$str .= '</ebl:CreditCard>';
 		}
-		if($this->BillingStartDate != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:BillingStartDate>' . $this->BillingStartDate . '</ebl:BillingStartDate>';
+		if($this->BillingStartDate != null)
+		{
+			$str .= '<ebl:BillingStartDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingStartDate) . '</ebl:BillingStartDate>';
 		}
-		if($this->TrialPeriod != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->TrialPeriod != null)
+		{
 			$str .= '<ebl:TrialPeriod>';
 			$str .= $this->TrialPeriod->toXMLString();
 			$str .= '</ebl:TrialPeriod>';
 		}
-		if($this->PaymentPeriod != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->PaymentPeriod != null)
+		{
 			$str .= '<ebl:PaymentPeriod>';
 			$str .= $this->PaymentPeriod->toXMLString();
 			$str .= '</ebl:PaymentPeriod>';
@@ -14301,13 +13288,11 @@ class EnhancedDataType  {
 	public $AirlineItinerary;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->AirlineItinerary != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->AirlineItinerary != null)
+		{
 			$str .= '<ebl:AirlineItinerary>';
 			$str .= $this->AirlineItinerary->toXMLString();
 			$str .= '</ebl:AirlineItinerary>';
@@ -14425,103 +13410,74 @@ class AirlineItineraryType  {
 	public $FlightDetails;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->PassengerName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PassengerName>' . $this->PassengerName . '</ebl:PassengerName>';
+		if($this->PassengerName != null)
+		{
+			$str .= '<ebl:PassengerName>' . PPUtils::escapeInvalidXmlCharsRegex($this->PassengerName) . '</ebl:PassengerName>';
 		}
-		if($this->IssueDate != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:IssueDate>' . $this->IssueDate . '</ebl:IssueDate>';
+		if($this->IssueDate != null)
+		{
+			$str .= '<ebl:IssueDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->IssueDate) . '</ebl:IssueDate>';
 		}
-		if($this->TravelAgencyName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:TravelAgencyName>' . $this->TravelAgencyName . '</ebl:TravelAgencyName>';
+		if($this->TravelAgencyName != null)
+		{
+			$str .= '<ebl:TravelAgencyName>' . PPUtils::escapeInvalidXmlCharsRegex($this->TravelAgencyName) . '</ebl:TravelAgencyName>';
 		}
-		if($this->TravelAgencyCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:TravelAgencyCode>' . $this->TravelAgencyCode . '</ebl:TravelAgencyCode>';
+		if($this->TravelAgencyCode != null)
+		{
+			$str .= '<ebl:TravelAgencyCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->TravelAgencyCode) . '</ebl:TravelAgencyCode>';
 		}
-		if($this->TicketNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:TicketNumber>' . $this->TicketNumber . '</ebl:TicketNumber>';
+		if($this->TicketNumber != null)
+		{
+			$str .= '<ebl:TicketNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->TicketNumber) . '</ebl:TicketNumber>';
 		}
-		if($this->IssuingCarrierCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:IssuingCarrierCode>' . $this->IssuingCarrierCode . '</ebl:IssuingCarrierCode>';
+		if($this->IssuingCarrierCode != null)
+		{
+			$str .= '<ebl:IssuingCarrierCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->IssuingCarrierCode) . '</ebl:IssuingCarrierCode>';
 		}
-		if($this->CustomerCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CustomerCode>' . $this->CustomerCode . '</ebl:CustomerCode>';
+		if($this->CustomerCode != null)
+		{
+			$str .= '<ebl:CustomerCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->CustomerCode) . '</ebl:CustomerCode>';
 		}
-		if($this->TotalFare != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->TotalFare != null)
+		{
 			$str .= '<ebl:TotalFare';
 			$str .= $this->TotalFare->toXMLString();
 			$str .= '</ebl:TotalFare>';
 		}
-		if($this->TotalTaxes != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->TotalTaxes != null)
+		{
 			$str .= '<ebl:TotalTaxes';
 			$str .= $this->TotalTaxes->toXMLString();
 			$str .= '</ebl:TotalTaxes>';
 		}
-		if($this->TotalFee != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->TotalFee != null)
+		{
 			$str .= '<ebl:TotalFee';
 			$str .= $this->TotalFee->toXMLString();
 			$str .= '</ebl:TotalFee>';
 		}
-		if($this->RestrictedTicket != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:RestrictedTicket>' . $this->RestrictedTicket . '</ebl:RestrictedTicket>';
+		if($this->RestrictedTicket != null)
+		{
+			$str .= '<ebl:RestrictedTicket>' . PPUtils::escapeInvalidXmlCharsRegex($this->RestrictedTicket) . '</ebl:RestrictedTicket>';
 		}
-		if($this->ClearingSequence != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ClearingSequence>' . $this->ClearingSequence . '</ebl:ClearingSequence>';
+		if($this->ClearingSequence != null)
+		{
+			$str .= '<ebl:ClearingSequence>' . PPUtils::escapeInvalidXmlCharsRegex($this->ClearingSequence) . '</ebl:ClearingSequence>';
 		}
-		if($this->ClearingCount != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ClearingCount>' . $this->ClearingCount . '</ebl:ClearingCount>';
+		if($this->ClearingCount != null)
+		{
+			$str .= '<ebl:ClearingCount>' . PPUtils::escapeInvalidXmlCharsRegex($this->ClearingCount) . '</ebl:ClearingCount>';
 		}
-		if($this->FlightDetails != null) {
-			for($i = 0; $i < count($this->FlightDetails); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->FlightDetails != null)
+		{
+			for($i = 0; $i < count($this->FlightDetails); $i++)
+			{
 				$str .= '<ebl:FlightDetails>';
 				$str .= $this->FlightDetails[$i]->toXMLString();
 				$str .= '</ebl:FlightDetails>';
-		
 			}
 		}
 		return $str;
@@ -14657,118 +13613,82 @@ class FlightDetailsType  {
 	public $EndorsementOrRestrictions;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ConjuctionTicket != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ConjuctionTicket>' . $this->ConjuctionTicket . '</ebl:ConjuctionTicket>';
+		if($this->ConjuctionTicket != null)
+		{
+			$str .= '<ebl:ConjuctionTicket>' . PPUtils::escapeInvalidXmlCharsRegex($this->ConjuctionTicket) . '</ebl:ConjuctionTicket>';
 		}
-		if($this->ExchangeTicket != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ExchangeTicket>' . $this->ExchangeTicket . '</ebl:ExchangeTicket>';
+		if($this->ExchangeTicket != null)
+		{
+			$str .= '<ebl:ExchangeTicket>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExchangeTicket) . '</ebl:ExchangeTicket>';
 		}
-		if($this->CouponNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CouponNumber>' . $this->CouponNumber . '</ebl:CouponNumber>';
+		if($this->CouponNumber != null)
+		{
+			$str .= '<ebl:CouponNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->CouponNumber) . '</ebl:CouponNumber>';
 		}
-		if($this->ServiceClass != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ServiceClass>' . $this->ServiceClass . '</ebl:ServiceClass>';
+		if($this->ServiceClass != null)
+		{
+			$str .= '<ebl:ServiceClass>' . PPUtils::escapeInvalidXmlCharsRegex($this->ServiceClass) . '</ebl:ServiceClass>';
 		}
-		if($this->TravelDate != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:TravelDate>' . $this->TravelDate . '</ebl:TravelDate>';
+		if($this->TravelDate != null)
+		{
+			$str .= '<ebl:TravelDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->TravelDate) . '</ebl:TravelDate>';
 		}
-		if($this->CarrierCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CarrierCode>' . $this->CarrierCode . '</ebl:CarrierCode>';
+		if($this->CarrierCode != null)
+		{
+			$str .= '<ebl:CarrierCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->CarrierCode) . '</ebl:CarrierCode>';
 		}
-		if($this->StopOverPermitted != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:StopOverPermitted>' . $this->StopOverPermitted . '</ebl:StopOverPermitted>';
+		if($this->StopOverPermitted != null)
+		{
+			$str .= '<ebl:StopOverPermitted>' . PPUtils::escapeInvalidXmlCharsRegex($this->StopOverPermitted) . '</ebl:StopOverPermitted>';
 		}
-		if($this->DepartureAirport != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:DepartureAirport>' . $this->DepartureAirport . '</ebl:DepartureAirport>';
+		if($this->DepartureAirport != null)
+		{
+			$str .= '<ebl:DepartureAirport>' . PPUtils::escapeInvalidXmlCharsRegex($this->DepartureAirport) . '</ebl:DepartureAirport>';
 		}
-		if($this->ArrivalAirport != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ArrivalAirport>' . $this->ArrivalAirport . '</ebl:ArrivalAirport>';
+		if($this->ArrivalAirport != null)
+		{
+			$str .= '<ebl:ArrivalAirport>' . PPUtils::escapeInvalidXmlCharsRegex($this->ArrivalAirport) . '</ebl:ArrivalAirport>';
 		}
-		if($this->FlightNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:FlightNumber>' . $this->FlightNumber . '</ebl:FlightNumber>';
+		if($this->FlightNumber != null)
+		{
+			$str .= '<ebl:FlightNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->FlightNumber) . '</ebl:FlightNumber>';
 		}
-		if($this->DepartureTime != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:DepartureTime>' . $this->DepartureTime . '</ebl:DepartureTime>';
+		if($this->DepartureTime != null)
+		{
+			$str .= '<ebl:DepartureTime>' . PPUtils::escapeInvalidXmlCharsRegex($this->DepartureTime) . '</ebl:DepartureTime>';
 		}
-		if($this->ArrivalTime != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ArrivalTime>' . $this->ArrivalTime . '</ebl:ArrivalTime>';
+		if($this->ArrivalTime != null)
+		{
+			$str .= '<ebl:ArrivalTime>' . PPUtils::escapeInvalidXmlCharsRegex($this->ArrivalTime) . '</ebl:ArrivalTime>';
 		}
-		if($this->FareBasisCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:FareBasisCode>' . $this->FareBasisCode . '</ebl:FareBasisCode>';
+		if($this->FareBasisCode != null)
+		{
+			$str .= '<ebl:FareBasisCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->FareBasisCode) . '</ebl:FareBasisCode>';
 		}
-		if($this->Fare != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Fare != null)
+		{
 			$str .= '<ebl:Fare';
 			$str .= $this->Fare->toXMLString();
 			$str .= '</ebl:Fare>';
 		}
-		if($this->Taxes != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Taxes != null)
+		{
 			$str .= '<ebl:Taxes';
 			$str .= $this->Taxes->toXMLString();
 			$str .= '</ebl:Taxes>';
 		}
-		if($this->Fee != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Fee != null)
+		{
 			$str .= '<ebl:Fee';
 			$str .= $this->Fee->toXMLString();
 			$str .= '</ebl:Fee>';
 		}
-		if($this->EndorsementOrRestrictions != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:EndorsementOrRestrictions>' . $this->EndorsementOrRestrictions . '</ebl:EndorsementOrRestrictions>';
+		if($this->EndorsementOrRestrictions != null)
+		{
+			$str .= '<ebl:EndorsementOrRestrictions>' . PPUtils::escapeInvalidXmlCharsRegex($this->EndorsementOrRestrictions) . '</ebl:EndorsementOrRestrictions>';
 		}
 		return $str;
 	}
@@ -14914,43 +13834,32 @@ class OptionTrackingDetailsType  {
 	public $OptionCost;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->OptionNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OptionNumber>' . $this->OptionNumber . '</ebl:OptionNumber>';
+		if($this->OptionNumber != null)
+		{
+			$str .= '<ebl:OptionNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionNumber) . '</ebl:OptionNumber>';
 		}
-		if($this->OptionQty != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OptionQty>' . $this->OptionQty . '</ebl:OptionQty>';
+		if($this->OptionQty != null)
+		{
+			$str .= '<ebl:OptionQty>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionQty) . '</ebl:OptionQty>';
 		}
-		if($this->OptionSelect != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OptionSelect>' . $this->OptionSelect . '</ebl:OptionSelect>';
+		if($this->OptionSelect != null)
+		{
+			$str .= '<ebl:OptionSelect>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionSelect) . '</ebl:OptionSelect>';
 		}
-		if($this->OptionQtyDelta != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OptionQtyDelta>' . $this->OptionQtyDelta . '</ebl:OptionQtyDelta>';
+		if($this->OptionQtyDelta != null)
+		{
+			$str .= '<ebl:OptionQtyDelta>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionQtyDelta) . '</ebl:OptionQtyDelta>';
 		}
-		if($this->OptionAlert != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OptionAlert>' . $this->OptionAlert . '</ebl:OptionAlert>';
+		if($this->OptionAlert != null)
+		{
+			$str .= '<ebl:OptionAlert>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionAlert) . '</ebl:OptionAlert>';
 		}
-		if($this->OptionCost != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:OptionCost>' . $this->OptionCost . '</ebl:OptionCost>';
+		if($this->OptionCost != null)
+		{
+			$str .= '<ebl:OptionCost>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionCost) . '</ebl:OptionCost>';
 		}
 		return $str;
 	}
@@ -15025,37 +13934,28 @@ class ItemTrackingDetailsType  {
 	public $ItemCost;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ItemNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemNumber>' . $this->ItemNumber . '</ebl:ItemNumber>';
+		if($this->ItemNumber != null)
+		{
+			$str .= '<ebl:ItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemNumber) . '</ebl:ItemNumber>';
 		}
-		if($this->ItemQty != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemQty>' . $this->ItemQty . '</ebl:ItemQty>';
+		if($this->ItemQty != null)
+		{
+			$str .= '<ebl:ItemQty>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemQty) . '</ebl:ItemQty>';
 		}
-		if($this->ItemQtyDelta != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemQtyDelta>' . $this->ItemQtyDelta . '</ebl:ItemQtyDelta>';
+		if($this->ItemQtyDelta != null)
+		{
+			$str .= '<ebl:ItemQtyDelta>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemQtyDelta) . '</ebl:ItemQtyDelta>';
 		}
-		if($this->ItemAlert != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemAlert>' . $this->ItemAlert . '</ebl:ItemAlert>';
+		if($this->ItemAlert != null)
+		{
+			$str .= '<ebl:ItemAlert>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemAlert) . '</ebl:ItemAlert>';
 		}
-		if($this->ItemCost != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemCost>' . $this->ItemCost . '</ebl:ItemCost>';
+		if($this->ItemCost != null)
+		{
+			$str .= '<ebl:ItemCost>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemCost) . '</ebl:ItemCost>';
 		}
 		return $str;
 	}
@@ -15161,13 +14061,12 @@ class ReverseTransactionRequestDetailsType  {
 	public $TransactionID;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->TransactionID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:TransactionID>' . $this->TransactionID . '</ebl:TransactionID>';
+		if($this->TransactionID != null)
+		{
+			$str .= '<ebl:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</ebl:TransactionID>';
 		}
 		return $str;
 	}
@@ -15241,22 +14140,20 @@ class IncentiveInfoType  {
 	public $ApplyIndication;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->IncentiveCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:IncentiveCode>' . $this->IncentiveCode . '</ebl:IncentiveCode>';
+		if($this->IncentiveCode != null)
+		{
+			$str .= '<ebl:IncentiveCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->IncentiveCode) . '</ebl:IncentiveCode>';
 		}
-		if($this->ApplyIndication != null) {
-			for($i = 0; $i < count($this->ApplyIndication); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->ApplyIndication != null)
+		{
+			for($i = 0; $i < count($this->ApplyIndication); $i++)
+			{
 				$str .= '<ebl:ApplyIndication>';
 				$str .= $this->ApplyIndication[$i]->toXMLString();
 				$str .= '</ebl:ApplyIndication>';
-		
 			}
 		}
 		return $str;
@@ -15288,19 +14185,16 @@ class IncentiveApplyIndicationType  {
 	public $ItemId;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->PaymentRequestID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PaymentRequestID>' . $this->PaymentRequestID . '</ebl:PaymentRequestID>';
+		if($this->PaymentRequestID != null)
+		{
+			$str .= '<ebl:PaymentRequestID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentRequestID) . '</ebl:PaymentRequestID>';
 		}
-		if($this->ItemId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemId>' . $this->ItemId . '</ebl:ItemId>';
+		if($this->ItemId != null)
+		{
+			$str .= '<ebl:ItemId>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemId) . '</ebl:ItemId>';
 		}
 		return $str;
 	}
@@ -15398,19 +14292,16 @@ class ExternalRememberMeOwnerDetailsType  {
 	public $ExternalRememberMeOwnerID;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ExternalRememberMeOwnerIDType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ExternalRememberMeOwnerIDType>' . $this->ExternalRememberMeOwnerIDType . '</ebl:ExternalRememberMeOwnerIDType>';
+		if($this->ExternalRememberMeOwnerIDType != null)
+		{
+			$str .= '<ebl:ExternalRememberMeOwnerIDType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalRememberMeOwnerIDType) . '</ebl:ExternalRememberMeOwnerIDType>';
 		}
-		if($this->ExternalRememberMeOwnerID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ExternalRememberMeOwnerID>' . $this->ExternalRememberMeOwnerID . '</ebl:ExternalRememberMeOwnerID>';
+		if($this->ExternalRememberMeOwnerID != null)
+		{
+			$str .= '<ebl:ExternalRememberMeOwnerID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalRememberMeOwnerID) . '</ebl:ExternalRememberMeOwnerID>';
 		}
 		return $str;
 	}
@@ -15448,19 +14339,15 @@ class ExternalRememberMeOptInDetailsType  {
 	public $ExternalRememberMeOwnerDetails;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ExternalRememberMeOptIn != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ExternalRememberMeOptIn>' . $this->ExternalRememberMeOptIn . '</ebl:ExternalRememberMeOptIn>';
+		if($this->ExternalRememberMeOptIn != null)
+		{
+			$str .= '<ebl:ExternalRememberMeOptIn>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalRememberMeOptIn) . '</ebl:ExternalRememberMeOptIn>';
 		}
-		if($this->ExternalRememberMeOwnerDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ExternalRememberMeOwnerDetails != null)
+		{
 			$str .= '<ebl:ExternalRememberMeOwnerDetails>';
 			$str .= $this->ExternalRememberMeOwnerDetails->toXMLString();
 			$str .= '</ebl:ExternalRememberMeOwnerDetails>';
@@ -15496,19 +14383,16 @@ class FlowControlDetailsType  {
 	public $InContextReturnURL;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ErrorURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ErrorURL>' . $this->ErrorURL . '</ebl:ErrorURL>';
+		if($this->ErrorURL != null)
+		{
+			$str .= '<ebl:ErrorURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ErrorURL) . '</ebl:ErrorURL>';
 		}
-		if($this->InContextReturnURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:InContextReturnURL>' . $this->InContextReturnURL . '</ebl:InContextReturnURL>';
+		if($this->InContextReturnURL != null)
+		{
+			$str .= '<ebl:InContextReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->InContextReturnURL) . '</ebl:InContextReturnURL>';
 		}
 		return $str;
 	}
@@ -15587,13 +14471,12 @@ class DisplayControlDetailsType  {
 	public $InContextPaymentButtonImage;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->InContextPaymentButtonImage != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:InContextPaymentButtonImage>' . $this->InContextPaymentButtonImage . '</ebl:InContextPaymentButtonImage>';
+		if($this->InContextPaymentButtonImage != null)
+		{
+			$str .= '<ebl:InContextPaymentButtonImage>' . PPUtils::escapeInvalidXmlCharsRegex($this->InContextPaymentButtonImage) . '</ebl:InContextPaymentButtonImage>';
 		}
 		return $str;
 	}
@@ -15626,13 +14509,12 @@ class ExternalPartnerTrackingDetailsType  {
 	public $ExternalPartnerSegmentID;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ExternalPartnerSegmentID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ExternalPartnerSegmentID>' . $this->ExternalPartnerSegmentID . '</ebl:ExternalPartnerSegmentID>';
+		if($this->ExternalPartnerSegmentID != null)
+		{
+			$str .= '<ebl:ExternalPartnerSegmentID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalPartnerSegmentID) . '</ebl:ExternalPartnerSegmentID>';
 		}
 		return $str;
 	}
@@ -15672,19 +14554,16 @@ class MerchantStoreDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->StoreID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:StoreID>' . $this->StoreID . '</ebl:StoreID>';
+		if($this->StoreID != null)
+		{
+			$str .= '<ebl:StoreID>' . PPUtils::escapeInvalidXmlCharsRegex($this->StoreID) . '</ebl:StoreID>';
 		}
-		if($this->TerminalID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:TerminalID>' . $this->TerminalID . '</ebl:TerminalID>';
+		if($this->TerminalID != null)
+		{
+			$str .= '<ebl:TerminalID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TerminalID) . '</ebl:TerminalID>';
 		}
 		return $str;
 	}
@@ -15714,19 +14593,15 @@ class AdditionalFeeType  {
 	public $Amount;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Type != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Type>' . $this->Type . '</ebl:Type>';
+		if($this->Type != null)
+		{
+			$str .= '<ebl:Type>' . PPUtils::escapeInvalidXmlCharsRegex($this->Type) . '</ebl:Type>';
 		}
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
@@ -15790,40 +14665,30 @@ class DiscountType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Name != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Name>' . $this->Name . '</ebl:Name>';
+		if($this->Name != null)
+		{
+			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
 		}
-		if($this->Description != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Description>' . $this->Description . '</ebl:Description>';
+		if($this->Description != null)
+		{
+			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
 		}
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->RedeemedOfferType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:RedeemedOfferType>' . $this->RedeemedOfferType . '</ebl:RedeemedOfferType>';
+		if($this->RedeemedOfferType != null)
+		{
+			$str .= '<ebl:RedeemedOfferType>' . PPUtils::escapeInvalidXmlCharsRegex($this->RedeemedOfferType) . '</ebl:RedeemedOfferType>';
 		}
-		if($this->RedeemedOfferID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:RedeemedOfferID>' . $this->RedeemedOfferID . '</ebl:RedeemedOfferID>';
+		if($this->RedeemedOfferID != null)
+		{
+			$str .= '<ebl:RedeemedOfferID>' . PPUtils::escapeInvalidXmlCharsRegex($this->RedeemedOfferID) . '</ebl:RedeemedOfferID>';
 		}
 		return $str;
 	}
@@ -15995,135 +14860,98 @@ class InvoiceItemType  {
 	public $StyleNumber;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->Name != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Name>' . $this->Name . '</ebl:Name>';
+		if($this->Name != null)
+		{
+			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
 		}
-		if($this->Description != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Description>' . $this->Description . '</ebl:Description>';
+		if($this->Description != null)
+		{
+			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
 		}
-		if($this->EAN != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:EAN>' . $this->EAN . '</ebl:EAN>';
+		if($this->EAN != null)
+		{
+			$str .= '<ebl:EAN>' . PPUtils::escapeInvalidXmlCharsRegex($this->EAN) . '</ebl:EAN>';
 		}
-		if($this->SKU != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:SKU>' . $this->SKU . '</ebl:SKU>';
+		if($this->SKU != null)
+		{
+			$str .= '<ebl:SKU>' . PPUtils::escapeInvalidXmlCharsRegex($this->SKU) . '</ebl:SKU>';
 		}
-		if($this->ReturnPolicyIdentifier != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ReturnPolicyIdentifier>' . $this->ReturnPolicyIdentifier . '</ebl:ReturnPolicyIdentifier>';
+		if($this->ReturnPolicyIdentifier != null)
+		{
+			$str .= '<ebl:ReturnPolicyIdentifier>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnPolicyIdentifier) . '</ebl:ReturnPolicyIdentifier>';
 		}
-		if($this->Price != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Price != null)
+		{
 			$str .= '<ebl:Price';
 			$str .= $this->Price->toXMLString();
 			$str .= '</ebl:Price>';
 		}
-		if($this->ItemPrice != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->ItemPrice != null)
+		{
 			$str .= '<ebl:ItemPrice';
 			$str .= $this->ItemPrice->toXMLString();
 			$str .= '</ebl:ItemPrice>';
 		}
-		if($this->ItemCount != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemCount>' . $this->ItemCount . '</ebl:ItemCount>';
+		if($this->ItemCount != null)
+		{
+			$str .= '<ebl:ItemCount>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemCount) . '</ebl:ItemCount>';
 		}
-		if($this->ItemCountUnit != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ItemCountUnit>' . $this->ItemCountUnit . '</ebl:ItemCountUnit>';
+		if($this->ItemCountUnit != null)
+		{
+			$str .= '<ebl:ItemCountUnit>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemCountUnit) . '</ebl:ItemCountUnit>';
 		}
-		if($this->Discount != null) {
-			for($i = 0; $i < count($this->Discount); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->Discount != null)
+		{
+			for($i = 0; $i < count($this->Discount); $i++)
+			{
 				$str .= '<ebl:Discount>';
 				$str .= $this->Discount[$i]->toXMLString();
 				$str .= '</ebl:Discount>';
-		
 			}
 		}
-		if($this->Taxable != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Taxable>' . $this->Taxable . '</ebl:Taxable>';
+		if($this->Taxable != null)
+		{
+			$str .= '<ebl:Taxable>' . PPUtils::escapeInvalidXmlCharsRegex($this->Taxable) . '</ebl:Taxable>';
 		}
-		if($this->TaxRate != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:TaxRate>' . $this->TaxRate . '</ebl:TaxRate>';
+		if($this->TaxRate != null)
+		{
+			$str .= '<ebl:TaxRate>' . PPUtils::escapeInvalidXmlCharsRegex($this->TaxRate) . '</ebl:TaxRate>';
 		}
-		if($this->AdditionalFees != null) {
-			for($i = 0; $i < count($this->AdditionalFees); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->AdditionalFees != null)
+		{
+			for($i = 0; $i < count($this->AdditionalFees); $i++)
+			{
 				$str .= '<ebl:AdditionalFees>';
 				$str .= $this->AdditionalFees[$i]->toXMLString();
 				$str .= '</ebl:AdditionalFees>';
-		
 			}
 		}
-		if($this->Reimbursable != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:Reimbursable>' . $this->Reimbursable . '</ebl:Reimbursable>';
+		if($this->Reimbursable != null)
+		{
+			$str .= '<ebl:Reimbursable>' . PPUtils::escapeInvalidXmlCharsRegex($this->Reimbursable) . '</ebl:Reimbursable>';
 		}
-		if($this->MPN != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:MPN>' . $this->MPN . '</ebl:MPN>';
+		if($this->MPN != null)
+		{
+			$str .= '<ebl:MPN>' . PPUtils::escapeInvalidXmlCharsRegex($this->MPN) . '</ebl:MPN>';
 		}
-		if($this->ISBN != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ISBN>' . $this->ISBN . '</ebl:ISBN>';
+		if($this->ISBN != null)
+		{
+			$str .= '<ebl:ISBN>' . PPUtils::escapeInvalidXmlCharsRegex($this->ISBN) . '</ebl:ISBN>';
 		}
-		if($this->PLU != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:PLU>' . $this->PLU . '</ebl:PLU>';
+		if($this->PLU != null)
+		{
+			$str .= '<ebl:PLU>' . PPUtils::escapeInvalidXmlCharsRegex($this->PLU) . '</ebl:PLU>';
 		}
-		if($this->ModelNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:ModelNumber>' . $this->ModelNumber . '</ebl:ModelNumber>';
+		if($this->ModelNumber != null)
+		{
+			$str .= '<ebl:ModelNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ModelNumber) . '</ebl:ModelNumber>';
 		}
-		if($this->StyleNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:StyleNumber>' . $this->StyleNumber . '</ebl:StyleNumber>';
+		if($this->StyleNumber != null)
+		{
+			$str .= '<ebl:StyleNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->StyleNumber) . '</ebl:StyleNumber>';
 		}
 		return $str;
 	}
@@ -16206,26 +15034,22 @@ class CoupledBucketsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->CoupleType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CoupleType>' . $this->CoupleType . '</ebl:CoupleType>';
+		if($this->CoupleType != null)
+		{
+			$str .= '<ebl:CoupleType>' . PPUtils::escapeInvalidXmlCharsRegex($this->CoupleType) . '</ebl:CoupleType>';
 		}
-		if($this->CoupledPaymentRequestID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<ebl:CoupledPaymentRequestID>' . $this->CoupledPaymentRequestID . '</ebl:CoupledPaymentRequestID>';
+		if($this->CoupledPaymentRequestID != null)
+		{
+			$str .= '<ebl:CoupledPaymentRequestID>' . PPUtils::escapeInvalidXmlCharsRegex($this->CoupledPaymentRequestID) . '</ebl:CoupledPaymentRequestID>';
 		}
-		if($this->PaymentRequestID != null) {
-			for($i = 0; $i < count($this->PaymentRequestID); $i++) { //property is collection
-				//not a complex member
-				//prop is not a value
-				$str .= '<ebl:PaymentRequestID>'. $this->PaymentRequestID[$i] . '</ebl:PaymentRequestID>';
-		
+		if($this->PaymentRequestID != null)
+		{
+			for($i = 0; $i < count($this->PaymentRequestID); $i++)
+			{
+				$str .= '<ebl:PaymentRequestID>'. PPUtils::escapeInvalidXmlCharsRegex($this->PaymentRequestID[$i]) . '</ebl:PaymentRequestID>';
 			}
 		}
 		return $str;
@@ -16281,7 +15105,8 @@ class CoupledPaymentInfoType  {
 class EnhancedCheckoutDataType  {
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		return $str;
 	}
@@ -16297,7 +15122,8 @@ class EnhancedCheckoutDataType  {
 class EnhancedPaymentDataType  {
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		return $str;
 	}
@@ -16319,7 +15145,8 @@ class EnhancedPaymentDataType  {
 class EnhancedItemDataType  {
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		return $str;
 	}
@@ -16359,7 +15186,8 @@ class EnhancedPaymentInfoType  {
 class EnhancedInitiateRecoupRequestDetailsType  {
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		return $str;
 	}
@@ -16375,7 +15203,8 @@ class EnhancedInitiateRecoupRequestDetailsType  {
 class EnhancedCompleteRecoupRequestDetailsType  {
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		return $str;
 	}
@@ -16409,7 +15238,8 @@ class EnhancedCompleteRecoupResponseDetailsType  {
 class EnhancedCancelRecoupRequestDetailsType  {
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		return $str;
 	}
@@ -16425,7 +15255,8 @@ class EnhancedCancelRecoupRequestDetailsType  {
 class EnhancedPayerInfoType  {
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		return $str;
 	}
@@ -16489,43 +15320,32 @@ class InstallmentDetailsType  {
 	public $TaxAmount;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->BillingPeriod != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:BillingPeriod>' . $this->BillingPeriod . '</urn:BillingPeriod>';
+		if($this->BillingPeriod != null)
+		{
+			$str .= '<urn:BillingPeriod>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingPeriod) . '</urn:BillingPeriod>';
 		}
-		if($this->BillingFrequency != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:BillingFrequency>' . $this->BillingFrequency . '</urn:BillingFrequency>';
+		if($this->BillingFrequency != null)
+		{
+			$str .= '<urn:BillingFrequency>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingFrequency) . '</urn:BillingFrequency>';
 		}
-		if($this->TotalBillingCycles != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:TotalBillingCycles>' . $this->TotalBillingCycles . '</urn:TotalBillingCycles>';
+		if($this->TotalBillingCycles != null)
+		{
+			$str .= '<urn:TotalBillingCycles>' . PPUtils::escapeInvalidXmlCharsRegex($this->TotalBillingCycles) . '</urn:TotalBillingCycles>';
 		}
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Amount>' . $this->Amount . '</urn:Amount>';
+		if($this->Amount != null)
+		{
+			$str .= '<urn:Amount>' . PPUtils::escapeInvalidXmlCharsRegex($this->Amount) . '</urn:Amount>';
 		}
-		if($this->ShippingAmount != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ShippingAmount>' . $this->ShippingAmount . '</urn:ShippingAmount>';
+		if($this->ShippingAmount != null)
+		{
+			$str .= '<urn:ShippingAmount>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingAmount) . '</urn:ShippingAmount>';
 		}
-		if($this->TaxAmount != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:TaxAmount>' . $this->TaxAmount . '</urn:TaxAmount>';
+		if($this->TaxAmount != null)
+		{
+			$str .= '<urn:TaxAmount>' . PPUtils::escapeInvalidXmlCharsRegex($this->TaxAmount) . '</urn:TaxAmount>';
 		}
 		return $str;
 	}
@@ -16603,34 +15423,28 @@ class OptionSelectionDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->OptionSelection != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:OptionSelection>' . $this->OptionSelection . '</urn:OptionSelection>';
+		if($this->OptionSelection != null)
+		{
+			$str .= '<urn:OptionSelection>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionSelection) . '</urn:OptionSelection>';
 		}
-		if($this->Price != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Price>' . $this->Price . '</urn:Price>';
+		if($this->Price != null)
+		{
+			$str .= '<urn:Price>' . PPUtils::escapeInvalidXmlCharsRegex($this->Price) . '</urn:Price>';
 		}
-		if($this->OptionType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:OptionType>' . $this->OptionType . '</urn:OptionType>';
+		if($this->OptionType != null)
+		{
+			$str .= '<urn:OptionType>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionType) . '</urn:OptionType>';
 		}
-		if($this->PaymentPeriod != null) {
-			for($i = 0; $i < count($this->PaymentPeriod); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->PaymentPeriod != null)
+		{
+			for($i = 0; $i < count($this->PaymentPeriod); $i++)
+			{
 				$str .= '<urn:PaymentPeriod>';
 				$str .= $this->PaymentPeriod[$i]->toXMLString();
 				$str .= '</urn:PaymentPeriod>';
-		
 			}
 		}
 		return $str;
@@ -16700,22 +15514,20 @@ class OptionDetailsType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->OptionName != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:OptionName>' . $this->OptionName . '</urn:OptionName>';
+		if($this->OptionName != null)
+		{
+			$str .= '<urn:OptionName>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionName) . '</urn:OptionName>';
 		}
-		if($this->OptionSelectionDetails != null) {
-			for($i = 0; $i < count($this->OptionSelectionDetails); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->OptionSelectionDetails != null)
+		{
+			for($i = 0; $i < count($this->OptionSelectionDetails); $i++)
+			{
 				$str .= '<urn:OptionSelectionDetails>';
 				$str .= $this->OptionSelectionDetails[$i]->toXMLString();
 				$str .= '</urn:OptionSelectionDetails>';
-		
 			}
 		}
 		return $str;
@@ -16764,14 +15576,12 @@ class BMCreateButtonReq  {
 	public $BMCreateButtonRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:BMCreateButtonReq>';
-		if($this->BMCreateButtonRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BMCreateButtonRequest != null)
+		{
 			$str .= '<urn:BMCreateButtonRequest>';
 			$str .= $this->BMCreateButtonRequest->toXMLString();
 			$str .= '</urn:BMCreateButtonRequest>';
@@ -16892,88 +15702,68 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	public $ButtonLanguage;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ButtonType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonType>' . $this->ButtonType . '</urn:ButtonType>';
+		if($this->ButtonType != null)
+		{
+			$str .= '<urn:ButtonType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonType) . '</urn:ButtonType>';
 		}
-		if($this->ButtonCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonCode>' . $this->ButtonCode . '</urn:ButtonCode>';
+		if($this->ButtonCode != null)
+		{
+			$str .= '<urn:ButtonCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonCode) . '</urn:ButtonCode>';
 		}
-		if($this->ButtonSubType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonSubType>' . $this->ButtonSubType . '</urn:ButtonSubType>';
+		if($this->ButtonSubType != null)
+		{
+			$str .= '<urn:ButtonSubType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSubType) . '</urn:ButtonSubType>';
 		}
-		if($this->ButtonVar != null) {
-			for($i = 0; $i < count($this->ButtonVar); $i++) { //property is collection
-				//not a complex member
-				//prop is not a value
-				$str .= '<urn:ButtonVar>'. $this->ButtonVar[$i] . '</urn:ButtonVar>';
-		
+		if($this->ButtonVar != null)
+		{
+			for($i = 0; $i < count($this->ButtonVar); $i++)
+			{
+				$str .= '<urn:ButtonVar>'. PPUtils::escapeInvalidXmlCharsRegex($this->ButtonVar[$i]) . '</urn:ButtonVar>';
 			}
 		}
-		if($this->OptionDetails != null) {
-			for($i = 0; $i < count($this->OptionDetails); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->OptionDetails != null)
+		{
+			for($i = 0; $i < count($this->OptionDetails); $i++)
+			{
 				$str .= '<urn:OptionDetails>';
 				$str .= $this->OptionDetails[$i]->toXMLString();
 				$str .= '</urn:OptionDetails>';
-		
 			}
 		}
-		if($this->TextBox != null) {
-			for($i = 0; $i < count($this->TextBox); $i++) { //property is collection
-				//not a complex member
-				//prop is not a value
-				$str .= '<urn:TextBox>'. $this->TextBox[$i] . '</urn:TextBox>';
-		
+		if($this->TextBox != null)
+		{
+			for($i = 0; $i < count($this->TextBox); $i++)
+			{
+				$str .= '<urn:TextBox>'. PPUtils::escapeInvalidXmlCharsRegex($this->TextBox[$i]) . '</urn:TextBox>';
 			}
 		}
-		if($this->ButtonImage != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonImage>' . $this->ButtonImage . '</urn:ButtonImage>';
+		if($this->ButtonImage != null)
+		{
+			$str .= '<urn:ButtonImage>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonImage) . '</urn:ButtonImage>';
 		}
-		if($this->ButtonImageURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonImageURL>' . $this->ButtonImageURL . '</urn:ButtonImageURL>';
+		if($this->ButtonImageURL != null)
+		{
+			$str .= '<urn:ButtonImageURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonImageURL) . '</urn:ButtonImageURL>';
 		}
-		if($this->BuyNowText != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:BuyNowText>' . $this->BuyNowText . '</urn:BuyNowText>';
+		if($this->BuyNowText != null)
+		{
+			$str .= '<urn:BuyNowText>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyNowText) . '</urn:BuyNowText>';
 		}
-		if($this->SubscribeText != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:SubscribeText>' . $this->SubscribeText . '</urn:SubscribeText>';
+		if($this->SubscribeText != null)
+		{
+			$str .= '<urn:SubscribeText>' . PPUtils::escapeInvalidXmlCharsRegex($this->SubscribeText) . '</urn:SubscribeText>';
 		}
-		if($this->ButtonCountry != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonCountry>' . $this->ButtonCountry . '</urn:ButtonCountry>';
+		if($this->ButtonCountry != null)
+		{
+			$str .= '<urn:ButtonCountry>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonCountry) . '</urn:ButtonCountry>';
 		}
-		if($this->ButtonLanguage != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonLanguage>' . $this->ButtonLanguage . '</urn:ButtonLanguage>';
+		if($this->ButtonLanguage != null)
+		{
+			$str .= '<urn:ButtonLanguage>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonLanguage) . '</urn:ButtonLanguage>';
 		}
 		return $str;
 	}
@@ -17055,14 +15845,12 @@ class BMUpdateButtonReq  {
 	public $BMUpdateButtonRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:BMUpdateButtonReq>';
-		if($this->BMUpdateButtonRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BMUpdateButtonRequest != null)
+		{
 			$str .= '<urn:BMUpdateButtonRequest>';
 			$str .= $this->BMUpdateButtonRequest->toXMLString();
 			$str .= '</urn:BMUpdateButtonRequest>';
@@ -17199,94 +15987,72 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->HostedButtonID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:HostedButtonID>' . $this->HostedButtonID . '</urn:HostedButtonID>';
+		if($this->HostedButtonID != null)
+		{
+			$str .= '<urn:HostedButtonID>' . PPUtils::escapeInvalidXmlCharsRegex($this->HostedButtonID) . '</urn:HostedButtonID>';
 		}
-		if($this->ButtonType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonType>' . $this->ButtonType . '</urn:ButtonType>';
+		if($this->ButtonType != null)
+		{
+			$str .= '<urn:ButtonType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonType) . '</urn:ButtonType>';
 		}
-		if($this->ButtonCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonCode>' . $this->ButtonCode . '</urn:ButtonCode>';
+		if($this->ButtonCode != null)
+		{
+			$str .= '<urn:ButtonCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonCode) . '</urn:ButtonCode>';
 		}
-		if($this->ButtonSubType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonSubType>' . $this->ButtonSubType . '</urn:ButtonSubType>';
+		if($this->ButtonSubType != null)
+		{
+			$str .= '<urn:ButtonSubType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSubType) . '</urn:ButtonSubType>';
 		}
-		if($this->ButtonVar != null) {
-			for($i = 0; $i < count($this->ButtonVar); $i++) { //property is collection
-				//not a complex member
-				//prop is not a value
-				$str .= '<urn:ButtonVar>'. $this->ButtonVar[$i] . '</urn:ButtonVar>';
-		
+		if($this->ButtonVar != null)
+		{
+			for($i = 0; $i < count($this->ButtonVar); $i++)
+			{
+				$str .= '<urn:ButtonVar>'. PPUtils::escapeInvalidXmlCharsRegex($this->ButtonVar[$i]) . '</urn:ButtonVar>';
 			}
 		}
-		if($this->OptionDetails != null) {
-			for($i = 0; $i < count($this->OptionDetails); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->OptionDetails != null)
+		{
+			for($i = 0; $i < count($this->OptionDetails); $i++)
+			{
 				$str .= '<urn:OptionDetails>';
 				$str .= $this->OptionDetails[$i]->toXMLString();
 				$str .= '</urn:OptionDetails>';
-		
 			}
 		}
-		if($this->TextBox != null) {
-			for($i = 0; $i < count($this->TextBox); $i++) { //property is collection
-				//not a complex member
-				//prop is not a value
-				$str .= '<urn:TextBox>'. $this->TextBox[$i] . '</urn:TextBox>';
-		
+		if($this->TextBox != null)
+		{
+			for($i = 0; $i < count($this->TextBox); $i++)
+			{
+				$str .= '<urn:TextBox>'. PPUtils::escapeInvalidXmlCharsRegex($this->TextBox[$i]) . '</urn:TextBox>';
 			}
 		}
-		if($this->ButtonImage != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonImage>' . $this->ButtonImage . '</urn:ButtonImage>';
+		if($this->ButtonImage != null)
+		{
+			$str .= '<urn:ButtonImage>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonImage) . '</urn:ButtonImage>';
 		}
-		if($this->ButtonImageURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonImageURL>' . $this->ButtonImageURL . '</urn:ButtonImageURL>';
+		if($this->ButtonImageURL != null)
+		{
+			$str .= '<urn:ButtonImageURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonImageURL) . '</urn:ButtonImageURL>';
 		}
-		if($this->BuyNowText != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:BuyNowText>' . $this->BuyNowText . '</urn:BuyNowText>';
+		if($this->BuyNowText != null)
+		{
+			$str .= '<urn:BuyNowText>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyNowText) . '</urn:BuyNowText>';
 		}
-		if($this->SubscribeText != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:SubscribeText>' . $this->SubscribeText . '</urn:SubscribeText>';
+		if($this->SubscribeText != null)
+		{
+			$str .= '<urn:SubscribeText>' . PPUtils::escapeInvalidXmlCharsRegex($this->SubscribeText) . '</urn:SubscribeText>';
 		}
-		if($this->ButtonCountry != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonCountry>' . $this->ButtonCountry . '</urn:ButtonCountry>';
+		if($this->ButtonCountry != null)
+		{
+			$str .= '<urn:ButtonCountry>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonCountry) . '</urn:ButtonCountry>';
 		}
-		if($this->ButtonLanguage != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonLanguage>' . $this->ButtonLanguage . '</urn:ButtonLanguage>';
+		if($this->ButtonLanguage != null)
+		{
+			$str .= '<urn:ButtonLanguage>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonLanguage) . '</urn:ButtonLanguage>';
 		}
 		return $str;
 	}
@@ -17368,14 +16134,12 @@ class BMManageButtonStatusReq  {
 	public $BMManageButtonStatusRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:BMManageButtonStatusReq>';
-		if($this->BMManageButtonStatusRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BMManageButtonStatusRequest != null)
+		{
 			$str .= '<urn:BMManageButtonStatusRequest>';
 			$str .= $this->BMManageButtonStatusRequest->toXMLString();
 			$str .= '</urn:BMManageButtonStatusRequest>';
@@ -17413,20 +16177,17 @@ class BMManageButtonStatusRequestType  extends AbstractRequestType  {
 	public $ButtonStatus;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->HostedButtonID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:HostedButtonID>' . $this->HostedButtonID . '</urn:HostedButtonID>';
+		if($this->HostedButtonID != null)
+		{
+			$str .= '<urn:HostedButtonID>' . PPUtils::escapeInvalidXmlCharsRegex($this->HostedButtonID) . '</urn:HostedButtonID>';
 		}
-		if($this->ButtonStatus != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonStatus>' . $this->ButtonStatus . '</urn:ButtonStatus>';
+		if($this->ButtonStatus != null)
+		{
+			$str .= '<urn:ButtonStatus>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonStatus) . '</urn:ButtonStatus>';
 		}
 		return $str;
 	}
@@ -17468,14 +16229,12 @@ class BMGetButtonDetailsReq  {
 	public $BMGetButtonDetailsRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:BMGetButtonDetailsReq>';
-		if($this->BMGetButtonDetailsRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BMGetButtonDetailsRequest != null)
+		{
 			$str .= '<urn:BMGetButtonDetailsRequest>';
 			$str .= $this->BMGetButtonDetailsRequest->toXMLString();
 			$str .= '</urn:BMGetButtonDetailsRequest>';
@@ -17511,14 +16270,13 @@ class BMGetButtonDetailsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->HostedButtonID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:HostedButtonID>' . $this->HostedButtonID . '</urn:HostedButtonID>';
+		if($this->HostedButtonID != null)
+		{
+			$str .= '<urn:HostedButtonID>' . PPUtils::escapeInvalidXmlCharsRegex($this->HostedButtonID) . '</urn:HostedButtonID>';
 		}
 		return $str;
 	}
@@ -17739,14 +16497,12 @@ class BMSetInventoryReq  {
 	public $BMSetInventoryRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:BMSetInventoryReq>';
-		if($this->BMSetInventoryRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BMSetInventoryRequest != null)
+		{
 			$str .= '<urn:BMSetInventoryRequest>';
 			$str .= $this->BMSetInventoryRequest->toXMLString();
 			$str .= '</urn:BMSetInventoryRequest>';
@@ -17859,76 +16615,58 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->HostedButtonID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:HostedButtonID>' . $this->HostedButtonID . '</urn:HostedButtonID>';
+		if($this->HostedButtonID != null)
+		{
+			$str .= '<urn:HostedButtonID>' . PPUtils::escapeInvalidXmlCharsRegex($this->HostedButtonID) . '</urn:HostedButtonID>';
 		}
-		if($this->TrackInv != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:TrackInv>' . $this->TrackInv . '</urn:TrackInv>';
+		if($this->TrackInv != null)
+		{
+			$str .= '<urn:TrackInv>' . PPUtils::escapeInvalidXmlCharsRegex($this->TrackInv) . '</urn:TrackInv>';
 		}
-		if($this->TrackPnl != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:TrackPnl>' . $this->TrackPnl . '</urn:TrackPnl>';
+		if($this->TrackPnl != null)
+		{
+			$str .= '<urn:TrackPnl>' . PPUtils::escapeInvalidXmlCharsRegex($this->TrackPnl) . '</urn:TrackPnl>';
 		}
-		if($this->ItemTrackingDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ItemTrackingDetails != null)
+		{
 			$str .= '<ebl:ItemTrackingDetails>';
 			$str .= $this->ItemTrackingDetails->toXMLString();
 			$str .= '</ebl:ItemTrackingDetails>';
 		}
-		if($this->OptionIndex != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:OptionIndex>' . $this->OptionIndex . '</urn:OptionIndex>';
+		if($this->OptionIndex != null)
+		{
+			$str .= '<urn:OptionIndex>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionIndex) . '</urn:OptionIndex>';
 		}
-		if($this->OptionTrackingDetails != null) {
-			for($i = 0; $i < count($this->OptionTrackingDetails); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->OptionTrackingDetails != null)
+		{
+			for($i = 0; $i < count($this->OptionTrackingDetails); $i++)
+			{
 				$str .= '<ebl:OptionTrackingDetails>';
 				$str .= $this->OptionTrackingDetails[$i]->toXMLString();
 				$str .= '</ebl:OptionTrackingDetails>';
-		
 			}
 		}
-		if($this->SoldoutURL != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:SoldoutURL>' . $this->SoldoutURL . '</urn:SoldoutURL>';
+		if($this->SoldoutURL != null)
+		{
+			$str .= '<urn:SoldoutURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->SoldoutURL) . '</urn:SoldoutURL>';
 		}
-		if($this->ReuseDigitalDownloadKeys != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ReuseDigitalDownloadKeys>' . $this->ReuseDigitalDownloadKeys . '</urn:ReuseDigitalDownloadKeys>';
+		if($this->ReuseDigitalDownloadKeys != null)
+		{
+			$str .= '<urn:ReuseDigitalDownloadKeys>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReuseDigitalDownloadKeys) . '</urn:ReuseDigitalDownloadKeys>';
 		}
-		if($this->AppendDigitalDownloadKeys != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:AppendDigitalDownloadKeys>' . $this->AppendDigitalDownloadKeys . '</urn:AppendDigitalDownloadKeys>';
+		if($this->AppendDigitalDownloadKeys != null)
+		{
+			$str .= '<urn:AppendDigitalDownloadKeys>' . PPUtils::escapeInvalidXmlCharsRegex($this->AppendDigitalDownloadKeys) . '</urn:AppendDigitalDownloadKeys>';
 		}
-		if($this->DigitalDownloadKeys != null) {
-			for($i = 0; $i < count($this->DigitalDownloadKeys); $i++) { //property is collection
-				//not a complex member
-				//prop is not a value
-				$str .= '<urn:DigitalDownloadKeys>'. $this->DigitalDownloadKeys[$i] . '</urn:DigitalDownloadKeys>';
-		
+		if($this->DigitalDownloadKeys != null)
+		{
+			for($i = 0; $i < count($this->DigitalDownloadKeys); $i++)
+			{
+				$str .= '<urn:DigitalDownloadKeys>'. PPUtils::escapeInvalidXmlCharsRegex($this->DigitalDownloadKeys[$i]) . '</urn:DigitalDownloadKeys>';
 			}
 		}
 		return $str;
@@ -17971,14 +16709,12 @@ class BMGetInventoryReq  {
 	public $BMGetInventoryRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:BMGetInventoryReq>';
-		if($this->BMGetInventoryRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BMGetInventoryRequest != null)
+		{
 			$str .= '<urn:BMGetInventoryRequest>';
 			$str .= $this->BMGetInventoryRequest->toXMLString();
 			$str .= '</urn:BMGetInventoryRequest>';
@@ -18016,14 +16752,13 @@ class BMGetInventoryRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->HostedButtonID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:HostedButtonID>' . $this->HostedButtonID . '</urn:HostedButtonID>';
+		if($this->HostedButtonID != null)
+		{
+			$str .= '<urn:HostedButtonID>' . PPUtils::escapeInvalidXmlCharsRegex($this->HostedButtonID) . '</urn:HostedButtonID>';
 		}
 		return $str;
 	}
@@ -18172,14 +16907,12 @@ class BMButtonSearchReq  {
 	public $BMButtonSearchRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:BMButtonSearchReq>';
-		if($this->BMButtonSearchRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BMButtonSearchRequest != null)
+		{
 			$str .= '<urn:BMButtonSearchRequest>';
 			$str .= $this->BMButtonSearchRequest->toXMLString();
 			$str .= '</urn:BMButtonSearchRequest>';
@@ -18216,20 +16949,17 @@ class BMButtonSearchRequestType  extends AbstractRequestType  {
 	public $EndDate;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->StartDate != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:StartDate>' . $this->StartDate . '</urn:StartDate>';
+		if($this->StartDate != null)
+		{
+			$str .= '<urn:StartDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartDate) . '</urn:StartDate>';
 		}
-		if($this->EndDate != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:EndDate>' . $this->EndDate . '</urn:EndDate>';
+		if($this->EndDate != null)
+		{
+			$str .= '<urn:EndDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->EndDate) . '</urn:EndDate>';
 		}
 		return $str;
 	}
@@ -18295,14 +17025,12 @@ class RefundTransactionReq  {
 	public $RefundTransactionRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:RefundTransactionReq>';
-		if($this->RefundTransactionRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->RefundTransactionRequest != null)
+		{
 			$str .= '<urn:RefundTransactionRequest>';
 			$str .= $this->RefundTransactionRequest->toXMLString();
 			$str .= '</urn:RefundTransactionRequest>';
@@ -18416,84 +17144,62 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	public $MsgSubID;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->TransactionID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:TransactionID>' . $this->TransactionID . '</urn:TransactionID>';
+		if($this->TransactionID != null)
+		{
+			$str .= '<urn:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</urn:TransactionID>';
 		}
-		if($this->InvoiceID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:InvoiceID>' . $this->InvoiceID . '</urn:InvoiceID>';
+		if($this->InvoiceID != null)
+		{
+			$str .= '<urn:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</urn:InvoiceID>';
 		}
-		if($this->RefundType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:RefundType>' . $this->RefundType . '</urn:RefundType>';
+		if($this->RefundType != null)
+		{
+			$str .= '<urn:RefundType>' . PPUtils::escapeInvalidXmlCharsRegex($this->RefundType) . '</urn:RefundType>';
 		}
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</urn:Amount>';
 		}
-		if($this->Memo != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Memo>' . $this->Memo . '</urn:Memo>';
+		if($this->Memo != null)
+		{
+			$str .= '<urn:Memo>' . PPUtils::escapeInvalidXmlCharsRegex($this->Memo) . '</urn:Memo>';
 		}
-		if($this->RetryUntil != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:RetryUntil>' . $this->RetryUntil . '</urn:RetryUntil>';
+		if($this->RetryUntil != null)
+		{
+			$str .= '<urn:RetryUntil>' . PPUtils::escapeInvalidXmlCharsRegex($this->RetryUntil) . '</urn:RetryUntil>';
 		}
-		if($this->RefundSource != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:RefundSource>' . $this->RefundSource . '</urn:RefundSource>';
+		if($this->RefundSource != null)
+		{
+			$str .= '<urn:RefundSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->RefundSource) . '</urn:RefundSource>';
 		}
-		if($this->RefundAdvice != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:RefundAdvice>' . $this->RefundAdvice . '</urn:RefundAdvice>';
+		if($this->RefundAdvice != null)
+		{
+			$str .= '<urn:RefundAdvice>' . PPUtils::escapeInvalidXmlCharsRegex($this->RefundAdvice) . '</urn:RefundAdvice>';
 		}
-		if($this->MerchantStoreDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->MerchantStoreDetails != null)
+		{
 			$str .= '<ebl:MerchantStoreDetails>';
 			$str .= $this->MerchantStoreDetails->toXMLString();
 			$str .= '</ebl:MerchantStoreDetails>';
 		}
-		if($this->RefundItemDetails != null) {
-			for($i = 0; $i < count($this->RefundItemDetails); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->RefundItemDetails != null)
+		{
+			for($i = 0; $i < count($this->RefundItemDetails); $i++)
+			{
 				$str .= '<ebl:RefundItemDetails>';
 				$str .= $this->RefundItemDetails[$i]->toXMLString();
 				$str .= '</ebl:RefundItemDetails>';
-		
 			}
 		}
-		if($this->MsgSubID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:MsgSubID>' . $this->MsgSubID . '</urn:MsgSubID>';
+		if($this->MsgSubID != null)
+		{
+			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
 		}
 		return $str;
 	}
@@ -18680,14 +17386,12 @@ class InitiateRecoupReq  {
 	public $InitiateRecoupRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:InitiateRecoupReq>';
-		if($this->InitiateRecoupRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->InitiateRecoupRequest != null)
+		{
 			$str .= '<urn:InitiateRecoupRequest>';
 			$str .= $this->InitiateRecoupRequest->toXMLString();
 			$str .= '</urn:InitiateRecoupRequest>';
@@ -18721,14 +17425,12 @@ class InitiateRecoupRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->EnhancedInitiateRecoupRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->EnhancedInitiateRecoupRequestDetails != null)
+		{
 			$str .= '<ed:EnhancedInitiateRecoupRequestDetails>';
 			$str .= $this->EnhancedInitiateRecoupRequestDetails->toXMLString();
 			$str .= '</ed:EnhancedInitiateRecoupRequestDetails>';
@@ -18773,14 +17475,12 @@ class CompleteRecoupReq  {
 	public $CompleteRecoupRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:CompleteRecoupReq>';
-		if($this->CompleteRecoupRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->CompleteRecoupRequest != null)
+		{
 			$str .= '<urn:CompleteRecoupRequest>';
 			$str .= $this->CompleteRecoupRequest->toXMLString();
 			$str .= '</urn:CompleteRecoupRequest>';
@@ -18814,14 +17514,12 @@ class CompleteRecoupRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->EnhancedCompleteRecoupRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->EnhancedCompleteRecoupRequestDetails != null)
+		{
 			$str .= '<ed:EnhancedCompleteRecoupRequestDetails>';
 			$str .= $this->EnhancedCompleteRecoupRequestDetails->toXMLString();
 			$str .= '</ed:EnhancedCompleteRecoupRequestDetails>';
@@ -18881,14 +17579,12 @@ class CancelRecoupReq  {
 	public $CancelRecoupRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:CancelRecoupReq>';
-		if($this->CancelRecoupRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->CancelRecoupRequest != null)
+		{
 			$str .= '<urn:CancelRecoupRequest>';
 			$str .= $this->CancelRecoupRequest->toXMLString();
 			$str .= '</urn:CancelRecoupRequest>';
@@ -18922,14 +17618,12 @@ class CancelRecoupRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->EnhancedCancelRecoupRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->EnhancedCancelRecoupRequestDetails != null)
+		{
 			$str .= '<ed:EnhancedCancelRecoupRequestDetails>';
 			$str .= $this->EnhancedCancelRecoupRequestDetails->toXMLString();
 			$str .= '</ed:EnhancedCancelRecoupRequestDetails>';
@@ -18974,14 +17668,12 @@ class GetTransactionDetailsReq  {
 	public $GetTransactionDetailsRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:GetTransactionDetailsReq>';
-		if($this->GetTransactionDetailsRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->GetTransactionDetailsRequest != null)
+		{
 			$str .= '<urn:GetTransactionDetailsRequest>';
 			$str .= $this->GetTransactionDetailsRequest->toXMLString();
 			$str .= '</urn:GetTransactionDetailsRequest>';
@@ -19016,14 +17708,13 @@ class GetTransactionDetailsRequestType  extends AbstractRequestType  {
 	public $TransactionID;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->TransactionID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:TransactionID>' . $this->TransactionID . '</urn:TransactionID>';
+		if($this->TransactionID != null)
+		{
+			$str .= '<urn:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</urn:TransactionID>';
 		}
 		return $str;
 	}
@@ -19095,14 +17786,12 @@ class BillUserReq  {
 	public $BillUserRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:BillUserReq>';
-		if($this->BillUserRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BillUserRequest != null)
+		{
 			$str .= '<urn:BillUserRequest>';
 			$str .= $this->BillUserRequest->toXMLString();
 			$str .= '</urn:BillUserRequest>';
@@ -19138,23 +17827,19 @@ class BillUserRequestType  extends AbstractRequestType  {
 	public $ReturnFMFDetails;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->MerchantPullPaymentDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->MerchantPullPaymentDetails != null)
+		{
 			$str .= '<ebl:MerchantPullPaymentDetails>';
 			$str .= $this->MerchantPullPaymentDetails->toXMLString();
 			$str .= '</ebl:MerchantPullPaymentDetails>';
 		}
-		if($this->ReturnFMFDetails != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ReturnFMFDetails>' . $this->ReturnFMFDetails . '</urn:ReturnFMFDetails>';
+		if($this->ReturnFMFDetails != null)
+		{
+			$str .= '<urn:ReturnFMFDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnFMFDetails) . '</urn:ReturnFMFDetails>';
 		}
 		return $str;
 	}
@@ -19226,14 +17911,12 @@ class TransactionSearchReq  {
 	public $TransactionSearchRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:TransactionSearchReq>';
-		if($this->TransactionSearchRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->TransactionSearchRequest != null)
+		{
 			$str .= '<urn:TransactionSearchRequest>';
 			$str .= $this->TransactionSearchRequest->toXMLString();
 			$str .= '</urn:TransactionSearchRequest>';
@@ -19421,104 +18104,73 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->StartDate != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:StartDate>' . $this->StartDate . '</urn:StartDate>';
+		if($this->StartDate != null)
+		{
+			$str .= '<urn:StartDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartDate) . '</urn:StartDate>';
 		}
-		if($this->EndDate != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:EndDate>' . $this->EndDate . '</urn:EndDate>';
+		if($this->EndDate != null)
+		{
+			$str .= '<urn:EndDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->EndDate) . '</urn:EndDate>';
 		}
-		if($this->Payer != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Payer>' . $this->Payer . '</urn:Payer>';
+		if($this->Payer != null)
+		{
+			$str .= '<urn:Payer>' . PPUtils::escapeInvalidXmlCharsRegex($this->Payer) . '</urn:Payer>';
 		}
-		if($this->Receiver != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Receiver>' . $this->Receiver . '</urn:Receiver>';
+		if($this->Receiver != null)
+		{
+			$str .= '<urn:Receiver>' . PPUtils::escapeInvalidXmlCharsRegex($this->Receiver) . '</urn:Receiver>';
 		}
-		if($this->ReceiptID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ReceiptID>' . $this->ReceiptID . '</urn:ReceiptID>';
+		if($this->ReceiptID != null)
+		{
+			$str .= '<urn:ReceiptID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiptID) . '</urn:ReceiptID>';
 		}
-		if($this->TransactionID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:TransactionID>' . $this->TransactionID . '</urn:TransactionID>';
+		if($this->TransactionID != null)
+		{
+			$str .= '<urn:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</urn:TransactionID>';
 		}
-		if($this->ProfileID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ProfileID>' . $this->ProfileID . '</urn:ProfileID>';
+		if($this->ProfileID != null)
+		{
+			$str .= '<urn:ProfileID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileID) . '</urn:ProfileID>';
 		}
-		if($this->PayerName != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->PayerName != null)
+		{
 			$str .= '<urn:PayerName>';
 			$str .= $this->PayerName->toXMLString();
 			$str .= '</urn:PayerName>';
 		}
-		if($this->AuctionItemNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:AuctionItemNumber>' . $this->AuctionItemNumber . '</urn:AuctionItemNumber>';
+		if($this->AuctionItemNumber != null)
+		{
+			$str .= '<urn:AuctionItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuctionItemNumber) . '</urn:AuctionItemNumber>';
 		}
-		if($this->InvoiceID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:InvoiceID>' . $this->InvoiceID . '</urn:InvoiceID>';
+		if($this->InvoiceID != null)
+		{
+			$str .= '<urn:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</urn:InvoiceID>';
 		}
-		if($this->CardNumber != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:CardNumber>' . $this->CardNumber . '</urn:CardNumber>';
+		if($this->CardNumber != null)
+		{
+			$str .= '<urn:CardNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->CardNumber) . '</urn:CardNumber>';
 		}
-		if($this->TransactionClass != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:TransactionClass>' . $this->TransactionClass . '</urn:TransactionClass>';
+		if($this->TransactionClass != null)
+		{
+			$str .= '<urn:TransactionClass>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionClass) . '</urn:TransactionClass>';
 		}
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</urn:Amount>';
 		}
-		if($this->CurrencyCode != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:CurrencyCode>' . $this->CurrencyCode . '</urn:CurrencyCode>';
+		if($this->CurrencyCode != null)
+		{
+			$str .= '<urn:CurrencyCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->CurrencyCode) . '</urn:CurrencyCode>';
 		}
-		if($this->Status != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Status>' . $this->Status . '</urn:Status>';
+		if($this->Status != null)
+		{
+			$str .= '<urn:Status>' . PPUtils::escapeInvalidXmlCharsRegex($this->Status) . '</urn:Status>';
 		}
 		return $str;
 	}
@@ -19584,14 +18236,12 @@ class MassPayReq  {
 	public $MassPayRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:MassPayReq>';
-		if($this->MassPayRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->MassPayRequest != null)
+		{
 			$str .= '<urn:MassPayRequest>';
 			$str .= $this->MassPayRequest->toXMLString();
 			$str .= '</urn:MassPayRequest>';
@@ -19660,35 +18310,29 @@ class MassPayRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->EmailSubject != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:EmailSubject>' . $this->EmailSubject . '</urn:EmailSubject>';
+		if($this->EmailSubject != null)
+		{
+			$str .= '<urn:EmailSubject>' . PPUtils::escapeInvalidXmlCharsRegex($this->EmailSubject) . '</urn:EmailSubject>';
 		}
-		if($this->ReceiverType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ReceiverType>' . $this->ReceiverType . '</urn:ReceiverType>';
+		if($this->ReceiverType != null)
+		{
+			$str .= '<urn:ReceiverType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiverType) . '</urn:ReceiverType>';
 		}
-		if($this->ButtonSource != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ButtonSource>' . $this->ButtonSource . '</urn:ButtonSource>';
+		if($this->ButtonSource != null)
+		{
+			$str .= '<urn:ButtonSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSource) . '</urn:ButtonSource>';
 		}
-		if($this->MassPayItem != null) {
-			for($i = 0; $i < count($this->MassPayItem); $i++) { //property is collection
-				//prop.complex
-				//does not contain attribute or is attribute
+		if($this->MassPayItem != null)
+		{
+			for($i = 0; $i < count($this->MassPayItem); $i++)
+			{
 				$str .= '<urn:MassPayItem>';
 				$str .= $this->MassPayItem[$i]->toXMLString();
 				$str .= '</urn:MassPayItem>';
-		
 			}
 		}
 		return $str;
@@ -19794,46 +18438,34 @@ class MassPayRequestItemType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
-		if($this->ReceiverEmail != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ReceiverEmail>' . $this->ReceiverEmail . '</urn:ReceiverEmail>';
+		if($this->ReceiverEmail != null)
+		{
+			$str .= '<urn:ReceiverEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiverEmail) . '</urn:ReceiverEmail>';
 		}
-		if($this->ReceiverPhone != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ReceiverPhone>' . $this->ReceiverPhone . '</urn:ReceiverPhone>';
+		if($this->ReceiverPhone != null)
+		{
+			$str .= '<urn:ReceiverPhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiverPhone) . '</urn:ReceiverPhone>';
 		}
-		if($this->ReceiverID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ReceiverID>' . $this->ReceiverID . '</urn:ReceiverID>';
+		if($this->ReceiverID != null)
+		{
+			$str .= '<urn:ReceiverID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiverID) . '</urn:ReceiverID>';
 		}
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</urn:Amount>';
 		}
-		if($this->UniqueId != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:UniqueId>' . $this->UniqueId . '</urn:UniqueId>';
+		if($this->UniqueId != null)
+		{
+			$str .= '<urn:UniqueId>' . PPUtils::escapeInvalidXmlCharsRegex($this->UniqueId) . '</urn:UniqueId>';
 		}
-		if($this->Note != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Note>' . $this->Note . '</urn:Note>';
+		if($this->Note != null)
+		{
+			$str .= '<urn:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</urn:Note>';
 		}
 		return $str;
 	}
@@ -19856,14 +18488,12 @@ class BillAgreementUpdateReq  {
 	public $BAUpdateRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:BillAgreementUpdateReq>';
-		if($this->BAUpdateRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BAUpdateRequest != null)
+		{
 			$str .= '<urn:BAUpdateRequest>';
 			$str .= $this->BAUpdateRequest->toXMLString();
 			$str .= '</urn:BAUpdateRequest>';
@@ -19918,32 +18548,25 @@ class BAUpdateRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ReferenceID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ReferenceID>' . $this->ReferenceID . '</urn:ReferenceID>';
+		if($this->ReferenceID != null)
+		{
+			$str .= '<urn:ReferenceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReferenceID) . '</urn:ReferenceID>';
 		}
-		if($this->BillingAgreementDescription != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:BillingAgreementDescription>' . $this->BillingAgreementDescription . '</urn:BillingAgreementDescription>';
+		if($this->BillingAgreementDescription != null)
+		{
+			$str .= '<urn:BillingAgreementDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingAgreementDescription) . '</urn:BillingAgreementDescription>';
 		}
-		if($this->BillingAgreementStatus != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:BillingAgreementStatus>' . $this->BillingAgreementStatus . '</urn:BillingAgreementStatus>';
+		if($this->BillingAgreementStatus != null)
+		{
+			$str .= '<urn:BillingAgreementStatus>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingAgreementStatus) . '</urn:BillingAgreementStatus>';
 		}
-		if($this->BillingAgreementCustom != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:BillingAgreementCustom>' . $this->BillingAgreementCustom . '</urn:BillingAgreementCustom>';
+		if($this->BillingAgreementCustom != null)
+		{
+			$str .= '<urn:BillingAgreementCustom>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingAgreementCustom) . '</urn:BillingAgreementCustom>';
 		}
 		return $str;
 	}
@@ -20000,14 +18623,12 @@ class AddressVerifyReq  {
 	public $AddressVerifyRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:AddressVerifyReq>';
-		if($this->AddressVerifyRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->AddressVerifyRequest != null)
+		{
 			$str .= '<urn:AddressVerifyRequest>';
 			$str .= $this->AddressVerifyRequest->toXMLString();
 			$str .= '</urn:AddressVerifyRequest>';
@@ -20070,26 +18691,21 @@ class AddressVerifyRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Email != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Email>' . $this->Email . '</urn:Email>';
+		if($this->Email != null)
+		{
+			$str .= '<urn:Email>' . PPUtils::escapeInvalidXmlCharsRegex($this->Email) . '</urn:Email>';
 		}
-		if($this->Street != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Street>' . $this->Street . '</urn:Street>';
+		if($this->Street != null)
+		{
+			$str .= '<urn:Street>' . PPUtils::escapeInvalidXmlCharsRegex($this->Street) . '</urn:Street>';
 		}
-		if($this->Zip != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Zip>' . $this->Zip . '</urn:Zip>';
+		if($this->Zip != null)
+		{
+			$str .= '<urn:Zip>' . PPUtils::escapeInvalidXmlCharsRegex($this->Zip) . '</urn:Zip>';
 		}
 		return $str;
 	}
@@ -20213,14 +18829,12 @@ class EnterBoardingReq  {
 	public $EnterBoardingRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:EnterBoardingReq>';
-		if($this->EnterBoardingRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->EnterBoardingRequest != null)
+		{
 			$str .= '<urn:EnterBoardingRequest>';
 			$str .= $this->EnterBoardingRequest->toXMLString();
 			$str .= '</urn:EnterBoardingRequest>';
@@ -20254,14 +18868,12 @@ class EnterBoardingRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->EnterBoardingRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->EnterBoardingRequestDetails != null)
+		{
 			$str .= '<ebl:EnterBoardingRequestDetails>';
 			$str .= $this->EnterBoardingRequestDetails->toXMLString();
 			$str .= '</ebl:EnterBoardingRequestDetails>';
@@ -20322,14 +18934,12 @@ class GetBoardingDetailsReq  {
 	public $GetBoardingDetailsRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:GetBoardingDetailsReq>';
-		if($this->GetBoardingDetailsRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->GetBoardingDetailsRequest != null)
+		{
 			$str .= '<urn:GetBoardingDetailsRequest>';
 			$str .= $this->GetBoardingDetailsRequest->toXMLString();
 			$str .= '</urn:GetBoardingDetailsRequest>';
@@ -20369,14 +18979,13 @@ class GetBoardingDetailsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Token != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Token>' . $this->Token . '</urn:Token>';
+		if($this->Token != null)
+		{
+			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
 		}
 		return $str;
 	}
@@ -20433,14 +19042,12 @@ class SetAuthFlowParamReq  {
 	public $SetAuthFlowParamRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:SetAuthFlowParamReq>';
-		if($this->SetAuthFlowParamRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SetAuthFlowParamRequest != null)
+		{
 			$str .= '<urn:SetAuthFlowParamRequest>';
 			$str .= $this->SetAuthFlowParamRequest->toXMLString();
 			$str .= '</urn:SetAuthFlowParamRequest>';
@@ -20474,14 +19081,12 @@ class SetAuthFlowParamRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->SetAuthFlowParamRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SetAuthFlowParamRequestDetails != null)
+		{
 			$str .= '<ebl:SetAuthFlowParamRequestDetails>';
 			$str .= $this->SetAuthFlowParamRequestDetails->toXMLString();
 			$str .= '</ebl:SetAuthFlowParamRequestDetails>';
@@ -20542,14 +19147,12 @@ class GetAuthDetailsReq  {
 	public $GetAuthDetailsRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:GetAuthDetailsReq>';
-		if($this->GetAuthDetailsRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->GetAuthDetailsRequest != null)
+		{
 			$str .= '<urn:GetAuthDetailsRequest>';
 			$str .= $this->GetAuthDetailsRequest->toXMLString();
 			$str .= '</urn:GetAuthDetailsRequest>';
@@ -20587,14 +19190,13 @@ class GetAuthDetailsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Token != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Token>' . $this->Token . '</urn:Token>';
+		if($this->Token != null)
+		{
+			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
 		}
 		return $str;
 	}
@@ -20651,14 +19253,12 @@ class SetAccessPermissionsReq  {
 	public $SetAccessPermissionsRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:SetAccessPermissionsReq>';
-		if($this->SetAccessPermissionsRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SetAccessPermissionsRequest != null)
+		{
 			$str .= '<urn:SetAccessPermissionsRequest>';
 			$str .= $this->SetAccessPermissionsRequest->toXMLString();
 			$str .= '</urn:SetAccessPermissionsRequest>';
@@ -20692,14 +19292,12 @@ class SetAccessPermissionsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->SetAccessPermissionsRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SetAccessPermissionsRequestDetails != null)
+		{
 			$str .= '<ebl:SetAccessPermissionsRequestDetails>';
 			$str .= $this->SetAccessPermissionsRequestDetails->toXMLString();
 			$str .= '</ebl:SetAccessPermissionsRequestDetails>';
@@ -20760,14 +19358,12 @@ class UpdateAccessPermissionsReq  {
 	public $UpdateAccessPermissionsRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:UpdateAccessPermissionsReq>';
-		if($this->UpdateAccessPermissionsRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->UpdateAccessPermissionsRequest != null)
+		{
 			$str .= '<urn:UpdateAccessPermissionsRequest>';
 			$str .= $this->UpdateAccessPermissionsRequest->toXMLString();
 			$str .= '</urn:UpdateAccessPermissionsRequest>';
@@ -20805,14 +19401,13 @@ class UpdateAccessPermissionsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->PayerID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:PayerID>' . $this->PayerID . '</urn:PayerID>';
+		if($this->PayerID != null)
+		{
+			$str .= '<urn:PayerID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerID) . '</urn:PayerID>';
 		}
 		return $str;
 	}
@@ -20866,14 +19461,12 @@ class GetAccessPermissionDetailsReq  {
 	public $GetAccessPermissionDetailsRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:GetAccessPermissionDetailsReq>';
-		if($this->GetAccessPermissionDetailsRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->GetAccessPermissionDetailsRequest != null)
+		{
 			$str .= '<urn:GetAccessPermissionDetailsRequest>';
 			$str .= $this->GetAccessPermissionDetailsRequest->toXMLString();
 			$str .= '</urn:GetAccessPermissionDetailsRequest>';
@@ -20911,14 +19504,13 @@ class GetAccessPermissionDetailsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Token != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Token>' . $this->Token . '</urn:Token>';
+		if($this->Token != null)
+		{
+			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
 		}
 		return $str;
 	}
@@ -20975,14 +19567,12 @@ class GetIncentiveEvaluationReq  {
 	public $GetIncentiveEvaluationRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:GetIncentiveEvaluationReq>';
-		if($this->GetIncentiveEvaluationRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->GetIncentiveEvaluationRequest != null)
+		{
 			$str .= '<urn:GetIncentiveEvaluationRequest>';
 			$str .= $this->GetIncentiveEvaluationRequest->toXMLString();
 			$str .= '</urn:GetIncentiveEvaluationRequest>';
@@ -21016,14 +19606,12 @@ class GetIncentiveEvaluationRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->GetIncentiveEvaluationRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->GetIncentiveEvaluationRequestDetails != null)
+		{
 			$str .= '<ebl:GetIncentiveEvaluationRequestDetails>';
 			$str .= $this->GetIncentiveEvaluationRequestDetails->toXMLString();
 			$str .= '</ebl:GetIncentiveEvaluationRequestDetails>';
@@ -21083,14 +19671,12 @@ class SetExpressCheckoutReq  {
 	public $SetExpressCheckoutRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:SetExpressCheckoutReq>';
-		if($this->SetExpressCheckoutRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SetExpressCheckoutRequest != null)
+		{
 			$str .= '<urn:SetExpressCheckoutRequest>';
 			$str .= $this->SetExpressCheckoutRequest->toXMLString();
 			$str .= '</urn:SetExpressCheckoutRequest>';
@@ -21124,14 +19710,12 @@ class SetExpressCheckoutRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->SetExpressCheckoutRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SetExpressCheckoutRequestDetails != null)
+		{
 			$str .= '<ebl:SetExpressCheckoutRequestDetails>';
 			$str .= $this->SetExpressCheckoutRequestDetails->toXMLString();
 			$str .= '</ebl:SetExpressCheckoutRequestDetails>';
@@ -21196,14 +19780,12 @@ class ExecuteCheckoutOperationsReq  {
 	public $ExecuteCheckoutOperationsRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:ExecuteCheckoutOperationsReq>';
-		if($this->ExecuteCheckoutOperationsRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ExecuteCheckoutOperationsRequest != null)
+		{
 			$str .= '<urn:ExecuteCheckoutOperationsRequest>';
 			$str .= $this->ExecuteCheckoutOperationsRequest->toXMLString();
 			$str .= '</urn:ExecuteCheckoutOperationsRequest>';
@@ -21237,14 +19819,12 @@ class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ExecuteCheckoutOperationsRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ExecuteCheckoutOperationsRequestDetails != null)
+		{
 			$str .= '<ebl:ExecuteCheckoutOperationsRequestDetails>';
 			$str .= $this->ExecuteCheckoutOperationsRequestDetails->toXMLString();
 			$str .= '</ebl:ExecuteCheckoutOperationsRequestDetails>';
@@ -21304,14 +19884,12 @@ class GetExpressCheckoutDetailsReq  {
 	public $GetExpressCheckoutDetailsRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:GetExpressCheckoutDetailsReq>';
-		if($this->GetExpressCheckoutDetailsRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->GetExpressCheckoutDetailsRequest != null)
+		{
 			$str .= '<urn:GetExpressCheckoutDetailsRequest>';
 			$str .= $this->GetExpressCheckoutDetailsRequest->toXMLString();
 			$str .= '</urn:GetExpressCheckoutDetailsRequest>';
@@ -21349,14 +19927,13 @@ class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Token != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Token>' . $this->Token . '</urn:Token>';
+		if($this->Token != null)
+		{
+			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
 		}
 		return $str;
 	}
@@ -21413,14 +19990,12 @@ class DoExpressCheckoutPaymentReq  {
 	public $DoExpressCheckoutPaymentRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:DoExpressCheckoutPaymentReq>';
-		if($this->DoExpressCheckoutPaymentRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoExpressCheckoutPaymentRequest != null)
+		{
 			$str .= '<urn:DoExpressCheckoutPaymentRequest>';
 			$str .= $this->DoExpressCheckoutPaymentRequest->toXMLString();
 			$str .= '</urn:DoExpressCheckoutPaymentRequest>';
@@ -21463,23 +20038,19 @@ class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->DoExpressCheckoutPaymentRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoExpressCheckoutPaymentRequestDetails != null)
+		{
 			$str .= '<ebl:DoExpressCheckoutPaymentRequestDetails>';
 			$str .= $this->DoExpressCheckoutPaymentRequestDetails->toXMLString();
 			$str .= '</ebl:DoExpressCheckoutPaymentRequestDetails>';
 		}
-		if($this->ReturnFMFDetails != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ReturnFMFDetails>' . $this->ReturnFMFDetails . '</urn:ReturnFMFDetails>';
+		if($this->ReturnFMFDetails != null)
+		{
+			$str .= '<urn:ReturnFMFDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnFMFDetails) . '</urn:ReturnFMFDetails>';
 		}
 		return $str;
 	}
@@ -21551,14 +20122,12 @@ class DoUATPExpressCheckoutPaymentReq  {
 	public $DoUATPExpressCheckoutPaymentRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:DoUATPExpressCheckoutPaymentReq>';
-		if($this->DoUATPExpressCheckoutPaymentRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoUATPExpressCheckoutPaymentRequest != null)
+		{
 			$str .= '<urn:DoUATPExpressCheckoutPaymentRequest>';
 			$str .= $this->DoUATPExpressCheckoutPaymentRequest->toXMLString();
 			$str .= '</urn:DoUATPExpressCheckoutPaymentRequest>';
@@ -21578,7 +20147,8 @@ class DoUATPExpressCheckoutPaymentReq  {
 class DoUATPExpressCheckoutPaymentRequestType  extends DoExpressCheckoutPaymentRequestType  {
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
 		return $str;
@@ -21636,14 +20206,12 @@ class ManagePendingTransactionStatusReq  {
 	public $ManagePendingTransactionStatusRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:ManagePendingTransactionStatusReq>';
-		if($this->ManagePendingTransactionStatusRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ManagePendingTransactionStatusRequest != null)
+		{
 			$str .= '<urn:ManagePendingTransactionStatusRequest>';
 			$str .= $this->ManagePendingTransactionStatusRequest->toXMLString();
 			$str .= '</urn:ManagePendingTransactionStatusRequest>';
@@ -21685,20 +20253,17 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->TransactionID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:TransactionID>' . $this->TransactionID . '</urn:TransactionID>';
+		if($this->TransactionID != null)
+		{
+			$str .= '<urn:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</urn:TransactionID>';
 		}
-		if($this->Action != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Action>' . $this->Action . '</urn:Action>';
+		if($this->Action != null)
+		{
+			$str .= '<urn:Action>' . PPUtils::escapeInvalidXmlCharsRegex($this->Action) . '</urn:Action>';
 		}
 		return $str;
 	}
@@ -21760,14 +20325,12 @@ class DoDirectPaymentReq  {
 	public $DoDirectPaymentRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:DoDirectPaymentReq>';
-		if($this->DoDirectPaymentRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoDirectPaymentRequest != null)
+		{
 			$str .= '<urn:DoDirectPaymentRequest>';
 			$str .= $this->DoDirectPaymentRequest->toXMLString();
 			$str .= '</urn:DoDirectPaymentRequest>';
@@ -21810,23 +20373,19 @@ class DoDirectPaymentRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->DoDirectPaymentRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoDirectPaymentRequestDetails != null)
+		{
 			$str .= '<ebl:DoDirectPaymentRequestDetails>';
 			$str .= $this->DoDirectPaymentRequestDetails->toXMLString();
 			$str .= '</ebl:DoDirectPaymentRequestDetails>';
 		}
-		if($this->ReturnFMFDetails != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ReturnFMFDetails>' . $this->ReturnFMFDetails . '</urn:ReturnFMFDetails>';
+		if($this->ReturnFMFDetails != null)
+		{
+			$str .= '<urn:ReturnFMFDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnFMFDetails) . '</urn:ReturnFMFDetails>';
 		}
 		return $str;
 	}
@@ -22004,14 +20563,12 @@ class DoCancelReq  {
 	public $DoCancelRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:DoCancelReq>';
-		if($this->DoCancelRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoCancelRequest != null)
+		{
 			$str .= '<urn:DoCancelRequest>';
 			$str .= $this->DoCancelRequest->toXMLString();
 			$str .= '</urn:DoCancelRequest>';
@@ -22053,20 +20610,17 @@ class DoCancelRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->CancelMsgSubID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:CancelMsgSubID>' . $this->CancelMsgSubID . '</urn:CancelMsgSubID>';
+		if($this->CancelMsgSubID != null)
+		{
+			$str .= '<urn:CancelMsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelMsgSubID) . '</urn:CancelMsgSubID>';
 		}
-		if($this->APIType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:APIType>' . $this->APIType . '</urn:APIType>';
+		if($this->APIType != null)
+		{
+			$str .= '<urn:APIType>' . PPUtils::escapeInvalidXmlCharsRegex($this->APIType) . '</urn:APIType>';
 		}
 		return $str;
 	}
@@ -22108,14 +20662,12 @@ class DoCaptureReq  {
 	public $DoCaptureRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:DoCaptureReq>';
-		if($this->DoCaptureRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoCaptureRequest != null)
+		{
 			$str .= '<urn:DoCaptureRequest>';
 			$str .= $this->DoCaptureRequest->toXMLString();
 			$str .= '</urn:DoCaptureRequest>';
@@ -22232,71 +20784,51 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->AuthorizationID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:AuthorizationID>' . $this->AuthorizationID . '</urn:AuthorizationID>';
+		if($this->AuthorizationID != null)
+		{
+			$str .= '<urn:AuthorizationID>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuthorizationID) . '</urn:AuthorizationID>';
 		}
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</urn:Amount>';
 		}
-		if($this->CompleteType != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:CompleteType>' . $this->CompleteType . '</urn:CompleteType>';
+		if($this->CompleteType != null)
+		{
+			$str .= '<urn:CompleteType>' . PPUtils::escapeInvalidXmlCharsRegex($this->CompleteType) . '</urn:CompleteType>';
 		}
-		if($this->Note != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Note>' . $this->Note . '</urn:Note>';
+		if($this->Note != null)
+		{
+			$str .= '<urn:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</urn:Note>';
 		}
-		if($this->InvoiceID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:InvoiceID>' . $this->InvoiceID . '</urn:InvoiceID>';
+		if($this->InvoiceID != null)
+		{
+			$str .= '<urn:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</urn:InvoiceID>';
 		}
-		if($this->EnhancedData != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->EnhancedData != null)
+		{
 			$str .= '<ebl:EnhancedData>';
 			$str .= $this->EnhancedData->toXMLString();
 			$str .= '</ebl:EnhancedData>';
 		}
-		if($this->Descriptor != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Descriptor>' . $this->Descriptor . '</urn:Descriptor>';
+		if($this->Descriptor != null)
+		{
+			$str .= '<urn:Descriptor>' . PPUtils::escapeInvalidXmlCharsRegex($this->Descriptor) . '</urn:Descriptor>';
 		}
-		if($this->MerchantStoreDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->MerchantStoreDetails != null)
+		{
 			$str .= '<ebl:MerchantStoreDetails>';
 			$str .= $this->MerchantStoreDetails->toXMLString();
 			$str .= '</ebl:MerchantStoreDetails>';
 		}
-		if($this->MsgSubID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:MsgSubID>' . $this->MsgSubID . '</urn:MsgSubID>';
+		if($this->MsgSubID != null)
+		{
+			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
 		}
 		return $str;
 	}
@@ -22353,14 +20885,12 @@ class DoReauthorizationReq  {
 	public $DoReauthorizationRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:DoReauthorizationReq>';
-		if($this->DoReauthorizationRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoReauthorizationRequest != null)
+		{
 			$str .= '<urn:DoReauthorizationRequest>';
 			$str .= $this->DoReauthorizationRequest->toXMLString();
 			$str .= '</urn:DoReauthorizationRequest>';
@@ -22415,20 +20945,16 @@ class DoReauthorizationRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->AuthorizationID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:AuthorizationID>' . $this->AuthorizationID . '</urn:AuthorizationID>';
+		if($this->AuthorizationID != null)
+		{
+			$str .= '<urn:AuthorizationID>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuthorizationID) . '</urn:AuthorizationID>';
 		}
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</urn:Amount>';
@@ -22500,14 +21026,12 @@ class DoVoidReq  {
 	public $DoVoidRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:DoVoidReq>';
-		if($this->DoVoidRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoVoidRequest != null)
+		{
 			$str .= '<urn:DoVoidRequest>';
 			$str .= $this->DoVoidRequest->toXMLString();
 			$str .= '</urn:DoVoidRequest>';
@@ -22561,20 +21085,17 @@ class DoVoidRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->AuthorizationID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:AuthorizationID>' . $this->AuthorizationID . '</urn:AuthorizationID>';
+		if($this->AuthorizationID != null)
+		{
+			$str .= '<urn:AuthorizationID>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuthorizationID) . '</urn:AuthorizationID>';
 		}
-		if($this->Note != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Note>' . $this->Note . '</urn:Note>';
+		if($this->Note != null)
+		{
+			$str .= '<urn:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</urn:Note>';
 		}
 		return $str;
 	}
@@ -22630,14 +21151,12 @@ class DoAuthorizationReq  {
 	public $DoAuthorizationRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:DoAuthorizationReq>';
-		if($this->DoAuthorizationRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoAuthorizationRequest != null)
+		{
 			$str .= '<urn:DoAuthorizationRequest>';
 			$str .= $this->DoAuthorizationRequest->toXMLString();
 			$str .= '</urn:DoAuthorizationRequest>';
@@ -22704,35 +21223,27 @@ class DoAuthorizationRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->TransactionID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:TransactionID>' . $this->TransactionID . '</urn:TransactionID>';
+		if($this->TransactionID != null)
+		{
+			$str .= '<urn:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</urn:TransactionID>';
 		}
-		if($this->TransactionEntity != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:TransactionEntity>' . $this->TransactionEntity . '</urn:TransactionEntity>';
+		if($this->TransactionEntity != null)
+		{
+			$str .= '<urn:TransactionEntity>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionEntity) . '</urn:TransactionEntity>';
 		}
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</urn:Amount>';
 		}
-		if($this->MsgSubID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:MsgSubID>' . $this->MsgSubID . '</urn:MsgSubID>';
+		if($this->MsgSubID != null)
+		{
+			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
 		}
 		return $str;
 	}
@@ -22835,14 +21346,12 @@ class DoUATPAuthorizationReq  {
 	public $DoUATPAuthorizationRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:DoUATPAuthorizationReq>';
-		if($this->DoUATPAuthorizationRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoUATPAuthorizationRequest != null)
+		{
 			$str .= '<urn:DoUATPAuthorizationRequest>';
 			$str .= $this->DoUATPAuthorizationRequest->toXMLString();
 			$str .= '</urn:DoUATPAuthorizationRequest>';
@@ -22912,44 +21421,33 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->UATPDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->UATPDetails != null)
+		{
 			$str .= '<ebl:UATPDetails>';
 			$str .= $this->UATPDetails->toXMLString();
 			$str .= '</ebl:UATPDetails>';
 		}
-		if($this->TransactionEntity != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:TransactionEntity>' . $this->TransactionEntity . '</urn:TransactionEntity>';
+		if($this->TransactionEntity != null)
+		{
+			$str .= '<urn:TransactionEntity>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionEntity) . '</urn:TransactionEntity>';
 		}
-		if($this->Amount != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//prop containsattribute
+		if($this->Amount != null)
+		{
 			$str .= '<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</urn:Amount>';
 		}
-		if($this->InvoiceID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:InvoiceID>' . $this->InvoiceID . '</urn:InvoiceID>';
+		if($this->InvoiceID != null)
+		{
+			$str .= '<urn:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</urn:InvoiceID>';
 		}
-		if($this->MsgSubID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:MsgSubID>' . $this->MsgSubID . '</urn:MsgSubID>';
+		if($this->MsgSubID != null)
+		{
+			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
 		}
 		return $str;
 	}
@@ -23038,14 +21536,12 @@ class CreateMobilePaymentReq  {
 	public $CreateMobilePaymentRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:CreateMobilePaymentReq>';
-		if($this->CreateMobilePaymentRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->CreateMobilePaymentRequest != null)
+		{
 			$str .= '<urn:CreateMobilePaymentRequest>';
 			$str .= $this->CreateMobilePaymentRequest->toXMLString();
 			$str .= '</urn:CreateMobilePaymentRequest>';
@@ -23079,14 +21575,12 @@ class CreateMobilePaymentRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->CreateMobilePaymentRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->CreateMobilePaymentRequestDetails != null)
+		{
 			$str .= '<ebl:CreateMobilePaymentRequestDetails>';
 			$str .= $this->CreateMobilePaymentRequestDetails->toXMLString();
 			$str .= '</ebl:CreateMobilePaymentRequestDetails>';
@@ -23131,14 +21625,12 @@ class GetMobileStatusReq  {
 	public $GetMobileStatusRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:GetMobileStatusReq>';
-		if($this->GetMobileStatusRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->GetMobileStatusRequest != null)
+		{
 			$str .= '<urn:GetMobileStatusRequest>';
 			$str .= $this->GetMobileStatusRequest->toXMLString();
 			$str .= '</urn:GetMobileStatusRequest>';
@@ -23172,14 +21664,12 @@ class GetMobileStatusRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->GetMobileStatusRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->GetMobileStatusRequestDetails != null)
+		{
 			$str .= '<ebl:GetMobileStatusRequestDetails>';
 			$str .= $this->GetMobileStatusRequestDetails->toXMLString();
 			$str .= '</ebl:GetMobileStatusRequestDetails>';
@@ -23246,14 +21736,12 @@ class SetMobileCheckoutReq  {
 	public $SetMobileCheckoutRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:SetMobileCheckoutReq>';
-		if($this->SetMobileCheckoutRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SetMobileCheckoutRequest != null)
+		{
 			$str .= '<urn:SetMobileCheckoutRequest>';
 			$str .= $this->SetMobileCheckoutRequest->toXMLString();
 			$str .= '</urn:SetMobileCheckoutRequest>';
@@ -23287,14 +21775,12 @@ class SetMobileCheckoutRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->SetMobileCheckoutRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SetMobileCheckoutRequestDetails != null)
+		{
 			$str .= '<ebl:SetMobileCheckoutRequestDetails>';
 			$str .= $this->SetMobileCheckoutRequestDetails->toXMLString();
 			$str .= '</ebl:SetMobileCheckoutRequestDetails>';
@@ -23355,14 +21841,12 @@ class DoMobileCheckoutPaymentReq  {
 	public $DoMobileCheckoutPaymentRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:DoMobileCheckoutPaymentReq>';
-		if($this->DoMobileCheckoutPaymentRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoMobileCheckoutPaymentRequest != null)
+		{
 			$str .= '<urn:DoMobileCheckoutPaymentRequest>';
 			$str .= $this->DoMobileCheckoutPaymentRequest->toXMLString();
 			$str .= '</urn:DoMobileCheckoutPaymentRequest>';
@@ -23400,14 +21884,13 @@ class DoMobileCheckoutPaymentRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Token != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Token>' . $this->Token . '</urn:Token>';
+		if($this->Token != null)
+		{
+			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
 		}
 		return $str;
 	}
@@ -23464,14 +21947,12 @@ class GetBalanceReq  {
 	public $GetBalanceRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:GetBalanceReq>';
-		if($this->GetBalanceRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->GetBalanceRequest != null)
+		{
 			$str .= '<urn:GetBalanceRequest>';
 			$str .= $this->GetBalanceRequest->toXMLString();
 			$str .= '</urn:GetBalanceRequest>';
@@ -23498,14 +21979,13 @@ class GetBalanceRequestType  extends AbstractRequestType  {
 	public $ReturnAllCurrencies;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ReturnAllCurrencies != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ReturnAllCurrencies>' . $this->ReturnAllCurrencies . '</urn:ReturnAllCurrencies>';
+		if($this->ReturnAllCurrencies != null)
+		{
+			$str .= '<urn:ReturnAllCurrencies>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnAllCurrencies) . '</urn:ReturnAllCurrencies>';
 		}
 		return $str;
 	}
@@ -23605,14 +22085,12 @@ class SetCustomerBillingAgreementReq  {
 	public $SetCustomerBillingAgreementRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:SetCustomerBillingAgreementReq>';
-		if($this->SetCustomerBillingAgreementRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SetCustomerBillingAgreementRequest != null)
+		{
 			$str .= '<urn:SetCustomerBillingAgreementRequest>';
 			$str .= $this->SetCustomerBillingAgreementRequest->toXMLString();
 			$str .= '</urn:SetCustomerBillingAgreementRequest>';
@@ -23646,14 +22124,12 @@ class SetCustomerBillingAgreementRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->SetCustomerBillingAgreementRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->SetCustomerBillingAgreementRequestDetails != null)
+		{
 			$str .= '<ebl:SetCustomerBillingAgreementRequestDetails>';
 			$str .= $this->SetCustomerBillingAgreementRequestDetails->toXMLString();
 			$str .= '</ebl:SetCustomerBillingAgreementRequestDetails>';
@@ -23708,14 +22184,12 @@ class GetBillingAgreementCustomerDetailsReq  {
 	public $GetBillingAgreementCustomerDetailsRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:GetBillingAgreementCustomerDetailsReq>';
-		if($this->GetBillingAgreementCustomerDetailsRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->GetBillingAgreementCustomerDetailsRequest != null)
+		{
 			$str .= '<urn:GetBillingAgreementCustomerDetailsRequest>';
 			$str .= $this->GetBillingAgreementCustomerDetailsRequest->toXMLString();
 			$str .= '</urn:GetBillingAgreementCustomerDetailsRequest>';
@@ -23749,14 +22223,13 @@ class GetBillingAgreementCustomerDetailsRequestType  extends AbstractRequestType
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Token != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Token>' . $this->Token . '</urn:Token>';
+		if($this->Token != null)
+		{
+			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
 		}
 		return $str;
 	}
@@ -23813,14 +22286,12 @@ class CreateBillingAgreementReq  {
 	public $CreateBillingAgreementRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:CreateBillingAgreementReq>';
-		if($this->CreateBillingAgreementRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->CreateBillingAgreementRequest != null)
+		{
 			$str .= '<urn:CreateBillingAgreementRequest>';
 			$str .= $this->CreateBillingAgreementRequest->toXMLString();
 			$str .= '</urn:CreateBillingAgreementRequest>';
@@ -23854,14 +22325,13 @@ class CreateBillingAgreementRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Token != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:Token>' . $this->Token . '</urn:Token>';
+		if($this->Token != null)
+		{
+			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
 		}
 		return $str;
 	}
@@ -23913,14 +22383,12 @@ class DoReferenceTransactionReq  {
 	public $DoReferenceTransactionRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:DoReferenceTransactionReq>';
-		if($this->DoReferenceTransactionRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoReferenceTransactionRequest != null)
+		{
 			$str .= '<urn:DoReferenceTransactionRequest>';
 			$str .= $this->DoReferenceTransactionRequest->toXMLString();
 			$str .= '</urn:DoReferenceTransactionRequest>';
@@ -23963,23 +22431,19 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->DoReferenceTransactionRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoReferenceTransactionRequestDetails != null)
+		{
 			$str .= '<ebl:DoReferenceTransactionRequestDetails>';
 			$str .= $this->DoReferenceTransactionRequestDetails->toXMLString();
 			$str .= '</ebl:DoReferenceTransactionRequestDetails>';
 		}
-		if($this->ReturnFMFDetails != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ReturnFMFDetails>' . $this->ReturnFMFDetails . '</urn:ReturnFMFDetails>';
+		if($this->ReturnFMFDetails != null)
+		{
+			$str .= '<urn:ReturnFMFDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnFMFDetails) . '</urn:ReturnFMFDetails>';
 		}
 		return $str;
 	}
@@ -24051,14 +22515,12 @@ class DoNonReferencedCreditReq  {
 	public $DoNonReferencedCreditRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:DoNonReferencedCreditReq>';
-		if($this->DoNonReferencedCreditRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoNonReferencedCreditRequest != null)
+		{
 			$str .= '<urn:DoNonReferencedCreditRequest>';
 			$str .= $this->DoNonReferencedCreditRequest->toXMLString();
 			$str .= '</urn:DoNonReferencedCreditRequest>';
@@ -24092,14 +22554,12 @@ class DoNonReferencedCreditRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->DoNonReferencedCreditRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->DoNonReferencedCreditRequestDetails != null)
+		{
 			$str .= '<ebl:DoNonReferencedCreditRequestDetails>';
 			$str .= $this->DoNonReferencedCreditRequestDetails->toXMLString();
 			$str .= '</ebl:DoNonReferencedCreditRequestDetails>';
@@ -24159,14 +22619,12 @@ class CreateRecurringPaymentsProfileReq  {
 	public $CreateRecurringPaymentsProfileRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:CreateRecurringPaymentsProfileReq>';
-		if($this->CreateRecurringPaymentsProfileRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->CreateRecurringPaymentsProfileRequest != null)
+		{
 			$str .= '<urn:CreateRecurringPaymentsProfileRequest>';
 			$str .= $this->CreateRecurringPaymentsProfileRequest->toXMLString();
 			$str .= '</urn:CreateRecurringPaymentsProfileRequest>';
@@ -24193,14 +22651,12 @@ class CreateRecurringPaymentsProfileRequestType  extends AbstractRequestType  {
 	public $CreateRecurringPaymentsProfileRequestDetails;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->CreateRecurringPaymentsProfileRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->CreateRecurringPaymentsProfileRequestDetails != null)
+		{
 			$str .= '<ebl:CreateRecurringPaymentsProfileRequestDetails>';
 			$str .= $this->CreateRecurringPaymentsProfileRequestDetails->toXMLString();
 			$str .= '</ebl:CreateRecurringPaymentsProfileRequestDetails>';
@@ -24260,14 +22716,12 @@ class GetRecurringPaymentsProfileDetailsReq  {
 	public $GetRecurringPaymentsProfileDetailsRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:GetRecurringPaymentsProfileDetailsReq>';
-		if($this->GetRecurringPaymentsProfileDetailsRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->GetRecurringPaymentsProfileDetailsRequest != null)
+		{
 			$str .= '<urn:GetRecurringPaymentsProfileDetailsRequest>';
 			$str .= $this->GetRecurringPaymentsProfileDetailsRequest->toXMLString();
 			$str .= '</urn:GetRecurringPaymentsProfileDetailsRequest>';
@@ -24301,14 +22755,13 @@ class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ProfileID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ProfileID>' . $this->ProfileID . '</urn:ProfileID>';
+		if($this->ProfileID != null)
+		{
+			$str .= '<urn:ProfileID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileID) . '</urn:ProfileID>';
 		}
 		return $str;
 	}
@@ -24365,14 +22818,12 @@ class ManageRecurringPaymentsProfileStatusReq  {
 	public $ManageRecurringPaymentsProfileStatusRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:ManageRecurringPaymentsProfileStatusReq>';
-		if($this->ManageRecurringPaymentsProfileStatusRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ManageRecurringPaymentsProfileStatusRequest != null)
+		{
 			$str .= '<urn:ManageRecurringPaymentsProfileStatusRequest>';
 			$str .= $this->ManageRecurringPaymentsProfileStatusRequest->toXMLString();
 			$str .= '</urn:ManageRecurringPaymentsProfileStatusRequest>';
@@ -24399,14 +22850,12 @@ class ManageRecurringPaymentsProfileStatusRequestType  extends AbstractRequestTy
 	public $ManageRecurringPaymentsProfileStatusRequestDetails;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ManageRecurringPaymentsProfileStatusRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ManageRecurringPaymentsProfileStatusRequestDetails != null)
+		{
 			$str .= '<ebl:ManageRecurringPaymentsProfileStatusRequestDetails>';
 			$str .= $this->ManageRecurringPaymentsProfileStatusRequestDetails->toXMLString();
 			$str .= '</ebl:ManageRecurringPaymentsProfileStatusRequestDetails>';
@@ -24466,14 +22915,12 @@ class BillOutstandingAmountReq  {
 	public $BillOutstandingAmountRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:BillOutstandingAmountReq>';
-		if($this->BillOutstandingAmountRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BillOutstandingAmountRequest != null)
+		{
 			$str .= '<urn:BillOutstandingAmountRequest>';
 			$str .= $this->BillOutstandingAmountRequest->toXMLString();
 			$str .= '</urn:BillOutstandingAmountRequest>';
@@ -24500,14 +22947,12 @@ class BillOutstandingAmountRequestType  extends AbstractRequestType  {
 	public $BillOutstandingAmountRequestDetails;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->BillOutstandingAmountRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->BillOutstandingAmountRequestDetails != null)
+		{
 			$str .= '<ebl:BillOutstandingAmountRequestDetails>';
 			$str .= $this->BillOutstandingAmountRequestDetails->toXMLString();
 			$str .= '</ebl:BillOutstandingAmountRequestDetails>';
@@ -24567,14 +23012,12 @@ class UpdateRecurringPaymentsProfileReq  {
 	public $UpdateRecurringPaymentsProfileRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:UpdateRecurringPaymentsProfileReq>';
-		if($this->UpdateRecurringPaymentsProfileRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->UpdateRecurringPaymentsProfileRequest != null)
+		{
 			$str .= '<urn:UpdateRecurringPaymentsProfileRequest>';
 			$str .= $this->UpdateRecurringPaymentsProfileRequest->toXMLString();
 			$str .= '</urn:UpdateRecurringPaymentsProfileRequest>';
@@ -24601,14 +23044,12 @@ class UpdateRecurringPaymentsProfileRequestType  extends AbstractRequestType  {
 	public $UpdateRecurringPaymentsProfileRequestDetails;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->UpdateRecurringPaymentsProfileRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->UpdateRecurringPaymentsProfileRequestDetails != null)
+		{
 			$str .= '<ebl:UpdateRecurringPaymentsProfileRequestDetails>';
 			$str .= $this->UpdateRecurringPaymentsProfileRequestDetails->toXMLString();
 			$str .= '</ebl:UpdateRecurringPaymentsProfileRequestDetails>';
@@ -24668,14 +23109,12 @@ class GetPalDetailsReq  {
 	public $GetPalDetailsRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:GetPalDetailsReq>';
-		if($this->GetPalDetailsRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->GetPalDetailsRequest != null)
+		{
 			$str .= '<urn:GetPalDetailsRequest>';
 			$str .= $this->GetPalDetailsRequest->toXMLString();
 			$str .= '</urn:GetPalDetailsRequest>';
@@ -24695,7 +23134,8 @@ class GetPalDetailsReq  {
 class GetPalDetailsRequestType  extends AbstractRequestType  {
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
 		return $str;
@@ -24758,14 +23198,12 @@ class ReverseTransactionReq  {
 	public $ReverseTransactionRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:ReverseTransactionReq>';
-		if($this->ReverseTransactionRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ReverseTransactionRequest != null)
+		{
 			$str .= '<urn:ReverseTransactionRequest>';
 			$str .= $this->ReverseTransactionRequest->toXMLString();
 			$str .= '</urn:ReverseTransactionRequest>';
@@ -24799,14 +23237,12 @@ class ReverseTransactionRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ReverseTransactionRequestDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ReverseTransactionRequestDetails != null)
+		{
 			$str .= '<ebl:ReverseTransactionRequestDetails>';
 			$str .= $this->ReverseTransactionRequestDetails->toXMLString();
 			$str .= '</ebl:ReverseTransactionRequestDetails>';
@@ -24866,14 +23302,12 @@ class ExternalRememberMeOptOutReq  {
 	public $ExternalRememberMeOptOutRequest;
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= '<urn:ExternalRememberMeOptOutReq>';
-		if($this->ExternalRememberMeOptOutRequest != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ExternalRememberMeOptOutRequest != null)
+		{
 			$str .= '<urn:ExternalRememberMeOptOutRequest>';
 			$str .= $this->ExternalRememberMeOptOutRequest->toXMLString();
 			$str .= '</urn:ExternalRememberMeOptOutRequest>';
@@ -24923,20 +23357,16 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString() {
+	public function toXMLString()
+	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ExternalRememberMeID != null) {
-			//prop is not a collection
-			//prop not complex
-			//prop is not value
-			$str .= '<urn:ExternalRememberMeID>' . $this->ExternalRememberMeID . '</urn:ExternalRememberMeID>';
+		if($this->ExternalRememberMeID != null)
+		{
+			$str .= '<urn:ExternalRememberMeID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalRememberMeID) . '</urn:ExternalRememberMeID>';
 		}
-		if($this->ExternalRememberMeOwnerDetails != null) {
-			//prop is not a collection
-			//prop is complex
-			//prop is not enum
-			//does not contain attribute or is attribute
+		if($this->ExternalRememberMeOwnerDetails != null)
+		{
 			$str .= '<urn:ExternalRememberMeOwnerDetails>';
 			$str .= $this->ExternalRememberMeOwnerDetails->toXMLString();
 			$str .= '</urn:ExternalRememberMeOwnerDetails>';
