@@ -70,9 +70,10 @@ class PPCredentialManager
 						
 				$userName = isset($credArr[$prefix.$suffix.'.UserName']) ? $credArr[$prefix.$suffix.'.UserName'] : "";
 				$password = isset($credArr[$prefix.$suffix.'.Password']) ? $credArr[$prefix.$suffix.'.Password'] : "";
+				$passPhrase = isset($credArr[$prefix.$suffix.'.CertKey']) ? $credArr[$prefix.$suffix.'.CertKey'] : "";	
 				$certPath = isset($credArr[$prefix.$suffix.'.CertPath']) ? $credArr[$prefix.$suffix.'.CertPath'] : "";				
 				$appId = isset($credArr[$prefix.$suffix.'.AppId']) ? $credArr[$prefix.$suffix.'.AppId'] : "";
-				$this->credentialHashmap[$userName] = new PPCertificateCredential($userName, $password, $certPath, $appId);
+				$this->credentialHashmap[$userName] = new PPCertificateCredential($userName, $password, $certPath, $appId, $passPhrase);
 				
 			}
 			if ($this->defaultAccountName == null)

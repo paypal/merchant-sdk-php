@@ -29,7 +29,7 @@ class PPAuthenticationManager
 
 			$headers_arr[] = "X-PAYPAL-SECURITY-USERID:  " . $apiCred->getUserName();
 			$headers_arr[] = "X-PAYPAL-SECURITY-PASSWORD: " . $apiCred->getPassword();
-			$connection->setSSLCert($apiCred->getCertificatePath());
+			$connection->setSSLCert($apiCred->getCertificatePath(), $apiCred->getPassPhrase());
 		}
 
 		// Add other headers
@@ -72,7 +72,7 @@ class PPAuthenticationManager
 			$soapHeader .="</ebl:Credentials>";
 			$soapHeader .="</urn:RequesterCredentials>";
 			$soapHeader .="</soapenv:Header>";
-            $connection->setSSLCert($apiCred->getCertificatePath());
+            $connection->setSSLCert($apiCred->getCertificatePath(), $apiCred->getPassPhrase());
 		}
 		$soapHeader .="<soapenv:Body>";
 		$soapHeader .= $payLoad;
