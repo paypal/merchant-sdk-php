@@ -46,6 +46,8 @@ class PPHttpConnection
 	CURLOPT_USERAGENT      => 'PayPal-PHP',
 	CURLOPT_POST           => 1,
 	CURLOPT_HTTPHEADER => array(),
+    CURLOPT_SSL_VERIFYHOST => 1,
+    CURLOPT_SSL_VERIFYPEER => 2
 	);
 
 	public function __construct()
@@ -55,7 +57,6 @@ class PPHttpConnection
 		}
 		$this->curlOpt = self::$DEFAULT_CURL_OPTS;
 		$this->logger = new PPLoggingManager(__CLASS__);
-
 	}
 
 	/**
@@ -63,9 +64,10 @@ class PPHttpConnection
 	 *
 	 * @param string $certPath - path to client certificate file (PEM formatted file)
 	 */
-	public function setSSLCert($certPath)
+	public function setSSLCert($certPath, $passPhrase)
 	{
 		$this->curlOpt[CURLOPT_SSLCERT] = realpath($certPath);
+		$this->curlOpt[CURLOPT_SSLCERTPASSWD] = $passPhrase;
 	}
 
 	/**
@@ -151,7 +153,6 @@ class PPHttpConnection
 			//TODO: Strip out credentials when logging.
 			$this->logger->info("Adding header $header");
 		}
-
 		if(isset($method))
 		{
 			$this->curlOpt[CURLOPT_CUSTOMREQUEST] = $method;

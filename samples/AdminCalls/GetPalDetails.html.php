@@ -6,19 +6,19 @@
 </head>
 <body>
 
-<div id="header">
-<h3>GetPalDetails</h3>
-<div id="apidetails">GetPalDetails API operation gets the
-information about the partner of the requested Merchant.</div>
-</div>
-<form method="POST" action = "GetPalDetails.php">
-<div id="request_form">
-<div class="submit">
-<input type="submit" name="GetPalDetailsBtn" value="GetPalDetails" /><br />
-</div>
-<a href="../Index.php">Home</a>
-</div>
-</form>
+	<div id="header">
+		<h3>GetPalDetails</h3>
+		<div id="apidetails">GetPalDetails API operation gets the information
+			about the partner of the requested Merchant.</div>
+	</div>
+	<form method="POST" action="GetPalDetails.php">
+		<div id="request_form">
+			<div class="submit">
+				<input type="submit" name="GetPalDetailsBtn" value="GetPalDetails" /><br />
+			</div>
+			<a href="../Index.php">Home</a>
+		</div>
+	</form>
 
 
 </body>

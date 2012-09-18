@@ -1,7 +1,7 @@
 <?php
 class PPUtils {
 
-	const SDK_VERSION = "1.0.92";
+	const SDK_VERSION = "1.1.93";
 	const SDK_NAME = "sdk-merchant-php ";
 
 	/**
@@ -64,7 +64,7 @@ class PPUtils {
 	 * Compute the value that needs to sent for the PAYPAL_REQUEST_SOURCE
 	 * parameter when making API calls
 	 */
-	public function getRequestSource() {
+	public static function getRequestSource() {
 		return str_replace(" ", "-", self::SDK_NAME). self::SDK_VERSION;
 	}
 	public static function xmlToArray($xmlInput) {
@@ -138,6 +138,14 @@ function convertXmlObjToArr($obj, &$arr)
     }
     return $arr;
 }
+	/**
+	 * Escapes invalid xml characters
+	 * @param $textContent = xml data to be escaped
+	 */
+	public static function escapeInvalidXmlCharsRegex($textContent)
+	{
+		return htmlspecialchars($textContent, (1 | 2), 'UTF-8', false);
+	}
 
 }
 
@@ -246,6 +254,8 @@ class XmlToArray
 		$array[$name] = $this->_struct_to_array($values, $i);
 		return $array;
 	}//createArray
+
+	
 
 
 }//XmlToArray

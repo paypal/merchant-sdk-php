@@ -6,66 +6,66 @@
 
 </head>
 <body>
-<div id="wrapper">
-<div id="header">
-<h3>DoAuthorization</h3>
-<div id="apidetails">Used to authorize a payment</div>
-</div>
-<form method="POST" action ="DoAuthorization.php">
-<div id="request_form">
-<div class="params">
-<div class="param_name">
-Make a Transaction to get Transaction ID <a
-href="../DCC/DirectPayment">Direct Payment</a> or <a
-href="../EC/SetExpressCheckout">ExpressCheckout</a> with
-PaymentType "Order")
-</div>
-<div class="param_value">
-<input type="text" name="transID" value="" size="50"
-maxlength="260" />
-</div>
-</div>
-<div class="params">
-<div class="param_name">Amount</div>
-<div class="param_value">
-<input type="text" name="amt" value="1.00" size="50"
-maxlength="260" />
-</div>
-</div>
-<div class="params">
-<div class="param_name">Currency Code</div>
-<div class="param_value">
-<input type="text" name="currencyCode" value="USD" size="50"
-maxlength="260" />
-</div>
-</div>
-<div class="submit">
-<input type="submit" name="DoAuthorizationBtn"
-value="DoAuthorization" /><br />
-</div>
-<a href="../index.php">Home</a>
-</div>
-</form>
-<div id="relatedcalls">
-See also
-<ul>
-<li><a href="DoCapture.html.php">DoCapture</a>
-</li>
-<li><a href="DoVoid.html.php">DoVoid</a>
-</li>
-<li><a href="Refund.html.php">Refund</a>
-</li>
-<li><a href="DoReauthorization.html.php">DoReauthorization</a>
-</li>
+	<div id="wrapper">
+		<div id="header">
+			<h3>DoAuthorization</h3>
+			<div id="apidetails">Used to authorize a payment</div>
+		</div>
+		<form method="POST" action="DoAuthorization.php">
+			<div id="request_form">
+				<div class="params">
+					<div class="param_name">
+						Make a Transaction to get Transaction ID <a
+							href="../DCC/DirectPayment">Direct Payment</a> or <a
+							href="../EC/SetExpressCheckout">ExpressCheckout</a> with
+						PaymentType "Order")
+					</div>
+					<div class="param_value">
+						<input type="text" name="transID" value="" size="50"
+							maxlength="260" />
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">Amount</div>
+					<div class="param_value">
+						<input type="text" name="amt" value="1.00" size="50"
+							maxlength="260" />
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">Currency Code</div>
+					<div class="param_value">
+						<input type="text" name="currencyCode" value="USD" size="50"
+							maxlength="260" />
+					</div>
+				</div>
+				<div class="submit">
+					<input type="submit" name="DoAuthorizationBtn"
+						value="DoAuthorization" /><br />
+				</div>
+				<a href="../index.php">Home</a>
+			</div>
+		</form>
+		<div id="relatedcalls">
+			See also
+			<ul>
+				<li><a href="DoCapture.html.php">DoCapture</a>
+				</li>
+				<li><a href="DoVoid.html.php">DoVoid</a>
+				</li>
+				<li><a href="Refund.html.php">Refund</a>
+				</li>
+				<li><a href="DoReauthorization.html.php">DoReauthorization</a>
+				</li>
 
-<li><a href="ReverseTransaction.html.php">ReverseTransaction</a>
-</li>
-<li><a href="DoNonReferencedCredit.html.php">DoNonReferencedCredit</a>
-</li>
-<li><a href="ManagePendingTransactionStatus.html.php">ManagePendingTransactionStatus</a>
-</li>
-</ul>
-</div>
-</div>
+				<li><a href="ReverseTransaction.html.php">ReverseTransaction</a>
+				</li>
+				<li><a href="DoNonReferencedCredit.html.php">DoNonReferencedCredit</a>
+				</li>
+				<li><a href="ManagePendingTransactionStatus.html.php">ManagePendingTransactionStatus</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 </body>
 </html>

@@ -29,11 +29,11 @@ if(isset($_REQUEST['ReferenceCreditCardDetails']) && $_REQUEST['ReferenceCreditC
 	$billingAddress->StateOrProvince = $_REQUEST['Bstate'];
 	$billingAddress->Country = $_REQUEST['Bcountry'];
 	$billingAddress->PostalCode = $_REQUEST['Bzip'];
-	
+
 	$cardOwner = new PersonNameType();
 	$cardOwner->FirstName = $_REQUEST['OfirstName'];
 	$cardOwner->LastName =  $_REQUEST['OfirstName'];
-	
+
 	$creditCardNumberType= new CreditCardNumberTypeType();
 	$creditCardNumberType->CreditCardNumber = $_REQUEST['creditCardNumber'];
 	$creditCardNumberType->CreditCardType = $_REQUEST['creditCardType'];
@@ -65,14 +65,24 @@ $RTRequestDetails->PaymentType = $_REQUEST['paymentType'];
 
 $RTRequest = new DoReferenceTransactionRequestType();
 $RTRequest->DoReferenceTransactionRequestDetails  = $RTRequestDetails;
-$RTRequest->Version = 92;
 
 $RTReq = new DoReferenceTransactionReq();
 $RTReq->DoReferenceTransactionRequest = $RTRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$RTResponse = $paypalService->DoReferenceTransaction($RTReq);
-echo "<pre>";
-print_r($RTResponse);
-echo "</pre>";
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$RTResponse = $paypalService->DoReferenceTransaction($RTReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
+if(isset($RTResponse)) {
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>$RTResponse->Ack</div> </td></tr>";
+	echo "</table>";
+	echo "<pre>";
+	print_r($RTResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';

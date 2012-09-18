@@ -9,17 +9,22 @@ $logger = new PPLoggingManager('DoExpressCheckout');
 
 $token =urlencode( $_REQUEST['token']);
 $payerId=urlencode(  $_REQUEST['payerID']);
+$paymentAction = urlencode(  $_REQUEST['paymentAction']);
 
 // ------------------------------------------------------------------
 // this section is optional if parameters required for DoExpressCheckout is retrieved from your database
 $getExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType($token);
-$getExpressCheckoutDetailsRequest->Version = 92.0;
 $getExpressCheckoutReq = new GetExpressCheckoutDetailsReq();
 $getExpressCheckoutReq->GetExpressCheckoutDetailsRequest = $getExpressCheckoutDetailsRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$getECResponse = $paypalService->GetExpressCheckoutDetails($getExpressCheckoutReq);
-
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$getECResponse = $paypalService->GetExpressCheckoutDetails($getExpressCheckoutReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
 //----------------------------------------------------------------------------
 
 $orderTotal = new BasicAmountType();
@@ -32,17 +37,30 @@ $PaymentDetails->OrderTotal = $orderTotal;
 $DoECRequestDetails = new DoExpressCheckoutPaymentRequestDetailsType();
 $DoECRequestDetails->PayerID = $payerId;
 $DoECRequestDetails->Token = $token;
+$DoECRequestDetails->PaymentAction = $paymentAction;
 $DoECRequestDetails->PaymentDetails[0] = $PaymentDetails;
 
 $DoECRequest = new DoExpressCheckoutPaymentRequestType();
 $DoECRequest->DoExpressCheckoutPaymentRequestDetails = $DoECRequestDetails;
-$DoECRequest->Version = '92.0';
+
 
 $DoECReq = new DoExpressCheckoutPaymentReq();
 $DoECReq->DoExpressCheckoutPaymentRequest = $DoECRequest;
 
-$DoECResponse = $paypalService->DoExpressCheckoutPayment($DoECReq);
-echo "<pre>";
-print_r($DoECResponse);
-echo "</pre>";
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$DoECResponse = $paypalService->DoExpressCheckoutPayment($DoECReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
+if(isset($DoECResponse)) {
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>$DoECResponse->Ack</div> </td></tr>";
+	echo "<tr><td>TransactionID :</td><td><div id='TransactionID'>".$DoECResponse->DoExpressCheckoutPaymentResponseDetails->PaymentInfo->TransactionID."</div> </td></tr>";
+	echo "</table>";
+	echo "<pre>";
+	print_r($DoECResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';

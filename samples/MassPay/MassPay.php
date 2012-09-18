@@ -48,15 +48,26 @@ elseif ($_REQUEST['receiverInfoCode'] == 'PhoneNumber')
 
 $massPayRequest = new MassPayRequestType();
 $massPayRequest->MassPayItem = Array($masspayItem1,$masspayItem2,$masspayItem3);
-$massPayRequest->Version = 92;
+
 
 $massPayReq = new MassPayReq();
 $massPayReq->MassPayRequest = $massPayRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$massPayResponse = $paypalService->MassPay($massPayReq);
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$massPayResponse = $paypalService->MassPay($massPayReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
+if(isset($massPayResponse)) {
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>$massPayResponse->Ack</div> </td></tr>";
+	echo "</table>";
 
-echo "<pre>";
-print_r($massPayResponse);
-echo "</pre>";
+	echo "<pre>";
+	print_r($massPayResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';

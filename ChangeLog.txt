@@ -1,4 +1,11 @@
 
+Version 1.1.93 - August 14, 2012
+ 
+	- SDK refreshed to Release 93. Please refer https://www.x.com/developers/paypal/documentation-tools/release-notes#MerchantAPI
+	- SDK Core - Deserialization Logic Change
+--------------------------------------------------------------------------------------------------
+
+
 Version 1.0.92 - July 30, 2012
  
 	- Stable release

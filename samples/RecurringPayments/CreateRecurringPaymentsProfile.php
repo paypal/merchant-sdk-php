@@ -8,13 +8,7 @@ require_once('PPLoggingManager.php');
  */
 $logger = new PPLoggingManager('CreateRecurringPaymentsProfile');
 
-$trialAmount = new BasicAmountType();
-$trialAmount->currencyID = 'USD';
-$trialAmount->value = $_REQUEST['billingAmount'];
-
-$paymentAmount = new BasicAmountType();
-$paymentAmount->currencyID = 'USD';
-$paymentAmount->value = $_REQUEST['trialBillingAmount'];
+$currencyCode = "USD";
 
 $creditCard = new CreditCardDetailsType();
 $creditCard->CreditCardNumber = $_REQUEST['creditCardNumber'];
@@ -23,36 +17,41 @@ $creditCard->CVV2 = $_REQUEST['cvv'];
 $creditCard->ExpMonth = $_REQUEST['expMonth'];
 $creditCard->ExpYear = $_REQUEST['expYear'];
 
-$shppingAddress = new AddressType();
-$shppingAddress->Name = $_REQUEST['shippingName'];
-$shppingAddress->Street1 = $_REQUEST['shippingStreet1'];
-$shppingAddress->CityName = $_REQUEST['shippingCity'];
-$shppingAddress->StateOrProvince = $_REQUEST['shippingState'];
-$shppingAddress->PostalCode = $_REQUEST['shippingPostalCode'];
-$shppingAddress->Country = $_REQUEST['shippingCountry'];
-$shppingAddress->Phone = $_REQUEST['shippingPhone'];
+$shippingAddress = new AddressType();
+$shippingAddress->Name = $_REQUEST['shippingName'];
+$shippingAddress->Street1 = $_REQUEST['shippingStreet1'];
+$shippingAddress->Street2 = $_REQUEST['shippingStreet2'];
+$shippingAddress->CityName = $_REQUEST['shippingCity'];
+$shippingAddress->StateOrProvince = $_REQUEST['shippingState'];
+$shippingAddress->PostalCode = $_REQUEST['shippingPostalCode'];
+$shippingAddress->Country = $_REQUEST['shippingCountry'];
+$shippingAddress->Phone = $_REQUEST['shippingPhone'];
 
 
 $RPProfileDetails = new RecurringPaymentsProfileDetailsType();
 $RPProfileDetails->SubscriberName = $_REQUEST['subscriberName'];
 $RPProfileDetails->BillingStartDate = $_REQUEST['billingStartDate'];
-$RPProfileDetails->SubscriberShippingAddress  = $shppingAddress;
+$RPProfileDetails->SubscriberShippingAddress  = $shippingAddress;
 
 $activationDetails = new ActivationDetailsType();
-$activationDetails->InitialAmount = $_REQUEST['initialAmount'];
+$activationDetails->InitialAmount = new BasicAmountType($currencyCode, $_REQUEST['initialAmount']);
 $activationDetails->FailedInitialAmountAction = $_REQUEST['failedInitialAmountAction'];
 
 $paymentBillingPeriod =  new BillingPeriodDetailsType();
 $paymentBillingPeriod->BillingFrequency = $_REQUEST['billingFrequency'];
 $paymentBillingPeriod->BillingPeriod = $_REQUEST['billingPeriod'];
-$paymentBillingPeriod->Amount = $trialAmount;
 $paymentBillingPeriod->TotalBillingCycles = $_REQUEST['totalBillingCycles'];
+$paymentBillingPeriod->Amount = new BasicAmountType($currencyCode, $_REQUEST['paymentAmount']);
+$paymentBillingPeriod->ShippingAmount = new BasicAmountType($currencyCode, $_REQUEST['paymentShippingAmount']);
+$paymentBillingPeriod->TaxAmount = new BasicAmountType($currencyCode, $_REQUEST['paymentTaxAmount']);
 
 $trialBillingPeriod =  new BillingPeriodDetailsType();
 $trialBillingPeriod->BillingFrequency = $_REQUEST['trialBillingFrequency'];
 $trialBillingPeriod->BillingPeriod = $_REQUEST['trialBillingPeriod'];
-$trialBillingPeriod->Amount = $trialAmount;
 $trialBillingPeriod->TotalBillingCycles = $_REQUEST['trialBillingCycles'];
+$trialBillingPeriod->Amount = new BasicAmountType($currencyCode, $_REQUEST['trialAmount']);
+$trialBillingPeriod->ShippingAmount = new BasicAmountType($currencyCode, $_REQUEST['trialShippingAmount']);
+$trialBillingPeriod->TaxAmount = new BasicAmountType($currencyCode, $_REQUEST['trialTaxAmount']);
 
 $scheduleDetails = new ScheduleDetailsType();
 $scheduleDetails->Description = $_REQUEST['profileDescription'];
@@ -69,15 +68,28 @@ $createRPProfileRequestDetail->ScheduleDetails = $scheduleDetails;
 $createRPProfileRequestDetail->RecurringPaymentsProfileDetails = $RPProfileDetails;
 $createRPProfileRequest = new CreateRecurringPaymentsProfileRequestType();
 $createRPProfileRequest->CreateRecurringPaymentsProfileRequestDetails = $createRPProfileRequestDetail;
-$createRPProfileRequest->Version = 92;
+
 
 $createRPProfileReq =  new CreateRecurringPaymentsProfileReq();
 $createRPProfileReq->CreateRecurringPaymentsProfileRequest = $createRPProfileRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$createRPProfileResponse = $paypalService->CreateRecurringPaymentsProfile($createRPProfileReq);
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$createRPProfileResponse = $paypalService->CreateRecurringPaymentsProfile($createRPProfileReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
 
-echo "<pre>";
-print_r($createRPProfileResponse);
-echo "</pre>";
+if(isset($createRPProfileResponse)) {
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>$createRPProfileResponse->Ack</div> </td></tr>";
+	echo "<tr><td>ProfileID :</td><td><div id='ProfileID'>".$createRPProfileResponse->CreateRecurringPaymentsProfileResponseDetails->ProfileID ."</div> </td></tr>";
+	echo "</table>";
+
+	echo "<pre>";
+	print_r($createRPProfileResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';

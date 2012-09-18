@@ -13,17 +13,25 @@ $amount->currencyID = $_REQUEST['currencyCode'];
 $amount->value = $_REQUEST['amt'];
 
 $doCaptureReqest = new DoCaptureRequestType();
-$doCaptureReqest->AuthorizationID = $_REQUEST['authID']; 
+$doCaptureReqest->AuthorizationID = $_REQUEST['authID'];
 $doCaptureReqest->Amount = $amount;
 $doCaptureReqest->CompleteType = $_REQUEST['completeCodeType'];
-$doCaptureReqest->Version = 92;
+
 
 $doCaptureReq = new DoCaptureReq();
 $doCaptureReq->DoCaptureRequest = $doCaptureReqest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$doCaptureResponse = $paypalService->DoCapture($doCaptureReq);
-echo "<pre>";
-print_r($doCaptureResponse);
-echo "</pre>";
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$doCaptureResponse = $paypalService->DoCapture($doCaptureReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
+if(isset($doCaptureResponse)) {
+	echo "<pre>";
+	print_r($doCaptureResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';

@@ -21,14 +21,22 @@ $MPPaymentDetails->MpID = $_REQUEST['billingAgreementID'];
 
 $billUserReqest = new BillUserRequestType();
 $billUserReqest->MerchantPullPaymentDetails = $MPPaymentDetails;
-$billUserReqest->Version = 92;
+
 
 $billUserReq = new BillUserReq();
 $billUserReq->BillUserRequest = $billUserReqest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$billUserResponse = $paypalService->BillUser($billUserReq);
-echo "<pre>";
-print_r($billUserResponse);
-echo "</pre>";
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$billUserResponse = $paypalService->BillUser($billUserReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
+if(isset($billUserResponse)) {
+	echo "<pre>";
+	print_r($billUserResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';

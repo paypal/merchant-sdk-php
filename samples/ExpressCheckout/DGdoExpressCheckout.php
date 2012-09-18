@@ -48,7 +48,7 @@ $DoECRequestDetails->PaymentDetails[0] = $PaymentDetails;
 
 $DoECRequest = new DoExpressCheckoutPaymentRequestType();
 $DoECRequest->DoExpressCheckoutPaymentRequestDetails = $DoECRequestDetails;
-$DoECRequest->Version = '92.0';
+
 
 $DoECReq = new DoExpressCheckoutPaymentReq();
 $DoECReq->DoExpressCheckoutPaymentRequest = $DoECRequest;
@@ -56,8 +56,8 @@ $paypalService = new PayPalAPIInterfaceServiceService();
 $DoECResponse = $paypalService->DoExpressCheckoutPayment($DoECReq);
 //var_dump($DoECResponse);
 if($DoECResponse->Ack == 'Success')
-	{
-?>
+{
+	?>
 <html>
 <script>
 alert("Payment Successful")
@@ -66,22 +66,23 @@ top.dg.closeFlow();
 <?php 
 /*
  * TODO: add your logic that handles successful payment
- */
-	}
-	else 
-	{
-?>
+*/
+}
+else
+{
+	?>
 <script>
 alert("Payment failed")
 top.dg.closeFlow();
 </script>
 <?php 
-	}
+}
 ?>
 
 
 <script type="text/javascript"
-	src="https://www.paypalobjects.com/js/external/dg.js"></script></head>
+	src="https://www.paypalobjects.com/js/external/dg.js"></script>
+</head>
 <body>
 </body>
 </html>

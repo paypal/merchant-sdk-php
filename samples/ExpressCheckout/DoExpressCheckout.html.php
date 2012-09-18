@@ -5,64 +5,63 @@
 <title>PayPal SDK - DoExpressCheckout</title>
 </head>
 <body>
-<div id="wrapper">
-<div id="header">
-<h3>DoExpressCheckout</h3>
-<div id="apidetails">Used to make checkout payment</div>
-</div>
-<form method="POST" action ="DoExpressCheckout.php">
-<div id="request_form">
-<div class="params">
-<div class="param_name">
-Token(Get Token via <a href="SetExpressCheckout.html.php">SetExpressCheckout</a>)
-</div>
-<div class="param_value">
-<input type="text" name="token" value="EC-8UT96070TG172711X" size="50" maxlength="260" />
-</div>
-</div>
-<div class="params">
-<div class="param_name">Payer ID</div>
-<div class="param_value">
-<input type="text" name="payerID" value="TWLK53YN7GDM6" size="50"
-maxlength="260" />
-</div>
-</div>
-<div class="params">
-<div class="param_name">PaymentType</div>
-<div class="param_value">
-<select name="paymentAction">
-<option value="Sale">Sale</option>
-<option value="Authorization">Authorization</option>
-<option value="Order">Order</option>
-</select>
-</div>
-</div>
-<div class="params">
-<div class="param_name">Amount</div>
-<div class="param_value">
-<input type="text" name="amt" value="2.00" size="50"
-maxlength="260" />
-</div>
-</div>
-<div class="params">
-<div class="param_name">CurrencyCode</div>
-<div class="param_value">
-<input type="text" name="currencyCode" value="USD" size="50"
-maxlength="260" />
-</div>
-</div>
+	<div id="wrapper">
+		<div id="header">
+			<h3>DoExpressCheckout</h3>
+			<div id="apidetails">Used to make checkout payment</div>
+		</div>
+		<form method="POST" action="DoExpressCheckout.php">
+			<div id="request_form">
+				<div class="params">
+					<div class="param_name">
+						Token(Get Token via <a href="SetExpressCheckout.html.php">SetExpressCheckout</a>)
+					</div>
+					<div class="param_value">
+						<input type="text" name="token" value="EC-8UT96070TG172711X"
+							size="50" maxlength="260" />
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">Payer ID</div>
+					<div class="param_value">
+						<input type="text" name="payerID" value="TWLK53YN7GDM6" size="50"
+							maxlength="260" />
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">PaymentType</div>
+					<div class="param_value">
+						<select name="paymentAction">
+							<option value="Sale">Sale</option>
+							<option value="Authorization">Authorization</option>
+							<option value="Order">Order</option>
+						</select>
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">Amount</div>
+					<div class="param_value">
+						<input type="text" name="amt" value="2.00" size="50"
+							maxlength="260" />
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">CurrencyCode</div>
+					<div class="param_value">
+						<input type="text" name="currencyCode" value="USD" size="50"
+							maxlength="260" />
+					</div>
+				</div>
 
-<div class="submit">
-<input type="submit" name="DoExpressCheckoutBtn"
-value="DoExpressCheckout" /> <br />
-</div>
-<a href="../index.php">Home</a>
-</div>
-</form>
-</div>
-<div id="relatedcalls">
-
-</div>
-</div>
+				<div class="submit">
+					<input type="submit" name="DoExpressCheckoutBtn"
+						value="DoExpressCheckout" /> <br />
+				</div>
+				<a href="../index.php">Home</a>
+			</div>
+		</form>
+	</div>
+	<div id="relatedcalls"></div>
+	</div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-$path = '../lib';
+$path = '../../lib';
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 require_once('services/PayPalAPIInterfaceService/PayPalAPIInterfaceServiceService.php');
 require_once('PPLoggingManager.php');
@@ -10,14 +10,25 @@ $logger = new PPLoggingManager('GetBillingAgreementCustomerDetails');
 
 $BACustomerDetailRequest = new GetBillingAgreementCustomerDetailsRequestType();
 $BACustomerDetailRequest->Token = $_REQUEST['token'];
-$BACustomerDetailRequest->Version = 92;
+
 
 $BACustomerDetailReq = new GetBillingAgreementCustomerDetailsReq();
 $BACustomerDetailReq->GetBillingAgreementCustomerDetailsRequest = $BACustomerDetailRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$BACustomerDetailResponse = $paypalService->GetBillingAgreementCustomerDetails($BACustomerDetailReq);
-echo "<pre>";
-print_r($BACustomerDetailResponse);
-echo "</pre>";
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$BACustomerDetailResponse = $paypalService->GetBillingAgreementCustomerDetails($BACustomerDetailReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
+if(isset($BACustomerDetailResponse)) {
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>$BACustomerDetailResponse->Ack</div> </td></tr>";
+	echo "</table>";
+	echo "<pre>";
+	print_r($BACustomerDetailResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';

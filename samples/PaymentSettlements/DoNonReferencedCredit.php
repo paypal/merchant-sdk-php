@@ -8,9 +8,23 @@ require_once('PPLoggingManager.php');
  */
 $logger = new PPLoggingManager('DoNonReferencedCredit');
 
-$amount = new BasicAmountType();
-$amount->currencyID = $_REQUEST['currencyID'];
-$amount->value = $_REQUEST['netAmount'];
+$currencyId = $_REQUEST['currencyID'];
+
+$itemAmount = new BasicAmountType();
+$itemAmount->value = $_REQUEST['itemAmount'];
+$itemAmount->currencyID = $currencyId;
+
+$shippingAmount = new BasicAmountType();
+$shippingAmount->value = $_REQUEST['shippingAmount'];
+$shippingAmount->currencyID = $currencyId;
+
+$taxAmount = new BasicAmountType();
+$taxAmount->value = $_REQUEST['taxAmount'];
+$taxAmount->currencyID = $currencyId;
+
+$totalamount = new BasicAmountType();
+$totalamount->value = ($taxAmount->value + $shippingAmount->value + $itemAmount->value);
+$totalamount->currencyID = $currencyId;
 
 $creditCard = new CreditCardDetailsType();
 $creditCard->CreditCardNumber = $_REQUEST['creditCard'];
@@ -22,19 +36,32 @@ $creditCard->CVV2 = $_REQUEST['cvv'];
 $doNonRefCreditRequestDetails= new DoNonReferencedCreditRequestDetailsType();
 $doNonRefCreditRequestDetails->CreditCard = $creditCard;
 $doNonRefCreditRequestDetails->Comment =$_REQUEST['comment'];
-$doNonRefCreditRequestDetails->NetAmount =$amount;
-
+$doNonRefCreditRequestDetails->NetAmount =$itemAmount;
+$doNonRefCreditRequestDetails->ShippingAmount = $shippingAmount;
+$doNonRefCreditRequestDetails->TaxAmount = $taxAmount;
+$doNonRefCreditRequestDetails->Amount = $totalamount;
 
 $doNonRefCreditRequest = new DoNonReferencedCreditRequestType();
-$doNonRefCreditRequest->DoNonReferencedCreditRequestDetails =$doNonRefCreditRequestDetails ;
-$doNonRefCreditRequest->Version = 92;
+$doNonRefCreditRequest->DoNonReferencedCreditRequestDetails =$doNonRefCreditRequestDetails;
+
 
 $doNonRefCreditReq = new DoNonReferencedCreditReq();
 $doNonRefCreditReq->DoNonReferencedCreditRequest = $doNonRefCreditRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$doNonRefCreditResponse = $paypalService->DoNonReferencedCredit($doNonRefCreditReq);
-echo "<pre>";
-print_r($doNonRefCreditResponse);
-echo "</pre>";
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$doNonRefCreditResponse = $paypalService->DoNonReferencedCredit($doNonRefCreditReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
+if(isset($doNonRefCreditResponse)) {
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>$doNonRefCreditResponse->Ack</div> </td></tr>";
+	echo "</table>";
+	echo "<pre>";
+	print_r($doNonRefCreditResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';

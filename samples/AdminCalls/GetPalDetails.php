@@ -5,16 +5,25 @@ require_once('services/PayPalAPIInterfaceService/PayPalAPIInterfaceServiceServic
 require_once('PPLoggingManager.php');
 
 $logger = new PPLoggingManager('GetPlaDetails');
-
 $getPalDetailsRequest = new GetPalDetailsRequestType();
-$getPalDetailsRequest->Version = 92.0;
-
 $getPalDetailsReq = new GetPalDetailsReq();
 $getPalDetailsReq->GetPalDetailsRequest = $getPalDetailsRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$getPalDetailsResponse = $paypalService->GetPalDetails($getPalDetailsReq);
-echo "<pre>";
-print_r($getPalDetailsResponse);
-echo "</pre>";
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$getPalDetailsResponse = $paypalService->GetPalDetails($getPalDetailsReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
+if(isset($getPalDetailsResponse)) {
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>$getPalDetailsResponse->Ack</div> </td></tr>";
+	echo "<tr><td>Pal :</td><td><div id='Pal'>$getPalDetailsResponse->Pal</div> </td></tr>";
+	echo "</table>";
+	echo "<pre>";
+	print_r($getPalDetailsResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';
