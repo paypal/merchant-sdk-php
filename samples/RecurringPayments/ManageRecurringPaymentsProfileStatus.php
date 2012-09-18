@@ -18,14 +18,23 @@ $manageRPPStatusReq = new ManageRecurringPaymentsProfileStatusReq();
 $manageRPPStatusReq->ManageRecurringPaymentsProfileStatusRequest = $manageRPPStatusReqest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$manageRPPStatusResponse = $paypalService->ManageRecurringPaymentsProfileStatus($manageRPPStatusReq);
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$manageRPPStatusResponse = $paypalService->ManageRecurringPaymentsProfileStatus($manageRPPStatusReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
 
-echo "<table>";
-echo "<tr><td>Ack :</td><td><div id='Ack'>$manageRPPStatusResponse->Ack</div> </td></tr>";
-echo "<tr><td>ProfileID :</td><td><div id='ProfileID'>".$manageRPPStatusResponse->ManageRecurringPaymentsProfileStatusResponseDetails->ProfileID ."</div> </td></tr>";
-echo "</table>";
+if(isset($manageRPPStatusResponse)) {
 
-echo "<pre>";
-print_r($manageRPPStatusResponse);
-echo "</pre>";
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>$manageRPPStatusResponse->Ack</div> </td></tr>";
+	echo "<tr><td>ProfileID :</td><td><div id='ProfileID'>".$manageRPPStatusResponse->ManageRecurringPaymentsProfileStatusResponseDetails->ProfileID ."</div> </td></tr>";
+	echo "</table>";
+
+	echo "<pre>";
+	print_r($manageRPPStatusResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';

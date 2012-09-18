@@ -49,9 +49,16 @@ $enterBoardingReq = new EnterBoardingReq();
 $enterBoardingReq->EnterBoardingRequest = $enterBoardingRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$enterBoardingResponse = $paypalService->EnterBoarding($enterBoardingReq);
-
-echo "<pre>";
-print_r($enterBoardingResponse);
-echo "</pre>";
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$enterBoardingResponse = $paypalService->EnterBoarding($enterBoardingReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
+if(isset($enterBoardingResponse)) {
+	echo "<pre>";
+	print_r($enterBoardingResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';

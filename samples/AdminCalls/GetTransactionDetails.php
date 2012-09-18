@@ -8,24 +8,26 @@ require_once('PPLoggingManager.php');
 $logger = new PPLoggingManager('TransactionDetails');
 
 $req = new GetTransactionDetailsRequestType();
-
 $req->TransactionID = $_POST['transID'];
-
-
-
 $trans = new GetTransactionDetailsReq();
 $trans->GetTransactionDetailsRequest = $req;
 
-$logger->error("created transDetailRequest Object");
 $paypalService = new PayPalAPIInterfaceServiceService();
-$TransDetailsResponse = $paypalService->GetTransactionDetails($trans);
-//$logger->error("Received $createTransDetailsResponse:");
-echo "<table>";
-echo "<tr><td>Ack :</td><td><div id='Ack'>$TransDetailsResponse->Ack</div> </td></tr>";
-echo "</table>";
-echo "<pre>";
-print_r($TransDetailsResponse);
-echo "</pre>";
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$transDetailsResponse = $paypalService->GetTransactionDetails($trans);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
+if(isset($transDetailsResponse)) {
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>$transDetailsResponse->Ack</div> </td></tr>";
+	echo "</table>";
+	echo "<pre>";
+	print_r($transDetailsResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';
 
 ?>

@@ -5,30 +5,33 @@
 <title>PayPal SDK - GetBalance</title>
 </head>
 <body>
-<div id="wrapper">
-<div id="header">
-<h3>GetBalance</h3>
-<div id="apidetails">GetBalance API Operation obtains the available
-balance for a PayPal account.</div>
-</div>
-<form method="POST" action ="GetBalance.php">
-<div id="request_form">
-<div class="params">
-<div class="param_name">ReturnAllCurrencies(Indicates whether to return
-all currencies)</div>
-<div class="param_value"><select name="returnAllCurrencies">
-	<option value=""></option>
-	<option value="0">Return only the balance for the primary currency
-	holding</option>
-	<option value="1">Return the balance for each currency holding</option>
-</select></div>
-</div>
-<div class="submit"><input type="submit" name="GetBalanceBtn"
-	value="GetBalance" /><br />
-</div>
-<a href="../Index.php">Home</a></div>
-</form>
+	<div id="wrapper">
+		<div id="header">
+			<h3>GetBalance</h3>
+			<div id="apidetails">GetBalance API Operation obtains the available
+				balance for a PayPal account.</div>
+		</div>
+		<form method="POST" action="GetBalance.php">
+			<div id="request_form">
+				<div class="params">
+					<div class="param_name">ReturnAllCurrencies(Indicates whether to
+						return all currencies)</div>
+					<div class="param_value">
+						<select name="returnAllCurrencies">
+							<option value=""></option>
+							<option value="0">Return only the balance for the primary
+								currency holding</option>
+							<option value="1">Return the balance for each currency holding</option>
+						</select>
+					</div>
+				</div>
+				<div class="submit">
+					<input type="submit" name="GetBalanceBtn" value="GetBalance" /><br />
+				</div>
+				<a href="../Index.php">Home</a>
+			</div>
+		</form>
 
-</div>
+	</div>
 </body>
 </html>

@@ -14,7 +14,7 @@ $itemAmount = new BasicAmountType();
 $itemAmount->value = $_REQUEST['itemAmount'];
 $itemAmount->currencyID = $currencyId;
 
-$shippingAmount = new BasicAmountType(); 
+$shippingAmount = new BasicAmountType();
 $shippingAmount->value = $_REQUEST['shippingAmount'];
 $shippingAmount->currencyID = $currencyId;
 
@@ -49,12 +49,19 @@ $doNonRefCreditReq = new DoNonReferencedCreditReq();
 $doNonRefCreditReq->DoNonReferencedCreditRequest = $doNonRefCreditRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$doNonRefCreditResponse = $paypalService->DoNonReferencedCredit($doNonRefCreditReq);
-
-echo "<table>";
-echo "<tr><td>Ack :</td><td><div id='Ack'>$doNonRefCreditResponse->Ack</div> </td></tr>";
-echo "</table>";
-echo "<pre>";
-print_r($doNonRefCreditResponse);
-echo "</pre>";
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$doNonRefCreditResponse = $paypalService->DoNonReferencedCredit($doNonRefCreditReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
+if(isset($doNonRefCreditResponse)) {
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>$doNonRefCreditResponse->Ack</div> </td></tr>";
+	echo "</table>";
+	echo "<pre>";
+	print_r($doNonRefCreditResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';

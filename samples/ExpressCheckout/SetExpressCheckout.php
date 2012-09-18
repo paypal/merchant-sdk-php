@@ -17,7 +17,7 @@ $cancelUrl = $url. "/SetExpressCheckout.php" ;
 
 
 /*$taxTotal = new BasicAmountType();
-$taxTotal->currencyID = $_REQUEST['currencyCode'];
+ $taxTotal->currencyID = $_REQUEST['currencyCode'];
 $taxTotal->value = $_REQUEST['taxTotal'];*/
 
 $shippingTotal = new BasicAmountType();
@@ -78,23 +78,26 @@ $setECReq->SetExpressCheckoutRequest = $setECReqType;
 
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$setECResponse = $paypalService->SetExpressCheckout($setECReq);
-echo "<table>";
-echo "<tr><td>Ack :</td><td><div id='Ack'>$setECResponse->Ack</div> </td></tr>";
-echo "<tr><td>Token :</td><td><div id='Token'>$setECResponse->Token</div> </td></tr>";
-echo "</table>";
-echo '<pre>';
-print_r($setECResponse);
-echo '</pre>';
-
-
-if($setECResponse->Ack =='Success')
-{
-		$token = $setECResponse->Token;
-	// Redirect to paypal.com here
-	$payPalURL = 'https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&token=' . $token;
-
-	echo" <a href=$payPalURL><b>* Redirect to PayPal to login </b></a><br>";
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$setECResponse = $paypalService->SetExpressCheckout($setECReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
 }
-
+if(isset($setECResponse)) {
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>$setECResponse->Ack</div> </td></tr>";
+	echo "<tr><td>Token :</td><td><div id='Token'>$setECResponse->Token</div> </td></tr>";
+	echo "</table>";
+	echo '<pre>';
+	print_r($setECResponse);
+	echo '</pre>';
+	if($setECResponse->Ack =='Success') {
+		$token = $setECResponse->Token;
+		// Redirect to paypal.com here
+		$payPalURL = 'https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&token=' . $token;
+		echo" <a href=$payPalURL><b>* Redirect to PayPal to login </b></a><br>";
+	}
+}
 require_once '../Response.php';

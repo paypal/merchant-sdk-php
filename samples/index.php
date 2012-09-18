@@ -2,260 +2,124 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PayPal SDK</title>
+<title>PayPal Merchant SDK for PHP - Samples</title>
+<style>
+table {
+	border-collapse: collapse;
+}
+
+td {
+	padding: 5px;
+}
+</style>
 </head>
 <body>
 	<center>
-		<font size=2 color=black face=Verdana><b><u>Merchant
-					Samples</u> </b> </font>
+		<font size=2 color=black face=Verdana><b><u>PayPal Merchant SDK for
+					PHP - Samples</u> </b> </font>
 	</center>
+	<br />
+	<br />
 	<table>
-		<tr>
-			<td valign="top">	
+		<tr valign="top">
+			<td><b>Express Checkout</b>
+				<ul>
+					<li><a href="ExpressCheckout/DGsetEC.html.php">ExpressCheckout -
+							Digital Goods</a></li>
+					<li><a href="ExpressCheckout/SetExpressCheckout.html.php">SetExpressCheckout</a>
+					</li>
+					<li><a href="ExpressCheckout/GetExpressCheckout.html.php">GetExpressCheckout</a>
+					</li>
+					<li><a href="ExpressCheckout/DoExpressCheckout.html.php">DoExpressCheckout</a>
+					</li>
+				</ul>
 			</td>
-			<td valign="top"><table align="center">
-
-					<tr>
-						<th>Settlements and Refunds</th>
-					</tr>
-					<tr>
-						<td align="left"><a href="PaymentSettlements/Refund.html.php">Refund</a></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a href="PaymentSettlements/DoAuthorization.html.php">DoAuthorization</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a href="PaymentSettlements/DoVoid.html.php">DoVoid</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a href="PaymentSettlements/DoReauthorization.html.php">DoReauthorization</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a href="PaymentSettlements/DoCapture.html.php">DoCapture</a>
-						</td>
-						<td></td>
-					</tr>
-
-					<tr>
-						<td align="left"><a href="PaymentSettlements/ReverseTransaction.html.php">ReverseTransaction</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a href="PaymentSettlements/DoNonReferencedCredit.html.php">DoNonReferencedCredit</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a
-							href="PaymentSettlements/ManagePendingTransactionStatus.html.php">ManagePendingTransactionStatus</a>
-						</td>
-						<td></td>
-					</tr>
-				</table>
+			<td><b>DCC</b>
+				<ul>
+					<li><a href="DirectPayment/DoDirectPayment.html.php">DoDirectPayment</a>
+					</li>
+				</ul>
 			</td>
-			<td valign="top"><table align="right">
-					<tr>
-						<th>Express Checkout</th>
-					</tr>
-
-					<tr>
-						<td align="left"><a href="ExpressCheckout/DGsetEC.html.php">ExpressCheckout - Digital Goods</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a href="ExpressCheckout/SetExpressCheckout.html.php">SetExpressCheckout</a>
-						</td>
-						
-					</tr>
-					<tr>
-						<td align="left"><a href="ExpressCheckout/GetExpressCheckout.html.php">GetExpressCheckout</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a href="ExpressCheckout/DoExpressCheckout.html.php">DoExpressCheckout</a>
-						</td>
-						<td></td>
-					</tr>
-					
-					<!--<tr>
-						<td align="left"><a href="ExpressCheckout">ExternalRememberMeOptOut</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a href="ExpressCheckout">ExecuteCheckoutOperations</a>
-						</td>
-						<td></td>
-					</tr>
-				--></table>
+			<td><b>MassPay</b>
+				<ul>
+					<li><a href="MassPay/MassPay.html.php">MassPay</a></li>
+				</ul>
 			</td>
 		</tr>
-		
-		<tr>
-		<td valign="top"><table align="right">
-					<tr>
-						<th>Account Authentication</th>
-					</tr>
-<tr>
-						<td align="left"><a href="AccountAuthentication/SetAuthFlowParam.html.php">SetAuthFlowParam</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a href="AccountAuthentication/GetAuthDetails.html.php">GetAuthDetails</a>
-						</td>
-						<td></td>
-					</tr>
-					
-					
-				</table>
+		<tr valign="top">
+			<td><b>Settlments and Refunds</b>
+				<ul>
+					<li><a href="PaymentSettlements/Refund.html.php">Refund</a></li>
+					<li><a href="PaymentSettlements/DoAuthorization.html.php">DoAuthorization</a>
+					</li>
+					<li><a href="PaymentSettlements/DoVoid.html.php">DoVoid</a></li>
+					<li><a href="PaymentSettlements/DoReauthorization.html.php">DoReauthorization</a>
+					</li>
+					<li><a href="PaymentSettlements/DoCapture.html.php">DoCapture</a></li>
+					<li><a href="PaymentSettlements/ReverseTransaction.html.php">ReverseTransaction</a>
+					</li>
+					<li><a href="PaymentSettlements/DoNonReferencedCredit.html.php">DoNonReferencedCredit</a>
+					</li>
+					<li><a
+						href="PaymentSettlements/ManagePendingTransactionStatus.html.php">ManagePendingTransactionStatus</a>
+					</li>
+				</ul>
 			</td>
-		
-			<td valign="top"><table align="left">
-					<tr>
-						<th>Recurring Payments</th>
-					</tr>
-					<tr>
-						<td align="left"><a href="RecurringPayments/CreateRecurringPaymentsProfile.html.php">CreateRecurringPaymentsProfile</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a
-							href="RecurringPayments/GetRecurringPaymentsProfileDetails.html.php">GetRecurringPaymentsProfileDetails</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a
-							href="RecurringPayments/ManageRecurringPaymentsProfileStatus.html.php">ManageRecurringPaymentsProfileStatus</a>
-						</td>
-						<td></td>
-					</tr>
-				
-					<tr>
-						<td align="left"><a href="RecurringPayments/BillOutstandingAmount.html.php">BillOutstandingAmount</a>
-						</td>
-						<td></td>
-					</tr>
-
-				</table></td>
-
-
-			<td valign="top"><table align="center">
-					<tr>
-						<th>Reference Transactions and Billing Agreement</th>
-					</tr>
-
-					<!--<tr>
-						<td align="left"><a href="BillingAgreements/">SetCustomerBillingAgreement</a>
-						</td>
-					</tr>
-					<tr>
-						<td align="left"><a href="BillingAgreements/">CreateBillingAgreement</a>
-						</td>
-					</tr>
-					--><tr>
-						<td align="left"><a
-							href="BillingAgreements/GetBillingAgreementCustomerDetails.html.php">GetBillingAgreementCustomerDetails</a>
-						</td>
-					</tr>
-					<tr>
-						<td align="left"><a href="BillingAgreements/BillingAgreementUpdate.html.php">BillAgreementUpdate</a>
-						</td>
-					</tr>
-					<tr>
-						<td align="left"><a href="BillingAgreements/DoReferenceTransaction.html.php">DoReferenceTransaction</a>
-						</td>
-					</tr>
-					<tr>
-						<td align="left"><a href="BillingAgreements/BillUser.html.php">BillUser</a>
-						</td>
-					</tr>
-				</table>
+			<td><b>Recurring Payments</b>
+				<ul>
+					<li><a
+						href="RecurringPayments/CreateRecurringPaymentsProfile.html.php">CreateRecurringPaymentsProfile</a>
+					</li>
+					<li><a
+						href="RecurringPayments/GetRecurringPaymentsProfileDetails.html.php">GetRecurringPaymentsProfileDetails</a>
+					</li>
+					<li><a
+						href="RecurringPayments/ManageRecurringPaymentsProfileStatus.html.php">ManageRecurringPaymentsProfileStatus</a>
+					</li>
+					<li><a href="RecurringPayments/BillOutstandingAmount.html.php">BillOutstandingAmount</a>
+					</li>
+				</ul>
 			</td>
-			<td valign="top"><table align="right">
-					<tr>
-						<th>Reporting and Admin</th>
-					</tr>
-					<tr>
-						<td align="left"><a href="AdminCalls/TransactionSearch.html.php">TransactionSearch</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a href="AdminCalls/GetTransactionDetails.html.php">GetTransactionDetails</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a href="AdminCalls/GetBalance.html.php">GetBalance</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a href="AdminCalls/GetPalDetails.html.php">GetPalDetails</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a href="AdminCalls/AddressVerify.html.php">AddressVerify</a>
-						</td>
-						<td></td>
-					</tr>
-				</table></td>
+			<td><b>Reference Transactions and Billing Agreement</b>
+				<ul>
+					<li><a
+						href="BillingAgreements/GetBillingAgreementCustomerDetails.html.php">GetBillingAgreementCustomerDetails</a>
+					</li>
+					<li><a href="BillingAgreements/BillingAgreementUpdate.html.php">BillAgreementUpdate</a>
+					</li>
+					<li><a href="BillingAgreements/DoReferenceTransaction.html.php">DoReferenceTransaction</a>
+					</li>
+					<li><a href="BillingAgreements/BillUser.html.php">BillUser</a></li>
+				</ul>
+			</td>
 		</tr>
-		<tr />
-		<tr />
-		<tr />
-		<tr>
-			<td valign="top"><table align="left">
-					<tr>
-						<th>DCC</th>
-					</tr>
-					<tr>
-						<td align="left"><a href="DirectPayment/DoDirectPayment.html.php">DoDirectPayment</a>
-						</td>
-						<td></td>
-					</tr>
-				</table>
+		<tr valign="top">
+			<td><b>Account Authentication</b>
+				<ul>
+					<li><a href="AccountAuthentication/SetAuthFlowParam.html.php">SetAuthFlowParam</a>
+					</li>
+					<li><a href="AccountAuthentication/GetAuthDetails.html.php">GetAuthDetails</a>
+					</li>
+				</ul>
 			</td>
-			<td valign="top"><table align="center">
-					<tr>
-						<th>MassPay</th>
-					</tr>
-					<tr>
-						<td align="left"><a href="MassPay/MassPay.html.php">MassPay</a>
-						</td>
-						<td></td>
-					</tr>
-				</table>
+			<td><b>Reporting and Admin</b>
+				<ul>
+					<li><a href="AdminCalls/TransactionSearch.html.php">TransactionSearch</a>
+					</li>
+					<li><a href="AdminCalls/GetTransactionDetails.html.php">GetTransactionDetails</a>
+					</li>
+					<li><a href="AdminCalls/GetBalance.html.php">GetBalance</a></li>
+					<li><a href="AdminCalls/GetPalDetails.html.php">GetPalDetails</a></li>
+					<li><a href="AdminCalls/AddressVerify.html.php">AddressVerify</a></li>
+				</ul>
 			</td>
-			<td valign="top"><table align="right">
-					<tr>
-						<th>Onboarding</th>
-					</tr>
-					<tr>
-						<td align="left"><a href="Onboarding/EnterBoarding.html.php">EnterBoarding</a>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td align="left"><a href="Onboarding/GetBoardingDetails.html.php">GetBoardingDetails</a>
-						</td>
-						<td></td>
-					</tr>
-				</table></td>
+			<td><b>Onboarding</b>
+				<ul>
+					<li><a href="Onboarding/EnterBoarding.html.php">EnterBoarding</a></li>
+					<li><a href="Onboarding/GetBoardingDetails.html.php">GetBoardingDetails</a>
+					</li>
+				</ul>
+			</td>
 		</tr>
 	</table>
 </body>

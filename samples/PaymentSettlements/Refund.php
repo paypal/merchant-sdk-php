@@ -17,7 +17,7 @@ $refundReqest = new RefundTransactionRequestType();
 if(!empty($amount->value))
 {
 	$refundReqest->Amount = $amount;
-	
+
 }
 $refundReqest->RefundType = $_REQUEST['refundType'];
 $refundReqest->TransactionID = $_REQUEST['transID'];
@@ -27,12 +27,20 @@ $refundReq = new RefundTransactionReq();
 $refundReq->RefundTransactionRequest = $refundReqest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$refundResponse = $paypalService->RefundTransaction($refundReq);
-echo "<table>";
-echo "<tr><td>Ack :</td><td><div id='Ack'>$refundResponse->Ack</div> </td></tr>";
-//echo "<tr><td>RefundStatus :</td><td><div id='RefundStatus'>$refundResponse->RefundInfo->RefundStatus</div> </td></tr>";
-echo "</table>";
-echo "<pre>";
-print_r($refundResponse);
-echo "</pre>";
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$refundResponse = $paypalService->RefundTransaction($refundReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
+if(isset($refundResponse)) {
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>$refundResponse->Ack</div> </td></tr>";
+	//echo "<tr><td>RefundStatus :</td><td><div id='RefundStatus'>$refundResponse->RefundInfo->RefundStatus</div> </td></tr>";
+	echo "</table>";
+	echo "<pre>";
+	print_r($refundResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';

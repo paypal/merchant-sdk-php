@@ -6,41 +6,43 @@
 
 </head>
 <body>
-<div id="wrapper">
-<div id="header">
-<h3>ManageRecurringPaymentsProfileStatus</h3>
-<div id="apidetails">
-<p>ManageRecurringPaymentsProfileStatus API operation cancels,
-suspends, or reactivates a recurring payments profile.</p>
-</div>
-</div>
-<form method="POST" action="ManageRecurringPaymentsProfileStatus.php">
-<div id="request_form">
-<div class="params">
-<div class="param_name">Profile ID*(Get Profile ID via <a
-href='CreateRecurringPaymentsProfile.html.php'>CreateRecurringPaymentsProfile</a>)</div>
-<div class="param_value">
-<input type="text" name="profileID" value="" size="50"
-maxlength="260" />
-</div>
-</div>
-<div class="params">
-<div class="param_name">Action*</div>
-<div class="param_value">
-<select name="action"><option value="Cancel">Cancel</option>
-<option value="Suspend">Suspend</option>
-<option value="Reactivate">Reactivate</option>
-</select>
-</div>
-</div>
-<div class="submit">
-<input type="submit" name="ManageRecurringPaymentsProfileStatusBtn"
-value="ManageRecurringPaymentsProfileStatus" /><br />
-</div>
-<a href="../index.php">Home</a>
-</div>
-</form>
+	<div id="wrapper">
+		<div id="header">
+			<h3>ManageRecurringPaymentsProfileStatus</h3>
+			<div id="apidetails">
+				<p>ManageRecurringPaymentsProfileStatus API operation cancels,
+					suspends, or reactivates a recurring payments profile.</p>
+			</div>
+		</div>
+		<form method="POST" action="ManageRecurringPaymentsProfileStatus.php">
+			<div id="request_form">
+				<div class="params">
+					<div class="param_name">
+						Profile ID*(Get Profile ID via <a
+							href='CreateRecurringPaymentsProfile.html.php'>CreateRecurringPaymentsProfile</a>)
+					</div>
+					<div class="param_value">
+						<input type="text" name="profileID" value="" size="50"
+							maxlength="260" />
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">Action*</div>
+					<div class="param_value">
+						<select name="action"><option value="Cancel">Cancel</option>
+							<option value="Suspend">Suspend</option>
+							<option value="Reactivate">Reactivate</option>
+						</select>
+					</div>
+				</div>
+				<div class="submit">
+					<input type="submit" name="ManageRecurringPaymentsProfileStatusBtn"
+						value="ManageRecurringPaymentsProfileStatus" /><br />
+				</div>
+				<a href="../index.php">Home</a>
+			</div>
+		</form>
 
-</div>
+	</div>
 </body>
 </html>

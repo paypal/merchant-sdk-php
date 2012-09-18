@@ -14,13 +14,18 @@ $paymentAction = urlencode(  $_REQUEST['paymentAction']);
 // ------------------------------------------------------------------
 // this section is optional if parameters required for DoExpressCheckout is retrieved from your database
 $getExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType($token);
-
+$getECResponse = $paypalService->GetExpressCheckoutDetails($getExpressCheckoutReq);
 $getExpressCheckoutReq = new GetExpressCheckoutDetailsReq();
 $getExpressCheckoutReq->GetExpressCheckoutDetailsRequest = $getExpressCheckoutDetailsRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$getECResponse = $paypalService->GetExpressCheckoutDetails($getExpressCheckoutReq);
-
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$DoECResponse = $paypalService->DoExpressCheckoutPayment($DoECReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
 //----------------------------------------------------------------------------
 
 $orderTotal = new BasicAmountType();
@@ -43,12 +48,20 @@ $DoECRequest->DoExpressCheckoutPaymentRequestDetails = $DoECRequestDetails;
 $DoECReq = new DoExpressCheckoutPaymentReq();
 $DoECReq->DoExpressCheckoutPaymentRequest = $DoECRequest;
 
-$DoECResponse = $paypalService->DoExpressCheckoutPayment($DoECReq);
-echo "<table>";
-echo "<tr><td>Ack :</td><td><div id='Ack'>$DoECResponse->Ack</div> </td></tr>";
-echo "<tr><td>TransactionID :</td><td><div id='TransactionID'>".$DoECResponse->DoExpressCheckoutPaymentResponseDetails->PaymentInfo->TransactionID."</div> </td></tr>";
-echo "</table>";
-echo "<pre>";
-print_r($DoECResponse);
-echo "</pre>";
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$DoECResponse = $paypalService->DoExpressCheckoutPayment($DoECReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
+if(isset($DoECResponse)) {
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>$DoECResponse->Ack</div> </td></tr>";
+	echo "<tr><td>TransactionID :</td><td><div id='TransactionID'>".$DoECResponse->DoExpressCheckoutPaymentResponseDetails->PaymentInfo->TransactionID."</div> </td></tr>";
+	echo "</table>";
+	echo "<pre>";
+	print_r($DoECResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';

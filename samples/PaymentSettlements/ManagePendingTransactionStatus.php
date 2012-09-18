@@ -7,7 +7,7 @@ require_once('PPLoggingManager.php');
  * Get required parameters from the web form for the request
  */
 $logger = new PPLoggingManager('ManagePendingTransactionStatus');
- 
+
 $MPTranStatusReqest= new ManagePendingTransactionStatusRequestType();
 $MPTranStatusReqest->TransactionID = $_REQUEST['transactionID'];
 $MPTranStatusReqest->Action = $_REQUEST['action'];
@@ -17,9 +17,17 @@ $MPTranStatusReq = new ManagePendingTransactionStatusReq();
 $MPTranStatusReq->ManagePendingTransactionStatusRequest = $MPTranStatusReqest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
-$MPTranStatusResponse = $paypalService->ManagePendingTransactionStatus($MPTranStatusReq);
-echo "<pre>";
-print_r($MPTranStatusResponse);
-echo "</pre>";
+try {
+	/* wrap API method calls on the service object with a try catch */
+	$MPTranStatusResponse = $paypalService->ManagePendingTransactionStatus($MPTranStatusReq);
+} catch (Exception $ex) {
+	include_once("../Error.php");
+	exit;
+}
+if(isset($MPTranStatusResponse)) {
+	echo "<pre>";
+	print_r($MPTranStatusResponse);
+	echo "</pre>";
+}
 require_once '../Response.php';
 ?>
