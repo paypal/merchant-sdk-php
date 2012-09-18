@@ -14,14 +14,13 @@ $paymentAction = urlencode(  $_REQUEST['paymentAction']);
 // ------------------------------------------------------------------
 // this section is optional if parameters required for DoExpressCheckout is retrieved from your database
 $getExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType($token);
-$getECResponse = $paypalService->GetExpressCheckoutDetails($getExpressCheckoutReq);
 $getExpressCheckoutReq = new GetExpressCheckoutDetailsReq();
 $getExpressCheckoutReq->GetExpressCheckoutDetailsRequest = $getExpressCheckoutDetailsRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */
-	$DoECResponse = $paypalService->DoExpressCheckoutPayment($DoECReq);
+	$getECResponse = $paypalService->GetExpressCheckoutDetails($getExpressCheckoutReq);
 } catch (Exception $ex) {
 	include_once("../Error.php");
 	exit;
