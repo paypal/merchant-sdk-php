@@ -41,10 +41,8 @@ class BasicAmountType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->currencyID != null)
-		{
-			$str .= ' currencyID = "' . PPUtils::escapeInvalidXmlCharsRegex($this->currencyID) . '">';
-		}
+		$str .= $this->getAttributeAsXml();
+		$str .= '>';
 		if($this->value != null)
 		{
 			$str .= PPUtils::escapeInvalidXmlCharsRegex($this->value);
@@ -52,6 +50,15 @@ class BasicAmountType  {
 		return $str;
 	}
 
+	
+	private function getAttributeAsXml()
+	{
+		$str = '';
+		if($this->currencyID != null) {
+			$str .= ' currencyID = "' . PPUtils::escapeInvalidXmlCharsRegex($this->currencyID) . '"';
+		}
+		return $str;
+	}
 
 	public function init($arr = null) {
 		if ($arr != null) {
@@ -100,10 +107,8 @@ class MeasureType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->unit != null)
-		{
-			$str .= ' unit = "' . PPUtils::escapeInvalidXmlCharsRegex($this->unit) . '">';
-		}
+		$str .= $this->getAttributeAsXml();
+		$str .= '>';
 		if($this->value != null)
 		{
 			$str .= PPUtils::escapeInvalidXmlCharsRegex($this->value);
@@ -111,6 +116,15 @@ class MeasureType  {
 		return $str;
 	}
 
+	
+	private function getAttributeAsXml()
+	{
+		$str = '';
+		if($this->unit != null) {
+			$str .= ' unit = "' . PPUtils::escapeInvalidXmlCharsRegex($this->unit) . '"';
+		}
+		return $str;
+	}
 
 	public function init($arr = null) {
 		if ($arr != null) {
@@ -139,7 +153,6 @@ class ErrorParameterType  {
 	 *@var string
 	 */ 
 	public $Value;
-
 
 
 
@@ -206,7 +219,6 @@ class ErrorType  {
 	 *@var ErrorParameterType
 	 */ 
 	public $ErrorParameters;
-
 
 
 
@@ -365,7 +377,6 @@ class AbstractResponseType  {
 	 *@var string
 	 */ 
 	public $Build;
-
 
 
 
@@ -898,7 +909,6 @@ class IncentiveAppliedToType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -996,7 +1006,6 @@ class IncentiveDetailType  {
 	 *@var string
 	 */ 
 	public $ErrorCode;
-
 
 
 
@@ -1425,7 +1434,6 @@ class GetIncentiveEvaluationResponseDetailsType  {
 	 *@var string
 	 */ 
 	public $RequestId;
-
 
 
 
@@ -3302,7 +3310,6 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -3487,7 +3494,6 @@ class ExecuteCheckoutOperationsResponseDetailsType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -3535,7 +3541,6 @@ class SetDataResponseType  {
 	 *@var ErrorType
 	 */ 
 	public $SetDataError;
-
 
 
 
@@ -3589,7 +3594,6 @@ class AuthorizationResponseType  {
 	 *@var ErrorType
 	 */ 
 	public $AuthorizationError;
-
 
 
 
@@ -3987,7 +3991,6 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -4082,7 +4085,6 @@ class DoCaptureResponseDetailsType  {
 	 *@var string
 	 */ 
 	public $MsgSubID;
-
 
 
 
@@ -4761,7 +4763,6 @@ class GetAuthDetailsResponseDetailsType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -5088,7 +5089,6 @@ class GetAccessPermissionDetailsResponseDetailsType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -5167,7 +5167,6 @@ class BAUpdateResponseDetailsType  {
 	 *@var AddressType
 	 */ 
 	public $BillingAddress;
-
 
 
 
@@ -5252,7 +5251,6 @@ class MerchantPullPaymentResponseType  {
 	 *@var MerchantPullInfoType
 	 */ 
 	public $MerchantPullInfo;
-
 
 
 
@@ -5346,7 +5344,6 @@ class MerchantPullInfoType  {
 	 *@var string
 	 */ 
 	public $PaymentSourceID;
-
 
 
 
@@ -5472,7 +5469,6 @@ class PaymentTransactionSearchResultType  {
 	 *@var BasicAmountType
 	 */ 
 	public $NetAmount;
-
 
 
 
@@ -5861,7 +5857,6 @@ class PaymentTransactionType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -5995,7 +5990,6 @@ class ReceiverInfoType  {
 	 *@var string
 	 */ 
 	public $ReceiverID;
-
 
 
 
@@ -6227,7 +6221,6 @@ class InstrumentDetailsType  {
 	 *@var string
 	 */ 
 	public $InstrumentCategory;
-
 
 
 
@@ -6692,7 +6685,6 @@ class PaymentInfoType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -6908,7 +6900,6 @@ class SubscriptionTermsType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -7008,7 +6999,6 @@ class SubscriptionInfoType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -7077,7 +7067,6 @@ class AuctionInfoType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -7098,7 +7087,6 @@ class AuctionInfoType  {
  * OptionType PayPal item options for shopping cart. 
  */
 class OptionType  {
-
 
 
 
@@ -7677,7 +7665,6 @@ class PaymentItemType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -7822,7 +7809,6 @@ class PaymentItemInfoType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -7910,7 +7896,6 @@ class OfferCouponInfoType  {
 	 *@var string
 	 */ 
 	public $AmountCurrency;
-
 
 
 
@@ -8690,7 +8675,6 @@ class IncentiveDetailsType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -8786,7 +8770,6 @@ class IncentiveAppliedDetailsType  {
 	 *@var string
 	 */ 
 	public $SubType;
-
 
 
 
@@ -9281,7 +9264,6 @@ class ThreeDSecureResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -9316,7 +9298,6 @@ class ThreeDSecureInfoType  {
 	 *@var ThreeDSecureResponseType
 	 */ 
 	public $ThreeDSecureResponse;
-
 
 
 
@@ -10023,7 +10004,6 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -10331,7 +10311,6 @@ class DoReferenceTransactionResponseDetailsType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -10507,7 +10486,6 @@ class DoNonReferencedCreditResponseDetailsType  {
 	 *@var string
 	 */ 
 	public $TransactionID;
-
 
 
 
@@ -11131,7 +11109,6 @@ class GetBoardingDetailsResponseDetailsType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -11246,7 +11223,6 @@ class APICredentialsType  {
 	 *@var APIAuthenticationType
 	 */ 
 	public $Type;
-
 
 
 
@@ -11541,7 +11517,6 @@ class DoMobileCheckoutPaymentResponseDetailsType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -11692,7 +11667,6 @@ class RecurringPaymentsSummaryType  {
 	 *@var BasicAmountType
 	 */ 
 	public $LastPaymentAmount;
-
 
 
 
@@ -12387,7 +12361,6 @@ class CreateRecurringPaymentsProfileResponseDetailsType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -12529,7 +12502,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	 *@var dateTime
 	 */ 
 	public $FinalPaymentDueDate;
-
 
 
 
@@ -12749,7 +12721,6 @@ class ManageRecurringPaymentsProfileStatusResponseDetailsType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -12833,7 +12804,6 @@ class BillOutstandingAmountResponseDetailsType  {
 	 *@var string
 	 */ 
 	public $ProfileID;
-
 
 
 
@@ -13092,7 +13062,6 @@ class UpdateRecurringPaymentsProfileResponseDetailsType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -13134,7 +13103,6 @@ class RiskFilterDetailsType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -13166,7 +13134,6 @@ class RiskFilterListType  {
 	 *@var RiskFilterDetailsType
 	 */ 
 	public $Filters;
-
 
 
 
@@ -13229,7 +13196,6 @@ class FMFDetailsType  {
 	 *@var RiskFilterListType
 	 */ 
 	public $ReportFilters;
-
 
 
 
@@ -13763,7 +13729,6 @@ class AuthorizationInfoType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -14021,7 +13986,6 @@ class ButtonSearchResultType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -14098,7 +14062,6 @@ class ReverseTransactionResponseDetailsType  {
 	 *@var string
 	 */ 
 	public $Status;
-
 
 
 
@@ -14230,7 +14193,6 @@ class PaymentRequestInfoType  {
 	 *@var ErrorType
 	 */ 
 	public $PaymentError;
-
 
 
 
@@ -14435,7 +14397,6 @@ class ExternalRememberMeStatusDetailsType  {
 	 *@var string
 	 */ 
 	public $ExternalRememberMeID;
-
 
 
 
@@ -14982,7 +14943,6 @@ class RefundInfoType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -15082,7 +15042,6 @@ class CoupledPaymentInfoType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -15169,7 +15128,6 @@ class EnhancedPaymentInfoType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			foreach($arr as $arry) {
@@ -15218,7 +15176,6 @@ class EnhancedCompleteRecoupRequestDetailsType  {
  * 
  */
 class EnhancedCompleteRecoupResponseDetailsType  {
-
 
 
 
@@ -15808,7 +15765,6 @@ class BMCreateButtonResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -16097,7 +16053,6 @@ class BMUpdateButtonResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -16201,7 +16156,6 @@ class BMManageButtonStatusRequestType  extends AbstractRequestType  {
  * 
  */
 class BMManageButtonStatusResponseType  extends AbstractResponseType  {
-
 
 
 
@@ -16414,7 +16368,6 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	 *@var string
 	 */ 
 	public $ButtonLanguage;
-
 
 
 
@@ -16684,7 +16637,6 @@ class BMSetInventoryResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -16840,7 +16792,6 @@ class BMGetInventoryResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -16981,7 +16932,6 @@ class BMButtonSearchResponseType  extends AbstractResponseType  {
 	 *@var ButtonSearchResultType
 	 */ 
 	public $ButtonSearchResult;
-
 
 
 
@@ -17276,7 +17226,6 @@ class RefundTransactionResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -17450,7 +17399,6 @@ class InitiateRecoupResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -17543,7 +17491,6 @@ class CompleteRecoupResponseType  extends AbstractResponseType  {
 	 *@var EnhancedCompleteRecoupResponseDetailsType
 	 */ 
 	public $EnhancedCompleteRecoupResponseDetails;
-
 
 
 
@@ -17640,7 +17587,6 @@ class CancelRecoupRequestType  extends AbstractRequestType  {
  * 
  */
 class CancelRecoupResponseType  extends AbstractResponseType  {
-
 
 
 
@@ -17742,7 +17688,6 @@ class GetTransactionDetailsResponseType  extends AbstractResponseType  {
 	 *@var ThreeDSecureInfoType
 	 */ 
 	public $ThreeDSecureDetails;
-
 
 
 
@@ -17867,7 +17812,6 @@ class BillUserResponseType  extends AbstractResponseType  {
 	 *@var FMFDetailsType
 	 */ 
 	public $FMFDetails;
-
 
 
 
@@ -18195,7 +18139,6 @@ class TransactionSearchResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -18347,7 +18290,6 @@ class MassPayRequestType  extends AbstractRequestType  {
  * 
  */
 class MassPayResponseType  extends AbstractResponseType  {
-
 
 
 
@@ -18590,7 +18532,6 @@ class BAUpdateResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -18789,7 +18730,6 @@ class AddressVerifyResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -18906,7 +18846,6 @@ class EnterBoardingResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -19006,7 +18945,6 @@ class GetBoardingDetailsResponseType  extends AbstractResponseType  {
 	 *@var GetBoardingDetailsResponseDetailsType
 	 */ 
 	public $GetBoardingDetailsResponseDetails;
-
 
 
 
@@ -19119,7 +19057,6 @@ class SetAuthFlowParamResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -19217,7 +19154,6 @@ class GetAuthDetailsResponseType  extends AbstractResponseType  {
 	 *@var GetAuthDetailsResponseDetailsType
 	 */ 
 	public $GetAuthDetailsResponseDetails;
-
 
 
 
@@ -19330,7 +19266,6 @@ class SetAccessPermissionsResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -19430,7 +19365,6 @@ class UpdateAccessPermissionsResponseType  extends AbstractResponseType  {
 	 *@var string
 	 */ 
 	public $Status;
-
 
 
 
@@ -19534,7 +19468,6 @@ class GetAccessPermissionDetailsResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -19635,7 +19568,6 @@ class GetIncentiveEvaluationResponseType  extends AbstractResponseType  {
 	 *@var GetIncentiveEvaluationResponseDetailsType
 	 */ 
 	public $GetIncentiveEvaluationResponseDetails;
-
 
 
 
@@ -19752,7 +19684,6 @@ class SetExpressCheckoutResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -19848,7 +19779,6 @@ class ExecuteCheckoutOperationsResponseType  extends AbstractResponseType  {
 	 *@var ExecuteCheckoutOperationsResponseDetailsType
 	 */ 
 	public $ExecuteCheckoutOperationsResponseDetails;
-
 
 
 
@@ -19954,7 +19884,6 @@ class GetExpressCheckoutDetailsResponseType  extends AbstractResponseType  {
 	 *@var GetExpressCheckoutDetailsResponseDetailsType
 	 */ 
 	public $GetExpressCheckoutDetailsResponseDetails;
-
 
 
 
@@ -20081,7 +20010,6 @@ class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -20170,7 +20098,6 @@ class DoUATPExpressCheckoutPaymentResponseType  extends DoExpressCheckoutPayment
 	 *@var UATPDetailsType
 	 */ 
 	public $UATPDetails;
-
 
 
 
@@ -20291,7 +20218,6 @@ class ManagePendingTransactionStatusResponseType  extends AbstractResponseType  
 	 *@var string
 	 */ 
 	public $Status;
-
 
 
 
@@ -20487,7 +20413,6 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -20634,7 +20559,6 @@ class DoCancelRequestType  extends AbstractRequestType  {
  * 
  */
 class DoCancelResponseType  extends AbstractResponseType  {
-
 
 
 
@@ -20852,7 +20776,6 @@ class DoCaptureResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -20990,7 +20913,6 @@ class DoReauthorizationResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -21120,7 +21042,6 @@ class DoVoidResponseType  extends AbstractResponseType  {
 	 *@var string
 	 */ 
 	public $AuthorizationID;
-
 
 
 
@@ -21287,7 +21208,6 @@ class DoAuthorizationResponseType  extends AbstractResponseType  {
 	 *@var string
 	 */ 
 	public $MsgSubID;
-
 
 
 
@@ -21494,7 +21414,6 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -21600,7 +21519,6 @@ class CreateMobilePaymentResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -21702,7 +21620,6 @@ class GetMobileStatusResponseType  extends AbstractResponseType  {
 	 *@var integer
 	 */ 
 	public $PaymentPending;
-
 
 
 
@@ -21813,7 +21730,6 @@ class SetMobileCheckoutResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -21911,7 +21827,6 @@ class DoMobileCheckoutPaymentResponseType  extends AbstractResponseType  {
 	 *@var DoMobileCheckoutPaymentResponseDetailsType
 	 */ 
 	public $DoMobileCheckoutPaymentResponseDetails;
-
 
 
 
@@ -22021,7 +21936,6 @@ class GetBalanceResponseType  extends AbstractResponseType  {
 	 *@var BasicAmountType
 	 */ 
 	public $BalanceHoldings;
-
 
 
 
@@ -22156,7 +22070,6 @@ class SetCustomerBillingAgreementResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -22250,7 +22163,6 @@ class GetBillingAgreementCustomerDetailsResponseType  extends AbstractResponseTy
 	 *@var GetBillingAgreementCustomerDetailsResponseDetailsType
 	 */ 
 	public $GetBillingAgreementCustomerDetailsResponseDetails;
-
 
 
 
@@ -22352,7 +22264,6 @@ class CreateBillingAgreementResponseType  extends AbstractResponseType  {
 	 *@var string
 	 */ 
 	public $BillingAgreementID;
-
 
 
 
@@ -22474,7 +22385,6 @@ class DoReferenceTransactionResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -22586,7 +22496,6 @@ class DoNonReferencedCreditResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -22680,7 +22589,6 @@ class CreateRecurringPaymentsProfileResponseType  extends AbstractResponseType  
 	 *@var CreateRecurringPaymentsProfileResponseDetailsType
 	 */ 
 	public $CreateRecurringPaymentsProfileResponseDetails;
-
 
 
 
@@ -22785,7 +22693,6 @@ class GetRecurringPaymentsProfileDetailsResponseType  extends AbstractResponseTy
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -22879,7 +22786,6 @@ class ManageRecurringPaymentsProfileStatusResponseType  extends AbstractResponse
 	 *@var ManageRecurringPaymentsProfileStatusResponseDetailsType
 	 */ 
 	public $ManageRecurringPaymentsProfileStatusResponseDetails;
-
 
 
 
@@ -22979,7 +22885,6 @@ class BillOutstandingAmountResponseType  extends AbstractResponseType  {
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -23076,7 +22981,6 @@ class UpdateRecurringPaymentsProfileResponseType  extends AbstractResponseType  
 
 
 
-
 	public function init($arr = null) {
 		if ($arr != null) {
 			parent::init($arr);
@@ -23164,7 +23068,6 @@ class GetPalDetailsResponseType  extends AbstractResponseType  {
 	 *@var string
 	 */ 
 	public $Locale;
-
 
 
 
@@ -23266,7 +23169,6 @@ class ReverseTransactionResponseType  extends AbstractResponseType  {
 	 *@var ReverseTransactionResponseDetailsType
 	 */ 
 	public $ReverseTransactionResponseDetails;
-
 
 
 
@@ -23383,7 +23285,6 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType  {
  * 
  */
 class ExternalRememberMeOptOutResponseType  extends AbstractResponseType  {
-
 
 
 
