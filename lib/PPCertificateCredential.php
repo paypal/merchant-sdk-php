@@ -6,13 +6,14 @@ require_once 'exceptions/PPMissingCredentialException.php';
 class PPCertificateCredential extends IPPCredential{
 	
 	private $certificatePath;
-
 	private $passPhrase;
+	private $subject;
 	
-	public function __construct($userName, $password, $certPath, $appId, $passPhrase) {
+	public function __construct($userName, $password, $certPath, $appId, $passPhrase, $subject) {
 		parent::__construct($userName, $password, $appId);
 		$this->certificatePath = $certPath;
 		$this->passPhrase = $passPhrase;
+		$this->subject = $subject;
 		$this->validate();
 	}
 	
@@ -65,7 +66,10 @@ class PPCertificateCredential extends IPPCredential{
 	public function getApplicationId() {
 		return $this->applicationId;
 	}
-
+	
+	public function getSubject(){
+		return $this->subject;
+	}
 }
 
 ?>

@@ -63,7 +63,8 @@ class PPCredentialManager
 				$password = isset($credArr[$prefix.$suffix.'.Password']) ? $credArr[$prefix.$suffix.'.Password'] : "";
 				$signature = isset($credArr[$prefix.$suffix.'.Signature']) ? $credArr[$prefix.$suffix.'.Signature'] : "";
 				$appId = isset($credArr[$prefix.$suffix.'.AppId']) ? $credArr[$prefix.$suffix.'.AppId'] : "";
-				$this->credentialHashmap[$userName] = new PPSignatureCredential($userName, $password, $signature, $appId);
+				$subject = isset($credArr[$prefix.$suffix.'.Subject']) ? $credArr[$prefix.$suffix.'.Subject'] : "";
+				$this->credentialHashmap[$userName] = new PPSignatureCredential($userName, $password, $signature, $appId, $subject);
 				
 			} elseif (isset($credArr[$prefix.$suffix.".CertPath"]) 
 					&& $credArr[$prefix.$suffix.".CertPath"] != null && $credArr[$prefix.$suffix.".CertPath"] != ""){
@@ -73,7 +74,8 @@ class PPCredentialManager
 				$passPhrase = isset($credArr[$prefix.$suffix.'.CertKey']) ? $credArr[$prefix.$suffix.'.CertKey'] : "";	
 				$certPath = isset($credArr[$prefix.$suffix.'.CertPath']) ? $credArr[$prefix.$suffix.'.CertPath'] : "";				
 				$appId = isset($credArr[$prefix.$suffix.'.AppId']) ? $credArr[$prefix.$suffix.'.AppId'] : "";
-				$this->credentialHashmap[$userName] = new PPCertificateCredential($userName, $password, $certPath, $appId, $passPhrase);
+				$subject = isset($credArr[$prefix.$suffix.'.Subject']) ? $credArr[$prefix.$suffix.'.Subject'] : "";
+				$this->credentialHashmap[$userName] = new PPCertificateCredential($userName, $password, $certPath, $appId, $passPhrase,$subject);
 				
 			}
 			if ($this->defaultAccountName == null)

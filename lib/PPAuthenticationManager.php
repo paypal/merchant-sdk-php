@@ -58,6 +58,11 @@ class PPAuthenticationManager
 			$soapHeader .="<ebl:Username>".$apiCred->getUserName()."</ebl:Username>";
 			$soapHeader .="<ebl:Password>". $apiCred->getPassword()."</ebl:Password>";
 			$soapHeader .="<ebl:Signature>".$apiCred->getSignature()."</ebl:Signature>";
+			$subject = $apiCred->getSubject();
+			if(isset($subject) && $subject != "")
+			{
+				$soapHeader .="<ebl:Subject>".$apiCred->getSubject()."</ebl:Subject>";
+			}
 			$soapHeader .="</ebl:Credentials>";
 			$soapHeader .="</urn:RequesterCredentials>";
 			$soapHeader .="</soapenv:Header>";
@@ -69,6 +74,11 @@ class PPAuthenticationManager
 			$soapHeader .="<ebl:Credentials>";
 			$soapHeader .="<ebl:Username>".$apiCred->getUserName()."</ebl:Username>";
 			$soapHeader .="<ebl:Password>". $apiCred->getPassword()."</ebl:Password>";
+			$subject = $apiCred->getSubject();
+			if(isset($subject) && $subject != "")
+			{
+				$soapHeader .="<ebl:Subject>".$apiCred->getSubject()."</ebl:Subject>";
+			}
 			$soapHeader .="</ebl:Credentials>";
 			$soapHeader .="</urn:RequesterCredentials>";
 			$soapHeader .="</soapenv:Header>";

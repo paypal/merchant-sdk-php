@@ -14,10 +14,12 @@ class PPSignatureCredential extends IPPCredential {
 	 * @var string
 	 */
 	private $signature;
-
-	public function __construct($userName, $password, $signature, $appId){
+    private $subject;
+    
+	public function __construct($userName, $password, $signature, $appId, $subject){
 		parent::__construct($userName, $password, $appId);		
 		$this->signature = $signature;
+		$this->subject = $subject;
 		$this->validate();
 	}
 	
@@ -39,6 +41,10 @@ class PPSignatureCredential extends IPPCredential {
 
 	public function getSignature(){
 		return $this->signature;
+	}
+	
+	public function getSubject(){
+		return $this->subject;
 	}
 }
 ?>
