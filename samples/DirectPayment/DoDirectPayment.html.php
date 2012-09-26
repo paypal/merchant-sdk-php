@@ -7,26 +7,14 @@ and credit card information. It also accept input variable
 paymentType which becomes the value of the PAYMENTACTION
 parameter.
 
-When the user clicks the Submit button, DoDirectPaymentReceipt.php
-is called.
-
-Called by index.html.
-
-Calls DoDirectPaymentReceipt.php.
-
 ************************************************************/
 // clearing the session before starting new API Call
 session_unset();
-
-
 ?>
-
-
-
 <html>
 <head>
-<title>PayPal PHP SDK - DoDirectPayment API</title>
-
+<title>PayPal Merchant SDK - DoDirectPayment API</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 <script language="JavaScript">
 	function generateCC(){
 		var cc_number = new Array(16);
@@ -78,201 +66,218 @@ session_unset();
 	}
 </script>
 </head>
-
-<body alink=#0000FF vlink=#0000FF>
-	<br>
-	<center>
-		<font size=2 color=black face=Verdana><b>DoDirectPayment</b> </font> <br>
-		<br>
-		<form method="POST" action="DoDirectPayment.php"
-			name="DoDirectPaymentForm">
-
-			<table width=600>
-				<tr>
-					<td align=right>Payment Type:</td>
-					<td align=left><select name=paymentType>
-							<option value=Sale selected>Sale</option>
-							<option value=Authorisation>Authorisation</option>
-
-					</select>
-					</td>
-				</tr>
-				<tr>
-					<td align=right>First Name:</td>
-					<td align=left><input type=text size=30 maxlength=32 name=firstName
-						value=John></td>
-				</tr>
-				<tr>
-					<td align=right>Last Name:</td>
-					<td align=left><input type=text size=30 maxlength=32 name=lastName
-						value=Doe></td>
-				</tr>
-				<tr>
-					<td align=right>Card Type:</td>
-					<td align=left><select name=creditCardType
-						onChange="javascript:generateCC(); return false;">
-							<option value=Visa selected>Visa</option>
-							<option value=MasterCard>MasterCard</option>
-							<option value=Discover>Discover</option>
-							<option value=Amex>American Express</option>
-					</select>
-					</td>
-				</tr>
-				<tr>
-					<td align=right>Card Number:</td>
-					<td align=left><input type=text size=19 maxlength=19
-						name=creditCardNumber></td>
-				</tr>
-				<tr>
-					<td align=right>Expiration Date:</td>
-					<td align=left><p>
-							<select name=expDateMonth>
-								<option value=1>01</option>
-								<option value=2>02</option>
-								<option value=3>03</option>
-								<option value=4>04</option>
-								<option value=5>05</option>
-								<option value=6>06</option>
-								<option value=7>07</option>
-								<option value=8>08</option>
-								<option value=9>09</option>
-								<option value=10>10</option>
-								<option value=11>11</option>
-								<option value=12>12</option>
-							</select> <select name=expDateYear>
-								<option value=2005>2005</option>
-								<option value=2006>2006</option>
-								<option value=2007>2007</option>
-								<option value=2008>2008</option>
-								<option value=2009>2009</option>
-								<option value=2010>2010</option>
-								<option value=2011>2011</option>
-								<option value=2012>2012</option>
-								<option value=2013>2013</option>
-								<option value=2014 selected>2014</option>
-								<option value=2015>2015</option>
-							</select>
-						</p></td>
-				</tr>
-				<tr>
-					<td align=right>Card Verification Number:</td>
-					<td align=left><input type=text size=3 maxlength=4 name=cvv2Number
-						value=962></td>
-				</tr>
-				<tr>
-					<td align=right><br> <b>Billing Address:</b></td>
-				</tr>
-				<tr>
-					<td align=right>Address 1:</td>
-					<td align=left><input type=text size=25 maxlength=100 name=address1
-						value="1 Main St"></td>
-				</tr>
-				<tr>
-					<td align=right>Address 2:</td>
-					<td align=left><input type=text size=25 maxlength=100 name=address2>(optional)</td>
-				</tr>
-				<tr>
-					<td align=right>City:</td>
-					<td align=left><input type=text size=25 maxlength=40 name=city
-						value="San Jose"></td>
-				</tr>
-				<tr>
-					<td align=right>State:</td>
-					<td align=left><select id=state name=state>
-							<option value=></option>
-							<option value=AK>AK</option>
-							<option value=AL>AL</option>
-							<option value=AR>AR</option>
-							<option value=AZ>AZ</option>
-							<option value=CA selected>CA</option>
-							<option value=CO>CO</option>
-							<option value=CT>CT</option>
-							<option value=DC>DC</option>
-							<option value=DE>DE</option>
-							<option value=FL>FL</option>
-							<option value=GA>GA</option>
-							<option value=HI>HI</option>
-							<option value=IA>IA</option>
-							<option value=ID>ID</option>
-							<option value=IL>IL</option>
-							<option value=IN>IN</option>
-							<option value=KS>KS</option>
-							<option value=KY>KY</option>
-							<option value=LA>LA</option>
-							<option value=MA>MA</option>
-							<option value=MD>MD</option>
-							<option value=ME>ME</option>
-							<option value=MI>MI</option>
-							<option value=MN>MN</option>
-							<option value=MO>MO</option>
-							<option value=MS>MS</option>
-							<option value=MT>MT</option>
-							<option value=NC>NC</option>
-							<option value=ND>ND</option>
-							<option value=NE>NE</option>
-							<option value=NH>NH</option>
-							<option value=NJ>NJ</option>
-							<option value=NM>NM</option>
-							<option value=NV>NV</option>
-							<option value=NY>NY</option>
-							<option value=OH>OH</option>
-							<option value=OK>OK</option>
-							<option value=OR>OR</option>
-							<option value=PA>PA</option>
-							<option value=RI>RI</option>
-							<option value=SC>SC</option>
-							<option value=SD>SD</option>
-							<option value=TN>TN</option>
-							<option value=TX>TX</option>
-							<option value=UT>UT</option>
-							<option value=VA>VA</option>
-							<option value=VT>VT</option>
-							<option value=WA>WA</option>
-							<option value=WI>WI</option>
-							<option value=WV>WV</option>
-							<option value=WY>WY</option>
-							<option value=AA>AA</option>
-							<option value=AE>AE</option>
-							<option value=AP>AP</option>
-							<option value=AS>AS</option>
-							<option value=FM>FM</option>
-							<option value=GU>GU</option>
-							<option value=MH>MH</option>
-							<option value=MP>MP</option>
-							<option value=PR>PR</option>
-							<option value=PW>PW</option>
-							<option value=VI>VI</option>
-					</select>
-					</td>
-				</tr>
-				<tr>
-					<td align=right>ZIP Code:</td>
-					<td align=left><input type=text size=10 maxlength=10 name=zip
-						value=95131>(5 or 9 digits)</td>
-				</tr>
-				<tr>
-					<td align=right>Country:</td>
-					<td align=left>United States</td>
-				</tr>
-				<tr>
-					<td align=right><br>Amount:</td>
-					<td align=left><br> <input type=text size=4 maxlength=7 name=amount
-						value=1.00> USD</td>
-				</tr>
-				<tr>
-					<td />
-					<td align=left><b></b></td>
-				</tr>
-				<tr>
-					<td />
-					<td><input type=Submit value=Submit></td>
-				</tr>
-			</table>
-		</form>
-	</center>
-	<a id="CallsLink" href="../Index.php">Home</a>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h3>DoDirectPayment</h3>
+			<div id="apidetails">Process a credit card payment.</div>
+		</div>
+		<div id="request_form">		
+			<form method="POST" action="DoDirectPayment.php"
+				name="DoDirectPaymentForm">
+				<div class="params">
+					<div class="param_name">Payment type</div>
+					<div class="param_value">
+						<select name="paymentType">
+							<option value="Sale" selected="selected">Sale</option>
+							<option value="Authorisation">Authorisation</option>
+						</select>
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">First name</div>
+					<div class="param_value">
+						<input type="text" name="firstName" value="John"/>
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">Last name</div>
+					<div class="param_value">
+						<input type="text" name="lastName" value="Doe"/>
+					</div>
+				</div>			
+				<div class="params">
+					<div class="param_name">Card type</div>
+					<div class="param_value">
+						<select name="creditCardType"
+							onChange="javascript:generateCC(); return false;">
+								<option value="Visa" selected="selected">Visa</option>
+								<option value="MasterCard">MasterCard</option>
+								<option value="Discover">Discover</option>
+								<option value="Amex">American Express</option>
+						</select>				
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">Card number</div>
+					<div class="param_value">
+						<input type="text" size="19" maxlength="19" name="creditCardNumber">
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">Expiry date</div>
+					<div class="param_value">
+						<select name="expDateMonth">
+							<option value="01">01</option>
+							<option value="02">02</option>
+							<option value="03">03</option>
+							<option value="04">04</option>
+							<option value="05">05</option>
+							<option value="06">06</option>
+							<option value="07">07</option>
+							<option value="08">08</option>
+							<option value="09">09</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+						</select>
+						<select name="expDateYear">					
+							<option value="2013">2013</option>
+							<option value="2014" selected>2014</option>
+							<option value="2015">2015</option>
+							<option value="2016">2016</option>
+							<option value="2017">2017</option>
+							<option value="2018">2018</option>
+							<option value="2019">2019</option>
+							<option value="2020">2020</option>						
+						</select>
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">CVV</div>
+					<div class="param_value">
+						<input type="text" size="3" maxlength="4" name="cvv2Number" value="962">
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">Amount</div>
+					<div class="param_value">
+						 <input type="text" size="5" maxlength="7" name="amount" value="1.00"> USD
+					</div>
+				</div>				
+				<div class="section_header">Billing address</div>
+				<div class="params">
+					<div class="param_name">Address 1</div>
+					<div class="param_value">
+						<input type="text" size="25" maxlength="100" name="address1" value="1 Main St">
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">Address 2 (optional)</div>
+					<div class="param_value">
+						<input type="text" size="25" maxlength="100" name="address2" value="">
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">City</div>
+					<div class="param_value">
+						<input type="text" size="25" maxlength="40" name="city" value="San Jose">
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">State</div>
+					<div class="param_value">
+						<select id=state name="state">
+							<option value=""></option>
+							<option value="AK">AK</option>
+							<option value="AL">AL</option>
+							<option value="AR">AR</option>
+							<option value="AZ">AZ</option>
+							<option value="CA" selected>CA</option>
+							<option value="CO">CO</option>
+							<option value="CT">CT</option>
+							<option value="DC">DC</option>
+							<option value="DE">DE</option>
+							<option value="FL">FL</option>
+							<option value="GA">GA</option>
+							<option value="HI">HI</option>
+							<option value="IA">IA</option>
+							<option value="ID">ID</option>
+							<option value="IL">IL</option>
+							<option value="IN">IN</option>
+							<option value="KS">KS</option>
+							<option value="KY">KY</option>
+							<option value="LA">LA</option>
+							<option value="MA">MA</option>
+							<option value="MD">MD</option>
+							<option value="ME">ME</option>
+							<option value="MI">MI</option>
+							<option value="MN">MN</option>
+							<option value="MO">MO</option>
+							<option value="MS">MS</option>
+							<option value="MT">MT</option>
+							<option value="NC">NC</option>
+							<option value="ND">ND</option>
+							<option value="NE">NE</option>
+							<option value="NH">NH</option>
+							<option value="NJ">NJ</option>
+							<option value="NM">NM</option>
+							<option value="NV">NV</option>
+							<option value="NY">NY</option>
+							<option value="OH">OH</option>
+							<option value="OK">OK</option>
+							<option value="OR">OR</option>
+							<option value="PA">PA</option>
+							<option value="RI">RI</option>
+							<option value="SC">SC</option>
+							<option value="SD">SD</option>
+							<option value="TN">TN</option>
+							<option value="TX">TX</option>
+							<option value="UT">UT</option>
+							<option value="VA">VA</option>
+							<option value="VT">VT</option>
+							<option value="WA">WA</option>
+							<option value="WI">WI</option>
+							<option value="WV">WV</option>
+							<option value="WY">WY</option>
+							<option value="AA">AA</option>
+							<option value="AE">AE</option>
+							<option value="AP">AP</option>
+							<option value="AS">AS</option>
+							<option value="FM">FM</option>
+							<option value="GU">GU</option>
+							<option value="MH">MH</option>
+							<option value="MP">MP</option>
+							<option value="PR">PR</option>
+							<option value="PW">PW</option>
+							<option value="VI">VI</option>
+						</select>
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">Zip code</div>
+					<div class="param_value">
+						<input type="text" size="10" maxlength="10" name="zip" value="95131"> (5 or 9 digits)
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">Country</div>
+					<div class="param_value">
+						<input type="text" size="10" maxlength="10" name="country" value="US">
+					</div>
+				</div>
+				<div class="params">
+					<div class="param_name">Phone</div>
+					<div class="param_value">
+						<input type="text" size="10" maxlength="10" name="phone" value="">
+					</div>
+				</div>
+				
+				<div class="params">
+					<div class="param_name"></div>
+					<div class="param_value">
+					</div>
+				</div>
+				<div class="submit">
+					<input type="submit" name="DoDirectPaymentBtn"
+						value="DoDirectPayment" />
+				</div>							
+			</form>
+			<a href="../index.php">Home</a>
+		</div>
+	</div>
 	<script language="javascript">
-	generateCC();
-</script>
+		generateCC();
+	</script>
 </body>
 </html>

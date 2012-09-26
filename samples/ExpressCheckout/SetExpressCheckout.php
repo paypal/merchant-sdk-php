@@ -3,79 +3,85 @@ $path = '../../lib';
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 require_once('services/PayPalAPIInterfaceService/PayPalAPIInterfaceServiceService.php');
 require_once('PPLoggingManager.php');
-session_start();
 
 $logger = new PPLoggingManager('SetExpressCheckout');
 
-$serverName = $_SERVER['SERVER_NAME'];
-$serverPort = $_SERVER['SERVER_PORT'];
-$url=dirname('http://'.$serverName.':'.$serverPort.$_SERVER['REQUEST_URI']);
+$url = dirname('http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . $_SERVER['REQUEST_URI']);
+$returnUrl = "$url/GetExpressCheckout.php";
+$cancelUrl = "$url/SetExpressCheckout.php" ;
 
+$currencyCode = $_REQUEST['currencyCode'];
+$shippingTotal = new BasicAmountType($currencyCode, $_REQUEST['shippingTotal']);
+$handlingTotal = new BasicAmountType($currencyCode, $_REQUEST['handlingTotal']);
+$insuranceTotal = new BasicAmountType($currencyCode, $_REQUEST['insuranceTotal']);
 
-$returnUrl = $url."/GetExpressCheckout.php";
-$cancelUrl = $url. "/SetExpressCheckout.php" ;
-
-
-/*$taxTotal = new BasicAmountType();
- $taxTotal->currencyID = $_REQUEST['currencyCode'];
-$taxTotal->value = $_REQUEST['taxTotal'];*/
-
-$shippingTotal = new BasicAmountType();
-$shippingTotal->currencyID = $_REQUEST['currencyCode'];
-$shippingTotal->value = $_REQUEST['shippingAmount'];
-
-$itemAmount = new BasicAmountType();
-$itemAmount->currencyID = $_REQUEST['currencyCode'];
-$itemAmount->value = $_REQUEST['itemAmount'];
-
-//total amount of the order
-$orderTotal = new BasicAmountType();
-$orderTotal->currencyID = $_REQUEST['currencyCode'];
-//$orderTotal->value = $taxTotal->value + $shippingTotal->value + $itemAmount->value;
-$orderTotal->value =  $shippingTotal->value + $itemAmount->value;
+$itemAmount = new BasicAmountType($currencyCode, $_REQUEST['itemAmount']);
+$itemTotalValue = $_REQUEST['itemAmount'] * $_REQUEST['itemQuantity'];
+$taxTotalValue = $_REQUEST['itemSalesTax'] * $_REQUEST['itemQuantity'];
+$orderTotalValue = $shippingTotal->value + $handlingTotal->value + 
+					$insuranceTotal->value +
+					$itemTotalValue + $taxTotalValue; 
 
 $itemDetails = new PaymentDetailsItemType();
 $itemDetails->Name = $_REQUEST['itemName'];
 $itemDetails->Amount = $itemAmount;
 $itemDetails->Quantity = $_REQUEST['itemQuantity'];
 $itemDetails->ItemCategory = $_REQUEST['itemCategory'];
+$itemDetails->Tax = new BasicAmountType($currencyCode, $_REQUEST['itemSalesTax']);
 
-$address =new AddressType();
-$address->city = $_REQUEST['itemQuantity'];
+$address = new AddressType();
+$address->CityName = $_REQUEST['itemQuantity'];
 $address->Name = $_REQUEST['name'];
-$address->line1 = $_REQUEST['street'];
-$address->state = $_REQUEST['state'];
+$address->Street1 = $_REQUEST['street'];
+$address->StateOrProvince = $_REQUEST['state'];
 $address->PostalCode = $_REQUEST['postalCode'];
-$address->countryCode = $_REQUEST['countryCode'];
+$address->Country = $_REQUEST['countryCode'];
+$address->Phone = $_REQUEST['phone'];
 
-$PaymentDetails= new PaymentDetailsType();
+$PaymentDetails = new PaymentDetailsType();
 $PaymentDetails->PaymentDetailsItem[0] = $itemDetails;
 $PaymentDetails->ShipToAddress = $address;
-
-$PaymentDetails->OrderTotal = $orderTotal;
+$PaymentDetails->ItemTotal = new BasicAmountType($currencyCode, $itemTotalValue);
+$PaymentDetails->OrderTotal = new BasicAmountType($currencyCode, $orderTotalValue);
+$PaymentDetails->TaxTotal = new BasicAmountType($currencyCode, $taxTotalValue);
 $PaymentDetails->PaymentAction = $_REQUEST['paymentType'];
-$PaymentDetails->ItemTotal = $itemAmount;
-//$PaymentDetails->TaxTotal = $taxTotal;
+
+$PaymentDetails->HandlingTotal = $handlingTotal;
+$PaymentDetails->InsuranceTotal = $insuranceTotal;
 $PaymentDetails->ShippingTotal = $shippingTotal;
 
-$billingAgreementDetails = new BillingAgreementDetailsType($_REQUEST['billingType']);
-$billingAgreementDetails->BillingAgreementDescription = $_REQUEST['billingAgreementText'];
-$billAgreementArray = array($billingAgreementDetails);
 $setECReqDetails = new SetExpressCheckoutRequestDetailsType();
 $setECReqDetails->PaymentDetails[0] = $PaymentDetails;
 $setECReqDetails->CancelURL = $cancelUrl;
 $setECReqDetails->ReturnURL = $returnUrl;
-$setECReqDetails->BillingAgreementDetails = $billAgreementArray;
-//$setECReqDetails->NoShipping = $_REQUEST['noShipping'];;
 
+// Shipping details
+$setECReqDetails->NoShipping = $_REQUEST['noShipping'];
+$setECReqDetails->AddressOverride = $_REQUEST['addressOverride'];
+$setECReqDetails->ReqConfirmShipping = $_REQUEST['reqConfirmShipping'];
+
+// Billing agreement
+$billingAgreementDetails->BillingAgreementDescription = $_REQUEST['billingAgreementText'];
+$billingAgreementDetails = new BillingAgreementDetailsType($_REQUEST['billingType']);
+$setECReqDetails->BillingAgreementDetails = array($billingAgreementDetails);
+
+// Display options
+$setECReqDetails->cppheaderimage = $_REQUEST['cppheaderimage'];
+$setECReqDetails->cppheaderbordercolor = $_REQUEST['cppheaderbordercolor'];
+$setECReqDetails->cppheaderbackcolor = $_REQUEST['cppheaderbackcolor'];
+$setECReqDetails->cpppayflowcolor = $_REQUEST['cpppayflowcolor'];
+$setECReqDetails->cppcartbordercolor = $_REQUEST['cppcartbordercolor'];
+$setECReqDetails->cpplogoimage = $_REQUEST['cpplogoimage'];
+$setECReqDetails->PageStyle = $_REQUEST['pageStyle'];
+$setECReqDetails->BrandName = $_REQUEST['brandName'];
+
+// Advanced options
+$setECReqDetails->AllowNote = $_REQUEST['allowNote'];
 
 $setECReqType = new SetExpressCheckoutRequestType();
 $setECReqType->SetExpressCheckoutRequestDetails = $setECReqDetails;
 $setECReq = new SetExpressCheckoutReq();
 $setECReq->SetExpressCheckoutRequest = $setECReqType;
-
-// storing in session to use in DoExpressCheckout
-
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {

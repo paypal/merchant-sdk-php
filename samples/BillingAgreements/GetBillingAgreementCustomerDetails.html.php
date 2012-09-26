@@ -1,5 +1,6 @@
 <html>
-<title>PayPal SDK - GetBillingAgreementCustomerDetails</title>
+<title>PayPal Merchant SDK - GetBillingAgreementCustomerDetails</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 </head>
 <body>
 	<div id="wrapper">
@@ -17,7 +18,7 @@
 			<div id="request_form">
 				<div class="params">
 					<div class="param_name">
-						Token:(Get Token via <a
+						Token (Get Token via <a
 							href="../ExpressCheckout/SetExpressCheckout.html.php">ExpressCheckout</a>)
 					</div>
 					<div class="param_value">

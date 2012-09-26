@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PayPal SDK - EnterBoarding</title>
+<title>PayPal Merchant SDK - EnterBoarding</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 </head>
 <body>
 	<div id="wrapper">

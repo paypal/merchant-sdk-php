@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PayPal SDK - CreateRecurringPaymentsProfile</title>
+<title>PayPal Merchant SDK - CreateRecurringPaymentsProfile</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 <script language="JavaScript">
 	function generateCC(){
 		var cc_number = new Array(16);
@@ -56,8 +57,6 @@
 
 </head>
 <body>
-
-
 	<div id="wrapper">
 		<div id="header">
 			<h3>CreateRecurringPaymentsProfile</h3>

@@ -1,7 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>PayPal SDK - DoReferenceTransaction</title>
+<title>PayPal Merchant SDK - DoReferenceTransaction</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 <script type="text/javascript">
 function display() {
 document.getElementById("id2").style.display = "";
@@ -175,10 +176,9 @@ document.getElementById("id2").style.display = "";
 					</div>
 					<div class="params">
 						<div class="param_name">
-							<b>Reference TransactionID(Billing agreement ID or a reference
+							Reference TransactionID (Billing agreement ID or a reference
 								transaction ID that is associated with a billing agreement, get
-								it via <a href="../ExpressCheckout/SetExpressCheckout.html.php">ExpressCheckout</a>)
-							</b>
+								it via <a href="../ExpressCheckout/SetExpressCheckout.html.php">ExpressCheckout</a>)							
 						</div>
 						<div class="param_value">
 							<input type="text" name="referenceID" id="referenceID" />
@@ -251,7 +251,7 @@ document.getElementById("id2").style.display = "";
 						<div class="params">
 							<div class="param_name">Expiry Year</div>
 							<div class="param_value">
-								<input type="text" name="expYear" id="expYear" value="2012" />
+								<input type="text" name="expYear" id="expYear" value="2015" />
 							</div>
 						</div>
 

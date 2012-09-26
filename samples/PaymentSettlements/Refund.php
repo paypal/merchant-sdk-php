@@ -8,20 +8,17 @@ require_once('PPLoggingManager.php');
  */
 $logger = new PPLoggingManager('RefundTransaction');
 
-$amount = new BasicAmountType();
-$amount->currencyID = $_REQUEST['currencyID'];
-$amount->value = $_REQUEST['amt'];
 
 $refundReqest = new RefundTransactionRequestType();
 
-if(!empty($amount->value))
-{
-	$refundReqest->Amount = $amount;
-
+if($_REQUEST['amt'] != "" && strtoupper($_POST['refundType']) != "FULL") {
+	$refundReqest->Amount = new BasicAmountType($_REQUEST['currencyID'], $_REQUEST['amt']);
 }
 $refundReqest->RefundType = $_REQUEST['refundType'];
 $refundReqest->TransactionID = $_REQUEST['transID'];
 $refundReqest->RefundSource = $_REQUEST['refundSource'];
+$refundReqest->Memo = $_REQUEST['memo'];
+$refundReqest->RetryUntil = $_REQUEST['retryUntil'];
 
 $refundReq = new RefundTransactionReq();
 $refundReq->RefundTransactionRequest = $refundReqest;

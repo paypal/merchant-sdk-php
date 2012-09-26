@@ -8,10 +8,7 @@ require_once('PPLoggingManager.php');
  */
 $logger = new PPLoggingManager('GetBillingAgreementCustomerDetails');
 
-$BACustomerDetailRequest = new GetBillingAgreementCustomerDetailsRequestType();
-$BACustomerDetailRequest->Token = $_REQUEST['token'];
-
-
+$BACustomerDetailRequest = new GetBillingAgreementCustomerDetailsRequestType($_REQUEST['token']);
 $BACustomerDetailReq = new GetBillingAgreementCustomerDetailsReq();
 $BACustomerDetailReq->GetBillingAgreementCustomerDetailsRequest = $BACustomerDetailRequest;
 

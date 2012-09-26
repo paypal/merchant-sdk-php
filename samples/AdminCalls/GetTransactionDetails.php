@@ -7,15 +7,15 @@ require_once('PPLoggingManager.php');
 
 $logger = new PPLoggingManager('TransactionDetails');
 
-$req = new GetTransactionDetailsRequestType();
-$req->TransactionID = $_POST['transID'];
-$trans = new GetTransactionDetailsReq();
-$trans->GetTransactionDetailsRequest = $req;
+$transactionDetails = new GetTransactionDetailsRequestType();
+$transactionDetails->TransactionID = $_POST['transID'];
 
+$request = new GetTransactionDetailsReq();
+$request->GetTransactionDetailsRequest = $transactionDetails;
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */
-	$transDetailsResponse = $paypalService->GetTransactionDetails($trans);
+	$transDetailsResponse = $paypalService->GetTransactionDetails($request);
 } catch (Exception $ex) {
 	include_once("../Error.php");
 	exit;

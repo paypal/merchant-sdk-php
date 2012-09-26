@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<title>PayPal SDK - BillAgreementUpdate</title>
+<title>PayPal Merchant SDK - BillAgreementUpdate</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 </head>
 <body>
 	<div id="wrapper">
@@ -16,7 +17,7 @@
 			<div id="request_form">
 				<div class="params">
 					<div class="param_name">
-						ReferenceID:(Billing agreement ID or a reference transaction ID
+						ReferenceID (Billing agreement ID or a reference transaction ID
 						that is associated with a billing agreement, get it via <a
 							href="../ExpressCheckout/SetExpressCheckout.html.php">ExpressCheckout</a>)
 					</div>
@@ -25,7 +26,7 @@
 					</div>
 				</div>
 				<div class="params">
-					<div class="param_name">BillingAgreement Status:</div>
+					<div class="param_name">BillingAgreement Status</div>
 					<div class="param_value">
 						<select name="billingAgreementStatus">
 							<option value="Active">Active</option>
@@ -34,7 +35,7 @@
 					</div>
 				</div>
 				<div class="params">
-					<div class="param_name">BillingAgreement Description:</div>
+					<div class="param_name">BillingAgreement Description</div>
 					<div class="param_value">
 						<textarea name="billingAgreementDescription" rows="10" cols="50"></textarea>
 					</div>

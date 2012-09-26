@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PayPal SDK - DoAuthorization</title>
-
+<title>PayPal Merchant SDK - DoAuthorization</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 </head>
 <body>
 	<div id="wrapper">
@@ -14,8 +14,8 @@
 		<form method="POST" action="DoAuthorization.php">
 			<div id="request_form">
 				<div class="params">
-					<div class="param_name">
-						Make a Transaction to get Transaction ID <a
+					<div class="param_name"> Transaction ID
+						 (Make a Transaction to get Transaction ID <a
 							href="../DCC/DirectPayment">Direct Payment</a> or <a
 							href="../EC/SetExpressCheckout">ExpressCheckout</a> with
 						PaymentType "Order")

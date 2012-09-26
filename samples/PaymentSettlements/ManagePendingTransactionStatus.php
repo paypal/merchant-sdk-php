@@ -8,11 +8,7 @@ require_once('PPLoggingManager.php');
  */
 $logger = new PPLoggingManager('ManagePendingTransactionStatus');
 
-$MPTranStatusReqest= new ManagePendingTransactionStatusRequestType();
-$MPTranStatusReqest->TransactionID = $_REQUEST['transactionID'];
-$MPTranStatusReqest->Action = $_REQUEST['action'];
-
-
+$MPTranStatusReqest= new ManagePendingTransactionStatusRequestType($_REQUEST['transactionID'], $_REQUEST['action']);
 $MPTranStatusReq = new ManagePendingTransactionStatusReq();
 $MPTranStatusReq->ManagePendingTransactionStatusRequest = $MPTranStatusReqest;
 

@@ -8,9 +8,7 @@ require_once('PPLoggingManager.php');
  */
 $logger = new PPLoggingManager('DoReferenceTransaction');
 
-$amount = new BasicAmountType();
-$amount->currencyID = $_REQUEST['currencyID'];
-$amount->value = $_REQUEST['amount'];
+$amount = new BasicAmountType($_REQUEST['currencyID'], $_REQUEST['amount']);
 
 $shippingAddress = new AddressType();
 $shippingAddress->Name = $_REQUEST['firstName'].' '.$_REQUEST['lastName'];
@@ -32,7 +30,7 @@ if(isset($_REQUEST['ReferenceCreditCardDetails']) && $_REQUEST['ReferenceCreditC
 
 	$cardOwner = new PersonNameType();
 	$cardOwner->FirstName = $_REQUEST['OfirstName'];
-	$cardOwner->LastName =  $_REQUEST['OfirstName'];
+	$cardOwner->LastName =  $_REQUEST['OlastName'];
 
 	$creditCardNumberType= new CreditCardNumberTypeType();
 	$creditCardNumberType->CreditCardNumber = $_REQUEST['creditCardNumber'];

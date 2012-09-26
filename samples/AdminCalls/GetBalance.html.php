@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PayPal SDK - GetBalance</title>
+<title>PayPal Merchant SDK - GetBalance</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 </head>
 <body>
 	<div id="wrapper">
@@ -14,7 +15,7 @@
 		<form method="POST" action="GetBalance.php">
 			<div id="request_form">
 				<div class="params">
-					<div class="param_name">ReturnAllCurrencies(Indicates whether to
+					<div class="param_name">Return All Currencies (Indicates whether to
 						return all currencies)</div>
 					<div class="param_value">
 						<select name="returnAllCurrencies">

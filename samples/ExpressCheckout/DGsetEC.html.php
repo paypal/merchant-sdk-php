@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>PayPal PHP SDK - SetExpressCheckout API</title>
+<title>PayPal Merchant SDK - SetExpressCheckout for Digital Goods</title>
 
 </head>
 <body alink=#0000FF vlink=#0000FF>
@@ -9,13 +9,12 @@
 top.dg.closeFlow();
 </script>
 	<br>
-	<center>
+	<div style="align: auto;">
 		<font size=2 color=black face=Verdana><b>SetExpressCheckout - digital
-				goods</b>
-		</font> <br> <br>
+				goods</b> </font> <br> <br>
 		<form method="POST" action="DGsetExpressCheckout.php">
 
-			<table width=600>
+			<table style="align: auto;">
 				<tr>
 					<td align=right></td>
 					<td align=left>Digital Download</td>
@@ -24,27 +23,23 @@ top.dg.closeFlow();
 				<tr>
 					<td align=right>Currency:</td>
 					<td align=left><input type=text size=30 maxlength=32
-						name=currencyId value=USD>
-					</td>
+						name=currencyId value=USD></td>
 				</tr>
 				<tr>
 					<td align=right>Amount:</td>
 					<td align=left><input type=text size=30 maxlength=32 name=amount
-						value=1.00>
-					</td>
+						value=1.00></td>
 				</tr>
 				<tr>
 					<td />
-					<td align=left><b></b>
-					</td>
+					<td align=left><b></b></td>
 				</tr>
 
 				<tr>
 					<td />
 					<td><input type="image"
 						src='https://www.paypal.com/en_US/i/btn/btn_dg_pay_w_paypal.gif'
-						id="submitBtn" name="submitBtn" value="Pay with PayPal" />
-					</td>
+						id="submitBtn" name="submitBtn" value="Pay with PayPal" /></td>
 				</tr>
 
 
@@ -58,7 +53,7 @@ top.dg.closeFlow();
     });
 </script>
 		</form>
-	</center>
+	</div>
 	<a id="CallsLink" href="../index.php">Home</a>
 </body>
 </html>

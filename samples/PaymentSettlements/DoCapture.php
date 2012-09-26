@@ -8,16 +8,8 @@ require_once('PPLoggingManager.php');
  */
 $logger = new PPLoggingManager('DoDirectPayment');
 
-$amount = new BasicAmountType();
-$amount->currencyID = $_REQUEST['currencyCode'];
-$amount->value = $_REQUEST['amt'];
-
-$doCaptureReqest = new DoCaptureRequestType();
-$doCaptureReqest->AuthorizationID = $_REQUEST['authID'];
-$doCaptureReqest->Amount = $amount;
-$doCaptureReqest->CompleteType = $_REQUEST['completeCodeType'];
-
-
+$amount = new BasicAmountType($_REQUEST['currencyCode'], $_REQUEST['amt']);
+$doCaptureReqest = new DoCaptureRequestType($_REQUEST['authID'], $amount, $_REQUEST['completeCodeType']);
 $doCaptureReq = new DoCaptureReq();
 $doCaptureReq->DoCaptureRequest = $doCaptureReqest;
 

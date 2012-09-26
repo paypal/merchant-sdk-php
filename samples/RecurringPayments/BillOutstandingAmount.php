@@ -8,12 +8,8 @@ require_once('PPLoggingManager.php');
  */
 $logger = new PPLoggingManager('BillOutstandingAmount');
 
-$amount = new BasicAmountType();
-$amount->currencyID = "USD";
-$amount->value = $_REQUEST['amt'];
-
 $billOutstandingAmtReqestDetail = new BillOutstandingAmountRequestDetailsType();
-$billOutstandingAmtReqestDetail->Amount = $amount;
+$billOutstandingAmtReqestDetail->Amount = new BasicAmountType($_REQUEST['currencyCode'], $_REQUEST['amt']);
 $billOutstandingAmtReqestDetail->ProfileID = $_REQUEST['profileID'];
 
 $billOutstandingAmtReqest = new BillOutstandingAmountRequestType();

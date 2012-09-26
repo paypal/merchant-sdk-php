@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PayPal SDK - DoVoid</title>
-
+<title>PayPal Merchant SDK - DoVoid</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 </head>
 <body>
 	<div id="wrapper">
@@ -14,7 +14,7 @@
 		<form method="POST" action="DoVoid.php">
 			<div id="request_form">
 				<div class="params">
-					<div class="param_name">AuthorizationID</div>
+					<div class="param_name">Authorization ID *</div>
 					<div class="param_value">
 						<input type="text" name="authID" value="" size="50"
 							maxlength="260" />

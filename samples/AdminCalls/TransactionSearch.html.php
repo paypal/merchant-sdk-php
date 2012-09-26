@@ -14,7 +14,8 @@ function strtDate($orgDate,$dy){
 ?>
 <html>
 <head>
-<title>PayPal SDK - TransactionSearch</title>
+<title>PayPal Merchant SDK - TransactionSearch</title>
+<link href="../Common/sdk.css" rel="stylesheet"/>
 </head>
 <body>
 	<div id="wrapper">
@@ -27,28 +28,28 @@ function strtDate($orgDate,$dy){
 
 			<div id="request_form">
 				<div class="params">
-					<div class="param_name">StartDate*</div>
+					<div class="param_name">Start date *</div>
 					<div class="param_value">
 						<input type="text" name="startDate" size="30"
 							value="<?php echo $startDate ?>" />
 					</div>
 				</div>
 				<div class="params">
-					<div class="param_name">EndDate</div>
+					<div class="param_name">End date</div>
 					<div class="param_value">
 						<input type="text" name="endDate" size="30"
-							value=<?php echo $endDate?> />(Optional)
+							value=<?php echo $endDate?> />
 					</div>
 				</div>
 				<div class="params">
 					<div class="param_name">
-						Transaction ID(Get Transaction ID via <a
+						Transaction ID (Get Transaction ID via <a
 							href="../DirectPayment/DoDirectPayment.html.php">Direct Payment</a>
 						or <a href="../ExpressCheckout/SetExpressCheckout.html.php">ExpressCheckout</a>)
 					</div>
 					<div class="param_value">
 						<input type="text" name="transactionID" value="" size="50"
-							maxlength="260" />(Optional)
+							maxlength="260" />
 					</div>
 				</div>
 				<div class="submit">

@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PayPal SDK - GetTransactionDetails</title>
+<title>PayPal Merchant SDK - GetTransactionDetails</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 </head>
 <body>
 	<div id="wrapper">
@@ -15,7 +16,7 @@
 			<div id="request_form">
 				<div class="params">
 					<div class="param_name">
-						Transaction ID*(Get Transaction ID via <a
+						Transaction ID * (Get Transaction ID via <a
 							href="../DirectPayment/DoDirectPayment.html.php">Direct Payment</a>
 						or <a href="../ExpressCheckout/SetExpressCheckout.html.php">ExpressCheckout</a>)
 					</div>

@@ -1,7 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>PayPal SDK - SetAuthFlowParam</title>
+<title>PayPal Merchant SDK - SetAuthFlowParam</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 </head>
 <?php 
 $serverName = $_SERVER['SERVER_NAME'];
@@ -36,11 +37,11 @@ $cancelUrl = $url. "/SetAuthFlowParam.html.php" ;
 				</div>
 
 				<div class="submit">
-					<input id="Submit1" type="submit" name="submit" value="submit" />
+					<input id="Submit1" type="submit" name="submit" value="Submit" />
 				</div>
 			</div>
+			<a href="../index.php">Home</a>
 		</form>
 	</div>
-
 </body>
 </html>

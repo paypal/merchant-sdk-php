@@ -70,6 +70,7 @@ if($setECResponse->Ack == 'Success')
 
 }
 else {
+	var_dump($setECResponse);
 	echo "error in SetEC API call";
 }
 ?>

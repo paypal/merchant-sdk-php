@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PayPal SDK - Refund</title>
-
+<title>PayPal Merchant SDK - Refund</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 </head>
 <body>
 	<div id="wrapper">
@@ -16,7 +16,7 @@
 			<div id="request_form">
 				<div class="params">
 					<div class="param_name">
-						TransactionID*(Get Transaction ID via<a
+						TransactionID * (Get Transaction ID via<a
 							href="../DirectPayment/DoDirectPayment.html.php">Direct Payment</a>
 						or <a href="../ExpressCheckout/SetExpressCheckout.html.php">ExpressCheckout</a>)
 					</div>
@@ -31,7 +31,7 @@
 						<select name="refundType">
 							<option value=""></option>
 							<option value="Other">Other</option>
-							<option value="Full">Full</option>
+							<option value="Full" selected="selected">Full (Default)</option>
 							<option value="Partial">Partial</option>
 							<option value="ExternalDispute">ExternalDispute</option>
 						</select>
@@ -51,20 +51,26 @@
 					</div>
 				</div>
 				<div class="params">
-					<div class="param_name">Amount to be refunded(If RefundType is
+					<div class="param_name">Amount to be refunded (If RefundType is
 						full, do not set the amount)</div>
 					<div class="param_value">
-						<input type="text" name="amt" value="" size="50" maxlength="260" />
+						<input type="text" name="amt" value=""/>
 					</div>
 				</div>
 				<div class="params">
 					<div class="param_name">Currency Code</div>
 					<div class="param_value">
-						<input type="text" name="currencyID" value="" size="50"
-							maxlength="260" />
+						<input type="text" name="currencyID" value=""/>
 					</div>
 				</div>
-				<div class="section_header"></div>
+				<div class="param_name">Memo</div>
+	            <div class="param_value">
+	                <input type="text" name="memo" id="memo" size="50" value="" />
+	            </div>
+	            <div class="param_name">Maximum time until which refund must be retried</div>
+	            <div class="param_value">	                
+	                <input type="text" name="retryUntil" value="" />
+	            </div>
 
 				<div class="submit">
 					<input type="submit" name="RefundBtn" value="Refund" /><br />
@@ -72,26 +78,6 @@
 				<a href="../index.php">Home</a>
 			</div>
 		</form>
-		<div id="relatedcalls">
-			See also
-			<ul>
-				<li><a href="DoCapture.html.php">DoCapture</a>
-				</li>
-				<li><a href="DoVoid.html.php">DoVoid</a>
-				</li>
-
-				<li><a href="DoReauthorization.html.php">DoReauthorization</a>
-				</li>
-				<li><a href="DoAuthorization.html.php">DoAuthorization</a></li>
-
-				<li><a href="ReverseTransaction.html.php">ReverseTransaction</a>
-				</li>
-				<li><a href="DoNonReferencedCredit.html.php">DoNonReferencedCredit</a>
-				</li>
-				<li><a href="ManagePendingTransactionStatus.html.php">ManagePendingTransactionStatus</a>
-				</li>
-			</ul>
-		</div>
 	</div>
 </body>
 </html>

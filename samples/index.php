@@ -6,10 +6,11 @@
 <style>
 table {
 	border-collapse: collapse;
+	margin: auto;
 }
 
 td {
-	padding: 5px;
+	padding: 5px 15px;
 }
 </style>
 </head>
@@ -19,19 +20,19 @@ td {
 					PHP - Samples</u> </b> </font>
 	</center>
 	<br />
-	<br />
+	<br /><br />
 	<table>
 		<tr valign="top">
 			<td><b>Express Checkout</b>
 				<ul>
-					<li><a href="ExpressCheckout/DGsetEC.html.php">ExpressCheckout -
-							Digital Goods</a></li>
 					<li><a href="ExpressCheckout/SetExpressCheckout.html.php">SetExpressCheckout</a>
 					</li>
 					<li><a href="ExpressCheckout/GetExpressCheckout.html.php">GetExpressCheckout</a>
 					</li>
 					<li><a href="ExpressCheckout/DoExpressCheckout.html.php">DoExpressCheckout</a>
 					</li>
+					<li><a href="ExpressCheckout/DGsetEC.html.php">ExpressCheckout -
+							Digital Goods</a></li>
 				</ul>
 			</td>
 			<td><b>DCC</b>

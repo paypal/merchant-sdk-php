@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PayPal SDK - BillOutstandingAmount</title>
-
+<title>PayPal Merchant SDK - BillOutstandingAmount</title>
+<link rel="stylesheet" href="../Common/sdk.css"/>
 </head>
 <body>
 	<div id="wrapper">
@@ -29,7 +29,8 @@
 				<div class="params">
 					<div class="param_name">Bill Outstanding Amount</div>
 					<div class="param_value">
-						<input type="text" name="amt" value="" size="50" maxlength="260" />
+						<input type="text" name="amt" value="1.00" size="20" />
+						<input type="text" name="currencyCode" value="USD" size="20" />
 					</div>
 				</div>
 				<div class="submit">

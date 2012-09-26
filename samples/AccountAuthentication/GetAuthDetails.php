@@ -5,15 +5,12 @@ require_once('services/PayPalAPIInterfaceService/PayPalAPIInterfaceServiceServic
 require_once('PPLoggingManager.php');
 
 $logger = new PPLoggingManager('GetAuthDetails');
-$token = $_REQUEST['token'];
-$reqType = new GetAuthDetailsRequestType();
-$reqType->Token = $token;
-
-
+ 
+$reqType = new GetAuthDetailsRequestType($_REQUEST['token']);
 $req = new GetAuthDetailsReq();
 $req->GetAuthDetailsRequest = $reqType;
 
-$logger->error("created GetAuthDetailsRequest Object");
+$logger->info("created GetAuthDetailsRequest Object");
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */

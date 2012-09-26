@@ -6,11 +6,7 @@ require_once('PPLoggingManager.php');
 
 $logger = new PPLoggingManager('Address Verify');
 
-$addressVerifyRequest = new AddressVerifyRequestType();
-$addressVerifyRequest->Email = $_REQUEST['mail'];
-$addressVerifyRequest->Street =$_REQUEST['street'];
-$addressVerifyRequest->Zip = $_REQUEST['zip'];
-
+$addressVerifyRequest = new AddressVerifyRequestType($_REQUEST['mail'], $_REQUEST['street'], $_REQUEST['zip']);
 $addrVerifyReq = new AddressVerifyReq();
 $addrVerifyReq->AddressVerifyRequest = $addressVerifyRequest;
 

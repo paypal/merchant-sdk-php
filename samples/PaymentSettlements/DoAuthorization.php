@@ -8,15 +8,8 @@ require_once('PPLoggingManager.php');
  */
 $logger = new PPLoggingManager('DoAuthorization');
 
-$amount = new BasicAmountType();
-$amount->currencyID = $_REQUEST['currencyCode'];
-$amount->value = $_REQUEST['amt'];
-
-$doAuthRequest = new DoAuthorizationRequestType();
-$doAuthRequest->Amount = $amount;
-$doAuthRequest->TransactionID = $_REQUEST['transID'];
-
-
+$amount = new BasicAmountType($_REQUEST['currencyCode'], $_REQUEST['amt']);
+$doAuthRequest = new DoAuthorizationRequestType($_REQUEST['transID'], $amount);
 $doAuthReq = new DoAuthorizationReq();
 $doAuthReq->DoAuthorizationRequest =$doAuthRequest;
 

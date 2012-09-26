@@ -6,12 +6,15 @@ require_once('PPLoggingManager.php');
 
 $logger = new PPLoggingManager('Bill User');
 
-$amount = new BasicAmountType();
-$amount->currencyID = $_REQUEST['currencyID'];
-$amount->value = $_REQUEST['amt'];
+
+$currencyId = $_REQUEST['currencyID'];
+
 
 $MPPaymentDetails = new MerchantPullPaymentType();
-$MPPaymentDetails->Amount = $amount;
+$MPPaymentDetails->Amount = new BasicAmountType($currencyId, $_REQUEST['amt']);
+$MPPaymentDetails->Shipping = new BasicAmountType($currencyId, $_REQUEST['shipping']);
+$MPPaymentDetails->Handling = new BasicAmountType($currencyId, $_REQUEST['handling']);
+$MPPaymentDetails->Tax = new BasicAmountType($currencyId, $_REQUEST['tax']);
 $MPPaymentDetails->PaymentType = $_REQUEST['paymentCodeType'];
 $MPPaymentDetails->EmailSubject = $_REQUEST['mailSubject'];
 $MPPaymentDetails->ItemName = $_REQUEST['itemName'];

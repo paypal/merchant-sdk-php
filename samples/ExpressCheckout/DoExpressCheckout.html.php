@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PayPal SDK - DoExpressCheckout</title>
+<title>PayPal Merchant SDK - DoExpressCheckout</title>
+<link rel="stylesheet" type="text/css" href="../Common/sdk.css" />
 </head>
 <body>
 	<div id="wrapper">
@@ -62,6 +63,5 @@
 		</form>
 	</div>
 	<div id="relatedcalls"></div>
-	</div>
 </body>
 </html>
