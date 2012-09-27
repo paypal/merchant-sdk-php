@@ -10,7 +10,7 @@ $massPayRequest = new MassPayRequestType();
 $massPayRequest->MassPayItem = array();
 for($i=0; $i<count($_REQUEST['mail']); $i++) {	
 	$masspayItem = new MassPayRequestItemType();	
-	$masspayItem->Amount = new BasicAmountType($_REQUEST['currencyCode'][$i], $_REQUEST['currencyCode'][$i]);
+	$masspayItem->Amount = new BasicAmountType($_REQUEST['currencyCode'][$i], $_REQUEST['amount'][$i]);
 	if($_REQUEST['receiverInfoCode'] == 'EmailAddress') {
 		$masspayItem->ReceiverEmail = $_REQUEST['mail'][$i];
 	} elseif ($_REQUEST['receiverInfoCode'] == 'UserID') {

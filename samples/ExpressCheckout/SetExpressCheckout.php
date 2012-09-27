@@ -61,8 +61,8 @@ $setECReqDetails->AddressOverride = $_REQUEST['addressOverride'];
 $setECReqDetails->ReqConfirmShipping = $_REQUEST['reqConfirmShipping'];
 
 // Billing agreement
-$billingAgreementDetails->BillingAgreementDescription = $_REQUEST['billingAgreementText'];
 $billingAgreementDetails = new BillingAgreementDetailsType($_REQUEST['billingType']);
+$billingAgreementDetails->BillingAgreementDescription = $_REQUEST['billingAgreementText'];
 $setECReqDetails->BillingAgreementDetails = array($billingAgreementDetails);
 
 // Display options
