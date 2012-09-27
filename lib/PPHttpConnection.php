@@ -40,14 +40,14 @@ class PPHttpConnection
 	 * These are typically overridden by PPConnectionManager
 	 */
 	public static $DEFAULT_CURL_OPTS = array(
-	CURLOPT_CONNECTTIMEOUT => 10,
-	CURLOPT_RETURNTRANSFER => true,
-	CURLOPT_TIMEOUT        => 60,	// maximum number of seconds to allow cURL functions to execute
-	CURLOPT_USERAGENT      => 'PayPal-PHP',
-	CURLOPT_POST           => 1,
-	CURLOPT_HTTPHEADER => array(),
-    CURLOPT_SSL_VERIFYHOST => 1,
-    CURLOPT_SSL_VERIFYPEER => 2
+		CURLOPT_CONNECTTIMEOUT => 10,
+		CURLOPT_RETURNTRANSFER => TRUE,
+		CURLOPT_TIMEOUT        => 60,	// maximum number of seconds to allow cURL functions to execute
+		CURLOPT_USERAGENT      => 'PayPal-PHP-SDK',
+		CURLOPT_POST           => 1,
+		CURLOPT_HTTPHEADER => array(),
+	    CURLOPT_SSL_VERIFYHOST => 1,
+	    CURLOPT_SSL_VERIFYPEER => 2
 	);
 
 	public function __construct()
@@ -95,25 +95,6 @@ class PPHttpConnection
 		$this->curlOpt[CURLOPT_PROXY] .=  ":" . $urlParts["port"];
 		if(isset($urlParts["user"]))
 		$this->curlOpt[URLOPT_PROXYUSERPWD]	= $urlParts["user"] . ":" . $urlParts["pass"];
-	}
-
-	/**
-	 * Set whether invalid server certificates are to be trusted
-	 *
-	 * @param boolean $trustAllConnection
-	 */
-	public function setHttpTrustAllConnection($trustAllConnection)
-	{
-		if(strtoupper($trustAllConnection) =='FALSE' || $trustAllConnection == 0)
-		{
-			$this->curlOpt[CURLOPT_SSL_VERIFYPEER] = 1;
-			$this->curlOpt[CURLOPT_SSL_VERIFYHOST] = 2;
-		}
-		else if (strtoupper($trustAllConnection) =='TRUE' || $trustAllConnection == 1)
-		{
-			$this->curlOpt[CURLOPT_SSL_VERIFYPEER] = 0;
-			$this->curlOpt[CURLOPT_SSL_VERIFYHOST] = 0;
-		}
 	}
 
 	public function setHttpHeaders($headers)
@@ -164,10 +145,10 @@ class PPHttpConnection
 		$result = curl_exec($ch);
 
 		if (curl_errno($ch) == 60) {
-	 	$this->logger->info("Invalid or no certificate authority found,using bundled information");
-	 	curl_setopt($ch, CURLOPT_CAINFO,
-	 	dirname(__FILE__) . '/cacert.pem');
-	 	$result = curl_exec($ch);
+		 	$this->logger->info("Invalid or no certificate authority found, retrying using bundled CA certs");
+		 	curl_setopt($ch, CURLOPT_CAINFO,
+		 	dirname(__FILE__) . '/cacert.pem');
+		 	$result = curl_exec($ch);
 		}
 		$httpStatus = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 		$retries = 0;

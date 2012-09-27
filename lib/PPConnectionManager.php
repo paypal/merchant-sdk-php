@@ -31,9 +31,6 @@ class PPConnectionManager
 		if( ($configMgr->get("http.ConnectionTimeOut")) ) {
 			$connection->setHttpTimeout( $configMgr->get("http.ConnectionTimeOut") );
 		}
-		if( $configMgr->get("http.TrustAllConnection") ) {
-			$connection->setHttpTrustAllConnection( $configMgr->get("http.TrustAllConnection") );
-		}
 		if( $configMgr->get("http.Proxy") ) {
 			$connection->setHttpProxy( $configMgr->get("http.Proxy") );
 		}
