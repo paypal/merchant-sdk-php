@@ -10,7 +10,7 @@ require_once('PPUtils.php');
 class PayPalAPIInterfaceServiceService extends PPBaseService {
 
 	// Service Version
-	private static $SERVICE_VERSION = "93.0";
+	private static $SERVICE_VERSION = "94.0";
 
 	// Service Name
 	private static $SERVICE_NAME = "PayPalAPIInterfaceService";
@@ -20,7 +20,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	}
 
 	private function setStandardParams(AbstractRequestType $request) {
-		if ($request->Version == null) {
+		if ($request->Version == NULL) {
 			$request->Version = self::$SERVICE_VERSION;
 		}
 	}
@@ -31,7 +31,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return RefundTransactionResponseType
 	 * @throws APIException
 	 */
-	public function RefundTransaction($refundTransactionReq, $apiUsername = null) {
+	public function RefundTransaction($refundTransactionReq, $apiUsername = NULL) {
 		$this->setStandardParams($refundTransactionReq->RefundTransactionRequest);
 		$ret = new RefundTransactionResponseType();
 		$resp = $this->call("RefundTransaction", $refundTransactionReq, $apiUsername);
@@ -46,7 +46,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return InitiateRecoupResponseType
 	 * @throws APIException
 	 */
-	public function InitiateRecoup($initiateRecoupReq, $apiUsername = null) {
+	public function InitiateRecoup($initiateRecoupReq, $apiUsername = NULL) {
 		$this->setStandardParams($initiateRecoupReq->InitiateRecoupRequest);
 		$ret = new InitiateRecoupResponseType();
 		$resp = $this->call("InitiateRecoup", $initiateRecoupReq, $apiUsername);
@@ -61,7 +61,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return CompleteRecoupResponseType
 	 * @throws APIException
 	 */
-	public function CompleteRecoup($completeRecoupReq, $apiUsername = null) {
+	public function CompleteRecoup($completeRecoupReq, $apiUsername = NULL) {
 		$this->setStandardParams($completeRecoupReq->CompleteRecoupRequest);
 		$ret = new CompleteRecoupResponseType();
 		$resp = $this->call("CompleteRecoup", $completeRecoupReq, $apiUsername);
@@ -76,7 +76,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return CancelRecoupResponseType
 	 * @throws APIException
 	 */
-	public function CancelRecoup($cancelRecoupReq, $apiUsername = null) {
+	public function CancelRecoup($cancelRecoupReq, $apiUsername = NULL) {
 		$this->setStandardParams($cancelRecoupReq->CancelRecoupRequest);
 		$ret = new CancelRecoupResponseType();
 		$resp = $this->call("CancelRecoup", $cancelRecoupReq, $apiUsername);
@@ -91,7 +91,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return GetTransactionDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetTransactionDetails($getTransactionDetailsReq, $apiUsername = null) {
+	public function GetTransactionDetails($getTransactionDetailsReq, $apiUsername = NULL) {
 		$this->setStandardParams($getTransactionDetailsReq->GetTransactionDetailsRequest);
 		$ret = new GetTransactionDetailsResponseType();
 		$resp = $this->call("GetTransactionDetails", $getTransactionDetailsReq, $apiUsername);
@@ -106,7 +106,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return BillUserResponseType
 	 * @throws APIException
 	 */
-	public function BillUser($billUserReq, $apiUsername = null) {
+	public function BillUser($billUserReq, $apiUsername = NULL) {
 		$this->setStandardParams($billUserReq->BillUserRequest);
 		$ret = new BillUserResponseType();
 		$resp = $this->call("BillUser", $billUserReq, $apiUsername);
@@ -121,7 +121,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return TransactionSearchResponseType
 	 * @throws APIException
 	 */
-	public function TransactionSearch($transactionSearchReq, $apiUsername = null) {
+	public function TransactionSearch($transactionSearchReq, $apiUsername = NULL) {
 		$this->setStandardParams($transactionSearchReq->TransactionSearchRequest);
 		$ret = new TransactionSearchResponseType();
 		$resp = $this->call("TransactionSearch", $transactionSearchReq, $apiUsername);
@@ -136,7 +136,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return MassPayResponseType
 	 * @throws APIException
 	 */
-	public function MassPay($massPayReq, $apiUsername = null) {
+	public function MassPay($massPayReq, $apiUsername = NULL) {
 		$this->setStandardParams($massPayReq->MassPayRequest);
 		$ret = new MassPayResponseType();
 		$resp = $this->call("MassPay", $massPayReq, $apiUsername);
@@ -151,7 +151,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return BAUpdateResponseType
 	 * @throws APIException
 	 */
-	public function BillAgreementUpdate($billAgreementUpdateReq, $apiUsername = null) {
+	public function BillAgreementUpdate($billAgreementUpdateReq, $apiUsername = NULL) {
 		$this->setStandardParams($billAgreementUpdateReq->BAUpdateRequest);
 		$ret = new BAUpdateResponseType();
 		$resp = $this->call("BillAgreementUpdate", $billAgreementUpdateReq, $apiUsername);
@@ -166,7 +166,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return AddressVerifyResponseType
 	 * @throws APIException
 	 */
-	public function AddressVerify($addressVerifyReq, $apiUsername = null) {
+	public function AddressVerify($addressVerifyReq, $apiUsername = NULL) {
 		$this->setStandardParams($addressVerifyReq->AddressVerifyRequest);
 		$ret = new AddressVerifyResponseType();
 		$resp = $this->call("AddressVerify", $addressVerifyReq, $apiUsername);
@@ -181,7 +181,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return EnterBoardingResponseType
 	 * @throws APIException
 	 */
-	public function EnterBoarding($enterBoardingReq, $apiUsername = null) {
+	public function EnterBoarding($enterBoardingReq, $apiUsername = NULL) {
 		$this->setStandardParams($enterBoardingReq->EnterBoardingRequest);
 		$ret = new EnterBoardingResponseType();
 		$resp = $this->call("EnterBoarding", $enterBoardingReq, $apiUsername);
@@ -196,7 +196,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return GetBoardingDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetBoardingDetails($getBoardingDetailsReq, $apiUsername = null) {
+	public function GetBoardingDetails($getBoardingDetailsReq, $apiUsername = NULL) {
 		$this->setStandardParams($getBoardingDetailsReq->GetBoardingDetailsRequest);
 		$ret = new GetBoardingDetailsResponseType();
 		$resp = $this->call("GetBoardingDetails", $getBoardingDetailsReq, $apiUsername);
@@ -211,7 +211,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return CreateMobilePaymentResponseType
 	 * @throws APIException
 	 */
-	public function CreateMobilePayment($createMobilePaymentReq, $apiUsername = null) {
+	public function CreateMobilePayment($createMobilePaymentReq, $apiUsername = NULL) {
 		$this->setStandardParams($createMobilePaymentReq->CreateMobilePaymentRequest);
 		$ret = new CreateMobilePaymentResponseType();
 		$resp = $this->call("CreateMobilePayment", $createMobilePaymentReq, $apiUsername);
@@ -226,7 +226,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return GetMobileStatusResponseType
 	 * @throws APIException
 	 */
-	public function GetMobileStatus($getMobileStatusReq, $apiUsername = null) {
+	public function GetMobileStatus($getMobileStatusReq, $apiUsername = NULL) {
 		$this->setStandardParams($getMobileStatusReq->GetMobileStatusRequest);
 		$ret = new GetMobileStatusResponseType();
 		$resp = $this->call("GetMobileStatus", $getMobileStatusReq, $apiUsername);
@@ -241,7 +241,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return SetMobileCheckoutResponseType
 	 * @throws APIException
 	 */
-	public function SetMobileCheckout($setMobileCheckoutReq, $apiUsername = null) {
+	public function SetMobileCheckout($setMobileCheckoutReq, $apiUsername = NULL) {
 		$this->setStandardParams($setMobileCheckoutReq->SetMobileCheckoutRequest);
 		$ret = new SetMobileCheckoutResponseType();
 		$resp = $this->call("SetMobileCheckout", $setMobileCheckoutReq, $apiUsername);
@@ -256,7 +256,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return DoMobileCheckoutPaymentResponseType
 	 * @throws APIException
 	 */
-	public function DoMobileCheckoutPayment($doMobileCheckoutPaymentReq, $apiUsername = null) {
+	public function DoMobileCheckoutPayment($doMobileCheckoutPaymentReq, $apiUsername = NULL) {
 		$this->setStandardParams($doMobileCheckoutPaymentReq->DoMobileCheckoutPaymentRequest);
 		$ret = new DoMobileCheckoutPaymentResponseType();
 		$resp = $this->call("DoMobileCheckoutPayment", $doMobileCheckoutPaymentReq, $apiUsername);
@@ -271,7 +271,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return GetBalanceResponseType
 	 * @throws APIException
 	 */
-	public function GetBalance($getBalanceReq, $apiUsername = null) {
+	public function GetBalance($getBalanceReq, $apiUsername = NULL) {
 		$this->setStandardParams($getBalanceReq->GetBalanceRequest);
 		$ret = new GetBalanceResponseType();
 		$resp = $this->call("GetBalance", $getBalanceReq, $apiUsername);
@@ -286,7 +286,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return GetPalDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetPalDetails($getPalDetailsReq, $apiUsername = null) {
+	public function GetPalDetails($getPalDetailsReq, $apiUsername = NULL) {
 		$this->setStandardParams($getPalDetailsReq->GetPalDetailsRequest);
 		$ret = new GetPalDetailsResponseType();
 		$resp = $this->call("GetPalDetails", $getPalDetailsReq, $apiUsername);
@@ -301,7 +301,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return DoExpressCheckoutPaymentResponseType
 	 * @throws APIException
 	 */
-	public function DoExpressCheckoutPayment($doExpressCheckoutPaymentReq, $apiUsername = null) {
+	public function DoExpressCheckoutPayment($doExpressCheckoutPaymentReq, $apiUsername = NULL) {
 		$this->setStandardParams($doExpressCheckoutPaymentReq->DoExpressCheckoutPaymentRequest);
 		$ret = new DoExpressCheckoutPaymentResponseType();
 		$resp = $this->call("DoExpressCheckoutPayment", $doExpressCheckoutPaymentReq, $apiUsername);
@@ -316,7 +316,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return DoUATPExpressCheckoutPaymentResponseType
 	 * @throws APIException
 	 */
-	public function DoUATPExpressCheckoutPayment($doUATPExpressCheckoutPaymentReq, $apiUsername = null) {
+	public function DoUATPExpressCheckoutPayment($doUATPExpressCheckoutPaymentReq, $apiUsername = NULL) {
 		$this->setStandardParams($doUATPExpressCheckoutPaymentReq->DoUATPExpressCheckoutPaymentRequest);
 		$ret = new DoUATPExpressCheckoutPaymentResponseType();
 		$resp = $this->call("DoUATPExpressCheckoutPayment", $doUATPExpressCheckoutPaymentReq, $apiUsername);
@@ -331,7 +331,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return SetAuthFlowParamResponseType
 	 * @throws APIException
 	 */
-	public function SetAuthFlowParam($setAuthFlowParamReq, $apiUsername = null) {
+	public function SetAuthFlowParam($setAuthFlowParamReq, $apiUsername = NULL) {
 		$this->setStandardParams($setAuthFlowParamReq->SetAuthFlowParamRequest);
 		$ret = new SetAuthFlowParamResponseType();
 		$resp = $this->call("SetAuthFlowParam", $setAuthFlowParamReq, $apiUsername);
@@ -346,7 +346,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return GetAuthDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetAuthDetails($getAuthDetailsReq, $apiUsername = null) {
+	public function GetAuthDetails($getAuthDetailsReq, $apiUsername = NULL) {
 		$this->setStandardParams($getAuthDetailsReq->GetAuthDetailsRequest);
 		$ret = new GetAuthDetailsResponseType();
 		$resp = $this->call("GetAuthDetails", $getAuthDetailsReq, $apiUsername);
@@ -361,7 +361,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return SetAccessPermissionsResponseType
 	 * @throws APIException
 	 */
-	public function SetAccessPermissions($setAccessPermissionsReq, $apiUsername = null) {
+	public function SetAccessPermissions($setAccessPermissionsReq, $apiUsername = NULL) {
 		$this->setStandardParams($setAccessPermissionsReq->SetAccessPermissionsRequest);
 		$ret = new SetAccessPermissionsResponseType();
 		$resp = $this->call("SetAccessPermissions", $setAccessPermissionsReq, $apiUsername);
@@ -376,7 +376,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return UpdateAccessPermissionsResponseType
 	 * @throws APIException
 	 */
-	public function UpdateAccessPermissions($updateAccessPermissionsReq, $apiUsername = null) {
+	public function UpdateAccessPermissions($updateAccessPermissionsReq, $apiUsername = NULL) {
 		$this->setStandardParams($updateAccessPermissionsReq->UpdateAccessPermissionsRequest);
 		$ret = new UpdateAccessPermissionsResponseType();
 		$resp = $this->call("UpdateAccessPermissions", $updateAccessPermissionsReq, $apiUsername);
@@ -391,7 +391,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return GetAccessPermissionDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetAccessPermissionDetails($getAccessPermissionDetailsReq, $apiUsername = null) {
+	public function GetAccessPermissionDetails($getAccessPermissionDetailsReq, $apiUsername = NULL) {
 		$this->setStandardParams($getAccessPermissionDetailsReq->GetAccessPermissionDetailsRequest);
 		$ret = new GetAccessPermissionDetailsResponseType();
 		$resp = $this->call("GetAccessPermissionDetails", $getAccessPermissionDetailsReq, $apiUsername);
@@ -406,7 +406,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return GetIncentiveEvaluationResponseType
 	 * @throws APIException
 	 */
-	public function GetIncentiveEvaluation($getIncentiveEvaluationReq, $apiUsername = null) {
+	public function GetIncentiveEvaluation($getIncentiveEvaluationReq, $apiUsername = NULL) {
 		$this->setStandardParams($getIncentiveEvaluationReq->GetIncentiveEvaluationRequest);
 		$ret = new GetIncentiveEvaluationResponseType();
 		$resp = $this->call("GetIncentiveEvaluation", $getIncentiveEvaluationReq, $apiUsername);
@@ -421,7 +421,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return SetExpressCheckoutResponseType
 	 * @throws APIException
 	 */
-	public function SetExpressCheckout($setExpressCheckoutReq, $apiUsername = null) {
+	public function SetExpressCheckout($setExpressCheckoutReq, $apiUsername = NULL) {
 		$this->setStandardParams($setExpressCheckoutReq->SetExpressCheckoutRequest);
 		$ret = new SetExpressCheckoutResponseType();
 		$resp = $this->call("SetExpressCheckout", $setExpressCheckoutReq, $apiUsername);
@@ -436,7 +436,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return ExecuteCheckoutOperationsResponseType
 	 * @throws APIException
 	 */
-	public function ExecuteCheckoutOperations($executeCheckoutOperationsReq, $apiUsername = null) {
+	public function ExecuteCheckoutOperations($executeCheckoutOperationsReq, $apiUsername = NULL) {
 		$this->setStandardParams($executeCheckoutOperationsReq->ExecuteCheckoutOperationsRequest);
 		$ret = new ExecuteCheckoutOperationsResponseType();
 		$resp = $this->call("ExecuteCheckoutOperations", $executeCheckoutOperationsReq, $apiUsername);
@@ -451,7 +451,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return GetExpressCheckoutDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetExpressCheckoutDetails($getExpressCheckoutDetailsReq, $apiUsername = null) {
+	public function GetExpressCheckoutDetails($getExpressCheckoutDetailsReq, $apiUsername = NULL) {
 		$this->setStandardParams($getExpressCheckoutDetailsReq->GetExpressCheckoutDetailsRequest);
 		$ret = new GetExpressCheckoutDetailsResponseType();
 		$resp = $this->call("GetExpressCheckoutDetails", $getExpressCheckoutDetailsReq, $apiUsername);
@@ -466,7 +466,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return DoDirectPaymentResponseType
 	 * @throws APIException
 	 */
-	public function DoDirectPayment($doDirectPaymentReq, $apiUsername = null) {
+	public function DoDirectPayment($doDirectPaymentReq, $apiUsername = NULL) {
 		$this->setStandardParams($doDirectPaymentReq->DoDirectPaymentRequest);
 		$ret = new DoDirectPaymentResponseType();
 		$resp = $this->call("DoDirectPayment", $doDirectPaymentReq, $apiUsername);
@@ -481,7 +481,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return ManagePendingTransactionStatusResponseType
 	 * @throws APIException
 	 */
-	public function ManagePendingTransactionStatus($managePendingTransactionStatusReq, $apiUsername = null) {
+	public function ManagePendingTransactionStatus($managePendingTransactionStatusReq, $apiUsername = NULL) {
 		$this->setStandardParams($managePendingTransactionStatusReq->ManagePendingTransactionStatusRequest);
 		$ret = new ManagePendingTransactionStatusResponseType();
 		$resp = $this->call("ManagePendingTransactionStatus", $managePendingTransactionStatusReq, $apiUsername);
@@ -496,7 +496,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return DoCancelResponseType
 	 * @throws APIException
 	 */
-	public function DoCancel($doCancelReq, $apiUsername = null) {
+	public function DoCancel($doCancelReq, $apiUsername = NULL) {
 		$this->setStandardParams($doCancelReq->DoCancelRequest);
 		$ret = new DoCancelResponseType();
 		$resp = $this->call("DoCancel", $doCancelReq, $apiUsername);
@@ -511,7 +511,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return DoCaptureResponseType
 	 * @throws APIException
 	 */
-	public function DoCapture($doCaptureReq, $apiUsername = null) {
+	public function DoCapture($doCaptureReq, $apiUsername = NULL) {
 		$this->setStandardParams($doCaptureReq->DoCaptureRequest);
 		$ret = new DoCaptureResponseType();
 		$resp = $this->call("DoCapture", $doCaptureReq, $apiUsername);
@@ -526,7 +526,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return DoReauthorizationResponseType
 	 * @throws APIException
 	 */
-	public function DoReauthorization($doReauthorizationReq, $apiUsername = null) {
+	public function DoReauthorization($doReauthorizationReq, $apiUsername = NULL) {
 		$this->setStandardParams($doReauthorizationReq->DoReauthorizationRequest);
 		$ret = new DoReauthorizationResponseType();
 		$resp = $this->call("DoReauthorization", $doReauthorizationReq, $apiUsername);
@@ -541,7 +541,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return DoVoidResponseType
 	 * @throws APIException
 	 */
-	public function DoVoid($doVoidReq, $apiUsername = null) {
+	public function DoVoid($doVoidReq, $apiUsername = NULL) {
 		$this->setStandardParams($doVoidReq->DoVoidRequest);
 		$ret = new DoVoidResponseType();
 		$resp = $this->call("DoVoid", $doVoidReq, $apiUsername);
@@ -556,7 +556,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return DoAuthorizationResponseType
 	 * @throws APIException
 	 */
-	public function DoAuthorization($doAuthorizationReq, $apiUsername = null) {
+	public function DoAuthorization($doAuthorizationReq, $apiUsername = NULL) {
 		$this->setStandardParams($doAuthorizationReq->DoAuthorizationRequest);
 		$ret = new DoAuthorizationResponseType();
 		$resp = $this->call("DoAuthorization", $doAuthorizationReq, $apiUsername);
@@ -571,7 +571,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return SetCustomerBillingAgreementResponseType
 	 * @throws APIException
 	 */
-	public function SetCustomerBillingAgreement($setCustomerBillingAgreementReq, $apiUsername = null) {
+	public function SetCustomerBillingAgreement($setCustomerBillingAgreementReq, $apiUsername = NULL) {
 		$this->setStandardParams($setCustomerBillingAgreementReq->SetCustomerBillingAgreementRequest);
 		$ret = new SetCustomerBillingAgreementResponseType();
 		$resp = $this->call("SetCustomerBillingAgreement", $setCustomerBillingAgreementReq, $apiUsername);
@@ -586,7 +586,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return GetBillingAgreementCustomerDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetBillingAgreementCustomerDetails($getBillingAgreementCustomerDetailsReq, $apiUsername = null) {
+	public function GetBillingAgreementCustomerDetails($getBillingAgreementCustomerDetailsReq, $apiUsername = NULL) {
 		$this->setStandardParams($getBillingAgreementCustomerDetailsReq->GetBillingAgreementCustomerDetailsRequest);
 		$ret = new GetBillingAgreementCustomerDetailsResponseType();
 		$resp = $this->call("GetBillingAgreementCustomerDetails", $getBillingAgreementCustomerDetailsReq, $apiUsername);
@@ -601,7 +601,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return CreateBillingAgreementResponseType
 	 * @throws APIException
 	 */
-	public function CreateBillingAgreement($createBillingAgreementReq, $apiUsername = null) {
+	public function CreateBillingAgreement($createBillingAgreementReq, $apiUsername = NULL) {
 		$this->setStandardParams($createBillingAgreementReq->CreateBillingAgreementRequest);
 		$ret = new CreateBillingAgreementResponseType();
 		$resp = $this->call("CreateBillingAgreement", $createBillingAgreementReq, $apiUsername);
@@ -616,7 +616,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return DoReferenceTransactionResponseType
 	 * @throws APIException
 	 */
-	public function DoReferenceTransaction($doReferenceTransactionReq, $apiUsername = null) {
+	public function DoReferenceTransaction($doReferenceTransactionReq, $apiUsername = NULL) {
 		$this->setStandardParams($doReferenceTransactionReq->DoReferenceTransactionRequest);
 		$ret = new DoReferenceTransactionResponseType();
 		$resp = $this->call("DoReferenceTransaction", $doReferenceTransactionReq, $apiUsername);
@@ -631,7 +631,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return DoNonReferencedCreditResponseType
 	 * @throws APIException
 	 */
-	public function DoNonReferencedCredit($doNonReferencedCreditReq, $apiUsername = null) {
+	public function DoNonReferencedCredit($doNonReferencedCreditReq, $apiUsername = NULL) {
 		$this->setStandardParams($doNonReferencedCreditReq->DoNonReferencedCreditRequest);
 		$ret = new DoNonReferencedCreditResponseType();
 		$resp = $this->call("DoNonReferencedCredit", $doNonReferencedCreditReq, $apiUsername);
@@ -646,7 +646,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return DoUATPAuthorizationResponseType
 	 * @throws APIException
 	 */
-	public function DoUATPAuthorization($doUATPAuthorizationReq, $apiUsername = null) {
+	public function DoUATPAuthorization($doUATPAuthorizationReq, $apiUsername = NULL) {
 		$this->setStandardParams($doUATPAuthorizationReq->DoUATPAuthorizationRequest);
 		$ret = new DoUATPAuthorizationResponseType();
 		$resp = $this->call("DoUATPAuthorization", $doUATPAuthorizationReq, $apiUsername);
@@ -661,7 +661,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return CreateRecurringPaymentsProfileResponseType
 	 * @throws APIException
 	 */
-	public function CreateRecurringPaymentsProfile($createRecurringPaymentsProfileReq, $apiUsername = null) {
+	public function CreateRecurringPaymentsProfile($createRecurringPaymentsProfileReq, $apiUsername = NULL) {
 		$this->setStandardParams($createRecurringPaymentsProfileReq->CreateRecurringPaymentsProfileRequest);
 		$ret = new CreateRecurringPaymentsProfileResponseType();
 		$resp = $this->call("CreateRecurringPaymentsProfile", $createRecurringPaymentsProfileReq, $apiUsername);
@@ -676,7 +676,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return GetRecurringPaymentsProfileDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetRecurringPaymentsProfileDetails($getRecurringPaymentsProfileDetailsReq, $apiUsername = null) {
+	public function GetRecurringPaymentsProfileDetails($getRecurringPaymentsProfileDetailsReq, $apiUsername = NULL) {
 		$this->setStandardParams($getRecurringPaymentsProfileDetailsReq->GetRecurringPaymentsProfileDetailsRequest);
 		$ret = new GetRecurringPaymentsProfileDetailsResponseType();
 		$resp = $this->call("GetRecurringPaymentsProfileDetails", $getRecurringPaymentsProfileDetailsReq, $apiUsername);
@@ -691,7 +691,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return ManageRecurringPaymentsProfileStatusResponseType
 	 * @throws APIException
 	 */
-	public function ManageRecurringPaymentsProfileStatus($manageRecurringPaymentsProfileStatusReq, $apiUsername = null) {
+	public function ManageRecurringPaymentsProfileStatus($manageRecurringPaymentsProfileStatusReq, $apiUsername = NULL) {
 		$this->setStandardParams($manageRecurringPaymentsProfileStatusReq->ManageRecurringPaymentsProfileStatusRequest);
 		$ret = new ManageRecurringPaymentsProfileStatusResponseType();
 		$resp = $this->call("ManageRecurringPaymentsProfileStatus", $manageRecurringPaymentsProfileStatusReq, $apiUsername);
@@ -706,7 +706,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return BillOutstandingAmountResponseType
 	 * @throws APIException
 	 */
-	public function BillOutstandingAmount($billOutstandingAmountReq, $apiUsername = null) {
+	public function BillOutstandingAmount($billOutstandingAmountReq, $apiUsername = NULL) {
 		$this->setStandardParams($billOutstandingAmountReq->BillOutstandingAmountRequest);
 		$ret = new BillOutstandingAmountResponseType();
 		$resp = $this->call("BillOutstandingAmount", $billOutstandingAmountReq, $apiUsername);
@@ -721,7 +721,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return UpdateRecurringPaymentsProfileResponseType
 	 * @throws APIException
 	 */
-	public function UpdateRecurringPaymentsProfile($updateRecurringPaymentsProfileReq, $apiUsername = null) {
+	public function UpdateRecurringPaymentsProfile($updateRecurringPaymentsProfileReq, $apiUsername = NULL) {
 		$this->setStandardParams($updateRecurringPaymentsProfileReq->UpdateRecurringPaymentsProfileRequest);
 		$ret = new UpdateRecurringPaymentsProfileResponseType();
 		$resp = $this->call("UpdateRecurringPaymentsProfile", $updateRecurringPaymentsProfileReq, $apiUsername);
@@ -736,7 +736,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return ReverseTransactionResponseType
 	 * @throws APIException
 	 */
-	public function ReverseTransaction($reverseTransactionReq, $apiUsername = null) {
+	public function ReverseTransaction($reverseTransactionReq, $apiUsername = NULL) {
 		$this->setStandardParams($reverseTransactionReq->ReverseTransactionRequest);
 		$ret = new ReverseTransactionResponseType();
 		$resp = $this->call("ReverseTransaction", $reverseTransactionReq, $apiUsername);
@@ -751,7 +751,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @return ExternalRememberMeOptOutResponseType
 	 * @throws APIException
 	 */
-	public function ExternalRememberMeOptOut($externalRememberMeOptOutReq, $apiUsername = null) {
+	public function ExternalRememberMeOptOut($externalRememberMeOptOutReq, $apiUsername = NULL) {
 		$this->setStandardParams($externalRememberMeOptOutReq->ExternalRememberMeOptOutRequest);
 		$ret = new ExternalRememberMeOptOutResponseType();
 		$resp = $this->call("ExternalRememberMeOptOut", $externalRememberMeOptOutReq, $apiUsername);

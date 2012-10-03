@@ -17,22 +17,22 @@ class BasicAmountType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var CurrencyCodeType
+	 * @access public
+	 * @var CurrencyCodeType
 	 */ 
 	public $currencyID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $value;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($currencyID = null, $value = null) {
+	public function __construct($currencyID = NULL, $value = NULL) {
 		$this->currencyID = $currencyID;
 		$this->value = $value;
 	}
@@ -43,7 +43,7 @@ class BasicAmountType  {
 		$str = '';
 		$str .= $this->getAttributeAsXml();
 		$str .= '>';
-		if($this->value != null)
+		if($this->value != NULL)
 		{
 			$str .= PPUtils::escapeInvalidXmlCharsRegex($this->value);
 		}
@@ -54,19 +54,19 @@ class BasicAmountType  {
 	private function getAttributeAsXml()
 	{
 		$str = '';
-		if($this->currencyID != null) {
+		if($this->currencyID != NULL) {
 			$str .= ' currencyID = "' . PPUtils::escapeInvalidXmlCharsRegex($this->currencyID) . '"';
 		}
 		return $str;
 	}
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'currencyid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'currencyid') {
 					$this->currencyID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'value') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'value') {
 					$this->value = $arry["text"];
 				}
 			}
@@ -83,22 +83,22 @@ class MeasureType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $unit;
 
 	/**
 	 * 
-	 *@access public
-	 *@var double
+	 * @access public
+	 * @var double
 	 */ 
 	public $value;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($unit = null, $value = null) {
+	public function __construct($unit = NULL, $value = NULL) {
 		$this->unit = $unit;
 		$this->value = $value;
 	}
@@ -109,7 +109,7 @@ class MeasureType  {
 		$str = '';
 		$str .= $this->getAttributeAsXml();
 		$str .= '>';
-		if($this->value != null)
+		if($this->value != NULL)
 		{
 			$str .= PPUtils::escapeInvalidXmlCharsRegex($this->value);
 		}
@@ -120,19 +120,19 @@ class MeasureType  {
 	private function getAttributeAsXml()
 	{
 		$str = '';
-		if($this->unit != null) {
+		if($this->unit != NULL) {
 			$str .= ' unit = "' . PPUtils::escapeInvalidXmlCharsRegex($this->unit) . '"';
 		}
 		return $str;
 	}
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'unit') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'unit') {
 					$this->unit = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'value') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'value') {
 					$this->value = $arry["text"];
 				}
 			}
@@ -149,17 +149,17 @@ class ErrorParameterType  {
 
 	/**
 	 * Value of the application-specific error parameter.  
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Value;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'value') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'value') {
 					$this->Value = $arry["text"];
 				}
 			}
@@ -178,15 +178,15 @@ class ErrorType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ShortMessage;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $LongMessage;
 
@@ -194,8 +194,8 @@ class ErrorType  {
 	 * Error code can be used by a receiving application to
 	 * debugging a response message. These codes will need to be
 	 * uniquely defined for each application. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ErrorCode;
 
@@ -203,8 +203,8 @@ class ErrorType  {
 	 * SeverityCode indicates whether the error is an application 
 	 * level error or if it is informational error, i.e., warning. 
 	 * 
-	 *@access public
-	 *@var SeverityCodeType
+	 * @access public
+	 * @var SeverityCodeType
 	 */ 
 	public $SeverityCode;
 
@@ -214,32 +214,32 @@ class ErrorType  {
 	 * information about the error condition particularly in the
 	 * cases where there are multiple instances of the ErrorType
 	 * which require additional context.  
-     *@array
-	 *@access public
-	 *@var ErrorParameterType
+     * @array
+	 * @access public
+	 * @var ErrorParameterType
 	 */ 
 	public $ErrorParameters;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'shortmessage') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shortmessage') {
 					$this->ShortMessage = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'longmessage') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'longmessage') {
 					$this->LongMessage = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'errorcode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'errorcode') {
 					$this->ErrorCode = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'severitycode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'severitycode') {
 					$this->SeverityCode = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "errorparameters[$i]") {
 							$this->ErrorParameters[$i] = new ErrorParameterType();
 							$this->ErrorParameters[$i]->init($arry["children"]);
@@ -249,7 +249,7 @@ class ErrorType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "errorparameters")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "errorparameters")) {
 					$this->ErrorParameters = new ErrorParameterType();
 					$this->ErrorParameters->init($arry["children"]);
 				}
@@ -273,24 +273,24 @@ class AbstractRequestType  {
 	 * (e.g., Item, Transaction, etc.). The detail level is
 	 * specified in the DetailLevelCodeType which has all the
 	 * enumerated values of the detail level for each component. 
-     *@array
-	 *@access public
-	 *@var DetailLevelCodeType
+     * @array
+	 * @access public
+	 * @var DetailLevelCodeType
 	 */ 
 	public $DetailLevel;
 
 	/**
 	 * This should be the standard RFC 3066 language identification
 	 * tag, e.g., en_US. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ErrorLanguage;
 
 	/**
 	 * This refers to the version of the request payload schema. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Version;
 
@@ -298,18 +298,18 @@ class AbstractRequestType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->DetailLevel != null)
+		if($this->DetailLevel != NULL)
 		{
 			for($i = 0; $i < count($this->DetailLevel); $i++)
 			{
 				$str .= '<ebl:DetailLevel>'. PPUtils::escapeInvalidXmlCharsRegex($this->DetailLevel[$i]) . '</ebl:DetailLevel>';
 			}
 		}
-		if($this->ErrorLanguage != null)
+		if($this->ErrorLanguage != NULL)
 		{
 			$str .= '<ebl:ErrorLanguage>' . PPUtils::escapeInvalidXmlCharsRegex($this->ErrorLanguage) . '</ebl:ErrorLanguage>';
 		}
-		if($this->Version != null)
+		if($this->Version != NULL)
 		{
 			$str .= '<ebl:Version>' . PPUtils::escapeInvalidXmlCharsRegex($this->Version) . '</ebl:Version>';
 		}
@@ -334,38 +334,38 @@ class AbstractResponseType  {
 	 * This value represents the date and time (GMT) when the
 	 * response was generated by a service provider (as a result of
 	 * processing of a request). 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $Timestamp;
 
 	/**
 	 * Application level acknowledgement code. 
-	 *@access public
-	 *@var AckCodeType
+	 * @access public
+	 * @var AckCodeType
 	 */ 
 	public $Ack;
 
 	/**
 	 * CorrelationID may be used optionally with an application
 	 * level acknowledgement. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CorrelationID;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var ErrorType
+     * @array
+	 * @access public
+	 * @var ErrorType
 	 */ 
 	public $Errors;
 
 	/**
 	 * This refers to the version of the response payload schema. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Version;
 
@@ -373,28 +373,28 @@ class AbstractResponseType  {
 	 * This refers to the specific software build that was used in
 	 * the deployment for processing the request and generating the
 	 * response. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Build;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'timestamp') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'timestamp') {
 					$this->Timestamp = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'ack') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'ack') {
 					$this->Ack = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'correlationid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'correlationid') {
 					$this->CorrelationID = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "errors[$i]") {
 							$this->Errors[$i] = new ErrorType();
 							$this->Errors[$i]->init($arry["children"]);
@@ -404,14 +404,14 @@ class AbstractResponseType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "errors")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "errors")) {
 					$this->Errors = new ErrorType();
 					$this->Errors->init($arry["children"]);
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'version') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'version') {
 					$this->Version = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'build') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'build') {
 					$this->Build = $arry["text"];
 				}
 			}
@@ -428,22 +428,22 @@ class PhoneNumberType  {
 
 	/**
 	 * Country code associated with this phone number. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CountryCode;
 
 	/**
 	 * Phone number associated with this phone. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PhoneNumber;
 
 	/**
 	 * Extension associated with this phone number. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Extension;
 
@@ -451,15 +451,15 @@ class PhoneNumberType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->CountryCode != null)
+		if($this->CountryCode != NULL)
 		{
 			$str .= '<ebl:CountryCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->CountryCode) . '</ebl:CountryCode>';
 		}
-		if($this->PhoneNumber != null)
+		if($this->PhoneNumber != NULL)
 		{
 			$str .= '<ebl:PhoneNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->PhoneNumber) . '</ebl:PhoneNumber>';
 		}
-		if($this->Extension != null)
+		if($this->Extension != NULL)
 		{
 			$str .= '<ebl:Extension>' . PPUtils::escapeInvalidXmlCharsRegex($this->Extension) . '</ebl:Extension>';
 		}
@@ -480,32 +480,32 @@ class AddressType  {
 	/**
 	 * Person's name associated with this address. Character length
 	 * and limitations: 32 single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Name;
 
 	/**
 	 * First street address. Character length and limitations: 300
 	 * single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Street1;
 
 	/**
 	 * Second street address. Character length and limitations: 300
 	 * single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Street2;
 
 	/**
 	 * Name of city. Character length and limitations: 120
 	 * single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CityName;
 
@@ -533,16 +533,16 @@ class AddressType  {
 	 * Virgin_Islands VI Virginia VA Washington WA West_Virginia WV
 	 * Wisconsin WI Wyoming WY Armed_Forces_Americas AA
 	 * Armed_Forces AE Armed_Forces_Pacific AP 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $StateOrProvince;
 
 	/**
 	 * ISO 3166 standard country code Character limit: Two
 	 * single-byte characters. 
-	 *@access public
-	 *@var CountryCodeType
+	 * @access public
+	 * @var CountryCodeType
 	 */ 
 	public $Country;
 
@@ -555,22 +555,22 @@ class AddressType  {
 	 * in creating request messages which specify the name of a
 	 * country using the Country element (which refers to a 
 	 * 2-letter country code). 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CountryName;
 
 	/**
 	 * Telephone number associated with this address
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Phone;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PostalCode;
 
@@ -579,8 +579,8 @@ class AddressType  {
 	 * DoExpressCheckoutPayment, DoDirectPayment,
 	 * CreateRecurringPaymentsProfile, or
 	 * UpdateRecurringPaymentsProfile.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AddressID;
 
@@ -589,8 +589,8 @@ class AddressType  {
 	 * DoExpressCheckoutPayment, DoDirectPayment,
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile.
-	 *@access public
-	 *@var AddressOwnerCodeType
+	 * @access public
+	 * @var AddressOwnerCodeType
 	 */ 
 	public $AddressOwner;
 
@@ -599,8 +599,8 @@ class AddressType  {
 	 * DoExpressCheckoutPayment, DoDirectPayment,
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ExternalAddressID;
 
@@ -611,8 +611,8 @@ class AddressType  {
 	 * UpdateRecurringPaymentsProfile.  Only applicable to
 	 * SellerPaymentAddress today. Seller's international name that
 	 * is associated with the payment address. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InternationalName;
 
@@ -623,8 +623,8 @@ class AddressType  {
 	 * UpdateRecurringPaymentsProfile. Only applicable to
 	 * SellerPaymentAddress today. International state and city for
 	 * the seller's payment address. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InternationalStateAndCity;
 
@@ -635,8 +635,8 @@ class AddressType  {
 	 * UpdateRecurringPaymentsProfile. Only applicable to
 	 * SellerPaymentAddress today. Seller's international street
 	 * address that is associated with the payment address. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InternationalStreet;
 
@@ -646,8 +646,8 @@ class AddressType  {
 	 * DoExpressCheckoutPayment, DoDirectPayment,
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile. 
-	 *@access public
-	 *@var AddressStatusCodeType
+	 * @access public
+	 * @var AddressStatusCodeType
 	 */ 
 	public $AddressStatus;
 
@@ -655,67 +655,67 @@ class AddressType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Name != null)
+		if($this->Name != NULL)
 		{
 			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
 		}
-		if($this->Street1 != null)
+		if($this->Street1 != NULL)
 		{
 			$str .= '<ebl:Street1>' . PPUtils::escapeInvalidXmlCharsRegex($this->Street1) . '</ebl:Street1>';
 		}
-		if($this->Street2 != null)
+		if($this->Street2 != NULL)
 		{
 			$str .= '<ebl:Street2>' . PPUtils::escapeInvalidXmlCharsRegex($this->Street2) . '</ebl:Street2>';
 		}
-		if($this->CityName != null)
+		if($this->CityName != NULL)
 		{
 			$str .= '<ebl:CityName>' . PPUtils::escapeInvalidXmlCharsRegex($this->CityName) . '</ebl:CityName>';
 		}
-		if($this->StateOrProvince != null)
+		if($this->StateOrProvince != NULL)
 		{
 			$str .= '<ebl:StateOrProvince>' . PPUtils::escapeInvalidXmlCharsRegex($this->StateOrProvince) . '</ebl:StateOrProvince>';
 		}
-		if($this->Country != null)
+		if($this->Country != NULL)
 		{
 			$str .= '<ebl:Country>' . PPUtils::escapeInvalidXmlCharsRegex($this->Country) . '</ebl:Country>';
 		}
-		if($this->CountryName != null)
+		if($this->CountryName != NULL)
 		{
 			$str .= '<ebl:CountryName>' . PPUtils::escapeInvalidXmlCharsRegex($this->CountryName) . '</ebl:CountryName>';
 		}
-		if($this->Phone != null)
+		if($this->Phone != NULL)
 		{
 			$str .= '<ebl:Phone>' . PPUtils::escapeInvalidXmlCharsRegex($this->Phone) . '</ebl:Phone>';
 		}
-		if($this->PostalCode != null)
+		if($this->PostalCode != NULL)
 		{
 			$str .= '<ebl:PostalCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->PostalCode) . '</ebl:PostalCode>';
 		}
-		if($this->AddressID != null)
+		if($this->AddressID != NULL)
 		{
 			$str .= '<ebl:AddressID>' . PPUtils::escapeInvalidXmlCharsRegex($this->AddressID) . '</ebl:AddressID>';
 		}
-		if($this->AddressOwner != null)
+		if($this->AddressOwner != NULL)
 		{
 			$str .= '<ebl:AddressOwner>' . PPUtils::escapeInvalidXmlCharsRegex($this->AddressOwner) . '</ebl:AddressOwner>';
 		}
-		if($this->ExternalAddressID != null)
+		if($this->ExternalAddressID != NULL)
 		{
 			$str .= '<ebl:ExternalAddressID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalAddressID) . '</ebl:ExternalAddressID>';
 		}
-		if($this->InternationalName != null)
+		if($this->InternationalName != NULL)
 		{
 			$str .= '<ebl:InternationalName>' . PPUtils::escapeInvalidXmlCharsRegex($this->InternationalName) . '</ebl:InternationalName>';
 		}
-		if($this->InternationalStateAndCity != null)
+		if($this->InternationalStateAndCity != NULL)
 		{
 			$str .= '<ebl:InternationalStateAndCity>' . PPUtils::escapeInvalidXmlCharsRegex($this->InternationalStateAndCity) . '</ebl:InternationalStateAndCity>';
 		}
-		if($this->InternationalStreet != null)
+		if($this->InternationalStreet != NULL)
 		{
 			$str .= '<ebl:InternationalStreet>' . PPUtils::escapeInvalidXmlCharsRegex($this->InternationalStreet) . '</ebl:InternationalStreet>';
 		}
-		if($this->AddressStatus != null)
+		if($this->AddressStatus != NULL)
 		{
 			$str .= '<ebl:AddressStatus>' . PPUtils::escapeInvalidXmlCharsRegex($this->AddressStatus) . '</ebl:AddressStatus>';
 		}
@@ -723,55 +723,55 @@ class AddressType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'name') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'name') {
 					$this->Name = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'street1') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'street1') {
 					$this->Street1 = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'street2') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'street2') {
 					$this->Street2 = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'cityname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'cityname') {
 					$this->CityName = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'stateorprovince') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'stateorprovince') {
 					$this->StateOrProvince = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'country') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'country') {
 					$this->Country = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'countryname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'countryname') {
 					$this->CountryName = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'phone') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'phone') {
 					$this->Phone = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'postalcode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'postalcode') {
 					$this->PostalCode = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'addressid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'addressid') {
 					$this->AddressID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'addressowner') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'addressowner') {
 					$this->AddressOwner = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'externaladdressid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'externaladdressid') {
 					$this->ExternalAddressID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'internationalname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'internationalname') {
 					$this->InternationalName = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'internationalstateandcity') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'internationalstateandcity') {
 					$this->InternationalStateAndCity = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'internationalstreet') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'internationalstreet') {
 					$this->InternationalStreet = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'addressstatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'addressstatus') {
 					$this->AddressStatus = $arry["text"];
 				}
 			}
@@ -788,36 +788,36 @@ class PersonNameType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Salutation;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $FirstName;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MiddleName;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $LastName;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Suffix;
 
@@ -825,23 +825,23 @@ class PersonNameType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Salutation != null)
+		if($this->Salutation != NULL)
 		{
 			$str .= '<ebl:Salutation>' . PPUtils::escapeInvalidXmlCharsRegex($this->Salutation) . '</ebl:Salutation>';
 		}
-		if($this->FirstName != null)
+		if($this->FirstName != NULL)
 		{
 			$str .= '<ebl:FirstName>' . PPUtils::escapeInvalidXmlCharsRegex($this->FirstName) . '</ebl:FirstName>';
 		}
-		if($this->MiddleName != null)
+		if($this->MiddleName != NULL)
 		{
 			$str .= '<ebl:MiddleName>' . PPUtils::escapeInvalidXmlCharsRegex($this->MiddleName) . '</ebl:MiddleName>';
 		}
-		if($this->LastName != null)
+		if($this->LastName != NULL)
 		{
 			$str .= '<ebl:LastName>' . PPUtils::escapeInvalidXmlCharsRegex($this->LastName) . '</ebl:LastName>';
 		}
-		if($this->Suffix != null)
+		if($this->Suffix != NULL)
 		{
 			$str .= '<ebl:Suffix>' . PPUtils::escapeInvalidXmlCharsRegex($this->Suffix) . '</ebl:Suffix>';
 		}
@@ -849,22 +849,22 @@ class PersonNameType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'salutation') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'salutation') {
 					$this->Salutation = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'firstname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'firstname') {
 					$this->FirstName = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'middlename') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'middlename') {
 					$this->MiddleName = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'lastname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'lastname') {
 					$this->LastName = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'suffix') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'suffix') {
 					$this->Suffix = $arry["text"];
 				}
 			}
@@ -881,46 +881,46 @@ class IncentiveAppliedToType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BucketId;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemId;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $IncentiveAmount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SubType;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'bucketid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'bucketid') {
 					$this->BucketId = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'itemid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemid') {
 					$this->ItemId = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='incentiveamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -935,7 +935,7 @@ class IncentiveAppliedToType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'subtype') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'subtype') {
 					$this->SubType = $arry["text"];
 				}
 			}
@@ -952,84 +952,84 @@ class IncentiveDetailType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $RedemptionCode;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $DisplayCode;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProgramId;
 
 	/**
 	 * 
-	 *@access public
-	 *@var IncentiveTypeCodeType
+	 * @access public
+	 * @var IncentiveTypeCodeType
 	 */ 
 	public $IncentiveType;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $IncentiveDescription;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var IncentiveAppliedToType
+     * @array
+	 * @access public
+	 * @var IncentiveAppliedToType
 	 */ 
 	public $AppliedTo;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Status;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ErrorCode;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'redemptioncode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'redemptioncode') {
 					$this->RedemptionCode = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'displaycode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'displaycode') {
 					$this->DisplayCode = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'programid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'programid') {
 					$this->ProgramId = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'incentivetype') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'incentivetype') {
 					$this->IncentiveType = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'incentivedescription') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'incentivedescription') {
 					$this->IncentiveDescription = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "appliedto[$i]") {
 							$this->AppliedTo[$i] = new IncentiveAppliedToType();
 							$this->AppliedTo[$i]->init($arry["children"]);
@@ -1039,14 +1039,14 @@ class IncentiveDetailType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "appliedto")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "appliedto")) {
 					$this->AppliedTo = new IncentiveAppliedToType();
 					$this->AppliedTo->init($arry["children"]);
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'status') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
 					$this->Status = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'errorcode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'errorcode') {
 					$this->ErrorCode = $arry["text"];
 				}
 			}
@@ -1063,36 +1063,36 @@ class IncentiveItemType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemId;
 
 	/**
 	 * 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $PurchaseTime;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemCategoryList;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $ItemPrice;
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $ItemQuantity;
 
@@ -1100,25 +1100,25 @@ class IncentiveItemType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ItemId != null)
+		if($this->ItemId != NULL)
 		{
 			$str .= '<ebl:ItemId>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemId) . '</ebl:ItemId>';
 		}
-		if($this->PurchaseTime != null)
+		if($this->PurchaseTime != NULL)
 		{
 			$str .= '<ebl:PurchaseTime>' . PPUtils::escapeInvalidXmlCharsRegex($this->PurchaseTime) . '</ebl:PurchaseTime>';
 		}
-		if($this->ItemCategoryList != null)
+		if($this->ItemCategoryList != NULL)
 		{
 			$str .= '<ebl:ItemCategoryList>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemCategoryList) . '</ebl:ItemCategoryList>';
 		}
-		if($this->ItemPrice != null)
+		if($this->ItemPrice != NULL)
 		{
 			$str .= '<ebl:ItemPrice';
 			$str .= $this->ItemPrice->toXMLString();
 			$str .= '</ebl:ItemPrice>';
 		}
-		if($this->ItemQuantity != null)
+		if($this->ItemQuantity != NULL)
 		{
 			$str .= '<ebl:ItemQuantity>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemQuantity) . '</ebl:ItemQuantity>';
 		}
@@ -1137,65 +1137,65 @@ class IncentiveBucketType  {
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var IncentiveItemType
+     * @array
+	 * @access public
+	 * @var IncentiveItemType
 	 */ 
 	public $Items;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BucketId;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SellerId;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ExternalSellerId;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $BucketSubtotalAmt;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $BucketShippingAmt;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $BucketInsuranceAmt;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $BucketSalesTaxAmt;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $BucketTotalAmt;
 
@@ -1203,7 +1203,7 @@ class IncentiveBucketType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Items != null)
+		if($this->Items != NULL)
 		{
 			for($i = 0; $i < count($this->Items); $i++)
 			{
@@ -1212,43 +1212,43 @@ class IncentiveBucketType  {
 				$str .= '</ebl:Items>';
 			}
 		}
-		if($this->BucketId != null)
+		if($this->BucketId != NULL)
 		{
 			$str .= '<ebl:BucketId>' . PPUtils::escapeInvalidXmlCharsRegex($this->BucketId) . '</ebl:BucketId>';
 		}
-		if($this->SellerId != null)
+		if($this->SellerId != NULL)
 		{
 			$str .= '<ebl:SellerId>' . PPUtils::escapeInvalidXmlCharsRegex($this->SellerId) . '</ebl:SellerId>';
 		}
-		if($this->ExternalSellerId != null)
+		if($this->ExternalSellerId != NULL)
 		{
 			$str .= '<ebl:ExternalSellerId>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalSellerId) . '</ebl:ExternalSellerId>';
 		}
-		if($this->BucketSubtotalAmt != null)
+		if($this->BucketSubtotalAmt != NULL)
 		{
 			$str .= '<ebl:BucketSubtotalAmt';
 			$str .= $this->BucketSubtotalAmt->toXMLString();
 			$str .= '</ebl:BucketSubtotalAmt>';
 		}
-		if($this->BucketShippingAmt != null)
+		if($this->BucketShippingAmt != NULL)
 		{
 			$str .= '<ebl:BucketShippingAmt';
 			$str .= $this->BucketShippingAmt->toXMLString();
 			$str .= '</ebl:BucketShippingAmt>';
 		}
-		if($this->BucketInsuranceAmt != null)
+		if($this->BucketInsuranceAmt != NULL)
 		{
 			$str .= '<ebl:BucketInsuranceAmt';
 			$str .= $this->BucketInsuranceAmt->toXMLString();
 			$str .= '</ebl:BucketInsuranceAmt>';
 		}
-		if($this->BucketSalesTaxAmt != null)
+		if($this->BucketSalesTaxAmt != NULL)
 		{
 			$str .= '<ebl:BucketSalesTaxAmt';
 			$str .= $this->BucketSalesTaxAmt->toXMLString();
 			$str .= '</ebl:BucketSalesTaxAmt>';
 		}
-		if($this->BucketTotalAmt != null)
+		if($this->BucketTotalAmt != NULL)
 		{
 			$str .= '<ebl:BucketTotalAmt';
 			$str .= $this->BucketTotalAmt->toXMLString();
@@ -1269,22 +1269,22 @@ class IncentiveRequestDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $RequestId;
 
 	/**
 	 * 
-	 *@access public
-	 *@var IncentiveRequestCodeType
+	 * @access public
+	 * @var IncentiveRequestCodeType
 	 */ 
 	public $RequestType;
 
 	/**
 	 * 
-	 *@access public
-	 *@var IncentiveRequestDetailLevelCodeType
+	 * @access public
+	 * @var IncentiveRequestDetailLevelCodeType
 	 */ 
 	public $RequestDetailLevel;
 
@@ -1292,15 +1292,15 @@ class IncentiveRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->RequestId != null)
+		if($this->RequestId != NULL)
 		{
 			$str .= '<ebl:RequestId>' . PPUtils::escapeInvalidXmlCharsRegex($this->RequestId) . '</ebl:RequestId>';
 		}
-		if($this->RequestType != null)
+		if($this->RequestType != NULL)
 		{
 			$str .= '<ebl:RequestType>' . PPUtils::escapeInvalidXmlCharsRegex($this->RequestType) . '</ebl:RequestType>';
 		}
-		if($this->RequestDetailLevel != null)
+		if($this->RequestDetailLevel != NULL)
 		{
 			$str .= '<ebl:RequestDetailLevel>' . PPUtils::escapeInvalidXmlCharsRegex($this->RequestDetailLevel) . '</ebl:RequestDetailLevel>';
 		}
@@ -1319,46 +1319,46 @@ class GetIncentiveEvaluationRequestDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ExternalBuyerId;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $IncentiveCodes;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var IncentiveApplyIndicationType
+     * @array
+	 * @access public
+	 * @var IncentiveApplyIndicationType
 	 */ 
 	public $ApplyIndication;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var IncentiveBucketType
+     * @array
+	 * @access public
+	 * @var IncentiveBucketType
 	 */ 
 	public $Buckets;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $CartTotalAmt;
 
 	/**
 	 * 
-	 *@access public
-	 *@var IncentiveRequestDetailsType
+	 * @access public
+	 * @var IncentiveRequestDetailsType
 	 */ 
 	public $RequestDetails;
 
@@ -1366,18 +1366,18 @@ class GetIncentiveEvaluationRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ExternalBuyerId != null)
+		if($this->ExternalBuyerId != NULL)
 		{
 			$str .= '<ebl:ExternalBuyerId>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalBuyerId) . '</ebl:ExternalBuyerId>';
 		}
-		if($this->IncentiveCodes != null)
+		if($this->IncentiveCodes != NULL)
 		{
 			for($i = 0; $i < count($this->IncentiveCodes); $i++)
 			{
 				$str .= '<ebl:IncentiveCodes>'. PPUtils::escapeInvalidXmlCharsRegex($this->IncentiveCodes[$i]) . '</ebl:IncentiveCodes>';
 			}
 		}
-		if($this->ApplyIndication != null)
+		if($this->ApplyIndication != NULL)
 		{
 			for($i = 0; $i < count($this->ApplyIndication); $i++)
 			{
@@ -1386,7 +1386,7 @@ class GetIncentiveEvaluationRequestDetailsType  {
 				$str .= '</ebl:ApplyIndication>';
 			}
 		}
-		if($this->Buckets != null)
+		if($this->Buckets != NULL)
 		{
 			for($i = 0; $i < count($this->Buckets); $i++)
 			{
@@ -1395,13 +1395,13 @@ class GetIncentiveEvaluationRequestDetailsType  {
 				$str .= '</ebl:Buckets>';
 			}
 		}
-		if($this->CartTotalAmt != null)
+		if($this->CartTotalAmt != NULL)
 		{
 			$str .= '<ebl:CartTotalAmt';
 			$str .= $this->CartTotalAmt->toXMLString();
 			$str .= '</ebl:CartTotalAmt>';
 		}
-		if($this->RequestDetails != null)
+		if($this->RequestDetails != NULL)
 		{
 			$str .= '<ebl:RequestDetails>';
 			$str .= $this->RequestDetails->toXMLString();
@@ -1422,27 +1422,27 @@ class GetIncentiveEvaluationResponseDetailsType  {
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var IncentiveDetailType
+     * @array
+	 * @access public
+	 * @var IncentiveDetailType
 	 */ 
 	public $IncentiveDetails;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $RequestId;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "incentivedetails[$i]") {
 							$this->IncentiveDetails[$i] = new IncentiveDetailType();
 							$this->IncentiveDetails[$i]->init($arry["children"]);
@@ -1452,11 +1452,11 @@ class GetIncentiveEvaluationResponseDetailsType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "incentivedetails")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "incentivedetails")) {
 					$this->IncentiveDetails = new IncentiveDetailType();
 					$this->IncentiveDetails->init($arry["children"]);
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'requestid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'requestid') {
 					$this->RequestId = $arry["text"];
 				}
 			}
@@ -1489,8 +1489,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * in any currency. No currency symbol. Decimal separator must
 	 * be a period (.), and the thousands separator must be a comma
 	 * (,).
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $OrderTotal;
 
@@ -1500,8 +1500,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * value of ReturnURL be the final review page on which the
 	 * customer confirms the order and payment. Required Character
 	 * length and limitations: no limit. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReturnURL;
 
@@ -1511,16 +1511,16 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * value of CancelURL be the original page on which the
 	 * customer chose to pay with PayPal. Required Character length
 	 * and limitations: no limit
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CancelURL;
 
 	/**
 	 * Tracking URL for ebay. Required Character length and
 	 * limitations: no limit
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TrackingImageURL;
 
@@ -1528,8 +1528,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * URL to which the customer's browser is returned after paying
 	 * with giropay online. Optional Character length and
 	 * limitations: no limit.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $giropaySuccessURL;
 
@@ -1537,8 +1537,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * URL to which the customer's browser is returned after fail
 	 * to pay with giropay online. Optional Character length and
 	 * limitations: no limit.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $giropayCancelURL;
 
@@ -1546,8 +1546,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * URL to which the customer's browser can be returned in the
 	 * mEFT done page. Optional Character length and limitations:
 	 * no limit.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BanktxnPendingURL;
 
@@ -1560,8 +1560,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * SetExpressCheckoutRequest; for example, if you want the
 	 * customer to edit his shipping address on PayPal. Character
 	 * length and limitations: 20 single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
@@ -1573,8 +1573,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Limitations: Must not exceed $10,000 USD in any currency. No
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $MaxAmount;
 
@@ -1582,8 +1582,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Description of items the customer is purchasing. Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OrderDescription;
 
@@ -1593,8 +1593,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * GetExpressCheckoutDetailsResponse and
 	 * DoExpressCheckoutPaymentResponse. Optional Character length
 	 * and limitations: 256 single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Custom;
 
@@ -1603,8 +1603,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * this value to you on DoExpressCheckoutPaymentResponse.
 	 * Optional Character length and limitations: 127 single-byte
 	 * alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InvoiceID;
 
@@ -1617,8 +1617,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * specified in the recipient's Merchant Account Profile.
 	 * Optional Character length and limitations: One single-byte
 	 * numeric character.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReqConfirmShipping;
 
@@ -1627,8 +1627,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * billing address on file. Setting this element overrides the
 	 * setting you have specified in Admin. Optional Character
 	 * length and limitations: One single-byte numeric character. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReqBillingAddress;
 
@@ -1637,8 +1637,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * the BillingAddress element, the AddressType elements are
 	 * required: Name Street1 CityName CountryCode Do not set set
 	 * the CountryName element. 
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $BillingAddress;
 
@@ -1647,8 +1647,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * address fields should be displayed whatsoever. Optional
 	 * Character length and limitations: Four single-byte numeric
 	 * characters.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $NoShipping;
 
@@ -1660,8 +1660,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * street address on file does not allow the customer to edit
 	 * that address. Optional Character length and limitations:
 	 * Four single-byte numeric characters.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AddressOverride;
 
@@ -1671,8 +1671,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * alphabetic characters, upper- or lowercase. Allowable
 	 * values: AU or en_AUDE or de_DEFR or fr_FRGB or en_GBIT or
 	 * it_ITJP or ja_JPUS or en_US
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $LocaleCode;
 
@@ -1685,8 +1685,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * the My Account tab of your PayPal account. Optional
 	 * Character length and limitations: 30 single-byte alphabetic
 	 * characters. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PageStyle;
 
@@ -1696,8 +1696,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * wide by 90 pixels high. PayPal recommends that you provide
 	 * an image that is stored on a secure (https) server. Optional
 	 * Character length and limitations: 127
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cppheaderimage;
 
@@ -1707,8 +1707,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * which is 750 pixels wide by 90 pixels high. Optional
 	 * Character length and limitations: Six character HTML
 	 * hexadecimal color code in ASCII
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cppheaderbordercolor;
 
@@ -1716,8 +1716,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Sets the background color for the header of the payment
 	 * page. Optional Character length and limitation: Six
 	 * character HTML hexadecimal color code in ASCII
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cppheaderbackcolor;
 
@@ -1725,8 +1725,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Sets the background color for the payment page. Optional
 	 * Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cpppayflowcolor;
 
@@ -1734,8 +1734,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Sets the cart gradient color for the Mini Cart on 1X flow.
 	 * Optional Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cppcartbordercolor;
 
@@ -1745,8 +1745,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * high. PayPal recommends that you provide an image that is
 	 * stored on a secure (https) server. Optional Character length
 	 * and limitations: 127
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cpplogoimage;
 
@@ -1755,8 +1755,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * shipping address and set the AddressOverride element on the
 	 * request, PayPal returns this same address in
 	 * GetExpressCheckoutDetailsResponse. 
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $Address;
 
@@ -1772,8 +1772,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * change PaymentAction to Authorization on the final Express
 	 * Checkout API, DoExpressCheckoutPaymentRequest. Character
 	 * length and limit: Up to 13 single-byte alphabetic characters
-	 *@access public
-	 *@var PaymentActionCodeType
+	 * @access public
+	 * @var PaymentActionCodeType
 	 */ 
 	public $PaymentAction;
 
@@ -1782,8 +1782,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * (expresschecheckout or expresscheckout optional) Optional
 	 * None Sole indicates that you are in the ExpressO flow Mark
 	 * indicates that you are in the old express flow. 
-	 *@access public
-	 *@var SolutionTypeType
+	 * @access public
+	 * @var SolutionTypeType
 	 */ 
 	public $SolutionType;
 
@@ -1792,8 +1792,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * or Login) Optional None Billing indicates that you are not a
 	 * paypal account holder Login indicates that you are a paypal
 	 * account holder 
-	 *@access public
-	 *@var LandingPageType
+	 * @access public
+	 * @var LandingPageType
 	 */ 
 	public $LandingPage;
 
@@ -1802,23 +1802,23 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * PayPal uses this value to pre-fill the PayPal membership
 	 * sign-up portion of the PayPal login page. Optional Character
 	 * length and limit: 127 single-byte alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BuyerEmail;
 
 	/**
 	 * 
-	 *@access public
-	 *@var ChannelType
+	 * @access public
+	 * @var ChannelType
 	 */ 
 	public $ChannelType;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var BillingAgreementDetailsType
+     * @array
+	 * @access public
+	 * @var BillingAgreementDetailsType
 	 */ 
 	public $BillingAgreementDetails;
 
@@ -1826,38 +1826,38 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Promo Code Optional List of promo codes supplied by
 	 * merchant. These promo codes enable the Merchant Services
 	 * Promotion Financing feature. 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $PromoCodes;
 
 	/**
 	 * Default Funding option for PayLater Checkout button. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PayPalCheckOutBtnType;
 
 	/**
 	 * 
-	 *@access public
-	 *@var ProductCategoryType
+	 * @access public
+	 * @var ProductCategoryType
 	 */ 
 	public $ProductCategory;
 
 	/**
 	 * 
-	 *@access public
-	 *@var ShippingServiceCodeType
+	 * @access public
+	 * @var ShippingServiceCodeType
 	 */ 
 	public $ShippingMethod;
 
 	/**
 	 * Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at
 	 * which address was changed by the user. 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $ProfileAddressChangeDate;
 
@@ -1868,15 +1868,15 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * DoExpressCheckoutPayment response. Optional Character length
 	 * and limitations: One single-byte numeric character.
 	 * Allowable values: 0,1 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AllowNote;
 
 	/**
 	 * Funding source preferences. 
-	 *@access public
-	 *@var FundingSourceDetailsType
+	 * @access public
+	 * @var FundingSourceDetailsType
 	 */ 
 	public $FundingSourceDetails;
 
@@ -1884,8 +1884,8 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * The label that needs to be displayed on the cancel links in
 	 * the PayPal hosted checkout pages. Optional Character length
 	 * and limit: 127 single-byte alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BrandName;
 
@@ -1893,15 +1893,15 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * URL for PayPal to use to retrieve shipping, handling,
 	 * insurance, and tax details from your website. Optional
 	 * Character length and limitations: 2048 characters. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CallbackURL;
 
 	/**
 	 * Enhanced data for different industry segments. Optional 
-	 *@access public
-	 *@var EnhancedCheckoutDataType
+	 * @access public
+	 * @var EnhancedCheckoutDataType
 	 */ 
 	public $EnhancedCheckoutData;
 
@@ -1909,150 +1909,150 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * List of other payment methods the user can pay with.
 	 * Optional Refer to the OtherPaymentMethodDetailsType for more
 	 * details. 
-     *@array
-	 *@access public
-	 *@var OtherPaymentMethodDetailsType
+     * @array
+	 * @access public
+	 * @var OtherPaymentMethodDetailsType
 	 */ 
 	public $OtherPaymentMethods;
 
 	/**
 	 * Details about the buyer's account. Optional Refer to the
 	 * BuyerDetailsType for more details. 
-	 *@access public
-	 *@var BuyerDetailsType
+	 * @access public
+	 * @var BuyerDetailsType
 	 */ 
 	public $BuyerDetails;
 
 	/**
 	 * Information about the payment. 
-     *@array
-	 *@access public
-	 *@var PaymentDetailsType
+     * @array
+	 * @access public
+	 * @var PaymentDetailsType
 	 */ 
 	public $PaymentDetails;
 
 	/**
 	 * List of Fall Back Shipping options provided by merchant. 
-     *@array
-	 *@access public
-	 *@var ShippingOptionType
+     * @array
+	 * @access public
+	 * @var ShippingOptionType
 	 */ 
 	public $FlatRateShippingOptions;
 
 	/**
 	 * Information about the call back timeout override. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CallbackTimeout;
 
 	/**
 	 * Information about the call back version. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CallbackVersion;
 
 	/**
 	 * Information about the Customer service number. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CustomerServiceNumber;
 
 	/**
 	 * Information about the Gift message enable. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $GiftMessageEnable;
 
 	/**
 	 * Information about the Gift receipt enable. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $GiftReceiptEnable;
 
 	/**
 	 * Information about the Gift Wrap enable. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $GiftWrapEnable;
 
 	/**
 	 * Information about the Gift Wrap name. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $GiftWrapName;
 
 	/**
 	 * Information about the Gift Wrap amount. 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $GiftWrapAmount;
 
 	/**
 	 * Information about the Buyer email option enable . 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BuyerEmailOptInEnable;
 
 	/**
 	 * Information about the survey enable. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SurveyEnable;
 
 	/**
 	 * Information about the survey question. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SurveyQuestion;
 
 	/**
 	 * Information about the survey choices for survey question. 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $SurveyChoice;
 
 	/**
 	 * 
-	 *@access public
-	 *@var TotalType
+	 * @access public
+	 * @var TotalType
 	 */ 
 	public $TotalType;
 
 	/**
 	 * Any message the seller would like to be displayed in the
 	 * Mini Cart for UX. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $NoteToBuyer;
 
 	/**
 	 * Incentive Code Optional List of incentive codes supplied by
 	 * ebay/merchant. 
-     *@array
-	 *@access public
-	 *@var IncentiveInfoType
+     * @array
+	 * @access public
+	 * @var IncentiveInfoType
 	 */ 
 	public $Incentives;
 
 	/**
 	 * Merchant specified flag which indicates whether to return
 	 * Funding Instrument Details in DoEC or not. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReqInstrumentDetails;
 
@@ -2062,39 +2062,39 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * buyer or to request login bypass using external remember me.
 	 * Note the opt-in details are silently ignored if the
 	 * ExternalRememberMeID is present. 
-	 *@access public
-	 *@var ExternalRememberMeOptInDetailsType
+	 * @access public
+	 * @var ExternalRememberMeOptInDetailsType
 	 */ 
 	public $ExternalRememberMeOptInDetails;
 
 	/**
 	 * An optional set of values related to flow-specific details. 
-	 *@access public
-	 *@var FlowControlDetailsType
+	 * @access public
+	 * @var FlowControlDetailsType
 	 */ 
 	public $FlowControlDetails;
 
 	/**
 	 * An optional set of values related to display-specific
 	 * details. 
-	 *@access public
-	 *@var DisplayControlDetailsType
+	 * @access public
+	 * @var DisplayControlDetailsType
 	 */ 
 	public $DisplayControlDetails;
 
 	/**
 	 * An optional set of values related to tracking for external
 	 * partner. 
-	 *@access public
-	 *@var ExternalPartnerTrackingDetailsType
+	 * @access public
+	 * @var ExternalPartnerTrackingDetailsType
 	 */ 
 	public $ExternalPartnerTrackingDetails;
 
 	/**
 	 * Optional element that defines relationship between buckets 
-     *@array
-	 *@access public
-	 *@var CoupledBucketsType
+     * @array
+	 * @access public
+	 * @var CoupledBucketsType
 	 */ 
 	public $CoupledBuckets;
 
@@ -2102,139 +2102,139 @@ class SetExpressCheckoutRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->OrderTotal != null)
+		if($this->OrderTotal != NULL)
 		{
 			$str .= '<ebl:OrderTotal';
 			$str .= $this->OrderTotal->toXMLString();
 			$str .= '</ebl:OrderTotal>';
 		}
-		if($this->ReturnURL != null)
+		if($this->ReturnURL != NULL)
 		{
 			$str .= '<ebl:ReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnURL) . '</ebl:ReturnURL>';
 		}
-		if($this->CancelURL != null)
+		if($this->CancelURL != NULL)
 		{
 			$str .= '<ebl:CancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelURL) . '</ebl:CancelURL>';
 		}
-		if($this->TrackingImageURL != null)
+		if($this->TrackingImageURL != NULL)
 		{
 			$str .= '<ebl:TrackingImageURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->TrackingImageURL) . '</ebl:TrackingImageURL>';
 		}
-		if($this->giropaySuccessURL != null)
+		if($this->giropaySuccessURL != NULL)
 		{
 			$str .= '<ebl:giropaySuccessURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->giropaySuccessURL) . '</ebl:giropaySuccessURL>';
 		}
-		if($this->giropayCancelURL != null)
+		if($this->giropayCancelURL != NULL)
 		{
 			$str .= '<ebl:giropayCancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->giropayCancelURL) . '</ebl:giropayCancelURL>';
 		}
-		if($this->BanktxnPendingURL != null)
+		if($this->BanktxnPendingURL != NULL)
 		{
 			$str .= '<ebl:BanktxnPendingURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->BanktxnPendingURL) . '</ebl:BanktxnPendingURL>';
 		}
-		if($this->Token != null)
+		if($this->Token != NULL)
 		{
 			$str .= '<ebl:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</ebl:Token>';
 		}
-		if($this->MaxAmount != null)
+		if($this->MaxAmount != NULL)
 		{
 			$str .= '<ebl:MaxAmount';
 			$str .= $this->MaxAmount->toXMLString();
 			$str .= '</ebl:MaxAmount>';
 		}
-		if($this->OrderDescription != null)
+		if($this->OrderDescription != NULL)
 		{
 			$str .= '<ebl:OrderDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->OrderDescription) . '</ebl:OrderDescription>';
 		}
-		if($this->Custom != null)
+		if($this->Custom != NULL)
 		{
 			$str .= '<ebl:Custom>' . PPUtils::escapeInvalidXmlCharsRegex($this->Custom) . '</ebl:Custom>';
 		}
-		if($this->InvoiceID != null)
+		if($this->InvoiceID != NULL)
 		{
 			$str .= '<ebl:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</ebl:InvoiceID>';
 		}
-		if($this->ReqConfirmShipping != null)
+		if($this->ReqConfirmShipping != NULL)
 		{
 			$str .= '<ebl:ReqConfirmShipping>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqConfirmShipping) . '</ebl:ReqConfirmShipping>';
 		}
-		if($this->ReqBillingAddress != null)
+		if($this->ReqBillingAddress != NULL)
 		{
 			$str .= '<ebl:ReqBillingAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqBillingAddress) . '</ebl:ReqBillingAddress>';
 		}
-		if($this->BillingAddress != null)
+		if($this->BillingAddress != NULL)
 		{
 			$str .= '<ebl:BillingAddress>';
 			$str .= $this->BillingAddress->toXMLString();
 			$str .= '</ebl:BillingAddress>';
 		}
-		if($this->NoShipping != null)
+		if($this->NoShipping != NULL)
 		{
 			$str .= '<ebl:NoShipping>' . PPUtils::escapeInvalidXmlCharsRegex($this->NoShipping) . '</ebl:NoShipping>';
 		}
-		if($this->AddressOverride != null)
+		if($this->AddressOverride != NULL)
 		{
 			$str .= '<ebl:AddressOverride>' . PPUtils::escapeInvalidXmlCharsRegex($this->AddressOverride) . '</ebl:AddressOverride>';
 		}
-		if($this->LocaleCode != null)
+		if($this->LocaleCode != NULL)
 		{
 			$str .= '<ebl:LocaleCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->LocaleCode) . '</ebl:LocaleCode>';
 		}
-		if($this->PageStyle != null)
+		if($this->PageStyle != NULL)
 		{
 			$str .= '<ebl:PageStyle>' . PPUtils::escapeInvalidXmlCharsRegex($this->PageStyle) . '</ebl:PageStyle>';
 		}
-		if($this->cppheaderimage != null)
+		if($this->cppheaderimage != NULL)
 		{
-			$str .= '<ebl:cppheaderimage>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cppheaderimage>';
+			$str .= '<ebl:cpp-header-image>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cpp-header-image>';
 		}
-		if($this->cppheaderbordercolor != null)
+		if($this->cppheaderbordercolor != NULL)
 		{
-			$str .= '<ebl:cppheaderbordercolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cppheaderbordercolor>';
+			$str .= '<ebl:cpp-header-border-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cpp-header-border-color>';
 		}
-		if($this->cppheaderbackcolor != null)
+		if($this->cppheaderbackcolor != NULL)
 		{
-			$str .= '<ebl:cppheaderbackcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cppheaderbackcolor>';
+			$str .= '<ebl:cpp-header-back-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cpp-header-back-color>';
 		}
-		if($this->cpppayflowcolor != null)
+		if($this->cpppayflowcolor != NULL)
 		{
-			$str .= '<ebl:cpppayflowcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpppayflowcolor>';
+			$str .= '<ebl:cpp-payflow-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpp-payflow-color>';
 		}
-		if($this->cppcartbordercolor != null)
+		if($this->cppcartbordercolor != NULL)
 		{
-			$str .= '<ebl:cppcartbordercolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppcartbordercolor) . '</ebl:cppcartbordercolor>';
+			$str .= '<ebl:cpp-cart-border-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppcartbordercolor) . '</ebl:cpp-cart-border-color>';
 		}
-		if($this->cpplogoimage != null)
+		if($this->cpplogoimage != NULL)
 		{
-			$str .= '<ebl:cpplogoimage>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpplogoimage) . '</ebl:cpplogoimage>';
+			$str .= '<ebl:cpp-logo-image>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpplogoimage) . '</ebl:cpp-logo-image>';
 		}
-		if($this->Address != null)
+		if($this->Address != NULL)
 		{
 			$str .= '<ebl:Address>';
 			$str .= $this->Address->toXMLString();
 			$str .= '</ebl:Address>';
 		}
-		if($this->PaymentAction != null)
+		if($this->PaymentAction != NULL)
 		{
 			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
 		}
-		if($this->SolutionType != null)
+		if($this->SolutionType != NULL)
 		{
 			$str .= '<ebl:SolutionType>' . PPUtils::escapeInvalidXmlCharsRegex($this->SolutionType) . '</ebl:SolutionType>';
 		}
-		if($this->LandingPage != null)
+		if($this->LandingPage != NULL)
 		{
 			$str .= '<ebl:LandingPage>' . PPUtils::escapeInvalidXmlCharsRegex($this->LandingPage) . '</ebl:LandingPage>';
 		}
-		if($this->BuyerEmail != null)
+		if($this->BuyerEmail != NULL)
 		{
 			$str .= '<ebl:BuyerEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerEmail) . '</ebl:BuyerEmail>';
 		}
-		if($this->ChannelType != null)
+		if($this->ChannelType != NULL)
 		{
 			$str .= '<ebl:ChannelType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ChannelType) . '</ebl:ChannelType>';
 		}
-		if($this->BillingAgreementDetails != null)
+		if($this->BillingAgreementDetails != NULL)
 		{
 			for($i = 0; $i < count($this->BillingAgreementDetails); $i++)
 			{
@@ -2243,54 +2243,54 @@ class SetExpressCheckoutRequestDetailsType  {
 				$str .= '</ebl:BillingAgreementDetails>';
 			}
 		}
-		if($this->PromoCodes != null)
+		if($this->PromoCodes != NULL)
 		{
 			for($i = 0; $i < count($this->PromoCodes); $i++)
 			{
 				$str .= '<ebl:PromoCodes>'. PPUtils::escapeInvalidXmlCharsRegex($this->PromoCodes[$i]) . '</ebl:PromoCodes>';
 			}
 		}
-		if($this->PayPalCheckOutBtnType != null)
+		if($this->PayPalCheckOutBtnType != NULL)
 		{
 			$str .= '<ebl:PayPalCheckOutBtnType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayPalCheckOutBtnType) . '</ebl:PayPalCheckOutBtnType>';
 		}
-		if($this->ProductCategory != null)
+		if($this->ProductCategory != NULL)
 		{
 			$str .= '<ebl:ProductCategory>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProductCategory) . '</ebl:ProductCategory>';
 		}
-		if($this->ShippingMethod != null)
+		if($this->ShippingMethod != NULL)
 		{
 			$str .= '<ebl:ShippingMethod>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingMethod) . '</ebl:ShippingMethod>';
 		}
-		if($this->ProfileAddressChangeDate != null)
+		if($this->ProfileAddressChangeDate != NULL)
 		{
 			$str .= '<ebl:ProfileAddressChangeDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileAddressChangeDate) . '</ebl:ProfileAddressChangeDate>';
 		}
-		if($this->AllowNote != null)
+		if($this->AllowNote != NULL)
 		{
 			$str .= '<ebl:AllowNote>' . PPUtils::escapeInvalidXmlCharsRegex($this->AllowNote) . '</ebl:AllowNote>';
 		}
-		if($this->FundingSourceDetails != null)
+		if($this->FundingSourceDetails != NULL)
 		{
 			$str .= '<ebl:FundingSourceDetails>';
 			$str .= $this->FundingSourceDetails->toXMLString();
 			$str .= '</ebl:FundingSourceDetails>';
 		}
-		if($this->BrandName != null)
+		if($this->BrandName != NULL)
 		{
 			$str .= '<ebl:BrandName>' . PPUtils::escapeInvalidXmlCharsRegex($this->BrandName) . '</ebl:BrandName>';
 		}
-		if($this->CallbackURL != null)
+		if($this->CallbackURL != NULL)
 		{
 			$str .= '<ebl:CallbackURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CallbackURL) . '</ebl:CallbackURL>';
 		}
-		if($this->EnhancedCheckoutData != null)
+		if($this->EnhancedCheckoutData != NULL)
 		{
 			$str .= '<ebl:EnhancedCheckoutData>';
 			$str .= $this->EnhancedCheckoutData->toXMLString();
 			$str .= '</ebl:EnhancedCheckoutData>';
 		}
-		if($this->OtherPaymentMethods != null)
+		if($this->OtherPaymentMethods != NULL)
 		{
 			for($i = 0; $i < count($this->OtherPaymentMethods); $i++)
 			{
@@ -2299,13 +2299,13 @@ class SetExpressCheckoutRequestDetailsType  {
 				$str .= '</ebl:OtherPaymentMethods>';
 			}
 		}
-		if($this->BuyerDetails != null)
+		if($this->BuyerDetails != NULL)
 		{
 			$str .= '<ebl:BuyerDetails>';
 			$str .= $this->BuyerDetails->toXMLString();
 			$str .= '</ebl:BuyerDetails>';
 		}
-		if($this->PaymentDetails != null)
+		if($this->PaymentDetails != NULL)
 		{
 			for($i = 0; $i < count($this->PaymentDetails); $i++)
 			{
@@ -2314,7 +2314,7 @@ class SetExpressCheckoutRequestDetailsType  {
 				$str .= '</ebl:PaymentDetails>';
 			}
 		}
-		if($this->FlatRateShippingOptions != null)
+		if($this->FlatRateShippingOptions != NULL)
 		{
 			for($i = 0; $i < count($this->FlatRateShippingOptions); $i++)
 			{
@@ -2323,68 +2323,68 @@ class SetExpressCheckoutRequestDetailsType  {
 				$str .= '</ebl:FlatRateShippingOptions>';
 			}
 		}
-		if($this->CallbackTimeout != null)
+		if($this->CallbackTimeout != NULL)
 		{
 			$str .= '<ebl:CallbackTimeout>' . PPUtils::escapeInvalidXmlCharsRegex($this->CallbackTimeout) . '</ebl:CallbackTimeout>';
 		}
-		if($this->CallbackVersion != null)
+		if($this->CallbackVersion != NULL)
 		{
 			$str .= '<ebl:CallbackVersion>' . PPUtils::escapeInvalidXmlCharsRegex($this->CallbackVersion) . '</ebl:CallbackVersion>';
 		}
-		if($this->CustomerServiceNumber != null)
+		if($this->CustomerServiceNumber != NULL)
 		{
 			$str .= '<ebl:CustomerServiceNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->CustomerServiceNumber) . '</ebl:CustomerServiceNumber>';
 		}
-		if($this->GiftMessageEnable != null)
+		if($this->GiftMessageEnable != NULL)
 		{
 			$str .= '<ebl:GiftMessageEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftMessageEnable) . '</ebl:GiftMessageEnable>';
 		}
-		if($this->GiftReceiptEnable != null)
+		if($this->GiftReceiptEnable != NULL)
 		{
 			$str .= '<ebl:GiftReceiptEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftReceiptEnable) . '</ebl:GiftReceiptEnable>';
 		}
-		if($this->GiftWrapEnable != null)
+		if($this->GiftWrapEnable != NULL)
 		{
 			$str .= '<ebl:GiftWrapEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftWrapEnable) . '</ebl:GiftWrapEnable>';
 		}
-		if($this->GiftWrapName != null)
+		if($this->GiftWrapName != NULL)
 		{
 			$str .= '<ebl:GiftWrapName>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftWrapName) . '</ebl:GiftWrapName>';
 		}
-		if($this->GiftWrapAmount != null)
+		if($this->GiftWrapAmount != NULL)
 		{
 			$str .= '<ebl:GiftWrapAmount';
 			$str .= $this->GiftWrapAmount->toXMLString();
 			$str .= '</ebl:GiftWrapAmount>';
 		}
-		if($this->BuyerEmailOptInEnable != null)
+		if($this->BuyerEmailOptInEnable != NULL)
 		{
 			$str .= '<ebl:BuyerEmailOptInEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerEmailOptInEnable) . '</ebl:BuyerEmailOptInEnable>';
 		}
-		if($this->SurveyEnable != null)
+		if($this->SurveyEnable != NULL)
 		{
 			$str .= '<ebl:SurveyEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->SurveyEnable) . '</ebl:SurveyEnable>';
 		}
-		if($this->SurveyQuestion != null)
+		if($this->SurveyQuestion != NULL)
 		{
 			$str .= '<ebl:SurveyQuestion>' . PPUtils::escapeInvalidXmlCharsRegex($this->SurveyQuestion) . '</ebl:SurveyQuestion>';
 		}
-		if($this->SurveyChoice != null)
+		if($this->SurveyChoice != NULL)
 		{
 			for($i = 0; $i < count($this->SurveyChoice); $i++)
 			{
 				$str .= '<ebl:SurveyChoice>'. PPUtils::escapeInvalidXmlCharsRegex($this->SurveyChoice[$i]) . '</ebl:SurveyChoice>';
 			}
 		}
-		if($this->TotalType != null)
+		if($this->TotalType != NULL)
 		{
 			$str .= '<ebl:TotalType>' . PPUtils::escapeInvalidXmlCharsRegex($this->TotalType) . '</ebl:TotalType>';
 		}
-		if($this->NoteToBuyer != null)
+		if($this->NoteToBuyer != NULL)
 		{
 			$str .= '<ebl:NoteToBuyer>' . PPUtils::escapeInvalidXmlCharsRegex($this->NoteToBuyer) . '</ebl:NoteToBuyer>';
 		}
-		if($this->Incentives != null)
+		if($this->Incentives != NULL)
 		{
 			for($i = 0; $i < count($this->Incentives); $i++)
 			{
@@ -2393,35 +2393,35 @@ class SetExpressCheckoutRequestDetailsType  {
 				$str .= '</ebl:Incentives>';
 			}
 		}
-		if($this->ReqInstrumentDetails != null)
+		if($this->ReqInstrumentDetails != NULL)
 		{
 			$str .= '<ebl:ReqInstrumentDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqInstrumentDetails) . '</ebl:ReqInstrumentDetails>';
 		}
-		if($this->ExternalRememberMeOptInDetails != null)
+		if($this->ExternalRememberMeOptInDetails != NULL)
 		{
 			$str .= '<ebl:ExternalRememberMeOptInDetails>';
 			$str .= $this->ExternalRememberMeOptInDetails->toXMLString();
 			$str .= '</ebl:ExternalRememberMeOptInDetails>';
 		}
-		if($this->FlowControlDetails != null)
+		if($this->FlowControlDetails != NULL)
 		{
 			$str .= '<ebl:FlowControlDetails>';
 			$str .= $this->FlowControlDetails->toXMLString();
 			$str .= '</ebl:FlowControlDetails>';
 		}
-		if($this->DisplayControlDetails != null)
+		if($this->DisplayControlDetails != NULL)
 		{
 			$str .= '<ebl:DisplayControlDetails>';
 			$str .= $this->DisplayControlDetails->toXMLString();
 			$str .= '</ebl:DisplayControlDetails>';
 		}
-		if($this->ExternalPartnerTrackingDetails != null)
+		if($this->ExternalPartnerTrackingDetails != NULL)
 		{
 			$str .= '<ebl:ExternalPartnerTrackingDetails>';
 			$str .= $this->ExternalPartnerTrackingDetails->toXMLString();
 			$str .= '</ebl:ExternalPartnerTrackingDetails>';
 		}
-		if($this->CoupledBuckets != null)
+		if($this->CoupledBuckets != NULL)
 		{
 			for($i = 0; $i < count($this->CoupledBuckets); $i++)
 			{
@@ -2459,31 +2459,31 @@ class ExecuteCheckoutOperationsRequestDetailsType  {
 	 * of ExecuteCheckoutOperationsRequest; for example, if you
 	 * want the customer to edit his shipping address on PayPal.
 	 * Character length and limitations: 20 single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 	/**
 	 * All the Data required to initiate the checkout session is
 	 * passed in this element. 
-	 *@access public
-	 *@var SetDataRequestType
+	 * @access public
+	 * @var SetDataRequestType
 	 */ 
 	public $SetDataRequest;
 
 	/**
 	 * If auto authorization is required, this should be passed in
 	 * with IsRequested set to yes. 
-	 *@access public
-	 *@var AuthorizationRequestType
+	 * @access public
+	 * @var AuthorizationRequestType
 	 */ 
 	public $AuthorizationRequest;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($SetDataRequest = null) {
+	public function __construct($SetDataRequest = NULL) {
 		$this->SetDataRequest = $SetDataRequest;
 	}
 
@@ -2491,17 +2491,17 @@ class ExecuteCheckoutOperationsRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Token != null)
+		if($this->Token != NULL)
 		{
 			$str .= '<ebl:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</ebl:Token>';
 		}
-		if($this->SetDataRequest != null)
+		if($this->SetDataRequest != NULL)
 		{
 			$str .= '<ebl:SetDataRequest>';
 			$str .= $this->SetDataRequest->toXMLString();
 			$str .= '</ebl:SetDataRequest>';
 		}
-		if($this->AuthorizationRequest != null)
+		if($this->AuthorizationRequest != NULL)
 		{
 			$str .= '<ebl:AuthorizationRequest>';
 			$str .= $this->AuthorizationRequest->toXMLString();
@@ -2522,17 +2522,17 @@ class SetDataRequestType  {
 
 	/**
 	 * Details about Billing Agreements requested to be created. 
-     *@array
-	 *@access public
-	 *@var BillingApprovalDetailsType
+     * @array
+	 * @access public
+	 * @var BillingApprovalDetailsType
 	 */ 
 	public $BillingApprovalDetails;
 
 	/**
 	 * Only needed if Auto Authorization is requested. The
 	 * authentication session token will be passed in here. 
-	 *@access public
-	 *@var BuyerDetailType
+	 * @access public
+	 * @var BuyerDetailType
 	 */ 
 	public $BuyerDetail;
 
@@ -2540,8 +2540,8 @@ class SetDataRequestType  {
 	 * Requests for specific buyer information like Billing Address
 	 * to be returned through GetExpressCheckoutDetails should be
 	 * specified under this. 
-	 *@access public
-	 *@var InfoSharingDirectivesType
+	 * @access public
+	 * @var InfoSharingDirectivesType
 	 */ 
 	public $InfoSharingDirectives;
 
@@ -2549,7 +2549,7 @@ class SetDataRequestType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->BillingApprovalDetails != null)
+		if($this->BillingApprovalDetails != NULL)
 		{
 			for($i = 0; $i < count($this->BillingApprovalDetails); $i++)
 			{
@@ -2558,13 +2558,13 @@ class SetDataRequestType  {
 				$str .= '</ebl:BillingApprovalDetails>';
 			}
 		}
-		if($this->BuyerDetail != null)
+		if($this->BuyerDetail != NULL)
 		{
 			$str .= '<ebl:BuyerDetail>';
 			$str .= $this->BuyerDetail->toXMLString();
 			$str .= '</ebl:BuyerDetail>';
 		}
-		if($this->InfoSharingDirectives != null)
+		if($this->InfoSharingDirectives != NULL)
 		{
 			$str .= '<ebl:InfoSharingDirectives>';
 			$str .= $this->InfoSharingDirectives->toXMLString();
@@ -2585,15 +2585,15 @@ class AuthorizationRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var boolean
+	 * @access public
+	 * @var boolean
 	 */ 
 	public $IsRequested;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($IsRequested = null) {
+	public function __construct($IsRequested = NULL) {
 		$this->IsRequested = $IsRequested;
 	}
 
@@ -2601,7 +2601,7 @@ class AuthorizationRequestType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->IsRequested != null)
+		if($this->IsRequested != NULL)
 		{
 			$str .= '<ebl:IsRequested>' . PPUtils::escapeInvalidXmlCharsRegex($this->IsRequested) . '</ebl:IsRequested>';
 		}
@@ -2622,45 +2622,45 @@ class BillingApprovalDetailsType  {
 	/**
 	 * The Type of Approval requested - Billing Agreement or
 	 * Profile
-	 *@access public
-	 *@var ApprovalTypeType
+	 * @access public
+	 * @var ApprovalTypeType
 	 */ 
 	public $ApprovalType;
 
 	/**
 	 * The Approval subtype - Must be MerchantInitiatedBilling for
 	 * BillingAgreement ApprovalType
-	 *@access public
-	 *@var ApprovalSubTypeType
+	 * @access public
+	 * @var ApprovalSubTypeType
 	 */ 
 	public $ApprovalSubType;
 
 	/**
 	 * Description about the Order
-	 *@access public
-	 *@var OrderDetailsType
+	 * @access public
+	 * @var OrderDetailsType
 	 */ 
 	public $OrderDetails;
 
 	/**
 	 * Directives about the type of payment
-	 *@access public
-	 *@var PaymentDirectivesType
+	 * @access public
+	 * @var PaymentDirectivesType
 	 */ 
 	public $PaymentDirectives;
 
 	/**
 	 * Client may pass in its identification of this Billing
 	 * Agreement. It used for the client's tracking purposes.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Custom;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($ApprovalType = null) {
+	public function __construct($ApprovalType = NULL) {
 		$this->ApprovalType = $ApprovalType;
 	}
 
@@ -2668,27 +2668,27 @@ class BillingApprovalDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ApprovalType != null)
+		if($this->ApprovalType != NULL)
 		{
 			$str .= '<ebl:ApprovalType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ApprovalType) . '</ebl:ApprovalType>';
 		}
-		if($this->ApprovalSubType != null)
+		if($this->ApprovalSubType != NULL)
 		{
 			$str .= '<ebl:ApprovalSubType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ApprovalSubType) . '</ebl:ApprovalSubType>';
 		}
-		if($this->OrderDetails != null)
+		if($this->OrderDetails != NULL)
 		{
 			$str .= '<ebl:OrderDetails>';
 			$str .= $this->OrderDetails->toXMLString();
 			$str .= '</ebl:OrderDetails>';
 		}
-		if($this->PaymentDirectives != null)
+		if($this->PaymentDirectives != NULL)
 		{
 			$str .= '<ebl:PaymentDirectives>';
 			$str .= $this->PaymentDirectives->toXMLString();
 			$str .= '</ebl:PaymentDirectives>';
 		}
-		if($this->Custom != null)
+		if($this->Custom != NULL)
 		{
 			$str .= '<ebl:Custom>' . PPUtils::escapeInvalidXmlCharsRegex($this->Custom) . '</ebl:Custom>';
 		}
@@ -2711,8 +2711,8 @@ class InfoSharingDirectivesType  {
 	 * If Billing Address should be returned in
 	 * GetExpressCheckoutDetails response, this parameter should be
 	 * set to yes here
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReqBillingAddress;
 
@@ -2720,7 +2720,7 @@ class InfoSharingDirectivesType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ReqBillingAddress != null)
+		if($this->ReqBillingAddress != NULL)
 		{
 			$str .= '<ebl:ReqBillingAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqBillingAddress) . '</ebl:ReqBillingAddress>';
 		}
@@ -2739,16 +2739,16 @@ class OrderDetailsType  {
 
 	/**
 	 * Description of the Order.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Description;
 
 	/**
 	 * Expected maximum amount that the merchant may pull using
 	 * DoReferenceTransaction
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $MaxAmount;
 
@@ -2756,11 +2756,11 @@ class OrderDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Description != null)
+		if($this->Description != NULL)
 		{
 			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
 		}
-		if($this->MaxAmount != null)
+		if($this->MaxAmount != NULL)
 		{
 			$str .= '<ebl:MaxAmount';
 			$str .= $this->MaxAmount->toXMLString();
@@ -2781,8 +2781,8 @@ class PaymentDirectivesType  {
 
 	/**
 	 * Type of the Payment is it Instant or Echeck or Any.
-	 *@access public
-	 *@var MerchantPullPaymentCodeType
+	 * @access public
+	 * @var MerchantPullPaymentCodeType
 	 */ 
 	public $PaymentType;
 
@@ -2790,7 +2790,7 @@ class PaymentDirectivesType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->PaymentType != null)
+		if($this->PaymentType != NULL)
 		{
 			$str .= '<ebl:PaymentType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentType) . '</ebl:PaymentType>';
 		}
@@ -2813,8 +2813,8 @@ class BuyerDetailType  {
 	 * Information that is used to indentify the Buyer. This is
 	 * used for auto authorization. Mandatory if Authorization is
 	 * requested.
-	 *@access public
-	 *@var IdentificationInfoType
+	 * @access public
+	 * @var IdentificationInfoType
 	 */ 
 	public $IdentificationInfo;
 
@@ -2822,7 +2822,7 @@ class BuyerDetailType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->IdentificationInfo != null)
+		if($this->IdentificationInfo != NULL)
 		{
 			$str .= '<ebl:IdentificationInfo>';
 			$str .= $this->IdentificationInfo->toXMLString();
@@ -2843,22 +2843,22 @@ class IdentificationInfoType  {
 
 	/**
 	 * Mobile specific buyer identification.
-	 *@access public
-	 *@var MobileIDInfoType
+	 * @access public
+	 * @var MobileIDInfoType
 	 */ 
 	public $MobileIDInfo;
 
 	/**
 	 * Contains login bypass information.
-	 *@access public
-	 *@var RememberMeIDInfoType
+	 * @access public
+	 * @var RememberMeIDInfoType
 	 */ 
 	public $RememberMeIDInfo;
 
 	/**
 	 * Identity Access Token.
-	 *@access public
-	 *@var IdentityTokenInfoType
+	 * @access public
+	 * @var IdentityTokenInfoType
 	 */ 
 	public $IdentityTokenInfo;
 
@@ -2866,19 +2866,19 @@ class IdentificationInfoType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->MobileIDInfo != null)
+		if($this->MobileIDInfo != NULL)
 		{
 			$str .= '<ebl:MobileIDInfo>';
 			$str .= $this->MobileIDInfo->toXMLString();
 			$str .= '</ebl:MobileIDInfo>';
 		}
-		if($this->RememberMeIDInfo != null)
+		if($this->RememberMeIDInfo != NULL)
 		{
 			$str .= '<ebl:RememberMeIDInfo>';
 			$str .= $this->RememberMeIDInfo->toXMLString();
 			$str .= '</ebl:RememberMeIDInfo>';
 		}
-		if($this->IdentityTokenInfo != null)
+		if($this->IdentityTokenInfo != NULL)
 		{
 			$str .= '<ebl:IdentityTokenInfo>';
 			$str .= $this->IdentityTokenInfo->toXMLString();
@@ -2899,8 +2899,8 @@ class MobileIDInfoType  {
 
 	/**
 	 * The Session token returned during buyer authentication.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SessionToken;
 
@@ -2908,7 +2908,7 @@ class MobileIDInfoType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->SessionToken != null)
+		if($this->SessionToken != NULL)
 		{
 			$str .= '<ebl:SessionToken>' . PPUtils::escapeInvalidXmlCharsRegex($this->SessionToken) . '</ebl:SessionToken>';
 		}
@@ -2939,8 +2939,8 @@ class RememberMeIDInfoType  {
 	 * login with a merchant and has meaning only to the merchant.
 	 * If present, requests that the web flow attempt bypass of
 	 * login. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ExternalRememberMeID;
 
@@ -2948,7 +2948,7 @@ class RememberMeIDInfoType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ExternalRememberMeID != null)
+		if($this->ExternalRememberMeID != NULL)
 		{
 			$str .= '<ebl:ExternalRememberMeID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalRememberMeID) . '</ebl:ExternalRememberMeID>';
 		}
@@ -2967,15 +2967,15 @@ class IdentityTokenInfoType  {
 
 	/**
 	 * Identity Access token from merchant
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AccessToken;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($AccessToken = null) {
+	public function __construct($AccessToken = NULL) {
 		$this->AccessToken = $AccessToken;
 	}
 
@@ -2983,7 +2983,7 @@ class IdentityTokenInfoType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->AccessToken != null)
+		if($this->AccessToken != NULL)
 		{
 			$str .= '<ebl:AccessToken>' . PPUtils::escapeInvalidXmlCharsRegex($this->AccessToken) . '</ebl:AccessToken>';
 		}
@@ -3008,8 +3008,8 @@ class FundingSourceDetailsType  {
 	 * customer can accept push funding, and 0 means they cannot.
 	 * Optional Character length and limitations: One single-byte
 	 * numeric character. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AllowPushFunding;
 
@@ -3018,8 +3018,8 @@ class FundingSourceDetailsType  {
 	 * element could be used to specify the perered funding option
 	 * for a guest users. It has effect only if LandingPage element
 	 * is set to Billing. Otherwise it will be ignored. 
-	 *@access public
-	 *@var UserSelectedFundingSourceType
+	 * @access public
+	 * @var UserSelectedFundingSourceType
 	 */ 
 	public $UserSelectedFundingSource;
 
@@ -3027,11 +3027,11 @@ class FundingSourceDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->AllowPushFunding != null)
+		if($this->AllowPushFunding != NULL)
 		{
 			$str .= '<ebl:AllowPushFunding>' . PPUtils::escapeInvalidXmlCharsRegex($this->AllowPushFunding) . '</ebl:AllowPushFunding>';
 		}
-		if($this->UserSelectedFundingSource != null)
+		if($this->UserSelectedFundingSource != NULL)
 		{
 			$str .= '<ebl:UserSelectedFundingSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->UserSelectedFundingSource) . '</ebl:UserSelectedFundingSource>';
 		}
@@ -3050,36 +3050,36 @@ class BillingAgreementDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BillingCodeType
+	 * @access public
+	 * @var BillingCodeType
 	 */ 
 	public $BillingType;
 
 	/**
 	 * Only needed for AutoBill billinng type. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BillingAgreementDescription;
 
 	/**
 	 * 
-	 *@access public
-	 *@var MerchantPullPaymentCodeType
+	 * @access public
+	 * @var MerchantPullPaymentCodeType
 	 */ 
 	public $PaymentType;
 
 	/**
 	 * Custom annotation field for your exclusive use. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BillingAgreementCustom;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($BillingType = null) {
+	public function __construct($BillingType = NULL) {
 		$this->BillingType = $BillingType;
 	}
 
@@ -3087,19 +3087,19 @@ class BillingAgreementDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->BillingType != null)
+		if($this->BillingType != NULL)
 		{
 			$str .= '<ebl:BillingType>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingType) . '</ebl:BillingType>';
 		}
-		if($this->BillingAgreementDescription != null)
+		if($this->BillingAgreementDescription != NULL)
 		{
 			$str .= '<ebl:BillingAgreementDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingAgreementDescription) . '</ebl:BillingAgreementDescription>';
 		}
-		if($this->PaymentType != null)
+		if($this->PaymentType != NULL)
 		{
 			$str .= '<ebl:PaymentType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentType) . '</ebl:PaymentType>';
 		}
-		if($this->BillingAgreementCustom != null)
+		if($this->BillingAgreementCustom != NULL)
 		{
 			$str .= '<ebl:BillingAgreementCustom>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingAgreementCustom) . '</ebl:BillingAgreementCustom>';
 		}
@@ -3124,15 +3124,15 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * SetExpressCheckoutResponse and passed on
 	 * GetExpressCheckoutDetailsRequest. Character length and
 	 * limitations: 20 single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 	/**
 	 * Information about the payer
-	 *@access public
-	 *@var PayerInfoType
+	 * @access public
+	 * @var PayerInfoType
 	 */ 
 	public $PayerInfo;
 
@@ -3141,8 +3141,8 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * Custom element of SetExpressCheckoutRequest. Character
 	 * length and limitations: 256 single-byte alphanumeric
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Custom;
 
@@ -3151,8 +3151,8 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * InvoiceID element of SetExpressCheckoutRequest. Character
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InvoiceID;
 
@@ -3160,22 +3160,22 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * Payer's contact telephone number. PayPal returns a contact
 	 * telephone number only if your Merchant account profile
 	 * settings require that the buyer enter one.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ContactPhone;
 
 	/**
 	 * 
-	 *@access public
-	 *@var boolean
+	 * @access public
+	 * @var boolean
 	 */ 
 	public $BillingAgreementAcceptedStatus;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $RedirectRequired;
 
@@ -3185,15 +3185,15 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * card is returned otherwise your primary address is returned
 	 * , PayPal returns this address in
 	 * GetExpressCheckoutDetailsResponse.
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $BillingAddress;
 
 	/**
 	 * Text note entered by the buyer in PayPal flow. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Note;
 
@@ -3201,8 +3201,8 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * Returns the status of the EC checkout session. Values
 	 * include 'PaymentActionNotInitiated', 'PaymentActionFailed',
 	 * 'PaymentActionInProgress', 'PaymentCompleted'. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CheckoutStatus;
 
@@ -3212,150 +3212,158 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * buyer has a negative balance, PayPal will add that amount to
 	 * the current charges, which will be represented as a positive
 	 * amount. 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $PayPalAdjustment;
 
 	/**
 	 * Information about the individual purchased items. 
-     *@array
-	 *@access public
-	 *@var PaymentDetailsType
+     * @array
+	 * @access public
+	 * @var PaymentDetailsType
 	 */ 
 	public $PaymentDetails;
 
 	/**
 	 * Information about the user selected options. 
-	 *@access public
-	 *@var UserSelectedOptionType
+	 * @access public
+	 * @var UserSelectedOptionType
 	 */ 
 	public $UserSelectedOptions;
 
 	/**
 	 * Information about the incentives that were applied from Ebay
 	 * RYP page and PayPal RYP page. 
-     *@array
-	 *@access public
-	 *@var IncentiveDetailsType
+     * @array
+	 * @access public
+	 * @var IncentiveDetailsType
 	 */ 
 	public $IncentiveDetails;
 
 	/**
 	 * Information about the Gift message. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $GiftMessage;
 
 	/**
 	 * Information about the Gift receipt enable. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $GiftReceiptEnable;
 
 	/**
 	 * Information about the Gift Wrap name. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $GiftWrapName;
 
 	/**
 	 * Information about the Gift Wrap amount. 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $GiftWrapAmount;
 
 	/**
 	 * Information about the Buyer marketing email. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BuyerMarketingEmail;
 
 	/**
 	 * Information about the survey question. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SurveyQuestion;
 
 	/**
 	 * Information about the survey choice selected by the user. 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $SurveyChoiceSelected;
 
 	/**
 	 * Contains payment request information about each bucket in
 	 * the cart. 
-     *@array
-	 *@access public
-	 *@var PaymentRequestInfoType
+     * @array
+	 * @access public
+	 * @var PaymentRequestInfoType
 	 */ 
 	public $PaymentRequestInfo;
 
 	/**
 	 * Response information resulting from opt-in operation or
 	 * current login bypass status. 
-	 *@access public
-	 *@var ExternalRememberMeStatusDetailsType
+	 * @access public
+	 * @var ExternalRememberMeStatusDetailsType
 	 */ 
 	public $ExternalRememberMeStatusDetails;
 
+	/**
+	 * Response information resulting from opt-in operation or
+	 * current login bypass status. 
+	 * @access public
+	 * @var RefreshTokenStatusDetailsType
+	 */ 
+	public $RefreshTokenStatusDetails;
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'token') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
 					$this->Token = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='payerinfo'){
                                     $this->PayerInfo = new PayerInfoType(); 
                                     $this->PayerInfo->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'custom') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'custom') {
 					$this->Custom = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'invoiceid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'invoiceid') {
 					$this->InvoiceID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'contactphone') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'contactphone') {
 					$this->ContactPhone = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingagreementacceptedstatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementacceptedstatus') {
 					$this->BillingAgreementAcceptedStatus = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'redirectrequired') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'redirectrequired') {
 					$this->RedirectRequired = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='billingaddress'){
                                     $this->BillingAddress = new AddressType(); 
                                     $this->BillingAddress->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'note') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'note') {
 					$this->Note = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'checkoutstatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'checkoutstatus') {
 					$this->CheckoutStatus = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='paypaladjustment') {
 								$tmp =  array();
 								$atr =  array();
@@ -3370,9 +3378,9 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 							}
 							                            
 			}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "paymentdetails[$i]") {
 							$this->PaymentDetails[$i] = new PaymentDetailsType();
 							$this->PaymentDetails[$i]->init($arry["children"]);
@@ -3382,21 +3390,21 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "paymentdetails")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "paymentdetails")) {
 					$this->PaymentDetails = new PaymentDetailsType();
 					$this->PaymentDetails->init($arry["children"]);
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='userselectedoptions'){
                                     $this->UserSelectedOptions = new UserSelectedOptionType(); 
                                     $this->UserSelectedOptions->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "incentivedetails[$i]") {
 							$this->IncentiveDetails[$i] = new IncentiveDetailsType();
 							$this->IncentiveDetails[$i]->init($arry["children"]);
@@ -3406,22 +3414,22 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "incentivedetails")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "incentivedetails")) {
 					$this->IncentiveDetails = new IncentiveDetailsType();
 					$this->IncentiveDetails->init($arry["children"]);
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'giftmessage') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'giftmessage') {
 					$this->GiftMessage = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'giftreceiptenable') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'giftreceiptenable') {
 					$this->GiftReceiptEnable = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'giftwrapname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'giftwrapname') {
 					$this->GiftWrapName = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='giftwrapamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -3436,15 +3444,15 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'buyermarketingemail') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buyermarketingemail') {
 					$this->BuyerMarketingEmail = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'surveyquestion') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'surveyquestion') {
 					$this->SurveyQuestion = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "paymentrequestinfo[$i]") {
 							$this->PaymentRequestInfo[$i] = new PaymentRequestInfoType();
 							$this->PaymentRequestInfo[$i]->init($arry["children"]);
@@ -3454,15 +3462,23 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "paymentrequestinfo")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "paymentrequestinfo")) {
 					$this->PaymentRequestInfo = new PaymentRequestInfoType();
 					$this->PaymentRequestInfo->init($arry["children"]);
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='externalremembermestatusdetails'){
                                     $this->ExternalRememberMeStatusDetails = new ExternalRememberMeStatusDetailsType(); 
                                     $this->ExternalRememberMeStatusDetails->init($arry["children"]);
+                                }                                                
+                                                
+			}
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
+                                    if( $arry["name"]=='refreshtokenstatusdetails'){
+                                    $this->RefreshTokenStatusDetails = new RefreshTokenStatusDetailsType(); 
+                                    $this->RefreshTokenStatusDetails->init($arry["children"]);
                                 }                                                
                                                 
 			}
@@ -3480,25 +3496,25 @@ class ExecuteCheckoutOperationsResponseDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var SetDataResponseType
+	 * @access public
+	 * @var SetDataResponseType
 	 */ 
 	public $SetDataResponse;
 
 	/**
 	 * 
-	 *@access public
-	 *@var AuthorizationResponseType
+	 * @access public
+	 * @var AuthorizationResponseType
 	 */ 
 	public $AuthorizationResponse;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='setdataresponse'){
                                     $this->SetDataResponse = new SetDataResponseType(); 
                                     $this->SetDataResponse->init($arry["children"]);
@@ -3506,7 +3522,7 @@ class ExecuteCheckoutOperationsResponseDetailsType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='authorizationresponse'){
                                     $this->AuthorizationResponse = new AuthorizationResponseType(); 
                                     $this->AuthorizationResponse->init($arry["children"]);
@@ -3529,30 +3545,30 @@ class SetDataResponseType  {
 	/**
 	 * If Checkout session was initialized successfully, the
 	 * corresponding token is returned in this element. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var ErrorType
+     * @array
+	 * @access public
+	 * @var ErrorType
 	 */ 
 	public $SetDataError;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'token') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
 					$this->Token = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "setdataerror[$i]") {
 							$this->SetDataError[$i] = new ErrorType();
 							$this->SetDataError[$i]->init($arry["children"]);
@@ -3562,7 +3578,7 @@ class SetDataResponseType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "setdataerror")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "setdataerror")) {
 					$this->SetDataError = new ErrorType();
 					$this->SetDataError->init($arry["children"]);
 				}
@@ -3582,30 +3598,30 @@ class AuthorizationResponseType  {
 	/**
 	 * Status will denote whether Auto authorization was successful
 	 * or not. 
-	 *@access public
-	 *@var AckCodeType
+	 * @access public
+	 * @var AckCodeType
 	 */ 
 	public $Status;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var ErrorType
+     * @array
+	 * @access public
+	 * @var ErrorType
 	 */ 
 	public $AuthorizationError;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'status') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
 					$this->Status = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "authorizationerror[$i]") {
 							$this->AuthorizationError[$i] = new ErrorType();
 							$this->AuthorizationError[$i]->init($arry["children"]);
@@ -3615,7 +3631,7 @@ class AuthorizationResponseType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "authorizationerror")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "authorizationerror")) {
 					$this->AuthorizationError = new ErrorType();
 					$this->AuthorizationError->init($arry["children"]);
 				}
@@ -3653,8 +3669,8 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * PaymentAction to Authorization on the final Express Checkout
 	 * API, DoExpressCheckoutPaymentRequest. Character length and
 	 * limit: Up to 13 single-byte alphabetic characters
-	 *@access public
-	 *@var PaymentActionCodeType
+	 * @access public
+	 * @var PaymentActionCodeType
 	 */ 
 	public $PaymentAction;
 
@@ -3663,8 +3679,8 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * SetExpressCheckoutResponse and passed on
 	 * GetExpressCheckoutDetailsRequest. Required Character length
 	 * and limitations: 20 single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
@@ -3673,112 +3689,112 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * returned by GetExpressCheckoutDetailsResponse. Required
 	 * Character length and limitations: 127 single-byte
 	 * characters.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PayerID;
 
 	/**
 	 * URL on Merchant site pertaining to this invoice. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OrderURL;
 
 	/**
 	 * Information about the payment Required 
-     *@array
-	 *@access public
-	 *@var PaymentDetailsType
+     * @array
+	 * @access public
+	 * @var PaymentDetailsType
 	 */ 
 	public $PaymentDetails;
 
 	/**
 	 * Flag to indicate if previously set promoCode shall be
 	 * overriden. Value 1 indicates overriding.  
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PromoOverrideFlag;
 
 	/**
 	 * Promotional financing code for item. Overrides any previous
 	 * PromoCode setting. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PromoCode;
 
 	/**
 	 * Contains data for enhanced data like Airline Itinerary Data.
 	 * 
-	 *@access public
-	 *@var EnhancedDataType
+	 * @access public
+	 * @var EnhancedDataType
 	 */ 
 	public $EnhancedData;
 
 	/**
 	 * Soft Descriptor supported for Sale and Auth in DEC only. For
 	 * Order this will be ignored. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SoftDescriptor;
 
 	/**
 	 * Information about the user selected options. 
-	 *@access public
-	 *@var UserSelectedOptionType
+	 * @access public
+	 * @var UserSelectedOptionType
 	 */ 
 	public $UserSelectedOptions;
 
 	/**
 	 * Information about the Gift message. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $GiftMessage;
 
 	/**
 	 * Information about the Gift receipt enable. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $GiftReceiptEnable;
 
 	/**
 	 * Information about the Gift Wrap name. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $GiftWrapName;
 
 	/**
 	 * Information about the Gift Wrap amount. 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $GiftWrapAmount;
 
 	/**
 	 * Information about the Buyer marketing email. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BuyerMarketingEmail;
 
 	/**
 	 * Information about the survey question. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SurveyQuestion;
 
 	/**
 	 * Information about the survey choice selected by the user. 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $SurveyChoiceSelected;
 
@@ -3786,24 +3802,24 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * An identification code for use by third-party applications
 	 * to identify transactions. Optional Character length and
 	 * limitations: 32 single-byte alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ButtonSource;
 
 	/**
 	 * Merchant specified flag which indicates whether to create
 	 * billing agreement as part of DoEC or not. Optional 
-	 *@access public
-	 *@var boolean
+	 * @access public
+	 * @var boolean
 	 */ 
 	public $SkipBACreation;
 
 	/**
 	 * Optional element that defines relationship between buckets 
-     *@array
-	 *@access public
-	 *@var CoupledBucketsType
+     * @array
+	 * @access public
+	 * @var CoupledBucketsType
 	 */ 
 	public $CoupledBuckets;
 
@@ -3811,23 +3827,23 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->PaymentAction != null)
+		if($this->PaymentAction != NULL)
 		{
 			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
 		}
-		if($this->Token != null)
+		if($this->Token != NULL)
 		{
 			$str .= '<ebl:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</ebl:Token>';
 		}
-		if($this->PayerID != null)
+		if($this->PayerID != NULL)
 		{
 			$str .= '<ebl:PayerID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerID) . '</ebl:PayerID>';
 		}
-		if($this->OrderURL != null)
+		if($this->OrderURL != NULL)
 		{
 			$str .= '<ebl:OrderURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->OrderURL) . '</ebl:OrderURL>';
 		}
-		if($this->PaymentDetails != null)
+		if($this->PaymentDetails != NULL)
 		{
 			for($i = 0; $i < count($this->PaymentDetails); $i++)
 			{
@@ -3836,72 +3852,72 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 				$str .= '</ebl:PaymentDetails>';
 			}
 		}
-		if($this->PromoOverrideFlag != null)
+		if($this->PromoOverrideFlag != NULL)
 		{
 			$str .= '<ebl:PromoOverrideFlag>' . PPUtils::escapeInvalidXmlCharsRegex($this->PromoOverrideFlag) . '</ebl:PromoOverrideFlag>';
 		}
-		if($this->PromoCode != null)
+		if($this->PromoCode != NULL)
 		{
 			$str .= '<ebl:PromoCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->PromoCode) . '</ebl:PromoCode>';
 		}
-		if($this->EnhancedData != null)
+		if($this->EnhancedData != NULL)
 		{
 			$str .= '<ebl:EnhancedData>';
 			$str .= $this->EnhancedData->toXMLString();
 			$str .= '</ebl:EnhancedData>';
 		}
-		if($this->SoftDescriptor != null)
+		if($this->SoftDescriptor != NULL)
 		{
 			$str .= '<ebl:SoftDescriptor>' . PPUtils::escapeInvalidXmlCharsRegex($this->SoftDescriptor) . '</ebl:SoftDescriptor>';
 		}
-		if($this->UserSelectedOptions != null)
+		if($this->UserSelectedOptions != NULL)
 		{
 			$str .= '<ebl:UserSelectedOptions>';
 			$str .= $this->UserSelectedOptions->toXMLString();
 			$str .= '</ebl:UserSelectedOptions>';
 		}
-		if($this->GiftMessage != null)
+		if($this->GiftMessage != NULL)
 		{
 			$str .= '<ebl:GiftMessage>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftMessage) . '</ebl:GiftMessage>';
 		}
-		if($this->GiftReceiptEnable != null)
+		if($this->GiftReceiptEnable != NULL)
 		{
 			$str .= '<ebl:GiftReceiptEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftReceiptEnable) . '</ebl:GiftReceiptEnable>';
 		}
-		if($this->GiftWrapName != null)
+		if($this->GiftWrapName != NULL)
 		{
 			$str .= '<ebl:GiftWrapName>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftWrapName) . '</ebl:GiftWrapName>';
 		}
-		if($this->GiftWrapAmount != null)
+		if($this->GiftWrapAmount != NULL)
 		{
 			$str .= '<ebl:GiftWrapAmount';
 			$str .= $this->GiftWrapAmount->toXMLString();
 			$str .= '</ebl:GiftWrapAmount>';
 		}
-		if($this->BuyerMarketingEmail != null)
+		if($this->BuyerMarketingEmail != NULL)
 		{
 			$str .= '<ebl:BuyerMarketingEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerMarketingEmail) . '</ebl:BuyerMarketingEmail>';
 		}
-		if($this->SurveyQuestion != null)
+		if($this->SurveyQuestion != NULL)
 		{
 			$str .= '<ebl:SurveyQuestion>' . PPUtils::escapeInvalidXmlCharsRegex($this->SurveyQuestion) . '</ebl:SurveyQuestion>';
 		}
-		if($this->SurveyChoiceSelected != null)
+		if($this->SurveyChoiceSelected != NULL)
 		{
 			for($i = 0; $i < count($this->SurveyChoiceSelected); $i++)
 			{
 				$str .= '<ebl:SurveyChoiceSelected>'. PPUtils::escapeInvalidXmlCharsRegex($this->SurveyChoiceSelected[$i]) . '</ebl:SurveyChoiceSelected>';
 			}
 		}
-		if($this->ButtonSource != null)
+		if($this->ButtonSource != NULL)
 		{
 			$str .= '<ebl:ButtonSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSource) . '</ebl:ButtonSource>';
 		}
-		if($this->SkipBACreation != null)
+		if($this->SkipBACreation != NULL)
 		{
 			$str .= '<ebl:SkipBACreation>' . PPUtils::escapeInvalidXmlCharsRegex($this->SkipBACreation) . '</ebl:SkipBACreation>';
 		}
-		if($this->CoupledBuckets != null)
+		if($this->CoupledBuckets != NULL)
 		{
 			for($i = 0; $i < count($this->CoupledBuckets); $i++)
 			{
@@ -3931,30 +3947,30 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 	 * SetExpressCheckoutResponse and passed on
 	 * GetExpressCheckoutDetailsRequest. Character length and
 	 * limitations:20 single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 	/**
 	 * Information about the transaction 
-     *@array
-	 *@access public
-	 *@var PaymentInfoType
+     * @array
+	 * @access public
+	 * @var PaymentInfoType
 	 */ 
 	public $PaymentInfo;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BillingAgreementID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $RedirectRequired;
 
@@ -3962,44 +3978,44 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 	 * Memo entered by sender in PayPal Review Page note field.
 	 * Optional Character length and limitations: 255 single-byte
 	 * alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Note;
 
 	/**
 	 * Redirect back to PayPal, PayPal can host the success page. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SuccessPageRedirectRequested;
 
 	/**
 	 * Information about the user selected options. 
-	 *@access public
-	 *@var UserSelectedOptionType
+	 * @access public
+	 * @var UserSelectedOptionType
 	 */ 
 	public $UserSelectedOptions;
 
 	/**
 	 * Information about Coupled Payment transactions. 
-     *@array
-	 *@access public
-	 *@var CoupledPaymentInfoType
+     * @array
+	 * @access public
+	 * @var CoupledPaymentInfoType
 	 */ 
 	public $CoupledPaymentInfo;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'token') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
 					$this->Token = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "paymentinfo[$i]") {
 							$this->PaymentInfo[$i] = new PaymentInfoType();
 							$this->PaymentInfo[$i]->init($arry["children"]);
@@ -4009,33 +4025,33 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "paymentinfo")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "paymentinfo")) {
 					$this->PaymentInfo = new PaymentInfoType();
 					$this->PaymentInfo->init($arry["children"]);
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingagreementid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementid') {
 					$this->BillingAgreementID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'redirectrequired') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'redirectrequired') {
 					$this->RedirectRequired = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'note') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'note') {
 					$this->Note = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'successpageredirectrequested') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'successpageredirectrequested') {
 					$this->SuccessPageRedirectRequested = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='userselectedoptions'){
                                     $this->UserSelectedOptions = new UserSelectedOptionType(); 
                                     $this->UserSelectedOptions->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "coupledpaymentinfo[$i]") {
 							$this->CoupledPaymentInfo[$i] = new CoupledPaymentInfoType();
 							$this->CoupledPaymentInfo[$i]->init($arry["children"]);
@@ -4045,7 +4061,7 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "coupledpaymentinfo")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "coupledpaymentinfo")) {
 					$this->CoupledPaymentInfo = new CoupledPaymentInfoType();
 					$this->CoupledPaymentInfo->init($arry["children"]);
 				}
@@ -4067,42 +4083,42 @@ class DoCaptureResponseDetailsType  {
 	 * The authorization identification number you specified in the
 	 * request. Character length and limits: 19 single-byte
 	 * characters maximum
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AuthorizationID;
 
 	/**
 	 * Information about the transaction 
-	 *@access public
-	 *@var PaymentInfoType
+	 * @access public
+	 * @var PaymentInfoType
 	 */ 
 	public $PaymentInfo;
 
 	/**
 	 * Return msgsubid back to merchant 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MsgSubID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'authorizationid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'authorizationid') {
 					$this->AuthorizationID = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='paymentinfo'){
                                     $this->PaymentInfo = new PaymentInfoType(); 
                                     $this->PaymentInfo->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'msgsubid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
 					$this->MsgSubID = $arry["text"];
 				}
 			}
@@ -4131,22 +4147,22 @@ class DoDirectPaymentRequestDetailsType  {
 	 * requesting payment. NOTE: Order is not allowed for Direct
 	 * Payment. Character length and limit: Up to 13 single-byte
 	 * alphabetic characters
-	 *@access public
-	 *@var PaymentActionCodeType
+	 * @access public
+	 * @var PaymentActionCodeType
 	 */ 
 	public $PaymentAction;
 
 	/**
 	 * Information about the payment Required 
-	 *@access public
-	 *@var PaymentDetailsType
+	 * @access public
+	 * @var PaymentDetailsType
 	 */ 
 	public $PaymentDetails;
 
 	/**
 	 * Information about the credit card to be charged. Required 
-	 *@access public
-	 *@var CreditCardDetailsType
+	 * @access public
+	 * @var CreditCardDetailsType
 	 */ 
 	public $CreditCard;
 
@@ -4156,8 +4172,8 @@ class DoDirectPaymentRequestDetailsType  {
 	 * a means to detect possible fraud. Required Character length
 	 * and limitations: 15 single-byte characters, including
 	 * periods, in dotted-quad format: ???.???.???.???
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $IPAddress;
 
@@ -4166,15 +4182,15 @@ class DoDirectPaymentRequestDetailsType  {
 	 * this optional session identification token as an additional
 	 * means to detect possible fraud. Optional Character length
 	 * and limitations: 64 single-byte numeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MerchantSessionId;
 
 	/**
 	 * 
-	 *@access public
-	 *@var boolean
+	 * @access public
+	 * @var boolean
 	 */ 
 	public $ReturnFMFDetails;
 
@@ -4182,31 +4198,31 @@ class DoDirectPaymentRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->PaymentAction != null)
+		if($this->PaymentAction != NULL)
 		{
 			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
 		}
-		if($this->PaymentDetails != null)
+		if($this->PaymentDetails != NULL)
 		{
 			$str .= '<ebl:PaymentDetails>';
 			$str .= $this->PaymentDetails->toXMLString();
 			$str .= '</ebl:PaymentDetails>';
 		}
-		if($this->CreditCard != null)
+		if($this->CreditCard != NULL)
 		{
 			$str .= '<ebl:CreditCard>';
 			$str .= $this->CreditCard->toXMLString();
 			$str .= '</ebl:CreditCard>';
 		}
-		if($this->IPAddress != null)
+		if($this->IPAddress != NULL)
 		{
 			$str .= '<ebl:IPAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->IPAddress) . '</ebl:IPAddress>';
 		}
-		if($this->MerchantSessionId != null)
+		if($this->MerchantSessionId != NULL)
 		{
 			$str .= '<ebl:MerchantSessionId>' . PPUtils::escapeInvalidXmlCharsRegex($this->MerchantSessionId) . '</ebl:MerchantSessionId>';
 		}
-		if($this->ReturnFMFDetails != null)
+		if($this->ReturnFMFDetails != NULL)
 		{
 			$str .= '<ebl:ReturnFMFDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnFMFDetails) . '</ebl:ReturnFMFDetails>';
 		}
@@ -4225,8 +4241,8 @@ class CreateMobilePaymentRequestDetailsType  {
 
 	/**
 	 * Type of the payment Required 
-	 *@access public
-	 *@var MobilePaymentCodeType
+	 * @access public
+	 * @var MobilePaymentCodeType
 	 */ 
 	public $PaymentType;
 
@@ -4236,74 +4252,74 @@ class CreateMobilePaymentRequestDetailsType  {
 	 * authorization subject to settlement with PayPal
 	 * Authorization and Capture. Sale indicates that this is a
 	 * final sale for which you are requesting payment. 
-	 *@access public
-	 *@var PaymentActionCodeType
+	 * @access public
+	 * @var PaymentActionCodeType
 	 */ 
 	public $PaymentAction;
 
 	/**
 	 * Phone number of the user making the payment. Required 
-	 *@access public
-	 *@var PhoneNumberType
+	 * @access public
+	 * @var PhoneNumberType
 	 */ 
 	public $SenderPhone;
 
 	/**
 	 * Type of recipient specified, i.e., phone number or email
 	 * address Required 
-	 *@access public
-	 *@var MobileRecipientCodeType
+	 * @access public
+	 * @var MobileRecipientCodeType
 	 */ 
 	public $RecipientType;
 
 	/**
 	 * Email address of the recipient 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $RecipientEmail;
 
 	/**
 	 * Phone number of the recipipent Required 
-	 *@access public
-	 *@var PhoneNumberType
+	 * @access public
+	 * @var PhoneNumberType
 	 */ 
 	public $RecipientPhone;
 
 	/**
 	 * Amount of item before tax and shipping 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $ItemAmount;
 
 	/**
 	 * The tax charged on the transactionTax Optional 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Tax;
 
 	/**
 	 * Per-transaction shipping charge Optional 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Shipping;
 
 	/**
 	 * Name of the item being ordered Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemName;
 
 	/**
 	 * SKU of the item being ordered Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemNumber;
 
@@ -4311,8 +4327,8 @@ class CreateMobilePaymentRequestDetailsType  {
 	 * Memo entered by sender in PayPal Website Payments note
 	 * field. Optional Character length and limitations: 255
 	 * single-byte alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Note;
 
@@ -4320,24 +4336,24 @@ class CreateMobilePaymentRequestDetailsType  {
 	 * Unique ID for the order. Required for non-P2P transactions
 	 * Optional Character length and limitations: 255 single-byte
 	 * alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CustomID;
 
 	/**
 	 * Indicates whether the sender's phone number will be shared
 	 * with recipient Optional 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $SharePhoneNumber;
 
 	/**
 	 * Indicates whether the sender's home address will be shared
 	 * with recipient Optional 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $ShareHomeAddress;
 
@@ -4345,73 +4361,73 @@ class CreateMobilePaymentRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->PaymentType != null)
+		if($this->PaymentType != NULL)
 		{
 			$str .= '<ebl:PaymentType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentType) . '</ebl:PaymentType>';
 		}
-		if($this->PaymentAction != null)
+		if($this->PaymentAction != NULL)
 		{
 			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
 		}
-		if($this->SenderPhone != null)
+		if($this->SenderPhone != NULL)
 		{
 			$str .= '<ebl:SenderPhone>';
 			$str .= $this->SenderPhone->toXMLString();
 			$str .= '</ebl:SenderPhone>';
 		}
-		if($this->RecipientType != null)
+		if($this->RecipientType != NULL)
 		{
 			$str .= '<ebl:RecipientType>' . PPUtils::escapeInvalidXmlCharsRegex($this->RecipientType) . '</ebl:RecipientType>';
 		}
-		if($this->RecipientEmail != null)
+		if($this->RecipientEmail != NULL)
 		{
 			$str .= '<ebl:RecipientEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->RecipientEmail) . '</ebl:RecipientEmail>';
 		}
-		if($this->RecipientPhone != null)
+		if($this->RecipientPhone != NULL)
 		{
 			$str .= '<ebl:RecipientPhone>';
 			$str .= $this->RecipientPhone->toXMLString();
 			$str .= '</ebl:RecipientPhone>';
 		}
-		if($this->ItemAmount != null)
+		if($this->ItemAmount != NULL)
 		{
 			$str .= '<ebl:ItemAmount';
 			$str .= $this->ItemAmount->toXMLString();
 			$str .= '</ebl:ItemAmount>';
 		}
-		if($this->Tax != null)
+		if($this->Tax != NULL)
 		{
 			$str .= '<ebl:Tax';
 			$str .= $this->Tax->toXMLString();
 			$str .= '</ebl:Tax>';
 		}
-		if($this->Shipping != null)
+		if($this->Shipping != NULL)
 		{
 			$str .= '<ebl:Shipping';
 			$str .= $this->Shipping->toXMLString();
 			$str .= '</ebl:Shipping>';
 		}
-		if($this->ItemName != null)
+		if($this->ItemName != NULL)
 		{
 			$str .= '<ebl:ItemName>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemName) . '</ebl:ItemName>';
 		}
-		if($this->ItemNumber != null)
+		if($this->ItemNumber != NULL)
 		{
 			$str .= '<ebl:ItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemNumber) . '</ebl:ItemNumber>';
 		}
-		if($this->Note != null)
+		if($this->Note != NULL)
 		{
 			$str .= '<ebl:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</ebl:Note>';
 		}
-		if($this->CustomID != null)
+		if($this->CustomID != NULL)
 		{
 			$str .= '<ebl:CustomID>' . PPUtils::escapeInvalidXmlCharsRegex($this->CustomID) . '</ebl:CustomID>';
 		}
-		if($this->SharePhoneNumber != null)
+		if($this->SharePhoneNumber != NULL)
 		{
 			$str .= '<ebl:SharePhoneNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->SharePhoneNumber) . '</ebl:SharePhoneNumber>';
 		}
-		if($this->ShareHomeAddress != null)
+		if($this->ShareHomeAddress != NULL)
 		{
 			$str .= '<ebl:ShareHomeAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShareHomeAddress) . '</ebl:ShareHomeAddress>';
 		}
@@ -4430,8 +4446,8 @@ class GetMobileStatusRequestDetailsType  {
 
 	/**
 	 * Phone number for status inquiry 
-	 *@access public
-	 *@var PhoneNumberType
+	 * @access public
+	 * @var PhoneNumberType
 	 */ 
 	public $Phone;
 
@@ -4439,7 +4455,7 @@ class GetMobileStatusRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Phone != null)
+		if($this->Phone != NULL)
 		{
 			$str .= '<ebl:Phone>';
 			$str .= $this->Phone->toXMLString();
@@ -4464,8 +4480,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * URL to which the customer's browser is returned after
 	 * choosing to login with PayPal. Required Character length and
 	 * limitations: no limit. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReturnURL;
 
@@ -4473,8 +4489,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * URL to which the customer is returned if he does not approve
 	 * the use of PayPal login. Required Character length and
 	 * limitations: no limit
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CancelURL;
 
@@ -4482,16 +4498,16 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * URL to which the customer's browser is returned after user
 	 * logs out from PayPal. Required Character length and
 	 * limitations: no limit. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $LogoutURL;
 
 	/**
 	 * The type of the flow. Optional Character length and
 	 * limitations: 127 single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InitFlowType;
 
@@ -4499,8 +4515,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * The used to decide SkipLogin allowed or not. Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SkipLoginPage;
 
@@ -4508,8 +4524,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * The name of the field Merchant requires from PayPal after
 	 * user's login. Optional Character length and limitations: 256
 	 * single-byte alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ServiceName1;
 
@@ -4517,8 +4533,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * Whether the field is required, opt-in or opt-out.  Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ServiceDefReq1;
 
@@ -4526,8 +4542,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * The name of the field Merchant requires from PayPal after
 	 * user's login. Optional Character length and limitations: 256
 	 * single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ServiceName2;
 
@@ -4535,8 +4551,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * Whether the field is required, opt-in or opt-out. Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ServiceDefReq2;
 
@@ -4546,8 +4562,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * single-byte alphabetic characters, upper- or lowercase.
 	 * Allowable values: AU or en_AUDE or de_DEFR or fr_FRGB or
 	 * en_GBIT or it_ITJP or ja_JPUS or en_US
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $LocaleCode;
 
@@ -4560,8 +4576,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * Account tab of your PayPal account. Optional Character
 	 * length and limitations: 30 single-byte alphabetic
 	 * characters. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PageStyle;
 
@@ -4571,8 +4587,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * wide by 90 pixels high. PayPal recommends that you provide
 	 * an image that is stored on a secure (https) server. Optional
 	 * Character length and limitations: 127
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cppheaderimage;
 
@@ -4582,8 +4598,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * which is 750 pixels wide by 90 pixels high. Optional
 	 * Character length and limitations: Six character HTML
 	 * hexadecimal color code in ASCII
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cppheaderbordercolor;
 
@@ -4591,8 +4607,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * Sets the background color for the header of the flow page.
 	 * Optional Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cppheaderbackcolor;
 
@@ -4600,8 +4616,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * Sets the background color for the payment page. Optional
 	 * Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cpppayflowcolor;
 
@@ -4610,8 +4626,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * chooses to signup with PayPal. Optional Character length and
 	 * limitation: Six character HTML hexadecimal color code in
 	 * ASCII
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $FirstName;
 
@@ -4620,8 +4636,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * chooses to signup with PayPal. Optional Character length and
 	 * limitation: Six character HTML hexadecimal color code in
 	 * ASCII
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $LastName;
 
@@ -4631,8 +4647,8 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * address and set the AddressOverride element on the request,
 	 * PayPal returns this same address in
 	 * GetExpressCheckoutDetailsResponse. 
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $Address;
 
@@ -4640,75 +4656,75 @@ class SetAuthFlowParamRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ReturnURL != null)
+		if($this->ReturnURL != NULL)
 		{
 			$str .= '<ebl:ReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnURL) . '</ebl:ReturnURL>';
 		}
-		if($this->CancelURL != null)
+		if($this->CancelURL != NULL)
 		{
 			$str .= '<ebl:CancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelURL) . '</ebl:CancelURL>';
 		}
-		if($this->LogoutURL != null)
+		if($this->LogoutURL != NULL)
 		{
 			$str .= '<ebl:LogoutURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->LogoutURL) . '</ebl:LogoutURL>';
 		}
-		if($this->InitFlowType != null)
+		if($this->InitFlowType != NULL)
 		{
 			$str .= '<ebl:InitFlowType>' . PPUtils::escapeInvalidXmlCharsRegex($this->InitFlowType) . '</ebl:InitFlowType>';
 		}
-		if($this->SkipLoginPage != null)
+		if($this->SkipLoginPage != NULL)
 		{
 			$str .= '<ebl:SkipLoginPage>' . PPUtils::escapeInvalidXmlCharsRegex($this->SkipLoginPage) . '</ebl:SkipLoginPage>';
 		}
-		if($this->ServiceName1 != null)
+		if($this->ServiceName1 != NULL)
 		{
 			$str .= '<ebl:ServiceName1>' . PPUtils::escapeInvalidXmlCharsRegex($this->ServiceName1) . '</ebl:ServiceName1>';
 		}
-		if($this->ServiceDefReq1 != null)
+		if($this->ServiceDefReq1 != NULL)
 		{
 			$str .= '<ebl:ServiceDefReq1>' . PPUtils::escapeInvalidXmlCharsRegex($this->ServiceDefReq1) . '</ebl:ServiceDefReq1>';
 		}
-		if($this->ServiceName2 != null)
+		if($this->ServiceName2 != NULL)
 		{
 			$str .= '<ebl:ServiceName2>' . PPUtils::escapeInvalidXmlCharsRegex($this->ServiceName2) . '</ebl:ServiceName2>';
 		}
-		if($this->ServiceDefReq2 != null)
+		if($this->ServiceDefReq2 != NULL)
 		{
 			$str .= '<ebl:ServiceDefReq2>' . PPUtils::escapeInvalidXmlCharsRegex($this->ServiceDefReq2) . '</ebl:ServiceDefReq2>';
 		}
-		if($this->LocaleCode != null)
+		if($this->LocaleCode != NULL)
 		{
 			$str .= '<ebl:LocaleCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->LocaleCode) . '</ebl:LocaleCode>';
 		}
-		if($this->PageStyle != null)
+		if($this->PageStyle != NULL)
 		{
 			$str .= '<ebl:PageStyle>' . PPUtils::escapeInvalidXmlCharsRegex($this->PageStyle) . '</ebl:PageStyle>';
 		}
-		if($this->cppheaderimage != null)
+		if($this->cppheaderimage != NULL)
 		{
-			$str .= '<ebl:cppheaderimage>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cppheaderimage>';
+			$str .= '<ebl:cpp-header-image>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cpp-header-image>';
 		}
-		if($this->cppheaderbordercolor != null)
+		if($this->cppheaderbordercolor != NULL)
 		{
-			$str .= '<ebl:cppheaderbordercolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cppheaderbordercolor>';
+			$str .= '<ebl:cpp-header-border-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cpp-header-border-color>';
 		}
-		if($this->cppheaderbackcolor != null)
+		if($this->cppheaderbackcolor != NULL)
 		{
-			$str .= '<ebl:cppheaderbackcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cppheaderbackcolor>';
+			$str .= '<ebl:cpp-header-back-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cpp-header-back-color>';
 		}
-		if($this->cpppayflowcolor != null)
+		if($this->cpppayflowcolor != NULL)
 		{
-			$str .= '<ebl:cpppayflowcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpppayflowcolor>';
+			$str .= '<ebl:cpp-payflow-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpp-payflow-color>';
 		}
-		if($this->FirstName != null)
+		if($this->FirstName != NULL)
 		{
 			$str .= '<ebl:FirstName>' . PPUtils::escapeInvalidXmlCharsRegex($this->FirstName) . '</ebl:FirstName>';
 		}
-		if($this->LastName != null)
+		if($this->LastName != NULL)
 		{
 			$str .= '<ebl:LastName>' . PPUtils::escapeInvalidXmlCharsRegex($this->LastName) . '</ebl:LastName>';
 		}
-		if($this->Address != null)
+		if($this->Address != NULL)
 		{
 			$str .= '<ebl:Address>';
 			$str .= $this->Address->toXMLString();
@@ -4731,24 +4747,24 @@ class GetAuthDetailsResponseDetailsType  {
 	/**
 	 * The first name of the User. Character length and
 	 * limitations: 127 single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $FirstName;
 
 	/**
 	 * The Last name of the user. Character length and limitations:
 	 * 127 single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $LastName;
 
 	/**
 	 * The email address of the user. Character length and
 	 * limitations: 256 single-byte alphanumeric characters. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Email;
 
@@ -4756,26 +4772,26 @@ class GetAuthDetailsResponseDetailsType  {
 	 * Encrypted PayPal customer account identification number.
 	 * Required Character length and limitations: 127 single-byte
 	 * characters.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PayerID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'firstname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'firstname') {
 					$this->FirstName = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'lastname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'lastname') {
 					$this->LastName = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'email') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'email') {
 					$this->Email = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'payerid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payerid') {
 					$this->PayerID = $arry["text"];
 				}
 			}
@@ -4796,8 +4812,8 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * URL to which the customer's browser is returned after
 	 * choosing to login with PayPal. Required Character length and
 	 * limitations: no limit. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReturnURL;
 
@@ -4805,8 +4821,8 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * URL to which the customer is returned if he does not approve
 	 * the use of PayPal login. Required Character length and
 	 * limitations: no limit 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CancelURL;
 
@@ -4814,16 +4830,16 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * URL to which the customer's browser is returned after user
 	 * logs out from PayPal. Required Character length and
 	 * limitations: no limit. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $LogoutURL;
 
 	/**
 	 * The type of the flow. Optional Character length and
 	 * limitations: 127 single-byte alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InitFlowType;
 
@@ -4831,24 +4847,24 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * The used to decide SkipLogin allowed or not. Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SkipLoginPage;
 
 	/**
 	 * contains information about API Services 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $RequiredAccessPermissions;
 
 	/**
 	 * contains information about API Services 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $OptionalAccessPermissions;
 
@@ -4858,8 +4874,8 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * single-byte alphabetic characters, upper- or lowercase.
 	 * Allowable values: AU or en_AUDE or de_DEFR or fr_FRGB or
 	 * en_GBIT or it_ITJP or ja_JPUS or en_US 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $LocaleCode;
 
@@ -4872,8 +4888,8 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * Account tab of your PayPal account. Optional Character
 	 * length and limitations: 30 single-byte alphabetic
 	 * characters. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PageStyle;
 
@@ -4883,8 +4899,8 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * wide by 90 pixels high. PayPal recommends that you provide
 	 * an image that is stored on a secure (https) server. Optional
 	 * Character length and limitations: 127 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cppheaderimage;
 
@@ -4894,8 +4910,8 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * which is 750 pixels wide by 90 pixels high. Optional
 	 * Character length and limitations: Six character HTML
 	 * hexadecimal color code in ASCII 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cppheaderbordercolor;
 
@@ -4903,8 +4919,8 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * Sets the background color for the header of the flow page.
 	 * Optional Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cppheaderbackcolor;
 
@@ -4912,8 +4928,8 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * Sets the background color for the payment page. Optional
 	 * Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cpppayflowcolor;
 
@@ -4922,8 +4938,8 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * chooses to signup with PayPal. Optional Character length and
 	 * limitation: Six character HTML hexadecimal color code in
 	 * ASCII 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $FirstName;
 
@@ -4932,8 +4948,8 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * chooses to signup with PayPal. Optional Character length and
 	 * limitation: Six character HTML hexadecimal color code in
 	 * ASCII 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $LastName;
 
@@ -4943,8 +4959,8 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * address and set the AddressOverride element on the request,
 	 * PayPal returns this same address in
 	 * GetExpressCheckoutDetailsResponse. 
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $Address;
 
@@ -4952,73 +4968,73 @@ class SetAccessPermissionsRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ReturnURL != null)
+		if($this->ReturnURL != NULL)
 		{
 			$str .= '<ebl:ReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnURL) . '</ebl:ReturnURL>';
 		}
-		if($this->CancelURL != null)
+		if($this->CancelURL != NULL)
 		{
 			$str .= '<ebl:CancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelURL) . '</ebl:CancelURL>';
 		}
-		if($this->LogoutURL != null)
+		if($this->LogoutURL != NULL)
 		{
 			$str .= '<ebl:LogoutURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->LogoutURL) . '</ebl:LogoutURL>';
 		}
-		if($this->InitFlowType != null)
+		if($this->InitFlowType != NULL)
 		{
 			$str .= '<ebl:InitFlowType>' . PPUtils::escapeInvalidXmlCharsRegex($this->InitFlowType) . '</ebl:InitFlowType>';
 		}
-		if($this->SkipLoginPage != null)
+		if($this->SkipLoginPage != NULL)
 		{
 			$str .= '<ebl:SkipLoginPage>' . PPUtils::escapeInvalidXmlCharsRegex($this->SkipLoginPage) . '</ebl:SkipLoginPage>';
 		}
-		if($this->RequiredAccessPermissions != null)
+		if($this->RequiredAccessPermissions != NULL)
 		{
 			for($i = 0; $i < count($this->RequiredAccessPermissions); $i++)
 			{
 				$str .= '<ebl:RequiredAccessPermissions>'. PPUtils::escapeInvalidXmlCharsRegex($this->RequiredAccessPermissions[$i]) . '</ebl:RequiredAccessPermissions>';
 			}
 		}
-		if($this->OptionalAccessPermissions != null)
+		if($this->OptionalAccessPermissions != NULL)
 		{
 			for($i = 0; $i < count($this->OptionalAccessPermissions); $i++)
 			{
 				$str .= '<ebl:OptionalAccessPermissions>'. PPUtils::escapeInvalidXmlCharsRegex($this->OptionalAccessPermissions[$i]) . '</ebl:OptionalAccessPermissions>';
 			}
 		}
-		if($this->LocaleCode != null)
+		if($this->LocaleCode != NULL)
 		{
 			$str .= '<ebl:LocaleCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->LocaleCode) . '</ebl:LocaleCode>';
 		}
-		if($this->PageStyle != null)
+		if($this->PageStyle != NULL)
 		{
 			$str .= '<ebl:PageStyle>' . PPUtils::escapeInvalidXmlCharsRegex($this->PageStyle) . '</ebl:PageStyle>';
 		}
-		if($this->cppheaderimage != null)
+		if($this->cppheaderimage != NULL)
 		{
-			$str .= '<ebl:cppheaderimage>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cppheaderimage>';
+			$str .= '<ebl:cpp-header-image>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cpp-header-image>';
 		}
-		if($this->cppheaderbordercolor != null)
+		if($this->cppheaderbordercolor != NULL)
 		{
-			$str .= '<ebl:cppheaderbordercolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cppheaderbordercolor>';
+			$str .= '<ebl:cpp-header-border-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cpp-header-border-color>';
 		}
-		if($this->cppheaderbackcolor != null)
+		if($this->cppheaderbackcolor != NULL)
 		{
-			$str .= '<ebl:cppheaderbackcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cppheaderbackcolor>';
+			$str .= '<ebl:cpp-header-back-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cpp-header-back-color>';
 		}
-		if($this->cpppayflowcolor != null)
+		if($this->cpppayflowcolor != NULL)
 		{
-			$str .= '<ebl:cpppayflowcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpppayflowcolor>';
+			$str .= '<ebl:cpp-payflow-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpp-payflow-color>';
 		}
-		if($this->FirstName != null)
+		if($this->FirstName != NULL)
 		{
 			$str .= '<ebl:FirstName>' . PPUtils::escapeInvalidXmlCharsRegex($this->FirstName) . '</ebl:FirstName>';
 		}
-		if($this->LastName != null)
+		if($this->LastName != NULL)
 		{
 			$str .= '<ebl:LastName>' . PPUtils::escapeInvalidXmlCharsRegex($this->LastName) . '</ebl:LastName>';
 		}
-		if($this->Address != null)
+		if($this->Address != NULL)
 		{
 			$str .= '<ebl:Address>';
 			$str .= $this->Address->toXMLString();
@@ -5041,40 +5057,40 @@ class GetAccessPermissionDetailsResponseDetailsType  {
 	/**
 	 * The first name of the User. Character length and
 	 * limitations: 127 single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $FirstName;
 
 	/**
 	 * The Last name of the user. Character length and limitations:
 	 * 127 single-byte alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $LastName;
 
 	/**
 	 * The email address of the user. Character length and
 	 * limitations: 256 single-byte alphanumeric characters. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Email;
 
 	/**
 	 * contains information about API Services 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $AccessPermissionName;
 
 	/**
 	 * contains information about API Services 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $AccessPermissionStatus;
 
@@ -5082,26 +5098,26 @@ class GetAccessPermissionDetailsResponseDetailsType  {
 	 * Encrypted PayPal customer account identification number.
 	 * Required Character length and limitations: 127 single-byte
 	 * characters. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PayerID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'firstname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'firstname') {
 					$this->FirstName = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'lastname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'lastname') {
 					$this->LastName = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'email') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'email') {
 					$this->Email = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'payerid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payerid') {
 					$this->PayerID = $arry["text"];
 				}
 			}
@@ -5118,43 +5134,43 @@ class BAUpdateResponseDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BillingAgreementID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BillingAgreementDescription;
 
 	/**
 	 * 
-	 *@access public
-	 *@var MerchantPullStatusCodeType
+	 * @access public
+	 * @var MerchantPullStatusCodeType
 	 */ 
 	public $BillingAgreementStatus;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BillingAgreementCustom;
 
 	/**
 	 * 
-	 *@access public
-	 *@var PayerInfoType
+	 * @access public
+	 * @var PayerInfoType
 	 */ 
 	public $PayerInfo;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $BillingAgreementMax;
 
@@ -5163,30 +5179,30 @@ class BAUpdateResponseDetailsType  {
 	 * mapped in your account then billing address of the credit
 	 * card is returned otherwise your primary address is returned
 	 * , PayPal returns this address in BAUpdateResponseDetails. 
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $BillingAddress;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingagreementid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementid') {
 					$this->BillingAgreementID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingagreementdescription') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementdescription') {
 					$this->BillingAgreementDescription = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingagreementstatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementstatus') {
 					$this->BillingAgreementStatus = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingagreementcustom') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementcustom') {
 					$this->BillingAgreementCustom = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='payerinfo'){
                                     $this->PayerInfo = new PayerInfoType(); 
                                     $this->PayerInfo->init($arry["children"]);
@@ -5195,7 +5211,7 @@ class BAUpdateResponseDetailsType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='billingagreementmax') {
 								$tmp =  array();
 								$atr =  array();
@@ -5211,7 +5227,7 @@ class BAUpdateResponseDetailsType  {
 							                            
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='billingaddress'){
                                     $this->BillingAddress = new AddressType(); 
                                     $this->BillingAddress->init($arry["children"]);
@@ -5233,32 +5249,32 @@ class MerchantPullPaymentResponseType  {
 
 	/**
 	 * information about the customer
-	 *@access public
-	 *@var PayerInfoType
+	 * @access public
+	 * @var PayerInfoType
 	 */ 
 	public $PayerInfo;
 
 	/**
 	 * Information about the transaction 
-	 *@access public
-	 *@var PaymentInfoType
+	 * @access public
+	 * @var PaymentInfoType
 	 */ 
 	public $PaymentInfo;
 
 	/**
 	 * Specific information about the preapproved payment 
-	 *@access public
-	 *@var MerchantPullInfoType
+	 * @access public
+	 * @var MerchantPullInfoType
 	 */ 
 	public $MerchantPullInfo;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='payerinfo'){
                                     $this->PayerInfo = new PayerInfoType(); 
                                     $this->PayerInfo->init($arry["children"]);
@@ -5266,7 +5282,7 @@ class MerchantPullPaymentResponseType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='paymentinfo'){
                                     $this->PaymentInfo = new PaymentInfoType(); 
                                     $this->PaymentInfo->init($arry["children"]);
@@ -5274,7 +5290,7 @@ class MerchantPullPaymentResponseType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='merchantpullinfo'){
                                     $this->MerchantPullInfo = new MerchantPullInfoType(); 
                                     $this->MerchantPullInfo->init($arry["children"]);
@@ -5295,15 +5311,15 @@ class MerchantPullInfoType  {
 
 	/**
 	 * Current status of billing agreement 
-	 *@access public
-	 *@var MerchantPullStatusCodeType
+	 * @access public
+	 * @var MerchantPullStatusCodeType
 	 */ 
 	public $MpStatus;
 
 	/**
 	 * Monthly maximum payment amount
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $MpMax;
 
@@ -5311,51 +5327,51 @@ class MerchantPullInfoType  {
 	 * The value of the mp_custom variable that you specified in a
 	 * FORM submission to PayPal during the creation or updating of
 	 * a customer billing agreement 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MpCustom;
 
 	/**
 	 * The value of the mp_desc variable (description of goods or
 	 * services) associated with the billing agreement 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Desc;
 
 	/**
 	 * Invoice value as set by BillUserRequest API call 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Invoice;
 
 	/**
 	 * Custom field as set by BillUserRequest API call 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Custom;
 
 	/**
 	 * Note: This field is no longer used and is always empty.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PaymentSourceID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'mpstatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'mpstatus') {
 					$this->MpStatus = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='mpmax') {
 								$tmp =  array();
 								$atr =  array();
@@ -5370,19 +5386,19 @@ class MerchantPullInfoType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'mpcustom') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'mpcustom') {
 					$this->MpCustom = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'desc') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'desc') {
 					$this->Desc = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'invoice') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'invoice') {
 					$this->Invoice = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'custom') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'custom') {
 					$this->Custom = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentsourceid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentsourceid') {
 					$this->PaymentSourceID = $arry["text"];
 				}
 			}
@@ -5401,104 +5417,104 @@ class PaymentTransactionSearchResultType  {
 	/**
 	 * The date and time (in UTC/GMT format) the transaction
 	 * occurred
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $Timestamp;
 
 	/**
 	 * The time zone of the transaction 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Timezone;
 
 	/**
 	 * The type of the transaction
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Type;
 
 	/**
 	 * The email address of the payer
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Payer;
 
 	/**
 	 * Display name of the payer
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PayerDisplayName;
 
 	/**
 	 * The transaction ID of the seller
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionID;
 
 	/**
 	 * The status of the transaction
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Status;
 
 	/**
 	 * The total gross amount charged, including any profile
 	 * shipping cost and taxes
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $GrossAmount;
 
 	/**
 	 * The fee that PayPal charged for the transaction 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $FeeAmount;
 
 	/**
 	 * The net amount of the transaction 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $NetAmount;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'timestamp') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'timestamp') {
 					$this->Timestamp = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'timezone') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'timezone') {
 					$this->Timezone = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'type') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'type') {
 					$this->Type = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'payer') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payer') {
 					$this->Payer = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'payerdisplayname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payerdisplayname') {
 					$this->PayerDisplayName = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'transactionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
 					$this->TransactionID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'status') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
 					$this->Status = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='grossamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -5515,7 +5531,7 @@ class PaymentTransactionSearchResultType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='feeamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -5532,7 +5548,7 @@ class PaymentTransactionSearchResultType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='netamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -5566,8 +5582,8 @@ class MerchantPullPaymentType  {
 	 * single-byte characters, including two for decimals You must
 	 * set the currencyID attribute to one of the three-character
 	 * currency code for any of the supported PayPal currencies. 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
@@ -5578,80 +5594,80 @@ class MerchantPullPaymentType  {
 	 * a billing agreement identification number is the
 	 * single-character prefix B, followed by a hyphen and an
 	 * alphanumeric character string: B-unique_alphanumeric_string
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MpID;
 
 	/**
 	 * Specifies type of PayPal payment you require Optional
-	 *@access public
-	 *@var MerchantPullPaymentCodeType
+	 * @access public
+	 * @var MerchantPullPaymentCodeType
 	 */ 
 	public $PaymentType;
 
 	/**
 	 * Text entered by the customer in the Note field during
 	 * enrollment Optional
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Memo;
 
 	/**
 	 * Subject line of confirmation email sent to recipient
 	 * Optional
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $EmailSubject;
 
 	/**
 	 * The tax charged on the transaction Optional
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Tax;
 
 	/**
 	 * Per-transaction shipping charge Optional
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Shipping;
 
 	/**
 	 * Per-transaction handling charge Optional
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Handling;
 
 	/**
 	 * Name of purchased item Optional
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemName;
 
 	/**
 	 * Reference number of purchased item Optional
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemNumber;
 
 	/**
 	 * Your invoice number Optional
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Invoice;
 
 	/**
 	 * Custom annotation field for tracking or other use Optional
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Custom;
 
@@ -5659,8 +5675,8 @@ class MerchantPullPaymentType  {
 	 * An identification code for use by third-party applications
 	 * to identify transactions. Optional Character length and
 	 * limitations: 32 single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ButtonSource;
 
@@ -5668,8 +5684,8 @@ class MerchantPullPaymentType  {
 	 * Passed in soft descriptor string to be appended. Optional
 	 * Character length and limitations: single-byte alphanumeric
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SoftDescriptor;
 
@@ -5677,67 +5693,67 @@ class MerchantPullPaymentType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->MpID != null)
+		if($this->MpID != NULL)
 		{
 			$str .= '<ebl:MpID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MpID) . '</ebl:MpID>';
 		}
-		if($this->PaymentType != null)
+		if($this->PaymentType != NULL)
 		{
 			$str .= '<ebl:PaymentType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentType) . '</ebl:PaymentType>';
 		}
-		if($this->Memo != null)
+		if($this->Memo != NULL)
 		{
 			$str .= '<ebl:Memo>' . PPUtils::escapeInvalidXmlCharsRegex($this->Memo) . '</ebl:Memo>';
 		}
-		if($this->EmailSubject != null)
+		if($this->EmailSubject != NULL)
 		{
 			$str .= '<ebl:EmailSubject>' . PPUtils::escapeInvalidXmlCharsRegex($this->EmailSubject) . '</ebl:EmailSubject>';
 		}
-		if($this->Tax != null)
+		if($this->Tax != NULL)
 		{
 			$str .= '<ebl:Tax';
 			$str .= $this->Tax->toXMLString();
 			$str .= '</ebl:Tax>';
 		}
-		if($this->Shipping != null)
+		if($this->Shipping != NULL)
 		{
 			$str .= '<ebl:Shipping';
 			$str .= $this->Shipping->toXMLString();
 			$str .= '</ebl:Shipping>';
 		}
-		if($this->Handling != null)
+		if($this->Handling != NULL)
 		{
 			$str .= '<ebl:Handling';
 			$str .= $this->Handling->toXMLString();
 			$str .= '</ebl:Handling>';
 		}
-		if($this->ItemName != null)
+		if($this->ItemName != NULL)
 		{
 			$str .= '<ebl:ItemName>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemName) . '</ebl:ItemName>';
 		}
-		if($this->ItemNumber != null)
+		if($this->ItemNumber != NULL)
 		{
 			$str .= '<ebl:ItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemNumber) . '</ebl:ItemNumber>';
 		}
-		if($this->Invoice != null)
+		if($this->Invoice != NULL)
 		{
 			$str .= '<ebl:Invoice>' . PPUtils::escapeInvalidXmlCharsRegex($this->Invoice) . '</ebl:Invoice>';
 		}
-		if($this->Custom != null)
+		if($this->Custom != NULL)
 		{
 			$str .= '<ebl:Custom>' . PPUtils::escapeInvalidXmlCharsRegex($this->Custom) . '</ebl:Custom>';
 		}
-		if($this->ButtonSource != null)
+		if($this->ButtonSource != NULL)
 		{
 			$str .= '<ebl:ButtonSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSource) . '</ebl:ButtonSource>';
 		}
-		if($this->SoftDescriptor != null)
+		if($this->SoftDescriptor != NULL)
 		{
 			$str .= '<ebl:SoftDescriptor>' . PPUtils::escapeInvalidXmlCharsRegex($this->SoftDescriptor) . '</ebl:SoftDescriptor>';
 		}
@@ -5757,111 +5773,119 @@ class PaymentTransactionType  {
 
 	/**
 	 * Information about the recipient of the payment 
-	 *@access public
-	 *@var ReceiverInfoType
+	 * @access public
+	 * @var ReceiverInfoType
 	 */ 
 	public $ReceiverInfo;
 
 	/**
 	 * Information about the payer 
-	 *@access public
-	 *@var PayerInfoType
+	 * @access public
+	 * @var PayerInfoType
 	 */ 
 	public $PayerInfo;
 
 	/**
+	 * This field is for holding ReferenceId for shippment sent
+	 * from Merchant to the 3rd Party  
+	 * @access public
+	 * @var string
+	 */ 
+	public $TPLReferenceID;
+
+	/**
 	 * Information about the transaction 
-	 *@access public
-	 *@var PaymentInfoType
+	 * @access public
+	 * @var PaymentInfoType
 	 */ 
 	public $PaymentInfo;
 
 	/**
 	 * Information about an individual item in the transaction
-	 *@access public
-	 *@var PaymentItemInfoType
+	 * @access public
+	 * @var PaymentItemInfoType
 	 */ 
 	public $PaymentItemInfo;
 
 	/**
 	 * Information about an individual Offer and Coupon information
 	 * in the transaction
-	 *@access public
-	 *@var OfferCouponInfoType
+	 * @access public
+	 * @var OfferCouponInfoType
 	 */ 
 	public $OfferCouponInfo;
 
 	/**
 	 * Information about Secondary Address
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $SecondaryAddress;
 
 	/**
 	 * Information about the user selected options.  
-	 *@access public
-	 *@var UserSelectedOptionType
+	 * @access public
+	 * @var UserSelectedOptionType
 	 */ 
 	public $UserSelectedOptions;
 
 	/**
 	 * Information about the Gift message.  
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $GiftMessage;
 
 	/**
 	 * Information about the Gift receipt.  
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $GiftReceipt;
 
 	/**
 	 * Information about the Gift Wrap name.  
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $GiftWrapName;
 
 	/**
 	 * Information about the Gift Wrap amount.  
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $GiftWrapAmount;
 
 	/**
 	 * Information about the Buyer email.  
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BuyerEmailOptIn;
 
 	/**
 	 * Information about the survey question.  
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SurveyQuestion;
 
 	/**
 	 * Information about the survey choice selected by the user.  
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $SurveyChoiceSelected;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='receiverinfo'){
                                     $this->ReceiverInfo = new ReceiverInfoType(); 
                                     $this->ReceiverInfo->init($arry["children"]);
@@ -5869,15 +5893,18 @@ class PaymentTransactionType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='payerinfo'){
                                     $this->PayerInfo = new PayerInfoType(); 
                                     $this->PayerInfo->init($arry["children"]);
                                 }                                                
                                                 
 			}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'tplreferenceid') {
+					$this->TPLReferenceID = $arry["text"];
+				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='paymentinfo'){
                                     $this->PaymentInfo = new PaymentInfoType(); 
                                     $this->PaymentInfo->init($arry["children"]);
@@ -5885,7 +5912,7 @@ class PaymentTransactionType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='paymentiteminfo'){
                                     $this->PaymentItemInfo = new PaymentItemInfoType(); 
                                     $this->PaymentItemInfo->init($arry["children"]);
@@ -5893,7 +5920,7 @@ class PaymentTransactionType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='offercouponinfo'){
                                     $this->OfferCouponInfo = new OfferCouponInfoType(); 
                                     $this->OfferCouponInfo->init($arry["children"]);
@@ -5901,7 +5928,7 @@ class PaymentTransactionType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='secondaryaddress'){
                                     $this->SecondaryAddress = new AddressType(); 
                                     $this->SecondaryAddress->init($arry["children"]);
@@ -5909,25 +5936,25 @@ class PaymentTransactionType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='userselectedoptions'){
                                     $this->UserSelectedOptions = new UserSelectedOptionType(); 
                                     $this->UserSelectedOptions->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'giftmessage') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'giftmessage') {
 					$this->GiftMessage = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'giftreceipt') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'giftreceipt') {
 					$this->GiftReceipt = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'giftwrapname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'giftwrapname') {
 					$this->GiftWrapName = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='giftwrapamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -5942,10 +5969,10 @@ class PaymentTransactionType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'buyeremailoptin') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buyeremailoptin') {
 					$this->BuyerEmailOptIn = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'surveyquestion') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'surveyquestion') {
 					$this->SurveyQuestion = $arry["text"];
 				}
 			}
@@ -5965,8 +5992,8 @@ class ReceiverInfoType  {
 	 * seller). Equivalent to Receiver if payment is sent to
 	 * primary account. Character length and limitations: 127
 	 * single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Business;
 
@@ -5977,8 +6004,8 @@ class ReceiverInfoType  {
 	 * Receiver is still your primary email address. Character
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Receiver;
 
@@ -5986,23 +6013,23 @@ class ReceiverInfoType  {
 	 * Unique account ID of the payment recipient (the seller).
 	 * This value is the same as the value of the recipient's
 	 * referral ID. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReceiverID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'business') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'business') {
 					$this->Business = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'receiver') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'receiver') {
 					$this->Receiver = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'receiverid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'receiverid') {
 					$this->ReceiverID = $arry["text"];
 				}
 			}
@@ -6020,30 +6047,30 @@ class PayerInfoType  {
 	/**
 	 * Email address of payer Character length and limitations: 127
 	 * single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Payer;
 
 	/**
 	 * Unique customer ID Character length and limitations: 17
 	 * single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PayerID;
 
 	/**
 	 * Status of payer's email address 
-	 *@access public
-	 *@var PayPalUserStatusCodeType
+	 * @access public
+	 * @var PayPalUserStatusCodeType
 	 */ 
 	public $PayerStatus;
 
 	/**
 	 * Name of payer 
-	 *@access public
-	 *@var PersonNameType
+	 * @access public
+	 * @var PersonNameType
 	 */ 
 	public $PayerName;
 
@@ -6051,45 +6078,45 @@ class PayerInfoType  {
 	 * Payment sender's country of residence using standard
 	 * two-character ISO 3166 country codes. Character length and
 	 * limitations: Two single-byte characters
-	 *@access public
-	 *@var CountryCodeType
+	 * @access public
+	 * @var CountryCodeType
 	 */ 
 	public $PayerCountry;
 
 	/**
 	 * Payer's business name. Character length and limitations: 127
 	 * single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PayerBusiness;
 
 	/**
 	 * Payer's business address
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $Address;
 
 	/**
 	 * Business contact telephone number
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ContactPhone;
 
 	/**
 	 * Details about payer's tax info. Refer to the
 	 * TaxIdDetailsType for more details. 
-	 *@access public
-	 *@var TaxIdDetailsType
+	 * @access public
+	 * @var TaxIdDetailsType
 	 */ 
 	public $TaxIdDetails;
 
 	/**
 	 * Holds any enhanced information about the payer
-	 *@access public
-	 *@var EnhancedPayerInfoType
+	 * @access public
+	 * @var EnhancedPayerInfoType
 	 */ 
 	public $EnhancedPayerInfo;
 
@@ -6097,49 +6124,49 @@ class PayerInfoType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Payer != null)
+		if($this->Payer != NULL)
 		{
 			$str .= '<ebl:Payer>' . PPUtils::escapeInvalidXmlCharsRegex($this->Payer) . '</ebl:Payer>';
 		}
-		if($this->PayerID != null)
+		if($this->PayerID != NULL)
 		{
 			$str .= '<ebl:PayerID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerID) . '</ebl:PayerID>';
 		}
-		if($this->PayerStatus != null)
+		if($this->PayerStatus != NULL)
 		{
 			$str .= '<ebl:PayerStatus>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerStatus) . '</ebl:PayerStatus>';
 		}
-		if($this->PayerName != null)
+		if($this->PayerName != NULL)
 		{
 			$str .= '<ebl:PayerName>';
 			$str .= $this->PayerName->toXMLString();
 			$str .= '</ebl:PayerName>';
 		}
-		if($this->PayerCountry != null)
+		if($this->PayerCountry != NULL)
 		{
 			$str .= '<ebl:PayerCountry>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerCountry) . '</ebl:PayerCountry>';
 		}
-		if($this->PayerBusiness != null)
+		if($this->PayerBusiness != NULL)
 		{
 			$str .= '<ebl:PayerBusiness>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerBusiness) . '</ebl:PayerBusiness>';
 		}
-		if($this->Address != null)
+		if($this->Address != NULL)
 		{
 			$str .= '<ebl:Address>';
 			$str .= $this->Address->toXMLString();
 			$str .= '</ebl:Address>';
 		}
-		if($this->ContactPhone != null)
+		if($this->ContactPhone != NULL)
 		{
 			$str .= '<ebl:ContactPhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->ContactPhone) . '</ebl:ContactPhone>';
 		}
-		if($this->TaxIdDetails != null)
+		if($this->TaxIdDetails != NULL)
 		{
 			$str .= '<ebl:TaxIdDetails>';
 			$str .= $this->TaxIdDetails->toXMLString();
 			$str .= '</ebl:TaxIdDetails>';
 		}
-		if($this->EnhancedPayerInfo != null)
+		if($this->EnhancedPayerInfo != NULL)
 		{
 			$str .= '<ebl:EnhancedPayerInfo>';
 			$str .= $this->EnhancedPayerInfo->toXMLString();
@@ -6149,45 +6176,45 @@ class PayerInfoType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'payer') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payer') {
 					$this->Payer = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'payerid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payerid') {
 					$this->PayerID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'payerstatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payerstatus') {
 					$this->PayerStatus = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='payername'){
                                     $this->PayerName = new PersonNameType(); 
                                     $this->PayerName->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'payercountry') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payercountry') {
 					$this->PayerCountry = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'payerbusiness') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payerbusiness') {
 					$this->PayerBusiness = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='address'){
                                     $this->Address = new AddressType(); 
                                     $this->Address->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'contactphone') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'contactphone') {
 					$this->ContactPhone = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='taxiddetails'){
                                     $this->TaxIdDetails = new TaxIdDetailsType(); 
                                     $this->TaxIdDetails->init($arry["children"]);
@@ -6195,7 +6222,7 @@ class PayerInfoType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='enhancedpayerinfo'){
                                     $this->EnhancedPayerInfo = new EnhancedPayerInfoType(); 
                                     $this->EnhancedPayerInfo->init($arry["children"]);
@@ -6217,17 +6244,17 @@ class InstrumentDetailsType  {
 	/**
 	 * This field holds the category of the instrument only when it
 	 * is promotional. Return value 1 represents BML. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InstrumentCategory;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'instrumentcategory') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'instrumentcategory') {
 					$this->InstrumentCategory = $arry["text"];
 				}
 			}
@@ -6244,8 +6271,8 @@ class BMLOfferInfoType  {
 
 	/**
 	 * Unique identification for merchant/buyer/offer combo. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OfferTrackingID;
 
@@ -6253,7 +6280,7 @@ class BMLOfferInfoType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->OfferTrackingID != null)
+		if($this->OfferTrackingID != NULL)
 		{
 			$str .= '<ebl:OfferTrackingID>' . PPUtils::escapeInvalidXmlCharsRegex($this->OfferTrackingID) . '</ebl:OfferTrackingID>';
 		}
@@ -6261,10 +6288,10 @@ class BMLOfferInfoType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'offertrackingid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'offertrackingid') {
 					$this->OfferTrackingID = $arry["text"];
 				}
 			}
@@ -6281,16 +6308,16 @@ class OfferDetailsType  {
 
 	/**
 	 * Code used to identify the promotion offer. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OfferCode;
 
 	/**
 	 * Specific infromation for BML, Similar structure could be
 	 * added for sepcific  promotion needs like CrossPromotions 
-	 *@access public
-	 *@var BMLOfferInfoType
+	 * @access public
+	 * @var BMLOfferInfoType
 	 */ 
 	public $BMLOfferInfo;
 
@@ -6298,11 +6325,11 @@ class OfferDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->OfferCode != null)
+		if($this->OfferCode != NULL)
 		{
 			$str .= '<ebl:OfferCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->OfferCode) . '</ebl:OfferCode>';
 		}
-		if($this->BMLOfferInfo != null)
+		if($this->BMLOfferInfo != NULL)
 		{
 			$str .= '<ebl:BMLOfferInfo>';
 			$str .= $this->BMLOfferInfo->toXMLString();
@@ -6312,14 +6339,14 @@ class OfferDetailsType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'offercode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'offercode') {
 					$this->OfferCode = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='bmlofferinfo'){
                                     $this->BMLOfferInfo = new BMLOfferInfoType(); 
                                     $this->BMLOfferInfo->init($arry["children"]);
@@ -6341,16 +6368,16 @@ class PaymentInfoType  {
 	/**
 	 * A transaction identification number. Character length and
 	 * limits: 19 single-byte characters maximum
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionID;
 
 	/**
 	 * Its Ebay transaction id. EbayTransactionID will returned for
 	 * immediate pay item transaction in ECA 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $EbayTransactionID;
 
@@ -6365,16 +6392,16 @@ class PaymentInfoType  {
 	 * The value of ParentTransactionID is the original OrderID.
 	 * Character length and limits: 19 single-byte characters
 	 * maximum
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ParentTransactionID;
 
 	/**
 	 * Receipt ID Character length and limitations: 16 digits in
 	 * xxxx-xxxx-xxxx-xxxx format
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReceiptID;
 
@@ -6392,51 +6419,51 @@ class PaymentInfoType  {
 	 * created via MassPay. virtual-terminal: Transaction created
 	 * via merchant virtual terminal. credit: Transaction created
 	 * via merchant virtual terminal or API to credit a customer.
-	 *@access public
-	 *@var PaymentTransactionCodeType
+	 * @access public
+	 * @var PaymentTransactionCodeType
 	 */ 
 	public $TransactionType;
 
 	/**
 	 * The type of payment
-	 *@access public
-	 *@var PaymentCodeType
+	 * @access public
+	 * @var PaymentCodeType
 	 */ 
 	public $PaymentType;
 
 	/**
 	 * The type of funding source
-	 *@access public
-	 *@var RefundSourceCodeType
+	 * @access public
+	 * @var RefundSourceCodeType
 	 */ 
 	public $RefundSourceCodeType;
 
 	/**
 	 * eCheck latest expected clear date 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $ExpectedeCheckClearDate;
 
 	/**
 	 * Date and time of payment 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $PaymentDate;
 
 	/**
 	 * Full amount of the customer's payment, before transaction
 	 * fee is subtracted
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $GrossAmount;
 
 	/**
 	 * Transaction fee associated with the payment 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $FeeAmount;
 
@@ -6446,22 +6473,22 @@ class PaymentInfoType  {
 	 * Payment Receiving Preferences or manual conversion through
 	 * manually accepting a payment. This amount is calculated
 	 * after fees and taxes have been assessed. 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $SettleAmount;
 
 	/**
 	 * Amount of tax for transaction 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $TaxAmount;
 
 	/**
 	 * Exchange rate for transaction 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ExchangeRate;
 
@@ -6492,8 +6519,8 @@ class PaymentInfoType  {
 	 * completed, and the funds have been added successfully to
 	 * your pending balance. See the "HoldDecision" field for more
 	 * information.
-	 *@access public
-	 *@var PaymentStatusCodeType
+	 * @access public
+	 * @var PaymentStatusCodeType
 	 */ 
 	public $PaymentStatus;
 
@@ -6526,8 +6553,8 @@ class PaymentInfoType  {
 	 * this payment. other: The payment is pending for a reason
 	 * other than those listed above. For more information, contact
 	 * PayPal Customer Service.
-	 *@access public
-	 *@var PendingStatusCodeType
+	 * @access public
+	 * @var PendingStatusCodeType
 	 */ 
 	public $PendingReason;
 
@@ -6543,8 +6570,8 @@ class PaymentInfoType  {
 	 * you have given the customer a refund. other: A reversal has
 	 * occurred on this transaction due to a reason not listed
 	 * above.
-	 *@access public
-	 *@var ReversalReasonCodeType
+	 * @access public
+	 * @var ReversalReasonCodeType
 	 */ 
 	public $ReasonCode;
 
@@ -6554,170 +6581,187 @@ class PaymentInfoType  {
 	 * are kept in pending balance: newsellerpaymenthold: The
 	 * seller is new. paymenthold: A hold is placed on your
 	 * transaction due to a reason not listed above. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $HoldDecision;
 
 	/**
 	 * Shipping method selected by the user during check-out. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ShippingMethod;
 
 	/**
 	 * Protection Eligibility for this Transaction - None, SPP or
 	 * ESPP 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProtectionEligibility;
 
 	/**
 	 * Protection Eligibility details for this Transaction 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProtectionEligibilityType;
 
 	/**
+	 * Receipt Reference Number for this Transaction 
+	 * @access public
+	 * @var string
+	 */ 
+	public $ReceiptReferenceNumber;
+
+	/**
+	 * The type of POS transaction F: Forced post transaction. POS
+	 * merchant can send transactions at a later point if
+	 * connectivity is lost. S: Single call checkout, and this is
+	 * to identify PayPal Lite API usage. 
+	 * @access public
+	 * @var POSTransactionCodeType
+	 */ 
+	public $POSTransactionType;
+
+	/**
 	 * Amount of shipping charged on transaction
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ShipAmount;
 
 	/**
 	 * Amount of ship handling charged on transaction
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ShipHandleAmount;
 
 	/**
 	 * Amount of shipping discount on transaction
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ShipDiscount;
 
 	/**
 	 * Amount of Insurance amount on transaction
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InsuranceAmount;
 
 	/**
 	 * Subject as entered in the transaction
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Subject;
 
 	/**
 	 * StoreID as entered in the transaction
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $StoreID;
 
 	/**
 	 * TerminalID as entered in the transaction
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TerminalID;
 
 	/**
 	 * Details about the seller. Optional 
-	 *@access public
-	 *@var SellerDetailsType
+	 * @access public
+	 * @var SellerDetailsType
 	 */ 
 	public $SellerDetails;
 
 	/**
 	 * Unique identifier and mandatory for each bucket in case of
 	 * split payement 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PaymentRequestID;
 
 	/**
 	 * Thes are filters that could result in accept/deny/pending
 	 * action. 
-	 *@access public
-	 *@var FMFDetailsType
+	 * @access public
+	 * @var FMFDetailsType
 	 */ 
 	public $FMFDetails;
 
 	/**
 	 * This will be enhanced info for the payment: Example: UATP
 	 * details 
-	 *@access public
-	 *@var EnhancedPaymentInfoType
+	 * @access public
+	 * @var EnhancedPaymentInfoType
 	 */ 
 	public $EnhancedPaymentInfo;
 
 	/**
 	 * This will indicate the payment status for individual payment
 	 * request in case of split payment 
-	 *@access public
-	 *@var ErrorType
+	 * @access public
+	 * @var ErrorType
 	 */ 
 	public $PaymentError;
 
 	/**
 	 * Type of the payment instrument. 
-	 *@access public
-	 *@var InstrumentDetailsType
+	 * @access public
+	 * @var InstrumentDetailsType
 	 */ 
 	public $InstrumentDetails;
 
 	/**
 	 * Offer Details. 
-	 *@access public
-	 *@var OfferDetailsType
+	 * @access public
+	 * @var OfferDetailsType
 	 */ 
 	public $OfferDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'transactionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
 					$this->TransactionID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'ebaytransactionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'ebaytransactionid') {
 					$this->EbayTransactionID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'parenttransactionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'parenttransactionid') {
 					$this->ParentTransactionID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'receiptid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'receiptid') {
 					$this->ReceiptID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'transactiontype') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactiontype') {
 					$this->TransactionType = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymenttype') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymenttype') {
 					$this->PaymentType = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'refundsourcecodetype') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'refundsourcecodetype') {
 					$this->RefundSourceCodeType = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'expectedecheckcleardate') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'expectedecheckcleardate') {
 					$this->ExpectedeCheckClearDate = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentdate') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentdate') {
 					$this->PaymentDate = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='grossamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -6734,7 +6778,7 @@ class PaymentInfoType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='feeamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -6751,7 +6795,7 @@ class PaymentInfoType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='settleamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -6768,7 +6812,7 @@ class PaymentInfoType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='taxamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -6783,64 +6827,70 @@ class PaymentInfoType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'exchangerate') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'exchangerate') {
 					$this->ExchangeRate = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentstatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentstatus') {
 					$this->PaymentStatus = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'pendingreason') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'pendingreason') {
 					$this->PendingReason = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'reasoncode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'reasoncode') {
 					$this->ReasonCode = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'holddecision') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'holddecision') {
 					$this->HoldDecision = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'shippingmethod') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shippingmethod') {
 					$this->ShippingMethod = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'protectioneligibility') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'protectioneligibility') {
 					$this->ProtectionEligibility = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'protectioneligibilitytype') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'protectioneligibilitytype') {
 					$this->ProtectionEligibilityType = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'shipamount') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'receiptreferencenumber') {
+					$this->ReceiptReferenceNumber = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'postransactiontype') {
+					$this->POSTransactionType = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shipamount') {
 					$this->ShipAmount = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'shiphandleamount') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shiphandleamount') {
 					$this->ShipHandleAmount = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'shipdiscount') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shipdiscount') {
 					$this->ShipDiscount = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'insuranceamount') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'insuranceamount') {
 					$this->InsuranceAmount = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'subject') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'subject') {
 					$this->Subject = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'storeid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'storeid') {
 					$this->StoreID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'terminalid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'terminalid') {
 					$this->TerminalID = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='sellerdetails'){
                                     $this->SellerDetails = new SellerDetailsType(); 
                                     $this->SellerDetails->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentrequestid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentrequestid') {
 					$this->PaymentRequestID = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='fmfdetails'){
                                     $this->FMFDetails = new FMFDetailsType(); 
                                     $this->FMFDetails->init($arry["children"]);
@@ -6848,7 +6898,7 @@ class PaymentInfoType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='enhancedpaymentinfo'){
                                     $this->EnhancedPaymentInfo = new EnhancedPaymentInfoType(); 
                                     $this->EnhancedPaymentInfo->init($arry["children"]);
@@ -6856,7 +6906,7 @@ class PaymentInfoType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='paymenterror'){
                                     $this->PaymentError = new ErrorType(); 
                                     $this->PaymentError->init($arry["children"]);
@@ -6864,7 +6914,7 @@ class PaymentInfoType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='instrumentdetails'){
                                     $this->InstrumentDetails = new InstrumentDetailsType(); 
                                     $this->InstrumentDetails->init($arry["children"]);
@@ -6872,7 +6922,7 @@ class PaymentInfoType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='offerdetails'){
                                     $this->OfferDetails = new OfferDetailsType(); 
                                     $this->OfferDetails->init($arry["children"]);
@@ -6893,19 +6943,19 @@ class SubscriptionTermsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='amount') {
 								$tmp =  array();
 								$atr =  array();
@@ -6936,29 +6986,29 @@ class SubscriptionInfoType  {
 	/**
 	 * ID generated by PayPal for the subscriber. Character length
 	 * and limitations: no limit
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SubscriptionID;
 
 	/**
 	 * Subscription start date 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $SubscriptionDate;
 
 	/**
 	 * Date when the subscription modification will be effective 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $EffectiveDate;
 
 	/**
 	 * Date PayPal will retry a failed subscription payment 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $RetryTime;
 
@@ -6966,8 +7016,8 @@ class SubscriptionInfoType  {
 	 * Username generated by PayPal and given to subscriber to
 	 * access the subscription. Character length and limitations:
 	 * 64 alphanumeric single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Username;
 
@@ -6976,56 +7026,56 @@ class SubscriptionInfoType  {
 	 * access the subscription. For security, the value of the
 	 * password is hashed. Character length and limitations: 128
 	 * alphanumeric single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Password;
 
 	/**
 	 * The number of payment installments that will occur at the
 	 * regular rate. Character length and limitations: no limit
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Recurrences;
 
 	/**
 	 * Subscription duration and charges
-     *@array
-	 *@access public
-	 *@var SubscriptionTermsType
+     * @array
+	 * @access public
+	 * @var SubscriptionTermsType
 	 */ 
 	public $Terms;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'subscriptionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'subscriptionid') {
 					$this->SubscriptionID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'subscriptiondate') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'subscriptiondate') {
 					$this->SubscriptionDate = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'effectivedate') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'effectivedate') {
 					$this->EffectiveDate = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'retrytime') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'retrytime') {
 					$this->RetryTime = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'username') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'username') {
 					$this->Username = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'password') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'password') {
 					$this->Password = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'recurrences') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'recurrences') {
 					$this->Recurrences = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "terms[$i]") {
 							$this->Terms[$i] = new SubscriptionTermsType();
 							$this->Terms[$i]->init($arry["children"]);
@@ -7035,7 +7085,7 @@ class SubscriptionInfoType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "terms")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "terms")) {
 					$this->Terms = new SubscriptionTermsType();
 					$this->Terms->init($arry["children"]);
 				}
@@ -7053,27 +7103,27 @@ class AuctionInfoType  {
 
 	/**
 	 * Customer's auction ID 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BuyerID;
 
 	/**
 	 * Auction's close date 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $ClosingDate;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'buyerid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buyerid') {
 					$this->BuyerID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'closingdate') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'closingdate') {
 					$this->ClosingDate = $arry["text"];
 				}
 			}
@@ -7090,8 +7140,8 @@ class OptionType  {
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
 			}
 		}
@@ -7109,32 +7159,32 @@ class EbayItemPaymentDetailsItemType  {
 	/**
 	 * Auction ItemNumber. Optional Character length and
 	 * limitations: 765 single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemNumber;
 
 	/**
 	 * Auction Transaction ID. Optional Character length and
 	 * limitations: 255 single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AuctionTransactionId;
 
 	/**
 	 * Ebay Order ID. Optional Character length and limitations: 64
 	 * single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OrderId;
 
 	/**
 	 * Ebay Cart ID. Optional Character length and limitations: 64
 	 * single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CartID;
 
@@ -7142,19 +7192,19 @@ class EbayItemPaymentDetailsItemType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ItemNumber != null)
+		if($this->ItemNumber != NULL)
 		{
 			$str .= '<ebl:ItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemNumber) . '</ebl:ItemNumber>';
 		}
-		if($this->AuctionTransactionId != null)
+		if($this->AuctionTransactionId != NULL)
 		{
 			$str .= '<ebl:AuctionTransactionId>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuctionTransactionId) . '</ebl:AuctionTransactionId>';
 		}
-		if($this->OrderId != null)
+		if($this->OrderId != NULL)
 		{
 			$str .= '<ebl:OrderId>' . PPUtils::escapeInvalidXmlCharsRegex($this->OrderId) . '</ebl:OrderId>';
 		}
-		if($this->CartID != null)
+		if($this->CartID != NULL)
 		{
 			$str .= '<ebl:CartID>' . PPUtils::escapeInvalidXmlCharsRegex($this->CartID) . '</ebl:CartID>';
 		}
@@ -7162,19 +7212,19 @@ class EbayItemPaymentDetailsItemType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'itemnumber') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemnumber') {
 					$this->ItemNumber = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'auctiontransactionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'auctiontransactionid') {
 					$this->AuctionTransactionId = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'orderid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'orderid') {
 					$this->OrderId = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'cartid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'cartid') {
 					$this->CartID = $arry["text"];
 				}
 			}
@@ -7192,24 +7242,24 @@ class PaymentDetailsItemType  {
 	/**
 	 * Item name. Optional Character length and limitations: 127
 	 * single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Name;
 
 	/**
 	 * Item number. Optional Character length and limitations: 127
 	 * single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Number;
 
 	/**
 	 * Item quantity. Optional Character length and limitations:
 	 * Any positive integer
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $Quantity;
 
@@ -7217,8 +7267,8 @@ class PaymentDetailsItemType  {
 	 * Item sales tax. Optional Character length and limitations:
 	 * any valid currency amount; currency code is set the same as
 	 * for OrderTotal.
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Tax;
 
@@ -7229,88 +7279,88 @@ class PaymentDetailsItemType  {
 	 * $10,000 USD in any currency. No currency symbol. Decimal
 	 * separator must be a period (.), and the thousands separator
 	 * must be a comma (,).
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
 	 * Ebay specific details. Optional 
-	 *@access public
-	 *@var EbayItemPaymentDetailsItemType
+	 * @access public
+	 * @var EbayItemPaymentDetailsItemType
 	 */ 
 	public $EbayItemPaymentDetailsItem;
 
 	/**
 	 * Promotional financing code for item. Part of the Merchant
 	 * Services Promotion Financing feature. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PromoCode;
 
 	/**
 	 * 
-	 *@access public
-	 *@var ProductCategoryType
+	 * @access public
+	 * @var ProductCategoryType
 	 */ 
 	public $ProductCategory;
 
 	/**
 	 * Item description. Optional Character length and limitations:
 	 * 127 single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Description;
 
 	/**
 	 * Information about the Item weight. 
-	 *@access public
-	 *@var MeasureType
+	 * @access public
+	 * @var MeasureType
 	 */ 
 	public $ItemWeight;
 
 	/**
 	 * Information about the Item length. 
-	 *@access public
-	 *@var MeasureType
+	 * @access public
+	 * @var MeasureType
 	 */ 
 	public $ItemLength;
 
 	/**
 	 * Information about the Item width. 
-	 *@access public
-	 *@var MeasureType
+	 * @access public
+	 * @var MeasureType
 	 */ 
 	public $ItemWidth;
 
 	/**
 	 * Information about the Item height. 
-	 *@access public
-	 *@var MeasureType
+	 * @access public
+	 * @var MeasureType
 	 */ 
 	public $ItemHeight;
 
 	/**
 	 * URL for the item. Optional Character length and limitations:
 	 * no limit. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemURL;
 
 	/**
 	 * Enhanced data for each item in the cart. Optional 
-	 *@access public
-	 *@var EnhancedItemDataType
+	 * @access public
+	 * @var EnhancedItemDataType
 	 */ 
 	public $EnhancedItemData;
 
 	/**
 	 * Item category - physical or digital. Optional 
-	 *@access public
-	 *@var ItemCategoryType
+	 * @access public
+	 * @var ItemCategoryType
 	 */ 
 	public $ItemCategory;
 
@@ -7318,83 +7368,83 @@ class PaymentDetailsItemType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Name != null)
+		if($this->Name != NULL)
 		{
 			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
 		}
-		if($this->Number != null)
+		if($this->Number != NULL)
 		{
 			$str .= '<ebl:Number>' . PPUtils::escapeInvalidXmlCharsRegex($this->Number) . '</ebl:Number>';
 		}
-		if($this->Quantity != null)
+		if($this->Quantity != NULL)
 		{
 			$str .= '<ebl:Quantity>' . PPUtils::escapeInvalidXmlCharsRegex($this->Quantity) . '</ebl:Quantity>';
 		}
-		if($this->Tax != null)
+		if($this->Tax != NULL)
 		{
 			$str .= '<ebl:Tax';
 			$str .= $this->Tax->toXMLString();
 			$str .= '</ebl:Tax>';
 		}
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->EbayItemPaymentDetailsItem != null)
+		if($this->EbayItemPaymentDetailsItem != NULL)
 		{
 			$str .= '<ebl:EbayItemPaymentDetailsItem>';
 			$str .= $this->EbayItemPaymentDetailsItem->toXMLString();
 			$str .= '</ebl:EbayItemPaymentDetailsItem>';
 		}
-		if($this->PromoCode != null)
+		if($this->PromoCode != NULL)
 		{
 			$str .= '<ebl:PromoCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->PromoCode) . '</ebl:PromoCode>';
 		}
-		if($this->ProductCategory != null)
+		if($this->ProductCategory != NULL)
 		{
 			$str .= '<ebl:ProductCategory>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProductCategory) . '</ebl:ProductCategory>';
 		}
-		if($this->Description != null)
+		if($this->Description != NULL)
 		{
 			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
 		}
-		if($this->ItemWeight != null)
+		if($this->ItemWeight != NULL)
 		{
 			$str .= '<ebl:ItemWeight';
 			$str .= $this->ItemWeight->toXMLString();
 			$str .= '</ebl:ItemWeight>';
 		}
-		if($this->ItemLength != null)
+		if($this->ItemLength != NULL)
 		{
 			$str .= '<ebl:ItemLength';
 			$str .= $this->ItemLength->toXMLString();
 			$str .= '</ebl:ItemLength>';
 		}
-		if($this->ItemWidth != null)
+		if($this->ItemWidth != NULL)
 		{
 			$str .= '<ebl:ItemWidth';
 			$str .= $this->ItemWidth->toXMLString();
 			$str .= '</ebl:ItemWidth>';
 		}
-		if($this->ItemHeight != null)
+		if($this->ItemHeight != NULL)
 		{
 			$str .= '<ebl:ItemHeight';
 			$str .= $this->ItemHeight->toXMLString();
 			$str .= '</ebl:ItemHeight>';
 		}
-		if($this->ItemURL != null)
+		if($this->ItemURL != NULL)
 		{
 			$str .= '<ebl:ItemURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemURL) . '</ebl:ItemURL>';
 		}
-		if($this->EnhancedItemData != null)
+		if($this->EnhancedItemData != NULL)
 		{
 			$str .= '<ebl:EnhancedItemData>';
 			$str .= $this->EnhancedItemData->toXMLString();
 			$str .= '</ebl:EnhancedItemData>';
 		}
-		if($this->ItemCategory != null)
+		if($this->ItemCategory != NULL)
 		{
 			$str .= '<ebl:ItemCategory>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemCategory) . '</ebl:ItemCategory>';
 		}
@@ -7402,21 +7452,21 @@ class PaymentDetailsItemType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'name') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'name') {
 					$this->Name = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'number') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'number') {
 					$this->Number = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'quantity') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'quantity') {
 					$this->Quantity = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='tax') {
 								$tmp =  array();
 								$atr =  array();
@@ -7433,7 +7483,7 @@ class PaymentDetailsItemType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='amount') {
 								$tmp =  array();
 								$atr =  array();
@@ -7449,25 +7499,25 @@ class PaymentDetailsItemType  {
 							                            
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='ebayitempaymentdetailsitem'){
                                     $this->EbayItemPaymentDetailsItem = new EbayItemPaymentDetailsItemType(); 
                                     $this->EbayItemPaymentDetailsItem->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'promocode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'promocode') {
 					$this->PromoCode = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'productcategory') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'productcategory') {
 					$this->ProductCategory = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'description') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'description') {
 					$this->Description = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='itemweight') {
 								$tmp =  array();
 								$atr =  array();
@@ -7484,7 +7534,7 @@ class PaymentDetailsItemType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='itemlength') {
 								$tmp =  array();
 								$atr =  array();
@@ -7501,7 +7551,7 @@ class PaymentDetailsItemType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='itemwidth') {
 								$tmp =  array();
 								$atr =  array();
@@ -7518,7 +7568,7 @@ class PaymentDetailsItemType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='itemheight') {
 								$tmp =  array();
 								$atr =  array();
@@ -7533,18 +7583,18 @@ class PaymentDetailsItemType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'itemurl') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemurl') {
 					$this->ItemURL = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='enhanceditemdata'){
                                     $this->EnhancedItemData = new EnhancedItemDataType(); 
                                     $this->EnhancedItemData->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'itemcategory') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemcategory') {
 					$this->ItemCategory = $arry["text"];
 				}
 			}
@@ -7562,8 +7612,8 @@ class PaymentItemType  {
 	/**
 	 * eBay Auction Transaction ID of the Item Optional Character
 	 * length and limitations: 255 single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $EbayItemTxnId;
 
@@ -7571,142 +7621,157 @@ class PaymentItemType  {
 	 * Item name set by you or entered by the customer. Character
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Name;
 
 	/**
 	 * Item number set by you. Character length and limitations:
 	 * 127 single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Number;
 
 	/**
 	 * Quantity set by you or entered by the customer. Character
 	 * length and limitations: no limit
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Quantity;
 
 	/**
 	 * Amount of tax charged on payment 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SalesTax;
 
 	/**
 	 * Amount of shipping charged on payment 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ShippingAmount;
 
 	/**
 	 * Amount of handling charged on payment 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $HandlingAmount;
 
 	/**
+	 * Invoice item details 
+	 * @access public
+	 * @var InvoiceItemType
+	 */ 
+	public $InvoiceItemDetails;
+
+	/**
 	 * Coupon ID Number 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CouponID;
 
 	/**
 	 * Amount Value of The Coupon 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CouponAmount;
 
 	/**
 	 * Currency of the Coupon Amount 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CouponAmountCurrency;
 
 	/**
 	 * Amount of Discount on this Loyalty Card
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $LoyaltyCardDiscountAmount;
 
 	/**
 	 * Currency of the Discount
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $LoyaltyCardDiscountCurrency;
 
 	/**
 	 * Cost of item 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
 	 * Item options selected in PayPal shopping cart 
-     *@array
-	 *@access public
-	 *@var OptionType
+     * @array
+	 * @access public
+	 * @var OptionType
 	 */ 
 	public $Options;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'ebayitemtxnid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'ebayitemtxnid') {
 					$this->EbayItemTxnId = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'name') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'name') {
 					$this->Name = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'number') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'number') {
 					$this->Number = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'quantity') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'quantity') {
 					$this->Quantity = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'salestax') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'salestax') {
 					$this->SalesTax = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'shippingamount') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shippingamount') {
 					$this->ShippingAmount = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'handlingamount') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'handlingamount') {
 					$this->HandlingAmount = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'couponid') {
+			
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
+                                    if( $arry["name"]=='invoiceitemdetails'){
+                                    $this->InvoiceItemDetails = new InvoiceItemType(); 
+                                    $this->InvoiceItemDetails->init($arry["children"]);
+                                }                                                
+                                                
+			}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'couponid') {
 					$this->CouponID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'couponamount') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'couponamount') {
 					$this->CouponAmount = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'couponamountcurrency') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'couponamountcurrency') {
 					$this->CouponAmountCurrency = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'loyaltycarddiscountamount') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'loyaltycarddiscountamount') {
 					$this->LoyaltyCardDiscountAmount = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'loyaltycarddiscountcurrency') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'loyaltycarddiscountcurrency') {
 					$this->LoyaltyCardDiscountCurrency = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='amount') {
 								$tmp =  array();
 								$atr =  array();
@@ -7721,9 +7786,9 @@ class PaymentItemType  {
 							}
 							                            
 			}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "options[$i]") {
 							$this->Options[$i] = new OptionType();
 							$this->Options[$i]->init($arry["children"]);
@@ -7733,7 +7798,7 @@ class PaymentItemType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "options")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "options")) {
 					$this->Options = new OptionType();
 					$this->Options->init($arry["children"]);
 				}
@@ -7753,8 +7818,8 @@ class PaymentItemInfoType  {
 	 * Invoice number you set in the original transaction.
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InvoiceID;
 
@@ -7762,8 +7827,8 @@ class PaymentItemInfoType  {
 	 * Custom field you set in the original transaction. Character
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Custom;
 
@@ -7771,62 +7836,62 @@ class PaymentItemInfoType  {
 	 * Memo entered by your customer in PayPal Website Payments
 	 * note field. Character length and limitations: 255
 	 * single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Memo;
 
 	/**
 	 * Amount of tax charged on transaction
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SalesTax;
 
 	/**
 	 * Details about the indivudal purchased item
-     *@array
-	 *@access public
-	 *@var PaymentItemType
+     * @array
+	 * @access public
+	 * @var PaymentItemType
 	 */ 
 	public $PaymentItem;
 
 	/**
 	 * Information about the transaction if it was created via
 	 * PayPal Subcriptions
-	 *@access public
-	 *@var SubscriptionInfoType
+	 * @access public
+	 * @var SubscriptionInfoType
 	 */ 
 	public $Subscription;
 
 	/**
 	 * Information about the transaction if it was created via an
 	 * auction
-	 *@access public
-	 *@var AuctionInfoType
+	 * @access public
+	 * @var AuctionInfoType
 	 */ 
 	public $Auction;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'invoiceid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'invoiceid') {
 					$this->InvoiceID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'custom') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'custom') {
 					$this->Custom = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'memo') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'memo') {
 					$this->Memo = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'salestax') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'salestax') {
 					$this->SalesTax = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "paymentitem[$i]") {
 							$this->PaymentItem[$i] = new PaymentItemType();
 							$this->PaymentItem[$i]->init($arry["children"]);
@@ -7836,12 +7901,12 @@ class PaymentItemInfoType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "paymentitem")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "paymentitem")) {
 					$this->PaymentItem = new PaymentItemType();
 					$this->PaymentItem->init($arry["children"]);
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='subscription'){
                                     $this->Subscription = new SubscriptionInfoType(); 
                                     $this->Subscription->init($arry["children"]);
@@ -7849,7 +7914,7 @@ class PaymentItemInfoType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='auction'){
                                     $this->Auction = new AuctionInfoType(); 
                                     $this->Auction->init($arry["children"]);
@@ -7871,47 +7936,47 @@ class OfferCouponInfoType  {
 
 	/**
 	 * Type of the incentive 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Type;
 
 	/**
 	 * ID of the Incentive used in transaction
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ID;
 
 	/**
 	 * Amount used on transaction
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Amount;
 
 	/**
 	 * Amount Currency
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AmountCurrency;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'type') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'type') {
 					$this->Type = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'id') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'id') {
 					$this->ID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'amount') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'amount') {
 					$this->Amount = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'amountcurrency') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'amountcurrency') {
 					$this->AmountCurrency = $arry["text"];
 				}
 			}
@@ -7935,8 +8000,8 @@ class PaymentDetailsType  {
 	 * in any currency. No currency symbol. Decimal separator must
 	 * be a period (.), and the thousands separator must be a comma
 	 * (,). 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $OrderTotal;
 
@@ -7945,8 +8010,8 @@ class PaymentDetailsType  {
 	 * currencyID attribute to one of the three-character currency
 	 * codes for any of the supported PayPal currencies. Optional
 	 * separator must be a comma (,).
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $ItemTotal;
 
@@ -7957,8 +8022,8 @@ class PaymentDetailsType  {
 	 * Limitations: Must not exceed $10,000 USD in any currency. No
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $ShippingTotal;
 
@@ -7969,8 +8034,8 @@ class PaymentDetailsType  {
 	 * Limitations: Must not exceed $10,000 USD in any currency. No
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $HandlingTotal;
 
@@ -7981,8 +8046,8 @@ class PaymentDetailsType  {
 	 * Limitations: Must not exceed $10,000 USD in any currency. No
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $TaxTotal;
 
@@ -7990,8 +8055,8 @@ class PaymentDetailsType  {
 	 * Description of items the customer is purchasing. Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OrderDescription;
 
@@ -7999,8 +8064,8 @@ class PaymentDetailsType  {
 	 * A free-form field for your own use. Optional Character
 	 * length and limitations: 256 single-byte alphanumeric
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Custom;
 
@@ -8008,8 +8073,8 @@ class PaymentDetailsType  {
 	 * Your own invoice or tracking number. Optional Character
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InvoiceID;
 
@@ -8017,8 +8082,8 @@ class PaymentDetailsType  {
 	 * An identification code for use by third-party applications
 	 * to identify transactions. Optional Character length and
 	 * limitations: 32 single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ButtonSource;
 
@@ -8028,8 +8093,8 @@ class PaymentDetailsType  {
 	 * NotifyURL in the request, the notification URL from your
 	 * Merchant Profile is used, if one exists. Character length
 	 * and limitations: 2,048 single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $NotifyURL;
 
@@ -8038,105 +8103,113 @@ class PaymentDetailsType  {
 	 * include the ShipToAddress element, the AddressType elements
 	 * are required: Name Street1 CityName CountryCode Do not set
 	 * set the CountryName element. 
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $ShipToAddress;
 
 	/**
+	 * Thirdparty Fulfillment Reference Number. Optional Character
+	 * length and limitations: 32 alphanumeric characters. 
+	 * @access public
+	 * @var string
+	 */ 
+	public $FulfillmentReferenceNumber;
+
+	/**
 	 * 
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $FulfillmentAddress;
 
 	/**
 	 * 
-	 *@access public
-	 *@var PaymentCategoryType
+	 * @access public
+	 * @var PaymentCategoryType
 	 */ 
 	public $PaymentCategoryType;
 
 	/**
 	 * 
-	 *@access public
-	 *@var ShippingServiceCodeType
+	 * @access public
+	 * @var ShippingServiceCodeType
 	 */ 
 	public $ShippingMethod;
 
 	/**
 	 * Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at
 	 * which address was changed by the user. 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $ProfileAddressChangeDate;
 
 	/**
 	 * Information about the individual purchased items
-     *@array
-	 *@access public
-	 *@var PaymentDetailsItemType
+     * @array
+	 * @access public
+	 * @var PaymentDetailsItemType
 	 */ 
 	public $PaymentDetailsItem;
 
 	/**
 	 * Total shipping insurance costs for this order. Optional 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $InsuranceTotal;
 
 	/**
 	 * Shipping discount for this order, specified as a negative
 	 * number. Optional 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $ShippingDiscount;
 
 	/**
 	 * Information about the Insurance options. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InsuranceOptionOffered;
 
 	/**
 	 * Allowed payment methods for this transaction. 
-	 *@access public
-	 *@var AllowedPaymentMethodType
+	 * @access public
+	 * @var AllowedPaymentMethodType
 	 */ 
 	public $AllowedPaymentMethod;
 
 	/**
 	 * Enhanced Data section to accept channel specific data.
 	 * Optional Refer to EnhancedPaymentDataType for details. 
-	 *@access public
-	 *@var EnhancedPaymentDataType
+	 * @access public
+	 * @var EnhancedPaymentDataType
 	 */ 
 	public $EnhancedPaymentData;
 
 	/**
 	 * Details about the seller. Optional 
-	 *@access public
-	 *@var SellerDetailsType
+	 * @access public
+	 * @var SellerDetailsType
 	 */ 
 	public $SellerDetails;
 
 	/**
 	 * Note to recipient/seller. Optional Character length and
 	 * limitations: 127 single-byte alphanumeric characters. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $NoteText;
 
 	/**
 	 * PayPal Transaction Id, returned once DoExpressCheckout is
 	 * completed. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionId;
 
@@ -8153,31 +8226,31 @@ class PaymentDetailsType  {
 	 * PaymentAction to Authorization on the final Express Checkout
 	 * API, DoExpressCheckoutPaymentRequest. Character length and
 	 * limit: Up to 13 single-byte alphabetic characters 
-	 *@access public
-	 *@var PaymentActionCodeType
+	 * @access public
+	 * @var PaymentActionCodeType
 	 */ 
 	public $PaymentAction;
 
 	/**
 	 * Unique identifier and mandatory for the particular payment
 	 * request in case of multiple payment 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PaymentRequestID;
 
 	/**
 	 * URL on Merchant site pertaining to this invoice. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OrderURL;
 
 	/**
 	 * Soft Descriptor supported for Sale and Auth in DEC only. For
 	 * Order this will be ignored. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SoftDescriptor;
 
@@ -8186,30 +8259,30 @@ class PaymentDetailsType  {
 	 * BranchLevel is 0 or 1, this payment is where money moves to.
 	 * If BranchLevel greater than 1, this payment contains the
 	 * actual seller info. Optional 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $BranchLevel;
 
 	/**
 	 * Soft Descriptor supported for Sale and Auth in DEC only. For
 	 * Order this will be ignored. 
-	 *@access public
-	 *@var OfferDetailsType
+	 * @access public
+	 * @var OfferDetailsType
 	 */ 
 	public $OfferDetails;
 
 	/**
 	 * Flag to indicate the recurring transaction 
-	 *@access public
-	 *@var RecurringFlagType
+	 * @access public
+	 * @var RecurringFlagType
 	 */ 
 	public $Recurring;
 
 	/**
 	 * Indicates the purpose of this payment like Refund 
-	 *@access public
-	 *@var PaymentReasonType
+	 * @access public
+	 * @var PaymentReasonType
 	 */ 
 	public $PaymentReason;
 
@@ -8217,81 +8290,85 @@ class PaymentDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->OrderTotal != null)
+		if($this->OrderTotal != NULL)
 		{
 			$str .= '<ebl:OrderTotal';
 			$str .= $this->OrderTotal->toXMLString();
 			$str .= '</ebl:OrderTotal>';
 		}
-		if($this->ItemTotal != null)
+		if($this->ItemTotal != NULL)
 		{
 			$str .= '<ebl:ItemTotal';
 			$str .= $this->ItemTotal->toXMLString();
 			$str .= '</ebl:ItemTotal>';
 		}
-		if($this->ShippingTotal != null)
+		if($this->ShippingTotal != NULL)
 		{
 			$str .= '<ebl:ShippingTotal';
 			$str .= $this->ShippingTotal->toXMLString();
 			$str .= '</ebl:ShippingTotal>';
 		}
-		if($this->HandlingTotal != null)
+		if($this->HandlingTotal != NULL)
 		{
 			$str .= '<ebl:HandlingTotal';
 			$str .= $this->HandlingTotal->toXMLString();
 			$str .= '</ebl:HandlingTotal>';
 		}
-		if($this->TaxTotal != null)
+		if($this->TaxTotal != NULL)
 		{
 			$str .= '<ebl:TaxTotal';
 			$str .= $this->TaxTotal->toXMLString();
 			$str .= '</ebl:TaxTotal>';
 		}
-		if($this->OrderDescription != null)
+		if($this->OrderDescription != NULL)
 		{
 			$str .= '<ebl:OrderDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->OrderDescription) . '</ebl:OrderDescription>';
 		}
-		if($this->Custom != null)
+		if($this->Custom != NULL)
 		{
 			$str .= '<ebl:Custom>' . PPUtils::escapeInvalidXmlCharsRegex($this->Custom) . '</ebl:Custom>';
 		}
-		if($this->InvoiceID != null)
+		if($this->InvoiceID != NULL)
 		{
 			$str .= '<ebl:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</ebl:InvoiceID>';
 		}
-		if($this->ButtonSource != null)
+		if($this->ButtonSource != NULL)
 		{
 			$str .= '<ebl:ButtonSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSource) . '</ebl:ButtonSource>';
 		}
-		if($this->NotifyURL != null)
+		if($this->NotifyURL != NULL)
 		{
 			$str .= '<ebl:NotifyURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->NotifyURL) . '</ebl:NotifyURL>';
 		}
-		if($this->ShipToAddress != null)
+		if($this->ShipToAddress != NULL)
 		{
 			$str .= '<ebl:ShipToAddress>';
 			$str .= $this->ShipToAddress->toXMLString();
 			$str .= '</ebl:ShipToAddress>';
 		}
-		if($this->FulfillmentAddress != null)
+		if($this->FulfillmentReferenceNumber != NULL)
+		{
+			$str .= '<ebl:FulfillmentReferenceNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->FulfillmentReferenceNumber) . '</ebl:FulfillmentReferenceNumber>';
+		}
+		if($this->FulfillmentAddress != NULL)
 		{
 			$str .= '<ebl:FulfillmentAddress>';
 			$str .= $this->FulfillmentAddress->toXMLString();
 			$str .= '</ebl:FulfillmentAddress>';
 		}
-		if($this->PaymentCategoryType != null)
+		if($this->PaymentCategoryType != NULL)
 		{
 			$str .= '<ebl:PaymentCategoryType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentCategoryType) . '</ebl:PaymentCategoryType>';
 		}
-		if($this->ShippingMethod != null)
+		if($this->ShippingMethod != NULL)
 		{
 			$str .= '<ebl:ShippingMethod>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingMethod) . '</ebl:ShippingMethod>';
 		}
-		if($this->ProfileAddressChangeDate != null)
+		if($this->ProfileAddressChangeDate != NULL)
 		{
 			$str .= '<ebl:ProfileAddressChangeDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileAddressChangeDate) . '</ebl:ProfileAddressChangeDate>';
 		}
-		if($this->PaymentDetailsItem != null)
+		if($this->PaymentDetailsItem != NULL)
 		{
 			for($i = 0; $i < count($this->PaymentDetailsItem); $i++)
 			{
@@ -8300,77 +8377,77 @@ class PaymentDetailsType  {
 				$str .= '</ebl:PaymentDetailsItem>';
 			}
 		}
-		if($this->InsuranceTotal != null)
+		if($this->InsuranceTotal != NULL)
 		{
 			$str .= '<ebl:InsuranceTotal';
 			$str .= $this->InsuranceTotal->toXMLString();
 			$str .= '</ebl:InsuranceTotal>';
 		}
-		if($this->ShippingDiscount != null)
+		if($this->ShippingDiscount != NULL)
 		{
 			$str .= '<ebl:ShippingDiscount';
 			$str .= $this->ShippingDiscount->toXMLString();
 			$str .= '</ebl:ShippingDiscount>';
 		}
-		if($this->InsuranceOptionOffered != null)
+		if($this->InsuranceOptionOffered != NULL)
 		{
 			$str .= '<ebl:InsuranceOptionOffered>' . PPUtils::escapeInvalidXmlCharsRegex($this->InsuranceOptionOffered) . '</ebl:InsuranceOptionOffered>';
 		}
-		if($this->AllowedPaymentMethod != null)
+		if($this->AllowedPaymentMethod != NULL)
 		{
 			$str .= '<ebl:AllowedPaymentMethod>' . PPUtils::escapeInvalidXmlCharsRegex($this->AllowedPaymentMethod) . '</ebl:AllowedPaymentMethod>';
 		}
-		if($this->EnhancedPaymentData != null)
+		if($this->EnhancedPaymentData != NULL)
 		{
 			$str .= '<ebl:EnhancedPaymentData>';
 			$str .= $this->EnhancedPaymentData->toXMLString();
 			$str .= '</ebl:EnhancedPaymentData>';
 		}
-		if($this->SellerDetails != null)
+		if($this->SellerDetails != NULL)
 		{
 			$str .= '<ebl:SellerDetails>';
 			$str .= $this->SellerDetails->toXMLString();
 			$str .= '</ebl:SellerDetails>';
 		}
-		if($this->NoteText != null)
+		if($this->NoteText != NULL)
 		{
 			$str .= '<ebl:NoteText>' . PPUtils::escapeInvalidXmlCharsRegex($this->NoteText) . '</ebl:NoteText>';
 		}
-		if($this->TransactionId != null)
+		if($this->TransactionId != NULL)
 		{
 			$str .= '<ebl:TransactionId>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionId) . '</ebl:TransactionId>';
 		}
-		if($this->PaymentAction != null)
+		if($this->PaymentAction != NULL)
 		{
 			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
 		}
-		if($this->PaymentRequestID != null)
+		if($this->PaymentRequestID != NULL)
 		{
 			$str .= '<ebl:PaymentRequestID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentRequestID) . '</ebl:PaymentRequestID>';
 		}
-		if($this->OrderURL != null)
+		if($this->OrderURL != NULL)
 		{
 			$str .= '<ebl:OrderURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->OrderURL) . '</ebl:OrderURL>';
 		}
-		if($this->SoftDescriptor != null)
+		if($this->SoftDescriptor != NULL)
 		{
 			$str .= '<ebl:SoftDescriptor>' . PPUtils::escapeInvalidXmlCharsRegex($this->SoftDescriptor) . '</ebl:SoftDescriptor>';
 		}
-		if($this->BranchLevel != null)
+		if($this->BranchLevel != NULL)
 		{
 			$str .= '<ebl:BranchLevel>' . PPUtils::escapeInvalidXmlCharsRegex($this->BranchLevel) . '</ebl:BranchLevel>';
 		}
-		if($this->OfferDetails != null)
+		if($this->OfferDetails != NULL)
 		{
 			$str .= '<ebl:OfferDetails>';
 			$str .= $this->OfferDetails->toXMLString();
 			$str .= '</ebl:OfferDetails>';
 		}
-		if($this->Recurring != null)
+		if($this->Recurring != NULL)
 		{
 			$str .= '<ebl:Recurring>' . PPUtils::escapeInvalidXmlCharsRegex($this->Recurring) . '</ebl:Recurring>';
 		}
-		if($this->PaymentReason != null)
+		if($this->PaymentReason != NULL)
 		{
 			$str .= '<ebl:PaymentReason>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentReason) . '</ebl:PaymentReason>';
 		}
@@ -8378,12 +8455,12 @@ class PaymentDetailsType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='ordertotal') {
 								$tmp =  array();
 								$atr =  array();
@@ -8400,7 +8477,7 @@ class PaymentDetailsType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='itemtotal') {
 								$tmp =  array();
 								$atr =  array();
@@ -8417,7 +8494,7 @@ class PaymentDetailsType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='shippingtotal') {
 								$tmp =  array();
 								$atr =  array();
@@ -8434,7 +8511,7 @@ class PaymentDetailsType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='handlingtotal') {
 								$tmp =  array();
 								$atr =  array();
@@ -8451,7 +8528,7 @@ class PaymentDetailsType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='taxtotal') {
 								$tmp =  array();
 								$atr =  array();
@@ -8466,49 +8543,52 @@ class PaymentDetailsType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'orderdescription') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'orderdescription') {
 					$this->OrderDescription = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'custom') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'custom') {
 					$this->Custom = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'invoiceid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'invoiceid') {
 					$this->InvoiceID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'buttonsource') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttonsource') {
 					$this->ButtonSource = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'notifyurl') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'notifyurl') {
 					$this->NotifyURL = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='shiptoaddress'){
                                     $this->ShipToAddress = new AddressType(); 
                                     $this->ShipToAddress->init($arry["children"]);
                                 }                                                
                                                 
 			}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'fulfillmentreferencenumber') {
+					$this->FulfillmentReferenceNumber = $arry["text"];
+				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='fulfillmentaddress'){
                                     $this->FulfillmentAddress = new AddressType(); 
                                     $this->FulfillmentAddress->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentcategorytype') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentcategorytype') {
 					$this->PaymentCategoryType = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'shippingmethod') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shippingmethod') {
 					$this->ShippingMethod = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'profileaddresschangedate') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profileaddresschangedate') {
 					$this->ProfileAddressChangeDate = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "paymentdetailsitem[$i]") {
 							$this->PaymentDetailsItem[$i] = new PaymentDetailsItemType();
 							$this->PaymentDetailsItem[$i]->init($arry["children"]);
@@ -8518,13 +8598,13 @@ class PaymentDetailsType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "paymentdetailsitem")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "paymentdetailsitem")) {
 					$this->PaymentDetailsItem = new PaymentDetailsItemType();
 					$this->PaymentDetailsItem->init($arry["children"]);
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='insurancetotal') {
 								$tmp =  array();
 								$atr =  array();
@@ -8541,7 +8621,7 @@ class PaymentDetailsType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='shippingdiscount') {
 								$tmp =  array();
 								$atr =  array();
@@ -8556,14 +8636,14 @@ class PaymentDetailsType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'insuranceoptionoffered') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'insuranceoptionoffered') {
 					$this->InsuranceOptionOffered = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'allowedpaymentmethod') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'allowedpaymentmethod') {
 					$this->AllowedPaymentMethod = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='enhancedpaymentdata'){
                                     $this->EnhancedPaymentData = new EnhancedPaymentDataType(); 
                                     $this->EnhancedPaymentData->init($arry["children"]);
@@ -8571,46 +8651,46 @@ class PaymentDetailsType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='sellerdetails'){
                                     $this->SellerDetails = new SellerDetailsType(); 
                                     $this->SellerDetails->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'notetext') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'notetext') {
 					$this->NoteText = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'transactionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
 					$this->TransactionId = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentaction') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentaction') {
 					$this->PaymentAction = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentrequestid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentrequestid') {
 					$this->PaymentRequestID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'orderurl') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'orderurl') {
 					$this->OrderURL = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'softdescriptor') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'softdescriptor') {
 					$this->SoftDescriptor = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'branchlevel') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'branchlevel') {
 					$this->BranchLevel = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='offerdetails'){
                                     $this->OfferDetails = new OfferDetailsType(); 
                                     $this->OfferDetails->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'recurring') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'recurring') {
 					$this->Recurring = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentreason') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentreason') {
 					$this->PaymentReason = $arry["text"];
 				}
 			}
@@ -8630,63 +8710,63 @@ class IncentiveDetailsType  {
 	 * Unique Identifier consisting of redemption code, user
 	 * friendly descripotion, incentive type, campaign code,
 	 * incenitve application order and site redeemed on. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $UniqueIdentifier;
 
 	/**
 	 * Defines if the incentive has been applied on Ebay or PayPal.
 	 * 
-	 *@access public
-	 *@var IncentiveSiteAppliedOnType
+	 * @access public
+	 * @var IncentiveSiteAppliedOnType
 	 */ 
 	public $SiteAppliedOn;
 
 	/**
 	 * The total discount amount for the incentive, summation of
 	 * discounts up across all the buckets/items. 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $TotalDiscountAmount;
 
 	/**
 	 * Status of incentive processing. Sussess or Error. 
-	 *@access public
-	 *@var IncentiveAppliedStatusType
+	 * @access public
+	 * @var IncentiveAppliedStatusType
 	 */ 
 	public $Status;
 
 	/**
 	 * Error code if there are any errors. Zero otherwise. 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $ErrorCode;
 
 	/**
 	 * Details of incentive application on individual bucket/item. 
-     *@array
-	 *@access public
-	 *@var IncentiveAppliedDetailsType
+     * @array
+	 * @access public
+	 * @var IncentiveAppliedDetailsType
 	 */ 
 	public $IncentiveAppliedDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'uniqueidentifier') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'uniqueidentifier') {
 					$this->UniqueIdentifier = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'siteappliedon') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'siteappliedon') {
 					$this->SiteAppliedOn = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='totaldiscountamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -8701,15 +8781,15 @@ class IncentiveDetailsType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'status') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
 					$this->Status = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'errorcode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'errorcode') {
 					$this->ErrorCode = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "incentiveapplieddetails[$i]") {
 							$this->IncentiveAppliedDetails[$i] = new IncentiveAppliedDetailsType();
 							$this->IncentiveAppliedDetails[$i]->init($arry["children"]);
@@ -8719,7 +8799,7 @@ class IncentiveDetailsType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "incentiveapplieddetails")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "incentiveapplieddetails")) {
 					$this->IncentiveAppliedDetails = new IncentiveAppliedDetailsType();
 					$this->IncentiveAppliedDetails->init($arry["children"]);
 				}
@@ -8738,56 +8818,56 @@ class IncentiveAppliedDetailsType  {
 	/**
 	 * PaymentRequestID uniquely identifies a bucket. It is the
 	 * "bucket id" in the world of EC API. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PaymentRequestID;
 
 	/**
 	 * The item id passed through by the merchant. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemId;
 
 	/**
 	 * The item transaction id passed through by the merchant. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ExternalTxnId;
 
 	/**
 	 * Discount offerred for this bucket or item. 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $DiscountAmount;
 
 	/**
 	 * SubType for coupon. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SubType;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentrequestid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentrequestid') {
 					$this->PaymentRequestID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'itemid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemid') {
 					$this->ItemId = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'externaltxnid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'externaltxnid') {
 					$this->ExternalTxnId = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='discountamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -8802,7 +8882,7 @@ class IncentiveAppliedDetailsType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'subtype') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'subtype') {
 					$this->SubType = $arry["text"];
 				}
 			}
@@ -8819,32 +8899,32 @@ class SellerDetailsType  {
 
 	/**
 	 * Unique identifier for the seller. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SellerId;
 
 	/**
 	 * The user name of the user at the marketplaces site. Optional
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SellerUserName;
 
 	/**
 	 * Date when the user registered with the marketplace. Optional
 	 * 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $SellerRegistrationDate;
 
 	/**
 	 * Seller Paypal Account Id contains the seller EmailId or
 	 * PayerId or PhoneNo passed during the Request. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PayPalAccountID;
 
@@ -8852,8 +8932,8 @@ class SellerDetailsType  {
 	 * Unique PayPal customer account identification number (of the
 	 * seller). This feild is meant for Response. This field is
 	 * ignored, if passed in the Request. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SecureMerchantAccountID;
 
@@ -8861,23 +8941,23 @@ class SellerDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->SellerId != null)
+		if($this->SellerId != NULL)
 		{
 			$str .= '<ebl:SellerId>' . PPUtils::escapeInvalidXmlCharsRegex($this->SellerId) . '</ebl:SellerId>';
 		}
-		if($this->SellerUserName != null)
+		if($this->SellerUserName != NULL)
 		{
 			$str .= '<ebl:SellerUserName>' . PPUtils::escapeInvalidXmlCharsRegex($this->SellerUserName) . '</ebl:SellerUserName>';
 		}
-		if($this->SellerRegistrationDate != null)
+		if($this->SellerRegistrationDate != NULL)
 		{
 			$str .= '<ebl:SellerRegistrationDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->SellerRegistrationDate) . '</ebl:SellerRegistrationDate>';
 		}
-		if($this->PayPalAccountID != null)
+		if($this->PayPalAccountID != NULL)
 		{
 			$str .= '<ebl:PayPalAccountID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayPalAccountID) . '</ebl:PayPalAccountID>';
 		}
-		if($this->SecureMerchantAccountID != null)
+		if($this->SecureMerchantAccountID != NULL)
 		{
 			$str .= '<ebl:SecureMerchantAccountID>' . PPUtils::escapeInvalidXmlCharsRegex($this->SecureMerchantAccountID) . '</ebl:SecureMerchantAccountID>';
 		}
@@ -8885,22 +8965,22 @@ class SellerDetailsType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'sellerid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'sellerid') {
 					$this->SellerId = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'sellerusername') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'sellerusername') {
 					$this->SellerUserName = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'sellerregistrationdate') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'sellerregistrationdate') {
 					$this->SellerRegistrationDate = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paypalaccountid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paypalaccountid') {
 					$this->PayPalAccountID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'securemerchantaccountid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'securemerchantaccountid') {
 					$this->SecureMerchantAccountID = $arry["text"];
 				}
 			}
@@ -8918,51 +8998,51 @@ class OtherPaymentMethodDetailsType  {
 
 	/**
 	 * The identifier of the Payment Method. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OtherPaymentMethodId;
 
 	/**
 	 * Valid values are 'Method', 'SubMethod'. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OtherPaymentMethodType;
 
 	/**
 	 * The name of the Payment Method. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OtherPaymentMethodLabel;
 
 	/**
 	 * The short description of the Payment Method, goes along with
 	 * the label. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OtherPaymentMethodLabelDescription;
 
 	/**
 	 * The title for the long description. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OtherPaymentMethodLongDescriptionTitle;
 
 	/**
 	 * The long description of the Payment Method. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OtherPaymentMethodLongDescription;
 
 	/**
 	 * The icon of the Payment Method. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OtherPaymentMethodIcon;
 
@@ -8970,8 +9050,8 @@ class OtherPaymentMethodDetailsType  {
 	 * If this flag is true, then OtherPaymentMethodIcon is
 	 * required to have a valid value; the label will be hidden and
 	 * only ICON will be shown. 
-	 *@access public
-	 *@var boolean
+	 * @access public
+	 * @var boolean
 	 */ 
 	public $OtherPaymentMethodHideLabel;
 
@@ -8979,35 +9059,35 @@ class OtherPaymentMethodDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->OtherPaymentMethodId != null)
+		if($this->OtherPaymentMethodId != NULL)
 		{
 			$str .= '<ebl:OtherPaymentMethodId>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodId) . '</ebl:OtherPaymentMethodId>';
 		}
-		if($this->OtherPaymentMethodType != null)
+		if($this->OtherPaymentMethodType != NULL)
 		{
 			$str .= '<ebl:OtherPaymentMethodType>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodType) . '</ebl:OtherPaymentMethodType>';
 		}
-		if($this->OtherPaymentMethodLabel != null)
+		if($this->OtherPaymentMethodLabel != NULL)
 		{
 			$str .= '<ebl:OtherPaymentMethodLabel>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodLabel) . '</ebl:OtherPaymentMethodLabel>';
 		}
-		if($this->OtherPaymentMethodLabelDescription != null)
+		if($this->OtherPaymentMethodLabelDescription != NULL)
 		{
 			$str .= '<ebl:OtherPaymentMethodLabelDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodLabelDescription) . '</ebl:OtherPaymentMethodLabelDescription>';
 		}
-		if($this->OtherPaymentMethodLongDescriptionTitle != null)
+		if($this->OtherPaymentMethodLongDescriptionTitle != NULL)
 		{
 			$str .= '<ebl:OtherPaymentMethodLongDescriptionTitle>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodLongDescriptionTitle) . '</ebl:OtherPaymentMethodLongDescriptionTitle>';
 		}
-		if($this->OtherPaymentMethodLongDescription != null)
+		if($this->OtherPaymentMethodLongDescription != NULL)
 		{
 			$str .= '<ebl:OtherPaymentMethodLongDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodLongDescription) . '</ebl:OtherPaymentMethodLongDescription>';
 		}
-		if($this->OtherPaymentMethodIcon != null)
+		if($this->OtherPaymentMethodIcon != NULL)
 		{
 			$str .= '<ebl:OtherPaymentMethodIcon>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodIcon) . '</ebl:OtherPaymentMethodIcon>';
 		}
-		if($this->OtherPaymentMethodHideLabel != null)
+		if($this->OtherPaymentMethodHideLabel != NULL)
 		{
 			$str .= '<ebl:OtherPaymentMethodHideLabel>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodHideLabel) . '</ebl:OtherPaymentMethodHideLabel>';
 		}
@@ -9027,38 +9107,38 @@ class BuyerDetailsType  {
 
 	/**
 	 * The client's unique ID for this user. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BuyerId;
 
 	/**
 	 * The user name of the user at the marketplaces site. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BuyerUserName;
 
 	/**
 	 * Date when the user registered with the marketplace. 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $BuyerRegistrationDate;
 
 	/**
 	 * Details about payer's tax info. Refer to the
 	 * TaxIdDetailsType for more details. 
-	 *@access public
-	 *@var TaxIdDetailsType
+	 * @access public
+	 * @var TaxIdDetailsType
 	 */ 
 	public $TaxIdDetails;
 
 	/**
 	 * Contains information that identifies the buyer. e.g. email
 	 * address or the external remember me id. 
-	 *@access public
-	 *@var IdentificationInfoType
+	 * @access public
+	 * @var IdentificationInfoType
 	 */ 
 	public $IdentificationInfo;
 
@@ -9066,25 +9146,25 @@ class BuyerDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->BuyerId != null)
+		if($this->BuyerId != NULL)
 		{
 			$str .= '<ebl:BuyerId>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerId) . '</ebl:BuyerId>';
 		}
-		if($this->BuyerUserName != null)
+		if($this->BuyerUserName != NULL)
 		{
 			$str .= '<ebl:BuyerUserName>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerUserName) . '</ebl:BuyerUserName>';
 		}
-		if($this->BuyerRegistrationDate != null)
+		if($this->BuyerRegistrationDate != NULL)
 		{
 			$str .= '<ebl:BuyerRegistrationDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerRegistrationDate) . '</ebl:BuyerRegistrationDate>';
 		}
-		if($this->TaxIdDetails != null)
+		if($this->TaxIdDetails != NULL)
 		{
 			$str .= '<ebl:TaxIdDetails>';
 			$str .= $this->TaxIdDetails->toXMLString();
 			$str .= '</ebl:TaxIdDetails>';
 		}
-		if($this->IdentificationInfo != null)
+		if($this->IdentificationInfo != NULL)
 		{
 			$str .= '<ebl:IdentificationInfo>';
 			$str .= $this->IdentificationInfo->toXMLString();
@@ -9106,15 +9186,15 @@ class TaxIdDetailsType  {
 
 	/**
 	 * The payer's Tax ID type; CNPJ/CPF for BR country. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TaxIdType;
 
 	/**
 	 * The payer's Tax ID 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TaxId;
 
@@ -9122,11 +9202,11 @@ class TaxIdDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->TaxIdType != null)
+		if($this->TaxIdType != NULL)
 		{
 			$str .= '<ebl:TaxIdType>' . PPUtils::escapeInvalidXmlCharsRegex($this->TaxIdType) . '</ebl:TaxIdType>';
 		}
-		if($this->TaxId != null)
+		if($this->TaxId != NULL)
 		{
 			$str .= '<ebl:TaxId>' . PPUtils::escapeInvalidXmlCharsRegex($this->TaxId) . '</ebl:TaxId>';
 		}
@@ -9134,13 +9214,13 @@ class TaxIdDetailsType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'taxidtype') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'taxidtype') {
 					$this->TaxIdType = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'taxid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'taxid') {
 					$this->TaxId = $arry["text"];
 				}
 			}
@@ -9157,36 +9237,36 @@ class ThreeDSecureRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Eci3ds;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Cavv;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Xid;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MpiVendor3ds;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AuthStatus3ds;
 
@@ -9194,23 +9274,23 @@ class ThreeDSecureRequestType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Eci3ds != null)
+		if($this->Eci3ds != NULL)
 		{
 			$str .= '<ebl:Eci3ds>' . PPUtils::escapeInvalidXmlCharsRegex($this->Eci3ds) . '</ebl:Eci3ds>';
 		}
-		if($this->Cavv != null)
+		if($this->Cavv != NULL)
 		{
 			$str .= '<ebl:Cavv>' . PPUtils::escapeInvalidXmlCharsRegex($this->Cavv) . '</ebl:Cavv>';
 		}
-		if($this->Xid != null)
+		if($this->Xid != NULL)
 		{
 			$str .= '<ebl:Xid>' . PPUtils::escapeInvalidXmlCharsRegex($this->Xid) . '</ebl:Xid>';
 		}
-		if($this->MpiVendor3ds != null)
+		if($this->MpiVendor3ds != NULL)
 		{
 			$str .= '<ebl:MpiVendor3ds>' . PPUtils::escapeInvalidXmlCharsRegex($this->MpiVendor3ds) . '</ebl:MpiVendor3ds>';
 		}
-		if($this->AuthStatus3ds != null)
+		if($this->AuthStatus3ds != NULL)
 		{
 			$str .= '<ebl:AuthStatus3ds>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuthStatus3ds) . '</ebl:AuthStatus3ds>';
 		}
@@ -9218,22 +9298,22 @@ class ThreeDSecureRequestType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'eci3ds') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'eci3ds') {
 					$this->Eci3ds = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'cavv') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'cavv') {
 					$this->Cavv = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'xid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'xid') {
 					$this->Xid = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'mpivendor3ds') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'mpivendor3ds') {
 					$this->MpiVendor3ds = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'authstatus3ds') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'authstatus3ds') {
 					$this->AuthStatus3ds = $arry["text"];
 				}
 			}
@@ -9250,27 +9330,27 @@ class ThreeDSecureResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Vpas;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $EciSubmitted3DS;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'vpas') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'vpas') {
 					$this->Vpas = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'ecisubmitted3ds') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'ecisubmitted3ds') {
 					$this->EciSubmitted3DS = $arry["text"];
 				}
 			}
@@ -9287,25 +9367,25 @@ class ThreeDSecureInfoType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var ThreeDSecureRequestType
+	 * @access public
+	 * @var ThreeDSecureRequestType
 	 */ 
 	public $ThreeDSecureRequest;
 
 	/**
 	 * 
-	 *@access public
-	 *@var ThreeDSecureResponseType
+	 * @access public
+	 * @var ThreeDSecureResponseType
 	 */ 
 	public $ThreeDSecureResponse;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='threedsecurerequest'){
                                     $this->ThreeDSecureRequest = new ThreeDSecureRequestType(); 
                                     $this->ThreeDSecureRequest->init($arry["children"]);
@@ -9313,7 +9393,7 @@ class ThreeDSecureInfoType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='threedsecureresponse'){
                                     $this->ThreeDSecureResponse = new ThreeDSecureResponseType(); 
                                     $this->ThreeDSecureResponse->init($arry["children"]);
@@ -9334,71 +9414,71 @@ class CreditCardDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var CreditCardTypeType
+	 * @access public
+	 * @var CreditCardTypeType
 	 */ 
 	public $CreditCardType;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CreditCardNumber;
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $ExpMonth;
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $ExpYear;
 
 	/**
 	 * 
-	 *@access public
-	 *@var PayerInfoType
+	 * @access public
+	 * @var PayerInfoType
 	 */ 
 	public $CardOwner;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CVV2;
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $StartMonth;
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $StartYear;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $IssueNumber;
 
 	/**
 	 * 
-	 *@access public
-	 *@var ThreeDSecureRequestType
+	 * @access public
+	 * @var ThreeDSecureRequestType
 	 */ 
 	public $ThreeDSecureRequest;
 
@@ -9406,45 +9486,45 @@ class CreditCardDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->CreditCardType != null)
+		if($this->CreditCardType != NULL)
 		{
 			$str .= '<ebl:CreditCardType>' . PPUtils::escapeInvalidXmlCharsRegex($this->CreditCardType) . '</ebl:CreditCardType>';
 		}
-		if($this->CreditCardNumber != null)
+		if($this->CreditCardNumber != NULL)
 		{
 			$str .= '<ebl:CreditCardNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->CreditCardNumber) . '</ebl:CreditCardNumber>';
 		}
-		if($this->ExpMonth != null)
+		if($this->ExpMonth != NULL)
 		{
 			$str .= '<ebl:ExpMonth>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpMonth) . '</ebl:ExpMonth>';
 		}
-		if($this->ExpYear != null)
+		if($this->ExpYear != NULL)
 		{
 			$str .= '<ebl:ExpYear>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpYear) . '</ebl:ExpYear>';
 		}
-		if($this->CardOwner != null)
+		if($this->CardOwner != NULL)
 		{
 			$str .= '<ebl:CardOwner>';
 			$str .= $this->CardOwner->toXMLString();
 			$str .= '</ebl:CardOwner>';
 		}
-		if($this->CVV2 != null)
+		if($this->CVV2 != NULL)
 		{
 			$str .= '<ebl:CVV2>' . PPUtils::escapeInvalidXmlCharsRegex($this->CVV2) . '</ebl:CVV2>';
 		}
-		if($this->StartMonth != null)
+		if($this->StartMonth != NULL)
 		{
 			$str .= '<ebl:StartMonth>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartMonth) . '</ebl:StartMonth>';
 		}
-		if($this->StartYear != null)
+		if($this->StartYear != NULL)
 		{
 			$str .= '<ebl:StartYear>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartYear) . '</ebl:StartYear>';
 		}
-		if($this->IssueNumber != null)
+		if($this->IssueNumber != NULL)
 		{
 			$str .= '<ebl:IssueNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->IssueNumber) . '</ebl:IssueNumber>';
 		}
-		if($this->ThreeDSecureRequest != null)
+		if($this->ThreeDSecureRequest != NULL)
 		{
 			$str .= '<ebl:ThreeDSecureRequest>';
 			$str .= $this->ThreeDSecureRequest->toXMLString();
@@ -9454,43 +9534,43 @@ class CreditCardDetailsType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'creditcardtype') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'creditcardtype') {
 					$this->CreditCardType = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'creditcardnumber') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'creditcardnumber') {
 					$this->CreditCardNumber = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'expmonth') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'expmonth') {
 					$this->ExpMonth = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'expyear') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'expyear') {
 					$this->ExpYear = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='cardowner'){
                                     $this->CardOwner = new PayerInfoType(); 
                                     $this->CardOwner->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'cvv2') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'cvv2') {
 					$this->CVV2 = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'startmonth') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'startmonth') {
 					$this->StartMonth = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'startyear') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'startyear') {
 					$this->StartYear = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'issuenumber') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'issuenumber') {
 					$this->IssueNumber = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='threedsecurerequest'){
                                     $this->ThreeDSecureRequest = new ThreeDSecureRequestType(); 
                                     $this->ThreeDSecureRequest->init($arry["children"]);
@@ -9511,22 +9591,22 @@ class ShippingOptionType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ShippingOptionIsDefault;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $ShippingOptionAmount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ShippingOptionName;
 
@@ -9534,17 +9614,17 @@ class ShippingOptionType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ShippingOptionIsDefault != null)
+		if($this->ShippingOptionIsDefault != NULL)
 		{
 			$str .= '<ebl:ShippingOptionIsDefault>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingOptionIsDefault) . '</ebl:ShippingOptionIsDefault>';
 		}
-		if($this->ShippingOptionAmount != null)
+		if($this->ShippingOptionAmount != NULL)
 		{
 			$str .= '<ebl:ShippingOptionAmount';
 			$str .= $this->ShippingOptionAmount->toXMLString();
 			$str .= '</ebl:ShippingOptionAmount>';
 		}
-		if($this->ShippingOptionName != null)
+		if($this->ShippingOptionName != NULL)
 		{
 			$str .= '<ebl:ShippingOptionName>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingOptionName) . '</ebl:ShippingOptionName>';
 		}
@@ -9563,36 +9643,36 @@ class UserSelectedOptionType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ShippingCalculationMode;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InsuranceOptionSelected;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ShippingOptionIsDefault;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $ShippingOptionAmount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ShippingOptionName;
 
@@ -9600,25 +9680,25 @@ class UserSelectedOptionType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ShippingCalculationMode != null)
+		if($this->ShippingCalculationMode != NULL)
 		{
 			$str .= '<ebl:ShippingCalculationMode>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingCalculationMode) . '</ebl:ShippingCalculationMode>';
 		}
-		if($this->InsuranceOptionSelected != null)
+		if($this->InsuranceOptionSelected != NULL)
 		{
 			$str .= '<ebl:InsuranceOptionSelected>' . PPUtils::escapeInvalidXmlCharsRegex($this->InsuranceOptionSelected) . '</ebl:InsuranceOptionSelected>';
 		}
-		if($this->ShippingOptionIsDefault != null)
+		if($this->ShippingOptionIsDefault != NULL)
 		{
 			$str .= '<ebl:ShippingOptionIsDefault>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingOptionIsDefault) . '</ebl:ShippingOptionIsDefault>';
 		}
-		if($this->ShippingOptionAmount != null)
+		if($this->ShippingOptionAmount != NULL)
 		{
 			$str .= '<ebl:ShippingOptionAmount';
 			$str .= $this->ShippingOptionAmount->toXMLString();
 			$str .= '</ebl:ShippingOptionAmount>';
 		}
-		if($this->ShippingOptionName != null)
+		if($this->ShippingOptionName != NULL)
 		{
 			$str .= '<ebl:ShippingOptionName>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingOptionName) . '</ebl:ShippingOptionName>';
 		}
@@ -9626,21 +9706,21 @@ class UserSelectedOptionType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'shippingcalculationmode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shippingcalculationmode') {
 					$this->ShippingCalculationMode = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'insuranceoptionselected') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'insuranceoptionselected') {
 					$this->InsuranceOptionSelected = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'shippingoptionisdefault') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shippingoptionisdefault') {
 					$this->ShippingOptionIsDefault = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='shippingoptionamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -9655,7 +9735,7 @@ class UserSelectedOptionType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'shippingoptionname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shippingoptionname') {
 					$this->ShippingOptionName = $arry["text"];
 				}
 			}
@@ -9672,15 +9752,15 @@ class CreditCardNumberTypeType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var CreditCardTypeType
+	 * @access public
+	 * @var CreditCardTypeType
 	 */ 
 	public $CreditCardType;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CreditCardNumber;
 
@@ -9688,11 +9768,11 @@ class CreditCardNumberTypeType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->CreditCardType != null)
+		if($this->CreditCardType != NULL)
 		{
 			$str .= '<ebl:CreditCardType>' . PPUtils::escapeInvalidXmlCharsRegex($this->CreditCardType) . '</ebl:CreditCardType>';
 		}
-		if($this->CreditCardNumber != null)
+		if($this->CreditCardNumber != NULL)
 		{
 			$str .= '<ebl:CreditCardNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->CreditCardNumber) . '</ebl:CreditCardNumber>';
 		}
@@ -9712,64 +9792,64 @@ class ReferenceCreditCardDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var CreditCardNumberTypeType
+	 * @access public
+	 * @var CreditCardNumberTypeType
 	 */ 
 	public $CreditCardNumberType;
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $ExpMonth;
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $ExpYear;
 
 	/**
 	 * 
-	 *@access public
-	 *@var PersonNameType
+	 * @access public
+	 * @var PersonNameType
 	 */ 
 	public $CardOwnerName;
 
 	/**
 	 * 
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $BillingAddress;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CVV2;
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $StartMonth;
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $StartYear;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $IssueNumber;
 
@@ -9777,45 +9857,45 @@ class ReferenceCreditCardDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->CreditCardNumberType != null)
+		if($this->CreditCardNumberType != NULL)
 		{
 			$str .= '<ebl:CreditCardNumberType>';
 			$str .= $this->CreditCardNumberType->toXMLString();
 			$str .= '</ebl:CreditCardNumberType>';
 		}
-		if($this->ExpMonth != null)
+		if($this->ExpMonth != NULL)
 		{
 			$str .= '<ebl:ExpMonth>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpMonth) . '</ebl:ExpMonth>';
 		}
-		if($this->ExpYear != null)
+		if($this->ExpYear != NULL)
 		{
 			$str .= '<ebl:ExpYear>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpYear) . '</ebl:ExpYear>';
 		}
-		if($this->CardOwnerName != null)
+		if($this->CardOwnerName != NULL)
 		{
 			$str .= '<ebl:CardOwnerName>';
 			$str .= $this->CardOwnerName->toXMLString();
 			$str .= '</ebl:CardOwnerName>';
 		}
-		if($this->BillingAddress != null)
+		if($this->BillingAddress != NULL)
 		{
 			$str .= '<ebl:BillingAddress>';
 			$str .= $this->BillingAddress->toXMLString();
 			$str .= '</ebl:BillingAddress>';
 		}
-		if($this->CVV2 != null)
+		if($this->CVV2 != NULL)
 		{
 			$str .= '<ebl:CVV2>' . PPUtils::escapeInvalidXmlCharsRegex($this->CVV2) . '</ebl:CVV2>';
 		}
-		if($this->StartMonth != null)
+		if($this->StartMonth != NULL)
 		{
 			$str .= '<ebl:StartMonth>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartMonth) . '</ebl:StartMonth>';
 		}
-		if($this->StartYear != null)
+		if($this->StartYear != NULL)
 		{
 			$str .= '<ebl:StartYear>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartYear) . '</ebl:StartYear>';
 		}
-		if($this->IssueNumber != null)
+		if($this->IssueNumber != NULL)
 		{
 			$str .= '<ebl:IssueNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->IssueNumber) . '</ebl:IssueNumber>';
 		}
@@ -9834,71 +9914,71 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BillingAgreementDetailsType
+	 * @access public
+	 * @var BillingAgreementDetailsType
 	 */ 
 	public $BillingAgreementDetails;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReturnURL;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CancelURL;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $LocaleCode;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PageStyle;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cppheaderimage;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cppheaderbordercolor;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cppheaderbackcolor;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $cpppayflowcolor;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BuyerEmail;
 
@@ -9907,15 +9987,15 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 	 * billing address on file. Setting this element overrides the
 	 * setting you have specified in Admin. Optional Character
 	 * length and limitations: One single-byte numeric character.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReqBillingAddress;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($BillingAgreementDetails = null, $ReturnURL = null, $CancelURL = null) {
+	public function __construct($BillingAgreementDetails = NULL, $ReturnURL = NULL, $CancelURL = NULL) {
 		$this->BillingAgreementDetails = $BillingAgreementDetails;
 		$this->ReturnURL = $ReturnURL;
 		$this->CancelURL = $CancelURL;
@@ -9925,49 +10005,49 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->BillingAgreementDetails != null)
+		if($this->BillingAgreementDetails != NULL)
 		{
 			$str .= '<ebl:BillingAgreementDetails>';
 			$str .= $this->BillingAgreementDetails->toXMLString();
 			$str .= '</ebl:BillingAgreementDetails>';
 		}
-		if($this->ReturnURL != null)
+		if($this->ReturnURL != NULL)
 		{
 			$str .= '<ebl:ReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnURL) . '</ebl:ReturnURL>';
 		}
-		if($this->CancelURL != null)
+		if($this->CancelURL != NULL)
 		{
 			$str .= '<ebl:CancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelURL) . '</ebl:CancelURL>';
 		}
-		if($this->LocaleCode != null)
+		if($this->LocaleCode != NULL)
 		{
 			$str .= '<ebl:LocaleCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->LocaleCode) . '</ebl:LocaleCode>';
 		}
-		if($this->PageStyle != null)
+		if($this->PageStyle != NULL)
 		{
 			$str .= '<ebl:PageStyle>' . PPUtils::escapeInvalidXmlCharsRegex($this->PageStyle) . '</ebl:PageStyle>';
 		}
-		if($this->cppheaderimage != null)
+		if($this->cppheaderimage != NULL)
 		{
-			$str .= '<ebl:cppheaderimage>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cppheaderimage>';
+			$str .= '<ebl:cpp-header-image>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cpp-header-image>';
 		}
-		if($this->cppheaderbordercolor != null)
+		if($this->cppheaderbordercolor != NULL)
 		{
-			$str .= '<ebl:cppheaderbordercolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cppheaderbordercolor>';
+			$str .= '<ebl:cpp-header-border-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cpp-header-border-color>';
 		}
-		if($this->cppheaderbackcolor != null)
+		if($this->cppheaderbackcolor != NULL)
 		{
-			$str .= '<ebl:cppheaderbackcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cppheaderbackcolor>';
+			$str .= '<ebl:cpp-header-back-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cpp-header-back-color>';
 		}
-		if($this->cpppayflowcolor != null)
+		if($this->cpppayflowcolor != NULL)
 		{
-			$str .= '<ebl:cpppayflowcolor>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpppayflowcolor>';
+			$str .= '<ebl:cpp-payflow-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpp-payflow-color>';
 		}
-		if($this->BuyerEmail != null)
+		if($this->BuyerEmail != NULL)
 		{
 			$str .= '<ebl:BuyerEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerEmail) . '</ebl:BuyerEmail>';
 		}
-		if($this->ReqBillingAddress != null)
+		if($this->ReqBillingAddress != NULL)
 		{
 			$str .= '<ebl:ReqBillingAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqBillingAddress) . '</ebl:ReqBillingAddress>';
 		}
@@ -9986,8 +10066,8 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var PayerInfoType
+	 * @access public
+	 * @var PayerInfoType
 	 */ 
 	public $PayerInfo;
 
@@ -9997,18 +10077,18 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType  {
 	 * billing address of the credit billing address otherwise your
 	 * primary address as billing address in
 	 * GetBillingAgreementCustomerDetails.
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $BillingAddress;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='payerinfo'){
                                     $this->PayerInfo = new PayerInfoType(); 
                                     $this->PayerInfo->init($arry["children"]);
@@ -10016,7 +10096,7 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='billingaddress'){
                                     $this->BillingAddress = new AddressType(); 
                                     $this->BillingAddress->init($arry["children"]);
@@ -10041,8 +10121,8 @@ class DeviceDetailsType  {
 	 * Device ID Optional  Character length and limits: 256
 	 * single-byte characters DeviceID length morethan 256 is
 	 * truncated  
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $DeviceID;
 
@@ -10050,7 +10130,7 @@ class DeviceDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->DeviceID != null)
+		if($this->DeviceID != NULL)
 		{
 			$str .= '<ebl:DeviceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->DeviceID) . '</ebl:DeviceID>';
 		}
@@ -10069,8 +10149,8 @@ class SenderDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DeviceDetailsType
+	 * @access public
+	 * @var DeviceDetailsType
 	 */ 
 	public $DeviceDetails;
 
@@ -10078,7 +10158,7 @@ class SenderDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->DeviceDetails != null)
+		if($this->DeviceDetails != NULL)
 		{
 			$str .= '<ebl:DeviceDetails>';
 			$str .= $this->DeviceDetails->toXMLString();
@@ -10099,71 +10179,71 @@ class DoReferenceTransactionRequestDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReferenceID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var PaymentActionCodeType
+	 * @access public
+	 * @var PaymentActionCodeType
 	 */ 
 	public $PaymentAction;
 
 	/**
 	 * 
-	 *@access public
-	 *@var MerchantPullPaymentCodeType
+	 * @access public
+	 * @var MerchantPullPaymentCodeType
 	 */ 
 	public $PaymentType;
 
 	/**
 	 * 
-	 *@access public
-	 *@var PaymentDetailsType
+	 * @access public
+	 * @var PaymentDetailsType
 	 */ 
 	public $PaymentDetails;
 
 	/**
 	 * 
-	 *@access public
-	 *@var ReferenceCreditCardDetailsType
+	 * @access public
+	 * @var ReferenceCreditCardDetailsType
 	 */ 
 	public $CreditCard;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $IPAddress;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MerchantSessionId;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReqConfirmShipping;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SoftDescriptor;
 
 	/**
 	 * 
-	 *@access public
-	 *@var SenderDetailsType
+	 * @access public
+	 * @var SenderDetailsType
 	 */ 
 	public $SenderDetails;
 
@@ -10171,15 +10251,15 @@ class DoReferenceTransactionRequestDetailsType  {
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MsgSubID;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($ReferenceID = null, $PaymentAction = null, $PaymentDetails = null) {
+	public function __construct($ReferenceID = NULL, $PaymentAction = NULL, $PaymentDetails = NULL) {
 		$this->ReferenceID = $ReferenceID;
 		$this->PaymentAction = $PaymentAction;
 		$this->PaymentDetails = $PaymentDetails;
@@ -10189,53 +10269,53 @@ class DoReferenceTransactionRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ReferenceID != null)
+		if($this->ReferenceID != NULL)
 		{
 			$str .= '<ebl:ReferenceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReferenceID) . '</ebl:ReferenceID>';
 		}
-		if($this->PaymentAction != null)
+		if($this->PaymentAction != NULL)
 		{
 			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
 		}
-		if($this->PaymentType != null)
+		if($this->PaymentType != NULL)
 		{
 			$str .= '<ebl:PaymentType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentType) . '</ebl:PaymentType>';
 		}
-		if($this->PaymentDetails != null)
+		if($this->PaymentDetails != NULL)
 		{
 			$str .= '<ebl:PaymentDetails>';
 			$str .= $this->PaymentDetails->toXMLString();
 			$str .= '</ebl:PaymentDetails>';
 		}
-		if($this->CreditCard != null)
+		if($this->CreditCard != NULL)
 		{
 			$str .= '<ebl:CreditCard>';
 			$str .= $this->CreditCard->toXMLString();
 			$str .= '</ebl:CreditCard>';
 		}
-		if($this->IPAddress != null)
+		if($this->IPAddress != NULL)
 		{
 			$str .= '<ebl:IPAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->IPAddress) . '</ebl:IPAddress>';
 		}
-		if($this->MerchantSessionId != null)
+		if($this->MerchantSessionId != NULL)
 		{
 			$str .= '<ebl:MerchantSessionId>' . PPUtils::escapeInvalidXmlCharsRegex($this->MerchantSessionId) . '</ebl:MerchantSessionId>';
 		}
-		if($this->ReqConfirmShipping != null)
+		if($this->ReqConfirmShipping != NULL)
 		{
 			$str .= '<ebl:ReqConfirmShipping>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqConfirmShipping) . '</ebl:ReqConfirmShipping>';
 		}
-		if($this->SoftDescriptor != null)
+		if($this->SoftDescriptor != NULL)
 		{
 			$str .= '<ebl:SoftDescriptor>' . PPUtils::escapeInvalidXmlCharsRegex($this->SoftDescriptor) . '</ebl:SoftDescriptor>';
 		}
-		if($this->SenderDetails != null)
+		if($this->SenderDetails != NULL)
 		{
 			$str .= '<ebl:SenderDetails>';
 			$str .= $this->SenderDetails->toXMLString();
 			$str .= '</ebl:SenderDetails>';
 		}
-		if($this->MsgSubID != null)
+		if($this->MsgSubID != NULL)
 		{
 			$str .= '<ebl:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</ebl:MsgSubID>';
 		}
@@ -10254,71 +10334,71 @@ class DoReferenceTransactionResponseDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BillingAgreementID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var PaymentInfoType
+	 * @access public
+	 * @var PaymentInfoType
 	 */ 
 	public $PaymentInfo;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AVSCode;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CVV2Code;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionID;
 
 	/**
 	 * Response code from the processor when a recurring
 	 * transaction is declined 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PaymentAdviceCode;
 
 	/**
 	 * Return msgsubid back to merchant 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MsgSubID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingagreementid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementid') {
 					$this->BillingAgreementID = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='paymentinfo'){
                                     $this->PaymentInfo = new PaymentInfoType(); 
                                     $this->PaymentInfo->init($arry["children"]);
@@ -10327,7 +10407,7 @@ class DoReferenceTransactionResponseDetailsType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='amount') {
 								$tmp =  array();
 								$atr =  array();
@@ -10342,19 +10422,19 @@ class DoReferenceTransactionResponseDetailsType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'avscode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'avscode') {
 					$this->AVSCode = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'cvv2code') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'cvv2code') {
 					$this->CVV2Code = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'transactionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
 					$this->TransactionID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentadvicecode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentadvicecode') {
 					$this->PaymentAdviceCode = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'msgsubid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
 					$this->MsgSubID = $arry["text"];
 				}
 			}
@@ -10371,50 +10451,50 @@ class DoNonReferencedCreditRequestDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $NetAmount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $TaxAmount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $ShippingAmount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var CreditCardDetailsType
+	 * @access public
+	 * @var CreditCardDetailsType
 	 */ 
 	public $CreditCard;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReceiverEmail;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Comment;
 
@@ -10422,41 +10502,41 @@ class DoNonReferencedCreditRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->NetAmount != null)
+		if($this->NetAmount != NULL)
 		{
 			$str .= '<ebl:NetAmount';
 			$str .= $this->NetAmount->toXMLString();
 			$str .= '</ebl:NetAmount>';
 		}
-		if($this->TaxAmount != null)
+		if($this->TaxAmount != NULL)
 		{
 			$str .= '<ebl:TaxAmount';
 			$str .= $this->TaxAmount->toXMLString();
 			$str .= '</ebl:TaxAmount>';
 		}
-		if($this->ShippingAmount != null)
+		if($this->ShippingAmount != NULL)
 		{
 			$str .= '<ebl:ShippingAmount';
 			$str .= $this->ShippingAmount->toXMLString();
 			$str .= '</ebl:ShippingAmount>';
 		}
-		if($this->CreditCard != null)
+		if($this->CreditCard != NULL)
 		{
 			$str .= '<ebl:CreditCard>';
 			$str .= $this->CreditCard->toXMLString();
 			$str .= '</ebl:CreditCard>';
 		}
-		if($this->ReceiverEmail != null)
+		if($this->ReceiverEmail != NULL)
 		{
 			$str .= '<ebl:ReceiverEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiverEmail) . '</ebl:ReceiverEmail>';
 		}
-		if($this->Comment != null)
+		if($this->Comment != NULL)
 		{
 			$str .= '<ebl:Comment>' . PPUtils::escapeInvalidXmlCharsRegex($this->Comment) . '</ebl:Comment>';
 		}
@@ -10475,26 +10555,26 @@ class DoNonReferencedCreditResponseDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='amount') {
 								$tmp =  array();
 								$atr =  array();
@@ -10509,7 +10589,7 @@ class DoNonReferencedCreditResponseDetailsType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'transactionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
 					$this->TransactionID = $arry["text"];
 				}
 			}
@@ -10529,8 +10609,8 @@ class EnterBoardingRequestDetailsType  {
 	/**
 	 * Onboarding program code given to you by PayPal. Required
 	 * Character length and limitations: 64 alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProgramCode;
 
@@ -10547,8 +10627,8 @@ class EnterBoardingRequestDetailsType  {
 	 * PayPal APIs for transaction searching, getting transaction
 	 * details, refunding, and mass payments. Required Character
 	 * length and limitations: 64 alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProductList;
 
@@ -10556,8 +10636,8 @@ class EnterBoardingRequestDetailsType  {
 	 * Any custom information you want to store for this partner
 	 * Optional Character length and limitations: 256 alphanumeric
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PartnerCustom;
 
@@ -10565,37 +10645,37 @@ class EnterBoardingRequestDetailsType  {
 	 * The URL for the logo displayed on the PayPal Partner Welcome
 	 * Page. Optional Character length and limitations: 2,048
 	 * alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ImageUrl;
 
 	/**
 	 * Marketing category tha configures the graphic displayed n
 	 * the PayPal Partner Welcome page.
-	 *@access public
-	 *@var MarketingCategoryType
+	 * @access public
+	 * @var MarketingCategoryType
 	 */ 
 	public $MarketingCategory;
 
 	/**
 	 * Information about the merchant’s business
-	 *@access public
-	 *@var BusinessInfoType
+	 * @access public
+	 * @var BusinessInfoType
 	 */ 
 	public $BusinessInfo;
 
 	/**
 	 * Information about the merchant (the business owner)
-	 *@access public
-	 *@var BusinessOwnerInfoType
+	 * @access public
+	 * @var BusinessOwnerInfoType
 	 */ 
 	public $OwnerInfo;
 
 	/**
 	 * Information about the merchant's bank account
-	 *@access public
-	 *@var BankAccountDetailsType
+	 * @access public
+	 * @var BankAccountDetailsType
 	 */ 
 	public $BankAccount;
 
@@ -10603,39 +10683,39 @@ class EnterBoardingRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ProgramCode != null)
+		if($this->ProgramCode != NULL)
 		{
 			$str .= '<ebl:ProgramCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProgramCode) . '</ebl:ProgramCode>';
 		}
-		if($this->ProductList != null)
+		if($this->ProductList != NULL)
 		{
 			$str .= '<ebl:ProductList>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProductList) . '</ebl:ProductList>';
 		}
-		if($this->PartnerCustom != null)
+		if($this->PartnerCustom != NULL)
 		{
 			$str .= '<ebl:PartnerCustom>' . PPUtils::escapeInvalidXmlCharsRegex($this->PartnerCustom) . '</ebl:PartnerCustom>';
 		}
-		if($this->ImageUrl != null)
+		if($this->ImageUrl != NULL)
 		{
 			$str .= '<ebl:ImageUrl>' . PPUtils::escapeInvalidXmlCharsRegex($this->ImageUrl) . '</ebl:ImageUrl>';
 		}
-		if($this->MarketingCategory != null)
+		if($this->MarketingCategory != NULL)
 		{
 			$str .= '<ebl:MarketingCategory>' . PPUtils::escapeInvalidXmlCharsRegex($this->MarketingCategory) . '</ebl:MarketingCategory>';
 		}
-		if($this->BusinessInfo != null)
+		if($this->BusinessInfo != NULL)
 		{
 			$str .= '<ebl:BusinessInfo>';
 			$str .= $this->BusinessInfo->toXMLString();
 			$str .= '</ebl:BusinessInfo>';
 		}
-		if($this->OwnerInfo != null)
+		if($this->OwnerInfo != NULL)
 		{
 			$str .= '<ebl:OwnerInfo>';
 			$str .= $this->OwnerInfo->toXMLString();
 			$str .= '</ebl:OwnerInfo>';
 		}
-		if($this->BankAccount != null)
+		if($this->BankAccount != NULL)
 		{
 			$str .= '<ebl:BankAccount>';
 			$str .= $this->BankAccount->toXMLString();
@@ -10656,45 +10736,45 @@ class BusinessInfoType  {
 
 	/**
 	 * Type of business, such as corporation or sole proprietorship
-	 *@access public
-	 *@var BusinessTypeType
+	 * @access public
+	 * @var BusinessTypeType
 	 */ 
 	public $Type;
 
 	/**
 	 * Official name of business Character length and limitations:
 	 * 75 alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Name;
 
 	/**
 	 * Merchant’s business postal address
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $Address;
 
 	/**
 	 * Business’s primary telephone number Character length and
 	 * limitations: 20 alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $WorkPhone;
 
 	/**
 	 * Line of business, as defined in the enumerations
-	 *@access public
-	 *@var BusinessCategoryType
+	 * @access public
+	 * @var BusinessCategoryType
 	 */ 
 	public $Category;
 
 	/**
 	 * Business sub-category, as defined in the enumerations
-	 *@access public
-	 *@var BusinessSubCategoryType
+	 * @access public
+	 * @var BusinessSubCategoryType
 	 */ 
 	public $SubCategory;
 
@@ -10711,8 +10791,8 @@ class BusinessInfoType  {
 	 * AverageTransactionPrice-Range8 $2,000 USD to $5,000 USD
 	 * AverageTransactionPrice-Range9 $5,000 USD to $10,000 USD
 	 * AverageTransactionPrice-Range10 More than $10,000 USD 
-	 *@access public
-	 *@var AverageTransactionPriceType
+	 * @access public
+	 * @var AverageTransactionPriceType
 	 */ 
 	public $AveragePrice;
 
@@ -10726,23 +10806,23 @@ class BusinessInfoType  {
 	 * AverageMonthlyVolume-Range4 $25,000 USD to $100,000 USD
 	 * AverageMonthlyVolume-Range5 $100,000 USD to $1,000,000 USD
 	 * AverageMonthlyVolume-Range6 More than $1,000,000 USD 
-	 *@access public
-	 *@var AverageMonthlyVolumeType
+	 * @access public
+	 * @var AverageMonthlyVolumeType
 	 */ 
 	public $AverageMonthlyVolume;
 
 	/**
 	 * Main sales venue, such as eBay
-	 *@access public
-	 *@var SalesVenueType
+	 * @access public
+	 * @var SalesVenueType
 	 */ 
 	public $SalesVenue;
 
 	/**
 	 * Primary URL of business Character length and limitations:
 	 * 2,048 alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Website;
 
@@ -10754,15 +10834,15 @@ class BusinessInfoType  {
 	 * PercentageRevenueFromOnlineSales-Range2 25% to 50%
 	 * PercentageRevenueFromOnlineSales-Range3 50% to 75%
 	 * PercentageRevenueFromOnlineSales-Range4 75% to 100% 
-	 *@access public
-	 *@var PercentageRevenueFromOnlineSalesType
+	 * @access public
+	 * @var PercentageRevenueFromOnlineSalesType
 	 */ 
 	public $RevenueFromOnlineSales;
 
 	/**
 	 * Date the merchant’s business was established
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $BusinessEstablished;
 
@@ -10770,16 +10850,16 @@ class BusinessInfoType  {
 	 * Email address to contact business’s customer service
 	 * Character length and limitations: 127 alphanumeric
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CustomerServiceEmail;
 
 	/**
 	 * Telephone number to contact business’s customer service
 	 * Character length and limitations: 32 alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CustomerServicePhone;
 
@@ -10787,61 +10867,61 @@ class BusinessInfoType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Type != null)
+		if($this->Type != NULL)
 		{
 			$str .= '<ebl:Type>' . PPUtils::escapeInvalidXmlCharsRegex($this->Type) . '</ebl:Type>';
 		}
-		if($this->Name != null)
+		if($this->Name != NULL)
 		{
 			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
 		}
-		if($this->Address != null)
+		if($this->Address != NULL)
 		{
 			$str .= '<ebl:Address>';
 			$str .= $this->Address->toXMLString();
 			$str .= '</ebl:Address>';
 		}
-		if($this->WorkPhone != null)
+		if($this->WorkPhone != NULL)
 		{
 			$str .= '<ebl:WorkPhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->WorkPhone) . '</ebl:WorkPhone>';
 		}
-		if($this->Category != null)
+		if($this->Category != NULL)
 		{
 			$str .= '<ebl:Category>' . PPUtils::escapeInvalidXmlCharsRegex($this->Category) . '</ebl:Category>';
 		}
-		if($this->SubCategory != null)
+		if($this->SubCategory != NULL)
 		{
 			$str .= '<ebl:SubCategory>' . PPUtils::escapeInvalidXmlCharsRegex($this->SubCategory) . '</ebl:SubCategory>';
 		}
-		if($this->AveragePrice != null)
+		if($this->AveragePrice != NULL)
 		{
 			$str .= '<ebl:AveragePrice>' . PPUtils::escapeInvalidXmlCharsRegex($this->AveragePrice) . '</ebl:AveragePrice>';
 		}
-		if($this->AverageMonthlyVolume != null)
+		if($this->AverageMonthlyVolume != NULL)
 		{
 			$str .= '<ebl:AverageMonthlyVolume>' . PPUtils::escapeInvalidXmlCharsRegex($this->AverageMonthlyVolume) . '</ebl:AverageMonthlyVolume>';
 		}
-		if($this->SalesVenue != null)
+		if($this->SalesVenue != NULL)
 		{
 			$str .= '<ebl:SalesVenue>' . PPUtils::escapeInvalidXmlCharsRegex($this->SalesVenue) . '</ebl:SalesVenue>';
 		}
-		if($this->Website != null)
+		if($this->Website != NULL)
 		{
 			$str .= '<ebl:Website>' . PPUtils::escapeInvalidXmlCharsRegex($this->Website) . '</ebl:Website>';
 		}
-		if($this->RevenueFromOnlineSales != null)
+		if($this->RevenueFromOnlineSales != NULL)
 		{
 			$str .= '<ebl:RevenueFromOnlineSales>' . PPUtils::escapeInvalidXmlCharsRegex($this->RevenueFromOnlineSales) . '</ebl:RevenueFromOnlineSales>';
 		}
-		if($this->BusinessEstablished != null)
+		if($this->BusinessEstablished != NULL)
 		{
 			$str .= '<ebl:BusinessEstablished>' . PPUtils::escapeInvalidXmlCharsRegex($this->BusinessEstablished) . '</ebl:BusinessEstablished>';
 		}
-		if($this->CustomerServiceEmail != null)
+		if($this->CustomerServiceEmail != NULL)
 		{
 			$str .= '<ebl:CustomerServiceEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->CustomerServiceEmail) . '</ebl:CustomerServiceEmail>';
 		}
-		if($this->CustomerServicePhone != null)
+		if($this->CustomerServicePhone != NULL)
 		{
 			$str .= '<ebl:CustomerServicePhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->CustomerServicePhone) . '</ebl:CustomerServicePhone>';
 		}
@@ -10860,32 +10940,32 @@ class BusinessOwnerInfoType  {
 
 	/**
 	 * Details about the business owner
-	 *@access public
-	 *@var PayerInfoType
+	 * @access public
+	 * @var PayerInfoType
 	 */ 
 	public $Owner;
 
 	/**
 	 * Business owner’s home telephone number Character length
 	 * and limitations: 32 alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $HomePhone;
 
 	/**
 	 * Business owner’s mobile telephone number Character length
 	 * and limitations: 32 alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MobilePhone;
 
 	/**
 	 * Business owner’s social security number Character length
 	 * and limitations: 9 alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SSN;
 
@@ -10893,21 +10973,21 @@ class BusinessOwnerInfoType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Owner != null)
+		if($this->Owner != NULL)
 		{
 			$str .= '<ebl:Owner>';
 			$str .= $this->Owner->toXMLString();
 			$str .= '</ebl:Owner>';
 		}
-		if($this->HomePhone != null)
+		if($this->HomePhone != NULL)
 		{
 			$str .= '<ebl:HomePhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->HomePhone) . '</ebl:HomePhone>';
 		}
-		if($this->MobilePhone != null)
+		if($this->MobilePhone != NULL)
 		{
 			$str .= '<ebl:MobilePhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->MobilePhone) . '</ebl:MobilePhone>';
 		}
-		if($this->SSN != null)
+		if($this->SSN != NULL)
 		{
 			$str .= '<ebl:SSN>' . PPUtils::escapeInvalidXmlCharsRegex($this->SSN) . '</ebl:SSN>';
 		}
@@ -10927,31 +11007,31 @@ class BankAccountDetailsType  {
 	/**
 	 * Name of bank Character length and limitations: 192
 	 * alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Name;
 
 	/**
 	 * Type of bank account: Checking or Savings
-	 *@access public
-	 *@var BankAccountTypeType
+	 * @access public
+	 * @var BankAccountTypeType
 	 */ 
 	public $Type;
 
 	/**
 	 * Merchant’s bank routing number Character length and
 	 * limitations: 23 alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $RoutingNumber;
 
 	/**
 	 * Merchant’s bank account number Character length and
 	 * limitations: 256 alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AccountNumber;
 
@@ -10959,19 +11039,19 @@ class BankAccountDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Name != null)
+		if($this->Name != NULL)
 		{
 			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
 		}
-		if($this->Type != null)
+		if($this->Type != NULL)
 		{
 			$str .= '<ebl:Type>' . PPUtils::escapeInvalidXmlCharsRegex($this->Type) . '</ebl:Type>';
 		}
-		if($this->RoutingNumber != null)
+		if($this->RoutingNumber != NULL)
 		{
 			$str .= '<ebl:RoutingNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->RoutingNumber) . '</ebl:RoutingNumber>';
 		}
-		if($this->AccountNumber != null)
+		if($this->AccountNumber != NULL)
 		{
 			$str .= '<ebl:AccountNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->AccountNumber) . '</ebl:AccountNumber>';
 		}
@@ -10994,59 +11074,59 @@ class GetBoardingDetailsResponseDetailsType  {
 	 * Status of merchant's onboarding process:
 	 * CompletedCancelledPending Character length and limitations:
 	 * Eight alphabetic characters
-	 *@access public
-	 *@var BoardingStatusType
+	 * @access public
+	 * @var BoardingStatusType
 	 */ 
 	public $Status;
 
 	/**
 	 * Date the boarding process started
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $StartDate;
 
 	/**
 	 * Date the merchant’s status or progress was last updated
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $LastUpdated;
 
 	/**
 	 * Reason for merchant’s cancellation of sign-up. Character
 	 * length and limitations: 1,024 alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Reason;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProgramName;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProgramCode;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CampaignID;
 
 	/**
 	 * Indicates if there is a limitation on the amount of money
 	 * the business can withdraw from PayPal
-	 *@access public
-	 *@var UserWithdrawalLimitTypeType
+	 * @access public
+	 * @var UserWithdrawalLimitTypeType
 	 */ 
 	public $UserWithdrawalLimit;
 
@@ -11054,22 +11134,22 @@ class GetBoardingDetailsResponseDetailsType  {
 	 * Custom information you set on the EnterBoarding API call
 	 * Character length and limitations: 256 alphanumeric
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PartnerCustom;
 
 	/**
 	 * Details about the owner of the account
-	 *@access public
-	 *@var PayerInfoType
+	 * @access public
+	 * @var PayerInfoType
 	 */ 
 	public $AccountOwner;
 
 	/**
 	 * Merchant’s PayPal API credentials
-	 *@access public
-	 *@var APICredentialsType
+	 * @access public
+	 * @var APICredentialsType
 	 */ 
 	public $Credentials;
 
@@ -11077,15 +11157,15 @@ class GetBoardingDetailsResponseDetailsType  {
 	 * The APIs that this merchant has granted the business partner
 	 * permission to call on his behalf. For example:
 	 * SetExpressCheckout,GetExpressCheckoutDetails,DoExpressCheckoutPayment
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ConfigureAPIs;
 
 	/**
 	 * Primary email verification status. Confirmed, Unconfirmed
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $EmailVerificationStatus;
 
@@ -11093,8 +11173,8 @@ class GetBoardingDetailsResponseDetailsType  {
 	 * Gives VettingStatus - Pending, Cancelled, Approved,
 	 * UnderReview Character length and limitations: 256
 	 * alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $VettingStatus;
 
@@ -11102,45 +11182,45 @@ class GetBoardingDetailsResponseDetailsType  {
 	 * Gives BankAccountVerificationStatus - Added, Confirmed
 	 * Character length and limitations: 256 alphanumeric
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BankAccountVerificationStatus;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'status') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
 					$this->Status = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'startdate') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'startdate') {
 					$this->StartDate = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'lastupdated') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'lastupdated') {
 					$this->LastUpdated = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'reason') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'reason') {
 					$this->Reason = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'programname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'programname') {
 					$this->ProgramName = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'programcode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'programcode') {
 					$this->ProgramCode = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'campaignid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'campaignid') {
 					$this->CampaignID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'userwithdrawallimit') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'userwithdrawallimit') {
 					$this->UserWithdrawalLimit = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'partnercustom') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'partnercustom') {
 					$this->PartnerCustom = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='accountowner'){
                                     $this->AccountOwner = new PayerInfoType(); 
                                     $this->AccountOwner->init($arry["children"]);
@@ -11148,23 +11228,23 @@ class GetBoardingDetailsResponseDetailsType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='credentials'){
                                     $this->Credentials = new APICredentialsType(); 
                                     $this->Credentials->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'configureapis') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'configureapis') {
 					$this->ConfigureAPIs = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'emailverificationstatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'emailverificationstatus') {
 					$this->EmailVerificationStatus = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'vettingstatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'vettingstatus') {
 					$this->VettingStatus = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'bankaccountverificationstatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'bankaccountverificationstatus') {
 					$this->BankAccountVerificationStatus = $arry["text"];
 				}
 			}
@@ -11182,24 +11262,24 @@ class APICredentialsType  {
 	/**
 	 * Merchant’s PayPal API usernameCharacter length and
 	 * limitations: 128 alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Username;
 
 	/**
 	 * Merchant’s PayPal API passwordCharacter length and
 	 * limitations: 40 alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Password;
 
 	/**
 	 * Merchant’s PayPal API signature, if one exists. Character
 	 * length and limitations: 256 alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Signature;
 
@@ -11209,8 +11289,8 @@ class APICredentialsType  {
 	 * key (2,048 bytes) and the certificate proper (4,000 bytes).
 	 * Character length and limitations: 6,048 alphanumeric
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Certificate;
 
@@ -11219,29 +11299,29 @@ class APICredentialsType  {
 	 * no authentication mechanism on file Cert: API certificate
 	 * Sign: API signature Character length and limitations: 9
 	 * alphanumeric characters
-	 *@access public
-	 *@var APIAuthenticationType
+	 * @access public
+	 * @var APIAuthenticationType
 	 */ 
 	public $Type;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'username') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'username') {
 					$this->Username = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'password') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'password') {
 					$this->Password = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'signature') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'signature') {
 					$this->Signature = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'certificate') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'certificate') {
 					$this->Certificate = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'type') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'type') {
 					$this->Type = $arry["text"];
 				}
 			}
@@ -11260,8 +11340,8 @@ class SetMobileCheckoutRequestDetailsType  {
 	/**
 	 * The phone number of the buyer's mobile device, if available.
 	 * Optional 
-	 *@access public
-	 *@var PhoneNumberType
+	 * @access public
+	 * @var PhoneNumberType
 	 */ 
 	public $BuyerPhone;
 
@@ -11269,8 +11349,8 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * Cost of this item before tax and shipping.You must set the
 	 * currencyID attribute to one of the three-character currency
 	 * codes for any of the supported PayPal currencies. Required
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $ItemAmount;
 
@@ -11278,8 +11358,8 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * Tax amount for this item.You must set the currencyID
 	 * attribute to one of the three-character currency codes for
 	 * any of the supported PayPal currencies. Optional
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Tax;
 
@@ -11287,8 +11367,8 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * Shipping amount for this item.You must set the currencyID
 	 * attribute to one of the three-character currency codes for
 	 * any of the supported PayPal currencies. Optional
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Shipping;
 
@@ -11296,8 +11376,8 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * Description of the item that the customer is purchasing.
 	 * Required Character length and limitations: 127 single-byte
 	 * alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemName;
 
@@ -11305,8 +11385,8 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * Reference number of the item that the customer is
 	 * purchasing. Optional Character length and limitations: 127
 	 * single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemNumber;
 
@@ -11315,8 +11395,8 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * number or other value you want returned to you in IPN.
 	 * Optional Character length and limitations: 256 single-byte
 	 * alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Custom;
 
@@ -11324,8 +11404,8 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * Your own unique invoice or tracking number. Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InvoiceID;
 
@@ -11335,8 +11415,8 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * value of ReturnURL be the final review page on which the
 	 * customer confirms the order and payment. Required Character
 	 * length and limitations: no limit. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReturnURL;
 
@@ -11346,8 +11426,8 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * value of CancelURL be the original page on which the
 	 * customer chose to pay with PayPal. Optional Character length
 	 * and limitations: no limit
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CancelURL;
 
@@ -11356,8 +11436,8 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * shipping address on file with PayPal be a confirmed address.
 	 * Setting this element overrides the setting you have
 	 * specified in your Merchant Account Profile. Optional
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $AddressDisplayOptions;
 
@@ -11365,15 +11445,15 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * The value 1 indicates that you require that the customer
 	 * specifies a contact phone for the transactxion. Default is 0
 	 * / none required. Optional
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $SharePhone;
 
 	/**
 	 * Customer's shipping address. Optional
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $ShipToAddress;
 
@@ -11382,15 +11462,15 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * PayPal uses this value to pre-fill the login portion of the
 	 * PayPal login page. Optional Character length and limit: 127
 	 * single-byte alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BuyerEmail;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($ItemAmount = null, $ItemName = null, $ReturnURL = null) {
+	public function __construct($ItemAmount = NULL, $ItemName = NULL, $ReturnURL = NULL) {
 		$this->ItemAmount = $ItemAmount;
 		$this->ItemName = $ItemName;
 		$this->ReturnURL = $ReturnURL;
@@ -11400,69 +11480,69 @@ class SetMobileCheckoutRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->BuyerPhone != null)
+		if($this->BuyerPhone != NULL)
 		{
 			$str .= '<ebl:BuyerPhone>';
 			$str .= $this->BuyerPhone->toXMLString();
 			$str .= '</ebl:BuyerPhone>';
 		}
-		if($this->ItemAmount != null)
+		if($this->ItemAmount != NULL)
 		{
 			$str .= '<ebl:ItemAmount';
 			$str .= $this->ItemAmount->toXMLString();
 			$str .= '</ebl:ItemAmount>';
 		}
-		if($this->Tax != null)
+		if($this->Tax != NULL)
 		{
 			$str .= '<ebl:Tax';
 			$str .= $this->Tax->toXMLString();
 			$str .= '</ebl:Tax>';
 		}
-		if($this->Shipping != null)
+		if($this->Shipping != NULL)
 		{
 			$str .= '<ebl:Shipping';
 			$str .= $this->Shipping->toXMLString();
 			$str .= '</ebl:Shipping>';
 		}
-		if($this->ItemName != null)
+		if($this->ItemName != NULL)
 		{
 			$str .= '<ebl:ItemName>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemName) . '</ebl:ItemName>';
 		}
-		if($this->ItemNumber != null)
+		if($this->ItemNumber != NULL)
 		{
 			$str .= '<ebl:ItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemNumber) . '</ebl:ItemNumber>';
 		}
-		if($this->Custom != null)
+		if($this->Custom != NULL)
 		{
 			$str .= '<ebl:Custom>' . PPUtils::escapeInvalidXmlCharsRegex($this->Custom) . '</ebl:Custom>';
 		}
-		if($this->InvoiceID != null)
+		if($this->InvoiceID != NULL)
 		{
 			$str .= '<ebl:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</ebl:InvoiceID>';
 		}
-		if($this->ReturnURL != null)
+		if($this->ReturnURL != NULL)
 		{
 			$str .= '<ebl:ReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnURL) . '</ebl:ReturnURL>';
 		}
-		if($this->CancelURL != null)
+		if($this->CancelURL != NULL)
 		{
 			$str .= '<ebl:CancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelURL) . '</ebl:CancelURL>';
 		}
-		if($this->AddressDisplayOptions != null)
+		if($this->AddressDisplayOptions != NULL)
 		{
 			$str .= '<ebl:AddressDisplayOptions>' . PPUtils::escapeInvalidXmlCharsRegex($this->AddressDisplayOptions) . '</ebl:AddressDisplayOptions>';
 		}
-		if($this->SharePhone != null)
+		if($this->SharePhone != NULL)
 		{
 			$str .= '<ebl:SharePhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->SharePhone) . '</ebl:SharePhone>';
 		}
-		if($this->ShipToAddress != null)
+		if($this->ShipToAddress != NULL)
 		{
 			$str .= '<ebl:ShipToAddress>';
 			$str .= $this->ShipToAddress->toXMLString();
 			$str .= '</ebl:ShipToAddress>';
 		}
-		if($this->BuyerEmail != null)
+		if($this->BuyerEmail != NULL)
 		{
 			$str .= '<ebl:BuyerEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerEmail) . '</ebl:BuyerEmail>';
 		}
@@ -11487,8 +11567,8 @@ class DoMobileCheckoutPaymentResponseDetailsType  {
 	 * number or other value you want returned to you in IPN.
 	 * Optional Character length and limitations: 256 single-byte
 	 * alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Custom;
 
@@ -11496,38 +11576,38 @@ class DoMobileCheckoutPaymentResponseDetailsType  {
 	 * Your own unique invoice or tracking number. Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InvoiceID;
 
 	/**
 	 * Information about the payer
-	 *@access public
-	 *@var PayerInfoType
+	 * @access public
+	 * @var PayerInfoType
 	 */ 
 	public $PayerInfo;
 
 	/**
 	 * Information about the transaction
-	 *@access public
-	 *@var PaymentInfoType
+	 * @access public
+	 * @var PaymentInfoType
 	 */ 
 	public $PaymentInfo;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'custom') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'custom') {
 					$this->Custom = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'invoiceid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'invoiceid') {
 					$this->InvoiceID = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='payerinfo'){
                                     $this->PayerInfo = new PayerInfoType(); 
                                     $this->PayerInfo->init($arry["children"]);
@@ -11535,7 +11615,7 @@ class DoMobileCheckoutPaymentResponseDetailsType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='paymentinfo'){
                                     $this->PaymentInfo = new PaymentInfoType(); 
                                     $this->PaymentInfo->init($arry["children"]);
@@ -11556,22 +11636,22 @@ class UATPDetailsType  {
 
 	/**
 	 * UATP Card Number
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $UATPNumber;
 
 	/**
 	 * UATP Card expirty month
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $ExpMonth;
 
 	/**
 	 * UATP Card expirty year
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $ExpYear;
 
@@ -11579,15 +11659,15 @@ class UATPDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->UATPNumber != null)
+		if($this->UATPNumber != NULL)
 		{
 			$str .= '<ebl:UATPNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->UATPNumber) . '</ebl:UATPNumber>';
 		}
-		if($this->ExpMonth != null)
+		if($this->ExpMonth != NULL)
 		{
 			$str .= '<ebl:ExpMonth>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpMonth) . '</ebl:ExpMonth>';
 		}
-		if($this->ExpYear != null)
+		if($this->ExpYear != NULL)
 		{
 			$str .= '<ebl:ExpYear>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpYear) . '</ebl:ExpYear>';
 		}
@@ -11595,16 +11675,16 @@ class UATPDetailsType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'uatpnumber') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'uatpnumber') {
 					$this->UATPNumber = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'expmonth') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'expmonth') {
 					$this->ExpMonth = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'expyear') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'expyear') {
 					$this->ExpYear = $arry["text"];
 				}
 			}
@@ -11621,70 +11701,70 @@ class RecurringPaymentsSummaryType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $NextBillingDate;
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $NumberCyclesCompleted;
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $NumberCyclesRemaining;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $OutstandingBalance;
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $FailedPaymentCount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $LastPaymentDate;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $LastPaymentAmount;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'nextbillingdate') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'nextbillingdate') {
 					$this->NextBillingDate = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'numbercyclescompleted') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'numbercyclescompleted') {
 					$this->NumberCyclesCompleted = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'numbercyclesremaining') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'numbercyclesremaining') {
 					$this->NumberCyclesRemaining = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='outstandingbalance') {
 								$tmp =  array();
 								$atr =  array();
@@ -11699,15 +11779,15 @@ class RecurringPaymentsSummaryType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'failedpaymentcount') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'failedpaymentcount') {
 					$this->FailedPaymentCount = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'lastpaymentdate') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'lastpaymentdate') {
 					$this->LastPaymentDate = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='lastpaymentamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -11736,22 +11816,22 @@ class ActivationDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $InitialAmount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var FailedPaymentActionType
+	 * @access public
+	 * @var FailedPaymentActionType
 	 */ 
 	public $FailedInitialAmountAction;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($InitialAmount = null) {
+	public function __construct($InitialAmount = NULL) {
 		$this->InitialAmount = $InitialAmount;
 	}
 
@@ -11759,13 +11839,13 @@ class ActivationDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->InitialAmount != null)
+		if($this->InitialAmount != NULL)
 		{
 			$str .= '<ebl:InitialAmount';
 			$str .= $this->InitialAmount->toXMLString();
 			$str .= '</ebl:InitialAmount>';
 		}
-		if($this->FailedInitialAmountAction != null)
+		if($this->FailedInitialAmountAction != NULL)
 		{
 			$str .= '<ebl:FailedInitialAmountAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->FailedInitialAmountAction) . '</ebl:FailedInitialAmountAction>';
 		}
@@ -11784,50 +11864,50 @@ class BillingPeriodDetailsType  {
 
 	/**
 	 * Unit of meausre for billing cycle 
-	 *@access public
-	 *@var BillingPeriodType
+	 * @access public
+	 * @var BillingPeriodType
 	 */ 
 	public $BillingPeriod;
 
 	/**
 	 * Number of BillingPeriod that make up one billing cycle 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $BillingFrequency;
 
 	/**
 	 * Total billing cycles in this portion of the schedule 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $TotalBillingCycles;
 
 	/**
 	 * Amount to charge 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
 	 * Additional shipping amount to charge 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $ShippingAmount;
 
 	/**
 	 * Additional tax amount to charge 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $TaxAmount;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($BillingPeriod = null, $BillingFrequency = null, $Amount = null) {
+	public function __construct($BillingPeriod = NULL, $BillingFrequency = NULL, $Amount = NULL) {
 		$this->BillingPeriod = $BillingPeriod;
 		$this->BillingFrequency = $BillingFrequency;
 		$this->Amount = $Amount;
@@ -11837,31 +11917,31 @@ class BillingPeriodDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->BillingPeriod != null)
+		if($this->BillingPeriod != NULL)
 		{
 			$str .= '<ebl:BillingPeriod>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingPeriod) . '</ebl:BillingPeriod>';
 		}
-		if($this->BillingFrequency != null)
+		if($this->BillingFrequency != NULL)
 		{
 			$str .= '<ebl:BillingFrequency>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingFrequency) . '</ebl:BillingFrequency>';
 		}
-		if($this->TotalBillingCycles != null)
+		if($this->TotalBillingCycles != NULL)
 		{
 			$str .= '<ebl:TotalBillingCycles>' . PPUtils::escapeInvalidXmlCharsRegex($this->TotalBillingCycles) . '</ebl:TotalBillingCycles>';
 		}
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->ShippingAmount != null)
+		if($this->ShippingAmount != NULL)
 		{
 			$str .= '<ebl:ShippingAmount';
 			$str .= $this->ShippingAmount->toXMLString();
 			$str .= '</ebl:ShippingAmount>';
 		}
-		if($this->TaxAmount != null)
+		if($this->TaxAmount != NULL)
 		{
 			$str .= '<ebl:TaxAmount';
 			$str .= $this->TaxAmount->toXMLString();
@@ -11871,21 +11951,21 @@ class BillingPeriodDetailsType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingperiod') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingperiod') {
 					$this->BillingPeriod = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingfrequency') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingfrequency') {
 					$this->BillingFrequency = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'totalbillingcycles') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'totalbillingcycles') {
 					$this->TotalBillingCycles = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='amount') {
 								$tmp =  array();
 								$atr =  array();
@@ -11902,7 +11982,7 @@ class BillingPeriodDetailsType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='shippingamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -11919,7 +11999,7 @@ class BillingPeriodDetailsType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='taxamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -11948,43 +12028,43 @@ class BillingPeriodDetailsType_Update  {
 
 	/**
 	 * Unit of meausre for billing cycle 
-	 *@access public
-	 *@var BillingPeriodType
+	 * @access public
+	 * @var BillingPeriodType
 	 */ 
 	public $BillingPeriod;
 
 	/**
 	 * Number of BillingPeriod that make up one billing cycle 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $BillingFrequency;
 
 	/**
 	 * Total billing cycles in this portion of the schedule 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $TotalBillingCycles;
 
 	/**
 	 * Amount to charge 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
 	 * Additional shipping amount to charge 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $ShippingAmount;
 
 	/**
 	 * Additional tax amount to charge 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $TaxAmount;
 
@@ -11992,31 +12072,31 @@ class BillingPeriodDetailsType_Update  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->BillingPeriod != null)
+		if($this->BillingPeriod != NULL)
 		{
 			$str .= '<ebl:BillingPeriod>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingPeriod) . '</ebl:BillingPeriod>';
 		}
-		if($this->BillingFrequency != null)
+		if($this->BillingFrequency != NULL)
 		{
 			$str .= '<ebl:BillingFrequency>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingFrequency) . '</ebl:BillingFrequency>';
 		}
-		if($this->TotalBillingCycles != null)
+		if($this->TotalBillingCycles != NULL)
 		{
 			$str .= '<ebl:TotalBillingCycles>' . PPUtils::escapeInvalidXmlCharsRegex($this->TotalBillingCycles) . '</ebl:TotalBillingCycles>';
 		}
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->ShippingAmount != null)
+		if($this->ShippingAmount != NULL)
 		{
 			$str .= '<ebl:ShippingAmount';
 			$str .= $this->ShippingAmount->toXMLString();
 			$str .= '</ebl:ShippingAmount>';
 		}
-		if($this->TaxAmount != null)
+		if($this->TaxAmount != NULL)
 		{
 			$str .= '<ebl:TaxAmount';
 			$str .= $this->TaxAmount->toXMLString();
@@ -12037,51 +12117,51 @@ class ScheduleDetailsType  {
 
 	/**
 	 * Schedule details for the Recurring Payment 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Description;
 
 	/**
 	 * Trial period of this schedule 
-	 *@access public
-	 *@var BillingPeriodDetailsType
+	 * @access public
+	 * @var BillingPeriodDetailsType
 	 */ 
 	public $TrialPeriod;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BillingPeriodDetailsType
+	 * @access public
+	 * @var BillingPeriodDetailsType
 	 */ 
 	public $PaymentPeriod;
 
 	/**
 	 * The max number of payments the buyer can fail before this
 	 * Recurring Payments profile is cancelled 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $MaxFailedPayments;
 
 	/**
 	 * 
-	 *@access public
-	 *@var ActivationDetailsType
+	 * @access public
+	 * @var ActivationDetailsType
 	 */ 
 	public $ActivationDetails;
 
 	/**
 	 * 
-	 *@access public
-	 *@var AutoBillType
+	 * @access public
+	 * @var AutoBillType
 	 */ 
 	public $AutoBillOutstandingAmount;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($Description = null, $PaymentPeriod = null) {
+	public function __construct($Description = NULL, $PaymentPeriod = NULL) {
 		$this->Description = $Description;
 		$this->PaymentPeriod = $PaymentPeriod;
 	}
@@ -12090,33 +12170,33 @@ class ScheduleDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Description != null)
+		if($this->Description != NULL)
 		{
 			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
 		}
-		if($this->TrialPeriod != null)
+		if($this->TrialPeriod != NULL)
 		{
 			$str .= '<ebl:TrialPeriod>';
 			$str .= $this->TrialPeriod->toXMLString();
 			$str .= '</ebl:TrialPeriod>';
 		}
-		if($this->PaymentPeriod != null)
+		if($this->PaymentPeriod != NULL)
 		{
 			$str .= '<ebl:PaymentPeriod>';
 			$str .= $this->PaymentPeriod->toXMLString();
 			$str .= '</ebl:PaymentPeriod>';
 		}
-		if($this->MaxFailedPayments != null)
+		if($this->MaxFailedPayments != NULL)
 		{
 			$str .= '<ebl:MaxFailedPayments>' . PPUtils::escapeInvalidXmlCharsRegex($this->MaxFailedPayments) . '</ebl:MaxFailedPayments>';
 		}
-		if($this->ActivationDetails != null)
+		if($this->ActivationDetails != NULL)
 		{
 			$str .= '<ebl:ActivationDetails>';
 			$str .= $this->ActivationDetails->toXMLString();
 			$str .= '</ebl:ActivationDetails>';
 		}
-		if($this->AutoBillOutstandingAmount != null)
+		if($this->AutoBillOutstandingAmount != NULL)
 		{
 			$str .= '<ebl:AutoBillOutstandingAmount>' . PPUtils::escapeInvalidXmlCharsRegex($this->AutoBillOutstandingAmount) . '</ebl:AutoBillOutstandingAmount>';
 		}
@@ -12137,23 +12217,23 @@ class RecurringPaymentsProfileDetailsType  {
 	/**
 	 * Subscriber name - if missing, will use name in buyer's
 	 * account 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SubscriberName;
 
 	/**
 	 * Subscriber address - if missing, will use address in buyer's
 	 * account 
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $SubscriberShippingAddress;
 
 	/**
 	 * When does this Profile begin billing? 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $BillingStartDate;
 
@@ -12161,15 +12241,15 @@ class RecurringPaymentsProfileDetailsType  {
 	 * Your own unique invoice or tracking number. Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProfileReference;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($BillingStartDate = null) {
+	public function __construct($BillingStartDate = NULL) {
 		$this->BillingStartDate = $BillingStartDate;
 	}
 
@@ -12177,21 +12257,21 @@ class RecurringPaymentsProfileDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->SubscriberName != null)
+		if($this->SubscriberName != NULL)
 		{
 			$str .= '<ebl:SubscriberName>' . PPUtils::escapeInvalidXmlCharsRegex($this->SubscriberName) . '</ebl:SubscriberName>';
 		}
-		if($this->SubscriberShippingAddress != null)
+		if($this->SubscriberShippingAddress != NULL)
 		{
 			$str .= '<ebl:SubscriberShippingAddress>';
 			$str .= $this->SubscriberShippingAddress->toXMLString();
 			$str .= '</ebl:SubscriberShippingAddress>';
 		}
-		if($this->BillingStartDate != null)
+		if($this->BillingStartDate != NULL)
 		{
 			$str .= '<ebl:BillingStartDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingStartDate) . '</ebl:BillingStartDate>';
 		}
-		if($this->ProfileReference != null)
+		if($this->ProfileReference != NULL)
 		{
 			$str .= '<ebl:ProfileReference>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileReference) . '</ebl:ProfileReference>';
 		}
@@ -12199,24 +12279,24 @@ class RecurringPaymentsProfileDetailsType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'subscribername') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'subscribername') {
 					$this->SubscriberName = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='subscribershippingaddress'){
                                     $this->SubscriberShippingAddress = new AddressType(); 
                                     $this->SubscriberShippingAddress->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingstartdate') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingstartdate') {
 					$this->BillingStartDate = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'profilereference') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profilereference') {
 					$this->ProfileReference = $arry["text"];
 				}
 			}
@@ -12233,45 +12313,45 @@ class CreateRecurringPaymentsProfileRequestDetailsType  {
 
 	/**
 	 * Billing Agreement token (required if Express Checkout) 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 	/**
 	 * Information about the credit card to be charged (required if
 	 * Direct Payment) 
-	 *@access public
-	 *@var CreditCardDetailsType
+	 * @access public
+	 * @var CreditCardDetailsType
 	 */ 
 	public $CreditCard;
 
 	/**
 	 * Customer Information for this Recurring Payments 
-	 *@access public
-	 *@var RecurringPaymentsProfileDetailsType
+	 * @access public
+	 * @var RecurringPaymentsProfileDetailsType
 	 */ 
 	public $RecurringPaymentsProfileDetails;
 
 	/**
 	 * Schedule Information for this Recurring Payments 
-	 *@access public
-	 *@var ScheduleDetailsType
+	 * @access public
+	 * @var ScheduleDetailsType
 	 */ 
 	public $ScheduleDetails;
 
 	/**
 	 * Information about the Item Details. 
-     *@array
-	 *@access public
-	 *@var PaymentDetailsItemType
+     * @array
+	 * @access public
+	 * @var PaymentDetailsItemType
 	 */ 
 	public $PaymentDetailsItem;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($RecurringPaymentsProfileDetails = null, $ScheduleDetails = null) {
+	public function __construct($RecurringPaymentsProfileDetails = NULL, $ScheduleDetails = NULL) {
 		$this->RecurringPaymentsProfileDetails = $RecurringPaymentsProfileDetails;
 		$this->ScheduleDetails = $ScheduleDetails;
 	}
@@ -12280,29 +12360,29 @@ class CreateRecurringPaymentsProfileRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Token != null)
+		if($this->Token != NULL)
 		{
 			$str .= '<ebl:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</ebl:Token>';
 		}
-		if($this->CreditCard != null)
+		if($this->CreditCard != NULL)
 		{
 			$str .= '<ebl:CreditCard>';
 			$str .= $this->CreditCard->toXMLString();
 			$str .= '</ebl:CreditCard>';
 		}
-		if($this->RecurringPaymentsProfileDetails != null)
+		if($this->RecurringPaymentsProfileDetails != NULL)
 		{
 			$str .= '<ebl:RecurringPaymentsProfileDetails>';
 			$str .= $this->RecurringPaymentsProfileDetails->toXMLString();
 			$str .= '</ebl:RecurringPaymentsProfileDetails>';
 		}
-		if($this->ScheduleDetails != null)
+		if($this->ScheduleDetails != NULL)
 		{
 			$str .= '<ebl:ScheduleDetails>';
 			$str .= $this->ScheduleDetails->toXMLString();
 			$str .= '</ebl:ScheduleDetails>';
 		}
-		if($this->PaymentDetailsItem != null)
+		if($this->PaymentDetailsItem != NULL)
 		{
 			for($i = 0; $i < count($this->PaymentDetailsItem); $i++)
 			{
@@ -12326,57 +12406,57 @@ class CreateRecurringPaymentsProfileResponseDetailsType  {
 
 	/**
 	 * Recurring Billing Profile ID 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProfileID;
 
 	/**
 	 * Recurring Billing Profile Status 
-	 *@access public
-	 *@var RecurringPaymentsProfileStatusType
+	 * @access public
+	 * @var RecurringPaymentsProfileStatusType
 	 */ 
 	public $ProfileStatus;
 
 	/**
 	 * Transaction id from DCC initial payment 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionID;
 
 	/**
 	 * Response from DCC initial payment 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $DCCProcessorResponse;
 
 	/**
 	 * Return code if DCC initial payment fails 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $DCCReturnCode;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'profileid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profileid') {
 					$this->ProfileID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'profilestatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profilestatus') {
 					$this->ProfileStatus = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'transactionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
 					$this->TransactionID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'dccprocessorresponse') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'dccprocessorresponse') {
 					$this->DCCProcessorResponse = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'dccreturncode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'dccreturncode') {
 					$this->DCCReturnCode = $arry["text"];
 				}
 			}
@@ -12393,138 +12473,138 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 
 	/**
 	 * Recurring Billing Profile ID 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProfileID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var RecurringPaymentsProfileStatusType
+	 * @access public
+	 * @var RecurringPaymentsProfileStatusType
 	 */ 
 	public $ProfileStatus;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Description;
 
 	/**
 	 * 
-	 *@access public
-	 *@var AutoBillType
+	 * @access public
+	 * @var AutoBillType
 	 */ 
 	public $AutoBillOutstandingAmount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $MaxFailedPayments;
 
 	/**
 	 * 
-	 *@access public
-	 *@var RecurringPaymentsProfileDetailsType
+	 * @access public
+	 * @var RecurringPaymentsProfileDetailsType
 	 */ 
 	public $RecurringPaymentsProfileDetails;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BillingPeriodDetailsType
+	 * @access public
+	 * @var BillingPeriodDetailsType
 	 */ 
 	public $CurrentRecurringPaymentsPeriod;
 
 	/**
 	 * 
-	 *@access public
-	 *@var RecurringPaymentsSummaryType
+	 * @access public
+	 * @var RecurringPaymentsSummaryType
 	 */ 
 	public $RecurringPaymentsSummary;
 
 	/**
 	 * 
-	 *@access public
-	 *@var CreditCardDetailsType
+	 * @access public
+	 * @var CreditCardDetailsType
 	 */ 
 	public $CreditCard;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BillingPeriodDetailsType
+	 * @access public
+	 * @var BillingPeriodDetailsType
 	 */ 
 	public $TrialRecurringPaymentsPeriod;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BillingPeriodDetailsType
+	 * @access public
+	 * @var BillingPeriodDetailsType
 	 */ 
 	public $RegularRecurringPaymentsPeriod;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $TrialAmountPaid;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $RegularAmountPaid;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $AggregateAmount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $AggregateOptionalAmount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $FinalPaymentDueDate;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'profileid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profileid') {
 					$this->ProfileID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'profilestatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profilestatus') {
 					$this->ProfileStatus = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'description') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'description') {
 					$this->Description = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'autobilloutstandingamount') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'autobilloutstandingamount') {
 					$this->AutoBillOutstandingAmount = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'maxfailedpayments') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'maxfailedpayments') {
 					$this->MaxFailedPayments = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='recurringpaymentsprofiledetails'){
                                     $this->RecurringPaymentsProfileDetails = new RecurringPaymentsProfileDetailsType(); 
                                     $this->RecurringPaymentsProfileDetails->init($arry["children"]);
@@ -12532,7 +12612,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='currentrecurringpaymentsperiod'){
                                     $this->CurrentRecurringPaymentsPeriod = new BillingPeriodDetailsType(); 
                                     $this->CurrentRecurringPaymentsPeriod->init($arry["children"]);
@@ -12540,7 +12620,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='recurringpaymentssummary'){
                                     $this->RecurringPaymentsSummary = new RecurringPaymentsSummaryType(); 
                                     $this->RecurringPaymentsSummary->init($arry["children"]);
@@ -12548,7 +12628,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='creditcard'){
                                     $this->CreditCard = new CreditCardDetailsType(); 
                                     $this->CreditCard->init($arry["children"]);
@@ -12556,7 +12636,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='trialrecurringpaymentsperiod'){
                                     $this->TrialRecurringPaymentsPeriod = new BillingPeriodDetailsType(); 
                                     $this->TrialRecurringPaymentsPeriod->init($arry["children"]);
@@ -12564,7 +12644,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='regularrecurringpaymentsperiod'){
                                     $this->RegularRecurringPaymentsPeriod = new BillingPeriodDetailsType(); 
                                     $this->RegularRecurringPaymentsPeriod->init($arry["children"]);
@@ -12573,7 +12653,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='trialamountpaid') {
 								$tmp =  array();
 								$atr =  array();
@@ -12590,7 +12670,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='regularamountpaid') {
 								$tmp =  array();
 								$atr =  array();
@@ -12607,7 +12687,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='aggregateamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -12624,7 +12704,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='aggregateoptionalamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -12639,7 +12719,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'finalpaymentduedate') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'finalpaymentduedate') {
 					$this->FinalPaymentDueDate = $arry["text"];
 				}
 			}
@@ -12656,29 +12736,29 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProfileID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var StatusChangeActionType
+	 * @access public
+	 * @var StatusChangeActionType
 	 */ 
 	public $Action;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Note;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($ProfileID = null, $Action = null) {
+	public function __construct($ProfileID = NULL, $Action = NULL) {
 		$this->ProfileID = $ProfileID;
 		$this->Action = $Action;
 	}
@@ -12687,15 +12767,15 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ProfileID != null)
+		if($this->ProfileID != NULL)
 		{
 			$str .= '<ebl:ProfileID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileID) . '</ebl:ProfileID>';
 		}
-		if($this->Action != null)
+		if($this->Action != NULL)
 		{
 			$str .= '<ebl:Action>' . PPUtils::escapeInvalidXmlCharsRegex($this->Action) . '</ebl:Action>';
 		}
-		if($this->Note != null)
+		if($this->Note != NULL)
 		{
 			$str .= '<ebl:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</ebl:Note>';
 		}
@@ -12714,17 +12794,17 @@ class ManageRecurringPaymentsProfileStatusResponseDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProfileID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'profileid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profileid') {
 					$this->ProfileID = $arry["text"];
 				}
 			}
@@ -12741,29 +12821,29 @@ class BillOutstandingAmountRequestDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProfileID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Note;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($ProfileID = null) {
+	public function __construct($ProfileID = NULL) {
 		$this->ProfileID = $ProfileID;
 	}
 
@@ -12771,17 +12851,17 @@ class BillOutstandingAmountRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ProfileID != null)
+		if($this->ProfileID != NULL)
 		{
 			$str .= '<ebl:ProfileID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileID) . '</ebl:ProfileID>';
 		}
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->Note != null)
+		if($this->Note != NULL)
 		{
 			$str .= '<ebl:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</ebl:Note>';
 		}
@@ -12800,17 +12880,17 @@ class BillOutstandingAmountResponseDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProfileID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'profileid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profileid') {
 					$this->ProfileID = $arry["text"];
 				}
 			}
@@ -12827,128 +12907,128 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProfileID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Note;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Description;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SubscriberName;
 
 	/**
 	 * 
-	 *@access public
-	 *@var AddressType
+	 * @access public
+	 * @var AddressType
 	 */ 
 	public $SubscriberShippingAddress;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProfileReference;
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $AdditionalBillingCycles;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $ShippingAmount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $TaxAmount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $OutstandingBalance;
 
 	/**
 	 * 
-	 *@access public
-	 *@var AutoBillType
+	 * @access public
+	 * @var AutoBillType
 	 */ 
 	public $AutoBillOutstandingAmount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $MaxFailedPayments;
 
 	/**
 	 * Information about the credit card to be charged (required if
 	 * Direct Payment) 
-	 *@access public
-	 *@var CreditCardDetailsType
+	 * @access public
+	 * @var CreditCardDetailsType
 	 */ 
 	public $CreditCard;
 
 	/**
 	 * When does this Profile begin billing? 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $BillingStartDate;
 
 	/**
 	 * Trial period of this schedule 
-	 *@access public
-	 *@var BillingPeriodDetailsType_Update
+	 * @access public
+	 * @var BillingPeriodDetailsType_Update
 	 */ 
 	public $TrialPeriod;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BillingPeriodDetailsType_Update
+	 * @access public
+	 * @var BillingPeriodDetailsType_Update
 	 */ 
 	public $PaymentPeriod;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($ProfileID = null) {
+	public function __construct($ProfileID = NULL) {
 		$this->ProfileID = $ProfileID;
 	}
 
@@ -12956,85 +13036,85 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ProfileID != null)
+		if($this->ProfileID != NULL)
 		{
 			$str .= '<ebl:ProfileID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileID) . '</ebl:ProfileID>';
 		}
-		if($this->Note != null)
+		if($this->Note != NULL)
 		{
 			$str .= '<ebl:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</ebl:Note>';
 		}
-		if($this->Description != null)
+		if($this->Description != NULL)
 		{
 			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
 		}
-		if($this->SubscriberName != null)
+		if($this->SubscriberName != NULL)
 		{
 			$str .= '<ebl:SubscriberName>' . PPUtils::escapeInvalidXmlCharsRegex($this->SubscriberName) . '</ebl:SubscriberName>';
 		}
-		if($this->SubscriberShippingAddress != null)
+		if($this->SubscriberShippingAddress != NULL)
 		{
 			$str .= '<ebl:SubscriberShippingAddress>';
 			$str .= $this->SubscriberShippingAddress->toXMLString();
 			$str .= '</ebl:SubscriberShippingAddress>';
 		}
-		if($this->ProfileReference != null)
+		if($this->ProfileReference != NULL)
 		{
 			$str .= '<ebl:ProfileReference>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileReference) . '</ebl:ProfileReference>';
 		}
-		if($this->AdditionalBillingCycles != null)
+		if($this->AdditionalBillingCycles != NULL)
 		{
 			$str .= '<ebl:AdditionalBillingCycles>' . PPUtils::escapeInvalidXmlCharsRegex($this->AdditionalBillingCycles) . '</ebl:AdditionalBillingCycles>';
 		}
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->ShippingAmount != null)
+		if($this->ShippingAmount != NULL)
 		{
 			$str .= '<ebl:ShippingAmount';
 			$str .= $this->ShippingAmount->toXMLString();
 			$str .= '</ebl:ShippingAmount>';
 		}
-		if($this->TaxAmount != null)
+		if($this->TaxAmount != NULL)
 		{
 			$str .= '<ebl:TaxAmount';
 			$str .= $this->TaxAmount->toXMLString();
 			$str .= '</ebl:TaxAmount>';
 		}
-		if($this->OutstandingBalance != null)
+		if($this->OutstandingBalance != NULL)
 		{
 			$str .= '<ebl:OutstandingBalance';
 			$str .= $this->OutstandingBalance->toXMLString();
 			$str .= '</ebl:OutstandingBalance>';
 		}
-		if($this->AutoBillOutstandingAmount != null)
+		if($this->AutoBillOutstandingAmount != NULL)
 		{
 			$str .= '<ebl:AutoBillOutstandingAmount>' . PPUtils::escapeInvalidXmlCharsRegex($this->AutoBillOutstandingAmount) . '</ebl:AutoBillOutstandingAmount>';
 		}
-		if($this->MaxFailedPayments != null)
+		if($this->MaxFailedPayments != NULL)
 		{
 			$str .= '<ebl:MaxFailedPayments>' . PPUtils::escapeInvalidXmlCharsRegex($this->MaxFailedPayments) . '</ebl:MaxFailedPayments>';
 		}
-		if($this->CreditCard != null)
+		if($this->CreditCard != NULL)
 		{
 			$str .= '<ebl:CreditCard>';
 			$str .= $this->CreditCard->toXMLString();
 			$str .= '</ebl:CreditCard>';
 		}
-		if($this->BillingStartDate != null)
+		if($this->BillingStartDate != NULL)
 		{
 			$str .= '<ebl:BillingStartDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingStartDate) . '</ebl:BillingStartDate>';
 		}
-		if($this->TrialPeriod != null)
+		if($this->TrialPeriod != NULL)
 		{
 			$str .= '<ebl:TrialPeriod>';
 			$str .= $this->TrialPeriod->toXMLString();
 			$str .= '</ebl:TrialPeriod>';
 		}
-		if($this->PaymentPeriod != null)
+		if($this->PaymentPeriod != NULL)
 		{
 			$str .= '<ebl:PaymentPeriod>';
 			$str .= $this->PaymentPeriod->toXMLString();
@@ -13055,17 +13135,17 @@ class UpdateRecurringPaymentsProfileResponseDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProfileID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'profileid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profileid') {
 					$this->ProfileID = $arry["text"];
 				}
 			}
@@ -13082,37 +13162,37 @@ class RiskFilterDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $Id;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Name;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Description;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'id') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'id') {
 					$this->Id = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'name') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'name') {
 					$this->Name = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'description') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'description') {
 					$this->Description = $arry["text"];
 				}
 			}
@@ -13129,20 +13209,20 @@ class RiskFilterListType  {
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var RiskFilterDetailsType
+     * @array
+	 * @access public
+	 * @var RiskFilterDetailsType
 	 */ 
 	public $Filters;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "filters[$i]") {
 							$this->Filters[$i] = new RiskFilterDetailsType();
 							$this->Filters[$i]->init($arry["children"]);
@@ -13152,7 +13232,7 @@ class RiskFilterListType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "filters")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "filters")) {
 					$this->Filters = new RiskFilterDetailsType();
 					$this->Filters->init($arry["children"]);
 				}
@@ -13171,39 +13251,39 @@ class FMFDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var RiskFilterListType
+	 * @access public
+	 * @var RiskFilterListType
 	 */ 
 	public $AcceptFilters;
 
 	/**
 	 * 
-	 *@access public
-	 *@var RiskFilterListType
+	 * @access public
+	 * @var RiskFilterListType
 	 */ 
 	public $PendingFilters;
 
 	/**
 	 * 
-	 *@access public
-	 *@var RiskFilterListType
+	 * @access public
+	 * @var RiskFilterListType
 	 */ 
 	public $DenyFilters;
 
 	/**
 	 * 
-	 *@access public
-	 *@var RiskFilterListType
+	 * @access public
+	 * @var RiskFilterListType
 	 */ 
 	public $ReportFilters;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='acceptfilters'){
                                     $this->AcceptFilters = new RiskFilterListType(); 
                                     $this->AcceptFilters->init($arry["children"]);
@@ -13211,7 +13291,7 @@ class FMFDetailsType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='pendingfilters'){
                                     $this->PendingFilters = new RiskFilterListType(); 
                                     $this->PendingFilters->init($arry["children"]);
@@ -13219,7 +13299,7 @@ class FMFDetailsType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='denyfilters'){
                                     $this->DenyFilters = new RiskFilterListType(); 
                                     $this->DenyFilters->init($arry["children"]);
@@ -13227,7 +13307,7 @@ class FMFDetailsType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='reportfilters'){
                                     $this->ReportFilters = new RiskFilterListType(); 
                                     $this->ReportFilters->init($arry["children"]);
@@ -13248,8 +13328,8 @@ class EnhancedDataType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var AirlineItineraryType
+	 * @access public
+	 * @var AirlineItineraryType
 	 */ 
 	public $AirlineItinerary;
 
@@ -13257,7 +13337,7 @@ class EnhancedDataType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->AirlineItinerary != null)
+		if($this->AirlineItinerary != NULL)
 		{
 			$str .= '<ebl:AirlineItinerary>';
 			$str .= $this->AirlineItinerary->toXMLString();
@@ -13278,100 +13358,100 @@ class AirlineItineraryType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PassengerName;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $IssueDate;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TravelAgencyName;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TravelAgencyCode;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TicketNumber;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $IssuingCarrierCode;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CustomerCode;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $TotalFare;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $TotalTaxes;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $TotalFee;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $RestrictedTicket;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ClearingSequence;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ClearingCount;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var FlightDetailsType
+     * @array
+	 * @access public
+	 * @var FlightDetailsType
 	 */ 
 	public $FlightDetails;
 
@@ -13379,65 +13459,65 @@ class AirlineItineraryType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->PassengerName != null)
+		if($this->PassengerName != NULL)
 		{
 			$str .= '<ebl:PassengerName>' . PPUtils::escapeInvalidXmlCharsRegex($this->PassengerName) . '</ebl:PassengerName>';
 		}
-		if($this->IssueDate != null)
+		if($this->IssueDate != NULL)
 		{
 			$str .= '<ebl:IssueDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->IssueDate) . '</ebl:IssueDate>';
 		}
-		if($this->TravelAgencyName != null)
+		if($this->TravelAgencyName != NULL)
 		{
 			$str .= '<ebl:TravelAgencyName>' . PPUtils::escapeInvalidXmlCharsRegex($this->TravelAgencyName) . '</ebl:TravelAgencyName>';
 		}
-		if($this->TravelAgencyCode != null)
+		if($this->TravelAgencyCode != NULL)
 		{
 			$str .= '<ebl:TravelAgencyCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->TravelAgencyCode) . '</ebl:TravelAgencyCode>';
 		}
-		if($this->TicketNumber != null)
+		if($this->TicketNumber != NULL)
 		{
 			$str .= '<ebl:TicketNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->TicketNumber) . '</ebl:TicketNumber>';
 		}
-		if($this->IssuingCarrierCode != null)
+		if($this->IssuingCarrierCode != NULL)
 		{
 			$str .= '<ebl:IssuingCarrierCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->IssuingCarrierCode) . '</ebl:IssuingCarrierCode>';
 		}
-		if($this->CustomerCode != null)
+		if($this->CustomerCode != NULL)
 		{
 			$str .= '<ebl:CustomerCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->CustomerCode) . '</ebl:CustomerCode>';
 		}
-		if($this->TotalFare != null)
+		if($this->TotalFare != NULL)
 		{
 			$str .= '<ebl:TotalFare';
 			$str .= $this->TotalFare->toXMLString();
 			$str .= '</ebl:TotalFare>';
 		}
-		if($this->TotalTaxes != null)
+		if($this->TotalTaxes != NULL)
 		{
 			$str .= '<ebl:TotalTaxes';
 			$str .= $this->TotalTaxes->toXMLString();
 			$str .= '</ebl:TotalTaxes>';
 		}
-		if($this->TotalFee != null)
+		if($this->TotalFee != NULL)
 		{
 			$str .= '<ebl:TotalFee';
 			$str .= $this->TotalFee->toXMLString();
 			$str .= '</ebl:TotalFee>';
 		}
-		if($this->RestrictedTicket != null)
+		if($this->RestrictedTicket != NULL)
 		{
 			$str .= '<ebl:RestrictedTicket>' . PPUtils::escapeInvalidXmlCharsRegex($this->RestrictedTicket) . '</ebl:RestrictedTicket>';
 		}
-		if($this->ClearingSequence != null)
+		if($this->ClearingSequence != NULL)
 		{
 			$str .= '<ebl:ClearingSequence>' . PPUtils::escapeInvalidXmlCharsRegex($this->ClearingSequence) . '</ebl:ClearingSequence>';
 		}
-		if($this->ClearingCount != null)
+		if($this->ClearingCount != NULL)
 		{
 			$str .= '<ebl:ClearingCount>' . PPUtils::escapeInvalidXmlCharsRegex($this->ClearingCount) . '</ebl:ClearingCount>';
 		}
-		if($this->FlightDetails != null)
+		if($this->FlightDetails != NULL)
 		{
 			for($i = 0; $i < count($this->FlightDetails); $i++)
 			{
@@ -13461,120 +13541,120 @@ class FlightDetailsType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ConjuctionTicket;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ExchangeTicket;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CouponNumber;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ServiceClass;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TravelDate;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CarrierCode;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $StopOverPermitted;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $DepartureAirport;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ArrivalAirport;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $FlightNumber;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $DepartureTime;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ArrivalTime;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $FareBasisCode;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Fare;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Taxes;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Fee;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $EndorsementOrRestrictions;
 
@@ -13582,77 +13662,77 @@ class FlightDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ConjuctionTicket != null)
+		if($this->ConjuctionTicket != NULL)
 		{
 			$str .= '<ebl:ConjuctionTicket>' . PPUtils::escapeInvalidXmlCharsRegex($this->ConjuctionTicket) . '</ebl:ConjuctionTicket>';
 		}
-		if($this->ExchangeTicket != null)
+		if($this->ExchangeTicket != NULL)
 		{
 			$str .= '<ebl:ExchangeTicket>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExchangeTicket) . '</ebl:ExchangeTicket>';
 		}
-		if($this->CouponNumber != null)
+		if($this->CouponNumber != NULL)
 		{
 			$str .= '<ebl:CouponNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->CouponNumber) . '</ebl:CouponNumber>';
 		}
-		if($this->ServiceClass != null)
+		if($this->ServiceClass != NULL)
 		{
 			$str .= '<ebl:ServiceClass>' . PPUtils::escapeInvalidXmlCharsRegex($this->ServiceClass) . '</ebl:ServiceClass>';
 		}
-		if($this->TravelDate != null)
+		if($this->TravelDate != NULL)
 		{
 			$str .= '<ebl:TravelDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->TravelDate) . '</ebl:TravelDate>';
 		}
-		if($this->CarrierCode != null)
+		if($this->CarrierCode != NULL)
 		{
 			$str .= '<ebl:CarrierCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->CarrierCode) . '</ebl:CarrierCode>';
 		}
-		if($this->StopOverPermitted != null)
+		if($this->StopOverPermitted != NULL)
 		{
 			$str .= '<ebl:StopOverPermitted>' . PPUtils::escapeInvalidXmlCharsRegex($this->StopOverPermitted) . '</ebl:StopOverPermitted>';
 		}
-		if($this->DepartureAirport != null)
+		if($this->DepartureAirport != NULL)
 		{
 			$str .= '<ebl:DepartureAirport>' . PPUtils::escapeInvalidXmlCharsRegex($this->DepartureAirport) . '</ebl:DepartureAirport>';
 		}
-		if($this->ArrivalAirport != null)
+		if($this->ArrivalAirport != NULL)
 		{
 			$str .= '<ebl:ArrivalAirport>' . PPUtils::escapeInvalidXmlCharsRegex($this->ArrivalAirport) . '</ebl:ArrivalAirport>';
 		}
-		if($this->FlightNumber != null)
+		if($this->FlightNumber != NULL)
 		{
 			$str .= '<ebl:FlightNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->FlightNumber) . '</ebl:FlightNumber>';
 		}
-		if($this->DepartureTime != null)
+		if($this->DepartureTime != NULL)
 		{
 			$str .= '<ebl:DepartureTime>' . PPUtils::escapeInvalidXmlCharsRegex($this->DepartureTime) . '</ebl:DepartureTime>';
 		}
-		if($this->ArrivalTime != null)
+		if($this->ArrivalTime != NULL)
 		{
 			$str .= '<ebl:ArrivalTime>' . PPUtils::escapeInvalidXmlCharsRegex($this->ArrivalTime) . '</ebl:ArrivalTime>';
 		}
-		if($this->FareBasisCode != null)
+		if($this->FareBasisCode != NULL)
 		{
 			$str .= '<ebl:FareBasisCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->FareBasisCode) . '</ebl:FareBasisCode>';
 		}
-		if($this->Fare != null)
+		if($this->Fare != NULL)
 		{
 			$str .= '<ebl:Fare';
 			$str .= $this->Fare->toXMLString();
 			$str .= '</ebl:Fare>';
 		}
-		if($this->Taxes != null)
+		if($this->Taxes != NULL)
 		{
 			$str .= '<ebl:Taxes';
 			$str .= $this->Taxes->toXMLString();
 			$str .= '</ebl:Taxes>';
 		}
-		if($this->Fee != null)
+		if($this->Fee != NULL)
 		{
 			$str .= '<ebl:Fee';
 			$str .= $this->Fee->toXMLString();
 			$str .= '</ebl:Fee>';
 		}
-		if($this->EndorsementOrRestrictions != null)
+		if($this->EndorsementOrRestrictions != NULL)
 		{
 			$str .= '<ebl:EndorsementOrRestrictions>' . PPUtils::escapeInvalidXmlCharsRegex($this->EndorsementOrRestrictions) . '</ebl:EndorsementOrRestrictions>';
 		}
@@ -13672,8 +13752,8 @@ class AuthorizationInfoType  {
 	/**
 	 * The status of the payment: Pending: The payment is pending.
 	 * See "PendingReason" for more information.
-	 *@access public
-	 *@var PaymentStatusCodeType
+	 * @access public
+	 * @var PaymentStatusCodeType
 	 */ 
 	public $PaymentStatus;
 
@@ -13707,41 +13787,41 @@ class AuthorizationInfoType  {
 	 * other: The payment is pending for a reason other than those
 	 * listed above. For more information, contact PayPal Customer
 	 * Service.
-	 *@access public
-	 *@var PendingStatusCodeType
+	 * @access public
+	 * @var PendingStatusCodeType
 	 */ 
 	public $PendingReason;
 
 	/**
 	 * Protection Eligibility for this Transaction - None, SPP or
 	 * ESPP 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProtectionEligibility;
 
 	/**
 	 * Protection Eligibility Type for this Transaction 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProtectionEligibilityType;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentstatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentstatus') {
 					$this->PaymentStatus = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'pendingreason') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'pendingreason') {
 					$this->PendingReason = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'protectioneligibility') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'protectioneligibility') {
 					$this->ProtectionEligibility = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'protectioneligibilitytype') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'protectioneligibilitytype') {
 					$this->ProtectionEligibilityType = $arry["text"];
 				}
 			}
@@ -13758,43 +13838,43 @@ class OptionTrackingDetailsType  {
 
 	/**
 	 * Option Number. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OptionNumber;
 
 	/**
 	 * Option Quantity. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OptionQty;
 
 	/**
 	 * Option Select Name. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OptionSelect;
 
 	/**
 	 * Option Quantity Delta. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OptionQtyDelta;
 
 	/**
 	 * Option Alert. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OptionAlert;
 
 	/**
 	 * Option Cost. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OptionCost;
 
@@ -13802,27 +13882,27 @@ class OptionTrackingDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->OptionNumber != null)
+		if($this->OptionNumber != NULL)
 		{
 			$str .= '<ebl:OptionNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionNumber) . '</ebl:OptionNumber>';
 		}
-		if($this->OptionQty != null)
+		if($this->OptionQty != NULL)
 		{
 			$str .= '<ebl:OptionQty>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionQty) . '</ebl:OptionQty>';
 		}
-		if($this->OptionSelect != null)
+		if($this->OptionSelect != NULL)
 		{
 			$str .= '<ebl:OptionSelect>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionSelect) . '</ebl:OptionSelect>';
 		}
-		if($this->OptionQtyDelta != null)
+		if($this->OptionQtyDelta != NULL)
 		{
 			$str .= '<ebl:OptionQtyDelta>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionQtyDelta) . '</ebl:OptionQtyDelta>';
 		}
-		if($this->OptionAlert != null)
+		if($this->OptionAlert != NULL)
 		{
 			$str .= '<ebl:OptionAlert>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionAlert) . '</ebl:OptionAlert>';
 		}
-		if($this->OptionCost != null)
+		if($this->OptionCost != NULL)
 		{
 			$str .= '<ebl:OptionCost>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionCost) . '</ebl:OptionCost>';
 		}
@@ -13830,25 +13910,25 @@ class OptionTrackingDetailsType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'optionnumber') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionnumber') {
 					$this->OptionNumber = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'optionqty') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionqty') {
 					$this->OptionQty = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'optionselect') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionselect') {
 					$this->OptionSelect = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'optionqtydelta') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionqtydelta') {
 					$this->OptionQtyDelta = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'optionalert') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionalert') {
 					$this->OptionAlert = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'optioncost') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optioncost') {
 					$this->OptionCost = $arry["text"];
 				}
 			}
@@ -13865,36 +13945,36 @@ class ItemTrackingDetailsType  {
 
 	/**
 	 * Item Number. Required 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemNumber;
 
 	/**
 	 * Option Quantity. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemQty;
 
 	/**
 	 * Item Quantity Delta. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemQtyDelta;
 
 	/**
 	 * Item Alert. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemAlert;
 
 	/**
 	 * Item Cost. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemCost;
 
@@ -13902,23 +13982,23 @@ class ItemTrackingDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ItemNumber != null)
+		if($this->ItemNumber != NULL)
 		{
 			$str .= '<ebl:ItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemNumber) . '</ebl:ItemNumber>';
 		}
-		if($this->ItemQty != null)
+		if($this->ItemQty != NULL)
 		{
 			$str .= '<ebl:ItemQty>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemQty) . '</ebl:ItemQty>';
 		}
-		if($this->ItemQtyDelta != null)
+		if($this->ItemQtyDelta != NULL)
 		{
 			$str .= '<ebl:ItemQtyDelta>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemQtyDelta) . '</ebl:ItemQtyDelta>';
 		}
-		if($this->ItemAlert != null)
+		if($this->ItemAlert != NULL)
 		{
 			$str .= '<ebl:ItemAlert>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemAlert) . '</ebl:ItemAlert>';
 		}
-		if($this->ItemCost != null)
+		if($this->ItemCost != NULL)
 		{
 			$str .= '<ebl:ItemCost>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemCost) . '</ebl:ItemCost>';
 		}
@@ -13926,22 +14006,22 @@ class ItemTrackingDetailsType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'itemnumber') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemnumber') {
 					$this->ItemNumber = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'itemqty') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemqty') {
 					$this->ItemQty = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'itemqtydelta') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemqtydelta') {
 					$this->ItemQtyDelta = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'itemalert') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemalert') {
 					$this->ItemAlert = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'itemcost') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemcost') {
 					$this->ItemCost = $arry["text"];
 				}
 			}
@@ -13958,47 +14038,47 @@ class ButtonSearchResultType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $HostedButtonID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ButtonType;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemName;
 
 	/**
 	 * 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $ModifyDate;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'hostedbuttonid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'hostedbuttonid') {
 					$this->HostedButtonID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'buttontype') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttontype') {
 					$this->ButtonType = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'itemname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemname') {
 					$this->ItemName = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'modifydate') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'modifydate') {
 					$this->ModifyDate = $arry["text"];
 				}
 			}
@@ -14019,8 +14099,8 @@ class ReverseTransactionRequestDetailsType  {
 	 * Identifier of the transaction to reverse. Required Character
 	 * length and limitations: 17 single-byte alphanumeric
 	 * characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionID;
 
@@ -14028,7 +14108,7 @@ class ReverseTransactionRequestDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->TransactionID != null)
+		if($this->TransactionID != NULL)
 		{
 			$str .= '<ebl:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</ebl:TransactionID>';
 		}
@@ -14051,27 +14131,27 @@ class ReverseTransactionResponseDetailsType  {
 	 * Unique transaction identifier of the reversal transaction
 	 * created. Character length and limitations:17 single-byte
 	 * characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReverseTransactionID;
 
 	/**
 	 * Status of reversal request. Required 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Status;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'reversetransactionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'reversetransactionid') {
 					$this->ReverseTransactionID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'status') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
 					$this->Status = $arry["text"];
 				}
 			}
@@ -14088,17 +14168,17 @@ class IncentiveInfoType  {
 
 	/**
 	 * Incentive redemption code. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $IncentiveCode;
 
 	/**
 	 * Defines which bucket or item that the incentive should be
 	 * applied to. 
-     *@array
-	 *@access public
-	 *@var IncentiveApplyIndicationType
+     * @array
+	 * @access public
+	 * @var IncentiveApplyIndicationType
 	 */ 
 	public $ApplyIndication;
 
@@ -14106,11 +14186,11 @@ class IncentiveInfoType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->IncentiveCode != null)
+		if($this->IncentiveCode != NULL)
 		{
 			$str .= '<ebl:IncentiveCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->IncentiveCode) . '</ebl:IncentiveCode>';
 		}
-		if($this->ApplyIndication != null)
+		if($this->ApplyIndication != NULL)
 		{
 			for($i = 0; $i < count($this->ApplyIndication); $i++)
 			{
@@ -14135,15 +14215,15 @@ class IncentiveApplyIndicationType  {
 
 	/**
 	 * The Bucket ID that the incentive is applied to. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PaymentRequestID;
 
 	/**
 	 * The item that the incentive is applied to. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ItemId;
 
@@ -14151,11 +14231,11 @@ class IncentiveApplyIndicationType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->PaymentRequestID != null)
+		if($this->PaymentRequestID != NULL)
 		{
 			$str .= '<ebl:PaymentRequestID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentRequestID) . '</ebl:PaymentRequestID>';
 		}
-		if($this->ItemId != null)
+		if($this->ItemId != NULL)
 		{
 			$str .= '<ebl:ItemId>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemId) . '</ebl:ItemId>';
 		}
@@ -14175,38 +14255,38 @@ class PaymentRequestInfoType  {
 
 	/**
 	 * Contains the transaction id of the bucket.  
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionId;
 
 	/**
 	 * Contains the bucket id.  
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PaymentRequestID;
 
 	/**
 	 * Contains the error details.  
-	 *@access public
-	 *@var ErrorType
+	 * @access public
+	 * @var ErrorType
 	 */ 
 	public $PaymentError;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'transactionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
 					$this->TransactionId = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentrequestid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentrequestid') {
 					$this->PaymentRequestID = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='paymenterror'){
                                     $this->PaymentError = new ErrorType(); 
                                     $this->PaymentError->init($arry["children"]);
@@ -14236,8 +14316,8 @@ class ExternalRememberMeOwnerDetailsType  {
 	 * also signifies None. Email, the owner ID is an email address
 	 * SecureMerchantAccountID, the owner id is a string
 	 * representing the secure merchant account ID 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ExternalRememberMeOwnerIDType;
 
@@ -14248,8 +14328,8 @@ class ExternalRememberMeOwnerDetailsType  {
 	 * actor or omitted/none. In the future, we may allow the owner
 	 * to be a 3rd party merchant account. If the Owner ID Type
 	 * field is not present or "None", this parameter is ignored. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ExternalRememberMeOwnerID;
 
@@ -14257,11 +14337,11 @@ class ExternalRememberMeOwnerDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ExternalRememberMeOwnerIDType != null)
+		if($this->ExternalRememberMeOwnerIDType != NULL)
 		{
 			$str .= '<ebl:ExternalRememberMeOwnerIDType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalRememberMeOwnerIDType) . '</ebl:ExternalRememberMeOwnerIDType>';
 		}
-		if($this->ExternalRememberMeOwnerID != null)
+		if($this->ExternalRememberMeOwnerID != NULL)
 		{
 			$str .= '<ebl:ExternalRememberMeOwnerID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalRememberMeOwnerID) . '</ebl:ExternalRememberMeOwnerID>';
 		}
@@ -14284,8 +14364,8 @@ class ExternalRememberMeOptInDetailsType  {
 	/**
 	 * 1 = opt in to external remember me. 0 or omitted = no opt-in
 	 * Other values are invalid 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ExternalRememberMeOptIn;
 
@@ -14295,8 +14375,8 @@ class ExternalRememberMeOptInDetailsType  {
 	 * owner must be either the API actor or omitted/none. In the
 	 * future, we may allow the owner to be a 3rd party merchant
 	 * account. 
-	 *@access public
-	 *@var ExternalRememberMeOwnerDetailsType
+	 * @access public
+	 * @var ExternalRememberMeOwnerDetailsType
 	 */ 
 	public $ExternalRememberMeOwnerDetails;
 
@@ -14304,11 +14384,11 @@ class ExternalRememberMeOptInDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ExternalRememberMeOptIn != null)
+		if($this->ExternalRememberMeOptIn != NULL)
 		{
 			$str .= '<ebl:ExternalRememberMeOptIn>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalRememberMeOptIn) . '</ebl:ExternalRememberMeOptIn>';
 		}
-		if($this->ExternalRememberMeOwnerDetails != null)
+		if($this->ExternalRememberMeOwnerDetails != NULL)
 		{
 			$str .= '<ebl:ExternalRememberMeOwnerDetails>';
 			$str .= $this->ExternalRememberMeOwnerDetails->toXMLString();
@@ -14330,8 +14410,8 @@ class FlowControlDetailsType  {
 	/**
 	 * The URL to redirect to for an unpayable transaction. This
 	 * field is currently used only for the inline checkout flow. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ErrorURL;
 
@@ -14339,8 +14419,8 @@ class FlowControlDetailsType  {
 	 * The URL to redirect to after a user clicks the "Pay" or
 	 * "Continue" button on the merchant's site. This field is
 	 * currently used only for the inline checkout flow. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InContextReturnURL;
 
@@ -14348,11 +14428,11 @@ class FlowControlDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ErrorURL != null)
+		if($this->ErrorURL != NULL)
 		{
 			$str .= '<ebl:ErrorURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ErrorURL) . '</ebl:ErrorURL>';
 		}
-		if($this->InContextReturnURL != null)
+		if($this->InContextReturnURL != NULL)
 		{
 			$str .= '<ebl:InContextReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->InContextReturnURL) . '</ebl:InContextReturnURL>';
 		}
@@ -14381,8 +14461,8 @@ class ExternalRememberMeStatusDetailsType  {
 	 * authentication and allow buyer to complete transaction. -1 =
 	 * None - the return value does not signify any valid remember
 	 * me status. 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $ExternalRememberMeStatus;
 
@@ -14393,21 +14473,83 @@ class ExternalRememberMeStatusDetailsType  {
 	 * transactions. The ExternalRememberMeID is a 17-character
 	 * alphanumeric (encrypted) string. This field has meaning only
 	 * to the merchant. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ExternalRememberMeID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'externalremembermestatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'externalremembermestatus') {
 					$this->ExternalRememberMeStatus = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'externalremembermeid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'externalremembermeid') {
 					$this->ExternalRememberMeID = $arry["text"];
+				}
+			}
+		}
+	}
+} 
+
+
+
+/**
+ * Response information resulting from opt-in operation or
+ * current login bypass status. 
+ */
+class RefreshTokenStatusDetailsType  {
+
+	/**
+	 * Required field that reports status of opt-in or login bypass
+	 * attempt.  0 = Success, successful opt-in or RefreshToken
+	 * corresponding to AccessToken specified  in
+	 * SetExpressCheckout is valid (user is still opted in).  1 =
+	 * New RefreshToken was generated (user is still opted in).  2
+	 * = Invalid ID, RefreshToken corresponding to AccessToken
+	 * specified in SetExpressCheckout  is invalid (user is opted
+	 * out). -2 = Internal Error, system error or outage during
+	 * opt-in or login bypass. Can retry  opt-in or login bypass
+	 * next time. Flow will force full authentication and allow 
+	 * buyer to complete transaction. -1 = None, the field does not
+	 * represent any valid value of the status. 
+	 * @access public
+	 * @var integer
+	 */ 
+	public $RefreshTokenStatus;
+
+	/**
+	 * Identifier returned on external-remember-me-opt-in to allow
+	 * the merchant to request bypass of PayPal login 
+	 * @access public
+	 * @var string
+	 */ 
+	public $RefreshToken;
+
+	/**
+	 * The immutable_id is the user's unique value per merchant
+	 * that should never ever change for that account. This would
+	 * be the key used to uniquely identify the user 
+	 * @access public
+	 * @var string
+	 */ 
+	public $ImmutableID;
+
+
+
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
+			foreach($arr as $arry) {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'refreshtokenstatus') {
+					$this->RefreshTokenStatus = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'refreshtoken') {
+					$this->RefreshToken = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'immutableid') {
+					$this->ImmutableID = $arry["text"];
 				}
 			}
 		}
@@ -14426,8 +14568,8 @@ class DisplayControlDetailsType  {
 	 * Optional URL to pay button image for the inline checkout
 	 * flow. Currently applicable only to the inline checkout flow
 	 * when the FlowControlDetails/InlineReturnURL is present. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InContextPaymentButtonImage;
 
@@ -14435,7 +14577,7 @@ class DisplayControlDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->InContextPaymentButtonImage != null)
+		if($this->InContextPaymentButtonImage != NULL)
 		{
 			$str .= '<ebl:InContextPaymentButtonImage>' . PPUtils::escapeInvalidXmlCharsRegex($this->InContextPaymentButtonImage) . '</ebl:InContextPaymentButtonImage>';
 		}
@@ -14464,8 +14606,8 @@ class ExternalPartnerTrackingDetailsType  {
 	 * etc based on these segments. The external partner would
 	 * control the value of what gets passed and we take that value
 	 * as is and generate data based on it. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ExternalPartnerSegmentID;
 
@@ -14473,7 +14615,7 @@ class ExternalPartnerTrackingDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ExternalPartnerSegmentID != null)
+		if($this->ExternalPartnerSegmentID != NULL)
 		{
 			$str .= '<ebl:ExternalPartnerSegmentID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalPartnerSegmentID) . '</ebl:ExternalPartnerSegmentID>';
 		}
@@ -14494,23 +14636,23 @@ class MerchantStoreDetailsType  {
 	/**
 	 * Store IDOptional Character length and limits: 50 single-byte
 	 * characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $StoreID;
 
 	/**
 	 * Terminal IDOptional Character length and limits: 50
 	 * single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TerminalID;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($StoreID = null) {
+	public function __construct($StoreID = NULL) {
 		$this->StoreID = $StoreID;
 	}
 
@@ -14518,11 +14660,11 @@ class MerchantStoreDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->StoreID != null)
+		if($this->StoreID != NULL)
 		{
 			$str .= '<ebl:StoreID>' . PPUtils::escapeInvalidXmlCharsRegex($this->StoreID) . '</ebl:StoreID>';
 		}
-		if($this->TerminalID != null)
+		if($this->TerminalID != NULL)
 		{
 			$str .= '<ebl:TerminalID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TerminalID) . '</ebl:TerminalID>';
 		}
@@ -14541,15 +14683,15 @@ class AdditionalFeeType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Type;
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
@@ -14557,11 +14699,11 @@ class AdditionalFeeType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Type != null)
+		if($this->Type != NULL)
 		{
 			$str .= '<ebl:Type>' . PPUtils::escapeInvalidXmlCharsRegex($this->Type) . '</ebl:Type>';
 		}
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
@@ -14571,6 +14713,32 @@ class AdditionalFeeType  {
 	}
 
 
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
+			foreach($arr as $arry) {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'type') {
+					$this->Type = $arry["text"];
+				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
+                        if( $arry["name"]=='amount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->Amount= new BasicAmountType(); 
+								$this->Amount->init($atr);
+							}
+							                            
+			}
+			}
+		}
+	}
 } 
 
 
@@ -14583,45 +14751,45 @@ class DiscountType  {
 	/**
 	 * Item nameOptional Character length and limits: 127
 	 * single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Name;
 
 	/**
 	 * description of the discountOptional Character length and
 	 * limits: 127 single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Description;
 
 	/**
 	 * amount discountedOptional 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
 	 * offer typeOptional 
-	 *@access public
-	 *@var RedeemedOfferType
+	 * @access public
+	 * @var RedeemedOfferType
 	 */ 
 	public $RedeemedOfferType;
 
 	/**
 	 * offer IDOptional Character length and limits: 64 single-byte
 	 * characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $RedeemedOfferID;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($Amount = null) {
+	public function __construct($Amount = NULL) {
 		$this->Amount = $Amount;
 	}
 
@@ -14629,25 +14797,25 @@ class DiscountType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Name != null)
+		if($this->Name != NULL)
 		{
 			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
 		}
-		if($this->Description != null)
+		if($this->Description != NULL)
 		{
 			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
 		}
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<ebl:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</ebl:Amount>';
 		}
-		if($this->RedeemedOfferType != null)
+		if($this->RedeemedOfferType != NULL)
 		{
 			$str .= '<ebl:RedeemedOfferType>' . PPUtils::escapeInvalidXmlCharsRegex($this->RedeemedOfferType) . '</ebl:RedeemedOfferType>';
 		}
-		if($this->RedeemedOfferID != null)
+		if($this->RedeemedOfferID != NULL)
 		{
 			$str .= '<ebl:RedeemedOfferID>' . PPUtils::escapeInvalidXmlCharsRegex($this->RedeemedOfferID) . '</ebl:RedeemedOfferID>';
 		}
@@ -14655,6 +14823,41 @@ class DiscountType  {
 	}
 
 
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
+			foreach($arr as $arry) {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'name') {
+					$this->Name = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'description') {
+					$this->Description = $arry["text"];
+				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
+                        if( $arry["name"]=='amount') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->Amount= new BasicAmountType(); 
+								$this->Amount->init($atr);
+							}
+							                            
+			}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'redeemedoffertype') {
+					$this->RedeemedOfferType = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'redeemedofferid') {
+					$this->RedeemedOfferID = $arry["text"];
+				}
+			}
+		}
+	}
 } 
 
 
@@ -14667,16 +14870,16 @@ class InvoiceItemType  {
 	/**
 	 * a human readable item nameOptional Character length and
 	 * limits: 127 single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Name;
 
 	/**
 	 * a human readable item descriptionOptional Character length
 	 * and limits: 127 single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Description;
 
@@ -14684,8 +14887,8 @@ class InvoiceItemType  {
 	 * The International Article Number or Universal Product Code
 	 * (UPC) for the item. Empty string is allowed. Character
 	 * length and limits: 17 single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $EAN;
 
@@ -14693,8 +14896,8 @@ class InvoiceItemType  {
 	 * The Stock-Keeping Unit or other identification code assigned
 	 * to the item. Character length and limits: 64 single-byte
 	 * characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SKU;
 
@@ -14705,52 +14908,52 @@ class InvoiceItemType  {
 	 * should be set here. This identifier will be displayed next
 	 * to the item in the e-Receipt. Character length and limits: 8
 	 * single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReturnPolicyIdentifier;
 
 	/**
 	 * total price of this item 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Price;
 
 	/**
 	 * price per item quantity 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $ItemPrice;
 
 	/**
 	 * quantity of the item (non-negative) 
-	 *@access public
-	 *@var double
+	 * @access public
+	 * @var double
 	 */ 
 	public $ItemCount;
 
 	/**
 	 * Unit of measure for the itemCount 
-	 *@access public
-	 *@var UnitOfMeasure
+	 * @access public
+	 * @var UnitOfMeasure
 	 */ 
 	public $ItemCountUnit;
 
 	/**
 	 * discount applied to this item 
-     *@array
-	 *@access public
-	 *@var DiscountType
+     * @array
+	 * @access public
+	 * @var DiscountType
 	 */ 
 	public $Discount;
 
 	/**
 	 * identifies whether this item is taxable or not. If not
 	 * passed, this will be assumed to be true. 
-	 *@access public
-	 *@var boolean
+	 * @access public
+	 * @var boolean
 	 */ 
 	public $Taxable;
 
@@ -14760,31 +14963,31 @@ class InvoiceItemType  {
 	 * calculations. Note: we have totalTax at invoice level. It's
 	 * up to the caller to do the calculations for setting that
 	 * other element. 
-	 *@access public
-	 *@var double
+	 * @access public
+	 * @var double
 	 */ 
 	public $TaxRate;
 
 	/**
 	 * Additional fees to this item 
-     *@array
-	 *@access public
-	 *@var AdditionalFeeType
+     * @array
+	 * @access public
+	 * @var AdditionalFeeType
 	 */ 
 	public $AdditionalFees;
 
 	/**
 	 * identifies whether this is reimbursable or not. If not pass,
 	 * this will be assumed to be true. 
-	 *@access public
-	 *@var boolean
+	 * @access public
+	 * @var boolean
 	 */ 
 	public $Reimbursable;
 
 	/**
 	 * Manufacturer part number. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MPN;
 
@@ -14792,8 +14995,8 @@ class InvoiceItemType  {
 	 * International Standard Book Number. Reference
 	 * http://en.wikipedia.org/wiki/ISBN Character length and
 	 * limits: 32 single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ISBN;
 
@@ -14801,22 +15004,22 @@ class InvoiceItemType  {
 	 * Price Look-Up code Reference
 	 * http://en.wikipedia.org/wiki/Price_Look-Up_code Character
 	 * length and limits: 5 single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PLU;
 
 	/**
 	 * Character length and limits: 32 single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ModelNumber;
 
 	/**
 	 * Character length and limits: 32 single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $StyleNumber;
 
@@ -14824,47 +15027,47 @@ class InvoiceItemType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->Name != null)
+		if($this->Name != NULL)
 		{
 			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
 		}
-		if($this->Description != null)
+		if($this->Description != NULL)
 		{
 			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
 		}
-		if($this->EAN != null)
+		if($this->EAN != NULL)
 		{
 			$str .= '<ebl:EAN>' . PPUtils::escapeInvalidXmlCharsRegex($this->EAN) . '</ebl:EAN>';
 		}
-		if($this->SKU != null)
+		if($this->SKU != NULL)
 		{
 			$str .= '<ebl:SKU>' . PPUtils::escapeInvalidXmlCharsRegex($this->SKU) . '</ebl:SKU>';
 		}
-		if($this->ReturnPolicyIdentifier != null)
+		if($this->ReturnPolicyIdentifier != NULL)
 		{
 			$str .= '<ebl:ReturnPolicyIdentifier>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnPolicyIdentifier) . '</ebl:ReturnPolicyIdentifier>';
 		}
-		if($this->Price != null)
+		if($this->Price != NULL)
 		{
 			$str .= '<ebl:Price';
 			$str .= $this->Price->toXMLString();
 			$str .= '</ebl:Price>';
 		}
-		if($this->ItemPrice != null)
+		if($this->ItemPrice != NULL)
 		{
 			$str .= '<ebl:ItemPrice';
 			$str .= $this->ItemPrice->toXMLString();
 			$str .= '</ebl:ItemPrice>';
 		}
-		if($this->ItemCount != null)
+		if($this->ItemCount != NULL)
 		{
 			$str .= '<ebl:ItemCount>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemCount) . '</ebl:ItemCount>';
 		}
-		if($this->ItemCountUnit != null)
+		if($this->ItemCountUnit != NULL)
 		{
 			$str .= '<ebl:ItemCountUnit>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemCountUnit) . '</ebl:ItemCountUnit>';
 		}
-		if($this->Discount != null)
+		if($this->Discount != NULL)
 		{
 			for($i = 0; $i < count($this->Discount); $i++)
 			{
@@ -14873,15 +15076,15 @@ class InvoiceItemType  {
 				$str .= '</ebl:Discount>';
 			}
 		}
-		if($this->Taxable != null)
+		if($this->Taxable != NULL)
 		{
 			$str .= '<ebl:Taxable>' . PPUtils::escapeInvalidXmlCharsRegex($this->Taxable) . '</ebl:Taxable>';
 		}
-		if($this->TaxRate != null)
+		if($this->TaxRate != NULL)
 		{
 			$str .= '<ebl:TaxRate>' . PPUtils::escapeInvalidXmlCharsRegex($this->TaxRate) . '</ebl:TaxRate>';
 		}
-		if($this->AdditionalFees != null)
+		if($this->AdditionalFees != NULL)
 		{
 			for($i = 0; $i < count($this->AdditionalFees); $i++)
 			{
@@ -14890,27 +15093,27 @@ class InvoiceItemType  {
 				$str .= '</ebl:AdditionalFees>';
 			}
 		}
-		if($this->Reimbursable != null)
+		if($this->Reimbursable != NULL)
 		{
 			$str .= '<ebl:Reimbursable>' . PPUtils::escapeInvalidXmlCharsRegex($this->Reimbursable) . '</ebl:Reimbursable>';
 		}
-		if($this->MPN != null)
+		if($this->MPN != NULL)
 		{
 			$str .= '<ebl:MPN>' . PPUtils::escapeInvalidXmlCharsRegex($this->MPN) . '</ebl:MPN>';
 		}
-		if($this->ISBN != null)
+		if($this->ISBN != NULL)
 		{
 			$str .= '<ebl:ISBN>' . PPUtils::escapeInvalidXmlCharsRegex($this->ISBN) . '</ebl:ISBN>';
 		}
-		if($this->PLU != null)
+		if($this->PLU != NULL)
 		{
 			$str .= '<ebl:PLU>' . PPUtils::escapeInvalidXmlCharsRegex($this->PLU) . '</ebl:PLU>';
 		}
-		if($this->ModelNumber != null)
+		if($this->ModelNumber != NULL)
 		{
 			$str .= '<ebl:ModelNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ModelNumber) . '</ebl:ModelNumber>';
 		}
-		if($this->StyleNumber != null)
+		if($this->StyleNumber != NULL)
 		{
 			$str .= '<ebl:StyleNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->StyleNumber) . '</ebl:StyleNumber>';
 		}
@@ -14918,6 +15121,123 @@ class InvoiceItemType  {
 	}
 
 
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
+			foreach($arr as $arry) {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'name') {
+					$this->Name = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'description') {
+					$this->Description = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'ean') {
+					$this->EAN = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'sku') {
+					$this->SKU = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'returnpolicyidentifier') {
+					$this->ReturnPolicyIdentifier = $arry["text"];
+				}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
+                        if( $arry["name"]=='price') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->Price= new BasicAmountType(); 
+								$this->Price->init($atr);
+							}
+							                            
+			}
+			
+            						
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
+                        if( $arry["name"]=='itemprice') {
+								$tmp =  array();
+								$atr =  array();
+								foreach($arry["attributes"] as $key => $val){
+                                    $atr[0]["name"] =$key;
+                                    $atr[0]["text"] =$val;
+								}
+								$atr[1]["name"] ="value";
+								$atr[1]["text"] =$arry["text"];
+								$this->ItemPrice= new BasicAmountType(); 
+								$this->ItemPrice->init($atr);
+							}
+							                            
+			}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemcount') {
+					$this->ItemCount = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemcountunit') {
+					$this->ItemCountUnit = $arry["text"];
+				}
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
+					$i = 0;
+					while (TRUE) {
+						if ($arry["name"] == "discount[$i]") {
+							$this->Discount[$i] = new DiscountType();
+							$this->Discount[$i]->init($arry["children"]);
+						} else {
+							break;
+						}
+						$i++;
+					}
+				}
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "discount")) {
+					$this->Discount = new DiscountType();
+					$this->Discount->init($arry["children"]);
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'taxable') {
+					$this->Taxable = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'taxrate') {
+					$this->TaxRate = $arry["text"];
+				}
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
+					$i = 0;
+					while (TRUE) {
+						if ($arry["name"] == "additionalfees[$i]") {
+							$this->AdditionalFees[$i] = new AdditionalFeeType();
+							$this->AdditionalFees[$i]->init($arry["children"]);
+						} else {
+							break;
+						}
+						$i++;
+					}
+				}
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "additionalfees")) {
+					$this->AdditionalFees = new AdditionalFeeType();
+					$this->AdditionalFees->init($arry["children"]);
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'reimbursable') {
+					$this->Reimbursable = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'mpn') {
+					$this->MPN = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'isbn') {
+					$this->ISBN = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'plu') {
+					$this->PLU = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'modelnumber') {
+					$this->ModelNumber = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'stylenumber') {
+					$this->StyleNumber = $arry["text"];
+				}
+			}
+		}
+	}
 } 
 
 
@@ -14929,27 +15249,27 @@ class RefundInfoType  {
 
 	/**
 	 * Refund status whether it is Instant or Delayed. 
-	 *@access public
-	 *@var PaymentStatusCodeType
+	 * @access public
+	 * @var PaymentStatusCodeType
 	 */ 
 	public $RefundStatus;
 
 	/**
 	 * Tells us the reason when refund payment status is Delayed. 
-	 *@access public
-	 *@var PendingStatusCodeType
+	 * @access public
+	 * @var PendingStatusCodeType
 	 */ 
 	public $PendingReason;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'refundstatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'refundstatus') {
 					$this->RefundStatus = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'pendingreason') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'pendingreason') {
 					$this->PendingReason = $arry["text"];
 				}
 			}
@@ -14966,30 +15286,30 @@ class CoupledBucketsType  {
 
 	/**
 	 * Relationship Type - LifeTime (default) 
-	 *@access public
-	 *@var CoupleType
+	 * @access public
+	 * @var CoupleType
 	 */ 
 	public $CoupleType;
 
 	/**
 	 * Identifier for this relation 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CoupledPaymentRequestID;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $PaymentRequestID;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($PaymentRequestID = null) {
+	public function __construct($PaymentRequestID = NULL) {
 		$this->PaymentRequestID = $PaymentRequestID;
 	}
 
@@ -14997,15 +15317,15 @@ class CoupledBucketsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->CoupleType != null)
+		if($this->CoupleType != NULL)
 		{
 			$str .= '<ebl:CoupleType>' . PPUtils::escapeInvalidXmlCharsRegex($this->CoupleType) . '</ebl:CoupleType>';
 		}
-		if($this->CoupledPaymentRequestID != null)
+		if($this->CoupledPaymentRequestID != NULL)
 		{
 			$str .= '<ebl:CoupledPaymentRequestID>' . PPUtils::escapeInvalidXmlCharsRegex($this->CoupledPaymentRequestID) . '</ebl:CoupledPaymentRequestID>';
 		}
-		if($this->PaymentRequestID != null)
+		if($this->PaymentRequestID != NULL)
 		{
 			for($i = 0; $i < count($this->PaymentRequestID); $i++)
 			{
@@ -15027,28 +15347,28 @@ class CoupledPaymentInfoType  {
 
 	/**
 	 * ID received in the Coupled Payment Request
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CoupledPaymentRequestID;
 
 	/**
 	 * ID that uniquely identifies this CoupledPayment. Generated
 	 * by PP in Response
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CoupledPaymentID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'coupledpaymentrequestid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'coupledpaymentrequestid') {
 					$this->CoupledPaymentRequestID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'coupledpaymentid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'coupledpaymentid') {
 					$this->CoupledPaymentID = $arry["text"];
 				}
 			}
@@ -15088,8 +15408,8 @@ class EnhancedPaymentDataType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
 			}
 		}
@@ -15111,8 +15431,8 @@ class EnhancedItemDataType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
 			}
 		}
@@ -15128,8 +15448,8 @@ class EnhancedPaymentInfoType  {
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
 			}
 		}
@@ -15179,8 +15499,8 @@ class EnhancedCompleteRecoupResponseDetailsType  {
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
 			}
 		}
@@ -15219,8 +15539,8 @@ class EnhancedPayerInfoType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
 			}
 		}
@@ -15236,43 +15556,43 @@ class InstallmentDetailsType  {
 
 	/**
 	 * Installment Period. Optional 
-	 *@access public
-	 *@var BillingPeriodType
+	 * @access public
+	 * @var BillingPeriodType
 	 */ 
 	public $BillingPeriod;
 
 	/**
 	 * Installment Frequency. Optional 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $BillingFrequency;
 
 	/**
 	 * Installment Cycles. Optional 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $TotalBillingCycles;
 
 	/**
 	 * Installment Amount. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Amount;
 
 	/**
 	 * Installment Amount. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ShippingAmount;
 
 	/**
 	 * Installment Amount. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TaxAmount;
 
@@ -15280,27 +15600,27 @@ class InstallmentDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->BillingPeriod != null)
+		if($this->BillingPeriod != NULL)
 		{
 			$str .= '<urn:BillingPeriod>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingPeriod) . '</urn:BillingPeriod>';
 		}
-		if($this->BillingFrequency != null)
+		if($this->BillingFrequency != NULL)
 		{
 			$str .= '<urn:BillingFrequency>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingFrequency) . '</urn:BillingFrequency>';
 		}
-		if($this->TotalBillingCycles != null)
+		if($this->TotalBillingCycles != NULL)
 		{
 			$str .= '<urn:TotalBillingCycles>' . PPUtils::escapeInvalidXmlCharsRegex($this->TotalBillingCycles) . '</urn:TotalBillingCycles>';
 		}
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<urn:Amount>' . PPUtils::escapeInvalidXmlCharsRegex($this->Amount) . '</urn:Amount>';
 		}
-		if($this->ShippingAmount != null)
+		if($this->ShippingAmount != NULL)
 		{
 			$str .= '<urn:ShippingAmount>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingAmount) . '</urn:ShippingAmount>';
 		}
-		if($this->TaxAmount != null)
+		if($this->TaxAmount != NULL)
 		{
 			$str .= '<urn:TaxAmount>' . PPUtils::escapeInvalidXmlCharsRegex($this->TaxAmount) . '</urn:TaxAmount>';
 		}
@@ -15308,25 +15628,25 @@ class InstallmentDetailsType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingperiod') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingperiod') {
 					$this->BillingPeriod = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingfrequency') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingfrequency') {
 					$this->BillingFrequency = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'totalbillingcycles') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'totalbillingcycles') {
 					$this->TotalBillingCycles = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'amount') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'amount') {
 					$this->Amount = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'shippingamount') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shippingamount') {
 					$this->ShippingAmount = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'taxamount') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'taxamount') {
 					$this->TaxAmount = $arry["text"];
 				}
 			}
@@ -15345,37 +15665,37 @@ class OptionSelectionDetailsType  {
 	/**
 	 * Option Selection. Required Character length and limitations:
 	 * 12 single-byte alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OptionSelection;
 
 	/**
 	 * Option Price. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Price;
 
 	/**
 	 * Option Type Optional 
-	 *@access public
-	 *@var OptionTypeListType
+	 * @access public
+	 * @var OptionTypeListType
 	 */ 
 	public $OptionType;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var InstallmentDetailsType
+     * @array
+	 * @access public
+	 * @var InstallmentDetailsType
 	 */ 
 	public $PaymentPeriod;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($OptionSelection = null) {
+	public function __construct($OptionSelection = NULL) {
 		$this->OptionSelection = $OptionSelection;
 	}
 
@@ -15383,19 +15703,19 @@ class OptionSelectionDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->OptionSelection != null)
+		if($this->OptionSelection != NULL)
 		{
 			$str .= '<urn:OptionSelection>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionSelection) . '</urn:OptionSelection>';
 		}
-		if($this->Price != null)
+		if($this->Price != NULL)
 		{
 			$str .= '<urn:Price>' . PPUtils::escapeInvalidXmlCharsRegex($this->Price) . '</urn:Price>';
 		}
-		if($this->OptionType != null)
+		if($this->OptionType != NULL)
 		{
 			$str .= '<urn:OptionType>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionType) . '</urn:OptionType>';
 		}
-		if($this->PaymentPeriod != null)
+		if($this->PaymentPeriod != NULL)
 		{
 			for($i = 0; $i < count($this->PaymentPeriod); $i++)
 			{
@@ -15408,21 +15728,21 @@ class OptionSelectionDetailsType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'optionselection') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionselection') {
 					$this->OptionSelection = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'price') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'price') {
 					$this->Price = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'optiontype') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optiontype') {
 					$this->OptionType = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "paymentperiod[$i]") {
 							$this->PaymentPeriod[$i] = new InstallmentDetailsType();
 							$this->PaymentPeriod[$i]->init($arry["children"]);
@@ -15432,7 +15752,7 @@ class OptionSelectionDetailsType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "paymentperiod")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "paymentperiod")) {
 					$this->PaymentPeriod = new InstallmentDetailsType();
 					$this->PaymentPeriod->init($arry["children"]);
 				}
@@ -15450,23 +15770,23 @@ class OptionDetailsType  {
 
 	/**
 	 * Option Name. Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OptionName;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var OptionSelectionDetailsType
+     * @array
+	 * @access public
+	 * @var OptionSelectionDetailsType
 	 */ 
 	public $OptionSelectionDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($OptionName = null) {
+	public function __construct($OptionName = NULL) {
 		$this->OptionName = $OptionName;
 	}
 
@@ -15474,11 +15794,11 @@ class OptionDetailsType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->OptionName != null)
+		if($this->OptionName != NULL)
 		{
 			$str .= '<urn:OptionName>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionName) . '</urn:OptionName>';
 		}
-		if($this->OptionSelectionDetails != null)
+		if($this->OptionSelectionDetails != NULL)
 		{
 			for($i = 0; $i < count($this->OptionSelectionDetails); $i++)
 			{
@@ -15491,15 +15811,15 @@ class OptionDetailsType  {
 	}
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'optionname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionname') {
 					$this->OptionName = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "optionselectiondetails[$i]") {
 							$this->OptionSelectionDetails[$i] = new OptionSelectionDetailsType();
 							$this->OptionSelectionDetails[$i]->init($arry["children"]);
@@ -15509,7 +15829,7 @@ class OptionDetailsType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "optionselectiondetails")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "optionselectiondetails")) {
 					$this->OptionSelectionDetails = new OptionSelectionDetailsType();
 					$this->OptionSelectionDetails->init($arry["children"]);
 				}
@@ -15527,8 +15847,8 @@ class BMCreateButtonReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BMCreateButtonRequestType
+	 * @access public
+	 * @var BMCreateButtonRequestType
 	 */ 
 	public $BMCreateButtonRequest;
 
@@ -15537,7 +15857,7 @@ class BMCreateButtonReq  {
 	{
 		$str = '';
 		$str .= '<urn:BMCreateButtonReq>';
-		if($this->BMCreateButtonRequest != null)
+		if($this->BMCreateButtonRequest != NULL)
 		{
 			$str .= '<urn:BMCreateButtonRequest>';
 			$str .= $this->BMCreateButtonRequest->toXMLString();
@@ -15563,24 +15883,24 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	 * Type of Button to create.  Required Must be one of the
 	 * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
 	 * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE 
-	 *@access public
-	 *@var ButtonTypeType
+	 * @access public
+	 * @var ButtonTypeType
 	 */ 
 	public $ButtonType;
 
 	/**
 	 * button code.  optional Must be one of the following: hosted,
 	 * encrypted or cleartext 
-	 *@access public
-	 *@var ButtonCodeType
+	 * @access public
+	 * @var ButtonCodeType
 	 */ 
 	public $ButtonCode;
 
 	/**
 	 * Button sub type.  optional for button types buynow and cart
 	 * only Must Be either PRODUCTS or SERVICES 
-	 *@access public
-	 *@var ButtonSubTypeType
+	 * @access public
+	 * @var ButtonSubTypeType
 	 */ 
 	public $ButtonSubType;
 
@@ -15588,33 +15908,33 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	 * Button Variable information  At least one required recurring
 	 * Character length and limitations: 63 single-byte
 	 * alphanumeric characters 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $ButtonVar;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var OptionDetailsType
+     * @array
+	 * @access public
+	 * @var OptionDetailsType
 	 */ 
 	public $OptionDetails;
 
 	/**
 	 * Details of each option for the button.  Optional 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $TextBox;
 
 	/**
 	 * Button image to use.  Optional Must be one of: REG, SML, or
 	 * CC 
-	 *@access public
-	 *@var ButtonImageType
+	 * @access public
+	 * @var ButtonImageType
 	 */ 
 	public $ButtonImage;
 
@@ -15622,39 +15942,39 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	 * Button URL for custom button image.  Optional Character
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ButtonImageURL;
 
 	/**
 	 * Text to use on Buy Now Button.  Optional Must be either
 	 * BUYNOW or PAYNOW 
-	 *@access public
-	 *@var BuyNowTextType
+	 * @access public
+	 * @var BuyNowTextType
 	 */ 
 	public $BuyNowText;
 
 	/**
 	 * Text to use on Subscribe button.  Optional Must be either
 	 * BUYNOW or SUBSCRIBE 
-	 *@access public
-	 *@var SubscribeTextType
+	 * @access public
+	 * @var SubscribeTextType
 	 */ 
 	public $SubscribeText;
 
 	/**
 	 * Button Country.  Optional Must be valid ISO country code 
-	 *@access public
-	 *@var CountryCodeType
+	 * @access public
+	 * @var CountryCodeType
 	 */ 
 	public $ButtonCountry;
 
 	/**
 	 * Button language code.  Optional Character length and
 	 * limitations: 3 single-byte alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ButtonLanguage;
 
@@ -15663,26 +15983,26 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ButtonType != null)
+		if($this->ButtonType != NULL)
 		{
 			$str .= '<urn:ButtonType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonType) . '</urn:ButtonType>';
 		}
-		if($this->ButtonCode != null)
+		if($this->ButtonCode != NULL)
 		{
 			$str .= '<urn:ButtonCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonCode) . '</urn:ButtonCode>';
 		}
-		if($this->ButtonSubType != null)
+		if($this->ButtonSubType != NULL)
 		{
 			$str .= '<urn:ButtonSubType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSubType) . '</urn:ButtonSubType>';
 		}
-		if($this->ButtonVar != null)
+		if($this->ButtonVar != NULL)
 		{
 			for($i = 0; $i < count($this->ButtonVar); $i++)
 			{
 				$str .= '<urn:ButtonVar>'. PPUtils::escapeInvalidXmlCharsRegex($this->ButtonVar[$i]) . '</urn:ButtonVar>';
 			}
 		}
-		if($this->OptionDetails != null)
+		if($this->OptionDetails != NULL)
 		{
 			for($i = 0; $i < count($this->OptionDetails); $i++)
 			{
@@ -15691,34 +16011,34 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 				$str .= '</urn:OptionDetails>';
 			}
 		}
-		if($this->TextBox != null)
+		if($this->TextBox != NULL)
 		{
 			for($i = 0; $i < count($this->TextBox); $i++)
 			{
 				$str .= '<urn:TextBox>'. PPUtils::escapeInvalidXmlCharsRegex($this->TextBox[$i]) . '</urn:TextBox>';
 			}
 		}
-		if($this->ButtonImage != null)
+		if($this->ButtonImage != NULL)
 		{
 			$str .= '<urn:ButtonImage>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonImage) . '</urn:ButtonImage>';
 		}
-		if($this->ButtonImageURL != null)
+		if($this->ButtonImageURL != NULL)
 		{
 			$str .= '<urn:ButtonImageURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonImageURL) . '</urn:ButtonImageURL>';
 		}
-		if($this->BuyNowText != null)
+		if($this->BuyNowText != NULL)
 		{
 			$str .= '<urn:BuyNowText>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyNowText) . '</urn:BuyNowText>';
 		}
-		if($this->SubscribeText != null)
+		if($this->SubscribeText != NULL)
 		{
 			$str .= '<urn:SubscribeText>' . PPUtils::escapeInvalidXmlCharsRegex($this->SubscribeText) . '</urn:SubscribeText>';
 		}
-		if($this->ButtonCountry != null)
+		if($this->ButtonCountry != NULL)
 		{
 			$str .= '<urn:ButtonCountry>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonCountry) . '</urn:ButtonCountry>';
 		}
-		if($this->ButtonLanguage != null)
+		if($this->ButtonLanguage != NULL)
 		{
 			$str .= '<urn:ButtonLanguage>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonLanguage) . '</urn:ButtonLanguage>';
 		}
@@ -15737,48 +16057,48 @@ class BMCreateButtonResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Website;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Email;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Mobile;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $HostedButtonID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'website') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'website') {
 					$this->Website = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'email') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'email') {
 					$this->Email = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'mobile') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'mobile') {
 					$this->Mobile = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'hostedbuttonid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'hostedbuttonid') {
 					$this->HostedButtonID = $arry["text"];
 				}
 			}
@@ -15795,8 +16115,8 @@ class BMUpdateButtonReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BMUpdateButtonRequestType
+	 * @access public
+	 * @var BMUpdateButtonRequestType
 	 */ 
 	public $BMUpdateButtonRequest;
 
@@ -15805,7 +16125,7 @@ class BMUpdateButtonReq  {
 	{
 		$str = '';
 		$str .= '<urn:BMUpdateButtonReq>';
-		if($this->BMUpdateButtonRequest != null)
+		if($this->BMUpdateButtonRequest != NULL)
 		{
 			$str .= '<urn:BMUpdateButtonRequest>';
 			$str .= $this->BMUpdateButtonRequest->toXMLString();
@@ -15831,8 +16151,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	 * Hosted Button id of the button to update.  Required
 	 * Character length and limitations: 10 single-byte numeric
 	 * characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $HostedButtonID;
 
@@ -15840,24 +16160,24 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	 * Type of Button to create.  Required Must be one of the
 	 * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
 	 * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE 
-	 *@access public
-	 *@var ButtonTypeType
+	 * @access public
+	 * @var ButtonTypeType
 	 */ 
 	public $ButtonType;
 
 	/**
 	 * button code.  optional Must be one of the following: hosted,
 	 * encrypted or cleartext 
-	 *@access public
-	 *@var ButtonCodeType
+	 * @access public
+	 * @var ButtonCodeType
 	 */ 
 	public $ButtonCode;
 
 	/**
 	 * Button sub type.  optional for button types buynow and cart
 	 * only Must Be either PRODUCTS or SERVICES 
-	 *@access public
-	 *@var ButtonSubTypeType
+	 * @access public
+	 * @var ButtonSubTypeType
 	 */ 
 	public $ButtonSubType;
 
@@ -15865,33 +16185,33 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	 * Button Variable information  At least one required recurring
 	 * Character length and limitations: 63 single-byte
 	 * alphanumeric characters 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $ButtonVar;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var OptionDetailsType
+     * @array
+	 * @access public
+	 * @var OptionDetailsType
 	 */ 
 	public $OptionDetails;
 
 	/**
 	 * Details of each option for the button.  Optional 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $TextBox;
 
 	/**
 	 * Button image to use.  Optional Must be one of: REG, SML, or
 	 * CC 
-	 *@access public
-	 *@var ButtonImageType
+	 * @access public
+	 * @var ButtonImageType
 	 */ 
 	public $ButtonImage;
 
@@ -15899,46 +16219,46 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	 * Button URL for custom button image.  Optional Character
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ButtonImageURL;
 
 	/**
 	 * Text to use on Buy Now Button.  Optional Must be either
 	 * BUYNOW or PAYNOW 
-	 *@access public
-	 *@var BuyNowTextType
+	 * @access public
+	 * @var BuyNowTextType
 	 */ 
 	public $BuyNowText;
 
 	/**
 	 * Text to use on Subscribe button.  Optional Must be either
 	 * BUYNOW or SUBSCRIBE 
-	 *@access public
-	 *@var SubscribeTextType
+	 * @access public
+	 * @var SubscribeTextType
 	 */ 
 	public $SubscribeText;
 
 	/**
 	 * Button Country.  Optional Must be valid ISO country code 
-	 *@access public
-	 *@var CountryCodeType
+	 * @access public
+	 * @var CountryCodeType
 	 */ 
 	public $ButtonCountry;
 
 	/**
 	 * Button language code.  Optional Character length and
 	 * limitations: 2 single-byte alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ButtonLanguage;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($HostedButtonID = null) {
+	public function __construct($HostedButtonID = NULL) {
 		$this->HostedButtonID = $HostedButtonID;
 	}
 
@@ -15947,30 +16267,30 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->HostedButtonID != null)
+		if($this->HostedButtonID != NULL)
 		{
 			$str .= '<urn:HostedButtonID>' . PPUtils::escapeInvalidXmlCharsRegex($this->HostedButtonID) . '</urn:HostedButtonID>';
 		}
-		if($this->ButtonType != null)
+		if($this->ButtonType != NULL)
 		{
 			$str .= '<urn:ButtonType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonType) . '</urn:ButtonType>';
 		}
-		if($this->ButtonCode != null)
+		if($this->ButtonCode != NULL)
 		{
 			$str .= '<urn:ButtonCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonCode) . '</urn:ButtonCode>';
 		}
-		if($this->ButtonSubType != null)
+		if($this->ButtonSubType != NULL)
 		{
 			$str .= '<urn:ButtonSubType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSubType) . '</urn:ButtonSubType>';
 		}
-		if($this->ButtonVar != null)
+		if($this->ButtonVar != NULL)
 		{
 			for($i = 0; $i < count($this->ButtonVar); $i++)
 			{
 				$str .= '<urn:ButtonVar>'. PPUtils::escapeInvalidXmlCharsRegex($this->ButtonVar[$i]) . '</urn:ButtonVar>';
 			}
 		}
-		if($this->OptionDetails != null)
+		if($this->OptionDetails != NULL)
 		{
 			for($i = 0; $i < count($this->OptionDetails); $i++)
 			{
@@ -15979,34 +16299,34 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 				$str .= '</urn:OptionDetails>';
 			}
 		}
-		if($this->TextBox != null)
+		if($this->TextBox != NULL)
 		{
 			for($i = 0; $i < count($this->TextBox); $i++)
 			{
 				$str .= '<urn:TextBox>'. PPUtils::escapeInvalidXmlCharsRegex($this->TextBox[$i]) . '</urn:TextBox>';
 			}
 		}
-		if($this->ButtonImage != null)
+		if($this->ButtonImage != NULL)
 		{
 			$str .= '<urn:ButtonImage>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonImage) . '</urn:ButtonImage>';
 		}
-		if($this->ButtonImageURL != null)
+		if($this->ButtonImageURL != NULL)
 		{
 			$str .= '<urn:ButtonImageURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonImageURL) . '</urn:ButtonImageURL>';
 		}
-		if($this->BuyNowText != null)
+		if($this->BuyNowText != NULL)
 		{
 			$str .= '<urn:BuyNowText>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyNowText) . '</urn:BuyNowText>';
 		}
-		if($this->SubscribeText != null)
+		if($this->SubscribeText != NULL)
 		{
 			$str .= '<urn:SubscribeText>' . PPUtils::escapeInvalidXmlCharsRegex($this->SubscribeText) . '</urn:SubscribeText>';
 		}
-		if($this->ButtonCountry != null)
+		if($this->ButtonCountry != NULL)
 		{
 			$str .= '<urn:ButtonCountry>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonCountry) . '</urn:ButtonCountry>';
 		}
-		if($this->ButtonLanguage != null)
+		if($this->ButtonLanguage != NULL)
 		{
 			$str .= '<urn:ButtonLanguage>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonLanguage) . '</urn:ButtonLanguage>';
 		}
@@ -16025,48 +16345,48 @@ class BMUpdateButtonResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Website;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Email;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Mobile;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $HostedButtonID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'website') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'website') {
 					$this->Website = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'email') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'email') {
 					$this->Email = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'mobile') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'mobile') {
 					$this->Mobile = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'hostedbuttonid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'hostedbuttonid') {
 					$this->HostedButtonID = $arry["text"];
 				}
 			}
@@ -16083,8 +16403,8 @@ class BMManageButtonStatusReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BMManageButtonStatusRequestType
+	 * @access public
+	 * @var BMManageButtonStatusRequestType
 	 */ 
 	public $BMManageButtonStatusRequest;
 
@@ -16093,7 +16413,7 @@ class BMManageButtonStatusReq  {
 	{
 		$str = '';
 		$str .= '<urn:BMManageButtonStatusReq>';
-		if($this->BMManageButtonStatusRequest != null)
+		if($this->BMManageButtonStatusRequest != NULL)
 		{
 			$str .= '<urn:BMManageButtonStatusRequest>';
 			$str .= $this->BMManageButtonStatusRequest->toXMLString();
@@ -16117,8 +16437,8 @@ class BMManageButtonStatusRequestType  extends AbstractRequestType  {
 	/**
 	 * Button ID of Hosted button.  Required Character length and
 	 * limitations: 10 single-byte numeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $HostedButtonID;
 
@@ -16126,8 +16446,8 @@ class BMManageButtonStatusRequestType  extends AbstractRequestType  {
 	 * Requested Status change for hosted button.  Required
 	 * Character length and limitations: 1 single-byte alphanumeric
 	 * characters 
-	 *@access public
-	 *@var ButtonStatusType
+	 * @access public
+	 * @var ButtonStatusType
 	 */ 
 	public $ButtonStatus;
 
@@ -16136,11 +16456,11 @@ class BMManageButtonStatusRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->HostedButtonID != null)
+		if($this->HostedButtonID != NULL)
 		{
 			$str .= '<urn:HostedButtonID>' . PPUtils::escapeInvalidXmlCharsRegex($this->HostedButtonID) . '</urn:HostedButtonID>';
 		}
-		if($this->ButtonStatus != null)
+		if($this->ButtonStatus != NULL)
 		{
 			$str .= '<urn:ButtonStatus>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonStatus) . '</urn:ButtonStatus>';
 		}
@@ -16159,8 +16479,8 @@ class BMManageButtonStatusResponseType  extends AbstractResponseType  {
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			}
@@ -16177,8 +16497,8 @@ class BMGetButtonDetailsReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BMGetButtonDetailsRequestType
+	 * @access public
+	 * @var BMGetButtonDetailsRequestType
 	 */ 
 	public $BMGetButtonDetailsRequest;
 
@@ -16187,7 +16507,7 @@ class BMGetButtonDetailsReq  {
 	{
 		$str = '';
 		$str .= '<urn:BMGetButtonDetailsReq>';
-		if($this->BMGetButtonDetailsRequest != null)
+		if($this->BMGetButtonDetailsRequest != NULL)
 		{
 			$str .= '<urn:BMGetButtonDetailsRequest>';
 			$str .= $this->BMGetButtonDetailsRequest->toXMLString();
@@ -16211,15 +16531,15 @@ class BMGetButtonDetailsRequestType  extends AbstractRequestType  {
 	/**
 	 * Button ID of button to return.  Required Character length
 	 * and limitations: 10 single-byte numeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $HostedButtonID;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($HostedButtonID = null) {
+	public function __construct($HostedButtonID = NULL) {
 		$this->HostedButtonID = $HostedButtonID;
 	}
 
@@ -16228,7 +16548,7 @@ class BMGetButtonDetailsRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->HostedButtonID != null)
+		if($this->HostedButtonID != NULL)
 		{
 			$str .= '<urn:HostedButtonID>' . PPUtils::escapeInvalidXmlCharsRegex($this->HostedButtonID) . '</urn:HostedButtonID>';
 		}
@@ -16249,29 +16569,29 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Website;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Email;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Mobile;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $HostedButtonID;
 
@@ -16279,126 +16599,126 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	 * Type of button. One of the following: BUYNOW, CART,
 	 * GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
 	 * DONATE, VIEWCART or UNSUBSCRIBE 
-	 *@access public
-	 *@var ButtonTypeType
+	 * @access public
+	 * @var ButtonTypeType
 	 */ 
 	public $ButtonType;
 
 	/**
 	 * Type of button code. One of the following: hosted, encrypted
 	 * or cleartext 
-	 *@access public
-	 *@var ButtonCodeType
+	 * @access public
+	 * @var ButtonCodeType
 	 */ 
 	public $ButtonCode;
 
 	/**
 	 * Button sub type. optional for button types buynow and cart
 	 * only Either PRODUCTS or SERVICES 
-	 *@access public
-	 *@var ButtonSubTypeType
+	 * @access public
+	 * @var ButtonSubTypeType
 	 */ 
 	public $ButtonSubType;
 
 	/**
 	 * Button Variable information Character length and
 	 * limitations: 63 single-byte alphanumeric characters 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $ButtonVar;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var OptionDetailsType
+     * @array
+	 * @access public
+	 * @var OptionDetailsType
 	 */ 
 	public $OptionDetails;
 
 	/**
 	 * Text field 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $TextBox;
 
 	/**
 	 * Button image to use. One of: REG, SML, or CC 
-	 *@access public
-	 *@var ButtonImageType
+	 * @access public
+	 * @var ButtonImageType
 	 */ 
 	public $ButtonImage;
 
 	/**
 	 * Button URL for custom button image. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ButtonImageURL;
 
 	/**
 	 * Text to use on Buy Now Button. Either BUYNOW or PAYNOW 
-	 *@access public
-	 *@var BuyNowTextType
+	 * @access public
+	 * @var BuyNowTextType
 	 */ 
 	public $BuyNowText;
 
 	/**
 	 * Text to use on Subscribe button. Must be either BUYNOW or
 	 * SUBSCRIBE 
-	 *@access public
-	 *@var SubscribeTextType
+	 * @access public
+	 * @var SubscribeTextType
 	 */ 
 	public $SubscribeText;
 
 	/**
 	 * Button Country. Valid ISO country code or 'International' 
-	 *@access public
-	 *@var CountryCodeType
+	 * @access public
+	 * @var CountryCodeType
 	 */ 
 	public $ButtonCountry;
 
 	/**
 	 * Button language code. Character length and limitations: 3
 	 * single-byte alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ButtonLanguage;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'website') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'website') {
 					$this->Website = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'email') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'email') {
 					$this->Email = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'mobile') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'mobile') {
 					$this->Mobile = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'hostedbuttonid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'hostedbuttonid') {
 					$this->HostedButtonID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'buttontype') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttontype') {
 					$this->ButtonType = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'buttoncode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttoncode') {
 					$this->ButtonCode = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'buttonsubtype') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttonsubtype') {
 					$this->ButtonSubType = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "optiondetails[$i]") {
 							$this->OptionDetails[$i] = new OptionDetailsType();
 							$this->OptionDetails[$i]->init($arry["children"]);
@@ -16408,26 +16728,26 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "optiondetails")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "optiondetails")) {
 					$this->OptionDetails = new OptionDetailsType();
 					$this->OptionDetails->init($arry["children"]);
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'buttonimage') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttonimage') {
 					$this->ButtonImage = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'buttonimageurl') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttonimageurl') {
 					$this->ButtonImageURL = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'buynowtext') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buynowtext') {
 					$this->BuyNowText = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'subscribetext') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'subscribetext') {
 					$this->SubscribeText = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'buttoncountry') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttoncountry') {
 					$this->ButtonCountry = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'buttonlanguage') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttonlanguage') {
 					$this->ButtonLanguage = $arry["text"];
 				}
 			}
@@ -16444,8 +16764,8 @@ class BMSetInventoryReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BMSetInventoryRequestType
+	 * @access public
+	 * @var BMSetInventoryRequestType
 	 */ 
 	public $BMSetInventoryRequest;
 
@@ -16454,7 +16774,7 @@ class BMSetInventoryReq  {
 	{
 		$str = '';
 		$str .= '<urn:BMSetInventoryReq>';
-		if($this->BMSetInventoryRequest != null)
+		if($this->BMSetInventoryRequest != NULL)
 		{
 			$str .= '<urn:BMSetInventoryRequest>';
 			$str .= $this->BMSetInventoryRequest->toXMLString();
@@ -16480,45 +16800,45 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	 * Hosted Button ID of button you wish to change.  Required
 	 * Character length and limitations: 10 single-byte numeric
 	 * characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $HostedButtonID;
 
 	/**
 	 * Is Inventory tracked.  Required 0 or 1 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TrackInv;
 
 	/**
 	 * Is PNL Tracked.  Required 0 or 1 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TrackPnl;
 
 	/**
 	 * 
-	 *@access public
-	 *@var ItemTrackingDetailsType
+	 * @access public
+	 * @var ItemTrackingDetailsType
 	 */ 
 	public $ItemTrackingDetails;
 
 	/**
 	 * Option Index.  Optional Character length and limitations: 1
 	 * single-byte alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OptionIndex;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var OptionTrackingDetailsType
+     * @array
+	 * @access public
+	 * @var OptionTrackingDetailsType
 	 */ 
 	public $OptionTrackingDetails;
 
@@ -16526,24 +16846,24 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	 * URL of page to display when an item is soldout.  Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SoldoutURL;
 
 	/**
 	 * Whether to use the same digital download key repeatedly. 
 	 * Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReuseDigitalDownloadKeys;
 
 	/**
 	 * Whether to append these keys to the list or not (replace). 
 	 * Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AppendDigitalDownloadKeys;
 
@@ -16552,16 +16872,16 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	 * customers after transaction is completed.  Optional
 	 * Character length and limitations: 1000 single-byte
 	 * alphanumeric characters 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $DigitalDownloadKeys;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($HostedButtonID = null, $TrackInv = null, $TrackPnl = null) {
+	public function __construct($HostedButtonID = NULL, $TrackInv = NULL, $TrackPnl = NULL) {
 		$this->HostedButtonID = $HostedButtonID;
 		$this->TrackInv = $TrackInv;
 		$this->TrackPnl = $TrackPnl;
@@ -16572,29 +16892,29 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->HostedButtonID != null)
+		if($this->HostedButtonID != NULL)
 		{
 			$str .= '<urn:HostedButtonID>' . PPUtils::escapeInvalidXmlCharsRegex($this->HostedButtonID) . '</urn:HostedButtonID>';
 		}
-		if($this->TrackInv != null)
+		if($this->TrackInv != NULL)
 		{
 			$str .= '<urn:TrackInv>' . PPUtils::escapeInvalidXmlCharsRegex($this->TrackInv) . '</urn:TrackInv>';
 		}
-		if($this->TrackPnl != null)
+		if($this->TrackPnl != NULL)
 		{
 			$str .= '<urn:TrackPnl>' . PPUtils::escapeInvalidXmlCharsRegex($this->TrackPnl) . '</urn:TrackPnl>';
 		}
-		if($this->ItemTrackingDetails != null)
+		if($this->ItemTrackingDetails != NULL)
 		{
 			$str .= '<ebl:ItemTrackingDetails>';
 			$str .= $this->ItemTrackingDetails->toXMLString();
 			$str .= '</ebl:ItemTrackingDetails>';
 		}
-		if($this->OptionIndex != null)
+		if($this->OptionIndex != NULL)
 		{
 			$str .= '<urn:OptionIndex>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionIndex) . '</urn:OptionIndex>';
 		}
-		if($this->OptionTrackingDetails != null)
+		if($this->OptionTrackingDetails != NULL)
 		{
 			for($i = 0; $i < count($this->OptionTrackingDetails); $i++)
 			{
@@ -16603,19 +16923,19 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 				$str .= '</ebl:OptionTrackingDetails>';
 			}
 		}
-		if($this->SoldoutURL != null)
+		if($this->SoldoutURL != NULL)
 		{
 			$str .= '<urn:SoldoutURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->SoldoutURL) . '</urn:SoldoutURL>';
 		}
-		if($this->ReuseDigitalDownloadKeys != null)
+		if($this->ReuseDigitalDownloadKeys != NULL)
 		{
 			$str .= '<urn:ReuseDigitalDownloadKeys>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReuseDigitalDownloadKeys) . '</urn:ReuseDigitalDownloadKeys>';
 		}
-		if($this->AppendDigitalDownloadKeys != null)
+		if($this->AppendDigitalDownloadKeys != NULL)
 		{
 			$str .= '<urn:AppendDigitalDownloadKeys>' . PPUtils::escapeInvalidXmlCharsRegex($this->AppendDigitalDownloadKeys) . '</urn:AppendDigitalDownloadKeys>';
 		}
-		if($this->DigitalDownloadKeys != null)
+		if($this->DigitalDownloadKeys != NULL)
 		{
 			for($i = 0; $i < count($this->DigitalDownloadKeys); $i++)
 			{
@@ -16637,8 +16957,8 @@ class BMSetInventoryResponseType  extends AbstractResponseType  {
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			}
@@ -16655,8 +16975,8 @@ class BMGetInventoryReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BMGetInventoryRequestType
+	 * @access public
+	 * @var BMGetInventoryRequestType
 	 */ 
 	public $BMGetInventoryRequest;
 
@@ -16665,7 +16985,7 @@ class BMGetInventoryReq  {
 	{
 		$str = '';
 		$str .= '<urn:BMGetInventoryReq>';
-		if($this->BMGetInventoryRequest != null)
+		if($this->BMGetInventoryRequest != NULL)
 		{
 			$str .= '<urn:BMGetInventoryRequest>';
 			$str .= $this->BMGetInventoryRequest->toXMLString();
@@ -16691,15 +17011,15 @@ class BMGetInventoryRequestType  extends AbstractRequestType  {
 	 * Hosted Button ID of the button to return inventory for. 
 	 * Required Character length and limitations: 10 single-byte
 	 * numeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $HostedButtonID;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($HostedButtonID = null) {
+	public function __construct($HostedButtonID = NULL) {
 		$this->HostedButtonID = $HostedButtonID;
 	}
 
@@ -16708,7 +17028,7 @@ class BMGetInventoryRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->HostedButtonID != null)
+		if($this->HostedButtonID != NULL)
 		{
 			$str .= '<urn:HostedButtonID>' . PPUtils::escapeInvalidXmlCharsRegex($this->HostedButtonID) . '</urn:HostedButtonID>';
 		}
@@ -16727,101 +17047,101 @@ class BMGetInventoryResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $HostedButtonID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TrackInv;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TrackPnl;
 
 	/**
 	 * 
-	 *@access public
-	 *@var ItemTrackingDetailsType
+	 * @access public
+	 * @var ItemTrackingDetailsType
 	 */ 
 	public $ItemTrackingDetails;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OptionIndex;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $OptionName;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var OptionTrackingDetailsType
+     * @array
+	 * @access public
+	 * @var OptionTrackingDetailsType
 	 */ 
 	public $OptionTrackingDetails;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $SoldoutURL;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var string
+     * @array
+	 * @access public
+	 * @var string
 	 */ 
 	public $DigitalDownloadKeys;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'hostedbuttonid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'hostedbuttonid') {
 					$this->HostedButtonID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'trackinv') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'trackinv') {
 					$this->TrackInv = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'trackpnl') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'trackpnl') {
 					$this->TrackPnl = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='itemtrackingdetails'){
                                     $this->ItemTrackingDetails = new ItemTrackingDetailsType(); 
                                     $this->ItemTrackingDetails->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'optionindex') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionindex') {
 					$this->OptionIndex = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'optionname') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionname') {
 					$this->OptionName = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "optiontrackingdetails[$i]") {
 							$this->OptionTrackingDetails[$i] = new OptionTrackingDetailsType();
 							$this->OptionTrackingDetails[$i]->init($arry["children"]);
@@ -16831,11 +17151,11 @@ class BMGetInventoryResponseType  extends AbstractResponseType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "optiontrackingdetails")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "optiontrackingdetails")) {
 					$this->OptionTrackingDetails = new OptionTrackingDetailsType();
 					$this->OptionTrackingDetails->init($arry["children"]);
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'soldouturl') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'soldouturl') {
 					$this->SoldoutURL = $arry["text"];
 				}
 			}
@@ -16852,8 +17172,8 @@ class BMButtonSearchReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BMButtonSearchRequestType
+	 * @access public
+	 * @var BMButtonSearchRequestType
 	 */ 
 	public $BMButtonSearchRequest;
 
@@ -16862,7 +17182,7 @@ class BMButtonSearchReq  {
 	{
 		$str = '';
 		$str .= '<urn:BMButtonSearchReq>';
-		if($this->BMButtonSearchRequest != null)
+		if($this->BMButtonSearchRequest != NULL)
 		{
 			$str .= '<urn:BMButtonSearchRequest>';
 			$str .= $this->BMButtonSearchRequest->toXMLString();
@@ -16886,16 +17206,16 @@ class BMButtonSearchRequestType  extends AbstractRequestType  {
 	/**
 	 * The earliest transaction date at which to start the search.
 	 * No wildcards are allowed. Required 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $StartDate;
 
 	/**
 	 * The latest transaction date to be included in the search
 	 * Optional 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $EndDate;
 
@@ -16904,11 +17224,11 @@ class BMButtonSearchRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->StartDate != null)
+		if($this->StartDate != NULL)
 		{
 			$str .= '<urn:StartDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartDate) . '</urn:StartDate>';
 		}
-		if($this->EndDate != null)
+		if($this->EndDate != NULL)
 		{
 			$str .= '<urn:EndDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->EndDate) . '</urn:EndDate>';
 		}
@@ -16927,21 +17247,21 @@ class BMButtonSearchResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var ButtonSearchResultType
+     * @array
+	 * @access public
+	 * @var ButtonSearchResultType
 	 */ 
 	public $ButtonSearchResult;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "buttonsearchresult[$i]") {
 							$this->ButtonSearchResult[$i] = new ButtonSearchResultType();
 							$this->ButtonSearchResult[$i]->init($arry["children"]);
@@ -16951,7 +17271,7 @@ class BMButtonSearchResponseType  extends AbstractResponseType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "buttonsearchresult")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "buttonsearchresult")) {
 					$this->ButtonSearchResult = new ButtonSearchResultType();
 					$this->ButtonSearchResult->init($arry["children"]);
 				}
@@ -16969,8 +17289,8 @@ class RefundTransactionReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var RefundTransactionRequestType
+	 * @access public
+	 * @var RefundTransactionRequestType
 	 */ 
 	public $RefundTransactionRequest;
 
@@ -16979,7 +17299,7 @@ class RefundTransactionReq  {
 	{
 		$str = '';
 		$str .= '<urn:RefundTransactionReq>';
-		if($this->RefundTransactionRequest != null)
+		if($this->RefundTransactionRequest != NULL)
 		{
 			$str .= '<urn:RefundTransactionRequest>';
 			$str .= $this->RefundTransactionRequest->toXMLString();
@@ -16996,19 +17316,28 @@ class RefundTransactionReq  {
 
 /**
  * Unique identifier of the transaction you are refunding.
- * Required Character length and limitations: 17 single-byte
+ * Optional Character length and limitations: 17 single-byte
  * alphanumeric characters 
  */
 class RefundTransactionRequestType  extends AbstractRequestType  {
 
 	/**
 	 * Unique identifier of the transaction you are refunding.
-	 * Required Character length and limitations: 17 single-byte
+	 * Optional Character length and limitations: 17 single-byte
 	 * alphanumeric characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionID;
+
+	/**
+	 * Encrypted PayPal customer account identification number.
+	 * Optional Character length and limitations: 127 single-byte
+	 * alphanumeric characters
+	 * @access public
+	 * @var string
+	 */ 
+	public $PayerID;
 
 	/**
 	 * Invoice number corresponding to transaction details for
@@ -17017,45 +17346,45 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	 * transaction. This parameter does not affect the business
 	 * logic, it is persisted in the DB for transaction reference
 	 * Optional 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InvoiceID;
 
 	/**
 	 * Type of refund you are making Required 
-	 *@access public
-	 *@var RefundType
+	 * @access public
+	 * @var RefundType
 	 */ 
 	public $RefundType;
 
 	/**
 	 * Refund amount. Amount is required if RefundType is Partial.
 	 * NOTE: If RefundType is Full, do not set Amount.
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
 	 * Custom memo about the refund. Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Memo;
 
 	/**
 	 * The maximum time till which refund must be tried. Optional 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $RetryUntil;
 
 	/**
 	 * The type of funding source for refund. Optional 
-	 *@access public
-	 *@var RefundSourceCodeType
+	 * @access public
+	 * @var RefundSourceCodeType
 	 */ 
 	public $RefundSource;
 
@@ -17063,24 +17392,24 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	 * Flag to indicate that the customer was already given store
 	 * credit for a given transaction. This will allow us to make
 	 * sure we do not double refund. Optional 
-	 *@access public
-	 *@var boolean
+	 * @access public
+	 * @var boolean
 	 */ 
 	public $RefundAdvice;
 
 	/**
 	 * To pass the Merchant store informationOptional 
-	 *@access public
-	 *@var MerchantStoreDetailsType
+	 * @access public
+	 * @var MerchantStoreDetailsType
 	 */ 
 	public $MerchantStoreDetails;
 
 	/**
 	 * Information about the individual details of the items to be
 	 * refunded.Optional 
-     *@array
-	 *@access public
-	 *@var InvoiceItemType
+     * @array
+	 * @access public
+	 * @var InvoiceItemType
 	 */ 
 	public $RefundItemDetails;
 
@@ -17088,8 +17417,8 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MsgSubID;
 
@@ -17098,47 +17427,51 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->TransactionID != null)
+		if($this->TransactionID != NULL)
 		{
 			$str .= '<urn:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</urn:TransactionID>';
 		}
-		if($this->InvoiceID != null)
+		if($this->PayerID != NULL)
+		{
+			$str .= '<urn:PayerID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerID) . '</urn:PayerID>';
+		}
+		if($this->InvoiceID != NULL)
 		{
 			$str .= '<urn:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</urn:InvoiceID>';
 		}
-		if($this->RefundType != null)
+		if($this->RefundType != NULL)
 		{
 			$str .= '<urn:RefundType>' . PPUtils::escapeInvalidXmlCharsRegex($this->RefundType) . '</urn:RefundType>';
 		}
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</urn:Amount>';
 		}
-		if($this->Memo != null)
+		if($this->Memo != NULL)
 		{
 			$str .= '<urn:Memo>' . PPUtils::escapeInvalidXmlCharsRegex($this->Memo) . '</urn:Memo>';
 		}
-		if($this->RetryUntil != null)
+		if($this->RetryUntil != NULL)
 		{
 			$str .= '<urn:RetryUntil>' . PPUtils::escapeInvalidXmlCharsRegex($this->RetryUntil) . '</urn:RetryUntil>';
 		}
-		if($this->RefundSource != null)
+		if($this->RefundSource != NULL)
 		{
 			$str .= '<urn:RefundSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->RefundSource) . '</urn:RefundSource>';
 		}
-		if($this->RefundAdvice != null)
+		if($this->RefundAdvice != NULL)
 		{
 			$str .= '<urn:RefundAdvice>' . PPUtils::escapeInvalidXmlCharsRegex($this->RefundAdvice) . '</urn:RefundAdvice>';
 		}
-		if($this->MerchantStoreDetails != null)
+		if($this->MerchantStoreDetails != NULL)
 		{
 			$str .= '<ebl:MerchantStoreDetails>';
 			$str .= $this->MerchantStoreDetails->toXMLString();
 			$str .= '</ebl:MerchantStoreDetails>';
 		}
-		if($this->RefundItemDetails != null)
+		if($this->RefundItemDetails != NULL)
 		{
 			for($i = 0; $i < count($this->RefundItemDetails); $i++)
 			{
@@ -17147,7 +17480,7 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 				$str .= '</ebl:RefundItemDetails>';
 			}
 		}
-		if($this->MsgSubID != null)
+		if($this->MsgSubID != NULL)
 		{
 			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
 		}
@@ -17168,74 +17501,74 @@ class RefundTransactionResponseType  extends AbstractResponseType  {
 	/**
 	 * Unique transaction ID of the refund. Character length and
 	 * limitations:17 single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $RefundTransactionID;
 
 	/**
 	 * Amount subtracted from PayPal balance of original recipient
 	 * of payment to make this refund 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $NetRefundAmount;
 
 	/**
 	 * Transaction fee refunded to original recipient of payment 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $FeeRefundAmount;
 
 	/**
 	 * Amount of money refunded to original payer 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $GrossRefundAmount;
 
 	/**
 	 * Total of all previous refunds
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $TotalRefundedAmount;
 
 	/**
 	 * Contains Refund Payment status information.
-	 *@access public
-	 *@var RefundInfoType
+	 * @access public
+	 * @var RefundInfoType
 	 */ 
 	public $RefundInfo;
 
 	/**
 	 * Any general information like offer details that is
 	 * reinstated or any other marketing data
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReceiptData;
 
 	/**
 	 * Return msgsubid back to merchant
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MsgSubID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'refundtransactionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'refundtransactionid') {
 					$this->RefundTransactionID = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='netrefundamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -17252,7 +17585,7 @@ class RefundTransactionResponseType  extends AbstractResponseType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='feerefundamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -17269,7 +17602,7 @@ class RefundTransactionResponseType  extends AbstractResponseType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='grossrefundamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -17286,7 +17619,7 @@ class RefundTransactionResponseType  extends AbstractResponseType  {
 			}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='totalrefundedamount') {
 								$tmp =  array();
 								$atr =  array();
@@ -17302,17 +17635,17 @@ class RefundTransactionResponseType  extends AbstractResponseType  {
 							                            
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='refundinfo'){
                                     $this->RefundInfo = new RefundInfoType(); 
                                     $this->RefundInfo->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'receiptdata') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'receiptdata') {
 					$this->ReceiptData = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'msgsubid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
 					$this->MsgSubID = $arry["text"];
 				}
 			}
@@ -17329,8 +17662,8 @@ class InitiateRecoupReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var InitiateRecoupRequestType
+	 * @access public
+	 * @var InitiateRecoupRequestType
 	 */ 
 	public $InitiateRecoupRequest;
 
@@ -17339,7 +17672,7 @@ class InitiateRecoupReq  {
 	{
 		$str = '';
 		$str .= '<urn:InitiateRecoupReq>';
-		if($this->InitiateRecoupRequest != null)
+		if($this->InitiateRecoupRequest != NULL)
 		{
 			$str .= '<urn:InitiateRecoupRequest>';
 			$str .= $this->InitiateRecoupRequest->toXMLString();
@@ -17361,15 +17694,15 @@ class InitiateRecoupRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var EnhancedInitiateRecoupRequestDetailsType
+	 * @access public
+	 * @var EnhancedInitiateRecoupRequestDetailsType
 	 */ 
 	public $EnhancedInitiateRecoupRequestDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($EnhancedInitiateRecoupRequestDetails = null) {
+	public function __construct($EnhancedInitiateRecoupRequestDetails = NULL) {
 		$this->EnhancedInitiateRecoupRequestDetails = $EnhancedInitiateRecoupRequestDetails;
 	}
 
@@ -17378,7 +17711,7 @@ class InitiateRecoupRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->EnhancedInitiateRecoupRequestDetails != null)
+		if($this->EnhancedInitiateRecoupRequestDetails != NULL)
 		{
 			$str .= '<ed:EnhancedInitiateRecoupRequestDetails>';
 			$str .= $this->EnhancedInitiateRecoupRequestDetails->toXMLString();
@@ -17399,8 +17732,8 @@ class InitiateRecoupResponseType  extends AbstractResponseType  {
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			}
@@ -17417,8 +17750,8 @@ class CompleteRecoupReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var CompleteRecoupRequestType
+	 * @access public
+	 * @var CompleteRecoupRequestType
 	 */ 
 	public $CompleteRecoupRequest;
 
@@ -17427,7 +17760,7 @@ class CompleteRecoupReq  {
 	{
 		$str = '';
 		$str .= '<urn:CompleteRecoupReq>';
-		if($this->CompleteRecoupRequest != null)
+		if($this->CompleteRecoupRequest != NULL)
 		{
 			$str .= '<urn:CompleteRecoupRequest>';
 			$str .= $this->CompleteRecoupRequest->toXMLString();
@@ -17449,15 +17782,15 @@ class CompleteRecoupRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var EnhancedCompleteRecoupRequestDetailsType
+	 * @access public
+	 * @var EnhancedCompleteRecoupRequestDetailsType
 	 */ 
 	public $EnhancedCompleteRecoupRequestDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($EnhancedCompleteRecoupRequestDetails = null) {
+	public function __construct($EnhancedCompleteRecoupRequestDetails = NULL) {
 		$this->EnhancedCompleteRecoupRequestDetails = $EnhancedCompleteRecoupRequestDetails;
 	}
 
@@ -17466,7 +17799,7 @@ class CompleteRecoupRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->EnhancedCompleteRecoupRequestDetails != null)
+		if($this->EnhancedCompleteRecoupRequestDetails != NULL)
 		{
 			$str .= '<ed:EnhancedCompleteRecoupRequestDetails>';
 			$str .= $this->EnhancedCompleteRecoupRequestDetails->toXMLString();
@@ -17487,19 +17820,19 @@ class CompleteRecoupResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var EnhancedCompleteRecoupResponseDetailsType
+	 * @access public
+	 * @var EnhancedCompleteRecoupResponseDetailsType
 	 */ 
 	public $EnhancedCompleteRecoupResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='enhancedcompleterecoupresponsedetails'){
                                     $this->EnhancedCompleteRecoupResponseDetails = new EnhancedCompleteRecoupResponseDetailsType(); 
                                     $this->EnhancedCompleteRecoupResponseDetails->init($arry["children"]);
@@ -17520,8 +17853,8 @@ class CancelRecoupReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var CancelRecoupRequestType
+	 * @access public
+	 * @var CancelRecoupRequestType
 	 */ 
 	public $CancelRecoupRequest;
 
@@ -17530,7 +17863,7 @@ class CancelRecoupReq  {
 	{
 		$str = '';
 		$str .= '<urn:CancelRecoupReq>';
-		if($this->CancelRecoupRequest != null)
+		if($this->CancelRecoupRequest != NULL)
 		{
 			$str .= '<urn:CancelRecoupRequest>';
 			$str .= $this->CancelRecoupRequest->toXMLString();
@@ -17552,15 +17885,15 @@ class CancelRecoupRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var EnhancedCancelRecoupRequestDetailsType
+	 * @access public
+	 * @var EnhancedCancelRecoupRequestDetailsType
 	 */ 
 	public $EnhancedCancelRecoupRequestDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($EnhancedCancelRecoupRequestDetails = null) {
+	public function __construct($EnhancedCancelRecoupRequestDetails = NULL) {
 		$this->EnhancedCancelRecoupRequestDetails = $EnhancedCancelRecoupRequestDetails;
 	}
 
@@ -17569,7 +17902,7 @@ class CancelRecoupRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->EnhancedCancelRecoupRequestDetails != null)
+		if($this->EnhancedCancelRecoupRequestDetails != NULL)
 		{
 			$str .= '<ed:EnhancedCancelRecoupRequestDetails>';
 			$str .= $this->EnhancedCancelRecoupRequestDetails->toXMLString();
@@ -17590,8 +17923,8 @@ class CancelRecoupResponseType  extends AbstractResponseType  {
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			}
@@ -17608,8 +17941,8 @@ class GetTransactionDetailsReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetTransactionDetailsRequestType
+	 * @access public
+	 * @var GetTransactionDetailsRequestType
 	 */ 
 	public $GetTransactionDetailsRequest;
 
@@ -17618,7 +17951,7 @@ class GetTransactionDetailsReq  {
 	{
 		$str = '';
 		$str .= '<urn:GetTransactionDetailsReq>';
-		if($this->GetTransactionDetailsRequest != null)
+		if($this->GetTransactionDetailsRequest != NULL)
 		{
 			$str .= '<urn:GetTransactionDetailsRequest>';
 			$str .= $this->GetTransactionDetailsRequest->toXMLString();
@@ -17648,8 +17981,8 @@ class GetTransactionDetailsRequestType  extends AbstractRequestType  {
 	 * GetTransactionDetailsRequest. You cannot obtain details of
 	 * bank transfer withdrawals, for example. Character length and
 	 * limitations: 17 single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionID;
 
@@ -17658,7 +17991,7 @@ class GetTransactionDetailsRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->TransactionID != null)
+		if($this->TransactionID != NULL)
 		{
 			$str .= '<urn:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</urn:TransactionID>';
 		}
@@ -17677,26 +18010,26 @@ class GetTransactionDetailsResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var PaymentTransactionType
+	 * @access public
+	 * @var PaymentTransactionType
 	 */ 
 	public $PaymentTransactionDetails;
 
 	/**
 	 * 
-	 *@access public
-	 *@var ThreeDSecureInfoType
+	 * @access public
+	 * @var ThreeDSecureInfoType
 	 */ 
 	public $ThreeDSecureDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='paymenttransactiondetails'){
                                     $this->PaymentTransactionDetails = new PaymentTransactionType(); 
                                     $this->PaymentTransactionDetails->init($arry["children"]);
@@ -17704,7 +18037,7 @@ class GetTransactionDetailsResponseType  extends AbstractResponseType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='threedsecuredetails'){
                                     $this->ThreeDSecureDetails = new ThreeDSecureInfoType(); 
                                     $this->ThreeDSecureDetails->init($arry["children"]);
@@ -17725,8 +18058,8 @@ class BillUserReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BillUserRequestType
+	 * @access public
+	 * @var BillUserRequestType
 	 */ 
 	public $BillUserRequest;
 
@@ -17735,7 +18068,7 @@ class BillUserReq  {
 	{
 		$str = '';
 		$str .= '<urn:BillUserReq>';
-		if($this->BillUserRequest != null)
+		if($this->BillUserRequest != NULL)
 		{
 			$str .= '<urn:BillUserRequest>';
 			$str .= $this->BillUserRequest->toXMLString();
@@ -17758,16 +18091,16 @@ class BillUserRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var MerchantPullPaymentType
+	 * @access public
+	 * @var MerchantPullPaymentType
 	 */ 
 	public $MerchantPullPaymentDetails;
 
 	/**
 	 * This flag indicates that the response should include
 	 * FMFDetails
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $ReturnFMFDetails;
 
@@ -17776,13 +18109,13 @@ class BillUserRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->MerchantPullPaymentDetails != null)
+		if($this->MerchantPullPaymentDetails != NULL)
 		{
 			$str .= '<ebl:MerchantPullPaymentDetails>';
 			$str .= $this->MerchantPullPaymentDetails->toXMLString();
 			$str .= '</ebl:MerchantPullPaymentDetails>';
 		}
-		if($this->ReturnFMFDetails != null)
+		if($this->ReturnFMFDetails != NULL)
 		{
 			$str .= '<urn:ReturnFMFDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnFMFDetails) . '</urn:ReturnFMFDetails>';
 		}
@@ -17801,26 +18134,26 @@ class BillUserResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var MerchantPullPaymentResponseType
+	 * @access public
+	 * @var MerchantPullPaymentResponseType
 	 */ 
 	public $BillUserResponseDetails;
 
 	/**
 	 * 
-	 *@access public
-	 *@var FMFDetailsType
+	 * @access public
+	 * @var FMFDetailsType
 	 */ 
 	public $FMFDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='billuserresponsedetails'){
                                     $this->BillUserResponseDetails = new MerchantPullPaymentResponseType(); 
                                     $this->BillUserResponseDetails->init($arry["children"]);
@@ -17828,7 +18161,7 @@ class BillUserResponseType  extends AbstractResponseType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='fmfdetails'){
                                     $this->FMFDetails = new FMFDetailsType(); 
                                     $this->FMFDetails->init($arry["children"]);
@@ -17849,8 +18182,8 @@ class TransactionSearchReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var TransactionSearchRequestType
+	 * @access public
+	 * @var TransactionSearchRequestType
 	 */ 
 	public $TransactionSearchRequest;
 
@@ -17859,7 +18192,7 @@ class TransactionSearchReq  {
 	{
 		$str = '';
 		$str .= '<urn:TransactionSearchReq>';
-		if($this->TransactionSearchRequest != null)
+		if($this->TransactionSearchRequest != NULL)
 		{
 			$str .= '<urn:TransactionSearchRequest>';
 			$str .= $this->TransactionSearchRequest->toXMLString();
@@ -17883,24 +18216,24 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	/**
 	 * The earliest transaction date at which to start the search.
 	 * No wildcards are allowed. Required
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $StartDate;
 
 	/**
 	 * The latest transaction date to be included in the search
 	 * Optional
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $EndDate;
 
 	/**
 	 * Search by the buyer's email address OptionalCharacter length
 	 * and limitations: 127 single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Payer;
 
@@ -17908,15 +18241,15 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * Search by the receiver's email address. If the merchant
 	 * account has only one email, this is the primary email. Can
 	 * also be a non-primary email.Optional
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Receiver;
 
 	/**
 	 * Search by the PayPal Account Optional receipt IDOptional
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReceiptID;
 
@@ -17924,8 +18257,8 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * Search by the transaction ID. OptionalThe returned results
 	 * are from the merchant's transaction records. Character
 	 * length and limitations: 19 single-byte characters maximum
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionID;
 
@@ -17933,8 +18266,8 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * Search by Recurring Payment Profile id. The ProfileID is
 	 * returned as part of the CreateRecurringPaymentsProfile API
 	 * response. Optional
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProfileID;
 
@@ -17944,8 +18277,8 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * character limit.MiddleName: 25 single-byte character
 	 * limit.LastName: 25 single-byte character limit.Suffix: 12
 	 * single-byte character limit.
-	 *@access public
-	 *@var PersonNameType
+	 * @access public
+	 * @var PersonNameType
 	 */ 
 	public $PayerName;
 
@@ -17955,8 +18288,8 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * AuctionItemNumber element to the value of the HTML
 	 * item_number variable set in the shopping cart for the
 	 * original transaction.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AuctionItemNumber;
 
@@ -17968,15 +18301,15 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * invoice identification number. No wildcards are allowed.
 	 * Character length and limitations: 127 single-byte characters
 	 * maximum
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InvoiceID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CardNumber;
 
@@ -18001,9 +18334,11 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * involving BillPay reversals.Shipping: only transactions
 	 * involving UPS shipping fees.BalanceAffecting: only
 	 * transactions that affect the account balance.ECheck: only
-	 * transactions involving eCheck
-	 *@access public
-	 *@var PaymentTransactionClassCodeType
+	 * transactions involving eCheckForcedPostTransaction: forced
+	 * post transaction.NonReferencedRefunds: non-referenced
+	 * refunds.
+	 * @access public
+	 * @var PaymentTransactionClassCodeType
 	 */ 
 	public $TransactionClass;
 
@@ -18011,15 +18346,15 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * Search by transaction amount OptionalYou must set the
 	 * currencyID attribute to one of the three-character currency
 	 * codes for any of the supported PayPal currencies. 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
 	 * Search by currency codeOptional
-	 *@access public
-	 *@var CurrencyCodeType
+	 * @access public
+	 * @var CurrencyCodeType
 	 */ 
 	public $CurrencyCode;
 
@@ -18035,15 +18370,15 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * payment was reversed due to a chargeback or other type of
 	 * reversal. The funds have been removed from your account
 	 * balance and returned to the buyer.
-	 *@access public
-	 *@var PaymentTransactionStatusCodeType
+	 * @access public
+	 * @var PaymentTransactionStatusCodeType
 	 */ 
 	public $Status;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($StartDate = null) {
+	public function __construct($StartDate = NULL) {
 		$this->StartDate = $StartDate;
 	}
 
@@ -18052,67 +18387,67 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->StartDate != null)
+		if($this->StartDate != NULL)
 		{
 			$str .= '<urn:StartDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartDate) . '</urn:StartDate>';
 		}
-		if($this->EndDate != null)
+		if($this->EndDate != NULL)
 		{
 			$str .= '<urn:EndDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->EndDate) . '</urn:EndDate>';
 		}
-		if($this->Payer != null)
+		if($this->Payer != NULL)
 		{
 			$str .= '<urn:Payer>' . PPUtils::escapeInvalidXmlCharsRegex($this->Payer) . '</urn:Payer>';
 		}
-		if($this->Receiver != null)
+		if($this->Receiver != NULL)
 		{
 			$str .= '<urn:Receiver>' . PPUtils::escapeInvalidXmlCharsRegex($this->Receiver) . '</urn:Receiver>';
 		}
-		if($this->ReceiptID != null)
+		if($this->ReceiptID != NULL)
 		{
 			$str .= '<urn:ReceiptID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiptID) . '</urn:ReceiptID>';
 		}
-		if($this->TransactionID != null)
+		if($this->TransactionID != NULL)
 		{
 			$str .= '<urn:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</urn:TransactionID>';
 		}
-		if($this->ProfileID != null)
+		if($this->ProfileID != NULL)
 		{
 			$str .= '<urn:ProfileID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileID) . '</urn:ProfileID>';
 		}
-		if($this->PayerName != null)
+		if($this->PayerName != NULL)
 		{
 			$str .= '<urn:PayerName>';
 			$str .= $this->PayerName->toXMLString();
 			$str .= '</urn:PayerName>';
 		}
-		if($this->AuctionItemNumber != null)
+		if($this->AuctionItemNumber != NULL)
 		{
 			$str .= '<urn:AuctionItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuctionItemNumber) . '</urn:AuctionItemNumber>';
 		}
-		if($this->InvoiceID != null)
+		if($this->InvoiceID != NULL)
 		{
 			$str .= '<urn:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</urn:InvoiceID>';
 		}
-		if($this->CardNumber != null)
+		if($this->CardNumber != NULL)
 		{
 			$str .= '<urn:CardNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->CardNumber) . '</urn:CardNumber>';
 		}
-		if($this->TransactionClass != null)
+		if($this->TransactionClass != NULL)
 		{
 			$str .= '<urn:TransactionClass>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionClass) . '</urn:TransactionClass>';
 		}
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</urn:Amount>';
 		}
-		if($this->CurrencyCode != null)
+		if($this->CurrencyCode != NULL)
 		{
 			$str .= '<urn:CurrencyCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->CurrencyCode) . '</urn:CurrencyCode>';
 		}
-		if($this->Status != null)
+		if($this->Status != NULL)
 		{
 			$str .= '<urn:Status>' . PPUtils::escapeInvalidXmlCharsRegex($this->Status) . '</urn:Status>';
 		}
@@ -18131,21 +18466,21 @@ class TransactionSearchResponseType  extends AbstractResponseType  {
 
 	/**
 	 * Results of a Transaction Search.
-     *@array
-	 *@access public
-	 *@var PaymentTransactionSearchResultType
+     * @array
+	 * @access public
+	 * @var PaymentTransactionSearchResultType
 	 */ 
 	public $PaymentTransactions;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "paymenttransactions[$i]") {
 							$this->PaymentTransactions[$i] = new PaymentTransactionSearchResultType();
 							$this->PaymentTransactions[$i]->init($arry["children"]);
@@ -18155,7 +18490,7 @@ class TransactionSearchResponseType  extends AbstractResponseType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "paymenttransactions")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "paymenttransactions")) {
 					$this->PaymentTransactions = new PaymentTransactionSearchResultType();
 					$this->PaymentTransactions->init($arry["children"]);
 				}
@@ -18173,8 +18508,8 @@ class MassPayReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var MassPayRequestType
+	 * @access public
+	 * @var MassPayRequestType
 	 */ 
 	public $MassPayRequest;
 
@@ -18183,7 +18518,7 @@ class MassPayReq  {
 	{
 		$str = '';
 		$str .= '<urn:MassPayReq>';
-		if($this->MassPayRequest != null)
+		if($this->MassPayRequest != NULL)
 		{
 			$str .= '<urn:MassPayRequest>';
 			$str .= $this->MassPayRequest->toXMLString();
@@ -18211,8 +18546,8 @@ class MassPayRequestType  extends AbstractRequestType  {
 	 * subject is not contained in the input file; you must create
 	 * it with your application. Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $EmailSubject;
 
@@ -18222,8 +18557,8 @@ class MassPayRequestType  extends AbstractRequestType  {
 	 * MassPayItem), PhoneNumber (ReceiverPhone in MassPayItem), or
 	 * by UserID (ReceiverID in MassPayItem). Required. You must
 	 * specify one or the other of EmailAddress or UserID.
-	 *@access public
-	 *@var ReceiverInfoCodeType
+	 * @access public
+	 * @var ReceiverInfoCodeType
 	 */ 
 	public $ReceiverType;
 
@@ -18231,24 +18566,24 @@ class MassPayRequestType  extends AbstractRequestType  {
 	 * Known as BN code, to track the partner referred merchant
 	 * transactions. OptionalCharacter length and limitations: 32
 	 * single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ButtonSource;
 
 	/**
 	 * Details of each payment. A single MassPayRequest can include
 	 * up to 250 MassPayItems. Required 
-     *@array
-	 *@access public
-	 *@var MassPayRequestItemType
+     * @array
+	 * @access public
+	 * @var MassPayRequestItemType
 	 */ 
 	public $MassPayItem;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($MassPayItem = null) {
+	public function __construct($MassPayItem = NULL) {
 		$this->MassPayItem = $MassPayItem;
 	}
 
@@ -18257,19 +18592,19 @@ class MassPayRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->EmailSubject != null)
+		if($this->EmailSubject != NULL)
 		{
 			$str .= '<urn:EmailSubject>' . PPUtils::escapeInvalidXmlCharsRegex($this->EmailSubject) . '</urn:EmailSubject>';
 		}
-		if($this->ReceiverType != null)
+		if($this->ReceiverType != NULL)
 		{
 			$str .= '<urn:ReceiverType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiverType) . '</urn:ReceiverType>';
 		}
-		if($this->ButtonSource != null)
+		if($this->ButtonSource != NULL)
 		{
 			$str .= '<urn:ButtonSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSource) . '</urn:ButtonSource>';
 		}
-		if($this->MassPayItem != null)
+		if($this->MassPayItem != NULL)
 		{
 			for($i = 0; $i < count($this->MassPayItem); $i++)
 			{
@@ -18293,8 +18628,8 @@ class MassPayResponseType  extends AbstractResponseType  {
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			}
@@ -18315,8 +18650,8 @@ class MassPayRequestItemType  {
 	 * MassPayItems in a request must use the same field to specify
 	 * recipients. Character length and limitations: 127
 	 * single-byte characters maximum.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReceiverEmail;
 
@@ -18325,8 +18660,8 @@ class MassPayRequestItemType  {
 	 * ReceiverEmail, ReceiverPhone, or ReceiverID, but all
 	 * MassPayItems in a request must use the same field to specify
 	 * recipients.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReceiverPhone;
 
@@ -18338,8 +18673,8 @@ class MassPayRequestItemType  {
 	 * MassPayItems in a request must use the same field to specify
 	 * recipients. Character length and limitations: 17 single-byte
 	 * characters maximum.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReceiverID;
 
@@ -18349,8 +18684,8 @@ class MassPayRequestItemType  {
 	 * supported PayPal currencies. Required You cannot mix
 	 * currencies in a single MassPayRequest. A single request must
 	 * include items that are of the same currency.
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
@@ -18359,23 +18694,23 @@ class MassPayRequestItemType  {
 	 * an accounting system. Optional Character length and
 	 * limitations: 30 single-byte characters. No whitespace
 	 * allowed.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $UniqueId;
 
 	/**
 	 * Custom note for each recipient. Optional Character length
 	 * and limitations: 4,000 single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Note;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($Amount = null) {
+	public function __construct($Amount = NULL) {
 		$this->Amount = $Amount;
 	}
 
@@ -18383,29 +18718,29 @@ class MassPayRequestItemType  {
 	public function toXMLString()
 	{
 		$str = '';
-		if($this->ReceiverEmail != null)
+		if($this->ReceiverEmail != NULL)
 		{
 			$str .= '<urn:ReceiverEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiverEmail) . '</urn:ReceiverEmail>';
 		}
-		if($this->ReceiverPhone != null)
+		if($this->ReceiverPhone != NULL)
 		{
 			$str .= '<urn:ReceiverPhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiverPhone) . '</urn:ReceiverPhone>';
 		}
-		if($this->ReceiverID != null)
+		if($this->ReceiverID != NULL)
 		{
 			$str .= '<urn:ReceiverID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiverID) . '</urn:ReceiverID>';
 		}
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</urn:Amount>';
 		}
-		if($this->UniqueId != null)
+		if($this->UniqueId != NULL)
 		{
 			$str .= '<urn:UniqueId>' . PPUtils::escapeInvalidXmlCharsRegex($this->UniqueId) . '</urn:UniqueId>';
 		}
-		if($this->Note != null)
+		if($this->Note != NULL)
 		{
 			$str .= '<urn:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</urn:Note>';
 		}
@@ -18424,8 +18759,8 @@ class BillAgreementUpdateReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BAUpdateRequestType
+	 * @access public
+	 * @var BAUpdateRequestType
 	 */ 
 	public $BAUpdateRequest;
 
@@ -18434,7 +18769,7 @@ class BillAgreementUpdateReq  {
 	{
 		$str = '';
 		$str .= '<urn:BillAgreementUpdateReq>';
-		if($this->BAUpdateRequest != null)
+		if($this->BAUpdateRequest != NULL)
 		{
 			$str .= '<urn:BAUpdateRequest>';
 			$str .= $this->BAUpdateRequest->toXMLString();
@@ -18456,36 +18791,36 @@ class BAUpdateRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReferenceID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BillingAgreementDescription;
 
 	/**
 	 * 
-	 *@access public
-	 *@var MerchantPullStatusCodeType
+	 * @access public
+	 * @var MerchantPullStatusCodeType
 	 */ 
 	public $BillingAgreementStatus;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BillingAgreementCustom;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($ReferenceID = null) {
+	public function __construct($ReferenceID = NULL) {
 		$this->ReferenceID = $ReferenceID;
 	}
 
@@ -18494,19 +18829,19 @@ class BAUpdateRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ReferenceID != null)
+		if($this->ReferenceID != NULL)
 		{
 			$str .= '<urn:ReferenceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReferenceID) . '</urn:ReferenceID>';
 		}
-		if($this->BillingAgreementDescription != null)
+		if($this->BillingAgreementDescription != NULL)
 		{
 			$str .= '<urn:BillingAgreementDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingAgreementDescription) . '</urn:BillingAgreementDescription>';
 		}
-		if($this->BillingAgreementStatus != null)
+		if($this->BillingAgreementStatus != NULL)
 		{
 			$str .= '<urn:BillingAgreementStatus>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingAgreementStatus) . '</urn:BillingAgreementStatus>';
 		}
-		if($this->BillingAgreementCustom != null)
+		if($this->BillingAgreementCustom != NULL)
 		{
 			$str .= '<urn:BillingAgreementCustom>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingAgreementCustom) . '</urn:BillingAgreementCustom>';
 		}
@@ -18525,19 +18860,19 @@ class BAUpdateResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BAUpdateResponseDetailsType
+	 * @access public
+	 * @var BAUpdateResponseDetailsType
 	 */ 
 	public $BAUpdateResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='baupdateresponsedetails'){
                                     $this->BAUpdateResponseDetails = new BAUpdateResponseDetailsType(); 
                                     $this->BAUpdateResponseDetails->init($arry["children"]);
@@ -18558,8 +18893,8 @@ class AddressVerifyReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var AddressVerifyRequestType
+	 * @access public
+	 * @var AddressVerifyRequestType
 	 */ 
 	public $AddressVerifyRequest;
 
@@ -18568,7 +18903,7 @@ class AddressVerifyReq  {
 	{
 		$str = '';
 		$str .= '<urn:AddressVerifyReq>';
-		if($this->AddressVerifyRequest != null)
+		if($this->AddressVerifyRequest != NULL)
 		{
 			$str .= '<urn:AddressVerifyRequest>';
 			$str .= $this->AddressVerifyRequest->toXMLString();
@@ -18593,8 +18928,8 @@ class AddressVerifyRequestType  extends AbstractRequestType  {
 	/**
 	 * Email address of buyer to be verified. Required Maximum
 	 * string length: 255 single-byte characters Input mask: ?@?.??
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Email;
 
@@ -18606,8 +18941,8 @@ class AddressVerifyRequestType  extends AbstractRequestType  {
 	 * account. Maximum string length: 35 single-byte characters
 	 * Alphanumeric plus - , . ‘ # \ Whitespace and case of input
 	 * value are ignored.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Street;
 
@@ -18617,15 +18952,15 @@ class AddressVerifyRequestType  extends AbstractRequestType  {
 	 * characters of the postal code on file for the PayPal
 	 * account. Maximum string length: 16 single-byte characters
 	 * Whitespace and case of input value are ignored.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Zip;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($Email = null, $Street = null, $Zip = null) {
+	public function __construct($Email = NULL, $Street = NULL, $Zip = NULL) {
 		$this->Email = $Email;
 		$this->Street = $Street;
 		$this->Zip = $Zip;
@@ -18636,15 +18971,15 @@ class AddressVerifyRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Email != null)
+		if($this->Email != NULL)
 		{
 			$str .= '<urn:Email>' . PPUtils::escapeInvalidXmlCharsRegex($this->Email) . '</urn:Email>';
 		}
-		if($this->Street != null)
+		if($this->Street != NULL)
 		{
 			$str .= '<urn:Street>' . PPUtils::escapeInvalidXmlCharsRegex($this->Street) . '</urn:Street>';
 		}
-		if($this->Zip != null)
+		if($this->Zip != NULL)
 		{
 			$str .= '<urn:Zip>' . PPUtils::escapeInvalidXmlCharsRegex($this->Zip) . '</urn:Zip>';
 		}
@@ -18673,8 +19008,8 @@ class AddressVerifyResponseType  extends AbstractResponseType  {
 	 * the StreetMatch object is Matched, PayPal responds that the
 	 * entire postal address is confirmed. Unconfirmed: PayPal
 	 * responds that the postal address is unconfirmed
-	 *@access public
-	 *@var AddressStatusCodeType
+	 * @access public
+	 * @var AddressStatusCodeType
 	 */ 
 	public $ConfirmationCode;
 
@@ -18687,8 +19022,8 @@ class AddressVerifyResponseType  extends AbstractResponseType  {
 	 * been made. Matched: The street address matches the street
 	 * address on file at PayPal. Unmatched: The street address
 	 * does not match the street address on file at PayPal. 
-	 *@access public
-	 *@var MatchStatusCodeType
+	 * @access public
+	 * @var MatchStatusCodeType
 	 */ 
 	public $StreetMatch;
 
@@ -18699,16 +19034,16 @@ class AddressVerifyResponseType  extends AbstractResponseType  {
 	 * values has been made. Matched: The zip code matches the zip
 	 * code on file at PayPal. Unmatched: The zip code does not
 	 * match the zip code on file at PayPal. 
-	 *@access public
-	 *@var MatchStatusCodeType
+	 * @access public
+	 * @var MatchStatusCodeType
 	 */ 
 	public $ZipMatch;
 
 	/**
 	 * Two-character country code (ISO 3166) on file for the PayPal
 	 * email address. 
-	 *@access public
-	 *@var CountryCodeType
+	 * @access public
+	 * @var CountryCodeType
 	 */ 
 	public $CountryCode;
 
@@ -18723,30 +19058,30 @@ class AddressVerifyResponseType  extends AbstractResponseType  {
 	 * email address other than those verified by PayPal. The token
 	 * is valid for 24 hours. Character length and limitations: 94
 	 * single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PayPalToken;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'confirmationcode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'confirmationcode') {
 					$this->ConfirmationCode = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'streetmatch') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'streetmatch') {
 					$this->StreetMatch = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'zipmatch') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'zipmatch') {
 					$this->ZipMatch = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'countrycode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'countrycode') {
 					$this->CountryCode = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paypaltoken') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paypaltoken') {
 					$this->PayPalToken = $arry["text"];
 				}
 			}
@@ -18763,8 +19098,8 @@ class EnterBoardingReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var EnterBoardingRequestType
+	 * @access public
+	 * @var EnterBoardingRequestType
 	 */ 
 	public $EnterBoardingRequest;
 
@@ -18773,7 +19108,7 @@ class EnterBoardingReq  {
 	{
 		$str = '';
 		$str .= '<urn:EnterBoardingReq>';
-		if($this->EnterBoardingRequest != null)
+		if($this->EnterBoardingRequest != NULL)
 		{
 			$str .= '<urn:EnterBoardingRequest>';
 			$str .= $this->EnterBoardingRequest->toXMLString();
@@ -18795,15 +19130,15 @@ class EnterBoardingRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var EnterBoardingRequestDetailsType
+	 * @access public
+	 * @var EnterBoardingRequestDetailsType
 	 */ 
 	public $EnterBoardingRequestDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($EnterBoardingRequestDetails = null) {
+	public function __construct($EnterBoardingRequestDetails = NULL) {
 		$this->EnterBoardingRequestDetails = $EnterBoardingRequestDetails;
 	}
 
@@ -18812,7 +19147,7 @@ class EnterBoardingRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->EnterBoardingRequestDetails != null)
+		if($this->EnterBoardingRequestDetails != NULL)
 		{
 			$str .= '<ebl:EnterBoardingRequestDetails>';
 			$str .= $this->EnterBoardingRequestDetails->toXMLString();
@@ -18839,18 +19174,18 @@ class EnterBoardingResponseType  extends AbstractResponseType  {
 	 * this token with the GetBoarding Details API call.Character
 	 * length and limitations: 64 alphanumeric characters. The
 	 * token has the following format:OB-61characterstring
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'token') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
 					$this->Token = $arry["text"];
 				}
 			}
@@ -18867,8 +19202,8 @@ class GetBoardingDetailsReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetBoardingDetailsRequestType
+	 * @access public
+	 * @var GetBoardingDetailsRequestType
 	 */ 
 	public $GetBoardingDetailsRequest;
 
@@ -18877,7 +19212,7 @@ class GetBoardingDetailsReq  {
 	{
 		$str = '';
 		$str .= '<urn:GetBoardingDetailsReq>';
-		if($this->GetBoardingDetailsRequest != null)
+		if($this->GetBoardingDetailsRequest != NULL)
 		{
 			$str .= '<urn:GetBoardingDetailsRequest>';
 			$str .= $this->GetBoardingDetailsRequest->toXMLString();
@@ -18905,15 +19240,15 @@ class GetBoardingDetailsRequestType  extends AbstractRequestType  {
 	 * identifies this boarding session. RequiredCharacter length
 	 * and limitations: 64 alphanumeric characters. The token has
 	 * the following format:OB-61characterstring
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($Token = null) {
+	public function __construct($Token = NULL) {
 		$this->Token = $Token;
 	}
 
@@ -18922,7 +19257,7 @@ class GetBoardingDetailsRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Token != null)
+		if($this->Token != NULL)
 		{
 			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
 		}
@@ -18941,19 +19276,19 @@ class GetBoardingDetailsResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetBoardingDetailsResponseDetailsType
+	 * @access public
+	 * @var GetBoardingDetailsResponseDetailsType
 	 */ 
 	public $GetBoardingDetailsResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='getboardingdetailsresponsedetails'){
                                     $this->GetBoardingDetailsResponseDetails = new GetBoardingDetailsResponseDetailsType(); 
                                     $this->GetBoardingDetailsResponseDetails->init($arry["children"]);
@@ -18974,8 +19309,8 @@ class SetAuthFlowParamReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var SetAuthFlowParamRequestType
+	 * @access public
+	 * @var SetAuthFlowParamRequestType
 	 */ 
 	public $SetAuthFlowParamRequest;
 
@@ -18984,7 +19319,7 @@ class SetAuthFlowParamReq  {
 	{
 		$str = '';
 		$str .= '<urn:SetAuthFlowParamReq>';
-		if($this->SetAuthFlowParamRequest != null)
+		if($this->SetAuthFlowParamRequest != NULL)
 		{
 			$str .= '<urn:SetAuthFlowParamRequest>';
 			$str .= $this->SetAuthFlowParamRequest->toXMLString();
@@ -19006,15 +19341,15 @@ class SetAuthFlowParamRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var SetAuthFlowParamRequestDetailsType
+	 * @access public
+	 * @var SetAuthFlowParamRequestDetailsType
 	 */ 
 	public $SetAuthFlowParamRequestDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($SetAuthFlowParamRequestDetails = null) {
+	public function __construct($SetAuthFlowParamRequestDetails = NULL) {
 		$this->SetAuthFlowParamRequestDetails = $SetAuthFlowParamRequestDetails;
 	}
 
@@ -19023,7 +19358,7 @@ class SetAuthFlowParamRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->SetAuthFlowParamRequestDetails != null)
+		if($this->SetAuthFlowParamRequestDetails != NULL)
 		{
 			$str .= '<ebl:SetAuthFlowParamRequestDetails>';
 			$str .= $this->SetAuthFlowParamRequestDetails->toXMLString();
@@ -19050,18 +19385,18 @@ class SetAuthFlowParamResponseType  extends AbstractResponseType  {
 	 * are processing this user. The token expires after three
 	 * hours. Character length and limitations: 20 single-byte
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'token') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
 					$this->Token = $arry["text"];
 				}
 			}
@@ -19078,8 +19413,8 @@ class GetAuthDetailsReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetAuthDetailsRequestType
+	 * @access public
+	 * @var GetAuthDetailsRequestType
 	 */ 
 	public $GetAuthDetailsRequest;
 
@@ -19088,7 +19423,7 @@ class GetAuthDetailsReq  {
 	{
 		$str = '';
 		$str .= '<urn:GetAuthDetailsReq>';
-		if($this->GetAuthDetailsRequest != null)
+		if($this->GetAuthDetailsRequest != NULL)
 		{
 			$str .= '<urn:GetAuthDetailsRequest>';
 			$str .= $this->GetAuthDetailsRequest->toXMLString();
@@ -19114,15 +19449,15 @@ class GetAuthDetailsRequestType  extends AbstractRequestType  {
 	 * A timestamped token, the value of which was returned by
 	 * SetAuthFlowParam Response. RequiredCharacter length and
 	 * limitations: 20 single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($Token = null) {
+	public function __construct($Token = NULL) {
 		$this->Token = $Token;
 	}
 
@@ -19131,7 +19466,7 @@ class GetAuthDetailsRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Token != null)
+		if($this->Token != NULL)
 		{
 			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
 		}
@@ -19150,19 +19485,19 @@ class GetAuthDetailsResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetAuthDetailsResponseDetailsType
+	 * @access public
+	 * @var GetAuthDetailsResponseDetailsType
 	 */ 
 	public $GetAuthDetailsResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='getauthdetailsresponsedetails'){
                                     $this->GetAuthDetailsResponseDetails = new GetAuthDetailsResponseDetailsType(); 
                                     $this->GetAuthDetailsResponseDetails->init($arry["children"]);
@@ -19183,8 +19518,8 @@ class SetAccessPermissionsReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var SetAccessPermissionsRequestType
+	 * @access public
+	 * @var SetAccessPermissionsRequestType
 	 */ 
 	public $SetAccessPermissionsRequest;
 
@@ -19193,7 +19528,7 @@ class SetAccessPermissionsReq  {
 	{
 		$str = '';
 		$str .= '<urn:SetAccessPermissionsReq>';
-		if($this->SetAccessPermissionsRequest != null)
+		if($this->SetAccessPermissionsRequest != NULL)
 		{
 			$str .= '<urn:SetAccessPermissionsRequest>';
 			$str .= $this->SetAccessPermissionsRequest->toXMLString();
@@ -19215,15 +19550,15 @@ class SetAccessPermissionsRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var SetAccessPermissionsRequestDetailsType
+	 * @access public
+	 * @var SetAccessPermissionsRequestDetailsType
 	 */ 
 	public $SetAccessPermissionsRequestDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($SetAccessPermissionsRequestDetails = null) {
+	public function __construct($SetAccessPermissionsRequestDetails = NULL) {
 		$this->SetAccessPermissionsRequestDetails = $SetAccessPermissionsRequestDetails;
 	}
 
@@ -19232,7 +19567,7 @@ class SetAccessPermissionsRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->SetAccessPermissionsRequestDetails != null)
+		if($this->SetAccessPermissionsRequestDetails != NULL)
 		{
 			$str .= '<ebl:SetAccessPermissionsRequestDetails>';
 			$str .= $this->SetAccessPermissionsRequestDetails->toXMLString();
@@ -19259,18 +19594,18 @@ class SetAccessPermissionsResponseType  extends AbstractResponseType  {
 	 * are processing this user. The token expires after three
 	 * hours. Character length and limitations: 20 single-byte
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'token') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
 					$this->Token = $arry["text"];
 				}
 			}
@@ -19287,8 +19622,8 @@ class UpdateAccessPermissionsReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var UpdateAccessPermissionsRequestType
+	 * @access public
+	 * @var UpdateAccessPermissionsRequestType
 	 */ 
 	public $UpdateAccessPermissionsRequest;
 
@@ -19297,7 +19632,7 @@ class UpdateAccessPermissionsReq  {
 	{
 		$str = '';
 		$str .= '<urn:UpdateAccessPermissionsReq>';
-		if($this->UpdateAccessPermissionsRequest != null)
+		if($this->UpdateAccessPermissionsRequest != NULL)
 		{
 			$str .= '<urn:UpdateAccessPermissionsRequest>';
 			$str .= $this->UpdateAccessPermissionsRequest->toXMLString();
@@ -19323,15 +19658,15 @@ class UpdateAccessPermissionsRequestType  extends AbstractRequestType  {
 	 * Unique PayPal customer account number, the value of which
 	 * was returned by GetAuthDetails Response. Required Character
 	 * length and limitations: 20 single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PayerID;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($PayerID = null) {
+	public function __construct($PayerID = NULL) {
 		$this->PayerID = $PayerID;
 	}
 
@@ -19340,7 +19675,7 @@ class UpdateAccessPermissionsRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->PayerID != null)
+		if($this->PayerID != NULL)
 		{
 			$str .= '<urn:PayerID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerID) . '</urn:PayerID>';
 		}
@@ -19361,18 +19696,18 @@ class UpdateAccessPermissionsResponseType  extends AbstractResponseType  {
 	/**
 	 * The status of the update call, Success/Failure. Character
 	 * length and limitations: 20 single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Status;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'status') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
 					$this->Status = $arry["text"];
 				}
 			}
@@ -19389,8 +19724,8 @@ class GetAccessPermissionDetailsReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetAccessPermissionDetailsRequestType
+	 * @access public
+	 * @var GetAccessPermissionDetailsRequestType
 	 */ 
 	public $GetAccessPermissionDetailsRequest;
 
@@ -19399,7 +19734,7 @@ class GetAccessPermissionDetailsReq  {
 	{
 		$str = '';
 		$str .= '<urn:GetAccessPermissionDetailsReq>';
-		if($this->GetAccessPermissionDetailsRequest != null)
+		if($this->GetAccessPermissionDetailsRequest != NULL)
 		{
 			$str .= '<urn:GetAccessPermissionDetailsRequest>';
 			$str .= $this->GetAccessPermissionDetailsRequest->toXMLString();
@@ -19425,15 +19760,15 @@ class GetAccessPermissionDetailsRequestType  extends AbstractRequestType  {
 	 * A timestamped token, the value of which was returned by
 	 * SetAuthFlowParam Response. Required Character length and
 	 * limitations: 20 single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($Token = null) {
+	public function __construct($Token = NULL) {
 		$this->Token = $Token;
 	}
 
@@ -19442,7 +19777,7 @@ class GetAccessPermissionDetailsRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Token != null)
+		if($this->Token != NULL)
 		{
 			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
 		}
@@ -19461,19 +19796,19 @@ class GetAccessPermissionDetailsResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetAccessPermissionDetailsResponseDetailsType
+	 * @access public
+	 * @var GetAccessPermissionDetailsResponseDetailsType
 	 */ 
 	public $GetAccessPermissionDetailsResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='getaccesspermissiondetailsresponsedetails'){
                                     $this->GetAccessPermissionDetailsResponseDetails = new GetAccessPermissionDetailsResponseDetailsType(); 
                                     $this->GetAccessPermissionDetailsResponseDetails->init($arry["children"]);
@@ -19494,8 +19829,8 @@ class GetIncentiveEvaluationReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetIncentiveEvaluationRequestType
+	 * @access public
+	 * @var GetIncentiveEvaluationRequestType
 	 */ 
 	public $GetIncentiveEvaluationRequest;
 
@@ -19504,7 +19839,7 @@ class GetIncentiveEvaluationReq  {
 	{
 		$str = '';
 		$str .= '<urn:GetIncentiveEvaluationReq>';
-		if($this->GetIncentiveEvaluationRequest != null)
+		if($this->GetIncentiveEvaluationRequest != NULL)
 		{
 			$str .= '<urn:GetIncentiveEvaluationRequest>';
 			$str .= $this->GetIncentiveEvaluationRequest->toXMLString();
@@ -19526,15 +19861,15 @@ class GetIncentiveEvaluationRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetIncentiveEvaluationRequestDetailsType
+	 * @access public
+	 * @var GetIncentiveEvaluationRequestDetailsType
 	 */ 
 	public $GetIncentiveEvaluationRequestDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($GetIncentiveEvaluationRequestDetails = null) {
+	public function __construct($GetIncentiveEvaluationRequestDetails = NULL) {
 		$this->GetIncentiveEvaluationRequestDetails = $GetIncentiveEvaluationRequestDetails;
 	}
 
@@ -19543,7 +19878,7 @@ class GetIncentiveEvaluationRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->GetIncentiveEvaluationRequestDetails != null)
+		if($this->GetIncentiveEvaluationRequestDetails != NULL)
 		{
 			$str .= '<ebl:GetIncentiveEvaluationRequestDetails>';
 			$str .= $this->GetIncentiveEvaluationRequestDetails->toXMLString();
@@ -19564,19 +19899,19 @@ class GetIncentiveEvaluationResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetIncentiveEvaluationResponseDetailsType
+	 * @access public
+	 * @var GetIncentiveEvaluationResponseDetailsType
 	 */ 
 	public $GetIncentiveEvaluationResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='getincentiveevaluationresponsedetails'){
                                     $this->GetIncentiveEvaluationResponseDetails = new GetIncentiveEvaluationResponseDetailsType(); 
                                     $this->GetIncentiveEvaluationResponseDetails->init($arry["children"]);
@@ -19597,8 +19932,8 @@ class SetExpressCheckoutReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var SetExpressCheckoutRequestType
+	 * @access public
+	 * @var SetExpressCheckoutRequestType
 	 */ 
 	public $SetExpressCheckoutRequest;
 
@@ -19607,7 +19942,7 @@ class SetExpressCheckoutReq  {
 	{
 		$str = '';
 		$str .= '<urn:SetExpressCheckoutReq>';
-		if($this->SetExpressCheckoutRequest != null)
+		if($this->SetExpressCheckoutRequest != NULL)
 		{
 			$str .= '<urn:SetExpressCheckoutRequest>';
 			$str .= $this->SetExpressCheckoutRequest->toXMLString();
@@ -19629,15 +19964,15 @@ class SetExpressCheckoutRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var SetExpressCheckoutRequestDetailsType
+	 * @access public
+	 * @var SetExpressCheckoutRequestDetailsType
 	 */ 
 	public $SetExpressCheckoutRequestDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($SetExpressCheckoutRequestDetails = null) {
+	public function __construct($SetExpressCheckoutRequestDetails = NULL) {
 		$this->SetExpressCheckoutRequestDetails = $SetExpressCheckoutRequestDetails;
 	}
 
@@ -19646,7 +19981,7 @@ class SetExpressCheckoutRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->SetExpressCheckoutRequestDetails != null)
+		if($this->SetExpressCheckoutRequestDetails != NULL)
 		{
 			$str .= '<ebl:SetExpressCheckoutRequestDetails>';
 			$str .= $this->SetExpressCheckoutRequestDetails->toXMLString();
@@ -19677,18 +20012,18 @@ class SetExpressCheckoutResponseType  extends AbstractResponseType  {
 	 * SetExpressCheckoutRequest, the value of Token in the
 	 * response is identical to the value in the request. Character
 	 * length and limitations: 20 single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'token') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
 					$this->Token = $arry["text"];
 				}
 			}
@@ -19705,8 +20040,8 @@ class ExecuteCheckoutOperationsReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var ExecuteCheckoutOperationsRequestType
+	 * @access public
+	 * @var ExecuteCheckoutOperationsRequestType
 	 */ 
 	public $ExecuteCheckoutOperationsRequest;
 
@@ -19715,7 +20050,7 @@ class ExecuteCheckoutOperationsReq  {
 	{
 		$str = '';
 		$str .= '<urn:ExecuteCheckoutOperationsReq>';
-		if($this->ExecuteCheckoutOperationsRequest != null)
+		if($this->ExecuteCheckoutOperationsRequest != NULL)
 		{
 			$str .= '<urn:ExecuteCheckoutOperationsRequest>';
 			$str .= $this->ExecuteCheckoutOperationsRequest->toXMLString();
@@ -19737,15 +20072,15 @@ class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var ExecuteCheckoutOperationsRequestDetailsType
+	 * @access public
+	 * @var ExecuteCheckoutOperationsRequestDetailsType
 	 */ 
 	public $ExecuteCheckoutOperationsRequestDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($ExecuteCheckoutOperationsRequestDetails = null) {
+	public function __construct($ExecuteCheckoutOperationsRequestDetails = NULL) {
 		$this->ExecuteCheckoutOperationsRequestDetails = $ExecuteCheckoutOperationsRequestDetails;
 	}
 
@@ -19754,7 +20089,7 @@ class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ExecuteCheckoutOperationsRequestDetails != null)
+		if($this->ExecuteCheckoutOperationsRequestDetails != NULL)
 		{
 			$str .= '<ebl:ExecuteCheckoutOperationsRequestDetails>';
 			$str .= $this->ExecuteCheckoutOperationsRequestDetails->toXMLString();
@@ -19775,19 +20110,19 @@ class ExecuteCheckoutOperationsResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var ExecuteCheckoutOperationsResponseDetailsType
+	 * @access public
+	 * @var ExecuteCheckoutOperationsResponseDetailsType
 	 */ 
 	public $ExecuteCheckoutOperationsResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='executecheckoutoperationsresponsedetails'){
                                     $this->ExecuteCheckoutOperationsResponseDetails = new ExecuteCheckoutOperationsResponseDetailsType(); 
                                     $this->ExecuteCheckoutOperationsResponseDetails->init($arry["children"]);
@@ -19808,8 +20143,8 @@ class GetExpressCheckoutDetailsReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetExpressCheckoutDetailsRequestType
+	 * @access public
+	 * @var GetExpressCheckoutDetailsRequestType
 	 */ 
 	public $GetExpressCheckoutDetailsRequest;
 
@@ -19818,7 +20153,7 @@ class GetExpressCheckoutDetailsReq  {
 	{
 		$str = '';
 		$str .= '<urn:GetExpressCheckoutDetailsReq>';
-		if($this->GetExpressCheckoutDetailsRequest != null)
+		if($this->GetExpressCheckoutDetailsRequest != NULL)
 		{
 			$str .= '<urn:GetExpressCheckoutDetailsRequest>';
 			$str .= $this->GetExpressCheckoutDetailsRequest->toXMLString();
@@ -19844,15 +20179,15 @@ class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType  {
 	 * A timestamped token, the value of which was returned by
 	 * SetExpressCheckoutResponse. RequiredCharacter length and
 	 * limitations: 20 single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($Token = null) {
+	public function __construct($Token = NULL) {
 		$this->Token = $Token;
 	}
 
@@ -19861,7 +20196,7 @@ class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Token != null)
+		if($this->Token != NULL)
 		{
 			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
 		}
@@ -19880,19 +20215,19 @@ class GetExpressCheckoutDetailsResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetExpressCheckoutDetailsResponseDetailsType
+	 * @access public
+	 * @var GetExpressCheckoutDetailsResponseDetailsType
 	 */ 
 	public $GetExpressCheckoutDetailsResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='getexpresscheckoutdetailsresponsedetails'){
                                     $this->GetExpressCheckoutDetailsResponseDetails = new GetExpressCheckoutDetailsResponseDetailsType(); 
                                     $this->GetExpressCheckoutDetailsResponseDetails->init($arry["children"]);
@@ -19913,8 +20248,8 @@ class DoExpressCheckoutPaymentReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoExpressCheckoutPaymentRequestType
+	 * @access public
+	 * @var DoExpressCheckoutPaymentRequestType
 	 */ 
 	public $DoExpressCheckoutPaymentRequest;
 
@@ -19923,7 +20258,7 @@ class DoExpressCheckoutPaymentReq  {
 	{
 		$str = '';
 		$str .= '<urn:DoExpressCheckoutPaymentReq>';
-		if($this->DoExpressCheckoutPaymentRequest != null)
+		if($this->DoExpressCheckoutPaymentRequest != NULL)
 		{
 			$str .= '<urn:DoExpressCheckoutPaymentRequest>';
 			$str .= $this->DoExpressCheckoutPaymentRequest->toXMLString();
@@ -19946,23 +20281,23 @@ class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoExpressCheckoutPaymentRequestDetailsType
+	 * @access public
+	 * @var DoExpressCheckoutPaymentRequestDetailsType
 	 */ 
 	public $DoExpressCheckoutPaymentRequestDetails;
 
 	/**
 	 * This flag indicates that the response should include
 	 * FMFDetails
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $ReturnFMFDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($DoExpressCheckoutPaymentRequestDetails = null) {
+	public function __construct($DoExpressCheckoutPaymentRequestDetails = NULL) {
 		$this->DoExpressCheckoutPaymentRequestDetails = $DoExpressCheckoutPaymentRequestDetails;
 	}
 
@@ -19971,13 +20306,13 @@ class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->DoExpressCheckoutPaymentRequestDetails != null)
+		if($this->DoExpressCheckoutPaymentRequestDetails != NULL)
 		{
 			$str .= '<ebl:DoExpressCheckoutPaymentRequestDetails>';
 			$str .= $this->DoExpressCheckoutPaymentRequestDetails->toXMLString();
 			$str .= '</ebl:DoExpressCheckoutPaymentRequestDetails>';
 		}
-		if($this->ReturnFMFDetails != null)
+		if($this->ReturnFMFDetails != NULL)
 		{
 			$str .= '<urn:ReturnFMFDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnFMFDetails) . '</urn:ReturnFMFDetails>';
 		}
@@ -19996,26 +20331,26 @@ class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoExpressCheckoutPaymentResponseDetailsType
+	 * @access public
+	 * @var DoExpressCheckoutPaymentResponseDetailsType
 	 */ 
 	public $DoExpressCheckoutPaymentResponseDetails;
 
 	/**
 	 * 
-	 *@access public
-	 *@var FMFDetailsType
+	 * @access public
+	 * @var FMFDetailsType
 	 */ 
 	public $FMFDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='doexpresscheckoutpaymentresponsedetails'){
                                     $this->DoExpressCheckoutPaymentResponseDetails = new DoExpressCheckoutPaymentResponseDetailsType(); 
                                     $this->DoExpressCheckoutPaymentResponseDetails->init($arry["children"]);
@@ -20023,7 +20358,7 @@ class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='fmfdetails'){
                                     $this->FMFDetails = new FMFDetailsType(); 
                                     $this->FMFDetails->init($arry["children"]);
@@ -20044,8 +20379,8 @@ class DoUATPExpressCheckoutPaymentReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoUATPExpressCheckoutPaymentRequestType
+	 * @access public
+	 * @var DoUATPExpressCheckoutPaymentRequestType
 	 */ 
 	public $DoUATPExpressCheckoutPaymentRequest;
 
@@ -20054,7 +20389,7 @@ class DoUATPExpressCheckoutPaymentReq  {
 	{
 		$str = '';
 		$str .= '<urn:DoUATPExpressCheckoutPaymentReq>';
-		if($this->DoUATPExpressCheckoutPaymentRequest != null)
+		if($this->DoUATPExpressCheckoutPaymentRequest != NULL)
 		{
 			$str .= '<urn:DoUATPExpressCheckoutPaymentRequest>';
 			$str .= $this->DoUATPExpressCheckoutPaymentRequest->toXMLString();
@@ -20094,19 +20429,19 @@ class DoUATPExpressCheckoutPaymentResponseType  extends DoExpressCheckoutPayment
 
 	/**
 	 * 
-	 *@access public
-	 *@var UATPDetailsType
+	 * @access public
+	 * @var UATPDetailsType
 	 */ 
 	public $UATPDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='uatpdetails'){
                                     $this->UATPDetails = new UATPDetailsType(); 
                                     $this->UATPDetails->init($arry["children"]);
@@ -20127,8 +20462,8 @@ class ManagePendingTransactionStatusReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var ManagePendingTransactionStatusRequestType
+	 * @access public
+	 * @var ManagePendingTransactionStatusRequestType
 	 */ 
 	public $ManagePendingTransactionStatusRequest;
 
@@ -20137,7 +20472,7 @@ class ManagePendingTransactionStatusReq  {
 	{
 		$str = '';
 		$str .= '<urn:ManagePendingTransactionStatusReq>';
-		if($this->ManagePendingTransactionStatusRequest != null)
+		if($this->ManagePendingTransactionStatusRequest != NULL)
 		{
 			$str .= '<urn:ManagePendingTransactionStatusRequest>';
 			$str .= $this->ManagePendingTransactionStatusRequest->toXMLString();
@@ -20159,22 +20494,22 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var FMFPendingTransactionActionType
+	 * @access public
+	 * @var FMFPendingTransactionActionType
 	 */ 
 	public $Action;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($TransactionID = null, $Action = null) {
+	public function __construct($TransactionID = NULL, $Action = NULL) {
 		$this->TransactionID = $TransactionID;
 		$this->Action = $Action;
 	}
@@ -20184,11 +20519,11 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->TransactionID != null)
+		if($this->TransactionID != NULL)
 		{
 			$str .= '<urn:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</urn:TransactionID>';
 		}
-		if($this->Action != null)
+		if($this->Action != NULL)
 		{
 			$str .= '<urn:Action>' . PPUtils::escapeInvalidXmlCharsRegex($this->Action) . '</urn:Action>';
 		}
@@ -20207,28 +20542,28 @@ class ManagePendingTransactionStatusResponseType  extends AbstractResponseType  
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Status;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'transactionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
 					$this->TransactionID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'status') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
 					$this->Status = $arry["text"];
 				}
 			}
@@ -20245,8 +20580,8 @@ class DoDirectPaymentReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoDirectPaymentRequestType
+	 * @access public
+	 * @var DoDirectPaymentRequestType
 	 */ 
 	public $DoDirectPaymentRequest;
 
@@ -20255,7 +20590,7 @@ class DoDirectPaymentReq  {
 	{
 		$str = '';
 		$str .= '<urn:DoDirectPaymentReq>';
-		if($this->DoDirectPaymentRequest != null)
+		if($this->DoDirectPaymentRequest != NULL)
 		{
 			$str .= '<urn:DoDirectPaymentRequest>';
 			$str .= $this->DoDirectPaymentRequest->toXMLString();
@@ -20278,23 +20613,23 @@ class DoDirectPaymentRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoDirectPaymentRequestDetailsType
+	 * @access public
+	 * @var DoDirectPaymentRequestDetailsType
 	 */ 
 	public $DoDirectPaymentRequestDetails;
 
 	/**
 	 * This flag indicates that the response should include
 	 * FMFDetails
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $ReturnFMFDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($DoDirectPaymentRequestDetails = null) {
+	public function __construct($DoDirectPaymentRequestDetails = NULL) {
 		$this->DoDirectPaymentRequestDetails = $DoDirectPaymentRequestDetails;
 	}
 
@@ -20303,13 +20638,13 @@ class DoDirectPaymentRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->DoDirectPaymentRequestDetails != null)
+		if($this->DoDirectPaymentRequestDetails != NULL)
 		{
 			$str .= '<ebl:DoDirectPaymentRequestDetails>';
 			$str .= $this->DoDirectPaymentRequestDetails->toXMLString();
 			$str .= '</ebl:DoDirectPaymentRequestDetails>';
 		}
-		if($this->ReturnFMFDetails != null)
+		if($this->ReturnFMFDetails != NULL)
 		{
 			$str .= '<urn:ReturnFMFDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnFMFDetails) . '</urn:ReturnFMFDetails>';
 		}
@@ -20330,8 +20665,8 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 	/**
 	 * The amount of the payment as specified by you on
 	 * DoDirectPaymentRequest.
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
@@ -20351,8 +20686,8 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 	 * Exact match Address and nine-digit ZIP code Y YesAddress and
 	 * five-digit ZIP Z ZIP Five-digit ZIP code (no Address) All
 	 * others Error Not applicable
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AVSCode;
 
@@ -20362,64 +20697,64 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 	 * applicable SService not SupportedNot applicable U
 	 * UnavailableNot applicable XNo response Not applicable All
 	 * others ErrorNot applicable 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CVV2Code;
 
 	/**
 	 * Transaction identification number. Character length and
 	 * limitations: 19 characters maximum.
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionID;
 
 	/**
 	 * The reason why a particular transaction went in pending. 
-	 *@access public
-	 *@var PendingStatusCodeType
+	 * @access public
+	 * @var PendingStatusCodeType
 	 */ 
 	public $PendingReason;
 
 	/**
 	 * This will identify the actual transaction status. 
-	 *@access public
-	 *@var PaymentStatusCodeType
+	 * @access public
+	 * @var PaymentStatusCodeType
 	 */ 
 	public $PaymentStatus;
 
 	/**
 	 * 
-	 *@access public
-	 *@var FMFDetailsType
+	 * @access public
+	 * @var FMFDetailsType
 	 */ 
 	public $FMFDetails;
 
 	/**
 	 * 
-	 *@access public
-	 *@var ThreeDSecureResponseType
+	 * @access public
+	 * @var ThreeDSecureResponseType
 	 */ 
 	public $ThreeDSecureResponse;
 
 	/**
 	 * Response code from the processor when a recurring
 	 * transaction is declined.  
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $PaymentAdviceCode;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='amount') {
 								$tmp =  array();
 								$atr =  array();
@@ -20434,23 +20769,23 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'avscode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'avscode') {
 					$this->AVSCode = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'cvv2code') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'cvv2code') {
 					$this->CVV2Code = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'transactionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
 					$this->TransactionID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'pendingreason') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'pendingreason') {
 					$this->PendingReason = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentstatus') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentstatus') {
 					$this->PaymentStatus = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='fmfdetails'){
                                     $this->FMFDetails = new FMFDetailsType(); 
                                     $this->FMFDetails->init($arry["children"]);
@@ -20458,14 +20793,14 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='threedsecureresponse'){
                                     $this->ThreeDSecureResponse = new ThreeDSecureResponseType(); 
                                     $this->ThreeDSecureResponse->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentadvicecode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentadvicecode') {
 					$this->PaymentAdviceCode = $arry["text"];
 				}
 			}
@@ -20482,8 +20817,8 @@ class DoCancelReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoCancelRequestType
+	 * @access public
+	 * @var DoCancelRequestType
 	 */ 
 	public $DoCancelRequest;
 
@@ -20492,7 +20827,7 @@ class DoCancelReq  {
 	{
 		$str = '';
 		$str .= '<urn:DoCancelReq>';
-		if($this->DoCancelRequest != null)
+		if($this->DoCancelRequest != NULL)
 		{
 			$str .= '<urn:DoCancelRequest>';
 			$str .= $this->DoCancelRequest->toXMLString();
@@ -20514,22 +20849,31 @@ class DoCancelRequestType  extends AbstractRequestType  {
 
 	/**
 	 * Msg Sub Id that was used for the orginal operation. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $CancelMsgSubID;
 
 	/**
 	 * Original API's type
-	 *@access public
-	 *@var APIType
+	 * @access public
+	 * @var APIType
 	 */ 
 	public $APIType;
 
 	/**
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 
+	 * @access public
+	 * @var string
+	 */ 
+	public $MsgSubID;
+
+	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($CancelMsgSubID = null, $APIType = null) {
+	public function __construct($CancelMsgSubID = NULL, $APIType = NULL) {
 		$this->CancelMsgSubID = $CancelMsgSubID;
 		$this->APIType = $APIType;
 	}
@@ -20539,13 +20883,17 @@ class DoCancelRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->CancelMsgSubID != null)
+		if($this->CancelMsgSubID != NULL)
 		{
 			$str .= '<urn:CancelMsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelMsgSubID) . '</urn:CancelMsgSubID>';
 		}
-		if($this->APIType != null)
+		if($this->APIType != NULL)
 		{
 			$str .= '<urn:APIType>' . PPUtils::escapeInvalidXmlCharsRegex($this->APIType) . '</urn:APIType>';
+		}
+		if($this->MsgSubID != NULL)
+		{
+			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
 		}
 		return $str;
 	}
@@ -20556,16 +20904,26 @@ class DoCancelRequestType  extends AbstractRequestType  {
 
 
 /**
- * 
+ * Return msgsubid back to merchant 
  */
 class DoCancelResponseType  extends AbstractResponseType  {
 
+	/**
+	 * Return msgsubid back to merchant
+	 * @access public
+	 * @var string
+	 */ 
+	public $MsgSubID;
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
+					$this->MsgSubID = $arry["text"];
+				}
 			}
 		}
 	}
@@ -20580,8 +20938,8 @@ class DoCaptureReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoCaptureRequestType
+	 * @access public
+	 * @var DoCaptureRequestType
 	 */ 
 	public $DoCaptureRequest;
 
@@ -20590,7 +20948,7 @@ class DoCaptureReq  {
 	{
 		$str = '';
 		$str .= '<urn:DoCaptureReq>';
-		if($this->DoCaptureRequest != null)
+		if($this->DoCaptureRequest != NULL)
 		{
 			$str .= '<urn:DoCaptureRequest>';
 			$str .= $this->DoCaptureRequest->toXMLString();
@@ -20616,8 +20974,8 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	 * The authorization identification number of the payment you
 	 * want to capture. Required Character length and limits: 19
 	 * single-byte characters maximum
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AuthorizationID;
 
@@ -20627,8 +20985,8 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	 * any currency. No currency symbol. Decimal separator must be
 	 * a period (.), and the thousands separator must be a comma
 	 * (,)
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
@@ -20638,8 +20996,8 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	 * any remaining amount of the original reauthorized
 	 * transaction is automatically voided. Required Character
 	 * length and limits: 12 single-byte alphanumeric characters
-	 *@access public
-	 *@var CompleteCodeType
+	 * @access public
+	 * @var CompleteCodeType
 	 */ 
 	public $CompleteType;
 
@@ -20648,8 +21006,8 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	 * displayed to the payer in email and in transaction history.
 	 * Optional Character length and limits: 255 single-byte
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Note;
 
@@ -20659,16 +21017,16 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	 * are capturing is an order authorization, not a basic
 	 * authorization. Optional Character length and limits: 127
 	 * single-byte alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InvoiceID;
 
 	/**
 	 * Contains enhanced data like airline itinerary information.
 	 * Not Required 
-	 *@access public
-	 *@var EnhancedDataType
+	 * @access public
+	 * @var EnhancedDataType
 	 */ 
 	public $EnhancedData;
 
@@ -20677,15 +21035,15 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	 * to provide detail of a transaction appears on statement
 	 * Optional Character length and limits: <18 characters
 	 * alphanumeric characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Descriptor;
 
 	/**
 	 * To pass the Merchant store informationOptional 
-	 *@access public
-	 *@var MerchantStoreDetailsType
+	 * @access public
+	 * @var MerchantStoreDetailsType
 	 */ 
 	public $MerchantStoreDetails;
 
@@ -20693,15 +21051,15 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MsgSubID;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($AuthorizationID = null, $Amount = null, $CompleteType = null) {
+	public function __construct($AuthorizationID = NULL, $Amount = NULL, $CompleteType = NULL) {
 		$this->AuthorizationID = $AuthorizationID;
 		$this->Amount = $Amount;
 		$this->CompleteType = $CompleteType;
@@ -20712,45 +21070,45 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->AuthorizationID != null)
+		if($this->AuthorizationID != NULL)
 		{
 			$str .= '<urn:AuthorizationID>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuthorizationID) . '</urn:AuthorizationID>';
 		}
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</urn:Amount>';
 		}
-		if($this->CompleteType != null)
+		if($this->CompleteType != NULL)
 		{
 			$str .= '<urn:CompleteType>' . PPUtils::escapeInvalidXmlCharsRegex($this->CompleteType) . '</urn:CompleteType>';
 		}
-		if($this->Note != null)
+		if($this->Note != NULL)
 		{
 			$str .= '<urn:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</urn:Note>';
 		}
-		if($this->InvoiceID != null)
+		if($this->InvoiceID != NULL)
 		{
 			$str .= '<urn:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</urn:InvoiceID>';
 		}
-		if($this->EnhancedData != null)
+		if($this->EnhancedData != NULL)
 		{
 			$str .= '<ebl:EnhancedData>';
 			$str .= $this->EnhancedData->toXMLString();
 			$str .= '</ebl:EnhancedData>';
 		}
-		if($this->Descriptor != null)
+		if($this->Descriptor != NULL)
 		{
 			$str .= '<urn:Descriptor>' . PPUtils::escapeInvalidXmlCharsRegex($this->Descriptor) . '</urn:Descriptor>';
 		}
-		if($this->MerchantStoreDetails != null)
+		if($this->MerchantStoreDetails != NULL)
 		{
 			$str .= '<ebl:MerchantStoreDetails>';
 			$str .= $this->MerchantStoreDetails->toXMLString();
 			$str .= '</ebl:MerchantStoreDetails>';
 		}
-		if($this->MsgSubID != null)
+		if($this->MsgSubID != NULL)
 		{
 			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
 		}
@@ -20769,19 +21127,19 @@ class DoCaptureResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoCaptureResponseDetailsType
+	 * @access public
+	 * @var DoCaptureResponseDetailsType
 	 */ 
 	public $DoCaptureResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='docaptureresponsedetails'){
                                     $this->DoCaptureResponseDetails = new DoCaptureResponseDetailsType(); 
                                     $this->DoCaptureResponseDetails->init($arry["children"]);
@@ -20802,8 +21160,8 @@ class DoReauthorizationReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoReauthorizationRequestType
+	 * @access public
+	 * @var DoReauthorizationRequestType
 	 */ 
 	public $DoReauthorizationRequest;
 
@@ -20812,7 +21170,7 @@ class DoReauthorizationReq  {
 	{
 		$str = '';
 		$str .= '<urn:DoReauthorizationReq>';
-		if($this->DoReauthorizationRequest != null)
+		if($this->DoReauthorizationRequest != NULL)
 		{
 			$str .= '<urn:DoReauthorizationRequest>';
 			$str .= $this->DoReauthorizationRequest->toXMLString();
@@ -20844,8 +21202,8 @@ class DoReauthorizationRequestType  extends AbstractRequestType  {
 	 * element of the PayerInfo structure returned by
 	 * GetTransactionDetailsResponse. Required Character length and
 	 * limits: 19 single-byte characters maximum
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AuthorizationID;
 
@@ -20854,15 +21212,24 @@ class DoReauthorizationRequestType  extends AbstractRequestType  {
 	 * $10,000 USD in any currency. No currency symbol. Decimal
 	 * separator must be a period (.), and the thousands separator
 	 * must be a comma (,).
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 
+	 * @access public
+	 * @var string
+	 */ 
+	public $MsgSubID;
+
+	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($AuthorizationID = null, $Amount = null) {
+	public function __construct($AuthorizationID = NULL, $Amount = NULL) {
 		$this->AuthorizationID = $AuthorizationID;
 		$this->Amount = $Amount;
 	}
@@ -20872,15 +21239,19 @@ class DoReauthorizationRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->AuthorizationID != null)
+		if($this->AuthorizationID != NULL)
 		{
 			$str .= '<urn:AuthorizationID>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuthorizationID) . '</urn:AuthorizationID>';
 		}
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</urn:Amount>';
+		}
+		if($this->MsgSubID != NULL)
+		{
+			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
 		}
 		return $str;
 	}
@@ -20899,35 +21270,45 @@ class DoReauthorizationResponseType  extends AbstractResponseType  {
 	/**
 	 * A new authorization identification number. Character length
 	 * and limits: 19 single-byte characters 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AuthorizationID;
 
 	/**
 	 * 
-	 *@access public
-	 *@var AuthorizationInfoType
+	 * @access public
+	 * @var AuthorizationInfoType
 	 */ 
 	public $AuthorizationInfo;
 
+	/**
+	 * Return msgsubid back to merchant
+	 * @access public
+	 * @var string
+	 */ 
+	public $MsgSubID;
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'authorizationid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'authorizationid') {
 					$this->AuthorizationID = $arry["text"];
 				}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='authorizationinfo'){
                                     $this->AuthorizationInfo = new AuthorizationInfoType(); 
                                     $this->AuthorizationInfo->init($arry["children"]);
                                 }                                                
                                                 
 			}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
+					$this->MsgSubID = $arry["text"];
+				}
 			}
 		}
 	}
@@ -20942,8 +21323,8 @@ class DoVoidReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoVoidRequestType
+	 * @access public
+	 * @var DoVoidRequestType
 	 */ 
 	public $DoVoidRequest;
 
@@ -20952,7 +21333,7 @@ class DoVoidReq  {
 	{
 		$str = '';
 		$str .= '<urn:DoVoidReq>';
-		if($this->DoVoidRequest != null)
+		if($this->DoVoidRequest != NULL)
 		{
 			$str .= '<urn:DoVoidRequest>';
 			$str .= $this->DoVoidRequest->toXMLString();
@@ -20984,8 +21365,8 @@ class DoVoidRequestType  extends AbstractRequestType  {
 	 * original authorization, and not the reauthorization.
 	 * Required Character length and limits: 19 single-byte
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AuthorizationID;
 
@@ -20994,15 +21375,24 @@ class DoVoidRequestType  extends AbstractRequestType  {
 	 * displayed to the payer in email and in transaction history.
 	 * Optional Character length and limits: 255 single-byte
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Note;
 
 	/**
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 
+	 * @access public
+	 * @var string
+	 */ 
+	public $MsgSubID;
+
+	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($AuthorizationID = null) {
+	public function __construct($AuthorizationID = NULL) {
 		$this->AuthorizationID = $AuthorizationID;
 	}
 
@@ -21011,13 +21401,17 @@ class DoVoidRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->AuthorizationID != null)
+		if($this->AuthorizationID != NULL)
 		{
 			$str .= '<urn:AuthorizationID>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuthorizationID) . '</urn:AuthorizationID>';
 		}
-		if($this->Note != null)
+		if($this->Note != NULL)
 		{
 			$str .= '<urn:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</urn:Note>';
+		}
+		if($this->MsgSubID != NULL)
+		{
+			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
 		}
 		return $str;
 	}
@@ -21038,19 +21432,29 @@ class DoVoidResponseType  extends AbstractResponseType  {
 	 * The authorization identification number you specified in the
 	 * request. Character length and limits: 19 single-byte
 	 * characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AuthorizationID;
 
+	/**
+	 * Return msgsubid back to merchant
+	 * @access public
+	 * @var string
+	 */ 
+	public $MsgSubID;
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'authorizationid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'authorizationid') {
 					$this->AuthorizationID = $arry["text"];
+				}
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
+					$this->MsgSubID = $arry["text"];
 				}
 			}
 		}
@@ -21066,8 +21470,8 @@ class DoAuthorizationReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoAuthorizationRequestType
+	 * @access public
+	 * @var DoAuthorizationRequestType
 	 */ 
 	public $DoAuthorizationRequest;
 
@@ -21076,7 +21480,7 @@ class DoAuthorizationReq  {
 	{
 		$str = '';
 		$str .= '<urn:DoAuthorizationReq>';
-		if($this->DoAuthorizationRequest != null)
+		if($this->DoAuthorizationRequest != NULL)
 		{
 			$str .= '<urn:DoAuthorizationRequest>';
 			$str .= $this->DoAuthorizationRequest->toXMLString();
@@ -21102,8 +21506,8 @@ class DoAuthorizationRequestType  extends AbstractRequestType  {
 	 * The value of the order’s transaction identification number
 	 * returned by a PayPal product. Required Character length and
 	 * limits: 19 single-byte characters maximum
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionID;
 
@@ -21111,8 +21515,8 @@ class DoAuthorizationRequestType  extends AbstractRequestType  {
 	 * Type of transaction to authorize. The only allowable value
 	 * is Order, which means that the transaction represents a
 	 * customer order that can be fulfilled over 29 days. Optional
-	 *@access public
-	 *@var TransactionEntityType
+	 * @access public
+	 * @var TransactionEntityType
 	 */ 
 	public $TransactionEntity;
 
@@ -21121,8 +21525,8 @@ class DoAuthorizationRequestType  extends AbstractRequestType  {
 	 * $10,000 USD in any currency. No currency symbol. Decimal
 	 * separator must be a period (.), and the thousands separator
 	 * must be a comma (,).
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
@@ -21130,15 +21534,15 @@ class DoAuthorizationRequestType  extends AbstractRequestType  {
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MsgSubID;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($TransactionID = null, $Amount = null) {
+	public function __construct($TransactionID = NULL, $Amount = NULL) {
 		$this->TransactionID = $TransactionID;
 		$this->Amount = $Amount;
 	}
@@ -21148,21 +21552,21 @@ class DoAuthorizationRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->TransactionID != null)
+		if($this->TransactionID != NULL)
 		{
 			$str .= '<urn:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</urn:TransactionID>';
 		}
-		if($this->TransactionEntity != null)
+		if($this->TransactionEntity != NULL)
 		{
 			$str .= '<urn:TransactionEntity>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionEntity) . '</urn:TransactionEntity>';
 		}
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</urn:Amount>';
 		}
-		if($this->MsgSubID != null)
+		if($this->MsgSubID != NULL)
 		{
 			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
 		}
@@ -21183,44 +21587,44 @@ class DoAuthorizationResponseType  extends AbstractResponseType  {
 	/**
 	 * An authorization identification number. Character length and
 	 * limits: 19 single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $TransactionID;
 
 	/**
 	 * The amount and currency you specified in the request. 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
 	 * 
-	 *@access public
-	 *@var AuthorizationInfoType
+	 * @access public
+	 * @var AuthorizationInfoType
 	 */ 
 	public $AuthorizationInfo;
 
 	/**
 	 * Return msgsubid back to merchant
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MsgSubID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'transactionid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
 					$this->TransactionID = $arry["text"];
 				}
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='amount') {
 								$tmp =  array();
 								$atr =  array();
@@ -21236,14 +21640,14 @@ class DoAuthorizationResponseType  extends AbstractResponseType  {
 							                            
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='authorizationinfo'){
                                     $this->AuthorizationInfo = new AuthorizationInfoType(); 
                                     $this->AuthorizationInfo->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'msgsubid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
 					$this->MsgSubID = $arry["text"];
 				}
 			}
@@ -21260,8 +21664,8 @@ class DoUATPAuthorizationReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoUATPAuthorizationRequestType
+	 * @access public
+	 * @var DoUATPAuthorizationRequestType
 	 */ 
 	public $DoUATPAuthorizationRequest;
 
@@ -21270,7 +21674,7 @@ class DoUATPAuthorizationReq  {
 	{
 		$str = '';
 		$str .= '<urn:DoUATPAuthorizationReq>';
-		if($this->DoUATPAuthorizationRequest != null)
+		if($this->DoUATPAuthorizationRequest != NULL)
 		{
 			$str .= '<urn:DoUATPAuthorizationRequest>';
 			$str .= $this->DoUATPAuthorizationRequest->toXMLString();
@@ -21292,8 +21696,8 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType  {
 
 	/**
 	 * UATP card details Required 
-	 *@access public
-	 *@var UATPDetailsType
+	 * @access public
+	 * @var UATPDetailsType
 	 */ 
 	public $UATPDetails;
 
@@ -21301,8 +21705,8 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType  {
 	 * Type of transaction to authorize. The only allowable value
 	 * is Order, which means that the transaction represents a
 	 * customer order that can be fulfilled over 29 days. Optional
-	 *@access public
-	 *@var TransactionEntityType
+	 * @access public
+	 * @var TransactionEntityType
 	 */ 
 	public $TransactionEntity;
 
@@ -21311,15 +21715,15 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType  {
 	 * $10,000 USD in any currency. No currency symbol. Decimal
 	 * separator must be a period (.), and the thousands separator
 	 * must be a comma (,).
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 	/**
 	 * Invoice ID. A pass through. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InvoiceID;
 
@@ -21327,15 +21731,15 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType  {
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MsgSubID;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($UATPDetails = null, $Amount = null) {
+	public function __construct($UATPDetails = NULL, $Amount = NULL) {
 		$this->UATPDetails = $UATPDetails;
 		$this->Amount = $Amount;
 	}
@@ -21345,27 +21749,27 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->UATPDetails != null)
+		if($this->UATPDetails != NULL)
 		{
 			$str .= '<ebl:UATPDetails>';
 			$str .= $this->UATPDetails->toXMLString();
 			$str .= '</ebl:UATPDetails>';
 		}
-		if($this->TransactionEntity != null)
+		if($this->TransactionEntity != NULL)
 		{
 			$str .= '<urn:TransactionEntity>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionEntity) . '</urn:TransactionEntity>';
 		}
-		if($this->Amount != null)
+		if($this->Amount != NULL)
 		{
 			$str .= '<urn:Amount';
 			$str .= $this->Amount->toXMLString();
 			$str .= '</urn:Amount>';
 		}
-		if($this->InvoiceID != null)
+		if($this->InvoiceID != NULL)
 		{
 			$str .= '<urn:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</urn:InvoiceID>';
 		}
-		if($this->MsgSubID != null)
+		if($this->MsgSubID != NULL)
 		{
 			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
 		}
@@ -21384,22 +21788,22 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var UATPDetailsType
+	 * @access public
+	 * @var UATPDetailsType
 	 */ 
 	public $UATPDetails;
 
 	/**
 	 * Auth Authorization Code. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $AuthorizationCode;
 
 	/**
 	 * Invoice ID. A pass through. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $InvoiceID;
 
@@ -21407,32 +21811,32 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType  {
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $MsgSubID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='uatpdetails'){
                                     $this->UATPDetails = new UATPDetailsType(); 
                                     $this->UATPDetails->init($arry["children"]);
                                 }                                                
                                                 
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'authorizationcode') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'authorizationcode') {
 					$this->AuthorizationCode = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'invoiceid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'invoiceid') {
 					$this->InvoiceID = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'msgsubid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
 					$this->MsgSubID = $arry["text"];
 				}
 			}
@@ -21449,8 +21853,8 @@ class CreateMobilePaymentReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var CreateMobilePaymentRequestType
+	 * @access public
+	 * @var CreateMobilePaymentRequestType
 	 */ 
 	public $CreateMobilePaymentRequest;
 
@@ -21459,7 +21863,7 @@ class CreateMobilePaymentReq  {
 	{
 		$str = '';
 		$str .= '<urn:CreateMobilePaymentReq>';
-		if($this->CreateMobilePaymentRequest != null)
+		if($this->CreateMobilePaymentRequest != NULL)
 		{
 			$str .= '<urn:CreateMobilePaymentRequest>';
 			$str .= $this->CreateMobilePaymentRequest->toXMLString();
@@ -21481,15 +21885,15 @@ class CreateMobilePaymentRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var CreateMobilePaymentRequestDetailsType
+	 * @access public
+	 * @var CreateMobilePaymentRequestDetailsType
 	 */ 
 	public $CreateMobilePaymentRequestDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($CreateMobilePaymentRequestDetails = null) {
+	public function __construct($CreateMobilePaymentRequestDetails = NULL) {
 		$this->CreateMobilePaymentRequestDetails = $CreateMobilePaymentRequestDetails;
 	}
 
@@ -21498,7 +21902,7 @@ class CreateMobilePaymentRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->CreateMobilePaymentRequestDetails != null)
+		if($this->CreateMobilePaymentRequestDetails != NULL)
 		{
 			$str .= '<ebl:CreateMobilePaymentRequestDetails>';
 			$str .= $this->CreateMobilePaymentRequestDetails->toXMLString();
@@ -21519,8 +21923,8 @@ class CreateMobilePaymentResponseType  extends AbstractResponseType  {
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			}
@@ -21537,8 +21941,8 @@ class GetMobileStatusReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetMobileStatusRequestType
+	 * @access public
+	 * @var GetMobileStatusRequestType
 	 */ 
 	public $GetMobileStatusRequest;
 
@@ -21547,7 +21951,7 @@ class GetMobileStatusReq  {
 	{
 		$str = '';
 		$str .= '<urn:GetMobileStatusReq>';
-		if($this->GetMobileStatusRequest != null)
+		if($this->GetMobileStatusRequest != NULL)
 		{
 			$str .= '<urn:GetMobileStatusRequest>';
 			$str .= $this->GetMobileStatusRequest->toXMLString();
@@ -21569,15 +21973,15 @@ class GetMobileStatusRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetMobileStatusRequestDetailsType
+	 * @access public
+	 * @var GetMobileStatusRequestDetailsType
 	 */ 
 	public $GetMobileStatusRequestDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($GetMobileStatusRequestDetails = null) {
+	public function __construct($GetMobileStatusRequestDetails = NULL) {
 		$this->GetMobileStatusRequestDetails = $GetMobileStatusRequestDetails;
 	}
 
@@ -21586,7 +21990,7 @@ class GetMobileStatusRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->GetMobileStatusRequestDetails != null)
+		if($this->GetMobileStatusRequestDetails != NULL)
 		{
 			$str .= '<ebl:GetMobileStatusRequestDetails>';
 			$str .= $this->GetMobileStatusRequestDetails->toXMLString();
@@ -21609,28 +22013,28 @@ class GetMobileStatusResponseType  extends AbstractResponseType  {
 	/**
 	 * Indicates whether the phone is activated for mobile payments
 	 * 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $IsActivated;
 
 	/**
 	 * Indicates whether there is a payment pending from the phone 
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $PaymentPending;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'isactivated') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'isactivated') {
 					$this->IsActivated = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'paymentpending') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentpending') {
 					$this->PaymentPending = $arry["text"];
 				}
 			}
@@ -21647,8 +22051,8 @@ class SetMobileCheckoutReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var SetMobileCheckoutRequestType
+	 * @access public
+	 * @var SetMobileCheckoutRequestType
 	 */ 
 	public $SetMobileCheckoutRequest;
 
@@ -21657,7 +22061,7 @@ class SetMobileCheckoutReq  {
 	{
 		$str = '';
 		$str .= '<urn:SetMobileCheckoutReq>';
-		if($this->SetMobileCheckoutRequest != null)
+		if($this->SetMobileCheckoutRequest != NULL)
 		{
 			$str .= '<urn:SetMobileCheckoutRequest>';
 			$str .= $this->SetMobileCheckoutRequest->toXMLString();
@@ -21679,15 +22083,15 @@ class SetMobileCheckoutRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var SetMobileCheckoutRequestDetailsType
+	 * @access public
+	 * @var SetMobileCheckoutRequestDetailsType
 	 */ 
 	public $SetMobileCheckoutRequestDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($SetMobileCheckoutRequestDetails = null) {
+	public function __construct($SetMobileCheckoutRequestDetails = NULL) {
 		$this->SetMobileCheckoutRequestDetails = $SetMobileCheckoutRequestDetails;
 	}
 
@@ -21696,7 +22100,7 @@ class SetMobileCheckoutRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->SetMobileCheckoutRequestDetails != null)
+		if($this->SetMobileCheckoutRequestDetails != NULL)
 		{
 			$str .= '<ebl:SetMobileCheckoutRequestDetails>';
 			$str .= $this->SetMobileCheckoutRequestDetails->toXMLString();
@@ -21723,18 +22127,18 @@ class SetMobileCheckoutResponseType  extends AbstractResponseType  {
 	 * are processing this payment with Mobile Checkout. The token
 	 * expires after three hours. Character length and limitations:
 	 * 20 single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'token') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
 					$this->Token = $arry["text"];
 				}
 			}
@@ -21751,8 +22155,8 @@ class DoMobileCheckoutPaymentReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoMobileCheckoutPaymentRequestType
+	 * @access public
+	 * @var DoMobileCheckoutPaymentRequestType
 	 */ 
 	public $DoMobileCheckoutPaymentRequest;
 
@@ -21761,7 +22165,7 @@ class DoMobileCheckoutPaymentReq  {
 	{
 		$str = '';
 		$str .= '<urn:DoMobileCheckoutPaymentReq>';
-		if($this->DoMobileCheckoutPaymentRequest != null)
+		if($this->DoMobileCheckoutPaymentRequest != NULL)
 		{
 			$str .= '<urn:DoMobileCheckoutPaymentRequest>';
 			$str .= $this->DoMobileCheckoutPaymentRequest->toXMLString();
@@ -21787,15 +22191,15 @@ class DoMobileCheckoutPaymentRequestType  extends AbstractRequestType  {
 	 * A timestamped token, the value of which was returned by
 	 * SetMobileCheckoutResponse. RequiredCharacter length and
 	 * limitations: 20 single-byte characters
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($Token = null) {
+	public function __construct($Token = NULL) {
 		$this->Token = $Token;
 	}
 
@@ -21804,7 +22208,7 @@ class DoMobileCheckoutPaymentRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Token != null)
+		if($this->Token != NULL)
 		{
 			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
 		}
@@ -21823,19 +22227,19 @@ class DoMobileCheckoutPaymentResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoMobileCheckoutPaymentResponseDetailsType
+	 * @access public
+	 * @var DoMobileCheckoutPaymentResponseDetailsType
 	 */ 
 	public $DoMobileCheckoutPaymentResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='domobilecheckoutpaymentresponsedetails'){
                                     $this->DoMobileCheckoutPaymentResponseDetails = new DoMobileCheckoutPaymentResponseDetailsType(); 
                                     $this->DoMobileCheckoutPaymentResponseDetails->init($arry["children"]);
@@ -21856,8 +22260,8 @@ class GetBalanceReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetBalanceRequestType
+	 * @access public
+	 * @var GetBalanceRequestType
 	 */ 
 	public $GetBalanceRequest;
 
@@ -21866,7 +22270,7 @@ class GetBalanceReq  {
 	{
 		$str = '';
 		$str .= '<urn:GetBalanceReq>';
-		if($this->GetBalanceRequest != null)
+		if($this->GetBalanceRequest != NULL)
 		{
 			$str .= '<urn:GetBalanceRequest>';
 			$str .= $this->GetBalanceRequest->toXMLString();
@@ -21888,8 +22292,8 @@ class GetBalanceRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ReturnAllCurrencies;
 
@@ -21898,7 +22302,7 @@ class GetBalanceRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ReturnAllCurrencies != null)
+		if($this->ReturnAllCurrencies != NULL)
 		{
 			$str .= '<urn:ReturnAllCurrencies>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnAllCurrencies) . '</urn:ReturnAllCurrencies>';
 		}
@@ -21917,35 +22321,35 @@ class GetBalanceResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BasicAmountType
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $Balance;
 
 	/**
 	 * 
-	 *@access public
-	 *@var dateTime
+	 * @access public
+	 * @var dateTime
 	 */ 
 	public $BalanceTimeStamp;
 
 	/**
 	 * 
-     *@array
-	 *@access public
-	 *@var BasicAmountType
+     * @array
+	 * @access public
+	 * @var BasicAmountType
 	 */ 
 	public $BalanceHoldings;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
             						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!=null) 	{
+					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
                         if( $arry["name"]=='balance') {
 								$tmp =  array();
 								$atr =  array();
@@ -21960,12 +22364,12 @@ class GetBalanceResponseType  extends AbstractResponseType  {
 							}
 							                            
 			}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'balancetimestamp') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'balancetimestamp') {
 					$this->BalanceTimeStamp = $arry["text"];
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null)) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
 					$i = 0;
-					while (true) {
+					while (TRUE) {
 						if ($arry["name"] == "balanceholdings[$i]") {
 							$this->BalanceHoldings[$i] = new BasicAmountType();
 							$this->BalanceHoldings[$i]->init($arry["children"]);
@@ -21975,7 +22379,7 @@ class GetBalanceResponseType  extends AbstractResponseType  {
 						$i++;
 					}
 				}
-				if (is_array($arry["children"]) && (($arry["children"]) != null) && ($arry["name"] == "balanceholdings")) {
+				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "balanceholdings")) {
 					$this->BalanceHoldings = new BasicAmountType();
 					$this->BalanceHoldings->init($arry["children"]);
 				}
@@ -21993,8 +22397,8 @@ class SetCustomerBillingAgreementReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var SetCustomerBillingAgreementRequestType
+	 * @access public
+	 * @var SetCustomerBillingAgreementRequestType
 	 */ 
 	public $SetCustomerBillingAgreementRequest;
 
@@ -22003,7 +22407,7 @@ class SetCustomerBillingAgreementReq  {
 	{
 		$str = '';
 		$str .= '<urn:SetCustomerBillingAgreementReq>';
-		if($this->SetCustomerBillingAgreementRequest != null)
+		if($this->SetCustomerBillingAgreementRequest != NULL)
 		{
 			$str .= '<urn:SetCustomerBillingAgreementRequest>';
 			$str .= $this->SetCustomerBillingAgreementRequest->toXMLString();
@@ -22025,15 +22429,15 @@ class SetCustomerBillingAgreementRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var SetCustomerBillingAgreementRequestDetailsType
+	 * @access public
+	 * @var SetCustomerBillingAgreementRequestDetailsType
 	 */ 
 	public $SetCustomerBillingAgreementRequestDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($SetCustomerBillingAgreementRequestDetails = null) {
+	public function __construct($SetCustomerBillingAgreementRequestDetails = NULL) {
 		$this->SetCustomerBillingAgreementRequestDetails = $SetCustomerBillingAgreementRequestDetails;
 	}
 
@@ -22042,7 +22446,7 @@ class SetCustomerBillingAgreementRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->SetCustomerBillingAgreementRequestDetails != null)
+		if($this->SetCustomerBillingAgreementRequestDetails != NULL)
 		{
 			$str .= '<ebl:SetCustomerBillingAgreementRequestDetails>';
 			$str .= $this->SetCustomerBillingAgreementRequestDetails->toXMLString();
@@ -22063,18 +22467,18 @@ class SetCustomerBillingAgreementResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'token') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
 					$this->Token = $arry["text"];
 				}
 			}
@@ -22091,8 +22495,8 @@ class GetBillingAgreementCustomerDetailsReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetBillingAgreementCustomerDetailsRequestType
+	 * @access public
+	 * @var GetBillingAgreementCustomerDetailsRequestType
 	 */ 
 	public $GetBillingAgreementCustomerDetailsRequest;
 
@@ -22101,7 +22505,7 @@ class GetBillingAgreementCustomerDetailsReq  {
 	{
 		$str = '';
 		$str .= '<urn:GetBillingAgreementCustomerDetailsReq>';
-		if($this->GetBillingAgreementCustomerDetailsRequest != null)
+		if($this->GetBillingAgreementCustomerDetailsRequest != NULL)
 		{
 			$str .= '<urn:GetBillingAgreementCustomerDetailsRequest>';
 			$str .= $this->GetBillingAgreementCustomerDetailsRequest->toXMLString();
@@ -22123,15 +22527,15 @@ class GetBillingAgreementCustomerDetailsRequestType  extends AbstractRequestType
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($Token = null) {
+	public function __construct($Token = NULL) {
 		$this->Token = $Token;
 	}
 
@@ -22140,7 +22544,7 @@ class GetBillingAgreementCustomerDetailsRequestType  extends AbstractRequestType
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Token != null)
+		if($this->Token != NULL)
 		{
 			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
 		}
@@ -22159,19 +22563,19 @@ class GetBillingAgreementCustomerDetailsResponseType  extends AbstractResponseTy
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetBillingAgreementCustomerDetailsResponseDetailsType
+	 * @access public
+	 * @var GetBillingAgreementCustomerDetailsResponseDetailsType
 	 */ 
 	public $GetBillingAgreementCustomerDetailsResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='getbillingagreementcustomerdetailsresponsedetails'){
                                     $this->GetBillingAgreementCustomerDetailsResponseDetails = new GetBillingAgreementCustomerDetailsResponseDetailsType(); 
                                     $this->GetBillingAgreementCustomerDetailsResponseDetails->init($arry["children"]);
@@ -22192,8 +22596,8 @@ class CreateBillingAgreementReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var CreateBillingAgreementRequestType
+	 * @access public
+	 * @var CreateBillingAgreementRequestType
 	 */ 
 	public $CreateBillingAgreementRequest;
 
@@ -22202,7 +22606,7 @@ class CreateBillingAgreementReq  {
 	{
 		$str = '';
 		$str .= '<urn:CreateBillingAgreementReq>';
-		if($this->CreateBillingAgreementRequest != null)
+		if($this->CreateBillingAgreementRequest != NULL)
 		{
 			$str .= '<urn:CreateBillingAgreementRequest>';
 			$str .= $this->CreateBillingAgreementRequest->toXMLString();
@@ -22224,15 +22628,15 @@ class CreateBillingAgreementRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Token;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($Token = null) {
+	public function __construct($Token = NULL) {
 		$this->Token = $Token;
 	}
 
@@ -22241,7 +22645,7 @@ class CreateBillingAgreementRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->Token != null)
+		if($this->Token != NULL)
 		{
 			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
 		}
@@ -22260,18 +22664,18 @@ class CreateBillingAgreementResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $BillingAgreementID;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'billingagreementid') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementid') {
 					$this->BillingAgreementID = $arry["text"];
 				}
 			}
@@ -22288,8 +22692,8 @@ class DoReferenceTransactionReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoReferenceTransactionRequestType
+	 * @access public
+	 * @var DoReferenceTransactionRequestType
 	 */ 
 	public $DoReferenceTransactionRequest;
 
@@ -22298,7 +22702,7 @@ class DoReferenceTransactionReq  {
 	{
 		$str = '';
 		$str .= '<urn:DoReferenceTransactionReq>';
-		if($this->DoReferenceTransactionRequest != null)
+		if($this->DoReferenceTransactionRequest != NULL)
 		{
 			$str .= '<urn:DoReferenceTransactionRequest>';
 			$str .= $this->DoReferenceTransactionRequest->toXMLString();
@@ -22321,23 +22725,23 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoReferenceTransactionRequestDetailsType
+	 * @access public
+	 * @var DoReferenceTransactionRequestDetailsType
 	 */ 
 	public $DoReferenceTransactionRequestDetails;
 
 	/**
 	 * This flag indicates that the response should include
 	 * FMFDetails
-	 *@access public
-	 *@var integer
+	 * @access public
+	 * @var integer
 	 */ 
 	public $ReturnFMFDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($DoReferenceTransactionRequestDetails = null) {
+	public function __construct($DoReferenceTransactionRequestDetails = NULL) {
 		$this->DoReferenceTransactionRequestDetails = $DoReferenceTransactionRequestDetails;
 	}
 
@@ -22346,13 +22750,13 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->DoReferenceTransactionRequestDetails != null)
+		if($this->DoReferenceTransactionRequestDetails != NULL)
 		{
 			$str .= '<ebl:DoReferenceTransactionRequestDetails>';
 			$str .= $this->DoReferenceTransactionRequestDetails->toXMLString();
 			$str .= '</ebl:DoReferenceTransactionRequestDetails>';
 		}
-		if($this->ReturnFMFDetails != null)
+		if($this->ReturnFMFDetails != NULL)
 		{
 			$str .= '<urn:ReturnFMFDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnFMFDetails) . '</urn:ReturnFMFDetails>';
 		}
@@ -22371,26 +22775,26 @@ class DoReferenceTransactionResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoReferenceTransactionResponseDetailsType
+	 * @access public
+	 * @var DoReferenceTransactionResponseDetailsType
 	 */ 
 	public $DoReferenceTransactionResponseDetails;
 
 	/**
 	 * 
-	 *@access public
-	 *@var FMFDetailsType
+	 * @access public
+	 * @var FMFDetailsType
 	 */ 
 	public $FMFDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='doreferencetransactionresponsedetails'){
                                     $this->DoReferenceTransactionResponseDetails = new DoReferenceTransactionResponseDetailsType(); 
                                     $this->DoReferenceTransactionResponseDetails->init($arry["children"]);
@@ -22398,7 +22802,7 @@ class DoReferenceTransactionResponseType  extends AbstractResponseType  {
                                                 
 			}
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='fmfdetails'){
                                     $this->FMFDetails = new FMFDetailsType(); 
                                     $this->FMFDetails->init($arry["children"]);
@@ -22419,8 +22823,8 @@ class DoNonReferencedCreditReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoNonReferencedCreditRequestType
+	 * @access public
+	 * @var DoNonReferencedCreditRequestType
 	 */ 
 	public $DoNonReferencedCreditRequest;
 
@@ -22429,7 +22833,7 @@ class DoNonReferencedCreditReq  {
 	{
 		$str = '';
 		$str .= '<urn:DoNonReferencedCreditReq>';
-		if($this->DoNonReferencedCreditRequest != null)
+		if($this->DoNonReferencedCreditRequest != NULL)
 		{
 			$str .= '<urn:DoNonReferencedCreditRequest>';
 			$str .= $this->DoNonReferencedCreditRequest->toXMLString();
@@ -22451,15 +22855,15 @@ class DoNonReferencedCreditRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoNonReferencedCreditRequestDetailsType
+	 * @access public
+	 * @var DoNonReferencedCreditRequestDetailsType
 	 */ 
 	public $DoNonReferencedCreditRequestDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($DoNonReferencedCreditRequestDetails = null) {
+	public function __construct($DoNonReferencedCreditRequestDetails = NULL) {
 		$this->DoNonReferencedCreditRequestDetails = $DoNonReferencedCreditRequestDetails;
 	}
 
@@ -22468,7 +22872,7 @@ class DoNonReferencedCreditRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->DoNonReferencedCreditRequestDetails != null)
+		if($this->DoNonReferencedCreditRequestDetails != NULL)
 		{
 			$str .= '<ebl:DoNonReferencedCreditRequestDetails>';
 			$str .= $this->DoNonReferencedCreditRequestDetails->toXMLString();
@@ -22489,19 +22893,19 @@ class DoNonReferencedCreditResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var DoNonReferencedCreditResponseDetailsType
+	 * @access public
+	 * @var DoNonReferencedCreditResponseDetailsType
 	 */ 
 	public $DoNonReferencedCreditResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='dononreferencedcreditresponsedetails'){
                                     $this->DoNonReferencedCreditResponseDetails = new DoNonReferencedCreditResponseDetailsType(); 
                                     $this->DoNonReferencedCreditResponseDetails->init($arry["children"]);
@@ -22522,8 +22926,8 @@ class CreateRecurringPaymentsProfileReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var CreateRecurringPaymentsProfileRequestType
+	 * @access public
+	 * @var CreateRecurringPaymentsProfileRequestType
 	 */ 
 	public $CreateRecurringPaymentsProfileRequest;
 
@@ -22532,7 +22936,7 @@ class CreateRecurringPaymentsProfileReq  {
 	{
 		$str = '';
 		$str .= '<urn:CreateRecurringPaymentsProfileReq>';
-		if($this->CreateRecurringPaymentsProfileRequest != null)
+		if($this->CreateRecurringPaymentsProfileRequest != NULL)
 		{
 			$str .= '<urn:CreateRecurringPaymentsProfileRequest>';
 			$str .= $this->CreateRecurringPaymentsProfileRequest->toXMLString();
@@ -22554,8 +22958,8 @@ class CreateRecurringPaymentsProfileRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var CreateRecurringPaymentsProfileRequestDetailsType
+	 * @access public
+	 * @var CreateRecurringPaymentsProfileRequestDetailsType
 	 */ 
 	public $CreateRecurringPaymentsProfileRequestDetails;
 
@@ -22564,7 +22968,7 @@ class CreateRecurringPaymentsProfileRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->CreateRecurringPaymentsProfileRequestDetails != null)
+		if($this->CreateRecurringPaymentsProfileRequestDetails != NULL)
 		{
 			$str .= '<ebl:CreateRecurringPaymentsProfileRequestDetails>';
 			$str .= $this->CreateRecurringPaymentsProfileRequestDetails->toXMLString();
@@ -22585,19 +22989,19 @@ class CreateRecurringPaymentsProfileResponseType  extends AbstractResponseType  
 
 	/**
 	 * 
-	 *@access public
-	 *@var CreateRecurringPaymentsProfileResponseDetailsType
+	 * @access public
+	 * @var CreateRecurringPaymentsProfileResponseDetailsType
 	 */ 
 	public $CreateRecurringPaymentsProfileResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='createrecurringpaymentsprofileresponsedetails'){
                                     $this->CreateRecurringPaymentsProfileResponseDetails = new CreateRecurringPaymentsProfileResponseDetailsType(); 
                                     $this->CreateRecurringPaymentsProfileResponseDetails->init($arry["children"]);
@@ -22618,8 +23022,8 @@ class GetRecurringPaymentsProfileDetailsReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetRecurringPaymentsProfileDetailsRequestType
+	 * @access public
+	 * @var GetRecurringPaymentsProfileDetailsRequestType
 	 */ 
 	public $GetRecurringPaymentsProfileDetailsRequest;
 
@@ -22628,7 +23032,7 @@ class GetRecurringPaymentsProfileDetailsReq  {
 	{
 		$str = '';
 		$str .= '<urn:GetRecurringPaymentsProfileDetailsReq>';
-		if($this->GetRecurringPaymentsProfileDetailsRequest != null)
+		if($this->GetRecurringPaymentsProfileDetailsRequest != NULL)
 		{
 			$str .= '<urn:GetRecurringPaymentsProfileDetailsRequest>';
 			$str .= $this->GetRecurringPaymentsProfileDetailsRequest->toXMLString();
@@ -22650,15 +23054,15 @@ class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ProfileID;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($ProfileID = null) {
+	public function __construct($ProfileID = NULL) {
 		$this->ProfileID = $ProfileID;
 	}
 
@@ -22667,7 +23071,7 @@ class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ProfileID != null)
+		if($this->ProfileID != NULL)
 		{
 			$str .= '<urn:ProfileID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileID) . '</urn:ProfileID>';
 		}
@@ -22686,19 +23090,19 @@ class GetRecurringPaymentsProfileDetailsResponseType  extends AbstractResponseTy
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetRecurringPaymentsProfileDetailsResponseDetailsType
+	 * @access public
+	 * @var GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 */ 
 	public $GetRecurringPaymentsProfileDetailsResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='getrecurringpaymentsprofiledetailsresponsedetails'){
                                     $this->GetRecurringPaymentsProfileDetailsResponseDetails = new GetRecurringPaymentsProfileDetailsResponseDetailsType(); 
                                     $this->GetRecurringPaymentsProfileDetailsResponseDetails->init($arry["children"]);
@@ -22719,8 +23123,8 @@ class ManageRecurringPaymentsProfileStatusReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var ManageRecurringPaymentsProfileStatusRequestType
+	 * @access public
+	 * @var ManageRecurringPaymentsProfileStatusRequestType
 	 */ 
 	public $ManageRecurringPaymentsProfileStatusRequest;
 
@@ -22729,7 +23133,7 @@ class ManageRecurringPaymentsProfileStatusReq  {
 	{
 		$str = '';
 		$str .= '<urn:ManageRecurringPaymentsProfileStatusReq>';
-		if($this->ManageRecurringPaymentsProfileStatusRequest != null)
+		if($this->ManageRecurringPaymentsProfileStatusRequest != NULL)
 		{
 			$str .= '<urn:ManageRecurringPaymentsProfileStatusRequest>';
 			$str .= $this->ManageRecurringPaymentsProfileStatusRequest->toXMLString();
@@ -22751,8 +23155,8 @@ class ManageRecurringPaymentsProfileStatusRequestType  extends AbstractRequestTy
 
 	/**
 	 * 
-	 *@access public
-	 *@var ManageRecurringPaymentsProfileStatusRequestDetailsType
+	 * @access public
+	 * @var ManageRecurringPaymentsProfileStatusRequestDetailsType
 	 */ 
 	public $ManageRecurringPaymentsProfileStatusRequestDetails;
 
@@ -22761,7 +23165,7 @@ class ManageRecurringPaymentsProfileStatusRequestType  extends AbstractRequestTy
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ManageRecurringPaymentsProfileStatusRequestDetails != null)
+		if($this->ManageRecurringPaymentsProfileStatusRequestDetails != NULL)
 		{
 			$str .= '<ebl:ManageRecurringPaymentsProfileStatusRequestDetails>';
 			$str .= $this->ManageRecurringPaymentsProfileStatusRequestDetails->toXMLString();
@@ -22782,19 +23186,19 @@ class ManageRecurringPaymentsProfileStatusResponseType  extends AbstractResponse
 
 	/**
 	 * 
-	 *@access public
-	 *@var ManageRecurringPaymentsProfileStatusResponseDetailsType
+	 * @access public
+	 * @var ManageRecurringPaymentsProfileStatusResponseDetailsType
 	 */ 
 	public $ManageRecurringPaymentsProfileStatusResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='managerecurringpaymentsprofilestatusresponsedetails'){
                                     $this->ManageRecurringPaymentsProfileStatusResponseDetails = new ManageRecurringPaymentsProfileStatusResponseDetailsType(); 
                                     $this->ManageRecurringPaymentsProfileStatusResponseDetails->init($arry["children"]);
@@ -22815,8 +23219,8 @@ class BillOutstandingAmountReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BillOutstandingAmountRequestType
+	 * @access public
+	 * @var BillOutstandingAmountRequestType
 	 */ 
 	public $BillOutstandingAmountRequest;
 
@@ -22825,7 +23229,7 @@ class BillOutstandingAmountReq  {
 	{
 		$str = '';
 		$str .= '<urn:BillOutstandingAmountReq>';
-		if($this->BillOutstandingAmountRequest != null)
+		if($this->BillOutstandingAmountRequest != NULL)
 		{
 			$str .= '<urn:BillOutstandingAmountRequest>';
 			$str .= $this->BillOutstandingAmountRequest->toXMLString();
@@ -22847,8 +23251,8 @@ class BillOutstandingAmountRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BillOutstandingAmountRequestDetailsType
+	 * @access public
+	 * @var BillOutstandingAmountRequestDetailsType
 	 */ 
 	public $BillOutstandingAmountRequestDetails;
 
@@ -22857,7 +23261,7 @@ class BillOutstandingAmountRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->BillOutstandingAmountRequestDetails != null)
+		if($this->BillOutstandingAmountRequestDetails != NULL)
 		{
 			$str .= '<ebl:BillOutstandingAmountRequestDetails>';
 			$str .= $this->BillOutstandingAmountRequestDetails->toXMLString();
@@ -22878,19 +23282,19 @@ class BillOutstandingAmountResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var BillOutstandingAmountResponseDetailsType
+	 * @access public
+	 * @var BillOutstandingAmountResponseDetailsType
 	 */ 
 	public $BillOutstandingAmountResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='billoutstandingamountresponsedetails'){
                                     $this->BillOutstandingAmountResponseDetails = new BillOutstandingAmountResponseDetailsType(); 
                                     $this->BillOutstandingAmountResponseDetails->init($arry["children"]);
@@ -22911,8 +23315,8 @@ class UpdateRecurringPaymentsProfileReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var UpdateRecurringPaymentsProfileRequestType
+	 * @access public
+	 * @var UpdateRecurringPaymentsProfileRequestType
 	 */ 
 	public $UpdateRecurringPaymentsProfileRequest;
 
@@ -22921,7 +23325,7 @@ class UpdateRecurringPaymentsProfileReq  {
 	{
 		$str = '';
 		$str .= '<urn:UpdateRecurringPaymentsProfileReq>';
-		if($this->UpdateRecurringPaymentsProfileRequest != null)
+		if($this->UpdateRecurringPaymentsProfileRequest != NULL)
 		{
 			$str .= '<urn:UpdateRecurringPaymentsProfileRequest>';
 			$str .= $this->UpdateRecurringPaymentsProfileRequest->toXMLString();
@@ -22943,8 +23347,8 @@ class UpdateRecurringPaymentsProfileRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var UpdateRecurringPaymentsProfileRequestDetailsType
+	 * @access public
+	 * @var UpdateRecurringPaymentsProfileRequestDetailsType
 	 */ 
 	public $UpdateRecurringPaymentsProfileRequestDetails;
 
@@ -22953,7 +23357,7 @@ class UpdateRecurringPaymentsProfileRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->UpdateRecurringPaymentsProfileRequestDetails != null)
+		if($this->UpdateRecurringPaymentsProfileRequestDetails != NULL)
 		{
 			$str .= '<ebl:UpdateRecurringPaymentsProfileRequestDetails>';
 			$str .= $this->UpdateRecurringPaymentsProfileRequestDetails->toXMLString();
@@ -22974,19 +23378,19 @@ class UpdateRecurringPaymentsProfileResponseType  extends AbstractResponseType  
 
 	/**
 	 * 
-	 *@access public
-	 *@var UpdateRecurringPaymentsProfileResponseDetailsType
+	 * @access public
+	 * @var UpdateRecurringPaymentsProfileResponseDetailsType
 	 */ 
 	public $UpdateRecurringPaymentsProfileResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='updaterecurringpaymentsprofileresponsedetails'){
                                     $this->UpdateRecurringPaymentsProfileResponseDetails = new UpdateRecurringPaymentsProfileResponseDetailsType(); 
                                     $this->UpdateRecurringPaymentsProfileResponseDetails->init($arry["children"]);
@@ -23007,8 +23411,8 @@ class GetPalDetailsReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var GetPalDetailsRequestType
+	 * @access public
+	 * @var GetPalDetailsRequestType
 	 */ 
 	public $GetPalDetailsRequest;
 
@@ -23017,7 +23421,7 @@ class GetPalDetailsReq  {
 	{
 		$str = '';
 		$str .= '<urn:GetPalDetailsReq>';
-		if($this->GetPalDetailsRequest != null)
+		if($this->GetPalDetailsRequest != NULL)
 		{
 			$str .= '<urn:GetPalDetailsRequest>';
 			$str .= $this->GetPalDetailsRequest->toXMLString();
@@ -23057,28 +23461,28 @@ class GetPalDetailsResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Pal;
 
 	/**
 	 * 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $Locale;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'pal') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'pal') {
 					$this->Pal = $arry["text"];
 				}
-				if($arry != null && isset($arry['text']) && $arry['name'] == 'locale') {
+				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'locale') {
 					$this->Locale = $arry["text"];
 				}
 			}
@@ -23095,8 +23499,8 @@ class ReverseTransactionReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var ReverseTransactionRequestType
+	 * @access public
+	 * @var ReverseTransactionRequestType
 	 */ 
 	public $ReverseTransactionRequest;
 
@@ -23105,7 +23509,7 @@ class ReverseTransactionReq  {
 	{
 		$str = '';
 		$str .= '<urn:ReverseTransactionReq>';
-		if($this->ReverseTransactionRequest != null)
+		if($this->ReverseTransactionRequest != NULL)
 		{
 			$str .= '<urn:ReverseTransactionRequest>';
 			$str .= $this->ReverseTransactionRequest->toXMLString();
@@ -23127,15 +23531,15 @@ class ReverseTransactionRequestType  extends AbstractRequestType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var ReverseTransactionRequestDetailsType
+	 * @access public
+	 * @var ReverseTransactionRequestDetailsType
 	 */ 
 	public $ReverseTransactionRequestDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($ReverseTransactionRequestDetails = null) {
+	public function __construct($ReverseTransactionRequestDetails = NULL) {
 		$this->ReverseTransactionRequestDetails = $ReverseTransactionRequestDetails;
 	}
 
@@ -23144,7 +23548,7 @@ class ReverseTransactionRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ReverseTransactionRequestDetails != null)
+		if($this->ReverseTransactionRequestDetails != NULL)
 		{
 			$str .= '<ebl:ReverseTransactionRequestDetails>';
 			$str .= $this->ReverseTransactionRequestDetails->toXMLString();
@@ -23165,19 +23569,19 @@ class ReverseTransactionResponseType  extends AbstractResponseType  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var ReverseTransactionResponseDetailsType
+	 * @access public
+	 * @var ReverseTransactionResponseDetailsType
 	 */ 
 	public $ReverseTransactionResponseDetails;
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			
-            								if ( is_array($arry["children"])&& ($arry["children"])!=null) 	{
+            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
                                     if( $arry["name"]=='reversetransactionresponsedetails'){
                                     $this->ReverseTransactionResponseDetails = new ReverseTransactionResponseDetailsType(); 
                                     $this->ReverseTransactionResponseDetails->init($arry["children"]);
@@ -23198,8 +23602,8 @@ class ExternalRememberMeOptOutReq  {
 
 	/**
 	 * 
-	 *@access public
-	 *@var ExternalRememberMeOptOutRequestType
+	 * @access public
+	 * @var ExternalRememberMeOptOutRequestType
 	 */ 
 	public $ExternalRememberMeOptOutRequest;
 
@@ -23208,7 +23612,7 @@ class ExternalRememberMeOptOutReq  {
 	{
 		$str = '';
 		$str .= '<urn:ExternalRememberMeOptOutReq>';
-		if($this->ExternalRememberMeOptOutRequest != null)
+		if($this->ExternalRememberMeOptOutRequest != NULL)
 		{
 			$str .= '<urn:ExternalRememberMeOptOutRequest>';
 			$str .= $this->ExternalRememberMeOptOutRequest->toXMLString();
@@ -23238,23 +23642,23 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType  {
 	 * (encrypted) string that identifies the buyer's remembered
 	 * login with a merchant and has meaning only to the merchant.
 	 * Required 
-	 *@access public
-	 *@var string
+	 * @access public
+	 * @var string
 	 */ 
 	public $ExternalRememberMeID;
 
 	/**
 	 * E-mail address or secure merchant account ID of merchant to
 	 * associate with external remember-me. 
-	 *@access public
-	 *@var ExternalRememberMeOwnerDetailsType
+	 * @access public
+	 * @var ExternalRememberMeOwnerDetailsType
 	 */ 
 	public $ExternalRememberMeOwnerDetails;
 
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($ExternalRememberMeID = null) {
+	public function __construct($ExternalRememberMeID = NULL) {
 		$this->ExternalRememberMeID = $ExternalRememberMeID;
 	}
 
@@ -23263,11 +23667,11 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType  {
 	{
 		$str = '';
 		$str .= parent::toXMLString();
-		if($this->ExternalRememberMeID != null)
+		if($this->ExternalRememberMeID != NULL)
 		{
 			$str .= '<urn:ExternalRememberMeID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalRememberMeID) . '</urn:ExternalRememberMeID>';
 		}
-		if($this->ExternalRememberMeOwnerDetails != null)
+		if($this->ExternalRememberMeOwnerDetails != NULL)
 		{
 			$str .= '<urn:ExternalRememberMeOwnerDetails>';
 			$str .= $this->ExternalRememberMeOwnerDetails->toXMLString();
@@ -23288,8 +23692,8 @@ class ExternalRememberMeOptOutResponseType  extends AbstractResponseType  {
 
 
 
-	public function init($arr = null) {
-		if ($arr != null) {
+	public function init($arr = NULL) {
+		if ($arr != NULL) {
 			parent::init($arr);
 			foreach($arr as $arry) {
 			}
