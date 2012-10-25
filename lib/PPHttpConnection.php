@@ -46,8 +46,8 @@ class PPHttpConnection
 		CURLOPT_USERAGENT      => 'PayPal-PHP-SDK',
 		CURLOPT_POST           => 1,
 		CURLOPT_HTTPHEADER => array(),
-	    CURLOPT_SSL_VERIFYHOST => 1,
-	    CURLOPT_SSL_VERIFYPEER => 2
+	    CURLOPT_SSL_VERIFYHOST => 2,
+	    CURLOPT_SSL_VERIFYPEER => 1
 	);
 
 	public function __construct()
