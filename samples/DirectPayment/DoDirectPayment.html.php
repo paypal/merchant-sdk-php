@@ -80,7 +80,7 @@ session_unset();
 					<div class="param_value">
 						<select name="paymentType">
 							<option value="Sale" selected="selected">Sale</option>
-							<option value="Authorisation">Authorisation</option>
+							<option value="Authorization">Authorization</option>
 						</select>
 					</div>
 				</div>
