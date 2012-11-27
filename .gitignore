@@ -1,0 +1,12 @@
+
+*.log
+
+# IDE files
+
+.buildpath
+.project
+.settings
+
+# Others
+.DS_Store
+
