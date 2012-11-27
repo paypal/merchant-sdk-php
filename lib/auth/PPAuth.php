@@ -1,13 +1,11 @@
 <?php
 //PayPal specific modification starts
 //Method to be called for generating signature
-require_once("AuthUtil.php");
-class AuthSignature
-{
+require_once 'AuthUtil.php';
 
-	public function genSign($key,$secret,$token,$tokenSecret,$httpMethod,$endpoint)
-	{
+class AuthSignature {
 
+	public function genSign($key, $secret, $token, $tokenSecret, $httpMethod, $endpoint) {
 
 		$authServer = new OAuthServer(new MockOAuthDataStore());
 		$hmac_method = new OAuthSignatureMethod_HMAC_SHA1();
@@ -19,17 +17,22 @@ class AuthSignature
 		$authToken = new OAuthToken($token, $tokenSecret);
 
 		//$params is the query param array which is required only in the httpMethod is "GET"
-
 		$params = array();
-		//set the Query parameters to $params if httpMethod is "GET"
+		//TODO: set the Query parameters to $params if httpMethod is "GET"
 
 		$acc_req = OAuthRequest::from_consumer_and_token($authConsumer, $authToken, $httpMethod, $endpoint, $params);
-
 		$acc_req->sign_request($sig_method,$authConsumer, $authToken);
-		$response= OAuthutil::parseQueryString($acc_req);
-		return $response;
-
+		return  OAuthutil::parseQueryString($acc_req);
 	}
+	
+	public static function generateFullAuthString($key, $secret, $token, $tokenSecret, $httpMethod, $endpoint) {
+		$authSignature = new AuthSignature();
+		$response = $authSignature->genSign($key, $secret, $token, $tokenSecret, $httpMethod, $endpoint);
+		return "token=" . $token . 
+			   ",signature=" . $response['oauth_signature'] .
+		       ",timestamp=" . $response['oauth_timestamp'];		
+	}
+	
 }
 //PayPal specific modification ends
 /* Generic exception class

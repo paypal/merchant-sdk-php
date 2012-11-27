@@ -1,8 +1,6 @@
 <?php 
-require_once('PPBaseService.php');
-require_once('PayPalAPIInterfaceService.php');
-require_once('PPUtils.php');
-
+require_once 'PPBaseService.php';
+require_once 'PayPalAPIInterfaceService.php';
 
 /**
  * AUTO GENERATED code for PayPalAPIInterfaceService
@@ -15,8 +13,14 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	// Service Name
 	private static $SERVICE_NAME = "PayPalAPIInterfaceService";
 
+    // SDK Name
+	private static $SDK_NAME = "sdkname";
+	
+	// SDK Version
+	private static $SDK_VERSION = "sdkversion";
+
 	public function __construct() {
-		parent::__construct('PayPalAPIInterfaceService');
+		parent::__construct(self::$SERVICE_NAME, 'SOAP', array('PPMerchantServiceHandler'));
 	}
 
 	private function setStandardParams(AbstractRequestType $request) {
@@ -28,13 +32,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: RefundTransaction
 	 * @param RefundTransactionReq $refundTransactionReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return RefundTransactionResponseType
 	 * @throws APIException
 	 */
-	public function RefundTransaction($refundTransactionReq, $apiUsername = NULL) {
+	public function RefundTransaction($refundTransactionReq, $apiCredential = NULL) {
 		$this->setStandardParams($refundTransactionReq->RefundTransactionRequest);
 		$ret = new RefundTransactionResponseType();
-		$resp = $this->call("RefundTransaction", $refundTransactionReq, $apiUsername);
+		$resp = $this->call("RefundTransaction", $refundTransactionReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -43,13 +50,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: InitiateRecoup
 	 * @param InitiateRecoupReq $initiateRecoupReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return InitiateRecoupResponseType
 	 * @throws APIException
 	 */
-	public function InitiateRecoup($initiateRecoupReq, $apiUsername = NULL) {
+	public function InitiateRecoup($initiateRecoupReq, $apiCredential = NULL) {
 		$this->setStandardParams($initiateRecoupReq->InitiateRecoupRequest);
 		$ret = new InitiateRecoupResponseType();
-		$resp = $this->call("InitiateRecoup", $initiateRecoupReq, $apiUsername);
+		$resp = $this->call("InitiateRecoup", $initiateRecoupReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -58,13 +68,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: CompleteRecoup
 	 * @param CompleteRecoupReq $completeRecoupReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return CompleteRecoupResponseType
 	 * @throws APIException
 	 */
-	public function CompleteRecoup($completeRecoupReq, $apiUsername = NULL) {
+	public function CompleteRecoup($completeRecoupReq, $apiCredential = NULL) {
 		$this->setStandardParams($completeRecoupReq->CompleteRecoupRequest);
 		$ret = new CompleteRecoupResponseType();
-		$resp = $this->call("CompleteRecoup", $completeRecoupReq, $apiUsername);
+		$resp = $this->call("CompleteRecoup", $completeRecoupReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -73,13 +86,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: CancelRecoup
 	 * @param CancelRecoupReq $cancelRecoupReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return CancelRecoupResponseType
 	 * @throws APIException
 	 */
-	public function CancelRecoup($cancelRecoupReq, $apiUsername = NULL) {
+	public function CancelRecoup($cancelRecoupReq, $apiCredential = NULL) {
 		$this->setStandardParams($cancelRecoupReq->CancelRecoupRequest);
 		$ret = new CancelRecoupResponseType();
-		$resp = $this->call("CancelRecoup", $cancelRecoupReq, $apiUsername);
+		$resp = $this->call("CancelRecoup", $cancelRecoupReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -88,13 +104,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: GetTransactionDetails
 	 * @param GetTransactionDetailsReq $getTransactionDetailsReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return GetTransactionDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetTransactionDetails($getTransactionDetailsReq, $apiUsername = NULL) {
+	public function GetTransactionDetails($getTransactionDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getTransactionDetailsReq->GetTransactionDetailsRequest);
 		$ret = new GetTransactionDetailsResponseType();
-		$resp = $this->call("GetTransactionDetails", $getTransactionDetailsReq, $apiUsername);
+		$resp = $this->call("GetTransactionDetails", $getTransactionDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -103,13 +122,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: BillUser
 	 * @param BillUserReq $billUserReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return BillUserResponseType
 	 * @throws APIException
 	 */
-	public function BillUser($billUserReq, $apiUsername = NULL) {
+	public function BillUser($billUserReq, $apiCredential = NULL) {
 		$this->setStandardParams($billUserReq->BillUserRequest);
 		$ret = new BillUserResponseType();
-		$resp = $this->call("BillUser", $billUserReq, $apiUsername);
+		$resp = $this->call("BillUser", $billUserReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -118,13 +140,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: TransactionSearch
 	 * @param TransactionSearchReq $transactionSearchReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return TransactionSearchResponseType
 	 * @throws APIException
 	 */
-	public function TransactionSearch($transactionSearchReq, $apiUsername = NULL) {
+	public function TransactionSearch($transactionSearchReq, $apiCredential = NULL) {
 		$this->setStandardParams($transactionSearchReq->TransactionSearchRequest);
 		$ret = new TransactionSearchResponseType();
-		$resp = $this->call("TransactionSearch", $transactionSearchReq, $apiUsername);
+		$resp = $this->call("TransactionSearch", $transactionSearchReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -133,13 +158,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: MassPay
 	 * @param MassPayReq $massPayReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return MassPayResponseType
 	 * @throws APIException
 	 */
-	public function MassPay($massPayReq, $apiUsername = NULL) {
+	public function MassPay($massPayReq, $apiCredential = NULL) {
 		$this->setStandardParams($massPayReq->MassPayRequest);
 		$ret = new MassPayResponseType();
-		$resp = $this->call("MassPay", $massPayReq, $apiUsername);
+		$resp = $this->call("MassPay", $massPayReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -148,13 +176,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: BillAgreementUpdate
 	 * @param BillAgreementUpdateReq $billAgreementUpdateReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return BAUpdateResponseType
 	 * @throws APIException
 	 */
-	public function BillAgreementUpdate($billAgreementUpdateReq, $apiUsername = NULL) {
+	public function BillAgreementUpdate($billAgreementUpdateReq, $apiCredential = NULL) {
 		$this->setStandardParams($billAgreementUpdateReq->BAUpdateRequest);
 		$ret = new BAUpdateResponseType();
-		$resp = $this->call("BillAgreementUpdate", $billAgreementUpdateReq, $apiUsername);
+		$resp = $this->call("BillAgreementUpdate", $billAgreementUpdateReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -163,13 +194,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: AddressVerify
 	 * @param AddressVerifyReq $addressVerifyReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return AddressVerifyResponseType
 	 * @throws APIException
 	 */
-	public function AddressVerify($addressVerifyReq, $apiUsername = NULL) {
+	public function AddressVerify($addressVerifyReq, $apiCredential = NULL) {
 		$this->setStandardParams($addressVerifyReq->AddressVerifyRequest);
 		$ret = new AddressVerifyResponseType();
-		$resp = $this->call("AddressVerify", $addressVerifyReq, $apiUsername);
+		$resp = $this->call("AddressVerify", $addressVerifyReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -178,13 +212,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: EnterBoarding
 	 * @param EnterBoardingReq $enterBoardingReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return EnterBoardingResponseType
 	 * @throws APIException
 	 */
-	public function EnterBoarding($enterBoardingReq, $apiUsername = NULL) {
+	public function EnterBoarding($enterBoardingReq, $apiCredential = NULL) {
 		$this->setStandardParams($enterBoardingReq->EnterBoardingRequest);
 		$ret = new EnterBoardingResponseType();
-		$resp = $this->call("EnterBoarding", $enterBoardingReq, $apiUsername);
+		$resp = $this->call("EnterBoarding", $enterBoardingReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -193,13 +230,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: GetBoardingDetails
 	 * @param GetBoardingDetailsReq $getBoardingDetailsReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return GetBoardingDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetBoardingDetails($getBoardingDetailsReq, $apiUsername = NULL) {
+	public function GetBoardingDetails($getBoardingDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getBoardingDetailsReq->GetBoardingDetailsRequest);
 		$ret = new GetBoardingDetailsResponseType();
-		$resp = $this->call("GetBoardingDetails", $getBoardingDetailsReq, $apiUsername);
+		$resp = $this->call("GetBoardingDetails", $getBoardingDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -208,13 +248,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: CreateMobilePayment
 	 * @param CreateMobilePaymentReq $createMobilePaymentReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return CreateMobilePaymentResponseType
 	 * @throws APIException
 	 */
-	public function CreateMobilePayment($createMobilePaymentReq, $apiUsername = NULL) {
+	public function CreateMobilePayment($createMobilePaymentReq, $apiCredential = NULL) {
 		$this->setStandardParams($createMobilePaymentReq->CreateMobilePaymentRequest);
 		$ret = new CreateMobilePaymentResponseType();
-		$resp = $this->call("CreateMobilePayment", $createMobilePaymentReq, $apiUsername);
+		$resp = $this->call("CreateMobilePayment", $createMobilePaymentReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -223,13 +266,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: GetMobileStatus
 	 * @param GetMobileStatusReq $getMobileStatusReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return GetMobileStatusResponseType
 	 * @throws APIException
 	 */
-	public function GetMobileStatus($getMobileStatusReq, $apiUsername = NULL) {
+	public function GetMobileStatus($getMobileStatusReq, $apiCredential = NULL) {
 		$this->setStandardParams($getMobileStatusReq->GetMobileStatusRequest);
 		$ret = new GetMobileStatusResponseType();
-		$resp = $this->call("GetMobileStatus", $getMobileStatusReq, $apiUsername);
+		$resp = $this->call("GetMobileStatus", $getMobileStatusReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -238,13 +284,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: SetMobileCheckout
 	 * @param SetMobileCheckoutReq $setMobileCheckoutReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return SetMobileCheckoutResponseType
 	 * @throws APIException
 	 */
-	public function SetMobileCheckout($setMobileCheckoutReq, $apiUsername = NULL) {
+	public function SetMobileCheckout($setMobileCheckoutReq, $apiCredential = NULL) {
 		$this->setStandardParams($setMobileCheckoutReq->SetMobileCheckoutRequest);
 		$ret = new SetMobileCheckoutResponseType();
-		$resp = $this->call("SetMobileCheckout", $setMobileCheckoutReq, $apiUsername);
+		$resp = $this->call("SetMobileCheckout", $setMobileCheckoutReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -253,13 +302,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: DoMobileCheckoutPayment
 	 * @param DoMobileCheckoutPaymentReq $doMobileCheckoutPaymentReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return DoMobileCheckoutPaymentResponseType
 	 * @throws APIException
 	 */
-	public function DoMobileCheckoutPayment($doMobileCheckoutPaymentReq, $apiUsername = NULL) {
+	public function DoMobileCheckoutPayment($doMobileCheckoutPaymentReq, $apiCredential = NULL) {
 		$this->setStandardParams($doMobileCheckoutPaymentReq->DoMobileCheckoutPaymentRequest);
 		$ret = new DoMobileCheckoutPaymentResponseType();
-		$resp = $this->call("DoMobileCheckoutPayment", $doMobileCheckoutPaymentReq, $apiUsername);
+		$resp = $this->call("DoMobileCheckoutPayment", $doMobileCheckoutPaymentReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -268,13 +320,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: GetBalance
 	 * @param GetBalanceReq $getBalanceReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return GetBalanceResponseType
 	 * @throws APIException
 	 */
-	public function GetBalance($getBalanceReq, $apiUsername = NULL) {
+	public function GetBalance($getBalanceReq, $apiCredential = NULL) {
 		$this->setStandardParams($getBalanceReq->GetBalanceRequest);
 		$ret = new GetBalanceResponseType();
-		$resp = $this->call("GetBalance", $getBalanceReq, $apiUsername);
+		$resp = $this->call("GetBalance", $getBalanceReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -283,13 +338,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: GetPalDetails
 	 * @param GetPalDetailsReq $getPalDetailsReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return GetPalDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetPalDetails($getPalDetailsReq, $apiUsername = NULL) {
+	public function GetPalDetails($getPalDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getPalDetailsReq->GetPalDetailsRequest);
 		$ret = new GetPalDetailsResponseType();
-		$resp = $this->call("GetPalDetails", $getPalDetailsReq, $apiUsername);
+		$resp = $this->call("GetPalDetails", $getPalDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -298,13 +356,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: DoExpressCheckoutPayment
 	 * @param DoExpressCheckoutPaymentReq $doExpressCheckoutPaymentReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return DoExpressCheckoutPaymentResponseType
 	 * @throws APIException
 	 */
-	public function DoExpressCheckoutPayment($doExpressCheckoutPaymentReq, $apiUsername = NULL) {
+	public function DoExpressCheckoutPayment($doExpressCheckoutPaymentReq, $apiCredential = NULL) {
 		$this->setStandardParams($doExpressCheckoutPaymentReq->DoExpressCheckoutPaymentRequest);
 		$ret = new DoExpressCheckoutPaymentResponseType();
-		$resp = $this->call("DoExpressCheckoutPayment", $doExpressCheckoutPaymentReq, $apiUsername);
+		$resp = $this->call("DoExpressCheckoutPayment", $doExpressCheckoutPaymentReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -313,13 +374,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: DoUATPExpressCheckoutPayment
 	 * @param DoUATPExpressCheckoutPaymentReq $doUATPExpressCheckoutPaymentReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return DoUATPExpressCheckoutPaymentResponseType
 	 * @throws APIException
 	 */
-	public function DoUATPExpressCheckoutPayment($doUATPExpressCheckoutPaymentReq, $apiUsername = NULL) {
+	public function DoUATPExpressCheckoutPayment($doUATPExpressCheckoutPaymentReq, $apiCredential = NULL) {
 		$this->setStandardParams($doUATPExpressCheckoutPaymentReq->DoUATPExpressCheckoutPaymentRequest);
 		$ret = new DoUATPExpressCheckoutPaymentResponseType();
-		$resp = $this->call("DoUATPExpressCheckoutPayment", $doUATPExpressCheckoutPaymentReq, $apiUsername);
+		$resp = $this->call("DoUATPExpressCheckoutPayment", $doUATPExpressCheckoutPaymentReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -328,13 +392,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: SetAuthFlowParam
 	 * @param SetAuthFlowParamReq $setAuthFlowParamReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return SetAuthFlowParamResponseType
 	 * @throws APIException
 	 */
-	public function SetAuthFlowParam($setAuthFlowParamReq, $apiUsername = NULL) {
+	public function SetAuthFlowParam($setAuthFlowParamReq, $apiCredential = NULL) {
 		$this->setStandardParams($setAuthFlowParamReq->SetAuthFlowParamRequest);
 		$ret = new SetAuthFlowParamResponseType();
-		$resp = $this->call("SetAuthFlowParam", $setAuthFlowParamReq, $apiUsername);
+		$resp = $this->call("SetAuthFlowParam", $setAuthFlowParamReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -343,13 +410,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: GetAuthDetails
 	 * @param GetAuthDetailsReq $getAuthDetailsReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return GetAuthDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetAuthDetails($getAuthDetailsReq, $apiUsername = NULL) {
+	public function GetAuthDetails($getAuthDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getAuthDetailsReq->GetAuthDetailsRequest);
 		$ret = new GetAuthDetailsResponseType();
-		$resp = $this->call("GetAuthDetails", $getAuthDetailsReq, $apiUsername);
+		$resp = $this->call("GetAuthDetails", $getAuthDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -358,13 +428,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: SetAccessPermissions
 	 * @param SetAccessPermissionsReq $setAccessPermissionsReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return SetAccessPermissionsResponseType
 	 * @throws APIException
 	 */
-	public function SetAccessPermissions($setAccessPermissionsReq, $apiUsername = NULL) {
+	public function SetAccessPermissions($setAccessPermissionsReq, $apiCredential = NULL) {
 		$this->setStandardParams($setAccessPermissionsReq->SetAccessPermissionsRequest);
 		$ret = new SetAccessPermissionsResponseType();
-		$resp = $this->call("SetAccessPermissions", $setAccessPermissionsReq, $apiUsername);
+		$resp = $this->call("SetAccessPermissions", $setAccessPermissionsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -373,13 +446,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: UpdateAccessPermissions
 	 * @param UpdateAccessPermissionsReq $updateAccessPermissionsReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return UpdateAccessPermissionsResponseType
 	 * @throws APIException
 	 */
-	public function UpdateAccessPermissions($updateAccessPermissionsReq, $apiUsername = NULL) {
+	public function UpdateAccessPermissions($updateAccessPermissionsReq, $apiCredential = NULL) {
 		$this->setStandardParams($updateAccessPermissionsReq->UpdateAccessPermissionsRequest);
 		$ret = new UpdateAccessPermissionsResponseType();
-		$resp = $this->call("UpdateAccessPermissions", $updateAccessPermissionsReq, $apiUsername);
+		$resp = $this->call("UpdateAccessPermissions", $updateAccessPermissionsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -388,13 +464,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: GetAccessPermissionDetails
 	 * @param GetAccessPermissionDetailsReq $getAccessPermissionDetailsReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return GetAccessPermissionDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetAccessPermissionDetails($getAccessPermissionDetailsReq, $apiUsername = NULL) {
+	public function GetAccessPermissionDetails($getAccessPermissionDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getAccessPermissionDetailsReq->GetAccessPermissionDetailsRequest);
 		$ret = new GetAccessPermissionDetailsResponseType();
-		$resp = $this->call("GetAccessPermissionDetails", $getAccessPermissionDetailsReq, $apiUsername);
+		$resp = $this->call("GetAccessPermissionDetails", $getAccessPermissionDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -403,13 +482,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: GetIncentiveEvaluation
 	 * @param GetIncentiveEvaluationReq $getIncentiveEvaluationReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return GetIncentiveEvaluationResponseType
 	 * @throws APIException
 	 */
-	public function GetIncentiveEvaluation($getIncentiveEvaluationReq, $apiUsername = NULL) {
+	public function GetIncentiveEvaluation($getIncentiveEvaluationReq, $apiCredential = NULL) {
 		$this->setStandardParams($getIncentiveEvaluationReq->GetIncentiveEvaluationRequest);
 		$ret = new GetIncentiveEvaluationResponseType();
-		$resp = $this->call("GetIncentiveEvaluation", $getIncentiveEvaluationReq, $apiUsername);
+		$resp = $this->call("GetIncentiveEvaluation", $getIncentiveEvaluationReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -418,13 +500,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: SetExpressCheckout
 	 * @param SetExpressCheckoutReq $setExpressCheckoutReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return SetExpressCheckoutResponseType
 	 * @throws APIException
 	 */
-	public function SetExpressCheckout($setExpressCheckoutReq, $apiUsername = NULL) {
+	public function SetExpressCheckout($setExpressCheckoutReq, $apiCredential = NULL) {
 		$this->setStandardParams($setExpressCheckoutReq->SetExpressCheckoutRequest);
 		$ret = new SetExpressCheckoutResponseType();
-		$resp = $this->call("SetExpressCheckout", $setExpressCheckoutReq, $apiUsername);
+		$resp = $this->call("SetExpressCheckout", $setExpressCheckoutReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -433,13 +518,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: ExecuteCheckoutOperations
 	 * @param ExecuteCheckoutOperationsReq $executeCheckoutOperationsReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return ExecuteCheckoutOperationsResponseType
 	 * @throws APIException
 	 */
-	public function ExecuteCheckoutOperations($executeCheckoutOperationsReq, $apiUsername = NULL) {
+	public function ExecuteCheckoutOperations($executeCheckoutOperationsReq, $apiCredential = NULL) {
 		$this->setStandardParams($executeCheckoutOperationsReq->ExecuteCheckoutOperationsRequest);
 		$ret = new ExecuteCheckoutOperationsResponseType();
-		$resp = $this->call("ExecuteCheckoutOperations", $executeCheckoutOperationsReq, $apiUsername);
+		$resp = $this->call("ExecuteCheckoutOperations", $executeCheckoutOperationsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -448,13 +536,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: GetExpressCheckoutDetails
 	 * @param GetExpressCheckoutDetailsReq $getExpressCheckoutDetailsReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return GetExpressCheckoutDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetExpressCheckoutDetails($getExpressCheckoutDetailsReq, $apiUsername = NULL) {
+	public function GetExpressCheckoutDetails($getExpressCheckoutDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getExpressCheckoutDetailsReq->GetExpressCheckoutDetailsRequest);
 		$ret = new GetExpressCheckoutDetailsResponseType();
-		$resp = $this->call("GetExpressCheckoutDetails", $getExpressCheckoutDetailsReq, $apiUsername);
+		$resp = $this->call("GetExpressCheckoutDetails", $getExpressCheckoutDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -463,13 +554,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: DoDirectPayment
 	 * @param DoDirectPaymentReq $doDirectPaymentReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return DoDirectPaymentResponseType
 	 * @throws APIException
 	 */
-	public function DoDirectPayment($doDirectPaymentReq, $apiUsername = NULL) {
+	public function DoDirectPayment($doDirectPaymentReq, $apiCredential = NULL) {
 		$this->setStandardParams($doDirectPaymentReq->DoDirectPaymentRequest);
 		$ret = new DoDirectPaymentResponseType();
-		$resp = $this->call("DoDirectPayment", $doDirectPaymentReq, $apiUsername);
+		$resp = $this->call("DoDirectPayment", $doDirectPaymentReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -478,13 +572,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: ManagePendingTransactionStatus
 	 * @param ManagePendingTransactionStatusReq $managePendingTransactionStatusReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return ManagePendingTransactionStatusResponseType
 	 * @throws APIException
 	 */
-	public function ManagePendingTransactionStatus($managePendingTransactionStatusReq, $apiUsername = NULL) {
+	public function ManagePendingTransactionStatus($managePendingTransactionStatusReq, $apiCredential = NULL) {
 		$this->setStandardParams($managePendingTransactionStatusReq->ManagePendingTransactionStatusRequest);
 		$ret = new ManagePendingTransactionStatusResponseType();
-		$resp = $this->call("ManagePendingTransactionStatus", $managePendingTransactionStatusReq, $apiUsername);
+		$resp = $this->call("ManagePendingTransactionStatus", $managePendingTransactionStatusReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -493,13 +590,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: DoCancel
 	 * @param DoCancelReq $doCancelReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return DoCancelResponseType
 	 * @throws APIException
 	 */
-	public function DoCancel($doCancelReq, $apiUsername = NULL) {
+	public function DoCancel($doCancelReq, $apiCredential = NULL) {
 		$this->setStandardParams($doCancelReq->DoCancelRequest);
 		$ret = new DoCancelResponseType();
-		$resp = $this->call("DoCancel", $doCancelReq, $apiUsername);
+		$resp = $this->call("DoCancel", $doCancelReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -508,13 +608,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: DoCapture
 	 * @param DoCaptureReq $doCaptureReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return DoCaptureResponseType
 	 * @throws APIException
 	 */
-	public function DoCapture($doCaptureReq, $apiUsername = NULL) {
+	public function DoCapture($doCaptureReq, $apiCredential = NULL) {
 		$this->setStandardParams($doCaptureReq->DoCaptureRequest);
 		$ret = new DoCaptureResponseType();
-		$resp = $this->call("DoCapture", $doCaptureReq, $apiUsername);
+		$resp = $this->call("DoCapture", $doCaptureReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -523,13 +626,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: DoReauthorization
 	 * @param DoReauthorizationReq $doReauthorizationReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return DoReauthorizationResponseType
 	 * @throws APIException
 	 */
-	public function DoReauthorization($doReauthorizationReq, $apiUsername = NULL) {
+	public function DoReauthorization($doReauthorizationReq, $apiCredential = NULL) {
 		$this->setStandardParams($doReauthorizationReq->DoReauthorizationRequest);
 		$ret = new DoReauthorizationResponseType();
-		$resp = $this->call("DoReauthorization", $doReauthorizationReq, $apiUsername);
+		$resp = $this->call("DoReauthorization", $doReauthorizationReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -538,13 +644,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: DoVoid
 	 * @param DoVoidReq $doVoidReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return DoVoidResponseType
 	 * @throws APIException
 	 */
-	public function DoVoid($doVoidReq, $apiUsername = NULL) {
+	public function DoVoid($doVoidReq, $apiCredential = NULL) {
 		$this->setStandardParams($doVoidReq->DoVoidRequest);
 		$ret = new DoVoidResponseType();
-		$resp = $this->call("DoVoid", $doVoidReq, $apiUsername);
+		$resp = $this->call("DoVoid", $doVoidReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -553,13 +662,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: DoAuthorization
 	 * @param DoAuthorizationReq $doAuthorizationReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return DoAuthorizationResponseType
 	 * @throws APIException
 	 */
-	public function DoAuthorization($doAuthorizationReq, $apiUsername = NULL) {
+	public function DoAuthorization($doAuthorizationReq, $apiCredential = NULL) {
 		$this->setStandardParams($doAuthorizationReq->DoAuthorizationRequest);
 		$ret = new DoAuthorizationResponseType();
-		$resp = $this->call("DoAuthorization", $doAuthorizationReq, $apiUsername);
+		$resp = $this->call("DoAuthorization", $doAuthorizationReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -568,13 +680,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: SetCustomerBillingAgreement
 	 * @param SetCustomerBillingAgreementReq $setCustomerBillingAgreementReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return SetCustomerBillingAgreementResponseType
 	 * @throws APIException
 	 */
-	public function SetCustomerBillingAgreement($setCustomerBillingAgreementReq, $apiUsername = NULL) {
+	public function SetCustomerBillingAgreement($setCustomerBillingAgreementReq, $apiCredential = NULL) {
 		$this->setStandardParams($setCustomerBillingAgreementReq->SetCustomerBillingAgreementRequest);
 		$ret = new SetCustomerBillingAgreementResponseType();
-		$resp = $this->call("SetCustomerBillingAgreement", $setCustomerBillingAgreementReq, $apiUsername);
+		$resp = $this->call("SetCustomerBillingAgreement", $setCustomerBillingAgreementReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -583,13 +698,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: GetBillingAgreementCustomerDetails
 	 * @param GetBillingAgreementCustomerDetailsReq $getBillingAgreementCustomerDetailsReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return GetBillingAgreementCustomerDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetBillingAgreementCustomerDetails($getBillingAgreementCustomerDetailsReq, $apiUsername = NULL) {
+	public function GetBillingAgreementCustomerDetails($getBillingAgreementCustomerDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getBillingAgreementCustomerDetailsReq->GetBillingAgreementCustomerDetailsRequest);
 		$ret = new GetBillingAgreementCustomerDetailsResponseType();
-		$resp = $this->call("GetBillingAgreementCustomerDetails", $getBillingAgreementCustomerDetailsReq, $apiUsername);
+		$resp = $this->call("GetBillingAgreementCustomerDetails", $getBillingAgreementCustomerDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -598,13 +716,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: CreateBillingAgreement
 	 * @param CreateBillingAgreementReq $createBillingAgreementReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return CreateBillingAgreementResponseType
 	 * @throws APIException
 	 */
-	public function CreateBillingAgreement($createBillingAgreementReq, $apiUsername = NULL) {
+	public function CreateBillingAgreement($createBillingAgreementReq, $apiCredential = NULL) {
 		$this->setStandardParams($createBillingAgreementReq->CreateBillingAgreementRequest);
 		$ret = new CreateBillingAgreementResponseType();
-		$resp = $this->call("CreateBillingAgreement", $createBillingAgreementReq, $apiUsername);
+		$resp = $this->call("CreateBillingAgreement", $createBillingAgreementReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -613,13 +734,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: DoReferenceTransaction
 	 * @param DoReferenceTransactionReq $doReferenceTransactionReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return DoReferenceTransactionResponseType
 	 * @throws APIException
 	 */
-	public function DoReferenceTransaction($doReferenceTransactionReq, $apiUsername = NULL) {
+	public function DoReferenceTransaction($doReferenceTransactionReq, $apiCredential = NULL) {
 		$this->setStandardParams($doReferenceTransactionReq->DoReferenceTransactionRequest);
 		$ret = new DoReferenceTransactionResponseType();
-		$resp = $this->call("DoReferenceTransaction", $doReferenceTransactionReq, $apiUsername);
+		$resp = $this->call("DoReferenceTransaction", $doReferenceTransactionReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -628,13 +752,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: DoNonReferencedCredit
 	 * @param DoNonReferencedCreditReq $doNonReferencedCreditReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return DoNonReferencedCreditResponseType
 	 * @throws APIException
 	 */
-	public function DoNonReferencedCredit($doNonReferencedCreditReq, $apiUsername = NULL) {
+	public function DoNonReferencedCredit($doNonReferencedCreditReq, $apiCredential = NULL) {
 		$this->setStandardParams($doNonReferencedCreditReq->DoNonReferencedCreditRequest);
 		$ret = new DoNonReferencedCreditResponseType();
-		$resp = $this->call("DoNonReferencedCredit", $doNonReferencedCreditReq, $apiUsername);
+		$resp = $this->call("DoNonReferencedCredit", $doNonReferencedCreditReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -643,13 +770,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: DoUATPAuthorization
 	 * @param DoUATPAuthorizationReq $doUATPAuthorizationReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return DoUATPAuthorizationResponseType
 	 * @throws APIException
 	 */
-	public function DoUATPAuthorization($doUATPAuthorizationReq, $apiUsername = NULL) {
+	public function DoUATPAuthorization($doUATPAuthorizationReq, $apiCredential = NULL) {
 		$this->setStandardParams($doUATPAuthorizationReq->DoUATPAuthorizationRequest);
 		$ret = new DoUATPAuthorizationResponseType();
-		$resp = $this->call("DoUATPAuthorization", $doUATPAuthorizationReq, $apiUsername);
+		$resp = $this->call("DoUATPAuthorization", $doUATPAuthorizationReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -658,13 +788,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: CreateRecurringPaymentsProfile
 	 * @param CreateRecurringPaymentsProfileReq $createRecurringPaymentsProfileReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return CreateRecurringPaymentsProfileResponseType
 	 * @throws APIException
 	 */
-	public function CreateRecurringPaymentsProfile($createRecurringPaymentsProfileReq, $apiUsername = NULL) {
+	public function CreateRecurringPaymentsProfile($createRecurringPaymentsProfileReq, $apiCredential = NULL) {
 		$this->setStandardParams($createRecurringPaymentsProfileReq->CreateRecurringPaymentsProfileRequest);
 		$ret = new CreateRecurringPaymentsProfileResponseType();
-		$resp = $this->call("CreateRecurringPaymentsProfile", $createRecurringPaymentsProfileReq, $apiUsername);
+		$resp = $this->call("CreateRecurringPaymentsProfile", $createRecurringPaymentsProfileReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -673,13 +806,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: GetRecurringPaymentsProfileDetails
 	 * @param GetRecurringPaymentsProfileDetailsReq $getRecurringPaymentsProfileDetailsReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return GetRecurringPaymentsProfileDetailsResponseType
 	 * @throws APIException
 	 */
-	public function GetRecurringPaymentsProfileDetails($getRecurringPaymentsProfileDetailsReq, $apiUsername = NULL) {
+	public function GetRecurringPaymentsProfileDetails($getRecurringPaymentsProfileDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getRecurringPaymentsProfileDetailsReq->GetRecurringPaymentsProfileDetailsRequest);
 		$ret = new GetRecurringPaymentsProfileDetailsResponseType();
-		$resp = $this->call("GetRecurringPaymentsProfileDetails", $getRecurringPaymentsProfileDetailsReq, $apiUsername);
+		$resp = $this->call("GetRecurringPaymentsProfileDetails", $getRecurringPaymentsProfileDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -688,13 +824,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: ManageRecurringPaymentsProfileStatus
 	 * @param ManageRecurringPaymentsProfileStatusReq $manageRecurringPaymentsProfileStatusReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return ManageRecurringPaymentsProfileStatusResponseType
 	 * @throws APIException
 	 */
-	public function ManageRecurringPaymentsProfileStatus($manageRecurringPaymentsProfileStatusReq, $apiUsername = NULL) {
+	public function ManageRecurringPaymentsProfileStatus($manageRecurringPaymentsProfileStatusReq, $apiCredential = NULL) {
 		$this->setStandardParams($manageRecurringPaymentsProfileStatusReq->ManageRecurringPaymentsProfileStatusRequest);
 		$ret = new ManageRecurringPaymentsProfileStatusResponseType();
-		$resp = $this->call("ManageRecurringPaymentsProfileStatus", $manageRecurringPaymentsProfileStatusReq, $apiUsername);
+		$resp = $this->call("ManageRecurringPaymentsProfileStatus", $manageRecurringPaymentsProfileStatusReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -703,13 +842,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: BillOutstandingAmount
 	 * @param BillOutstandingAmountReq $billOutstandingAmountReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return BillOutstandingAmountResponseType
 	 * @throws APIException
 	 */
-	public function BillOutstandingAmount($billOutstandingAmountReq, $apiUsername = NULL) {
+	public function BillOutstandingAmount($billOutstandingAmountReq, $apiCredential = NULL) {
 		$this->setStandardParams($billOutstandingAmountReq->BillOutstandingAmountRequest);
 		$ret = new BillOutstandingAmountResponseType();
-		$resp = $this->call("BillOutstandingAmount", $billOutstandingAmountReq, $apiUsername);
+		$resp = $this->call("BillOutstandingAmount", $billOutstandingAmountReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -718,13 +860,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: UpdateRecurringPaymentsProfile
 	 * @param UpdateRecurringPaymentsProfileReq $updateRecurringPaymentsProfileReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return UpdateRecurringPaymentsProfileResponseType
 	 * @throws APIException
 	 */
-	public function UpdateRecurringPaymentsProfile($updateRecurringPaymentsProfileReq, $apiUsername = NULL) {
+	public function UpdateRecurringPaymentsProfile($updateRecurringPaymentsProfileReq, $apiCredential = NULL) {
 		$this->setStandardParams($updateRecurringPaymentsProfileReq->UpdateRecurringPaymentsProfileRequest);
 		$ret = new UpdateRecurringPaymentsProfileResponseType();
-		$resp = $this->call("UpdateRecurringPaymentsProfile", $updateRecurringPaymentsProfileReq, $apiUsername);
+		$resp = $this->call("UpdateRecurringPaymentsProfile", $updateRecurringPaymentsProfileReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -733,13 +878,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: ReverseTransaction
 	 * @param ReverseTransactionReq $reverseTransactionReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return ReverseTransactionResponseType
 	 * @throws APIException
 	 */
-	public function ReverseTransaction($reverseTransactionReq, $apiUsername = NULL) {
+	public function ReverseTransaction($reverseTransactionReq, $apiCredential = NULL) {
 		$this->setStandardParams($reverseTransactionReq->ReverseTransactionRequest);
 		$ret = new ReverseTransactionResponseType();
-		$resp = $this->call("ReverseTransaction", $reverseTransactionReq, $apiUsername);
+		$resp = $this->call("ReverseTransaction", $reverseTransactionReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -748,13 +896,16 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	/**
 	 * Service Call: ExternalRememberMeOptOut
 	 * @param ExternalRememberMeOptOutReq $externalRememberMeOptOutReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return ExternalRememberMeOptOutResponseType
 	 * @throws APIException
 	 */
-	public function ExternalRememberMeOptOut($externalRememberMeOptOutReq, $apiUsername = NULL) {
+	public function ExternalRememberMeOptOut($externalRememberMeOptOutReq, $apiCredential = NULL) {
 		$this->setStandardParams($externalRememberMeOptOutReq->ExternalRememberMeOptOutRequest);
 		$ret = new ExternalRememberMeOptOutResponseType();
-		$resp = $this->call("ExternalRememberMeOptOut", $externalRememberMeOptOutReq, $apiUsername);
+		$resp = $this->call("ExternalRememberMeOptOut", $externalRememberMeOptOutReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}

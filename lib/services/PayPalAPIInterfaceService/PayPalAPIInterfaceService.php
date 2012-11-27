@@ -4,7 +4,8 @@
   * Auto generated code 
   * 
   */
-require_once('PPUtils.php');
+require_once 'PPUtils.php';
+require_once 'PPXmlMessage.php';
 /**
  * On requests, you must set the currencyID attribute to one of
  * the three-character currency codes for any of the supported
@@ -13,11 +14,19 @@ require_once('PPUtils.php');
  * be a period (.), and the thousands separator must be a comma
  * (,).
  */
-class BasicAmountType  {
+ 
+class BasicAmountType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace cc
+	 
+	 
+	 * @attribute 
+	 
 	 * @var CurrencyCodeType
 	 */ 
 	public $currencyID;
@@ -25,6 +34,10 @@ class BasicAmountType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace cc
+	 
+	 
 	 * @var string
 	 */ 
 	public $value;
@@ -38,52 +51,27 @@ class BasicAmountType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= $this->getAttributeAsXml();
-		$str .= '>';
-		if($this->value != NULL)
-		{
-			$str .= PPUtils::escapeInvalidXmlCharsRegex($this->value);
-		}
-		return $str;
-	}
-
-	
-	private function getAttributeAsXml()
-	{
-		$str = '';
-		if($this->currencyID != NULL) {
-			$str .= ' currencyID = "' . PPUtils::escapeInvalidXmlCharsRegex($this->currencyID) . '"';
-		}
-		return $str;
-	}
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'currencyid') {
-					$this->currencyID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'value') {
-					$this->value = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class MeasureType  {
+ 
+class MeasureType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace cc
+	 
+	 
+	 * @attribute 
+	 
 	 * @var string
 	 */ 
 	public $unit;
@@ -91,6 +79,10 @@ class MeasureType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace cc
+	 
+	 
 	 * @var double
 	 */ 
 	public $value;
@@ -104,68 +96,31 @@ class MeasureType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= $this->getAttributeAsXml();
-		$str .= '>';
-		if($this->value != NULL)
-		{
-			$str .= PPUtils::escapeInvalidXmlCharsRegex($this->value);
-		}
-		return $str;
-	}
-
-	
-	private function getAttributeAsXml()
-	{
-		$str = '';
-		if($this->unit != NULL) {
-			$str .= ' unit = "' . PPUtils::escapeInvalidXmlCharsRegex($this->unit) . '"';
-		}
-		return $str;
-	}
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'unit') {
-					$this->unit = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'value') {
-					$this->value = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * Value of the application-specific error parameter.  
  */
-class ErrorParameterType  {
+ 
+class ErrorParameterType  
+   extends PPXmlMessage{
 
 	/**
 	 * Value of the application-specific error parameter.  
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Value;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'value') {
-					$this->Value = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -174,11 +129,17 @@ class ErrorParameterType  {
  * debugging a response message. These codes will need to be
  * uniquely defined for each application. 
  */
-class ErrorType  {
+ 
+class ErrorType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ShortMessage;
@@ -186,6 +147,10 @@ class ErrorType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $LongMessage;
@@ -195,6 +160,10 @@ class ErrorType  {
 	 * debugging a response message. These codes will need to be
 	 * uniquely defined for each application. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ErrorCode;
@@ -204,6 +173,10 @@ class ErrorType  {
 	 * level error or if it is informational error, i.e., warning. 
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var SeverityCodeType
 	 */ 
 	public $SeverityCode;
@@ -216,47 +189,16 @@ class ErrorType  {
 	 * which require additional context.  
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ErrorParameterType
 	 */ 
 	public $ErrorParameters;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shortmessage') {
-					$this->ShortMessage = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'longmessage') {
-					$this->LongMessage = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'errorcode') {
-					$this->ErrorCode = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'severitycode') {
-					$this->SeverityCode = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "errorparameters[$i]") {
-							$this->ErrorParameters[$i] = new ErrorParameterType();
-							$this->ErrorParameters[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "errorparameters")) {
-					$this->ErrorParameters = new ErrorParameterType();
-					$this->ErrorParameters->init($arry["children"]);
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -265,7 +207,9 @@ class ErrorType  {
  * type of payload content with optional versioning information
  * and detail level requirements. 
  */
-class AbstractRequestType  {
+ 
+class AbstractRequestType  
+   extends PPXmlMessage{
 
 	/**
 	 * This specifies the required detail level that is needed by a
@@ -275,6 +219,10 @@ class AbstractRequestType  {
 	 * enumerated values of the detail level for each component. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var DetailLevelCodeType
 	 */ 
 	public $DetailLevel;
@@ -283,6 +231,10 @@ class AbstractRequestType  {
 	 * This should be the standard RFC 3066 language identification
 	 * tag, e.g., en_US. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ErrorLanguage;
@@ -290,34 +242,17 @@ class AbstractRequestType  {
 	/**
 	 * This refers to the version of the request payload schema. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Version;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->DetailLevel != NULL)
-		{
-			for($i = 0; $i < count($this->DetailLevel); $i++)
-			{
-				$str .= '<ebl:DetailLevel>'. PPUtils::escapeInvalidXmlCharsRegex($this->DetailLevel[$i]) . '</ebl:DetailLevel>';
-			}
-		}
-		if($this->ErrorLanguage != NULL)
-		{
-			$str .= '<ebl:ErrorLanguage>' . PPUtils::escapeInvalidXmlCharsRegex($this->ErrorLanguage) . '</ebl:ErrorLanguage>';
-		}
-		if($this->Version != NULL)
-		{
-			$str .= '<ebl:Version>' . PPUtils::escapeInvalidXmlCharsRegex($this->Version) . '</ebl:Version>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -328,13 +263,19 @@ class AbstractRequestType  {
  * level acknowledgement, and - application-level errors and
  * warnings. 
  */
-class AbstractResponseType  {
+ 
+class AbstractResponseType  
+   extends PPXmlMessage{
 
 	/**
 	 * This value represents the date and time (GMT) when the
 	 * response was generated by a service provider (as a result of
 	 * processing of a request). 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $Timestamp;
@@ -342,6 +283,10 @@ class AbstractResponseType  {
 	/**
 	 * Application level acknowledgement code. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AckCodeType
 	 */ 
 	public $Ack;
@@ -350,6 +295,10 @@ class AbstractResponseType  {
 	 * CorrelationID may be used optionally with an application
 	 * level acknowledgement. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CorrelationID;
@@ -358,6 +307,10 @@ class AbstractResponseType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ErrorType
 	 */ 
 	public $Errors;
@@ -365,6 +318,10 @@ class AbstractResponseType  {
 	/**
 	 * This refers to the version of the response payload schema. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Version;
@@ -374,61 +331,33 @@ class AbstractResponseType  {
 	 * the deployment for processing the request and generating the
 	 * response. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Build;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'timestamp') {
-					$this->Timestamp = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'ack') {
-					$this->Ack = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'correlationid') {
-					$this->CorrelationID = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "errors[$i]") {
-							$this->Errors[$i] = new ErrorType();
-							$this->Errors[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "errors")) {
-					$this->Errors = new ErrorType();
-					$this->Errors->init($arry["children"]);
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'version') {
-					$this->Version = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'build') {
-					$this->Build = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * Country code associated with this phone number. 
  */
-class PhoneNumberType  {
+ 
+class PhoneNumberType  
+   extends PPXmlMessage{
 
 	/**
 	 * Country code associated with this phone number. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CountryCode;
@@ -436,6 +365,10 @@ class PhoneNumberType  {
 	/**
 	 * Phone number associated with this phone. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PhoneNumber;
@@ -443,31 +376,17 @@ class PhoneNumberType  {
 	/**
 	 * Extension associated with this phone number. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Extension;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->CountryCode != NULL)
-		{
-			$str .= '<ebl:CountryCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->CountryCode) . '</ebl:CountryCode>';
-		}
-		if($this->PhoneNumber != NULL)
-		{
-			$str .= '<ebl:PhoneNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->PhoneNumber) . '</ebl:PhoneNumber>';
-		}
-		if($this->Extension != NULL)
-		{
-			$str .= '<ebl:Extension>' . PPUtils::escapeInvalidXmlCharsRegex($this->Extension) . '</ebl:Extension>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -475,12 +394,18 @@ class PhoneNumberType  {
  * Person's name associated with this address. Character length
  * and limitations: 32 single-byte alphanumeric characters 
  */
-class AddressType  {
+ 
+class AddressType  
+   extends PPXmlMessage{
 
 	/**
 	 * Person's name associated with this address. Character length
 	 * and limitations: 32 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Name;
@@ -489,6 +414,10 @@ class AddressType  {
 	 * First street address. Character length and limitations: 300
 	 * single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Street1;
@@ -497,6 +426,10 @@ class AddressType  {
 	 * Second street address. Character length and limitations: 300
 	 * single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Street2;
@@ -505,6 +438,10 @@ class AddressType  {
 	 * Name of city. Character length and limitations: 120
 	 * single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CityName;
@@ -534,6 +471,10 @@ class AddressType  {
 	 * Wisconsin WI Wyoming WY Armed_Forces_Americas AA
 	 * Armed_Forces AE Armed_Forces_Pacific AP 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $StateOrProvince;
@@ -542,6 +483,10 @@ class AddressType  {
 	 * ISO 3166 standard country code Character limit: Two
 	 * single-byte characters. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CountryCodeType
 	 */ 
 	public $Country;
@@ -556,6 +501,10 @@ class AddressType  {
 	 * country using the Country element (which refers to a 
 	 * 2-letter country code). 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CountryName;
@@ -563,6 +512,10 @@ class AddressType  {
 	/**
 	 * Telephone number associated with this address
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Phone;
@@ -570,6 +523,10 @@ class AddressType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PostalCode;
@@ -580,6 +537,10 @@ class AddressType  {
 	 * CreateRecurringPaymentsProfile, or
 	 * UpdateRecurringPaymentsProfile.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $AddressID;
@@ -590,6 +551,10 @@ class AddressType  {
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressOwnerCodeType
 	 */ 
 	public $AddressOwner;
@@ -600,6 +565,10 @@ class AddressType  {
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ExternalAddressID;
@@ -612,6 +581,10 @@ class AddressType  {
 	 * SellerPaymentAddress today. Seller's international name that
 	 * is associated with the payment address. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InternationalName;
@@ -624,6 +597,10 @@ class AddressType  {
 	 * SellerPaymentAddress today. International state and city for
 	 * the seller's payment address. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InternationalStateAndCity;
@@ -636,6 +613,10 @@ class AddressType  {
 	 * SellerPaymentAddress today. Seller's international street
 	 * address that is associated with the payment address. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InternationalStreet;
@@ -647,148 +628,34 @@ class AddressType  {
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressStatusCodeType
 	 */ 
 	public $AddressStatus;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Name != NULL)
-		{
-			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
-		}
-		if($this->Street1 != NULL)
-		{
-			$str .= '<ebl:Street1>' . PPUtils::escapeInvalidXmlCharsRegex($this->Street1) . '</ebl:Street1>';
-		}
-		if($this->Street2 != NULL)
-		{
-			$str .= '<ebl:Street2>' . PPUtils::escapeInvalidXmlCharsRegex($this->Street2) . '</ebl:Street2>';
-		}
-		if($this->CityName != NULL)
-		{
-			$str .= '<ebl:CityName>' . PPUtils::escapeInvalidXmlCharsRegex($this->CityName) . '</ebl:CityName>';
-		}
-		if($this->StateOrProvince != NULL)
-		{
-			$str .= '<ebl:StateOrProvince>' . PPUtils::escapeInvalidXmlCharsRegex($this->StateOrProvince) . '</ebl:StateOrProvince>';
-		}
-		if($this->Country != NULL)
-		{
-			$str .= '<ebl:Country>' . PPUtils::escapeInvalidXmlCharsRegex($this->Country) . '</ebl:Country>';
-		}
-		if($this->CountryName != NULL)
-		{
-			$str .= '<ebl:CountryName>' . PPUtils::escapeInvalidXmlCharsRegex($this->CountryName) . '</ebl:CountryName>';
-		}
-		if($this->Phone != NULL)
-		{
-			$str .= '<ebl:Phone>' . PPUtils::escapeInvalidXmlCharsRegex($this->Phone) . '</ebl:Phone>';
-		}
-		if($this->PostalCode != NULL)
-		{
-			$str .= '<ebl:PostalCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->PostalCode) . '</ebl:PostalCode>';
-		}
-		if($this->AddressID != NULL)
-		{
-			$str .= '<ebl:AddressID>' . PPUtils::escapeInvalidXmlCharsRegex($this->AddressID) . '</ebl:AddressID>';
-		}
-		if($this->AddressOwner != NULL)
-		{
-			$str .= '<ebl:AddressOwner>' . PPUtils::escapeInvalidXmlCharsRegex($this->AddressOwner) . '</ebl:AddressOwner>';
-		}
-		if($this->ExternalAddressID != NULL)
-		{
-			$str .= '<ebl:ExternalAddressID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalAddressID) . '</ebl:ExternalAddressID>';
-		}
-		if($this->InternationalName != NULL)
-		{
-			$str .= '<ebl:InternationalName>' . PPUtils::escapeInvalidXmlCharsRegex($this->InternationalName) . '</ebl:InternationalName>';
-		}
-		if($this->InternationalStateAndCity != NULL)
-		{
-			$str .= '<ebl:InternationalStateAndCity>' . PPUtils::escapeInvalidXmlCharsRegex($this->InternationalStateAndCity) . '</ebl:InternationalStateAndCity>';
-		}
-		if($this->InternationalStreet != NULL)
-		{
-			$str .= '<ebl:InternationalStreet>' . PPUtils::escapeInvalidXmlCharsRegex($this->InternationalStreet) . '</ebl:InternationalStreet>';
-		}
-		if($this->AddressStatus != NULL)
-		{
-			$str .= '<ebl:AddressStatus>' . PPUtils::escapeInvalidXmlCharsRegex($this->AddressStatus) . '</ebl:AddressStatus>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'name') {
-					$this->Name = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'street1') {
-					$this->Street1 = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'street2') {
-					$this->Street2 = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'cityname') {
-					$this->CityName = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'stateorprovince') {
-					$this->StateOrProvince = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'country') {
-					$this->Country = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'countryname') {
-					$this->CountryName = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'phone') {
-					$this->Phone = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'postalcode') {
-					$this->PostalCode = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'addressid') {
-					$this->AddressID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'addressowner') {
-					$this->AddressOwner = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'externaladdressid') {
-					$this->ExternalAddressID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'internationalname') {
-					$this->InternationalName = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'internationalstateandcity') {
-					$this->InternationalStateAndCity = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'internationalstreet') {
-					$this->InternationalStreet = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'addressstatus') {
-					$this->AddressStatus = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class PersonNameType  {
+ 
+class PersonNameType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Salutation;
@@ -796,6 +663,10 @@ class PersonNameType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $FirstName;
@@ -803,6 +674,10 @@ class PersonNameType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $MiddleName;
@@ -810,6 +685,10 @@ class PersonNameType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $LastName;
@@ -817,71 +696,34 @@ class PersonNameType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Suffix;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Salutation != NULL)
-		{
-			$str .= '<ebl:Salutation>' . PPUtils::escapeInvalidXmlCharsRegex($this->Salutation) . '</ebl:Salutation>';
-		}
-		if($this->FirstName != NULL)
-		{
-			$str .= '<ebl:FirstName>' . PPUtils::escapeInvalidXmlCharsRegex($this->FirstName) . '</ebl:FirstName>';
-		}
-		if($this->MiddleName != NULL)
-		{
-			$str .= '<ebl:MiddleName>' . PPUtils::escapeInvalidXmlCharsRegex($this->MiddleName) . '</ebl:MiddleName>';
-		}
-		if($this->LastName != NULL)
-		{
-			$str .= '<ebl:LastName>' . PPUtils::escapeInvalidXmlCharsRegex($this->LastName) . '</ebl:LastName>';
-		}
-		if($this->Suffix != NULL)
-		{
-			$str .= '<ebl:Suffix>' . PPUtils::escapeInvalidXmlCharsRegex($this->Suffix) . '</ebl:Suffix>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'salutation') {
-					$this->Salutation = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'firstname') {
-					$this->FirstName = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'middlename') {
-					$this->MiddleName = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'lastname') {
-					$this->LastName = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'suffix') {
-					$this->Suffix = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class IncentiveAppliedToType  {
+ 
+class IncentiveAppliedToType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BucketId;
@@ -889,6 +731,10 @@ class IncentiveAppliedToType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemId;
@@ -896,6 +742,10 @@ class IncentiveAppliedToType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $IncentiveAmount;
@@ -903,56 +753,33 @@ class IncentiveAppliedToType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SubType;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'bucketid') {
-					$this->BucketId = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemid') {
-					$this->ItemId = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='incentiveamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->IncentiveAmount= new BasicAmountType(); 
-								$this->IncentiveAmount->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'subtype') {
-					$this->SubType = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class IncentiveDetailType  {
+ 
+class IncentiveDetailType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $RedemptionCode;
@@ -960,6 +787,10 @@ class IncentiveDetailType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $DisplayCode;
@@ -967,6 +798,10 @@ class IncentiveDetailType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProgramId;
@@ -974,6 +809,10 @@ class IncentiveDetailType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IncentiveTypeCodeType
 	 */ 
 	public $IncentiveType;
@@ -981,6 +820,10 @@ class IncentiveDetailType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $IncentiveDescription;
@@ -989,6 +832,10 @@ class IncentiveDetailType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IncentiveAppliedToType
 	 */ 
 	public $AppliedTo;
@@ -996,6 +843,10 @@ class IncentiveDetailType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Status;
@@ -1003,67 +854,33 @@ class IncentiveDetailType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ErrorCode;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'redemptioncode') {
-					$this->RedemptionCode = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'displaycode') {
-					$this->DisplayCode = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'programid') {
-					$this->ProgramId = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'incentivetype') {
-					$this->IncentiveType = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'incentivedescription') {
-					$this->IncentiveDescription = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "appliedto[$i]") {
-							$this->AppliedTo[$i] = new IncentiveAppliedToType();
-							$this->AppliedTo[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "appliedto")) {
-					$this->AppliedTo = new IncentiveAppliedToType();
-					$this->AppliedTo->init($arry["children"]);
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
-					$this->Status = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'errorcode') {
-					$this->ErrorCode = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class IncentiveItemType  {
+ 
+class IncentiveItemType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemId;
@@ -1071,6 +888,10 @@ class IncentiveItemType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $PurchaseTime;
@@ -1078,6 +899,10 @@ class IncentiveItemType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemCategoryList;
@@ -1085,6 +910,10 @@ class IncentiveItemType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $ItemPrice;
@@ -1092,53 +921,35 @@ class IncentiveItemType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $ItemQuantity;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ItemId != NULL)
-		{
-			$str .= '<ebl:ItemId>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemId) . '</ebl:ItemId>';
-		}
-		if($this->PurchaseTime != NULL)
-		{
-			$str .= '<ebl:PurchaseTime>' . PPUtils::escapeInvalidXmlCharsRegex($this->PurchaseTime) . '</ebl:PurchaseTime>';
-		}
-		if($this->ItemCategoryList != NULL)
-		{
-			$str .= '<ebl:ItemCategoryList>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemCategoryList) . '</ebl:ItemCategoryList>';
-		}
-		if($this->ItemPrice != NULL)
-		{
-			$str .= '<ebl:ItemPrice';
-			$str .= $this->ItemPrice->toXMLString();
-			$str .= '</ebl:ItemPrice>';
-		}
-		if($this->ItemQuantity != NULL)
-		{
-			$str .= '<ebl:ItemQuantity>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemQuantity) . '</ebl:ItemQuantity>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class IncentiveBucketType  {
+ 
+class IncentiveBucketType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IncentiveItemType
 	 */ 
 	public $Items;
@@ -1146,6 +957,10 @@ class IncentiveBucketType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BucketId;
@@ -1153,6 +968,10 @@ class IncentiveBucketType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SellerId;
@@ -1160,6 +979,10 @@ class IncentiveBucketType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ExternalSellerId;
@@ -1167,6 +990,10 @@ class IncentiveBucketType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $BucketSubtotalAmt;
@@ -1174,6 +1001,10 @@ class IncentiveBucketType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $BucketShippingAmt;
@@ -1181,6 +1012,10 @@ class IncentiveBucketType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $BucketInsuranceAmt;
@@ -1188,6 +1023,10 @@ class IncentiveBucketType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $BucketSalesTaxAmt;
@@ -1195,81 +1034,34 @@ class IncentiveBucketType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $BucketTotalAmt;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Items != NULL)
-		{
-			for($i = 0; $i < count($this->Items); $i++)
-			{
-				$str .= '<ebl:Items>';
-				$str .= $this->Items[$i]->toXMLString();
-				$str .= '</ebl:Items>';
-			}
-		}
-		if($this->BucketId != NULL)
-		{
-			$str .= '<ebl:BucketId>' . PPUtils::escapeInvalidXmlCharsRegex($this->BucketId) . '</ebl:BucketId>';
-		}
-		if($this->SellerId != NULL)
-		{
-			$str .= '<ebl:SellerId>' . PPUtils::escapeInvalidXmlCharsRegex($this->SellerId) . '</ebl:SellerId>';
-		}
-		if($this->ExternalSellerId != NULL)
-		{
-			$str .= '<ebl:ExternalSellerId>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalSellerId) . '</ebl:ExternalSellerId>';
-		}
-		if($this->BucketSubtotalAmt != NULL)
-		{
-			$str .= '<ebl:BucketSubtotalAmt';
-			$str .= $this->BucketSubtotalAmt->toXMLString();
-			$str .= '</ebl:BucketSubtotalAmt>';
-		}
-		if($this->BucketShippingAmt != NULL)
-		{
-			$str .= '<ebl:BucketShippingAmt';
-			$str .= $this->BucketShippingAmt->toXMLString();
-			$str .= '</ebl:BucketShippingAmt>';
-		}
-		if($this->BucketInsuranceAmt != NULL)
-		{
-			$str .= '<ebl:BucketInsuranceAmt';
-			$str .= $this->BucketInsuranceAmt->toXMLString();
-			$str .= '</ebl:BucketInsuranceAmt>';
-		}
-		if($this->BucketSalesTaxAmt != NULL)
-		{
-			$str .= '<ebl:BucketSalesTaxAmt';
-			$str .= $this->BucketSalesTaxAmt->toXMLString();
-			$str .= '</ebl:BucketSalesTaxAmt>';
-		}
-		if($this->BucketTotalAmt != NULL)
-		{
-			$str .= '<ebl:BucketTotalAmt';
-			$str .= $this->BucketTotalAmt->toXMLString();
-			$str .= '</ebl:BucketTotalAmt>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class IncentiveRequestDetailsType  {
+ 
+class IncentiveRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $RequestId;
@@ -1277,6 +1069,10 @@ class IncentiveRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IncentiveRequestCodeType
 	 */ 
 	public $RequestType;
@@ -1284,42 +1080,34 @@ class IncentiveRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IncentiveRequestDetailLevelCodeType
 	 */ 
 	public $RequestDetailLevel;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->RequestId != NULL)
-		{
-			$str .= '<ebl:RequestId>' . PPUtils::escapeInvalidXmlCharsRegex($this->RequestId) . '</ebl:RequestId>';
-		}
-		if($this->RequestType != NULL)
-		{
-			$str .= '<ebl:RequestType>' . PPUtils::escapeInvalidXmlCharsRegex($this->RequestType) . '</ebl:RequestType>';
-		}
-		if($this->RequestDetailLevel != NULL)
-		{
-			$str .= '<ebl:RequestDetailLevel>' . PPUtils::escapeInvalidXmlCharsRegex($this->RequestDetailLevel) . '</ebl:RequestDetailLevel>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetIncentiveEvaluationRequestDetailsType  {
+ 
+class GetIncentiveEvaluationRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ExternalBuyerId;
@@ -1328,6 +1116,10 @@ class GetIncentiveEvaluationRequestDetailsType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $IncentiveCodes;
@@ -1336,6 +1128,10 @@ class GetIncentiveEvaluationRequestDetailsType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IncentiveApplyIndicationType
 	 */ 
 	public $ApplyIndication;
@@ -1344,6 +1140,10 @@ class GetIncentiveEvaluationRequestDetailsType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IncentiveBucketType
 	 */ 
 	public $Buckets;
@@ -1351,6 +1151,10 @@ class GetIncentiveEvaluationRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $CartTotalAmt;
@@ -1358,72 +1162,35 @@ class GetIncentiveEvaluationRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IncentiveRequestDetailsType
 	 */ 
 	public $RequestDetails;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ExternalBuyerId != NULL)
-		{
-			$str .= '<ebl:ExternalBuyerId>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalBuyerId) . '</ebl:ExternalBuyerId>';
-		}
-		if($this->IncentiveCodes != NULL)
-		{
-			for($i = 0; $i < count($this->IncentiveCodes); $i++)
-			{
-				$str .= '<ebl:IncentiveCodes>'. PPUtils::escapeInvalidXmlCharsRegex($this->IncentiveCodes[$i]) . '</ebl:IncentiveCodes>';
-			}
-		}
-		if($this->ApplyIndication != NULL)
-		{
-			for($i = 0; $i < count($this->ApplyIndication); $i++)
-			{
-				$str .= '<ebl:ApplyIndication>';
-				$str .= $this->ApplyIndication[$i]->toXMLString();
-				$str .= '</ebl:ApplyIndication>';
-			}
-		}
-		if($this->Buckets != NULL)
-		{
-			for($i = 0; $i < count($this->Buckets); $i++)
-			{
-				$str .= '<ebl:Buckets>';
-				$str .= $this->Buckets[$i]->toXMLString();
-				$str .= '</ebl:Buckets>';
-			}
-		}
-		if($this->CartTotalAmt != NULL)
-		{
-			$str .= '<ebl:CartTotalAmt';
-			$str .= $this->CartTotalAmt->toXMLString();
-			$str .= '</ebl:CartTotalAmt>';
-		}
-		if($this->RequestDetails != NULL)
-		{
-			$str .= '<ebl:RequestDetails>';
-			$str .= $this->RequestDetails->toXMLString();
-			$str .= '</ebl:RequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetIncentiveEvaluationResponseDetailsType  {
+ 
+class GetIncentiveEvaluationResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IncentiveDetailType
 	 */ 
 	public $IncentiveDetails;
@@ -1431,38 +1198,16 @@ class GetIncentiveEvaluationResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $RequestId;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "incentivedetails[$i]") {
-							$this->IncentiveDetails[$i] = new IncentiveDetailType();
-							$this->IncentiveDetails[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "incentivedetails")) {
-					$this->IncentiveDetails = new IncentiveDetailType();
-					$this->IncentiveDetails->init($arry["children"]);
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'requestid') {
-					$this->RequestId = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -1477,7 +1222,9 @@ class GetIncentiveEvaluationResponseDetailsType  {
  * be a period (.), and the thousands separator must be a comma
  * (,). 
  */
-class SetExpressCheckoutRequestDetailsType  {
+ 
+class SetExpressCheckoutRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * The total cost of the order to the customer. If shipping
@@ -1490,6 +1237,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * be a period (.), and the thousands separator must be a comma
 	 * (,).
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $OrderTotal;
@@ -1501,6 +1252,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * customer confirms the order and payment. Required Character
 	 * length and limitations: no limit. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReturnURL;
@@ -1512,6 +1267,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * customer chose to pay with PayPal. Required Character length
 	 * and limitations: no limit
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CancelURL;
@@ -1520,6 +1279,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Tracking URL for ebay. Required Character length and
 	 * limitations: no limit
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TrackingImageURL;
@@ -1529,6 +1292,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * with giropay online. Optional Character length and
 	 * limitations: no limit.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $giropaySuccessURL;
@@ -1538,6 +1305,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * to pay with giropay online. Optional Character length and
 	 * limitations: no limit.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $giropayCancelURL;
@@ -1547,6 +1318,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * mEFT done page. Optional Character length and limitations:
 	 * no limit.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BanktxnPendingURL;
@@ -1561,6 +1336,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * customer to edit his shipping address on PayPal. Character
 	 * length and limitations: 20 single-byte characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
@@ -1574,6 +1353,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $MaxAmount;
@@ -1583,6 +1366,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OrderDescription;
@@ -1594,6 +1381,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * DoExpressCheckoutPaymentResponse. Optional Character length
 	 * and limitations: 256 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Custom;
@@ -1604,6 +1395,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Optional Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InvoiceID;
@@ -1618,6 +1413,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Optional Character length and limitations: One single-byte
 	 * numeric character.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReqConfirmShipping;
@@ -1628,6 +1427,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * setting you have specified in Admin. Optional Character
 	 * length and limitations: One single-byte numeric character. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReqBillingAddress;
@@ -1638,6 +1441,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * required: Name Street1 CityName CountryCode Do not set set
 	 * the CountryName element. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $BillingAddress;
@@ -1648,6 +1455,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Character length and limitations: Four single-byte numeric
 	 * characters.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $NoShipping;
@@ -1661,6 +1472,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * that address. Optional Character length and limitations:
 	 * Four single-byte numeric characters.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $AddressOverride;
@@ -1672,6 +1487,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * values: AU or en_AUDE or de_DEFR or fr_FRGB or en_GBIT or
 	 * it_ITJP or ja_JPUS or en_US
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $LocaleCode;
@@ -1686,6 +1505,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Character length and limitations: 30 single-byte alphabetic
 	 * characters. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PageStyle;
@@ -1697,6 +1520,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * an image that is stored on a secure (https) server. Optional
 	 * Character length and limitations: 127
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cppheaderimage;
@@ -1708,6 +1535,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Character length and limitations: Six character HTML
 	 * hexadecimal color code in ASCII
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cppheaderbordercolor;
@@ -1717,6 +1548,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * page. Optional Character length and limitation: Six
 	 * character HTML hexadecimal color code in ASCII
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cppheaderbackcolor;
@@ -1726,6 +1561,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cpppayflowcolor;
@@ -1735,6 +1574,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Optional Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cppcartbordercolor;
@@ -1746,6 +1589,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * stored on a secure (https) server. Optional Character length
 	 * and limitations: 127
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cpplogoimage;
@@ -1756,6 +1603,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * request, PayPal returns this same address in
 	 * GetExpressCheckoutDetailsResponse. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $Address;
@@ -1773,6 +1624,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Checkout API, DoExpressCheckoutPaymentRequest. Character
 	 * length and limit: Up to 13 single-byte alphabetic characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentActionCodeType
 	 */ 
 	public $PaymentAction;
@@ -1783,6 +1638,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * None Sole indicates that you are in the ExpressO flow Mark
 	 * indicates that you are in the old express flow. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var SolutionTypeType
 	 */ 
 	public $SolutionType;
@@ -1793,6 +1652,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * paypal account holder Login indicates that you are a paypal
 	 * account holder 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var LandingPageType
 	 */ 
 	public $LandingPage;
@@ -1803,6 +1666,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * sign-up portion of the PayPal login page. Optional Character
 	 * length and limit: 127 single-byte alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BuyerEmail;
@@ -1810,6 +1677,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ChannelType
 	 */ 
 	public $ChannelType;
@@ -1818,6 +1689,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BillingAgreementDetailsType
 	 */ 
 	public $BillingAgreementDetails;
@@ -1828,6 +1703,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Promotion Financing feature. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PromoCodes;
@@ -1835,6 +1714,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * Default Funding option for PayLater Checkout button. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PayPalCheckOutBtnType;
@@ -1842,6 +1725,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ProductCategoryType
 	 */ 
 	public $ProductCategory;
@@ -1849,6 +1736,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ShippingServiceCodeType
 	 */ 
 	public $ShippingMethod;
@@ -1857,6 +1748,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at
 	 * which address was changed by the user. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $ProfileAddressChangeDate;
@@ -1869,6 +1764,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * and limitations: One single-byte numeric character.
 	 * Allowable values: 0,1 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $AllowNote;
@@ -1876,6 +1775,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * Funding source preferences. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var FundingSourceDetailsType
 	 */ 
 	public $FundingSourceDetails;
@@ -1885,6 +1788,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * the PayPal hosted checkout pages. Optional Character length
 	 * and limit: 127 single-byte alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BrandName;
@@ -1894,6 +1801,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * insurance, and tax details from your website. Optional
 	 * Character length and limitations: 2048 characters. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CallbackURL;
@@ -1901,6 +1812,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * Enhanced data for different industry segments. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var EnhancedCheckoutDataType
 	 */ 
 	public $EnhancedCheckoutData;
@@ -1911,6 +1826,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * details. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var OtherPaymentMethodDetailsType
 	 */ 
 	public $OtherPaymentMethods;
@@ -1919,6 +1838,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Details about the buyer's account. Optional Refer to the
 	 * BuyerDetailsType for more details. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BuyerDetailsType
 	 */ 
 	public $BuyerDetails;
@@ -1927,6 +1850,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Information about the payment. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentDetailsType
 	 */ 
 	public $PaymentDetails;
@@ -1935,6 +1862,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * List of Fall Back Shipping options provided by merchant. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ShippingOptionType
 	 */ 
 	public $FlatRateShippingOptions;
@@ -1942,6 +1873,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * Information about the call back timeout override. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CallbackTimeout;
@@ -1949,6 +1884,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * Information about the call back version. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CallbackVersion;
@@ -1956,6 +1895,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * Information about the Customer service number. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CustomerServiceNumber;
@@ -1963,6 +1906,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * Information about the Gift message enable. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $GiftMessageEnable;
@@ -1970,6 +1917,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * Information about the Gift receipt enable. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $GiftReceiptEnable;
@@ -1977,6 +1928,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * Information about the Gift Wrap enable. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $GiftWrapEnable;
@@ -1984,6 +1939,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * Information about the Gift Wrap name. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $GiftWrapName;
@@ -1991,6 +1950,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * Information about the Gift Wrap amount. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $GiftWrapAmount;
@@ -1998,6 +1961,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * Information about the Buyer email option enable . 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BuyerEmailOptInEnable;
@@ -2005,6 +1972,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * Information about the survey enable. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SurveyEnable;
@@ -2012,6 +1983,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * Information about the survey question. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SurveyQuestion;
@@ -2020,6 +1995,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Information about the survey choices for survey question. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SurveyChoice;
@@ -2027,6 +2006,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var TotalType
 	 */ 
 	public $TotalType;
@@ -2035,6 +2018,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Any message the seller would like to be displayed in the
 	 * Mini Cart for UX. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $NoteToBuyer;
@@ -2044,6 +2031,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * ebay/merchant. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IncentiveInfoType
 	 */ 
 	public $Incentives;
@@ -2052,6 +2043,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Merchant specified flag which indicates whether to return
 	 * Funding Instrument Details in DoEC or not. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReqInstrumentDetails;
@@ -2063,6 +2058,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Note the opt-in details are silently ignored if the
 	 * ExternalRememberMeID is present. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ExternalRememberMeOptInDetailsType
 	 */ 
 	public $ExternalRememberMeOptInDetails;
@@ -2070,6 +2069,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	/**
 	 * An optional set of values related to flow-specific details. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var FlowControlDetailsType
 	 */ 
 	public $FlowControlDetails;
@@ -2078,6 +2081,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * An optional set of values related to display-specific
 	 * details. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var DisplayControlDetailsType
 	 */ 
 	public $DisplayControlDetails;
@@ -2086,6 +2093,10 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * An optional set of values related to tracking for external
 	 * partner. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ExternalPartnerTrackingDetailsType
 	 */ 
 	public $ExternalPartnerTrackingDetails;
@@ -2094,347 +2105,17 @@ class SetExpressCheckoutRequestDetailsType  {
 	 * Optional element that defines relationship between buckets 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CoupledBucketsType
 	 */ 
 	public $CoupledBuckets;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->OrderTotal != NULL)
-		{
-			$str .= '<ebl:OrderTotal';
-			$str .= $this->OrderTotal->toXMLString();
-			$str .= '</ebl:OrderTotal>';
-		}
-		if($this->ReturnURL != NULL)
-		{
-			$str .= '<ebl:ReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnURL) . '</ebl:ReturnURL>';
-		}
-		if($this->CancelURL != NULL)
-		{
-			$str .= '<ebl:CancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelURL) . '</ebl:CancelURL>';
-		}
-		if($this->TrackingImageURL != NULL)
-		{
-			$str .= '<ebl:TrackingImageURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->TrackingImageURL) . '</ebl:TrackingImageURL>';
-		}
-		if($this->giropaySuccessURL != NULL)
-		{
-			$str .= '<ebl:giropaySuccessURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->giropaySuccessURL) . '</ebl:giropaySuccessURL>';
-		}
-		if($this->giropayCancelURL != NULL)
-		{
-			$str .= '<ebl:giropayCancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->giropayCancelURL) . '</ebl:giropayCancelURL>';
-		}
-		if($this->BanktxnPendingURL != NULL)
-		{
-			$str .= '<ebl:BanktxnPendingURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->BanktxnPendingURL) . '</ebl:BanktxnPendingURL>';
-		}
-		if($this->Token != NULL)
-		{
-			$str .= '<ebl:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</ebl:Token>';
-		}
-		if($this->MaxAmount != NULL)
-		{
-			$str .= '<ebl:MaxAmount';
-			$str .= $this->MaxAmount->toXMLString();
-			$str .= '</ebl:MaxAmount>';
-		}
-		if($this->OrderDescription != NULL)
-		{
-			$str .= '<ebl:OrderDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->OrderDescription) . '</ebl:OrderDescription>';
-		}
-		if($this->Custom != NULL)
-		{
-			$str .= '<ebl:Custom>' . PPUtils::escapeInvalidXmlCharsRegex($this->Custom) . '</ebl:Custom>';
-		}
-		if($this->InvoiceID != NULL)
-		{
-			$str .= '<ebl:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</ebl:InvoiceID>';
-		}
-		if($this->ReqConfirmShipping != NULL)
-		{
-			$str .= '<ebl:ReqConfirmShipping>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqConfirmShipping) . '</ebl:ReqConfirmShipping>';
-		}
-		if($this->ReqBillingAddress != NULL)
-		{
-			$str .= '<ebl:ReqBillingAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqBillingAddress) . '</ebl:ReqBillingAddress>';
-		}
-		if($this->BillingAddress != NULL)
-		{
-			$str .= '<ebl:BillingAddress>';
-			$str .= $this->BillingAddress->toXMLString();
-			$str .= '</ebl:BillingAddress>';
-		}
-		if($this->NoShipping != NULL)
-		{
-			$str .= '<ebl:NoShipping>' . PPUtils::escapeInvalidXmlCharsRegex($this->NoShipping) . '</ebl:NoShipping>';
-		}
-		if($this->AddressOverride != NULL)
-		{
-			$str .= '<ebl:AddressOverride>' . PPUtils::escapeInvalidXmlCharsRegex($this->AddressOverride) . '</ebl:AddressOverride>';
-		}
-		if($this->LocaleCode != NULL)
-		{
-			$str .= '<ebl:LocaleCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->LocaleCode) . '</ebl:LocaleCode>';
-		}
-		if($this->PageStyle != NULL)
-		{
-			$str .= '<ebl:PageStyle>' . PPUtils::escapeInvalidXmlCharsRegex($this->PageStyle) . '</ebl:PageStyle>';
-		}
-		if($this->cppheaderimage != NULL)
-		{
-			$str .= '<ebl:cpp-header-image>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cpp-header-image>';
-		}
-		if($this->cppheaderbordercolor != NULL)
-		{
-			$str .= '<ebl:cpp-header-border-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cpp-header-border-color>';
-		}
-		if($this->cppheaderbackcolor != NULL)
-		{
-			$str .= '<ebl:cpp-header-back-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cpp-header-back-color>';
-		}
-		if($this->cpppayflowcolor != NULL)
-		{
-			$str .= '<ebl:cpp-payflow-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpp-payflow-color>';
-		}
-		if($this->cppcartbordercolor != NULL)
-		{
-			$str .= '<ebl:cpp-cart-border-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppcartbordercolor) . '</ebl:cpp-cart-border-color>';
-		}
-		if($this->cpplogoimage != NULL)
-		{
-			$str .= '<ebl:cpp-logo-image>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpplogoimage) . '</ebl:cpp-logo-image>';
-		}
-		if($this->Address != NULL)
-		{
-			$str .= '<ebl:Address>';
-			$str .= $this->Address->toXMLString();
-			$str .= '</ebl:Address>';
-		}
-		if($this->PaymentAction != NULL)
-		{
-			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
-		}
-		if($this->SolutionType != NULL)
-		{
-			$str .= '<ebl:SolutionType>' . PPUtils::escapeInvalidXmlCharsRegex($this->SolutionType) . '</ebl:SolutionType>';
-		}
-		if($this->LandingPage != NULL)
-		{
-			$str .= '<ebl:LandingPage>' . PPUtils::escapeInvalidXmlCharsRegex($this->LandingPage) . '</ebl:LandingPage>';
-		}
-		if($this->BuyerEmail != NULL)
-		{
-			$str .= '<ebl:BuyerEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerEmail) . '</ebl:BuyerEmail>';
-		}
-		if($this->ChannelType != NULL)
-		{
-			$str .= '<ebl:ChannelType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ChannelType) . '</ebl:ChannelType>';
-		}
-		if($this->BillingAgreementDetails != NULL)
-		{
-			for($i = 0; $i < count($this->BillingAgreementDetails); $i++)
-			{
-				$str .= '<ebl:BillingAgreementDetails>';
-				$str .= $this->BillingAgreementDetails[$i]->toXMLString();
-				$str .= '</ebl:BillingAgreementDetails>';
-			}
-		}
-		if($this->PromoCodes != NULL)
-		{
-			for($i = 0; $i < count($this->PromoCodes); $i++)
-			{
-				$str .= '<ebl:PromoCodes>'. PPUtils::escapeInvalidXmlCharsRegex($this->PromoCodes[$i]) . '</ebl:PromoCodes>';
-			}
-		}
-		if($this->PayPalCheckOutBtnType != NULL)
-		{
-			$str .= '<ebl:PayPalCheckOutBtnType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayPalCheckOutBtnType) . '</ebl:PayPalCheckOutBtnType>';
-		}
-		if($this->ProductCategory != NULL)
-		{
-			$str .= '<ebl:ProductCategory>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProductCategory) . '</ebl:ProductCategory>';
-		}
-		if($this->ShippingMethod != NULL)
-		{
-			$str .= '<ebl:ShippingMethod>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingMethod) . '</ebl:ShippingMethod>';
-		}
-		if($this->ProfileAddressChangeDate != NULL)
-		{
-			$str .= '<ebl:ProfileAddressChangeDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileAddressChangeDate) . '</ebl:ProfileAddressChangeDate>';
-		}
-		if($this->AllowNote != NULL)
-		{
-			$str .= '<ebl:AllowNote>' . PPUtils::escapeInvalidXmlCharsRegex($this->AllowNote) . '</ebl:AllowNote>';
-		}
-		if($this->FundingSourceDetails != NULL)
-		{
-			$str .= '<ebl:FundingSourceDetails>';
-			$str .= $this->FundingSourceDetails->toXMLString();
-			$str .= '</ebl:FundingSourceDetails>';
-		}
-		if($this->BrandName != NULL)
-		{
-			$str .= '<ebl:BrandName>' . PPUtils::escapeInvalidXmlCharsRegex($this->BrandName) . '</ebl:BrandName>';
-		}
-		if($this->CallbackURL != NULL)
-		{
-			$str .= '<ebl:CallbackURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CallbackURL) . '</ebl:CallbackURL>';
-		}
-		if($this->EnhancedCheckoutData != NULL)
-		{
-			$str .= '<ebl:EnhancedCheckoutData>';
-			$str .= $this->EnhancedCheckoutData->toXMLString();
-			$str .= '</ebl:EnhancedCheckoutData>';
-		}
-		if($this->OtherPaymentMethods != NULL)
-		{
-			for($i = 0; $i < count($this->OtherPaymentMethods); $i++)
-			{
-				$str .= '<ebl:OtherPaymentMethods>';
-				$str .= $this->OtherPaymentMethods[$i]->toXMLString();
-				$str .= '</ebl:OtherPaymentMethods>';
-			}
-		}
-		if($this->BuyerDetails != NULL)
-		{
-			$str .= '<ebl:BuyerDetails>';
-			$str .= $this->BuyerDetails->toXMLString();
-			$str .= '</ebl:BuyerDetails>';
-		}
-		if($this->PaymentDetails != NULL)
-		{
-			for($i = 0; $i < count($this->PaymentDetails); $i++)
-			{
-				$str .= '<ebl:PaymentDetails>';
-				$str .= $this->PaymentDetails[$i]->toXMLString();
-				$str .= '</ebl:PaymentDetails>';
-			}
-		}
-		if($this->FlatRateShippingOptions != NULL)
-		{
-			for($i = 0; $i < count($this->FlatRateShippingOptions); $i++)
-			{
-				$str .= '<ebl:FlatRateShippingOptions>';
-				$str .= $this->FlatRateShippingOptions[$i]->toXMLString();
-				$str .= '</ebl:FlatRateShippingOptions>';
-			}
-		}
-		if($this->CallbackTimeout != NULL)
-		{
-			$str .= '<ebl:CallbackTimeout>' . PPUtils::escapeInvalidXmlCharsRegex($this->CallbackTimeout) . '</ebl:CallbackTimeout>';
-		}
-		if($this->CallbackVersion != NULL)
-		{
-			$str .= '<ebl:CallbackVersion>' . PPUtils::escapeInvalidXmlCharsRegex($this->CallbackVersion) . '</ebl:CallbackVersion>';
-		}
-		if($this->CustomerServiceNumber != NULL)
-		{
-			$str .= '<ebl:CustomerServiceNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->CustomerServiceNumber) . '</ebl:CustomerServiceNumber>';
-		}
-		if($this->GiftMessageEnable != NULL)
-		{
-			$str .= '<ebl:GiftMessageEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftMessageEnable) . '</ebl:GiftMessageEnable>';
-		}
-		if($this->GiftReceiptEnable != NULL)
-		{
-			$str .= '<ebl:GiftReceiptEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftReceiptEnable) . '</ebl:GiftReceiptEnable>';
-		}
-		if($this->GiftWrapEnable != NULL)
-		{
-			$str .= '<ebl:GiftWrapEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftWrapEnable) . '</ebl:GiftWrapEnable>';
-		}
-		if($this->GiftWrapName != NULL)
-		{
-			$str .= '<ebl:GiftWrapName>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftWrapName) . '</ebl:GiftWrapName>';
-		}
-		if($this->GiftWrapAmount != NULL)
-		{
-			$str .= '<ebl:GiftWrapAmount';
-			$str .= $this->GiftWrapAmount->toXMLString();
-			$str .= '</ebl:GiftWrapAmount>';
-		}
-		if($this->BuyerEmailOptInEnable != NULL)
-		{
-			$str .= '<ebl:BuyerEmailOptInEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerEmailOptInEnable) . '</ebl:BuyerEmailOptInEnable>';
-		}
-		if($this->SurveyEnable != NULL)
-		{
-			$str .= '<ebl:SurveyEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->SurveyEnable) . '</ebl:SurveyEnable>';
-		}
-		if($this->SurveyQuestion != NULL)
-		{
-			$str .= '<ebl:SurveyQuestion>' . PPUtils::escapeInvalidXmlCharsRegex($this->SurveyQuestion) . '</ebl:SurveyQuestion>';
-		}
-		if($this->SurveyChoice != NULL)
-		{
-			for($i = 0; $i < count($this->SurveyChoice); $i++)
-			{
-				$str .= '<ebl:SurveyChoice>'. PPUtils::escapeInvalidXmlCharsRegex($this->SurveyChoice[$i]) . '</ebl:SurveyChoice>';
-			}
-		}
-		if($this->TotalType != NULL)
-		{
-			$str .= '<ebl:TotalType>' . PPUtils::escapeInvalidXmlCharsRegex($this->TotalType) . '</ebl:TotalType>';
-		}
-		if($this->NoteToBuyer != NULL)
-		{
-			$str .= '<ebl:NoteToBuyer>' . PPUtils::escapeInvalidXmlCharsRegex($this->NoteToBuyer) . '</ebl:NoteToBuyer>';
-		}
-		if($this->Incentives != NULL)
-		{
-			for($i = 0; $i < count($this->Incentives); $i++)
-			{
-				$str .= '<ebl:Incentives>';
-				$str .= $this->Incentives[$i]->toXMLString();
-				$str .= '</ebl:Incentives>';
-			}
-		}
-		if($this->ReqInstrumentDetails != NULL)
-		{
-			$str .= '<ebl:ReqInstrumentDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqInstrumentDetails) . '</ebl:ReqInstrumentDetails>';
-		}
-		if($this->ExternalRememberMeOptInDetails != NULL)
-		{
-			$str .= '<ebl:ExternalRememberMeOptInDetails>';
-			$str .= $this->ExternalRememberMeOptInDetails->toXMLString();
-			$str .= '</ebl:ExternalRememberMeOptInDetails>';
-		}
-		if($this->FlowControlDetails != NULL)
-		{
-			$str .= '<ebl:FlowControlDetails>';
-			$str .= $this->FlowControlDetails->toXMLString();
-			$str .= '</ebl:FlowControlDetails>';
-		}
-		if($this->DisplayControlDetails != NULL)
-		{
-			$str .= '<ebl:DisplayControlDetails>';
-			$str .= $this->DisplayControlDetails->toXMLString();
-			$str .= '</ebl:DisplayControlDetails>';
-		}
-		if($this->ExternalPartnerTrackingDetails != NULL)
-		{
-			$str .= '<ebl:ExternalPartnerTrackingDetails>';
-			$str .= $this->ExternalPartnerTrackingDetails->toXMLString();
-			$str .= '</ebl:ExternalPartnerTrackingDetails>';
-		}
-		if($this->CoupledBuckets != NULL)
-		{
-			for($i = 0; $i < count($this->CoupledBuckets); $i++)
-			{
-				$str .= '<ebl:CoupledBuckets>';
-				$str .= $this->CoupledBuckets[$i]->toXMLString();
-				$str .= '</ebl:CoupledBuckets>';
-			}
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -2448,7 +2129,9 @@ class SetExpressCheckoutRequestDetailsType  {
  * want the customer to edit his shipping address on PayPal.
  * Character length and limitations: 20 single-byte characters 
  */
-class ExecuteCheckoutOperationsRequestDetailsType  {
+ 
+class ExecuteCheckoutOperationsRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * On your first invocation of
@@ -2460,6 +2143,10 @@ class ExecuteCheckoutOperationsRequestDetailsType  {
 	 * want the customer to edit his shipping address on PayPal.
 	 * Character length and limitations: 20 single-byte characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
@@ -2468,6 +2155,10 @@ class ExecuteCheckoutOperationsRequestDetailsType  {
 	 * All the Data required to initiate the checkout session is
 	 * passed in this element. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var SetDataRequestType
 	 */ 
 	public $SetDataRequest;
@@ -2476,6 +2167,10 @@ class ExecuteCheckoutOperationsRequestDetailsType  {
 	 * If auto authorization is required, this should be passed in
 	 * with IsRequested set to yes. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AuthorizationRequestType
 	 */ 
 	public $AuthorizationRequest;
@@ -2488,42 +2183,26 @@ class ExecuteCheckoutOperationsRequestDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Token != NULL)
-		{
-			$str .= '<ebl:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</ebl:Token>';
-		}
-		if($this->SetDataRequest != NULL)
-		{
-			$str .= '<ebl:SetDataRequest>';
-			$str .= $this->SetDataRequest->toXMLString();
-			$str .= '</ebl:SetDataRequest>';
-		}
-		if($this->AuthorizationRequest != NULL)
-		{
-			$str .= '<ebl:AuthorizationRequest>';
-			$str .= $this->AuthorizationRequest->toXMLString();
-			$str .= '</ebl:AuthorizationRequest>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Details about Billing Agreements requested to be created. 
  */
-class SetDataRequestType  {
+ 
+class SetDataRequestType  
+   extends PPXmlMessage{
 
 	/**
 	 * Details about Billing Agreements requested to be created. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BillingApprovalDetailsType
 	 */ 
 	public $BillingApprovalDetails;
@@ -2532,6 +2211,10 @@ class SetDataRequestType  {
 	 * Only needed if Auto Authorization is requested. The
 	 * authentication session token will be passed in here. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BuyerDetailType
 	 */ 
 	public $BuyerDetail;
@@ -2541,51 +2224,34 @@ class SetDataRequestType  {
 	 * to be returned through GetExpressCheckoutDetails should be
 	 * specified under this. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var InfoSharingDirectivesType
 	 */ 
 	public $InfoSharingDirectives;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->BillingApprovalDetails != NULL)
-		{
-			for($i = 0; $i < count($this->BillingApprovalDetails); $i++)
-			{
-				$str .= '<ebl:BillingApprovalDetails>';
-				$str .= $this->BillingApprovalDetails[$i]->toXMLString();
-				$str .= '</ebl:BillingApprovalDetails>';
-			}
-		}
-		if($this->BuyerDetail != NULL)
-		{
-			$str .= '<ebl:BuyerDetail>';
-			$str .= $this->BuyerDetail->toXMLString();
-			$str .= '</ebl:BuyerDetail>';
-		}
-		if($this->InfoSharingDirectives != NULL)
-		{
-			$str .= '<ebl:InfoSharingDirectives>';
-			$str .= $this->InfoSharingDirectives->toXMLString();
-			$str .= '</ebl:InfoSharingDirectives>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class AuthorizationRequestType  {
+ 
+class AuthorizationRequestType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var boolean
 	 */ 
 	public $IsRequested;
@@ -2598,18 +2264,8 @@ class AuthorizationRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->IsRequested != NULL)
-		{
-			$str .= '<ebl:IsRequested>' . PPUtils::escapeInvalidXmlCharsRegex($this->IsRequested) . '</ebl:IsRequested>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -2617,12 +2273,18 @@ class AuthorizationRequestType  {
  * The Type of Approval requested - Billing Agreement or
  * Profile 
  */
-class BillingApprovalDetailsType  {
+ 
+class BillingApprovalDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * The Type of Approval requested - Billing Agreement or
 	 * Profile
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ApprovalTypeType
 	 */ 
 	public $ApprovalType;
@@ -2631,6 +2293,10 @@ class BillingApprovalDetailsType  {
 	 * The Approval subtype - Must be MerchantInitiatedBilling for
 	 * BillingAgreement ApprovalType
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ApprovalSubTypeType
 	 */ 
 	public $ApprovalSubType;
@@ -2638,6 +2304,10 @@ class BillingApprovalDetailsType  {
 	/**
 	 * Description about the Order
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var OrderDetailsType
 	 */ 
 	public $OrderDetails;
@@ -2645,6 +2315,10 @@ class BillingApprovalDetailsType  {
 	/**
 	 * Directives about the type of payment
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentDirectivesType
 	 */ 
 	public $PaymentDirectives;
@@ -2653,6 +2327,10 @@ class BillingApprovalDetailsType  {
 	 * Client may pass in its identification of this Billing
 	 * Agreement. It used for the client's tracking purposes.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Custom;
@@ -2665,38 +2343,8 @@ class BillingApprovalDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ApprovalType != NULL)
-		{
-			$str .= '<ebl:ApprovalType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ApprovalType) . '</ebl:ApprovalType>';
-		}
-		if($this->ApprovalSubType != NULL)
-		{
-			$str .= '<ebl:ApprovalSubType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ApprovalSubType) . '</ebl:ApprovalSubType>';
-		}
-		if($this->OrderDetails != NULL)
-		{
-			$str .= '<ebl:OrderDetails>';
-			$str .= $this->OrderDetails->toXMLString();
-			$str .= '</ebl:OrderDetails>';
-		}
-		if($this->PaymentDirectives != NULL)
-		{
-			$str .= '<ebl:PaymentDirectives>';
-			$str .= $this->PaymentDirectives->toXMLString();
-			$str .= '</ebl:PaymentDirectives>';
-		}
-		if($this->Custom != NULL)
-		{
-			$str .= '<ebl:Custom>' . PPUtils::escapeInvalidXmlCharsRegex($this->Custom) . '</ebl:Custom>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -2705,41 +2353,43 @@ class BillingApprovalDetailsType  {
  * GetExpressCheckoutDetails response, this parameter should be
  * set to yes here 
  */
-class InfoSharingDirectivesType  {
+ 
+class InfoSharingDirectivesType  
+   extends PPXmlMessage{
 
 	/**
 	 * If Billing Address should be returned in
 	 * GetExpressCheckoutDetails response, this parameter should be
 	 * set to yes here
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReqBillingAddress;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ReqBillingAddress != NULL)
-		{
-			$str .= '<ebl:ReqBillingAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqBillingAddress) . '</ebl:ReqBillingAddress>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Description of the Order. 
  */
-class OrderDetailsType  {
+ 
+class OrderDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Description of the Order.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Description;
@@ -2748,57 +2398,41 @@ class OrderDetailsType  {
 	 * Expected maximum amount that the merchant may pull using
 	 * DoReferenceTransaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $MaxAmount;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Description != NULL)
-		{
-			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
-		}
-		if($this->MaxAmount != NULL)
-		{
-			$str .= '<ebl:MaxAmount';
-			$str .= $this->MaxAmount->toXMLString();
-			$str .= '</ebl:MaxAmount>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Type of the Payment is it Instant or Echeck or Any. 
  */
-class PaymentDirectivesType  {
+ 
+class PaymentDirectivesType  
+   extends PPXmlMessage{
 
 	/**
 	 * Type of the Payment is it Instant or Echeck or Any.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MerchantPullPaymentCodeType
 	 */ 
 	public $PaymentType;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->PaymentType != NULL)
-		{
-			$str .= '<ebl:PaymentType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentType) . '</ebl:PaymentType>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -2807,43 +2441,43 @@ class PaymentDirectivesType  {
  * used for auto authorization. Mandatory if Authorization is
  * requested. 
  */
-class BuyerDetailType  {
+ 
+class BuyerDetailType  
+   extends PPXmlMessage{
 
 	/**
 	 * Information that is used to indentify the Buyer. This is
 	 * used for auto authorization. Mandatory if Authorization is
 	 * requested.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IdentificationInfoType
 	 */ 
 	public $IdentificationInfo;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->IdentificationInfo != NULL)
-		{
-			$str .= '<ebl:IdentificationInfo>';
-			$str .= $this->IdentificationInfo->toXMLString();
-			$str .= '</ebl:IdentificationInfo>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Mobile specific buyer identification. 
  */
-class IdentificationInfoType  {
+ 
+class IdentificationInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * Mobile specific buyer identification.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MobileIDInfoType
 	 */ 
 	public $MobileIDInfo;
@@ -2851,6 +2485,10 @@ class IdentificationInfoType  {
 	/**
 	 * Contains login bypass information.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RememberMeIDInfoType
 	 */ 
 	public $RememberMeIDInfo;
@@ -2858,65 +2496,41 @@ class IdentificationInfoType  {
 	/**
 	 * Identity Access Token.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IdentityTokenInfoType
 	 */ 
 	public $IdentityTokenInfo;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->MobileIDInfo != NULL)
-		{
-			$str .= '<ebl:MobileIDInfo>';
-			$str .= $this->MobileIDInfo->toXMLString();
-			$str .= '</ebl:MobileIDInfo>';
-		}
-		if($this->RememberMeIDInfo != NULL)
-		{
-			$str .= '<ebl:RememberMeIDInfo>';
-			$str .= $this->RememberMeIDInfo->toXMLString();
-			$str .= '</ebl:RememberMeIDInfo>';
-		}
-		if($this->IdentityTokenInfo != NULL)
-		{
-			$str .= '<ebl:IdentityTokenInfo>';
-			$str .= $this->IdentityTokenInfo->toXMLString();
-			$str .= '</ebl:IdentityTokenInfo>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * The Session token returned during buyer authentication. 
  */
-class MobileIDInfoType  {
+ 
+class MobileIDInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * The Session token returned during buyer authentication.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SessionToken;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->SessionToken != NULL)
-		{
-			$str .= '<ebl:SessionToken>' . PPUtils::escapeInvalidXmlCharsRegex($this->SessionToken) . '</ebl:SessionToken>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -2929,7 +2543,9 @@ class MobileIDInfoType  {
  * If present, requests that the web flow attempt bypass of
  * login. 
  */
-class RememberMeIDInfoType  {
+ 
+class RememberMeIDInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * External remember-me ID returned by
@@ -2940,34 +2556,34 @@ class RememberMeIDInfoType  {
 	 * If present, requests that the web flow attempt bypass of
 	 * login. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ExternalRememberMeID;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ExternalRememberMeID != NULL)
-		{
-			$str .= '<ebl:ExternalRememberMeID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalRememberMeID) . '</ebl:ExternalRememberMeID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Identity Access token from merchant 
  */
-class IdentityTokenInfoType  {
+ 
+class IdentityTokenInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * Identity Access token from merchant
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $AccessToken;
@@ -2980,18 +2596,8 @@ class IdentityTokenInfoType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->AccessToken != NULL)
-		{
-			$str .= '<ebl:AccessToken>' . PPUtils::escapeInvalidXmlCharsRegex($this->AccessToken) . '</ebl:AccessToken>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -3001,7 +2607,9 @@ class IdentityTokenInfoType  {
  * Optional Character length and limitations: One single-byte
  * numeric character. 
  */
-class FundingSourceDetailsType  {
+ 
+class FundingSourceDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Allowable values: 0,1 The value 1 indicates that the
@@ -3009,6 +2617,10 @@ class FundingSourceDetailsType  {
 	 * Optional Character length and limitations: One single-byte
 	 * numeric character. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $AllowPushFunding;
@@ -3019,38 +2631,34 @@ class FundingSourceDetailsType  {
 	 * for a guest users. It has effect only if LandingPage element
 	 * is set to Billing. Otherwise it will be ignored. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var UserSelectedFundingSourceType
 	 */ 
 	public $UserSelectedFundingSource;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->AllowPushFunding != NULL)
-		{
-			$str .= '<ebl:AllowPushFunding>' . PPUtils::escapeInvalidXmlCharsRegex($this->AllowPushFunding) . '</ebl:AllowPushFunding>';
-		}
-		if($this->UserSelectedFundingSource != NULL)
-		{
-			$str .= '<ebl:UserSelectedFundingSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->UserSelectedFundingSource) . '</ebl:UserSelectedFundingSource>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class BillingAgreementDetailsType  {
+ 
+class BillingAgreementDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BillingCodeType
 	 */ 
 	public $BillingType;
@@ -3058,6 +2666,10 @@ class BillingAgreementDetailsType  {
 	/**
 	 * Only needed for AutoBill billinng type. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BillingAgreementDescription;
@@ -3065,6 +2677,10 @@ class BillingAgreementDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MerchantPullPaymentCodeType
 	 */ 
 	public $PaymentType;
@@ -3072,6 +2688,10 @@ class BillingAgreementDetailsType  {
 	/**
 	 * Custom annotation field for your exclusive use. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BillingAgreementCustom;
@@ -3084,30 +2704,8 @@ class BillingAgreementDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->BillingType != NULL)
-		{
-			$str .= '<ebl:BillingType>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingType) . '</ebl:BillingType>';
-		}
-		if($this->BillingAgreementDescription != NULL)
-		{
-			$str .= '<ebl:BillingAgreementDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingAgreementDescription) . '</ebl:BillingAgreementDescription>';
-		}
-		if($this->PaymentType != NULL)
-		{
-			$str .= '<ebl:PaymentType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentType) . '</ebl:PaymentType>';
-		}
-		if($this->BillingAgreementCustom != NULL)
-		{
-			$str .= '<ebl:BillingAgreementCustom>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingAgreementCustom) . '</ebl:BillingAgreementCustom>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -3117,7 +2715,9 @@ class BillingAgreementDetailsType  {
  * GetExpressCheckoutDetailsRequest. Character length and
  * limitations: 20 single-byte characters 
  */
-class GetExpressCheckoutDetailsResponseDetailsType  {
+ 
+class GetExpressCheckoutDetailsResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * The timestamped token value that was returned by
@@ -3125,6 +2725,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * GetExpressCheckoutDetailsRequest. Character length and
 	 * limitations: 20 single-byte characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
@@ -3132,6 +2736,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	/**
 	 * Information about the payer
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PayerInfoType
 	 */ 
 	public $PayerInfo;
@@ -3142,6 +2750,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * length and limitations: 256 single-byte alphanumeric
 	 * characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Custom;
@@ -3152,6 +2764,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InvoiceID;
@@ -3161,6 +2777,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * telephone number only if your Merchant account profile
 	 * settings require that the buyer enter one.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ContactPhone;
@@ -3168,6 +2788,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var boolean
 	 */ 
 	public $BillingAgreementAcceptedStatus;
@@ -3175,6 +2799,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $RedirectRequired;
@@ -3186,6 +2814,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * , PayPal returns this address in
 	 * GetExpressCheckoutDetailsResponse.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $BillingAddress;
@@ -3193,6 +2825,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	/**
 	 * Text note entered by the buyer in PayPal flow. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Note;
@@ -3202,6 +2838,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * include 'PaymentActionNotInitiated', 'PaymentActionFailed',
 	 * 'PaymentActionInProgress', 'PaymentCompleted'. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CheckoutStatus;
@@ -3213,6 +2853,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * the current charges, which will be represented as a positive
 	 * amount. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $PayPalAdjustment;
@@ -3221,6 +2865,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * Information about the individual purchased items. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentDetailsType
 	 */ 
 	public $PaymentDetails;
@@ -3228,6 +2876,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	/**
 	 * Information about the user selected options. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var UserSelectedOptionType
 	 */ 
 	public $UserSelectedOptions;
@@ -3237,6 +2889,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * RYP page and PayPal RYP page. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IncentiveDetailsType
 	 */ 
 	public $IncentiveDetails;
@@ -3244,6 +2900,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	/**
 	 * Information about the Gift message. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $GiftMessage;
@@ -3251,6 +2911,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	/**
 	 * Information about the Gift receipt enable. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $GiftReceiptEnable;
@@ -3258,6 +2922,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	/**
 	 * Information about the Gift Wrap name. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $GiftWrapName;
@@ -3265,6 +2933,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	/**
 	 * Information about the Gift Wrap amount. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $GiftWrapAmount;
@@ -3272,6 +2944,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	/**
 	 * Information about the Buyer marketing email. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BuyerMarketingEmail;
@@ -3279,6 +2955,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	/**
 	 * Information about the survey question. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SurveyQuestion;
@@ -3287,6 +2967,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * Information about the survey choice selected by the user. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SurveyChoiceSelected;
@@ -3296,6 +2980,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * the cart. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentRequestInfoType
 	 */ 
 	public $PaymentRequestInfo;
@@ -3304,6 +2992,10 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * Response information resulting from opt-in operation or
 	 * current login bypass status. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ExternalRememberMeStatusDetailsType
 	 */ 
 	public $ExternalRememberMeStatusDetails;
@@ -3312,191 +3004,33 @@ class GetExpressCheckoutDetailsResponseDetailsType  {
 	 * Response information resulting from opt-in operation or
 	 * current login bypass status. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RefreshTokenStatusDetailsType
 	 */ 
 	public $RefreshTokenStatusDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
-					$this->Token = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='payerinfo'){
-                                    $this->PayerInfo = new PayerInfoType(); 
-                                    $this->PayerInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'custom') {
-					$this->Custom = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'invoiceid') {
-					$this->InvoiceID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'contactphone') {
-					$this->ContactPhone = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementacceptedstatus') {
-					$this->BillingAgreementAcceptedStatus = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'redirectrequired') {
-					$this->RedirectRequired = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='billingaddress'){
-                                    $this->BillingAddress = new AddressType(); 
-                                    $this->BillingAddress->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'note') {
-					$this->Note = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'checkoutstatus') {
-					$this->CheckoutStatus = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='paypaladjustment') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->PayPalAdjustment= new BasicAmountType(); 
-								$this->PayPalAdjustment->init($atr);
-							}
-							                            
-			}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "paymentdetails[$i]") {
-							$this->PaymentDetails[$i] = new PaymentDetailsType();
-							$this->PaymentDetails[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "paymentdetails")) {
-					$this->PaymentDetails = new PaymentDetailsType();
-					$this->PaymentDetails->init($arry["children"]);
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='userselectedoptions'){
-                                    $this->UserSelectedOptions = new UserSelectedOptionType(); 
-                                    $this->UserSelectedOptions->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "incentivedetails[$i]") {
-							$this->IncentiveDetails[$i] = new IncentiveDetailsType();
-							$this->IncentiveDetails[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "incentivedetails")) {
-					$this->IncentiveDetails = new IncentiveDetailsType();
-					$this->IncentiveDetails->init($arry["children"]);
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'giftmessage') {
-					$this->GiftMessage = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'giftreceiptenable') {
-					$this->GiftReceiptEnable = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'giftwrapname') {
-					$this->GiftWrapName = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='giftwrapamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->GiftWrapAmount= new BasicAmountType(); 
-								$this->GiftWrapAmount->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buyermarketingemail') {
-					$this->BuyerMarketingEmail = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'surveyquestion') {
-					$this->SurveyQuestion = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "paymentrequestinfo[$i]") {
-							$this->PaymentRequestInfo[$i] = new PaymentRequestInfoType();
-							$this->PaymentRequestInfo[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "paymentrequestinfo")) {
-					$this->PaymentRequestInfo = new PaymentRequestInfoType();
-					$this->PaymentRequestInfo->init($arry["children"]);
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='externalremembermestatusdetails'){
-                                    $this->ExternalRememberMeStatusDetails = new ExternalRememberMeStatusDetailsType(); 
-                                    $this->ExternalRememberMeStatusDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='refreshtokenstatusdetails'){
-                                    $this->RefreshTokenStatusDetails = new RefreshTokenStatusDetailsType(); 
-                                    $this->RefreshTokenStatusDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class ExecuteCheckoutOperationsResponseDetailsType  {
+ 
+class ExecuteCheckoutOperationsResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var SetDataResponseType
 	 */ 
 	public $SetDataResponse;
@@ -3504,35 +3038,16 @@ class ExecuteCheckoutOperationsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AuthorizationResponseType
 	 */ 
 	public $AuthorizationResponse;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='setdataresponse'){
-                                    $this->SetDataResponse = new SetDataResponseType(); 
-                                    $this->SetDataResponse->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='authorizationresponse'){
-                                    $this->AuthorizationResponse = new AuthorizationResponseType(); 
-                                    $this->AuthorizationResponse->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -3540,12 +3055,18 @@ class ExecuteCheckoutOperationsResponseDetailsType  {
  * If Checkout session was initialized successfully, the
  * corresponding token is returned in this element. 
  */
-class SetDataResponseType  {
+ 
+class SetDataResponseType  
+   extends PPXmlMessage{
 
 	/**
 	 * If Checkout session was initialized successfully, the
 	 * corresponding token is returned in this element. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
@@ -3554,38 +3075,16 @@ class SetDataResponseType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ErrorType
 	 */ 
 	public $SetDataError;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
-					$this->Token = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "setdataerror[$i]") {
-							$this->SetDataError[$i] = new ErrorType();
-							$this->SetDataError[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "setdataerror")) {
-					$this->SetDataError = new ErrorType();
-					$this->SetDataError->init($arry["children"]);
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -3593,12 +3092,18 @@ class SetDataResponseType  {
  * Status will denote whether Auto authorization was successful
  * or not. 
  */
-class AuthorizationResponseType  {
+ 
+class AuthorizationResponseType  
+   extends PPXmlMessage{
 
 	/**
 	 * Status will denote whether Auto authorization was successful
 	 * or not. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AckCodeType
 	 */ 
 	public $Status;
@@ -3607,38 +3112,16 @@ class AuthorizationResponseType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ErrorType
 	 */ 
 	public $AuthorizationError;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
-					$this->Status = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "authorizationerror[$i]") {
-							$this->AuthorizationError[$i] = new ErrorType();
-							$this->AuthorizationError[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "authorizationerror")) {
-					$this->AuthorizationError = new ErrorType();
-					$this->AuthorizationError->init($arry["children"]);
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -3655,7 +3138,9 @@ class AuthorizationResponseType  {
  * API, DoExpressCheckoutPaymentRequest. Character length and
  * limit: Up to 13 single-byte alphabetic characters 
  */
-class DoExpressCheckoutPaymentRequestDetailsType  {
+ 
+class DoExpressCheckoutPaymentRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * How you want to obtain payment. Required Authorization
@@ -3670,6 +3155,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * API, DoExpressCheckoutPaymentRequest. Character length and
 	 * limit: Up to 13 single-byte alphabetic characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentActionCodeType
 	 */ 
 	public $PaymentAction;
@@ -3680,6 +3169,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * GetExpressCheckoutDetailsRequest. Required Character length
 	 * and limitations: 20 single-byte characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
@@ -3690,6 +3183,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * Character length and limitations: 127 single-byte
 	 * characters.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PayerID;
@@ -3697,6 +3194,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	/**
 	 * URL on Merchant site pertaining to this invoice. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OrderURL;
@@ -3705,6 +3206,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * Information about the payment Required 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentDetailsType
 	 */ 
 	public $PaymentDetails;
@@ -3713,6 +3218,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * Flag to indicate if previously set promoCode shall be
 	 * overriden. Value 1 indicates overriding.  
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PromoOverrideFlag;
@@ -3721,6 +3230,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * Promotional financing code for item. Overrides any previous
 	 * PromoCode setting. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PromoCode;
@@ -3729,6 +3242,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * Contains data for enhanced data like Airline Itinerary Data.
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var EnhancedDataType
 	 */ 
 	public $EnhancedData;
@@ -3737,6 +3254,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * Soft Descriptor supported for Sale and Auth in DEC only. For
 	 * Order this will be ignored. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SoftDescriptor;
@@ -3744,6 +3265,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	/**
 	 * Information about the user selected options. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var UserSelectedOptionType
 	 */ 
 	public $UserSelectedOptions;
@@ -3751,6 +3276,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	/**
 	 * Information about the Gift message. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $GiftMessage;
@@ -3758,6 +3287,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	/**
 	 * Information about the Gift receipt enable. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $GiftReceiptEnable;
@@ -3765,6 +3298,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	/**
 	 * Information about the Gift Wrap name. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $GiftWrapName;
@@ -3772,6 +3309,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	/**
 	 * Information about the Gift Wrap amount. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $GiftWrapAmount;
@@ -3779,6 +3320,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	/**
 	 * Information about the Buyer marketing email. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BuyerMarketingEmail;
@@ -3786,6 +3331,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	/**
 	 * Information about the survey question. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SurveyQuestion;
@@ -3794,6 +3343,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * Information about the survey choice selected by the user. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SurveyChoiceSelected;
@@ -3803,6 +3356,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * to identify transactions. Optional Character length and
 	 * limitations: 32 single-byte alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ButtonSource;
@@ -3811,6 +3368,10 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * Merchant specified flag which indicates whether to create
 	 * billing agreement as part of DoEC or not. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var boolean
 	 */ 
 	public $SkipBACreation;
@@ -3819,118 +3380,17 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
 	 * Optional element that defines relationship between buckets 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CoupledBucketsType
 	 */ 
 	public $CoupledBuckets;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->PaymentAction != NULL)
-		{
-			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
-		}
-		if($this->Token != NULL)
-		{
-			$str .= '<ebl:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</ebl:Token>';
-		}
-		if($this->PayerID != NULL)
-		{
-			$str .= '<ebl:PayerID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerID) . '</ebl:PayerID>';
-		}
-		if($this->OrderURL != NULL)
-		{
-			$str .= '<ebl:OrderURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->OrderURL) . '</ebl:OrderURL>';
-		}
-		if($this->PaymentDetails != NULL)
-		{
-			for($i = 0; $i < count($this->PaymentDetails); $i++)
-			{
-				$str .= '<ebl:PaymentDetails>';
-				$str .= $this->PaymentDetails[$i]->toXMLString();
-				$str .= '</ebl:PaymentDetails>';
-			}
-		}
-		if($this->PromoOverrideFlag != NULL)
-		{
-			$str .= '<ebl:PromoOverrideFlag>' . PPUtils::escapeInvalidXmlCharsRegex($this->PromoOverrideFlag) . '</ebl:PromoOverrideFlag>';
-		}
-		if($this->PromoCode != NULL)
-		{
-			$str .= '<ebl:PromoCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->PromoCode) . '</ebl:PromoCode>';
-		}
-		if($this->EnhancedData != NULL)
-		{
-			$str .= '<ebl:EnhancedData>';
-			$str .= $this->EnhancedData->toXMLString();
-			$str .= '</ebl:EnhancedData>';
-		}
-		if($this->SoftDescriptor != NULL)
-		{
-			$str .= '<ebl:SoftDescriptor>' . PPUtils::escapeInvalidXmlCharsRegex($this->SoftDescriptor) . '</ebl:SoftDescriptor>';
-		}
-		if($this->UserSelectedOptions != NULL)
-		{
-			$str .= '<ebl:UserSelectedOptions>';
-			$str .= $this->UserSelectedOptions->toXMLString();
-			$str .= '</ebl:UserSelectedOptions>';
-		}
-		if($this->GiftMessage != NULL)
-		{
-			$str .= '<ebl:GiftMessage>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftMessage) . '</ebl:GiftMessage>';
-		}
-		if($this->GiftReceiptEnable != NULL)
-		{
-			$str .= '<ebl:GiftReceiptEnable>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftReceiptEnable) . '</ebl:GiftReceiptEnable>';
-		}
-		if($this->GiftWrapName != NULL)
-		{
-			$str .= '<ebl:GiftWrapName>' . PPUtils::escapeInvalidXmlCharsRegex($this->GiftWrapName) . '</ebl:GiftWrapName>';
-		}
-		if($this->GiftWrapAmount != NULL)
-		{
-			$str .= '<ebl:GiftWrapAmount';
-			$str .= $this->GiftWrapAmount->toXMLString();
-			$str .= '</ebl:GiftWrapAmount>';
-		}
-		if($this->BuyerMarketingEmail != NULL)
-		{
-			$str .= '<ebl:BuyerMarketingEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerMarketingEmail) . '</ebl:BuyerMarketingEmail>';
-		}
-		if($this->SurveyQuestion != NULL)
-		{
-			$str .= '<ebl:SurveyQuestion>' . PPUtils::escapeInvalidXmlCharsRegex($this->SurveyQuestion) . '</ebl:SurveyQuestion>';
-		}
-		if($this->SurveyChoiceSelected != NULL)
-		{
-			for($i = 0; $i < count($this->SurveyChoiceSelected); $i++)
-			{
-				$str .= '<ebl:SurveyChoiceSelected>'. PPUtils::escapeInvalidXmlCharsRegex($this->SurveyChoiceSelected[$i]) . '</ebl:SurveyChoiceSelected>';
-			}
-		}
-		if($this->ButtonSource != NULL)
-		{
-			$str .= '<ebl:ButtonSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSource) . '</ebl:ButtonSource>';
-		}
-		if($this->SkipBACreation != NULL)
-		{
-			$str .= '<ebl:SkipBACreation>' . PPUtils::escapeInvalidXmlCharsRegex($this->SkipBACreation) . '</ebl:SkipBACreation>';
-		}
-		if($this->CoupledBuckets != NULL)
-		{
-			for($i = 0; $i < count($this->CoupledBuckets); $i++)
-			{
-				$str .= '<ebl:CoupledBuckets>';
-				$str .= $this->CoupledBuckets[$i]->toXMLString();
-				$str .= '</ebl:CoupledBuckets>';
-			}
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -3940,7 +3400,9 @@ class DoExpressCheckoutPaymentRequestDetailsType  {
  * GetExpressCheckoutDetailsRequest. Character length and
  * limitations:20 single-byte characters 
  */
-class DoExpressCheckoutPaymentResponseDetailsType  {
+ 
+class DoExpressCheckoutPaymentResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * The timestamped token value that was returned by
@@ -3948,6 +3410,10 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 	 * GetExpressCheckoutDetailsRequest. Character length and
 	 * limitations:20 single-byte characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
@@ -3956,6 +3422,10 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 	 * Information about the transaction 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentInfoType
 	 */ 
 	public $PaymentInfo;
@@ -3963,6 +3433,10 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BillingAgreementID;
@@ -3970,6 +3444,10 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $RedirectRequired;
@@ -3979,6 +3457,10 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 	 * Optional Character length and limitations: 255 single-byte
 	 * alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Note;
@@ -3986,6 +3468,10 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 	/**
 	 * Redirect back to PayPal, PayPal can host the success page. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SuccessPageRedirectRequested;
@@ -3993,6 +3479,10 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 	/**
 	 * Information about the user selected options. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var UserSelectedOptionType
 	 */ 
 	public $UserSelectedOptions;
@@ -4001,74 +3491,16 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
 	 * Information about Coupled Payment transactions. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CoupledPaymentInfoType
 	 */ 
 	public $CoupledPaymentInfo;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
-					$this->Token = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "paymentinfo[$i]") {
-							$this->PaymentInfo[$i] = new PaymentInfoType();
-							$this->PaymentInfo[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "paymentinfo")) {
-					$this->PaymentInfo = new PaymentInfoType();
-					$this->PaymentInfo->init($arry["children"]);
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementid') {
-					$this->BillingAgreementID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'redirectrequired') {
-					$this->RedirectRequired = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'note') {
-					$this->Note = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'successpageredirectrequested') {
-					$this->SuccessPageRedirectRequested = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='userselectedoptions'){
-                                    $this->UserSelectedOptions = new UserSelectedOptionType(); 
-                                    $this->UserSelectedOptions->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "coupledpaymentinfo[$i]") {
-							$this->CoupledPaymentInfo[$i] = new CoupledPaymentInfoType();
-							$this->CoupledPaymentInfo[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "coupledpaymentinfo")) {
-					$this->CoupledPaymentInfo = new CoupledPaymentInfoType();
-					$this->CoupledPaymentInfo->init($arry["children"]);
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -4077,13 +3509,19 @@ class DoExpressCheckoutPaymentResponseDetailsType  {
  * request. Character length and limits: 19 single-byte
  * characters maximum 
  */
-class DoCaptureResponseDetailsType  {
+ 
+class DoCaptureResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * The authorization identification number you specified in the
 	 * request. Character length and limits: 19 single-byte
 	 * characters maximum
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $AuthorizationID;
@@ -4091,6 +3529,10 @@ class DoCaptureResponseDetailsType  {
 	/**
 	 * Information about the transaction 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentInfoType
 	 */ 
 	public $PaymentInfo;
@@ -4098,33 +3540,16 @@ class DoCaptureResponseDetailsType  {
 	/**
 	 * Return msgsubid back to merchant 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'authorizationid') {
-					$this->AuthorizationID = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='paymentinfo'){
-                                    $this->PaymentInfo = new PaymentInfoType(); 
-                                    $this->PaymentInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
-					$this->MsgSubID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -4137,7 +3562,9 @@ class DoCaptureResponseDetailsType  {
  * Payment. Character length and limit: Up to 13 single-byte
  * alphabetic characters 
  */
-class DoDirectPaymentRequestDetailsType  {
+ 
+class DoDirectPaymentRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * How you want to obtain payment. Required Authorization
@@ -4148,6 +3575,10 @@ class DoDirectPaymentRequestDetailsType  {
 	 * Payment. Character length and limit: Up to 13 single-byte
 	 * alphabetic characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentActionCodeType
 	 */ 
 	public $PaymentAction;
@@ -4155,6 +3586,10 @@ class DoDirectPaymentRequestDetailsType  {
 	/**
 	 * Information about the payment Required 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentDetailsType
 	 */ 
 	public $PaymentDetails;
@@ -4162,6 +3597,10 @@ class DoDirectPaymentRequestDetailsType  {
 	/**
 	 * Information about the credit card to be charged. Required 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CreditCardDetailsType
 	 */ 
 	public $CreditCard;
@@ -4173,6 +3612,10 @@ class DoDirectPaymentRequestDetailsType  {
 	 * and limitations: 15 single-byte characters, including
 	 * periods, in dotted-quad format: ???.???.???.???
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $IPAddress;
@@ -4183,6 +3626,10 @@ class DoDirectPaymentRequestDetailsType  {
 	 * means to detect possible fraud. Optional Character length
 	 * and limitations: 64 single-byte numeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $MerchantSessionId;
@@ -4190,58 +3637,34 @@ class DoDirectPaymentRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var boolean
 	 */ 
 	public $ReturnFMFDetails;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->PaymentAction != NULL)
-		{
-			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
-		}
-		if($this->PaymentDetails != NULL)
-		{
-			$str .= '<ebl:PaymentDetails>';
-			$str .= $this->PaymentDetails->toXMLString();
-			$str .= '</ebl:PaymentDetails>';
-		}
-		if($this->CreditCard != NULL)
-		{
-			$str .= '<ebl:CreditCard>';
-			$str .= $this->CreditCard->toXMLString();
-			$str .= '</ebl:CreditCard>';
-		}
-		if($this->IPAddress != NULL)
-		{
-			$str .= '<ebl:IPAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->IPAddress) . '</ebl:IPAddress>';
-		}
-		if($this->MerchantSessionId != NULL)
-		{
-			$str .= '<ebl:MerchantSessionId>' . PPUtils::escapeInvalidXmlCharsRegex($this->MerchantSessionId) . '</ebl:MerchantSessionId>';
-		}
-		if($this->ReturnFMFDetails != NULL)
-		{
-			$str .= '<ebl:ReturnFMFDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnFMFDetails) . '</ebl:ReturnFMFDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Type of the payment Required 
  */
-class CreateMobilePaymentRequestDetailsType  {
+ 
+class CreateMobilePaymentRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Type of the payment Required 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MobilePaymentCodeType
 	 */ 
 	public $PaymentType;
@@ -4253,6 +3676,10 @@ class CreateMobilePaymentRequestDetailsType  {
 	 * Authorization and Capture. Sale indicates that this is a
 	 * final sale for which you are requesting payment. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentActionCodeType
 	 */ 
 	public $PaymentAction;
@@ -4260,6 +3687,10 @@ class CreateMobilePaymentRequestDetailsType  {
 	/**
 	 * Phone number of the user making the payment. Required 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PhoneNumberType
 	 */ 
 	public $SenderPhone;
@@ -4268,6 +3699,10 @@ class CreateMobilePaymentRequestDetailsType  {
 	 * Type of recipient specified, i.e., phone number or email
 	 * address Required 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MobileRecipientCodeType
 	 */ 
 	public $RecipientType;
@@ -4275,6 +3710,10 @@ class CreateMobilePaymentRequestDetailsType  {
 	/**
 	 * Email address of the recipient 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $RecipientEmail;
@@ -4282,6 +3721,10 @@ class CreateMobilePaymentRequestDetailsType  {
 	/**
 	 * Phone number of the recipipent Required 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PhoneNumberType
 	 */ 
 	public $RecipientPhone;
@@ -4289,6 +3732,10 @@ class CreateMobilePaymentRequestDetailsType  {
 	/**
 	 * Amount of item before tax and shipping 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $ItemAmount;
@@ -4296,6 +3743,10 @@ class CreateMobilePaymentRequestDetailsType  {
 	/**
 	 * The tax charged on the transactionTax Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Tax;
@@ -4303,6 +3754,10 @@ class CreateMobilePaymentRequestDetailsType  {
 	/**
 	 * Per-transaction shipping charge Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Shipping;
@@ -4311,6 +3766,10 @@ class CreateMobilePaymentRequestDetailsType  {
 	 * Name of the item being ordered Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemName;
@@ -4319,6 +3778,10 @@ class CreateMobilePaymentRequestDetailsType  {
 	 * SKU of the item being ordered Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemNumber;
@@ -4328,6 +3791,10 @@ class CreateMobilePaymentRequestDetailsType  {
 	 * field. Optional Character length and limitations: 255
 	 * single-byte alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Note;
@@ -4337,6 +3804,10 @@ class CreateMobilePaymentRequestDetailsType  {
 	 * Optional Character length and limitations: 255 single-byte
 	 * alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CustomID;
@@ -4345,6 +3816,10 @@ class CreateMobilePaymentRequestDetailsType  {
 	 * Indicates whether the sender's phone number will be shared
 	 * with recipient Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $SharePhoneNumber;
@@ -4353,119 +3828,41 @@ class CreateMobilePaymentRequestDetailsType  {
 	 * Indicates whether the sender's home address will be shared
 	 * with recipient Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $ShareHomeAddress;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->PaymentType != NULL)
-		{
-			$str .= '<ebl:PaymentType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentType) . '</ebl:PaymentType>';
-		}
-		if($this->PaymentAction != NULL)
-		{
-			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
-		}
-		if($this->SenderPhone != NULL)
-		{
-			$str .= '<ebl:SenderPhone>';
-			$str .= $this->SenderPhone->toXMLString();
-			$str .= '</ebl:SenderPhone>';
-		}
-		if($this->RecipientType != NULL)
-		{
-			$str .= '<ebl:RecipientType>' . PPUtils::escapeInvalidXmlCharsRegex($this->RecipientType) . '</ebl:RecipientType>';
-		}
-		if($this->RecipientEmail != NULL)
-		{
-			$str .= '<ebl:RecipientEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->RecipientEmail) . '</ebl:RecipientEmail>';
-		}
-		if($this->RecipientPhone != NULL)
-		{
-			$str .= '<ebl:RecipientPhone>';
-			$str .= $this->RecipientPhone->toXMLString();
-			$str .= '</ebl:RecipientPhone>';
-		}
-		if($this->ItemAmount != NULL)
-		{
-			$str .= '<ebl:ItemAmount';
-			$str .= $this->ItemAmount->toXMLString();
-			$str .= '</ebl:ItemAmount>';
-		}
-		if($this->Tax != NULL)
-		{
-			$str .= '<ebl:Tax';
-			$str .= $this->Tax->toXMLString();
-			$str .= '</ebl:Tax>';
-		}
-		if($this->Shipping != NULL)
-		{
-			$str .= '<ebl:Shipping';
-			$str .= $this->Shipping->toXMLString();
-			$str .= '</ebl:Shipping>';
-		}
-		if($this->ItemName != NULL)
-		{
-			$str .= '<ebl:ItemName>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemName) . '</ebl:ItemName>';
-		}
-		if($this->ItemNumber != NULL)
-		{
-			$str .= '<ebl:ItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemNumber) . '</ebl:ItemNumber>';
-		}
-		if($this->Note != NULL)
-		{
-			$str .= '<ebl:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</ebl:Note>';
-		}
-		if($this->CustomID != NULL)
-		{
-			$str .= '<ebl:CustomID>' . PPUtils::escapeInvalidXmlCharsRegex($this->CustomID) . '</ebl:CustomID>';
-		}
-		if($this->SharePhoneNumber != NULL)
-		{
-			$str .= '<ebl:SharePhoneNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->SharePhoneNumber) . '</ebl:SharePhoneNumber>';
-		}
-		if($this->ShareHomeAddress != NULL)
-		{
-			$str .= '<ebl:ShareHomeAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShareHomeAddress) . '</ebl:ShareHomeAddress>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Phone number for status inquiry 
  */
-class GetMobileStatusRequestDetailsType  {
+ 
+class GetMobileStatusRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Phone number for status inquiry 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PhoneNumberType
 	 */ 
 	public $Phone;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Phone != NULL)
-		{
-			$str .= '<ebl:Phone>';
-			$str .= $this->Phone->toXMLString();
-			$str .= '</ebl:Phone>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -4474,13 +3871,19 @@ class GetMobileStatusRequestDetailsType  {
  * choosing to login with PayPal. Required Character length and
  * limitations: no limit. 
  */
-class SetAuthFlowParamRequestDetailsType  {
+ 
+class SetAuthFlowParamRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * URL to which the customer's browser is returned after
 	 * choosing to login with PayPal. Required Character length and
 	 * limitations: no limit. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReturnURL;
@@ -4490,6 +3893,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * the use of PayPal login. Required Character length and
 	 * limitations: no limit
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CancelURL;
@@ -4499,6 +3906,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * logs out from PayPal. Required Character length and
 	 * limitations: no limit. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $LogoutURL;
@@ -4507,6 +3918,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * The type of the flow. Optional Character length and
 	 * limitations: 127 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InitFlowType;
@@ -4516,6 +3931,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SkipLoginPage;
@@ -4525,6 +3944,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * user's login. Optional Character length and limitations: 256
 	 * single-byte alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ServiceName1;
@@ -4534,6 +3957,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ServiceDefReq1;
@@ -4543,6 +3970,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * user's login. Optional Character length and limitations: 256
 	 * single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ServiceName2;
@@ -4552,6 +3983,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ServiceDefReq2;
@@ -4563,6 +3998,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * Allowable values: AU or en_AUDE or de_DEFR or fr_FRGB or
 	 * en_GBIT or it_ITJP or ja_JPUS or en_US
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $LocaleCode;
@@ -4577,6 +4016,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * length and limitations: 30 single-byte alphabetic
 	 * characters. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PageStyle;
@@ -4588,6 +4031,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * an image that is stored on a secure (https) server. Optional
 	 * Character length and limitations: 127
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cppheaderimage;
@@ -4599,6 +4046,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * Character length and limitations: Six character HTML
 	 * hexadecimal color code in ASCII
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cppheaderbordercolor;
@@ -4608,6 +4059,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * Optional Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cppheaderbackcolor;
@@ -4617,6 +4072,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cpppayflowcolor;
@@ -4627,6 +4086,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * limitation: Six character HTML hexadecimal color code in
 	 * ASCII
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $FirstName;
@@ -4637,6 +4100,10 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * limitation: Six character HTML hexadecimal color code in
 	 * ASCII
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $LastName;
@@ -4648,93 +4115,17 @@ class SetAuthFlowParamRequestDetailsType  {
 	 * PayPal returns this same address in
 	 * GetExpressCheckoutDetailsResponse. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $Address;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ReturnURL != NULL)
-		{
-			$str .= '<ebl:ReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnURL) . '</ebl:ReturnURL>';
-		}
-		if($this->CancelURL != NULL)
-		{
-			$str .= '<ebl:CancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelURL) . '</ebl:CancelURL>';
-		}
-		if($this->LogoutURL != NULL)
-		{
-			$str .= '<ebl:LogoutURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->LogoutURL) . '</ebl:LogoutURL>';
-		}
-		if($this->InitFlowType != NULL)
-		{
-			$str .= '<ebl:InitFlowType>' . PPUtils::escapeInvalidXmlCharsRegex($this->InitFlowType) . '</ebl:InitFlowType>';
-		}
-		if($this->SkipLoginPage != NULL)
-		{
-			$str .= '<ebl:SkipLoginPage>' . PPUtils::escapeInvalidXmlCharsRegex($this->SkipLoginPage) . '</ebl:SkipLoginPage>';
-		}
-		if($this->ServiceName1 != NULL)
-		{
-			$str .= '<ebl:ServiceName1>' . PPUtils::escapeInvalidXmlCharsRegex($this->ServiceName1) . '</ebl:ServiceName1>';
-		}
-		if($this->ServiceDefReq1 != NULL)
-		{
-			$str .= '<ebl:ServiceDefReq1>' . PPUtils::escapeInvalidXmlCharsRegex($this->ServiceDefReq1) . '</ebl:ServiceDefReq1>';
-		}
-		if($this->ServiceName2 != NULL)
-		{
-			$str .= '<ebl:ServiceName2>' . PPUtils::escapeInvalidXmlCharsRegex($this->ServiceName2) . '</ebl:ServiceName2>';
-		}
-		if($this->ServiceDefReq2 != NULL)
-		{
-			$str .= '<ebl:ServiceDefReq2>' . PPUtils::escapeInvalidXmlCharsRegex($this->ServiceDefReq2) . '</ebl:ServiceDefReq2>';
-		}
-		if($this->LocaleCode != NULL)
-		{
-			$str .= '<ebl:LocaleCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->LocaleCode) . '</ebl:LocaleCode>';
-		}
-		if($this->PageStyle != NULL)
-		{
-			$str .= '<ebl:PageStyle>' . PPUtils::escapeInvalidXmlCharsRegex($this->PageStyle) . '</ebl:PageStyle>';
-		}
-		if($this->cppheaderimage != NULL)
-		{
-			$str .= '<ebl:cpp-header-image>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cpp-header-image>';
-		}
-		if($this->cppheaderbordercolor != NULL)
-		{
-			$str .= '<ebl:cpp-header-border-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cpp-header-border-color>';
-		}
-		if($this->cppheaderbackcolor != NULL)
-		{
-			$str .= '<ebl:cpp-header-back-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cpp-header-back-color>';
-		}
-		if($this->cpppayflowcolor != NULL)
-		{
-			$str .= '<ebl:cpp-payflow-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpp-payflow-color>';
-		}
-		if($this->FirstName != NULL)
-		{
-			$str .= '<ebl:FirstName>' . PPUtils::escapeInvalidXmlCharsRegex($this->FirstName) . '</ebl:FirstName>';
-		}
-		if($this->LastName != NULL)
-		{
-			$str .= '<ebl:LastName>' . PPUtils::escapeInvalidXmlCharsRegex($this->LastName) . '</ebl:LastName>';
-		}
-		if($this->Address != NULL)
-		{
-			$str .= '<ebl:Address>';
-			$str .= $this->Address->toXMLString();
-			$str .= '</ebl:Address>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -4742,12 +4133,18 @@ class SetAuthFlowParamRequestDetailsType  {
  * The first name of the User. Character length and
  * limitations: 127 single-byte alphanumeric characters 
  */
-class GetAuthDetailsResponseDetailsType  {
+ 
+class GetAuthDetailsResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * The first name of the User. Character length and
 	 * limitations: 127 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $FirstName;
@@ -4756,6 +4153,10 @@ class GetAuthDetailsResponseDetailsType  {
 	 * The Last name of the user. Character length and limitations:
 	 * 127 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $LastName;
@@ -4764,6 +4165,10 @@ class GetAuthDetailsResponseDetailsType  {
 	 * The email address of the user. Character length and
 	 * limitations: 256 single-byte alphanumeric characters. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Email;
@@ -4773,31 +4178,16 @@ class GetAuthDetailsResponseDetailsType  {
 	 * Required Character length and limitations: 127 single-byte
 	 * characters.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PayerID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'firstname') {
-					$this->FirstName = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'lastname') {
-					$this->LastName = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'email') {
-					$this->Email = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payerid') {
-					$this->PayerID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -4806,13 +4196,19 @@ class GetAuthDetailsResponseDetailsType  {
  * choosing to login with PayPal. Required Character length and
  * limitations: no limit. 
  */
-class SetAccessPermissionsRequestDetailsType  {
+ 
+class SetAccessPermissionsRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * URL to which the customer's browser is returned after
 	 * choosing to login with PayPal. Required Character length and
 	 * limitations: no limit. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReturnURL;
@@ -4822,6 +4218,10 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * the use of PayPal login. Required Character length and
 	 * limitations: no limit 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CancelURL;
@@ -4831,6 +4231,10 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * logs out from PayPal. Required Character length and
 	 * limitations: no limit. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $LogoutURL;
@@ -4839,6 +4243,10 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * The type of the flow. Optional Character length and
 	 * limitations: 127 single-byte alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InitFlowType;
@@ -4848,6 +4256,10 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SkipLoginPage;
@@ -4856,6 +4268,10 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * contains information about API Services 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $RequiredAccessPermissions;
@@ -4864,6 +4280,10 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * contains information about API Services 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OptionalAccessPermissions;
@@ -4875,6 +4295,10 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * Allowable values: AU or en_AUDE or de_DEFR or fr_FRGB or
 	 * en_GBIT or it_ITJP or ja_JPUS or en_US 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $LocaleCode;
@@ -4889,6 +4313,10 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * length and limitations: 30 single-byte alphabetic
 	 * characters. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PageStyle;
@@ -4900,6 +4328,10 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * an image that is stored on a secure (https) server. Optional
 	 * Character length and limitations: 127 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cppheaderimage;
@@ -4911,6 +4343,10 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * Character length and limitations: Six character HTML
 	 * hexadecimal color code in ASCII 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cppheaderbordercolor;
@@ -4920,6 +4356,10 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * Optional Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cppheaderbackcolor;
@@ -4929,6 +4369,10 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cpppayflowcolor;
@@ -4939,6 +4383,10 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * limitation: Six character HTML hexadecimal color code in
 	 * ASCII 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $FirstName;
@@ -4949,6 +4397,10 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * limitation: Six character HTML hexadecimal color code in
 	 * ASCII 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $LastName;
@@ -4960,91 +4412,17 @@ class SetAccessPermissionsRequestDetailsType  {
 	 * PayPal returns this same address in
 	 * GetExpressCheckoutDetailsResponse. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $Address;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ReturnURL != NULL)
-		{
-			$str .= '<ebl:ReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnURL) . '</ebl:ReturnURL>';
-		}
-		if($this->CancelURL != NULL)
-		{
-			$str .= '<ebl:CancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelURL) . '</ebl:CancelURL>';
-		}
-		if($this->LogoutURL != NULL)
-		{
-			$str .= '<ebl:LogoutURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->LogoutURL) . '</ebl:LogoutURL>';
-		}
-		if($this->InitFlowType != NULL)
-		{
-			$str .= '<ebl:InitFlowType>' . PPUtils::escapeInvalidXmlCharsRegex($this->InitFlowType) . '</ebl:InitFlowType>';
-		}
-		if($this->SkipLoginPage != NULL)
-		{
-			$str .= '<ebl:SkipLoginPage>' . PPUtils::escapeInvalidXmlCharsRegex($this->SkipLoginPage) . '</ebl:SkipLoginPage>';
-		}
-		if($this->RequiredAccessPermissions != NULL)
-		{
-			for($i = 0; $i < count($this->RequiredAccessPermissions); $i++)
-			{
-				$str .= '<ebl:RequiredAccessPermissions>'. PPUtils::escapeInvalidXmlCharsRegex($this->RequiredAccessPermissions[$i]) . '</ebl:RequiredAccessPermissions>';
-			}
-		}
-		if($this->OptionalAccessPermissions != NULL)
-		{
-			for($i = 0; $i < count($this->OptionalAccessPermissions); $i++)
-			{
-				$str .= '<ebl:OptionalAccessPermissions>'. PPUtils::escapeInvalidXmlCharsRegex($this->OptionalAccessPermissions[$i]) . '</ebl:OptionalAccessPermissions>';
-			}
-		}
-		if($this->LocaleCode != NULL)
-		{
-			$str .= '<ebl:LocaleCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->LocaleCode) . '</ebl:LocaleCode>';
-		}
-		if($this->PageStyle != NULL)
-		{
-			$str .= '<ebl:PageStyle>' . PPUtils::escapeInvalidXmlCharsRegex($this->PageStyle) . '</ebl:PageStyle>';
-		}
-		if($this->cppheaderimage != NULL)
-		{
-			$str .= '<ebl:cpp-header-image>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cpp-header-image>';
-		}
-		if($this->cppheaderbordercolor != NULL)
-		{
-			$str .= '<ebl:cpp-header-border-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cpp-header-border-color>';
-		}
-		if($this->cppheaderbackcolor != NULL)
-		{
-			$str .= '<ebl:cpp-header-back-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cpp-header-back-color>';
-		}
-		if($this->cpppayflowcolor != NULL)
-		{
-			$str .= '<ebl:cpp-payflow-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpp-payflow-color>';
-		}
-		if($this->FirstName != NULL)
-		{
-			$str .= '<ebl:FirstName>' . PPUtils::escapeInvalidXmlCharsRegex($this->FirstName) . '</ebl:FirstName>';
-		}
-		if($this->LastName != NULL)
-		{
-			$str .= '<ebl:LastName>' . PPUtils::escapeInvalidXmlCharsRegex($this->LastName) . '</ebl:LastName>';
-		}
-		if($this->Address != NULL)
-		{
-			$str .= '<ebl:Address>';
-			$str .= $this->Address->toXMLString();
-			$str .= '</ebl:Address>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -5052,12 +4430,18 @@ class SetAccessPermissionsRequestDetailsType  {
  * The first name of the User. Character length and
  * limitations: 127 single-byte alphanumeric characters 
  */
-class GetAccessPermissionDetailsResponseDetailsType  {
+ 
+class GetAccessPermissionDetailsResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * The first name of the User. Character length and
 	 * limitations: 127 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $FirstName;
@@ -5066,6 +4450,10 @@ class GetAccessPermissionDetailsResponseDetailsType  {
 	 * The Last name of the user. Character length and limitations:
 	 * 127 single-byte alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $LastName;
@@ -5074,6 +4462,10 @@ class GetAccessPermissionDetailsResponseDetailsType  {
 	 * The email address of the user. Character length and
 	 * limitations: 256 single-byte alphanumeric characters. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Email;
@@ -5082,6 +4474,10 @@ class GetAccessPermissionDetailsResponseDetailsType  {
 	 * contains information about API Services 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $AccessPermissionName;
@@ -5090,6 +4486,10 @@ class GetAccessPermissionDetailsResponseDetailsType  {
 	 * contains information about API Services 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $AccessPermissionStatus;
@@ -5099,42 +4499,33 @@ class GetAccessPermissionDetailsResponseDetailsType  {
 	 * Required Character length and limitations: 127 single-byte
 	 * characters. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PayerID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'firstname') {
-					$this->FirstName = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'lastname') {
-					$this->LastName = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'email') {
-					$this->Email = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payerid') {
-					$this->PayerID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class BAUpdateResponseDetailsType  {
+ 
+class BAUpdateResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BillingAgreementID;
@@ -5142,6 +4533,10 @@ class BAUpdateResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BillingAgreementDescription;
@@ -5149,6 +4544,10 @@ class BAUpdateResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MerchantPullStatusCodeType
 	 */ 
 	public $BillingAgreementStatus;
@@ -5156,6 +4555,10 @@ class BAUpdateResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BillingAgreementCustom;
@@ -5163,6 +4566,10 @@ class BAUpdateResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PayerInfoType
 	 */ 
 	public $PayerInfo;
@@ -5170,6 +4577,10 @@ class BAUpdateResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $BillingAgreementMax;
@@ -5180,64 +4591,16 @@ class BAUpdateResponseDetailsType  {
 	 * card is returned otherwise your primary address is returned
 	 * , PayPal returns this address in BAUpdateResponseDetails. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $BillingAddress;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementid') {
-					$this->BillingAgreementID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementdescription') {
-					$this->BillingAgreementDescription = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementstatus') {
-					$this->BillingAgreementStatus = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementcustom') {
-					$this->BillingAgreementCustom = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='payerinfo'){
-                                    $this->PayerInfo = new PayerInfoType(); 
-                                    $this->PayerInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='billingagreementmax') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->BillingAgreementMax= new BasicAmountType(); 
-								$this->BillingAgreementMax->init($atr);
-							}
-							                            
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='billingaddress'){
-                                    $this->BillingAddress = new AddressType(); 
-                                    $this->BillingAddress->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -5245,11 +4608,17 @@ class BAUpdateResponseDetailsType  {
  * MerchantPullPaymentResponseType Response data from the
  * merchant pull. 
  */
-class MerchantPullPaymentResponseType  {
+ 
+class MerchantPullPaymentResponseType  
+   extends PPXmlMessage{
 
 	/**
 	 * information about the customer
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PayerInfoType
 	 */ 
 	public $PayerInfo;
@@ -5257,6 +4626,10 @@ class MerchantPullPaymentResponseType  {
 	/**
 	 * Information about the transaction 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentInfoType
 	 */ 
 	public $PaymentInfo;
@@ -5264,54 +4637,33 @@ class MerchantPullPaymentResponseType  {
 	/**
 	 * Specific information about the preapproved payment 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MerchantPullInfoType
 	 */ 
 	public $MerchantPullInfo;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='payerinfo'){
-                                    $this->PayerInfo = new PayerInfoType(); 
-                                    $this->PayerInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='paymentinfo'){
-                                    $this->PaymentInfo = new PaymentInfoType(); 
-                                    $this->PaymentInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='merchantpullinfo'){
-                                    $this->MerchantPullInfo = new MerchantPullInfoType(); 
-                                    $this->MerchantPullInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * MerchantPullInfoType Information about the merchant pull. 
  */
-class MerchantPullInfoType  {
+ 
+class MerchantPullInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * Current status of billing agreement 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MerchantPullStatusCodeType
 	 */ 
 	public $MpStatus;
@@ -5319,6 +4671,10 @@ class MerchantPullInfoType  {
 	/**
 	 * Monthly maximum payment amount
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $MpMax;
@@ -5328,6 +4684,10 @@ class MerchantPullInfoType  {
 	 * FORM submission to PayPal during the creation or updating of
 	 * a customer billing agreement 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $MpCustom;
@@ -5336,6 +4696,10 @@ class MerchantPullInfoType  {
 	 * The value of the mp_desc variable (description of goods or
 	 * services) associated with the billing agreement 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Desc;
@@ -5343,6 +4707,10 @@ class MerchantPullInfoType  {
 	/**
 	 * Invoice value as set by BillUserRequest API call 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Invoice;
@@ -5350,6 +4718,10 @@ class MerchantPullInfoType  {
 	/**
 	 * Custom field as set by BillUserRequest API call 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Custom;
@@ -5357,54 +4729,16 @@ class MerchantPullInfoType  {
 	/**
 	 * Note: This field is no longer used and is always empty.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PaymentSourceID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'mpstatus') {
-					$this->MpStatus = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='mpmax') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->MpMax= new BasicAmountType(); 
-								$this->MpMax->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'mpcustom') {
-					$this->MpCustom = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'desc') {
-					$this->Desc = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'invoice') {
-					$this->Invoice = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'custom') {
-					$this->Custom = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentsourceid') {
-					$this->PaymentSourceID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -5412,12 +4746,18 @@ class MerchantPullInfoType  {
  * PaymentTransactionSearchResultType Results from a
  * PaymentTransaction search 
  */
-class PaymentTransactionSearchResultType  {
+ 
+class PaymentTransactionSearchResultType  
+   extends PPXmlMessage{
 
 	/**
 	 * The date and time (in UTC/GMT format) the transaction
 	 * occurred
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $Timestamp;
@@ -5425,6 +4765,10 @@ class PaymentTransactionSearchResultType  {
 	/**
 	 * The time zone of the transaction 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Timezone;
@@ -5432,6 +4776,10 @@ class PaymentTransactionSearchResultType  {
 	/**
 	 * The type of the transaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Type;
@@ -5439,6 +4787,10 @@ class PaymentTransactionSearchResultType  {
 	/**
 	 * The email address of the payer
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Payer;
@@ -5446,6 +4798,10 @@ class PaymentTransactionSearchResultType  {
 	/**
 	 * Display name of the payer
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PayerDisplayName;
@@ -5453,6 +4809,10 @@ class PaymentTransactionSearchResultType  {
 	/**
 	 * The transaction ID of the seller
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionID;
@@ -5460,6 +4820,10 @@ class PaymentTransactionSearchResultType  {
 	/**
 	 * The status of the transaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Status;
@@ -5468,6 +4832,10 @@ class PaymentTransactionSearchResultType  {
 	 * The total gross amount charged, including any profile
 	 * shipping cost and taxes
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $GrossAmount;
@@ -5475,6 +4843,10 @@ class PaymentTransactionSearchResultType  {
 	/**
 	 * The fee that PayPal charged for the transaction 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $FeeAmount;
@@ -5482,91 +4854,16 @@ class PaymentTransactionSearchResultType  {
 	/**
 	 * The net amount of the transaction 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $NetAmount;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'timestamp') {
-					$this->Timestamp = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'timezone') {
-					$this->Timezone = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'type') {
-					$this->Type = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payer') {
-					$this->Payer = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payerdisplayname') {
-					$this->PayerDisplayName = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
-					$this->TransactionID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
-					$this->Status = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='grossamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->GrossAmount= new BasicAmountType(); 
-								$this->GrossAmount->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='feeamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->FeeAmount= new BasicAmountType(); 
-								$this->FeeAmount->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='netamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->NetAmount= new BasicAmountType(); 
-								$this->NetAmount->init($atr);
-							}
-							                            
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -5574,7 +4871,9 @@ class PaymentTransactionSearchResultType  {
  * MerchantPullPayment Parameters to make initiate a pull
  * payment 
  */
-class MerchantPullPaymentType  {
+ 
+class MerchantPullPaymentType  
+   extends PPXmlMessage{
 
 	/**
 	 * The amount to charge to the customer. Required Only numeric
@@ -5583,6 +4882,10 @@ class MerchantPullPaymentType  {
 	 * set the currencyID attribute to one of the three-character
 	 * currency code for any of the supported PayPal currencies. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -5595,6 +4898,10 @@ class MerchantPullPaymentType  {
 	 * single-character prefix B, followed by a hyphen and an
 	 * alphanumeric character string: B-unique_alphanumeric_string
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $MpID;
@@ -5602,6 +4909,10 @@ class MerchantPullPaymentType  {
 	/**
 	 * Specifies type of PayPal payment you require Optional
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MerchantPullPaymentCodeType
 	 */ 
 	public $PaymentType;
@@ -5610,6 +4921,10 @@ class MerchantPullPaymentType  {
 	 * Text entered by the customer in the Note field during
 	 * enrollment Optional
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Memo;
@@ -5618,6 +4933,10 @@ class MerchantPullPaymentType  {
 	 * Subject line of confirmation email sent to recipient
 	 * Optional
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $EmailSubject;
@@ -5625,6 +4944,10 @@ class MerchantPullPaymentType  {
 	/**
 	 * The tax charged on the transaction Optional
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Tax;
@@ -5632,6 +4955,10 @@ class MerchantPullPaymentType  {
 	/**
 	 * Per-transaction shipping charge Optional
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Shipping;
@@ -5639,6 +4966,10 @@ class MerchantPullPaymentType  {
 	/**
 	 * Per-transaction handling charge Optional
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Handling;
@@ -5646,6 +4977,10 @@ class MerchantPullPaymentType  {
 	/**
 	 * Name of purchased item Optional
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemName;
@@ -5653,6 +4988,10 @@ class MerchantPullPaymentType  {
 	/**
 	 * Reference number of purchased item Optional
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemNumber;
@@ -5660,6 +4999,10 @@ class MerchantPullPaymentType  {
 	/**
 	 * Your invoice number Optional
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Invoice;
@@ -5667,6 +5010,10 @@ class MerchantPullPaymentType  {
 	/**
 	 * Custom annotation field for tracking or other use Optional
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Custom;
@@ -5676,6 +5023,10 @@ class MerchantPullPaymentType  {
 	 * to identify transactions. Optional Character length and
 	 * limitations: 32 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ButtonSource;
@@ -5685,83 +5036,17 @@ class MerchantPullPaymentType  {
 	 * Character length and limitations: single-byte alphanumeric
 	 * characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SoftDescriptor;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Amount != NULL)
-		{
-			$str .= '<ebl:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</ebl:Amount>';
-		}
-		if($this->MpID != NULL)
-		{
-			$str .= '<ebl:MpID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MpID) . '</ebl:MpID>';
-		}
-		if($this->PaymentType != NULL)
-		{
-			$str .= '<ebl:PaymentType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentType) . '</ebl:PaymentType>';
-		}
-		if($this->Memo != NULL)
-		{
-			$str .= '<ebl:Memo>' . PPUtils::escapeInvalidXmlCharsRegex($this->Memo) . '</ebl:Memo>';
-		}
-		if($this->EmailSubject != NULL)
-		{
-			$str .= '<ebl:EmailSubject>' . PPUtils::escapeInvalidXmlCharsRegex($this->EmailSubject) . '</ebl:EmailSubject>';
-		}
-		if($this->Tax != NULL)
-		{
-			$str .= '<ebl:Tax';
-			$str .= $this->Tax->toXMLString();
-			$str .= '</ebl:Tax>';
-		}
-		if($this->Shipping != NULL)
-		{
-			$str .= '<ebl:Shipping';
-			$str .= $this->Shipping->toXMLString();
-			$str .= '</ebl:Shipping>';
-		}
-		if($this->Handling != NULL)
-		{
-			$str .= '<ebl:Handling';
-			$str .= $this->Handling->toXMLString();
-			$str .= '</ebl:Handling>';
-		}
-		if($this->ItemName != NULL)
-		{
-			$str .= '<ebl:ItemName>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemName) . '</ebl:ItemName>';
-		}
-		if($this->ItemNumber != NULL)
-		{
-			$str .= '<ebl:ItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemNumber) . '</ebl:ItemNumber>';
-		}
-		if($this->Invoice != NULL)
-		{
-			$str .= '<ebl:Invoice>' . PPUtils::escapeInvalidXmlCharsRegex($this->Invoice) . '</ebl:Invoice>';
-		}
-		if($this->Custom != NULL)
-		{
-			$str .= '<ebl:Custom>' . PPUtils::escapeInvalidXmlCharsRegex($this->Custom) . '</ebl:Custom>';
-		}
-		if($this->ButtonSource != NULL)
-		{
-			$str .= '<ebl:ButtonSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSource) . '</ebl:ButtonSource>';
-		}
-		if($this->SoftDescriptor != NULL)
-		{
-			$str .= '<ebl:SoftDescriptor>' . PPUtils::escapeInvalidXmlCharsRegex($this->SoftDescriptor) . '</ebl:SoftDescriptor>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -5769,11 +5054,17 @@ class MerchantPullPaymentType  {
  * PaymentTransactionType Information about a PayPal payment
  * from the seller side 
  */
-class PaymentTransactionType  {
+ 
+class PaymentTransactionType  
+   extends PPXmlMessage{
 
 	/**
 	 * Information about the recipient of the payment 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ReceiverInfoType
 	 */ 
 	public $ReceiverInfo;
@@ -5781,6 +5072,10 @@ class PaymentTransactionType  {
 	/**
 	 * Information about the payer 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PayerInfoType
 	 */ 
 	public $PayerInfo;
@@ -5789,6 +5084,10 @@ class PaymentTransactionType  {
 	 * This field is for holding ReferenceId for shippment sent
 	 * from Merchant to the 3rd Party  
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TPLReferenceID;
@@ -5796,6 +5095,10 @@ class PaymentTransactionType  {
 	/**
 	 * Information about the transaction 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentInfoType
 	 */ 
 	public $PaymentInfo;
@@ -5803,6 +5106,10 @@ class PaymentTransactionType  {
 	/**
 	 * Information about an individual item in the transaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentItemInfoType
 	 */ 
 	public $PaymentItemInfo;
@@ -5811,6 +5118,10 @@ class PaymentTransactionType  {
 	 * Information about an individual Offer and Coupon information
 	 * in the transaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var OfferCouponInfoType
 	 */ 
 	public $OfferCouponInfo;
@@ -5818,6 +5129,10 @@ class PaymentTransactionType  {
 	/**
 	 * Information about Secondary Address
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $SecondaryAddress;
@@ -5825,6 +5140,10 @@ class PaymentTransactionType  {
 	/**
 	 * Information about the user selected options.  
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var UserSelectedOptionType
 	 */ 
 	public $UserSelectedOptions;
@@ -5832,6 +5151,10 @@ class PaymentTransactionType  {
 	/**
 	 * Information about the Gift message.  
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $GiftMessage;
@@ -5839,6 +5162,10 @@ class PaymentTransactionType  {
 	/**
 	 * Information about the Gift receipt.  
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $GiftReceipt;
@@ -5846,6 +5173,10 @@ class PaymentTransactionType  {
 	/**
 	 * Information about the Gift Wrap name.  
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $GiftWrapName;
@@ -5853,6 +5184,10 @@ class PaymentTransactionType  {
 	/**
 	 * Information about the Gift Wrap amount.  
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $GiftWrapAmount;
@@ -5860,6 +5195,10 @@ class PaymentTransactionType  {
 	/**
 	 * Information about the Buyer email.  
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BuyerEmailOptIn;
@@ -5867,6 +5206,10 @@ class PaymentTransactionType  {
 	/**
 	 * Information about the survey question.  
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SurveyQuestion;
@@ -5875,117 +5218,25 @@ class PaymentTransactionType  {
 	 * Information about the survey choice selected by the user.  
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SurveyChoiceSelected;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='receiverinfo'){
-                                    $this->ReceiverInfo = new ReceiverInfoType(); 
-                                    $this->ReceiverInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='payerinfo'){
-                                    $this->PayerInfo = new PayerInfoType(); 
-                                    $this->PayerInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'tplreferenceid') {
-					$this->TPLReferenceID = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='paymentinfo'){
-                                    $this->PaymentInfo = new PaymentInfoType(); 
-                                    $this->PaymentInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='paymentiteminfo'){
-                                    $this->PaymentItemInfo = new PaymentItemInfoType(); 
-                                    $this->PaymentItemInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='offercouponinfo'){
-                                    $this->OfferCouponInfo = new OfferCouponInfoType(); 
-                                    $this->OfferCouponInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='secondaryaddress'){
-                                    $this->SecondaryAddress = new AddressType(); 
-                                    $this->SecondaryAddress->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='userselectedoptions'){
-                                    $this->UserSelectedOptions = new UserSelectedOptionType(); 
-                                    $this->UserSelectedOptions->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'giftmessage') {
-					$this->GiftMessage = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'giftreceipt') {
-					$this->GiftReceipt = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'giftwrapname') {
-					$this->GiftWrapName = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='giftwrapamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->GiftWrapAmount= new BasicAmountType(); 
-								$this->GiftWrapAmount->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buyeremailoptin') {
-					$this->BuyerEmailOptIn = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'surveyquestion') {
-					$this->SurveyQuestion = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * ReceiverInfoType Receiver information. 
  */
-class ReceiverInfoType  {
+ 
+class ReceiverInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * Email address or account ID of the payment recipient (the
@@ -5993,6 +5244,10 @@ class ReceiverInfoType  {
 	 * primary account. Character length and limitations: 127
 	 * single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Business;
@@ -6005,6 +5260,10 @@ class ReceiverInfoType  {
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Receiver;
@@ -6014,40 +5273,34 @@ class ReceiverInfoType  {
 	 * This value is the same as the value of the recipient's
 	 * referral ID. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReceiverID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'business') {
-					$this->Business = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'receiver') {
-					$this->Receiver = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'receiverid') {
-					$this->ReceiverID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * PayerInfoType Payer information 
  */
-class PayerInfoType  {
+ 
+class PayerInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * Email address of payer Character length and limitations: 127
 	 * single-byte characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Payer;
@@ -6056,6 +5309,10 @@ class PayerInfoType  {
 	 * Unique customer ID Character length and limitations: 17
 	 * single-byte characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PayerID;
@@ -6063,6 +5320,10 @@ class PayerInfoType  {
 	/**
 	 * Status of payer's email address 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PayPalUserStatusCodeType
 	 */ 
 	public $PayerStatus;
@@ -6070,6 +5331,10 @@ class PayerInfoType  {
 	/**
 	 * Name of payer 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PersonNameType
 	 */ 
 	public $PayerName;
@@ -6079,6 +5344,10 @@ class PayerInfoType  {
 	 * two-character ISO 3166 country codes. Character length and
 	 * limitations: Two single-byte characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CountryCodeType
 	 */ 
 	public $PayerCountry;
@@ -6087,6 +5356,10 @@ class PayerInfoType  {
 	 * Payer's business name. Character length and limitations: 127
 	 * single-byte characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PayerBusiness;
@@ -6094,6 +5367,10 @@ class PayerInfoType  {
 	/**
 	 * Payer's business address
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $Address;
@@ -6101,6 +5378,10 @@ class PayerInfoType  {
 	/**
 	 * Business contact telephone number
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ContactPhone;
@@ -6109,6 +5390,10 @@ class PayerInfoType  {
 	 * Details about payer's tax info. Refer to the
 	 * TaxIdDetailsType for more details. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var TaxIdDetailsType
 	 */ 
 	public $TaxIdDetails;
@@ -6116,199 +5401,82 @@ class PayerInfoType  {
 	/**
 	 * Holds any enhanced information about the payer
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var EnhancedPayerInfoType
 	 */ 
 	public $EnhancedPayerInfo;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Payer != NULL)
-		{
-			$str .= '<ebl:Payer>' . PPUtils::escapeInvalidXmlCharsRegex($this->Payer) . '</ebl:Payer>';
-		}
-		if($this->PayerID != NULL)
-		{
-			$str .= '<ebl:PayerID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerID) . '</ebl:PayerID>';
-		}
-		if($this->PayerStatus != NULL)
-		{
-			$str .= '<ebl:PayerStatus>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerStatus) . '</ebl:PayerStatus>';
-		}
-		if($this->PayerName != NULL)
-		{
-			$str .= '<ebl:PayerName>';
-			$str .= $this->PayerName->toXMLString();
-			$str .= '</ebl:PayerName>';
-		}
-		if($this->PayerCountry != NULL)
-		{
-			$str .= '<ebl:PayerCountry>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerCountry) . '</ebl:PayerCountry>';
-		}
-		if($this->PayerBusiness != NULL)
-		{
-			$str .= '<ebl:PayerBusiness>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerBusiness) . '</ebl:PayerBusiness>';
-		}
-		if($this->Address != NULL)
-		{
-			$str .= '<ebl:Address>';
-			$str .= $this->Address->toXMLString();
-			$str .= '</ebl:Address>';
-		}
-		if($this->ContactPhone != NULL)
-		{
-			$str .= '<ebl:ContactPhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->ContactPhone) . '</ebl:ContactPhone>';
-		}
-		if($this->TaxIdDetails != NULL)
-		{
-			$str .= '<ebl:TaxIdDetails>';
-			$str .= $this->TaxIdDetails->toXMLString();
-			$str .= '</ebl:TaxIdDetails>';
-		}
-		if($this->EnhancedPayerInfo != NULL)
-		{
-			$str .= '<ebl:EnhancedPayerInfo>';
-			$str .= $this->EnhancedPayerInfo->toXMLString();
-			$str .= '</ebl:EnhancedPayerInfo>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payer') {
-					$this->Payer = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payerid') {
-					$this->PayerID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payerstatus') {
-					$this->PayerStatus = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='payername'){
-                                    $this->PayerName = new PersonNameType(); 
-                                    $this->PayerName->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payercountry') {
-					$this->PayerCountry = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'payerbusiness') {
-					$this->PayerBusiness = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='address'){
-                                    $this->Address = new AddressType(); 
-                                    $this->Address->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'contactphone') {
-					$this->ContactPhone = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='taxiddetails'){
-                                    $this->TaxIdDetails = new TaxIdDetailsType(); 
-                                    $this->TaxIdDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='enhancedpayerinfo'){
-                                    $this->EnhancedPayerInfo = new EnhancedPayerInfoType(); 
-                                    $this->EnhancedPayerInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * InstrumentDetailsType Promotional Instrument Information. 
  */
-class InstrumentDetailsType  {
+ 
+class InstrumentDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * This field holds the category of the instrument only when it
 	 * is promotional. Return value 1 represents BML. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InstrumentCategory;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'instrumentcategory') {
-					$this->InstrumentCategory = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * BMLOfferInfoType Specific information for BML. 
  */
-class BMLOfferInfoType  {
+ 
+class BMLOfferInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * Unique identification for merchant/buyer/offer combo. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OfferTrackingID;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->OfferTrackingID != NULL)
-		{
-			$str .= '<ebl:OfferTrackingID>' . PPUtils::escapeInvalidXmlCharsRegex($this->OfferTrackingID) . '</ebl:OfferTrackingID>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'offertrackingid') {
-					$this->OfferTrackingID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * OfferDetailsType Specific information for an offer. 
  */
-class OfferDetailsType  {
+ 
+class OfferDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Code used to identify the promotion offer. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OfferCode;
@@ -6317,58 +5485,35 @@ class OfferDetailsType  {
 	 * Specific infromation for BML, Similar structure could be
 	 * added for sepcific  promotion needs like CrossPromotions 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BMLOfferInfoType
 	 */ 
 	public $BMLOfferInfo;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->OfferCode != NULL)
-		{
-			$str .= '<ebl:OfferCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->OfferCode) . '</ebl:OfferCode>';
-		}
-		if($this->BMLOfferInfo != NULL)
-		{
-			$str .= '<ebl:BMLOfferInfo>';
-			$str .= $this->BMLOfferInfo->toXMLString();
-			$str .= '</ebl:BMLOfferInfo>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'offercode') {
-					$this->OfferCode = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='bmlofferinfo'){
-                                    $this->BMLOfferInfo = new BMLOfferInfoType(); 
-                                    $this->BMLOfferInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * PaymentInfoType Payment information. 
  */
-class PaymentInfoType  {
+ 
+class PaymentInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * A transaction identification number. Character length and
 	 * limits: 19 single-byte characters maximum
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionID;
@@ -6377,6 +5522,10 @@ class PaymentInfoType  {
 	 * Its Ebay transaction id. EbayTransactionID will returned for
 	 * immediate pay item transaction in ECA 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $EbayTransactionID;
@@ -6393,6 +5542,10 @@ class PaymentInfoType  {
 	 * Character length and limits: 19 single-byte characters
 	 * maximum
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ParentTransactionID;
@@ -6401,6 +5554,10 @@ class PaymentInfoType  {
 	 * Receipt ID Character length and limitations: 16 digits in
 	 * xxxx-xxxx-xxxx-xxxx format
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReceiptID;
@@ -6420,6 +5577,10 @@ class PaymentInfoType  {
 	 * via merchant virtual terminal. credit: Transaction created
 	 * via merchant virtual terminal or API to credit a customer.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentTransactionCodeType
 	 */ 
 	public $TransactionType;
@@ -6427,6 +5588,10 @@ class PaymentInfoType  {
 	/**
 	 * The type of payment
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentCodeType
 	 */ 
 	public $PaymentType;
@@ -6434,6 +5599,10 @@ class PaymentInfoType  {
 	/**
 	 * The type of funding source
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RefundSourceCodeType
 	 */ 
 	public $RefundSourceCodeType;
@@ -6441,6 +5610,10 @@ class PaymentInfoType  {
 	/**
 	 * eCheck latest expected clear date 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $ExpectedeCheckClearDate;
@@ -6448,6 +5621,10 @@ class PaymentInfoType  {
 	/**
 	 * Date and time of payment 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $PaymentDate;
@@ -6456,6 +5633,10 @@ class PaymentInfoType  {
 	 * Full amount of the customer's payment, before transaction
 	 * fee is subtracted
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $GrossAmount;
@@ -6463,6 +5644,10 @@ class PaymentInfoType  {
 	/**
 	 * Transaction fee associated with the payment 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $FeeAmount;
@@ -6474,6 +5659,10 @@ class PaymentInfoType  {
 	 * manually accepting a payment. This amount is calculated
 	 * after fees and taxes have been assessed. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $SettleAmount;
@@ -6481,6 +5670,10 @@ class PaymentInfoType  {
 	/**
 	 * Amount of tax for transaction 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $TaxAmount;
@@ -6488,6 +5681,10 @@ class PaymentInfoType  {
 	/**
 	 * Exchange rate for transaction 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ExchangeRate;
@@ -6520,6 +5717,10 @@ class PaymentInfoType  {
 	 * your pending balance. See the "HoldDecision" field for more
 	 * information.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentStatusCodeType
 	 */ 
 	public $PaymentStatus;
@@ -6554,6 +5755,10 @@ class PaymentInfoType  {
 	 * other than those listed above. For more information, contact
 	 * PayPal Customer Service.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PendingStatusCodeType
 	 */ 
 	public $PendingReason;
@@ -6571,6 +5776,10 @@ class PaymentInfoType  {
 	 * occurred on this transaction due to a reason not listed
 	 * above.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ReversalReasonCodeType
 	 */ 
 	public $ReasonCode;
@@ -6582,6 +5791,10 @@ class PaymentInfoType  {
 	 * seller is new. paymenthold: A hold is placed on your
 	 * transaction due to a reason not listed above. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $HoldDecision;
@@ -6589,6 +5802,10 @@ class PaymentInfoType  {
 	/**
 	 * Shipping method selected by the user during check-out. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ShippingMethod;
@@ -6597,6 +5814,10 @@ class PaymentInfoType  {
 	 * Protection Eligibility for this Transaction - None, SPP or
 	 * ESPP 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProtectionEligibility;
@@ -6604,6 +5825,10 @@ class PaymentInfoType  {
 	/**
 	 * Protection Eligibility details for this Transaction 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProtectionEligibilityType;
@@ -6611,6 +5836,10 @@ class PaymentInfoType  {
 	/**
 	 * Receipt Reference Number for this Transaction 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReceiptReferenceNumber;
@@ -6621,6 +5850,10 @@ class PaymentInfoType  {
 	 * connectivity is lost. S: Single call checkout, and this is
 	 * to identify PayPal Lite API usage. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var POSTransactionCodeType
 	 */ 
 	public $POSTransactionType;
@@ -6628,6 +5861,10 @@ class PaymentInfoType  {
 	/**
 	 * Amount of shipping charged on transaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ShipAmount;
@@ -6635,6 +5872,10 @@ class PaymentInfoType  {
 	/**
 	 * Amount of ship handling charged on transaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ShipHandleAmount;
@@ -6642,6 +5883,10 @@ class PaymentInfoType  {
 	/**
 	 * Amount of shipping discount on transaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ShipDiscount;
@@ -6649,6 +5894,10 @@ class PaymentInfoType  {
 	/**
 	 * Amount of Insurance amount on transaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InsuranceAmount;
@@ -6656,6 +5905,10 @@ class PaymentInfoType  {
 	/**
 	 * Subject as entered in the transaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Subject;
@@ -6663,6 +5916,10 @@ class PaymentInfoType  {
 	/**
 	 * StoreID as entered in the transaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $StoreID;
@@ -6670,6 +5927,10 @@ class PaymentInfoType  {
 	/**
 	 * TerminalID as entered in the transaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TerminalID;
@@ -6677,6 +5938,10 @@ class PaymentInfoType  {
 	/**
 	 * Details about the seller. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var SellerDetailsType
 	 */ 
 	public $SellerDetails;
@@ -6685,6 +5950,10 @@ class PaymentInfoType  {
 	 * Unique identifier and mandatory for each bucket in case of
 	 * split payement 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PaymentRequestID;
@@ -6693,6 +5962,10 @@ class PaymentInfoType  {
 	 * Thes are filters that could result in accept/deny/pending
 	 * action. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var FMFDetailsType
 	 */ 
 	public $FMFDetails;
@@ -6701,6 +5974,10 @@ class PaymentInfoType  {
 	 * This will be enhanced info for the payment: Example: UATP
 	 * details 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var EnhancedPaymentInfoType
 	 */ 
 	public $EnhancedPaymentInfo;
@@ -6709,6 +5986,10 @@ class PaymentInfoType  {
 	 * This will indicate the payment status for individual payment
 	 * request in case of split payment 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ErrorType
 	 */ 
 	public $PaymentError;
@@ -6716,6 +5997,10 @@ class PaymentInfoType  {
 	/**
 	 * Type of the payment instrument. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var InstrumentDetailsType
 	 */ 
 	public $InstrumentDetails;
@@ -6723,257 +6008,60 @@ class PaymentInfoType  {
 	/**
 	 * Offer Details. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var OfferDetailsType
 	 */ 
 	public $OfferDetails;
 
+	/**
+	 * This field indicates whether the credit card number used for
+	 * this transaction is in a particular bin range registered
+	 * with PayPal by the merchant. This filed is optional and will
+	 * be present if merchant has a registered bin range. The value
+	 * of this field will be “true” if merchant has a
+	 * registered bin range and the credit card used in the
+	 * transaction is within the registered bin range. The value of
+	 * this field will be false if merchant has a registered bin
+	 * range and credit card used in the transaction outside
+	 * registered bin range or the transaction is not done using a
+	 * credit card. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
+	 * @var string
+	 */ 
+	public $BinEligibility;
 
 
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
-					$this->TransactionID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'ebaytransactionid') {
-					$this->EbayTransactionID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'parenttransactionid') {
-					$this->ParentTransactionID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'receiptid') {
-					$this->ReceiptID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactiontype') {
-					$this->TransactionType = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymenttype') {
-					$this->PaymentType = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'refundsourcecodetype') {
-					$this->RefundSourceCodeType = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'expectedecheckcleardate') {
-					$this->ExpectedeCheckClearDate = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentdate') {
-					$this->PaymentDate = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='grossamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->GrossAmount= new BasicAmountType(); 
-								$this->GrossAmount->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='feeamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->FeeAmount= new BasicAmountType(); 
-								$this->FeeAmount->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='settleamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->SettleAmount= new BasicAmountType(); 
-								$this->SettleAmount->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='taxamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->TaxAmount= new BasicAmountType(); 
-								$this->TaxAmount->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'exchangerate') {
-					$this->ExchangeRate = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentstatus') {
-					$this->PaymentStatus = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'pendingreason') {
-					$this->PendingReason = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'reasoncode') {
-					$this->ReasonCode = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'holddecision') {
-					$this->HoldDecision = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shippingmethod') {
-					$this->ShippingMethod = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'protectioneligibility') {
-					$this->ProtectionEligibility = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'protectioneligibilitytype') {
-					$this->ProtectionEligibilityType = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'receiptreferencenumber') {
-					$this->ReceiptReferenceNumber = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'postransactiontype') {
-					$this->POSTransactionType = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shipamount') {
-					$this->ShipAmount = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shiphandleamount') {
-					$this->ShipHandleAmount = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shipdiscount') {
-					$this->ShipDiscount = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'insuranceamount') {
-					$this->InsuranceAmount = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'subject') {
-					$this->Subject = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'storeid') {
-					$this->StoreID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'terminalid') {
-					$this->TerminalID = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='sellerdetails'){
-                                    $this->SellerDetails = new SellerDetailsType(); 
-                                    $this->SellerDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentrequestid') {
-					$this->PaymentRequestID = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='fmfdetails'){
-                                    $this->FMFDetails = new FMFDetailsType(); 
-                                    $this->FMFDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='enhancedpaymentinfo'){
-                                    $this->EnhancedPaymentInfo = new EnhancedPaymentInfoType(); 
-                                    $this->EnhancedPaymentInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='paymenterror'){
-                                    $this->PaymentError = new ErrorType(); 
-                                    $this->PaymentError->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='instrumentdetails'){
-                                    $this->InstrumentDetails = new InstrumentDetailsType(); 
-                                    $this->InstrumentDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='offerdetails'){
-                                    $this->OfferDetails = new OfferDetailsType(); 
-                                    $this->OfferDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * SubscriptionTermsType Terms of a PayPal subscription. 
  */
-class SubscriptionTermsType  {
+ 
+class SubscriptionTermsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='amount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->Amount= new BasicAmountType(); 
-								$this->Amount->init($atr);
-							}
-							                            
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -6981,12 +6069,18 @@ class SubscriptionTermsType  {
  * SubscriptionInfoType Information about a PayPal
  * Subscription. 
  */
-class SubscriptionInfoType  {
+ 
+class SubscriptionInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * ID generated by PayPal for the subscriber. Character length
 	 * and limitations: no limit
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SubscriptionID;
@@ -6994,6 +6088,10 @@ class SubscriptionInfoType  {
 	/**
 	 * Subscription start date 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $SubscriptionDate;
@@ -7001,6 +6099,10 @@ class SubscriptionInfoType  {
 	/**
 	 * Date when the subscription modification will be effective 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $EffectiveDate;
@@ -7008,6 +6110,10 @@ class SubscriptionInfoType  {
 	/**
 	 * Date PayPal will retry a failed subscription payment 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $RetryTime;
@@ -7017,6 +6123,10 @@ class SubscriptionInfoType  {
 	 * access the subscription. Character length and limitations:
 	 * 64 alphanumeric single-byte characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Username;
@@ -7027,6 +6137,10 @@ class SubscriptionInfoType  {
 	 * password is hashed. Character length and limitations: 128
 	 * alphanumeric single-byte characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Password;
@@ -7035,6 +6149,10 @@ class SubscriptionInfoType  {
 	 * The number of payment installments that will occur at the
 	 * regular rate. Character length and limitations: no limit
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Recurrences;
@@ -7043,67 +6161,33 @@ class SubscriptionInfoType  {
 	 * Subscription duration and charges
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var SubscriptionTermsType
 	 */ 
 	public $Terms;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'subscriptionid') {
-					$this->SubscriptionID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'subscriptiondate') {
-					$this->SubscriptionDate = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'effectivedate') {
-					$this->EffectiveDate = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'retrytime') {
-					$this->RetryTime = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'username') {
-					$this->Username = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'password') {
-					$this->Password = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'recurrences') {
-					$this->Recurrences = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "terms[$i]") {
-							$this->Terms[$i] = new SubscriptionTermsType();
-							$this->Terms[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "terms")) {
-					$this->Terms = new SubscriptionTermsType();
-					$this->Terms->init($arry["children"]);
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * AuctionInfoType Basic information about an auction. 
  */
-class AuctionInfoType  {
+ 
+class AuctionInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * Customer's auction ID 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BuyerID;
@@ -7111,42 +6195,28 @@ class AuctionInfoType  {
 	/**
 	 * Auction's close date 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $ClosingDate;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buyerid') {
-					$this->BuyerID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'closingdate') {
-					$this->ClosingDate = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * OptionType PayPal item options for shopping cart. 
  */
-class OptionType  {
+ 
+class OptionType  
+   extends PPXmlMessage{
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -7154,12 +6224,18 @@ class OptionType  {
  * EbayItemPaymentDetailsItemType - Type declaration to be used
  * by other schemas. Information about an Ebay Payment Item. 
  */
-class EbayItemPaymentDetailsItemType  {
+ 
+class EbayItemPaymentDetailsItemType  
+   extends PPXmlMessage{
 
 	/**
 	 * Auction ItemNumber. Optional Character length and
 	 * limitations: 765 single-byte characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemNumber;
@@ -7168,6 +6244,10 @@ class EbayItemPaymentDetailsItemType  {
 	 * Auction Transaction ID. Optional Character length and
 	 * limitations: 255 single-byte characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $AuctionTransactionId;
@@ -7176,6 +6256,10 @@ class EbayItemPaymentDetailsItemType  {
 	 * Ebay Order ID. Optional Character length and limitations: 64
 	 * single-byte characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OrderId;
@@ -7184,65 +6268,35 @@ class EbayItemPaymentDetailsItemType  {
 	 * Ebay Cart ID. Optional Character length and limitations: 64
 	 * single-byte characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CartID;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ItemNumber != NULL)
-		{
-			$str .= '<ebl:ItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemNumber) . '</ebl:ItemNumber>';
-		}
-		if($this->AuctionTransactionId != NULL)
-		{
-			$str .= '<ebl:AuctionTransactionId>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuctionTransactionId) . '</ebl:AuctionTransactionId>';
-		}
-		if($this->OrderId != NULL)
-		{
-			$str .= '<ebl:OrderId>' . PPUtils::escapeInvalidXmlCharsRegex($this->OrderId) . '</ebl:OrderId>';
-		}
-		if($this->CartID != NULL)
-		{
-			$str .= '<ebl:CartID>' . PPUtils::escapeInvalidXmlCharsRegex($this->CartID) . '</ebl:CartID>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemnumber') {
-					$this->ItemNumber = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'auctiontransactionid') {
-					$this->AuctionTransactionId = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'orderid') {
-					$this->OrderId = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'cartid') {
-					$this->CartID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * PaymentDetailsItemType Information about a Payment Item. 
  */
-class PaymentDetailsItemType  {
+ 
+class PaymentDetailsItemType  
+   extends PPXmlMessage{
 
 	/**
 	 * Item name. Optional Character length and limitations: 127
 	 * single-byte characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Name;
@@ -7251,6 +6305,10 @@ class PaymentDetailsItemType  {
 	 * Item number. Optional Character length and limitations: 127
 	 * single-byte characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Number;
@@ -7259,6 +6317,10 @@ class PaymentDetailsItemType  {
 	 * Item quantity. Optional Character length and limitations:
 	 * Any positive integer
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $Quantity;
@@ -7268,6 +6330,10 @@ class PaymentDetailsItemType  {
 	 * any valid currency amount; currency code is set the same as
 	 * for OrderTotal.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Tax;
@@ -7280,6 +6346,10 @@ class PaymentDetailsItemType  {
 	 * separator must be a period (.), and the thousands separator
 	 * must be a comma (,).
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -7287,6 +6357,10 @@ class PaymentDetailsItemType  {
 	/**
 	 * Ebay specific details. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var EbayItemPaymentDetailsItemType
 	 */ 
 	public $EbayItemPaymentDetailsItem;
@@ -7295,6 +6369,10 @@ class PaymentDetailsItemType  {
 	 * Promotional financing code for item. Part of the Merchant
 	 * Services Promotion Financing feature. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PromoCode;
@@ -7302,6 +6380,10 @@ class PaymentDetailsItemType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ProductCategoryType
 	 */ 
 	public $ProductCategory;
@@ -7310,6 +6392,10 @@ class PaymentDetailsItemType  {
 	 * Item description. Optional Character length and limitations:
 	 * 127 single-byte characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Description;
@@ -7317,6 +6403,10 @@ class PaymentDetailsItemType  {
 	/**
 	 * Information about the Item weight. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MeasureType
 	 */ 
 	public $ItemWeight;
@@ -7324,6 +6414,10 @@ class PaymentDetailsItemType  {
 	/**
 	 * Information about the Item length. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MeasureType
 	 */ 
 	public $ItemLength;
@@ -7331,6 +6425,10 @@ class PaymentDetailsItemType  {
 	/**
 	 * Information about the Item width. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MeasureType
 	 */ 
 	public $ItemWidth;
@@ -7338,6 +6436,10 @@ class PaymentDetailsItemType  {
 	/**
 	 * Information about the Item height. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MeasureType
 	 */ 
 	public $ItemHeight;
@@ -7346,6 +6448,10 @@ class PaymentDetailsItemType  {
 	 * URL for the item. Optional Character length and limitations:
 	 * no limit. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemURL;
@@ -7353,6 +6459,10 @@ class PaymentDetailsItemType  {
 	/**
 	 * Enhanced data for each item in the cart. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var EnhancedItemDataType
 	 */ 
 	public $EnhancedItemData;
@@ -7360,259 +6470,35 @@ class PaymentDetailsItemType  {
 	/**
 	 * Item category - physical or digital. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ItemCategoryType
 	 */ 
 	public $ItemCategory;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Name != NULL)
-		{
-			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
-		}
-		if($this->Number != NULL)
-		{
-			$str .= '<ebl:Number>' . PPUtils::escapeInvalidXmlCharsRegex($this->Number) . '</ebl:Number>';
-		}
-		if($this->Quantity != NULL)
-		{
-			$str .= '<ebl:Quantity>' . PPUtils::escapeInvalidXmlCharsRegex($this->Quantity) . '</ebl:Quantity>';
-		}
-		if($this->Tax != NULL)
-		{
-			$str .= '<ebl:Tax';
-			$str .= $this->Tax->toXMLString();
-			$str .= '</ebl:Tax>';
-		}
-		if($this->Amount != NULL)
-		{
-			$str .= '<ebl:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</ebl:Amount>';
-		}
-		if($this->EbayItemPaymentDetailsItem != NULL)
-		{
-			$str .= '<ebl:EbayItemPaymentDetailsItem>';
-			$str .= $this->EbayItemPaymentDetailsItem->toXMLString();
-			$str .= '</ebl:EbayItemPaymentDetailsItem>';
-		}
-		if($this->PromoCode != NULL)
-		{
-			$str .= '<ebl:PromoCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->PromoCode) . '</ebl:PromoCode>';
-		}
-		if($this->ProductCategory != NULL)
-		{
-			$str .= '<ebl:ProductCategory>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProductCategory) . '</ebl:ProductCategory>';
-		}
-		if($this->Description != NULL)
-		{
-			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
-		}
-		if($this->ItemWeight != NULL)
-		{
-			$str .= '<ebl:ItemWeight';
-			$str .= $this->ItemWeight->toXMLString();
-			$str .= '</ebl:ItemWeight>';
-		}
-		if($this->ItemLength != NULL)
-		{
-			$str .= '<ebl:ItemLength';
-			$str .= $this->ItemLength->toXMLString();
-			$str .= '</ebl:ItemLength>';
-		}
-		if($this->ItemWidth != NULL)
-		{
-			$str .= '<ebl:ItemWidth';
-			$str .= $this->ItemWidth->toXMLString();
-			$str .= '</ebl:ItemWidth>';
-		}
-		if($this->ItemHeight != NULL)
-		{
-			$str .= '<ebl:ItemHeight';
-			$str .= $this->ItemHeight->toXMLString();
-			$str .= '</ebl:ItemHeight>';
-		}
-		if($this->ItemURL != NULL)
-		{
-			$str .= '<ebl:ItemURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemURL) . '</ebl:ItemURL>';
-		}
-		if($this->EnhancedItemData != NULL)
-		{
-			$str .= '<ebl:EnhancedItemData>';
-			$str .= $this->EnhancedItemData->toXMLString();
-			$str .= '</ebl:EnhancedItemData>';
-		}
-		if($this->ItemCategory != NULL)
-		{
-			$str .= '<ebl:ItemCategory>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemCategory) . '</ebl:ItemCategory>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'name') {
-					$this->Name = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'number') {
-					$this->Number = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'quantity') {
-					$this->Quantity = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='tax') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->Tax= new BasicAmountType(); 
-								$this->Tax->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='amount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->Amount= new BasicAmountType(); 
-								$this->Amount->init($atr);
-							}
-							                            
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='ebayitempaymentdetailsitem'){
-                                    $this->EbayItemPaymentDetailsItem = new EbayItemPaymentDetailsItemType(); 
-                                    $this->EbayItemPaymentDetailsItem->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'promocode') {
-					$this->PromoCode = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'productcategory') {
-					$this->ProductCategory = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'description') {
-					$this->Description = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='itemweight') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->ItemWeight= new MeasureType(); 
-								$this->ItemWeight->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='itemlength') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->ItemLength= new MeasureType(); 
-								$this->ItemLength->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='itemwidth') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->ItemWidth= new MeasureType(); 
-								$this->ItemWidth->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='itemheight') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->ItemHeight= new MeasureType(); 
-								$this->ItemHeight->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemurl') {
-					$this->ItemURL = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='enhanceditemdata'){
-                                    $this->EnhancedItemData = new EnhancedItemDataType(); 
-                                    $this->EnhancedItemData->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemcategory') {
-					$this->ItemCategory = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * PaymentItemType Information about a Payment Item. 
  */
-class PaymentItemType  {
+ 
+class PaymentItemType  
+   extends PPXmlMessage{
 
 	/**
 	 * eBay Auction Transaction ID of the Item Optional Character
 	 * length and limitations: 255 single-byte characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $EbayItemTxnId;
@@ -7622,6 +6508,10 @@ class PaymentItemType  {
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Name;
@@ -7630,6 +6520,10 @@ class PaymentItemType  {
 	 * Item number set by you. Character length and limitations:
 	 * 127 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Number;
@@ -7638,6 +6532,10 @@ class PaymentItemType  {
 	 * Quantity set by you or entered by the customer. Character
 	 * length and limitations: no limit
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Quantity;
@@ -7645,6 +6543,10 @@ class PaymentItemType  {
 	/**
 	 * Amount of tax charged on payment 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SalesTax;
@@ -7652,6 +6554,10 @@ class PaymentItemType  {
 	/**
 	 * Amount of shipping charged on payment 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ShippingAmount;
@@ -7659,6 +6565,10 @@ class PaymentItemType  {
 	/**
 	 * Amount of handling charged on payment 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $HandlingAmount;
@@ -7666,6 +6576,10 @@ class PaymentItemType  {
 	/**
 	 * Invoice item details 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var InvoiceItemType
 	 */ 
 	public $InvoiceItemDetails;
@@ -7673,6 +6587,10 @@ class PaymentItemType  {
 	/**
 	 * Coupon ID Number 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CouponID;
@@ -7680,6 +6598,10 @@ class PaymentItemType  {
 	/**
 	 * Amount Value of The Coupon 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CouponAmount;
@@ -7687,6 +6609,10 @@ class PaymentItemType  {
 	/**
 	 * Currency of the Coupon Amount 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CouponAmountCurrency;
@@ -7694,6 +6620,10 @@ class PaymentItemType  {
 	/**
 	 * Amount of Discount on this Loyalty Card
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $LoyaltyCardDiscountAmount;
@@ -7701,6 +6631,10 @@ class PaymentItemType  {
 	/**
 	 * Currency of the Discount
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $LoyaltyCardDiscountCurrency;
@@ -7708,6 +6642,10 @@ class PaymentItemType  {
 	/**
 	 * Cost of item 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -7716,109 +6654,35 @@ class PaymentItemType  {
 	 * Item options selected in PayPal shopping cart 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var OptionType
 	 */ 
 	public $Options;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'ebayitemtxnid') {
-					$this->EbayItemTxnId = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'name') {
-					$this->Name = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'number') {
-					$this->Number = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'quantity') {
-					$this->Quantity = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'salestax') {
-					$this->SalesTax = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shippingamount') {
-					$this->ShippingAmount = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'handlingamount') {
-					$this->HandlingAmount = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='invoiceitemdetails'){
-                                    $this->InvoiceItemDetails = new InvoiceItemType(); 
-                                    $this->InvoiceItemDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'couponid') {
-					$this->CouponID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'couponamount') {
-					$this->CouponAmount = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'couponamountcurrency') {
-					$this->CouponAmountCurrency = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'loyaltycarddiscountamount') {
-					$this->LoyaltyCardDiscountAmount = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'loyaltycarddiscountcurrency') {
-					$this->LoyaltyCardDiscountCurrency = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='amount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->Amount= new BasicAmountType(); 
-								$this->Amount->init($atr);
-							}
-							                            
-			}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "options[$i]") {
-							$this->Options[$i] = new OptionType();
-							$this->Options[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "options")) {
-					$this->Options = new OptionType();
-					$this->Options->init($arry["children"]);
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * PaymentItemInfoType Information about a PayPal item. 
  */
-class PaymentItemInfoType  {
+ 
+class PaymentItemInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * Invoice number you set in the original transaction.
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InvoiceID;
@@ -7828,6 +6692,10 @@ class PaymentItemInfoType  {
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Custom;
@@ -7837,6 +6705,10 @@ class PaymentItemInfoType  {
 	 * note field. Character length and limitations: 255
 	 * single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Memo;
@@ -7844,6 +6716,10 @@ class PaymentItemInfoType  {
 	/**
 	 * Amount of tax charged on transaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SalesTax;
@@ -7852,6 +6728,10 @@ class PaymentItemInfoType  {
 	 * Details about the indivudal purchased item
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentItemType
 	 */ 
 	public $PaymentItem;
@@ -7860,6 +6740,10 @@ class PaymentItemInfoType  {
 	 * Information about the transaction if it was created via
 	 * PayPal Subcriptions
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var SubscriptionInfoType
 	 */ 
 	public $Subscription;
@@ -7868,63 +6752,16 @@ class PaymentItemInfoType  {
 	 * Information about the transaction if it was created via an
 	 * auction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AuctionInfoType
 	 */ 
 	public $Auction;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'invoiceid') {
-					$this->InvoiceID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'custom') {
-					$this->Custom = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'memo') {
-					$this->Memo = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'salestax') {
-					$this->SalesTax = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "paymentitem[$i]") {
-							$this->PaymentItem[$i] = new PaymentItemType();
-							$this->PaymentItem[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "paymentitem")) {
-					$this->PaymentItem = new PaymentItemType();
-					$this->PaymentItem->init($arry["children"]);
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='subscription'){
-                                    $this->Subscription = new SubscriptionInfoType(); 
-                                    $this->Subscription->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='auction'){
-                                    $this->Auction = new AuctionInfoType(); 
-                                    $this->Auction->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -7932,11 +6769,17 @@ class PaymentItemInfoType  {
  * OffersAndCouponsInfoType Information about a Offers and
  * Coupons. 
  */
-class OfferCouponInfoType  {
+ 
+class OfferCouponInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * Type of the incentive 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Type;
@@ -7944,6 +6787,10 @@ class OfferCouponInfoType  {
 	/**
 	 * ID of the Incentive used in transaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ID;
@@ -7951,6 +6798,10 @@ class OfferCouponInfoType  {
 	/**
 	 * Amount used on transaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Amount;
@@ -7958,31 +6809,16 @@ class OfferCouponInfoType  {
 	/**
 	 * Amount Currency
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $AmountCurrency;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'type') {
-					$this->Type = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'id') {
-					$this->ID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'amount') {
-					$this->Amount = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'amountcurrency') {
-					$this->AmountCurrency = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -7990,7 +6826,9 @@ class OfferCouponInfoType  {
  * PaymentDetailsType Information about a payment. Used by DCC
  * and Express Checkout. 
  */
-class PaymentDetailsType  {
+ 
+class PaymentDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Total of order, including shipping, handling, and tax. You
@@ -8001,6 +6839,10 @@ class PaymentDetailsType  {
 	 * be a period (.), and the thousands separator must be a comma
 	 * (,). 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $OrderTotal;
@@ -8011,6 +6853,10 @@ class PaymentDetailsType  {
 	 * codes for any of the supported PayPal currencies. Optional
 	 * separator must be a comma (,).
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $ItemTotal;
@@ -8023,6 +6869,10 @@ class PaymentDetailsType  {
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $ShippingTotal;
@@ -8035,6 +6885,10 @@ class PaymentDetailsType  {
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $HandlingTotal;
@@ -8047,6 +6901,10 @@ class PaymentDetailsType  {
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $TaxTotal;
@@ -8056,6 +6914,10 @@ class PaymentDetailsType  {
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OrderDescription;
@@ -8065,6 +6927,10 @@ class PaymentDetailsType  {
 	 * length and limitations: 256 single-byte alphanumeric
 	 * characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Custom;
@@ -8074,6 +6940,10 @@ class PaymentDetailsType  {
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InvoiceID;
@@ -8083,6 +6953,10 @@ class PaymentDetailsType  {
 	 * to identify transactions. Optional Character length and
 	 * limitations: 32 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ButtonSource;
@@ -8094,6 +6968,10 @@ class PaymentDetailsType  {
 	 * Merchant Profile is used, if one exists. Character length
 	 * and limitations: 2,048 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $NotifyURL;
@@ -8104,6 +6982,10 @@ class PaymentDetailsType  {
 	 * are required: Name Street1 CityName CountryCode Do not set
 	 * set the CountryName element. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $ShipToAddress;
@@ -8112,6 +6994,10 @@ class PaymentDetailsType  {
 	 * Thirdparty Fulfillment Reference Number. Optional Character
 	 * length and limitations: 32 alphanumeric characters. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $FulfillmentReferenceNumber;
@@ -8119,6 +7005,10 @@ class PaymentDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $FulfillmentAddress;
@@ -8126,6 +7016,10 @@ class PaymentDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentCategoryType
 	 */ 
 	public $PaymentCategoryType;
@@ -8133,6 +7027,10 @@ class PaymentDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ShippingServiceCodeType
 	 */ 
 	public $ShippingMethod;
@@ -8141,6 +7039,10 @@ class PaymentDetailsType  {
 	 * Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at
 	 * which address was changed by the user. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $ProfileAddressChangeDate;
@@ -8149,6 +7051,10 @@ class PaymentDetailsType  {
 	 * Information about the individual purchased items
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentDetailsItemType
 	 */ 
 	public $PaymentDetailsItem;
@@ -8156,6 +7062,10 @@ class PaymentDetailsType  {
 	/**
 	 * Total shipping insurance costs for this order. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $InsuranceTotal;
@@ -8164,6 +7074,10 @@ class PaymentDetailsType  {
 	 * Shipping discount for this order, specified as a negative
 	 * number. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $ShippingDiscount;
@@ -8171,6 +7085,10 @@ class PaymentDetailsType  {
 	/**
 	 * Information about the Insurance options. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InsuranceOptionOffered;
@@ -8178,6 +7096,10 @@ class PaymentDetailsType  {
 	/**
 	 * Allowed payment methods for this transaction. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AllowedPaymentMethodType
 	 */ 
 	public $AllowedPaymentMethod;
@@ -8186,6 +7108,10 @@ class PaymentDetailsType  {
 	 * Enhanced Data section to accept channel specific data.
 	 * Optional Refer to EnhancedPaymentDataType for details. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var EnhancedPaymentDataType
 	 */ 
 	public $EnhancedPaymentData;
@@ -8193,6 +7119,10 @@ class PaymentDetailsType  {
 	/**
 	 * Details about the seller. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var SellerDetailsType
 	 */ 
 	public $SellerDetails;
@@ -8201,6 +7131,10 @@ class PaymentDetailsType  {
 	 * Note to recipient/seller. Optional Character length and
 	 * limitations: 127 single-byte alphanumeric characters. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $NoteText;
@@ -8209,6 +7143,10 @@ class PaymentDetailsType  {
 	 * PayPal Transaction Id, returned once DoExpressCheckout is
 	 * completed. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionId;
@@ -8227,6 +7165,10 @@ class PaymentDetailsType  {
 	 * API, DoExpressCheckoutPaymentRequest. Character length and
 	 * limit: Up to 13 single-byte alphabetic characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentActionCodeType
 	 */ 
 	public $PaymentAction;
@@ -8235,6 +7177,10 @@ class PaymentDetailsType  {
 	 * Unique identifier and mandatory for the particular payment
 	 * request in case of multiple payment 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PaymentRequestID;
@@ -8242,6 +7188,10 @@ class PaymentDetailsType  {
 	/**
 	 * URL on Merchant site pertaining to this invoice. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OrderURL;
@@ -8250,6 +7200,10 @@ class PaymentDetailsType  {
 	 * Soft Descriptor supported for Sale and Auth in DEC only. For
 	 * Order this will be ignored. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SoftDescriptor;
@@ -8260,6 +7214,10 @@ class PaymentDetailsType  {
 	 * If BranchLevel greater than 1, this payment contains the
 	 * actual seller info. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $BranchLevel;
@@ -8268,6 +7226,10 @@ class PaymentDetailsType  {
 	 * Soft Descriptor supported for Sale and Auth in DEC only. For
 	 * Order this will be ignored. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var OfferDetailsType
 	 */ 
 	public $OfferDetails;
@@ -8275,6 +7237,10 @@ class PaymentDetailsType  {
 	/**
 	 * Flag to indicate the recurring transaction 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RecurringFlagType
 	 */ 
 	public $Recurring;
@@ -8282,421 +7248,17 @@ class PaymentDetailsType  {
 	/**
 	 * Indicates the purpose of this payment like Refund 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentReasonType
 	 */ 
 	public $PaymentReason;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->OrderTotal != NULL)
-		{
-			$str .= '<ebl:OrderTotal';
-			$str .= $this->OrderTotal->toXMLString();
-			$str .= '</ebl:OrderTotal>';
-		}
-		if($this->ItemTotal != NULL)
-		{
-			$str .= '<ebl:ItemTotal';
-			$str .= $this->ItemTotal->toXMLString();
-			$str .= '</ebl:ItemTotal>';
-		}
-		if($this->ShippingTotal != NULL)
-		{
-			$str .= '<ebl:ShippingTotal';
-			$str .= $this->ShippingTotal->toXMLString();
-			$str .= '</ebl:ShippingTotal>';
-		}
-		if($this->HandlingTotal != NULL)
-		{
-			$str .= '<ebl:HandlingTotal';
-			$str .= $this->HandlingTotal->toXMLString();
-			$str .= '</ebl:HandlingTotal>';
-		}
-		if($this->TaxTotal != NULL)
-		{
-			$str .= '<ebl:TaxTotal';
-			$str .= $this->TaxTotal->toXMLString();
-			$str .= '</ebl:TaxTotal>';
-		}
-		if($this->OrderDescription != NULL)
-		{
-			$str .= '<ebl:OrderDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->OrderDescription) . '</ebl:OrderDescription>';
-		}
-		if($this->Custom != NULL)
-		{
-			$str .= '<ebl:Custom>' . PPUtils::escapeInvalidXmlCharsRegex($this->Custom) . '</ebl:Custom>';
-		}
-		if($this->InvoiceID != NULL)
-		{
-			$str .= '<ebl:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</ebl:InvoiceID>';
-		}
-		if($this->ButtonSource != NULL)
-		{
-			$str .= '<ebl:ButtonSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSource) . '</ebl:ButtonSource>';
-		}
-		if($this->NotifyURL != NULL)
-		{
-			$str .= '<ebl:NotifyURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->NotifyURL) . '</ebl:NotifyURL>';
-		}
-		if($this->ShipToAddress != NULL)
-		{
-			$str .= '<ebl:ShipToAddress>';
-			$str .= $this->ShipToAddress->toXMLString();
-			$str .= '</ebl:ShipToAddress>';
-		}
-		if($this->FulfillmentReferenceNumber != NULL)
-		{
-			$str .= '<ebl:FulfillmentReferenceNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->FulfillmentReferenceNumber) . '</ebl:FulfillmentReferenceNumber>';
-		}
-		if($this->FulfillmentAddress != NULL)
-		{
-			$str .= '<ebl:FulfillmentAddress>';
-			$str .= $this->FulfillmentAddress->toXMLString();
-			$str .= '</ebl:FulfillmentAddress>';
-		}
-		if($this->PaymentCategoryType != NULL)
-		{
-			$str .= '<ebl:PaymentCategoryType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentCategoryType) . '</ebl:PaymentCategoryType>';
-		}
-		if($this->ShippingMethod != NULL)
-		{
-			$str .= '<ebl:ShippingMethod>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingMethod) . '</ebl:ShippingMethod>';
-		}
-		if($this->ProfileAddressChangeDate != NULL)
-		{
-			$str .= '<ebl:ProfileAddressChangeDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileAddressChangeDate) . '</ebl:ProfileAddressChangeDate>';
-		}
-		if($this->PaymentDetailsItem != NULL)
-		{
-			for($i = 0; $i < count($this->PaymentDetailsItem); $i++)
-			{
-				$str .= '<ebl:PaymentDetailsItem>';
-				$str .= $this->PaymentDetailsItem[$i]->toXMLString();
-				$str .= '</ebl:PaymentDetailsItem>';
-			}
-		}
-		if($this->InsuranceTotal != NULL)
-		{
-			$str .= '<ebl:InsuranceTotal';
-			$str .= $this->InsuranceTotal->toXMLString();
-			$str .= '</ebl:InsuranceTotal>';
-		}
-		if($this->ShippingDiscount != NULL)
-		{
-			$str .= '<ebl:ShippingDiscount';
-			$str .= $this->ShippingDiscount->toXMLString();
-			$str .= '</ebl:ShippingDiscount>';
-		}
-		if($this->InsuranceOptionOffered != NULL)
-		{
-			$str .= '<ebl:InsuranceOptionOffered>' . PPUtils::escapeInvalidXmlCharsRegex($this->InsuranceOptionOffered) . '</ebl:InsuranceOptionOffered>';
-		}
-		if($this->AllowedPaymentMethod != NULL)
-		{
-			$str .= '<ebl:AllowedPaymentMethod>' . PPUtils::escapeInvalidXmlCharsRegex($this->AllowedPaymentMethod) . '</ebl:AllowedPaymentMethod>';
-		}
-		if($this->EnhancedPaymentData != NULL)
-		{
-			$str .= '<ebl:EnhancedPaymentData>';
-			$str .= $this->EnhancedPaymentData->toXMLString();
-			$str .= '</ebl:EnhancedPaymentData>';
-		}
-		if($this->SellerDetails != NULL)
-		{
-			$str .= '<ebl:SellerDetails>';
-			$str .= $this->SellerDetails->toXMLString();
-			$str .= '</ebl:SellerDetails>';
-		}
-		if($this->NoteText != NULL)
-		{
-			$str .= '<ebl:NoteText>' . PPUtils::escapeInvalidXmlCharsRegex($this->NoteText) . '</ebl:NoteText>';
-		}
-		if($this->TransactionId != NULL)
-		{
-			$str .= '<ebl:TransactionId>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionId) . '</ebl:TransactionId>';
-		}
-		if($this->PaymentAction != NULL)
-		{
-			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
-		}
-		if($this->PaymentRequestID != NULL)
-		{
-			$str .= '<ebl:PaymentRequestID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentRequestID) . '</ebl:PaymentRequestID>';
-		}
-		if($this->OrderURL != NULL)
-		{
-			$str .= '<ebl:OrderURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->OrderURL) . '</ebl:OrderURL>';
-		}
-		if($this->SoftDescriptor != NULL)
-		{
-			$str .= '<ebl:SoftDescriptor>' . PPUtils::escapeInvalidXmlCharsRegex($this->SoftDescriptor) . '</ebl:SoftDescriptor>';
-		}
-		if($this->BranchLevel != NULL)
-		{
-			$str .= '<ebl:BranchLevel>' . PPUtils::escapeInvalidXmlCharsRegex($this->BranchLevel) . '</ebl:BranchLevel>';
-		}
-		if($this->OfferDetails != NULL)
-		{
-			$str .= '<ebl:OfferDetails>';
-			$str .= $this->OfferDetails->toXMLString();
-			$str .= '</ebl:OfferDetails>';
-		}
-		if($this->Recurring != NULL)
-		{
-			$str .= '<ebl:Recurring>' . PPUtils::escapeInvalidXmlCharsRegex($this->Recurring) . '</ebl:Recurring>';
-		}
-		if($this->PaymentReason != NULL)
-		{
-			$str .= '<ebl:PaymentReason>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentReason) . '</ebl:PaymentReason>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='ordertotal') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->OrderTotal= new BasicAmountType(); 
-								$this->OrderTotal->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='itemtotal') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->ItemTotal= new BasicAmountType(); 
-								$this->ItemTotal->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='shippingtotal') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->ShippingTotal= new BasicAmountType(); 
-								$this->ShippingTotal->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='handlingtotal') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->HandlingTotal= new BasicAmountType(); 
-								$this->HandlingTotal->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='taxtotal') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->TaxTotal= new BasicAmountType(); 
-								$this->TaxTotal->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'orderdescription') {
-					$this->OrderDescription = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'custom') {
-					$this->Custom = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'invoiceid') {
-					$this->InvoiceID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttonsource') {
-					$this->ButtonSource = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'notifyurl') {
-					$this->NotifyURL = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='shiptoaddress'){
-                                    $this->ShipToAddress = new AddressType(); 
-                                    $this->ShipToAddress->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'fulfillmentreferencenumber') {
-					$this->FulfillmentReferenceNumber = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='fulfillmentaddress'){
-                                    $this->FulfillmentAddress = new AddressType(); 
-                                    $this->FulfillmentAddress->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentcategorytype') {
-					$this->PaymentCategoryType = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shippingmethod') {
-					$this->ShippingMethod = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profileaddresschangedate') {
-					$this->ProfileAddressChangeDate = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "paymentdetailsitem[$i]") {
-							$this->PaymentDetailsItem[$i] = new PaymentDetailsItemType();
-							$this->PaymentDetailsItem[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "paymentdetailsitem")) {
-					$this->PaymentDetailsItem = new PaymentDetailsItemType();
-					$this->PaymentDetailsItem->init($arry["children"]);
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='insurancetotal') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->InsuranceTotal= new BasicAmountType(); 
-								$this->InsuranceTotal->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='shippingdiscount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->ShippingDiscount= new BasicAmountType(); 
-								$this->ShippingDiscount->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'insuranceoptionoffered') {
-					$this->InsuranceOptionOffered = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'allowedpaymentmethod') {
-					$this->AllowedPaymentMethod = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='enhancedpaymentdata'){
-                                    $this->EnhancedPaymentData = new EnhancedPaymentDataType(); 
-                                    $this->EnhancedPaymentData->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='sellerdetails'){
-                                    $this->SellerDetails = new SellerDetailsType(); 
-                                    $this->SellerDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'notetext') {
-					$this->NoteText = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
-					$this->TransactionId = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentaction') {
-					$this->PaymentAction = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentrequestid') {
-					$this->PaymentRequestID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'orderurl') {
-					$this->OrderURL = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'softdescriptor') {
-					$this->SoftDescriptor = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'branchlevel') {
-					$this->BranchLevel = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='offerdetails'){
-                                    $this->OfferDetails = new OfferDetailsType(); 
-                                    $this->OfferDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'recurring') {
-					$this->Recurring = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentreason') {
-					$this->PaymentReason = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
@@ -8704,13 +7266,19 @@ class PaymentDetailsType  {
  * Information about the incentives that were applied from Ebay
  * RYP page and PayPal RYP page. 
  */
-class IncentiveDetailsType  {
+ 
+class IncentiveDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Unique Identifier consisting of redemption code, user
 	 * friendly descripotion, incentive type, campaign code,
 	 * incenitve application order and site redeemed on. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $UniqueIdentifier;
@@ -8719,6 +7287,10 @@ class IncentiveDetailsType  {
 	 * Defines if the incentive has been applied on Ebay or PayPal.
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IncentiveSiteAppliedOnType
 	 */ 
 	public $SiteAppliedOn;
@@ -8727,6 +7299,10 @@ class IncentiveDetailsType  {
 	 * The total discount amount for the incentive, summation of
 	 * discounts up across all the buckets/items. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $TotalDiscountAmount;
@@ -8734,6 +7310,10 @@ class IncentiveDetailsType  {
 	/**
 	 * Status of incentive processing. Sussess or Error. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IncentiveAppliedStatusType
 	 */ 
 	public $Status;
@@ -8741,6 +7321,10 @@ class IncentiveDetailsType  {
 	/**
 	 * Error code if there are any errors. Zero otherwise. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $ErrorCode;
@@ -8749,76 +7333,34 @@ class IncentiveDetailsType  {
 	 * Details of incentive application on individual bucket/item. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IncentiveAppliedDetailsType
 	 */ 
 	public $IncentiveAppliedDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'uniqueidentifier') {
-					$this->UniqueIdentifier = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'siteappliedon') {
-					$this->SiteAppliedOn = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='totaldiscountamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->TotalDiscountAmount= new BasicAmountType(); 
-								$this->TotalDiscountAmount->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
-					$this->Status = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'errorcode') {
-					$this->ErrorCode = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "incentiveapplieddetails[$i]") {
-							$this->IncentiveAppliedDetails[$i] = new IncentiveAppliedDetailsType();
-							$this->IncentiveAppliedDetails[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "incentiveapplieddetails")) {
-					$this->IncentiveAppliedDetails = new IncentiveAppliedDetailsType();
-					$this->IncentiveAppliedDetails->init($arry["children"]);
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * Details of incentive application on individual bucket/item. 
  */
-class IncentiveAppliedDetailsType  {
+ 
+class IncentiveAppliedDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * PaymentRequestID uniquely identifies a bucket. It is the
 	 * "bucket id" in the world of EC API. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PaymentRequestID;
@@ -8826,6 +7368,10 @@ class IncentiveAppliedDetailsType  {
 	/**
 	 * The item id passed through by the merchant. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemId;
@@ -8833,6 +7379,10 @@ class IncentiveAppliedDetailsType  {
 	/**
 	 * The item transaction id passed through by the merchant. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ExternalTxnId;
@@ -8840,6 +7390,10 @@ class IncentiveAppliedDetailsType  {
 	/**
 	 * Discount offerred for this bucket or item. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $DiscountAmount;
@@ -8847,59 +7401,33 @@ class IncentiveAppliedDetailsType  {
 	/**
 	 * SubType for coupon. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SubType;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentrequestid') {
-					$this->PaymentRequestID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemid') {
-					$this->ItemId = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'externaltxnid') {
-					$this->ExternalTxnId = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='discountamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->DiscountAmount= new BasicAmountType(); 
-								$this->DiscountAmount->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'subtype') {
-					$this->SubType = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * Details about the seller. 
  */
-class SellerDetailsType  {
+ 
+class SellerDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Unique identifier for the seller. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SellerId;
@@ -8908,6 +7436,10 @@ class SellerDetailsType  {
 	 * The user name of the user at the marketplaces site. Optional
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SellerUserName;
@@ -8916,6 +7448,10 @@ class SellerDetailsType  {
 	 * Date when the user registered with the marketplace. Optional
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $SellerRegistrationDate;
@@ -8924,6 +7460,10 @@ class SellerDetailsType  {
 	 * Seller Paypal Account Id contains the seller EmailId or
 	 * PayerId or PhoneNo passed during the Request. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PayPalAccountID;
@@ -8933,60 +7473,17 @@ class SellerDetailsType  {
 	 * seller). This feild is meant for Response. This field is
 	 * ignored, if passed in the Request. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SecureMerchantAccountID;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->SellerId != NULL)
-		{
-			$str .= '<ebl:SellerId>' . PPUtils::escapeInvalidXmlCharsRegex($this->SellerId) . '</ebl:SellerId>';
-		}
-		if($this->SellerUserName != NULL)
-		{
-			$str .= '<ebl:SellerUserName>' . PPUtils::escapeInvalidXmlCharsRegex($this->SellerUserName) . '</ebl:SellerUserName>';
-		}
-		if($this->SellerRegistrationDate != NULL)
-		{
-			$str .= '<ebl:SellerRegistrationDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->SellerRegistrationDate) . '</ebl:SellerRegistrationDate>';
-		}
-		if($this->PayPalAccountID != NULL)
-		{
-			$str .= '<ebl:PayPalAccountID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayPalAccountID) . '</ebl:PayPalAccountID>';
-		}
-		if($this->SecureMerchantAccountID != NULL)
-		{
-			$str .= '<ebl:SecureMerchantAccountID>' . PPUtils::escapeInvalidXmlCharsRegex($this->SecureMerchantAccountID) . '</ebl:SecureMerchantAccountID>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'sellerid') {
-					$this->SellerId = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'sellerusername') {
-					$this->SellerUserName = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'sellerregistrationdate') {
-					$this->SellerRegistrationDate = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paypalaccountid') {
-					$this->PayPalAccountID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'securemerchantaccountid') {
-					$this->SecureMerchantAccountID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
@@ -8994,11 +7491,17 @@ class SellerDetailsType  {
  * Lists the Payment Methods (other than PayPal) that the use
  * can pay with e.g. Money Order. Optional. 
  */
-class OtherPaymentMethodDetailsType  {
+ 
+class OtherPaymentMethodDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * The identifier of the Payment Method. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OtherPaymentMethodId;
@@ -9006,6 +7509,10 @@ class OtherPaymentMethodDetailsType  {
 	/**
 	 * Valid values are 'Method', 'SubMethod'. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OtherPaymentMethodType;
@@ -9013,6 +7520,10 @@ class OtherPaymentMethodDetailsType  {
 	/**
 	 * The name of the Payment Method. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OtherPaymentMethodLabel;
@@ -9021,6 +7532,10 @@ class OtherPaymentMethodDetailsType  {
 	 * The short description of the Payment Method, goes along with
 	 * the label. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OtherPaymentMethodLabelDescription;
@@ -9028,6 +7543,10 @@ class OtherPaymentMethodDetailsType  {
 	/**
 	 * The title for the long description. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OtherPaymentMethodLongDescriptionTitle;
@@ -9035,6 +7554,10 @@ class OtherPaymentMethodDetailsType  {
 	/**
 	 * The long description of the Payment Method. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OtherPaymentMethodLongDescription;
@@ -9042,6 +7565,10 @@ class OtherPaymentMethodDetailsType  {
 	/**
 	 * The icon of the Payment Method. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OtherPaymentMethodIcon;
@@ -9051,51 +7578,17 @@ class OtherPaymentMethodDetailsType  {
 	 * required to have a valid value; the label will be hidden and
 	 * only ICON will be shown. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var boolean
 	 */ 
 	public $OtherPaymentMethodHideLabel;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->OtherPaymentMethodId != NULL)
-		{
-			$str .= '<ebl:OtherPaymentMethodId>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodId) . '</ebl:OtherPaymentMethodId>';
-		}
-		if($this->OtherPaymentMethodType != NULL)
-		{
-			$str .= '<ebl:OtherPaymentMethodType>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodType) . '</ebl:OtherPaymentMethodType>';
-		}
-		if($this->OtherPaymentMethodLabel != NULL)
-		{
-			$str .= '<ebl:OtherPaymentMethodLabel>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodLabel) . '</ebl:OtherPaymentMethodLabel>';
-		}
-		if($this->OtherPaymentMethodLabelDescription != NULL)
-		{
-			$str .= '<ebl:OtherPaymentMethodLabelDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodLabelDescription) . '</ebl:OtherPaymentMethodLabelDescription>';
-		}
-		if($this->OtherPaymentMethodLongDescriptionTitle != NULL)
-		{
-			$str .= '<ebl:OtherPaymentMethodLongDescriptionTitle>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodLongDescriptionTitle) . '</ebl:OtherPaymentMethodLongDescriptionTitle>';
-		}
-		if($this->OtherPaymentMethodLongDescription != NULL)
-		{
-			$str .= '<ebl:OtherPaymentMethodLongDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodLongDescription) . '</ebl:OtherPaymentMethodLongDescription>';
-		}
-		if($this->OtherPaymentMethodIcon != NULL)
-		{
-			$str .= '<ebl:OtherPaymentMethodIcon>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodIcon) . '</ebl:OtherPaymentMethodIcon>';
-		}
-		if($this->OtherPaymentMethodHideLabel != NULL)
-		{
-			$str .= '<ebl:OtherPaymentMethodHideLabel>' . PPUtils::escapeInvalidXmlCharsRegex($this->OtherPaymentMethodHideLabel) . '</ebl:OtherPaymentMethodHideLabel>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -9103,11 +7596,17 @@ class OtherPaymentMethodDetailsType  {
  * Details about the buyer's account passed in by the merchant
  * or partner. Optional. 
  */
-class BuyerDetailsType  {
+ 
+class BuyerDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * The client's unique ID for this user. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BuyerId;
@@ -9115,6 +7614,10 @@ class BuyerDetailsType  {
 	/**
 	 * The user name of the user at the marketplaces site. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BuyerUserName;
@@ -9122,6 +7625,10 @@ class BuyerDetailsType  {
 	/**
 	 * Date when the user registered with the marketplace. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $BuyerRegistrationDate;
@@ -9130,6 +7637,10 @@ class BuyerDetailsType  {
 	 * Details about payer's tax info. Refer to the
 	 * TaxIdDetailsType for more details. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var TaxIdDetailsType
 	 */ 
 	public $TaxIdDetails;
@@ -9138,43 +7649,17 @@ class BuyerDetailsType  {
 	 * Contains information that identifies the buyer. e.g. email
 	 * address or the external remember me id. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IdentificationInfoType
 	 */ 
 	public $IdentificationInfo;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->BuyerId != NULL)
-		{
-			$str .= '<ebl:BuyerId>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerId) . '</ebl:BuyerId>';
-		}
-		if($this->BuyerUserName != NULL)
-		{
-			$str .= '<ebl:BuyerUserName>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerUserName) . '</ebl:BuyerUserName>';
-		}
-		if($this->BuyerRegistrationDate != NULL)
-		{
-			$str .= '<ebl:BuyerRegistrationDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerRegistrationDate) . '</ebl:BuyerRegistrationDate>';
-		}
-		if($this->TaxIdDetails != NULL)
-		{
-			$str .= '<ebl:TaxIdDetails>';
-			$str .= $this->TaxIdDetails->toXMLString();
-			$str .= '</ebl:TaxIdDetails>';
-		}
-		if($this->IdentificationInfo != NULL)
-		{
-			$str .= '<ebl:IdentificationInfo>';
-			$str .= $this->IdentificationInfo->toXMLString();
-			$str .= '</ebl:IdentificationInfo>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -9182,11 +7667,17 @@ class BuyerDetailsType  {
  * Details about the payer's tax info passed in by the merchant
  * or partner. Optional. 
  */
-class TaxIdDetailsType  {
+ 
+class TaxIdDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * The payer's Tax ID type; CNPJ/CPF for BR country. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TaxIdType;
@@ -9194,50 +7685,34 @@ class TaxIdDetailsType  {
 	/**
 	 * The payer's Tax ID 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TaxId;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->TaxIdType != NULL)
-		{
-			$str .= '<ebl:TaxIdType>' . PPUtils::escapeInvalidXmlCharsRegex($this->TaxIdType) . '</ebl:TaxIdType>';
-		}
-		if($this->TaxId != NULL)
-		{
-			$str .= '<ebl:TaxId>' . PPUtils::escapeInvalidXmlCharsRegex($this->TaxId) . '</ebl:TaxId>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'taxidtype') {
-					$this->TaxIdType = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'taxid') {
-					$this->TaxId = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * The Common 3DS fields. Common for both GTD and DCC API's. 
  */
-class ThreeDSecureRequestType  {
+ 
+class ThreeDSecureRequestType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Eci3ds;
@@ -9245,6 +7720,10 @@ class ThreeDSecureRequestType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Cavv;
@@ -9252,6 +7731,10 @@ class ThreeDSecureRequestType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Xid;
@@ -9259,6 +7742,10 @@ class ThreeDSecureRequestType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $MpiVendor3ds;
@@ -9266,71 +7753,34 @@ class ThreeDSecureRequestType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $AuthStatus3ds;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Eci3ds != NULL)
-		{
-			$str .= '<ebl:Eci3ds>' . PPUtils::escapeInvalidXmlCharsRegex($this->Eci3ds) . '</ebl:Eci3ds>';
-		}
-		if($this->Cavv != NULL)
-		{
-			$str .= '<ebl:Cavv>' . PPUtils::escapeInvalidXmlCharsRegex($this->Cavv) . '</ebl:Cavv>';
-		}
-		if($this->Xid != NULL)
-		{
-			$str .= '<ebl:Xid>' . PPUtils::escapeInvalidXmlCharsRegex($this->Xid) . '</ebl:Xid>';
-		}
-		if($this->MpiVendor3ds != NULL)
-		{
-			$str .= '<ebl:MpiVendor3ds>' . PPUtils::escapeInvalidXmlCharsRegex($this->MpiVendor3ds) . '</ebl:MpiVendor3ds>';
-		}
-		if($this->AuthStatus3ds != NULL)
-		{
-			$str .= '<ebl:AuthStatus3ds>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuthStatus3ds) . '</ebl:AuthStatus3ds>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'eci3ds') {
-					$this->Eci3ds = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'cavv') {
-					$this->Cavv = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'xid') {
-					$this->Xid = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'mpivendor3ds') {
-					$this->MpiVendor3ds = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'authstatus3ds') {
-					$this->AuthStatus3ds = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * 3DS remaining fields. 
  */
-class ThreeDSecureResponseType  {
+ 
+class ThreeDSecureResponseType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Vpas;
@@ -9338,36 +7788,33 @@ class ThreeDSecureResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $EciSubmitted3DS;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'vpas') {
-					$this->Vpas = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'ecisubmitted3ds') {
-					$this->EciSubmitted3DS = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 3DSecureInfoType Information about 3D Secure parameters. 
  */
-class ThreeDSecureInfoType  {
+ 
+class ThreeDSecureInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ThreeDSecureRequestType
 	 */ 
 	public $ThreeDSecureRequest;
@@ -9375,46 +7822,33 @@ class ThreeDSecureInfoType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ThreeDSecureResponseType
 	 */ 
 	public $ThreeDSecureResponse;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='threedsecurerequest'){
-                                    $this->ThreeDSecureRequest = new ThreeDSecureRequestType(); 
-                                    $this->ThreeDSecureRequest->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='threedsecureresponse'){
-                                    $this->ThreeDSecureResponse = new ThreeDSecureResponseType(); 
-                                    $this->ThreeDSecureResponse->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * CreditCardDetailsType Information about a Credit Card. 
  */
-class CreditCardDetailsType  {
+ 
+class CreditCardDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CreditCardTypeType
 	 */ 
 	public $CreditCardType;
@@ -9422,6 +7856,10 @@ class CreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CreditCardNumber;
@@ -9429,6 +7867,10 @@ class CreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $ExpMonth;
@@ -9436,6 +7878,10 @@ class CreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $ExpYear;
@@ -9443,6 +7889,10 @@ class CreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PayerInfoType
 	 */ 
 	public $CardOwner;
@@ -9450,6 +7900,10 @@ class CreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CVV2;
@@ -9457,6 +7911,10 @@ class CreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $StartMonth;
@@ -9464,6 +7922,10 @@ class CreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $StartYear;
@@ -9471,6 +7933,10 @@ class CreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $IssueNumber;
@@ -9478,120 +7944,34 @@ class CreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ThreeDSecureRequestType
 	 */ 
 	public $ThreeDSecureRequest;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->CreditCardType != NULL)
-		{
-			$str .= '<ebl:CreditCardType>' . PPUtils::escapeInvalidXmlCharsRegex($this->CreditCardType) . '</ebl:CreditCardType>';
-		}
-		if($this->CreditCardNumber != NULL)
-		{
-			$str .= '<ebl:CreditCardNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->CreditCardNumber) . '</ebl:CreditCardNumber>';
-		}
-		if($this->ExpMonth != NULL)
-		{
-			$str .= '<ebl:ExpMonth>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpMonth) . '</ebl:ExpMonth>';
-		}
-		if($this->ExpYear != NULL)
-		{
-			$str .= '<ebl:ExpYear>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpYear) . '</ebl:ExpYear>';
-		}
-		if($this->CardOwner != NULL)
-		{
-			$str .= '<ebl:CardOwner>';
-			$str .= $this->CardOwner->toXMLString();
-			$str .= '</ebl:CardOwner>';
-		}
-		if($this->CVV2 != NULL)
-		{
-			$str .= '<ebl:CVV2>' . PPUtils::escapeInvalidXmlCharsRegex($this->CVV2) . '</ebl:CVV2>';
-		}
-		if($this->StartMonth != NULL)
-		{
-			$str .= '<ebl:StartMonth>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartMonth) . '</ebl:StartMonth>';
-		}
-		if($this->StartYear != NULL)
-		{
-			$str .= '<ebl:StartYear>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartYear) . '</ebl:StartYear>';
-		}
-		if($this->IssueNumber != NULL)
-		{
-			$str .= '<ebl:IssueNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->IssueNumber) . '</ebl:IssueNumber>';
-		}
-		if($this->ThreeDSecureRequest != NULL)
-		{
-			$str .= '<ebl:ThreeDSecureRequest>';
-			$str .= $this->ThreeDSecureRequest->toXMLString();
-			$str .= '</ebl:ThreeDSecureRequest>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'creditcardtype') {
-					$this->CreditCardType = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'creditcardnumber') {
-					$this->CreditCardNumber = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'expmonth') {
-					$this->ExpMonth = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'expyear') {
-					$this->ExpYear = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='cardowner'){
-                                    $this->CardOwner = new PayerInfoType(); 
-                                    $this->CardOwner->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'cvv2') {
-					$this->CVV2 = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'startmonth') {
-					$this->StartMonth = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'startyear') {
-					$this->StartYear = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'issuenumber') {
-					$this->IssueNumber = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='threedsecurerequest'){
-                                    $this->ThreeDSecureRequest = new ThreeDSecureRequestType(); 
-                                    $this->ThreeDSecureRequest->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * Fallback shipping options type. 
  */
-class ShippingOptionType  {
+ 
+class ShippingOptionType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ShippingOptionIsDefault;
@@ -9599,6 +7979,10 @@ class ShippingOptionType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $ShippingOptionAmount;
@@ -9606,44 +7990,34 @@ class ShippingOptionType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ShippingOptionName;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ShippingOptionIsDefault != NULL)
-		{
-			$str .= '<ebl:ShippingOptionIsDefault>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingOptionIsDefault) . '</ebl:ShippingOptionIsDefault>';
-		}
-		if($this->ShippingOptionAmount != NULL)
-		{
-			$str .= '<ebl:ShippingOptionAmount';
-			$str .= $this->ShippingOptionAmount->toXMLString();
-			$str .= '</ebl:ShippingOptionAmount>';
-		}
-		if($this->ShippingOptionName != NULL)
-		{
-			$str .= '<ebl:ShippingOptionName>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingOptionName) . '</ebl:ShippingOptionName>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Information on user selected options 
  */
-class UserSelectedOptionType  {
+ 
+class UserSelectedOptionType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ShippingCalculationMode;
@@ -9651,6 +8025,10 @@ class UserSelectedOptionType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InsuranceOptionSelected;
@@ -9658,6 +8036,10 @@ class UserSelectedOptionType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ShippingOptionIsDefault;
@@ -9665,6 +8047,10 @@ class UserSelectedOptionType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $ShippingOptionAmount;
@@ -9672,87 +8058,34 @@ class UserSelectedOptionType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ShippingOptionName;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ShippingCalculationMode != NULL)
-		{
-			$str .= '<ebl:ShippingCalculationMode>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingCalculationMode) . '</ebl:ShippingCalculationMode>';
-		}
-		if($this->InsuranceOptionSelected != NULL)
-		{
-			$str .= '<ebl:InsuranceOptionSelected>' . PPUtils::escapeInvalidXmlCharsRegex($this->InsuranceOptionSelected) . '</ebl:InsuranceOptionSelected>';
-		}
-		if($this->ShippingOptionIsDefault != NULL)
-		{
-			$str .= '<ebl:ShippingOptionIsDefault>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingOptionIsDefault) . '</ebl:ShippingOptionIsDefault>';
-		}
-		if($this->ShippingOptionAmount != NULL)
-		{
-			$str .= '<ebl:ShippingOptionAmount';
-			$str .= $this->ShippingOptionAmount->toXMLString();
-			$str .= '</ebl:ShippingOptionAmount>';
-		}
-		if($this->ShippingOptionName != NULL)
-		{
-			$str .= '<ebl:ShippingOptionName>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingOptionName) . '</ebl:ShippingOptionName>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shippingcalculationmode') {
-					$this->ShippingCalculationMode = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'insuranceoptionselected') {
-					$this->InsuranceOptionSelected = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shippingoptionisdefault') {
-					$this->ShippingOptionIsDefault = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='shippingoptionamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->ShippingOptionAmount= new BasicAmountType(); 
-								$this->ShippingOptionAmount->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shippingoptionname') {
-					$this->ShippingOptionName = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class CreditCardNumberTypeType  {
+ 
+class CreditCardNumberTypeType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CreditCardTypeType
 	 */ 
 	public $CreditCardType;
@@ -9760,27 +8093,17 @@ class CreditCardNumberTypeType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CreditCardNumber;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->CreditCardType != NULL)
-		{
-			$str .= '<ebl:CreditCardType>' . PPUtils::escapeInvalidXmlCharsRegex($this->CreditCardType) . '</ebl:CreditCardType>';
-		}
-		if($this->CreditCardNumber != NULL)
-		{
-			$str .= '<ebl:CreditCardNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->CreditCardNumber) . '</ebl:CreditCardNumber>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -9788,11 +8111,17 @@ class CreditCardNumberTypeType  {
  * CreditCardDetailsType for DCC Reference Transaction
  * Information about a Credit Card. 
  */
-class ReferenceCreditCardDetailsType  {
+ 
+class ReferenceCreditCardDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CreditCardNumberTypeType
 	 */ 
 	public $CreditCardNumberType;
@@ -9800,6 +8129,10 @@ class ReferenceCreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $ExpMonth;
@@ -9807,6 +8140,10 @@ class ReferenceCreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $ExpYear;
@@ -9814,6 +8151,10 @@ class ReferenceCreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PersonNameType
 	 */ 
 	public $CardOwnerName;
@@ -9821,6 +8162,10 @@ class ReferenceCreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $BillingAddress;
@@ -9828,6 +8173,10 @@ class ReferenceCreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CVV2;
@@ -9835,6 +8184,10 @@ class ReferenceCreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $StartMonth;
@@ -9842,6 +8195,10 @@ class ReferenceCreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $StartYear;
@@ -9849,72 +8206,34 @@ class ReferenceCreditCardDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $IssueNumber;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->CreditCardNumberType != NULL)
-		{
-			$str .= '<ebl:CreditCardNumberType>';
-			$str .= $this->CreditCardNumberType->toXMLString();
-			$str .= '</ebl:CreditCardNumberType>';
-		}
-		if($this->ExpMonth != NULL)
-		{
-			$str .= '<ebl:ExpMonth>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpMonth) . '</ebl:ExpMonth>';
-		}
-		if($this->ExpYear != NULL)
-		{
-			$str .= '<ebl:ExpYear>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpYear) . '</ebl:ExpYear>';
-		}
-		if($this->CardOwnerName != NULL)
-		{
-			$str .= '<ebl:CardOwnerName>';
-			$str .= $this->CardOwnerName->toXMLString();
-			$str .= '</ebl:CardOwnerName>';
-		}
-		if($this->BillingAddress != NULL)
-		{
-			$str .= '<ebl:BillingAddress>';
-			$str .= $this->BillingAddress->toXMLString();
-			$str .= '</ebl:BillingAddress>';
-		}
-		if($this->CVV2 != NULL)
-		{
-			$str .= '<ebl:CVV2>' . PPUtils::escapeInvalidXmlCharsRegex($this->CVV2) . '</ebl:CVV2>';
-		}
-		if($this->StartMonth != NULL)
-		{
-			$str .= '<ebl:StartMonth>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartMonth) . '</ebl:StartMonth>';
-		}
-		if($this->StartYear != NULL)
-		{
-			$str .= '<ebl:StartYear>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartYear) . '</ebl:StartYear>';
-		}
-		if($this->IssueNumber != NULL)
-		{
-			$str .= '<ebl:IssueNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->IssueNumber) . '</ebl:IssueNumber>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class SetCustomerBillingAgreementRequestDetailsType  {
+ 
+class SetCustomerBillingAgreementRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BillingAgreementDetailsType
 	 */ 
 	public $BillingAgreementDetails;
@@ -9922,6 +8241,10 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReturnURL;
@@ -9929,6 +8252,10 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CancelURL;
@@ -9936,6 +8263,10 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $LocaleCode;
@@ -9943,6 +8274,10 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PageStyle;
@@ -9950,6 +8285,10 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cppheaderimage;
@@ -9957,6 +8296,10 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cppheaderbordercolor;
@@ -9964,6 +8307,10 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cppheaderbackcolor;
@@ -9971,6 +8318,10 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $cpppayflowcolor;
@@ -9978,6 +8329,10 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BuyerEmail;
@@ -9988,6 +8343,10 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 	 * setting you have specified in Admin. Optional Character
 	 * length and limitations: One single-byte numeric character.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReqBillingAddress;
@@ -10002,71 +8361,25 @@ class SetCustomerBillingAgreementRequestDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->BillingAgreementDetails != NULL)
-		{
-			$str .= '<ebl:BillingAgreementDetails>';
-			$str .= $this->BillingAgreementDetails->toXMLString();
-			$str .= '</ebl:BillingAgreementDetails>';
-		}
-		if($this->ReturnURL != NULL)
-		{
-			$str .= '<ebl:ReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnURL) . '</ebl:ReturnURL>';
-		}
-		if($this->CancelURL != NULL)
-		{
-			$str .= '<ebl:CancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelURL) . '</ebl:CancelURL>';
-		}
-		if($this->LocaleCode != NULL)
-		{
-			$str .= '<ebl:LocaleCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->LocaleCode) . '</ebl:LocaleCode>';
-		}
-		if($this->PageStyle != NULL)
-		{
-			$str .= '<ebl:PageStyle>' . PPUtils::escapeInvalidXmlCharsRegex($this->PageStyle) . '</ebl:PageStyle>';
-		}
-		if($this->cppheaderimage != NULL)
-		{
-			$str .= '<ebl:cpp-header-image>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderimage) . '</ebl:cpp-header-image>';
-		}
-		if($this->cppheaderbordercolor != NULL)
-		{
-			$str .= '<ebl:cpp-header-border-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbordercolor) . '</ebl:cpp-header-border-color>';
-		}
-		if($this->cppheaderbackcolor != NULL)
-		{
-			$str .= '<ebl:cpp-header-back-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cppheaderbackcolor) . '</ebl:cpp-header-back-color>';
-		}
-		if($this->cpppayflowcolor != NULL)
-		{
-			$str .= '<ebl:cpp-payflow-color>' . PPUtils::escapeInvalidXmlCharsRegex($this->cpppayflowcolor) . '</ebl:cpp-payflow-color>';
-		}
-		if($this->BuyerEmail != NULL)
-		{
-			$str .= '<ebl:BuyerEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerEmail) . '</ebl:BuyerEmail>';
-		}
-		if($this->ReqBillingAddress != NULL)
-		{
-			$str .= '<ebl:ReqBillingAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqBillingAddress) . '</ebl:ReqBillingAddress>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetBillingAgreementCustomerDetailsResponseDetailsType  {
+ 
+class GetBillingAgreementCustomerDetailsResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PayerInfoType
 	 */ 
 	public $PayerInfo;
@@ -10078,35 +8391,16 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType  {
 	 * primary address as billing address in
 	 * GetBillingAgreementCustomerDetails.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $BillingAddress;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='payerinfo'){
-                                    $this->PayerInfo = new PayerInfoType(); 
-                                    $this->PayerInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='billingaddress'){
-                                    $this->BillingAddress = new AddressType(); 
-                                    $this->BillingAddress->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -10115,71 +8409,67 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType  {
  * single-byte characters DeviceID length morethan 256 is
  * truncated  
  */
-class DeviceDetailsType  {
+ 
+class DeviceDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Device ID Optional  Character length and limits: 256
 	 * single-byte characters DeviceID length morethan 256 is
 	 * truncated  
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $DeviceID;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->DeviceID != NULL)
-		{
-			$str .= '<ebl:DeviceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->DeviceID) . '</ebl:DeviceID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class SenderDetailsType  {
+ 
+class SenderDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var DeviceDetailsType
 	 */ 
 	public $DeviceDetails;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->DeviceDetails != NULL)
-		{
-			$str .= '<ebl:DeviceDetails>';
-			$str .= $this->DeviceDetails->toXMLString();
-			$str .= '</ebl:DeviceDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class DoReferenceTransactionRequestDetailsType  {
+ 
+class DoReferenceTransactionRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReferenceID;
@@ -10187,6 +8477,10 @@ class DoReferenceTransactionRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentActionCodeType
 	 */ 
 	public $PaymentAction;
@@ -10194,6 +8488,10 @@ class DoReferenceTransactionRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MerchantPullPaymentCodeType
 	 */ 
 	public $PaymentType;
@@ -10201,6 +8499,10 @@ class DoReferenceTransactionRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentDetailsType
 	 */ 
 	public $PaymentDetails;
@@ -10208,6 +8510,10 @@ class DoReferenceTransactionRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ReferenceCreditCardDetailsType
 	 */ 
 	public $CreditCard;
@@ -10215,6 +8521,10 @@ class DoReferenceTransactionRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $IPAddress;
@@ -10222,6 +8532,10 @@ class DoReferenceTransactionRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $MerchantSessionId;
@@ -10229,6 +8543,10 @@ class DoReferenceTransactionRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReqConfirmShipping;
@@ -10236,6 +8554,10 @@ class DoReferenceTransactionRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SoftDescriptor;
@@ -10243,6 +8565,10 @@ class DoReferenceTransactionRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var SenderDetailsType
 	 */ 
 	public $SenderDetails;
@@ -10252,6 +8578,10 @@ class DoReferenceTransactionRequestDetailsType  {
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
@@ -10266,75 +8596,25 @@ class DoReferenceTransactionRequestDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ReferenceID != NULL)
-		{
-			$str .= '<ebl:ReferenceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReferenceID) . '</ebl:ReferenceID>';
-		}
-		if($this->PaymentAction != NULL)
-		{
-			$str .= '<ebl:PaymentAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentAction) . '</ebl:PaymentAction>';
-		}
-		if($this->PaymentType != NULL)
-		{
-			$str .= '<ebl:PaymentType>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentType) . '</ebl:PaymentType>';
-		}
-		if($this->PaymentDetails != NULL)
-		{
-			$str .= '<ebl:PaymentDetails>';
-			$str .= $this->PaymentDetails->toXMLString();
-			$str .= '</ebl:PaymentDetails>';
-		}
-		if($this->CreditCard != NULL)
-		{
-			$str .= '<ebl:CreditCard>';
-			$str .= $this->CreditCard->toXMLString();
-			$str .= '</ebl:CreditCard>';
-		}
-		if($this->IPAddress != NULL)
-		{
-			$str .= '<ebl:IPAddress>' . PPUtils::escapeInvalidXmlCharsRegex($this->IPAddress) . '</ebl:IPAddress>';
-		}
-		if($this->MerchantSessionId != NULL)
-		{
-			$str .= '<ebl:MerchantSessionId>' . PPUtils::escapeInvalidXmlCharsRegex($this->MerchantSessionId) . '</ebl:MerchantSessionId>';
-		}
-		if($this->ReqConfirmShipping != NULL)
-		{
-			$str .= '<ebl:ReqConfirmShipping>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReqConfirmShipping) . '</ebl:ReqConfirmShipping>';
-		}
-		if($this->SoftDescriptor != NULL)
-		{
-			$str .= '<ebl:SoftDescriptor>' . PPUtils::escapeInvalidXmlCharsRegex($this->SoftDescriptor) . '</ebl:SoftDescriptor>';
-		}
-		if($this->SenderDetails != NULL)
-		{
-			$str .= '<ebl:SenderDetails>';
-			$str .= $this->SenderDetails->toXMLString();
-			$str .= '</ebl:SenderDetails>';
-		}
-		if($this->MsgSubID != NULL)
-		{
-			$str .= '<ebl:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</ebl:MsgSubID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class DoReferenceTransactionResponseDetailsType  {
+ 
+class DoReferenceTransactionResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BillingAgreementID;
@@ -10342,6 +8622,10 @@ class DoReferenceTransactionResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentInfoType
 	 */ 
 	public $PaymentInfo;
@@ -10349,6 +8633,10 @@ class DoReferenceTransactionResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -10356,6 +8644,10 @@ class DoReferenceTransactionResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $AVSCode;
@@ -10363,6 +8655,10 @@ class DoReferenceTransactionResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CVV2Code;
@@ -10370,6 +8666,10 @@ class DoReferenceTransactionResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionID;
@@ -10378,6 +8678,10 @@ class DoReferenceTransactionResponseDetailsType  {
 	 * Response code from the processor when a recurring
 	 * transaction is declined 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PaymentAdviceCode;
@@ -10385,73 +8689,33 @@ class DoReferenceTransactionResponseDetailsType  {
 	/**
 	 * Return msgsubid back to merchant 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementid') {
-					$this->BillingAgreementID = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='paymentinfo'){
-                                    $this->PaymentInfo = new PaymentInfoType(); 
-                                    $this->PaymentInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='amount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->Amount= new BasicAmountType(); 
-								$this->Amount->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'avscode') {
-					$this->AVSCode = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'cvv2code') {
-					$this->CVV2Code = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
-					$this->TransactionID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentadvicecode') {
-					$this->PaymentAdviceCode = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
-					$this->MsgSubID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class DoNonReferencedCreditRequestDetailsType  {
+ 
+class DoNonReferencedCreditRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -10459,6 +8723,10 @@ class DoNonReferencedCreditRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $NetAmount;
@@ -10466,6 +8734,10 @@ class DoNonReferencedCreditRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $TaxAmount;
@@ -10473,6 +8745,10 @@ class DoNonReferencedCreditRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $ShippingAmount;
@@ -10480,6 +8756,10 @@ class DoNonReferencedCreditRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CreditCardDetailsType
 	 */ 
 	public $CreditCard;
@@ -10487,6 +8767,10 @@ class DoNonReferencedCreditRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReceiverEmail;
@@ -10494,68 +8778,34 @@ class DoNonReferencedCreditRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Comment;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Amount != NULL)
-		{
-			$str .= '<ebl:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</ebl:Amount>';
-		}
-		if($this->NetAmount != NULL)
-		{
-			$str .= '<ebl:NetAmount';
-			$str .= $this->NetAmount->toXMLString();
-			$str .= '</ebl:NetAmount>';
-		}
-		if($this->TaxAmount != NULL)
-		{
-			$str .= '<ebl:TaxAmount';
-			$str .= $this->TaxAmount->toXMLString();
-			$str .= '</ebl:TaxAmount>';
-		}
-		if($this->ShippingAmount != NULL)
-		{
-			$str .= '<ebl:ShippingAmount';
-			$str .= $this->ShippingAmount->toXMLString();
-			$str .= '</ebl:ShippingAmount>';
-		}
-		if($this->CreditCard != NULL)
-		{
-			$str .= '<ebl:CreditCard>';
-			$str .= $this->CreditCard->toXMLString();
-			$str .= '</ebl:CreditCard>';
-		}
-		if($this->ReceiverEmail != NULL)
-		{
-			$str .= '<ebl:ReceiverEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiverEmail) . '</ebl:ReceiverEmail>';
-		}
-		if($this->Comment != NULL)
-		{
-			$str .= '<ebl:Comment>' . PPUtils::escapeInvalidXmlCharsRegex($this->Comment) . '</ebl:Comment>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class DoNonReferencedCreditResponseDetailsType  {
+ 
+class DoNonReferencedCreditResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -10563,39 +8813,16 @@ class DoNonReferencedCreditResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='amount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->Amount= new BasicAmountType(); 
-								$this->Amount->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
-					$this->TransactionID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -10604,12 +8831,18 @@ class DoNonReferencedCreditResponseDetailsType  {
  * Character length and limitations: 64 alphanumeric characters
  * 
  */
-class EnterBoardingRequestDetailsType  {
+ 
+class EnterBoardingRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Onboarding program code given to you by PayPal. Required
 	 * Character length and limitations: 64 alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProgramCode;
@@ -10628,6 +8861,10 @@ class EnterBoardingRequestDetailsType  {
 	 * details, refunding, and mass payments. Required Character
 	 * length and limitations: 64 alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProductList;
@@ -10637,6 +8874,10 @@ class EnterBoardingRequestDetailsType  {
 	 * Optional Character length and limitations: 256 alphanumeric
 	 * characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PartnerCustom;
@@ -10646,6 +8887,10 @@ class EnterBoardingRequestDetailsType  {
 	 * Page. Optional Character length and limitations: 2,048
 	 * alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ImageUrl;
@@ -10654,6 +8899,10 @@ class EnterBoardingRequestDetailsType  {
 	 * Marketing category tha configures the graphic displayed n
 	 * the PayPal Partner Welcome page.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MarketingCategoryType
 	 */ 
 	public $MarketingCategory;
@@ -10661,6 +8910,10 @@ class EnterBoardingRequestDetailsType  {
 	/**
 	 * Information about the merchant’s business
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BusinessInfoType
 	 */ 
 	public $BusinessInfo;
@@ -10668,6 +8921,10 @@ class EnterBoardingRequestDetailsType  {
 	/**
 	 * Information about the merchant (the business owner)
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BusinessOwnerInfoType
 	 */ 
 	public $OwnerInfo;
@@ -10675,68 +8932,34 @@ class EnterBoardingRequestDetailsType  {
 	/**
 	 * Information about the merchant's bank account
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BankAccountDetailsType
 	 */ 
 	public $BankAccount;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ProgramCode != NULL)
-		{
-			$str .= '<ebl:ProgramCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProgramCode) . '</ebl:ProgramCode>';
-		}
-		if($this->ProductList != NULL)
-		{
-			$str .= '<ebl:ProductList>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProductList) . '</ebl:ProductList>';
-		}
-		if($this->PartnerCustom != NULL)
-		{
-			$str .= '<ebl:PartnerCustom>' . PPUtils::escapeInvalidXmlCharsRegex($this->PartnerCustom) . '</ebl:PartnerCustom>';
-		}
-		if($this->ImageUrl != NULL)
-		{
-			$str .= '<ebl:ImageUrl>' . PPUtils::escapeInvalidXmlCharsRegex($this->ImageUrl) . '</ebl:ImageUrl>';
-		}
-		if($this->MarketingCategory != NULL)
-		{
-			$str .= '<ebl:MarketingCategory>' . PPUtils::escapeInvalidXmlCharsRegex($this->MarketingCategory) . '</ebl:MarketingCategory>';
-		}
-		if($this->BusinessInfo != NULL)
-		{
-			$str .= '<ebl:BusinessInfo>';
-			$str .= $this->BusinessInfo->toXMLString();
-			$str .= '</ebl:BusinessInfo>';
-		}
-		if($this->OwnerInfo != NULL)
-		{
-			$str .= '<ebl:OwnerInfo>';
-			$str .= $this->OwnerInfo->toXMLString();
-			$str .= '</ebl:OwnerInfo>';
-		}
-		if($this->BankAccount != NULL)
-		{
-			$str .= '<ebl:BankAccount>';
-			$str .= $this->BankAccount->toXMLString();
-			$str .= '</ebl:BankAccount>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * BusinessInfoType 
  */
-class BusinessInfoType  {
+ 
+class BusinessInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * Type of business, such as corporation or sole proprietorship
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BusinessTypeType
 	 */ 
 	public $Type;
@@ -10745,6 +8968,10 @@ class BusinessInfoType  {
 	 * Official name of business Character length and limitations:
 	 * 75 alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Name;
@@ -10752,6 +8979,10 @@ class BusinessInfoType  {
 	/**
 	 * Merchant’s business postal address
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $Address;
@@ -10760,6 +8991,10 @@ class BusinessInfoType  {
 	 * Business’s primary telephone number Character length and
 	 * limitations: 20 alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $WorkPhone;
@@ -10767,6 +9002,10 @@ class BusinessInfoType  {
 	/**
 	 * Line of business, as defined in the enumerations
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BusinessCategoryType
 	 */ 
 	public $Category;
@@ -10774,6 +9013,10 @@ class BusinessInfoType  {
 	/**
 	 * Business sub-category, as defined in the enumerations
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BusinessSubCategoryType
 	 */ 
 	public $SubCategory;
@@ -10792,6 +9035,10 @@ class BusinessInfoType  {
 	 * AverageTransactionPrice-Range9 $5,000 USD to $10,000 USD
 	 * AverageTransactionPrice-Range10 More than $10,000 USD 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AverageTransactionPriceType
 	 */ 
 	public $AveragePrice;
@@ -10807,6 +9054,10 @@ class BusinessInfoType  {
 	 * AverageMonthlyVolume-Range5 $100,000 USD to $1,000,000 USD
 	 * AverageMonthlyVolume-Range6 More than $1,000,000 USD 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AverageMonthlyVolumeType
 	 */ 
 	public $AverageMonthlyVolume;
@@ -10814,6 +9065,10 @@ class BusinessInfoType  {
 	/**
 	 * Main sales venue, such as eBay
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var SalesVenueType
 	 */ 
 	public $SalesVenue;
@@ -10822,6 +9077,10 @@ class BusinessInfoType  {
 	 * Primary URL of business Character length and limitations:
 	 * 2,048 alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Website;
@@ -10835,6 +9094,10 @@ class BusinessInfoType  {
 	 * PercentageRevenueFromOnlineSales-Range3 50% to 75%
 	 * PercentageRevenueFromOnlineSales-Range4 75% to 100% 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PercentageRevenueFromOnlineSalesType
 	 */ 
 	public $RevenueFromOnlineSales;
@@ -10842,6 +9105,10 @@ class BusinessInfoType  {
 	/**
 	 * Date the merchant’s business was established
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $BusinessEstablished;
@@ -10851,6 +9118,10 @@ class BusinessInfoType  {
 	 * Character length and limitations: 127 alphanumeric
 	 * characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CustomerServiceEmail;
@@ -10859,88 +9130,34 @@ class BusinessInfoType  {
 	 * Telephone number to contact business’s customer service
 	 * Character length and limitations: 32 alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CustomerServicePhone;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Type != NULL)
-		{
-			$str .= '<ebl:Type>' . PPUtils::escapeInvalidXmlCharsRegex($this->Type) . '</ebl:Type>';
-		}
-		if($this->Name != NULL)
-		{
-			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
-		}
-		if($this->Address != NULL)
-		{
-			$str .= '<ebl:Address>';
-			$str .= $this->Address->toXMLString();
-			$str .= '</ebl:Address>';
-		}
-		if($this->WorkPhone != NULL)
-		{
-			$str .= '<ebl:WorkPhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->WorkPhone) . '</ebl:WorkPhone>';
-		}
-		if($this->Category != NULL)
-		{
-			$str .= '<ebl:Category>' . PPUtils::escapeInvalidXmlCharsRegex($this->Category) . '</ebl:Category>';
-		}
-		if($this->SubCategory != NULL)
-		{
-			$str .= '<ebl:SubCategory>' . PPUtils::escapeInvalidXmlCharsRegex($this->SubCategory) . '</ebl:SubCategory>';
-		}
-		if($this->AveragePrice != NULL)
-		{
-			$str .= '<ebl:AveragePrice>' . PPUtils::escapeInvalidXmlCharsRegex($this->AveragePrice) . '</ebl:AveragePrice>';
-		}
-		if($this->AverageMonthlyVolume != NULL)
-		{
-			$str .= '<ebl:AverageMonthlyVolume>' . PPUtils::escapeInvalidXmlCharsRegex($this->AverageMonthlyVolume) . '</ebl:AverageMonthlyVolume>';
-		}
-		if($this->SalesVenue != NULL)
-		{
-			$str .= '<ebl:SalesVenue>' . PPUtils::escapeInvalidXmlCharsRegex($this->SalesVenue) . '</ebl:SalesVenue>';
-		}
-		if($this->Website != NULL)
-		{
-			$str .= '<ebl:Website>' . PPUtils::escapeInvalidXmlCharsRegex($this->Website) . '</ebl:Website>';
-		}
-		if($this->RevenueFromOnlineSales != NULL)
-		{
-			$str .= '<ebl:RevenueFromOnlineSales>' . PPUtils::escapeInvalidXmlCharsRegex($this->RevenueFromOnlineSales) . '</ebl:RevenueFromOnlineSales>';
-		}
-		if($this->BusinessEstablished != NULL)
-		{
-			$str .= '<ebl:BusinessEstablished>' . PPUtils::escapeInvalidXmlCharsRegex($this->BusinessEstablished) . '</ebl:BusinessEstablished>';
-		}
-		if($this->CustomerServiceEmail != NULL)
-		{
-			$str .= '<ebl:CustomerServiceEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->CustomerServiceEmail) . '</ebl:CustomerServiceEmail>';
-		}
-		if($this->CustomerServicePhone != NULL)
-		{
-			$str .= '<ebl:CustomerServicePhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->CustomerServicePhone) . '</ebl:CustomerServicePhone>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * BusinessOwnerInfoType 
  */
-class BusinessOwnerInfoType  {
+ 
+class BusinessOwnerInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * Details about the business owner
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PayerInfoType
 	 */ 
 	public $Owner;
@@ -10949,6 +9166,10 @@ class BusinessOwnerInfoType  {
 	 * Business owner’s home telephone number Character length
 	 * and limitations: 32 alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $HomePhone;
@@ -10957,6 +9178,10 @@ class BusinessOwnerInfoType  {
 	 * Business owner’s mobile telephone number Character length
 	 * and limitations: 32 alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $MobilePhone;
@@ -10965,49 +9190,35 @@ class BusinessOwnerInfoType  {
 	 * Business owner’s social security number Character length
 	 * and limitations: 9 alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SSN;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Owner != NULL)
-		{
-			$str .= '<ebl:Owner>';
-			$str .= $this->Owner->toXMLString();
-			$str .= '</ebl:Owner>';
-		}
-		if($this->HomePhone != NULL)
-		{
-			$str .= '<ebl:HomePhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->HomePhone) . '</ebl:HomePhone>';
-		}
-		if($this->MobilePhone != NULL)
-		{
-			$str .= '<ebl:MobilePhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->MobilePhone) . '</ebl:MobilePhone>';
-		}
-		if($this->SSN != NULL)
-		{
-			$str .= '<ebl:SSN>' . PPUtils::escapeInvalidXmlCharsRegex($this->SSN) . '</ebl:SSN>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * BankAccountDetailsType 
  */
-class BankAccountDetailsType  {
+ 
+class BankAccountDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Name of bank Character length and limitations: 192
 	 * alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Name;
@@ -11015,6 +9226,10 @@ class BankAccountDetailsType  {
 	/**
 	 * Type of bank account: Checking or Savings
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BankAccountTypeType
 	 */ 
 	public $Type;
@@ -11023,6 +9238,10 @@ class BankAccountDetailsType  {
 	 * Merchant’s bank routing number Character length and
 	 * limitations: 23 alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $RoutingNumber;
@@ -11031,35 +9250,17 @@ class BankAccountDetailsType  {
 	 * Merchant’s bank account number Character length and
 	 * limitations: 256 alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $AccountNumber;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Name != NULL)
-		{
-			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
-		}
-		if($this->Type != NULL)
-		{
-			$str .= '<ebl:Type>' . PPUtils::escapeInvalidXmlCharsRegex($this->Type) . '</ebl:Type>';
-		}
-		if($this->RoutingNumber != NULL)
-		{
-			$str .= '<ebl:RoutingNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->RoutingNumber) . '</ebl:RoutingNumber>';
-		}
-		if($this->AccountNumber != NULL)
-		{
-			$str .= '<ebl:AccountNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->AccountNumber) . '</ebl:AccountNumber>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -11068,13 +9269,19 @@ class BankAccountDetailsType  {
  * CompletedCancelledPending Character length and limitations:
  * Eight alphabetic characters 
  */
-class GetBoardingDetailsResponseDetailsType  {
+ 
+class GetBoardingDetailsResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Status of merchant's onboarding process:
 	 * CompletedCancelledPending Character length and limitations:
 	 * Eight alphabetic characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BoardingStatusType
 	 */ 
 	public $Status;
@@ -11082,6 +9289,10 @@ class GetBoardingDetailsResponseDetailsType  {
 	/**
 	 * Date the boarding process started
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $StartDate;
@@ -11089,6 +9300,10 @@ class GetBoardingDetailsResponseDetailsType  {
 	/**
 	 * Date the merchant’s status or progress was last updated
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $LastUpdated;
@@ -11097,6 +9312,10 @@ class GetBoardingDetailsResponseDetailsType  {
 	 * Reason for merchant’s cancellation of sign-up. Character
 	 * length and limitations: 1,024 alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Reason;
@@ -11104,6 +9323,10 @@ class GetBoardingDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProgramName;
@@ -11111,6 +9334,10 @@ class GetBoardingDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProgramCode;
@@ -11118,6 +9345,10 @@ class GetBoardingDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CampaignID;
@@ -11126,6 +9357,10 @@ class GetBoardingDetailsResponseDetailsType  {
 	 * Indicates if there is a limitation on the amount of money
 	 * the business can withdraw from PayPal
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var UserWithdrawalLimitTypeType
 	 */ 
 	public $UserWithdrawalLimit;
@@ -11135,6 +9370,10 @@ class GetBoardingDetailsResponseDetailsType  {
 	 * Character length and limitations: 256 alphanumeric
 	 * characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PartnerCustom;
@@ -11142,6 +9381,10 @@ class GetBoardingDetailsResponseDetailsType  {
 	/**
 	 * Details about the owner of the account
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PayerInfoType
 	 */ 
 	public $AccountOwner;
@@ -11149,6 +9392,10 @@ class GetBoardingDetailsResponseDetailsType  {
 	/**
 	 * Merchant’s PayPal API credentials
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var APICredentialsType
 	 */ 
 	public $Credentials;
@@ -11158,6 +9405,10 @@ class GetBoardingDetailsResponseDetailsType  {
 	 * permission to call on his behalf. For example:
 	 * SetExpressCheckout,GetExpressCheckoutDetails,DoExpressCheckoutPayment
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ConfigureAPIs;
@@ -11165,6 +9416,10 @@ class GetBoardingDetailsResponseDetailsType  {
 	/**
 	 * Primary email verification status. Confirmed, Unconfirmed
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $EmailVerificationStatus;
@@ -11174,6 +9429,10 @@ class GetBoardingDetailsResponseDetailsType  {
 	 * UnderReview Character length and limitations: 256
 	 * alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $VettingStatus;
@@ -11183,86 +9442,34 @@ class GetBoardingDetailsResponseDetailsType  {
 	 * Character length and limitations: 256 alphanumeric
 	 * characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BankAccountVerificationStatus;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
-					$this->Status = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'startdate') {
-					$this->StartDate = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'lastupdated') {
-					$this->LastUpdated = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'reason') {
-					$this->Reason = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'programname') {
-					$this->ProgramName = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'programcode') {
-					$this->ProgramCode = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'campaignid') {
-					$this->CampaignID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'userwithdrawallimit') {
-					$this->UserWithdrawalLimit = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'partnercustom') {
-					$this->PartnerCustom = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='accountowner'){
-                                    $this->AccountOwner = new PayerInfoType(); 
-                                    $this->AccountOwner->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='credentials'){
-                                    $this->Credentials = new APICredentialsType(); 
-                                    $this->Credentials->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'configureapis') {
-					$this->ConfigureAPIs = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'emailverificationstatus') {
-					$this->EmailVerificationStatus = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'vettingstatus') {
-					$this->VettingStatus = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'bankaccountverificationstatus') {
-					$this->BankAccountVerificationStatus = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * APICredentialsType 
  */
-class APICredentialsType  {
+ 
+class APICredentialsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Merchant’s PayPal API usernameCharacter length and
 	 * limitations: 128 alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Username;
@@ -11271,6 +9478,10 @@ class APICredentialsType  {
 	 * Merchant’s PayPal API passwordCharacter length and
 	 * limitations: 40 alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Password;
@@ -11279,6 +9490,10 @@ class APICredentialsType  {
 	 * Merchant’s PayPal API signature, if one exists. Character
 	 * length and limitations: 256 alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Signature;
@@ -11290,6 +9505,10 @@ class APICredentialsType  {
 	 * Character length and limitations: 6,048 alphanumeric
 	 * characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Certificate;
@@ -11300,34 +9519,16 @@ class APICredentialsType  {
 	 * Sign: API signature Character length and limitations: 9
 	 * alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var APIAuthenticationType
 	 */ 
 	public $Type;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'username') {
-					$this->Username = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'password') {
-					$this->Password = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'signature') {
-					$this->Signature = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'certificate') {
-					$this->Certificate = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'type') {
-					$this->Type = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -11335,12 +9536,18 @@ class APICredentialsType  {
  * The phone number of the buyer's mobile device, if available.
  * Optional 
  */
-class SetMobileCheckoutRequestDetailsType  {
+ 
+class SetMobileCheckoutRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * The phone number of the buyer's mobile device, if available.
 	 * Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PhoneNumberType
 	 */ 
 	public $BuyerPhone;
@@ -11350,6 +9557,10 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * currencyID attribute to one of the three-character currency
 	 * codes for any of the supported PayPal currencies. Required
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $ItemAmount;
@@ -11359,6 +9570,10 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * attribute to one of the three-character currency codes for
 	 * any of the supported PayPal currencies. Optional
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Tax;
@@ -11368,6 +9583,10 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * attribute to one of the three-character currency codes for
 	 * any of the supported PayPal currencies. Optional
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Shipping;
@@ -11377,6 +9596,10 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * Required Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemName;
@@ -11386,6 +9609,10 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * purchasing. Optional Character length and limitations: 127
 	 * single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemNumber;
@@ -11396,6 +9623,10 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * Optional Character length and limitations: 256 single-byte
 	 * alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Custom;
@@ -11405,6 +9636,10 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InvoiceID;
@@ -11416,6 +9651,10 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * customer confirms the order and payment. Required Character
 	 * length and limitations: no limit. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReturnURL;
@@ -11427,6 +9666,10 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * customer chose to pay with PayPal. Optional Character length
 	 * and limitations: no limit
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CancelURL;
@@ -11437,6 +9680,10 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * Setting this element overrides the setting you have
 	 * specified in your Merchant Account Profile. Optional
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $AddressDisplayOptions;
@@ -11446,6 +9693,10 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * specifies a contact phone for the transactxion. Default is 0
 	 * / none required. Optional
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $SharePhone;
@@ -11453,6 +9704,10 @@ class SetMobileCheckoutRequestDetailsType  {
 	/**
 	 * Customer's shipping address. Optional
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $ShipToAddress;
@@ -11463,6 +9718,10 @@ class SetMobileCheckoutRequestDetailsType  {
 	 * PayPal login page. Optional Character length and limit: 127
 	 * single-byte alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $BuyerEmail;
@@ -11477,80 +9736,8 @@ class SetMobileCheckoutRequestDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->BuyerPhone != NULL)
-		{
-			$str .= '<ebl:BuyerPhone>';
-			$str .= $this->BuyerPhone->toXMLString();
-			$str .= '</ebl:BuyerPhone>';
-		}
-		if($this->ItemAmount != NULL)
-		{
-			$str .= '<ebl:ItemAmount';
-			$str .= $this->ItemAmount->toXMLString();
-			$str .= '</ebl:ItemAmount>';
-		}
-		if($this->Tax != NULL)
-		{
-			$str .= '<ebl:Tax';
-			$str .= $this->Tax->toXMLString();
-			$str .= '</ebl:Tax>';
-		}
-		if($this->Shipping != NULL)
-		{
-			$str .= '<ebl:Shipping';
-			$str .= $this->Shipping->toXMLString();
-			$str .= '</ebl:Shipping>';
-		}
-		if($this->ItemName != NULL)
-		{
-			$str .= '<ebl:ItemName>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemName) . '</ebl:ItemName>';
-		}
-		if($this->ItemNumber != NULL)
-		{
-			$str .= '<ebl:ItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemNumber) . '</ebl:ItemNumber>';
-		}
-		if($this->Custom != NULL)
-		{
-			$str .= '<ebl:Custom>' . PPUtils::escapeInvalidXmlCharsRegex($this->Custom) . '</ebl:Custom>';
-		}
-		if($this->InvoiceID != NULL)
-		{
-			$str .= '<ebl:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</ebl:InvoiceID>';
-		}
-		if($this->ReturnURL != NULL)
-		{
-			$str .= '<ebl:ReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnURL) . '</ebl:ReturnURL>';
-		}
-		if($this->CancelURL != NULL)
-		{
-			$str .= '<ebl:CancelURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelURL) . '</ebl:CancelURL>';
-		}
-		if($this->AddressDisplayOptions != NULL)
-		{
-			$str .= '<ebl:AddressDisplayOptions>' . PPUtils::escapeInvalidXmlCharsRegex($this->AddressDisplayOptions) . '</ebl:AddressDisplayOptions>';
-		}
-		if($this->SharePhone != NULL)
-		{
-			$str .= '<ebl:SharePhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->SharePhone) . '</ebl:SharePhone>';
-		}
-		if($this->ShipToAddress != NULL)
-		{
-			$str .= '<ebl:ShipToAddress>';
-			$str .= $this->ShipToAddress->toXMLString();
-			$str .= '</ebl:ShipToAddress>';
-		}
-		if($this->BuyerEmail != NULL)
-		{
-			$str .= '<ebl:BuyerEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyerEmail) . '</ebl:BuyerEmail>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -11560,7 +9747,9 @@ class SetMobileCheckoutRequestDetailsType  {
  * Optional Character length and limitations: 256 single-byte
  * alphanumeric characters 
  */
-class DoMobileCheckoutPaymentResponseDetailsType  {
+ 
+class DoMobileCheckoutPaymentResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * A free-form field for your own use, such as a tracking
@@ -11568,6 +9757,10 @@ class DoMobileCheckoutPaymentResponseDetailsType  {
 	 * Optional Character length and limitations: 256 single-byte
 	 * alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Custom;
@@ -11577,6 +9770,10 @@ class DoMobileCheckoutPaymentResponseDetailsType  {
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InvoiceID;
@@ -11584,6 +9781,10 @@ class DoMobileCheckoutPaymentResponseDetailsType  {
 	/**
 	 * Information about the payer
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PayerInfoType
 	 */ 
 	public $PayerInfo;
@@ -11591,52 +9792,33 @@ class DoMobileCheckoutPaymentResponseDetailsType  {
 	/**
 	 * Information about the transaction
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentInfoType
 	 */ 
 	public $PaymentInfo;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'custom') {
-					$this->Custom = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'invoiceid') {
-					$this->InvoiceID = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='payerinfo'){
-                                    $this->PayerInfo = new PayerInfoType(); 
-                                    $this->PayerInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='paymentinfo'){
-                                    $this->PaymentInfo = new PaymentInfoType(); 
-                                    $this->PaymentInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * UATP Card Details Type 
  */
-class UATPDetailsType  {
+ 
+class UATPDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * UATP Card Number
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $UATPNumber;
@@ -11644,6 +9826,10 @@ class UATPDetailsType  {
 	/**
 	 * UATP Card expirty month
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $ExpMonth;
@@ -11651,57 +9837,34 @@ class UATPDetailsType  {
 	/**
 	 * UATP Card expirty year
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $ExpYear;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->UATPNumber != NULL)
-		{
-			$str .= '<ebl:UATPNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->UATPNumber) . '</ebl:UATPNumber>';
-		}
-		if($this->ExpMonth != NULL)
-		{
-			$str .= '<ebl:ExpMonth>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpMonth) . '</ebl:ExpMonth>';
-		}
-		if($this->ExpYear != NULL)
-		{
-			$str .= '<ebl:ExpYear>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExpYear) . '</ebl:ExpYear>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'uatpnumber') {
-					$this->UATPNumber = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'expmonth') {
-					$this->ExpMonth = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'expyear') {
-					$this->ExpYear = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class RecurringPaymentsSummaryType  {
+ 
+class RecurringPaymentsSummaryType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $NextBillingDate;
@@ -11709,6 +9872,10 @@ class RecurringPaymentsSummaryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $NumberCyclesCompleted;
@@ -11716,6 +9883,10 @@ class RecurringPaymentsSummaryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $NumberCyclesRemaining;
@@ -11723,6 +9894,10 @@ class RecurringPaymentsSummaryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $OutstandingBalance;
@@ -11730,6 +9905,10 @@ class RecurringPaymentsSummaryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $FailedPaymentCount;
@@ -11737,6 +9916,10 @@ class RecurringPaymentsSummaryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $LastPaymentDate;
@@ -11744,79 +9927,33 @@ class RecurringPaymentsSummaryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $LastPaymentAmount;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'nextbillingdate') {
-					$this->NextBillingDate = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'numbercyclescompleted') {
-					$this->NumberCyclesCompleted = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'numbercyclesremaining') {
-					$this->NumberCyclesRemaining = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='outstandingbalance') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->OutstandingBalance= new BasicAmountType(); 
-								$this->OutstandingBalance->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'failedpaymentcount') {
-					$this->FailedPaymentCount = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'lastpaymentdate') {
-					$this->LastPaymentDate = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='lastpaymentamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->LastPaymentAmount= new BasicAmountType(); 
-								$this->LastPaymentAmount->init($atr);
-							}
-							                            
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class ActivationDetailsType  {
+ 
+class ActivationDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $InitialAmount;
@@ -11824,6 +9961,10 @@ class ActivationDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var FailedPaymentActionType
 	 */ 
 	public $FailedInitialAmountAction;
@@ -11836,35 +9977,25 @@ class ActivationDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->InitialAmount != NULL)
-		{
-			$str .= '<ebl:InitialAmount';
-			$str .= $this->InitialAmount->toXMLString();
-			$str .= '</ebl:InitialAmount>';
-		}
-		if($this->FailedInitialAmountAction != NULL)
-		{
-			$str .= '<ebl:FailedInitialAmountAction>' . PPUtils::escapeInvalidXmlCharsRegex($this->FailedInitialAmountAction) . '</ebl:FailedInitialAmountAction>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Unit of meausre for billing cycle 
  */
-class BillingPeriodDetailsType  {
+ 
+class BillingPeriodDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Unit of meausre for billing cycle 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BillingPeriodType
 	 */ 
 	public $BillingPeriod;
@@ -11872,6 +10003,10 @@ class BillingPeriodDetailsType  {
 	/**
 	 * Number of BillingPeriod that make up one billing cycle 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $BillingFrequency;
@@ -11879,6 +10014,10 @@ class BillingPeriodDetailsType  {
 	/**
 	 * Total billing cycles in this portion of the schedule 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $TotalBillingCycles;
@@ -11886,6 +10025,10 @@ class BillingPeriodDetailsType  {
 	/**
 	 * Amount to charge 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -11893,6 +10036,10 @@ class BillingPeriodDetailsType  {
 	/**
 	 * Additional shipping amount to charge 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $ShippingAmount;
@@ -11900,6 +10047,10 @@ class BillingPeriodDetailsType  {
 	/**
 	 * Additional tax amount to charge 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $TaxAmount;
@@ -11914,121 +10065,25 @@ class BillingPeriodDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->BillingPeriod != NULL)
-		{
-			$str .= '<ebl:BillingPeriod>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingPeriod) . '</ebl:BillingPeriod>';
-		}
-		if($this->BillingFrequency != NULL)
-		{
-			$str .= '<ebl:BillingFrequency>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingFrequency) . '</ebl:BillingFrequency>';
-		}
-		if($this->TotalBillingCycles != NULL)
-		{
-			$str .= '<ebl:TotalBillingCycles>' . PPUtils::escapeInvalidXmlCharsRegex($this->TotalBillingCycles) . '</ebl:TotalBillingCycles>';
-		}
-		if($this->Amount != NULL)
-		{
-			$str .= '<ebl:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</ebl:Amount>';
-		}
-		if($this->ShippingAmount != NULL)
-		{
-			$str .= '<ebl:ShippingAmount';
-			$str .= $this->ShippingAmount->toXMLString();
-			$str .= '</ebl:ShippingAmount>';
-		}
-		if($this->TaxAmount != NULL)
-		{
-			$str .= '<ebl:TaxAmount';
-			$str .= $this->TaxAmount->toXMLString();
-			$str .= '</ebl:TaxAmount>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingperiod') {
-					$this->BillingPeriod = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingfrequency') {
-					$this->BillingFrequency = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'totalbillingcycles') {
-					$this->TotalBillingCycles = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='amount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->Amount= new BasicAmountType(); 
-								$this->Amount->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='shippingamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->ShippingAmount= new BasicAmountType(); 
-								$this->ShippingAmount->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='taxamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->TaxAmount= new BasicAmountType(); 
-								$this->TaxAmount->init($atr);
-							}
-							                            
-			}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * Unit of meausre for billing cycle 
  */
-class BillingPeriodDetailsType_Update  {
+ 
+class BillingPeriodDetailsType_Update  
+   extends PPXmlMessage{
 
 	/**
 	 * Unit of meausre for billing cycle 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BillingPeriodType
 	 */ 
 	public $BillingPeriod;
@@ -12036,6 +10091,10 @@ class BillingPeriodDetailsType_Update  {
 	/**
 	 * Number of BillingPeriod that make up one billing cycle 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $BillingFrequency;
@@ -12043,6 +10102,10 @@ class BillingPeriodDetailsType_Update  {
 	/**
 	 * Total billing cycles in this portion of the schedule 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $TotalBillingCycles;
@@ -12050,6 +10113,10 @@ class BillingPeriodDetailsType_Update  {
 	/**
 	 * Amount to charge 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -12057,6 +10124,10 @@ class BillingPeriodDetailsType_Update  {
 	/**
 	 * Additional shipping amount to charge 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $ShippingAmount;
@@ -12064,60 +10135,34 @@ class BillingPeriodDetailsType_Update  {
 	/**
 	 * Additional tax amount to charge 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $TaxAmount;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->BillingPeriod != NULL)
-		{
-			$str .= '<ebl:BillingPeriod>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingPeriod) . '</ebl:BillingPeriod>';
-		}
-		if($this->BillingFrequency != NULL)
-		{
-			$str .= '<ebl:BillingFrequency>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingFrequency) . '</ebl:BillingFrequency>';
-		}
-		if($this->TotalBillingCycles != NULL)
-		{
-			$str .= '<ebl:TotalBillingCycles>' . PPUtils::escapeInvalidXmlCharsRegex($this->TotalBillingCycles) . '</ebl:TotalBillingCycles>';
-		}
-		if($this->Amount != NULL)
-		{
-			$str .= '<ebl:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</ebl:Amount>';
-		}
-		if($this->ShippingAmount != NULL)
-		{
-			$str .= '<ebl:ShippingAmount';
-			$str .= $this->ShippingAmount->toXMLString();
-			$str .= '</ebl:ShippingAmount>';
-		}
-		if($this->TaxAmount != NULL)
-		{
-			$str .= '<ebl:TaxAmount';
-			$str .= $this->TaxAmount->toXMLString();
-			$str .= '</ebl:TaxAmount>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Schedule details for the Recurring Payment 
  */
-class ScheduleDetailsType  {
+ 
+class ScheduleDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Schedule details for the Recurring Payment 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Description;
@@ -12125,6 +10170,10 @@ class ScheduleDetailsType  {
 	/**
 	 * Trial period of this schedule 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BillingPeriodDetailsType
 	 */ 
 	public $TrialPeriod;
@@ -12132,6 +10181,10 @@ class ScheduleDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BillingPeriodDetailsType
 	 */ 
 	public $PaymentPeriod;
@@ -12140,6 +10193,10 @@ class ScheduleDetailsType  {
 	 * The max number of payments the buyer can fail before this
 	 * Recurring Payments profile is cancelled 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $MaxFailedPayments;
@@ -12147,6 +10204,10 @@ class ScheduleDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ActivationDetailsType
 	 */ 
 	public $ActivationDetails;
@@ -12154,6 +10215,10 @@ class ScheduleDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AutoBillType
 	 */ 
 	public $AutoBillOutstandingAmount;
@@ -12167,44 +10232,8 @@ class ScheduleDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Description != NULL)
-		{
-			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
-		}
-		if($this->TrialPeriod != NULL)
-		{
-			$str .= '<ebl:TrialPeriod>';
-			$str .= $this->TrialPeriod->toXMLString();
-			$str .= '</ebl:TrialPeriod>';
-		}
-		if($this->PaymentPeriod != NULL)
-		{
-			$str .= '<ebl:PaymentPeriod>';
-			$str .= $this->PaymentPeriod->toXMLString();
-			$str .= '</ebl:PaymentPeriod>';
-		}
-		if($this->MaxFailedPayments != NULL)
-		{
-			$str .= '<ebl:MaxFailedPayments>' . PPUtils::escapeInvalidXmlCharsRegex($this->MaxFailedPayments) . '</ebl:MaxFailedPayments>';
-		}
-		if($this->ActivationDetails != NULL)
-		{
-			$str .= '<ebl:ActivationDetails>';
-			$str .= $this->ActivationDetails->toXMLString();
-			$str .= '</ebl:ActivationDetails>';
-		}
-		if($this->AutoBillOutstandingAmount != NULL)
-		{
-			$str .= '<ebl:AutoBillOutstandingAmount>' . PPUtils::escapeInvalidXmlCharsRegex($this->AutoBillOutstandingAmount) . '</ebl:AutoBillOutstandingAmount>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -12212,12 +10241,18 @@ class ScheduleDetailsType  {
  * Subscriber name - if missing, will use name in buyer's
  * account 
  */
-class RecurringPaymentsProfileDetailsType  {
+ 
+class RecurringPaymentsProfileDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Subscriber name - if missing, will use name in buyer's
 	 * account 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SubscriberName;
@@ -12226,6 +10261,10 @@ class RecurringPaymentsProfileDetailsType  {
 	 * Subscriber address - if missing, will use address in buyer's
 	 * account 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $SubscriberShippingAddress;
@@ -12233,6 +10272,10 @@ class RecurringPaymentsProfileDetailsType  {
 	/**
 	 * When does this Profile begin billing? 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $BillingStartDate;
@@ -12242,6 +10285,10 @@ class RecurringPaymentsProfileDetailsType  {
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProfileReference;
@@ -12254,66 +10301,25 @@ class RecurringPaymentsProfileDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->SubscriberName != NULL)
-		{
-			$str .= '<ebl:SubscriberName>' . PPUtils::escapeInvalidXmlCharsRegex($this->SubscriberName) . '</ebl:SubscriberName>';
-		}
-		if($this->SubscriberShippingAddress != NULL)
-		{
-			$str .= '<ebl:SubscriberShippingAddress>';
-			$str .= $this->SubscriberShippingAddress->toXMLString();
-			$str .= '</ebl:SubscriberShippingAddress>';
-		}
-		if($this->BillingStartDate != NULL)
-		{
-			$str .= '<ebl:BillingStartDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingStartDate) . '</ebl:BillingStartDate>';
-		}
-		if($this->ProfileReference != NULL)
-		{
-			$str .= '<ebl:ProfileReference>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileReference) . '</ebl:ProfileReference>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'subscribername') {
-					$this->SubscriberName = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='subscribershippingaddress'){
-                                    $this->SubscriberShippingAddress = new AddressType(); 
-                                    $this->SubscriberShippingAddress->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingstartdate') {
-					$this->BillingStartDate = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profilereference') {
-					$this->ProfileReference = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * Billing Agreement token (required if Express Checkout) 
  */
-class CreateRecurringPaymentsProfileRequestDetailsType  {
+ 
+class CreateRecurringPaymentsProfileRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Billing Agreement token (required if Express Checkout) 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
@@ -12322,6 +10328,10 @@ class CreateRecurringPaymentsProfileRequestDetailsType  {
 	 * Information about the credit card to be charged (required if
 	 * Direct Payment) 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CreditCardDetailsType
 	 */ 
 	public $CreditCard;
@@ -12329,6 +10339,10 @@ class CreateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * Customer Information for this Recurring Payments 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RecurringPaymentsProfileDetailsType
 	 */ 
 	public $RecurringPaymentsProfileDetails;
@@ -12336,6 +10350,10 @@ class CreateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * Schedule Information for this Recurring Payments 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ScheduleDetailsType
 	 */ 
 	public $ScheduleDetails;
@@ -12344,6 +10362,10 @@ class CreateRecurringPaymentsProfileRequestDetailsType  {
 	 * Information about the Item Details. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentDetailsItemType
 	 */ 
 	public $PaymentDetailsItem;
@@ -12357,56 +10379,25 @@ class CreateRecurringPaymentsProfileRequestDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Token != NULL)
-		{
-			$str .= '<ebl:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</ebl:Token>';
-		}
-		if($this->CreditCard != NULL)
-		{
-			$str .= '<ebl:CreditCard>';
-			$str .= $this->CreditCard->toXMLString();
-			$str .= '</ebl:CreditCard>';
-		}
-		if($this->RecurringPaymentsProfileDetails != NULL)
-		{
-			$str .= '<ebl:RecurringPaymentsProfileDetails>';
-			$str .= $this->RecurringPaymentsProfileDetails->toXMLString();
-			$str .= '</ebl:RecurringPaymentsProfileDetails>';
-		}
-		if($this->ScheduleDetails != NULL)
-		{
-			$str .= '<ebl:ScheduleDetails>';
-			$str .= $this->ScheduleDetails->toXMLString();
-			$str .= '</ebl:ScheduleDetails>';
-		}
-		if($this->PaymentDetailsItem != NULL)
-		{
-			for($i = 0; $i < count($this->PaymentDetailsItem); $i++)
-			{
-				$str .= '<ebl:PaymentDetailsItem>';
-				$str .= $this->PaymentDetailsItem[$i]->toXMLString();
-				$str .= '</ebl:PaymentDetailsItem>';
-			}
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Recurring Billing Profile ID 
  */
-class CreateRecurringPaymentsProfileResponseDetailsType  {
+ 
+class CreateRecurringPaymentsProfileResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Recurring Billing Profile ID 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProfileID;
@@ -12414,6 +10405,10 @@ class CreateRecurringPaymentsProfileResponseDetailsType  {
 	/**
 	 * Recurring Billing Profile Status 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RecurringPaymentsProfileStatusType
 	 */ 
 	public $ProfileStatus;
@@ -12421,6 +10416,10 @@ class CreateRecurringPaymentsProfileResponseDetailsType  {
 	/**
 	 * Transaction id from DCC initial payment 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionID;
@@ -12428,6 +10427,10 @@ class CreateRecurringPaymentsProfileResponseDetailsType  {
 	/**
 	 * Response from DCC initial payment 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $DCCProcessorResponse;
@@ -12435,45 +10438,33 @@ class CreateRecurringPaymentsProfileResponseDetailsType  {
 	/**
 	 * Return code if DCC initial payment fails 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $DCCReturnCode;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profileid') {
-					$this->ProfileID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profilestatus') {
-					$this->ProfileStatus = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
-					$this->TransactionID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'dccprocessorresponse') {
-					$this->DCCProcessorResponse = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'dccreturncode') {
-					$this->DCCReturnCode = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * Recurring Billing Profile ID 
  */
-class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
+ 
+class GetRecurringPaymentsProfileDetailsResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Recurring Billing Profile ID 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProfileID;
@@ -12481,6 +10472,10 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RecurringPaymentsProfileStatusType
 	 */ 
 	public $ProfileStatus;
@@ -12488,6 +10483,10 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Description;
@@ -12495,6 +10494,10 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AutoBillType
 	 */ 
 	public $AutoBillOutstandingAmount;
@@ -12502,6 +10505,10 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $MaxFailedPayments;
@@ -12509,6 +10516,10 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RecurringPaymentsProfileDetailsType
 	 */ 
 	public $RecurringPaymentsProfileDetails;
@@ -12516,6 +10527,10 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BillingPeriodDetailsType
 	 */ 
 	public $CurrentRecurringPaymentsPeriod;
@@ -12523,6 +10538,10 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RecurringPaymentsSummaryType
 	 */ 
 	public $RecurringPaymentsSummary;
@@ -12530,6 +10549,10 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CreditCardDetailsType
 	 */ 
 	public $CreditCard;
@@ -12537,6 +10560,10 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BillingPeriodDetailsType
 	 */ 
 	public $TrialRecurringPaymentsPeriod;
@@ -12544,6 +10571,10 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BillingPeriodDetailsType
 	 */ 
 	public $RegularRecurringPaymentsPeriod;
@@ -12551,6 +10582,10 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $TrialAmountPaid;
@@ -12558,6 +10593,10 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $RegularAmountPaid;
@@ -12565,6 +10604,10 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $AggregateAmount;
@@ -12572,6 +10615,10 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $AggregateOptionalAmount;
@@ -12579,164 +10626,33 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $FinalPaymentDueDate;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profileid') {
-					$this->ProfileID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profilestatus') {
-					$this->ProfileStatus = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'description') {
-					$this->Description = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'autobilloutstandingamount') {
-					$this->AutoBillOutstandingAmount = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'maxfailedpayments') {
-					$this->MaxFailedPayments = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='recurringpaymentsprofiledetails'){
-                                    $this->RecurringPaymentsProfileDetails = new RecurringPaymentsProfileDetailsType(); 
-                                    $this->RecurringPaymentsProfileDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='currentrecurringpaymentsperiod'){
-                                    $this->CurrentRecurringPaymentsPeriod = new BillingPeriodDetailsType(); 
-                                    $this->CurrentRecurringPaymentsPeriod->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='recurringpaymentssummary'){
-                                    $this->RecurringPaymentsSummary = new RecurringPaymentsSummaryType(); 
-                                    $this->RecurringPaymentsSummary->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='creditcard'){
-                                    $this->CreditCard = new CreditCardDetailsType(); 
-                                    $this->CreditCard->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='trialrecurringpaymentsperiod'){
-                                    $this->TrialRecurringPaymentsPeriod = new BillingPeriodDetailsType(); 
-                                    $this->TrialRecurringPaymentsPeriod->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='regularrecurringpaymentsperiod'){
-                                    $this->RegularRecurringPaymentsPeriod = new BillingPeriodDetailsType(); 
-                                    $this->RegularRecurringPaymentsPeriod->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='trialamountpaid') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->TrialAmountPaid= new BasicAmountType(); 
-								$this->TrialAmountPaid->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='regularamountpaid') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->RegularAmountPaid= new BasicAmountType(); 
-								$this->RegularAmountPaid->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='aggregateamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->AggregateAmount= new BasicAmountType(); 
-								$this->AggregateAmount->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='aggregateoptionalamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->AggregateOptionalAmount= new BasicAmountType(); 
-								$this->AggregateOptionalAmount->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'finalpaymentduedate') {
-					$this->FinalPaymentDueDate = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class ManageRecurringPaymentsProfileStatusRequestDetailsType  {
+ 
+class ManageRecurringPaymentsProfileStatusRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProfileID;
@@ -12744,6 +10660,10 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var StatusChangeActionType
 	 */ 
 	public $Action;
@@ -12751,6 +10671,10 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Note;
@@ -12764,64 +10688,48 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ProfileID != NULL)
-		{
-			$str .= '<ebl:ProfileID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileID) . '</ebl:ProfileID>';
-		}
-		if($this->Action != NULL)
-		{
-			$str .= '<ebl:Action>' . PPUtils::escapeInvalidXmlCharsRegex($this->Action) . '</ebl:Action>';
-		}
-		if($this->Note != NULL)
-		{
-			$str .= '<ebl:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</ebl:Note>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class ManageRecurringPaymentsProfileStatusResponseDetailsType  {
+ 
+class ManageRecurringPaymentsProfileStatusResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProfileID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profileid') {
-					$this->ProfileID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class BillOutstandingAmountRequestDetailsType  {
+ 
+class BillOutstandingAmountRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProfileID;
@@ -12829,6 +10737,10 @@ class BillOutstandingAmountRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -12836,6 +10748,10 @@ class BillOutstandingAmountRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Note;
@@ -12848,66 +10764,48 @@ class BillOutstandingAmountRequestDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ProfileID != NULL)
-		{
-			$str .= '<ebl:ProfileID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileID) . '</ebl:ProfileID>';
-		}
-		if($this->Amount != NULL)
-		{
-			$str .= '<ebl:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</ebl:Amount>';
-		}
-		if($this->Note != NULL)
-		{
-			$str .= '<ebl:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</ebl:Note>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class BillOutstandingAmountResponseDetailsType  {
+ 
+class BillOutstandingAmountResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProfileID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profileid') {
-					$this->ProfileID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class UpdateRecurringPaymentsProfileRequestDetailsType  {
+ 
+class UpdateRecurringPaymentsProfileRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProfileID;
@@ -12915,6 +10813,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Note;
@@ -12922,6 +10824,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Description;
@@ -12929,6 +10835,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SubscriberName;
@@ -12936,6 +10846,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AddressType
 	 */ 
 	public $SubscriberShippingAddress;
@@ -12943,6 +10857,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProfileReference;
@@ -12950,6 +10868,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $AdditionalBillingCycles;
@@ -12957,6 +10879,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -12964,6 +10890,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $ShippingAmount;
@@ -12971,6 +10901,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $TaxAmount;
@@ -12978,6 +10912,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $OutstandingBalance;
@@ -12985,6 +10923,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AutoBillType
 	 */ 
 	public $AutoBillOutstandingAmount;
@@ -12992,6 +10934,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $MaxFailedPayments;
@@ -13000,6 +10946,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	 * Information about the credit card to be charged (required if
 	 * Direct Payment) 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CreditCardDetailsType
 	 */ 
 	public $CreditCard;
@@ -13007,6 +10957,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * When does this Profile begin billing? 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $BillingStartDate;
@@ -13014,6 +10968,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * Trial period of this schedule 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BillingPeriodDetailsType_Update
 	 */ 
 	public $TrialPeriod;
@@ -13021,6 +10979,10 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BillingPeriodDetailsType_Update
 	 */ 
 	public $PaymentPeriod;
@@ -13033,136 +10995,48 @@ class UpdateRecurringPaymentsProfileRequestDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ProfileID != NULL)
-		{
-			$str .= '<ebl:ProfileID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileID) . '</ebl:ProfileID>';
-		}
-		if($this->Note != NULL)
-		{
-			$str .= '<ebl:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</ebl:Note>';
-		}
-		if($this->Description != NULL)
-		{
-			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
-		}
-		if($this->SubscriberName != NULL)
-		{
-			$str .= '<ebl:SubscriberName>' . PPUtils::escapeInvalidXmlCharsRegex($this->SubscriberName) . '</ebl:SubscriberName>';
-		}
-		if($this->SubscriberShippingAddress != NULL)
-		{
-			$str .= '<ebl:SubscriberShippingAddress>';
-			$str .= $this->SubscriberShippingAddress->toXMLString();
-			$str .= '</ebl:SubscriberShippingAddress>';
-		}
-		if($this->ProfileReference != NULL)
-		{
-			$str .= '<ebl:ProfileReference>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileReference) . '</ebl:ProfileReference>';
-		}
-		if($this->AdditionalBillingCycles != NULL)
-		{
-			$str .= '<ebl:AdditionalBillingCycles>' . PPUtils::escapeInvalidXmlCharsRegex($this->AdditionalBillingCycles) . '</ebl:AdditionalBillingCycles>';
-		}
-		if($this->Amount != NULL)
-		{
-			$str .= '<ebl:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</ebl:Amount>';
-		}
-		if($this->ShippingAmount != NULL)
-		{
-			$str .= '<ebl:ShippingAmount';
-			$str .= $this->ShippingAmount->toXMLString();
-			$str .= '</ebl:ShippingAmount>';
-		}
-		if($this->TaxAmount != NULL)
-		{
-			$str .= '<ebl:TaxAmount';
-			$str .= $this->TaxAmount->toXMLString();
-			$str .= '</ebl:TaxAmount>';
-		}
-		if($this->OutstandingBalance != NULL)
-		{
-			$str .= '<ebl:OutstandingBalance';
-			$str .= $this->OutstandingBalance->toXMLString();
-			$str .= '</ebl:OutstandingBalance>';
-		}
-		if($this->AutoBillOutstandingAmount != NULL)
-		{
-			$str .= '<ebl:AutoBillOutstandingAmount>' . PPUtils::escapeInvalidXmlCharsRegex($this->AutoBillOutstandingAmount) . '</ebl:AutoBillOutstandingAmount>';
-		}
-		if($this->MaxFailedPayments != NULL)
-		{
-			$str .= '<ebl:MaxFailedPayments>' . PPUtils::escapeInvalidXmlCharsRegex($this->MaxFailedPayments) . '</ebl:MaxFailedPayments>';
-		}
-		if($this->CreditCard != NULL)
-		{
-			$str .= '<ebl:CreditCard>';
-			$str .= $this->CreditCard->toXMLString();
-			$str .= '</ebl:CreditCard>';
-		}
-		if($this->BillingStartDate != NULL)
-		{
-			$str .= '<ebl:BillingStartDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingStartDate) . '</ebl:BillingStartDate>';
-		}
-		if($this->TrialPeriod != NULL)
-		{
-			$str .= '<ebl:TrialPeriod>';
-			$str .= $this->TrialPeriod->toXMLString();
-			$str .= '</ebl:TrialPeriod>';
-		}
-		if($this->PaymentPeriod != NULL)
-		{
-			$str .= '<ebl:PaymentPeriod>';
-			$str .= $this->PaymentPeriod->toXMLString();
-			$str .= '</ebl:PaymentPeriod>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class UpdateRecurringPaymentsProfileResponseDetailsType  {
+ 
+class UpdateRecurringPaymentsProfileResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProfileID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'profileid') {
-					$this->ProfileID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * Details of Risk Filter. 
  */
-class RiskFilterDetailsType  {
+ 
+class RiskFilterDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $Id;
@@ -13170,6 +11044,10 @@ class RiskFilterDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Name;
@@ -13177,69 +11055,40 @@ class RiskFilterDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Description;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'id') {
-					$this->Id = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'name') {
-					$this->Name = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'description') {
-					$this->Description = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * Details of Risk Filter. 
  */
-class RiskFilterListType  {
+ 
+class RiskFilterListType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RiskFilterDetailsType
 	 */ 
 	public $Filters;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "filters[$i]") {
-							$this->Filters[$i] = new RiskFilterDetailsType();
-							$this->Filters[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "filters")) {
-					$this->Filters = new RiskFilterDetailsType();
-					$this->Filters->init($arry["children"]);
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -13247,11 +11096,17 @@ class RiskFilterListType  {
  * Thes are filters that could result in accept/deny/pending
  * action. 
  */
-class FMFDetailsType  {
+ 
+class FMFDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RiskFilterListType
 	 */ 
 	public $AcceptFilters;
@@ -13259,6 +11114,10 @@ class FMFDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RiskFilterListType
 	 */ 
 	public $PendingFilters;
@@ -13266,6 +11125,10 @@ class FMFDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RiskFilterListType
 	 */ 
 	public $DenyFilters;
@@ -13273,92 +11136,57 @@ class FMFDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RiskFilterListType
 	 */ 
 	public $ReportFilters;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='acceptfilters'){
-                                    $this->AcceptFilters = new RiskFilterListType(); 
-                                    $this->AcceptFilters->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='pendingfilters'){
-                                    $this->PendingFilters = new RiskFilterListType(); 
-                                    $this->PendingFilters->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='denyfilters'){
-                                    $this->DenyFilters = new RiskFilterListType(); 
-                                    $this->DenyFilters->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='reportfilters'){
-                                    $this->ReportFilters = new RiskFilterListType(); 
-                                    $this->ReportFilters->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * Enhanced Data Information. Example: AID for Airlines 
  */
-class EnhancedDataType  {
+ 
+class EnhancedDataType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AirlineItineraryType
 	 */ 
 	public $AirlineItinerary;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->AirlineItinerary != NULL)
-		{
-			$str .= '<ebl:AirlineItinerary>';
-			$str .= $this->AirlineItinerary->toXMLString();
-			$str .= '</ebl:AirlineItinerary>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * AID for Airlines 
  */
-class AirlineItineraryType  {
+ 
+class AirlineItineraryType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PassengerName;
@@ -13366,6 +11194,10 @@ class AirlineItineraryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $IssueDate;
@@ -13373,6 +11205,10 @@ class AirlineItineraryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TravelAgencyName;
@@ -13380,6 +11216,10 @@ class AirlineItineraryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TravelAgencyCode;
@@ -13387,6 +11227,10 @@ class AirlineItineraryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TicketNumber;
@@ -13394,6 +11238,10 @@ class AirlineItineraryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $IssuingCarrierCode;
@@ -13401,6 +11249,10 @@ class AirlineItineraryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CustomerCode;
@@ -13408,6 +11260,10 @@ class AirlineItineraryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $TotalFare;
@@ -13415,6 +11271,10 @@ class AirlineItineraryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $TotalTaxes;
@@ -13422,6 +11282,10 @@ class AirlineItineraryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $TotalFee;
@@ -13429,6 +11293,10 @@ class AirlineItineraryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $RestrictedTicket;
@@ -13436,6 +11304,10 @@ class AirlineItineraryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ClearingSequence;
@@ -13443,6 +11315,10 @@ class AirlineItineraryType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ClearingCount;
@@ -13451,97 +11327,34 @@ class AirlineItineraryType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var FlightDetailsType
 	 */ 
 	public $FlightDetails;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->PassengerName != NULL)
-		{
-			$str .= '<ebl:PassengerName>' . PPUtils::escapeInvalidXmlCharsRegex($this->PassengerName) . '</ebl:PassengerName>';
-		}
-		if($this->IssueDate != NULL)
-		{
-			$str .= '<ebl:IssueDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->IssueDate) . '</ebl:IssueDate>';
-		}
-		if($this->TravelAgencyName != NULL)
-		{
-			$str .= '<ebl:TravelAgencyName>' . PPUtils::escapeInvalidXmlCharsRegex($this->TravelAgencyName) . '</ebl:TravelAgencyName>';
-		}
-		if($this->TravelAgencyCode != NULL)
-		{
-			$str .= '<ebl:TravelAgencyCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->TravelAgencyCode) . '</ebl:TravelAgencyCode>';
-		}
-		if($this->TicketNumber != NULL)
-		{
-			$str .= '<ebl:TicketNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->TicketNumber) . '</ebl:TicketNumber>';
-		}
-		if($this->IssuingCarrierCode != NULL)
-		{
-			$str .= '<ebl:IssuingCarrierCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->IssuingCarrierCode) . '</ebl:IssuingCarrierCode>';
-		}
-		if($this->CustomerCode != NULL)
-		{
-			$str .= '<ebl:CustomerCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->CustomerCode) . '</ebl:CustomerCode>';
-		}
-		if($this->TotalFare != NULL)
-		{
-			$str .= '<ebl:TotalFare';
-			$str .= $this->TotalFare->toXMLString();
-			$str .= '</ebl:TotalFare>';
-		}
-		if($this->TotalTaxes != NULL)
-		{
-			$str .= '<ebl:TotalTaxes';
-			$str .= $this->TotalTaxes->toXMLString();
-			$str .= '</ebl:TotalTaxes>';
-		}
-		if($this->TotalFee != NULL)
-		{
-			$str .= '<ebl:TotalFee';
-			$str .= $this->TotalFee->toXMLString();
-			$str .= '</ebl:TotalFee>';
-		}
-		if($this->RestrictedTicket != NULL)
-		{
-			$str .= '<ebl:RestrictedTicket>' . PPUtils::escapeInvalidXmlCharsRegex($this->RestrictedTicket) . '</ebl:RestrictedTicket>';
-		}
-		if($this->ClearingSequence != NULL)
-		{
-			$str .= '<ebl:ClearingSequence>' . PPUtils::escapeInvalidXmlCharsRegex($this->ClearingSequence) . '</ebl:ClearingSequence>';
-		}
-		if($this->ClearingCount != NULL)
-		{
-			$str .= '<ebl:ClearingCount>' . PPUtils::escapeInvalidXmlCharsRegex($this->ClearingCount) . '</ebl:ClearingCount>';
-		}
-		if($this->FlightDetails != NULL)
-		{
-			for($i = 0; $i < count($this->FlightDetails); $i++)
-			{
-				$str .= '<ebl:FlightDetails>';
-				$str .= $this->FlightDetails[$i]->toXMLString();
-				$str .= '</ebl:FlightDetails>';
-			}
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Details of leg information 
  */
-class FlightDetailsType  {
+ 
+class FlightDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ConjuctionTicket;
@@ -13549,6 +11362,10 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ExchangeTicket;
@@ -13556,6 +11373,10 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CouponNumber;
@@ -13563,6 +11384,10 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ServiceClass;
@@ -13570,6 +11395,10 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TravelDate;
@@ -13577,6 +11406,10 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CarrierCode;
@@ -13584,6 +11417,10 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $StopOverPermitted;
@@ -13591,6 +11428,10 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $DepartureAirport;
@@ -13598,6 +11439,10 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ArrivalAirport;
@@ -13605,6 +11450,10 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $FlightNumber;
@@ -13612,6 +11461,10 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $DepartureTime;
@@ -13619,6 +11472,10 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ArrivalTime;
@@ -13626,6 +11483,10 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $FareBasisCode;
@@ -13633,6 +11494,10 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Fare;
@@ -13640,6 +11505,10 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Taxes;
@@ -13647,6 +11516,10 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Fee;
@@ -13654,105 +11527,35 @@ class FlightDetailsType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $EndorsementOrRestrictions;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ConjuctionTicket != NULL)
-		{
-			$str .= '<ebl:ConjuctionTicket>' . PPUtils::escapeInvalidXmlCharsRegex($this->ConjuctionTicket) . '</ebl:ConjuctionTicket>';
-		}
-		if($this->ExchangeTicket != NULL)
-		{
-			$str .= '<ebl:ExchangeTicket>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExchangeTicket) . '</ebl:ExchangeTicket>';
-		}
-		if($this->CouponNumber != NULL)
-		{
-			$str .= '<ebl:CouponNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->CouponNumber) . '</ebl:CouponNumber>';
-		}
-		if($this->ServiceClass != NULL)
-		{
-			$str .= '<ebl:ServiceClass>' . PPUtils::escapeInvalidXmlCharsRegex($this->ServiceClass) . '</ebl:ServiceClass>';
-		}
-		if($this->TravelDate != NULL)
-		{
-			$str .= '<ebl:TravelDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->TravelDate) . '</ebl:TravelDate>';
-		}
-		if($this->CarrierCode != NULL)
-		{
-			$str .= '<ebl:CarrierCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->CarrierCode) . '</ebl:CarrierCode>';
-		}
-		if($this->StopOverPermitted != NULL)
-		{
-			$str .= '<ebl:StopOverPermitted>' . PPUtils::escapeInvalidXmlCharsRegex($this->StopOverPermitted) . '</ebl:StopOverPermitted>';
-		}
-		if($this->DepartureAirport != NULL)
-		{
-			$str .= '<ebl:DepartureAirport>' . PPUtils::escapeInvalidXmlCharsRegex($this->DepartureAirport) . '</ebl:DepartureAirport>';
-		}
-		if($this->ArrivalAirport != NULL)
-		{
-			$str .= '<ebl:ArrivalAirport>' . PPUtils::escapeInvalidXmlCharsRegex($this->ArrivalAirport) . '</ebl:ArrivalAirport>';
-		}
-		if($this->FlightNumber != NULL)
-		{
-			$str .= '<ebl:FlightNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->FlightNumber) . '</ebl:FlightNumber>';
-		}
-		if($this->DepartureTime != NULL)
-		{
-			$str .= '<ebl:DepartureTime>' . PPUtils::escapeInvalidXmlCharsRegex($this->DepartureTime) . '</ebl:DepartureTime>';
-		}
-		if($this->ArrivalTime != NULL)
-		{
-			$str .= '<ebl:ArrivalTime>' . PPUtils::escapeInvalidXmlCharsRegex($this->ArrivalTime) . '</ebl:ArrivalTime>';
-		}
-		if($this->FareBasisCode != NULL)
-		{
-			$str .= '<ebl:FareBasisCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->FareBasisCode) . '</ebl:FareBasisCode>';
-		}
-		if($this->Fare != NULL)
-		{
-			$str .= '<ebl:Fare';
-			$str .= $this->Fare->toXMLString();
-			$str .= '</ebl:Fare>';
-		}
-		if($this->Taxes != NULL)
-		{
-			$str .= '<ebl:Taxes';
-			$str .= $this->Taxes->toXMLString();
-			$str .= '</ebl:Taxes>';
-		}
-		if($this->Fee != NULL)
-		{
-			$str .= '<ebl:Fee';
-			$str .= $this->Fee->toXMLString();
-			$str .= '</ebl:Fee>';
-		}
-		if($this->EndorsementOrRestrictions != NULL)
-		{
-			$str .= '<ebl:EndorsementOrRestrictions>' . PPUtils::escapeInvalidXmlCharsRegex($this->EndorsementOrRestrictions) . '</ebl:EndorsementOrRestrictions>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Authorization details 
  */
-class AuthorizationInfoType  {
+ 
+class AuthorizationInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * The status of the payment: Pending: The payment is pending.
 	 * See "PendingReason" for more information.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentStatusCodeType
 	 */ 
 	public $PaymentStatus;
@@ -13788,6 +11591,10 @@ class AuthorizationInfoType  {
 	 * listed above. For more information, contact PayPal Customer
 	 * Service.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PendingStatusCodeType
 	 */ 
 	public $PendingReason;
@@ -13796,6 +11603,10 @@ class AuthorizationInfoType  {
 	 * Protection Eligibility for this Transaction - None, SPP or
 	 * ESPP 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProtectionEligibility;
@@ -13803,42 +11614,33 @@ class AuthorizationInfoType  {
 	/**
 	 * Protection Eligibility Type for this Transaction 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProtectionEligibilityType;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentstatus') {
-					$this->PaymentStatus = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'pendingreason') {
-					$this->PendingReason = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'protectioneligibility') {
-					$this->ProtectionEligibility = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'protectioneligibilitytype') {
-					$this->ProtectionEligibilityType = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * Option Number. Optional 
  */
-class OptionTrackingDetailsType  {
+ 
+class OptionTrackingDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Option Number. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OptionNumber;
@@ -13846,6 +11648,10 @@ class OptionTrackingDetailsType  {
 	/**
 	 * Option Quantity. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OptionQty;
@@ -13853,6 +11659,10 @@ class OptionTrackingDetailsType  {
 	/**
 	 * Option Select Name. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OptionSelect;
@@ -13860,6 +11670,10 @@ class OptionTrackingDetailsType  {
 	/**
 	 * Option Quantity Delta. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OptionQtyDelta;
@@ -13867,6 +11681,10 @@ class OptionTrackingDetailsType  {
 	/**
 	 * Option Alert. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OptionAlert;
@@ -13874,78 +11692,34 @@ class OptionTrackingDetailsType  {
 	/**
 	 * Option Cost. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $OptionCost;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->OptionNumber != NULL)
-		{
-			$str .= '<ebl:OptionNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionNumber) . '</ebl:OptionNumber>';
-		}
-		if($this->OptionQty != NULL)
-		{
-			$str .= '<ebl:OptionQty>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionQty) . '</ebl:OptionQty>';
-		}
-		if($this->OptionSelect != NULL)
-		{
-			$str .= '<ebl:OptionSelect>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionSelect) . '</ebl:OptionSelect>';
-		}
-		if($this->OptionQtyDelta != NULL)
-		{
-			$str .= '<ebl:OptionQtyDelta>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionQtyDelta) . '</ebl:OptionQtyDelta>';
-		}
-		if($this->OptionAlert != NULL)
-		{
-			$str .= '<ebl:OptionAlert>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionAlert) . '</ebl:OptionAlert>';
-		}
-		if($this->OptionCost != NULL)
-		{
-			$str .= '<ebl:OptionCost>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionCost) . '</ebl:OptionCost>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionnumber') {
-					$this->OptionNumber = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionqty') {
-					$this->OptionQty = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionselect') {
-					$this->OptionSelect = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionqtydelta') {
-					$this->OptionQtyDelta = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionalert') {
-					$this->OptionAlert = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optioncost') {
-					$this->OptionCost = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * Item Number. Required 
  */
-class ItemTrackingDetailsType  {
+ 
+class ItemTrackingDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Item Number. Required 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemNumber;
@@ -13953,6 +11727,10 @@ class ItemTrackingDetailsType  {
 	/**
 	 * Option Quantity. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemQty;
@@ -13960,6 +11738,10 @@ class ItemTrackingDetailsType  {
 	/**
 	 * Item Quantity Delta. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemQtyDelta;
@@ -13967,6 +11749,10 @@ class ItemTrackingDetailsType  {
 	/**
 	 * Item Alert. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemAlert;
@@ -13974,71 +11760,34 @@ class ItemTrackingDetailsType  {
 	/**
 	 * Item Cost. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemCost;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ItemNumber != NULL)
-		{
-			$str .= '<ebl:ItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemNumber) . '</ebl:ItemNumber>';
-		}
-		if($this->ItemQty != NULL)
-		{
-			$str .= '<ebl:ItemQty>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemQty) . '</ebl:ItemQty>';
-		}
-		if($this->ItemQtyDelta != NULL)
-		{
-			$str .= '<ebl:ItemQtyDelta>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemQtyDelta) . '</ebl:ItemQtyDelta>';
-		}
-		if($this->ItemAlert != NULL)
-		{
-			$str .= '<ebl:ItemAlert>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemAlert) . '</ebl:ItemAlert>';
-		}
-		if($this->ItemCost != NULL)
-		{
-			$str .= '<ebl:ItemCost>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemCost) . '</ebl:ItemCost>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemnumber') {
-					$this->ItemNumber = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemqty') {
-					$this->ItemQty = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemqtydelta') {
-					$this->ItemQtyDelta = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemalert') {
-					$this->ItemAlert = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemcost') {
-					$this->ItemCost = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class ButtonSearchResultType  {
+ 
+class ButtonSearchResultType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $HostedButtonID;
@@ -14046,6 +11795,10 @@ class ButtonSearchResultType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ButtonType;
@@ -14053,6 +11806,10 @@ class ButtonSearchResultType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemName;
@@ -14060,31 +11817,16 @@ class ButtonSearchResultType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $ModifyDate;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'hostedbuttonid') {
-					$this->HostedButtonID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttontype') {
-					$this->ButtonType = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemname') {
-					$this->ItemName = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'modifydate') {
-					$this->ModifyDate = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -14093,30 +11835,26 @@ class ButtonSearchResultType  {
  * length and limitations: 17 single-byte alphanumeric
  * characters 
  */
-class ReverseTransactionRequestDetailsType  {
+ 
+class ReverseTransactionRequestDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Identifier of the transaction to reverse. Required Character
 	 * length and limitations: 17 single-byte alphanumeric
 	 * characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionID;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->TransactionID != NULL)
-		{
-			$str .= '<ebl:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</ebl:TransactionID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -14125,13 +11863,19 @@ class ReverseTransactionRequestDetailsType  {
  * created. Character length and limitations:17 single-byte
  * characters 
  */
-class ReverseTransactionResponseDetailsType  {
+ 
+class ReverseTransactionResponseDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Unique transaction identifier of the reversal transaction
 	 * created. Character length and limitations:17 single-byte
 	 * characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReverseTransactionID;
@@ -14139,36 +11883,33 @@ class ReverseTransactionResponseDetailsType  {
 	/**
 	 * Status of reversal request. Required 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Status;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'reversetransactionid') {
-					$this->ReverseTransactionID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
-					$this->Status = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * Details of incentive application on individual bucket. 
  */
-class IncentiveInfoType  {
+ 
+class IncentiveInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * Incentive redemption code. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $IncentiveCode;
@@ -14178,32 +11919,17 @@ class IncentiveInfoType  {
 	 * applied to. 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var IncentiveApplyIndicationType
 	 */ 
 	public $ApplyIndication;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->IncentiveCode != NULL)
-		{
-			$str .= '<ebl:IncentiveCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->IncentiveCode) . '</ebl:IncentiveCode>';
-		}
-		if($this->ApplyIndication != NULL)
-		{
-			for($i = 0; $i < count($this->ApplyIndication); $i++)
-			{
-				$str .= '<ebl:ApplyIndication>';
-				$str .= $this->ApplyIndication[$i]->toXMLString();
-				$str .= '</ebl:ApplyIndication>';
-			}
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -14211,11 +11937,17 @@ class IncentiveInfoType  {
  * Defines which bucket or item that the incentive should be
  * applied to. 
  */
-class IncentiveApplyIndicationType  {
+ 
+class IncentiveApplyIndicationType  
+   extends PPXmlMessage{
 
 	/**
 	 * The Bucket ID that the incentive is applied to. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PaymentRequestID;
@@ -14223,27 +11955,17 @@ class IncentiveApplyIndicationType  {
 	/**
 	 * The item that the incentive is applied to. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ItemId;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->PaymentRequestID != NULL)
-		{
-			$str .= '<ebl:PaymentRequestID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PaymentRequestID) . '</ebl:PaymentRequestID>';
-		}
-		if($this->ItemId != NULL)
-		{
-			$str .= '<ebl:ItemId>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemId) . '</ebl:ItemId>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -14251,11 +11973,17 @@ class IncentiveApplyIndicationType  {
  * Contains payment request information for each bucket in the
  * cart.  
  */
-class PaymentRequestInfoType  {
+ 
+class PaymentRequestInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * Contains the transaction id of the bucket.  
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionId;
@@ -14263,6 +11991,10 @@ class PaymentRequestInfoType  {
 	/**
 	 * Contains the bucket id.  
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PaymentRequestID;
@@ -14270,33 +12002,16 @@ class PaymentRequestInfoType  {
 	/**
 	 * Contains the error details.  
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ErrorType
 	 */ 
 	public $PaymentError;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
-					$this->TransactionId = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentrequestid') {
-					$this->PaymentRequestID = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='paymenterror'){
-                                    $this->PaymentError = new ErrorType(); 
-                                    $this->PaymentError->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -14304,7 +12019,9 @@ class PaymentRequestInfoType  {
  * E-mail address or secure merchant account ID of merchant to
  * associate with new external remember-me. 
  */
-class ExternalRememberMeOwnerDetailsType  {
+ 
+class ExternalRememberMeOwnerDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * A discriminant that tells SetEC what kind of data the
@@ -14317,6 +12034,10 @@ class ExternalRememberMeOwnerDetailsType  {
 	 * SecureMerchantAccountID, the owner id is a string
 	 * representing the secure merchant account ID 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ExternalRememberMeOwnerIDType;
@@ -14329,27 +12050,17 @@ class ExternalRememberMeOwnerDetailsType  {
 	 * to be a 3rd party merchant account. If the Owner ID Type
 	 * field is not present or "None", this parameter is ignored. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ExternalRememberMeOwnerID;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ExternalRememberMeOwnerIDType != NULL)
-		{
-			$str .= '<ebl:ExternalRememberMeOwnerIDType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalRememberMeOwnerIDType) . '</ebl:ExternalRememberMeOwnerIDType>';
-		}
-		if($this->ExternalRememberMeOwnerID != NULL)
-		{
-			$str .= '<ebl:ExternalRememberMeOwnerID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalRememberMeOwnerID) . '</ebl:ExternalRememberMeOwnerID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -14359,12 +12070,18 @@ class ExternalRememberMeOwnerDetailsType  {
  * buyer or to request login bypass using external remember me.
  * 
  */
-class ExternalRememberMeOptInDetailsType  {
+ 
+class ExternalRememberMeOptInDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * 1 = opt in to external remember me. 0 or omitted = no opt-in
 	 * Other values are invalid 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ExternalRememberMeOptIn;
@@ -14376,41 +12093,35 @@ class ExternalRememberMeOptInDetailsType  {
 	 * future, we may allow the owner to be a 3rd party merchant
 	 * account. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ExternalRememberMeOwnerDetailsType
 	 */ 
 	public $ExternalRememberMeOwnerDetails;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ExternalRememberMeOptIn != NULL)
-		{
-			$str .= '<ebl:ExternalRememberMeOptIn>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalRememberMeOptIn) . '</ebl:ExternalRememberMeOptIn>';
-		}
-		if($this->ExternalRememberMeOwnerDetails != NULL)
-		{
-			$str .= '<ebl:ExternalRememberMeOwnerDetails>';
-			$str .= $this->ExternalRememberMeOwnerDetails->toXMLString();
-			$str .= '</ebl:ExternalRememberMeOwnerDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * An optional set of values related to flow-specific details. 
  */
-class FlowControlDetailsType  {
+ 
+class FlowControlDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * The URL to redirect to for an unpayable transaction. This
 	 * field is currently used only for the inline checkout flow. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ErrorURL;
@@ -14420,27 +12131,17 @@ class FlowControlDetailsType  {
 	 * "Continue" button on the merchant's site. This field is
 	 * currently used only for the inline checkout flow. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InContextReturnURL;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ErrorURL != NULL)
-		{
-			$str .= '<ebl:ErrorURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ErrorURL) . '</ebl:ErrorURL>';
-		}
-		if($this->InContextReturnURL != NULL)
-		{
-			$str .= '<ebl:InContextReturnURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->InContextReturnURL) . '</ebl:InContextReturnURL>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -14448,7 +12149,9 @@ class FlowControlDetailsType  {
  * Response information resulting from opt-in operation or
  * current login bypass status. 
  */
-class ExternalRememberMeStatusDetailsType  {
+ 
+class ExternalRememberMeStatusDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Required field that reports status of opt-in or login bypass
@@ -14462,6 +12165,10 @@ class ExternalRememberMeStatusDetailsType  {
 	 * None - the return value does not signify any valid remember
 	 * me status. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $ExternalRememberMeStatus;
@@ -14474,25 +12181,16 @@ class ExternalRememberMeStatusDetailsType  {
 	 * alphanumeric (encrypted) string. This field has meaning only
 	 * to the merchant. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ExternalRememberMeID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'externalremembermestatus') {
-					$this->ExternalRememberMeStatus = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'externalremembermeid') {
-					$this->ExternalRememberMeID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -14500,7 +12198,9 @@ class ExternalRememberMeStatusDetailsType  {
  * Response information resulting from opt-in operation or
  * current login bypass status. 
  */
-class RefreshTokenStatusDetailsType  {
+ 
+class RefreshTokenStatusDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Required field that reports status of opt-in or login bypass
@@ -14516,6 +12216,10 @@ class RefreshTokenStatusDetailsType  {
 	 * buyer to complete transaction. -1 = None, the field does not
 	 * represent any valid value of the status. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var integer
 	 */ 
 	public $RefreshTokenStatus;
@@ -14524,6 +12228,10 @@ class RefreshTokenStatusDetailsType  {
 	 * Identifier returned on external-remember-me-opt-in to allow
 	 * the merchant to request bypass of PayPal login 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $RefreshToken;
@@ -14533,28 +12241,16 @@ class RefreshTokenStatusDetailsType  {
 	 * that should never ever change for that account. This would
 	 * be the key used to uniquely identify the user 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ImmutableID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'refreshtokenstatus') {
-					$this->RefreshTokenStatus = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'refreshtoken') {
-					$this->RefreshToken = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'immutableid') {
-					$this->ImmutableID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
@@ -14562,30 +12258,26 @@ class RefreshTokenStatusDetailsType  {
  * Contains elements that allows customization of display (user
  * interface) elements. 
  */
-class DisplayControlDetailsType  {
+ 
+class DisplayControlDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Optional URL to pay button image for the inline checkout
 	 * flow. Currently applicable only to the inline checkout flow
 	 * when the FlowControlDetails/InlineReturnURL is present. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $InContextPaymentButtonImage;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->InContextPaymentButtonImage != NULL)
-		{
-			$str .= '<ebl:InContextPaymentButtonImage>' . PPUtils::escapeInvalidXmlCharsRegex($this->InContextPaymentButtonImage) . '</ebl:InContextPaymentButtonImage>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -14593,7 +12285,9 @@ class DisplayControlDetailsType  {
  * Contains elements that allow tracking for an external
  * partner. 
  */
-class ExternalPartnerTrackingDetailsType  {
+ 
+class ExternalPartnerTrackingDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * PayPal will just log this string. There will NOT be any
@@ -14607,23 +12301,17 @@ class ExternalPartnerTrackingDetailsType  {
 	 * control the value of what gets passed and we take that value
 	 * as is and generate data based on it. Optional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ExternalPartnerSegmentID;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ExternalPartnerSegmentID != NULL)
-		{
-			$str .= '<ebl:ExternalPartnerSegmentID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalPartnerSegmentID) . '</ebl:ExternalPartnerSegmentID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -14631,12 +12319,18 @@ class ExternalPartnerTrackingDetailsType  {
  * Store IDOptional Character length and limits: 50 single-byte
  * characters 
  */
-class MerchantStoreDetailsType  {
+ 
+class MerchantStoreDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Store IDOptional Character length and limits: 50 single-byte
 	 * characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $StoreID;
@@ -14645,6 +12339,10 @@ class MerchantStoreDetailsType  {
 	 * Terminal IDOptional Character length and limits: 50
 	 * single-byte characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $TerminalID;
@@ -14657,33 +12355,25 @@ class MerchantStoreDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->StoreID != NULL)
-		{
-			$str .= '<ebl:StoreID>' . PPUtils::escapeInvalidXmlCharsRegex($this->StoreID) . '</ebl:StoreID>';
-		}
-		if($this->TerminalID != NULL)
-		{
-			$str .= '<ebl:TerminalID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TerminalID) . '</ebl:TerminalID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class AdditionalFeeType  {
+ 
+class AdditionalFeeType  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Type;
@@ -14691,67 +12381,35 @@ class AdditionalFeeType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Type != NULL)
-		{
-			$str .= '<ebl:Type>' . PPUtils::escapeInvalidXmlCharsRegex($this->Type) . '</ebl:Type>';
-		}
-		if($this->Amount != NULL)
-		{
-			$str .= '<ebl:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</ebl:Amount>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'type') {
-					$this->Type = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='amount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->Amount= new BasicAmountType(); 
-								$this->Amount->init($atr);
-							}
-							                            
-			}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * Describes discount information 
  */
-class DiscountType  {
+ 
+class DiscountType  
+   extends PPXmlMessage{
 
 	/**
 	 * Item nameOptional Character length and limits: 127
 	 * single-byte characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Name;
@@ -14760,6 +12418,10 @@ class DiscountType  {
 	 * description of the discountOptional Character length and
 	 * limits: 127 single-byte characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Description;
@@ -14767,6 +12429,10 @@ class DiscountType  {
 	/**
 	 * amount discountedOptional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -14774,6 +12440,10 @@ class DiscountType  {
 	/**
 	 * offer typeOptional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RedeemedOfferType
 	 */ 
 	public $RedeemedOfferType;
@@ -14782,6 +12452,10 @@ class DiscountType  {
 	 * offer IDOptional Character length and limits: 64 single-byte
 	 * characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $RedeemedOfferID;
@@ -14794,83 +12468,26 @@ class DiscountType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Name != NULL)
-		{
-			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
-		}
-		if($this->Description != NULL)
-		{
-			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
-		}
-		if($this->Amount != NULL)
-		{
-			$str .= '<ebl:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</ebl:Amount>';
-		}
-		if($this->RedeemedOfferType != NULL)
-		{
-			$str .= '<ebl:RedeemedOfferType>' . PPUtils::escapeInvalidXmlCharsRegex($this->RedeemedOfferType) . '</ebl:RedeemedOfferType>';
-		}
-		if($this->RedeemedOfferID != NULL)
-		{
-			$str .= '<ebl:RedeemedOfferID>' . PPUtils::escapeInvalidXmlCharsRegex($this->RedeemedOfferID) . '</ebl:RedeemedOfferID>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'name') {
-					$this->Name = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'description') {
-					$this->Description = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='amount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->Amount= new BasicAmountType(); 
-								$this->Amount->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'redeemedoffertype') {
-					$this->RedeemedOfferType = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'redeemedofferid') {
-					$this->RedeemedOfferID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * Describes an individual item for an invoice. 
  */
-class InvoiceItemType  {
+ 
+class InvoiceItemType  
+   extends PPXmlMessage{
 
 	/**
 	 * a human readable item nameOptional Character length and
 	 * limits: 127 single-byte characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Name;
@@ -14879,6 +12496,10 @@ class InvoiceItemType  {
 	 * a human readable item descriptionOptional Character length
 	 * and limits: 127 single-byte characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $Description;
@@ -14888,6 +12509,10 @@ class InvoiceItemType  {
 	 * (UPC) for the item. Empty string is allowed. Character
 	 * length and limits: 17 single-byte characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $EAN;
@@ -14897,6 +12522,10 @@ class InvoiceItemType  {
 	 * to the item. Character length and limits: 64 single-byte
 	 * characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $SKU;
@@ -14909,6 +12538,10 @@ class InvoiceItemType  {
 	 * to the item in the e-Receipt. Character length and limits: 8
 	 * single-byte characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReturnPolicyIdentifier;
@@ -14916,6 +12549,10 @@ class InvoiceItemType  {
 	/**
 	 * total price of this item 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Price;
@@ -14923,6 +12560,10 @@ class InvoiceItemType  {
 	/**
 	 * price per item quantity 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $ItemPrice;
@@ -14930,6 +12571,10 @@ class InvoiceItemType  {
 	/**
 	 * quantity of the item (non-negative) 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var double
 	 */ 
 	public $ItemCount;
@@ -14937,6 +12582,10 @@ class InvoiceItemType  {
 	/**
 	 * Unit of measure for the itemCount 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var UnitOfMeasure
 	 */ 
 	public $ItemCountUnit;
@@ -14945,6 +12594,10 @@ class InvoiceItemType  {
 	 * discount applied to this item 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var DiscountType
 	 */ 
 	public $Discount;
@@ -14953,6 +12606,10 @@ class InvoiceItemType  {
 	 * identifies whether this item is taxable or not. If not
 	 * passed, this will be assumed to be true. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var boolean
 	 */ 
 	public $Taxable;
@@ -14964,6 +12621,10 @@ class InvoiceItemType  {
 	 * up to the caller to do the calculations for setting that
 	 * other element. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var double
 	 */ 
 	public $TaxRate;
@@ -14972,6 +12633,10 @@ class InvoiceItemType  {
 	 * Additional fees to this item 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AdditionalFeeType
 	 */ 
 	public $AdditionalFees;
@@ -14980,6 +12645,10 @@ class InvoiceItemType  {
 	 * identifies whether this is reimbursable or not. If not pass,
 	 * this will be assumed to be true. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var boolean
 	 */ 
 	public $Reimbursable;
@@ -14987,6 +12656,10 @@ class InvoiceItemType  {
 	/**
 	 * Manufacturer part number. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $MPN;
@@ -14996,6 +12669,10 @@ class InvoiceItemType  {
 	 * http://en.wikipedia.org/wiki/ISBN Character length and
 	 * limits: 32 single-byte characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ISBN;
@@ -15005,6 +12682,10 @@ class InvoiceItemType  {
 	 * http://en.wikipedia.org/wiki/Price_Look-Up_code Character
 	 * length and limits: 5 single-byte characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PLU;
@@ -15012,6 +12693,10 @@ class InvoiceItemType  {
 	/**
 	 * Character length and limits: 32 single-byte characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $ModelNumber;
@@ -15019,237 +12704,34 @@ class InvoiceItemType  {
 	/**
 	 * Character length and limits: 32 single-byte characters 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $StyleNumber;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->Name != NULL)
-		{
-			$str .= '<ebl:Name>' . PPUtils::escapeInvalidXmlCharsRegex($this->Name) . '</ebl:Name>';
-		}
-		if($this->Description != NULL)
-		{
-			$str .= '<ebl:Description>' . PPUtils::escapeInvalidXmlCharsRegex($this->Description) . '</ebl:Description>';
-		}
-		if($this->EAN != NULL)
-		{
-			$str .= '<ebl:EAN>' . PPUtils::escapeInvalidXmlCharsRegex($this->EAN) . '</ebl:EAN>';
-		}
-		if($this->SKU != NULL)
-		{
-			$str .= '<ebl:SKU>' . PPUtils::escapeInvalidXmlCharsRegex($this->SKU) . '</ebl:SKU>';
-		}
-		if($this->ReturnPolicyIdentifier != NULL)
-		{
-			$str .= '<ebl:ReturnPolicyIdentifier>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnPolicyIdentifier) . '</ebl:ReturnPolicyIdentifier>';
-		}
-		if($this->Price != NULL)
-		{
-			$str .= '<ebl:Price';
-			$str .= $this->Price->toXMLString();
-			$str .= '</ebl:Price>';
-		}
-		if($this->ItemPrice != NULL)
-		{
-			$str .= '<ebl:ItemPrice';
-			$str .= $this->ItemPrice->toXMLString();
-			$str .= '</ebl:ItemPrice>';
-		}
-		if($this->ItemCount != NULL)
-		{
-			$str .= '<ebl:ItemCount>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemCount) . '</ebl:ItemCount>';
-		}
-		if($this->ItemCountUnit != NULL)
-		{
-			$str .= '<ebl:ItemCountUnit>' . PPUtils::escapeInvalidXmlCharsRegex($this->ItemCountUnit) . '</ebl:ItemCountUnit>';
-		}
-		if($this->Discount != NULL)
-		{
-			for($i = 0; $i < count($this->Discount); $i++)
-			{
-				$str .= '<ebl:Discount>';
-				$str .= $this->Discount[$i]->toXMLString();
-				$str .= '</ebl:Discount>';
-			}
-		}
-		if($this->Taxable != NULL)
-		{
-			$str .= '<ebl:Taxable>' . PPUtils::escapeInvalidXmlCharsRegex($this->Taxable) . '</ebl:Taxable>';
-		}
-		if($this->TaxRate != NULL)
-		{
-			$str .= '<ebl:TaxRate>' . PPUtils::escapeInvalidXmlCharsRegex($this->TaxRate) . '</ebl:TaxRate>';
-		}
-		if($this->AdditionalFees != NULL)
-		{
-			for($i = 0; $i < count($this->AdditionalFees); $i++)
-			{
-				$str .= '<ebl:AdditionalFees>';
-				$str .= $this->AdditionalFees[$i]->toXMLString();
-				$str .= '</ebl:AdditionalFees>';
-			}
-		}
-		if($this->Reimbursable != NULL)
-		{
-			$str .= '<ebl:Reimbursable>' . PPUtils::escapeInvalidXmlCharsRegex($this->Reimbursable) . '</ebl:Reimbursable>';
-		}
-		if($this->MPN != NULL)
-		{
-			$str .= '<ebl:MPN>' . PPUtils::escapeInvalidXmlCharsRegex($this->MPN) . '</ebl:MPN>';
-		}
-		if($this->ISBN != NULL)
-		{
-			$str .= '<ebl:ISBN>' . PPUtils::escapeInvalidXmlCharsRegex($this->ISBN) . '</ebl:ISBN>';
-		}
-		if($this->PLU != NULL)
-		{
-			$str .= '<ebl:PLU>' . PPUtils::escapeInvalidXmlCharsRegex($this->PLU) . '</ebl:PLU>';
-		}
-		if($this->ModelNumber != NULL)
-		{
-			$str .= '<ebl:ModelNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->ModelNumber) . '</ebl:ModelNumber>';
-		}
-		if($this->StyleNumber != NULL)
-		{
-			$str .= '<ebl:StyleNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->StyleNumber) . '</ebl:StyleNumber>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'name') {
-					$this->Name = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'description') {
-					$this->Description = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'ean') {
-					$this->EAN = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'sku') {
-					$this->SKU = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'returnpolicyidentifier') {
-					$this->ReturnPolicyIdentifier = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='price') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->Price= new BasicAmountType(); 
-								$this->Price->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='itemprice') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->ItemPrice= new BasicAmountType(); 
-								$this->ItemPrice->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemcount') {
-					$this->ItemCount = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'itemcountunit') {
-					$this->ItemCountUnit = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "discount[$i]") {
-							$this->Discount[$i] = new DiscountType();
-							$this->Discount[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "discount")) {
-					$this->Discount = new DiscountType();
-					$this->Discount->init($arry["children"]);
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'taxable') {
-					$this->Taxable = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'taxrate') {
-					$this->TaxRate = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "additionalfees[$i]") {
-							$this->AdditionalFees[$i] = new AdditionalFeeType();
-							$this->AdditionalFees[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "additionalfees")) {
-					$this->AdditionalFees = new AdditionalFeeType();
-					$this->AdditionalFees->init($arry["children"]);
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'reimbursable') {
-					$this->Reimbursable = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'mpn') {
-					$this->MPN = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'isbn') {
-					$this->ISBN = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'plu') {
-					$this->PLU = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'modelnumber') {
-					$this->ModelNumber = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'stylenumber') {
-					$this->StyleNumber = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * Holds refunds payment status information 
  */
-class RefundInfoType  {
+ 
+class RefundInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * Refund status whether it is Instant or Delayed. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentStatusCodeType
 	 */ 
 	public $RefundStatus;
@@ -15257,36 +12739,33 @@ class RefundInfoType  {
 	/**
 	 * Tells us the reason when refund payment status is Delayed. 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PendingStatusCodeType
 	 */ 
 	public $PendingReason;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'refundstatus') {
-					$this->RefundStatus = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'pendingreason') {
-					$this->PendingReason = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * Defines relationship between buckets 
  */
-class CoupledBucketsType  {
+ 
+class CoupledBucketsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Relationship Type - LifeTime (default) 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CoupleType
 	 */ 
 	public $CoupleType;
@@ -15294,6 +12773,10 @@ class CoupledBucketsType  {
 	/**
 	 * Identifier for this relation 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CoupledPaymentRequestID;
@@ -15302,6 +12785,10 @@ class CoupledBucketsType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $PaymentRequestID;
@@ -15314,40 +12801,25 @@ class CoupledBucketsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->CoupleType != NULL)
-		{
-			$str .= '<ebl:CoupleType>' . PPUtils::escapeInvalidXmlCharsRegex($this->CoupleType) . '</ebl:CoupleType>';
-		}
-		if($this->CoupledPaymentRequestID != NULL)
-		{
-			$str .= '<ebl:CoupledPaymentRequestID>' . PPUtils::escapeInvalidXmlCharsRegex($this->CoupledPaymentRequestID) . '</ebl:CoupledPaymentRequestID>';
-		}
-		if($this->PaymentRequestID != NULL)
-		{
-			for($i = 0; $i < count($this->PaymentRequestID); $i++)
-			{
-				$str .= '<ebl:PaymentRequestID>'. PPUtils::escapeInvalidXmlCharsRegex($this->PaymentRequestID[$i]) . '</ebl:PaymentRequestID>';
-			}
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Information about Coupled Payment transactions. 
  */
-class CoupledPaymentInfoType  {
+ 
+class CoupledPaymentInfoType  
+   extends PPXmlMessage{
 
 	/**
 	 * ID received in the Coupled Payment Request
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CoupledPaymentRequestID;
@@ -15356,207 +12828,148 @@ class CoupledPaymentInfoType  {
 	 * ID that uniquely identifies this CoupledPayment. Generated
 	 * by PP in Response
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var string
 	 */ 
 	public $CoupledPaymentID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'coupledpaymentrequestid') {
-					$this->CoupledPaymentRequestID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'coupledpaymentid') {
-					$this->CoupledPaymentID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class EnhancedCheckoutDataType  {
+ 
+class EnhancedCheckoutDataType  
+   extends PPXmlMessage{
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class EnhancedPaymentDataType  {
+ 
+class EnhancedPaymentDataType  
+   extends PPXmlMessage{
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class EnhancedItemDataType  {
+ 
+class EnhancedItemDataType  
+   extends PPXmlMessage{
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class EnhancedPaymentInfoType  {
+ 
+class EnhancedPaymentInfoType  
+   extends PPXmlMessage{
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class EnhancedInitiateRecoupRequestDetailsType  {
+ 
+class EnhancedInitiateRecoupRequestDetailsType  
+   extends PPXmlMessage{
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class EnhancedCompleteRecoupRequestDetailsType  {
+ 
+class EnhancedCompleteRecoupRequestDetailsType  
+   extends PPXmlMessage{
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class EnhancedCompleteRecoupResponseDetailsType  {
+ 
+class EnhancedCompleteRecoupResponseDetailsType  
+   extends PPXmlMessage{
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class EnhancedCancelRecoupRequestDetailsType  {
+ 
+class EnhancedCancelRecoupRequestDetailsType  
+   extends PPXmlMessage{
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class EnhancedPayerInfoType  {
+ 
+class EnhancedPayerInfoType  
+   extends PPXmlMessage{
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * Installment Period. Optional 
  */
-class InstallmentDetailsType  {
+ 
+class InstallmentDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Installment Period. Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BillingPeriodType
 	 */ 
 	public $BillingPeriod;
@@ -15564,6 +12977,10 @@ class InstallmentDetailsType  {
 	/**
 	 * Installment Frequency. Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var integer
 	 */ 
 	public $BillingFrequency;
@@ -15571,6 +12988,10 @@ class InstallmentDetailsType  {
 	/**
 	 * Installment Cycles. Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var integer
 	 */ 
 	public $TotalBillingCycles;
@@ -15578,6 +12999,10 @@ class InstallmentDetailsType  {
 	/**
 	 * Installment Amount. Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Amount;
@@ -15585,6 +13010,10 @@ class InstallmentDetailsType  {
 	/**
 	 * Installment Amount. Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ShippingAmount;
@@ -15592,67 +13021,17 @@ class InstallmentDetailsType  {
 	/**
 	 * Installment Amount. Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TaxAmount;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->BillingPeriod != NULL)
-		{
-			$str .= '<urn:BillingPeriod>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingPeriod) . '</urn:BillingPeriod>';
-		}
-		if($this->BillingFrequency != NULL)
-		{
-			$str .= '<urn:BillingFrequency>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingFrequency) . '</urn:BillingFrequency>';
-		}
-		if($this->TotalBillingCycles != NULL)
-		{
-			$str .= '<urn:TotalBillingCycles>' . PPUtils::escapeInvalidXmlCharsRegex($this->TotalBillingCycles) . '</urn:TotalBillingCycles>';
-		}
-		if($this->Amount != NULL)
-		{
-			$str .= '<urn:Amount>' . PPUtils::escapeInvalidXmlCharsRegex($this->Amount) . '</urn:Amount>';
-		}
-		if($this->ShippingAmount != NULL)
-		{
-			$str .= '<urn:ShippingAmount>' . PPUtils::escapeInvalidXmlCharsRegex($this->ShippingAmount) . '</urn:ShippingAmount>';
-		}
-		if($this->TaxAmount != NULL)
-		{
-			$str .= '<urn:TaxAmount>' . PPUtils::escapeInvalidXmlCharsRegex($this->TaxAmount) . '</urn:TaxAmount>';
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingperiod') {
-					$this->BillingPeriod = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingfrequency') {
-					$this->BillingFrequency = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'totalbillingcycles') {
-					$this->TotalBillingCycles = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'amount') {
-					$this->Amount = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'shippingamount') {
-					$this->ShippingAmount = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'taxamount') {
-					$this->TaxAmount = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
@@ -15660,12 +13039,18 @@ class InstallmentDetailsType  {
  * Option Selection. Required Character length and limitations:
  * 12 single-byte alphanumeric characters 
  */
-class OptionSelectionDetailsType  {
+ 
+class OptionSelectionDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Option Selection. Required Character length and limitations:
 	 * 12 single-byte alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $OptionSelection;
@@ -15673,6 +13058,10 @@ class OptionSelectionDetailsType  {
 	/**
 	 * Option Price. Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Price;
@@ -15680,6 +13069,10 @@ class OptionSelectionDetailsType  {
 	/**
 	 * Option Type Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var OptionTypeListType
 	 */ 
 	public $OptionType;
@@ -15688,6 +13081,10 @@ class OptionSelectionDetailsType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var InstallmentDetailsType
 	 */ 
 	public $PaymentPeriod;
@@ -15700,77 +13097,25 @@ class OptionSelectionDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->OptionSelection != NULL)
-		{
-			$str .= '<urn:OptionSelection>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionSelection) . '</urn:OptionSelection>';
-		}
-		if($this->Price != NULL)
-		{
-			$str .= '<urn:Price>' . PPUtils::escapeInvalidXmlCharsRegex($this->Price) . '</urn:Price>';
-		}
-		if($this->OptionType != NULL)
-		{
-			$str .= '<urn:OptionType>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionType) . '</urn:OptionType>';
-		}
-		if($this->PaymentPeriod != NULL)
-		{
-			for($i = 0; $i < count($this->PaymentPeriod); $i++)
-			{
-				$str .= '<urn:PaymentPeriod>';
-				$str .= $this->PaymentPeriod[$i]->toXMLString();
-				$str .= '</urn:PaymentPeriod>';
-			}
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionselection') {
-					$this->OptionSelection = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'price') {
-					$this->Price = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optiontype') {
-					$this->OptionType = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "paymentperiod[$i]") {
-							$this->PaymentPeriod[$i] = new InstallmentDetailsType();
-							$this->PaymentPeriod[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "paymentperiod")) {
-					$this->PaymentPeriod = new InstallmentDetailsType();
-					$this->PaymentPeriod->init($arry["children"]);
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * Option Name. Optional 
  */
-class OptionDetailsType  {
+ 
+class OptionDetailsType  
+   extends PPXmlMessage{
 
 	/**
 	 * Option Name. Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $OptionName;
@@ -15779,6 +13124,10 @@ class OptionDetailsType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var OptionSelectionDetailsType
 	 */ 
 	public $OptionSelectionDetails;
@@ -15791,63 +13140,25 @@ class OptionDetailsType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->OptionName != NULL)
-		{
-			$str .= '<urn:OptionName>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionName) . '</urn:OptionName>';
-		}
-		if($this->OptionSelectionDetails != NULL)
-		{
-			for($i = 0; $i < count($this->OptionSelectionDetails); $i++)
-			{
-				$str .= '<urn:OptionSelectionDetails>';
-				$str .= $this->OptionSelectionDetails[$i]->toXMLString();
-				$str .= '</urn:OptionSelectionDetails>';
-			}
-		}
-		return $str;
-	}
-
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionname') {
-					$this->OptionName = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "optionselectiondetails[$i]") {
-							$this->OptionSelectionDetails[$i] = new OptionSelectionDetailsType();
-							$this->OptionSelectionDetails[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "optionselectiondetails")) {
-					$this->OptionSelectionDetails = new OptionSelectionDetailsType();
-					$this->OptionSelectionDetails->init($arry["children"]);
-				}
-			}
-		}
-	}
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class BMCreateButtonReq  {
+ 
+class BMCreateButtonReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BMCreateButtonRequestType
 	 */ 
 	public $BMCreateButtonRequest;
@@ -15855,20 +13166,19 @@ class BMCreateButtonReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:BMCreateButtonReq>';
-		if($this->BMCreateButtonRequest != NULL)
-		{
-			$str .= '<urn:BMCreateButtonRequest>';
-			$str .= $this->BMCreateButtonRequest->toXMLString();
-			$str .= '</urn:BMCreateButtonRequest>';
-		}
-		$str .= '</urn:BMCreateButtonReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:BMCreateButtonReq>';
+			if($this->BMCreateButtonRequest != NULL)
+			{
+		   		$str .= '<ns:BMCreateButtonRequest>';
+				$str .= $this->BMCreateButtonRequest->toXMLString();
+				$str .= '</ns:BMCreateButtonRequest>';
+			}
+			$str .= '</ns:BMCreateButtonReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -15877,13 +13187,19 @@ class BMCreateButtonReq  {
  * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
  * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE  
  */
-class BMCreateButtonRequestType  extends AbstractRequestType  {
+ 
+class BMCreateButtonRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * Type of Button to create.  Required Must be one of the
 	 * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
 	 * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ButtonTypeType
 	 */ 
 	public $ButtonType;
@@ -15892,6 +13208,10 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	 * button code.  optional Must be one of the following: hosted,
 	 * encrypted or cleartext 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ButtonCodeType
 	 */ 
 	public $ButtonCode;
@@ -15900,6 +13220,10 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	 * Button sub type.  optional for button types buynow and cart
 	 * only Must Be either PRODUCTS or SERVICES 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ButtonSubTypeType
 	 */ 
 	public $ButtonSubType;
@@ -15910,6 +13234,10 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	 * alphanumeric characters 
      * @array
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ButtonVar;
@@ -15918,6 +13246,10 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var OptionDetailsType
 	 */ 
 	public $OptionDetails;
@@ -15926,6 +13258,10 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	 * Details of each option for the button.  Optional 
      * @array
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TextBox;
@@ -15934,6 +13270,10 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	 * Button image to use.  Optional Must be one of: REG, SML, or
 	 * CC 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ButtonImageType
 	 */ 
 	public $ButtonImage;
@@ -15943,6 +13283,10 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ButtonImageURL;
@@ -15951,6 +13295,10 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	 * Text to use on Buy Now Button.  Optional Must be either
 	 * BUYNOW or PAYNOW 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BuyNowTextType
 	 */ 
 	public $BuyNowText;
@@ -15959,6 +13307,10 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	 * Text to use on Subscribe button.  Optional Must be either
 	 * BUYNOW or SUBSCRIBE 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var SubscribeTextType
 	 */ 
 	public $SubscribeText;
@@ -15966,6 +13318,10 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	/**
 	 * Button Country.  Optional Must be valid ISO country code 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var CountryCodeType
 	 */ 
 	public $ButtonCountry;
@@ -15974,90 +13330,34 @@ class BMCreateButtonRequestType  extends AbstractRequestType  {
 	 * Button language code.  Optional Character length and
 	 * limitations: 3 single-byte alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ButtonLanguage;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->ButtonType != NULL)
-		{
-			$str .= '<urn:ButtonType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonType) . '</urn:ButtonType>';
-		}
-		if($this->ButtonCode != NULL)
-		{
-			$str .= '<urn:ButtonCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonCode) . '</urn:ButtonCode>';
-		}
-		if($this->ButtonSubType != NULL)
-		{
-			$str .= '<urn:ButtonSubType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSubType) . '</urn:ButtonSubType>';
-		}
-		if($this->ButtonVar != NULL)
-		{
-			for($i = 0; $i < count($this->ButtonVar); $i++)
-			{
-				$str .= '<urn:ButtonVar>'. PPUtils::escapeInvalidXmlCharsRegex($this->ButtonVar[$i]) . '</urn:ButtonVar>';
-			}
-		}
-		if($this->OptionDetails != NULL)
-		{
-			for($i = 0; $i < count($this->OptionDetails); $i++)
-			{
-				$str .= '<urn:OptionDetails>';
-				$str .= $this->OptionDetails[$i]->toXMLString();
-				$str .= '</urn:OptionDetails>';
-			}
-		}
-		if($this->TextBox != NULL)
-		{
-			for($i = 0; $i < count($this->TextBox); $i++)
-			{
-				$str .= '<urn:TextBox>'. PPUtils::escapeInvalidXmlCharsRegex($this->TextBox[$i]) . '</urn:TextBox>';
-			}
-		}
-		if($this->ButtonImage != NULL)
-		{
-			$str .= '<urn:ButtonImage>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonImage) . '</urn:ButtonImage>';
-		}
-		if($this->ButtonImageURL != NULL)
-		{
-			$str .= '<urn:ButtonImageURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonImageURL) . '</urn:ButtonImageURL>';
-		}
-		if($this->BuyNowText != NULL)
-		{
-			$str .= '<urn:BuyNowText>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyNowText) . '</urn:BuyNowText>';
-		}
-		if($this->SubscribeText != NULL)
-		{
-			$str .= '<urn:SubscribeText>' . PPUtils::escapeInvalidXmlCharsRegex($this->SubscribeText) . '</urn:SubscribeText>';
-		}
-		if($this->ButtonCountry != NULL)
-		{
-			$str .= '<urn:ButtonCountry>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonCountry) . '</urn:ButtonCountry>';
-		}
-		if($this->ButtonLanguage != NULL)
-		{
-			$str .= '<urn:ButtonLanguage>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonLanguage) . '</urn:ButtonLanguage>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class BMCreateButtonResponseType  extends AbstractResponseType  {
+ 
+class BMCreateButtonResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Website;
@@ -16065,6 +13365,10 @@ class BMCreateButtonResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Email;
@@ -16072,6 +13376,10 @@ class BMCreateButtonResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Mobile;
@@ -16079,43 +13387,33 @@ class BMCreateButtonResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $HostedButtonID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'website') {
-					$this->Website = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'email') {
-					$this->Email = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'mobile') {
-					$this->Mobile = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'hostedbuttonid') {
-					$this->HostedButtonID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class BMUpdateButtonReq  {
+ 
+class BMUpdateButtonReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BMUpdateButtonRequestType
 	 */ 
 	public $BMUpdateButtonRequest;
@@ -16123,20 +13421,19 @@ class BMUpdateButtonReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:BMUpdateButtonReq>';
-		if($this->BMUpdateButtonRequest != NULL)
-		{
-			$str .= '<urn:BMUpdateButtonRequest>';
-			$str .= $this->BMUpdateButtonRequest->toXMLString();
-			$str .= '</urn:BMUpdateButtonRequest>';
-		}
-		$str .= '</urn:BMUpdateButtonReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:BMUpdateButtonReq>';
+			if($this->BMUpdateButtonRequest != NULL)
+			{
+		   		$str .= '<ns:BMUpdateButtonRequest>';
+				$str .= $this->BMUpdateButtonRequest->toXMLString();
+				$str .= '</ns:BMUpdateButtonRequest>';
+			}
+			$str .= '</ns:BMUpdateButtonReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -16145,13 +13442,19 @@ class BMUpdateButtonReq  {
  * Character length and limitations: 10 single-byte numeric
  * characters  
  */
-class BMUpdateButtonRequestType  extends AbstractRequestType  {
+ 
+class BMUpdateButtonRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * Hosted Button id of the button to update.  Required
 	 * Character length and limitations: 10 single-byte numeric
 	 * characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $HostedButtonID;
@@ -16161,6 +13464,10 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	 * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
 	 * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ButtonTypeType
 	 */ 
 	public $ButtonType;
@@ -16169,6 +13476,10 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	 * button code.  optional Must be one of the following: hosted,
 	 * encrypted or cleartext 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ButtonCodeType
 	 */ 
 	public $ButtonCode;
@@ -16177,6 +13488,10 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	 * Button sub type.  optional for button types buynow and cart
 	 * only Must Be either PRODUCTS or SERVICES 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ButtonSubTypeType
 	 */ 
 	public $ButtonSubType;
@@ -16187,6 +13502,10 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	 * alphanumeric characters 
      * @array
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ButtonVar;
@@ -16195,6 +13514,10 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var OptionDetailsType
 	 */ 
 	public $OptionDetails;
@@ -16203,6 +13526,10 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	 * Details of each option for the button.  Optional 
      * @array
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TextBox;
@@ -16211,6 +13538,10 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	 * Button image to use.  Optional Must be one of: REG, SML, or
 	 * CC 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ButtonImageType
 	 */ 
 	public $ButtonImage;
@@ -16220,6 +13551,10 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ButtonImageURL;
@@ -16228,6 +13563,10 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	 * Text to use on Buy Now Button.  Optional Must be either
 	 * BUYNOW or PAYNOW 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BuyNowTextType
 	 */ 
 	public $BuyNowText;
@@ -16236,6 +13575,10 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	 * Text to use on Subscribe button.  Optional Must be either
 	 * BUYNOW or SUBSCRIBE 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var SubscribeTextType
 	 */ 
 	public $SubscribeText;
@@ -16243,6 +13586,10 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	/**
 	 * Button Country.  Optional Must be valid ISO country code 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var CountryCodeType
 	 */ 
 	public $ButtonCountry;
@@ -16251,6 +13598,10 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	 * Button language code.  Optional Character length and
 	 * limitations: 2 single-byte alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ButtonLanguage;
@@ -16263,89 +13614,25 @@ class BMUpdateButtonRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->HostedButtonID != NULL)
-		{
-			$str .= '<urn:HostedButtonID>' . PPUtils::escapeInvalidXmlCharsRegex($this->HostedButtonID) . '</urn:HostedButtonID>';
-		}
-		if($this->ButtonType != NULL)
-		{
-			$str .= '<urn:ButtonType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonType) . '</urn:ButtonType>';
-		}
-		if($this->ButtonCode != NULL)
-		{
-			$str .= '<urn:ButtonCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonCode) . '</urn:ButtonCode>';
-		}
-		if($this->ButtonSubType != NULL)
-		{
-			$str .= '<urn:ButtonSubType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSubType) . '</urn:ButtonSubType>';
-		}
-		if($this->ButtonVar != NULL)
-		{
-			for($i = 0; $i < count($this->ButtonVar); $i++)
-			{
-				$str .= '<urn:ButtonVar>'. PPUtils::escapeInvalidXmlCharsRegex($this->ButtonVar[$i]) . '</urn:ButtonVar>';
-			}
-		}
-		if($this->OptionDetails != NULL)
-		{
-			for($i = 0; $i < count($this->OptionDetails); $i++)
-			{
-				$str .= '<urn:OptionDetails>';
-				$str .= $this->OptionDetails[$i]->toXMLString();
-				$str .= '</urn:OptionDetails>';
-			}
-		}
-		if($this->TextBox != NULL)
-		{
-			for($i = 0; $i < count($this->TextBox); $i++)
-			{
-				$str .= '<urn:TextBox>'. PPUtils::escapeInvalidXmlCharsRegex($this->TextBox[$i]) . '</urn:TextBox>';
-			}
-		}
-		if($this->ButtonImage != NULL)
-		{
-			$str .= '<urn:ButtonImage>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonImage) . '</urn:ButtonImage>';
-		}
-		if($this->ButtonImageURL != NULL)
-		{
-			$str .= '<urn:ButtonImageURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonImageURL) . '</urn:ButtonImageURL>';
-		}
-		if($this->BuyNowText != NULL)
-		{
-			$str .= '<urn:BuyNowText>' . PPUtils::escapeInvalidXmlCharsRegex($this->BuyNowText) . '</urn:BuyNowText>';
-		}
-		if($this->SubscribeText != NULL)
-		{
-			$str .= '<urn:SubscribeText>' . PPUtils::escapeInvalidXmlCharsRegex($this->SubscribeText) . '</urn:SubscribeText>';
-		}
-		if($this->ButtonCountry != NULL)
-		{
-			$str .= '<urn:ButtonCountry>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonCountry) . '</urn:ButtonCountry>';
-		}
-		if($this->ButtonLanguage != NULL)
-		{
-			$str .= '<urn:ButtonLanguage>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonLanguage) . '</urn:ButtonLanguage>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class BMUpdateButtonResponseType  extends AbstractResponseType  {
+ 
+class BMUpdateButtonResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Website;
@@ -16353,6 +13640,10 @@ class BMUpdateButtonResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Email;
@@ -16360,6 +13651,10 @@ class BMUpdateButtonResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Mobile;
@@ -16367,43 +13662,33 @@ class BMUpdateButtonResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $HostedButtonID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'website') {
-					$this->Website = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'email') {
-					$this->Email = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'mobile') {
-					$this->Mobile = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'hostedbuttonid') {
-					$this->HostedButtonID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class BMManageButtonStatusReq  {
+ 
+class BMManageButtonStatusReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BMManageButtonStatusRequestType
 	 */ 
 	public $BMManageButtonStatusRequest;
@@ -16411,20 +13696,19 @@ class BMManageButtonStatusReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:BMManageButtonStatusReq>';
-		if($this->BMManageButtonStatusRequest != NULL)
-		{
-			$str .= '<urn:BMManageButtonStatusRequest>';
-			$str .= $this->BMManageButtonStatusRequest->toXMLString();
-			$str .= '</urn:BMManageButtonStatusRequest>';
-		}
-		$str .= '</urn:BMManageButtonStatusReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:BMManageButtonStatusReq>';
+			if($this->BMManageButtonStatusRequest != NULL)
+			{
+		   		$str .= '<ns:BMManageButtonStatusRequest>';
+				$str .= $this->BMManageButtonStatusRequest->toXMLString();
+				$str .= '</ns:BMManageButtonStatusRequest>';
+			}
+			$str .= '</ns:BMManageButtonStatusReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -16432,12 +13716,18 @@ class BMManageButtonStatusReq  {
  * Button ID of Hosted button.  Required Character length and
  * limitations: 10 single-byte numeric characters  
  */
-class BMManageButtonStatusRequestType  extends AbstractRequestType  {
+ 
+class BMManageButtonStatusRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * Button ID of Hosted button.  Required Character length and
 	 * limitations: 10 single-byte numeric characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $HostedButtonID;
@@ -16447,57 +13737,46 @@ class BMManageButtonStatusRequestType  extends AbstractRequestType  {
 	 * Character length and limitations: 1 single-byte alphanumeric
 	 * characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ButtonStatusType
 	 */ 
 	public $ButtonStatus;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->HostedButtonID != NULL)
-		{
-			$str .= '<urn:HostedButtonID>' . PPUtils::escapeInvalidXmlCharsRegex($this->HostedButtonID) . '</urn:HostedButtonID>';
-		}
-		if($this->ButtonStatus != NULL)
-		{
-			$str .= '<urn:ButtonStatus>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonStatus) . '</urn:ButtonStatus>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class BMManageButtonStatusResponseType  extends AbstractResponseType  {
+ 
+class BMManageButtonStatusResponseType  extends AbstractResponseType  
+  {
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class BMGetButtonDetailsReq  {
+ 
+class BMGetButtonDetailsReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BMGetButtonDetailsRequestType
 	 */ 
 	public $BMGetButtonDetailsRequest;
@@ -16505,20 +13784,19 @@ class BMGetButtonDetailsReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:BMGetButtonDetailsReq>';
-		if($this->BMGetButtonDetailsRequest != NULL)
-		{
-			$str .= '<urn:BMGetButtonDetailsRequest>';
-			$str .= $this->BMGetButtonDetailsRequest->toXMLString();
-			$str .= '</urn:BMGetButtonDetailsRequest>';
-		}
-		$str .= '</urn:BMGetButtonDetailsReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:BMGetButtonDetailsReq>';
+			if($this->BMGetButtonDetailsRequest != NULL)
+			{
+		   		$str .= '<ns:BMGetButtonDetailsRequest>';
+				$str .= $this->BMGetButtonDetailsRequest->toXMLString();
+				$str .= '</ns:BMGetButtonDetailsRequest>';
+			}
+			$str .= '</ns:BMGetButtonDetailsReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -16526,12 +13804,18 @@ class BMGetButtonDetailsReq  {
  * Button ID of button to return.  Required Character length
  * and limitations: 10 single-byte numeric characters  
  */
-class BMGetButtonDetailsRequestType  extends AbstractRequestType  {
+ 
+class BMGetButtonDetailsRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * Button ID of button to return.  Required Character length
 	 * and limitations: 10 single-byte numeric characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $HostedButtonID;
@@ -16544,19 +13828,8 @@ class BMGetButtonDetailsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->HostedButtonID != NULL)
-		{
-			$str .= '<urn:HostedButtonID>' . PPUtils::escapeInvalidXmlCharsRegex($this->HostedButtonID) . '</urn:HostedButtonID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -16565,11 +13838,17 @@ class BMGetButtonDetailsRequestType  extends AbstractRequestType  {
  * GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
  * DONATE, VIEWCART or UNSUBSCRIBE 
  */
-class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
+ 
+class BMGetButtonDetailsResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Website;
@@ -16577,6 +13856,10 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Email;
@@ -16584,6 +13867,10 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Mobile;
@@ -16591,6 +13878,10 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $HostedButtonID;
@@ -16600,6 +13891,10 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	 * GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
 	 * DONATE, VIEWCART or UNSUBSCRIBE 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ButtonTypeType
 	 */ 
 	public $ButtonType;
@@ -16608,6 +13903,10 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	 * Type of button code. One of the following: hosted, encrypted
 	 * or cleartext 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ButtonCodeType
 	 */ 
 	public $ButtonCode;
@@ -16616,6 +13915,10 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	 * Button sub type. optional for button types buynow and cart
 	 * only Either PRODUCTS or SERVICES 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ButtonSubTypeType
 	 */ 
 	public $ButtonSubType;
@@ -16625,6 +13928,10 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	 * limitations: 63 single-byte alphanumeric characters 
      * @array
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ButtonVar;
@@ -16633,6 +13940,10 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var OptionDetailsType
 	 */ 
 	public $OptionDetails;
@@ -16641,6 +13952,10 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	 * Text field 
      * @array
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TextBox;
@@ -16648,6 +13963,10 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	/**
 	 * Button image to use. One of: REG, SML, or CC 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ButtonImageType
 	 */ 
 	public $ButtonImage;
@@ -16655,6 +13974,10 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	/**
 	 * Button URL for custom button image. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ButtonImageURL;
@@ -16662,6 +13985,10 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	/**
 	 * Text to use on Buy Now Button. Either BUYNOW or PAYNOW 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BuyNowTextType
 	 */ 
 	public $BuyNowText;
@@ -16670,6 +13997,10 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	 * Text to use on Subscribe button. Must be either BUYNOW or
 	 * SUBSCRIBE 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var SubscribeTextType
 	 */ 
 	public $SubscribeText;
@@ -16677,6 +14008,10 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	/**
 	 * Button Country. Valid ISO country code or 'International' 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var CountryCodeType
 	 */ 
 	public $ButtonCountry;
@@ -16685,86 +14020,33 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType  {
 	 * Button language code. Character length and limitations: 3
 	 * single-byte alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ButtonLanguage;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'website') {
-					$this->Website = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'email') {
-					$this->Email = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'mobile') {
-					$this->Mobile = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'hostedbuttonid') {
-					$this->HostedButtonID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttontype') {
-					$this->ButtonType = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttoncode') {
-					$this->ButtonCode = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttonsubtype') {
-					$this->ButtonSubType = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "optiondetails[$i]") {
-							$this->OptionDetails[$i] = new OptionDetailsType();
-							$this->OptionDetails[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "optiondetails")) {
-					$this->OptionDetails = new OptionDetailsType();
-					$this->OptionDetails->init($arry["children"]);
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttonimage') {
-					$this->ButtonImage = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttonimageurl') {
-					$this->ButtonImageURL = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buynowtext') {
-					$this->BuyNowText = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'subscribetext') {
-					$this->SubscribeText = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttoncountry') {
-					$this->ButtonCountry = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'buttonlanguage') {
-					$this->ButtonLanguage = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class BMSetInventoryReq  {
+ 
+class BMSetInventoryReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BMSetInventoryRequestType
 	 */ 
 	public $BMSetInventoryRequest;
@@ -16772,20 +14054,19 @@ class BMSetInventoryReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:BMSetInventoryReq>';
-		if($this->BMSetInventoryRequest != NULL)
-		{
-			$str .= '<urn:BMSetInventoryRequest>';
-			$str .= $this->BMSetInventoryRequest->toXMLString();
-			$str .= '</urn:BMSetInventoryRequest>';
-		}
-		$str .= '</urn:BMSetInventoryReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:BMSetInventoryReq>';
+			if($this->BMSetInventoryRequest != NULL)
+			{
+		   		$str .= '<ns:BMSetInventoryRequest>';
+				$str .= $this->BMSetInventoryRequest->toXMLString();
+				$str .= '</ns:BMSetInventoryRequest>';
+			}
+			$str .= '</ns:BMSetInventoryReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -16794,13 +14075,19 @@ class BMSetInventoryReq  {
  * Character length and limitations: 10 single-byte numeric
  * characters  
  */
-class BMSetInventoryRequestType  extends AbstractRequestType  {
+ 
+class BMSetInventoryRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * Hosted Button ID of button you wish to change.  Required
 	 * Character length and limitations: 10 single-byte numeric
 	 * characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $HostedButtonID;
@@ -16808,6 +14095,10 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	/**
 	 * Is Inventory tracked.  Required 0 or 1 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TrackInv;
@@ -16815,6 +14106,10 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	/**
 	 * Is PNL Tracked.  Required 0 or 1 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TrackPnl;
@@ -16822,6 +14117,10 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ItemTrackingDetailsType
 	 */ 
 	public $ItemTrackingDetails;
@@ -16830,6 +14129,10 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	 * Option Index.  Optional Character length and limitations: 1
 	 * single-byte alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $OptionIndex;
@@ -16838,6 +14141,10 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var OptionTrackingDetailsType
 	 */ 
 	public $OptionTrackingDetails;
@@ -16847,6 +14154,10 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $SoldoutURL;
@@ -16855,6 +14166,10 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	 * Whether to use the same digital download key repeatedly. 
 	 * Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReuseDigitalDownloadKeys;
@@ -16863,6 +14178,10 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	 * Whether to append these keys to the list or not (replace). 
 	 * Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $AppendDigitalDownloadKeys;
@@ -16874,6 +14193,10 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	 * alphanumeric characters 
      * @array
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $DigitalDownloadKeys;
@@ -16888,94 +14211,37 @@ class BMSetInventoryRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->HostedButtonID != NULL)
-		{
-			$str .= '<urn:HostedButtonID>' . PPUtils::escapeInvalidXmlCharsRegex($this->HostedButtonID) . '</urn:HostedButtonID>';
-		}
-		if($this->TrackInv != NULL)
-		{
-			$str .= '<urn:TrackInv>' . PPUtils::escapeInvalidXmlCharsRegex($this->TrackInv) . '</urn:TrackInv>';
-		}
-		if($this->TrackPnl != NULL)
-		{
-			$str .= '<urn:TrackPnl>' . PPUtils::escapeInvalidXmlCharsRegex($this->TrackPnl) . '</urn:TrackPnl>';
-		}
-		if($this->ItemTrackingDetails != NULL)
-		{
-			$str .= '<ebl:ItemTrackingDetails>';
-			$str .= $this->ItemTrackingDetails->toXMLString();
-			$str .= '</ebl:ItemTrackingDetails>';
-		}
-		if($this->OptionIndex != NULL)
-		{
-			$str .= '<urn:OptionIndex>' . PPUtils::escapeInvalidXmlCharsRegex($this->OptionIndex) . '</urn:OptionIndex>';
-		}
-		if($this->OptionTrackingDetails != NULL)
-		{
-			for($i = 0; $i < count($this->OptionTrackingDetails); $i++)
-			{
-				$str .= '<ebl:OptionTrackingDetails>';
-				$str .= $this->OptionTrackingDetails[$i]->toXMLString();
-				$str .= '</ebl:OptionTrackingDetails>';
-			}
-		}
-		if($this->SoldoutURL != NULL)
-		{
-			$str .= '<urn:SoldoutURL>' . PPUtils::escapeInvalidXmlCharsRegex($this->SoldoutURL) . '</urn:SoldoutURL>';
-		}
-		if($this->ReuseDigitalDownloadKeys != NULL)
-		{
-			$str .= '<urn:ReuseDigitalDownloadKeys>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReuseDigitalDownloadKeys) . '</urn:ReuseDigitalDownloadKeys>';
-		}
-		if($this->AppendDigitalDownloadKeys != NULL)
-		{
-			$str .= '<urn:AppendDigitalDownloadKeys>' . PPUtils::escapeInvalidXmlCharsRegex($this->AppendDigitalDownloadKeys) . '</urn:AppendDigitalDownloadKeys>';
-		}
-		if($this->DigitalDownloadKeys != NULL)
-		{
-			for($i = 0; $i < count($this->DigitalDownloadKeys); $i++)
-			{
-				$str .= '<urn:DigitalDownloadKeys>'. PPUtils::escapeInvalidXmlCharsRegex($this->DigitalDownloadKeys[$i]) . '</urn:DigitalDownloadKeys>';
-			}
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class BMSetInventoryResponseType  extends AbstractResponseType  {
+ 
+class BMSetInventoryResponseType  extends AbstractResponseType  
+  {
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class BMGetInventoryReq  {
+ 
+class BMGetInventoryReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BMGetInventoryRequestType
 	 */ 
 	public $BMGetInventoryRequest;
@@ -16983,20 +14249,19 @@ class BMGetInventoryReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:BMGetInventoryReq>';
-		if($this->BMGetInventoryRequest != NULL)
-		{
-			$str .= '<urn:BMGetInventoryRequest>';
-			$str .= $this->BMGetInventoryRequest->toXMLString();
-			$str .= '</urn:BMGetInventoryRequest>';
-		}
-		$str .= '</urn:BMGetInventoryReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:BMGetInventoryReq>';
+			if($this->BMGetInventoryRequest != NULL)
+			{
+		   		$str .= '<ns:BMGetInventoryRequest>';
+				$str .= $this->BMGetInventoryRequest->toXMLString();
+				$str .= '</ns:BMGetInventoryRequest>';
+			}
+			$str .= '</ns:BMGetInventoryReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -17005,13 +14270,19 @@ class BMGetInventoryReq  {
  * Required Character length and limitations: 10 single-byte
  * numeric characters  
  */
-class BMGetInventoryRequestType  extends AbstractRequestType  {
+ 
+class BMGetInventoryRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * Hosted Button ID of the button to return inventory for. 
 	 * Required Character length and limitations: 10 single-byte
 	 * numeric characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $HostedButtonID;
@@ -17024,30 +14295,25 @@ class BMGetInventoryRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->HostedButtonID != NULL)
-		{
-			$str .= '<urn:HostedButtonID>' . PPUtils::escapeInvalidXmlCharsRegex($this->HostedButtonID) . '</urn:HostedButtonID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class BMGetInventoryResponseType  extends AbstractResponseType  {
+ 
+class BMGetInventoryResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $HostedButtonID;
@@ -17055,6 +14321,10 @@ class BMGetInventoryResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TrackInv;
@@ -17062,6 +14332,10 @@ class BMGetInventoryResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TrackPnl;
@@ -17069,6 +14343,10 @@ class BMGetInventoryResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ItemTrackingDetailsType
 	 */ 
 	public $ItemTrackingDetails;
@@ -17076,6 +14354,10 @@ class BMGetInventoryResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $OptionIndex;
@@ -17083,6 +14365,10 @@ class BMGetInventoryResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $OptionName;
@@ -17091,6 +14377,10 @@ class BMGetInventoryResponseType  extends AbstractResponseType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var OptionTrackingDetailsType
 	 */ 
 	public $OptionTrackingDetails;
@@ -17098,6 +14388,10 @@ class BMGetInventoryResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $SoldoutURL;
@@ -17106,73 +14400,33 @@ class BMGetInventoryResponseType  extends AbstractResponseType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $DigitalDownloadKeys;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'hostedbuttonid') {
-					$this->HostedButtonID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'trackinv') {
-					$this->TrackInv = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'trackpnl') {
-					$this->TrackPnl = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='itemtrackingdetails'){
-                                    $this->ItemTrackingDetails = new ItemTrackingDetailsType(); 
-                                    $this->ItemTrackingDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionindex') {
-					$this->OptionIndex = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'optionname') {
-					$this->OptionName = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "optiontrackingdetails[$i]") {
-							$this->OptionTrackingDetails[$i] = new OptionTrackingDetailsType();
-							$this->OptionTrackingDetails[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "optiontrackingdetails")) {
-					$this->OptionTrackingDetails = new OptionTrackingDetailsType();
-					$this->OptionTrackingDetails->init($arry["children"]);
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'soldouturl') {
-					$this->SoldoutURL = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class BMButtonSearchReq  {
+ 
+class BMButtonSearchReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BMButtonSearchRequestType
 	 */ 
 	public $BMButtonSearchRequest;
@@ -17180,20 +14434,19 @@ class BMButtonSearchReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:BMButtonSearchReq>';
-		if($this->BMButtonSearchRequest != NULL)
-		{
-			$str .= '<urn:BMButtonSearchRequest>';
-			$str .= $this->BMButtonSearchRequest->toXMLString();
-			$str .= '</urn:BMButtonSearchRequest>';
-		}
-		$str .= '</urn:BMButtonSearchReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:BMButtonSearchReq>';
+			if($this->BMButtonSearchRequest != NULL)
+			{
+		   		$str .= '<ns:BMButtonSearchRequest>';
+				$str .= $this->BMButtonSearchRequest->toXMLString();
+				$str .= '</ns:BMButtonSearchRequest>';
+			}
+			$str .= '</ns:BMButtonSearchReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -17201,12 +14454,18 @@ class BMButtonSearchReq  {
  * The earliest transaction date at which to start the search.
  * No wildcards are allowed. Required 
  */
-class BMButtonSearchRequestType  extends AbstractRequestType  {
+ 
+class BMButtonSearchRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * The earliest transaction date at which to start the search.
 	 * No wildcards are allowed. Required 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $StartDate;
@@ -17215,81 +14474,58 @@ class BMButtonSearchRequestType  extends AbstractRequestType  {
 	 * The latest transaction date to be included in the search
 	 * Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $EndDate;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->StartDate != NULL)
-		{
-			$str .= '<urn:StartDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartDate) . '</urn:StartDate>';
-		}
-		if($this->EndDate != NULL)
-		{
-			$str .= '<urn:EndDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->EndDate) . '</urn:EndDate>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class BMButtonSearchResponseType  extends AbstractResponseType  {
+ 
+class BMButtonSearchResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ButtonSearchResultType
 	 */ 
 	public $ButtonSearchResult;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "buttonsearchresult[$i]") {
-							$this->ButtonSearchResult[$i] = new ButtonSearchResultType();
-							$this->ButtonSearchResult[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "buttonsearchresult")) {
-					$this->ButtonSearchResult = new ButtonSearchResultType();
-					$this->ButtonSearchResult->init($arry["children"]);
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class RefundTransactionReq  {
+ 
+class RefundTransactionReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var RefundTransactionRequestType
 	 */ 
 	public $RefundTransactionRequest;
@@ -17297,20 +14533,19 @@ class RefundTransactionReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:RefundTransactionReq>';
-		if($this->RefundTransactionRequest != NULL)
-		{
-			$str .= '<urn:RefundTransactionRequest>';
-			$str .= $this->RefundTransactionRequest->toXMLString();
-			$str .= '</urn:RefundTransactionRequest>';
-		}
-		$str .= '</urn:RefundTransactionReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:RefundTransactionReq>';
+			if($this->RefundTransactionRequest != NULL)
+			{
+		   		$str .= '<ns:RefundTransactionRequest>';
+				$str .= $this->RefundTransactionRequest->toXMLString();
+				$str .= '</ns:RefundTransactionRequest>';
+			}
+			$str .= '</ns:RefundTransactionReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -17319,13 +14554,19 @@ class RefundTransactionReq  {
  * Optional Character length and limitations: 17 single-byte
  * alphanumeric characters 
  */
-class RefundTransactionRequestType  extends AbstractRequestType  {
+ 
+class RefundTransactionRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * Unique identifier of the transaction you are refunding.
 	 * Optional Character length and limitations: 17 single-byte
 	 * alphanumeric characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionID;
@@ -17335,6 +14576,10 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	 * Optional Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $PayerID;
@@ -17347,6 +14592,10 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	 * logic, it is persisted in the DB for transaction reference
 	 * Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $InvoiceID;
@@ -17354,6 +14603,10 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	/**
 	 * Type of refund you are making Required 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var RefundType
 	 */ 
 	public $RefundType;
@@ -17362,6 +14615,10 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	 * Refund amount. Amount is required if RefundType is Partial.
 	 * NOTE: If RefundType is Full, do not set Amount.
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -17370,6 +14627,10 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	 * Custom memo about the refund. Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Memo;
@@ -17377,6 +14638,10 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	/**
 	 * The maximum time till which refund must be tried. Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $RetryUntil;
@@ -17384,6 +14649,10 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	/**
 	 * The type of funding source for refund. Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var RefundSourceCodeType
 	 */ 
 	public $RefundSource;
@@ -17393,6 +14662,10 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	 * credit for a given transaction. This will allow us to make
 	 * sure we do not double refund. Optional 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var boolean
 	 */ 
 	public $RefundAdvice;
@@ -17400,6 +14673,10 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	/**
 	 * To pass the Merchant store informationOptional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MerchantStoreDetailsType
 	 */ 
 	public $MerchantStoreDetails;
@@ -17409,6 +14686,10 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	 * refunded.Optional 
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var InvoiceItemType
 	 */ 
 	public $RefundItemDetails;
@@ -17418,77 +14699,17 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->TransactionID != NULL)
-		{
-			$str .= '<urn:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</urn:TransactionID>';
-		}
-		if($this->PayerID != NULL)
-		{
-			$str .= '<urn:PayerID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerID) . '</urn:PayerID>';
-		}
-		if($this->InvoiceID != NULL)
-		{
-			$str .= '<urn:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</urn:InvoiceID>';
-		}
-		if($this->RefundType != NULL)
-		{
-			$str .= '<urn:RefundType>' . PPUtils::escapeInvalidXmlCharsRegex($this->RefundType) . '</urn:RefundType>';
-		}
-		if($this->Amount != NULL)
-		{
-			$str .= '<urn:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</urn:Amount>';
-		}
-		if($this->Memo != NULL)
-		{
-			$str .= '<urn:Memo>' . PPUtils::escapeInvalidXmlCharsRegex($this->Memo) . '</urn:Memo>';
-		}
-		if($this->RetryUntil != NULL)
-		{
-			$str .= '<urn:RetryUntil>' . PPUtils::escapeInvalidXmlCharsRegex($this->RetryUntil) . '</urn:RetryUntil>';
-		}
-		if($this->RefundSource != NULL)
-		{
-			$str .= '<urn:RefundSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->RefundSource) . '</urn:RefundSource>';
-		}
-		if($this->RefundAdvice != NULL)
-		{
-			$str .= '<urn:RefundAdvice>' . PPUtils::escapeInvalidXmlCharsRegex($this->RefundAdvice) . '</urn:RefundAdvice>';
-		}
-		if($this->MerchantStoreDetails != NULL)
-		{
-			$str .= '<ebl:MerchantStoreDetails>';
-			$str .= $this->MerchantStoreDetails->toXMLString();
-			$str .= '</ebl:MerchantStoreDetails>';
-		}
-		if($this->RefundItemDetails != NULL)
-		{
-			for($i = 0; $i < count($this->RefundItemDetails); $i++)
-			{
-				$str .= '<ebl:RefundItemDetails>';
-				$str .= $this->RefundItemDetails[$i]->toXMLString();
-				$str .= '</ebl:RefundItemDetails>';
-			}
-		}
-		if($this->MsgSubID != NULL)
-		{
-			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -17496,12 +14717,18 @@ class RefundTransactionRequestType  extends AbstractRequestType  {
  * Unique transaction ID of the refund. Character length and
  * limitations:17 single-byte characters 
  */
-class RefundTransactionResponseType  extends AbstractResponseType  {
+ 
+class RefundTransactionResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * Unique transaction ID of the refund. Character length and
 	 * limitations:17 single-byte characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $RefundTransactionID;
@@ -17510,6 +14737,10 @@ class RefundTransactionResponseType  extends AbstractResponseType  {
 	 * Amount subtracted from PayPal balance of original recipient
 	 * of payment to make this refund 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $NetRefundAmount;
@@ -17517,6 +14748,10 @@ class RefundTransactionResponseType  extends AbstractResponseType  {
 	/**
 	 * Transaction fee refunded to original recipient of payment 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $FeeRefundAmount;
@@ -17524,6 +14759,10 @@ class RefundTransactionResponseType  extends AbstractResponseType  {
 	/**
 	 * Amount of money refunded to original payer 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $GrossRefundAmount;
@@ -17531,6 +14770,10 @@ class RefundTransactionResponseType  extends AbstractResponseType  {
 	/**
 	 * Total of all previous refunds
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $TotalRefundedAmount;
@@ -17538,6 +14781,10 @@ class RefundTransactionResponseType  extends AbstractResponseType  {
 	/**
 	 * Contains Refund Payment status information.
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var RefundInfoType
 	 */ 
 	public $RefundInfo;
@@ -17546,6 +14793,10 @@ class RefundTransactionResponseType  extends AbstractResponseType  {
 	 * Any general information like offer details that is
 	 * reinstated or any other marketing data
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReceiptData;
@@ -17553,116 +14804,33 @@ class RefundTransactionResponseType  extends AbstractResponseType  {
 	/**
 	 * Return msgsubid back to merchant
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'refundtransactionid') {
-					$this->RefundTransactionID = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='netrefundamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->NetRefundAmount= new BasicAmountType(); 
-								$this->NetRefundAmount->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='feerefundamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->FeeRefundAmount= new BasicAmountType(); 
-								$this->FeeRefundAmount->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='grossrefundamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->GrossRefundAmount= new BasicAmountType(); 
-								$this->GrossRefundAmount->init($atr);
-							}
-							                            
-			}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='totalrefundedamount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->TotalRefundedAmount= new BasicAmountType(); 
-								$this->TotalRefundedAmount->init($atr);
-							}
-							                            
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='refundinfo'){
-                                    $this->RefundInfo = new RefundInfoType(); 
-                                    $this->RefundInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'receiptdata') {
-					$this->ReceiptData = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
-					$this->MsgSubID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class InitiateRecoupReq  {
+ 
+class InitiateRecoupReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var InitiateRecoupRequestType
 	 */ 
 	public $InitiateRecoupRequest;
@@ -17670,31 +14838,36 @@ class InitiateRecoupReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:InitiateRecoupReq>';
-		if($this->InitiateRecoupRequest != NULL)
-		{
-			$str .= '<urn:InitiateRecoupRequest>';
-			$str .= $this->InitiateRecoupRequest->toXMLString();
-			$str .= '</urn:InitiateRecoupRequest>';
-		}
-		$str .= '</urn:InitiateRecoupReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:InitiateRecoupReq>';
+			if($this->InitiateRecoupRequest != NULL)
+			{
+		   		$str .= '<ns:InitiateRecoupRequest>';
+				$str .= $this->InitiateRecoupRequest->toXMLString();
+				$str .= '</ns:InitiateRecoupRequest>';
+			}
+			$str .= '</ns:InitiateRecoupReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class InitiateRecoupRequestType  extends AbstractRequestType  {
+ 
+class InitiateRecoupRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ed
+	 
+	 
 	 * @var EnhancedInitiateRecoupRequestDetailsType
 	 */ 
 	public $EnhancedInitiateRecoupRequestDetails;
@@ -17707,50 +14880,37 @@ class InitiateRecoupRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->EnhancedInitiateRecoupRequestDetails != NULL)
-		{
-			$str .= '<ed:EnhancedInitiateRecoupRequestDetails>';
-			$str .= $this->EnhancedInitiateRecoupRequestDetails->toXMLString();
-			$str .= '</ed:EnhancedInitiateRecoupRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class InitiateRecoupResponseType  extends AbstractResponseType  {
+ 
+class InitiateRecoupResponseType  extends AbstractResponseType  
+  {
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class CompleteRecoupReq  {
+ 
+class CompleteRecoupReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var CompleteRecoupRequestType
 	 */ 
 	public $CompleteRecoupRequest;
@@ -17758,31 +14918,36 @@ class CompleteRecoupReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:CompleteRecoupReq>';
-		if($this->CompleteRecoupRequest != NULL)
-		{
-			$str .= '<urn:CompleteRecoupRequest>';
-			$str .= $this->CompleteRecoupRequest->toXMLString();
-			$str .= '</urn:CompleteRecoupRequest>';
-		}
-		$str .= '</urn:CompleteRecoupReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:CompleteRecoupReq>';
+			if($this->CompleteRecoupRequest != NULL)
+			{
+		   		$str .= '<ns:CompleteRecoupRequest>';
+				$str .= $this->CompleteRecoupRequest->toXMLString();
+				$str .= '</ns:CompleteRecoupRequest>';
+			}
+			$str .= '</ns:CompleteRecoupReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class CompleteRecoupRequestType  extends AbstractRequestType  {
+ 
+class CompleteRecoupRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ed
+	 
+	 
 	 * @var EnhancedCompleteRecoupRequestDetailsType
 	 */ 
 	public $EnhancedCompleteRecoupRequestDetails;
@@ -17795,65 +14960,48 @@ class CompleteRecoupRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->EnhancedCompleteRecoupRequestDetails != NULL)
-		{
-			$str .= '<ed:EnhancedCompleteRecoupRequestDetails>';
-			$str .= $this->EnhancedCompleteRecoupRequestDetails->toXMLString();
-			$str .= '</ed:EnhancedCompleteRecoupRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class CompleteRecoupResponseType  extends AbstractResponseType  {
+ 
+class CompleteRecoupResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ed
+	 
+	 
 	 * @var EnhancedCompleteRecoupResponseDetailsType
 	 */ 
 	public $EnhancedCompleteRecoupResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='enhancedcompleterecoupresponsedetails'){
-                                    $this->EnhancedCompleteRecoupResponseDetails = new EnhancedCompleteRecoupResponseDetailsType(); 
-                                    $this->EnhancedCompleteRecoupResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class CancelRecoupReq  {
+ 
+class CancelRecoupReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var CancelRecoupRequestType
 	 */ 
 	public $CancelRecoupRequest;
@@ -17861,31 +15009,36 @@ class CancelRecoupReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:CancelRecoupReq>';
-		if($this->CancelRecoupRequest != NULL)
-		{
-			$str .= '<urn:CancelRecoupRequest>';
-			$str .= $this->CancelRecoupRequest->toXMLString();
-			$str .= '</urn:CancelRecoupRequest>';
-		}
-		$str .= '</urn:CancelRecoupReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:CancelRecoupReq>';
+			if($this->CancelRecoupRequest != NULL)
+			{
+		   		$str .= '<ns:CancelRecoupRequest>';
+				$str .= $this->CancelRecoupRequest->toXMLString();
+				$str .= '</ns:CancelRecoupRequest>';
+			}
+			$str .= '</ns:CancelRecoupReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class CancelRecoupRequestType  extends AbstractRequestType  {
+ 
+class CancelRecoupRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ed
+	 
+	 
 	 * @var EnhancedCancelRecoupRequestDetailsType
 	 */ 
 	public $EnhancedCancelRecoupRequestDetails;
@@ -17898,50 +15051,37 @@ class CancelRecoupRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->EnhancedCancelRecoupRequestDetails != NULL)
-		{
-			$str .= '<ed:EnhancedCancelRecoupRequestDetails>';
-			$str .= $this->EnhancedCancelRecoupRequestDetails->toXMLString();
-			$str .= '</ed:EnhancedCancelRecoupRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class CancelRecoupResponseType  extends AbstractResponseType  {
+ 
+class CancelRecoupResponseType  extends AbstractResponseType  
+  {
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class GetTransactionDetailsReq  {
+ 
+class GetTransactionDetailsReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var GetTransactionDetailsRequestType
 	 */ 
 	public $GetTransactionDetailsRequest;
@@ -17949,20 +15089,19 @@ class GetTransactionDetailsReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:GetTransactionDetailsReq>';
-		if($this->GetTransactionDetailsRequest != NULL)
-		{
-			$str .= '<urn:GetTransactionDetailsRequest>';
-			$str .= $this->GetTransactionDetailsRequest->toXMLString();
-			$str .= '</urn:GetTransactionDetailsRequest>';
-		}
-		$str .= '</urn:GetTransactionDetailsReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:GetTransactionDetailsReq>';
+			if($this->GetTransactionDetailsRequest != NULL)
+			{
+		   		$str .= '<ns:GetTransactionDetailsRequest>';
+				$str .= $this->GetTransactionDetailsRequest->toXMLString();
+				$str .= '</ns:GetTransactionDetailsRequest>';
+			}
+			$str .= '</ns:GetTransactionDetailsReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -17973,7 +15112,9 @@ class GetTransactionDetailsReq  {
  * bank transfer withdrawals, for example. Character length and
  * limitations: 17 single-byte alphanumeric characters
  */
-class GetTransactionDetailsRequestType  extends AbstractRequestType  {
+ 
+class GetTransactionDetailsRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * Unique identifier of a transaction. RequiredThe details for
@@ -17982,35 +15123,34 @@ class GetTransactionDetailsRequestType  extends AbstractRequestType  {
 	 * bank transfer withdrawals, for example. Character length and
 	 * limitations: 17 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionID;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->TransactionID != NULL)
-		{
-			$str .= '<urn:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</urn:TransactionID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetTransactionDetailsResponseType  extends AbstractResponseType  {
+ 
+class GetTransactionDetailsResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentTransactionType
 	 */ 
 	public $PaymentTransactionDetails;
@@ -18018,47 +15158,33 @@ class GetTransactionDetailsResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ThreeDSecureInfoType
 	 */ 
 	public $ThreeDSecureDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='paymenttransactiondetails'){
-                                    $this->PaymentTransactionDetails = new PaymentTransactionType(); 
-                                    $this->PaymentTransactionDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='threedsecuredetails'){
-                                    $this->ThreeDSecureDetails = new ThreeDSecureInfoType(); 
-                                    $this->ThreeDSecureDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class BillUserReq  {
+ 
+class BillUserReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BillUserRequestType
 	 */ 
 	public $BillUserRequest;
@@ -18066,20 +15192,19 @@ class BillUserReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:BillUserReq>';
-		if($this->BillUserRequest != NULL)
-		{
-			$str .= '<urn:BillUserRequest>';
-			$str .= $this->BillUserRequest->toXMLString();
-			$str .= '</urn:BillUserRequest>';
-		}
-		$str .= '</urn:BillUserReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:BillUserReq>';
+			if($this->BillUserRequest != NULL)
+			{
+		   		$str .= '<ns:BillUserRequest>';
+				$str .= $this->BillUserRequest->toXMLString();
+				$str .= '</ns:BillUserRequest>';
+			}
+			$str .= '</ns:BillUserReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -18087,11 +15212,17 @@ class BillUserReq  {
  * This flag indicates that the response should include
  * FMFDetails 
  */
-class BillUserRequestType  extends AbstractRequestType  {
+ 
+class BillUserRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MerchantPullPaymentType
 	 */ 
 	public $MerchantPullPaymentDetails;
@@ -18100,41 +15231,34 @@ class BillUserRequestType  extends AbstractRequestType  {
 	 * This flag indicates that the response should include
 	 * FMFDetails
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var integer
 	 */ 
 	public $ReturnFMFDetails;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->MerchantPullPaymentDetails != NULL)
-		{
-			$str .= '<ebl:MerchantPullPaymentDetails>';
-			$str .= $this->MerchantPullPaymentDetails->toXMLString();
-			$str .= '</ebl:MerchantPullPaymentDetails>';
-		}
-		if($this->ReturnFMFDetails != NULL)
-		{
-			$str .= '<urn:ReturnFMFDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnFMFDetails) . '</urn:ReturnFMFDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class BillUserResponseType  extends AbstractResponseType  {
+ 
+class BillUserResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MerchantPullPaymentResponseType
 	 */ 
 	public $BillUserResponseDetails;
@@ -18142,47 +15266,33 @@ class BillUserResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var FMFDetailsType
 	 */ 
 	public $FMFDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='billuserresponsedetails'){
-                                    $this->BillUserResponseDetails = new MerchantPullPaymentResponseType(); 
-                                    $this->BillUserResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='fmfdetails'){
-                                    $this->FMFDetails = new FMFDetailsType(); 
-                                    $this->FMFDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class TransactionSearchReq  {
+ 
+class TransactionSearchReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var TransactionSearchRequestType
 	 */ 
 	public $TransactionSearchRequest;
@@ -18190,20 +15300,19 @@ class TransactionSearchReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:TransactionSearchReq>';
-		if($this->TransactionSearchRequest != NULL)
-		{
-			$str .= '<urn:TransactionSearchRequest>';
-			$str .= $this->TransactionSearchRequest->toXMLString();
-			$str .= '</urn:TransactionSearchRequest>';
-		}
-		$str .= '</urn:TransactionSearchReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:TransactionSearchReq>';
+			if($this->TransactionSearchRequest != NULL)
+			{
+		   		$str .= '<ns:TransactionSearchRequest>';
+				$str .= $this->TransactionSearchRequest->toXMLString();
+				$str .= '</ns:TransactionSearchRequest>';
+			}
+			$str .= '</ns:TransactionSearchReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -18211,12 +15320,18 @@ class TransactionSearchReq  {
  * The earliest transaction date at which to start the search.
  * No wildcards are allowed. Required
  */
-class TransactionSearchRequestType  extends AbstractRequestType  {
+ 
+class TransactionSearchRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * The earliest transaction date at which to start the search.
 	 * No wildcards are allowed. Required
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $StartDate;
@@ -18225,6 +15340,10 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * The latest transaction date to be included in the search
 	 * Optional
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $EndDate;
@@ -18233,6 +15352,10 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * Search by the buyer's email address OptionalCharacter length
 	 * and limitations: 127 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Payer;
@@ -18242,6 +15365,10 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * account has only one email, this is the primary email. Can
 	 * also be a non-primary email.Optional
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Receiver;
@@ -18249,6 +15376,10 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	/**
 	 * Search by the PayPal Account Optional receipt IDOptional
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReceiptID;
@@ -18258,6 +15389,10 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * are from the merchant's transaction records. Character
 	 * length and limitations: 19 single-byte characters maximum
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionID;
@@ -18267,6 +15402,10 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * returned as part of the CreateRecurringPaymentsProfile API
 	 * response. Optional
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProfileID;
@@ -18278,6 +15417,10 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * limit.LastName: 25 single-byte character limit.Suffix: 12
 	 * single-byte character limit.
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var PersonNameType
 	 */ 
 	public $PayerName;
@@ -18289,6 +15432,10 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * item_number variable set in the shopping cart for the
 	 * original transaction.
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $AuctionItemNumber;
@@ -18302,6 +15449,10 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * Character length and limitations: 127 single-byte characters
 	 * maximum
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $InvoiceID;
@@ -18309,6 +15460,10 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $CardNumber;
@@ -18338,6 +15493,10 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * post transaction.NonReferencedRefunds: non-referenced
 	 * refunds.
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var PaymentTransactionClassCodeType
 	 */ 
 	public $TransactionClass;
@@ -18347,6 +15506,10 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * currencyID attribute to one of the three-character currency
 	 * codes for any of the supported PayPal currencies. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -18354,6 +15517,10 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	/**
 	 * Search by currency codeOptional
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var CurrencyCodeType
 	 */ 
 	public $CurrencyCode;
@@ -18371,6 +15538,10 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	 * reversal. The funds have been removed from your account
 	 * balance and returned to the buyer.
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var PaymentTransactionStatusCodeType
 	 */ 
 	public $Status;
@@ -18383,132 +15554,49 @@ class TransactionSearchRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->StartDate != NULL)
-		{
-			$str .= '<urn:StartDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->StartDate) . '</urn:StartDate>';
-		}
-		if($this->EndDate != NULL)
-		{
-			$str .= '<urn:EndDate>' . PPUtils::escapeInvalidXmlCharsRegex($this->EndDate) . '</urn:EndDate>';
-		}
-		if($this->Payer != NULL)
-		{
-			$str .= '<urn:Payer>' . PPUtils::escapeInvalidXmlCharsRegex($this->Payer) . '</urn:Payer>';
-		}
-		if($this->Receiver != NULL)
-		{
-			$str .= '<urn:Receiver>' . PPUtils::escapeInvalidXmlCharsRegex($this->Receiver) . '</urn:Receiver>';
-		}
-		if($this->ReceiptID != NULL)
-		{
-			$str .= '<urn:ReceiptID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiptID) . '</urn:ReceiptID>';
-		}
-		if($this->TransactionID != NULL)
-		{
-			$str .= '<urn:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</urn:TransactionID>';
-		}
-		if($this->ProfileID != NULL)
-		{
-			$str .= '<urn:ProfileID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileID) . '</urn:ProfileID>';
-		}
-		if($this->PayerName != NULL)
-		{
-			$str .= '<urn:PayerName>';
-			$str .= $this->PayerName->toXMLString();
-			$str .= '</urn:PayerName>';
-		}
-		if($this->AuctionItemNumber != NULL)
-		{
-			$str .= '<urn:AuctionItemNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuctionItemNumber) . '</urn:AuctionItemNumber>';
-		}
-		if($this->InvoiceID != NULL)
-		{
-			$str .= '<urn:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</urn:InvoiceID>';
-		}
-		if($this->CardNumber != NULL)
-		{
-			$str .= '<urn:CardNumber>' . PPUtils::escapeInvalidXmlCharsRegex($this->CardNumber) . '</urn:CardNumber>';
-		}
-		if($this->TransactionClass != NULL)
-		{
-			$str .= '<urn:TransactionClass>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionClass) . '</urn:TransactionClass>';
-		}
-		if($this->Amount != NULL)
-		{
-			$str .= '<urn:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</urn:Amount>';
-		}
-		if($this->CurrencyCode != NULL)
-		{
-			$str .= '<urn:CurrencyCode>' . PPUtils::escapeInvalidXmlCharsRegex($this->CurrencyCode) . '</urn:CurrencyCode>';
-		}
-		if($this->Status != NULL)
-		{
-			$str .= '<urn:Status>' . PPUtils::escapeInvalidXmlCharsRegex($this->Status) . '</urn:Status>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Results of a Transaction Search.
  */
-class TransactionSearchResponseType  extends AbstractResponseType  {
+ 
+class TransactionSearchResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * Results of a Transaction Search.
      * @array
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var PaymentTransactionSearchResultType
 	 */ 
 	public $PaymentTransactions;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "paymenttransactions[$i]") {
-							$this->PaymentTransactions[$i] = new PaymentTransactionSearchResultType();
-							$this->PaymentTransactions[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "paymenttransactions")) {
-					$this->PaymentTransactions = new PaymentTransactionSearchResultType();
-					$this->PaymentTransactions->init($arry["children"]);
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class MassPayReq  {
+ 
+class MassPayReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var MassPayRequestType
 	 */ 
 	public $MassPayRequest;
@@ -18516,20 +15604,19 @@ class MassPayReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:MassPayReq>';
-		if($this->MassPayRequest != NULL)
-		{
-			$str .= '<urn:MassPayRequest>';
-			$str .= $this->MassPayRequest->toXMLString();
-			$str .= '</urn:MassPayRequest>';
-		}
-		$str .= '</urn:MassPayReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:MassPayReq>';
+			if($this->MassPayRequest != NULL)
+			{
+		   		$str .= '<ns:MassPayRequest>';
+				$str .= $this->MassPayRequest->toXMLString();
+				$str .= '</ns:MassPayRequest>';
+			}
+			$str .= '</ns:MassPayReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -18539,7 +15626,9 @@ class MassPayReq  {
  * it with your application. Optional Character length and
  * limitations: 255 single-byte alphanumeric characters 
  */
-class MassPayRequestType  extends AbstractRequestType  {
+ 
+class MassPayRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * Subject line of the email sent to all recipients. This
@@ -18547,6 +15636,10 @@ class MassPayRequestType  extends AbstractRequestType  {
 	 * it with your application. Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $EmailSubject;
@@ -18558,6 +15651,10 @@ class MassPayRequestType  extends AbstractRequestType  {
 	 * by UserID (ReceiverID in MassPayItem). Required. You must
 	 * specify one or the other of EmailAddress or UserID.
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ReceiverInfoCodeType
 	 */ 
 	public $ReceiverType;
@@ -18567,6 +15664,10 @@ class MassPayRequestType  extends AbstractRequestType  {
 	 * transactions. OptionalCharacter length and limitations: 32
 	 * single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ButtonSource;
@@ -18576,6 +15677,10 @@ class MassPayRequestType  extends AbstractRequestType  {
 	 * up to 250 MassPayItems. Required 
      * @array
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var MassPayRequestItemType
 	 */ 
 	public $MassPayItem;
@@ -18588,61 +15693,29 @@ class MassPayRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->EmailSubject != NULL)
-		{
-			$str .= '<urn:EmailSubject>' . PPUtils::escapeInvalidXmlCharsRegex($this->EmailSubject) . '</urn:EmailSubject>';
-		}
-		if($this->ReceiverType != NULL)
-		{
-			$str .= '<urn:ReceiverType>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiverType) . '</urn:ReceiverType>';
-		}
-		if($this->ButtonSource != NULL)
-		{
-			$str .= '<urn:ButtonSource>' . PPUtils::escapeInvalidXmlCharsRegex($this->ButtonSource) . '</urn:ButtonSource>';
-		}
-		if($this->MassPayItem != NULL)
-		{
-			for($i = 0; $i < count($this->MassPayItem); $i++)
-			{
-				$str .= '<urn:MassPayItem>';
-				$str .= $this->MassPayItem[$i]->toXMLString();
-				$str .= '</urn:MassPayItem>';
-			}
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class MassPayResponseType  extends AbstractResponseType  {
+ 
+class MassPayResponseType  extends AbstractResponseType  
+  {
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * MassPayRequestItemType 
  */
-class MassPayRequestItemType  {
+ 
+class MassPayRequestItemType  
+   extends PPXmlMessage{
 
 	/**
 	 * Email address of recipient. Required You must specify
@@ -18651,6 +15724,10 @@ class MassPayRequestItemType  {
 	 * recipients. Character length and limitations: 127
 	 * single-byte characters maximum.
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReceiverEmail;
@@ -18661,6 +15738,10 @@ class MassPayRequestItemType  {
 	 * MassPayItems in a request must use the same field to specify
 	 * recipients.
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReceiverPhone;
@@ -18674,6 +15755,10 @@ class MassPayRequestItemType  {
 	 * recipients. Character length and limitations: 17 single-byte
 	 * characters maximum.
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReceiverID;
@@ -18685,6 +15770,10 @@ class MassPayRequestItemType  {
 	 * currencies in a single MassPayRequest. A single request must
 	 * include items that are of the same currency.
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -18695,6 +15784,10 @@ class MassPayRequestItemType  {
 	 * limitations: 30 single-byte characters. No whitespace
 	 * allowed.
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $UniqueId;
@@ -18703,6 +15796,10 @@ class MassPayRequestItemType  {
 	 * Custom note for each recipient. Optional Character length
 	 * and limitations: 4,000 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Note;
@@ -18715,51 +15812,25 @@ class MassPayRequestItemType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		if($this->ReceiverEmail != NULL)
-		{
-			$str .= '<urn:ReceiverEmail>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiverEmail) . '</urn:ReceiverEmail>';
-		}
-		if($this->ReceiverPhone != NULL)
-		{
-			$str .= '<urn:ReceiverPhone>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiverPhone) . '</urn:ReceiverPhone>';
-		}
-		if($this->ReceiverID != NULL)
-		{
-			$str .= '<urn:ReceiverID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReceiverID) . '</urn:ReceiverID>';
-		}
-		if($this->Amount != NULL)
-		{
-			$str .= '<urn:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</urn:Amount>';
-		}
-		if($this->UniqueId != NULL)
-		{
-			$str .= '<urn:UniqueId>' . PPUtils::escapeInvalidXmlCharsRegex($this->UniqueId) . '</urn:UniqueId>';
-		}
-		if($this->Note != NULL)
-		{
-			$str .= '<urn:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</urn:Note>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class BillAgreementUpdateReq  {
+ 
+class BillAgreementUpdateReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BAUpdateRequestType
 	 */ 
 	public $BAUpdateRequest;
@@ -18767,31 +15838,36 @@ class BillAgreementUpdateReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:BillAgreementUpdateReq>';
-		if($this->BAUpdateRequest != NULL)
-		{
-			$str .= '<urn:BAUpdateRequest>';
-			$str .= $this->BAUpdateRequest->toXMLString();
-			$str .= '</urn:BAUpdateRequest>';
-		}
-		$str .= '</urn:BillAgreementUpdateReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:BillAgreementUpdateReq>';
+			if($this->BAUpdateRequest != NULL)
+			{
+		   		$str .= '<ns:BAUpdateRequest>';
+				$str .= $this->BAUpdateRequest->toXMLString();
+				$str .= '</ns:BAUpdateRequest>';
+			}
+			$str .= '</ns:BillAgreementUpdateReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class BAUpdateRequestType  extends AbstractRequestType  {
+ 
+class BAUpdateRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReferenceID;
@@ -18799,6 +15875,10 @@ class BAUpdateRequestType  extends AbstractRequestType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $BillingAgreementDescription;
@@ -18806,6 +15886,10 @@ class BAUpdateRequestType  extends AbstractRequestType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var MerchantPullStatusCodeType
 	 */ 
 	public $BillingAgreementStatus;
@@ -18813,6 +15897,10 @@ class BAUpdateRequestType  extends AbstractRequestType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $BillingAgreementCustom;
@@ -18825,75 +15913,48 @@ class BAUpdateRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->ReferenceID != NULL)
-		{
-			$str .= '<urn:ReferenceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReferenceID) . '</urn:ReferenceID>';
-		}
-		if($this->BillingAgreementDescription != NULL)
-		{
-			$str .= '<urn:BillingAgreementDescription>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingAgreementDescription) . '</urn:BillingAgreementDescription>';
-		}
-		if($this->BillingAgreementStatus != NULL)
-		{
-			$str .= '<urn:BillingAgreementStatus>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingAgreementStatus) . '</urn:BillingAgreementStatus>';
-		}
-		if($this->BillingAgreementCustom != NULL)
-		{
-			$str .= '<urn:BillingAgreementCustom>' . PPUtils::escapeInvalidXmlCharsRegex($this->BillingAgreementCustom) . '</urn:BillingAgreementCustom>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class BAUpdateResponseType  extends AbstractResponseType  {
+ 
+class BAUpdateResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BAUpdateResponseDetailsType
 	 */ 
 	public $BAUpdateResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='baupdateresponsedetails'){
-                                    $this->BAUpdateResponseDetails = new BAUpdateResponseDetailsType(); 
-                                    $this->BAUpdateResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class AddressVerifyReq  {
+ 
+class AddressVerifyReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var AddressVerifyRequestType
 	 */ 
 	public $AddressVerifyRequest;
@@ -18901,20 +15962,19 @@ class AddressVerifyReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:AddressVerifyReq>';
-		if($this->AddressVerifyRequest != NULL)
-		{
-			$str .= '<urn:AddressVerifyRequest>';
-			$str .= $this->AddressVerifyRequest->toXMLString();
-			$str .= '</urn:AddressVerifyRequest>';
-		}
-		$str .= '</urn:AddressVerifyReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:AddressVerifyReq>';
+			if($this->AddressVerifyRequest != NULL)
+			{
+		   		$str .= '<ns:AddressVerifyRequest>';
+				$str .= $this->AddressVerifyRequest->toXMLString();
+				$str .= '</ns:AddressVerifyRequest>';
+			}
+			$str .= '</ns:AddressVerifyReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -18923,12 +15983,18 @@ class AddressVerifyReq  {
  * string length: 255 single-byte characters Input mask: ?@?.??
  * 
  */
-class AddressVerifyRequestType  extends AbstractRequestType  {
+ 
+class AddressVerifyRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * Email address of buyer to be verified. Required Maximum
 	 * string length: 255 single-byte characters Input mask: ?@?.??
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Email;
@@ -18942,6 +16008,10 @@ class AddressVerifyRequestType  extends AbstractRequestType  {
 	 * Alphanumeric plus - , . ‘ # \ Whitespace and case of input
 	 * value are ignored.
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Street;
@@ -18953,6 +16023,10 @@ class AddressVerifyRequestType  extends AbstractRequestType  {
 	 * account. Maximum string length: 16 single-byte characters
 	 * Whitespace and case of input value are ignored.
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Zip;
@@ -18967,27 +16041,8 @@ class AddressVerifyRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->Email != NULL)
-		{
-			$str .= '<urn:Email>' . PPUtils::escapeInvalidXmlCharsRegex($this->Email) . '</urn:Email>';
-		}
-		if($this->Street != NULL)
-		{
-			$str .= '<urn:Street>' . PPUtils::escapeInvalidXmlCharsRegex($this->Street) . '</urn:Street>';
-		}
-		if($this->Zip != NULL)
-		{
-			$str .= '<urn:Zip>' . PPUtils::escapeInvalidXmlCharsRegex($this->Zip) . '</urn:Zip>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -18999,7 +16054,9 @@ class AddressVerifyRequestType  extends AbstractRequestType  {
  * entire postal address is confirmed. Unconfirmed: PayPal
  * responds that the postal address is unconfirmed 
  */
-class AddressVerifyResponseType  extends AbstractResponseType  {
+ 
+class AddressVerifyResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * Confirmation of a match, with one of the following tokens:
@@ -19009,6 +16066,10 @@ class AddressVerifyResponseType  extends AbstractResponseType  {
 	 * entire postal address is confirmed. Unconfirmed: PayPal
 	 * responds that the postal address is unconfirmed
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var AddressStatusCodeType
 	 */ 
 	public $ConfirmationCode;
@@ -19023,6 +16084,10 @@ class AddressVerifyResponseType  extends AbstractResponseType  {
 	 * address on file at PayPal. Unmatched: The street address
 	 * does not match the street address on file at PayPal. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var MatchStatusCodeType
 	 */ 
 	public $StreetMatch;
@@ -19035,6 +16100,10 @@ class AddressVerifyResponseType  extends AbstractResponseType  {
 	 * code on file at PayPal. Unmatched: The zip code does not
 	 * match the zip code on file at PayPal. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var MatchStatusCodeType
 	 */ 
 	public $ZipMatch;
@@ -19043,6 +16112,10 @@ class AddressVerifyResponseType  extends AbstractResponseType  {
 	 * Two-character country code (ISO 3166) on file for the PayPal
 	 * email address. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var CountryCodeType
 	 */ 
 	public $CountryCode;
@@ -19059,46 +16132,33 @@ class AddressVerifyResponseType  extends AbstractResponseType  {
 	 * is valid for 24 hours. Character length and limitations: 94
 	 * single-byte characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $PayPalToken;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'confirmationcode') {
-					$this->ConfirmationCode = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'streetmatch') {
-					$this->StreetMatch = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'zipmatch') {
-					$this->ZipMatch = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'countrycode') {
-					$this->CountryCode = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paypaltoken') {
-					$this->PayPalToken = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class EnterBoardingReq  {
+ 
+class EnterBoardingReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var EnterBoardingRequestType
 	 */ 
 	public $EnterBoardingRequest;
@@ -19106,31 +16166,36 @@ class EnterBoardingReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:EnterBoardingReq>';
-		if($this->EnterBoardingRequest != NULL)
-		{
-			$str .= '<urn:EnterBoardingRequest>';
-			$str .= $this->EnterBoardingRequest->toXMLString();
-			$str .= '</urn:EnterBoardingRequest>';
-		}
-		$str .= '</urn:EnterBoardingReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:EnterBoardingReq>';
+			if($this->EnterBoardingRequest != NULL)
+			{
+		   		$str .= '<ns:EnterBoardingRequest>';
+				$str .= $this->EnterBoardingRequest->toXMLString();
+				$str .= '</ns:EnterBoardingRequest>';
+			}
+			$str .= '</ns:EnterBoardingReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class EnterBoardingRequestType  extends AbstractRequestType  {
+ 
+class EnterBoardingRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var EnterBoardingRequestDetailsType
 	 */ 
 	public $EnterBoardingRequestDetails;
@@ -19143,21 +16208,8 @@ class EnterBoardingRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->EnterBoardingRequestDetails != NULL)
-		{
-			$str .= '<ebl:EnterBoardingRequestDetails>';
-			$str .= $this->EnterBoardingRequestDetails->toXMLString();
-			$str .= '</ebl:EnterBoardingRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -19167,7 +16219,9 @@ class EnterBoardingRequestType  extends AbstractRequestType  {
  * length and limitations: 64 alphanumeric characters. The
  * token has the following format:OB-61characterstring
  */
-class EnterBoardingResponseType  extends AbstractResponseType  {
+ 
+class EnterBoardingResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * A unique token that identifies this boarding session. Use
@@ -19175,34 +16229,33 @@ class EnterBoardingResponseType  extends AbstractResponseType  {
 	 * length and limitations: 64 alphanumeric characters. The
 	 * token has the following format:OB-61characterstring
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
-					$this->Token = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class GetBoardingDetailsReq  {
+ 
+class GetBoardingDetailsReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var GetBoardingDetailsRequestType
 	 */ 
 	public $GetBoardingDetailsRequest;
@@ -19210,20 +16263,19 @@ class GetBoardingDetailsReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:GetBoardingDetailsReq>';
-		if($this->GetBoardingDetailsRequest != NULL)
-		{
-			$str .= '<urn:GetBoardingDetailsRequest>';
-			$str .= $this->GetBoardingDetailsRequest->toXMLString();
-			$str .= '</urn:GetBoardingDetailsRequest>';
-		}
-		$str .= '</urn:GetBoardingDetailsReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:GetBoardingDetailsReq>';
+			if($this->GetBoardingDetailsRequest != NULL)
+			{
+		   		$str .= '<ns:GetBoardingDetailsRequest>';
+				$str .= $this->GetBoardingDetailsRequest->toXMLString();
+				$str .= '</ns:GetBoardingDetailsRequest>';
+			}
+			$str .= '</ns:GetBoardingDetailsReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -19233,7 +16285,9 @@ class GetBoardingDetailsReq  {
  * and limitations: 64 alphanumeric characters. The token has
  * the following format:OB-61characterstring
  */
-class GetBoardingDetailsRequestType  extends AbstractRequestType  {
+ 
+class GetBoardingDetailsRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * A unique token returned by the EnterBoarding API call that
@@ -19241,6 +16295,10 @@ class GetBoardingDetailsRequestType  extends AbstractRequestType  {
 	 * and limitations: 64 alphanumeric characters. The token has
 	 * the following format:OB-61characterstring
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
@@ -19253,63 +16311,48 @@ class GetBoardingDetailsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->Token != NULL)
-		{
-			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetBoardingDetailsResponseType  extends AbstractResponseType  {
+ 
+class GetBoardingDetailsResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var GetBoardingDetailsResponseDetailsType
 	 */ 
 	public $GetBoardingDetailsResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='getboardingdetailsresponsedetails'){
-                                    $this->GetBoardingDetailsResponseDetails = new GetBoardingDetailsResponseDetailsType(); 
-                                    $this->GetBoardingDetailsResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class SetAuthFlowParamReq  {
+ 
+class SetAuthFlowParamReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var SetAuthFlowParamRequestType
 	 */ 
 	public $SetAuthFlowParamRequest;
@@ -19317,31 +16360,36 @@ class SetAuthFlowParamReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:SetAuthFlowParamReq>';
-		if($this->SetAuthFlowParamRequest != NULL)
-		{
-			$str .= '<urn:SetAuthFlowParamRequest>';
-			$str .= $this->SetAuthFlowParamRequest->toXMLString();
-			$str .= '</urn:SetAuthFlowParamRequest>';
-		}
-		$str .= '</urn:SetAuthFlowParamReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:SetAuthFlowParamReq>';
+			if($this->SetAuthFlowParamRequest != NULL)
+			{
+		   		$str .= '<ns:SetAuthFlowParamRequest>';
+				$str .= $this->SetAuthFlowParamRequest->toXMLString();
+				$str .= '</ns:SetAuthFlowParamRequest>';
+			}
+			$str .= '</ns:SetAuthFlowParamReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class SetAuthFlowParamRequestType  extends AbstractRequestType  {
+ 
+class SetAuthFlowParamRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var SetAuthFlowParamRequestDetailsType
 	 */ 
 	public $SetAuthFlowParamRequestDetails;
@@ -19354,21 +16402,8 @@ class SetAuthFlowParamRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->SetAuthFlowParamRequestDetails != NULL)
-		{
-			$str .= '<ebl:SetAuthFlowParamRequestDetails>';
-			$str .= $this->SetAuthFlowParamRequestDetails->toXMLString();
-			$str .= '</ebl:SetAuthFlowParamRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -19378,7 +16413,9 @@ class SetAuthFlowParamRequestType  extends AbstractRequestType  {
  * hours. Character length and limitations: 20 single-byte
  * characters
  */
-class SetAuthFlowParamResponseType  extends AbstractResponseType  {
+ 
+class SetAuthFlowParamResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * A timestamped token by which you identify to PayPal that you
@@ -19386,34 +16423,33 @@ class SetAuthFlowParamResponseType  extends AbstractResponseType  {
 	 * hours. Character length and limitations: 20 single-byte
 	 * characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
-					$this->Token = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class GetAuthDetailsReq  {
+ 
+class GetAuthDetailsReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var GetAuthDetailsRequestType
 	 */ 
 	public $GetAuthDetailsRequest;
@@ -19421,20 +16457,19 @@ class GetAuthDetailsReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:GetAuthDetailsReq>';
-		if($this->GetAuthDetailsRequest != NULL)
-		{
-			$str .= '<urn:GetAuthDetailsRequest>';
-			$str .= $this->GetAuthDetailsRequest->toXMLString();
-			$str .= '</urn:GetAuthDetailsRequest>';
-		}
-		$str .= '</urn:GetAuthDetailsReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:GetAuthDetailsReq>';
+			if($this->GetAuthDetailsRequest != NULL)
+			{
+		   		$str .= '<ns:GetAuthDetailsRequest>';
+				$str .= $this->GetAuthDetailsRequest->toXMLString();
+				$str .= '</ns:GetAuthDetailsRequest>';
+			}
+			$str .= '</ns:GetAuthDetailsReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -19443,13 +16478,19 @@ class GetAuthDetailsReq  {
  * SetAuthFlowParam Response. RequiredCharacter length and
  * limitations: 20 single-byte characters
  */
-class GetAuthDetailsRequestType  extends AbstractRequestType  {
+ 
+class GetAuthDetailsRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * A timestamped token, the value of which was returned by
 	 * SetAuthFlowParam Response. RequiredCharacter length and
 	 * limitations: 20 single-byte characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
@@ -19462,63 +16503,48 @@ class GetAuthDetailsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->Token != NULL)
-		{
-			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetAuthDetailsResponseType  extends AbstractResponseType  {
+ 
+class GetAuthDetailsResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var GetAuthDetailsResponseDetailsType
 	 */ 
 	public $GetAuthDetailsResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='getauthdetailsresponsedetails'){
-                                    $this->GetAuthDetailsResponseDetails = new GetAuthDetailsResponseDetailsType(); 
-                                    $this->GetAuthDetailsResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class SetAccessPermissionsReq  {
+ 
+class SetAccessPermissionsReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var SetAccessPermissionsRequestType
 	 */ 
 	public $SetAccessPermissionsRequest;
@@ -19526,31 +16552,36 @@ class SetAccessPermissionsReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:SetAccessPermissionsReq>';
-		if($this->SetAccessPermissionsRequest != NULL)
-		{
-			$str .= '<urn:SetAccessPermissionsRequest>';
-			$str .= $this->SetAccessPermissionsRequest->toXMLString();
-			$str .= '</urn:SetAccessPermissionsRequest>';
-		}
-		$str .= '</urn:SetAccessPermissionsReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:SetAccessPermissionsReq>';
+			if($this->SetAccessPermissionsRequest != NULL)
+			{
+		   		$str .= '<ns:SetAccessPermissionsRequest>';
+				$str .= $this->SetAccessPermissionsRequest->toXMLString();
+				$str .= '</ns:SetAccessPermissionsRequest>';
+			}
+			$str .= '</ns:SetAccessPermissionsReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class SetAccessPermissionsRequestType  extends AbstractRequestType  {
+ 
+class SetAccessPermissionsRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var SetAccessPermissionsRequestDetailsType
 	 */ 
 	public $SetAccessPermissionsRequestDetails;
@@ -19563,21 +16594,8 @@ class SetAccessPermissionsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->SetAccessPermissionsRequestDetails != NULL)
-		{
-			$str .= '<ebl:SetAccessPermissionsRequestDetails>';
-			$str .= $this->SetAccessPermissionsRequestDetails->toXMLString();
-			$str .= '</ebl:SetAccessPermissionsRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -19587,7 +16605,9 @@ class SetAccessPermissionsRequestType  extends AbstractRequestType  {
  * hours. Character length and limitations: 20 single-byte
  * characters
  */
-class SetAccessPermissionsResponseType  extends AbstractResponseType  {
+ 
+class SetAccessPermissionsResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * A timestamped token by which you identify to PayPal that you
@@ -19595,34 +16615,33 @@ class SetAccessPermissionsResponseType  extends AbstractResponseType  {
 	 * hours. Character length and limitations: 20 single-byte
 	 * characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
-					$this->Token = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class UpdateAccessPermissionsReq  {
+ 
+class UpdateAccessPermissionsReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var UpdateAccessPermissionsRequestType
 	 */ 
 	public $UpdateAccessPermissionsRequest;
@@ -19630,20 +16649,19 @@ class UpdateAccessPermissionsReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:UpdateAccessPermissionsReq>';
-		if($this->UpdateAccessPermissionsRequest != NULL)
-		{
-			$str .= '<urn:UpdateAccessPermissionsRequest>';
-			$str .= $this->UpdateAccessPermissionsRequest->toXMLString();
-			$str .= '</urn:UpdateAccessPermissionsRequest>';
-		}
-		$str .= '</urn:UpdateAccessPermissionsReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:UpdateAccessPermissionsReq>';
+			if($this->UpdateAccessPermissionsRequest != NULL)
+			{
+		   		$str .= '<ns:UpdateAccessPermissionsRequest>';
+				$str .= $this->UpdateAccessPermissionsRequest->toXMLString();
+				$str .= '</ns:UpdateAccessPermissionsRequest>';
+			}
+			$str .= '</ns:UpdateAccessPermissionsReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -19652,13 +16670,19 @@ class UpdateAccessPermissionsReq  {
  * was returned by GetAuthDetails Response. Required Character
  * length and limitations: 20 single-byte characters 
  */
-class UpdateAccessPermissionsRequestType  extends AbstractRequestType  {
+ 
+class UpdateAccessPermissionsRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * Unique PayPal customer account number, the value of which
 	 * was returned by GetAuthDetails Response. Required Character
 	 * length and limitations: 20 single-byte characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $PayerID;
@@ -19671,19 +16695,8 @@ class UpdateAccessPermissionsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->PayerID != NULL)
-		{
-			$str .= '<urn:PayerID>' . PPUtils::escapeInvalidXmlCharsRegex($this->PayerID) . '</urn:PayerID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -19691,40 +16704,41 @@ class UpdateAccessPermissionsRequestType  extends AbstractRequestType  {
  * The status of the update call, Success/Failure. Character
  * length and limitations: 20 single-byte characters 
  */
-class UpdateAccessPermissionsResponseType  extends AbstractResponseType  {
+ 
+class UpdateAccessPermissionsResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * The status of the update call, Success/Failure. Character
 	 * length and limitations: 20 single-byte characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Status;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
-					$this->Status = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class GetAccessPermissionDetailsReq  {
+ 
+class GetAccessPermissionDetailsReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var GetAccessPermissionDetailsRequestType
 	 */ 
 	public $GetAccessPermissionDetailsRequest;
@@ -19732,20 +16746,19 @@ class GetAccessPermissionDetailsReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:GetAccessPermissionDetailsReq>';
-		if($this->GetAccessPermissionDetailsRequest != NULL)
-		{
-			$str .= '<urn:GetAccessPermissionDetailsRequest>';
-			$str .= $this->GetAccessPermissionDetailsRequest->toXMLString();
-			$str .= '</urn:GetAccessPermissionDetailsRequest>';
-		}
-		$str .= '</urn:GetAccessPermissionDetailsReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:GetAccessPermissionDetailsReq>';
+			if($this->GetAccessPermissionDetailsRequest != NULL)
+			{
+		   		$str .= '<ns:GetAccessPermissionDetailsRequest>';
+				$str .= $this->GetAccessPermissionDetailsRequest->toXMLString();
+				$str .= '</ns:GetAccessPermissionDetailsRequest>';
+			}
+			$str .= '</ns:GetAccessPermissionDetailsReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -19754,13 +16767,19 @@ class GetAccessPermissionDetailsReq  {
  * SetAuthFlowParam Response. Required Character length and
  * limitations: 20 single-byte characters 
  */
-class GetAccessPermissionDetailsRequestType  extends AbstractRequestType  {
+ 
+class GetAccessPermissionDetailsRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * A timestamped token, the value of which was returned by
 	 * SetAuthFlowParam Response. Required Character length and
 	 * limitations: 20 single-byte characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
@@ -19773,63 +16792,48 @@ class GetAccessPermissionDetailsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->Token != NULL)
-		{
-			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetAccessPermissionDetailsResponseType  extends AbstractResponseType  {
+ 
+class GetAccessPermissionDetailsResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var GetAccessPermissionDetailsResponseDetailsType
 	 */ 
 	public $GetAccessPermissionDetailsResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='getaccesspermissiondetailsresponsedetails'){
-                                    $this->GetAccessPermissionDetailsResponseDetails = new GetAccessPermissionDetailsResponseDetailsType(); 
-                                    $this->GetAccessPermissionDetailsResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class GetIncentiveEvaluationReq  {
+ 
+class GetIncentiveEvaluationReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var GetIncentiveEvaluationRequestType
 	 */ 
 	public $GetIncentiveEvaluationRequest;
@@ -19837,31 +16841,36 @@ class GetIncentiveEvaluationReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:GetIncentiveEvaluationReq>';
-		if($this->GetIncentiveEvaluationRequest != NULL)
-		{
-			$str .= '<urn:GetIncentiveEvaluationRequest>';
-			$str .= $this->GetIncentiveEvaluationRequest->toXMLString();
-			$str .= '</urn:GetIncentiveEvaluationRequest>';
-		}
-		$str .= '</urn:GetIncentiveEvaluationReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:GetIncentiveEvaluationReq>';
+			if($this->GetIncentiveEvaluationRequest != NULL)
+			{
+		   		$str .= '<ns:GetIncentiveEvaluationRequest>';
+				$str .= $this->GetIncentiveEvaluationRequest->toXMLString();
+				$str .= '</ns:GetIncentiveEvaluationRequest>';
+			}
+			$str .= '</ns:GetIncentiveEvaluationReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetIncentiveEvaluationRequestType  extends AbstractRequestType  {
+ 
+class GetIncentiveEvaluationRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var GetIncentiveEvaluationRequestDetailsType
 	 */ 
 	public $GetIncentiveEvaluationRequestDetails;
@@ -19874,65 +16883,48 @@ class GetIncentiveEvaluationRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->GetIncentiveEvaluationRequestDetails != NULL)
-		{
-			$str .= '<ebl:GetIncentiveEvaluationRequestDetails>';
-			$str .= $this->GetIncentiveEvaluationRequestDetails->toXMLString();
-			$str .= '</ebl:GetIncentiveEvaluationRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetIncentiveEvaluationResponseType  extends AbstractResponseType  {
+ 
+class GetIncentiveEvaluationResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var GetIncentiveEvaluationResponseDetailsType
 	 */ 
 	public $GetIncentiveEvaluationResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='getincentiveevaluationresponsedetails'){
-                                    $this->GetIncentiveEvaluationResponseDetails = new GetIncentiveEvaluationResponseDetailsType(); 
-                                    $this->GetIncentiveEvaluationResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class SetExpressCheckoutReq  {
+ 
+class SetExpressCheckoutReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var SetExpressCheckoutRequestType
 	 */ 
 	public $SetExpressCheckoutRequest;
@@ -19940,31 +16932,36 @@ class SetExpressCheckoutReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:SetExpressCheckoutReq>';
-		if($this->SetExpressCheckoutRequest != NULL)
-		{
-			$str .= '<urn:SetExpressCheckoutRequest>';
-			$str .= $this->SetExpressCheckoutRequest->toXMLString();
-			$str .= '</urn:SetExpressCheckoutRequest>';
-		}
-		$str .= '</urn:SetExpressCheckoutReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:SetExpressCheckoutReq>';
+			if($this->SetExpressCheckoutRequest != NULL)
+			{
+		   		$str .= '<ns:SetExpressCheckoutRequest>';
+				$str .= $this->SetExpressCheckoutRequest->toXMLString();
+				$str .= '</ns:SetExpressCheckoutRequest>';
+			}
+			$str .= '</ns:SetExpressCheckoutReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class SetExpressCheckoutRequestType  extends AbstractRequestType  {
+ 
+class SetExpressCheckoutRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var SetExpressCheckoutRequestDetailsType
 	 */ 
 	public $SetExpressCheckoutRequestDetails;
@@ -19977,21 +16974,8 @@ class SetExpressCheckoutRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->SetExpressCheckoutRequestDetails != NULL)
-		{
-			$str .= '<ebl:SetExpressCheckoutRequestDetails>';
-			$str .= $this->SetExpressCheckoutRequestDetails->toXMLString();
-			$str .= '</ebl:SetExpressCheckoutRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -20003,7 +16987,9 @@ class SetExpressCheckoutRequestType  extends AbstractRequestType  {
  * response is identical to the value in the request. Character
  * length and limitations: 20 single-byte characters
  */
-class SetExpressCheckoutResponseType  extends AbstractResponseType  {
+ 
+class SetExpressCheckoutResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * A timestamped token by which you identify to PayPal that you
@@ -20013,34 +16999,33 @@ class SetExpressCheckoutResponseType  extends AbstractResponseType  {
 	 * response is identical to the value in the request. Character
 	 * length and limitations: 20 single-byte characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
-					$this->Token = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class ExecuteCheckoutOperationsReq  {
+ 
+class ExecuteCheckoutOperationsReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ExecuteCheckoutOperationsRequestType
 	 */ 
 	public $ExecuteCheckoutOperationsRequest;
@@ -20048,31 +17033,36 @@ class ExecuteCheckoutOperationsReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:ExecuteCheckoutOperationsReq>';
-		if($this->ExecuteCheckoutOperationsRequest != NULL)
-		{
-			$str .= '<urn:ExecuteCheckoutOperationsRequest>';
-			$str .= $this->ExecuteCheckoutOperationsRequest->toXMLString();
-			$str .= '</urn:ExecuteCheckoutOperationsRequest>';
-		}
-		$str .= '</urn:ExecuteCheckoutOperationsReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:ExecuteCheckoutOperationsReq>';
+			if($this->ExecuteCheckoutOperationsRequest != NULL)
+			{
+		   		$str .= '<ns:ExecuteCheckoutOperationsRequest>';
+				$str .= $this->ExecuteCheckoutOperationsRequest->toXMLString();
+				$str .= '</ns:ExecuteCheckoutOperationsRequest>';
+			}
+			$str .= '</ns:ExecuteCheckoutOperationsReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType  {
+ 
+class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ExecuteCheckoutOperationsRequestDetailsType
 	 */ 
 	public $ExecuteCheckoutOperationsRequestDetails;
@@ -20085,65 +17075,48 @@ class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->ExecuteCheckoutOperationsRequestDetails != NULL)
-		{
-			$str .= '<ebl:ExecuteCheckoutOperationsRequestDetails>';
-			$str .= $this->ExecuteCheckoutOperationsRequestDetails->toXMLString();
-			$str .= '</ebl:ExecuteCheckoutOperationsRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class ExecuteCheckoutOperationsResponseType  extends AbstractResponseType  {
+ 
+class ExecuteCheckoutOperationsResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ExecuteCheckoutOperationsResponseDetailsType
 	 */ 
 	public $ExecuteCheckoutOperationsResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='executecheckoutoperationsresponsedetails'){
-                                    $this->ExecuteCheckoutOperationsResponseDetails = new ExecuteCheckoutOperationsResponseDetailsType(); 
-                                    $this->ExecuteCheckoutOperationsResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class GetExpressCheckoutDetailsReq  {
+ 
+class GetExpressCheckoutDetailsReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var GetExpressCheckoutDetailsRequestType
 	 */ 
 	public $GetExpressCheckoutDetailsRequest;
@@ -20151,20 +17124,19 @@ class GetExpressCheckoutDetailsReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:GetExpressCheckoutDetailsReq>';
-		if($this->GetExpressCheckoutDetailsRequest != NULL)
-		{
-			$str .= '<urn:GetExpressCheckoutDetailsRequest>';
-			$str .= $this->GetExpressCheckoutDetailsRequest->toXMLString();
-			$str .= '</urn:GetExpressCheckoutDetailsRequest>';
-		}
-		$str .= '</urn:GetExpressCheckoutDetailsReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:GetExpressCheckoutDetailsReq>';
+			if($this->GetExpressCheckoutDetailsRequest != NULL)
+			{
+		   		$str .= '<ns:GetExpressCheckoutDetailsRequest>';
+				$str .= $this->GetExpressCheckoutDetailsRequest->toXMLString();
+				$str .= '</ns:GetExpressCheckoutDetailsRequest>';
+			}
+			$str .= '</ns:GetExpressCheckoutDetailsReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -20173,13 +17145,19 @@ class GetExpressCheckoutDetailsReq  {
  * SetExpressCheckoutResponse. RequiredCharacter length and
  * limitations: 20 single-byte characters
  */
-class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType  {
+ 
+class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * A timestamped token, the value of which was returned by
 	 * SetExpressCheckoutResponse. RequiredCharacter length and
 	 * limitations: 20 single-byte characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
@@ -20192,63 +17170,48 @@ class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->Token != NULL)
-		{
-			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetExpressCheckoutDetailsResponseType  extends AbstractResponseType  {
+ 
+class GetExpressCheckoutDetailsResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var GetExpressCheckoutDetailsResponseDetailsType
 	 */ 
 	public $GetExpressCheckoutDetailsResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='getexpresscheckoutdetailsresponsedetails'){
-                                    $this->GetExpressCheckoutDetailsResponseDetails = new GetExpressCheckoutDetailsResponseDetailsType(); 
-                                    $this->GetExpressCheckoutDetailsResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class DoExpressCheckoutPaymentReq  {
+ 
+class DoExpressCheckoutPaymentReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var DoExpressCheckoutPaymentRequestType
 	 */ 
 	public $DoExpressCheckoutPaymentRequest;
@@ -20256,20 +17219,19 @@ class DoExpressCheckoutPaymentReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:DoExpressCheckoutPaymentReq>';
-		if($this->DoExpressCheckoutPaymentRequest != NULL)
-		{
-			$str .= '<urn:DoExpressCheckoutPaymentRequest>';
-			$str .= $this->DoExpressCheckoutPaymentRequest->toXMLString();
-			$str .= '</urn:DoExpressCheckoutPaymentRequest>';
-		}
-		$str .= '</urn:DoExpressCheckoutPaymentReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:DoExpressCheckoutPaymentReq>';
+			if($this->DoExpressCheckoutPaymentRequest != NULL)
+			{
+		   		$str .= '<ns:DoExpressCheckoutPaymentRequest>';
+				$str .= $this->DoExpressCheckoutPaymentRequest->toXMLString();
+				$str .= '</ns:DoExpressCheckoutPaymentRequest>';
+			}
+			$str .= '</ns:DoExpressCheckoutPaymentReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -20277,11 +17239,17 @@ class DoExpressCheckoutPaymentReq  {
  * This flag indicates that the response should include
  * FMFDetails 
  */
-class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType  {
+ 
+class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var DoExpressCheckoutPaymentRequestDetailsType
 	 */ 
 	public $DoExpressCheckoutPaymentRequestDetails;
@@ -20290,6 +17258,10 @@ class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType  {
 	 * This flag indicates that the response should include
 	 * FMFDetails
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var integer
 	 */ 
 	public $ReturnFMFDetails;
@@ -20302,36 +17274,25 @@ class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->DoExpressCheckoutPaymentRequestDetails != NULL)
-		{
-			$str .= '<ebl:DoExpressCheckoutPaymentRequestDetails>';
-			$str .= $this->DoExpressCheckoutPaymentRequestDetails->toXMLString();
-			$str .= '</ebl:DoExpressCheckoutPaymentRequestDetails>';
-		}
-		if($this->ReturnFMFDetails != NULL)
-		{
-			$str .= '<urn:ReturnFMFDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnFMFDetails) . '</urn:ReturnFMFDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType  {
+ 
+class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var DoExpressCheckoutPaymentResponseDetailsType
 	 */ 
 	public $DoExpressCheckoutPaymentResponseDetails;
@@ -20339,47 +17300,33 @@ class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var FMFDetailsType
 	 */ 
 	public $FMFDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='doexpresscheckoutpaymentresponsedetails'){
-                                    $this->DoExpressCheckoutPaymentResponseDetails = new DoExpressCheckoutPaymentResponseDetailsType(); 
-                                    $this->DoExpressCheckoutPaymentResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='fmfdetails'){
-                                    $this->FMFDetails = new FMFDetailsType(); 
-                                    $this->FMFDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class DoUATPExpressCheckoutPaymentReq  {
+ 
+class DoUATPExpressCheckoutPaymentReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var DoUATPExpressCheckoutPaymentRequestType
 	 */ 
 	public $DoUATPExpressCheckoutPaymentRequest;
@@ -20387,82 +17334,72 @@ class DoUATPExpressCheckoutPaymentReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:DoUATPExpressCheckoutPaymentReq>';
-		if($this->DoUATPExpressCheckoutPaymentRequest != NULL)
-		{
-			$str .= '<urn:DoUATPExpressCheckoutPaymentRequest>';
-			$str .= $this->DoUATPExpressCheckoutPaymentRequest->toXMLString();
-			$str .= '</urn:DoUATPExpressCheckoutPaymentRequest>';
-		}
-		$str .= '</urn:DoUATPExpressCheckoutPaymentReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:DoUATPExpressCheckoutPaymentReq>';
+			if($this->DoUATPExpressCheckoutPaymentRequest != NULL)
+			{
+		   		$str .= '<ns:DoUATPExpressCheckoutPaymentRequest>';
+				$str .= $this->DoUATPExpressCheckoutPaymentRequest->toXMLString();
+				$str .= '</ns:DoUATPExpressCheckoutPaymentRequest>';
+			}
+			$str .= '</ns:DoUATPExpressCheckoutPaymentReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class DoUATPExpressCheckoutPaymentRequestType  extends DoExpressCheckoutPaymentRequestType  {
+ 
+class DoUATPExpressCheckoutPaymentRequestType  extends DoExpressCheckoutPaymentRequestType  
+  {
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class DoUATPExpressCheckoutPaymentResponseType  extends DoExpressCheckoutPaymentResponseType  {
+ 
+class DoUATPExpressCheckoutPaymentResponseType  extends DoExpressCheckoutPaymentResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var UATPDetailsType
 	 */ 
 	public $UATPDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='uatpdetails'){
-                                    $this->UATPDetails = new UATPDetailsType(); 
-                                    $this->UATPDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class ManagePendingTransactionStatusReq  {
+ 
+class ManagePendingTransactionStatusReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ManagePendingTransactionStatusRequestType
 	 */ 
 	public $ManagePendingTransactionStatusRequest;
@@ -20470,31 +17407,36 @@ class ManagePendingTransactionStatusReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:ManagePendingTransactionStatusReq>';
-		if($this->ManagePendingTransactionStatusRequest != NULL)
-		{
-			$str .= '<urn:ManagePendingTransactionStatusRequest>';
-			$str .= $this->ManagePendingTransactionStatusRequest->toXMLString();
-			$str .= '</urn:ManagePendingTransactionStatusRequest>';
-		}
-		$str .= '</urn:ManagePendingTransactionStatusReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:ManagePendingTransactionStatusReq>';
+			if($this->ManagePendingTransactionStatusRequest != NULL)
+			{
+		   		$str .= '<ns:ManagePendingTransactionStatusRequest>';
+				$str .= $this->ManagePendingTransactionStatusRequest->toXMLString();
+				$str .= '</ns:ManagePendingTransactionStatusRequest>';
+			}
+			$str .= '</ns:ManagePendingTransactionStatusReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class ManagePendingTransactionStatusRequestType  extends AbstractRequestType  {
+ 
+class ManagePendingTransactionStatusRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionID;
@@ -20502,6 +17444,10 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var FMFPendingTransactionActionType
 	 */ 
 	public $Action;
@@ -20515,34 +17461,25 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->TransactionID != NULL)
-		{
-			$str .= '<urn:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</urn:TransactionID>';
-		}
-		if($this->Action != NULL)
-		{
-			$str .= '<urn:Action>' . PPUtils::escapeInvalidXmlCharsRegex($this->Action) . '</urn:Action>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class ManagePendingTransactionStatusResponseType  extends AbstractResponseType  {
+ 
+class ManagePendingTransactionStatusResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionID;
@@ -20550,37 +17487,33 @@ class ManagePendingTransactionStatusResponseType  extends AbstractResponseType  
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Status;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
-					$this->TransactionID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'status') {
-					$this->Status = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class DoDirectPaymentReq  {
+ 
+class DoDirectPaymentReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var DoDirectPaymentRequestType
 	 */ 
 	public $DoDirectPaymentRequest;
@@ -20588,20 +17521,19 @@ class DoDirectPaymentReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:DoDirectPaymentReq>';
-		if($this->DoDirectPaymentRequest != NULL)
-		{
-			$str .= '<urn:DoDirectPaymentRequest>';
-			$str .= $this->DoDirectPaymentRequest->toXMLString();
-			$str .= '</urn:DoDirectPaymentRequest>';
-		}
-		$str .= '</urn:DoDirectPaymentReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:DoDirectPaymentReq>';
+			if($this->DoDirectPaymentRequest != NULL)
+			{
+		   		$str .= '<ns:DoDirectPaymentRequest>';
+				$str .= $this->DoDirectPaymentRequest->toXMLString();
+				$str .= '</ns:DoDirectPaymentRequest>';
+			}
+			$str .= '</ns:DoDirectPaymentReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -20609,11 +17541,17 @@ class DoDirectPaymentReq  {
  * This flag indicates that the response should include
  * FMFDetails 
  */
-class DoDirectPaymentRequestType  extends AbstractRequestType  {
+ 
+class DoDirectPaymentRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var DoDirectPaymentRequestDetailsType
 	 */ 
 	public $DoDirectPaymentRequestDetails;
@@ -20622,6 +17560,10 @@ class DoDirectPaymentRequestType  extends AbstractRequestType  {
 	 * This flag indicates that the response should include
 	 * FMFDetails
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var integer
 	 */ 
 	public $ReturnFMFDetails;
@@ -20634,25 +17576,8 @@ class DoDirectPaymentRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->DoDirectPaymentRequestDetails != NULL)
-		{
-			$str .= '<ebl:DoDirectPaymentRequestDetails>';
-			$str .= $this->DoDirectPaymentRequestDetails->toXMLString();
-			$str .= '</ebl:DoDirectPaymentRequestDetails>';
-		}
-		if($this->ReturnFMFDetails != NULL)
-		{
-			$str .= '<urn:ReturnFMFDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnFMFDetails) . '</urn:ReturnFMFDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -20660,12 +17585,18 @@ class DoDirectPaymentRequestType  extends AbstractRequestType  {
  * The amount of the payment as specified by you on
  * DoDirectPaymentRequest.
  */
-class DoDirectPaymentResponseType  extends AbstractResponseType  {
+ 
+class DoDirectPaymentResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * The amount of the payment as specified by you on
 	 * DoDirectPaymentRequest.
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -20687,6 +17618,10 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 	 * five-digit ZIP Z ZIP Five-digit ZIP code (no Address) All
 	 * others Error Not applicable
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $AVSCode;
@@ -20698,6 +17633,10 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 	 * UnavailableNot applicable XNo response Not applicable All
 	 * others ErrorNot applicable 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $CVV2Code;
@@ -20706,6 +17645,10 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 	 * Transaction identification number. Character length and
 	 * limitations: 19 characters maximum.
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionID;
@@ -20713,6 +17656,10 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 	/**
 	 * The reason why a particular transaction went in pending. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var PendingStatusCodeType
 	 */ 
 	public $PendingReason;
@@ -20720,6 +17667,10 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 	/**
 	 * This will identify the actual transaction status. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var PaymentStatusCodeType
 	 */ 
 	public $PaymentStatus;
@@ -20727,6 +17678,10 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var FMFDetailsType
 	 */ 
 	public $FMFDetails;
@@ -20734,6 +17689,10 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ThreeDSecureResponseType
 	 */ 
 	public $ThreeDSecureResponse;
@@ -20742,82 +17701,33 @@ class DoDirectPaymentResponseType  extends AbstractResponseType  {
 	 * Response code from the processor when a recurring
 	 * transaction is declined.  
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $PaymentAdviceCode;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='amount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->Amount= new BasicAmountType(); 
-								$this->Amount->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'avscode') {
-					$this->AVSCode = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'cvv2code') {
-					$this->CVV2Code = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
-					$this->TransactionID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'pendingreason') {
-					$this->PendingReason = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentstatus') {
-					$this->PaymentStatus = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='fmfdetails'){
-                                    $this->FMFDetails = new FMFDetailsType(); 
-                                    $this->FMFDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='threedsecureresponse'){
-                                    $this->ThreeDSecureResponse = new ThreeDSecureResponseType(); 
-                                    $this->ThreeDSecureResponse->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentadvicecode') {
-					$this->PaymentAdviceCode = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class DoCancelReq  {
+ 
+class DoCancelReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var DoCancelRequestType
 	 */ 
 	public $DoCancelRequest;
@@ -20825,31 +17735,36 @@ class DoCancelReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:DoCancelReq>';
-		if($this->DoCancelRequest != NULL)
-		{
-			$str .= '<urn:DoCancelRequest>';
-			$str .= $this->DoCancelRequest->toXMLString();
-			$str .= '</urn:DoCancelRequest>';
-		}
-		$str .= '</urn:DoCancelReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:DoCancelReq>';
+			if($this->DoCancelRequest != NULL)
+			{
+		   		$str .= '<ns:DoCancelRequest>';
+				$str .= $this->DoCancelRequest->toXMLString();
+				$str .= '</ns:DoCancelRequest>';
+			}
+			$str .= '</ns:DoCancelReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Msg Sub Id that was used for the orginal operation. 
  */
-class DoCancelRequestType  extends AbstractRequestType  {
+ 
+class DoCancelRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * Msg Sub Id that was used for the orginal operation. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $CancelMsgSubID;
@@ -20857,6 +17772,10 @@ class DoCancelRequestType  extends AbstractRequestType  {
 	/**
 	 * Original API's type
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var APIType
 	 */ 
 	public $APIType;
@@ -20866,6 +17785,10 @@ class DoCancelRequestType  extends AbstractRequestType  {
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
@@ -20879,66 +17802,48 @@ class DoCancelRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->CancelMsgSubID != NULL)
-		{
-			$str .= '<urn:CancelMsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->CancelMsgSubID) . '</urn:CancelMsgSubID>';
-		}
-		if($this->APIType != NULL)
-		{
-			$str .= '<urn:APIType>' . PPUtils::escapeInvalidXmlCharsRegex($this->APIType) . '</urn:APIType>';
-		}
-		if($this->MsgSubID != NULL)
-		{
-			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Return msgsubid back to merchant 
  */
-class DoCancelResponseType  extends AbstractResponseType  {
+ 
+class DoCancelResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * Return msgsubid back to merchant
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
-					$this->MsgSubID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class DoCaptureReq  {
+ 
+class DoCaptureReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var DoCaptureRequestType
 	 */ 
 	public $DoCaptureRequest;
@@ -20946,20 +17851,19 @@ class DoCaptureReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:DoCaptureReq>';
-		if($this->DoCaptureRequest != NULL)
-		{
-			$str .= '<urn:DoCaptureRequest>';
-			$str .= $this->DoCaptureRequest->toXMLString();
-			$str .= '</urn:DoCaptureRequest>';
-		}
-		$str .= '</urn:DoCaptureReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:DoCaptureReq>';
+			if($this->DoCaptureRequest != NULL)
+			{
+		   		$str .= '<ns:DoCaptureRequest>';
+				$str .= $this->DoCaptureRequest->toXMLString();
+				$str .= '</ns:DoCaptureRequest>';
+			}
+			$str .= '</ns:DoCaptureReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -20968,13 +17872,19 @@ class DoCaptureReq  {
  * want to capture. Required Character length and limits: 19
  * single-byte characters maximum 
  */
-class DoCaptureRequestType  extends AbstractRequestType  {
+ 
+class DoCaptureRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * The authorization identification number of the payment you
 	 * want to capture. Required Character length and limits: 19
 	 * single-byte characters maximum
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $AuthorizationID;
@@ -20986,6 +17896,10 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	 * a period (.), and the thousands separator must be a comma
 	 * (,)
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -20997,6 +17911,10 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	 * transaction is automatically voided. Required Character
 	 * length and limits: 12 single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var CompleteCodeType
 	 */ 
 	public $CompleteType;
@@ -21007,6 +17925,10 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	 * Optional Character length and limits: 255 single-byte
 	 * characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Note;
@@ -21018,6 +17940,10 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	 * authorization. Optional Character length and limits: 127
 	 * single-byte alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $InvoiceID;
@@ -21026,6 +17952,10 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	 * Contains enhanced data like airline itinerary information.
 	 * Not Required 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var EnhancedDataType
 	 */ 
 	public $EnhancedData;
@@ -21036,6 +17966,10 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	 * Optional Character length and limits: <18 characters
 	 * alphanumeric characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Descriptor;
@@ -21043,6 +17977,10 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	/**
 	 * To pass the Merchant store informationOptional 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var MerchantStoreDetailsType
 	 */ 
 	public $MerchantStoreDetails;
@@ -21052,6 +17990,10 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
@@ -21066,101 +18008,48 @@ class DoCaptureRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->AuthorizationID != NULL)
-		{
-			$str .= '<urn:AuthorizationID>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuthorizationID) . '</urn:AuthorizationID>';
-		}
-		if($this->Amount != NULL)
-		{
-			$str .= '<urn:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</urn:Amount>';
-		}
-		if($this->CompleteType != NULL)
-		{
-			$str .= '<urn:CompleteType>' . PPUtils::escapeInvalidXmlCharsRegex($this->CompleteType) . '</urn:CompleteType>';
-		}
-		if($this->Note != NULL)
-		{
-			$str .= '<urn:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</urn:Note>';
-		}
-		if($this->InvoiceID != NULL)
-		{
-			$str .= '<urn:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</urn:InvoiceID>';
-		}
-		if($this->EnhancedData != NULL)
-		{
-			$str .= '<ebl:EnhancedData>';
-			$str .= $this->EnhancedData->toXMLString();
-			$str .= '</ebl:EnhancedData>';
-		}
-		if($this->Descriptor != NULL)
-		{
-			$str .= '<urn:Descriptor>' . PPUtils::escapeInvalidXmlCharsRegex($this->Descriptor) . '</urn:Descriptor>';
-		}
-		if($this->MerchantStoreDetails != NULL)
-		{
-			$str .= '<ebl:MerchantStoreDetails>';
-			$str .= $this->MerchantStoreDetails->toXMLString();
-			$str .= '</ebl:MerchantStoreDetails>';
-		}
-		if($this->MsgSubID != NULL)
-		{
-			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class DoCaptureResponseType  extends AbstractResponseType  {
+ 
+class DoCaptureResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var DoCaptureResponseDetailsType
 	 */ 
 	public $DoCaptureResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='docaptureresponsedetails'){
-                                    $this->DoCaptureResponseDetails = new DoCaptureResponseDetailsType(); 
-                                    $this->DoCaptureResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class DoReauthorizationReq  {
+ 
+class DoReauthorizationReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var DoReauthorizationRequestType
 	 */ 
 	public $DoReauthorizationRequest;
@@ -21168,20 +18057,19 @@ class DoReauthorizationReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:DoReauthorizationReq>';
-		if($this->DoReauthorizationRequest != NULL)
-		{
-			$str .= '<urn:DoReauthorizationRequest>';
-			$str .= $this->DoReauthorizationRequest->toXMLString();
-			$str .= '</urn:DoReauthorizationRequest>';
-		}
-		$str .= '</urn:DoReauthorizationReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:DoReauthorizationReq>';
+			if($this->DoReauthorizationRequest != NULL)
+			{
+		   		$str .= '<ns:DoReauthorizationRequest>';
+				$str .= $this->DoReauthorizationRequest->toXMLString();
+				$str .= '</ns:DoReauthorizationRequest>';
+			}
+			$str .= '</ns:DoReauthorizationReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -21193,7 +18081,9 @@ class DoReauthorizationReq  {
  * GetTransactionDetailsResponse. Required Character length and
  * limits: 19 single-byte characters maximum 
  */
-class DoReauthorizationRequestType  extends AbstractRequestType  {
+ 
+class DoReauthorizationRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * The value of a previously authorized transaction
@@ -21203,6 +18093,10 @@ class DoReauthorizationRequestType  extends AbstractRequestType  {
 	 * GetTransactionDetailsResponse. Required Character length and
 	 * limits: 19 single-byte characters maximum
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $AuthorizationID;
@@ -21213,6 +18107,10 @@ class DoReauthorizationRequestType  extends AbstractRequestType  {
 	 * separator must be a period (.), and the thousands separator
 	 * must be a comma (,).
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -21222,6 +18120,10 @@ class DoReauthorizationRequestType  extends AbstractRequestType  {
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
@@ -21235,29 +18137,8 @@ class DoReauthorizationRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->AuthorizationID != NULL)
-		{
-			$str .= '<urn:AuthorizationID>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuthorizationID) . '</urn:AuthorizationID>';
-		}
-		if($this->Amount != NULL)
-		{
-			$str .= '<urn:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</urn:Amount>';
-		}
-		if($this->MsgSubID != NULL)
-		{
-			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -21265,12 +18146,18 @@ class DoReauthorizationRequestType  extends AbstractRequestType  {
  * A new authorization identification number. Character length
  * and limits: 19 single-byte characters 
  */
-class DoReauthorizationResponseType  extends AbstractResponseType  {
+ 
+class DoReauthorizationResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * A new authorization identification number. Character length
 	 * and limits: 19 single-byte characters 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $AuthorizationID;
@@ -21278,6 +18165,10 @@ class DoReauthorizationResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AuthorizationInfoType
 	 */ 
 	public $AuthorizationInfo;
@@ -21285,45 +18176,33 @@ class DoReauthorizationResponseType  extends AbstractResponseType  {
 	/**
 	 * Return msgsubid back to merchant
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'authorizationid') {
-					$this->AuthorizationID = $arry["text"];
-				}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='authorizationinfo'){
-                                    $this->AuthorizationInfo = new AuthorizationInfoType(); 
-                                    $this->AuthorizationInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
-					$this->MsgSubID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class DoVoidReq  {
+ 
+class DoVoidReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var DoVoidRequestType
 	 */ 
 	public $DoVoidRequest;
@@ -21331,20 +18210,19 @@ class DoVoidReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:DoVoidReq>';
-		if($this->DoVoidRequest != NULL)
-		{
-			$str .= '<urn:DoVoidRequest>';
-			$str .= $this->DoVoidRequest->toXMLString();
-			$str .= '</urn:DoVoidRequest>';
-		}
-		$str .= '</urn:DoVoidReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:DoVoidReq>';
+			if($this->DoVoidRequest != NULL)
+			{
+		   		$str .= '<ns:DoVoidRequest>';
+				$str .= $this->DoVoidRequest->toXMLString();
+				$str .= '</ns:DoVoidRequest>';
+			}
+			$str .= '</ns:DoVoidReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -21356,7 +18234,9 @@ class DoVoidReq  {
  * Required Character length and limits: 19 single-byte
  * characters 
  */
-class DoVoidRequestType  extends AbstractRequestType  {
+ 
+class DoVoidRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * The value of the original authorization identification
@@ -21366,6 +18246,10 @@ class DoVoidRequestType  extends AbstractRequestType  {
 	 * Required Character length and limits: 19 single-byte
 	 * characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $AuthorizationID;
@@ -21376,6 +18260,10 @@ class DoVoidRequestType  extends AbstractRequestType  {
 	 * Optional Character length and limits: 255 single-byte
 	 * characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Note;
@@ -21385,6 +18273,10 @@ class DoVoidRequestType  extends AbstractRequestType  {
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
@@ -21397,27 +18289,8 @@ class DoVoidRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->AuthorizationID != NULL)
-		{
-			$str .= '<urn:AuthorizationID>' . PPUtils::escapeInvalidXmlCharsRegex($this->AuthorizationID) . '</urn:AuthorizationID>';
-		}
-		if($this->Note != NULL)
-		{
-			$str .= '<urn:Note>' . PPUtils::escapeInvalidXmlCharsRegex($this->Note) . '</urn:Note>';
-		}
-		if($this->MsgSubID != NULL)
-		{
-			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -21426,13 +18299,19 @@ class DoVoidRequestType  extends AbstractRequestType  {
  * request. Character length and limits: 19 single-byte
  * characters 
  */
-class DoVoidResponseType  extends AbstractResponseType  {
+ 
+class DoVoidResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * The authorization identification number you specified in the
 	 * request. Character length and limits: 19 single-byte
 	 * characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $AuthorizationID;
@@ -21440,37 +18319,33 @@ class DoVoidResponseType  extends AbstractResponseType  {
 	/**
 	 * Return msgsubid back to merchant
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'authorizationid') {
-					$this->AuthorizationID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
-					$this->MsgSubID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class DoAuthorizationReq  {
+ 
+class DoAuthorizationReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var DoAuthorizationRequestType
 	 */ 
 	public $DoAuthorizationRequest;
@@ -21478,20 +18353,19 @@ class DoAuthorizationReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:DoAuthorizationReq>';
-		if($this->DoAuthorizationRequest != NULL)
-		{
-			$str .= '<urn:DoAuthorizationRequest>';
-			$str .= $this->DoAuthorizationRequest->toXMLString();
-			$str .= '</urn:DoAuthorizationRequest>';
-		}
-		$str .= '</urn:DoAuthorizationReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:DoAuthorizationReq>';
+			if($this->DoAuthorizationRequest != NULL)
+			{
+		   		$str .= '<ns:DoAuthorizationRequest>';
+				$str .= $this->DoAuthorizationRequest->toXMLString();
+				$str .= '</ns:DoAuthorizationRequest>';
+			}
+			$str .= '</ns:DoAuthorizationReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -21500,13 +18374,19 @@ class DoAuthorizationReq  {
  * returned by a PayPal product. Required Character length and
  * limits: 19 single-byte characters maximum 
  */
-class DoAuthorizationRequestType  extends AbstractRequestType  {
+ 
+class DoAuthorizationRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * The value of the order’s transaction identification number
 	 * returned by a PayPal product. Required Character length and
 	 * limits: 19 single-byte characters maximum
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionID;
@@ -21516,6 +18396,10 @@ class DoAuthorizationRequestType  extends AbstractRequestType  {
 	 * is Order, which means that the transaction represents a
 	 * customer order that can be fulfilled over 29 days. Optional
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var TransactionEntityType
 	 */ 
 	public $TransactionEntity;
@@ -21526,6 +18410,10 @@ class DoAuthorizationRequestType  extends AbstractRequestType  {
 	 * separator must be a period (.), and the thousands separator
 	 * must be a comma (,).
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -21535,6 +18423,10 @@ class DoAuthorizationRequestType  extends AbstractRequestType  {
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
@@ -21548,33 +18440,8 @@ class DoAuthorizationRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->TransactionID != NULL)
-		{
-			$str .= '<urn:TransactionID>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionID) . '</urn:TransactionID>';
-		}
-		if($this->TransactionEntity != NULL)
-		{
-			$str .= '<urn:TransactionEntity>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionEntity) . '</urn:TransactionEntity>';
-		}
-		if($this->Amount != NULL)
-		{
-			$str .= '<urn:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</urn:Amount>';
-		}
-		if($this->MsgSubID != NULL)
-		{
-			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -21582,12 +18449,18 @@ class DoAuthorizationRequestType  extends AbstractRequestType  {
  * An authorization identification number. Character length and
  * limits: 19 single-byte characters 
  */
-class DoAuthorizationResponseType  extends AbstractResponseType  {
+ 
+class DoAuthorizationResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * An authorization identification number. Character length and
 	 * limits: 19 single-byte characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $TransactionID;
@@ -21595,6 +18468,10 @@ class DoAuthorizationResponseType  extends AbstractResponseType  {
 	/**
 	 * The amount and currency you specified in the request. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -21602,6 +18479,10 @@ class DoAuthorizationResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var AuthorizationInfoType
 	 */ 
 	public $AuthorizationInfo;
@@ -21609,62 +18490,33 @@ class DoAuthorizationResponseType  extends AbstractResponseType  {
 	/**
 	 * Return msgsubid back to merchant
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'transactionid') {
-					$this->TransactionID = $arry["text"];
-				}
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='amount') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->Amount= new BasicAmountType(); 
-								$this->Amount->init($atr);
-							}
-							                            
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='authorizationinfo'){
-                                    $this->AuthorizationInfo = new AuthorizationInfoType(); 
-                                    $this->AuthorizationInfo->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
-					$this->MsgSubID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class DoUATPAuthorizationReq  {
+ 
+class DoUATPAuthorizationReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var DoUATPAuthorizationRequestType
 	 */ 
 	public $DoUATPAuthorizationRequest;
@@ -21672,31 +18524,36 @@ class DoUATPAuthorizationReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:DoUATPAuthorizationReq>';
-		if($this->DoUATPAuthorizationRequest != NULL)
-		{
-			$str .= '<urn:DoUATPAuthorizationRequest>';
-			$str .= $this->DoUATPAuthorizationRequest->toXMLString();
-			$str .= '</urn:DoUATPAuthorizationRequest>';
-		}
-		$str .= '</urn:DoUATPAuthorizationReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:DoUATPAuthorizationReq>';
+			if($this->DoUATPAuthorizationRequest != NULL)
+			{
+		   		$str .= '<ns:DoUATPAuthorizationRequest>';
+				$str .= $this->DoUATPAuthorizationRequest->toXMLString();
+				$str .= '</ns:DoUATPAuthorizationRequest>';
+			}
+			$str .= '</ns:DoUATPAuthorizationReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * UATP card details Required 
  */
-class DoUATPAuthorizationRequestType  extends AbstractRequestType  {
+ 
+class DoUATPAuthorizationRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * UATP card details Required 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var UATPDetailsType
 	 */ 
 	public $UATPDetails;
@@ -21706,6 +18563,10 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType  {
 	 * is Order, which means that the transaction represents a
 	 * customer order that can be fulfilled over 29 days. Optional
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var TransactionEntityType
 	 */ 
 	public $TransactionEntity;
@@ -21716,6 +18577,10 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType  {
 	 * separator must be a period (.), and the thousands separator
 	 * must be a comma (,).
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Amount;
@@ -21723,6 +18588,10 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType  {
 	/**
 	 * Invoice ID. A pass through. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $InvoiceID;
@@ -21732,6 +18601,10 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType  {
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
@@ -21745,50 +18618,25 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->UATPDetails != NULL)
-		{
-			$str .= '<ebl:UATPDetails>';
-			$str .= $this->UATPDetails->toXMLString();
-			$str .= '</ebl:UATPDetails>';
-		}
-		if($this->TransactionEntity != NULL)
-		{
-			$str .= '<urn:TransactionEntity>' . PPUtils::escapeInvalidXmlCharsRegex($this->TransactionEntity) . '</urn:TransactionEntity>';
-		}
-		if($this->Amount != NULL)
-		{
-			$str .= '<urn:Amount';
-			$str .= $this->Amount->toXMLString();
-			$str .= '</urn:Amount>';
-		}
-		if($this->InvoiceID != NULL)
-		{
-			$str .= '<urn:InvoiceID>' . PPUtils::escapeInvalidXmlCharsRegex($this->InvoiceID) . '</urn:InvoiceID>';
-		}
-		if($this->MsgSubID != NULL)
-		{
-			$str .= '<urn:MsgSubID>' . PPUtils::escapeInvalidXmlCharsRegex($this->MsgSubID) . '</urn:MsgSubID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * Auth Authorization Code. 
  */
-class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType  {
+ 
+class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var UATPDetailsType
 	 */ 
 	public $UATPDetails;
@@ -21796,6 +18644,10 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType  {
 	/**
 	 * Auth Authorization Code. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $AuthorizationCode;
@@ -21803,6 +18655,10 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType  {
 	/**
 	 * Invoice ID. A pass through. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $InvoiceID;
@@ -21812,48 +18668,33 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType  {
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $MsgSubID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='uatpdetails'){
-                                    $this->UATPDetails = new UATPDetailsType(); 
-                                    $this->UATPDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'authorizationcode') {
-					$this->AuthorizationCode = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'invoiceid') {
-					$this->InvoiceID = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'msgsubid') {
-					$this->MsgSubID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class CreateMobilePaymentReq  {
+ 
+class CreateMobilePaymentReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var CreateMobilePaymentRequestType
 	 */ 
 	public $CreateMobilePaymentRequest;
@@ -21861,31 +18702,36 @@ class CreateMobilePaymentReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:CreateMobilePaymentReq>';
-		if($this->CreateMobilePaymentRequest != NULL)
-		{
-			$str .= '<urn:CreateMobilePaymentRequest>';
-			$str .= $this->CreateMobilePaymentRequest->toXMLString();
-			$str .= '</urn:CreateMobilePaymentRequest>';
-		}
-		$str .= '</urn:CreateMobilePaymentReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:CreateMobilePaymentReq>';
+			if($this->CreateMobilePaymentRequest != NULL)
+			{
+		   		$str .= '<ns:CreateMobilePaymentRequest>';
+				$str .= $this->CreateMobilePaymentRequest->toXMLString();
+				$str .= '</ns:CreateMobilePaymentRequest>';
+			}
+			$str .= '</ns:CreateMobilePaymentReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class CreateMobilePaymentRequestType  extends AbstractRequestType  {
+ 
+class CreateMobilePaymentRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CreateMobilePaymentRequestDetailsType
 	 */ 
 	public $CreateMobilePaymentRequestDetails;
@@ -21898,50 +18744,37 @@ class CreateMobilePaymentRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->CreateMobilePaymentRequestDetails != NULL)
-		{
-			$str .= '<ebl:CreateMobilePaymentRequestDetails>';
-			$str .= $this->CreateMobilePaymentRequestDetails->toXMLString();
-			$str .= '</ebl:CreateMobilePaymentRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class CreateMobilePaymentResponseType  extends AbstractResponseType  {
+ 
+class CreateMobilePaymentResponseType  extends AbstractResponseType  
+  {
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class GetMobileStatusReq  {
+ 
+class GetMobileStatusReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var GetMobileStatusRequestType
 	 */ 
 	public $GetMobileStatusRequest;
@@ -21949,31 +18782,36 @@ class GetMobileStatusReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:GetMobileStatusReq>';
-		if($this->GetMobileStatusRequest != NULL)
-		{
-			$str .= '<urn:GetMobileStatusRequest>';
-			$str .= $this->GetMobileStatusRequest->toXMLString();
-			$str .= '</urn:GetMobileStatusRequest>';
-		}
-		$str .= '</urn:GetMobileStatusReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:GetMobileStatusReq>';
+			if($this->GetMobileStatusRequest != NULL)
+			{
+		   		$str .= '<ns:GetMobileStatusRequest>';
+				$str .= $this->GetMobileStatusRequest->toXMLString();
+				$str .= '</ns:GetMobileStatusRequest>';
+			}
+			$str .= '</ns:GetMobileStatusReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetMobileStatusRequestType  extends AbstractRequestType  {
+ 
+class GetMobileStatusRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var GetMobileStatusRequestDetailsType
 	 */ 
 	public $GetMobileStatusRequestDetails;
@@ -21986,21 +18824,8 @@ class GetMobileStatusRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->GetMobileStatusRequestDetails != NULL)
-		{
-			$str .= '<ebl:GetMobileStatusRequestDetails>';
-			$str .= $this->GetMobileStatusRequestDetails->toXMLString();
-			$str .= '</ebl:GetMobileStatusRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -22008,12 +18833,18 @@ class GetMobileStatusRequestType  extends AbstractRequestType  {
  * Indicates whether the phone is activated for mobile payments
  * 
  */
-class GetMobileStatusResponseType  extends AbstractResponseType  {
+ 
+class GetMobileStatusResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * Indicates whether the phone is activated for mobile payments
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var integer
 	 */ 
 	public $IsActivated;
@@ -22021,37 +18852,33 @@ class GetMobileStatusResponseType  extends AbstractResponseType  {
 	/**
 	 * Indicates whether there is a payment pending from the phone 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var integer
 	 */ 
 	public $PaymentPending;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'isactivated') {
-					$this->IsActivated = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'paymentpending') {
-					$this->PaymentPending = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class SetMobileCheckoutReq  {
+ 
+class SetMobileCheckoutReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var SetMobileCheckoutRequestType
 	 */ 
 	public $SetMobileCheckoutRequest;
@@ -22059,31 +18886,36 @@ class SetMobileCheckoutReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:SetMobileCheckoutReq>';
-		if($this->SetMobileCheckoutRequest != NULL)
-		{
-			$str .= '<urn:SetMobileCheckoutRequest>';
-			$str .= $this->SetMobileCheckoutRequest->toXMLString();
-			$str .= '</urn:SetMobileCheckoutRequest>';
-		}
-		$str .= '</urn:SetMobileCheckoutReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:SetMobileCheckoutReq>';
+			if($this->SetMobileCheckoutRequest != NULL)
+			{
+		   		$str .= '<ns:SetMobileCheckoutRequest>';
+				$str .= $this->SetMobileCheckoutRequest->toXMLString();
+				$str .= '</ns:SetMobileCheckoutRequest>';
+			}
+			$str .= '</ns:SetMobileCheckoutReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class SetMobileCheckoutRequestType  extends AbstractRequestType  {
+ 
+class SetMobileCheckoutRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var SetMobileCheckoutRequestDetailsType
 	 */ 
 	public $SetMobileCheckoutRequestDetails;
@@ -22096,21 +18928,8 @@ class SetMobileCheckoutRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->SetMobileCheckoutRequestDetails != NULL)
-		{
-			$str .= '<ebl:SetMobileCheckoutRequestDetails>';
-			$str .= $this->SetMobileCheckoutRequestDetails->toXMLString();
-			$str .= '</ebl:SetMobileCheckoutRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
@@ -22120,7 +18939,9 @@ class SetMobileCheckoutRequestType  extends AbstractRequestType  {
  * expires after three hours. Character length and limitations:
  * 20 single-byte characters
  */
-class SetMobileCheckoutResponseType  extends AbstractResponseType  {
+ 
+class SetMobileCheckoutResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * A timestamped token by which you identify to PayPal that you
@@ -22128,34 +18949,33 @@ class SetMobileCheckoutResponseType  extends AbstractResponseType  {
 	 * expires after three hours. Character length and limitations:
 	 * 20 single-byte characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
-					$this->Token = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class DoMobileCheckoutPaymentReq  {
+ 
+class DoMobileCheckoutPaymentReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var DoMobileCheckoutPaymentRequestType
 	 */ 
 	public $DoMobileCheckoutPaymentRequest;
@@ -22163,20 +18983,19 @@ class DoMobileCheckoutPaymentReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:DoMobileCheckoutPaymentReq>';
-		if($this->DoMobileCheckoutPaymentRequest != NULL)
-		{
-			$str .= '<urn:DoMobileCheckoutPaymentRequest>';
-			$str .= $this->DoMobileCheckoutPaymentRequest->toXMLString();
-			$str .= '</urn:DoMobileCheckoutPaymentRequest>';
-		}
-		$str .= '</urn:DoMobileCheckoutPaymentReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:DoMobileCheckoutPaymentReq>';
+			if($this->DoMobileCheckoutPaymentRequest != NULL)
+			{
+		   		$str .= '<ns:DoMobileCheckoutPaymentRequest>';
+				$str .= $this->DoMobileCheckoutPaymentRequest->toXMLString();
+				$str .= '</ns:DoMobileCheckoutPaymentRequest>';
+			}
+			$str .= '</ns:DoMobileCheckoutPaymentReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -22185,13 +19004,19 @@ class DoMobileCheckoutPaymentReq  {
  * SetMobileCheckoutResponse. RequiredCharacter length and
  * limitations: 20 single-byte characters
  */
-class DoMobileCheckoutPaymentRequestType  extends AbstractRequestType  {
+ 
+class DoMobileCheckoutPaymentRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * A timestamped token, the value of which was returned by
 	 * SetMobileCheckoutResponse. RequiredCharacter length and
 	 * limitations: 20 single-byte characters
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
@@ -22204,63 +19029,48 @@ class DoMobileCheckoutPaymentRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->Token != NULL)
-		{
-			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class DoMobileCheckoutPaymentResponseType  extends AbstractResponseType  {
+ 
+class DoMobileCheckoutPaymentResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var DoMobileCheckoutPaymentResponseDetailsType
 	 */ 
 	public $DoMobileCheckoutPaymentResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='domobilecheckoutpaymentresponsedetails'){
-                                    $this->DoMobileCheckoutPaymentResponseDetails = new DoMobileCheckoutPaymentResponseDetailsType(); 
-                                    $this->DoMobileCheckoutPaymentResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class GetBalanceReq  {
+ 
+class GetBalanceReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var GetBalanceRequestType
 	 */ 
 	public $GetBalanceRequest;
@@ -22268,60 +19078,60 @@ class GetBalanceReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:GetBalanceReq>';
-		if($this->GetBalanceRequest != NULL)
-		{
-			$str .= '<urn:GetBalanceRequest>';
-			$str .= $this->GetBalanceRequest->toXMLString();
-			$str .= '</urn:GetBalanceRequest>';
-		}
-		$str .= '</urn:GetBalanceReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:GetBalanceReq>';
+			if($this->GetBalanceRequest != NULL)
+			{
+		   		$str .= '<ns:GetBalanceRequest>';
+				$str .= $this->GetBalanceRequest->toXMLString();
+				$str .= '</ns:GetBalanceRequest>';
+			}
+			$str .= '</ns:GetBalanceReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetBalanceRequestType  extends AbstractRequestType  {
+ 
+class GetBalanceRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ReturnAllCurrencies;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->ReturnAllCurrencies != NULL)
-		{
-			$str .= '<urn:ReturnAllCurrencies>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnAllCurrencies) . '</urn:ReturnAllCurrencies>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetBalanceResponseType  extends AbstractResponseType  {
+ 
+class GetBalanceResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $Balance;
@@ -22329,6 +19139,10 @@ class GetBalanceResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var dateTime
 	 */ 
 	public $BalanceTimeStamp;
@@ -22337,67 +19151,33 @@ class GetBalanceResponseType  extends AbstractResponseType  {
 	 * 
      * @array
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BasicAmountType
 	 */ 
 	public $BalanceHoldings;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            						
-					if ( is_array($arry["attributes"])&& ($arry["attributes"])!= NULL) 	{
-                        if( $arry["name"]=='balance') {
-								$tmp =  array();
-								$atr =  array();
-								foreach($arry["attributes"] as $key => $val){
-                                    $atr[0]["name"] =$key;
-                                    $atr[0]["text"] =$val;
-								}
-								$atr[1]["name"] ="value";
-								$atr[1]["text"] =$arry["text"];
-								$this->Balance= new BasicAmountType(); 
-								$this->Balance->init($atr);
-							}
-							                            
-			}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'balancetimestamp') {
-					$this->BalanceTimeStamp = $arry["text"];
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL)) {
-					$i = 0;
-					while (TRUE) {
-						if ($arry["name"] == "balanceholdings[$i]") {
-							$this->BalanceHoldings[$i] = new BasicAmountType();
-							$this->BalanceHoldings[$i]->init($arry["children"]);
-						} else {
-							break;
-						}
-						$i++;
-					}
-				}
-				if (is_array($arry["children"]) && (($arry["children"]) != NULL) && ($arry["name"] == "balanceholdings")) {
-					$this->BalanceHoldings = new BasicAmountType();
-					$this->BalanceHoldings->init($arry["children"]);
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class SetCustomerBillingAgreementReq  {
+ 
+class SetCustomerBillingAgreementReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var SetCustomerBillingAgreementRequestType
 	 */ 
 	public $SetCustomerBillingAgreementRequest;
@@ -22405,31 +19185,36 @@ class SetCustomerBillingAgreementReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:SetCustomerBillingAgreementReq>';
-		if($this->SetCustomerBillingAgreementRequest != NULL)
-		{
-			$str .= '<urn:SetCustomerBillingAgreementRequest>';
-			$str .= $this->SetCustomerBillingAgreementRequest->toXMLString();
-			$str .= '</urn:SetCustomerBillingAgreementRequest>';
-		}
-		$str .= '</urn:SetCustomerBillingAgreementReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:SetCustomerBillingAgreementReq>';
+			if($this->SetCustomerBillingAgreementRequest != NULL)
+			{
+		   		$str .= '<ns:SetCustomerBillingAgreementRequest>';
+				$str .= $this->SetCustomerBillingAgreementRequest->toXMLString();
+				$str .= '</ns:SetCustomerBillingAgreementRequest>';
+			}
+			$str .= '</ns:SetCustomerBillingAgreementReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class SetCustomerBillingAgreementRequestType  extends AbstractRequestType  {
+ 
+class SetCustomerBillingAgreementRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var SetCustomerBillingAgreementRequestDetailsType
 	 */ 
 	public $SetCustomerBillingAgreementRequestDetails;
@@ -22442,60 +19227,48 @@ class SetCustomerBillingAgreementRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->SetCustomerBillingAgreementRequestDetails != NULL)
-		{
-			$str .= '<ebl:SetCustomerBillingAgreementRequestDetails>';
-			$str .= $this->SetCustomerBillingAgreementRequestDetails->toXMLString();
-			$str .= '</ebl:SetCustomerBillingAgreementRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class SetCustomerBillingAgreementResponseType  extends AbstractResponseType  {
+ 
+class SetCustomerBillingAgreementResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'token') {
-					$this->Token = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class GetBillingAgreementCustomerDetailsReq  {
+ 
+class GetBillingAgreementCustomerDetailsReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var GetBillingAgreementCustomerDetailsRequestType
 	 */ 
 	public $GetBillingAgreementCustomerDetailsRequest;
@@ -22503,31 +19276,36 @@ class GetBillingAgreementCustomerDetailsReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:GetBillingAgreementCustomerDetailsReq>';
-		if($this->GetBillingAgreementCustomerDetailsRequest != NULL)
-		{
-			$str .= '<urn:GetBillingAgreementCustomerDetailsRequest>';
-			$str .= $this->GetBillingAgreementCustomerDetailsRequest->toXMLString();
-			$str .= '</urn:GetBillingAgreementCustomerDetailsRequest>';
-		}
-		$str .= '</urn:GetBillingAgreementCustomerDetailsReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:GetBillingAgreementCustomerDetailsReq>';
+			if($this->GetBillingAgreementCustomerDetailsRequest != NULL)
+			{
+		   		$str .= '<ns:GetBillingAgreementCustomerDetailsRequest>';
+				$str .= $this->GetBillingAgreementCustomerDetailsRequest->toXMLString();
+				$str .= '</ns:GetBillingAgreementCustomerDetailsRequest>';
+			}
+			$str .= '</ns:GetBillingAgreementCustomerDetailsReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetBillingAgreementCustomerDetailsRequestType  extends AbstractRequestType  {
+ 
+class GetBillingAgreementCustomerDetailsRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
@@ -22540,63 +19318,48 @@ class GetBillingAgreementCustomerDetailsRequestType  extends AbstractRequestType
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->Token != NULL)
-		{
-			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetBillingAgreementCustomerDetailsResponseType  extends AbstractResponseType  {
+ 
+class GetBillingAgreementCustomerDetailsResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var GetBillingAgreementCustomerDetailsResponseDetailsType
 	 */ 
 	public $GetBillingAgreementCustomerDetailsResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='getbillingagreementcustomerdetailsresponsedetails'){
-                                    $this->GetBillingAgreementCustomerDetailsResponseDetails = new GetBillingAgreementCustomerDetailsResponseDetailsType(); 
-                                    $this->GetBillingAgreementCustomerDetailsResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class CreateBillingAgreementReq  {
+ 
+class CreateBillingAgreementReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var CreateBillingAgreementRequestType
 	 */ 
 	public $CreateBillingAgreementRequest;
@@ -22604,31 +19367,36 @@ class CreateBillingAgreementReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:CreateBillingAgreementReq>';
-		if($this->CreateBillingAgreementRequest != NULL)
-		{
-			$str .= '<urn:CreateBillingAgreementRequest>';
-			$str .= $this->CreateBillingAgreementRequest->toXMLString();
-			$str .= '</urn:CreateBillingAgreementRequest>';
-		}
-		$str .= '</urn:CreateBillingAgreementReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:CreateBillingAgreementReq>';
+			if($this->CreateBillingAgreementRequest != NULL)
+			{
+		   		$str .= '<ns:CreateBillingAgreementRequest>';
+				$str .= $this->CreateBillingAgreementRequest->toXMLString();
+				$str .= '</ns:CreateBillingAgreementRequest>';
+			}
+			$str .= '</ns:CreateBillingAgreementReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class CreateBillingAgreementRequestType  extends AbstractRequestType  {
+ 
+class CreateBillingAgreementRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Token;
@@ -22641,58 +19409,48 @@ class CreateBillingAgreementRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->Token != NULL)
-		{
-			$str .= '<urn:Token>' . PPUtils::escapeInvalidXmlCharsRegex($this->Token) . '</urn:Token>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class CreateBillingAgreementResponseType  extends AbstractResponseType  {
+ 
+class CreateBillingAgreementResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $BillingAgreementID;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'billingagreementid') {
-					$this->BillingAgreementID = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class DoReferenceTransactionReq  {
+ 
+class DoReferenceTransactionReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var DoReferenceTransactionRequestType
 	 */ 
 	public $DoReferenceTransactionRequest;
@@ -22700,20 +19458,19 @@ class DoReferenceTransactionReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:DoReferenceTransactionReq>';
-		if($this->DoReferenceTransactionRequest != NULL)
-		{
-			$str .= '<urn:DoReferenceTransactionRequest>';
-			$str .= $this->DoReferenceTransactionRequest->toXMLString();
-			$str .= '</urn:DoReferenceTransactionRequest>';
-		}
-		$str .= '</urn:DoReferenceTransactionReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:DoReferenceTransactionReq>';
+			if($this->DoReferenceTransactionRequest != NULL)
+			{
+		   		$str .= '<ns:DoReferenceTransactionRequest>';
+				$str .= $this->DoReferenceTransactionRequest->toXMLString();
+				$str .= '</ns:DoReferenceTransactionRequest>';
+			}
+			$str .= '</ns:DoReferenceTransactionReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -22721,11 +19478,17 @@ class DoReferenceTransactionReq  {
  * This flag indicates that the response should include
  * FMFDetails 
  */
-class DoReferenceTransactionRequestType  extends AbstractRequestType  {
+ 
+class DoReferenceTransactionRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var DoReferenceTransactionRequestDetailsType
 	 */ 
 	public $DoReferenceTransactionRequestDetails;
@@ -22734,6 +19497,10 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType  {
 	 * This flag indicates that the response should include
 	 * FMFDetails
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var integer
 	 */ 
 	public $ReturnFMFDetails;
@@ -22746,36 +19513,25 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->DoReferenceTransactionRequestDetails != NULL)
-		{
-			$str .= '<ebl:DoReferenceTransactionRequestDetails>';
-			$str .= $this->DoReferenceTransactionRequestDetails->toXMLString();
-			$str .= '</ebl:DoReferenceTransactionRequestDetails>';
-		}
-		if($this->ReturnFMFDetails != NULL)
-		{
-			$str .= '<urn:ReturnFMFDetails>' . PPUtils::escapeInvalidXmlCharsRegex($this->ReturnFMFDetails) . '</urn:ReturnFMFDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class DoReferenceTransactionResponseType  extends AbstractResponseType  {
+ 
+class DoReferenceTransactionResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var DoReferenceTransactionResponseDetailsType
 	 */ 
 	public $DoReferenceTransactionResponseDetails;
@@ -22783,47 +19539,33 @@ class DoReferenceTransactionResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var FMFDetailsType
 	 */ 
 	public $FMFDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='doreferencetransactionresponsedetails'){
-                                    $this->DoReferenceTransactionResponseDetails = new DoReferenceTransactionResponseDetailsType(); 
-                                    $this->DoReferenceTransactionResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='fmfdetails'){
-                                    $this->FMFDetails = new FMFDetailsType(); 
-                                    $this->FMFDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class DoNonReferencedCreditReq  {
+ 
+class DoNonReferencedCreditReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var DoNonReferencedCreditRequestType
 	 */ 
 	public $DoNonReferencedCreditRequest;
@@ -22831,31 +19573,36 @@ class DoNonReferencedCreditReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:DoNonReferencedCreditReq>';
-		if($this->DoNonReferencedCreditRequest != NULL)
-		{
-			$str .= '<urn:DoNonReferencedCreditRequest>';
-			$str .= $this->DoNonReferencedCreditRequest->toXMLString();
-			$str .= '</urn:DoNonReferencedCreditRequest>';
-		}
-		$str .= '</urn:DoNonReferencedCreditReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:DoNonReferencedCreditReq>';
+			if($this->DoNonReferencedCreditRequest != NULL)
+			{
+		   		$str .= '<ns:DoNonReferencedCreditRequest>';
+				$str .= $this->DoNonReferencedCreditRequest->toXMLString();
+				$str .= '</ns:DoNonReferencedCreditRequest>';
+			}
+			$str .= '</ns:DoNonReferencedCreditReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class DoNonReferencedCreditRequestType  extends AbstractRequestType  {
+ 
+class DoNonReferencedCreditRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var DoNonReferencedCreditRequestDetailsType
 	 */ 
 	public $DoNonReferencedCreditRequestDetails;
@@ -22868,65 +19615,48 @@ class DoNonReferencedCreditRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->DoNonReferencedCreditRequestDetails != NULL)
-		{
-			$str .= '<ebl:DoNonReferencedCreditRequestDetails>';
-			$str .= $this->DoNonReferencedCreditRequestDetails->toXMLString();
-			$str .= '</ebl:DoNonReferencedCreditRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class DoNonReferencedCreditResponseType  extends AbstractResponseType  {
+ 
+class DoNonReferencedCreditResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var DoNonReferencedCreditResponseDetailsType
 	 */ 
 	public $DoNonReferencedCreditResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='dononreferencedcreditresponsedetails'){
-                                    $this->DoNonReferencedCreditResponseDetails = new DoNonReferencedCreditResponseDetailsType(); 
-                                    $this->DoNonReferencedCreditResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class CreateRecurringPaymentsProfileReq  {
+ 
+class CreateRecurringPaymentsProfileReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var CreateRecurringPaymentsProfileRequestType
 	 */ 
 	public $CreateRecurringPaymentsProfileRequest;
@@ -22934,95 +19664,83 @@ class CreateRecurringPaymentsProfileReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:CreateRecurringPaymentsProfileReq>';
-		if($this->CreateRecurringPaymentsProfileRequest != NULL)
-		{
-			$str .= '<urn:CreateRecurringPaymentsProfileRequest>';
-			$str .= $this->CreateRecurringPaymentsProfileRequest->toXMLString();
-			$str .= '</urn:CreateRecurringPaymentsProfileRequest>';
-		}
-		$str .= '</urn:CreateRecurringPaymentsProfileReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:CreateRecurringPaymentsProfileReq>';
+			if($this->CreateRecurringPaymentsProfileRequest != NULL)
+			{
+		   		$str .= '<ns:CreateRecurringPaymentsProfileRequest>';
+				$str .= $this->CreateRecurringPaymentsProfileRequest->toXMLString();
+				$str .= '</ns:CreateRecurringPaymentsProfileRequest>';
+			}
+			$str .= '</ns:CreateRecurringPaymentsProfileReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class CreateRecurringPaymentsProfileRequestType  extends AbstractRequestType  {
+ 
+class CreateRecurringPaymentsProfileRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CreateRecurringPaymentsProfileRequestDetailsType
 	 */ 
 	public $CreateRecurringPaymentsProfileRequestDetails;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->CreateRecurringPaymentsProfileRequestDetails != NULL)
-		{
-			$str .= '<ebl:CreateRecurringPaymentsProfileRequestDetails>';
-			$str .= $this->CreateRecurringPaymentsProfileRequestDetails->toXMLString();
-			$str .= '</ebl:CreateRecurringPaymentsProfileRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class CreateRecurringPaymentsProfileResponseType  extends AbstractResponseType  {
+ 
+class CreateRecurringPaymentsProfileResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var CreateRecurringPaymentsProfileResponseDetailsType
 	 */ 
 	public $CreateRecurringPaymentsProfileResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='createrecurringpaymentsprofileresponsedetails'){
-                                    $this->CreateRecurringPaymentsProfileResponseDetails = new CreateRecurringPaymentsProfileResponseDetailsType(); 
-                                    $this->CreateRecurringPaymentsProfileResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class GetRecurringPaymentsProfileDetailsReq  {
+ 
+class GetRecurringPaymentsProfileDetailsReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var GetRecurringPaymentsProfileDetailsRequestType
 	 */ 
 	public $GetRecurringPaymentsProfileDetailsRequest;
@@ -23030,31 +19748,36 @@ class GetRecurringPaymentsProfileDetailsReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:GetRecurringPaymentsProfileDetailsReq>';
-		if($this->GetRecurringPaymentsProfileDetailsRequest != NULL)
-		{
-			$str .= '<urn:GetRecurringPaymentsProfileDetailsRequest>';
-			$str .= $this->GetRecurringPaymentsProfileDetailsRequest->toXMLString();
-			$str .= '</urn:GetRecurringPaymentsProfileDetailsRequest>';
-		}
-		$str .= '</urn:GetRecurringPaymentsProfileDetailsReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:GetRecurringPaymentsProfileDetailsReq>';
+			if($this->GetRecurringPaymentsProfileDetailsRequest != NULL)
+			{
+		   		$str .= '<ns:GetRecurringPaymentsProfileDetailsRequest>';
+				$str .= $this->GetRecurringPaymentsProfileDetailsRequest->toXMLString();
+				$str .= '</ns:GetRecurringPaymentsProfileDetailsRequest>';
+			}
+			$str .= '</ns:GetRecurringPaymentsProfileDetailsReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType  {
+ 
+class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ProfileID;
@@ -23067,63 +19790,48 @@ class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->ProfileID != NULL)
-		{
-			$str .= '<urn:ProfileID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ProfileID) . '</urn:ProfileID>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetRecurringPaymentsProfileDetailsResponseType  extends AbstractResponseType  {
+ 
+class GetRecurringPaymentsProfileDetailsResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 */ 
 	public $GetRecurringPaymentsProfileDetailsResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='getrecurringpaymentsprofiledetailsresponsedetails'){
-                                    $this->GetRecurringPaymentsProfileDetailsResponseDetails = new GetRecurringPaymentsProfileDetailsResponseDetailsType(); 
-                                    $this->GetRecurringPaymentsProfileDetailsResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class ManageRecurringPaymentsProfileStatusReq  {
+ 
+class ManageRecurringPaymentsProfileStatusReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ManageRecurringPaymentsProfileStatusRequestType
 	 */ 
 	public $ManageRecurringPaymentsProfileStatusRequest;
@@ -23131,95 +19839,83 @@ class ManageRecurringPaymentsProfileStatusReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:ManageRecurringPaymentsProfileStatusReq>';
-		if($this->ManageRecurringPaymentsProfileStatusRequest != NULL)
-		{
-			$str .= '<urn:ManageRecurringPaymentsProfileStatusRequest>';
-			$str .= $this->ManageRecurringPaymentsProfileStatusRequest->toXMLString();
-			$str .= '</urn:ManageRecurringPaymentsProfileStatusRequest>';
-		}
-		$str .= '</urn:ManageRecurringPaymentsProfileStatusReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:ManageRecurringPaymentsProfileStatusReq>';
+			if($this->ManageRecurringPaymentsProfileStatusRequest != NULL)
+			{
+		   		$str .= '<ns:ManageRecurringPaymentsProfileStatusRequest>';
+				$str .= $this->ManageRecurringPaymentsProfileStatusRequest->toXMLString();
+				$str .= '</ns:ManageRecurringPaymentsProfileStatusRequest>';
+			}
+			$str .= '</ns:ManageRecurringPaymentsProfileStatusReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class ManageRecurringPaymentsProfileStatusRequestType  extends AbstractRequestType  {
+ 
+class ManageRecurringPaymentsProfileStatusRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ManageRecurringPaymentsProfileStatusRequestDetailsType
 	 */ 
 	public $ManageRecurringPaymentsProfileStatusRequestDetails;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->ManageRecurringPaymentsProfileStatusRequestDetails != NULL)
-		{
-			$str .= '<ebl:ManageRecurringPaymentsProfileStatusRequestDetails>';
-			$str .= $this->ManageRecurringPaymentsProfileStatusRequestDetails->toXMLString();
-			$str .= '</ebl:ManageRecurringPaymentsProfileStatusRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class ManageRecurringPaymentsProfileStatusResponseType  extends AbstractResponseType  {
+ 
+class ManageRecurringPaymentsProfileStatusResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ManageRecurringPaymentsProfileStatusResponseDetailsType
 	 */ 
 	public $ManageRecurringPaymentsProfileStatusResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='managerecurringpaymentsprofilestatusresponsedetails'){
-                                    $this->ManageRecurringPaymentsProfileStatusResponseDetails = new ManageRecurringPaymentsProfileStatusResponseDetailsType(); 
-                                    $this->ManageRecurringPaymentsProfileStatusResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class BillOutstandingAmountReq  {
+ 
+class BillOutstandingAmountReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var BillOutstandingAmountRequestType
 	 */ 
 	public $BillOutstandingAmountRequest;
@@ -23227,95 +19923,83 @@ class BillOutstandingAmountReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:BillOutstandingAmountReq>';
-		if($this->BillOutstandingAmountRequest != NULL)
-		{
-			$str .= '<urn:BillOutstandingAmountRequest>';
-			$str .= $this->BillOutstandingAmountRequest->toXMLString();
-			$str .= '</urn:BillOutstandingAmountRequest>';
-		}
-		$str .= '</urn:BillOutstandingAmountReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:BillOutstandingAmountReq>';
+			if($this->BillOutstandingAmountRequest != NULL)
+			{
+		   		$str .= '<ns:BillOutstandingAmountRequest>';
+				$str .= $this->BillOutstandingAmountRequest->toXMLString();
+				$str .= '</ns:BillOutstandingAmountRequest>';
+			}
+			$str .= '</ns:BillOutstandingAmountReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class BillOutstandingAmountRequestType  extends AbstractRequestType  {
+ 
+class BillOutstandingAmountRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BillOutstandingAmountRequestDetailsType
 	 */ 
 	public $BillOutstandingAmountRequestDetails;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->BillOutstandingAmountRequestDetails != NULL)
-		{
-			$str .= '<ebl:BillOutstandingAmountRequestDetails>';
-			$str .= $this->BillOutstandingAmountRequestDetails->toXMLString();
-			$str .= '</ebl:BillOutstandingAmountRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class BillOutstandingAmountResponseType  extends AbstractResponseType  {
+ 
+class BillOutstandingAmountResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var BillOutstandingAmountResponseDetailsType
 	 */ 
 	public $BillOutstandingAmountResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='billoutstandingamountresponsedetails'){
-                                    $this->BillOutstandingAmountResponseDetails = new BillOutstandingAmountResponseDetailsType(); 
-                                    $this->BillOutstandingAmountResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class UpdateRecurringPaymentsProfileReq  {
+ 
+class UpdateRecurringPaymentsProfileReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var UpdateRecurringPaymentsProfileRequestType
 	 */ 
 	public $UpdateRecurringPaymentsProfileRequest;
@@ -23323,95 +20007,83 @@ class UpdateRecurringPaymentsProfileReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:UpdateRecurringPaymentsProfileReq>';
-		if($this->UpdateRecurringPaymentsProfileRequest != NULL)
-		{
-			$str .= '<urn:UpdateRecurringPaymentsProfileRequest>';
-			$str .= $this->UpdateRecurringPaymentsProfileRequest->toXMLString();
-			$str .= '</urn:UpdateRecurringPaymentsProfileRequest>';
-		}
-		$str .= '</urn:UpdateRecurringPaymentsProfileReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:UpdateRecurringPaymentsProfileReq>';
+			if($this->UpdateRecurringPaymentsProfileRequest != NULL)
+			{
+		   		$str .= '<ns:UpdateRecurringPaymentsProfileRequest>';
+				$str .= $this->UpdateRecurringPaymentsProfileRequest->toXMLString();
+				$str .= '</ns:UpdateRecurringPaymentsProfileRequest>';
+			}
+			$str .= '</ns:UpdateRecurringPaymentsProfileReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class UpdateRecurringPaymentsProfileRequestType  extends AbstractRequestType  {
+ 
+class UpdateRecurringPaymentsProfileRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var UpdateRecurringPaymentsProfileRequestDetailsType
 	 */ 
 	public $UpdateRecurringPaymentsProfileRequestDetails;
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->UpdateRecurringPaymentsProfileRequestDetails != NULL)
-		{
-			$str .= '<ebl:UpdateRecurringPaymentsProfileRequestDetails>';
-			$str .= $this->UpdateRecurringPaymentsProfileRequestDetails->toXMLString();
-			$str .= '</ebl:UpdateRecurringPaymentsProfileRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class UpdateRecurringPaymentsProfileResponseType  extends AbstractResponseType  {
+ 
+class UpdateRecurringPaymentsProfileResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var UpdateRecurringPaymentsProfileResponseDetailsType
 	 */ 
 	public $UpdateRecurringPaymentsProfileResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='updaterecurringpaymentsprofileresponsedetails'){
-                                    $this->UpdateRecurringPaymentsProfileResponseDetails = new UpdateRecurringPaymentsProfileResponseDetailsType(); 
-                                    $this->UpdateRecurringPaymentsProfileResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class GetPalDetailsReq  {
+ 
+class GetPalDetailsReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var GetPalDetailsRequestType
 	 */ 
 	public $GetPalDetailsRequest;
@@ -23419,49 +20091,49 @@ class GetPalDetailsReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:GetPalDetailsReq>';
-		if($this->GetPalDetailsRequest != NULL)
-		{
-			$str .= '<urn:GetPalDetailsRequest>';
-			$str .= $this->GetPalDetailsRequest->toXMLString();
-			$str .= '</urn:GetPalDetailsRequest>';
-		}
-		$str .= '</urn:GetPalDetailsReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:GetPalDetailsReq>';
+			if($this->GetPalDetailsRequest != NULL)
+			{
+		   		$str .= '<ns:GetPalDetailsRequest>';
+				$str .= $this->GetPalDetailsRequest->toXMLString();
+				$str .= '</ns:GetPalDetailsRequest>';
+			}
+			$str .= '</ns:GetPalDetailsReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetPalDetailsRequestType  extends AbstractRequestType  {
+ 
+class GetPalDetailsRequestType  extends AbstractRequestType  
+  {
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class GetPalDetailsResponseType  extends AbstractResponseType  {
+ 
+class GetPalDetailsResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Pal;
@@ -23469,37 +20141,33 @@ class GetPalDetailsResponseType  extends AbstractResponseType  {
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $Locale;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'pal') {
-					$this->Pal = $arry["text"];
-				}
-				if($arry != NULL && isset($arry['text']) && $arry['name'] == 'locale') {
-					$this->Locale = $arry["text"];
-				}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class ReverseTransactionReq  {
+ 
+class ReverseTransactionReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ReverseTransactionRequestType
 	 */ 
 	public $ReverseTransactionRequest;
@@ -23507,31 +20175,36 @@ class ReverseTransactionReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:ReverseTransactionReq>';
-		if($this->ReverseTransactionRequest != NULL)
-		{
-			$str .= '<urn:ReverseTransactionRequest>';
-			$str .= $this->ReverseTransactionRequest->toXMLString();
-			$str .= '</urn:ReverseTransactionRequest>';
-		}
-		$str .= '</urn:ReverseTransactionReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:ReverseTransactionReq>';
+			if($this->ReverseTransactionRequest != NULL)
+			{
+		   		$str .= '<ns:ReverseTransactionRequest>';
+				$str .= $this->ReverseTransactionRequest->toXMLString();
+				$str .= '</ns:ReverseTransactionRequest>';
+			}
+			$str .= '</ns:ReverseTransactionReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class ReverseTransactionRequestType  extends AbstractRequestType  {
+ 
+class ReverseTransactionRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ReverseTransactionRequestDetailsType
 	 */ 
 	public $ReverseTransactionRequestDetails;
@@ -23544,65 +20217,48 @@ class ReverseTransactionRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->ReverseTransactionRequestDetails != NULL)
-		{
-			$str .= '<ebl:ReverseTransactionRequestDetails>';
-			$str .= $this->ReverseTransactionRequestDetails->toXMLString();
-			$str .= '</ebl:ReverseTransactionRequestDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class ReverseTransactionResponseType  extends AbstractResponseType  {
+ 
+class ReverseTransactionResponseType  extends AbstractResponseType  
+  {
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
 	 * @var ReverseTransactionResponseDetailsType
 	 */ 
 	public $ReverseTransactionResponseDetails;
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			
-            								if ( is_array($arry["children"])&& ($arry["children"])!= NULL) 	{
-                                    if( $arry["name"]=='reversetransactionresponsedetails'){
-                                    $this->ReverseTransactionResponseDetails = new ReverseTransactionResponseDetailsType(); 
-                                    $this->ReverseTransactionResponseDetails->init($arry["children"]);
-                                }                                                
-                                                
-			}
-			}
-		}
-	}
-} 
+}
 
 
 
 /**
  * 
  */
-class ExternalRememberMeOptOutReq  {
+ 
+class ExternalRememberMeOptOutReq  
+   extends PPXmlMessage{
 
 	/**
 	 * 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ExternalRememberMeOptOutRequestType
 	 */ 
 	public $ExternalRememberMeOptOutRequest;
@@ -23610,20 +20266,19 @@ class ExternalRememberMeOptOutReq  {
 
 	public function toXMLString()
 	{
-		$str = '';
-		$str .= '<urn:ExternalRememberMeOptOutReq>';
-		if($this->ExternalRememberMeOptOutRequest != NULL)
-		{
-			$str .= '<urn:ExternalRememberMeOptOutRequest>';
-			$str .= $this->ExternalRememberMeOptOutRequest->toXMLString();
-			$str .= '</urn:ExternalRememberMeOptOutRequest>';
-		}
-		$str .= '</urn:ExternalRememberMeOptOutReq>';
-		return $str;
+		    $str = '';
+			$str .= '<ns:ExternalRememberMeOptOutReq>';
+			if($this->ExternalRememberMeOptOutRequest != NULL)
+			{
+		   		$str .= '<ns:ExternalRememberMeOptOutRequest>';
+				$str .= $this->ExternalRememberMeOptOutRequest->toXMLString();
+				$str .= '</ns:ExternalRememberMeOptOutRequest>';
+			}
+			$str .= '</ns:ExternalRememberMeOptOutReq>';
+			return $str;
 	}
-
-
-} 
+   
+}
 
 
 
@@ -23634,7 +20289,9 @@ class ExternalRememberMeOptOutReq  {
  * login with a merchant and has meaning only to the merchant.
  * Required 
  */
-class ExternalRememberMeOptOutRequestType  extends AbstractRequestType  {
+ 
+class ExternalRememberMeOptOutRequestType  extends AbstractRequestType  
+  {
 
 	/**
 	 * The merchant passes in the ExternalRememberMeID to identify
@@ -23643,6 +20300,10 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType  {
 	 * login with a merchant and has meaning only to the merchant.
 	 * Required 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var string
 	 */ 
 	public $ExternalRememberMeID;
@@ -23651,6 +20312,10 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType  {
 	 * E-mail address or secure merchant account ID of merchant to
 	 * associate with external remember-me. 
 	 * @access public
+	 
+	 * @namespace ns
+	 
+	 
 	 * @var ExternalRememberMeOwnerDetailsType
 	 */ 
 	public $ExternalRememberMeOwnerDetails;
@@ -23663,43 +20328,20 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType  {
 	}
 
 
-	public function toXMLString()
-	{
-		$str = '';
-		$str .= parent::toXMLString();
-		if($this->ExternalRememberMeID != NULL)
-		{
-			$str .= '<urn:ExternalRememberMeID>' . PPUtils::escapeInvalidXmlCharsRegex($this->ExternalRememberMeID) . '</urn:ExternalRememberMeID>';
-		}
-		if($this->ExternalRememberMeOwnerDetails != NULL)
-		{
-			$str .= '<urn:ExternalRememberMeOwnerDetails>';
-			$str .= $this->ExternalRememberMeOwnerDetails->toXMLString();
-			$str .= '</urn:ExternalRememberMeOwnerDetails>';
-		}
-		return $str;
-	}
-
-
-} 
+   
+}
 
 
 
 /**
  * 
  */
-class ExternalRememberMeOptOutResponseType  extends AbstractResponseType  {
+ 
+class ExternalRememberMeOptOutResponseType  extends AbstractResponseType  
+  {
 
 
-
-	public function init($arr = NULL) {
-		if ($arr != NULL) {
-			parent::init($arr);
-			foreach($arr as $arry) {
-			}
-		}
-	}
-} 
+}
 
 
 

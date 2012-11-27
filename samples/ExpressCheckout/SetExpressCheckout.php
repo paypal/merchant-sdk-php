@@ -30,7 +30,7 @@ $itemDetails->ItemCategory = $_REQUEST['itemCategory'];
 $itemDetails->Tax = new BasicAmountType($currencyCode, $_REQUEST['itemSalesTax']);
 
 $address = new AddressType();
-$address->CityName = $_REQUEST['itemQuantity'];
+$address->CityName = $_REQUEST['city'];
 $address->Name = $_REQUEST['name'];
 $address->Street1 = $_REQUEST['street'];
 $address->StateOrProvince = $_REQUEST['state'];

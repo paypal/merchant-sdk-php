@@ -1,8 +1,12 @@
 <?php
-class PPUtils {
+class PPUtils
+{
 
-	const SDK_VERSION = "1.2.95";
-	const SDK_NAME = "sdk-merchant-php ";
+	const SDK_VERSION = "2.2.95";
+
+	const SDK_NAME = "merchant-php-sdk";
+
+
 
 	/**
 	 *
@@ -10,69 +14,85 @@ class PPUtils {
 	 * an associative array taking care to urldecode array values
 	 *
 	 * @param string $nvpString
+	 * @return array
 	 */
-	public static function nvpToMap($nvpString) {
-
+	public static function nvpToMap($nvpString)
+	{
 		$ret = array();
 		$params = explode("&", $nvpString);
-		foreach($params as $p) {
+		foreach ($params as $p) {
 			list($k, $v) = explode("=", $p);
 			$ret[$k] = urldecode($v);
 		}
 		return $ret;
 	}
 
+
+
 	/**
 	 * Returns true if the array contains a key like $key
+	 *
 	 * @param array $map
-	 * @param regex $key
+	 * @param string $key
+	 * @return bool
 	 */
-	public static function array_match_key($map, $key) {
+	public static function array_match_key($map, $key)
+	{
 		$key = str_replace("(", "\(", $key);
 		$key = str_replace(")", "\)", $key);
 		$key = str_replace(".", "\.", $key);
 		$pattern = "/$key*/";
-		foreach($map as $k => $v) {
+		foreach ($map as $k => $v) {
 			preg_match($pattern, $k, $matches);
-			if(count($matches) > 0)
-			return true;
+			if (count($matches) > 0) {
+				return true;
+			}
 		}
 		return false;
 	}
 
+
+
 	/**
-	 *
 	 * Get the local IP address. The client address is a required
 	 * request parameter for some API calls
 	 */
-	public static function getLocalIPAddress() {
-
-		if(array_key_exists("SERVER_ADDR", $_SERVER)) {
+	public static function getLocalIPAddress()
+	{
+		if (array_key_exists("SERVER_ADDR", $_SERVER)) {
 			// SERVER_ADDR is available only if we are running the CGI SAPI
 			return $_SERVER['SERVER_ADDR'];
-		} else if(function_exists("gethostname")) {
-			// gethostname is available only in PHP >= v5.3
-			return gethostbyname( gethostname() );
+
 		} else {
-			// fallback if nothing works
-			return "127.0.0.1";
+			if (function_exists("gethostname")) {
+				// gethostname is available only in PHP >= v5.3
+				return gethostbyname(gethostname());
+
+			} else {
+				// fallback if nothing works
+				return "127.0.0.1";
+			}
 		}
 	}
 
+
+
 	/**
-	 *
 	 * Compute the value that needs to sent for the PAYPAL_REQUEST_SOURCE
 	 * parameter when making API calls
 	 */
-	public static function getRequestSource() {
-		return str_replace(" ", "-", self::SDK_NAME). self::SDK_VERSION;
+	public static function getRequestSource()
+	{
+		return str_replace(" ", "-", self::SDK_NAME) . "-" . self::SDK_VERSION;
 	}
-	public static function xmlToArray($xmlInput) {
 
+
+
+	public static function xmlToArray($xmlInput)
+	{
 		$xml = simplexml_load_string($xmlInput);
 
 		$ns = $xml->getNamespaces(true);
-
 		$soap = $xml->children($ns['SOAP-ENV']);
 		$getChild = $soap->Body->children();
 
@@ -80,82 +100,199 @@ class PPUtils {
 		return $ret;
 	}
 
-/*foreach ($ret as $arry)
-{
-	if (isset($arry['children']) && is_array($arry['children'])&& ($arry['children'])!=null) 	{
-		foreach ($arry['children'] as $novel)
-		{
 
-		}
-	}
-	else if ($arry['name'] != null)
+
+	function convertXmlObjToArr($obj, &$arr)
 	{
-		$a = $arry['name'] ;
-		$b= $arry['text'];
-		if (isset($arry['attribute']))
-		{
-			$c = $arry['attribute'];
+		$children = $obj->children();
+		foreach ($children as $elementName => $node) {
+			$nextIdx = count($arr);
+			$arr[$nextIdx] = array();
+			$arr[$nextIdx]['name'] = strtolower((string)$elementName);
+			$arr[$nextIdx]['attributes'] = array();
+			$attributes = $node->attributes();
+			foreach ($attributes as $attributeName => $attributeValue) {
+				$attribName = strtolower(trim((string)$attributeName));
+				$attribVal = trim((string)$attributeValue);
+				$arr[$nextIdx]['attributes'][$attribName] = $attribVal;
+			}
+			$text = (string)$node;
+			$text = trim($text);
+			if (strlen($text) > 0) {
+				$arr[$nextIdx]['text'] = $text;
+			}
+			$arr[$nextIdx]['children'] = array();
+			PPutils::convertXmlObjToArr($node, $arr[$nextIdx]['children']);
 		}
+		return $arr;
 	}
 
 
-	}*/
 
-	/*public function xml2array ( $xmlObject, $out = array () )
-	{
-		foreach ( (array) $xmlObject as $index => $node )
-		{
-			$out[$index] = ( is_object ( $node ) ) ? PPUtils::xml2array ( $node ) : $node;
-		}
-		return $out;
-	}*/
-
-
-function convertXmlObjToArr($obj, &$arr)
-{
-    $children = $obj->children();
-    foreach ($children as $elementName => $node)
-    {
-        $nextIdx = count($arr);
-        $arr[$nextIdx] = array();
-        $arr[$nextIdx]['name'] = strtolower((string)$elementName);
-        $arr[$nextIdx]['attributes'] = array();
-        $attributes = $node->attributes();
-        foreach ($attributes as $attributeName => $attributeValue)
-        {
-            $attribName = strtolower(trim((string)$attributeName));
-            $attribVal = trim((string)$attributeValue);
-            $arr[$nextIdx]['attributes'][$attribName] = $attribVal;
-        }
-        $text = (string)$node;
-        $text = trim($text);
-        if (strlen($text) > 0)
-        {
-            $arr[$nextIdx]['text'] = $text;
-        }
-        $arr[$nextIdx]['children'] = array();
-        PPutils::convertXmlObjToArr($node, $arr[$nextIdx]['children']);
-    }
-    return $arr;
-}
 	/**
 	 * Escapes invalid xml characters
+	 *
 	 * @param $textContent = xml data to be escaped
+	 * @return string
 	 */
 	public static function escapeInvalidXmlCharsRegex($textContent)
 	{
 		return htmlspecialchars($textContent, (1 | 2), 'UTF-8', false);
 	}
 
+
+
+	/**
+	 * @param array $map
+	 * @param string $keyPrefix
+	 * @return array
+	 */
+	public static function filterKeyPrefix(array $map, $keyPrefix)
+	{
+		$filtered = array();
+		foreach ($map as $key => $val) {
+			if (($pos = stripos($key, $keyPrefix)) === FALSE) {
+				continue;
+			}
+
+			$filtered[substr_replace($key, '', 0, strlen($keyPrefix))] = $val;
+		}
+
+		return $filtered;
+	}
+
+
+
+	/**
+	 * @var array|ReflectionProperty[]
+	 */
+	private static $propertiesRefl = array();
+
+	/**
+	 * @var array|string[]
+	 */
+	private static $propertiesType = array();
+
+
+
+	/**
+	 * @param string $class
+	 * @param string $property
+	 * @throws RuntimeException
+	 * @return string
+	 */
+	public static function propertyAnnotations($class, $property)
+	{
+		$class = is_object($class) ? get_class($class) : $class;
+		if (!class_exists('ReflectionProperty')) {
+			throw new RuntimeException("Property type of " . $class . "::{$property} cannot be resolved");
+		}
+
+		if ($annotations =& self::$propertiesType[$class][$property]) {
+			return $annotations;
+		}
+
+		if (!($refl =& self::$propertiesRefl[$class][$property])) {
+			$refl = new ReflectionProperty($class, $property);
+		}
+
+		// todo: smarter regexp
+		if (!preg_match_all('~\@([^\s@\(]+)[\t ]*(?:\(?([^\n@]+)\)?)?~i', $refl->getDocComment(), $annots, PREG_PATTERN_ORDER)) {
+			return NULL;
+		}
+		foreach ($annots[1] as $i => $annot) {
+			$annotations[strtolower($annot)] = empty($annots[2][$i]) ? TRUE : rtrim($annots[2][$i], ')');
+		}
+
+		return $annotations;
+	}
+
+
+
+	/**
+	 * @param string $class
+	 * @param string $property
+	 * @return string
+	 */
+	public static function isPropertyArray($class, $property)
+	{
+		if (($annotations = self::propertyAnnotations($class, $property))) {
+			if (isset($annotations['var']) && substr($annotations['var'], -2) === '[]') {
+				return TRUE;
+
+			} elseif (isset($annotations['array'])) {
+				return TRUE;
+			}
+		}
+
+		return FALSE;
+	}
+
+
+
+	/**
+	 * @param string $class
+	 * @param string $property
+	 * @throws RuntimeException
+	 * @return string
+	 */
+	public static function propertyType($class, $property)
+	{
+		if (($annotations = self::propertyAnnotations($class, $property)) && isset($annotations['var'])) {
+			if (substr($annotations['var'], -2) === '[]') {
+				return substr($annotations['var'], 0, -2);
+			}
+
+			return $annotations['var'];
+		}
+
+		return 'string';
+	}
+
+
+
+	/**
+	 * @param object $object
+	 * @return array
+	 */
+	public static function objectProperties($object)
+	{
+		$props = array();
+		foreach (get_object_vars($object) as $property => $default) {
+			$annotations = self::propertyAnnotations($object, $property);
+			if (isset($annotations['name'])) {
+				$props[strtolower($annotations['name'])] = $property;
+			}
+
+			$props[strtolower($property)] = $property;
+		}
+
+		return $props;
+	}
+
+
+
+	/**
+	 * @param array $array
+	 * @return array
+	 */
+	public static function lowerKeys(array $array)
+	{
+		$ret = array();
+		foreach ($array as $key => $value) {
+			$ret[strtolower($key)] = $value;
+		}
+
+		return $ret;
+	}
+
 }
 
-/**
- *    @class    xml2array
- */
 
 
 /**
  * XMLToArray Generator Class
+ *
  * @author  :  MA Razzaque Rupom <rupom_315@yahoo.com>, <rupom.bd@gmail.com>
  *             Moderator, phpResource (LINK1http://groups.yahoo.com/group/phpresource/LINK1)
  *             URL: LINK2http://www.rupom.infoLINK2
@@ -164,22 +301,25 @@ function convertXmlObjToArr($obj, &$arr)
  * Purpose  : Creating Hierarchical Array from XML Data
  * Released : Under GPL
  */
-
 class XmlToArray
 {
 
-	var $xml='';
+	var $xml = '';
+
+
 
 	/**
 	 * Default Constructor
+	 *
 	 * @param $xml = xml data
 	 * @return none
 	 */
-
 	function XmlToArray($xml)
 	{
 		$this->xml = $xml;
 	}
+
+
 
 	/**
 	 * _struct_to_array($values, &$i)
@@ -192,11 +332,12 @@ class XmlToArray
 	 * @param    int    $i  this is the current location in the array
 	 * @return    Array
 	 */
-
 	function _struct_to_array($values, &$i)
 	{
 		$child = array();
-		if (isset($values[$i]['value'])) array_push($child, $values[$i]['value']);
+		if (isset($values[$i]['value'])) {
+			array_push($child, $values[$i]['value']);
+		}
 
 		while ($i++ < count($values)) {
 			switch ($values[$i]['type']) {
@@ -206,9 +347,9 @@ class XmlToArray
 
 				case 'complete':
 					$name = $values[$i]['tag'];
-					if(!empty($name)){
-						$child[$name]= ($values[$i]['value'])?($values[$i]['value']):'';
-						if(isset($values[$i]['attributes'])) {
+					if (!empty($name)) {
+						$child[$name] = ($values[$i]['value']) ? ($values[$i]['value']) : '';
+						if (isset($values[$i]['attributes'])) {
 							$child[$name] = $values[$i]['attributes'];
 						}
 					}
@@ -226,7 +367,9 @@ class XmlToArray
 			}
 		}
 		return $child;
-	}//_struct_to_array
+	}
+
+
 
 	/**
 	 * createArray($data)
@@ -234,15 +377,14 @@ class XmlToArray
 	 * This is adds the contents of the return xml into the array for easier processing.
 	 *
 	 * @access    public
-	 * @param    string    $data this is the string of the xml data
 	 * @return    Array
 	 */
 	function createArray()
 	{
-		$xml    = $this->xml;
+		$xml = $this->xml;
 		$values = array();
-		$index  = array();
-		$array  = array();
+		$index = array();
+		$array = array();
 		$parser = xml_parser_create();
 		xml_parser_set_option($parser, XML_OPTION_SKIP_WHITE, 1);
 		xml_parser_set_option($parser, XML_OPTION_CASE_FOLDING, 0);
@@ -253,10 +395,6 @@ class XmlToArray
 		$array[$name] = isset($values[$i]['attributes']) ? $values[$i]['attributes'] : '';
 		$array[$name] = $this->_struct_to_array($values, $i);
 		return $array;
-	}//createArray
+	}
 
-	
-
-
-}//XmlToArray
-?>
+}

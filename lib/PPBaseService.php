@@ -5,6 +5,8 @@ require_once 'PPAPIService.php';
 class PPBaseService {
 
 	private $serviceName;
+	private $serviceBinding;
+	private $handlers;
 
    /*
     * Setters and getters for Third party authentication (Permission Services)
@@ -40,22 +42,31 @@ class PPBaseService {
 		$this->tokenSecret = $tokenSecret;
 	}
 
-	public function __construct($serviceName) {
+	public function __construct($serviceName, $serviceBinding, $handlers=array()) {
 		$this->serviceName = $serviceName;
+		$this->serviceBinding = $serviceBinding;
+		$this->handlers = $handlers;
 	}
 
 	public function getServiceName() {
 		return $this->serviceName;
 	}
 
-	public function call($method, $requestObject, $apiUsername = null) {
-		$params = $this->marshall($requestObject);
-		$service = new PPAPIService();
-		$service->setServiceName($this->serviceName);
-
-		$this->lastRequest = $params;
-		$this->lastResponse = $service->makeRequest($method, $params, $apiUsername ,$this->accessToken, $this->tokenSecret);
-
+	/**
+	 * 
+	 * @param string $method - API method to call
+	 * @param object $requestObject Request object 
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
+	 */
+	public function call($method, $requestObject, $apiCredential = null) {		
+		$service = new PPAPIService($this->serviceName, 
+				$this->serviceBinding, $this->handlers);		
+		$ret = $service->makeRequest($method, $requestObject, $apiCredential,
+				$this->accessToken, $this->tokenSecret);
+		$this->lastRequest = $ret['request'];
+		$this->lastResponse = $ret['response'];
 		return $this->lastResponse;
 	}
 
