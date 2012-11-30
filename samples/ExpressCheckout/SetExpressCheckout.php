@@ -15,20 +15,6 @@ $shippingTotal = new BasicAmountType($currencyCode, $_REQUEST['shippingTotal']);
 $handlingTotal = new BasicAmountType($currencyCode, $_REQUEST['handlingTotal']);
 $insuranceTotal = new BasicAmountType($currencyCode, $_REQUEST['insuranceTotal']);
 
-$itemAmount = new BasicAmountType($currencyCode, $_REQUEST['itemAmount']);
-$itemTotalValue = $_REQUEST['itemAmount'] * $_REQUEST['itemQuantity'];
-$taxTotalValue = $_REQUEST['itemSalesTax'] * $_REQUEST['itemQuantity'];
-$orderTotalValue = $shippingTotal->value + $handlingTotal->value + 
-					$insuranceTotal->value +
-					$itemTotalValue + $taxTotalValue; 
-
-$itemDetails = new PaymentDetailsItemType();
-$itemDetails->Name = $_REQUEST['itemName'];
-$itemDetails->Amount = $itemAmount;
-$itemDetails->Quantity = $_REQUEST['itemQuantity'];
-$itemDetails->ItemCategory = $_REQUEST['itemCategory'];
-$itemDetails->Tax = new BasicAmountType($currencyCode, $_REQUEST['itemSalesTax']);
-
 $address = new AddressType();
 $address->CityName = $_REQUEST['city'];
 $address->Name = $_REQUEST['name'];
@@ -38,20 +24,39 @@ $address->PostalCode = $_REQUEST['postalCode'];
 $address->Country = $_REQUEST['countryCode'];
 $address->Phone = $_REQUEST['phone'];
 
-$PaymentDetails = new PaymentDetailsType();
-$PaymentDetails->PaymentDetailsItem[0] = $itemDetails;
-$PaymentDetails->ShipToAddress = $address;
-$PaymentDetails->ItemTotal = new BasicAmountType($currencyCode, $itemTotalValue);
-$PaymentDetails->OrderTotal = new BasicAmountType($currencyCode, $orderTotalValue);
-$PaymentDetails->TaxTotal = new BasicAmountType($currencyCode, $taxTotalValue);
-$PaymentDetails->PaymentAction = $_REQUEST['paymentType'];
+$paymentDetails = new PaymentDetailsType();
+$itemTotalValue = 0;
+$taxTotalValue = 0;
+for($i=0; $i<count($_REQUEST['itemAmount']); $i++) {
+	$itemAmount = new BasicAmountType($currencyCode, $_REQUEST['itemAmount'][$i]);	
+	$itemTotalValue += $_REQUEST['itemAmount'][$i] * $_REQUEST['itemQuantity'][$i]; 
+	$taxTotalValue += $_REQUEST['itemSalesTax'][$i] * $_REQUEST['itemQuantity'][$i];
+	$itemDetails = new PaymentDetailsItemType();
+	$itemDetails->Name = $_REQUEST['itemName'][$i];
+	$itemDetails->Amount = $itemAmount;
+	$itemDetails->Quantity = $_REQUEST['itemQuantity'][$i];
+	$itemDetails->ItemCategory = $_REQUEST['itemCategory'][$i];
+	$itemDetails->Tax = new BasicAmountType($currencyCode, $_REQUEST['itemSalesTax'][$i]);	
+	
+	$paymentDetails->PaymentDetailsItem[$i] = $itemDetails;	
+}
 
-$PaymentDetails->HandlingTotal = $handlingTotal;
-$PaymentDetails->InsuranceTotal = $insuranceTotal;
-$PaymentDetails->ShippingTotal = $shippingTotal;
+$orderTotalValue = $shippingTotal->value + $handlingTotal->value +
+$insuranceTotal->value +
+$itemTotalValue + $taxTotalValue;
+
+$paymentDetails->ShipToAddress = $address;
+$paymentDetails->ItemTotal = new BasicAmountType($currencyCode, $itemTotalValue);
+$paymentDetails->OrderTotal = new BasicAmountType($currencyCode, $orderTotalValue);
+$paymentDetails->TaxTotal = new BasicAmountType($currencyCode, $taxTotalValue);
+$paymentDetails->PaymentAction = $_REQUEST['paymentType'];
+
+$paymentDetails->HandlingTotal = $handlingTotal;
+$paymentDetails->InsuranceTotal = $insuranceTotal;
+$paymentDetails->ShippingTotal = $shippingTotal;
 
 $setECReqDetails = new SetExpressCheckoutRequestDetailsType();
-$setECReqDetails->PaymentDetails[0] = $PaymentDetails;
+$setECReqDetails->PaymentDetails[0] = $paymentDetails;
 $setECReqDetails->CancelURL = $cancelUrl;
 $setECReqDetails->ReturnURL = $returnUrl;
 

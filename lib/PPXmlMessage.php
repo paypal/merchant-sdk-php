@@ -115,7 +115,9 @@ abstract class PPXmlMessage
 		}
 
 		$propertiesMap = PPUtils::objectProperties($this);
+		$arrayCtr = array();		
 		foreach ($map as $element) {
+		
 			if (empty($element) || empty($element['name'])) {
 				continue;
 
@@ -128,7 +130,10 @@ abstract class PPXmlMessage
 				$element['num'] = $m[2];
 			}
 			$element['name'] = $propertiesMap[strtolower($element['name'])];
-
+			if(PPUtils::isPropertyArray($this, $element['name'])) {				
+				$arrayCtr[$element['name']] = isset($arrayCtr[$element['name']]) ? ($arrayCtr[$element['name']]+1) : 0;				
+				$element['num'] = $arrayCtr[$element['name']];
+			} 
 			if (!empty($element["attributes"]) && is_array($element["attributes"])) {
 				foreach ($element["attributes"] as $key => $val) {
 					$element["children"][] = array(
@@ -152,7 +157,7 @@ abstract class PPXmlMessage
 			} elseif (is_array($element["children"]) && !empty($element["children"])) {
 				$this->fillRelation($element['name'], $element);
 			}
-		}
+		}		
 	}
 
 

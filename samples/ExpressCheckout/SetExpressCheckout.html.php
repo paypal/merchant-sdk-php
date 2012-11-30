@@ -77,6 +77,7 @@ function display(value) {
 				<div class="params">
 					<div class="param_name">Item Details</div>
 					<table class="line_item">
+					
 						<tr>
 							<th class="param_name">Name</th>
 							<th class="param_name">Cost</th>
@@ -88,43 +89,73 @@ function display(value) {
 	
 						<tr>
 							<td><div class="param_value">
-									<input type="text" name="itemName" id="itemName"
-										value="Item Name" />
+									<input type="text" name="itemName[]" id="itemName0"
+										value="Item 1" />
 								</div>
-							</td>
-	
+							</td>	
 							<td><div class="param_value">
-									<input type="text" name="itemAmount" id="itemAmount"
+									<input type="text" name="itemAmount[]" id="itemAmount0"
 										value="5.50" />
 								</div>
-							</td>
-	
+							</td>	
 							<td><div class="param_value">
-									<input type="text" name="itemQuantity" id="itemQuantity"
+									<input type="text" name="itemQuantity[]" id="itemQuantity0"
 										value="2" />
 								</div>
-							</td>
-							
+							</td>							
 							<td><div class="param_value">
-									<input type="text" name="itemSalesTax" id="itemSalesTax"
+									<input type="text" name="itemSalesTax[]" id="itemSalesTax0"
 										value="1.5" />
 								</div>
 							</td>	
-	
 							<td><div class="param_value">
-									<select name="itemCategory">
+									<select name="itemCategory[]" id="itemCategory0">
 										<option Value="Physical">Physical</option>
 										<option Value="Digital">Digital</option>
 									</select>
 								</div>
-							</td>
-	
+							</td>	
 							<td><div class="param_value">
-									<input type="text" name="itemDescription" id="itemDescription"
+									<input type="text" name="itemDescription[]" id="itemDescription0"
 										value="" />
 								</div>
 							</td>
 						</tr>
+						
+						<tr>
+							<td><div class="param_value">
+									<input type="text" name="itemName[]" id="itemName1"
+										value="Item 2" />
+								</div>
+							</td>	
+							<td><div class="param_value">
+									<input type="text" name="itemAmount[]" id="itemAmount1"
+										value="1.00" />
+								</div>
+							</td>	
+							<td><div class="param_value">
+									<input type="text" name="itemQuantity[]" id="itemQuantity1"
+										value="1" />
+								</div>
+							</td>							
+							<td><div class="param_value">
+									<input type="text" name="itemSalesTax[]" id="itemSalesTax1"
+										value="0.0" />
+								</div>
+							</td>	
+							<td><div class="param_value">
+									<select name="itemCategory[]" id="itemCategory1">
+										<option Value="Physical">Physical</option>
+										<option Value="Digital">Digital</option>
+									</select>
+								</div>
+							</td>	
+							<td><div class="param_value">
+									<input type="text" name="itemDescription[]" id="itemDescription1"
+										value="" />
+								</div>
+							</td>
+						</tr>						
 					</table>
 				</div>
 				<div class="params">
