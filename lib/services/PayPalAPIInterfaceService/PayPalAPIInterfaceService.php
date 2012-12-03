@@ -26,8 +26,8 @@ class BasicAmountType
 	 
 	 
 	 * @attribute 
-	 
-	 * @var CurrencyCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $currencyID;
 
@@ -37,8 +37,8 @@ class BasicAmountType
 	 
 	 * @namespace cc
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $value;
 
@@ -71,8 +71,8 @@ class MeasureType
 	 
 	 
 	 * @attribute 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $unit;
 
@@ -82,8 +82,8 @@ class MeasureType
 	 
 	 * @namespace cc
 	 
-	 
-	 * @var double
+	 	 	 	 
+	 * @var double 	 
 	 */ 
 	public $value;
 
@@ -114,8 +114,8 @@ class ErrorParameterType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Value;
 
@@ -139,8 +139,8 @@ class ErrorType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ShortMessage;
 
@@ -150,8 +150,8 @@ class ErrorType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $LongMessage;
 
@@ -163,8 +163,8 @@ class ErrorType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ErrorCode;
 
@@ -176,8 +176,8 @@ class ErrorType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var SeverityCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SeverityCode;
 
@@ -193,7 +193,9 @@ class ErrorType
 	 * @namespace ebl
 	 
 	 
-	 * @var ErrorParameterType
+	 * @value
+	 	 	 	 
+	 * @var ErrorParameterType 	 
 	 */ 
 	public $ErrorParameters;
 
@@ -223,7 +225,9 @@ class AbstractRequestType
 	 * @namespace ebl
 	 
 	 
-	 * @var DetailLevelCodeType
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $DetailLevel;
 
@@ -234,8 +238,8 @@ class AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ErrorLanguage;
 
@@ -245,8 +249,8 @@ class AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Version;
 
@@ -275,8 +279,8 @@ class AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $Timestamp;
 
@@ -286,8 +290,8 @@ class AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AckCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Ack;
 
@@ -298,8 +302,8 @@ class AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CorrelationID;
 
@@ -311,7 +315,9 @@ class AbstractResponseType
 	 * @namespace ebl
 	 
 	 
-	 * @var ErrorType
+	 * @value
+	 	 	 	 
+	 * @var ErrorType 	 
 	 */ 
 	public $Errors;
 
@@ -321,8 +327,8 @@ class AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Version;
 
@@ -334,8 +340,8 @@ class AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Build;
 
@@ -357,8 +363,8 @@ class PhoneNumberType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CountryCode;
 
@@ -368,8 +374,8 @@ class PhoneNumberType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PhoneNumber;
 
@@ -379,8 +385,8 @@ class PhoneNumberType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Extension;
 
@@ -405,8 +411,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Name;
 
@@ -417,8 +423,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Street1;
 
@@ -429,8 +435,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Street2;
 
@@ -441,8 +447,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CityName;
 
@@ -474,8 +480,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $StateOrProvince;
 
@@ -486,8 +492,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var CountryCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Country;
 
@@ -504,8 +510,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CountryName;
 
@@ -515,8 +521,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Phone;
 
@@ -526,8 +532,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PostalCode;
 
@@ -540,8 +546,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AddressID;
 
@@ -554,8 +560,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressOwnerCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AddressOwner;
 
@@ -568,8 +574,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ExternalAddressID;
 
@@ -584,8 +590,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InternationalName;
 
@@ -600,8 +606,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InternationalStateAndCity;
 
@@ -616,8 +622,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InternationalStreet;
 
@@ -631,8 +637,8 @@ class AddressType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AddressStatus;
 
@@ -655,8 +661,8 @@ class PersonNameType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Salutation;
 
@@ -666,8 +672,8 @@ class PersonNameType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $FirstName;
 
@@ -677,8 +683,8 @@ class PersonNameType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MiddleName;
 
@@ -688,8 +694,8 @@ class PersonNameType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $LastName;
 
@@ -699,8 +705,8 @@ class PersonNameType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Suffix;
 
@@ -723,8 +729,8 @@ class IncentiveAppliedToType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BucketId;
 
@@ -734,8 +740,8 @@ class IncentiveAppliedToType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemId;
 
@@ -745,8 +751,8 @@ class IncentiveAppliedToType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $IncentiveAmount;
 
@@ -756,8 +762,8 @@ class IncentiveAppliedToType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SubType;
 
@@ -779,8 +785,8 @@ class IncentiveDetailType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RedemptionCode;
 
@@ -790,8 +796,8 @@ class IncentiveDetailType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $DisplayCode;
 
@@ -801,8 +807,8 @@ class IncentiveDetailType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProgramId;
 
@@ -812,8 +818,8 @@ class IncentiveDetailType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var IncentiveTypeCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $IncentiveType;
 
@@ -823,8 +829,8 @@ class IncentiveDetailType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $IncentiveDescription;
 
@@ -836,7 +842,9 @@ class IncentiveDetailType
 	 * @namespace ebl
 	 
 	 
-	 * @var IncentiveAppliedToType
+	 * @value
+	 	 	 	 
+	 * @var IncentiveAppliedToType 	 
 	 */ 
 	public $AppliedTo;
 
@@ -846,8 +854,8 @@ class IncentiveDetailType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Status;
 
@@ -857,8 +865,8 @@ class IncentiveDetailType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ErrorCode;
 
@@ -880,8 +888,8 @@ class IncentiveItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemId;
 
@@ -891,8 +899,8 @@ class IncentiveItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $PurchaseTime;
 
@@ -902,8 +910,8 @@ class IncentiveItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemCategoryList;
 
@@ -913,8 +921,8 @@ class IncentiveItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $ItemPrice;
 
@@ -924,8 +932,8 @@ class IncentiveItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $ItemQuantity;
 
@@ -950,7 +958,9 @@ class IncentiveBucketType
 	 * @namespace ebl
 	 
 	 
-	 * @var IncentiveItemType
+	 * @value
+	 	 	 	 
+	 * @var IncentiveItemType 	 
 	 */ 
 	public $Items;
 
@@ -960,8 +970,8 @@ class IncentiveBucketType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BucketId;
 
@@ -971,8 +981,8 @@ class IncentiveBucketType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SellerId;
 
@@ -982,8 +992,8 @@ class IncentiveBucketType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ExternalSellerId;
 
@@ -993,8 +1003,8 @@ class IncentiveBucketType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $BucketSubtotalAmt;
 
@@ -1004,8 +1014,8 @@ class IncentiveBucketType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $BucketShippingAmt;
 
@@ -1015,8 +1025,8 @@ class IncentiveBucketType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $BucketInsuranceAmt;
 
@@ -1026,8 +1036,8 @@ class IncentiveBucketType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $BucketSalesTaxAmt;
 
@@ -1037,8 +1047,8 @@ class IncentiveBucketType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $BucketTotalAmt;
 
@@ -1061,8 +1071,8 @@ class IncentiveRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RequestId;
 
@@ -1072,8 +1082,8 @@ class IncentiveRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var IncentiveRequestCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RequestType;
 
@@ -1083,8 +1093,8 @@ class IncentiveRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var IncentiveRequestDetailLevelCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RequestDetailLevel;
 
@@ -1107,8 +1117,8 @@ class GetIncentiveEvaluationRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ExternalBuyerId;
 
@@ -1120,7 +1130,9 @@ class GetIncentiveEvaluationRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $IncentiveCodes;
 
@@ -1132,7 +1144,9 @@ class GetIncentiveEvaluationRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var IncentiveApplyIndicationType
+	 * @value
+	 	 	 	 
+	 * @var IncentiveApplyIndicationType 	 
 	 */ 
 	public $ApplyIndication;
 
@@ -1144,7 +1158,9 @@ class GetIncentiveEvaluationRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var IncentiveBucketType
+	 * @value
+	 	 	 	 
+	 * @var IncentiveBucketType 	 
 	 */ 
 	public $Buckets;
 
@@ -1154,8 +1170,8 @@ class GetIncentiveEvaluationRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $CartTotalAmt;
 
@@ -1165,8 +1181,8 @@ class GetIncentiveEvaluationRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var IncentiveRequestDetailsType
+	 	 	 	 
+	 * @var IncentiveRequestDetailsType 	 
 	 */ 
 	public $RequestDetails;
 
@@ -1191,7 +1207,9 @@ class GetIncentiveEvaluationResponseDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var IncentiveDetailType
+	 * @value
+	 	 	 	 
+	 * @var IncentiveDetailType 	 
 	 */ 
 	public $IncentiveDetails;
 
@@ -1201,8 +1219,8 @@ class GetIncentiveEvaluationResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RequestId;
 
@@ -1240,8 +1258,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $OrderTotal;
 
@@ -1255,8 +1273,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReturnURL;
 
@@ -1270,8 +1288,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CancelURL;
 
@@ -1282,8 +1300,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TrackingImageURL;
 
@@ -1295,8 +1313,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $giropaySuccessURL;
 
@@ -1308,8 +1326,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $giropayCancelURL;
 
@@ -1321,8 +1339,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BanktxnPendingURL;
 
@@ -1339,8 +1357,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -1356,8 +1374,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $MaxAmount;
 
@@ -1369,8 +1387,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OrderDescription;
 
@@ -1384,8 +1402,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Custom;
 
@@ -1398,8 +1416,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InvoiceID;
 
@@ -1416,8 +1434,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReqConfirmShipping;
 
@@ -1430,8 +1448,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReqBillingAddress;
 
@@ -1444,8 +1462,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $BillingAddress;
 
@@ -1458,8 +1476,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $NoShipping;
 
@@ -1475,8 +1493,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AddressOverride;
 
@@ -1490,8 +1508,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $LocaleCode;
 
@@ -1508,8 +1526,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PageStyle;
 
@@ -1524,7 +1542,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-header-image
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cppheaderimage;
 
@@ -1539,7 +1559,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-header-border-color
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cppheaderbordercolor;
 
@@ -1552,7 +1574,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-header-back-color
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cppheaderbackcolor;
 
@@ -1565,7 +1589,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-payflow-color
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cpppayflowcolor;
 
@@ -1578,7 +1604,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-cart-border-color
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cppcartbordercolor;
 
@@ -1593,7 +1621,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-logo-image
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cpplogoimage;
 
@@ -1606,8 +1636,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $Address;
 
@@ -1627,8 +1657,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentActionCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentAction;
 
@@ -1641,8 +1671,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var SolutionTypeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SolutionType;
 
@@ -1655,8 +1685,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var LandingPageType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $LandingPage;
 
@@ -1669,8 +1699,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BuyerEmail;
 
@@ -1680,8 +1710,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ChannelType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ChannelType;
 
@@ -1693,7 +1723,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var BillingAgreementDetailsType
+	 * @value
+	 	 	 	 
+	 * @var BillingAgreementDetailsType 	 
 	 */ 
 	public $BillingAgreementDetails;
 
@@ -1707,7 +1739,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PromoCodes;
 
@@ -1717,8 +1751,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PayPalCheckOutBtnType;
 
@@ -1728,8 +1762,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ProductCategoryType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProductCategory;
 
@@ -1739,8 +1773,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ShippingServiceCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ShippingMethod;
 
@@ -1751,8 +1785,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $ProfileAddressChangeDate;
 
@@ -1767,8 +1801,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AllowNote;
 
@@ -1778,8 +1812,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var FundingSourceDetailsType
+	 	 	 	 
+	 * @var FundingSourceDetailsType 	 
 	 */ 
 	public $FundingSourceDetails;
 
@@ -1791,8 +1825,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BrandName;
 
@@ -1804,8 +1838,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CallbackURL;
 
@@ -1815,8 +1849,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var EnhancedCheckoutDataType
+	 	 	 	 
+	 * @var EnhancedCheckoutDataType 	 
 	 */ 
 	public $EnhancedCheckoutData;
 
@@ -1830,7 +1864,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var OtherPaymentMethodDetailsType
+	 * @value
+	 	 	 	 
+	 * @var OtherPaymentMethodDetailsType 	 
 	 */ 
 	public $OtherPaymentMethods;
 
@@ -1841,8 +1877,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BuyerDetailsType
+	 	 	 	 
+	 * @var BuyerDetailsType 	 
 	 */ 
 	public $BuyerDetails;
 
@@ -1854,7 +1890,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var PaymentDetailsType
+	 * @value
+	 	 	 	 
+	 * @var PaymentDetailsType 	 
 	 */ 
 	public $PaymentDetails;
 
@@ -1866,7 +1904,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var ShippingOptionType
+	 * @value
+	 	 	 	 
+	 * @var ShippingOptionType 	 
 	 */ 
 	public $FlatRateShippingOptions;
 
@@ -1876,8 +1916,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CallbackTimeout;
 
@@ -1887,8 +1927,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CallbackVersion;
 
@@ -1898,8 +1938,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CustomerServiceNumber;
 
@@ -1909,8 +1949,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $GiftMessageEnable;
 
@@ -1920,8 +1960,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $GiftReceiptEnable;
 
@@ -1931,8 +1971,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $GiftWrapEnable;
 
@@ -1942,8 +1982,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $GiftWrapName;
 
@@ -1953,8 +1993,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $GiftWrapAmount;
 
@@ -1964,8 +2004,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BuyerEmailOptInEnable;
 
@@ -1975,8 +2015,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SurveyEnable;
 
@@ -1986,8 +2026,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SurveyQuestion;
 
@@ -1999,7 +2039,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SurveyChoice;
 
@@ -2009,8 +2051,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var TotalType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TotalType;
 
@@ -2021,8 +2063,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $NoteToBuyer;
 
@@ -2035,7 +2077,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var IncentiveInfoType
+	 * @value
+	 	 	 	 
+	 * @var IncentiveInfoType 	 
 	 */ 
 	public $Incentives;
 
@@ -2046,8 +2090,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReqInstrumentDetails;
 
@@ -2061,8 +2105,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ExternalRememberMeOptInDetailsType
+	 	 	 	 
+	 * @var ExternalRememberMeOptInDetailsType 	 
 	 */ 
 	public $ExternalRememberMeOptInDetails;
 
@@ -2072,8 +2116,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var FlowControlDetailsType
+	 	 	 	 
+	 * @var FlowControlDetailsType 	 
 	 */ 
 	public $FlowControlDetails;
 
@@ -2084,8 +2128,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var DisplayControlDetailsType
+	 	 	 	 
+	 * @var DisplayControlDetailsType 	 
 	 */ 
 	public $DisplayControlDetails;
 
@@ -2096,8 +2140,8 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ExternalPartnerTrackingDetailsType
+	 	 	 	 
+	 * @var ExternalPartnerTrackingDetailsType 	 
 	 */ 
 	public $ExternalPartnerTrackingDetails;
 
@@ -2109,7 +2153,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var CoupledBucketsType
+	 * @value
+	 	 	 	 
+	 * @var CoupledBucketsType 	 
 	 */ 
 	public $CoupledBuckets;
 
@@ -2146,8 +2192,8 @@ class ExecuteCheckoutOperationsRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -2158,8 +2204,8 @@ class ExecuteCheckoutOperationsRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var SetDataRequestType
+	 	 	 	 
+	 * @var SetDataRequestType 	 
 	 */ 
 	public $SetDataRequest;
 
@@ -2170,8 +2216,8 @@ class ExecuteCheckoutOperationsRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AuthorizationRequestType
+	 	 	 	 
+	 * @var AuthorizationRequestType 	 
 	 */ 
 	public $AuthorizationRequest;
 
@@ -2203,7 +2249,9 @@ class SetDataRequestType
 	 * @namespace ebl
 	 
 	 
-	 * @var BillingApprovalDetailsType
+	 * @value
+	 	 	 	 
+	 * @var BillingApprovalDetailsType 	 
 	 */ 
 	public $BillingApprovalDetails;
 
@@ -2214,8 +2262,8 @@ class SetDataRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BuyerDetailType
+	 	 	 	 
+	 * @var BuyerDetailType 	 
 	 */ 
 	public $BuyerDetail;
 
@@ -2227,8 +2275,8 @@ class SetDataRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var InfoSharingDirectivesType
+	 	 	 	 
+	 * @var InfoSharingDirectivesType 	 
 	 */ 
 	public $InfoSharingDirectives;
 
@@ -2251,8 +2299,8 @@ class AuthorizationRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var boolean
+	 	 	 	 
+	 * @var boolean 	 
 	 */ 
 	public $IsRequested;
 
@@ -2284,8 +2332,8 @@ class BillingApprovalDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ApprovalTypeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ApprovalType;
 
@@ -2296,8 +2344,8 @@ class BillingApprovalDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ApprovalSubTypeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ApprovalSubType;
 
@@ -2307,8 +2355,8 @@ class BillingApprovalDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var OrderDetailsType
+	 	 	 	 
+	 * @var OrderDetailsType 	 
 	 */ 
 	public $OrderDetails;
 
@@ -2318,8 +2366,8 @@ class BillingApprovalDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentDirectivesType
+	 	 	 	 
+	 * @var PaymentDirectivesType 	 
 	 */ 
 	public $PaymentDirectives;
 
@@ -2330,8 +2378,8 @@ class BillingApprovalDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Custom;
 
@@ -2365,8 +2413,8 @@ class InfoSharingDirectivesType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReqBillingAddress;
 
@@ -2389,8 +2437,8 @@ class OrderDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Description;
 
@@ -2401,8 +2449,8 @@ class OrderDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $MaxAmount;
 
@@ -2425,8 +2473,8 @@ class PaymentDirectivesType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MerchantPullPaymentCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentType;
 
@@ -2453,8 +2501,8 @@ class BuyerDetailType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var IdentificationInfoType
+	 	 	 	 
+	 * @var IdentificationInfoType 	 
 	 */ 
 	public $IdentificationInfo;
 
@@ -2477,8 +2525,8 @@ class IdentificationInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MobileIDInfoType
+	 	 	 	 
+	 * @var MobileIDInfoType 	 
 	 */ 
 	public $MobileIDInfo;
 
@@ -2488,8 +2536,8 @@ class IdentificationInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var RememberMeIDInfoType
+	 	 	 	 
+	 * @var RememberMeIDInfoType 	 
 	 */ 
 	public $RememberMeIDInfo;
 
@@ -2499,8 +2547,8 @@ class IdentificationInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var IdentityTokenInfoType
+	 	 	 	 
+	 * @var IdentityTokenInfoType 	 
 	 */ 
 	public $IdentityTokenInfo;
 
@@ -2523,8 +2571,8 @@ class MobileIDInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SessionToken;
 
@@ -2559,8 +2607,8 @@ class RememberMeIDInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ExternalRememberMeID;
 
@@ -2583,8 +2631,8 @@ class IdentityTokenInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AccessToken;
 
@@ -2620,8 +2668,8 @@ class FundingSourceDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AllowPushFunding;
 
@@ -2634,8 +2682,8 @@ class FundingSourceDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var UserSelectedFundingSourceType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $UserSelectedFundingSource;
 
@@ -2658,8 +2706,8 @@ class BillingAgreementDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BillingCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingType;
 
@@ -2669,8 +2717,8 @@ class BillingAgreementDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingAgreementDescription;
 
@@ -2680,8 +2728,8 @@ class BillingAgreementDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MerchantPullPaymentCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentType;
 
@@ -2691,8 +2739,8 @@ class BillingAgreementDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingAgreementCustom;
 
@@ -2728,8 +2776,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -2739,8 +2787,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PayerInfoType
+	 	 	 	 
+	 * @var PayerInfoType 	 
 	 */ 
 	public $PayerInfo;
 
@@ -2753,8 +2801,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Custom;
 
@@ -2767,8 +2815,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InvoiceID;
 
@@ -2780,8 +2828,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ContactPhone;
 
@@ -2791,8 +2839,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var boolean
+	 	 	 	 
+	 * @var boolean 	 
 	 */ 
 	public $BillingAgreementAcceptedStatus;
 
@@ -2802,8 +2850,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RedirectRequired;
 
@@ -2817,8 +2865,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $BillingAddress;
 
@@ -2828,8 +2876,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Note;
 
@@ -2841,8 +2889,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CheckoutStatus;
 
@@ -2856,8 +2904,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $PayPalAdjustment;
 
@@ -2869,7 +2917,9 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var PaymentDetailsType
+	 * @value
+	 	 	 	 
+	 * @var PaymentDetailsType 	 
 	 */ 
 	public $PaymentDetails;
 
@@ -2879,8 +2929,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var UserSelectedOptionType
+	 	 	 	 
+	 * @var UserSelectedOptionType 	 
 	 */ 
 	public $UserSelectedOptions;
 
@@ -2893,7 +2943,9 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var IncentiveDetailsType
+	 * @value
+	 	 	 	 
+	 * @var IncentiveDetailsType 	 
 	 */ 
 	public $IncentiveDetails;
 
@@ -2903,8 +2955,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $GiftMessage;
 
@@ -2914,8 +2966,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $GiftReceiptEnable;
 
@@ -2925,8 +2977,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $GiftWrapName;
 
@@ -2936,8 +2988,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $GiftWrapAmount;
 
@@ -2947,8 +2999,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BuyerMarketingEmail;
 
@@ -2958,8 +3010,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SurveyQuestion;
 
@@ -2971,7 +3023,9 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SurveyChoiceSelected;
 
@@ -2984,7 +3038,9 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var PaymentRequestInfoType
+	 * @value
+	 	 	 	 
+	 * @var PaymentRequestInfoType 	 
 	 */ 
 	public $PaymentRequestInfo;
 
@@ -2995,8 +3051,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ExternalRememberMeStatusDetailsType
+	 	 	 	 
+	 * @var ExternalRememberMeStatusDetailsType 	 
 	 */ 
 	public $ExternalRememberMeStatusDetails;
 
@@ -3007,8 +3063,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var RefreshTokenStatusDetailsType
+	 	 	 	 
+	 * @var RefreshTokenStatusDetailsType 	 
 	 */ 
 	public $RefreshTokenStatusDetails;
 
@@ -3030,8 +3086,8 @@ class ExecuteCheckoutOperationsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var SetDataResponseType
+	 	 	 	 
+	 * @var SetDataResponseType 	 
 	 */ 
 	public $SetDataResponse;
 
@@ -3041,8 +3097,8 @@ class ExecuteCheckoutOperationsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AuthorizationResponseType
+	 	 	 	 
+	 * @var AuthorizationResponseType 	 
 	 */ 
 	public $AuthorizationResponse;
 
@@ -3066,8 +3122,8 @@ class SetDataResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -3079,7 +3135,9 @@ class SetDataResponseType
 	 * @namespace ebl
 	 
 	 
-	 * @var ErrorType
+	 * @value
+	 	 	 	 
+	 * @var ErrorType 	 
 	 */ 
 	public $SetDataError;
 
@@ -3103,8 +3161,8 @@ class AuthorizationResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AckCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Status;
 
@@ -3116,7 +3174,9 @@ class AuthorizationResponseType
 	 * @namespace ebl
 	 
 	 
-	 * @var ErrorType
+	 * @value
+	 	 	 	 
+	 * @var ErrorType 	 
 	 */ 
 	public $AuthorizationError;
 
@@ -3158,8 +3218,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentActionCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentAction;
 
@@ -3172,8 +3232,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -3186,8 +3246,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PayerID;
 
@@ -3197,8 +3257,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OrderURL;
 
@@ -3210,7 +3270,9 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var PaymentDetailsType
+	 * @value
+	 	 	 	 
+	 * @var PaymentDetailsType 	 
 	 */ 
 	public $PaymentDetails;
 
@@ -3221,8 +3283,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PromoOverrideFlag;
 
@@ -3233,8 +3295,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PromoCode;
 
@@ -3245,8 +3307,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var EnhancedDataType
+	 	 	 	 
+	 * @var EnhancedDataType 	 
 	 */ 
 	public $EnhancedData;
 
@@ -3257,8 +3319,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SoftDescriptor;
 
@@ -3268,8 +3330,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var UserSelectedOptionType
+	 	 	 	 
+	 * @var UserSelectedOptionType 	 
 	 */ 
 	public $UserSelectedOptions;
 
@@ -3279,8 +3341,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $GiftMessage;
 
@@ -3290,8 +3352,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $GiftReceiptEnable;
 
@@ -3301,8 +3363,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $GiftWrapName;
 
@@ -3312,8 +3374,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $GiftWrapAmount;
 
@@ -3323,8 +3385,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BuyerMarketingEmail;
 
@@ -3334,8 +3396,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SurveyQuestion;
 
@@ -3347,7 +3409,9 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SurveyChoiceSelected;
 
@@ -3359,8 +3423,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonSource;
 
@@ -3371,8 +3435,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var boolean
+	 	 	 	 
+	 * @var boolean 	 
 	 */ 
 	public $SkipBACreation;
 
@@ -3384,7 +3448,9 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var CoupledBucketsType
+	 * @value
+	 	 	 	 
+	 * @var CoupledBucketsType 	 
 	 */ 
 	public $CoupledBuckets;
 
@@ -3413,8 +3479,8 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -3426,7 +3492,9 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var PaymentInfoType
+	 * @value
+	 	 	 	 
+	 * @var PaymentInfoType 	 
 	 */ 
 	public $PaymentInfo;
 
@@ -3436,8 +3504,8 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingAgreementID;
 
@@ -3447,8 +3515,8 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RedirectRequired;
 
@@ -3460,8 +3528,8 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Note;
 
@@ -3471,8 +3539,8 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SuccessPageRedirectRequested;
 
@@ -3482,8 +3550,8 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var UserSelectedOptionType
+	 	 	 	 
+	 * @var UserSelectedOptionType 	 
 	 */ 
 	public $UserSelectedOptions;
 
@@ -3495,7 +3563,9 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var CoupledPaymentInfoType
+	 * @value
+	 	 	 	 
+	 * @var CoupledPaymentInfoType 	 
 	 */ 
 	public $CoupledPaymentInfo;
 
@@ -3521,8 +3591,8 @@ class DoCaptureResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AuthorizationID;
 
@@ -3532,8 +3602,8 @@ class DoCaptureResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentInfoType
+	 	 	 	 
+	 * @var PaymentInfoType 	 
 	 */ 
 	public $PaymentInfo;
 
@@ -3543,8 +3613,8 @@ class DoCaptureResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -3578,8 +3648,8 @@ class DoDirectPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentActionCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentAction;
 
@@ -3589,8 +3659,8 @@ class DoDirectPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentDetailsType
+	 	 	 	 
+	 * @var PaymentDetailsType 	 
 	 */ 
 	public $PaymentDetails;
 
@@ -3600,8 +3670,8 @@ class DoDirectPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var CreditCardDetailsType
+	 	 	 	 
+	 * @var CreditCardDetailsType 	 
 	 */ 
 	public $CreditCard;
 
@@ -3615,8 +3685,8 @@ class DoDirectPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $IPAddress;
 
@@ -3629,8 +3699,8 @@ class DoDirectPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MerchantSessionId;
 
@@ -3640,8 +3710,8 @@ class DoDirectPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var boolean
+	 	 	 	 
+	 * @var boolean 	 
 	 */ 
 	public $ReturnFMFDetails;
 
@@ -3664,8 +3734,8 @@ class CreateMobilePaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MobilePaymentCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentType;
 
@@ -3679,8 +3749,8 @@ class CreateMobilePaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentActionCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentAction;
 
@@ -3690,8 +3760,8 @@ class CreateMobilePaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PhoneNumberType
+	 	 	 	 
+	 * @var PhoneNumberType 	 
 	 */ 
 	public $SenderPhone;
 
@@ -3702,8 +3772,8 @@ class CreateMobilePaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MobileRecipientCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RecipientType;
 
@@ -3713,8 +3783,8 @@ class CreateMobilePaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RecipientEmail;
 
@@ -3724,8 +3794,8 @@ class CreateMobilePaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PhoneNumberType
+	 	 	 	 
+	 * @var PhoneNumberType 	 
 	 */ 
 	public $RecipientPhone;
 
@@ -3735,8 +3805,8 @@ class CreateMobilePaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $ItemAmount;
 
@@ -3746,8 +3816,8 @@ class CreateMobilePaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Tax;
 
@@ -3757,8 +3827,8 @@ class CreateMobilePaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Shipping;
 
@@ -3769,8 +3839,8 @@ class CreateMobilePaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemName;
 
@@ -3781,8 +3851,8 @@ class CreateMobilePaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemNumber;
 
@@ -3794,8 +3864,8 @@ class CreateMobilePaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Note;
 
@@ -3807,8 +3877,8 @@ class CreateMobilePaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CustomID;
 
@@ -3819,8 +3889,8 @@ class CreateMobilePaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $SharePhoneNumber;
 
@@ -3831,8 +3901,8 @@ class CreateMobilePaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $ShareHomeAddress;
 
@@ -3855,8 +3925,8 @@ class GetMobileStatusRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PhoneNumberType
+	 	 	 	 
+	 * @var PhoneNumberType 	 
 	 */ 
 	public $Phone;
 
@@ -3883,8 +3953,8 @@ class SetAuthFlowParamRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReturnURL;
 
@@ -3896,8 +3966,8 @@ class SetAuthFlowParamRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CancelURL;
 
@@ -3909,8 +3979,8 @@ class SetAuthFlowParamRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $LogoutURL;
 
@@ -3921,8 +3991,8 @@ class SetAuthFlowParamRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InitFlowType;
 
@@ -3934,8 +4004,8 @@ class SetAuthFlowParamRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SkipLoginPage;
 
@@ -3947,8 +4017,8 @@ class SetAuthFlowParamRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ServiceName1;
 
@@ -3960,8 +4030,8 @@ class SetAuthFlowParamRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ServiceDefReq1;
 
@@ -3973,8 +4043,8 @@ class SetAuthFlowParamRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ServiceName2;
 
@@ -3986,8 +4056,8 @@ class SetAuthFlowParamRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ServiceDefReq2;
 
@@ -4001,8 +4071,8 @@ class SetAuthFlowParamRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $LocaleCode;
 
@@ -4019,8 +4089,8 @@ class SetAuthFlowParamRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PageStyle;
 
@@ -4035,7 +4105,9 @@ class SetAuthFlowParamRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-header-image
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cppheaderimage;
 
@@ -4050,7 +4122,9 @@ class SetAuthFlowParamRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-header-border-color
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cppheaderbordercolor;
 
@@ -4063,7 +4137,9 @@ class SetAuthFlowParamRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-header-back-color
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cppheaderbackcolor;
 
@@ -4076,7 +4152,9 @@ class SetAuthFlowParamRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-payflow-color
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cpppayflowcolor;
 
@@ -4089,8 +4167,8 @@ class SetAuthFlowParamRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $FirstName;
 
@@ -4103,8 +4181,8 @@ class SetAuthFlowParamRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $LastName;
 
@@ -4118,8 +4196,8 @@ class SetAuthFlowParamRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $Address;
 
@@ -4144,8 +4222,8 @@ class GetAuthDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $FirstName;
 
@@ -4156,8 +4234,8 @@ class GetAuthDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $LastName;
 
@@ -4168,8 +4246,8 @@ class GetAuthDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Email;
 
@@ -4181,8 +4259,8 @@ class GetAuthDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PayerID;
 
@@ -4208,8 +4286,8 @@ class SetAccessPermissionsRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReturnURL;
 
@@ -4221,8 +4299,8 @@ class SetAccessPermissionsRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CancelURL;
 
@@ -4234,8 +4312,8 @@ class SetAccessPermissionsRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $LogoutURL;
 
@@ -4246,8 +4324,8 @@ class SetAccessPermissionsRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InitFlowType;
 
@@ -4259,8 +4337,8 @@ class SetAccessPermissionsRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SkipLoginPage;
 
@@ -4272,7 +4350,9 @@ class SetAccessPermissionsRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RequiredAccessPermissions;
 
@@ -4284,7 +4364,9 @@ class SetAccessPermissionsRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OptionalAccessPermissions;
 
@@ -4298,8 +4380,8 @@ class SetAccessPermissionsRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $LocaleCode;
 
@@ -4316,8 +4398,8 @@ class SetAccessPermissionsRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PageStyle;
 
@@ -4332,7 +4414,9 @@ class SetAccessPermissionsRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-header-image
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cppheaderimage;
 
@@ -4347,7 +4431,9 @@ class SetAccessPermissionsRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-header-border-color
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cppheaderbordercolor;
 
@@ -4360,7 +4446,9 @@ class SetAccessPermissionsRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-header-back-color
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cppheaderbackcolor;
 
@@ -4373,7 +4461,9 @@ class SetAccessPermissionsRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-payflow-color
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cpppayflowcolor;
 
@@ -4386,8 +4476,8 @@ class SetAccessPermissionsRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $FirstName;
 
@@ -4400,8 +4490,8 @@ class SetAccessPermissionsRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $LastName;
 
@@ -4415,8 +4505,8 @@ class SetAccessPermissionsRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $Address;
 
@@ -4441,8 +4531,8 @@ class GetAccessPermissionDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $FirstName;
 
@@ -4453,8 +4543,8 @@ class GetAccessPermissionDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $LastName;
 
@@ -4465,8 +4555,8 @@ class GetAccessPermissionDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Email;
 
@@ -4478,7 +4568,9 @@ class GetAccessPermissionDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AccessPermissionName;
 
@@ -4490,7 +4582,9 @@ class GetAccessPermissionDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AccessPermissionStatus;
 
@@ -4502,8 +4596,8 @@ class GetAccessPermissionDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PayerID;
 
@@ -4525,8 +4619,8 @@ class BAUpdateResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingAgreementID;
 
@@ -4536,8 +4630,8 @@ class BAUpdateResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingAgreementDescription;
 
@@ -4547,8 +4641,8 @@ class BAUpdateResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MerchantPullStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingAgreementStatus;
 
@@ -4558,8 +4652,8 @@ class BAUpdateResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingAgreementCustom;
 
@@ -4569,8 +4663,8 @@ class BAUpdateResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PayerInfoType
+	 	 	 	 
+	 * @var PayerInfoType 	 
 	 */ 
 	public $PayerInfo;
 
@@ -4580,8 +4674,8 @@ class BAUpdateResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $BillingAgreementMax;
 
@@ -4594,8 +4688,8 @@ class BAUpdateResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $BillingAddress;
 
@@ -4618,8 +4712,8 @@ class MerchantPullPaymentResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PayerInfoType
+	 	 	 	 
+	 * @var PayerInfoType 	 
 	 */ 
 	public $PayerInfo;
 
@@ -4629,8 +4723,8 @@ class MerchantPullPaymentResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentInfoType
+	 	 	 	 
+	 * @var PaymentInfoType 	 
 	 */ 
 	public $PaymentInfo;
 
@@ -4640,8 +4734,8 @@ class MerchantPullPaymentResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MerchantPullInfoType
+	 	 	 	 
+	 * @var MerchantPullInfoType 	 
 	 */ 
 	public $MerchantPullInfo;
 
@@ -4663,8 +4757,8 @@ class MerchantPullInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MerchantPullStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MpStatus;
 
@@ -4674,8 +4768,8 @@ class MerchantPullInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $MpMax;
 
@@ -4687,8 +4781,8 @@ class MerchantPullInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MpCustom;
 
@@ -4699,8 +4793,8 @@ class MerchantPullInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Desc;
 
@@ -4710,8 +4804,8 @@ class MerchantPullInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Invoice;
 
@@ -4721,8 +4815,8 @@ class MerchantPullInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Custom;
 
@@ -4732,8 +4826,8 @@ class MerchantPullInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentSourceID;
 
@@ -4757,8 +4851,8 @@ class PaymentTransactionSearchResultType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $Timestamp;
 
@@ -4768,8 +4862,8 @@ class PaymentTransactionSearchResultType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Timezone;
 
@@ -4779,8 +4873,8 @@ class PaymentTransactionSearchResultType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Type;
 
@@ -4790,8 +4884,8 @@ class PaymentTransactionSearchResultType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Payer;
 
@@ -4801,8 +4895,8 @@ class PaymentTransactionSearchResultType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PayerDisplayName;
 
@@ -4812,8 +4906,8 @@ class PaymentTransactionSearchResultType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionID;
 
@@ -4823,8 +4917,8 @@ class PaymentTransactionSearchResultType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Status;
 
@@ -4835,8 +4929,8 @@ class PaymentTransactionSearchResultType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $GrossAmount;
 
@@ -4846,8 +4940,8 @@ class PaymentTransactionSearchResultType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $FeeAmount;
 
@@ -4857,8 +4951,8 @@ class PaymentTransactionSearchResultType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $NetAmount;
 
@@ -4885,8 +4979,8 @@ class MerchantPullPaymentType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -4901,8 +4995,8 @@ class MerchantPullPaymentType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MpID;
 
@@ -4912,8 +5006,8 @@ class MerchantPullPaymentType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MerchantPullPaymentCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentType;
 
@@ -4924,8 +5018,8 @@ class MerchantPullPaymentType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Memo;
 
@@ -4936,8 +5030,8 @@ class MerchantPullPaymentType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $EmailSubject;
 
@@ -4947,8 +5041,8 @@ class MerchantPullPaymentType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Tax;
 
@@ -4958,8 +5052,8 @@ class MerchantPullPaymentType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Shipping;
 
@@ -4969,8 +5063,8 @@ class MerchantPullPaymentType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Handling;
 
@@ -4980,8 +5074,8 @@ class MerchantPullPaymentType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemName;
 
@@ -4991,8 +5085,8 @@ class MerchantPullPaymentType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemNumber;
 
@@ -5002,8 +5096,8 @@ class MerchantPullPaymentType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Invoice;
 
@@ -5013,8 +5107,8 @@ class MerchantPullPaymentType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Custom;
 
@@ -5026,8 +5120,8 @@ class MerchantPullPaymentType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonSource;
 
@@ -5039,8 +5133,8 @@ class MerchantPullPaymentType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SoftDescriptor;
 
@@ -5064,8 +5158,8 @@ class PaymentTransactionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ReceiverInfoType
+	 	 	 	 
+	 * @var ReceiverInfoType 	 
 	 */ 
 	public $ReceiverInfo;
 
@@ -5075,8 +5169,8 @@ class PaymentTransactionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PayerInfoType
+	 	 	 	 
+	 * @var PayerInfoType 	 
 	 */ 
 	public $PayerInfo;
 
@@ -5087,8 +5181,8 @@ class PaymentTransactionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TPLReferenceID;
 
@@ -5098,8 +5192,8 @@ class PaymentTransactionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentInfoType
+	 	 	 	 
+	 * @var PaymentInfoType 	 
 	 */ 
 	public $PaymentInfo;
 
@@ -5109,8 +5203,8 @@ class PaymentTransactionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentItemInfoType
+	 	 	 	 
+	 * @var PaymentItemInfoType 	 
 	 */ 
 	public $PaymentItemInfo;
 
@@ -5121,8 +5215,8 @@ class PaymentTransactionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var OfferCouponInfoType
+	 	 	 	 
+	 * @var OfferCouponInfoType 	 
 	 */ 
 	public $OfferCouponInfo;
 
@@ -5132,8 +5226,8 @@ class PaymentTransactionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $SecondaryAddress;
 
@@ -5143,8 +5237,8 @@ class PaymentTransactionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var UserSelectedOptionType
+	 	 	 	 
+	 * @var UserSelectedOptionType 	 
 	 */ 
 	public $UserSelectedOptions;
 
@@ -5154,8 +5248,8 @@ class PaymentTransactionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $GiftMessage;
 
@@ -5165,8 +5259,8 @@ class PaymentTransactionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $GiftReceipt;
 
@@ -5176,8 +5270,8 @@ class PaymentTransactionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $GiftWrapName;
 
@@ -5187,8 +5281,8 @@ class PaymentTransactionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $GiftWrapAmount;
 
@@ -5198,8 +5292,8 @@ class PaymentTransactionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BuyerEmailOptIn;
 
@@ -5209,8 +5303,8 @@ class PaymentTransactionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SurveyQuestion;
 
@@ -5222,7 +5316,9 @@ class PaymentTransactionType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SurveyChoiceSelected;
 
@@ -5247,8 +5343,8 @@ class ReceiverInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Business;
 
@@ -5263,8 +5359,8 @@ class ReceiverInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Receiver;
 
@@ -5276,8 +5372,8 @@ class ReceiverInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReceiverID;
 
@@ -5300,8 +5396,8 @@ class PayerInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Payer;
 
@@ -5312,8 +5408,8 @@ class PayerInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PayerID;
 
@@ -5323,8 +5419,8 @@ class PayerInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PayPalUserStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PayerStatus;
 
@@ -5334,8 +5430,8 @@ class PayerInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PersonNameType
+	 	 	 	 
+	 * @var PersonNameType 	 
 	 */ 
 	public $PayerName;
 
@@ -5347,8 +5443,8 @@ class PayerInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var CountryCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PayerCountry;
 
@@ -5359,8 +5455,8 @@ class PayerInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PayerBusiness;
 
@@ -5370,8 +5466,8 @@ class PayerInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $Address;
 
@@ -5381,8 +5477,8 @@ class PayerInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ContactPhone;
 
@@ -5393,8 +5489,8 @@ class PayerInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var TaxIdDetailsType
+	 	 	 	 
+	 * @var TaxIdDetailsType 	 
 	 */ 
 	public $TaxIdDetails;
 
@@ -5404,8 +5500,8 @@ class PayerInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var EnhancedPayerInfoType
+	 	 	 	 
+	 * @var EnhancedPayerInfoType 	 
 	 */ 
 	public $EnhancedPayerInfo;
 
@@ -5429,8 +5525,8 @@ class InstrumentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InstrumentCategory;
 
@@ -5452,8 +5548,8 @@ class BMLOfferInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OfferTrackingID;
 
@@ -5476,8 +5572,8 @@ class OfferDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OfferCode;
 
@@ -5488,8 +5584,8 @@ class OfferDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BMLOfferInfoType
+	 	 	 	 
+	 * @var BMLOfferInfoType 	 
 	 */ 
 	public $BMLOfferInfo;
 
@@ -5513,8 +5609,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionID;
 
@@ -5525,8 +5621,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $EbayTransactionID;
 
@@ -5545,8 +5641,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ParentTransactionID;
 
@@ -5557,8 +5653,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReceiptID;
 
@@ -5580,8 +5676,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentTransactionCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionType;
 
@@ -5591,8 +5687,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentType;
 
@@ -5602,8 +5698,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var RefundSourceCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RefundSourceCodeType;
 
@@ -5613,8 +5709,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $ExpectedeCheckClearDate;
 
@@ -5624,8 +5720,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $PaymentDate;
 
@@ -5636,8 +5732,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $GrossAmount;
 
@@ -5647,8 +5743,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $FeeAmount;
 
@@ -5662,8 +5758,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $SettleAmount;
 
@@ -5673,8 +5769,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $TaxAmount;
 
@@ -5684,8 +5780,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ExchangeRate;
 
@@ -5720,8 +5816,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentStatus;
 
@@ -5758,8 +5854,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PendingStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PendingReason;
 
@@ -5779,8 +5875,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ReversalReasonCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReasonCode;
 
@@ -5794,8 +5890,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $HoldDecision;
 
@@ -5805,8 +5901,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ShippingMethod;
 
@@ -5817,8 +5913,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProtectionEligibility;
 
@@ -5828,8 +5924,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProtectionEligibilityType;
 
@@ -5839,8 +5935,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReceiptReferenceNumber;
 
@@ -5853,8 +5949,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var POSTransactionCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $POSTransactionType;
 
@@ -5864,8 +5960,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ShipAmount;
 
@@ -5875,8 +5971,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ShipHandleAmount;
 
@@ -5886,8 +5982,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ShipDiscount;
 
@@ -5897,8 +5993,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InsuranceAmount;
 
@@ -5908,8 +6004,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Subject;
 
@@ -5919,8 +6015,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $StoreID;
 
@@ -5930,8 +6026,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TerminalID;
 
@@ -5941,8 +6037,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var SellerDetailsType
+	 	 	 	 
+	 * @var SellerDetailsType 	 
 	 */ 
 	public $SellerDetails;
 
@@ -5953,8 +6049,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentRequestID;
 
@@ -5965,8 +6061,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var FMFDetailsType
+	 	 	 	 
+	 * @var FMFDetailsType 	 
 	 */ 
 	public $FMFDetails;
 
@@ -5977,8 +6073,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var EnhancedPaymentInfoType
+	 	 	 	 
+	 * @var EnhancedPaymentInfoType 	 
 	 */ 
 	public $EnhancedPaymentInfo;
 
@@ -5989,8 +6085,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ErrorType
+	 	 	 	 
+	 * @var ErrorType 	 
 	 */ 
 	public $PaymentError;
 
@@ -6000,8 +6096,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var InstrumentDetailsType
+	 	 	 	 
+	 * @var InstrumentDetailsType 	 
 	 */ 
 	public $InstrumentDetails;
 
@@ -6011,8 +6107,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var OfferDetailsType
+	 	 	 	 
+	 * @var OfferDetailsType 	 
 	 */ 
 	public $OfferDetails;
 
@@ -6032,8 +6128,8 @@ class PaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BinEligibility;
 
@@ -6055,8 +6151,8 @@ class SubscriptionTermsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -6080,8 +6176,8 @@ class SubscriptionInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SubscriptionID;
 
@@ -6091,8 +6187,8 @@ class SubscriptionInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $SubscriptionDate;
 
@@ -6102,8 +6198,8 @@ class SubscriptionInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $EffectiveDate;
 
@@ -6113,8 +6209,8 @@ class SubscriptionInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $RetryTime;
 
@@ -6126,8 +6222,8 @@ class SubscriptionInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Username;
 
@@ -6140,8 +6236,8 @@ class SubscriptionInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Password;
 
@@ -6152,8 +6248,8 @@ class SubscriptionInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Recurrences;
 
@@ -6165,7 +6261,9 @@ class SubscriptionInfoType
 	 * @namespace ebl
 	 
 	 
-	 * @var SubscriptionTermsType
+	 * @value
+	 	 	 	 
+	 * @var SubscriptionTermsType 	 
 	 */ 
 	public $Terms;
 
@@ -6187,8 +6285,8 @@ class AuctionInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BuyerID;
 
@@ -6198,8 +6296,8 @@ class AuctionInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $ClosingDate;
 
@@ -6235,8 +6333,8 @@ class EbayItemPaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemNumber;
 
@@ -6247,8 +6345,8 @@ class EbayItemPaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AuctionTransactionId;
 
@@ -6259,8 +6357,8 @@ class EbayItemPaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OrderId;
 
@@ -6271,8 +6369,8 @@ class EbayItemPaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CartID;
 
@@ -6296,8 +6394,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Name;
 
@@ -6308,8 +6406,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Number;
 
@@ -6320,8 +6418,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $Quantity;
 
@@ -6333,8 +6431,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Tax;
 
@@ -6349,8 +6447,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -6360,8 +6458,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var EbayItemPaymentDetailsItemType
+	 	 	 	 
+	 * @var EbayItemPaymentDetailsItemType 	 
 	 */ 
 	public $EbayItemPaymentDetailsItem;
 
@@ -6372,8 +6470,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PromoCode;
 
@@ -6383,8 +6481,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ProductCategoryType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProductCategory;
 
@@ -6395,8 +6493,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Description;
 
@@ -6406,8 +6504,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MeasureType
+	 	 	 	 
+	 * @var MeasureType 	 
 	 */ 
 	public $ItemWeight;
 
@@ -6417,8 +6515,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MeasureType
+	 	 	 	 
+	 * @var MeasureType 	 
 	 */ 
 	public $ItemLength;
 
@@ -6428,8 +6526,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MeasureType
+	 	 	 	 
+	 * @var MeasureType 	 
 	 */ 
 	public $ItemWidth;
 
@@ -6439,8 +6537,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MeasureType
+	 	 	 	 
+	 * @var MeasureType 	 
 	 */ 
 	public $ItemHeight;
 
@@ -6451,8 +6549,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemURL;
 
@@ -6462,8 +6560,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var EnhancedItemDataType
+	 	 	 	 
+	 * @var EnhancedItemDataType 	 
 	 */ 
 	public $EnhancedItemData;
 
@@ -6473,8 +6571,8 @@ class PaymentDetailsItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ItemCategoryType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemCategory;
 
@@ -6498,8 +6596,8 @@ class PaymentItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $EbayItemTxnId;
 
@@ -6511,8 +6609,8 @@ class PaymentItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Name;
 
@@ -6523,8 +6621,8 @@ class PaymentItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Number;
 
@@ -6535,8 +6633,8 @@ class PaymentItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Quantity;
 
@@ -6546,8 +6644,8 @@ class PaymentItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SalesTax;
 
@@ -6557,8 +6655,8 @@ class PaymentItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ShippingAmount;
 
@@ -6568,8 +6666,8 @@ class PaymentItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $HandlingAmount;
 
@@ -6579,8 +6677,8 @@ class PaymentItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var InvoiceItemType
+	 	 	 	 
+	 * @var InvoiceItemType 	 
 	 */ 
 	public $InvoiceItemDetails;
 
@@ -6590,8 +6688,8 @@ class PaymentItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CouponID;
 
@@ -6601,8 +6699,8 @@ class PaymentItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CouponAmount;
 
@@ -6612,8 +6710,8 @@ class PaymentItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CouponAmountCurrency;
 
@@ -6623,8 +6721,8 @@ class PaymentItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $LoyaltyCardDiscountAmount;
 
@@ -6634,8 +6732,8 @@ class PaymentItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $LoyaltyCardDiscountCurrency;
 
@@ -6645,8 +6743,8 @@ class PaymentItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -6658,7 +6756,9 @@ class PaymentItemType
 	 * @namespace ebl
 	 
 	 
-	 * @var OptionType
+	 * @value
+	 	 	 	 
+	 * @var OptionType 	 
 	 */ 
 	public $Options;
 
@@ -6682,8 +6782,8 @@ class PaymentItemInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InvoiceID;
 
@@ -6695,8 +6795,8 @@ class PaymentItemInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Custom;
 
@@ -6708,8 +6808,8 @@ class PaymentItemInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Memo;
 
@@ -6719,8 +6819,8 @@ class PaymentItemInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SalesTax;
 
@@ -6732,7 +6832,9 @@ class PaymentItemInfoType
 	 * @namespace ebl
 	 
 	 
-	 * @var PaymentItemType
+	 * @value
+	 	 	 	 
+	 * @var PaymentItemType 	 
 	 */ 
 	public $PaymentItem;
 
@@ -6743,8 +6845,8 @@ class PaymentItemInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var SubscriptionInfoType
+	 	 	 	 
+	 * @var SubscriptionInfoType 	 
 	 */ 
 	public $Subscription;
 
@@ -6755,8 +6857,8 @@ class PaymentItemInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AuctionInfoType
+	 	 	 	 
+	 * @var AuctionInfoType 	 
 	 */ 
 	public $Auction;
 
@@ -6779,8 +6881,8 @@ class OfferCouponInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Type;
 
@@ -6790,8 +6892,8 @@ class OfferCouponInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ID;
 
@@ -6801,8 +6903,8 @@ class OfferCouponInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Amount;
 
@@ -6812,8 +6914,8 @@ class OfferCouponInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AmountCurrency;
 
@@ -6842,8 +6944,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $OrderTotal;
 
@@ -6856,8 +6958,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $ItemTotal;
 
@@ -6872,8 +6974,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $ShippingTotal;
 
@@ -6888,8 +6990,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $HandlingTotal;
 
@@ -6904,8 +7006,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $TaxTotal;
 
@@ -6917,8 +7019,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OrderDescription;
 
@@ -6930,8 +7032,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Custom;
 
@@ -6943,8 +7045,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InvoiceID;
 
@@ -6956,8 +7058,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonSource;
 
@@ -6971,8 +7073,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $NotifyURL;
 
@@ -6985,8 +7087,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $ShipToAddress;
 
@@ -6997,8 +7099,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $FulfillmentReferenceNumber;
 
@@ -7008,8 +7110,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $FulfillmentAddress;
 
@@ -7019,8 +7121,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentCategoryType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentCategoryType;
 
@@ -7030,8 +7132,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ShippingServiceCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ShippingMethod;
 
@@ -7042,8 +7144,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $ProfileAddressChangeDate;
 
@@ -7055,7 +7157,9 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var PaymentDetailsItemType
+	 * @value
+	 	 	 	 
+	 * @var PaymentDetailsItemType 	 
 	 */ 
 	public $PaymentDetailsItem;
 
@@ -7065,8 +7169,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $InsuranceTotal;
 
@@ -7077,8 +7181,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $ShippingDiscount;
 
@@ -7088,8 +7192,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InsuranceOptionOffered;
 
@@ -7099,8 +7203,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AllowedPaymentMethodType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AllowedPaymentMethod;
 
@@ -7111,8 +7215,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var EnhancedPaymentDataType
+	 	 	 	 
+	 * @var EnhancedPaymentDataType 	 
 	 */ 
 	public $EnhancedPaymentData;
 
@@ -7122,8 +7226,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var SellerDetailsType
+	 	 	 	 
+	 * @var SellerDetailsType 	 
 	 */ 
 	public $SellerDetails;
 
@@ -7134,8 +7238,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $NoteText;
 
@@ -7146,8 +7250,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionId;
 
@@ -7168,8 +7272,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentActionCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentAction;
 
@@ -7180,8 +7284,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentRequestID;
 
@@ -7191,8 +7295,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OrderURL;
 
@@ -7203,8 +7307,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SoftDescriptor;
 
@@ -7217,8 +7321,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $BranchLevel;
 
@@ -7229,8 +7333,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var OfferDetailsType
+	 	 	 	 
+	 * @var OfferDetailsType 	 
 	 */ 
 	public $OfferDetails;
 
@@ -7240,8 +7344,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var RecurringFlagType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Recurring;
 
@@ -7251,8 +7355,8 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentReasonType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentReason;
 
@@ -7278,8 +7382,8 @@ class IncentiveDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $UniqueIdentifier;
 
@@ -7290,8 +7394,8 @@ class IncentiveDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var IncentiveSiteAppliedOnType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SiteAppliedOn;
 
@@ -7302,8 +7406,8 @@ class IncentiveDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $TotalDiscountAmount;
 
@@ -7313,8 +7417,8 @@ class IncentiveDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var IncentiveAppliedStatusType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Status;
 
@@ -7324,8 +7428,8 @@ class IncentiveDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $ErrorCode;
 
@@ -7337,7 +7441,9 @@ class IncentiveDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var IncentiveAppliedDetailsType
+	 * @value
+	 	 	 	 
+	 * @var IncentiveAppliedDetailsType 	 
 	 */ 
 	public $IncentiveAppliedDetails;
 
@@ -7360,8 +7466,8 @@ class IncentiveAppliedDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentRequestID;
 
@@ -7371,8 +7477,8 @@ class IncentiveAppliedDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemId;
 
@@ -7382,8 +7488,8 @@ class IncentiveAppliedDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ExternalTxnId;
 
@@ -7393,8 +7499,8 @@ class IncentiveAppliedDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $DiscountAmount;
 
@@ -7404,8 +7510,8 @@ class IncentiveAppliedDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SubType;
 
@@ -7427,8 +7533,8 @@ class SellerDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SellerId;
 
@@ -7439,8 +7545,8 @@ class SellerDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SellerUserName;
 
@@ -7451,8 +7557,8 @@ class SellerDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $SellerRegistrationDate;
 
@@ -7463,8 +7569,8 @@ class SellerDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PayPalAccountID;
 
@@ -7476,8 +7582,8 @@ class SellerDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SecureMerchantAccountID;
 
@@ -7501,8 +7607,8 @@ class OtherPaymentMethodDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OtherPaymentMethodId;
 
@@ -7512,8 +7618,8 @@ class OtherPaymentMethodDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OtherPaymentMethodType;
 
@@ -7523,8 +7629,8 @@ class OtherPaymentMethodDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OtherPaymentMethodLabel;
 
@@ -7535,8 +7641,8 @@ class OtherPaymentMethodDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OtherPaymentMethodLabelDescription;
 
@@ -7546,8 +7652,8 @@ class OtherPaymentMethodDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OtherPaymentMethodLongDescriptionTitle;
 
@@ -7557,8 +7663,8 @@ class OtherPaymentMethodDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OtherPaymentMethodLongDescription;
 
@@ -7568,8 +7674,8 @@ class OtherPaymentMethodDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OtherPaymentMethodIcon;
 
@@ -7581,8 +7687,8 @@ class OtherPaymentMethodDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var boolean
+	 	 	 	 
+	 * @var boolean 	 
 	 */ 
 	public $OtherPaymentMethodHideLabel;
 
@@ -7606,8 +7712,8 @@ class BuyerDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BuyerId;
 
@@ -7617,8 +7723,8 @@ class BuyerDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BuyerUserName;
 
@@ -7628,8 +7734,8 @@ class BuyerDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $BuyerRegistrationDate;
 
@@ -7640,8 +7746,8 @@ class BuyerDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var TaxIdDetailsType
+	 	 	 	 
+	 * @var TaxIdDetailsType 	 
 	 */ 
 	public $TaxIdDetails;
 
@@ -7652,8 +7758,8 @@ class BuyerDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var IdentificationInfoType
+	 	 	 	 
+	 * @var IdentificationInfoType 	 
 	 */ 
 	public $IdentificationInfo;
 
@@ -7677,8 +7783,8 @@ class TaxIdDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TaxIdType;
 
@@ -7688,8 +7794,8 @@ class TaxIdDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TaxId;
 
@@ -7712,8 +7818,8 @@ class ThreeDSecureRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Eci3ds;
 
@@ -7723,8 +7829,8 @@ class ThreeDSecureRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Cavv;
 
@@ -7734,8 +7840,8 @@ class ThreeDSecureRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Xid;
 
@@ -7745,8 +7851,8 @@ class ThreeDSecureRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MpiVendor3ds;
 
@@ -7756,8 +7862,8 @@ class ThreeDSecureRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AuthStatus3ds;
 
@@ -7780,8 +7886,8 @@ class ThreeDSecureResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Vpas;
 
@@ -7791,8 +7897,8 @@ class ThreeDSecureResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $EciSubmitted3DS;
 
@@ -7814,8 +7920,8 @@ class ThreeDSecureInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ThreeDSecureRequestType
+	 	 	 	 
+	 * @var ThreeDSecureRequestType 	 
 	 */ 
 	public $ThreeDSecureRequest;
 
@@ -7825,8 +7931,8 @@ class ThreeDSecureInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ThreeDSecureResponseType
+	 	 	 	 
+	 * @var ThreeDSecureResponseType 	 
 	 */ 
 	public $ThreeDSecureResponse;
 
@@ -7848,8 +7954,8 @@ class CreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var CreditCardTypeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CreditCardType;
 
@@ -7859,8 +7965,8 @@ class CreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CreditCardNumber;
 
@@ -7870,8 +7976,8 @@ class CreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $ExpMonth;
 
@@ -7881,8 +7987,8 @@ class CreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $ExpYear;
 
@@ -7892,8 +7998,8 @@ class CreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PayerInfoType
+	 	 	 	 
+	 * @var PayerInfoType 	 
 	 */ 
 	public $CardOwner;
 
@@ -7903,8 +8009,8 @@ class CreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CVV2;
 
@@ -7914,8 +8020,8 @@ class CreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $StartMonth;
 
@@ -7925,8 +8031,8 @@ class CreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $StartYear;
 
@@ -7936,8 +8042,8 @@ class CreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $IssueNumber;
 
@@ -7947,8 +8053,8 @@ class CreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ThreeDSecureRequestType
+	 	 	 	 
+	 * @var ThreeDSecureRequestType 	 
 	 */ 
 	public $ThreeDSecureRequest;
 
@@ -7971,8 +8077,8 @@ class ShippingOptionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ShippingOptionIsDefault;
 
@@ -7982,8 +8088,8 @@ class ShippingOptionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $ShippingOptionAmount;
 
@@ -7993,8 +8099,8 @@ class ShippingOptionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ShippingOptionName;
 
@@ -8017,8 +8123,8 @@ class UserSelectedOptionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ShippingCalculationMode;
 
@@ -8028,8 +8134,8 @@ class UserSelectedOptionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InsuranceOptionSelected;
 
@@ -8039,8 +8145,8 @@ class UserSelectedOptionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ShippingOptionIsDefault;
 
@@ -8050,8 +8156,8 @@ class UserSelectedOptionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $ShippingOptionAmount;
 
@@ -8061,8 +8167,8 @@ class UserSelectedOptionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ShippingOptionName;
 
@@ -8085,8 +8191,8 @@ class CreditCardNumberTypeType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var CreditCardTypeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CreditCardType;
 
@@ -8096,8 +8202,8 @@ class CreditCardNumberTypeType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CreditCardNumber;
 
@@ -8121,8 +8227,8 @@ class ReferenceCreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var CreditCardNumberTypeType
+	 	 	 	 
+	 * @var CreditCardNumberTypeType 	 
 	 */ 
 	public $CreditCardNumberType;
 
@@ -8132,8 +8238,8 @@ class ReferenceCreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $ExpMonth;
 
@@ -8143,8 +8249,8 @@ class ReferenceCreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $ExpYear;
 
@@ -8154,8 +8260,8 @@ class ReferenceCreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PersonNameType
+	 	 	 	 
+	 * @var PersonNameType 	 
 	 */ 
 	public $CardOwnerName;
 
@@ -8165,8 +8271,8 @@ class ReferenceCreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $BillingAddress;
 
@@ -8176,8 +8282,8 @@ class ReferenceCreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CVV2;
 
@@ -8187,8 +8293,8 @@ class ReferenceCreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $StartMonth;
 
@@ -8198,8 +8304,8 @@ class ReferenceCreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $StartYear;
 
@@ -8209,8 +8315,8 @@ class ReferenceCreditCardDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $IssueNumber;
 
@@ -8233,8 +8339,8 @@ class SetCustomerBillingAgreementRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BillingAgreementDetailsType
+	 	 	 	 
+	 * @var BillingAgreementDetailsType 	 
 	 */ 
 	public $BillingAgreementDetails;
 
@@ -8244,8 +8350,8 @@ class SetCustomerBillingAgreementRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReturnURL;
 
@@ -8255,8 +8361,8 @@ class SetCustomerBillingAgreementRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CancelURL;
 
@@ -8266,8 +8372,8 @@ class SetCustomerBillingAgreementRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $LocaleCode;
 
@@ -8277,8 +8383,8 @@ class SetCustomerBillingAgreementRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PageStyle;
 
@@ -8289,7 +8395,9 @@ class SetCustomerBillingAgreementRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-header-image
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cppheaderimage;
 
@@ -8300,7 +8408,9 @@ class SetCustomerBillingAgreementRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-header-border-color
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cppheaderbordercolor;
 
@@ -8311,7 +8421,9 @@ class SetCustomerBillingAgreementRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-header-back-color
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cppheaderbackcolor;
 
@@ -8322,7 +8434,9 @@ class SetCustomerBillingAgreementRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @name cpp-payflow-color
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $cpppayflowcolor;
 
@@ -8332,8 +8446,8 @@ class SetCustomerBillingAgreementRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BuyerEmail;
 
@@ -8346,8 +8460,8 @@ class SetCustomerBillingAgreementRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReqBillingAddress;
 
@@ -8379,8 +8493,8 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PayerInfoType
+	 	 	 	 
+	 * @var PayerInfoType 	 
 	 */ 
 	public $PayerInfo;
 
@@ -8394,8 +8508,8 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $BillingAddress;
 
@@ -8421,8 +8535,8 @@ class DeviceDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $DeviceID;
 
@@ -8445,8 +8559,8 @@ class SenderDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var DeviceDetailsType
+	 	 	 	 
+	 * @var DeviceDetailsType 	 
 	 */ 
 	public $DeviceDetails;
 
@@ -8469,8 +8583,8 @@ class DoReferenceTransactionRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReferenceID;
 
@@ -8480,8 +8594,8 @@ class DoReferenceTransactionRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentActionCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentAction;
 
@@ -8491,8 +8605,8 @@ class DoReferenceTransactionRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MerchantPullPaymentCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentType;
 
@@ -8502,8 +8616,8 @@ class DoReferenceTransactionRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentDetailsType
+	 	 	 	 
+	 * @var PaymentDetailsType 	 
 	 */ 
 	public $PaymentDetails;
 
@@ -8513,8 +8627,8 @@ class DoReferenceTransactionRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ReferenceCreditCardDetailsType
+	 	 	 	 
+	 * @var ReferenceCreditCardDetailsType 	 
 	 */ 
 	public $CreditCard;
 
@@ -8524,8 +8638,8 @@ class DoReferenceTransactionRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $IPAddress;
 
@@ -8535,8 +8649,8 @@ class DoReferenceTransactionRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MerchantSessionId;
 
@@ -8546,8 +8660,8 @@ class DoReferenceTransactionRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReqConfirmShipping;
 
@@ -8557,8 +8671,8 @@ class DoReferenceTransactionRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SoftDescriptor;
 
@@ -8568,8 +8682,8 @@ class DoReferenceTransactionRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var SenderDetailsType
+	 	 	 	 
+	 * @var SenderDetailsType 	 
 	 */ 
 	public $SenderDetails;
 
@@ -8581,8 +8695,8 @@ class DoReferenceTransactionRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -8614,8 +8728,8 @@ class DoReferenceTransactionResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingAgreementID;
 
@@ -8625,8 +8739,8 @@ class DoReferenceTransactionResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentInfoType
+	 	 	 	 
+	 * @var PaymentInfoType 	 
 	 */ 
 	public $PaymentInfo;
 
@@ -8636,8 +8750,8 @@ class DoReferenceTransactionResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -8647,8 +8761,8 @@ class DoReferenceTransactionResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AVSCode;
 
@@ -8658,8 +8772,8 @@ class DoReferenceTransactionResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CVV2Code;
 
@@ -8669,8 +8783,8 @@ class DoReferenceTransactionResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionID;
 
@@ -8681,8 +8795,8 @@ class DoReferenceTransactionResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentAdviceCode;
 
@@ -8692,8 +8806,8 @@ class DoReferenceTransactionResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -8715,8 +8829,8 @@ class DoNonReferencedCreditRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -8726,8 +8840,8 @@ class DoNonReferencedCreditRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $NetAmount;
 
@@ -8737,8 +8851,8 @@ class DoNonReferencedCreditRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $TaxAmount;
 
@@ -8748,8 +8862,8 @@ class DoNonReferencedCreditRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $ShippingAmount;
 
@@ -8759,8 +8873,8 @@ class DoNonReferencedCreditRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var CreditCardDetailsType
+	 	 	 	 
+	 * @var CreditCardDetailsType 	 
 	 */ 
 	public $CreditCard;
 
@@ -8770,8 +8884,8 @@ class DoNonReferencedCreditRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReceiverEmail;
 
@@ -8781,8 +8895,8 @@ class DoNonReferencedCreditRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Comment;
 
@@ -8805,8 +8919,8 @@ class DoNonReferencedCreditResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -8816,8 +8930,8 @@ class DoNonReferencedCreditResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionID;
 
@@ -8842,8 +8956,8 @@ class EnterBoardingRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProgramCode;
 
@@ -8864,8 +8978,8 @@ class EnterBoardingRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProductList;
 
@@ -8877,8 +8991,8 @@ class EnterBoardingRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PartnerCustom;
 
@@ -8890,8 +9004,8 @@ class EnterBoardingRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ImageUrl;
 
@@ -8902,8 +9016,8 @@ class EnterBoardingRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MarketingCategoryType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MarketingCategory;
 
@@ -8913,8 +9027,8 @@ class EnterBoardingRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BusinessInfoType
+	 	 	 	 
+	 * @var BusinessInfoType 	 
 	 */ 
 	public $BusinessInfo;
 
@@ -8924,8 +9038,8 @@ class EnterBoardingRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BusinessOwnerInfoType
+	 	 	 	 
+	 * @var BusinessOwnerInfoType 	 
 	 */ 
 	public $OwnerInfo;
 
@@ -8935,8 +9049,8 @@ class EnterBoardingRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BankAccountDetailsType
+	 	 	 	 
+	 * @var BankAccountDetailsType 	 
 	 */ 
 	public $BankAccount;
 
@@ -8959,8 +9073,8 @@ class BusinessInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BusinessTypeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Type;
 
@@ -8971,8 +9085,8 @@ class BusinessInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Name;
 
@@ -8982,8 +9096,8 @@ class BusinessInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $Address;
 
@@ -8994,8 +9108,8 @@ class BusinessInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $WorkPhone;
 
@@ -9005,8 +9119,8 @@ class BusinessInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BusinessCategoryType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Category;
 
@@ -9016,8 +9130,8 @@ class BusinessInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BusinessSubCategoryType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SubCategory;
 
@@ -9038,8 +9152,8 @@ class BusinessInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AverageTransactionPriceType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AveragePrice;
 
@@ -9057,8 +9171,8 @@ class BusinessInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AverageMonthlyVolumeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AverageMonthlyVolume;
 
@@ -9068,8 +9182,8 @@ class BusinessInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var SalesVenueType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SalesVenue;
 
@@ -9080,8 +9194,8 @@ class BusinessInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Website;
 
@@ -9097,8 +9211,8 @@ class BusinessInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PercentageRevenueFromOnlineSalesType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RevenueFromOnlineSales;
 
@@ -9108,8 +9222,8 @@ class BusinessInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $BusinessEstablished;
 
@@ -9121,8 +9235,8 @@ class BusinessInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CustomerServiceEmail;
 
@@ -9133,8 +9247,8 @@ class BusinessInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CustomerServicePhone;
 
@@ -9157,8 +9271,8 @@ class BusinessOwnerInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PayerInfoType
+	 	 	 	 
+	 * @var PayerInfoType 	 
 	 */ 
 	public $Owner;
 
@@ -9169,8 +9283,8 @@ class BusinessOwnerInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $HomePhone;
 
@@ -9181,8 +9295,8 @@ class BusinessOwnerInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MobilePhone;
 
@@ -9193,8 +9307,8 @@ class BusinessOwnerInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SSN;
 
@@ -9218,8 +9332,8 @@ class BankAccountDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Name;
 
@@ -9229,8 +9343,8 @@ class BankAccountDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BankAccountTypeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Type;
 
@@ -9241,8 +9355,8 @@ class BankAccountDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RoutingNumber;
 
@@ -9253,8 +9367,8 @@ class BankAccountDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AccountNumber;
 
@@ -9281,8 +9395,8 @@ class GetBoardingDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BoardingStatusType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Status;
 
@@ -9292,8 +9406,8 @@ class GetBoardingDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $StartDate;
 
@@ -9303,8 +9417,8 @@ class GetBoardingDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $LastUpdated;
 
@@ -9315,8 +9429,8 @@ class GetBoardingDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Reason;
 
@@ -9326,8 +9440,8 @@ class GetBoardingDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProgramName;
 
@@ -9337,8 +9451,8 @@ class GetBoardingDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProgramCode;
 
@@ -9348,8 +9462,8 @@ class GetBoardingDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CampaignID;
 
@@ -9360,8 +9474,8 @@ class GetBoardingDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var UserWithdrawalLimitTypeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $UserWithdrawalLimit;
 
@@ -9373,8 +9487,8 @@ class GetBoardingDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PartnerCustom;
 
@@ -9384,8 +9498,8 @@ class GetBoardingDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PayerInfoType
+	 	 	 	 
+	 * @var PayerInfoType 	 
 	 */ 
 	public $AccountOwner;
 
@@ -9395,8 +9509,8 @@ class GetBoardingDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var APICredentialsType
+	 	 	 	 
+	 * @var APICredentialsType 	 
 	 */ 
 	public $Credentials;
 
@@ -9408,8 +9522,8 @@ class GetBoardingDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ConfigureAPIs;
 
@@ -9419,8 +9533,8 @@ class GetBoardingDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $EmailVerificationStatus;
 
@@ -9432,8 +9546,8 @@ class GetBoardingDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $VettingStatus;
 
@@ -9445,8 +9559,8 @@ class GetBoardingDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BankAccountVerificationStatus;
 
@@ -9469,8 +9583,8 @@ class APICredentialsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Username;
 
@@ -9481,8 +9595,8 @@ class APICredentialsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Password;
 
@@ -9493,8 +9607,8 @@ class APICredentialsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Signature;
 
@@ -9508,8 +9622,8 @@ class APICredentialsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Certificate;
 
@@ -9522,8 +9636,8 @@ class APICredentialsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var APIAuthenticationType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Type;
 
@@ -9547,8 +9661,8 @@ class SetMobileCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PhoneNumberType
+	 	 	 	 
+	 * @var PhoneNumberType 	 
 	 */ 
 	public $BuyerPhone;
 
@@ -9560,8 +9674,8 @@ class SetMobileCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $ItemAmount;
 
@@ -9573,8 +9687,8 @@ class SetMobileCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Tax;
 
@@ -9586,8 +9700,8 @@ class SetMobileCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Shipping;
 
@@ -9599,8 +9713,8 @@ class SetMobileCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemName;
 
@@ -9612,8 +9726,8 @@ class SetMobileCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemNumber;
 
@@ -9626,8 +9740,8 @@ class SetMobileCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Custom;
 
@@ -9639,8 +9753,8 @@ class SetMobileCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InvoiceID;
 
@@ -9654,8 +9768,8 @@ class SetMobileCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReturnURL;
 
@@ -9669,8 +9783,8 @@ class SetMobileCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CancelURL;
 
@@ -9683,8 +9797,8 @@ class SetMobileCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $AddressDisplayOptions;
 
@@ -9696,8 +9810,8 @@ class SetMobileCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $SharePhone;
 
@@ -9707,8 +9821,8 @@ class SetMobileCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $ShipToAddress;
 
@@ -9721,8 +9835,8 @@ class SetMobileCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BuyerEmail;
 
@@ -9760,8 +9874,8 @@ class DoMobileCheckoutPaymentResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Custom;
 
@@ -9773,8 +9887,8 @@ class DoMobileCheckoutPaymentResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InvoiceID;
 
@@ -9784,8 +9898,8 @@ class DoMobileCheckoutPaymentResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PayerInfoType
+	 	 	 	 
+	 * @var PayerInfoType 	 
 	 */ 
 	public $PayerInfo;
 
@@ -9795,8 +9909,8 @@ class DoMobileCheckoutPaymentResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentInfoType
+	 	 	 	 
+	 * @var PaymentInfoType 	 
 	 */ 
 	public $PaymentInfo;
 
@@ -9818,8 +9932,8 @@ class UATPDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $UATPNumber;
 
@@ -9829,8 +9943,8 @@ class UATPDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $ExpMonth;
 
@@ -9840,8 +9954,8 @@ class UATPDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $ExpYear;
 
@@ -9864,8 +9978,8 @@ class RecurringPaymentsSummaryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $NextBillingDate;
 
@@ -9875,8 +9989,8 @@ class RecurringPaymentsSummaryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $NumberCyclesCompleted;
 
@@ -9886,8 +10000,8 @@ class RecurringPaymentsSummaryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $NumberCyclesRemaining;
 
@@ -9897,8 +10011,8 @@ class RecurringPaymentsSummaryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $OutstandingBalance;
 
@@ -9908,8 +10022,8 @@ class RecurringPaymentsSummaryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $FailedPaymentCount;
 
@@ -9919,8 +10033,8 @@ class RecurringPaymentsSummaryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $LastPaymentDate;
 
@@ -9930,8 +10044,8 @@ class RecurringPaymentsSummaryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $LastPaymentAmount;
 
@@ -9953,8 +10067,8 @@ class ActivationDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $InitialAmount;
 
@@ -9964,8 +10078,8 @@ class ActivationDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var FailedPaymentActionType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $FailedInitialAmountAction;
 
@@ -9995,8 +10109,8 @@ class BillingPeriodDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BillingPeriodType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingPeriod;
 
@@ -10006,8 +10120,8 @@ class BillingPeriodDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $BillingFrequency;
 
@@ -10017,8 +10131,8 @@ class BillingPeriodDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $TotalBillingCycles;
 
@@ -10028,8 +10142,8 @@ class BillingPeriodDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -10039,8 +10153,8 @@ class BillingPeriodDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $ShippingAmount;
 
@@ -10050,8 +10164,8 @@ class BillingPeriodDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $TaxAmount;
 
@@ -10083,8 +10197,8 @@ class BillingPeriodDetailsType_Update
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BillingPeriodType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingPeriod;
 
@@ -10094,8 +10208,8 @@ class BillingPeriodDetailsType_Update
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $BillingFrequency;
 
@@ -10105,8 +10219,8 @@ class BillingPeriodDetailsType_Update
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $TotalBillingCycles;
 
@@ -10116,8 +10230,8 @@ class BillingPeriodDetailsType_Update
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -10127,8 +10241,8 @@ class BillingPeriodDetailsType_Update
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $ShippingAmount;
 
@@ -10138,8 +10252,8 @@ class BillingPeriodDetailsType_Update
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $TaxAmount;
 
@@ -10162,8 +10276,8 @@ class ScheduleDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Description;
 
@@ -10173,8 +10287,8 @@ class ScheduleDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BillingPeriodDetailsType
+	 	 	 	 
+	 * @var BillingPeriodDetailsType 	 
 	 */ 
 	public $TrialPeriod;
 
@@ -10184,8 +10298,8 @@ class ScheduleDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BillingPeriodDetailsType
+	 	 	 	 
+	 * @var BillingPeriodDetailsType 	 
 	 */ 
 	public $PaymentPeriod;
 
@@ -10196,8 +10310,8 @@ class ScheduleDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $MaxFailedPayments;
 
@@ -10207,8 +10321,8 @@ class ScheduleDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ActivationDetailsType
+	 	 	 	 
+	 * @var ActivationDetailsType 	 
 	 */ 
 	public $ActivationDetails;
 
@@ -10218,8 +10332,8 @@ class ScheduleDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AutoBillType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AutoBillOutstandingAmount;
 
@@ -10252,8 +10366,8 @@ class RecurringPaymentsProfileDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SubscriberName;
 
@@ -10264,8 +10378,8 @@ class RecurringPaymentsProfileDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $SubscriberShippingAddress;
 
@@ -10275,8 +10389,8 @@ class RecurringPaymentsProfileDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $BillingStartDate;
 
@@ -10288,8 +10402,8 @@ class RecurringPaymentsProfileDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProfileReference;
 
@@ -10319,8 +10433,8 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -10331,8 +10445,8 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var CreditCardDetailsType
+	 	 	 	 
+	 * @var CreditCardDetailsType 	 
 	 */ 
 	public $CreditCard;
 
@@ -10342,8 +10456,8 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var RecurringPaymentsProfileDetailsType
+	 	 	 	 
+	 * @var RecurringPaymentsProfileDetailsType 	 
 	 */ 
 	public $RecurringPaymentsProfileDetails;
 
@@ -10353,8 +10467,8 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ScheduleDetailsType
+	 	 	 	 
+	 * @var ScheduleDetailsType 	 
 	 */ 
 	public $ScheduleDetails;
 
@@ -10366,7 +10480,9 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	 * @namespace ebl
 	 
 	 
-	 * @var PaymentDetailsItemType
+	 * @value
+	 	 	 	 
+	 * @var PaymentDetailsItemType 	 
 	 */ 
 	public $PaymentDetailsItem;
 
@@ -10397,8 +10513,8 @@ class CreateRecurringPaymentsProfileResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProfileID;
 
@@ -10408,8 +10524,8 @@ class CreateRecurringPaymentsProfileResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var RecurringPaymentsProfileStatusType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProfileStatus;
 
@@ -10419,8 +10535,8 @@ class CreateRecurringPaymentsProfileResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionID;
 
@@ -10430,8 +10546,8 @@ class CreateRecurringPaymentsProfileResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $DCCProcessorResponse;
 
@@ -10441,8 +10557,8 @@ class CreateRecurringPaymentsProfileResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $DCCReturnCode;
 
@@ -10464,8 +10580,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProfileID;
 
@@ -10475,8 +10591,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var RecurringPaymentsProfileStatusType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProfileStatus;
 
@@ -10486,8 +10602,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Description;
 
@@ -10497,8 +10613,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AutoBillType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AutoBillOutstandingAmount;
 
@@ -10508,8 +10624,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $MaxFailedPayments;
 
@@ -10519,8 +10635,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var RecurringPaymentsProfileDetailsType
+	 	 	 	 
+	 * @var RecurringPaymentsProfileDetailsType 	 
 	 */ 
 	public $RecurringPaymentsProfileDetails;
 
@@ -10530,8 +10646,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BillingPeriodDetailsType
+	 	 	 	 
+	 * @var BillingPeriodDetailsType 	 
 	 */ 
 	public $CurrentRecurringPaymentsPeriod;
 
@@ -10541,8 +10657,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var RecurringPaymentsSummaryType
+	 	 	 	 
+	 * @var RecurringPaymentsSummaryType 	 
 	 */ 
 	public $RecurringPaymentsSummary;
 
@@ -10552,8 +10668,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var CreditCardDetailsType
+	 	 	 	 
+	 * @var CreditCardDetailsType 	 
 	 */ 
 	public $CreditCard;
 
@@ -10563,8 +10679,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BillingPeriodDetailsType
+	 	 	 	 
+	 * @var BillingPeriodDetailsType 	 
 	 */ 
 	public $TrialRecurringPaymentsPeriod;
 
@@ -10574,8 +10690,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BillingPeriodDetailsType
+	 	 	 	 
+	 * @var BillingPeriodDetailsType 	 
 	 */ 
 	public $RegularRecurringPaymentsPeriod;
 
@@ -10585,8 +10701,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $TrialAmountPaid;
 
@@ -10596,8 +10712,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $RegularAmountPaid;
 
@@ -10607,8 +10723,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $AggregateAmount;
 
@@ -10618,8 +10734,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $AggregateOptionalAmount;
 
@@ -10629,8 +10745,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $FinalPaymentDueDate;
 
@@ -10652,8 +10768,8 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProfileID;
 
@@ -10663,8 +10779,8 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var StatusChangeActionType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Action;
 
@@ -10674,8 +10790,8 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Note;
 
@@ -10706,8 +10822,8 @@ class ManageRecurringPaymentsProfileStatusResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProfileID;
 
@@ -10729,8 +10845,8 @@ class BillOutstandingAmountRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProfileID;
 
@@ -10740,8 +10856,8 @@ class BillOutstandingAmountRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -10751,8 +10867,8 @@ class BillOutstandingAmountRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Note;
 
@@ -10782,8 +10898,8 @@ class BillOutstandingAmountResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProfileID;
 
@@ -10805,8 +10921,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProfileID;
 
@@ -10816,8 +10932,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Note;
 
@@ -10827,8 +10943,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Description;
 
@@ -10838,8 +10954,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SubscriberName;
 
@@ -10849,8 +10965,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AddressType
+	 	 	 	 
+	 * @var AddressType 	 
 	 */ 
 	public $SubscriberShippingAddress;
 
@@ -10860,8 +10976,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProfileReference;
 
@@ -10871,8 +10987,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $AdditionalBillingCycles;
 
@@ -10882,8 +10998,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -10893,8 +11009,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $ShippingAmount;
 
@@ -10904,8 +11020,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $TaxAmount;
 
@@ -10915,8 +11031,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $OutstandingBalance;
 
@@ -10926,8 +11042,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AutoBillType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AutoBillOutstandingAmount;
 
@@ -10937,8 +11053,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $MaxFailedPayments;
 
@@ -10949,8 +11065,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var CreditCardDetailsType
+	 	 	 	 
+	 * @var CreditCardDetailsType 	 
 	 */ 
 	public $CreditCard;
 
@@ -10960,8 +11076,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $BillingStartDate;
 
@@ -10971,8 +11087,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BillingPeriodDetailsType_Update
+	 	 	 	 
+	 * @var BillingPeriodDetailsType_Update 	 
 	 */ 
 	public $TrialPeriod;
 
@@ -10982,8 +11098,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BillingPeriodDetailsType_Update
+	 	 	 	 
+	 * @var BillingPeriodDetailsType_Update 	 
 	 */ 
 	public $PaymentPeriod;
 
@@ -11013,8 +11129,8 @@ class UpdateRecurringPaymentsProfileResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProfileID;
 
@@ -11036,8 +11152,8 @@ class RiskFilterDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $Id;
 
@@ -11047,8 +11163,8 @@ class RiskFilterDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Name;
 
@@ -11058,8 +11174,8 @@ class RiskFilterDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Description;
 
@@ -11083,7 +11199,9 @@ class RiskFilterListType
 	 * @namespace ebl
 	 
 	 
-	 * @var RiskFilterDetailsType
+	 * @value
+	 	 	 	 
+	 * @var RiskFilterDetailsType 	 
 	 */ 
 	public $Filters;
 
@@ -11106,8 +11224,8 @@ class FMFDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var RiskFilterListType
+	 	 	 	 
+	 * @var RiskFilterListType 	 
 	 */ 
 	public $AcceptFilters;
 
@@ -11117,8 +11235,8 @@ class FMFDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var RiskFilterListType
+	 	 	 	 
+	 * @var RiskFilterListType 	 
 	 */ 
 	public $PendingFilters;
 
@@ -11128,8 +11246,8 @@ class FMFDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var RiskFilterListType
+	 	 	 	 
+	 * @var RiskFilterListType 	 
 	 */ 
 	public $DenyFilters;
 
@@ -11139,8 +11257,8 @@ class FMFDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var RiskFilterListType
+	 	 	 	 
+	 * @var RiskFilterListType 	 
 	 */ 
 	public $ReportFilters;
 
@@ -11162,8 +11280,8 @@ class EnhancedDataType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AirlineItineraryType
+	 	 	 	 
+	 * @var AirlineItineraryType 	 
 	 */ 
 	public $AirlineItinerary;
 
@@ -11186,8 +11304,8 @@ class AirlineItineraryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PassengerName;
 
@@ -11197,8 +11315,8 @@ class AirlineItineraryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $IssueDate;
 
@@ -11208,8 +11326,8 @@ class AirlineItineraryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TravelAgencyName;
 
@@ -11219,8 +11337,8 @@ class AirlineItineraryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TravelAgencyCode;
 
@@ -11230,8 +11348,8 @@ class AirlineItineraryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TicketNumber;
 
@@ -11241,8 +11359,8 @@ class AirlineItineraryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $IssuingCarrierCode;
 
@@ -11252,8 +11370,8 @@ class AirlineItineraryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CustomerCode;
 
@@ -11263,8 +11381,8 @@ class AirlineItineraryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $TotalFare;
 
@@ -11274,8 +11392,8 @@ class AirlineItineraryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $TotalTaxes;
 
@@ -11285,8 +11403,8 @@ class AirlineItineraryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $TotalFee;
 
@@ -11296,8 +11414,8 @@ class AirlineItineraryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RestrictedTicket;
 
@@ -11307,8 +11425,8 @@ class AirlineItineraryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ClearingSequence;
 
@@ -11318,8 +11436,8 @@ class AirlineItineraryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ClearingCount;
 
@@ -11331,7 +11449,9 @@ class AirlineItineraryType
 	 * @namespace ebl
 	 
 	 
-	 * @var FlightDetailsType
+	 * @value
+	 	 	 	 
+	 * @var FlightDetailsType 	 
 	 */ 
 	public $FlightDetails;
 
@@ -11354,8 +11474,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ConjuctionTicket;
 
@@ -11365,8 +11485,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ExchangeTicket;
 
@@ -11376,8 +11496,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CouponNumber;
 
@@ -11387,8 +11507,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ServiceClass;
 
@@ -11398,8 +11518,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TravelDate;
 
@@ -11409,8 +11529,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CarrierCode;
 
@@ -11420,8 +11540,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $StopOverPermitted;
 
@@ -11431,8 +11551,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $DepartureAirport;
 
@@ -11442,8 +11562,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ArrivalAirport;
 
@@ -11453,8 +11573,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $FlightNumber;
 
@@ -11464,8 +11584,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $DepartureTime;
 
@@ -11475,8 +11595,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ArrivalTime;
 
@@ -11486,8 +11606,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $FareBasisCode;
 
@@ -11497,8 +11617,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Fare;
 
@@ -11508,8 +11628,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Taxes;
 
@@ -11519,8 +11639,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Fee;
 
@@ -11530,8 +11650,8 @@ class FlightDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $EndorsementOrRestrictions;
 
@@ -11555,8 +11675,8 @@ class AuthorizationInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentStatus;
 
@@ -11594,8 +11714,8 @@ class AuthorizationInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PendingStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PendingReason;
 
@@ -11606,8 +11726,8 @@ class AuthorizationInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProtectionEligibility;
 
@@ -11617,8 +11737,8 @@ class AuthorizationInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProtectionEligibilityType;
 
@@ -11640,8 +11760,8 @@ class OptionTrackingDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OptionNumber;
 
@@ -11651,8 +11771,8 @@ class OptionTrackingDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OptionQty;
 
@@ -11662,8 +11782,8 @@ class OptionTrackingDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OptionSelect;
 
@@ -11673,8 +11793,8 @@ class OptionTrackingDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OptionQtyDelta;
 
@@ -11684,8 +11804,8 @@ class OptionTrackingDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OptionAlert;
 
@@ -11695,8 +11815,8 @@ class OptionTrackingDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OptionCost;
 
@@ -11719,8 +11839,8 @@ class ItemTrackingDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemNumber;
 
@@ -11730,8 +11850,8 @@ class ItemTrackingDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemQty;
 
@@ -11741,8 +11861,8 @@ class ItemTrackingDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemQtyDelta;
 
@@ -11752,8 +11872,8 @@ class ItemTrackingDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemAlert;
 
@@ -11763,8 +11883,8 @@ class ItemTrackingDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemCost;
 
@@ -11787,8 +11907,8 @@ class ButtonSearchResultType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $HostedButtonID;
 
@@ -11798,8 +11918,8 @@ class ButtonSearchResultType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonType;
 
@@ -11809,8 +11929,8 @@ class ButtonSearchResultType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemName;
 
@@ -11820,8 +11940,8 @@ class ButtonSearchResultType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $ModifyDate;
 
@@ -11847,8 +11967,8 @@ class ReverseTransactionRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionID;
 
@@ -11875,8 +11995,8 @@ class ReverseTransactionResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReverseTransactionID;
 
@@ -11886,8 +12006,8 @@ class ReverseTransactionResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Status;
 
@@ -11909,8 +12029,8 @@ class IncentiveInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $IncentiveCode;
 
@@ -11923,7 +12043,9 @@ class IncentiveInfoType
 	 * @namespace ebl
 	 
 	 
-	 * @var IncentiveApplyIndicationType
+	 * @value
+	 	 	 	 
+	 * @var IncentiveApplyIndicationType 	 
 	 */ 
 	public $ApplyIndication;
 
@@ -11947,8 +12069,8 @@ class IncentiveApplyIndicationType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentRequestID;
 
@@ -11958,8 +12080,8 @@ class IncentiveApplyIndicationType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemId;
 
@@ -11983,8 +12105,8 @@ class PaymentRequestInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionId;
 
@@ -11994,8 +12116,8 @@ class PaymentRequestInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentRequestID;
 
@@ -12005,8 +12127,8 @@ class PaymentRequestInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ErrorType
+	 	 	 	 
+	 * @var ErrorType 	 
 	 */ 
 	public $PaymentError;
 
@@ -12037,8 +12159,8 @@ class ExternalRememberMeOwnerDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ExternalRememberMeOwnerIDType;
 
@@ -12053,8 +12175,8 @@ class ExternalRememberMeOwnerDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ExternalRememberMeOwnerID;
 
@@ -12081,8 +12203,8 @@ class ExternalRememberMeOptInDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ExternalRememberMeOptIn;
 
@@ -12096,8 +12218,8 @@ class ExternalRememberMeOptInDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ExternalRememberMeOwnerDetailsType
+	 	 	 	 
+	 * @var ExternalRememberMeOwnerDetailsType 	 
 	 */ 
 	public $ExternalRememberMeOwnerDetails;
 
@@ -12121,8 +12243,8 @@ class FlowControlDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ErrorURL;
 
@@ -12134,8 +12256,8 @@ class FlowControlDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InContextReturnURL;
 
@@ -12168,8 +12290,8 @@ class ExternalRememberMeStatusDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $ExternalRememberMeStatus;
 
@@ -12184,8 +12306,8 @@ class ExternalRememberMeStatusDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ExternalRememberMeID;
 
@@ -12219,8 +12341,8 @@ class RefreshTokenStatusDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $RefreshTokenStatus;
 
@@ -12231,8 +12353,8 @@ class RefreshTokenStatusDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RefreshToken;
 
@@ -12244,8 +12366,8 @@ class RefreshTokenStatusDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ImmutableID;
 
@@ -12270,8 +12392,8 @@ class DisplayControlDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InContextPaymentButtonImage;
 
@@ -12304,8 +12426,8 @@ class ExternalPartnerTrackingDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ExternalPartnerSegmentID;
 
@@ -12330,8 +12452,8 @@ class MerchantStoreDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $StoreID;
 
@@ -12342,8 +12464,8 @@ class MerchantStoreDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TerminalID;
 
@@ -12373,8 +12495,8 @@ class AdditionalFeeType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Type;
 
@@ -12384,8 +12506,8 @@ class AdditionalFeeType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -12409,8 +12531,8 @@ class DiscountType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Name;
 
@@ -12421,8 +12543,8 @@ class DiscountType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Description;
 
@@ -12432,8 +12554,8 @@ class DiscountType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -12443,8 +12565,8 @@ class DiscountType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var RedeemedOfferType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RedeemedOfferType;
 
@@ -12455,8 +12577,8 @@ class DiscountType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RedeemedOfferID;
 
@@ -12487,8 +12609,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Name;
 
@@ -12499,8 +12621,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Description;
 
@@ -12512,8 +12634,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $EAN;
 
@@ -12525,8 +12647,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SKU;
 
@@ -12541,8 +12663,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReturnPolicyIdentifier;
 
@@ -12552,8 +12674,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Price;
 
@@ -12563,8 +12685,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $ItemPrice;
 
@@ -12574,8 +12696,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var double
+	 	 	 	 
+	 * @var double 	 
 	 */ 
 	public $ItemCount;
 
@@ -12585,8 +12707,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var UnitOfMeasure
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ItemCountUnit;
 
@@ -12598,7 +12720,9 @@ class InvoiceItemType
 	 * @namespace ebl
 	 
 	 
-	 * @var DiscountType
+	 * @value
+	 	 	 	 
+	 * @var DiscountType 	 
 	 */ 
 	public $Discount;
 
@@ -12609,8 +12733,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var boolean
+	 	 	 	 
+	 * @var boolean 	 
 	 */ 
 	public $Taxable;
 
@@ -12624,8 +12748,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var double
+	 	 	 	 
+	 * @var double 	 
 	 */ 
 	public $TaxRate;
 
@@ -12637,7 +12761,9 @@ class InvoiceItemType
 	 * @namespace ebl
 	 
 	 
-	 * @var AdditionalFeeType
+	 * @value
+	 	 	 	 
+	 * @var AdditionalFeeType 	 
 	 */ 
 	public $AdditionalFees;
 
@@ -12648,8 +12774,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var boolean
+	 	 	 	 
+	 * @var boolean 	 
 	 */ 
 	public $Reimbursable;
 
@@ -12659,8 +12785,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MPN;
 
@@ -12672,8 +12798,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ISBN;
 
@@ -12685,8 +12811,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PLU;
 
@@ -12696,8 +12822,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ModelNumber;
 
@@ -12707,8 +12833,8 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $StyleNumber;
 
@@ -12731,8 +12857,8 @@ class RefundInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RefundStatus;
 
@@ -12742,8 +12868,8 @@ class RefundInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PendingStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PendingReason;
 
@@ -12765,8 +12891,8 @@ class CoupledBucketsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var CoupleType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CoupleType;
 
@@ -12776,8 +12902,8 @@ class CoupledBucketsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CoupledPaymentRequestID;
 
@@ -12789,7 +12915,9 @@ class CoupledBucketsType
 	 * @namespace ebl
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentRequestID;
 
@@ -12819,8 +12947,8 @@ class CoupledPaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CoupledPaymentRequestID;
 
@@ -12831,8 +12959,8 @@ class CoupledPaymentInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CoupledPaymentID;
 
@@ -12969,8 +13097,8 @@ class InstallmentDetailsType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BillingPeriodType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingPeriod;
 
@@ -12980,8 +13108,8 @@ class InstallmentDetailsType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $BillingFrequency;
 
@@ -12991,8 +13119,8 @@ class InstallmentDetailsType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $TotalBillingCycles;
 
@@ -13002,8 +13130,8 @@ class InstallmentDetailsType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Amount;
 
@@ -13013,8 +13141,8 @@ class InstallmentDetailsType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ShippingAmount;
 
@@ -13024,8 +13152,8 @@ class InstallmentDetailsType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TaxAmount;
 
@@ -13050,8 +13178,8 @@ class OptionSelectionDetailsType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OptionSelection;
 
@@ -13061,8 +13189,8 @@ class OptionSelectionDetailsType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Price;
 
@@ -13072,8 +13200,8 @@ class OptionSelectionDetailsType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var OptionTypeListType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OptionType;
 
@@ -13085,7 +13213,9 @@ class OptionSelectionDetailsType
 	 * @namespace ns
 	 
 	 
-	 * @var InstallmentDetailsType
+	 * @value
+	 	 	 	 
+	 * @var InstallmentDetailsType 	 
 	 */ 
 	public $PaymentPeriod;
 
@@ -13115,8 +13245,8 @@ class OptionDetailsType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OptionName;
 
@@ -13128,7 +13258,9 @@ class OptionDetailsType
 	 * @namespace ns
 	 
 	 
-	 * @var OptionSelectionDetailsType
+	 * @value
+	 	 	 	 
+	 * @var OptionSelectionDetailsType 	 
 	 */ 
 	public $OptionSelectionDetails;
 
@@ -13158,8 +13290,8 @@ class BMCreateButtonReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BMCreateButtonRequestType
+	 	 	 	 
+	 * @var BMCreateButtonRequestType 	 
 	 */ 
 	public $BMCreateButtonRequest;
 
@@ -13199,8 +13331,8 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ButtonTypeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonType;
 
@@ -13211,8 +13343,8 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ButtonCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonCode;
 
@@ -13223,8 +13355,8 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ButtonSubTypeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonSubType;
 
@@ -13238,7 +13370,9 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonVar;
 
@@ -13250,7 +13384,9 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 
-	 * @var OptionDetailsType
+	 * @value
+	 	 	 	 
+	 * @var OptionDetailsType 	 
 	 */ 
 	public $OptionDetails;
 
@@ -13262,7 +13398,9 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TextBox;
 
@@ -13273,8 +13411,8 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ButtonImageType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonImage;
 
@@ -13286,8 +13424,8 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonImageURL;
 
@@ -13298,8 +13436,8 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BuyNowTextType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BuyNowText;
 
@@ -13310,8 +13448,8 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var SubscribeTextType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SubscribeText;
 
@@ -13321,8 +13459,8 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var CountryCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonCountry;
 
@@ -13333,8 +13471,8 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonLanguage;
 
@@ -13357,8 +13495,8 @@ class BMCreateButtonResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Website;
 
@@ -13368,8 +13506,8 @@ class BMCreateButtonResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Email;
 
@@ -13379,8 +13517,8 @@ class BMCreateButtonResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Mobile;
 
@@ -13390,8 +13528,8 @@ class BMCreateButtonResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $HostedButtonID;
 
@@ -13413,8 +13551,8 @@ class BMUpdateButtonReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BMUpdateButtonRequestType
+	 	 	 	 
+	 * @var BMUpdateButtonRequestType 	 
 	 */ 
 	public $BMUpdateButtonRequest;
 
@@ -13454,8 +13592,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $HostedButtonID;
 
@@ -13467,8 +13605,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ButtonTypeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonType;
 
@@ -13479,8 +13617,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ButtonCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonCode;
 
@@ -13491,8 +13629,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ButtonSubTypeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonSubType;
 
@@ -13506,7 +13644,9 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonVar;
 
@@ -13518,7 +13658,9 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 
-	 * @var OptionDetailsType
+	 * @value
+	 	 	 	 
+	 * @var OptionDetailsType 	 
 	 */ 
 	public $OptionDetails;
 
@@ -13530,7 +13672,9 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TextBox;
 
@@ -13541,8 +13685,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ButtonImageType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonImage;
 
@@ -13554,8 +13698,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonImageURL;
 
@@ -13566,8 +13710,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BuyNowTextType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BuyNowText;
 
@@ -13578,8 +13722,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var SubscribeTextType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SubscribeText;
 
@@ -13589,8 +13733,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var CountryCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonCountry;
 
@@ -13601,8 +13745,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonLanguage;
 
@@ -13632,8 +13776,8 @@ class BMUpdateButtonResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Website;
 
@@ -13643,8 +13787,8 @@ class BMUpdateButtonResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Email;
 
@@ -13654,8 +13798,8 @@ class BMUpdateButtonResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Mobile;
 
@@ -13665,8 +13809,8 @@ class BMUpdateButtonResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $HostedButtonID;
 
@@ -13688,8 +13832,8 @@ class BMManageButtonStatusReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BMManageButtonStatusRequestType
+	 	 	 	 
+	 * @var BMManageButtonStatusRequestType 	 
 	 */ 
 	public $BMManageButtonStatusRequest;
 
@@ -13727,8 +13871,8 @@ class BMManageButtonStatusRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $HostedButtonID;
 
@@ -13740,8 +13884,8 @@ class BMManageButtonStatusRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ButtonStatusType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonStatus;
 
@@ -13776,8 +13920,8 @@ class BMGetButtonDetailsReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BMGetButtonDetailsRequestType
+	 	 	 	 
+	 * @var BMGetButtonDetailsRequestType 	 
 	 */ 
 	public $BMGetButtonDetailsRequest;
 
@@ -13815,8 +13959,8 @@ class BMGetButtonDetailsRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $HostedButtonID;
 
@@ -13848,8 +13992,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Website;
 
@@ -13859,8 +14003,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Email;
 
@@ -13870,8 +14014,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Mobile;
 
@@ -13881,8 +14025,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $HostedButtonID;
 
@@ -13894,8 +14038,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ButtonTypeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonType;
 
@@ -13906,8 +14050,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ButtonCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonCode;
 
@@ -13918,8 +14062,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ButtonSubTypeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonSubType;
 
@@ -13932,7 +14076,9 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonVar;
 
@@ -13944,7 +14090,9 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 
-	 * @var OptionDetailsType
+	 * @value
+	 	 	 	 
+	 * @var OptionDetailsType 	 
 	 */ 
 	public $OptionDetails;
 
@@ -13956,7 +14104,9 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TextBox;
 
@@ -13966,8 +14116,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ButtonImageType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonImage;
 
@@ -13977,8 +14127,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonImageURL;
 
@@ -13988,8 +14138,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BuyNowTextType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BuyNowText;
 
@@ -14000,8 +14150,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var SubscribeTextType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SubscribeText;
 
@@ -14011,8 +14161,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var CountryCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonCountry;
 
@@ -14023,8 +14173,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonLanguage;
 
@@ -14046,8 +14196,8 @@ class BMSetInventoryReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BMSetInventoryRequestType
+	 	 	 	 
+	 * @var BMSetInventoryRequestType 	 
 	 */ 
 	public $BMSetInventoryRequest;
 
@@ -14087,8 +14237,8 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $HostedButtonID;
 
@@ -14098,8 +14248,8 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TrackInv;
 
@@ -14109,8 +14259,8 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TrackPnl;
 
@@ -14120,8 +14270,8 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ItemTrackingDetailsType
+	 	 	 	 
+	 * @var ItemTrackingDetailsType 	 
 	 */ 
 	public $ItemTrackingDetails;
 
@@ -14132,8 +14282,8 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OptionIndex;
 
@@ -14145,7 +14295,9 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 
-	 * @var OptionTrackingDetailsType
+	 * @value
+	 	 	 	 
+	 * @var OptionTrackingDetailsType 	 
 	 */ 
 	public $OptionTrackingDetails;
 
@@ -14157,8 +14309,8 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SoldoutURL;
 
@@ -14169,8 +14321,8 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReuseDigitalDownloadKeys;
 
@@ -14181,8 +14333,8 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AppendDigitalDownloadKeys;
 
@@ -14197,7 +14349,9 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $DigitalDownloadKeys;
 
@@ -14241,8 +14395,8 @@ class BMGetInventoryReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BMGetInventoryRequestType
+	 	 	 	 
+	 * @var BMGetInventoryRequestType 	 
 	 */ 
 	public $BMGetInventoryRequest;
 
@@ -14282,8 +14436,8 @@ class BMGetInventoryRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $HostedButtonID;
 
@@ -14313,8 +14467,8 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $HostedButtonID;
 
@@ -14324,8 +14478,8 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TrackInv;
 
@@ -14335,8 +14489,8 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TrackPnl;
 
@@ -14346,8 +14500,8 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ItemTrackingDetailsType
+	 	 	 	 
+	 * @var ItemTrackingDetailsType 	 
 	 */ 
 	public $ItemTrackingDetails;
 
@@ -14357,8 +14511,8 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OptionIndex;
 
@@ -14368,8 +14522,8 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $OptionName;
 
@@ -14381,7 +14535,9 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 
-	 * @var OptionTrackingDetailsType
+	 * @value
+	 	 	 	 
+	 * @var OptionTrackingDetailsType 	 
 	 */ 
 	public $OptionTrackingDetails;
 
@@ -14391,8 +14547,8 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $SoldoutURL;
 
@@ -14404,7 +14560,9 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $DigitalDownloadKeys;
 
@@ -14426,8 +14584,8 @@ class BMButtonSearchReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BMButtonSearchRequestType
+	 	 	 	 
+	 * @var BMButtonSearchRequestType 	 
 	 */ 
 	public $BMButtonSearchRequest;
 
@@ -14465,8 +14623,8 @@ class BMButtonSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $StartDate;
 
@@ -14477,8 +14635,8 @@ class BMButtonSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $EndDate;
 
@@ -14503,7 +14661,9 @@ class BMButtonSearchResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 
-	 * @var ButtonSearchResultType
+	 * @value
+	 	 	 	 
+	 * @var ButtonSearchResultType 	 
 	 */ 
 	public $ButtonSearchResult;
 
@@ -14525,8 +14685,8 @@ class RefundTransactionReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var RefundTransactionRequestType
+	 	 	 	 
+	 * @var RefundTransactionRequestType 	 
 	 */ 
 	public $RefundTransactionRequest;
 
@@ -14566,8 +14726,8 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionID;
 
@@ -14579,8 +14739,8 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PayerID;
 
@@ -14595,8 +14755,8 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InvoiceID;
 
@@ -14606,8 +14766,8 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var RefundType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RefundType;
 
@@ -14618,8 +14778,8 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -14630,8 +14790,8 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Memo;
 
@@ -14641,8 +14801,8 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $RetryUntil;
 
@@ -14652,8 +14812,8 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var RefundSourceCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RefundSource;
 
@@ -14665,8 +14825,8 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var boolean
+	 	 	 	 
+	 * @var boolean 	 
 	 */ 
 	public $RefundAdvice;
 
@@ -14676,8 +14836,8 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MerchantStoreDetailsType
+	 	 	 	 
+	 * @var MerchantStoreDetailsType 	 
 	 */ 
 	public $MerchantStoreDetails;
 
@@ -14690,7 +14850,9 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 
-	 * @var InvoiceItemType
+	 * @value
+	 	 	 	 
+	 * @var InvoiceItemType 	 
 	 */ 
 	public $RefundItemDetails;
 
@@ -14702,8 +14864,8 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -14728,8 +14890,8 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $RefundTransactionID;
 
@@ -14740,8 +14902,8 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $NetRefundAmount;
 
@@ -14751,8 +14913,8 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $FeeRefundAmount;
 
@@ -14762,8 +14924,8 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $GrossRefundAmount;
 
@@ -14773,8 +14935,8 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $TotalRefundedAmount;
 
@@ -14784,8 +14946,8 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var RefundInfoType
+	 	 	 	 
+	 * @var RefundInfoType 	 
 	 */ 
 	public $RefundInfo;
 
@@ -14796,8 +14958,8 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReceiptData;
 
@@ -14807,8 +14969,8 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -14830,8 +14992,8 @@ class InitiateRecoupReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var InitiateRecoupRequestType
+	 	 	 	 
+	 * @var InitiateRecoupRequestType 	 
 	 */ 
 	public $InitiateRecoupRequest;
 
@@ -14867,8 +15029,8 @@ class InitiateRecoupRequestType  extends AbstractRequestType
 	 
 	 * @namespace ed
 	 
-	 
-	 * @var EnhancedInitiateRecoupRequestDetailsType
+	 	 	 	 
+	 * @var EnhancedInitiateRecoupRequestDetailsType 	 
 	 */ 
 	public $EnhancedInitiateRecoupRequestDetails;
 
@@ -14910,8 +15072,8 @@ class CompleteRecoupReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var CompleteRecoupRequestType
+	 	 	 	 
+	 * @var CompleteRecoupRequestType 	 
 	 */ 
 	public $CompleteRecoupRequest;
 
@@ -14947,8 +15109,8 @@ class CompleteRecoupRequestType  extends AbstractRequestType
 	 
 	 * @namespace ed
 	 
-	 
-	 * @var EnhancedCompleteRecoupRequestDetailsType
+	 	 	 	 
+	 * @var EnhancedCompleteRecoupRequestDetailsType 	 
 	 */ 
 	public $EnhancedCompleteRecoupRequestDetails;
 
@@ -14978,8 +15140,8 @@ class CompleteRecoupResponseType  extends AbstractResponseType
 	 
 	 * @namespace ed
 	 
-	 
-	 * @var EnhancedCompleteRecoupResponseDetailsType
+	 	 	 	 
+	 * @var EnhancedCompleteRecoupResponseDetailsType 	 
 	 */ 
 	public $EnhancedCompleteRecoupResponseDetails;
 
@@ -15001,8 +15163,8 @@ class CancelRecoupReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var CancelRecoupRequestType
+	 	 	 	 
+	 * @var CancelRecoupRequestType 	 
 	 */ 
 	public $CancelRecoupRequest;
 
@@ -15038,8 +15200,8 @@ class CancelRecoupRequestType  extends AbstractRequestType
 	 
 	 * @namespace ed
 	 
-	 
-	 * @var EnhancedCancelRecoupRequestDetailsType
+	 	 	 	 
+	 * @var EnhancedCancelRecoupRequestDetailsType 	 
 	 */ 
 	public $EnhancedCancelRecoupRequestDetails;
 
@@ -15081,8 +15243,8 @@ class GetTransactionDetailsReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var GetTransactionDetailsRequestType
+	 	 	 	 
+	 * @var GetTransactionDetailsRequestType 	 
 	 */ 
 	public $GetTransactionDetailsRequest;
 
@@ -15126,8 +15288,8 @@ class GetTransactionDetailsRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionID;
 
@@ -15150,8 +15312,8 @@ class GetTransactionDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var PaymentTransactionType
+	 	 	 	 
+	 * @var PaymentTransactionType 	 
 	 */ 
 	public $PaymentTransactionDetails;
 
@@ -15161,8 +15323,8 @@ class GetTransactionDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ThreeDSecureInfoType
+	 	 	 	 
+	 * @var ThreeDSecureInfoType 	 
 	 */ 
 	public $ThreeDSecureDetails;
 
@@ -15184,8 +15346,8 @@ class BillUserReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BillUserRequestType
+	 	 	 	 
+	 * @var BillUserRequestType 	 
 	 */ 
 	public $BillUserRequest;
 
@@ -15222,8 +15384,8 @@ class BillUserRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MerchantPullPaymentType
+	 	 	 	 
+	 * @var MerchantPullPaymentType 	 
 	 */ 
 	public $MerchantPullPaymentDetails;
 
@@ -15234,8 +15396,8 @@ class BillUserRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $ReturnFMFDetails;
 
@@ -15258,8 +15420,8 @@ class BillUserResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MerchantPullPaymentResponseType
+	 	 	 	 
+	 * @var MerchantPullPaymentResponseType 	 
 	 */ 
 	public $BillUserResponseDetails;
 
@@ -15269,8 +15431,8 @@ class BillUserResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var FMFDetailsType
+	 	 	 	 
+	 * @var FMFDetailsType 	 
 	 */ 
 	public $FMFDetails;
 
@@ -15292,8 +15454,8 @@ class TransactionSearchReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var TransactionSearchRequestType
+	 	 	 	 
+	 * @var TransactionSearchRequestType 	 
 	 */ 
 	public $TransactionSearchRequest;
 
@@ -15331,8 +15493,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $StartDate;
 
@@ -15343,8 +15505,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $EndDate;
 
@@ -15355,8 +15517,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Payer;
 
@@ -15368,8 +15530,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Receiver;
 
@@ -15379,8 +15541,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReceiptID;
 
@@ -15392,8 +15554,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionID;
 
@@ -15405,8 +15567,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProfileID;
 
@@ -15420,8 +15582,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var PersonNameType
+	 	 	 	 
+	 * @var PersonNameType 	 
 	 */ 
 	public $PayerName;
 
@@ -15435,8 +15597,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AuctionItemNumber;
 
@@ -15452,8 +15614,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InvoiceID;
 
@@ -15463,8 +15625,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CardNumber;
 
@@ -15496,8 +15658,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var PaymentTransactionClassCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionClass;
 
@@ -15509,8 +15671,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -15520,8 +15682,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var CurrencyCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CurrencyCode;
 
@@ -15541,8 +15703,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var PaymentTransactionStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Status;
 
@@ -15574,7 +15736,9 @@ class TransactionSearchResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 
-	 * @var PaymentTransactionSearchResultType
+	 * @value
+	 	 	 	 
+	 * @var PaymentTransactionSearchResultType 	 
 	 */ 
 	public $PaymentTransactions;
 
@@ -15596,8 +15760,8 @@ class MassPayReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var MassPayRequestType
+	 	 	 	 
+	 * @var MassPayRequestType 	 
 	 */ 
 	public $MassPayRequest;
 
@@ -15639,8 +15803,8 @@ class MassPayRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $EmailSubject;
 
@@ -15654,8 +15818,8 @@ class MassPayRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ReceiverInfoCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReceiverType;
 
@@ -15667,8 +15831,8 @@ class MassPayRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ButtonSource;
 
@@ -15681,7 +15845,9 @@ class MassPayRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 
-	 * @var MassPayRequestItemType
+	 * @value
+	 	 	 	 
+	 * @var MassPayRequestItemType 	 
 	 */ 
 	public $MassPayItem;
 
@@ -15727,8 +15893,8 @@ class MassPayRequestItemType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReceiverEmail;
 
@@ -15741,8 +15907,8 @@ class MassPayRequestItemType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReceiverPhone;
 
@@ -15758,8 +15924,8 @@ class MassPayRequestItemType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReceiverID;
 
@@ -15773,8 +15939,8 @@ class MassPayRequestItemType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -15787,8 +15953,8 @@ class MassPayRequestItemType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $UniqueId;
 
@@ -15799,8 +15965,8 @@ class MassPayRequestItemType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Note;
 
@@ -15830,8 +15996,8 @@ class BillAgreementUpdateReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BAUpdateRequestType
+	 	 	 	 
+	 * @var BAUpdateRequestType 	 
 	 */ 
 	public $BAUpdateRequest;
 
@@ -15867,8 +16033,8 @@ class BAUpdateRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReferenceID;
 
@@ -15878,8 +16044,8 @@ class BAUpdateRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingAgreementDescription;
 
@@ -15889,8 +16055,8 @@ class BAUpdateRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var MerchantPullStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingAgreementStatus;
 
@@ -15900,8 +16066,8 @@ class BAUpdateRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingAgreementCustom;
 
@@ -15931,8 +16097,8 @@ class BAUpdateResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BAUpdateResponseDetailsType
+	 	 	 	 
+	 * @var BAUpdateResponseDetailsType 	 
 	 */ 
 	public $BAUpdateResponseDetails;
 
@@ -15954,8 +16120,8 @@ class AddressVerifyReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var AddressVerifyRequestType
+	 	 	 	 
+	 * @var AddressVerifyRequestType 	 
 	 */ 
 	public $AddressVerifyRequest;
 
@@ -15994,8 +16160,8 @@ class AddressVerifyRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Email;
 
@@ -16011,8 +16177,8 @@ class AddressVerifyRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Street;
 
@@ -16026,8 +16192,8 @@ class AddressVerifyRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Zip;
 
@@ -16069,8 +16235,8 @@ class AddressVerifyResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var AddressStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ConfirmationCode;
 
@@ -16087,8 +16253,8 @@ class AddressVerifyResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var MatchStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $StreetMatch;
 
@@ -16103,8 +16269,8 @@ class AddressVerifyResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var MatchStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ZipMatch;
 
@@ -16115,8 +16281,8 @@ class AddressVerifyResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var CountryCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CountryCode;
 
@@ -16135,8 +16301,8 @@ class AddressVerifyResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PayPalToken;
 
@@ -16158,8 +16324,8 @@ class EnterBoardingReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var EnterBoardingRequestType
+	 	 	 	 
+	 * @var EnterBoardingRequestType 	 
 	 */ 
 	public $EnterBoardingRequest;
 
@@ -16195,8 +16361,8 @@ class EnterBoardingRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var EnterBoardingRequestDetailsType
+	 	 	 	 
+	 * @var EnterBoardingRequestDetailsType 	 
 	 */ 
 	public $EnterBoardingRequestDetails;
 
@@ -16232,8 +16398,8 @@ class EnterBoardingResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -16255,8 +16421,8 @@ class GetBoardingDetailsReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var GetBoardingDetailsRequestType
+	 	 	 	 
+	 * @var GetBoardingDetailsRequestType 	 
 	 */ 
 	public $GetBoardingDetailsRequest;
 
@@ -16298,8 +16464,8 @@ class GetBoardingDetailsRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -16329,8 +16495,8 @@ class GetBoardingDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var GetBoardingDetailsResponseDetailsType
+	 	 	 	 
+	 * @var GetBoardingDetailsResponseDetailsType 	 
 	 */ 
 	public $GetBoardingDetailsResponseDetails;
 
@@ -16352,8 +16518,8 @@ class SetAuthFlowParamReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var SetAuthFlowParamRequestType
+	 	 	 	 
+	 * @var SetAuthFlowParamRequestType 	 
 	 */ 
 	public $SetAuthFlowParamRequest;
 
@@ -16389,8 +16555,8 @@ class SetAuthFlowParamRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var SetAuthFlowParamRequestDetailsType
+	 	 	 	 
+	 * @var SetAuthFlowParamRequestDetailsType 	 
 	 */ 
 	public $SetAuthFlowParamRequestDetails;
 
@@ -16426,8 +16592,8 @@ class SetAuthFlowParamResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -16449,8 +16615,8 @@ class GetAuthDetailsReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var GetAuthDetailsRequestType
+	 	 	 	 
+	 * @var GetAuthDetailsRequestType 	 
 	 */ 
 	public $GetAuthDetailsRequest;
 
@@ -16490,8 +16656,8 @@ class GetAuthDetailsRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -16521,8 +16687,8 @@ class GetAuthDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var GetAuthDetailsResponseDetailsType
+	 	 	 	 
+	 * @var GetAuthDetailsResponseDetailsType 	 
 	 */ 
 	public $GetAuthDetailsResponseDetails;
 
@@ -16544,8 +16710,8 @@ class SetAccessPermissionsReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var SetAccessPermissionsRequestType
+	 	 	 	 
+	 * @var SetAccessPermissionsRequestType 	 
 	 */ 
 	public $SetAccessPermissionsRequest;
 
@@ -16581,8 +16747,8 @@ class SetAccessPermissionsRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var SetAccessPermissionsRequestDetailsType
+	 	 	 	 
+	 * @var SetAccessPermissionsRequestDetailsType 	 
 	 */ 
 	public $SetAccessPermissionsRequestDetails;
 
@@ -16618,8 +16784,8 @@ class SetAccessPermissionsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -16641,8 +16807,8 @@ class UpdateAccessPermissionsReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var UpdateAccessPermissionsRequestType
+	 	 	 	 
+	 * @var UpdateAccessPermissionsRequestType 	 
 	 */ 
 	public $UpdateAccessPermissionsRequest;
 
@@ -16682,8 +16848,8 @@ class UpdateAccessPermissionsRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PayerID;
 
@@ -16715,8 +16881,8 @@ class UpdateAccessPermissionsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Status;
 
@@ -16738,8 +16904,8 @@ class GetAccessPermissionDetailsReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var GetAccessPermissionDetailsRequestType
+	 	 	 	 
+	 * @var GetAccessPermissionDetailsRequestType 	 
 	 */ 
 	public $GetAccessPermissionDetailsRequest;
 
@@ -16779,8 +16945,8 @@ class GetAccessPermissionDetailsRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -16810,8 +16976,8 @@ class GetAccessPermissionDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var GetAccessPermissionDetailsResponseDetailsType
+	 	 	 	 
+	 * @var GetAccessPermissionDetailsResponseDetailsType 	 
 	 */ 
 	public $GetAccessPermissionDetailsResponseDetails;
 
@@ -16833,8 +16999,8 @@ class GetIncentiveEvaluationReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var GetIncentiveEvaluationRequestType
+	 	 	 	 
+	 * @var GetIncentiveEvaluationRequestType 	 
 	 */ 
 	public $GetIncentiveEvaluationRequest;
 
@@ -16870,8 +17036,8 @@ class GetIncentiveEvaluationRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var GetIncentiveEvaluationRequestDetailsType
+	 	 	 	 
+	 * @var GetIncentiveEvaluationRequestDetailsType 	 
 	 */ 
 	public $GetIncentiveEvaluationRequestDetails;
 
@@ -16901,8 +17067,8 @@ class GetIncentiveEvaluationResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var GetIncentiveEvaluationResponseDetailsType
+	 	 	 	 
+	 * @var GetIncentiveEvaluationResponseDetailsType 	 
 	 */ 
 	public $GetIncentiveEvaluationResponseDetails;
 
@@ -16924,8 +17090,8 @@ class SetExpressCheckoutReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var SetExpressCheckoutRequestType
+	 	 	 	 
+	 * @var SetExpressCheckoutRequestType 	 
 	 */ 
 	public $SetExpressCheckoutRequest;
 
@@ -16961,8 +17127,8 @@ class SetExpressCheckoutRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var SetExpressCheckoutRequestDetailsType
+	 	 	 	 
+	 * @var SetExpressCheckoutRequestDetailsType 	 
 	 */ 
 	public $SetExpressCheckoutRequestDetails;
 
@@ -17002,8 +17168,8 @@ class SetExpressCheckoutResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -17025,8 +17191,8 @@ class ExecuteCheckoutOperationsReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ExecuteCheckoutOperationsRequestType
+	 	 	 	 
+	 * @var ExecuteCheckoutOperationsRequestType 	 
 	 */ 
 	public $ExecuteCheckoutOperationsRequest;
 
@@ -17062,8 +17228,8 @@ class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ExecuteCheckoutOperationsRequestDetailsType
+	 	 	 	 
+	 * @var ExecuteCheckoutOperationsRequestDetailsType 	 
 	 */ 
 	public $ExecuteCheckoutOperationsRequestDetails;
 
@@ -17093,8 +17259,8 @@ class ExecuteCheckoutOperationsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ExecuteCheckoutOperationsResponseDetailsType
+	 	 	 	 
+	 * @var ExecuteCheckoutOperationsResponseDetailsType 	 
 	 */ 
 	public $ExecuteCheckoutOperationsResponseDetails;
 
@@ -17116,8 +17282,8 @@ class GetExpressCheckoutDetailsReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var GetExpressCheckoutDetailsRequestType
+	 	 	 	 
+	 * @var GetExpressCheckoutDetailsRequestType 	 
 	 */ 
 	public $GetExpressCheckoutDetailsRequest;
 
@@ -17157,8 +17323,8 @@ class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -17188,8 +17354,8 @@ class GetExpressCheckoutDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var GetExpressCheckoutDetailsResponseDetailsType
+	 	 	 	 
+	 * @var GetExpressCheckoutDetailsResponseDetailsType 	 
 	 */ 
 	public $GetExpressCheckoutDetailsResponseDetails;
 
@@ -17211,8 +17377,8 @@ class DoExpressCheckoutPaymentReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var DoExpressCheckoutPaymentRequestType
+	 	 	 	 
+	 * @var DoExpressCheckoutPaymentRequestType 	 
 	 */ 
 	public $DoExpressCheckoutPaymentRequest;
 
@@ -17249,8 +17415,8 @@ class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var DoExpressCheckoutPaymentRequestDetailsType
+	 	 	 	 
+	 * @var DoExpressCheckoutPaymentRequestDetailsType 	 
 	 */ 
 	public $DoExpressCheckoutPaymentRequestDetails;
 
@@ -17261,8 +17427,8 @@ class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $ReturnFMFDetails;
 
@@ -17292,8 +17458,8 @@ class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var DoExpressCheckoutPaymentResponseDetailsType
+	 	 	 	 
+	 * @var DoExpressCheckoutPaymentResponseDetailsType 	 
 	 */ 
 	public $DoExpressCheckoutPaymentResponseDetails;
 
@@ -17303,8 +17469,8 @@ class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var FMFDetailsType
+	 	 	 	 
+	 * @var FMFDetailsType 	 
 	 */ 
 	public $FMFDetails;
 
@@ -17326,8 +17492,8 @@ class DoUATPExpressCheckoutPaymentReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var DoUATPExpressCheckoutPaymentRequestType
+	 	 	 	 
+	 * @var DoUATPExpressCheckoutPaymentRequestType 	 
 	 */ 
 	public $DoUATPExpressCheckoutPaymentRequest;
 
@@ -17376,8 +17542,8 @@ class DoUATPExpressCheckoutPaymentResponseType  extends DoExpressCheckoutPayment
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var UATPDetailsType
+	 	 	 	 
+	 * @var UATPDetailsType 	 
 	 */ 
 	public $UATPDetails;
 
@@ -17399,8 +17565,8 @@ class ManagePendingTransactionStatusReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ManagePendingTransactionStatusRequestType
+	 	 	 	 
+	 * @var ManagePendingTransactionStatusRequestType 	 
 	 */ 
 	public $ManagePendingTransactionStatusRequest;
 
@@ -17436,8 +17602,8 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionID;
 
@@ -17447,8 +17613,8 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var FMFPendingTransactionActionType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Action;
 
@@ -17479,8 +17645,8 @@ class ManagePendingTransactionStatusResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionID;
 
@@ -17490,8 +17656,8 @@ class ManagePendingTransactionStatusResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Status;
 
@@ -17513,8 +17679,8 @@ class DoDirectPaymentReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var DoDirectPaymentRequestType
+	 	 	 	 
+	 * @var DoDirectPaymentRequestType 	 
 	 */ 
 	public $DoDirectPaymentRequest;
 
@@ -17551,8 +17717,8 @@ class DoDirectPaymentRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var DoDirectPaymentRequestDetailsType
+	 	 	 	 
+	 * @var DoDirectPaymentRequestDetailsType 	 
 	 */ 
 	public $DoDirectPaymentRequestDetails;
 
@@ -17563,8 +17729,8 @@ class DoDirectPaymentRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $ReturnFMFDetails;
 
@@ -17596,8 +17762,8 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -17621,8 +17787,8 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AVSCode;
 
@@ -17636,8 +17802,8 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CVV2Code;
 
@@ -17648,8 +17814,8 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionID;
 
@@ -17659,8 +17825,8 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var PendingStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PendingReason;
 
@@ -17670,8 +17836,8 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var PaymentStatusCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentStatus;
 
@@ -17681,8 +17847,8 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var FMFDetailsType
+	 	 	 	 
+	 * @var FMFDetailsType 	 
 	 */ 
 	public $FMFDetails;
 
@@ -17692,8 +17858,8 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ThreeDSecureResponseType
+	 	 	 	 
+	 * @var ThreeDSecureResponseType 	 
 	 */ 
 	public $ThreeDSecureResponse;
 
@@ -17704,8 +17870,8 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $PaymentAdviceCode;
 
@@ -17727,8 +17893,8 @@ class DoCancelReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var DoCancelRequestType
+	 	 	 	 
+	 * @var DoCancelRequestType 	 
 	 */ 
 	public $DoCancelRequest;
 
@@ -17764,8 +17930,8 @@ class DoCancelRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CancelMsgSubID;
 
@@ -17775,8 +17941,8 @@ class DoCancelRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var APIType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $APIType;
 
@@ -17788,8 +17954,8 @@ class DoCancelRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -17820,8 +17986,8 @@ class DoCancelResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -17843,8 +18009,8 @@ class DoCaptureReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var DoCaptureRequestType
+	 	 	 	 
+	 * @var DoCaptureRequestType 	 
 	 */ 
 	public $DoCaptureRequest;
 
@@ -17884,8 +18050,8 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AuthorizationID;
 
@@ -17899,8 +18065,8 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -17914,8 +18080,8 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var CompleteCodeType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $CompleteType;
 
@@ -17928,8 +18094,8 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Note;
 
@@ -17943,8 +18109,8 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InvoiceID;
 
@@ -17955,8 +18121,8 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var EnhancedDataType
+	 	 	 	 
+	 * @var EnhancedDataType 	 
 	 */ 
 	public $EnhancedData;
 
@@ -17969,8 +18135,8 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Descriptor;
 
@@ -17980,8 +18146,8 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var MerchantStoreDetailsType
+	 	 	 	 
+	 * @var MerchantStoreDetailsType 	 
 	 */ 
 	public $MerchantStoreDetails;
 
@@ -17993,8 +18159,8 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -18026,8 +18192,8 @@ class DoCaptureResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var DoCaptureResponseDetailsType
+	 	 	 	 
+	 * @var DoCaptureResponseDetailsType 	 
 	 */ 
 	public $DoCaptureResponseDetails;
 
@@ -18049,8 +18215,8 @@ class DoReauthorizationReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var DoReauthorizationRequestType
+	 	 	 	 
+	 * @var DoReauthorizationRequestType 	 
 	 */ 
 	public $DoReauthorizationRequest;
 
@@ -18096,8 +18262,8 @@ class DoReauthorizationRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AuthorizationID;
 
@@ -18110,8 +18276,8 @@ class DoReauthorizationRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -18123,8 +18289,8 @@ class DoReauthorizationRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -18157,8 +18323,8 @@ class DoReauthorizationResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AuthorizationID;
 
@@ -18168,8 +18334,8 @@ class DoReauthorizationResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AuthorizationInfoType
+	 	 	 	 
+	 * @var AuthorizationInfoType 	 
 	 */ 
 	public $AuthorizationInfo;
 
@@ -18179,8 +18345,8 @@ class DoReauthorizationResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -18202,8 +18368,8 @@ class DoVoidReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var DoVoidRequestType
+	 	 	 	 
+	 * @var DoVoidRequestType 	 
 	 */ 
 	public $DoVoidRequest;
 
@@ -18249,8 +18415,8 @@ class DoVoidRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AuthorizationID;
 
@@ -18263,8 +18429,8 @@ class DoVoidRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Note;
 
@@ -18276,8 +18442,8 @@ class DoVoidRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -18311,8 +18477,8 @@ class DoVoidResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AuthorizationID;
 
@@ -18322,8 +18488,8 @@ class DoVoidResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -18345,8 +18511,8 @@ class DoAuthorizationReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var DoAuthorizationRequestType
+	 	 	 	 
+	 * @var DoAuthorizationRequestType 	 
 	 */ 
 	public $DoAuthorizationRequest;
 
@@ -18386,8 +18552,8 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionID;
 
@@ -18399,8 +18565,8 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var TransactionEntityType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionEntity;
 
@@ -18413,8 +18579,8 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -18426,8 +18592,8 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -18460,8 +18626,8 @@ class DoAuthorizationResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionID;
 
@@ -18471,8 +18637,8 @@ class DoAuthorizationResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -18482,8 +18648,8 @@ class DoAuthorizationResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var AuthorizationInfoType
+	 	 	 	 
+	 * @var AuthorizationInfoType 	 
 	 */ 
 	public $AuthorizationInfo;
 
@@ -18493,8 +18659,8 @@ class DoAuthorizationResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -18516,8 +18682,8 @@ class DoUATPAuthorizationReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var DoUATPAuthorizationRequestType
+	 	 	 	 
+	 * @var DoUATPAuthorizationRequestType 	 
 	 */ 
 	public $DoUATPAuthorizationRequest;
 
@@ -18553,8 +18719,8 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var UATPDetailsType
+	 	 	 	 
+	 * @var UATPDetailsType 	 
 	 */ 
 	public $UATPDetails;
 
@@ -18566,8 +18732,8 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var TransactionEntityType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $TransactionEntity;
 
@@ -18580,8 +18746,8 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Amount;
 
@@ -18591,8 +18757,8 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InvoiceID;
 
@@ -18604,8 +18770,8 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -18636,8 +18802,8 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var UATPDetailsType
+	 	 	 	 
+	 * @var UATPDetailsType 	 
 	 */ 
 	public $UATPDetails;
 
@@ -18647,8 +18813,8 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $AuthorizationCode;
 
@@ -18658,8 +18824,8 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $InvoiceID;
 
@@ -18671,8 +18837,8 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $MsgSubID;
 
@@ -18694,8 +18860,8 @@ class CreateMobilePaymentReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var CreateMobilePaymentRequestType
+	 	 	 	 
+	 * @var CreateMobilePaymentRequestType 	 
 	 */ 
 	public $CreateMobilePaymentRequest;
 
@@ -18731,8 +18897,8 @@ class CreateMobilePaymentRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var CreateMobilePaymentRequestDetailsType
+	 	 	 	 
+	 * @var CreateMobilePaymentRequestDetailsType 	 
 	 */ 
 	public $CreateMobilePaymentRequestDetails;
 
@@ -18774,8 +18940,8 @@ class GetMobileStatusReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var GetMobileStatusRequestType
+	 	 	 	 
+	 * @var GetMobileStatusRequestType 	 
 	 */ 
 	public $GetMobileStatusRequest;
 
@@ -18811,8 +18977,8 @@ class GetMobileStatusRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var GetMobileStatusRequestDetailsType
+	 	 	 	 
+	 * @var GetMobileStatusRequestDetailsType 	 
 	 */ 
 	public $GetMobileStatusRequestDetails;
 
@@ -18844,8 +19010,8 @@ class GetMobileStatusResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $IsActivated;
 
@@ -18855,8 +19021,8 @@ class GetMobileStatusResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $PaymentPending;
 
@@ -18878,8 +19044,8 @@ class SetMobileCheckoutReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var SetMobileCheckoutRequestType
+	 	 	 	 
+	 * @var SetMobileCheckoutRequestType 	 
 	 */ 
 	public $SetMobileCheckoutRequest;
 
@@ -18915,8 +19081,8 @@ class SetMobileCheckoutRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var SetMobileCheckoutRequestDetailsType
+	 	 	 	 
+	 * @var SetMobileCheckoutRequestDetailsType 	 
 	 */ 
 	public $SetMobileCheckoutRequestDetails;
 
@@ -18952,8 +19118,8 @@ class SetMobileCheckoutResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -18975,8 +19141,8 @@ class DoMobileCheckoutPaymentReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var DoMobileCheckoutPaymentRequestType
+	 	 	 	 
+	 * @var DoMobileCheckoutPaymentRequestType 	 
 	 */ 
 	public $DoMobileCheckoutPaymentRequest;
 
@@ -19016,8 +19182,8 @@ class DoMobileCheckoutPaymentRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -19047,8 +19213,8 @@ class DoMobileCheckoutPaymentResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var DoMobileCheckoutPaymentResponseDetailsType
+	 	 	 	 
+	 * @var DoMobileCheckoutPaymentResponseDetailsType 	 
 	 */ 
 	public $DoMobileCheckoutPaymentResponseDetails;
 
@@ -19070,8 +19236,8 @@ class GetBalanceReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var GetBalanceRequestType
+	 	 	 	 
+	 * @var GetBalanceRequestType 	 
 	 */ 
 	public $GetBalanceRequest;
 
@@ -19107,8 +19273,8 @@ class GetBalanceRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ReturnAllCurrencies;
 
@@ -19131,8 +19297,8 @@ class GetBalanceResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BasicAmountType
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $Balance;
 
@@ -19142,8 +19308,8 @@ class GetBalanceResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $BalanceTimeStamp;
 
@@ -19155,7 +19321,9 @@ class GetBalanceResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 
-	 * @var BasicAmountType
+	 * @value
+	 	 	 	 
+	 * @var BasicAmountType 	 
 	 */ 
 	public $BalanceHoldings;
 
@@ -19177,8 +19345,8 @@ class SetCustomerBillingAgreementReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var SetCustomerBillingAgreementRequestType
+	 	 	 	 
+	 * @var SetCustomerBillingAgreementRequestType 	 
 	 */ 
 	public $SetCustomerBillingAgreementRequest;
 
@@ -19214,8 +19382,8 @@ class SetCustomerBillingAgreementRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var SetCustomerBillingAgreementRequestDetailsType
+	 	 	 	 
+	 * @var SetCustomerBillingAgreementRequestDetailsType 	 
 	 */ 
 	public $SetCustomerBillingAgreementRequestDetails;
 
@@ -19245,8 +19413,8 @@ class SetCustomerBillingAgreementResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -19268,8 +19436,8 @@ class GetBillingAgreementCustomerDetailsReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var GetBillingAgreementCustomerDetailsRequestType
+	 	 	 	 
+	 * @var GetBillingAgreementCustomerDetailsRequestType 	 
 	 */ 
 	public $GetBillingAgreementCustomerDetailsRequest;
 
@@ -19305,8 +19473,8 @@ class GetBillingAgreementCustomerDetailsRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -19336,8 +19504,8 @@ class GetBillingAgreementCustomerDetailsResponseType  extends AbstractResponseTy
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var GetBillingAgreementCustomerDetailsResponseDetailsType
+	 	 	 	 
+	 * @var GetBillingAgreementCustomerDetailsResponseDetailsType 	 
 	 */ 
 	public $GetBillingAgreementCustomerDetailsResponseDetails;
 
@@ -19359,8 +19527,8 @@ class CreateBillingAgreementReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var CreateBillingAgreementRequestType
+	 	 	 	 
+	 * @var CreateBillingAgreementRequestType 	 
 	 */ 
 	public $CreateBillingAgreementRequest;
 
@@ -19396,8 +19564,8 @@ class CreateBillingAgreementRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Token;
 
@@ -19427,8 +19595,8 @@ class CreateBillingAgreementResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $BillingAgreementID;
 
@@ -19450,8 +19618,8 @@ class DoReferenceTransactionReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var DoReferenceTransactionRequestType
+	 	 	 	 
+	 * @var DoReferenceTransactionRequestType 	 
 	 */ 
 	public $DoReferenceTransactionRequest;
 
@@ -19488,8 +19656,8 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var DoReferenceTransactionRequestDetailsType
+	 	 	 	 
+	 * @var DoReferenceTransactionRequestDetailsType 	 
 	 */ 
 	public $DoReferenceTransactionRequestDetails;
 
@@ -19500,8 +19668,8 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $ReturnFMFDetails;
 
@@ -19531,8 +19699,8 @@ class DoReferenceTransactionResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var DoReferenceTransactionResponseDetailsType
+	 	 	 	 
+	 * @var DoReferenceTransactionResponseDetailsType 	 
 	 */ 
 	public $DoReferenceTransactionResponseDetails;
 
@@ -19542,8 +19710,8 @@ class DoReferenceTransactionResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var FMFDetailsType
+	 	 	 	 
+	 * @var FMFDetailsType 	 
 	 */ 
 	public $FMFDetails;
 
@@ -19565,8 +19733,8 @@ class DoNonReferencedCreditReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var DoNonReferencedCreditRequestType
+	 	 	 	 
+	 * @var DoNonReferencedCreditRequestType 	 
 	 */ 
 	public $DoNonReferencedCreditRequest;
 
@@ -19602,8 +19770,8 @@ class DoNonReferencedCreditRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var DoNonReferencedCreditRequestDetailsType
+	 	 	 	 
+	 * @var DoNonReferencedCreditRequestDetailsType 	 
 	 */ 
 	public $DoNonReferencedCreditRequestDetails;
 
@@ -19633,8 +19801,8 @@ class DoNonReferencedCreditResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var DoNonReferencedCreditResponseDetailsType
+	 	 	 	 
+	 * @var DoNonReferencedCreditResponseDetailsType 	 
 	 */ 
 	public $DoNonReferencedCreditResponseDetails;
 
@@ -19656,8 +19824,8 @@ class CreateRecurringPaymentsProfileReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var CreateRecurringPaymentsProfileRequestType
+	 	 	 	 
+	 * @var CreateRecurringPaymentsProfileRequestType 	 
 	 */ 
 	public $CreateRecurringPaymentsProfileRequest;
 
@@ -19693,8 +19861,8 @@ class CreateRecurringPaymentsProfileRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var CreateRecurringPaymentsProfileRequestDetailsType
+	 	 	 	 
+	 * @var CreateRecurringPaymentsProfileRequestDetailsType 	 
 	 */ 
 	public $CreateRecurringPaymentsProfileRequestDetails;
 
@@ -19717,8 +19885,8 @@ class CreateRecurringPaymentsProfileResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var CreateRecurringPaymentsProfileResponseDetailsType
+	 	 	 	 
+	 * @var CreateRecurringPaymentsProfileResponseDetailsType 	 
 	 */ 
 	public $CreateRecurringPaymentsProfileResponseDetails;
 
@@ -19740,8 +19908,8 @@ class GetRecurringPaymentsProfileDetailsReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var GetRecurringPaymentsProfileDetailsRequestType
+	 	 	 	 
+	 * @var GetRecurringPaymentsProfileDetailsRequestType 	 
 	 */ 
 	public $GetRecurringPaymentsProfileDetailsRequest;
 
@@ -19777,8 +19945,8 @@ class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ProfileID;
 
@@ -19808,8 +19976,8 @@ class GetRecurringPaymentsProfileDetailsResponseType  extends AbstractResponseTy
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var GetRecurringPaymentsProfileDetailsResponseDetailsType
+	 	 	 	 
+	 * @var GetRecurringPaymentsProfileDetailsResponseDetailsType 	 
 	 */ 
 	public $GetRecurringPaymentsProfileDetailsResponseDetails;
 
@@ -19831,8 +19999,8 @@ class ManageRecurringPaymentsProfileStatusReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ManageRecurringPaymentsProfileStatusRequestType
+	 	 	 	 
+	 * @var ManageRecurringPaymentsProfileStatusRequestType 	 
 	 */ 
 	public $ManageRecurringPaymentsProfileStatusRequest;
 
@@ -19868,8 +20036,8 @@ class ManageRecurringPaymentsProfileStatusRequestType  extends AbstractRequestTy
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ManageRecurringPaymentsProfileStatusRequestDetailsType
+	 	 	 	 
+	 * @var ManageRecurringPaymentsProfileStatusRequestDetailsType 	 
 	 */ 
 	public $ManageRecurringPaymentsProfileStatusRequestDetails;
 
@@ -19892,8 +20060,8 @@ class ManageRecurringPaymentsProfileStatusResponseType  extends AbstractResponse
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ManageRecurringPaymentsProfileStatusResponseDetailsType
+	 	 	 	 
+	 * @var ManageRecurringPaymentsProfileStatusResponseDetailsType 	 
 	 */ 
 	public $ManageRecurringPaymentsProfileStatusResponseDetails;
 
@@ -19915,8 +20083,8 @@ class BillOutstandingAmountReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var BillOutstandingAmountRequestType
+	 	 	 	 
+	 * @var BillOutstandingAmountRequestType 	 
 	 */ 
 	public $BillOutstandingAmountRequest;
 
@@ -19952,8 +20120,8 @@ class BillOutstandingAmountRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BillOutstandingAmountRequestDetailsType
+	 	 	 	 
+	 * @var BillOutstandingAmountRequestDetailsType 	 
 	 */ 
 	public $BillOutstandingAmountRequestDetails;
 
@@ -19976,8 +20144,8 @@ class BillOutstandingAmountResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var BillOutstandingAmountResponseDetailsType
+	 	 	 	 
+	 * @var BillOutstandingAmountResponseDetailsType 	 
 	 */ 
 	public $BillOutstandingAmountResponseDetails;
 
@@ -19999,8 +20167,8 @@ class UpdateRecurringPaymentsProfileReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var UpdateRecurringPaymentsProfileRequestType
+	 	 	 	 
+	 * @var UpdateRecurringPaymentsProfileRequestType 	 
 	 */ 
 	public $UpdateRecurringPaymentsProfileRequest;
 
@@ -20036,8 +20204,8 @@ class UpdateRecurringPaymentsProfileRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var UpdateRecurringPaymentsProfileRequestDetailsType
+	 	 	 	 
+	 * @var UpdateRecurringPaymentsProfileRequestDetailsType 	 
 	 */ 
 	public $UpdateRecurringPaymentsProfileRequestDetails;
 
@@ -20060,8 +20228,8 @@ class UpdateRecurringPaymentsProfileResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var UpdateRecurringPaymentsProfileResponseDetailsType
+	 	 	 	 
+	 * @var UpdateRecurringPaymentsProfileResponseDetailsType 	 
 	 */ 
 	public $UpdateRecurringPaymentsProfileResponseDetails;
 
@@ -20083,8 +20251,8 @@ class GetPalDetailsReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var GetPalDetailsRequestType
+	 	 	 	 
+	 * @var GetPalDetailsRequestType 	 
 	 */ 
 	public $GetPalDetailsRequest;
 
@@ -20133,8 +20301,8 @@ class GetPalDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Pal;
 
@@ -20144,8 +20312,8 @@ class GetPalDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $Locale;
 
@@ -20167,8 +20335,8 @@ class ReverseTransactionReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ReverseTransactionRequestType
+	 	 	 	 
+	 * @var ReverseTransactionRequestType 	 
 	 */ 
 	public $ReverseTransactionRequest;
 
@@ -20204,8 +20372,8 @@ class ReverseTransactionRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ReverseTransactionRequestDetailsType
+	 	 	 	 
+	 * @var ReverseTransactionRequestDetailsType 	 
 	 */ 
 	public $ReverseTransactionRequestDetails;
 
@@ -20235,8 +20403,8 @@ class ReverseTransactionResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @var ReverseTransactionResponseDetailsType
+	 	 	 	 
+	 * @var ReverseTransactionResponseDetailsType 	 
 	 */ 
 	public $ReverseTransactionResponseDetails;
 
@@ -20258,8 +20426,8 @@ class ExternalRememberMeOptOutReq
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ExternalRememberMeOptOutRequestType
+	 	 	 	 
+	 * @var ExternalRememberMeOptOutRequestType 	 
 	 */ 
 	public $ExternalRememberMeOptOutRequest;
 
@@ -20303,8 +20471,8 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ExternalRememberMeID;
 
@@ -20315,8 +20483,8 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @var ExternalRememberMeOwnerDetailsType
+	 	 	 	 
+	 * @var ExternalRememberMeOwnerDetailsType 	 
 	 */ 
 	public $ExternalRememberMeOwnerDetails;
 
