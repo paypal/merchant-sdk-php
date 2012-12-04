@@ -10,13 +10,6 @@ $logger = new PPLoggingManager('CreateRecurringPaymentsProfile');
 
 $currencyCode = "USD";
 
-$creditCard = new CreditCardDetailsType();
-$creditCard->CreditCardNumber = $_REQUEST['creditCardNumber'];
-$creditCard->CreditCardType = $_REQUEST['creditCardType'];
-$creditCard->CVV2 = $_REQUEST['cvv'];
-$creditCard->ExpMonth = $_REQUEST['expMonth'];
-$creditCard->ExpYear = $_REQUEST['expYear'];
-
 $shippingAddress = new AddressType();
 $shippingAddress->Name = $_REQUEST['shippingName'];
 $shippingAddress->Street1 = $_REQUEST['shippingStreet1'];
@@ -26,7 +19,6 @@ $shippingAddress->StateOrProvince = $_REQUEST['shippingState'];
 $shippingAddress->PostalCode = $_REQUEST['shippingPostalCode'];
 $shippingAddress->Country = $_REQUEST['shippingCountry'];
 $shippingAddress->Phone = $_REQUEST['shippingPhone'];
-
 
 $RPProfileDetails = new RecurringPaymentsProfileDetailsType();
 $RPProfileDetails->SubscriberName = $_REQUEST['subscriberName'];
@@ -45,25 +37,41 @@ $paymentBillingPeriod->Amount = new BasicAmountType($currencyCode, $_REQUEST['pa
 $paymentBillingPeriod->ShippingAmount = new BasicAmountType($currencyCode, $_REQUEST['paymentShippingAmount']);
 $paymentBillingPeriod->TaxAmount = new BasicAmountType($currencyCode, $_REQUEST['paymentTaxAmount']);
 
-$trialBillingPeriod =  new BillingPeriodDetailsType();
-$trialBillingPeriod->BillingFrequency = $_REQUEST['trialBillingFrequency'];
-$trialBillingPeriod->BillingPeriod = $_REQUEST['trialBillingPeriod'];
-$trialBillingPeriod->TotalBillingCycles = $_REQUEST['trialBillingCycles'];
-$trialBillingPeriod->Amount = new BasicAmountType($currencyCode, $_REQUEST['trialAmount']);
-$trialBillingPeriod->ShippingAmount = new BasicAmountType($currencyCode, $_REQUEST['trialShippingAmount']);
-$trialBillingPeriod->TaxAmount = new BasicAmountType($currencyCode, $_REQUEST['trialTaxAmount']);
-
 $scheduleDetails = new ScheduleDetailsType();
 $scheduleDetails->Description = $_REQUEST['profileDescription'];
 $scheduleDetails->ActivationDetails = $activationDetails;
-$scheduleDetails->TrialPeriod  = $trialBillingPeriod;
+
+if( $_REQUEST['trialBillingFrequency'] != "" && $_REQUEST['trialAmount'] != "") {
+	$trialBillingPeriod =  new BillingPeriodDetailsType();
+	$trialBillingPeriod->BillingFrequency = $_REQUEST['trialBillingFrequency'];
+	$trialBillingPeriod->BillingPeriod = $_REQUEST['trialBillingPeriod'];
+	$trialBillingPeriod->TotalBillingCycles = $_REQUEST['trialBillingCycles'];
+	$trialBillingPeriod->Amount = new BasicAmountType($currencyCode, $_REQUEST['trialAmount']);
+	$trialBillingPeriod->ShippingAmount = new BasicAmountType($currencyCode, $_REQUEST['trialShippingAmount']);
+	$trialBillingPeriod->TaxAmount = new BasicAmountType($currencyCode, $_REQUEST['trialTaxAmount']);	
+	$scheduleDetails->TrialPeriod  = $trialBillingPeriod;
+}
+
 $scheduleDetails->PaymentPeriod = $paymentBillingPeriod;
-$scheduleDetails->MaxFailedPayments =  $_REQUEST['maxFailedPayments'];
-$scheduleDetails->AutoBillOutstandingAmount = $_REQUEST['autoBillOutstandingAmount'];
+if($_REQUEST['maxFailedPayments'] != "") {
+	$scheduleDetails->MaxFailedPayments =  $_REQUEST['maxFailedPayments'];
+}
+if($_REQUEST['autoBillOutstandingAmount'] != "") {
+	$scheduleDetails->AutoBillOutstandingAmount = $_REQUEST['autoBillOutstandingAmount'];
+}
 
 $createRPProfileRequestDetail = new CreateRecurringPaymentsProfileRequestDetailsType();
-$createRPProfileRequestDetail->CreditCard = $creditCard;
-//$createRPProfileRequestDetail->Token  = $_REQUEST['token'];
+if($_REQUEST['token'] != "") {
+	$createRPProfileRequestDetail->Token  = $_REQUEST['token'];
+} else {
+	$creditCard = new CreditCardDetailsType();
+	$creditCard->CreditCardNumber = $_REQUEST['creditCardNumber'];
+	$creditCard->CreditCardType = $_REQUEST['creditCardType'];
+	$creditCard->CVV2 = $_REQUEST['cvv'];
+	$creditCard->ExpMonth = $_REQUEST['expMonth'];
+	$creditCard->ExpYear = $_REQUEST['expYear'];
+	$createRPProfileRequestDetail->CreditCard = $creditCard;
+}
 $createRPProfileRequestDetail->ScheduleDetails = $scheduleDetails;
 $createRPProfileRequestDetail->RecurringPaymentsProfileDetails = $RPProfileDetails;
 $createRPProfileRequest = new CreateRecurringPaymentsProfileRequestType();

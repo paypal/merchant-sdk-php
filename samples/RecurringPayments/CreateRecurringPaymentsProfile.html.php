@@ -314,6 +314,7 @@
 				<div class="param_name">Auto billing of outstanding amount</div>
 				<div class="param_value">
 					<select name="autoBillOutstandingAmount">
+						<option value="">- Select a value -</option>
 						<option value="NoAutoBill">No Auto billing</option>
 						<option value="AddToNextBilling">Add to next billing</option>
 					</select>
