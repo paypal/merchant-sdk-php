@@ -7,6 +7,7 @@
 require_once 'PPUtils.php';
 require_once 'PPXmlMessage.php';
 /**
+ * @hasAttribute
  * On requests, you must set the currencyID attribute to one of
  * the three-character currency codes for any of the supported
  * PayPal currencies. Limitations: Must not exceed $10,000 USD
@@ -37,6 +38,8 @@ class BasicAmountType
 	 
 	 * @namespace cc
 	 
+	 
+	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -57,6 +60,7 @@ class BasicAmountType
 
 
 /**
+ * @hasAttribute
  * 
  */
  
@@ -82,6 +86,8 @@ class MeasureType
 	 
 	 * @namespace cc
 	 
+	 
+	 * @value
 	 	 	 	 
 	 * @var double 	 
 	 */ 
@@ -192,8 +198,6 @@ class ErrorType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorParameterType 	 
 	 */ 
@@ -224,8 +228,6 @@ class AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -314,8 +316,6 @@ class AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorType 	 
 	 */ 
@@ -841,8 +841,6 @@ class IncentiveDetailType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var IncentiveAppliedToType 	 
 	 */ 
@@ -957,8 +955,6 @@ class IncentiveBucketType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var IncentiveItemType 	 
 	 */ 
@@ -1129,8 +1125,6 @@ class GetIncentiveEvaluationRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -1143,8 +1137,6 @@ class GetIncentiveEvaluationRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var IncentiveApplyIndicationType 	 
 	 */ 
@@ -1157,8 +1149,6 @@ class GetIncentiveEvaluationRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var IncentiveBucketType 	 
 	 */ 
@@ -1206,8 +1196,6 @@ class GetIncentiveEvaluationResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var IncentiveDetailType 	 
 	 */ 
@@ -1722,8 +1710,6 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var BillingAgreementDetailsType 	 
 	 */ 
@@ -1738,8 +1724,6 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -1863,8 +1847,6 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var OtherPaymentMethodDetailsType 	 
 	 */ 
@@ -1889,8 +1871,6 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var PaymentDetailsType 	 
 	 */ 
@@ -1903,8 +1883,6 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ShippingOptionType 	 
 	 */ 
@@ -2038,8 +2016,6 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -2076,8 +2052,6 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var IncentiveInfoType 	 
 	 */ 
@@ -2152,8 +2126,6 @@ class SetExpressCheckoutRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var CoupledBucketsType 	 
 	 */ 
@@ -2248,8 +2220,6 @@ class SetDataRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var BillingApprovalDetailsType 	 
 	 */ 
@@ -2916,8 +2886,6 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var PaymentDetailsType 	 
 	 */ 
@@ -2942,8 +2910,6 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var IncentiveDetailsType 	 
 	 */ 
@@ -3022,8 +2988,6 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -3037,8 +3001,6 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var PaymentRequestInfoType 	 
 	 */ 
@@ -3134,8 +3096,6 @@ class SetDataResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorType 	 
 	 */ 
@@ -3173,8 +3133,6 @@ class AuthorizationResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorType 	 
 	 */ 
@@ -3269,8 +3227,6 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var PaymentDetailsType 	 
 	 */ 
@@ -3408,8 +3364,6 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -3447,8 +3401,6 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var CoupledBucketsType 	 
 	 */ 
@@ -3491,8 +3443,6 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var PaymentInfoType 	 
 	 */ 
@@ -3562,8 +3512,6 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var CoupledPaymentInfoType 	 
 	 */ 
@@ -4349,8 +4297,6 @@ class SetAccessPermissionsRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -4363,8 +4309,6 @@ class SetAccessPermissionsRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -4567,8 +4511,6 @@ class GetAccessPermissionDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -4581,8 +4523,6 @@ class GetAccessPermissionDetailsResponseDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -5315,8 +5255,6 @@ class PaymentTransactionType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -6260,8 +6198,6 @@ class SubscriptionInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var SubscriptionTermsType 	 
 	 */ 
@@ -6755,8 +6691,6 @@ class PaymentItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var OptionType 	 
 	 */ 
@@ -6831,8 +6765,6 @@ class PaymentItemInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var PaymentItemType 	 
 	 */ 
@@ -7156,8 +7088,6 @@ class PaymentDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var PaymentDetailsItemType 	 
 	 */ 
@@ -7440,8 +7370,6 @@ class IncentiveDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var IncentiveAppliedDetailsType 	 
 	 */ 
@@ -10479,8 +10407,6 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var PaymentDetailsItemType 	 
 	 */ 
@@ -11198,8 +11124,6 @@ class RiskFilterListType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var RiskFilterDetailsType 	 
 	 */ 
@@ -11448,8 +11372,6 @@ class AirlineItineraryType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var FlightDetailsType 	 
 	 */ 
@@ -12042,8 +11964,6 @@ class IncentiveInfoType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var IncentiveApplyIndicationType 	 
 	 */ 
@@ -12719,8 +12639,6 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var DiscountType 	 
 	 */ 
@@ -12760,8 +12678,6 @@ class InvoiceItemType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var AdditionalFeeType 	 
 	 */ 
@@ -12914,8 +12830,6 @@ class CoupledBucketsType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -13212,8 +13126,6 @@ class OptionSelectionDetailsType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var InstallmentDetailsType 	 
 	 */ 
@@ -13257,8 +13169,6 @@ class OptionDetailsType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var OptionSelectionDetailsType 	 
 	 */ 
@@ -13369,8 +13279,6 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -13383,8 +13291,6 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var OptionDetailsType 	 
 	 */ 
@@ -13397,8 +13303,6 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -13643,8 +13547,6 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -13657,8 +13559,6 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var OptionDetailsType 	 
 	 */ 
@@ -13671,8 +13571,6 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -14075,8 +13973,6 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -14089,8 +13985,6 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var OptionDetailsType 	 
 	 */ 
@@ -14103,8 +13997,6 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -14294,8 +14186,6 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var OptionTrackingDetailsType 	 
 	 */ 
@@ -14348,8 +14238,6 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -14534,8 +14422,6 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var OptionTrackingDetailsType 	 
 	 */ 
@@ -14559,8 +14445,6 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -14660,8 +14544,6 @@ class BMButtonSearchResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ButtonSearchResultType 	 
 	 */ 
@@ -14849,8 +14731,6 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var InvoiceItemType 	 
 	 */ 
@@ -15735,8 +15615,6 @@ class TransactionSearchResponseType  extends AbstractResponseType
 	 
 	 * @namespace ebl
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var PaymentTransactionSearchResultType 	 
 	 */ 
@@ -15844,8 +15722,6 @@ class MassPayRequestType  extends AbstractRequestType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var MassPayRequestItemType 	 
 	 */ 
@@ -19320,8 +19196,6 @@ class GetBalanceResponseType  extends AbstractResponseType
 	 
 	 * @namespace ns
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var BasicAmountType 	 
 	 */ 
