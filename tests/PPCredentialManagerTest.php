@@ -1,5 +1,4 @@
 <?php
-
 require_once 'PPCredentialManager.php';
 
 /**
@@ -37,30 +36,48 @@ class PPCredentialManagerTest extends PHPUnit_Framework_TestCase
 	{
 		$instance = $this->object->getInstance();
 		$this->assertTrue($instance instanceof PPCredentialManager);
-
 	}
 
 	/**
 	 * @test
 	 */
-	public function testGetCredentialObject()
+	public function testGetSpecificCredentialObject()
 	{
-		$IPPCredential = $this->object->getCredentialObject('platfo_1255077030_biz_api1.gmail.com');
-		$this->assertNotNull($IPPCredential);
-		$IPPCredential = $this->object->getCredentialObject('suarumugam-biz_api1.paypal.com');
-		$this->assertNotNull($IPPCredential);
-		$this->assertEquals('suarumugam-biz_api1.paypal.com', $IPPCredential->getUsername());
-		$this->assertEquals('config/cert_key.pem', $IPPCredential->getCertificatePath());
-		$IPPCredential = $this->object->getCredentialObject('suarumugam-biz_api1.paypal.com');
-		$this->assertNotNull($IPPCredential->getUserName());
-		$IPPCredential = $this->object->getCredentialObject();
-		$this->assertEquals('platfo_1255077030_biz_api1.gmail.com', $IPPCredential->getUsername());
-		$this->setExpectedException('PPInvalidCredentialException');
-		$IPPCredential = $this->object->getCredentialObject('invalid_biz_api1.gmail.com');
-
-
+		$cred = $this->object->getCredentialObject('jb-us-seller_api1.paypal.com');
+		$this->assertNotNull($cred);
+		$this->assertEquals('jb-us-seller_api1.paypal.com', $cred->getUsername());
+		
+		$cred = $this->object->getCredentialObject('platfo_1255170694_biz_api1.gmail.com');
+		$this->assertNotNull($cred);
+		$this->assertEquals('platfo_1255170694_biz_api1.gmail.com', $cred->getUsername());
+		$this->assertStringEndsWith('cert_key.pem', $cred->getCertificatePath());		
 	}
-
-	 
+	
+	/**
+	 * @test
+	 */
+	public function testGetInvalidCredentialObject()
+	{
+		$this->setExpectedException('PPInvalidCredentialException');
+		$cred = $this->object->getCredentialObject('invalid_biz_api1.gmail.com');
+	}
+		
+	/**
+	 * @test
+	 */
+	public function testGetDefaultCredentialObject()
+	{
+		$cred = $this->object->getCredentialObject();
+		$this->assertEquals('jb-us-seller_api1.paypal.com', $cred->getUsername());
+	}	
+	
+	/**
+	 * @test
+	 */
+	public function testGetPlatformCredentialObject()
+	{
+		$cred = $this->object->getCredentialObject();
+		$this->assertEquals('APP-80W284485P519543T', $cred->getApplicationId());
+	}	
 }
 ?>

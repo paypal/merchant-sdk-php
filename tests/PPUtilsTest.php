@@ -3,7 +3,7 @@ require_once 'PPUtils.php';
 
 /**
  * Test class for PPUtils.
- * 
+ *
  */
 class PPUtilsTest extends PHPUnit_Framework_TestCase
 {
@@ -60,6 +60,5 @@ class PPUtilsTest extends PHPUnit_Framework_TestCase
         //$this->assertEquals('127.0.0.1',$ip);
     }
 
-  
 }
 ?>

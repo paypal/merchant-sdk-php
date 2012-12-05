@@ -85,7 +85,7 @@ class PPCertificateCredential extends IPPCredential {
 		} else if(defined('PP_CONFIG_PATH')) {
 			return realpath(constant('PP_CONFIG_PATH') . DIRECTORY_SEPARATOR . $this->certificatePath);
 		} else {
-			return realpath(dirname(__FILE__) . DIRECTORY_SEPARATOR . ".."	. DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . $this->certificatePath);
+			return realpath(dirname(__FILE__) . DIRECTORY_SEPARATOR . ".."	.DIRECTORY_SEPARATOR . ".."	. DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . $this->certificatePath);
 		}
 	}
 
@@ -102,5 +102,3 @@ class PPCertificateCredential extends IPPCredential {
 	}
 
 }
-
-?>

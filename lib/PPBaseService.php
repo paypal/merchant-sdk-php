@@ -69,10 +69,5 @@ class PPBaseService {
 		$this->lastResponse = $ret['response'];
 		return $this->lastResponse;
 	}
-
-    private function marshall($object) {
-		$transformer = new PPObjectTransformer();
-		return $transformer->toString($object);
-	}
 }
 ?>

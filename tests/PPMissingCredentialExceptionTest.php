@@ -1,10 +1,9 @@
 <?php
-
 require_once 'exceptions/PPMissingCredentialException.php';
 
 /**
  * Test class for PPMissingCredentialException.
- * 
+ *
  */
 class PPMissingCredentialExceptionTest extends PHPUnit_Framework_TestCase
 {
@@ -35,8 +34,8 @@ class PPMissingCredentialExceptionTest extends PHPUnit_Framework_TestCase
      */
     public function testErrorMessage()
     {
-       $msg = $this->object->errorMessage();
-      $this->assertContains('Error on line ', $msg);
+		$msg = $this->object->errorMessage();
+		$this->assertContains('Error on line', $msg);
     }
 }
 ?>

@@ -151,7 +151,7 @@ class PPUtils
 	{
 		$filtered = array();
 		foreach ($map as $key => $val) {
-			if (($pos = stripos($key, $keyPrefix)) === FALSE) {
+			if (($pos = stripos($key, $keyPrefix)) !== 0) {
 				continue;
 			}
 
@@ -177,31 +177,31 @@ class PPUtils
 
 	/**
 	 * @param string $class
-	 * @param string $property
+	 * @param string $propertyName
 	 * @throws RuntimeException
 	 * @return string
 	 */
-	public static function propertyAnnotations($class, $property)
+	public static function propertyAnnotations($class, $propertyName)
 	{
 		$class = is_object($class) ? get_class($class) : $class;
 		if (!class_exists('ReflectionProperty')) {
-			throw new RuntimeException("Property type of " . $class . "::{$property} cannot be resolved");
+			throw new RuntimeException("Property type of " . $class . "::{$propertyName} cannot be resolved");
 		}
 
-		if ($annotations =& self::$propertiesType[$class][$property]) {
+		if ($annotations =& self::$propertiesType[$class][$propertyName]) {
 			return $annotations;
 		}
 
-		if (!($refl =& self::$propertiesRefl[$class][$property])) {
-			$refl = new ReflectionProperty($class, $property);
+		if (!($refl =& self::$propertiesRefl[$class][$propertyName])) {
+			$refl = new ReflectionProperty($class, $propertyName);
 		}
 
 		// todo: smarter regexp
 		if (!preg_match_all('~\@([^\s@\(]+)[\t ]*(?:\(?([^\n@]+)\)?)?~i', $refl->getDocComment(), $annots, PREG_PATTERN_ORDER)) {
 			return NULL;
 		}
-		foreach ($annots[1] as $i => $annot) {			
-			$annotations[strtolower($annot)] = empty($annots[2][$i]) ? TRUE : rtrim($annots[2][$i], " \n\r\t)");
+		foreach ($annots[1] as $i => $annot) {
+			$annotations[strtolower($annot)] = empty($annots[2][$i]) ? TRUE : rtrim($annots[2][$i], " \t\n\r)");
 		}
 
 		return $annotations;
@@ -211,12 +211,23 @@ class PPUtils
 
 	/**
 	 * @param string $class
-	 * @param string $property
+	 * @param string $propertyName
 	 * @return string
 	 */
-	public static function isPropertyArray($class, $property)
-	{
+	public static function isAttributeProperty($class, $propertyName) {
 		if (($annotations = self::propertyAnnotations($class, $property))) {
+			return $annotations['attribute'];
+		}
+		return FALSE;
+	}
+
+	/**
+	 * @param string $class
+	 * @param string $propertyName
+	 * @return string
+	 */
+	public static function isPropertyArray($class, $propertyName) {
+		if (($annotations = self::propertyAnnotations($class, $propertyName))) {
 			if (isset($annotations['var']) && substr($annotations['var'], -2) === '[]') {
 				return TRUE;
 
@@ -232,13 +243,13 @@ class PPUtils
 
 	/**
 	 * @param string $class
-	 * @param string $property
+	 * @param string $propertyName
 	 * @throws RuntimeException
 	 * @return string
 	 */
-	public static function propertyType($class, $property)
+	public static function propertyType($class, $propertyName)
 	{
-		if (($annotations = self::propertyAnnotations($class, $property)) && isset($annotations['var'])) {
+		if (($annotations = self::propertyAnnotations($class, $propertyName)) && isset($annotations['var'])) {
 			if (substr($annotations['var'], -2) === '[]') {
 				return substr($annotations['var'], 0, -2);
 			}

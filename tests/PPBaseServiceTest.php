@@ -3,7 +3,7 @@ require_once 'PPBaseService.php';
 
 /**
  * Test class for PPBaseService.
- * 
+ *
  */
 class PPBaseServiceTest extends PHPUnit_Framework_TestCase
 {
@@ -18,7 +18,7 @@ class PPBaseServiceTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->object = new PPBaseService('serviceName');
+        $this->object = new PPBaseService('serviceName', 'serviceBinding');
         $this->object->setAccessToken('sampletoken');
         $this->object->setTokenSecret('sampleSrcret');
     }
@@ -40,7 +40,7 @@ class PPBaseServiceTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('sampletoken',$this->object->getAccessToken() );
         $this->assertEquals('sampleSrcret',$this->object->getTokenSecret() );
     }
-    
-   
+
+
 }
 ?>
