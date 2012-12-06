@@ -52,4 +52,3 @@ class MockOAuthDataStore extends OAuthDataStore {/*{{{*/
         return NULL;
     }/*}}}*/
 }/*}}}*/
-?>

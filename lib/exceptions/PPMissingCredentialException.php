@@ -16,5 +16,3 @@ class PPMissingCredentialException extends Exception{
 	}
 
 }
-
-?>

@@ -21,5 +21,3 @@ abstract class IPPCredential
 	
 	public abstract function validate();
 }
-
-?>

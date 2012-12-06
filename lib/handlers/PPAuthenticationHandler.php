@@ -23,5 +23,3 @@ class PPAuthenticationHandler implements IPPHandler {
 		}
 	}
 }
-
-?>

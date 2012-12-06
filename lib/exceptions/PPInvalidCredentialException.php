@@ -15,5 +15,3 @@ class PPInvalidCredentialException extends Exception{
 	}
 
 }
-
-?>

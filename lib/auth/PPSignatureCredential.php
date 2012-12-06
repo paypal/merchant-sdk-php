@@ -70,4 +70,3 @@ class PPSignatureCredential extends IPPCredential {
 		return $this->applicationId;
 	}
 }
-?>

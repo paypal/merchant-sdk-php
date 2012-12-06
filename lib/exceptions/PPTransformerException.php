@@ -14,5 +14,3 @@ class PPTransformerException extends Exception{
 	}
 
 }
-
-?>
