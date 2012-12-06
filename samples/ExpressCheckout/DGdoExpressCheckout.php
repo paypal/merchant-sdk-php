@@ -14,7 +14,6 @@ $payerId=urlencode( $_REQUEST['PayerID']);
 $token = $_REQUEST['token'];
 
 $getExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType($token);
-$getExpressCheckoutDetailsRequest->Version = 92.0;
 $getExpressCheckoutReq = new GetExpressCheckoutDetailsReq();
 $getExpressCheckoutReq->GetExpressCheckoutDetailsRequest = $getExpressCheckoutDetailsRequest;
 
@@ -24,8 +23,8 @@ $getECResponse = $paypalService->GetExpressCheckoutDetails($getExpressCheckoutRe
 //--------------------------------------------------------------------
 
 $orderTotal = new BasicAmountType();
-$orderTotal->currencyID = $getECResponse->GetExpressCheckoutDetailsResponseDetails->PaymentDetails->OrderTotal->currencyID;
-$orderTotal->value = $getECResponse->GetExpressCheckoutDetailsResponseDetails->PaymentDetails->OrderTotal->value;
+$orderTotal->currencyID = $getECResponse->GetExpressCheckoutDetailsResponseDetails->PaymentDetails[0]->OrderTotal->currencyID;
+$orderTotal->value = $getECResponse->GetExpressCheckoutDetailsResponseDetails->PaymentDetails[0]->OrderTotal->value;
 
 $itemDetails = new PaymentDetailsItemType();
 $itemDetails->Name = 'sample item';

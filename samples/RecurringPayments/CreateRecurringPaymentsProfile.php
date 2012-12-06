@@ -61,7 +61,7 @@ if($_REQUEST['autoBillOutstandingAmount'] != "") {
 }
 
 $createRPProfileRequestDetail = new CreateRecurringPaymentsProfileRequestDetailsType();
-if($_REQUEST['token'] != "") {
+if(trim($_REQUEST['token']) != "") {
 	$createRPProfileRequestDetail->Token  = $_REQUEST['token'];
 } else {
 	$creditCard = new CreditCardDetailsType();
