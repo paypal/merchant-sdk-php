@@ -2,7 +2,7 @@
 class PPUtils
 {
 
-	const SDK_VERSION = "2.0.95";
+	const SDK_VERSION = "2.0.96";
 
 	const SDK_NAME = "merchant-php-sdk";
 

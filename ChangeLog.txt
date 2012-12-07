@@ -1,3 +1,17 @@
+Version 2.0.96 - December 06, 2012
+
+	- SDK refreshed to Release 96
+	- Application ID is not mandatory now.
+	- Added support for passing in credentials dynamically for Authentication, now the call 
+	  wrappers have an argument for passing credentials
+	- New type ThirdPartyAuthorization has been added to support Subject and Token based Authorizations. The earlier
+	  setAccessToken and setTokenSecret have been deprecated. You can set an instance of ThirdPartyAuthorization to an 
+	  ICredential and pass ICredential as a parameter to  API call
+	- Fixes to deserialization issues.(https://github.com/paypal/SDKs/issues/37) 
+	- Fixes to validating SSL Cert in curl requests.(https://github.com/paypal/SDKs/issues/35) 
+	- Updated paymentType as Authorization instead of Authorisation in DoDirectPayment sample.(https://github.com/paypal/SDKs/issues/36) 
+--------------------------------------------------------------------------------------------------
+
 
 Version 1.2.95 - September 28, 2012
 
