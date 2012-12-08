@@ -20,19 +20,19 @@
 		</exec>
 	</target>
 
-	<target name="build" depends="clean, create-autoloader, test" />
+	<target name="build" depends="clean, test" />
 
     <target name="create-autoloader">
         <delete file="${basedir}/lib/${ant.project.name}_Autoloader.php" />
 
         <exec dir="${basedir}" executable="git" failonerror="true" outputproperty="classList">
             <!-- Use git's grep -->
-            <arg line="grep -e '^class ' lib/" />
+            <arg line="grep -e '^\(abstract \|final \)*\(class\|interface\) ' lib/" />
             <redirector>
                 <outputfilterchain>
                     <replaceregex
-                        pattern="lib/([^:]*):class ([^ ]*).*"
-                        replace="            '\2' => '/\1'," />
+                        pattern="lib/([^:]*):(abstract |final |class |interface )*([^ ]*).*"
+                        replace="            '\3' => '/\1'," />
                     <sortfilter />
                 </outputfilterchain>
             </redirector>
