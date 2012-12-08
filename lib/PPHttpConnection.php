@@ -1,8 +1,8 @@
 <?php
 
-require_once 'exceptions/PPConnectionException.php';
-require_once 'exceptions/PPConfigurationException.php';
-require_once 'PPLoggingManager.php';
+// require_once 'exceptions/PPConnectionException.php';
+// require_once 'exceptions/PPConfigurationException.php';
+// require_once 'PPLoggingManager.php';
 /**
  * A wrapper class based on the curl extension.
  * Requires the PHP curl module to be enabled.

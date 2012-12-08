@@ -4,8 +4,8 @@
   * Auto generated code 
   * 
   */
-require_once 'PPUtils.php';
-require_once 'PPXmlMessage.php';
+// require_once 'PPUtils.php';
+// require_once 'PPXmlMessage.php';
 /**
  * @hasAttribute
  * On requests, you must set the currencyID attribute to one of

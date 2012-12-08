@@ -1,7 +1,7 @@
 <?php
 
-require_once 'PPConnectionManager.php';
-require_once 'PPHttpConfig.php';
+// require_once 'PPConnectionManager.php';
+// require_once 'PPHttpConfig.php';
 
 /**
  * Test class for PPConnectionManager.

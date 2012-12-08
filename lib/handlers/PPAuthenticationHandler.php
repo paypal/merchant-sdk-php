@@ -1,11 +1,11 @@
 <?php
 
-require_once dirname(__FILE__) . '/../auth/PPSignatureCredential.php';
-require_once dirname(__FILE__) . '/../auth/PPCertificateCredential.php';
-require_once dirname(__FILE__) . '/../exceptions/PPInvalidCredentialException.php';
-require_once 'IPPHandler.php';
-require_once 'PPSignatureAuthHandler.php';
-require_once 'PPCertificateAuthHandler.php';
+// require_once dirname(__FILE__) . '/../auth/PPSignatureCredential.php';
+// require_once dirname(__FILE__) . '/../auth/PPCertificateCredential.php';
+// require_once dirname(__FILE__) . '/../exceptions/PPInvalidCredentialException.php';
+// require_once 'IPPHandler.php';
+// require_once 'PPSignatureAuthHandler.php';
+// require_once 'PPCertificateAuthHandler.php';
 
 class PPAuthenticationHandler implements IPPHandler {	
 	

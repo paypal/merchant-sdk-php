@@ -1,5 +1,5 @@
 <?php
-require_once 'IPPFormatter.php';
+// require_once 'IPPFormatter.php';
 
 class PPNVPFormatter implements IPPFormatter {
 	

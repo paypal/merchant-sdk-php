@@ -1,5 +1,5 @@
 <?php
-require_once 'exceptions/PPConnectionException.php';
+// require_once 'exceptions/PPConnectionException.php';
 
 /**
  * Test class for PPConnectionException.

@@ -1,5 +1,5 @@
 <?php
-require_once 'IPPThirdPartyAuthorization.php';
+// require_once 'IPPThirdPartyAuthorization.php';
 
 /**
  *

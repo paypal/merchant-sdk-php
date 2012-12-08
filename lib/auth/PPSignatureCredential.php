@@ -1,8 +1,8 @@
 <?php
 
-require_once 'IPPCredential.php';
-require_once dirname(__FILE__) . '/../exceptions/PPMissingCredentialException.php';
-require_once dirname(__FILE__) . '/../PPConfigManager.php';
+// require_once 'IPPCredential.php';
+// require_once dirname(__FILE__) . '/../exceptions/PPMissingCredentialException.php';
+// require_once dirname(__FILE__) . '/../PPConfigManager.php';
 
 /**
  * API signature (3-token) based credentials
