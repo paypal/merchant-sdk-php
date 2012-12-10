@@ -7,9 +7,9 @@
 // require_once 'PPUtils.php';
 // require_once dirname(__FILE__) . '/auth/PPTokenAuthorization.php';
 // require_once dirname(__FILE__) . '/formatters/FormatterFactory.php';
-foreach(glob(dirname(__FILE__) . '/handlers/*') as $handler) {
+// foreach(glob(dirname(__FILE__) . '/handlers/*') as $handler) {
 	// require_once $handler;
-}
+// }
 
 class PPAPIService {
 	
