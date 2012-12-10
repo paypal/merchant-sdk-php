@@ -40,7 +40,12 @@ class PPCertificateCredential extends IPPCredential {
 	 * Test application Ids are available for the sandbox environment
 	 * @var string
 	 */
-	protected $applicationId;	
+	protected $applicationId;
+
+	/**
+	 * Endpoint for this api key
+	 */
+	protected $endPoint;
 	
 	/**
 	 * Constructs a new certificate credential object
@@ -50,11 +55,16 @@ class PPCertificateCredential extends IPPCredential {
 	 * @param string $certPath	Path to PEM encoded client certificate file
 	 * @param string $certificatePassPhrase	password need to use the certificate
 	 */
-	public function __construct($userName, $password, $certPath, $certificatePassPhrase=NULL) {
+	public function __construct(
+		$userName, $password, $certPath,
+		$certificatePassPhrase = NULL, $endPoint = 'https://api.sandbox.paypal.com/2.0/'
+	)
+	{
 		$this->userName = trim($userName);
 		$this->password = trim($password);
 		$this->certificatePath = trim($certPath);
-		$this->certificatePassPhrase = $certificatePassPhrase; 
+		$this->certificatePassPhrase = $certificatePassPhrase;
+		$this->endPoint = trim($endPoint);
 		$this->validate();
 	}
 	
@@ -99,6 +109,10 @@ class PPCertificateCredential extends IPPCredential {
 	
 	public function getApplicationId() {
 		return $this->applicationId;
+	}
+
+	public function getEndPoint() {
+		return $this->endPoint;
 	}
 
 }
