@@ -68,6 +68,8 @@ foreach ($fileList as $file) {
     $found = get_classes_defined(file_get_contents($file));
 
     foreach ($found as $class) {
+        $class = strtolower($class);
+
         if (isset($classes[$class])) {
             echo "Warning: class [{$class}] is defined in both\n\t{$filename}\n\t{$classes[$class]}\n";
         }
@@ -93,7 +95,7 @@ class {$loaderClass}
 
     public static function loadClass(\$class)
     {
-        \$class = trim(\$class, '\\\\');
+        \$class = strtolower(trim(\$class, '\\\\'));
 
         if (isset(self::\$map[\$class])) {
             require dirname(__FILE__) . '/' . self::\$map[\$class];
