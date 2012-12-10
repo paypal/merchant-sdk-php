@@ -22,9 +22,9 @@ Called by DoDirectPayment.html.php.
 ***********************************************************/
 session_start();
 $path = '../../lib';
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);
-require_once('services/PayPalAPIInterfaceService/PayPalAPIInterfaceServiceService.php');
-require_once('PPLoggingManager.php');
+// Register auto loader
+require($path . "/PayPal_Merchant_SDK_Autoloader.php");
+PayPal_Merchant_SDK_Autoloader::register();
 /**
  * Get required parameters from the web form for the request
  */
