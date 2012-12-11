@@ -33,6 +33,10 @@ $orderTotal->value = $_REQUEST['amt'];
 
 $PaymentDetails= new PaymentDetailsType();
 $PaymentDetails->OrderTotal = $orderTotal;
+if(isset($_REQUEST['notifyURL']))
+{
+	$paymentDetails->NotifyURL = $_REQUEST['notifyURL'];
+}
 
 $DoECRequestDetails = new DoExpressCheckoutPaymentRequestDetailsType();
 $DoECRequestDetails->PayerID = $payerId;
