@@ -39,7 +39,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @throws APIException
 	 */
 	public function RefundTransaction($refundTransactionReq, $apiCredential = NULL) {
-		$this->setStandardParams($refundTransactionReq->RefundTransactionRequest);
+	$this->setStandardParams($refundTransactionReq->RefundTransactionRequest);
 		$ret = new RefundTransactionResponseType();
 		$resp = $this->call("RefundTransaction", $refundTransactionReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
