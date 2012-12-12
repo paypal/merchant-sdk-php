@@ -12,6 +12,12 @@ class PPIPNMessage {
 	
 	const IPN_CMD = 'cmd=_notify-validate';
 	
+	/*
+	 *@var boolian
+	 *
+	 */
+	$isIpnVerified;
+	
 	/**
 	 * 
 	 * @var array
@@ -37,7 +43,7 @@ class PPIPNMessage {
 			if (count($keyValue) == 2)
 				$this->ipnData[$keyValue[0]] = urldecode($keyValue[1]);
 		}
-		var_dump($this->ipnData);	
+		//var_dump($this->ipnData);	
 	}
 	
 	/**
@@ -55,31 +61,39 @@ class PPIPNMessage {
 	 * @return boolean
 	 */
 	public function validate() {
-		$request = self::IPN_CMD;
-		if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc() == 1) {
-			$get_magic_quotes_exists = true;
-		} else {
-			$get_magic_quotes_exists = false;
+	    if(isset($this->isIpnVerified))
+		{
+			return $this->isIpnVerified;
 		}
-		foreach ($this->ipnData as $key => $value) {
-			if($get_magic_quotes_exists) {
-				$value = urlencode(stripslashes($value));
+		else
+			{
+			$request = self::IPN_CMD;
+			if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc() == 1) {
+				$get_magic_quotes_exists = true;
 			} else {
-				$value = urlencode($value);
+				$get_magic_quotes_exists = false;
 			}
-			$request .= "&$key=$value";
-		}
-		
-		$httpConfig = new PPHttpConfig(PPConfigManager::getInstance()->get('service.IPNEndpoint'));
-		$httpConfig->addCurlOption(CURLOPT_FORBID_REUSE, 1);
-	    $httpConfig->addCurlOption(CURLOPT_HTTPHEADER, array('Connection: Close'));
-	    
-		$connection = PPConnectionManager::getInstance()->getConnection($httpConfig);
-		$response = $connection->execute($request);
-		if($response == 'VERIFIED') {
-			return true;
-		} 
-		return false; // value is 'INVALID'
+			foreach ($this->ipnData as $key => $value) {
+				if($get_magic_quotes_exists) {
+					$value = urlencode(stripslashes($value));
+				} else {
+					$value = urlencode($value);
+				}
+				$request .= "&$key=$value";
+			}			
+			$httpConfig = new PPHttpConfig(PPConfigManager::getInstance()->get('service.IPNEndpoint'));
+			$httpConfig->addCurlOption(CURLOPT_FORBID_REUSE, 1);
+			$httpConfig->addCurlOption(CURLOPT_HTTPHEADER, array('Connection: Close'));
+			
+			$connection = PPConnectionManager::getInstance()->getConnection($httpConfig);
+			$response = $connection->execute($request);
+			if($response == 'VERIFIED') {
+				$this->isIpnVerified = true;
+				return true;
+			}
+			$this->isIpnVerified = false;	
+			return false; // value is 'INVALID'
+			}
 	}
 	
 	/**
