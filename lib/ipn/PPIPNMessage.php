@@ -16,7 +16,7 @@ class PPIPNMessage {
 	 *@var boolian
 	 *
 	 */
-	public $isIpnVerified;
+	private $isIpnVerified;
 	
 	/**
 	 * 

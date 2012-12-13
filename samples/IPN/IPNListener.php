@@ -8,7 +8,7 @@
  * validate the IPN and initiate some action based on the 
  * incoming IPN variables.
  */
-set_include_path(get_include_path() . PATH_SEPARATOR . '../lib');
+set_include_path(get_include_path() . PATH_SEPARATOR . '../../lib');
 require_once 'ipn/PPIPNMessage.php';
 
 $ipnMessage = new PPIPNMessage();
