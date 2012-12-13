@@ -22,8 +22,8 @@ Ex:
 		$result = $ipnMessage->validate();
 		  
   Intiating IPN:
-* Make an PayPal api call (eg: SetExpressCheckout request), setting the IpnNotificationUrl field of api request   
-  class to the url of deployed IPNLIstener sample(eg:https://example.com/merchant-sdk-sample/IPN/IPNListener.php)  
+* Make an PayPal api call (eg: SetExpressCheckout request), setting the NotifyURL field of api request   
+  to the url of deployed IPNLIstener sample(eg:https://example.com/merchant-sdk-sample/IPN/IPNListener.php)  
   the notifyURL field is in 'PaymentDetailsType' class under API request class  
  (ex: 'SetExpressCheckoutRequestDetailsType->PaymentDetailsType')  
 * You will receive ipn call back from PayPal , which will be logged in to log file in case of IPN sample.

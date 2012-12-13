@@ -22,7 +22,15 @@ class PPAPIService {
 	public function __construct($port, $serviceName, $serviceBinding, $handlers=array()) {
 		$this->serviceName = $serviceName;
 		$config = PPConfigManager::getInstance();
-		$this->endpoint = $config->get('service.EndPoint.'.$port);
+		if(!null($port))
+		{
+			$this->endpoint = $config->get('service.EndPoint.'.$port);
+		}
+		else
+		{
+			$this->endpoint = $config->get('service.EndPoint');
+		}
+		
 		$this->logger = new PPLoggingManager(__CLASS__);
 		$this->handlers = $handlers;
 		$this->serviceBinding = $serviceBinding;

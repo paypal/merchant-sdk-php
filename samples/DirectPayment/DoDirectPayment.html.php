@@ -265,7 +265,7 @@ session_unset();
 				<div class="params">
 					<div class="param_name">IPN listener URL</div>
 					<div class="param_value">
-						<input type="text" size="10" maxlength="10" name="notifyURL" value="">
+						<input type="text" size="80" maxlength="200" name="notifyURL" value="">
 					</div>
 				</div>
 				

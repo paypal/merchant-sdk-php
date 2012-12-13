@@ -15,6 +15,6 @@
 			value="<?php if(isset($_GET['permTokenSecret'])) echo $_GET['permTokenSecret'];?>"
 			size="50" />
 	</div>
-	Click <a href="../Permissions/RequestPermissions.php">here</a> to get AccessToken and TokenSecret<br />
+	Click <a href="../Permissions/RequestPermissions.php" target="_blank">here</a> to get AccessToken and TokenSecret<br />
 </div>
 <br/>
