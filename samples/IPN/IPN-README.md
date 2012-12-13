@@ -1,5 +1,6 @@
 IPN Overview :
 ------------
+
 	* PayPal Instant Payment Notification is call back system that initiated once a tranction is completed
 	 (eg: When ExpressCheckout completed successfully).
 	* you will receive the transaction related ipn variables on your call back url that you have specified in your 
