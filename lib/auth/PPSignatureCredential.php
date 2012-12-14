@@ -44,7 +44,17 @@ class PPSignatureCredential extends IPPCredential {
 		$this->userName = trim($userName);
 		$this->password = trim($password);
 		$this->signature = trim($signature);
-		$this->endPoint = trim($endPoint);
+
+		if (is_string($endPoint)) {
+			// BC: Support for older configurations
+			$this->endPoint = trim($endPoint);
+		} else {
+			$this->endPoint = array();
+			foreach ($endPoint as $port => $url) {
+				$this->endPoint[trim($port)] = trim($url);
+			}
+		}
+
 		$this->validate();
 	}
 
@@ -76,8 +86,15 @@ class PPSignatureCredential extends IPPCredential {
 		return $this->applicationId;
 	}
 
-	public function getEndPoint() {
-		return $this->endPoint;
+	public function getEndPoint($port) {
+		if (is_string($this->endPoint)) {
+			// BC: Support older configurations
+			return $this->endPoint;
+		}
+		if (!isset($this->endPoint[$port])) {
+			throw new PPMissingCredentialException("Port {$port} has not been configured for this authentication");
+		}
+		return $this->endPoint[$port];
 	}
 
 }

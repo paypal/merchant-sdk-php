@@ -17,7 +17,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	private static $SDK_NAME = "merchant-php-sdk";
 	
 	// SDK Version
-	private static $SDK_VERSION = "2.0.96";
+	private static $SDK_VERSION = "2.1.96";
 
 	public function __construct() {
 		parent::__construct(self::$SERVICE_NAME, 'SOAP', array('PPMerchantServiceHandler'));
@@ -41,7 +41,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function RefundTransaction($refundTransactionReq, $apiCredential = NULL) {
 		$this->setStandardParams($refundTransactionReq->RefundTransactionRequest);
 		$ret = new RefundTransactionResponseType();
-		$resp = $this->call("RefundTransaction", $refundTransactionReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'RefundTransaction', $refundTransactionReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -59,7 +59,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function InitiateRecoup($initiateRecoupReq, $apiCredential = NULL) {
 		$this->setStandardParams($initiateRecoupReq->InitiateRecoupRequest);
 		$ret = new InitiateRecoupResponseType();
-		$resp = $this->call("InitiateRecoup", $initiateRecoupReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'InitiateRecoup', $initiateRecoupReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -77,7 +77,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function CompleteRecoup($completeRecoupReq, $apiCredential = NULL) {
 		$this->setStandardParams($completeRecoupReq->CompleteRecoupRequest);
 		$ret = new CompleteRecoupResponseType();
-		$resp = $this->call("CompleteRecoup", $completeRecoupReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'CompleteRecoup', $completeRecoupReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -95,7 +95,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function CancelRecoup($cancelRecoupReq, $apiCredential = NULL) {
 		$this->setStandardParams($cancelRecoupReq->CancelRecoupRequest);
 		$ret = new CancelRecoupResponseType();
-		$resp = $this->call("CancelRecoup", $cancelRecoupReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'CancelRecoup', $cancelRecoupReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -113,7 +113,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function GetTransactionDetails($getTransactionDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getTransactionDetailsReq->GetTransactionDetailsRequest);
 		$ret = new GetTransactionDetailsResponseType();
-		$resp = $this->call("GetTransactionDetails", $getTransactionDetailsReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'GetTransactionDetails', $getTransactionDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -131,7 +131,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function BillUser($billUserReq, $apiCredential = NULL) {
 		$this->setStandardParams($billUserReq->BillUserRequest);
 		$ret = new BillUserResponseType();
-		$resp = $this->call("BillUser", $billUserReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'BillUser', $billUserReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -149,7 +149,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function TransactionSearch($transactionSearchReq, $apiCredential = NULL) {
 		$this->setStandardParams($transactionSearchReq->TransactionSearchRequest);
 		$ret = new TransactionSearchResponseType();
-		$resp = $this->call("TransactionSearch", $transactionSearchReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'TransactionSearch', $transactionSearchReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -167,7 +167,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function MassPay($massPayReq, $apiCredential = NULL) {
 		$this->setStandardParams($massPayReq->MassPayRequest);
 		$ret = new MassPayResponseType();
-		$resp = $this->call("MassPay", $massPayReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'MassPay', $massPayReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -185,7 +185,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function BillAgreementUpdate($billAgreementUpdateReq, $apiCredential = NULL) {
 		$this->setStandardParams($billAgreementUpdateReq->BAUpdateRequest);
 		$ret = new BAUpdateResponseType();
-		$resp = $this->call("BillAgreementUpdate", $billAgreementUpdateReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'BillAgreementUpdate', $billAgreementUpdateReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -203,7 +203,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function AddressVerify($addressVerifyReq, $apiCredential = NULL) {
 		$this->setStandardParams($addressVerifyReq->AddressVerifyRequest);
 		$ret = new AddressVerifyResponseType();
-		$resp = $this->call("AddressVerify", $addressVerifyReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'AddressVerify', $addressVerifyReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -221,7 +221,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function EnterBoarding($enterBoardingReq, $apiCredential = NULL) {
 		$this->setStandardParams($enterBoardingReq->EnterBoardingRequest);
 		$ret = new EnterBoardingResponseType();
-		$resp = $this->call("EnterBoarding", $enterBoardingReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'EnterBoarding', $enterBoardingReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -239,7 +239,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function GetBoardingDetails($getBoardingDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getBoardingDetailsReq->GetBoardingDetailsRequest);
 		$ret = new GetBoardingDetailsResponseType();
-		$resp = $this->call("GetBoardingDetails", $getBoardingDetailsReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'GetBoardingDetails', $getBoardingDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -257,7 +257,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function CreateMobilePayment($createMobilePaymentReq, $apiCredential = NULL) {
 		$this->setStandardParams($createMobilePaymentReq->CreateMobilePaymentRequest);
 		$ret = new CreateMobilePaymentResponseType();
-		$resp = $this->call("CreateMobilePayment", $createMobilePaymentReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'CreateMobilePayment', $createMobilePaymentReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -275,7 +275,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function GetMobileStatus($getMobileStatusReq, $apiCredential = NULL) {
 		$this->setStandardParams($getMobileStatusReq->GetMobileStatusRequest);
 		$ret = new GetMobileStatusResponseType();
-		$resp = $this->call("GetMobileStatus", $getMobileStatusReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'GetMobileStatus', $getMobileStatusReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -293,7 +293,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function SetMobileCheckout($setMobileCheckoutReq, $apiCredential = NULL) {
 		$this->setStandardParams($setMobileCheckoutReq->SetMobileCheckoutRequest);
 		$ret = new SetMobileCheckoutResponseType();
-		$resp = $this->call("SetMobileCheckout", $setMobileCheckoutReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'SetMobileCheckout', $setMobileCheckoutReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -311,7 +311,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function DoMobileCheckoutPayment($doMobileCheckoutPaymentReq, $apiCredential = NULL) {
 		$this->setStandardParams($doMobileCheckoutPaymentReq->DoMobileCheckoutPaymentRequest);
 		$ret = new DoMobileCheckoutPaymentResponseType();
-		$resp = $this->call("DoMobileCheckoutPayment", $doMobileCheckoutPaymentReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'DoMobileCheckoutPayment', $doMobileCheckoutPaymentReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -329,7 +329,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function GetBalance($getBalanceReq, $apiCredential = NULL) {
 		$this->setStandardParams($getBalanceReq->GetBalanceRequest);
 		$ret = new GetBalanceResponseType();
-		$resp = $this->call("GetBalance", $getBalanceReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'GetBalance', $getBalanceReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -347,7 +347,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function GetPalDetails($getPalDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getPalDetailsReq->GetPalDetailsRequest);
 		$ret = new GetPalDetailsResponseType();
-		$resp = $this->call("GetPalDetails", $getPalDetailsReq, $apiCredential);
+		$resp = $this->call('PayPalAPI', 'GetPalDetails', $getPalDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -365,7 +365,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function DoExpressCheckoutPayment($doExpressCheckoutPaymentReq, $apiCredential = NULL) {
 		$this->setStandardParams($doExpressCheckoutPaymentReq->DoExpressCheckoutPaymentRequest);
 		$ret = new DoExpressCheckoutPaymentResponseType();
-		$resp = $this->call("DoExpressCheckoutPayment", $doExpressCheckoutPaymentReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'DoExpressCheckoutPayment', $doExpressCheckoutPaymentReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -383,7 +383,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function DoUATPExpressCheckoutPayment($doUATPExpressCheckoutPaymentReq, $apiCredential = NULL) {
 		$this->setStandardParams($doUATPExpressCheckoutPaymentReq->DoUATPExpressCheckoutPaymentRequest);
 		$ret = new DoUATPExpressCheckoutPaymentResponseType();
-		$resp = $this->call("DoUATPExpressCheckoutPayment", $doUATPExpressCheckoutPaymentReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'DoUATPExpressCheckoutPayment', $doUATPExpressCheckoutPaymentReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -401,7 +401,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function SetAuthFlowParam($setAuthFlowParamReq, $apiCredential = NULL) {
 		$this->setStandardParams($setAuthFlowParamReq->SetAuthFlowParamRequest);
 		$ret = new SetAuthFlowParamResponseType();
-		$resp = $this->call("SetAuthFlowParam", $setAuthFlowParamReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'SetAuthFlowParam', $setAuthFlowParamReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -419,7 +419,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function GetAuthDetails($getAuthDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getAuthDetailsReq->GetAuthDetailsRequest);
 		$ret = new GetAuthDetailsResponseType();
-		$resp = $this->call("GetAuthDetails", $getAuthDetailsReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'GetAuthDetails', $getAuthDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -437,7 +437,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function SetAccessPermissions($setAccessPermissionsReq, $apiCredential = NULL) {
 		$this->setStandardParams($setAccessPermissionsReq->SetAccessPermissionsRequest);
 		$ret = new SetAccessPermissionsResponseType();
-		$resp = $this->call("SetAccessPermissions", $setAccessPermissionsReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'SetAccessPermissions', $setAccessPermissionsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -455,7 +455,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function UpdateAccessPermissions($updateAccessPermissionsReq, $apiCredential = NULL) {
 		$this->setStandardParams($updateAccessPermissionsReq->UpdateAccessPermissionsRequest);
 		$ret = new UpdateAccessPermissionsResponseType();
-		$resp = $this->call("UpdateAccessPermissions", $updateAccessPermissionsReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'UpdateAccessPermissions', $updateAccessPermissionsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -473,7 +473,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function GetAccessPermissionDetails($getAccessPermissionDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getAccessPermissionDetailsReq->GetAccessPermissionDetailsRequest);
 		$ret = new GetAccessPermissionDetailsResponseType();
-		$resp = $this->call("GetAccessPermissionDetails", $getAccessPermissionDetailsReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'GetAccessPermissionDetails', $getAccessPermissionDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -491,7 +491,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function GetIncentiveEvaluation($getIncentiveEvaluationReq, $apiCredential = NULL) {
 		$this->setStandardParams($getIncentiveEvaluationReq->GetIncentiveEvaluationRequest);
 		$ret = new GetIncentiveEvaluationResponseType();
-		$resp = $this->call("GetIncentiveEvaluation", $getIncentiveEvaluationReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'GetIncentiveEvaluation', $getIncentiveEvaluationReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -509,7 +509,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function SetExpressCheckout($setExpressCheckoutReq, $apiCredential = NULL) {
 		$this->setStandardParams($setExpressCheckoutReq->SetExpressCheckoutRequest);
 		$ret = new SetExpressCheckoutResponseType();
-		$resp = $this->call("SetExpressCheckout", $setExpressCheckoutReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'SetExpressCheckout', $setExpressCheckoutReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -527,7 +527,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function ExecuteCheckoutOperations($executeCheckoutOperationsReq, $apiCredential = NULL) {
 		$this->setStandardParams($executeCheckoutOperationsReq->ExecuteCheckoutOperationsRequest);
 		$ret = new ExecuteCheckoutOperationsResponseType();
-		$resp = $this->call("ExecuteCheckoutOperations", $executeCheckoutOperationsReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'ExecuteCheckoutOperations', $executeCheckoutOperationsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -545,7 +545,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function GetExpressCheckoutDetails($getExpressCheckoutDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getExpressCheckoutDetailsReq->GetExpressCheckoutDetailsRequest);
 		$ret = new GetExpressCheckoutDetailsResponseType();
-		$resp = $this->call("GetExpressCheckoutDetails", $getExpressCheckoutDetailsReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'GetExpressCheckoutDetails', $getExpressCheckoutDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -563,7 +563,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function DoDirectPayment($doDirectPaymentReq, $apiCredential = NULL) {
 		$this->setStandardParams($doDirectPaymentReq->DoDirectPaymentRequest);
 		$ret = new DoDirectPaymentResponseType();
-		$resp = $this->call("DoDirectPayment", $doDirectPaymentReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'DoDirectPayment', $doDirectPaymentReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -581,7 +581,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function ManagePendingTransactionStatus($managePendingTransactionStatusReq, $apiCredential = NULL) {
 		$this->setStandardParams($managePendingTransactionStatusReq->ManagePendingTransactionStatusRequest);
 		$ret = new ManagePendingTransactionStatusResponseType();
-		$resp = $this->call("ManagePendingTransactionStatus", $managePendingTransactionStatusReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'ManagePendingTransactionStatus', $managePendingTransactionStatusReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -599,7 +599,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function DoCancel($doCancelReq, $apiCredential = NULL) {
 		$this->setStandardParams($doCancelReq->DoCancelRequest);
 		$ret = new DoCancelResponseType();
-		$resp = $this->call("DoCancel", $doCancelReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'DoCancel', $doCancelReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -617,7 +617,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function DoCapture($doCaptureReq, $apiCredential = NULL) {
 		$this->setStandardParams($doCaptureReq->DoCaptureRequest);
 		$ret = new DoCaptureResponseType();
-		$resp = $this->call("DoCapture", $doCaptureReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'DoCapture', $doCaptureReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -635,7 +635,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function DoReauthorization($doReauthorizationReq, $apiCredential = NULL) {
 		$this->setStandardParams($doReauthorizationReq->DoReauthorizationRequest);
 		$ret = new DoReauthorizationResponseType();
-		$resp = $this->call("DoReauthorization", $doReauthorizationReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'DoReauthorization', $doReauthorizationReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -653,7 +653,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function DoVoid($doVoidReq, $apiCredential = NULL) {
 		$this->setStandardParams($doVoidReq->DoVoidRequest);
 		$ret = new DoVoidResponseType();
-		$resp = $this->call("DoVoid", $doVoidReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'DoVoid', $doVoidReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -671,7 +671,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function DoAuthorization($doAuthorizationReq, $apiCredential = NULL) {
 		$this->setStandardParams($doAuthorizationReq->DoAuthorizationRequest);
 		$ret = new DoAuthorizationResponseType();
-		$resp = $this->call("DoAuthorization", $doAuthorizationReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'DoAuthorization', $doAuthorizationReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -689,7 +689,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function SetCustomerBillingAgreement($setCustomerBillingAgreementReq, $apiCredential = NULL) {
 		$this->setStandardParams($setCustomerBillingAgreementReq->SetCustomerBillingAgreementRequest);
 		$ret = new SetCustomerBillingAgreementResponseType();
-		$resp = $this->call("SetCustomerBillingAgreement", $setCustomerBillingAgreementReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'SetCustomerBillingAgreement', $setCustomerBillingAgreementReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -707,7 +707,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function GetBillingAgreementCustomerDetails($getBillingAgreementCustomerDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getBillingAgreementCustomerDetailsReq->GetBillingAgreementCustomerDetailsRequest);
 		$ret = new GetBillingAgreementCustomerDetailsResponseType();
-		$resp = $this->call("GetBillingAgreementCustomerDetails", $getBillingAgreementCustomerDetailsReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'GetBillingAgreementCustomerDetails', $getBillingAgreementCustomerDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -725,7 +725,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function CreateBillingAgreement($createBillingAgreementReq, $apiCredential = NULL) {
 		$this->setStandardParams($createBillingAgreementReq->CreateBillingAgreementRequest);
 		$ret = new CreateBillingAgreementResponseType();
-		$resp = $this->call("CreateBillingAgreement", $createBillingAgreementReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'CreateBillingAgreement', $createBillingAgreementReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -743,7 +743,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function DoReferenceTransaction($doReferenceTransactionReq, $apiCredential = NULL) {
 		$this->setStandardParams($doReferenceTransactionReq->DoReferenceTransactionRequest);
 		$ret = new DoReferenceTransactionResponseType();
-		$resp = $this->call("DoReferenceTransaction", $doReferenceTransactionReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'DoReferenceTransaction', $doReferenceTransactionReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -761,7 +761,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function DoNonReferencedCredit($doNonReferencedCreditReq, $apiCredential = NULL) {
 		$this->setStandardParams($doNonReferencedCreditReq->DoNonReferencedCreditRequest);
 		$ret = new DoNonReferencedCreditResponseType();
-		$resp = $this->call("DoNonReferencedCredit", $doNonReferencedCreditReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'DoNonReferencedCredit', $doNonReferencedCreditReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -779,7 +779,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function DoUATPAuthorization($doUATPAuthorizationReq, $apiCredential = NULL) {
 		$this->setStandardParams($doUATPAuthorizationReq->DoUATPAuthorizationRequest);
 		$ret = new DoUATPAuthorizationResponseType();
-		$resp = $this->call("DoUATPAuthorization", $doUATPAuthorizationReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'DoUATPAuthorization', $doUATPAuthorizationReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -797,7 +797,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function CreateRecurringPaymentsProfile($createRecurringPaymentsProfileReq, $apiCredential = NULL) {
 		$this->setStandardParams($createRecurringPaymentsProfileReq->CreateRecurringPaymentsProfileRequest);
 		$ret = new CreateRecurringPaymentsProfileResponseType();
-		$resp = $this->call("CreateRecurringPaymentsProfile", $createRecurringPaymentsProfileReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'CreateRecurringPaymentsProfile', $createRecurringPaymentsProfileReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -815,7 +815,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function GetRecurringPaymentsProfileDetails($getRecurringPaymentsProfileDetailsReq, $apiCredential = NULL) {
 		$this->setStandardParams($getRecurringPaymentsProfileDetailsReq->GetRecurringPaymentsProfileDetailsRequest);
 		$ret = new GetRecurringPaymentsProfileDetailsResponseType();
-		$resp = $this->call("GetRecurringPaymentsProfileDetails", $getRecurringPaymentsProfileDetailsReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'GetRecurringPaymentsProfileDetails', $getRecurringPaymentsProfileDetailsReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -833,7 +833,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function ManageRecurringPaymentsProfileStatus($manageRecurringPaymentsProfileStatusReq, $apiCredential = NULL) {
 		$this->setStandardParams($manageRecurringPaymentsProfileStatusReq->ManageRecurringPaymentsProfileStatusRequest);
 		$ret = new ManageRecurringPaymentsProfileStatusResponseType();
-		$resp = $this->call("ManageRecurringPaymentsProfileStatus", $manageRecurringPaymentsProfileStatusReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'ManageRecurringPaymentsProfileStatus', $manageRecurringPaymentsProfileStatusReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -851,7 +851,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function BillOutstandingAmount($billOutstandingAmountReq, $apiCredential = NULL) {
 		$this->setStandardParams($billOutstandingAmountReq->BillOutstandingAmountRequest);
 		$ret = new BillOutstandingAmountResponseType();
-		$resp = $this->call("BillOutstandingAmount", $billOutstandingAmountReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'BillOutstandingAmount', $billOutstandingAmountReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -869,7 +869,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function UpdateRecurringPaymentsProfile($updateRecurringPaymentsProfileReq, $apiCredential = NULL) {
 		$this->setStandardParams($updateRecurringPaymentsProfileReq->UpdateRecurringPaymentsProfileRequest);
 		$ret = new UpdateRecurringPaymentsProfileResponseType();
-		$resp = $this->call("UpdateRecurringPaymentsProfile", $updateRecurringPaymentsProfileReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'UpdateRecurringPaymentsProfile', $updateRecurringPaymentsProfileReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -887,7 +887,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function ReverseTransaction($reverseTransactionReq, $apiCredential = NULL) {
 		$this->setStandardParams($reverseTransactionReq->ReverseTransactionRequest);
 		$ret = new ReverseTransactionResponseType();
-		$resp = $this->call("ReverseTransaction", $reverseTransactionReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'ReverseTransaction', $reverseTransactionReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}
@@ -905,7 +905,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	public function ExternalRememberMeOptOut($externalRememberMeOptOutReq, $apiCredential = NULL) {
 		$this->setStandardParams($externalRememberMeOptOutReq->ExternalRememberMeOptOutRequest);
 		$ret = new ExternalRememberMeOptOutResponseType();
-		$resp = $this->call("ExternalRememberMeOptOut", $externalRememberMeOptOutReq, $apiCredential);
+		$resp = $this->call('PayPalAPIAA', 'ExternalRememberMeOptOut', $externalRememberMeOptOutReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}

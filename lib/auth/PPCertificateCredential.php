@@ -64,7 +64,17 @@ class PPCertificateCredential extends IPPCredential {
 		$this->password = trim($password);
 		$this->certificatePath = trim($certPath);
 		$this->certificatePassPhrase = $certificatePassPhrase;
-		$this->endPoint = trim($endPoint);
+
+		if (is_string($endPoint)) {
+			// BC: Support for older configurations
+			$this->endPoint = trim($endPoint);
+		} else {
+			$this->endPoint = array();
+			foreach ($endPoint as $port => $url) {
+				$this->endPoint[trim($port)] = trim($url);
+			}
+		}
+
 		$this->validate();
 	}
 	
@@ -75,9 +85,12 @@ class PPCertificateCredential extends IPPCredential {
 		}
 		if (empty($this->password)) {
 			throw new PPMissingCredentialException("password cannot be empty");
-		}		
+		}
 		if (empty($this->certificatePath)) {
 			throw new PPMissingCredentialException("certificate cannot be empty");
+		}
+		if (empty($this->endPoint)) {
+			throw new PPMissingCredentialException("endpoints cannot be empty");
 		}
 	}
 
@@ -111,8 +124,15 @@ class PPCertificateCredential extends IPPCredential {
 		return $this->applicationId;
 	}
 
-	public function getEndPoint() {
-		return $this->endPoint;
+	public function getEndPoint($port) {
+		if (is_string($this->endPoint)) {
+			// BC: Support older configurations
+			return $this->endPoint;
+		}
+		if (!isset($this->endPoint[$port])) {
+			throw new PPMissingCredentialException("Port {$port} has not been configured for this authentication");
+		}
+		return $this->endPoint[$port];
 	}
 
 }

@@ -17,9 +17,12 @@ class PPAPIService {
 	private $logger;
 	private $handlers = array();
 	private $serviceBinding;
+	private $port;
 
-	public function __construct($serviceName, $serviceBinding, $handlers=array()) {
+	public function __construct($port, $serviceName, $serviceBinding, $handlers=array()) {
 		$this->serviceName = $serviceName;
+		$this->port = $port;
+
 		$this->logger = new PPLoggingManager(__CLASS__);
 		$this->handlers = $handlers;
 		$this->serviceBinding = $serviceBinding;
@@ -49,9 +52,9 @@ class PPAPIService {
 		}
 		
 		if($this->serviceBinding == 'SOAP' ) {
-			$url = $apiCredential->getEndPoint();
+			$url = $apiCredential->getEndPoint($this->port);
 		} else {
-			$url = $apiCredential->getEndPoint() . $this->serviceName . '/' . $apiMethod;
+			$url = $apiCredential->getEndPoint($this->port) . $this->serviceName . '/' . $apiMethod;
 		}
 
 		$request = new PPRequest($params, $this->serviceBinding);
