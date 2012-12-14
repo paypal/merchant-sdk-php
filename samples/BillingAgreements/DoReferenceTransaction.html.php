@@ -184,7 +184,12 @@ document.getElementById("id2").style.display = "";
 							<input type="text" name="referenceID" id="referenceID" />
 						</div>
 					</div>
-
+						<div class="params">
+							<div class="param_name">Notify Url</div>
+							<div class="param_value">
+								<input type="text" name="notifyURL" id="notifyURL" value="" size = "80" />
+							</div>
+						</div>
 
 					<table class="params">
 						<tr>
@@ -374,6 +379,7 @@ document.getElementById("id2").style.display = "";
 								<input type="text" name="Bzip" id="Bzip" value="95131" />
 							</div>
 						</div>
+					
 					</div>
 					<div class="submit">
 						<input type="submit" name="DoReferenceTransactionBtn"
