@@ -1,7 +1,7 @@
 <?php
-require_once 'auth\PPSignatureCredential.php';
-require_once 'auth\PPSubjectAuthorization.php';
-require_once 'auth\PPTokenAuthorization.php';
+require_once 'auth/PPSignatureCredential.php';
+require_once 'auth/PPSubjectAuthorization.php';
+require_once 'auth/PPTokenAuthorization.php';
 
 /**
  * Test class for PPSignatureCredential.
