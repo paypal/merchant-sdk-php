@@ -1,3 +1,11 @@
+Version 2.1.96 - December 14, 2012
+
+	- Added support for Instant Payment Notification (Refer IPN-README.md for more details)
+	- Added new feature for supporting multiple endpoints based on portname for using different sdks together.
+	
+You can see source code of this release in github under https://github.com/paypal/merchant-sdk-php/tree/v2.1.96.
+--------------------------------------------------------------------------------------------------
+
 Version 2.0.96 - December 06, 2012
 
 	- SDK refreshed to Release 96

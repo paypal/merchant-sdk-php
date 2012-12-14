@@ -47,7 +47,10 @@ $address->Phone = $_POST['phone'];
 $paymentDetails = new PaymentDetailsType();
 $paymentDetails->ShipToAddress = $address;
 $paymentDetails->OrderTotal = new BasicAmountType('USD', $_POST['amount']);
-$paymentDetails->PaymentAction = $_POST['paymentType'];
+if(isset($_REQUEST['notifyURL']))
+{
+	$paymentDetails->NotifyURL = $_REQUEST['notifyURL'];
+}
 
 $personName = new PersonNameType();
 $personName->FirstName = $firstName;

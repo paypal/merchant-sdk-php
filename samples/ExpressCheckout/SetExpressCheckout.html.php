@@ -164,6 +164,13 @@ function display(value) {
 						<textarea cols="40" rows="5" name="orderDescription"></textarea>
 					</div>
 				</div>
+				<div class="params">
+					<div class="param_name">IPN listener URL</div>
+					<div class="param_value">
+					<input type="text" size="80" maxlength="200" name="notifyURL" value="">
+					</div>
+				</div>
+				
 				<div class="section_header">Shipping information:</div>
 				<div class="params">
 					<div class="param_name">Requires shipping</div>

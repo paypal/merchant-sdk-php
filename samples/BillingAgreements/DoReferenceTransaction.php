@@ -45,10 +45,14 @@ if(isset($_REQUEST['ReferenceCreditCardDetails']) && $_REQUEST['ReferenceCreditC
 	$creditCard->ExpYear = $_REQUEST['expYear'];
 }
 
-
 $paymentDetails = new PaymentDetailsType();
 $paymentDetails->OrderTotal = $amount;
 $paymentDetails->ShipToAddress = $shippingAddress;
+
+if(isset($_REQUEST['notifyURL']))
+{
+	$paymentDetails->NotifyURL = $_REQUEST['notifyURL'];
+}
 
 $RTRequestDetails = new DoReferenceTransactionRequestDetailsType();
 if(isset($_REQUEST['ReferenceCreditCardDetails']) && $_REQUEST['ReferenceCreditCardDetails'] == "ON" )

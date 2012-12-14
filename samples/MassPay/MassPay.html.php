@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>PayPal Merchant SDK - MassPay</title>
 	<link rel="stylesheet" href="../Common/sdk.css"/>
+	<script type="text/javascript" src="../Common/sdk.js"></script>
 </head>
 <body>
 	<div id="wrapper">
@@ -69,6 +70,10 @@
 							value="USD" size="25" maxlength="260" /></td>
 					</tr>
 				</table>
+				<?php
+					include('../Permissions/Permission.html.php');
+				?>
+					
 				<input type="submit" name="MassPayBtn" value="MassPay" /><br />
 			</div>
 			<a href="../index.php">Home</a>

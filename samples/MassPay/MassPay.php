@@ -24,6 +24,13 @@ $massPayReq = new MassPayReq();
 $massPayReq->MassPayRequest = $massPayRequest;
 
 $paypalService = new PayPalAPIInterfaceServiceService();
+
+// required in third party permissioning
+if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
+	$paypalService->setAccessToken($_POST['accessToken']);
+	$paypalService->setTokenSecret($_POST['tokenSecret']);
+}
+
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$massPayResponse = $paypalService->MassPay($massPayReq);

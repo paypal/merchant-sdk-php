@@ -55,6 +55,11 @@ $paymentDetails->HandlingTotal = $handlingTotal;
 $paymentDetails->InsuranceTotal = $insuranceTotal;
 $paymentDetails->ShippingTotal = $shippingTotal;
 
+if(isset($_REQUEST['notifyURL']))
+{
+	$paymentDetails->NotifyURL = $_REQUEST['notifyURL'];
+}
+
 $setECReqDetails = new SetExpressCheckoutRequestDetailsType();
 $setECReqDetails->PaymentDetails[0] = $paymentDetails;
 $setECReqDetails->CancelURL = $cancelUrl;
