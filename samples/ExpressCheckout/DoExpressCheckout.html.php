@@ -57,7 +57,7 @@
 				<div class="params">
 					<div class="param_name">IPN listener URL</div>
 					<div class="param_value">
-						<input type="text" name="notifyURL" value="USD" size="50"
+						<input type="text" name="notifyURL" value="" size="50"
 							maxlength="260" />
 					</div>
 				</div>

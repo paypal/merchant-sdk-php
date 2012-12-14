@@ -22,10 +22,11 @@ class PPAPIService {
 	public function __construct($port, $serviceName, $serviceBinding, $handlers=array()) {
 		$this->serviceName = $serviceName;
 		$config = PPConfigManager::getInstance();
-		if(!null($port))
+		if($port!= null)
 		{
 			$this->endpoint = $config->get('service.EndPoint.'.$port);
 		}
+		// for backward compatibilty (for those who are using old config files with 'service.EndPoint')
 		else
 		{
 			$this->endpoint = $config->get('service.EndPoint');

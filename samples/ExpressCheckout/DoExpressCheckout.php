@@ -31,8 +31,8 @@ $orderTotal = new BasicAmountType();
 $orderTotal->currencyID = $_REQUEST['currencyCode'];
 $orderTotal->value = $_REQUEST['amt'];
 
-$PaymentDetails= new PaymentDetailsType();
-$PaymentDetails->OrderTotal = $orderTotal;
+$paymentDetails= new PaymentDetailsType();
+$paymentDetails->OrderTotal = $orderTotal;
 if(isset($_REQUEST['notifyURL']))
 {
 	$paymentDetails->NotifyURL = $_REQUEST['notifyURL'];
@@ -42,7 +42,7 @@ $DoECRequestDetails = new DoExpressCheckoutPaymentRequestDetailsType();
 $DoECRequestDetails->PayerID = $payerId;
 $DoECRequestDetails->Token = $token;
 $DoECRequestDetails->PaymentAction = $paymentAction;
-$DoECRequestDetails->PaymentDetails[0] = $PaymentDetails;
+$DoECRequestDetails->PaymentDetails[0] = $paymentDetails;
 
 $DoECRequest = new DoExpressCheckoutPaymentRequestType();
 $DoECRequest->DoExpressCheckoutPaymentRequestDetails = $DoECRequestDetails;
