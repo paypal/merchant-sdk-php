@@ -6,7 +6,7 @@
  ********************************************/
 $path = '../../lib';
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
-require_once('services/Permissions/PermissionsService.php');
+require_once('services/PermissionsService.php');
 
 $serverName = $_SERVER['SERVER_NAME'];
 $serverPort = $_SERVER['SERVER_PORT'];
