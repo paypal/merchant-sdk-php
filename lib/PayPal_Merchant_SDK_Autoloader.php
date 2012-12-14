@@ -301,6 +301,7 @@ class PayPal_Merchant_SDK_Autoloader
   'pphttpconfig' => 'PPHttpConfig.php',
   'pphttpconnection' => 'PPHttpConnection.php',
   'ppinvalidcredentialexception' => 'exceptions/PPInvalidCredentialException.php',
+  'ppipnmessage' => 'ipn/PPIPNMessage.php',
   'pplogginglevel' => 'PPLoggingManager.php',
   'pploggingmanager' => 'PPLoggingManager.php',
   'ppmerchantservicehandler' => 'handlers/PPMerchantServiceHandler.php',
