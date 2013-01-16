@@ -53,7 +53,7 @@ class PPCredentialManager
 		$credArr = $configMgr->get($prefix);
 		$arrayPartKeys = $configMgr->getIniPrefix();
 		if(count($arrayPartKeys) == 0)
-			throw new MissingCredentialException("No valid API accounts have been configured");
+			throw new PPMissingCredentialException("No valid API accounts have been configured");
 
 		$key = $prefix.$suffix;
 		while (in_array($key, $arrayPartKeys)){
