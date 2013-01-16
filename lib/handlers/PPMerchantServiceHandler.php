@@ -1,6 +1,6 @@
 <?php
 
-require_once 'PPGenericServiceHandler.php';
+// require_once 'PPGenericServiceHandler.php';
 
 class PPMerchantServiceHandler extends PPGenericServiceHandler {
 

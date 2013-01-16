@@ -1,5 +1,5 @@
 <?php
-require_once 'IPPHandler.php';
+// require_once 'IPPHandler.php';
 
 class PPCredentialAuthHandler implements IPPHandler {
 

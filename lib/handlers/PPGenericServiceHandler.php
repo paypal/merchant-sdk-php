@@ -1,6 +1,6 @@
 <?php
 
-require_once 'IPPHandler.php';
+// require_once 'IPPHandler.php';
 
 class PPGenericServiceHandler implements IPPHandler {
 

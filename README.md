@@ -19,11 +19,10 @@ PayPal's PHP Merchant SDK requires
 Using the SDK
 -------------
 
-To use the SDK, 
+To use the SDK,
 
    * Copy the config and lib folders into your project. Modify the config file sdk_config.ini to suit your needs.
-   * Make sure that the lib folder in your project is available in PHP's include path.
-   * Include the services\PayPalAPIInterfaceService\PayPalAPIInterfaceServiceService.php file in your code.
+   * Register the autoloader in your code.
    * Create a service wrapper object.
    * Create a request object as per your project's needs. All the API request and response classes 
      are available in services\PayPalAPIInterfaceService\PayPalAPIInterfaceServiceService.php
@@ -31,20 +30,26 @@ To use the SDK,
 
 For example,
 
-	require_once('services\PayPalAPIInterfaceService\PayPalAPIInterfaceServiceService.php');
+    // Register auto loader
+    require("/absolute/or/relative/path/to/lib/PayPal_Merchant_SDK_Autoloader.php");
+    PayPal_Merchant_SDK_Autoloader::register();
 
+    // Create request details
     $itemAmount = new BasicAmountType($currencyId, $amount);
-	$setECReqType = new SetExpressCheckoutRequestType();	
+	$setECReqType = new SetExpressCheckoutRequestType();
 	$setECReqType->SetExpressCheckoutRequestDetails = $setECReqDetails;
 
+    // Create request
 	$setECReq = new SetExpressCheckoutReq();
 	$setECReq->SetExpressCheckoutRequest = $setECReqType;
 	......
 
+    // Perform request
 	$paypalService = new PayPalAPIInterfaceServiceService();
 	$setECResponse = $paypalService->SetExpressCheckout($setECReq);
 	
-	$ack = strtoupper($setECResponse->Ack); 
+    // Check results
+	$ack = strtoupper($setECResponse->Ack);
 	if($ack == 'SUCCESS') {
 		// Success
 	}  
@@ -54,15 +59,15 @@ The SDK provides multiple ways to authenticate your API call.
 	$paypalService = new PayPalAPIInterfaceServiceService();
 	
 	// Use the default account (the first account) configured in sdk_config.ini
-	$response = $paypalService->SetExpressCheckout($setECReq);	
+	$response = $paypalService->SetExpressCheckout($setECReq);
 
 	// Use a specific account configured in sdk_config.inig
-	$response = $paypalService->SetExpressCheckout($setECReq, 'jb-us-seller_api1.paypal.com');	
+	$response = $paypalService->SetExpressCheckout($setECReq, 'jb-us-seller_api1.paypal.com');
 	 
 	// Pass in a dynamically created API credential object
     $cred = new PPCertificateCredential("username", "password", "path-to-pem-file");
     $cred->setThirdPartyAuthorization(new PPTokenAuthorization("accessToken", "tokenSecret"));
-	$response = $paypalService->SetExpressCheckout($setECReq, $cred);	
+	$response = $paypalService->SetExpressCheckout($setECReq, $cred);
   
   
 SDK Configuration

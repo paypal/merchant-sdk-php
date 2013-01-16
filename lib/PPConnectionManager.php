@@ -1,6 +1,6 @@
 <?php
-require_once 'PPHttpConnection.php';
-require_once 'PPConfigManager.php';
+// require_once 'PPHttpConnection.php';
+// require_once 'PPConfigManager.php';
 class PPConnectionManager
 {
 	/**

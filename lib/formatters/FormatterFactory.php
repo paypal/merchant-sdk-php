@@ -1,6 +1,6 @@
 <?php
-require_once 'PPNVPFormatter.php';
-require_once 'PPSOAPFormatter.php';
+// require_once 'PPNVPFormatter.php';
+// require_once 'PPSOAPFormatter.php';
 
 class FormatterFactory {
 	public static function factory($bindingType) {
