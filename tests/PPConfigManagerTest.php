@@ -27,17 +27,17 @@ class PPConfigManagerTest extends PHPUnit_Framework_TestCase
 	 */
 	protected function tearDown()
 	{
+		PPConfigManager::_unsetInstance();
 	}
-
-
 
 	/**
 	 * @test
 	 */
 	public function testGetInstance()
 	{
-		$instance = $this->object->getInstance();
-		$this->assertTrue($instance instanceof PPConfigManager);
+		$instance = PPConfigManager::getInstance();
+		$this->assertTrue($instance instanceof PPConfigManager, 'Incorrect object type has been returned');
+		$this->assertTrue($instance === PPConfigManager::getInstance(), 'A different instance of the singleton has been returned');
 	}
 
 	/**
@@ -69,5 +69,34 @@ class PPConfigManagerTest extends PHPUnit_Framework_TestCase
 		$ret = $this->object->getIniPrefix('jb-us-seller_api1.paypal.com');
 		$this->assertEquals('acct1', $ret);
 	}
+
+	public function testSetConfig()
+	{
+		PPConfigManager::_unsetInstance();
+		PPConfigManager::setConfiguration(
+			array(
+				'foo' => 'bar',
+				'bar' => 'baz',
+			)
+		);
+		$object = PPConfigManager::getInstance();
+
+		$this->assertEquals('baz', $object->get('bar'));
+	}
+
+	public function testSetConfigFails()
+	{
+		// Singleton has been created
+		$object = PPConfigManager::getInstance();
+
+		$this->setExpectedException('PPConfigurationException');
+
+		// This should fail due to configuration already beeing loaded
+		PPConfigManager::setConfiguration(
+			array(
+				'foo' => 'bar',
+				'bar' => 'baz',
+			)
+		);
+	}
 }
-?>

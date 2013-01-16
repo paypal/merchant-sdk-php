@@ -8,37 +8,56 @@ require_once 'exceptions/PPConfigurationException.php';
 class PPConfigManager {
 
 	private $config;
+
 	/**
 	 * @var PPConfigManager
 	 */
 	private static $instance;
 
-	private function __construct(){
-		if(defined('PP_CONFIG_PATH')) {
-			$configFile = constant('PP_CONFIG_PATH') . '/sdk_config.ini';
-		} else {		
-			$configFile = implode(DIRECTORY_SEPARATOR,
-				array(dirname(__FILE__), "..", "config", "sdk_config.ini"));
-		}
-		$this->load($configFile);
+	private function __construct(array $config) {
+		$this->config = $config;
 	}
 
 	// create singleton object for PPConfigManager
-	public static function getInstance()
-	{
+	public static function getInstance() {
 		if ( !isset(self::$instance) ) {
-			self::$instance = new PPConfigManager();
+			if(defined('PP_CONFIG_PATH')) {
+				$configFile = PP_CONFIG_PATH . '/sdk_config.ini';
+			} else {
+				$configFile = dirname(__FILE__) . '/../config/sdk_config.ini';
+			}
+
+			if (!is_readable($configFile)) {
+				throw new PPConfigurationException("Config file $configFile not found", "303");
+			}
+
+			$config = @parse_ini_file($configFile);
+			if(empty($config)) {
+				throw new PPConfigurationException("Config file $configFile could not be loaded", "303");
+			}
+
+			self::$instance = new PPConfigManager($config);
 		}
 		return self::$instance;
 	}
 
-	//used to load the file
-	private function load($fileName) {
-
-		$this->config = @parse_ini_file($fileName);
-		if($this->config == NULL || count($this->config) == 0) {
-			throw new PPConfigurationException("Config file $fileName not found","303");
+	public static function setConfiguration(array $config) {
+		if (isset(self::$instance)) {
+			throw new PPConfigurationException('Configuration has already been loaded');
 		}
+		self::$instance = new PPConfigManager($config);
+		return self::$instance;
+	}
+
+	/**
+	 * Clear/Reset the configuration
+	 *
+	 * Primarily used in tearDown() in unit tests.
+	 *
+	 * @internal
+	 */
+	public static function _unsetInstance() {
+		self::$instance = null;
 	}
 
 	/**
@@ -46,7 +65,7 @@ class PPConfigManager {
 	 * If an exact match for key is not found,
 	 * does a "contains" search on the key
 	 */
-	public function get($searchKey){
+	public function get($searchKey) {
 
 		if(array_key_exists($searchKey, $this->config))
 		{
