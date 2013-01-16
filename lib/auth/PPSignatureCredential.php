@@ -35,10 +35,26 @@ class PPSignatureCredential extends IPPCredential {
 	 */
 	protected $applicationId;
 
-	public function __construct($userName, $password, $signature) {
+	/**
+	 * Endpoint for this api signature
+	 */
+	protected $endPoint;
+
+	public function __construct($userName, $password, $signature, $endPoint = 'https://api-3t.sandbox.paypal.com/2.0/') {
 		$this->userName = trim($userName);
 		$this->password = trim($password);
 		$this->signature = trim($signature);
+
+		if (is_string($endPoint)) {
+			// BC: Support for older configurations
+			$this->endPoint = trim($endPoint);
+		} else {
+			$this->endPoint = array();
+			foreach ($endPoint as $port => $url) {
+				$this->endPoint[trim($port)] = trim($url);
+			}
+		}
+
 		$this->validate();
 	}
 
@@ -69,4 +85,16 @@ class PPSignatureCredential extends IPPCredential {
 	public function getApplicationId() {
 		return $this->applicationId;
 	}
+
+	public function getEndPoint($port) {
+		if (is_string($this->endPoint)) {
+			// BC: Support older configurations
+			return $this->endPoint;
+		}
+		if (!isset($this->endPoint[$port])) {
+			throw new PPMissingCredentialException("Port {$port} has not been configured for this authentication");
+		}
+		return $this->endPoint[$port];
+	}
+
 }

@@ -64,8 +64,9 @@ class PPCredentialManager
 				$userName = isset($credArr[$key.'.UserName']) ? $credArr[$key.'.UserName'] : "";
 				$password = isset($credArr[$key.'.Password']) ? $credArr[$key.'.Password'] : "";
 				$signature = isset($credArr[$key.'.Signature']) ? $credArr[$key.'.Signature'] : "";
+				$endpoint = isset($credArr[$key.'.EndPoint']) ? $credArr[$key.'.EndPoint'] : "https://api-3t.sandbox.paypal.com/2.0/";
 				
-				$this->credentialHashmap[$userName] = new PPSignatureCredential($userName, $password, $signature);
+				$this->credentialHashmap[$userName] = new PPSignatureCredential($userName, $password, $signature, $endpoint);
 				if (isset($credArr[$key.'.AppId'])) {				
 					$this->credentialHashmap[$userName]->setApplicationId($credArr[$key.'.AppId']);
 				}
@@ -75,10 +76,11 @@ class PPCredentialManager
 						
 				$userName = isset($credArr[$key.'.UserName']) ? $credArr[$key.'.UserName'] : "";
 				$password = isset($credArr[$key.'.Password']) ? $credArr[$key.'.Password'] : "";
-				$certPassPhrase = isset($credArr[$key.'.CertKey']) ? $credArr[$key.'.CertKey'] : "";	
-				$certPath = isset($credArr[$key.'.CertPath']) ? $credArr[$key.'.CertPath'] : "";				
+				$certPassPhrase = isset($credArr[$key.'.CertKey']) ? $credArr[$key.'.CertKey'] : "";
+				$certPath = isset($credArr[$key.'.CertPath']) ? $credArr[$key.'.CertPath'] : "";
+				$endpoint = isset($credArr[$key.'.EndPoint']) ? $credArr[$key.'.EndPoint'] : "https://api.sandbox.paypal.com/2.0/";
 				
-				$this->credentialHashmap[$userName] = new PPCertificateCredential($userName, $password, $certPath, $certPassPhrase);
+				$this->credentialHashmap[$userName] = new PPCertificateCredential($userName, $password, $certPath, $certPassPhrase, $endpoint);
 				if (isset($credArr[$key.'.AppId'])) {
 					$this->credentialHashmap[$userName]->setApplicationId($credArr[$key.'.AppId']);
 				}

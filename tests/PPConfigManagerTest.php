@@ -48,12 +48,12 @@ class PPConfigManagerTest extends PHPUnit_Framework_TestCase
 		$ret = $this->object->get('acct1');
 		$this->assertContains('jb-us-seller_api1.paypal.com', $ret);
 		$this->assertArrayHasKey('acct1.UserName', $ret);
-		$this->assertTrue(sizeof($ret) == 5);
+		$this->assertEquals(sizeof($ret), 6);
 		
 		$ret = $this->object->get('acct1.UserName');
 		$this->assertEquals('jb-us-seller_api1.paypal.com', $ret);
 		$ret = $this->object->get("acct");
-		$this->assertEquals(sizeof($ret), 8);
+		$this->assertEquals(sizeof($ret), 10);
 
 	}
 
@@ -70,4 +70,3 @@ class PPConfigManagerTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals('acct1', $ret);
 	}
 }
-?>

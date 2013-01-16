@@ -13,25 +13,16 @@ foreach(glob(dirname(__FILE__) . '/handlers/*') as $handler) {
 
 class PPAPIService {
 	
-	public $endpoint;
 	public $serviceName;
 	private $logger;
 	private $handlers = array();
 	private $serviceBinding;
+	private $port;
 
 	public function __construct($port, $serviceName, $serviceBinding, $handlers=array()) {
 		$this->serviceName = $serviceName;
-		$config = PPConfigManager::getInstance();
-		if($port!= null)
-		{
-			$this->endpoint = $config->get('service.EndPoint.'.$port);
-		}
-		// for backward compatibilty (for those who are using old config files with 'service.EndPoint')
-		else
-		{
-			$this->endpoint = $config->get('service.EndPoint');
-		}
-		
+		$this->port = $port;
+
 		$this->logger = new PPLoggingManager(__CLASS__);
 		$this->handlers = $handlers;
 		$this->serviceBinding = $serviceBinding;
@@ -61,9 +52,9 @@ class PPAPIService {
 		}
 		
 		if($this->serviceBinding == 'SOAP' ) {
-			$url = $this->endpoint;
+			$url = $apiCredential->getEndPoint($this->port);
 		} else {
-			$url = $this->endpoint . $this->serviceName . '/' . $apiMethod;
+			$url = $apiCredential->getEndPoint($this->port) . $this->serviceName . '/' . $apiMethod;
 		}
 
 		$request = new PPRequest($params, $this->serviceBinding);
