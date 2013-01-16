@@ -72,6 +72,7 @@ $cardDetails->CardOwner = $payer;
 $ddReqDetails = new DoDirectPaymentRequestDetailsType();
 $ddReqDetails->CreditCard = $cardDetails;
 $ddReqDetails->PaymentDetails = $paymentDetails;
+$ddReqDetails->PaymentAction = $_POST['paymentType'];
 
 $doDirectPaymentReq = new DoDirectPaymentReq();
 $doDirectPaymentReq->DoDirectPaymentRequest = new DoDirectPaymentRequestType($ddReqDetails);
