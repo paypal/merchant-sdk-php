@@ -12,7 +12,7 @@
         }
     ],
         "repositories": [
-        { "type": "composer", "url": "http://localhost/Autoloader/test/" }
+        { "type": "composer", "url": "http://localhost/Autoloader/satis/web" }
        
     ],
     "require": {
