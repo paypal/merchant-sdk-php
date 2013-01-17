@@ -18,7 +18,7 @@
     "require": {
         "php": ">=5.2.0",
         "ext-curl": "*",
-        "paypal/php-core-sdk":"dev-composer"
+        "paypal/sdk-core-php":"dev-composer"
     },
     "autoload": {
         "classmap": ["/lib"]
