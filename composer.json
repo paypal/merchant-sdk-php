@@ -1,5 +1,5 @@
 {
-    "name": "paypal/php-sdk-sample",
+    "name": "paypal/merchant-sdk-php",
     "description": "PayPal Core SDK for PHP",
     "keywords": ["paypal", "php", "sdk"],
     "type": "library",
