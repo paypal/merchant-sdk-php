@@ -1,5 +1,5 @@
 <?php
-require_once 'PPConfigManager.php';
+// require_once 'PPConfigManager.php';
 
 /**
  * Test class for PPConfigManager.

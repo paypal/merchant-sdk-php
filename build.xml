@@ -3,11 +3,13 @@
 <project name="PayPal_Merchant_SDK" default="build">
 
 	<property name="tests.dir" value="tests"/>
-	<property name="tests.out.dir" value="tests\reports"/>
+	<property name="tests.out.dir" value="tests/reports"/>
 	
 	<condition property="PHPUNIT_BIN" value="phpunit.bat" else="phpunit">
 		<os family="windows" />
 	</condition>
+
+	<property name="PHP_BIN" value="php"/>
 
 	<target name="clean">
 		<delete dir="${tests.out.dir}" />
@@ -16,9 +18,16 @@
 	<target name="test">
 		<mkdir dir="${tests.out.dir}" />
 		<exec dir="${basedir}" executable="${PHPUNIT_BIN}" failonerror="true">
-			<arg line="--testdox --include-path lib --log-junit ${tests.out.dir}\phpunit.xml ${tests.dir}" />
+			<arg line="--testdox --bootstrap ${tests.dir}/bootstrap.php --include-path lib --log-junit ${tests.out.dir}/phpunit.xml ${tests.dir}" />
 		</exec>
 	</target>
 
 	<target name="build" depends="clean, test" />
+
+	<target name="create-autoloader">
+		<exec dir="${basedir}" executable="${PHP_BIN}" failonerror="true">
+			<arg line="bin/createAutoloader.php" />
+		</exec>
+	</target>
+
 </project>

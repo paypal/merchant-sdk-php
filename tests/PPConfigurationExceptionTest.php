@@ -1,5 +1,5 @@
 <?php
-require_once 'exceptions/PPConfigurationException.php';
+// require_once 'exceptions/PPConfigurationException.php';
 
 /**
  * Test class for PPConfigurationException.

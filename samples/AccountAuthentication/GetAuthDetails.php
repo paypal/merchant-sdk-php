@@ -1,8 +1,8 @@
 <?php
 $path = '../../lib';
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);
-require_once('services/PayPalAPIInterfaceService/PayPalAPIInterfaceServiceService.php');
-require_once('PPLoggingManager.php');
+// Register auto loader
+require($path . "/PayPal_Merchant_SDK_Autoloader.php");
+PayPal_Merchant_SDK_Autoloader::register();
 
 $logger = new PPLoggingManager('GetAuthDetails');
  
@@ -26,7 +26,7 @@ if(isset($getAuthDetailsResponse)) {
 	echo "</pre>";
 	if($getAuthDetailsResponse->Ack == 'Success') {
 		$payPalURL = 'https://www.sandbox.paypal.com/webscr&cmd=_account-authenticate-logout&token='.$token;
-		echo"<a href=$payPalURL><b>* Redirect to paypal to logout</b></a><br>";
+		echo "<a href=$payPalURL><b>* Redirect to paypal to logout</b></a><br>";
 	}
 }
 require_once '../Response.php';

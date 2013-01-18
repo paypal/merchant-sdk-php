@@ -1,6 +1,6 @@
 <?php 
-require_once 'PPBaseService.php';
-require_once 'PayPalAPIInterfaceService.php';
+// require_once 'PPBaseService.php';
+// require_once 'PayPalAPIInterfaceService.php';
 
 /**
  * AUTO GENERATED code for PayPalAPIInterfaceService
@@ -14,15 +14,13 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	private static $SERVICE_NAME = "PayPalAPIInterfaceService";
 
     // SDK Name
-	private  $sdkName = "merchant-php-sdk";
+	private static $SDK_NAME = "merchant-php-sdk";
 	
 	// SDK Version
-	private $sdkVersion = "2.1.00";
+	private static $SDK_VERSION = "2.1.96";
 
 	public function __construct() {
 		parent::__construct(self::$SERVICE_NAME, 'SOAP', array('PPMerchantServiceHandler'));
-		self::$SDK_NAME = $this->sdkName;
-		self::$SDK_VERSION = $this->sdkVersion;
 	}
 
 	private function setStandardParams(AbstractRequestType $request) {

@@ -1,8 +1,8 @@
 <?php
 $path = '../../lib';
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);
-require_once('services/PayPalAPIInterfaceService/PayPalAPIInterfaceServiceService.php');
-require_once('PPLoggingManager.php');
+// Register auto loader
+require($path . "/PayPal_Merchant_SDK_Autoloader.php");
+PayPal_Merchant_SDK_Autoloader::register();
 session_start();
 
 $logger = new PPLoggingManager('SetExpressCheckout');

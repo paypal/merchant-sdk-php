@@ -21,10 +21,9 @@ Called by DoDirectPayment.html.php.
 
 ***********************************************************/
 session_start();
-$path = '../../lib';
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);
-require_once('services/PayPalAPIInterfaceService/PayPalAPIInterfaceServiceService.php');
-require_once('PPLoggingManager.php');
+
+require "../Bootstrap.php";
+
 /**
  * Get required parameters from the web form for the request
  */
@@ -72,7 +71,6 @@ $cardDetails->CardOwner = $payer;
 $ddReqDetails = new DoDirectPaymentRequestDetailsType();
 $ddReqDetails->CreditCard = $cardDetails;
 $ddReqDetails->PaymentDetails = $paymentDetails;
-$ddReqDetails->PaymentAction = $_POST['paymentType'];
 
 $doDirectPaymentReq = new DoDirectPaymentReq();
 $doDirectPaymentReq->DoDirectPaymentRequest = new DoDirectPaymentRequestType($ddReqDetails);

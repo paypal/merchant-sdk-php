@@ -1,5 +1,5 @@
 <?php
-require_once 'PPBaseService.php';
+// require_once 'PPBaseService.php';
 
 /**
  * Test class for PPBaseService.
