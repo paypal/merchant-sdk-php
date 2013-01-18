@@ -21,7 +21,7 @@
         "paypal/sdk-core-php":"dev-composer"
     },
     "autoload": {
-        "classmap": ["../lib"]
+        "classmap": ["./"]
     }
  
 }
