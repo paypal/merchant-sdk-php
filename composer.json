@@ -22,6 +22,9 @@
     },
     "autoload": {
         "classmap": ["./"]
+    },
+    "paypal":{
+    "downloadURL":"https://github.com/paypal/sdk-core-php/archive/composer.zip"
     }
  
 }
