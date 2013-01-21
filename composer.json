@@ -24,7 +24,7 @@
         "classmap": ["./"]
     },
     "paypal":{
-    "downloadURL":"https://github.com/paypal/sdk-core-php/archive/composer.zip"
+    "downloadURL":"https://api.github.com/repos/paypal/sdk-core-php/zipball/composer"
     }
  
 }
