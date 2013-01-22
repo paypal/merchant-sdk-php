@@ -22,25 +22,40 @@ else
 			echo "<br>Please enable zip extension in php.ini";
 			exit;
 		}
-		
+
 		$json = file_get_contents("composer.json");
 		$json_a = json_decode($json, true);
 		$dirArray = array();
 		customInstall($json_a , $dirArray);
 	}
 	else
-		exit('composer.json not found');
+	{
+		//exit('composer.json not found');
+		$target_url = 'https://raw.github.com/paypal/merchant-sdk-php/composer/composer.json';
+		$ch = curl_init();
+		$fp = fopen("composer.json", "w");
+		curl_setopt($ch, CURLOPT_URL,$target_url);
+		curl_setopt($ch, CURLOPT_FAILONERROR, true);
+		curl_setopt($ch, CURLOPT_HEADER,0);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		curl_setopt($ch, CURLOPT_AUTOREFERER, true);
+		curl_setopt($ch, CURLOPT_BINARYTRANSFER,true);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+		curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
+		curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
+		curl_setopt($ch, CURLOPT_FILE, $fp);
+	}
 }
 
 /**
- * Autoloads all the classes 
+ * Autoloads all the classes
  */
 createAutoload();
 
 /**
  * @param array $json_a content of composer.json
  * @param array $dirArray contains list of directories already scanned for dependency
- */
+*/
 function customInstall($json_a, $dirArray)
 {
 
@@ -57,8 +72,8 @@ function customInstall($json_a, $dirArray)
 	$tempSourceDir = 'sdk-core-php-composer';
 	$ch = curl_init();
 	$fp = fopen("$fileZip", "w");
-	
-	
+
+
 	curl_setopt($ch, CURLOPT_URL,$target_url);
 	curl_setopt($ch, CURLOPT_FAILONERROR, true);
 	curl_setopt($ch, CURLOPT_HEADER,0);
@@ -86,7 +101,7 @@ function customInstall($json_a, $dirArray)
 	/**
 	 * extract the downloaded zip
 	 **/
-	 
+
 	$zip->extractTo($dest);
 	$zip->close();
 	fclose($fp);
@@ -112,7 +127,7 @@ function customInstall($json_a, $dirArray)
 					if($file == 'config')
 					{
 						if (!is_dir("config"))
-						mkdir("config");
+							mkdir("config");
 						copyConfig($dest . '/' . $result.'/'.$file.'/' , 'config/');
 						rmdir($dest . '/' . $result.'/'.$file);
 					}
