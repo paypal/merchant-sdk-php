@@ -1,5 +1,5 @@
 {
-    "name": "paypal/merchant-sdk-php",
+    "name": "paypal/php-sdk-sample",
     "description": "PayPal Core SDK for PHP",
     "keywords": ["paypal", "php", "sdk"],
     "type": "library",
@@ -12,19 +12,17 @@
         }
     ],
         "repositories": [
-        { "type": "composer", "url": "http://localhost/Autoloader/test/" }
+        { "type": "composer", "url": "http://localhost/Autoloader/satis/web/" }
        
     ],
     "require": {
         "php": ">=5.2.0",
         "ext-curl": "*",
-        "paypal/sdk-core-php":"dev-composer"
-    },
-    "autoload": {
-        "classmap": ["./"]
+        "paypal/sdk-core-php":"dev-composer",
+        "paypal/merchant-sdk-php":"dev-composer"
     },
     "paypal":{
-    "downloadURL":"https://api.github.com/repos/paypal/sdk-core-php/zipball/composer"
+    "downloadURL":"https://api.github.com/repos/paypal/merchant-sdk-php/zipball/composer"
     }
  
 }
