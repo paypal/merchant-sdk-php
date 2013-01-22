@@ -16,7 +16,7 @@ else
 	if(!file_exists('composer.json'))
 	{
 		//exit('composer.json not found');
-		$target_url = 'https://raw.github.com/paypal/merchant-sdk-php/composer/composer.json';
+		$target_url = 'https://raw.github.com/paypal/merchant-sdk-php/composer/samples/composer.json';
 		$ch = curl_init();
 		$fp = fopen("composer.json", "w");
 		curl_setopt($ch, CURLOPT_URL,$target_url);
@@ -30,6 +30,15 @@ else
 		curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt($ch, CURLOPT_FILE, $fp);
 	}
+	
+	if (!$res) {
+		echo "<br />cURL error number:" .curl_errno($ch);
+		echo "<br />cURL error:" . curl_error($ch);
+		exit;
+	}
+	curl_close($ch);
+	fclose($fp);
+	
 	
 	
 		if (!extension_loaded('zip')) {
