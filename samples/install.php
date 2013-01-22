@@ -13,22 +13,7 @@ if($useComposer && $status == 0)
 }
 else
 {
-	if(file_exists('composer.json'))
-	{
-		/**
-		 * check if zip extension is enabled
-		 */
-		if (!extension_loaded('zip')) {
-			echo "<br>Please enable zip extension in php.ini";
-			exit;
-		}
-
-		$json = file_get_contents("composer.json");
-		$json_a = json_decode($json, true);
-		$dirArray = array();
-		customInstall($json_a , $dirArray);
-	}
-	else
+	if(!file_exists('composer.json'))
 	{
 		//exit('composer.json not found');
 		$target_url = 'https://raw.github.com/paypal/merchant-sdk-php/composer/composer.json';
@@ -45,6 +30,21 @@ else
 		curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt($ch, CURLOPT_FILE, $fp);
 	}
+	
+	
+		if (!extension_loaded('zip')) {
+			echo "<br>Please enable zip extension in php.ini";
+			exit;
+		}
+
+		$json = file_get_contents("composer.json");
+		$json_a = json_decode($json, true);
+		$dirArray = array();
+		customInstall($json_a , $dirArray);
+
+	
+
+	
 }
 
 /**
