@@ -7,7 +7,8 @@
 define('DS', DIRECTORY_SEPARATOR);
 define('COMPOSER_FILE', 'composer.json');
 $useComposer = false;
-
+// name of the bootstrap file in custom installation
+$bootStrap = 'BootStrap.php';
 // Required : URL from where the composer.json is downloaded if not present
 $composerUrl = 'https://raw.github.com/paypal/merchant-sdk-php/composer/samples/composer.json';
 
@@ -20,7 +21,8 @@ init($useComposer, $composerUrl);
  * Autoloads all the classes
 */
 createAutoload();
-
+createBootStrap($bootStrap);
+echo "installation successful";
 function init($useComposer, $composerUrl)
 {
 
@@ -37,7 +39,7 @@ function init($useComposer, $composerUrl)
 	else
 	{
 		echo "composer not installed or 'useComposer' is set to false in install.php <br>";
-		echo "running custom installation";
+		echo "running custom installation <br>";
 		if (!extension_loaded('zip')) {
 			echo "<br>Please enable zip extension in php.ini";
 			exit;
@@ -323,4 +325,25 @@ function copyConfig($source, $destination )
 	foreach ($delete as $file) {
 		unlink($file);
 	}
+}
+function createBootStrap($bootStrap)
+{
+	$script = <<< SCRIPT
+		<?php
+/**
+ *  Include this file in your application 
+ *  this file includes autoloader.php if using composer. includes custom actoloader if it is a custom installation of SDK
+ */
+define('PP_CONFIG_PATH',dirname(__FILE__).'/config/');
+if(file_exists('vendor/autoload.php'))
+    require 'vendor/autoload.php';
+
+else
+{
+    require 'PPAutoloader.php';
+    PPAutoloader::register();
+}
+	
+SCRIPT;
+	file_put_contents($bootStrap, $script);
 }
