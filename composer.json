@@ -22,9 +22,5 @@
     },
     "autoload": {
         "classmap": ["./"]
-    },
-    "paypal":{
-    "downloadURL":"https://api.github.com/repos/paypal/sdk-core-php/zipball/composer"
     }
- 
 }
