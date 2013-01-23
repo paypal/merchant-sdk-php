@@ -1,6 +1,5 @@
 <?php 
-require_once 'PPBaseService.php';
-require_once 'Permissions.php';
+
 
 /**
  * AUTO GENERATED code for Permissions

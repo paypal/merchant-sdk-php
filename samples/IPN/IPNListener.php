@@ -8,8 +8,7 @@
  * validate the IPN and initiate some action based on the 
  * incoming IPN variables.
  */
-set_include_path(get_include_path() . PATH_SEPARATOR . '../../lib');
-require_once 'ipn/PPIPNMessage.php';
+require_once('../PPbootstrap.php');
 
 $ipnMessage = new PPIPNMessage();
 foreach($ipnMessage->getRawData() as $key => $value) {

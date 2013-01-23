@@ -17,7 +17,12 @@ PayPal's PHP Merchant SDK requires
   
 Installing the SDK
 -------------
-   *
+   * run this from commandline - this installs using composer if composer is installed else uses custom installer to install PHP SDK
+   curl  https://raw.github.com/paypal/merchant-sdk-php/composer/samples/install.php | php
+   
+   
+   
+   
 
 Using the SDK
 -------------

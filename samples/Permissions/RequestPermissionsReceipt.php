@@ -4,9 +4,7 @@
  RequestPermissionsReceipt.php
  Called by RequestPermissions.php
  ********************************************/
-$path = '../../lib';
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);
-require_once('services/PermissionsService.php');
+require_once('../PPbootstrap.php');
 
 $serverName = $_SERVER['SERVER_NAME'];
 $serverPort = $_SERVER['SERVER_PORT'];

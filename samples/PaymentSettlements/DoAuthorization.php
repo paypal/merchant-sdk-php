@@ -1,8 +1,5 @@
 <?php
-$path = '../../lib';
-// Register auto loader
-require($path . "/PayPal_Merchant_SDK_Autoloader.php");
-PayPal_Merchant_SDK_Autoloader::register();
+require_once('../PPbootstrap.php');
 /**
  * Get required parameters from the web form for the request
  */

@@ -273,7 +273,8 @@ function createAutoload()
 			$class = strtolower($class);
 
 			if (isset($classes[$class])) {
-				echo "Warning: class [{$class}] is defined in both\n\t{$filename}\n\t{$classes[$class]}\n";
+				;
+                //echo "Warning: class [{$class}] is defined in both\n\t{$filename}\n\t{$classes[$class]}\n";
 			}
 
 			$classes[$class] = $filename;
