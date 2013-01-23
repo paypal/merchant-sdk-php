@@ -26,6 +26,13 @@ echo "installation successful";
 function init($useComposer, $composerUrl)
 {
 
+	// download if composer.json is not present
+	if(!file_exists(COMPOSER_FILE))
+	{
+		$fp = fopen(COMPOSER_FILE, "w");
+		curlExec($composerUrl, $fp);
+		fclose($fp);
+	}
 	/**
 	 * check if composer is installed
 	 */
@@ -44,13 +51,7 @@ function init($useComposer, $composerUrl)
 			echo "<br>Please enable zip extension in php.ini";
 			exit;
 		}
-		// download if composer.json is not present
-		if(!file_exists(COMPOSER_FILE))
-		{
-			$fp = fopen(COMPOSER_FILE, "w");
-			curlExec($composerUrl, $fp);
-			fclose($fp);
-		}
+	
 		$json = file_get_contents(COMPOSER_FILE);
 		$json_a = json_decode($json, true);
 		//array $skipDir contains list of directories already scanned for dependency
