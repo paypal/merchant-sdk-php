@@ -15,14 +15,16 @@ PayPal's PHP Merchant SDK requires
 
    * PHP 5.2 and above with curl/openssl extensions enabled
   
+Installing the SDK
+-------------
+   *
 
 Using the SDK
 -------------
 
 To use the SDK,
 
-   * Copy the config and lib folders into your project. Modify the config file sdk_config.ini to suit your needs.
-   * Register the autoloader in your code.
+   * Update the sdk_config.ini with your API credentials.
    * Create a service wrapper object.
    * Create a request object as per your project's needs. All the API request and response classes 
      are available in services\PayPalAPIInterfaceService\PayPalAPIInterfaceServiceService.php
@@ -31,8 +33,7 @@ To use the SDK,
 For example,
 
     // Register auto loader
-    require("/absolute/or/relative/path/to/lib/PayPal_Merchant_SDK_Autoloader.php");
-    PayPal_Merchant_SDK_Autoloader::register();
+    require("PPbootStrap.php");
 
     // Create request details
     $itemAmount = new BasicAmountType($currencyId, $amount);

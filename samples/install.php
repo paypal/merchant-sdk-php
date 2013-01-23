@@ -8,7 +8,7 @@ define('DS', DIRECTORY_SEPARATOR);
 define('COMPOSER_FILE', 'composer.json');
 $useComposer = false;
 // name of the bootstrap file in custom installation
-$bootStrap = 'BootStrap.php';
+$bootStrap = 'PPbootStrap.php';
 // Required : URL from where the composer.json is downloaded if not present
 $composerUrl = 'https://raw.github.com/paypal/merchant-sdk-php/composer/samples/composer.json';
 
@@ -195,6 +195,11 @@ function curlExec($targetUrl, $writeToFile)
 	}
 	curl_close($ch);
 }
+
+/**
+ * 
+ * contributor: https://github.com/rrehbeindoi
+ */
 function createAutoload()
 {
 
