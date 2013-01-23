@@ -19,9 +19,5 @@
         "php": ">=5.2.0",
         "ext-curl": "*",
         "paypal/merchant-sdk-php":"dev-composer"
-    },
-    "paypal":{
-    "downloadURL":"https://api.github.com/repos/paypal/merchant-sdk-php/zipball/composer"
     }
- 
 }

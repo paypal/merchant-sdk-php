@@ -1,106 +1,88 @@
 <?php 
+/**
+ *  Downloads and Installs PayPal PHP SDK
+ *  custom installer is invoked if composer is not installed
+ */
+
 define('DS', DIRECTORY_SEPARATOR);
+define('COMPOSER_FILE', 'composer.json');
 $useComposer = false;
 
+// Required : URL from where the composer.json is downloaded if not present
+$composerUrl = 'https://raw.github.com/paypal/merchant-sdk-php/composer/samples/composer.json';
+
 /**
- * check if composer is installed
+ *  initiates and installs the SDK
  */
-exec('composer',$output,$status);
-if($useComposer && $status == 0)
+init($useComposer, $composerUrl);
+
+/**
+ * Autoloads all the classes
+*/
+createAutoload();
+
+function init($useComposer, $composerUrl)
 {
-	exec('composer update',$output,$status);
-	echo $output;
-}
-else
-{
-	if(!file_exists('composer.json'))
+
+	/**
+	 * check if composer is installed
+	 */
+	@exec('composer',$output,$status);
+	if($useComposer && $status == 0)
 	{
-		//exit('composer.json not found');
-		$target_url = 'https://raw.github.com/paypal/merchant-sdk-php/composer/samples/composer.json';
-		$ch = curl_init();
-		$fp = fopen("composer.json", "w");
-		curl_setopt($ch, CURLOPT_URL,$target_url);
-		curl_setopt($ch, CURLOPT_FAILONERROR, true);
-		curl_setopt($ch, CURLOPT_HEADER,0);
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-		curl_setopt($ch, CURLOPT_AUTOREFERER, true);
-		curl_setopt($ch, CURLOPT_BINARYTRANSFER,true);
-		curl_setopt($ch, CURLOPT_TIMEOUT, 60);
-		curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
-		curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
-		curl_setopt($ch, CURLOPT_FILE, $fp);
-		$res = curl_exec($ch);
+		@exec('composer update',$output,$status);
+		echo $output;
+		exit();
 	}
-	
-	if (!$res) {
-		echo "<br />cURL error number:" .curl_errno($ch);
-		echo "<br />cURL error:" . curl_error($ch);
-		exit;
-	}
-	curl_close($ch);
-	fclose($fp);
-	
-	
-	
+	else
+	{
+		echo "composer not installed or 'useComposer' is set to false in install.php <br>";
+		echo "running custom installation";
 		if (!extension_loaded('zip')) {
 			echo "<br>Please enable zip extension in php.ini";
 			exit;
 		}
-
-		$json = file_get_contents("composer.json");
+		// download if composer.json is not present
+		if(!file_exists(COMPOSER_FILE))
+		{
+			$fp = fopen(COMPOSER_FILE, "w");
+			curlExec($composerUrl, $fp);
+			fclose($fp);
+		}
+		$json = file_get_contents(COMPOSER_FILE);
 		$json_a = json_decode($json, true);
-		$dirArray = array();
-		customInstall($json_a , $dirArray);
+		//array $skipDir contains list of directories already scanned for dependency
+		$skipDir = array();
+		$dependencies =  getDependency($json_a);
+		foreach ($dependencies as $dependency )
+		{
 
-	
+			$downloadUrl = 'https://api.github.com/repos/'.$dependency['group'].'/'.$dependency['artifact'].'/zipball/'.$dependency['branch'];
+			echo "downloading dependency " .$dependency['artifact'] . '<br>';
+			customInstall($downloadUrl, $dependency['group'], $skipDir);
 
-	
+		}
+
+
+	}
 }
-
-/**
- * Autoloads all the classes
- */
-createAutoload();
-
 /**
  * @param array $json_a content of composer.json
- * @param array $dirArray contains list of directories already scanned for dependency
-*/
-function customInstall($json_a, $dirArray)
+ * @param array $skipDir contains list of directories already scanned for dependency
+ */
+function customInstall($downloadUrl, $installDir, $skipDir)
 {
 
 	/**
 	 *  download zip from github
 	 */
-	if(!empty( $json_a['paypal']['downloadURL']))
-		$target_url = $json_a['paypal']['downloadURL'];
-	else
-		exit('download url not valid');
-
 	$fileZip = "tempZip.zip";
-	$dest= 'vendor/paypal/';
+	$dest= 'vendor/'.$installDir.'/';
 	$tempSourceDir = 'sdk-core-php-composer';
-	$ch = curl_init();
 	$fp = fopen("$fileZip", "w");
 
+	curlExec($downloadUrl, $fp);
 
-	curl_setopt($ch, CURLOPT_URL,$target_url);
-	curl_setopt($ch, CURLOPT_FAILONERROR, true);
-	curl_setopt($ch, CURLOPT_HEADER,0);
-	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-	curl_setopt($ch, CURLOPT_AUTOREFERER, true);
-	curl_setopt($ch, CURLOPT_BINARYTRANSFER,true);
-	curl_setopt($ch, CURLOPT_TIMEOUT, 60);
-	curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
-	curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
-	curl_setopt($ch, CURLOPT_FILE, $fp);
-	$res = curl_exec($ch);
-	if (!$res) {
-		echo "<br />cURL error number:" .curl_errno($ch);
-		echo "<br />cURL error:" . curl_error($ch);
-		exit;
-	}
-	curl_close($ch);
 
 	$zip = new ZipArchive;
 	if($zip->open($fileZip) != "true") {
@@ -126,7 +108,7 @@ function customInstall($json_a, $dirArray)
 			/**
 			 *  skip the directories already scanned
 			 */
-			if( !in_array($result, $dirArray))
+			if( !in_array($result, $skipDir))
 			{
 				$scannedFiles = scandir($dest . '/' . $result);
 				foreach ($scannedFiles as $file)
@@ -141,16 +123,24 @@ function customInstall($json_a, $dirArray)
 						copyConfig($dest . '/' . $result.'/'.$file.'/' , 'config/');
 						rmdir($dest . '/' . $result.'/'.$file);
 					}
-					if($file == 'composer.json')
+					if($file == COMPOSER_FILE)
 					{
-						$json = file_get_contents($dest. '/' . $result."/composer.json");
+						$json = file_get_contents($dest. '/' . $result.'/'.COMPOSER_FILE);
 						$json_a = json_decode($json, true);
-						if(isset($json_a['paypal']))
+						$skipDir[] =  $result;
+						$dependencies =  getDependency($json_a);
+						if(!empty($dependencies))
 						{
-							$dirArray[] =  $result;
-							customInstall($json_a, $dirArray);
+							foreach ($dependencies as $dependency )
+							{
+
+								$downloadUrl = 'https://api.github.com/repos/'.$dependency['group'].'/'.$dependency['artifact'].'/zipball/'.$dependency['branch'];
+								echo "downloading dependency " .$dependency['artifact']. '<br>';
+								customInstall($downloadUrl, $dependency['group'], $skipDir);
+							}
+								
 						}
-							
+
 					}
 				}
 			}
@@ -159,13 +149,56 @@ function customInstall($json_a, $dirArray)
 
 }
 
+function getDependency($json_a)
+{
+	$requiredArray = $json_a['require'];
+	foreach ($requiredArray as $key => $val)
+	{
+		if(strpos($key, '/'))
+		{
+			$parts = explode('/', $key);
+			$pos = strpos($val, '-');
+			$branch = substr($val, $pos+1);
+			$batch['group'] = $parts[0] ;
+			$batch['artifact'] = $parts[1];
+			$batch['branch'] = $branch;
+			$res[] = $batch;
+		}
+		
+	}
+	if(empty($res))
+		return null;
+	else 
+		return $res;
+}
+function curlExec($targetUrl, $writeToFile)
+{
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,$targetUrl);
+	curl_setopt($ch, CURLOPT_FAILONERROR, true);
+	curl_setopt($ch, CURLOPT_HEADER,0);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+	curl_setopt($ch, CURLOPT_AUTOREFERER, true);
+	curl_setopt($ch, CURLOPT_BINARYTRANSFER,true);
+	curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+	curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
+	curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
+	curl_setopt($ch, CURLOPT_FILE, $writeToFile);
+	$res = curl_exec($ch);
+	if (!$res) {
+		echo "<br />cURL error number:" .curl_errno($ch);
+		echo "<br />cURL error:" . curl_error($ch);
+		exit;
+	}
+	curl_close($ch);
+}
 function createAutoload()
 {
 
 	$libraryPath = dirname(__FILE__).'/';
 	$loaderClass = 'PPAutoloader';
 	$loaderFile  = $loaderClass . '.php';
-
+	echo "generating autoload file <br>";
 	/**
 	 * From comment by "Mike" on http://us2.php.net/manual/en/function.glob.php
 	 *
