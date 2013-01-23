@@ -18,7 +18,6 @@
     "require": {
         "php": ">=5.2.0",
         "ext-curl": "*",
-        "paypal/sdk-core-php":"dev-composer",
         "paypal/merchant-sdk-php":"dev-composer"
     },
     "paypal":{
