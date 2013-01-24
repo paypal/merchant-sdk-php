@@ -1,5 +1,5 @@
 <?php
-require_once('../PPbootstrap.php');
+require_once('../PPBootStrap.php');
 session_start();
 
 $logger = new PPLoggingManager('SetExpressCheckout');

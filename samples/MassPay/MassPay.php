@@ -1,6 +1,5 @@
 <?php
-require_once('../PPbootstrap.php');
-
+require_once('../PPBootStrap.php');
 $logger = new PPLoggingManager('MassPay');
 
 $massPayRequest = new MassPayRequestType();

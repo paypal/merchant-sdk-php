@@ -8,8 +8,7 @@
  * validate the IPN and initiate some action based on the 
  * incoming IPN variables.
  */
-require_once('../PPbootstrap.php');
-
+require_once('../PPBootStrap.php');
 $ipnMessage = new PPIPNMessage();
 foreach($ipnMessage->getRawData() as $key => $value) {
 	error_log("IPN: $key => $value");

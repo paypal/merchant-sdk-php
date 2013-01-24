@@ -1,6 +1,5 @@
 <?php
-require_once('../PPbootstrap.php');
-
+require_once('../PPBootStrap.php');
 $logger = new PPLoggingManager('GetBoardingDetails');
 
 $getBoardingDetailsReqest = new GetBoardingDetailsRequestType();

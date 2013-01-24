@@ -8,7 +8,7 @@ define('DS', DIRECTORY_SEPARATOR);
 define('COMPOSER_FILE', 'composer.json');
 $useComposer = false;
 // name of the bootstrap file in custom installation
-$bootStrap = 'PPbootStrap.php';
+$bootStrap = 'PPBootStrap.php';
 // Required : URL from where the composer.json is downloaded if not present
 $composerUrl = 'https://raw.github.com/paypal/merchant-sdk-php/composer/samples/composer.json';
 
@@ -21,7 +21,10 @@ init($useComposer, $composerUrl);
  * Autoloads all the classes
 */
 createAutoload();
-createBootStrap($bootStrap);
+if(!file_exists($bootStrap))
+{
+	createBootStrap($bootStrap);
+}
 echo "installation successful";
 function init($useComposer, $composerUrl)
 {
@@ -36,22 +39,35 @@ function init($useComposer, $composerUrl)
 	/**
 	 * check if composer is installed
 	 */
-	@exec('composer',$output,$status);
-	if($useComposer && $status == 0)
+	if($useComposer)
 	{
-		@exec('composer update',$output,$status);
-		echo $output;
-		exit();
+		@exec('composer',$output,$status);
+		if( $status == 0)
+		{
+			@exec('composer update',$output,$status);
+			var_dump($output);
+			exit();
+		}
+		else
+		{
+			@exec('composer.phar',$output,$status);
+			if( $status == 0)
+			{
+				@exec('composer.phar update',$output,$status);
+				var_dump($output);
+				exit();
+			}
+		}
 	}
 	else
 	{
-		echo "composer not installed or 'useComposer' is set to false in install.php <br>";
-		echo "running custom installation <br>";
+		echo "composer not installed or 'useComposer' is set to false in install.php...".PHP_EOL;
+		echo "running custom installation... ".PHP_EOL;
 		if (!extension_loaded('zip')) {
-			echo "<br>Please enable zip extension in php.ini";
+			echo PHP_EOL . "Please enable zip extension in php.ini...";
 			exit;
 		}
-	
+
 		$json = file_get_contents(COMPOSER_FILE);
 		$json_a = json_decode($json, true);
 		//array $skipDir contains list of directories already scanned for dependency
@@ -61,7 +77,7 @@ function init($useComposer, $composerUrl)
 		{
 
 			$downloadUrl = 'https://api.github.com/repos/'.$dependency['group'].'/'.$dependency['artifact'].'/zipball/'.$dependency['branch'];
-			echo "downloading dependency " .$dependency['artifact'] . '<br>';
+			echo "downloading dependency " .$dependency['artifact'] . PHP_EOL;
 			customInstall($downloadUrl, $dependency['group'], $skipDir);
 
 		}
@@ -89,7 +105,7 @@ function customInstall($downloadUrl, $installDir, $skipDir)
 
 	$zip = new ZipArchive;
 	if($zip->open($fileZip) != "true") {
-		echo "<br>Could not open $fileZip";
+		echo PHP_EOL . "Could not open $fileZip";
 		exit;
 	}
 
@@ -138,10 +154,10 @@ function customInstall($downloadUrl, $installDir, $skipDir)
 							{
 
 								$downloadUrl = 'https://api.github.com/repos/'.$dependency['group'].'/'.$dependency['artifact'].'/zipball/'.$dependency['branch'];
-								echo "downloading dependency " .$dependency['artifact']. '<br>';
+								echo "downloading dependency " .$dependency['artifact'].'...'.PHP_EOL;
 								customInstall($downloadUrl, $dependency['group'], $skipDir);
 							}
-								
+
 						}
 
 					}
@@ -167,11 +183,11 @@ function getDependency($json_a)
 			$batch['branch'] = $branch;
 			$res[] = $batch;
 		}
-		
+
 	}
 	if(empty($res))
 		return null;
-	else 
+	else
 		return $res;
 }
 function curlExec($targetUrl, $writeToFile)
@@ -189,15 +205,15 @@ function curlExec($targetUrl, $writeToFile)
 	curl_setopt($ch, CURLOPT_FILE, $writeToFile);
 	$res = curl_exec($ch);
 	if (!$res) {
-		echo "<br />cURL error number:" .curl_errno($ch);
-		echo "<br />cURL error:" . curl_error($ch);
+		echo PHP_EOL . "cURL error number:" .curl_errno($ch);
+		echo PHP_EOL . "cURL error:" . curl_error($ch);
 		exit;
 	}
 	curl_close($ch);
 }
 
 /**
- * 
+ *
  * contributor: https://github.com/rrehbeindoi
  */
 function createAutoload()
@@ -206,7 +222,7 @@ function createAutoload()
 	$libraryPath = dirname(__FILE__).'/';
 	$loaderClass = 'PPAutoloader';
 	$loaderFile  = $loaderClass . '.php';
-	echo "generating autoload file <br>";
+	echo "generating autoload file ".PHP_EOL;
 	/**
 	 * From comment by "Mike" on http://us2.php.net/manual/en/function.glob.php
 	 *
@@ -274,7 +290,7 @@ function createAutoload()
 
 			if (isset($classes[$class])) {
 				;
-                //echo "Warning: class [{$class}] is defined in both\n\t{$filename}\n\t{$classes[$class]}\n";
+				//echo "Warning: class [{$class}] is defined in both\n\t{$filename}\n\t{$classes[$class]}\n";
 			}
 
 			$classes[$class] = $filename;
@@ -338,7 +354,7 @@ function createBootStrap($bootStrap)
 	$script = <<< SCRIPT
 		<?php
 /**
- *  Include this file in your application 
+ *  Include this file in your application
  *  this file includes autoloader.php if using composer. includes custom actoloader if it is a custom installation of SDK
  */
 define('PP_CONFIG_PATH',dirname(__FILE__).'/config/');
@@ -350,7 +366,7 @@ else
     require 'PPAutoloader.php';
     PPAutoloader::register();
 }
-	
+
 SCRIPT;
 	file_put_contents($bootStrap, $script);
 }

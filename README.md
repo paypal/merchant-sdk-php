@@ -16,12 +16,23 @@ PayPal's PHP Merchant SDK requires
    * PHP 5.2 and above with curl/openssl extensions enabled
   
 Installing the SDK
--------------
-   * run this from commandline - this installs using composer if composer is installed else uses custom installer to install PHP SDK
+-------------------
+   if using composer 
+   
+    Run from commandline and after the installation set the path to config file in PPBootStrap.php, config file is in vendor/paypal/merchant-sdk-php/config/
    curl  https://raw.github.com/paypal/merchant-sdk-php/composer/samples/install.php | php
+     
+    or run this command from merchant-sdk-php/samples directory and after the installation set the path to config file in PPBootStrap.php, config file is in vendor/paypal/merchant-sdk-php/config/
+    
+   composer update
    
+    if not using composer
    
+   curl  https://raw.github.com/paypal/merchant-sdk-php/composer/samples/install.php | php
+    
+     or run this command from merchant-sdk-php/samples directory
    
+   php install.php
    
 
 Using the SDK
@@ -30,6 +41,7 @@ Using the SDK
 To use the SDK,
 
    * Update the sdk_config.ini with your API credentials.
+   * require "PPbootStrap.php" in your application.
    * Create a service wrapper object.
    * Create a request object as per your project's needs. All the API request and response classes 
      are available in services\PayPalAPIInterfaceService\PayPalAPIInterfaceServiceService.php
@@ -89,7 +101,7 @@ Please refer to the sample config file provided with this bundle.
 
 Using multiple SDKs together
 ----------------------------
-*copy the contents in 'lib/service/' to one of the SDKs
+*add the required sdk names to 'required' section of composer.json
 *add the service endpoint to 'config/sdk_config.ini', for the endpoints refer the list below
 
 Endpoint Configuration

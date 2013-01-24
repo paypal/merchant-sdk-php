@@ -22,8 +22,7 @@ Called by DoDirectPayment.html.php.
 ***********************************************************/
 session_start();
 
-require "../Bootstrap.php";
-
+require_once('../PPBootStrap.php');
 /**
  * Get required parameters from the web form for the request
  */

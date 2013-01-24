@@ -1,6 +1,5 @@
 <?php
-require_once('../PPbootstrap.php');
-
+require_once('../PPBootStrap.php');
 $logger = new PPLoggingManager('SetExpressCheckout');
 
 $url = dirname('http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . $_SERVER['REQUEST_URI']);

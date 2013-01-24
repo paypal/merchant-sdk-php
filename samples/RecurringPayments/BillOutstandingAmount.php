@@ -1,5 +1,5 @@
 <?php
-require_once('../PPbootstrap.php');
+require_once('../PPBootStrap.php');
 /**
  * Get required parameters from the web form for the request
  */

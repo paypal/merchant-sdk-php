@@ -4,8 +4,7 @@
  GetAccessTokenReceipt.php
  Called by GetAccessToken.php
  ********************************************/
-require_once('../PPbootstrap.php');
-
+require_once('../PPBootStrap.php');
 $requestEnvelope = new RequestEnvelope();
 $requestEnvelope->errorLanguage = "en_US";
 $request = new GetAccessTokenRequest();

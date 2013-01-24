@@ -1,6 +1,5 @@
 <?php 
-// require_once 'PPBaseService.php';
-// require_once 'PayPalAPIInterfaceService.php';
+
 
 /**
  * AUTO GENERATED code for PayPalAPIInterfaceService
@@ -21,6 +20,8 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 
 	public function __construct() {
 		parent::__construct(self::$SERVICE_NAME, 'SOAP', array('PPMerchantServiceHandler'));
+        parent::$SDK_NAME    = self::$SDK_NAME 
+        parent::$SDK_VERSION = self::$SDK_VERSION
 	}
 
 	private function setStandardParams(AbstractRequestType $request) {

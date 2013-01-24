@@ -4,8 +4,7 @@
  RequestPermissionsReceipt.php
  Called by RequestPermissions.php
  ********************************************/
-require_once('../PPbootstrap.php');
-
+require_once('../PPBootStrap.php');
 $serverName = $_SERVER['SERVER_NAME'];
 $serverPort = $_SERVER['SERVER_PORT'];
 $url = dirname('http://'.$serverName.':'.$serverPort.$_SERVER['REQUEST_URI']);
