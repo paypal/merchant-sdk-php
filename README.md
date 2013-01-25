@@ -19,20 +19,21 @@ Installing the SDK
 -------------------
    if using composer 
    
-    Run from commandline and after the installation set the path to config file in PPBootStrap.php, config file is in vendor/paypal/merchant-sdk-php/config/
-   curl  https://raw.github.com/paypal/merchant-sdk-php/composer/samples/install.php | php
+   Run from commandline and after the installation set the path to config file in PPBootStrap.php, config file is in vendor/paypal/merchant-sdk-php/config/
+   
+    curl  https://raw.github.com/paypal/merchant-sdk-php/composer/samples/install.php | php
      
-    or run this command from merchant-sdk-php/samples directory and after the installation set the path to config file in PPBootStrap.php, config file is in vendor/paypal/merchant-sdk-php/config/
+   or run this command from merchant-sdk-php/samples directory and after the installation set the path to config file in PPBootStrap.php, config file is in vendor/paypal/merchant-sdk-php/config/
     
-   composer update
+    composer update
    
-    if not using composer
+   if not using composer
    
-   curl  https://raw.github.com/paypal/merchant-sdk-php/composer/samples/install.php | php
+    curl  https://raw.github.com/paypal/merchant-sdk-php/composer/samples/install.php | php
     
-     or run this command from merchant-sdk-php/samples directory
+   or run this command from merchant-sdk-php/samples directory
    
-   php install.php
+    php install.php
    
 
 Using the SDK
@@ -41,7 +42,9 @@ Using the SDK
 To use the SDK,
 
    * Update the sdk_config.ini with your API credentials.
-   * require "PPbootStrap.php" in your application.
+   * Require "PPBootStrap.php" in your application. [copy it from vendor/paypal/merchant-sdk-php/sample/ if using composer]
+   * To run samples : copy samples in [vendor/paypal/merchant-sdk-php/] to root directory and run in browser
+   * To build your own application:
    * Create a service wrapper object.
    * Create a request object as per your project's needs. All the API request and response classes 
      are available in services\PayPalAPIInterfaceService\PayPalAPIInterfaceServiceService.php
@@ -49,8 +52,8 @@ To use the SDK,
 
 For example,
 
-    // Register auto loader
-    require("PPbootStrap.php");
+    //sets config file path and loads all the classes
+    require("PPBootStrap.php");
 
     // Create request details
     $itemAmount = new BasicAmountType($currencyId, $amount);
@@ -163,8 +166,8 @@ Getting help
 
 If you need help using the SDK, a new feature that you need or have a issue to report, please visit
    
-   https://github.com/paypal/merchant-sdk-php/issues 
+    https://github.com/paypal/merchant-sdk-php/issues 
 
-      OR
+   OR
   
-   https://www.x.com/developers/paypal/forums/express-checkout    
+    https://www.x.com/developers/paypal/forums/express-checkout    
