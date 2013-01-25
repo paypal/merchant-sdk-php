@@ -4,7 +4,7 @@ Version 2.2.96 - January 23, 2013
 	- Added installation script that fetches the dependencies and installs sdk if composer not present
     - contributed by:  https://github.com/rrehbeindoi
 	
-You can see source code of this release in github under https://github.com/paypal/merchant-sdk-php/tree/v2.1.96.
+You can see source code of this release in github https://github.com/paypal/merchant-sdk-php/tree/composer
 --------------------------------------------------------------------------------------------------
 Version 2.1.96 - December 14, 2012
 
