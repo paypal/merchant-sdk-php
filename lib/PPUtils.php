@@ -36,20 +36,29 @@ class PPUtils
 	 * @param string $key
 	 * @return bool
 	 */
-	public static function array_match_key($map, $key)
-	{
-		$key = str_replace("(", "\(", $key);
-		$key = str_replace(")", "\)", $key);
-		$key = str_replace(".", "\.", $key);
-		$pattern = "/$key*/";
-		foreach ($map as $k => $v) {
-			preg_match($pattern, $k, $matches);
-			if (count($matches) > 0) {
-				return true;
-			}
-		}
-		return false;
-	}
+        public static function array_match_key($map, $key)
+        {
+            $replace = str_replace(array(
+                '(',
+                ')',
+                '.'
+            ), array(
+                '\(',
+                '\)',
+                '\.'
+            ), $key);
+    
+            $pattern = "/$replace*/";
+    
+            foreach ($map as $k => $v) {
+                preg_match($pattern, $k, $matches);
+                if(count($matches) > 0)
+    
+                return true;
+            }
+    
+            return false;
+        }
 
 
 
