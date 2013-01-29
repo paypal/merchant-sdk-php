@@ -4,8 +4,6 @@
   * Auto generated code 
   * 
   */
-// require_once 'PPUtils.php';
-// require_once 'PPXmlMessage.php';
 /**
  * @hasAttribute
  * On requests, you must set the currencyID attribute to one of
@@ -108,6 +106,7 @@ class MeasureType
 
 
 /**
+ * @hasAttribute
  * Value of the application-specific error parameter.  
  */
  
@@ -124,6 +123,19 @@ class ErrorParameterType
 	 * @var string 	 
 	 */ 
 	public $Value;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $ParamID;
 
 
 }
@@ -6077,6 +6089,7 @@ class PaymentInfoType
 
 
 /**
+ * @hasAttribute
  * SubscriptionTermsType Terms of a PayPal subscription. 
  */
  
@@ -6094,12 +6107,26 @@ class SubscriptionTermsType
 	 */ 
 	public $Amount;
 
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $period;
+
 
 }
 
 
 
 /**
+ * @hasAttribute
  * SubscriptionInfoType Information about a PayPal
  * Subscription. 
  */
@@ -6203,12 +6230,39 @@ class SubscriptionInfoType
 	 */ 
 	public $Terms;
 
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $reattempt;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $recurring;
+
 
 }
 
 
 
 /**
+ * @hasAttribute
  * AuctionInfoType Basic information about an auction. 
  */
  
@@ -6237,17 +6291,57 @@ class AuctionInfoType
 	 */ 
 	public $ClosingDate;
 
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $multiItem;
+
 
 }
 
 
 
 /**
+ * @hasAttribute
  * OptionType PayPal item options for shopping cart. 
  */
  
 class OptionType  
    extends PPXmlMessage{
+
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $name;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $value;
 
 
 }
