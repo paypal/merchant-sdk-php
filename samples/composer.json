@@ -2,7 +2,6 @@
     "name": "paypal/php-sdk-sample",
     "description": "PayPal Core SDK for PHP",
     "keywords": ["paypal", "php", "sdk"],
-    "type": "library",
     "homepage": "https://x.com",
     "license": "Apache2",
     "authors": [

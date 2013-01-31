@@ -2,7 +2,6 @@
     "name": "paypal/merchant-sdk-php",
     "description": "PayPal Core SDK for PHP",
     "keywords": ["paypal", "php", "sdk"],
-    "type": "library",
     "homepage": "https://x.com",
     "license": "Apache2",
     "authors": [
@@ -21,6 +20,6 @@
         "paypal/sdk-core-php":"dev-composer"
     },
     "autoload": {
-        "classmap": ["./"]
+        "classmap": ["lib"]
     }
 }
