@@ -6,7 +6,7 @@
 class PayPalAPIInterfaceServiceService extends PPBaseService {
 
 	// Service Version
-	private static $SERVICE_VERSION = "94.0";
+	private static $SERVICE_VERSION = "98.0";
 
 	// Service Name
 	private static $SERVICE_NAME = "PayPalAPIInterfaceService";
