@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.2.0",
         "ext-curl": "*",
-        "paypal/sdk-core-php":"v2.2.98"
+        "paypal/sdk-core-php":"v2.0"
     },
     "autoload": {
         "classmap": ["lib"]
