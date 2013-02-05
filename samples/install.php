@@ -177,7 +177,14 @@ function getDependency($json_a)
 		{
 			$parts = explode('/', $key);
 			$pos = strpos($val, '-');
-			$branch = substr($val, $pos+1);
+            if($pos == null || empty($pos))
+            {
+                $branch = $val;
+            }
+            else
+            {
+                $branch = substr($val, $pos+1);
+            }
 			$batch['group'] = $parts[0] ;
 			$batch['artifact'] = $parts[1];
 			$batch['branch'] = $branch;
