@@ -45,7 +45,7 @@ if(isset($ex)) {
 			</tr>
 
 		</table>
-		<br> <a href="../Index.php">Home</a>
+		<br> <a href="index.php">Home</a>
 	</div>
 </body>
 </html>

@@ -1,10 +1,6 @@
 <?php
 
-$path = '../../lib';
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);
-require_once('services/PayPalAPIInterfaceService/PayPalAPIInterfaceServiceService.php');
-require_once('PPLoggingManager.php');
-
+require_once('../PPBootStrap.php');
 $logger = new PPLoggingManager('TransactionDetails');
 
 $transactionDetails = new GetTransactionDetailsRequestType();

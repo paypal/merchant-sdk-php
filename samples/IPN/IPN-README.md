@@ -14,7 +14,7 @@ IPN configuration :
     
 IPN How to use
 --------------
-* include 'ipn/PPIPNMessage.php' in your IPN callback URL  
+* include 'PPBootStrap.php' in your IPN callback URL  
 * 'validate()' method validates the IPM message and returns true if 'VERIFIED' or returns false if 'INVALID'  
 Ex:
 
