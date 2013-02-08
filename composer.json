@@ -2,12 +2,12 @@
     "name": "paypal/merchant-sdk-php",
     "description": "PayPal Core SDK for PHP",
     "keywords": ["paypal", "php", "sdk"],
-    "homepage": "https://x.com",
+    "homepage": "https://www.x.com/developers/paypal",
     "license": "Apache2",
     "authors": [
         {
             "name": "PayPal",
-            "homepage": "https://github.com/paypal/php-core-sdk/contributors"
+            "homepage": "https://github.com/paypal/merchant-sdk-php/contributors"
         }
     ],
     "require": {
