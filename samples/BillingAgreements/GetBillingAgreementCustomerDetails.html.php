@@ -29,7 +29,7 @@
 					<input type="submit" name="GetBillingAgreementCustomerDetailsBtn"
 						value="GetBillingAgreementCustomerDetails" /><br />
 				</div>
-				<a href="../Index.php">Home</a>
+				<a href="../index.php">Home</a>
 			</div>
 		</form>
 

@@ -29,7 +29,7 @@
 					<input type="submit" name="GetTransactionDetailsBtn"
 						value="GetTransactionDetails" /><br />
 				</div>
-				<a href="../Index.php">Home</a>
+				<a href="../index.php">Home</a>
 			</div>
 		</form>
 

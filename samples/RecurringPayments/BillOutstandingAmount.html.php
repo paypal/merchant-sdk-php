@@ -37,7 +37,7 @@
 					<input type="submit" name="BillOutstandingAmountBtn"
 						value="BillOutstandingAmount" /><br />
 				</div>
-				<a href="../Index.php">Home</a>
+				<a href="../index.php">Home</a>
 			</div>
 		</form>
 

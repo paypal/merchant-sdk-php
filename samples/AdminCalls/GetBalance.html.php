@@ -29,7 +29,7 @@
 				<div class="submit">
 					<input type="submit" name="GetBalanceBtn" value="GetBalance" /><br />
 				</div>
-				<a href="../Index.php">Home</a>
+				<a href="../index.php">Home</a>
 			</div>
 		</form>
 

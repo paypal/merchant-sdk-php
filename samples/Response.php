@@ -20,6 +20,6 @@
 		</tr>
 	</table>
 	<br>
-	<a href="../Index.php">Home</a>
+	<a href="../index.php">Home</a>
 </body>
 </html>

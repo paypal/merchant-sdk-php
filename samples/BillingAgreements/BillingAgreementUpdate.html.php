@@ -44,7 +44,7 @@
 					<input type="submit" name="BillAgreementUpdateBtn"
 						value="BillAgreementUpdate" /><br />
 				</div>
-				<a href="../Index.php">Home</a>
+				<a href="../index.php">Home</a>
 			</div>
 		</form>
 

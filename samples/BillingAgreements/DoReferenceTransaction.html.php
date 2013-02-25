@@ -385,7 +385,7 @@ document.getElementById("id2").style.display = "";
 						<input type="submit" name="DoReferenceTransactionBtn"
 							value="DoReferenceTransaction" /><br />
 					</div>
-					<a href="../Index.php">Home</a>
+					<a href="../index.php">Home</a>
 				</div>
 			</div>
 		</form>

@@ -56,7 +56,7 @@ function strtDate($orgDate,$dy){
 					<input type="submit" name="TransactionSearchBtn"
 						value="TransactionSearch" /><br />
 				</div>
-				<a href="../Index.php">Home</a>
+				<a href="../index.php">Home</a>
 
 			</div>
 		</form>

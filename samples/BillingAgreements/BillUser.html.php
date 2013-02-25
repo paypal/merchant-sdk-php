@@ -88,7 +88,7 @@
 				<div class="submit">
 					<input type="submit" name="BillUserBtn" value="BillUser" /><br />
 				</div>
-				<a href="../Index.php">Home</a>
+				<a href="../index.php">Home</a>
 			</div>
 		</form>
 

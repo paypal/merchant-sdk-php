@@ -17,7 +17,7 @@
 			<div class="submit">
 				<input type="submit" name="GetPalDetailsBtn" value="GetPalDetails" /><br />
 			</div>
-			<a href="../Index.php">Home</a>
+			<a href="../index.php">Home</a>
 		</div>
 	</form>
 
