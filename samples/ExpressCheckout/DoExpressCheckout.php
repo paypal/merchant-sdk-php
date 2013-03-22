@@ -2,8 +2,6 @@
 require_once('../PPBootStrap.php');
 session_start();
 
-$logger = new PPLoggingManager('DoExpressCheckout');
-
 $token =urlencode( $_REQUEST['token']);
 $payerId=urlencode(  $_REQUEST['payerID']);
 $paymentAction = urlencode(  $_REQUEST['paymentAction']);

@@ -1,6 +1,5 @@
 <?php
 require_once('../PPBootStrap.php');
-$logger = new PPLoggingManager('billing agreement update');
 
 $BAUpdateRequest = new BAUpdateRequestType($_REQUEST['referenceID']);
 $BAUpdateRequest->BillingAgreementStatus = $_REQUEST['billingAgreementStatus'];

@@ -1,7 +1,5 @@
 <?php
 require_once('../PPBootStrap.php');
-$logger = new PPLoggingManager('Bill User');
-
 
 $currencyId = $_REQUEST['currencyID'];
 

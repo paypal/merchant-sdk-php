@@ -1,6 +1,5 @@
 <?php
 require_once('../PPBootStrap.php');
-$logger = new PPLoggingManager('ManageRecurringPaymentsProfileStatus');
 
 $manageRPPStatusReqestDetails = new ManageRecurringPaymentsProfileStatusRequestDetailsType();
 $manageRPPStatusReqestDetails->Action =  $_REQUEST['action'];

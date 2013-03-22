@@ -3,7 +3,6 @@ require_once('../PPBootStrap.php');
 /**
  * Get required parameters from the web form for the request
  */
-$logger = new PPLoggingManager('RefundTransaction');
 
 
 $refundReqest = new RefundTransactionRequestType();

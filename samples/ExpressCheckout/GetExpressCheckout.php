@@ -2,8 +2,6 @@
 require_once('../PPBootStrap.php');
 session_start();
 
-$logger = new PPLoggingManager('GetExpressCheckout');
-
 $token = $_REQUEST['token'];
 
 $getExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType($token);

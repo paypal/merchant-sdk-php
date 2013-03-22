@@ -1,6 +1,5 @@
 <?php
 require_once('../PPBootStrap.php');
-$logger = new PPLoggingManager('SetAuthFlowParam');
 
 $reqDetails = new SetAuthFlowParamRequestDetailsType();
 $reqDetails->CancelURL = $_REQUEST['cancelURL'];

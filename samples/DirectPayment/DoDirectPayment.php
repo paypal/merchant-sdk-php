@@ -26,7 +26,6 @@ require_once('../PPBootStrap.php');
 /**
  * Get required parameters from the web form for the request
  */
-$logger = new PPLoggingManager('DoDirectPayment');
 
 
 $firstName = $_POST['firstName'];
@@ -73,7 +72,6 @@ $ddReqDetails->PaymentDetails = $paymentDetails;
 
 $doDirectPaymentReq = new DoDirectPaymentReq();
 $doDirectPaymentReq->DoDirectPaymentRequest = new DoDirectPaymentRequestType($ddReqDetails);
-$logger->info("created doDirectPaymentReq Object");
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */

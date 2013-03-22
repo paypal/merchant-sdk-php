@@ -1,7 +1,5 @@
 <?php
 require_once('../PPBootStrap.php');
-$logger = new PPLoggingManager('Address Verify');
-
 $addressVerifyRequest = new AddressVerifyRequestType($_REQUEST['mail'], $_REQUEST['street'], $_REQUEST['zip']);
 $addrVerifyReq = new AddressVerifyReq();
 $addrVerifyReq->AddressVerifyRequest = $addressVerifyRequest;

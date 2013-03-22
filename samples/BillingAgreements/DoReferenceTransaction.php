@@ -2,7 +2,6 @@
 require_once('../PPBootStrap.php');/**
  * Get required parameters from the web form for the request
  */
-$logger = new PPLoggingManager('DoReferenceTransaction');
 
 $amount = new BasicAmountType($_REQUEST['currencyID'], $_REQUEST['amount']);
 

@@ -1,6 +1,5 @@
 <?php
 require_once('../PPBootStrap.php');
-$logger = new PPLoggingManager('EnterBoarding');
 
 $bankAccount = new BankAccountDetailsType();
 $bankAccount->AccountNumber = $_REQUEST['accNum'];

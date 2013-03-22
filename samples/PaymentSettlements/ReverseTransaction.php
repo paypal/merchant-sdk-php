@@ -3,7 +3,6 @@ require_once('../PPBootStrap.php');
 /**
  * Get required parameters from the web form for the request
  */
-$logger = new PPLoggingManager('ReverseTransaction');
 
 $reverseTransactionReqestDetails = new ReverseTransactionRequestDetailsType();
 $reverseTransactionReqestDetails->TransactionID = $_REQUEST['transID'];

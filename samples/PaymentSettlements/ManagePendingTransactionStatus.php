@@ -3,7 +3,6 @@ require_once('../PPBootStrap.php');
 /**
  * Get required parameters from the web form for the request
  */
-$logger = new PPLoggingManager('ManagePendingTransactionStatus');
 
 $MPTranStatusReqest= new ManagePendingTransactionStatusRequestType($_REQUEST['transactionID'], $_REQUEST['action']);
 $MPTranStatusReq = new ManagePendingTransactionStatusReq();

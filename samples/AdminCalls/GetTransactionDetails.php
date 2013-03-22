@@ -1,7 +1,6 @@
 <?php
 
 require_once('../PPBootStrap.php');
-$logger = new PPLoggingManager('TransactionDetails');
 
 $transactionDetails = new GetTransactionDetailsRequestType();
 $transactionDetails->TransactionID = $_POST['transID'];

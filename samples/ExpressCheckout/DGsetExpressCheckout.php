@@ -2,8 +2,6 @@
 require_once('../PPBootStrap.php');
 session_start();
 
-$logger = new PPLoggingManager('SetExpressCheckout');
-
 $serverName = $_SERVER['SERVER_NAME'];
 $serverPort = $_SERVER['SERVER_PORT'];
 $url=dirname('http://'.$serverName.':'.$serverPort.$_SERVER['REQUEST_URI']);

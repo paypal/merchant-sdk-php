@@ -1,7 +1,5 @@
 <?php
 require_once('../PPBootStrap.php');
-$logger = new PPLoggingManager('Get Balance');
-
 $getBalanceRequest = new GetBalanceRequestType();
 
 $getBalanceRequest->ReturnAllCurrencies = $_REQUEST['returnAllCurrencies'];

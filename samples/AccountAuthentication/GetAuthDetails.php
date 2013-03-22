@@ -1,7 +1,5 @@
 <?php
 require_once('../PPBootStrap.php');
-
-$logger = new PPLoggingManager('GetAuthDetails');
  
 $reqType = new GetAuthDetailsRequestType($_REQUEST['token']);
 $req = new GetAuthDetailsReq();

@@ -1,6 +1,5 @@
 <?php
 require_once('../PPBootStrap.php');
-$logger = new PPLoggingManager('TransactionSearch');
 
 $transactionSearchRequest = new TransactionSearchRequestType();
 $transactionSearchRequest->StartDate = $_REQUEST['startDate'];

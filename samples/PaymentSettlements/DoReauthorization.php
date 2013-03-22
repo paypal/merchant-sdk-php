@@ -3,7 +3,6 @@ require_once('../PPBootStrap.php');
 /**
  * Get required parameters from the web form for the request
  */
-$logger = new PPLoggingManager('DoReAuthorization');
 
 $amount = new BasicAmountType($_REQUEST['currencyCode'], $_REQUEST['amt']);
 $doReAuthRequest = new DoReauthorizationRequestType($_REQUEST['authID'], $amount);

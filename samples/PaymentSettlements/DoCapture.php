@@ -3,7 +3,6 @@ require_once('../PPBootStrap.php');
 /**
  * Get required parameters from the web form for the request
  */
-$logger = new PPLoggingManager('DoDirectPayment');
 
 $amount = new BasicAmountType($_REQUEST['currencyCode'], $_REQUEST['amt']);
 $doCaptureReqest = new DoCaptureRequestType($_REQUEST['authID'], $amount, $_REQUEST['completeCodeType']);

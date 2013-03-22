@@ -1,6 +1,5 @@
 <?php
 require_once('../PPBootStrap.php');
-$logger = new PPLoggingManager('GetPlaDetails');
 $getPalDetailsRequest = new GetPalDetailsRequestType();
 $getPalDetailsReq = new GetPalDetailsReq();
 $getPalDetailsReq->GetPalDetailsRequest = $getPalDetailsRequest;
