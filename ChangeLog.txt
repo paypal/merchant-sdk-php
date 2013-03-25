@@ -1,3 +1,11 @@
+Version v2.3.100 - March 25, 2013
+
+	- Updated stubs for 100 release
+	- Added dynamic configuration support by passing configuration parameters using hash map.
+	
+You can see source code of this release in github under https://github.com/paypal/merchant-sdk-php/tree/v2.3.100.
+--------------------------------------------------------------------------------------------------
+
 Version 2.2.98 - February 05, 2013
 
 	- Updated stubs for 98 release.
