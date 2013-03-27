@@ -12,10 +12,10 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	private static $SERVICE_NAME = "PayPalAPIInterfaceService";
 
     // SDK Name
-	protected static $SDK_NAME = "sdkname";
+	protected static $SDK_NAME = "merchant-php-sdk";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "sdkversion";
+	protected static $SDK_VERSION = "2.3.100";
 
 	public function __construct($config = null) {
 		parent::__construct(self::$SERVICE_NAME, 'SOAP', array('PPMerchantServiceHandler'), $config);
