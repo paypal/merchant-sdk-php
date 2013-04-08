@@ -1,10 +1,32 @@
 <?php
-require_once('../PPBootStrap.php');/**
- * Get required parameters from the web form for the request
- */
+require_once('../PPBootStrap.php');
 
+/*
+ *  # DoReferenceTransaction API
+The DoReferenceTransaction API operation processes a payment from a
+buyer's account, which is identified by a previous transaction.
+This sample code uses Merchant PHP SDK to make API call
+*/
+
+/*
+ *  The total cost of the transaction to the buyer. If shipping cost and
+tax charges are known, include them in this value. If not, this value
+should be the current subtotal of the order.
+
+If the transaction includes one or more one-time purchases, this field must be equal to
+the sum of the purchases. Set this field to 0 if the transaction does
+not include a one-time purchase such as when you set up a billing
+agreement for a recurring payment that is not immediately charged.
+When the field is set to 0, purchase-specific fields are ignored
+
+* `Currency ID` - You must set the currencyID attribute to one of the
+3-character currency codes for any of the supported PayPal
+currencies.
+* `Amount`
+*/
 $amount = new BasicAmountType($_REQUEST['currencyID'], $_REQUEST['amount']);
 
+// Address the order is shipped to.
 $shippingAddress = new AddressType();
 $shippingAddress->Name = $_REQUEST['firstName'].' '.$_REQUEST['lastName'];
 $shippingAddress->Street1 = $_REQUEST['address1'];
@@ -15,6 +37,7 @@ $shippingAddress->PostalCode = $_REQUEST['zip'];
 
 if(isset($_REQUEST['ReferenceCreditCardDetails']) && $_REQUEST['ReferenceCreditCardDetails'] == "ON" )
 {
+	// biling address
 	$billingAddress = new AddressType();
 	$billingAddress->Name = $_REQUEST['OfirstName'].' '.$_REQUEST['OlastName'];
 	$billingAddress->Street1 = $_REQUEST['Baddress1'];
@@ -23,6 +46,7 @@ if(isset($_REQUEST['ReferenceCreditCardDetails']) && $_REQUEST['ReferenceCreditC
 	$billingAddress->Country = $_REQUEST['Bcountry'];
 	$billingAddress->PostalCode = $_REQUEST['Bzip'];
 
+	// credit card details
 	$cardOwner = new PersonNameType();
 	$cardOwner->FirstName = $_REQUEST['OfirstName'];
 	$cardOwner->LastName =  $_REQUEST['OlastName'];
@@ -40,15 +64,34 @@ if(isset($_REQUEST['ReferenceCreditCardDetails']) && $_REQUEST['ReferenceCreditC
 	$creditCard->ExpYear = $_REQUEST['expYear'];
 }
 
+// Information about the payment.
 $paymentDetails = new PaymentDetailsType();
 $paymentDetails->OrderTotal = $amount;
 $paymentDetails->ShipToAddress = $shippingAddress;
 
+/*
+ * 		//Your URL for receiving Instant Payment Notification (IPN) about this transaction. If you do not specify this value in the request, the notification URL from your Merchant Profile is used, if one exists.
+
+*/
 if(isset($_REQUEST['notifyURL']))
 {
 	$paymentDetails->NotifyURL = $_REQUEST['notifyURL'];
 }
 
+/*
+ * 	 `DoReferenceTransactionRequestDetails` takes mandatory params:
+
+* `Reference Id` - A transaction ID from a previous purchase, such as a
+credit card charge using the DoDirectPayment API, or a billing
+agreement ID.
+* `Payment Action Code` - How you want to obtain payment. It is one of
+the following values:
+* Authorization
+* Sale
+* Order
+* None
+* `Payment Details`
+*/
 $RTRequestDetails = new DoReferenceTransactionRequestDetailsType();
 if(isset($_REQUEST['ReferenceCreditCardDetails']) && $_REQUEST['ReferenceCreditCardDetails'] == "ON" )
 {
@@ -66,6 +109,11 @@ $RTRequest->DoReferenceTransactionRequestDetails  = $RTRequestDetails;
 $RTReq = new DoReferenceTransactionReq();
 $RTReq->DoReferenceTransactionRequest = $RTRequest;
 
+/*
+## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */

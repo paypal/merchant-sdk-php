@@ -1,12 +1,29 @@
 <?php
 require_once('../PPBootStrap.php');
+
+/*
+ *  The GetBalance API Operation obtains the available balance for a PayPal account.
+*  This sample code uses Merchant PHP SDK to make API call
+*/
 $getBalanceRequest = new GetBalanceRequestType();
 
+/*
+ *  Indicates whether to return all currencies. It is one of the
+following values:
+
+* 0 – Return only the balance for the primary currency holding.
+* 1 – Return the balance for each currency holding.
+*/
 $getBalanceRequest->ReturnAllCurrencies = $_REQUEST['returnAllCurrencies'];
 
 $getBalanceReq = new GetBalanceReq();
 $getBalanceReq->GetBalanceRequest = $getBalanceRequest;
 
+/*
+ * 	 ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */

@@ -1,6 +1,8 @@
 <?php
 require_once('../PPBootStrap.php');
-
+/*
+ * update billing agreement
+ */
 $BAUpdateRequest = new BAUpdateRequestType($_REQUEST['referenceID']);
 $BAUpdateRequest->BillingAgreementStatus = $_REQUEST['billingAgreementStatus'];
 $BAUpdateRequest->BillingAgreementDescription = $_REQUEST['billingAgreementDescription'];

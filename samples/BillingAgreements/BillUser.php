@@ -1,9 +1,14 @@
 <?php
 require_once('../PPBootStrap.php');
 
+/*
+ * Initiate a "merchant pull" (or "prepparoved payment") transaction - transfer money from the user's account to the merchant's account in accordance with a previously established billing agreement
+ */
 $currencyId = $_REQUEST['currencyID'];
 
-
+/*
+ * payment details
+ */
 $MPPaymentDetails = new MerchantPullPaymentType();
 $MPPaymentDetails->Amount = new BasicAmountType($currencyId, $_REQUEST['amt']);
 $MPPaymentDetails->Shipping = new BasicAmountType($currencyId, $_REQUEST['shipping']);
@@ -22,6 +27,13 @@ $billUserReqest->MerchantPullPaymentDetails = $MPPaymentDetails;
 
 $billUserReq = new BillUserReq();
 $billUserReq->BillUserRequest = $billUserReqest;
+
+
+/*
+ * 	 ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {

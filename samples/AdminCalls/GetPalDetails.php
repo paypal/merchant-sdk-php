@@ -1,9 +1,17 @@
 <?php
 require_once('../PPBootStrap.php');
+/*
+ * Obtain your Pal ID, which is the PayPal-assigned merchant account number, and other informaton about your account. You need the account number when working with dynamic versions of PayPalbuttons and logos
+ */
 $getPalDetailsRequest = new GetPalDetailsRequestType();
 $getPalDetailsReq = new GetPalDetailsReq();
 $getPalDetailsReq->GetPalDetailsRequest = $getPalDetailsRequest;
 
+/*
+ * 	 ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */

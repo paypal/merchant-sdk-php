@@ -1,13 +1,21 @@
 <?php
 require_once('../PPBootStrap.php');
-/**
- * Get required parameters from the web form for the request
+/*
+ * The GetBillingAgreementCustomerDetails API operation obtains information about a billing agreement’s PayPal account holder. 
  */
 
+/*
+ *  The time-stamped token returned in the SetCustomerBillingAgreement response
+ */
 $BACustomerDetailRequest = new GetBillingAgreementCustomerDetailsRequestType($_REQUEST['token']);
 $BACustomerDetailReq = new GetBillingAgreementCustomerDetailsReq();
 $BACustomerDetailReq->GetBillingAgreementCustomerDetailsRequest = $BACustomerDetailRequest;
 
+/*
+ * 	 ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */

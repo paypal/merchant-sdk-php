@@ -1,6 +1,15 @@
 <?php
 require_once('../PPBootStrap.php');
 
+/*
+ * Sets up the account authentication flow and returns a token
+ * To validate a PayPal account in the sandbox:
+
+    1. Set up the account authentication flow.
+    2. Redirect the customer to PayPal for authorization.
+    3. Retrieve the customer data for identifying the customer on your site.
+
+ */
 $reqDetails = new SetAuthFlowParamRequestDetailsType();
 $reqDetails->CancelURL = $_REQUEST['cancelURL'];
 $reqDetails->ReturnURL = $_REQUEST['returnURL'];
@@ -12,6 +21,11 @@ $reqType->SetAuthFlowParamRequestDetails = $reqDetails;
 $req = new SetAuthFlowParamReq();
 $req->SetAuthFlowParamRequest = $reqType;
 
+/*
+ * 	 ## Creating service wrapper object
+		 Creating service wrapper object to make API call and loading
+		 configuration file for your credentials and endpoint
+ */
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */

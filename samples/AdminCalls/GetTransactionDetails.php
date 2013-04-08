@@ -2,11 +2,23 @@
 
 require_once('../PPBootStrap.php');
 
+/*
+ * The GetTransactionDetails API operation obtains information about a specific transaction.
+*/
 $transactionDetails = new GetTransactionDetailsRequestType();
+/*
+ * Unique identifier of a transaction.
+*/
 $transactionDetails->TransactionID = $_POST['transID'];
 
 $request = new GetTransactionDetailsReq();
 $request->GetTransactionDetailsRequest = $transactionDetails;
+
+/*
+ * 	 ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */

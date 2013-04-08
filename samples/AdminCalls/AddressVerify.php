@@ -1,9 +1,25 @@
 <?php
 require_once('../PPBootStrap.php');
+
+/*
+ * The AddressVerify API operation confirms whether a postal address and postal code match those of the specified PayPal account holder.
+ */
+
+/*
+ * Email address of a PayPal member to verify
+ * First line of the billing or shipping postal address to verify. To pass verification, the value of Street must match the first 3 single-byte characters of a postal address on file for the PayPal member. 
+ * Postal code to verify. To pass verification, the value of Zip must match the first 5 single-byte characters of the postal code of the verified postal address for the verified PayPal member.
+ */
+
 $addressVerifyRequest = new AddressVerifyRequestType($_REQUEST['mail'], $_REQUEST['street'], $_REQUEST['zip']);
 $addrVerifyReq = new AddressVerifyReq();
 $addrVerifyReq->AddressVerifyRequest = $addressVerifyRequest;
 
+/*
+ * 		// ## Creating service wrapper object
+		// Creating service wrapper object to make API call and loading
+		// configuration file for your credentials and endpoint
+ */
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */

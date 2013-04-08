@@ -1,6 +1,9 @@
 <?php
 require_once('../PPBootStrap.php');
- 
+
+/*
+ *  If a token from the SetAuthFlowParam call is specified on input, the GetAuthDetails call can return a customer's Payer ID, PayPal email address, first name, and last name. 
+ */
 $reqType = new GetAuthDetailsRequestType($_REQUEST['token']);
 $req = new GetAuthDetailsReq();
 $req->GetAuthDetailsRequest = $reqType;
@@ -24,4 +27,7 @@ if(isset($getAuthDetailsResponse)) {
 		echo "<a href=$payPalURL><b>* Redirect to paypal to logout</b></a><br>";
 	}
 }
+/*
+ * Note that the GetAuthDetails call is used after you have specified a set of customer data in the SetAuthFlowParam call (in the example above, the customer name and email address), and the customer has logged into PayPal and then was redirected back to your site
+ */
 require_once '../Response.php';

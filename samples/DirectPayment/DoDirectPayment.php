@@ -25,12 +25,15 @@ session_start();
 require_once('../PPBootStrap.php');
 /**
  * Get required parameters from the web form for the request
- */
+*/
 
 
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 
+/*
+ * shipping adress
+*/
 $address = new AddressType();
 $address->Name = "$firstName $lastName";
 $address->Street1 = $_POST['address1'];
@@ -43,7 +46,28 @@ $address->Phone = $_POST['phone'];
 
 $paymentDetails = new PaymentDetailsType();
 $paymentDetails->ShipToAddress = $address;
+
+/*
+ *  Total cost of the transaction to the buyer. If shipping cost and tax
+charges are known, include them in this value. If not, this value
+should be the current sub-total of the order.
+
+If the transaction includes one or more one-time purchases, this field must be equal to
+the sum of the purchases. Set this field to 0 if the transaction does
+not include a one-time purchase such as when you set up a billing
+agreement for a recurring payment that is not immediately charged.
+When the field is set to 0, purchase-specific fields are ignored.
+
+* `Currency Code` - You must set the currencyID attribute to one of the
+3-character currency codes for any of the supported PayPal
+currencies.
+* `Amount`
+*/
 $paymentDetails->OrderTotal = new BasicAmountType('USD', $_POST['amount']);
+/*
+ * 		Your URL for receiving Instant Payment Notification (IPN) about this transaction. If you do not specify this value in the request, the notification URL from your Merchant Profile is used, if one exists.
+
+*/
 if(isset($_REQUEST['notifyURL']))
 {
 	$paymentDetails->NotifyURL = $_REQUEST['notifyURL'];
@@ -53,6 +77,7 @@ $personName = new PersonNameType();
 $personName->FirstName = $firstName;
 $personName->LastName = $lastName;
 
+//information about the payer
 $payer = new PayerInfoType();
 $payer->PayerName = $personName;
 $payer->Address = $address;
@@ -60,6 +85,26 @@ $payer->PayerCountry = $_POST['country'];
 
 $cardDetails = new CreditCardDetailsType();
 $cardDetails->CreditCardNumber = $_POST['creditCardNumber'];
+
+/*
+ *
+Type of credit card. For UK, only Maestro, MasterCard, Discover, and
+Visa are allowable. For Canada, only MasterCard and Visa are
+allowable and Interac debit cards are not supported. It is one of the
+following values:
+
+* Visa
+* MasterCard
+* Discover
+* Amex
+* Solo
+* Switch
+* Maestro: See note.
+`Note:
+If the credit card type is Maestro, you must set currencyId to GBP.
+In addition, you must specify either StartMonth and StartYear or
+IssueNumber.`
+*/
 $cardDetails->CreditCardType = $_POST['creditCardType'];
 $cardDetails->ExpMonth = $_POST['expDateMonth'];
 $cardDetails->ExpYear = $_POST['expDateYear'];
@@ -72,6 +117,12 @@ $ddReqDetails->PaymentDetails = $paymentDetails;
 
 $doDirectPaymentReq = new DoDirectPaymentReq();
 $doDirectPaymentReq->DoDirectPaymentRequest = new DoDirectPaymentRequestType($ddReqDetails);
+
+/*
+ * 		 ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */
