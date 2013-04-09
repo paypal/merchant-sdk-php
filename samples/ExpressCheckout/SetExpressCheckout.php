@@ -1,9 +1,13 @@
 <?php
 require_once('../PPBootStrap.php');
 
+/*
+ * The SetExpressCheckout API operation initiates an Express Checkout transaction
+ */
 $url = dirname('http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . $_SERVER['REQUEST_URI']);
 $returnUrl = "$url/GetExpressCheckout.php";
 $cancelUrl = "$url/SetExpressCheckout.php" ;
+
 
 $currencyCode = $_REQUEST['currencyCode'];
 $shippingTotal = new BasicAmountType($currencyCode, $_REQUEST['shippingTotal']);
@@ -30,6 +34,14 @@ for($i=0; $i<count($_REQUEST['itemAmount']); $i++) {
 	$itemDetails->Name = $_REQUEST['itemName'][$i];
 	$itemDetails->Amount = $itemAmount;
 	$itemDetails->Quantity = $_REQUEST['itemQuantity'][$i];
+	/*
+	 * Indicates whether an item is digital or physical. For digital goods, this field is required and must be set to Digital. It is one of the following values:
+
+    Digital
+
+    Physical
+
+	 */
 	$itemDetails->ItemCategory = $_REQUEST['itemCategory'][$i];
 	$itemDetails->Tax = new BasicAmountType($currencyCode, $_REQUEST['itemSalesTax'][$i]);	
 	
@@ -40,10 +52,22 @@ $orderTotalValue = $shippingTotal->value + $handlingTotal->value +
 $insuranceTotal->value +
 $itemTotalValue + $taxTotalValue;
 
+//Payment details
 $paymentDetails->ShipToAddress = $address;
 $paymentDetails->ItemTotal = new BasicAmountType($currencyCode, $itemTotalValue);
-$paymentDetails->OrderTotal = new BasicAmountType($currencyCode, $orderTotalValue);
 $paymentDetails->TaxTotal = new BasicAmountType($currencyCode, $taxTotalValue);
+$paymentDetails->OrderTotal = new BasicAmountType($currencyCode, $orderTotalValue);
+
+/*
+ * How you want to obtain payment. When implementing parallel payments, this field is required and must be set to Order. When implementing digital goods, this field is required and must be set to Sale. If the transaction does not include a one-time purchase, this field is ignored. It is one of the following values:
+
+    Sale – This is a final sale for which you are requesting payment (default).
+
+    Authorization – This payment is a basic authorization subject to settlement with PayPal Authorization and Capture.
+
+    Order – This payment is an order authorization subject to settlement with PayPal Authorization and Capture.
+
+ */
 $paymentDetails->PaymentAction = $_REQUEST['paymentType'];
 
 $paymentDetails->HandlingTotal = $handlingTotal;
