@@ -1,14 +1,47 @@
 <?php
 require_once('../PPBootStrap.php');
-/**
- * Get required parameters from the web form for the request
- */
+/*
+ *  # DoCapture API
+Captures an authorized payment.
+This sample code uses Merchant PHP SDK to make API call
+*/
 
+/*
+ *
+`Amount` to capture which takes mandatory params:
+
+* `currencyCode`
+* `amount`
+*/
 $amount = new BasicAmountType($_REQUEST['currencyCode'], $_REQUEST['amt']);
+
+/*
+ *  `DoCaptureRequest` which takes mandatory params:
+
+* `Authorization ID` - Authorization identification number of the
+payment you want to capture. This is the transaction ID returned from
+DoExpressCheckoutPayment, DoDirectPayment, or CheckOut. For
+point-of-sale transactions, this is the transaction ID returned by
+the CheckOut call when the payment action is Authorization.
+* `amount` - Amount to capture
+* `CompleteCode` - Indicates whether or not this is your last capture.
+It is one of the following values:
+* Complete – This is the last capture you intend to make.
+* NotComplete – You intend to make additional captures.
+`Note:
+If Complete, any remaining amount of the original authorized
+transaction is automatically voided and all remaining open
+authorizations are voided.`
+*/
 $doCaptureReqest = new DoCaptureRequestType($_REQUEST['authID'], $amount, $_REQUEST['completeCodeType']);
 $doCaptureReq = new DoCaptureReq();
 $doCaptureReq->DoCaptureRequest = $doCaptureReqest;
 
+/*
+ *  ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */

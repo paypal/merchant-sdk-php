@@ -1,13 +1,24 @@
 <?php
 require_once('../PPBootStrap.php');
 
+/*
+ * Obtain information about a recurring payments profile. 
+ */
 $getRPPDetailsReqest = new GetRecurringPaymentsProfileDetailsRequestType();
+/*
+ * (Required) Recurring payments profile ID returned in the CreateRecurringPaymentsProfile response. 19-character profile IDs are supported for compatibility with previous versions of the PayPal API.
+ */
 $getRPPDetailsReqest->ProfileID = $_REQUEST['profileID'];
 
 
 $getRPPDetailsReq = new GetRecurringPaymentsProfileDetailsReq();
 $getRPPDetailsReq->GetRecurringPaymentsProfileDetailsRequest = $getRPPDetailsReqest;
 
+/*
+ * 	 ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */

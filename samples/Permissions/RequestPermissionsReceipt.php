@@ -3,13 +3,72 @@
 /********************************************
  RequestPermissionsReceipt.php
  Called by RequestPermissions.php
+ Use the RequestPermissions API operation to request permissions to execute API operations on a PayPal account holder’s behalf. 
  ********************************************/
 require_once('../PPBootStrap.php');
 $serverName = $_SERVER['SERVER_NAME'];
 $serverPort = $_SERVER['SERVER_PORT'];
 $url = dirname('http://'.$serverName.':'.$serverPort.$_SERVER['REQUEST_URI']);
+
 $returnURL = $url."/GetAccessToken.php";
 $cancelURL = $url. "/RequestPermissions.php";
+
+/*
+ *  (Required) At least 1 of the following permission categories:
+
+    EXPRESS_CHECKOUT - Express Checkout
+
+    DIRECT_PAYMENT - Direct payment by debit or credit card
+
+    SETTLEMENT_CONSOLIDATION - Settlement consolidation
+
+    SETTLEMENT_REPORTING - Settlement reporting
+
+    AUTH_CAPTURE - Payment authorization and capture
+
+    MOBILE_CHECKOUT - Mobile checkout
+
+    BILLING_AGREEMENT - Billing agreements
+
+    REFERENCE_TRANSACTION - Reference transactions
+
+    AIR_TRAVEL - Express Checkout for UTAP
+
+    MASS_PAY - Mass pay
+
+    TRANSACTION_DETAILS - Transaction details
+
+    TRANSACTION_SEARCH - Transaction search
+
+    RECURRING_PAYMENTS - Recurring payments
+
+    ACCOUNT_BALANCE - Account balance
+
+    ENCRYPTED_WEBSITE_PAYMENTS - Encrypted website payments
+
+    REFUND - Refunds
+
+    NON_REFERENCED_CREDIT - Non-referenced credit
+
+    BUTTON_MANAGER - Button Manager
+
+    MANAGE_PENDING_TRANSACTION_STATUS includes ManagePendingTransactionStatus
+
+    RECURRING_PAYMENT_REPORT - Reporting for recurring payments
+
+    EXTENDED_PRO_PROCESSING_REPORT - Extended Pro processing
+
+    EXCEPTION_PROCESSING_REPORT - Exception processing
+
+    ACCOUNT_MANAGEMENT_PERMISSION - Account Management Permission (MAM)
+
+    ACCESS_BASIC_PERSONAL_DATA - User attributes
+
+    ACCESS_ADVANCED_PERSONAL_DATA - User attributes
+
+    INVOICING - Invoicing
+
+ */
 $scope = array();
 if(isset($_POST['chkScope'])) {
 	$i = 0;
@@ -17,11 +76,22 @@ if(isset($_POST['chkScope'])) {
 		$scope[$i++] = $value;
 	}
 }
+
+/*
+ * (Required) Information common to each API operation, such as the language in which an error message is returned.
+ */
 $requestEnvelope = new RequestEnvelope("en_US");
 $request = new RequestPermissionsRequest($scope, $returnURL);
 $request->requestEnvelope = $requestEnvelope;
+
+/*
+ * 	 ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $service = new PermissionsService('Permissions');
 try {
+	/* wrap API method calls on the service object with a try catch */
 	$response = $service->RequestPermissions($request);
 } catch(Exception $ex) {
 	require 'Error.php';

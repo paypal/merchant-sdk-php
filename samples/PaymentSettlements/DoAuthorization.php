@@ -1,14 +1,35 @@
 <?php
 require_once('../PPBootStrap.php');
-/**
- * Get required parameters from the web form for the request
- */
+/*
+ *  # DoAuthorization API
+Authorize a payment.
+This sample code uses Merchant PHP SDK to make API call
+*/
 
+/*
+ *  `Amount` which takes mandatory params:
+
+* `currencyCode`
+* `amount`
+*/
 $amount = new BasicAmountType($_REQUEST['currencyCode'], $_REQUEST['amt']);
+
+/*
+ *  `DoAuthorizationRequest` which takes mandatory params:
+
+* `Transaction ID` - Value of the order's transaction identification
+number returned by PayPal.
+* `Amount` - Amount to authorize.
+*/
 $doAuthRequest = new DoAuthorizationRequestType($_REQUEST['transID'], $amount);
 $doAuthReq = new DoAuthorizationReq();
 $doAuthReq->DoAuthorizationRequest =$doAuthRequest;
 
+/*
+ *  ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $paypalService = new PayPalAPIInterfaceServiceService();
 
 try {

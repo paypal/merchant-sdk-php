@@ -1,8 +1,24 @@
 <?php
 require_once('../PPBootStrap.php');
 
+/*
+ * The ManageRecurringPaymentsProfileStatus API operation cancels, suspends, or reactivates a recurring payments profile. 
+ */
 $manageRPPStatusReqestDetails = new ManageRecurringPaymentsProfileStatusRequestDetailsType();
+/*
+ *  (Required) The action to be performed to the recurring payments profile. Must be one of the following:
+
+    Cancel – Only profiles in Active or Suspended state can be canceled.
+
+    Suspend – Only profiles in Active state can be suspended.
+
+    Reactivate – Only profiles in a suspended state can be reactivated.
+
+ */
 $manageRPPStatusReqestDetails->Action =  $_REQUEST['action'];
+/*
+ * (Required) Recurring payments profile ID returned in the CreateRecurringPaymentsProfile response.
+ */
 $manageRPPStatusReqestDetails->ProfileID =  $_REQUEST['profileID'];
 
 $manageRPPStatusReqest = new ManageRecurringPaymentsProfileStatusRequestType();
@@ -12,6 +28,11 @@ $manageRPPStatusReqest->ManageRecurringPaymentsProfileStatusRequestDetails = $ma
 $manageRPPStatusReq = new ManageRecurringPaymentsProfileStatusReq();
 $manageRPPStatusReq->ManageRecurringPaymentsProfileStatusRequest = $manageRPPStatusReqest;
 
+/*
+ * 	 ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */

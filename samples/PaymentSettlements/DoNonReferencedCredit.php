@@ -1,33 +1,50 @@
 <?php
 require_once('../PPBootStrap.php');
-/**
- * Get required parameters from the web form for the request
- */
+
+/*
+ * The DoNonReferencedCredit API issues a credit to a card not referenced by the original transaction
+*/
 
 $currencyId = $_REQUEST['currencyID'];
 
+/*
+ * (Optional) Total amount of all items in this transaction.
+*/
 $itemAmount = new BasicAmountType();
 $itemAmount->value = $_REQUEST['itemAmount'];
 $itemAmount->currencyID = $currencyId;
 
+/*
+ * shipping address
+*/
 $shippingAmount = new BasicAmountType();
 $shippingAmount->value = $_REQUEST['shippingAmount'];
 $shippingAmount->currencyID = $currencyId;
 
+/*
+ * (Optional) Sum of tax for all items in this order.
+*/
 $taxAmount = new BasicAmountType();
 $taxAmount->value = $_REQUEST['taxAmount'];
 $taxAmount->currencyID = $currencyId;
 
+/*
+ * Total of order, including shipping, handling, and tax.
+*/
 $totalamount = new BasicAmountType();
 $totalamount->value = ($taxAmount->value + $shippingAmount->value + $itemAmount->value);
 $totalamount->currencyID = $currencyId;
 
+/*
+ * creditcard details
+*/
 $creditCard = new CreditCardDetailsType();
 $creditCard->CreditCardNumber = $_REQUEST['creditCard'];
 $creditCard->ExpMonth = $_REQUEST['expMonth'];
 $creditCard->ExpYear =$_REQUEST['expYear'];
 $creditCard->CreditCardType = $_REQUEST['creditCardType'];
 $creditCard->CVV2 = $_REQUEST['cvv'];
+
 
 $doNonRefCreditRequestDetails= new DoNonReferencedCreditRequestDetailsType();
 $doNonRefCreditRequestDetails->CreditCard = $creditCard;
@@ -44,6 +61,11 @@ $doNonRefCreditRequest->DoNonReferencedCreditRequestDetails =$doNonRefCreditRequ
 $doNonRefCreditReq = new DoNonReferencedCreditReq();
 $doNonRefCreditReq->DoNonReferencedCreditRequest = $doNonRefCreditRequest;
 
+/*
+ * 	 ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */

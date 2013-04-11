@@ -1,16 +1,34 @@
 <?php
 require_once('../PPBootStrap.php');
-/**
- * Get required parameters from the web form for the request
+
+/*
+ *  # DoVoid API
+ Void an order or an authorization.
+ This sample code uses Merchant PHP SDK to make API call
  */
 
+
 $doVoidRequest = new DoVoidRequestType();
+/*
+ *  DoVoidRequest which takes mandatory params:
+
+ * `Authorization ID` - Original authorization ID specifying the
+ authorization to void or, to void an order, the order ID.
+ `Important:
+ If you are voiding a transaction that has been reauthorized, use the
+ ID from the original authorization, and not the reauthorization.`
+*/
 $doVoidRequest->AuthorizationID = $_REQUEST['authID'];
 
 
 $doVoidReq = new DoVoidReq();
 $doVoidReq->DoVoidRequest =$doVoidRequest;
 
+/*
+ * 	 ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */

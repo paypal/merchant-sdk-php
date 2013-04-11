@@ -1,11 +1,21 @@
 <?php
 require_once('../PPBootStrap.php');
-/**
- * Get required parameters from the web form for the request
+
+/*
+ * The BillOutstandingAmount API operation bills the buyer for the outstanding balance associated with a recurring payments profile. 
  */
 
 $billOutstandingAmtReqestDetail = new BillOutstandingAmountRequestDetailsType();
+
+/*
+ * (Optional) The amount to bill. The amount must be less than or equal to the current outstanding balance of the profile. If no value is specified, PayPal attempts to bill the entire outstanding balance amount.
+ */
 $billOutstandingAmtReqestDetail->Amount = new BasicAmountType($_REQUEST['currencyCode'], $_REQUEST['amt']);
+
+/*
+ *  (Required) Recurring payments profile ID returned in the CreateRecurringPaymentsProfile response.
+Note:The profile must have a status of either Active or Suspended. 
+ */
 $billOutstandingAmtReqestDetail->ProfileID = $_REQUEST['profileID'];
 
 $billOutstandingAmtReqest = new BillOutstandingAmountRequestType();
@@ -15,6 +25,11 @@ $billOutstandingAmtReqest->BillOutstandingAmountRequestDetails = $billOutstandin
 $billOutstandingAmtReq =  new BillOutstandingAmountReq();
 $billOutstandingAmtReq->BillOutstandingAmountRequest = $billOutstandingAmtReqest;
 
+/*
+ * 	 ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */

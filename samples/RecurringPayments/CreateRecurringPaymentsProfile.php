@@ -46,7 +46,21 @@ $RPProfileDetails->BillingStartDate = $_REQUEST['billingStartDate'];
 $RPProfileDetails->SubscriberShippingAddress  = $shippingAddress;
 
 $activationDetails = new ActivationDetailsType();
+
+/*
+ * (Optional) Initial non-recurring payment amount due immediately upon profile creation. Use an initial amount for enrolment or set-up fees.
+ */
 $activationDetails->InitialAmount = new BasicAmountType($currencyCode, $_REQUEST['initialAmount']);
+/*
+ *  (Optional) Action you can specify when a payment fails. It is one of the following values:
+
+    ContinueOnFailure – By default, PayPal suspends the pending profile in the event that the initial payment amount fails. You can override this default behavior by setting this field to ContinueOnFailure. Then, if the initial payment amount fails, PayPal adds the failed payment amount to the outstanding balance for this recurring payment profile.
+
+    When you specify ContinueOnFailure, a success code is returned to you in the CreateRecurringPaymentsProfile response and the recurring payments profile is activated for scheduled billing immediately. You should check your IPN messages or PayPal account for updates of the payment status.
+
+    CancelOnFailure – If this field is not set or you set it to CancelOnFailure, PayPal creates the recurring payment profile, but places it into a pending status until the initial payment completes. If the initial payment clears, PayPal notifies you by IPN that the pending profile has been activated. If the payment fails, PayPal notifies you by IPN that the pending profile has been canceled.
+
+ */
 $activationDetails->FailedInitialAmountAction = $_REQUEST['failedInitialAmountAction'];
 
 /*

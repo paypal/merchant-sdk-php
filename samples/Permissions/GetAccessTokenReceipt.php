@@ -3,16 +3,35 @@
 /********************************************
  GetAccessTokenReceipt.php
  Called by GetAccessToken.php
+ Use the GetAccessToken API operation to obtain an access token for a set of permissions. 
  ********************************************/
 require_once('../PPBootStrap.php');
+
+/*
+ * (Required) Information common to each API operation, such as the language in which an error message is returned.
+ */
 $requestEnvelope = new RequestEnvelope();
 $requestEnvelope->errorLanguage = "en_US";
+
 $request = new GetAccessTokenRequest();
 $request->requestEnvelope = $requestEnvelope;
+/*
+ * (Required) The request token from the response to RequestPermissions. 
+ */
 $request->token = $_REQUEST['Requesttoken'];
+/*
+ * (Required) The verification code returned in the redirect from PayPal to the return URL. 
+ */
 $request->verifier = $_REQUEST['Verifier'];
+
+/*
+ * 	 ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $service = new PermissionsService('Permissions');
 try {
+	/* wrap API method calls on the service object with a try catch */
 	$response = $service->GetAccessToken($request);
 } catch (Exception $ex) {
 	require 'Error.php';

@@ -2,6 +2,16 @@
 require_once('../PPBootStrap.php');
 session_start();
 
+/*
+ *  # GetExpressCheckout API
+The GetExpressCheckoutDetails API operation obtains information about
+an Express Checkout transaction.
+This sample code uses Merchant PHP SDK to make API call
+*/
+/*
+ * 		 A timestamped token, the value of which was returned by
+`SetExpressCheckout` response.
+*/
 $token = $_REQUEST['token'];
 
 $getExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType($token);
@@ -9,6 +19,11 @@ $getExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType($to
 $getExpressCheckoutReq = new GetExpressCheckoutDetailsReq();
 $getExpressCheckoutReq->GetExpressCheckoutDetailsRequest = $getExpressCheckoutDetailsRequest;
 
+/*
+ * 	 ## Creating service wrapper object
+Creating service wrapper object to make API call and loading
+configuration file for your credentials and endpoint
+*/
 $paypalService = new PayPalAPIInterfaceServiceService();
 try {
 	/* wrap API method calls on the service object with a try catch */
