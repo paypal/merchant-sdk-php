@@ -1,7 +1,7 @@
 <?php 
 
 /**
- *  AUTO GENERATED code for PayPalAPIInterfaceService
+ * AUTO GENERATED code for PayPalAPIInterfaceService
  */
 class PayPalAPIInterfaceServiceService extends PPBaseService {
 
@@ -12,13 +12,13 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	private static $SERVICE_NAME = "PayPalAPIInterfaceService";
 
     // SDK Name
-	protected static $SDK_NAME = "merchant-php-sdk";
+	protected static $SDK_NAME = "sdkname";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "2.3.100";
+	protected static $SDK_VERSION = "sdkversion";
 
-	public function __construct($config = null) {
-		parent::__construct(self::$SERVICE_NAME, 'SOAP', array('PPMerchantServiceHandler'), $config);
+	public function __construct() {
+		parent::__construct(self::$SERVICE_NAME, 'SOAP', array('PPMerchantServiceHandler'));
         parent::$SDK_NAME    = self::$SDK_NAME ;
         parent::$SDK_VERSION = self::$SDK_VERSION;
 	}
