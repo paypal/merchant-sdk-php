@@ -205,6 +205,7 @@ function curlExec($targetUrl, $writeToFile)
 	curl_setopt($ch, CURLOPT_HEADER,0);
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 	curl_setopt($ch, CURLOPT_AUTOREFERER, true);
+    curl_setopt($ch, CURLOPT_USERAGENT, 'curl/installScript');
 	curl_setopt($ch, CURLOPT_BINARYTRANSFER,true);
 	curl_setopt($ch, CURLOPT_TIMEOUT, 60);
 	curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
