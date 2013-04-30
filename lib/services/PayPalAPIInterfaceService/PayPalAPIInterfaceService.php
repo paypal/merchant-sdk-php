@@ -6,18 +6,18 @@
   */
 /**
  * @hasAttribute
- *  On requests, you must set the currencyID attribute to one of
- *  the three-character currency codes for any of the supported
- *  PayPal currencies. Limitations: Must not exceed $10,000 USD
- *  in any currency. No currency symbol. Decimal separator must
- *  be a period (.), and the thousands separator must be a comma
- *  (,).
+ * On requests, you must set the currencyID attribute to one of
+ * the three-character currency codes for any of the supported
+ * PayPal currencies. Limitations: Must not exceed $10,000 USD
+ * in any currency. No currency symbol. Decimal separator must
+ * be a period (.), and the thousands separator must be a comma
+ * (,).
  */
 class BasicAmountType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace cc
@@ -30,7 +30,7 @@ class BasicAmountType
 	public $currencyID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace cc
@@ -58,13 +58,13 @@ class BasicAmountType
 
 /**
  * @hasAttribute
- *  
+ * 
  */
 class MeasureType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace cc
@@ -77,7 +77,7 @@ class MeasureType
 	public $unit;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace cc
@@ -105,13 +105,13 @@ class MeasureType
 
 /**
  * @hasAttribute
- *  Value of the application-specific error parameter.  
+ * Value of the application-specific error parameter.  
  */
 class ErrorParameterType  
    extends PPXmlMessage{
 
 	/**
-	*  Value of the application-specific error parameter.  
+	 * Value of the application-specific error parameter.  
 	 * @access public
 	 
 	 * @namespace ebl
@@ -122,7 +122,7 @@ class ErrorParameterType
 	public $Value;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -140,15 +140,15 @@ class ErrorParameterType
 
 
 /**
- *  Error code can be used by a receiving application to
- *  debugging a response message. These codes will need to be
- *  uniquely defined for each application. 
+ * Error code can be used by a receiving application to
+ * debugging a response message. These codes will need to be
+ * uniquely defined for each application. 
  */
 class ErrorType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -159,7 +159,7 @@ class ErrorType
 	public $ShortMessage;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -170,9 +170,9 @@ class ErrorType
 	public $LongMessage;
 
 	/**
-	*  Error code can be used by a receiving application to
-	*  debugging a response message. These codes will need to be
-	*  uniquely defined for each application. 
+	 * Error code can be used by a receiving application to
+	 * debugging a response message. These codes will need to be
+	 * uniquely defined for each application. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -183,9 +183,9 @@ class ErrorType
 	public $ErrorCode;
 
 	/**
-	*  SeverityCode indicates whether the error is an application 
-	*  level error or if it is informational error, i.e., warning. 
-	*  
+	 * SeverityCode indicates whether the error is an application 
+	 * level error or if it is informational error, i.e., warning. 
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -196,11 +196,11 @@ class ErrorType
 	public $SeverityCode;
 
 	/**
-	*  This optional element may carry additional
-	*  application-specific error variables that indicate specific
-	*  information about the error condition particularly in the
-	*  cases where there are multiple instances of the ErrorType
-	*  which require additional context.  
+	 * This optional element may carry additional
+	 * application-specific error variables that indicate specific
+	 * information about the error condition particularly in the
+	 * cases where there are multiple instances of the ErrorType
+	 * which require additional context.  
      * @array
 	 * @access public
 	 
@@ -217,19 +217,19 @@ class ErrorType
 
 
 /**
- *  Base type definition of request payload that can carry any
- *  type of payload content with optional versioning information
- *  and detail level requirements. 
+ * Base type definition of request payload that can carry any
+ * type of payload content with optional versioning information
+ * and detail level requirements. 
  */
 class AbstractRequestType  
    extends PPXmlMessage{
 
 	/**
-	*  This specifies the required detail level that is needed by a
-	*  client application pertaining to a particular data component
-	*  (e.g., Item, Transaction, etc.). The detail level is
-	*  specified in the DetailLevelCodeType which has all the
-	*  enumerated values of the detail level for each component. 
+	 * This specifies the required detail level that is needed by a
+	 * client application pertaining to a particular data component
+	 * (e.g., Item, Transaction, etc.). The detail level is
+	 * specified in the DetailLevelCodeType which has all the
+	 * enumerated values of the detail level for each component. 
      * @array
 	 * @access public
 	 
@@ -241,8 +241,8 @@ class AbstractRequestType
 	public $DetailLevel;
 
 	/**
-	*  This should be the standard RFC 3066 language identification
-	*  tag, e.g., en_US. 
+	 * This should be the standard RFC 3066 language identification
+	 * tag, e.g., en_US. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -253,7 +253,7 @@ class AbstractRequestType
 	public $ErrorLanguage;
 
 	/**
-	*  This refers to the version of the request payload schema. 
+	 * This refers to the version of the request payload schema. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -270,19 +270,19 @@ class AbstractRequestType
 
 
 /**
- *  Base type definition of a response payload that can carry
- *  any type of payload content with following optional
- *  elements: - timestamp of response message, - application
- *  level acknowledgement, and - application-level errors and
- *  warnings. 
+ * Base type definition of a response payload that can carry
+ * any type of payload content with following optional
+ * elements: - timestamp of response message, - application
+ * level acknowledgement, and - application-level errors and
+ * warnings. 
  */
 class AbstractResponseType  
    extends PPXmlMessage{
 
 	/**
-	*  This value represents the date and time (GMT) when the
-	*  response was generated by a service provider (as a result of
-	*  processing of a request). 
+	 * This value represents the date and time (GMT) when the
+	 * response was generated by a service provider (as a result of
+	 * processing of a request). 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -293,7 +293,7 @@ class AbstractResponseType
 	public $Timestamp;
 
 	/**
-	*  Application level acknowledgement code. 
+	 * Application level acknowledgement code. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -304,8 +304,8 @@ class AbstractResponseType
 	public $Ack;
 
 	/**
-	*  CorrelationID may be used optionally with an application
-	*  level acknowledgement. 
+	 * CorrelationID may be used optionally with an application
+	 * level acknowledgement. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -316,7 +316,7 @@ class AbstractResponseType
 	public $CorrelationID;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -328,7 +328,7 @@ class AbstractResponseType
 	public $Errors;
 
 	/**
-	*  This refers to the version of the response payload schema. 
+	 * This refers to the version of the response payload schema. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -339,9 +339,9 @@ class AbstractResponseType
 	public $Version;
 
 	/**
-	*  This refers to the specific software build that was used in
-	*  the deployment for processing the request and generating the
-	*  response. 
+	 * This refers to the specific software build that was used in
+	 * the deployment for processing the request and generating the
+	 * response. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -357,13 +357,13 @@ class AbstractResponseType
 
 
 /**
- *  Country code associated with this phone number. 
+ * Country code associated with this phone number. 
  */
 class PhoneNumberType  
    extends PPXmlMessage{
 
 	/**
-	*  Country code associated with this phone number. 
+	 * Country code associated with this phone number. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -374,7 +374,7 @@ class PhoneNumberType
 	public $CountryCode;
 
 	/**
-	*  Phone number associated with this phone. 
+	 * Phone number associated with this phone. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -385,7 +385,7 @@ class PhoneNumberType
 	public $PhoneNumber;
 
 	/**
-	*  Extension associated with this phone number. 
+	 * Extension associated with this phone number. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -402,15 +402,15 @@ class PhoneNumberType
 
 
 /**
- *  Person's name associated with this address. Character length
- *  and limitations: 32 single-byte alphanumeric characters 
+ * Person's name associated with this address. Character length
+ * and limitations: 32 single-byte alphanumeric characters 
  */
 class AddressType  
    extends PPXmlMessage{
 
 	/**
-	*  Person's name associated with this address. Character length
-	*  and limitations: 32 single-byte alphanumeric characters
+	 * Person's name associated with this address. Character length
+	 * and limitations: 32 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -421,8 +421,8 @@ class AddressType
 	public $Name;
 
 	/**
-	*  First street address. Character length and limitations: 300
-	*  single-byte alphanumeric characters
+	 * First street address. Character length and limitations: 300
+	 * single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -433,8 +433,8 @@ class AddressType
 	public $Street1;
 
 	/**
-	*  Second street address. Character length and limitations: 300
-	*  single-byte alphanumeric characters
+	 * Second street address. Character length and limitations: 300
+	 * single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -445,8 +445,8 @@ class AddressType
 	public $Street2;
 
 	/**
-	*  Name of city. Character length and limitations: 120
-	*  single-byte alphanumeric characters
+	 * Name of city. Character length and limitations: 120
+	 * single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -457,29 +457,29 @@ class AddressType
 	public $CityName;
 
 	/**
-	*  State or province. Character length and limitations: 120
-	*  single-byte alphanumeric characters For Canada and the USA,
-	*  StateOrProvince must be the standard 2-character
-	*  abbreviation of a state or province. Canadian Provinces
-	*  Alberta AB British_Columbia BC Manitoba MB New_Brunswick NB
-	*  Newfoundland NF Northwest_Territories NT Nova_Scotia NS
-	*  Nunavut NU Ontario ON Prince_Edward_Island PE Quebec QC
-	*  Saskatchewan SK Yukon YK United States Alabama  AL Alaska AK
-	*  American_Samoa AS Arizona AZ Arkansas AR California CA
-	*  Colorado CO Connecticut CT Delaware DE District_Of_Columbia
-	*  DC Federated_States_Of_Micronesia FM Florida FL Georgia GA
-	*  Guam GU Hawaii HI Idaho ID Illinois IL Indiana IN Iowa IA
-	*  Kansas KS Kentucky KY Louisiana LA Maine ME Marshall_Islands
-	*  MH Maryland MD Massachusetts MA Michigan MI Minnesota MN
-	*  Mississippi MS Missouri MO Montana MT Nebraska NE Nevada NV
-	*  New_Hampshire NH New_Jersey NJ New_Mexico NM New_York NY
-	*  North_Carolina NC North_Dakota ND Northern_Mariana_Islands
-	*  MP Ohio OH Oklahoma OK Oregon OR Palau PW Pennsylvania PA
-	*  Puerto_Rico PR Rhode_Island RI South_Carolina SC
-	*  South_Dakota SD Tennessee TN Texas TX Utah UT Vermont VT
-	*  Virgin_Islands VI Virginia VA Washington WA West_Virginia WV
-	*  Wisconsin WI Wyoming WY Armed_Forces_Americas AA
-	*  Armed_Forces AE Armed_Forces_Pacific AP 
+	 * State or province. Character length and limitations: 120
+	 * single-byte alphanumeric characters For Canada and the USA,
+	 * StateOrProvince must be the standard 2-character
+	 * abbreviation of a state or province. Canadian Provinces
+	 * Alberta AB British_Columbia BC Manitoba MB New_Brunswick NB
+	 * Newfoundland NF Northwest_Territories NT Nova_Scotia NS
+	 * Nunavut NU Ontario ON Prince_Edward_Island PE Quebec QC
+	 * Saskatchewan SK Yukon YK United States Alabama  AL Alaska AK
+	 * American_Samoa AS Arizona AZ Arkansas AR California CA
+	 * Colorado CO Connecticut CT Delaware DE District_Of_Columbia
+	 * DC Federated_States_Of_Micronesia FM Florida FL Georgia GA
+	 * Guam GU Hawaii HI Idaho ID Illinois IL Indiana IN Iowa IA
+	 * Kansas KS Kentucky KY Louisiana LA Maine ME Marshall_Islands
+	 * MH Maryland MD Massachusetts MA Michigan MI Minnesota MN
+	 * Mississippi MS Missouri MO Montana MT Nebraska NE Nevada NV
+	 * New_Hampshire NH New_Jersey NJ New_Mexico NM New_York NY
+	 * North_Carolina NC North_Dakota ND Northern_Mariana_Islands
+	 * MP Ohio OH Oklahoma OK Oregon OR Palau PW Pennsylvania PA
+	 * Puerto_Rico PR Rhode_Island RI South_Carolina SC
+	 * South_Dakota SD Tennessee TN Texas TX Utah UT Vermont VT
+	 * Virgin_Islands VI Virginia VA Washington WA West_Virginia WV
+	 * Wisconsin WI Wyoming WY Armed_Forces_Americas AA
+	 * Armed_Forces AE Armed_Forces_Pacific AP 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -490,8 +490,8 @@ class AddressType
 	public $StateOrProvince;
 
 	/**
-	*  ISO 3166 standard country code Character limit: Two
-	*  single-byte characters. 
+	 * ISO 3166 standard country code Character limit: Two
+	 * single-byte characters. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -502,14 +502,14 @@ class AddressType
 	public $Country;
 
 	/**
-	*  IMPORTANT: Do not set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile or
-	*  UpdateRecurringPaymentsProfile.  This element should only be
-	*  used in response elements and typically  should not be used
-	*  in creating request messages which specify the name of a
-	*  country using the Country element (which refers to a 
-	*  2-letter country code). 
+	 * IMPORTANT: Do not set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile or
+	 * UpdateRecurringPaymentsProfile.  This element should only be
+	 * used in response elements and typically  should not be used
+	 * in creating request messages which specify the name of a
+	 * country using the Country element (which refers to a 
+	 * 2-letter country code). 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -520,7 +520,7 @@ class AddressType
 	public $CountryName;
 
 	/**
-	*  Telephone number associated with this address
+	 * Telephone number associated with this address
 	 * @access public
 	 
 	 * @namespace ebl
@@ -531,7 +531,7 @@ class AddressType
 	public $Phone;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -542,10 +542,10 @@ class AddressType
 	public $PostalCode;
 
 	/**
-	*  IMPORTANT: Do not set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile, or
-	*  UpdateRecurringPaymentsProfile.
+	 * IMPORTANT: Do not set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile, or
+	 * UpdateRecurringPaymentsProfile.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -556,10 +556,10 @@ class AddressType
 	public $AddressID;
 
 	/**
-	*  IMPORTANT: Do not set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile or
-	*  UpdateRecurringPaymentsProfile.
+	 * IMPORTANT: Do not set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile or
+	 * UpdateRecurringPaymentsProfile.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -570,10 +570,10 @@ class AddressType
 	public $AddressOwner;
 
 	/**
-	*  IMPORTANT: Do not set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile or
-	*  UpdateRecurringPaymentsProfile.
+	 * IMPORTANT: Do not set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile or
+	 * UpdateRecurringPaymentsProfile.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -584,12 +584,12 @@ class AddressType
 	public $ExternalAddressID;
 
 	/**
-	*  IMPORTANT: Do not set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile or
-	*  UpdateRecurringPaymentsProfile.  Only applicable to
-	*  SellerPaymentAddress today. Seller's international name that
-	*  is associated with the payment address. 
+	 * IMPORTANT: Do not set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile or
+	 * UpdateRecurringPaymentsProfile.  Only applicable to
+	 * SellerPaymentAddress today. Seller's international name that
+	 * is associated with the payment address. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -600,12 +600,12 @@ class AddressType
 	public $InternationalName;
 
 	/**
-	*  IMPORTANT: Do not set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile or
-	*  UpdateRecurringPaymentsProfile. Only applicable to
-	*  SellerPaymentAddress today. International state and city for
-	*  the seller's payment address. 
+	 * IMPORTANT: Do not set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile or
+	 * UpdateRecurringPaymentsProfile. Only applicable to
+	 * SellerPaymentAddress today. International state and city for
+	 * the seller's payment address. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -616,12 +616,12 @@ class AddressType
 	public $InternationalStateAndCity;
 
 	/**
-	*  IMPORTANT: Do not set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile or
-	*  UpdateRecurringPaymentsProfile. Only applicable to
-	*  SellerPaymentAddress today. Seller's international street
-	*  address that is associated with the payment address. 
+	 * IMPORTANT: Do not set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile or
+	 * UpdateRecurringPaymentsProfile. Only applicable to
+	 * SellerPaymentAddress today. Seller's international street
+	 * address that is associated with the payment address. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -632,11 +632,11 @@ class AddressType
 	public $InternationalStreet;
 
 	/**
-	*  Status of the address on file with PayPal. IMPORTANT: Do not
-	*  set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile or
-	*  UpdateRecurringPaymentsProfile. 
+	 * Status of the address on file with PayPal. IMPORTANT: Do not
+	 * set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile or
+	 * UpdateRecurringPaymentsProfile. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -647,8 +647,8 @@ class AddressType
 	public $AddressStatus;
 
 	/**
-	*  Returns Normalization Status of the Address. Possible values
-	*  are Normalized, Unnormalized, and None. 
+	 * Returns Normalization Status of the Address. Possible values
+	 * are Normalized, Unnormalized, and None. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -665,13 +665,13 @@ class AddressType
 
 
 /**
- *  
+ * 
  */
 class PersonNameType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -682,7 +682,7 @@ class PersonNameType
 	public $Salutation;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -693,7 +693,7 @@ class PersonNameType
 	public $FirstName;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -704,7 +704,7 @@ class PersonNameType
 	public $MiddleName;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -715,7 +715,7 @@ class PersonNameType
 	public $LastName;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -732,13 +732,13 @@ class PersonNameType
 
 
 /**
- *  
+ * 
  */
 class IncentiveAppliedToType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -749,7 +749,7 @@ class IncentiveAppliedToType
 	public $BucketId;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -760,7 +760,7 @@ class IncentiveAppliedToType
 	public $ItemId;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -771,7 +771,7 @@ class IncentiveAppliedToType
 	public $IncentiveAmount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -787,13 +787,13 @@ class IncentiveAppliedToType
 
 
 /**
- *  
+ * 
  */
 class IncentiveDetailType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -804,7 +804,7 @@ class IncentiveDetailType
 	public $RedemptionCode;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -815,7 +815,7 @@ class IncentiveDetailType
 	public $DisplayCode;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -826,7 +826,7 @@ class IncentiveDetailType
 	public $ProgramId;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -837,7 +837,7 @@ class IncentiveDetailType
 	public $IncentiveType;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -848,7 +848,7 @@ class IncentiveDetailType
 	public $IncentiveDescription;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -860,7 +860,7 @@ class IncentiveDetailType
 	public $AppliedTo;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -871,7 +871,7 @@ class IncentiveDetailType
 	public $Status;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -887,13 +887,13 @@ class IncentiveDetailType
 
 
 /**
- *  
+ * 
  */
 class IncentiveItemType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -904,7 +904,7 @@ class IncentiveItemType
 	public $ItemId;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -915,7 +915,7 @@ class IncentiveItemType
 	public $PurchaseTime;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -926,7 +926,7 @@ class IncentiveItemType
 	public $ItemCategoryList;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -937,7 +937,7 @@ class IncentiveItemType
 	public $ItemPrice;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -954,13 +954,13 @@ class IncentiveItemType
 
 
 /**
- *  
+ * 
  */
 class IncentiveBucketType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -972,7 +972,7 @@ class IncentiveBucketType
 	public $Items;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -983,7 +983,7 @@ class IncentiveBucketType
 	public $BucketId;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -994,7 +994,7 @@ class IncentiveBucketType
 	public $SellerId;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1005,7 +1005,7 @@ class IncentiveBucketType
 	public $ExternalSellerId;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1016,7 +1016,7 @@ class IncentiveBucketType
 	public $BucketSubtotalAmt;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1027,7 +1027,7 @@ class IncentiveBucketType
 	public $BucketShippingAmt;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1038,7 +1038,7 @@ class IncentiveBucketType
 	public $BucketInsuranceAmt;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1049,7 +1049,7 @@ class IncentiveBucketType
 	public $BucketSalesTaxAmt;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1066,13 +1066,13 @@ class IncentiveBucketType
 
 
 /**
- *  
+ * 
  */
 class IncentiveRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1083,7 +1083,7 @@ class IncentiveRequestDetailsType
 	public $RequestId;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1094,7 +1094,7 @@ class IncentiveRequestDetailsType
 	public $RequestType;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1111,13 +1111,13 @@ class IncentiveRequestDetailsType
 
 
 /**
- *  
+ * 
  */
 class GetIncentiveEvaluationRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1128,7 +1128,7 @@ class GetIncentiveEvaluationRequestDetailsType
 	public $ExternalBuyerId;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -1140,7 +1140,7 @@ class GetIncentiveEvaluationRequestDetailsType
 	public $IncentiveCodes;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -1152,7 +1152,7 @@ class GetIncentiveEvaluationRequestDetailsType
 	public $ApplyIndication;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -1164,7 +1164,7 @@ class GetIncentiveEvaluationRequestDetailsType
 	public $Buckets;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1175,7 +1175,7 @@ class GetIncentiveEvaluationRequestDetailsType
 	public $CartTotalAmt;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1192,13 +1192,13 @@ class GetIncentiveEvaluationRequestDetailsType
 
 
 /**
- *  
+ * 
  */
 class GetIncentiveEvaluationResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -1210,7 +1210,7 @@ class GetIncentiveEvaluationResponseDetailsType
 	public $IncentiveDetails;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1226,29 +1226,29 @@ class GetIncentiveEvaluationResponseDetailsType
 
 
 /**
- *  The total cost of the order to the customer. If shipping
- *  cost and tax charges are known, include them in OrderTotal;
- *  if not, OrderTotal should be the current sub-total of the
- *  order. You must set the currencyID attribute to one of the
- *  three-character currency codes for any of the supported
- *  PayPal currencies. Limitations: Must not exceed $10,000 USD
- *  in any currency. No currency symbol. Decimal separator must
- *  be a period (.), and the thousands separator must be a comma
- *  (,). 
+ * The total cost of the order to the customer. If shipping
+ * cost and tax charges are known, include them in OrderTotal;
+ * if not, OrderTotal should be the current sub-total of the
+ * order. You must set the currencyID attribute to one of the
+ * three-character currency codes for any of the supported
+ * PayPal currencies. Limitations: Must not exceed $10,000 USD
+ * in any currency. No currency symbol. Decimal separator must
+ * be a period (.), and the thousands separator must be a comma
+ * (,). 
  */
 class SetExpressCheckoutRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  The total cost of the order to the customer. If shipping
-	*  cost and tax charges are known, include them in OrderTotal;
-	*  if not, OrderTotal should be the current sub-total of the
-	*  order. You must set the currencyID attribute to one of the
-	*  three-character currency codes for any of the supported
-	*  PayPal currencies. Limitations: Must not exceed $10,000 USD
-	*  in any currency. No currency symbol. Decimal separator must
-	*  be a period (.), and the thousands separator must be a comma
-	*  (,).
+	 * The total cost of the order to the customer. If shipping
+	 * cost and tax charges are known, include them in OrderTotal;
+	 * if not, OrderTotal should be the current sub-total of the
+	 * order. You must set the currencyID attribute to one of the
+	 * three-character currency codes for any of the supported
+	 * PayPal currencies. Limitations: Must not exceed $10,000 USD
+	 * in any currency. No currency symbol. Decimal separator must
+	 * be a period (.), and the thousands separator must be a comma
+	 * (,).
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1259,11 +1259,11 @@ class SetExpressCheckoutRequestDetailsType
 	public $OrderTotal;
 
 	/**
-	*  URL to which the customer's browser is returned after
-	*  choosing to pay with PayPal. PayPal recommends that the
-	*  value of ReturnURL be the final review page on which the
-	*  customer confirms the order and payment. Required Character
-	*  length and limitations: no limit. 
+	 * URL to which the customer's browser is returned after
+	 * choosing to pay with PayPal. PayPal recommends that the
+	 * value of ReturnURL be the final review page on which the
+	 * customer confirms the order and payment. Required Character
+	 * length and limitations: no limit. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1274,11 +1274,11 @@ class SetExpressCheckoutRequestDetailsType
 	public $ReturnURL;
 
 	/**
-	*  URL to which the customer is returned if he does not approve
-	*  the use of PayPal to pay you. PayPal recommends that the
-	*  value of CancelURL be the original page on which the
-	*  customer chose to pay with PayPal. Required Character length
-	*  and limitations: no limit
+	 * URL to which the customer is returned if he does not approve
+	 * the use of PayPal to pay you. PayPal recommends that the
+	 * value of CancelURL be the original page on which the
+	 * customer chose to pay with PayPal. Required Character length
+	 * and limitations: no limit
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1289,8 +1289,8 @@ class SetExpressCheckoutRequestDetailsType
 	public $CancelURL;
 
 	/**
-	*  Tracking URL for ebay. Required Character length and
-	*  limitations: no limit
+	 * Tracking URL for ebay. Required Character length and
+	 * limitations: no limit
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1301,9 +1301,9 @@ class SetExpressCheckoutRequestDetailsType
 	public $TrackingImageURL;
 
 	/**
-	*  URL to which the customer's browser is returned after paying
-	*  with giropay online. Optional Character length and
-	*  limitations: no limit.
+	 * URL to which the customer's browser is returned after paying
+	 * with giropay online. Optional Character length and
+	 * limitations: no limit.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1314,9 +1314,9 @@ class SetExpressCheckoutRequestDetailsType
 	public $giropaySuccessURL;
 
 	/**
-	*  URL to which the customer's browser is returned after fail
-	*  to pay with giropay online. Optional Character length and
-	*  limitations: no limit.
+	 * URL to which the customer's browser is returned after fail
+	 * to pay with giropay online. Optional Character length and
+	 * limitations: no limit.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1327,9 +1327,9 @@ class SetExpressCheckoutRequestDetailsType
 	public $giropayCancelURL;
 
 	/**
-	*  URL to which the customer's browser can be returned in the
-	*  mEFT done page. Optional Character length and limitations:
-	*  no limit.
+	 * URL to which the customer's browser can be returned in the
+	 * mEFT done page. Optional Character length and limitations:
+	 * no limit.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1340,14 +1340,14 @@ class SetExpressCheckoutRequestDetailsType
 	public $BanktxnPendingURL;
 
 	/**
-	*  On your first invocation of SetExpressCheckoutRequest, the
-	*  value of this token is returned by
-	*  SetExpressCheckoutResponse. Optional Include this element
-	*  and its value only if you want to modify an existing
-	*  checkout session with another invocation of
-	*  SetExpressCheckoutRequest; for example, if you want the
-	*  customer to edit his shipping address on PayPal. Character
-	*  length and limitations: 20 single-byte characters
+	 * On your first invocation of SetExpressCheckoutRequest, the
+	 * value of this token is returned by
+	 * SetExpressCheckoutResponse. Optional Include this element
+	 * and its value only if you want to modify an existing
+	 * checkout session with another invocation of
+	 * SetExpressCheckoutRequest; for example, if you want the
+	 * customer to edit his shipping address on PayPal. Character
+	 * length and limitations: 20 single-byte characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1358,13 +1358,13 @@ class SetExpressCheckoutRequestDetailsType
 	public $Token;
 
 	/**
-	*  The expected maximum total amount of the complete order,
-	*  including shipping cost and tax charges. Optional You must
-	*  set the currencyID attribute to one of the three-character
-	*  currency codes for any of the supported PayPal currencies.
-	*  Limitations: Must not exceed $10,000 USD in any currency. No
-	*  currency symbol. Decimal separator must be a period (.), and
-	*  the thousands separator must be a comma (,).
+	 * The expected maximum total amount of the complete order,
+	 * including shipping cost and tax charges. Optional You must
+	 * set the currencyID attribute to one of the three-character
+	 * currency codes for any of the supported PayPal currencies.
+	 * Limitations: Must not exceed $10,000 USD in any currency. No
+	 * currency symbol. Decimal separator must be a period (.), and
+	 * the thousands separator must be a comma (,).
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1375,9 +1375,9 @@ class SetExpressCheckoutRequestDetailsType
 	public $MaxAmount;
 
 	/**
-	*  Description of items the customer is purchasing. Optional
-	*  Character length and limitations: 127 single-byte
-	*  alphanumeric characters
+	 * Description of items the customer is purchasing. Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1388,11 +1388,11 @@ class SetExpressCheckoutRequestDetailsType
 	public $OrderDescription;
 
 	/**
-	*  A free-form field for your own use, such as a tracking
-	*  number or other value you want PayPal to return on
-	*  GetExpressCheckoutDetailsResponse and
-	*  DoExpressCheckoutPaymentResponse. Optional Character length
-	*  and limitations: 256 single-byte alphanumeric characters
+	 * A free-form field for your own use, such as a tracking
+	 * number or other value you want PayPal to return on
+	 * GetExpressCheckoutDetailsResponse and
+	 * DoExpressCheckoutPaymentResponse. Optional Character length
+	 * and limitations: 256 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1403,10 +1403,10 @@ class SetExpressCheckoutRequestDetailsType
 	public $Custom;
 
 	/**
-	*  Your own unique invoice or tracking number. PayPal returns
-	*  this value to you on DoExpressCheckoutPaymentResponse.
-	*  Optional Character length and limitations: 127 single-byte
-	*  alphanumeric characters
+	 * Your own unique invoice or tracking number. PayPal returns
+	 * this value to you on DoExpressCheckoutPaymentResponse.
+	 * Optional Character length and limitations: 127 single-byte
+	 * alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1417,14 +1417,14 @@ class SetExpressCheckoutRequestDetailsType
 	public $InvoiceID;
 
 	/**
-	*  The value 1 indicates that you require that the customer's
-	*  shipping address on file with PayPal be a confirmed address.
-	*  Any value other than 1 indicates that the customer's
-	*  shipping address on file with PayPal need NOT be a confirmed
-	*  address. Setting this element overrides the setting you have
-	*  specified in the recipient's Merchant Account Profile.
-	*  Optional Character length and limitations: One single-byte
-	*  numeric character.
+	 * The value 1 indicates that you require that the customer's
+	 * shipping address on file with PayPal be a confirmed address.
+	 * Any value other than 1 indicates that the customer's
+	 * shipping address on file with PayPal need NOT be a confirmed
+	 * address. Setting this element overrides the setting you have
+	 * specified in the recipient's Merchant Account Profile.
+	 * Optional Character length and limitations: One single-byte
+	 * numeric character.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1435,10 +1435,10 @@ class SetExpressCheckoutRequestDetailsType
 	public $ReqConfirmShipping;
 
 	/**
-	*  The value 1 indicates that you require that the customer's
-	*  billing address on file. Setting this element overrides the
-	*  setting you have specified in Admin. Optional Character
-	*  length and limitations: One single-byte numeric character. 
+	 * The value 1 indicates that you require that the customer's
+	 * billing address on file. Setting this element overrides the
+	 * setting you have specified in Admin. Optional Character
+	 * length and limitations: One single-byte numeric character. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1449,10 +1449,10 @@ class SetExpressCheckoutRequestDetailsType
 	public $ReqBillingAddress;
 
 	/**
-	*  The billing address for the buyer. Optional If you include
-	*  the BillingAddress element, the AddressType elements are
-	*  required: Name Street1 CityName CountryCode Do not set set
-	*  the CountryName element. 
+	 * The billing address for the buyer. Optional If you include
+	 * the BillingAddress element, the AddressType elements are
+	 * required: Name Street1 CityName CountryCode Do not set set
+	 * the CountryName element. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1463,10 +1463,10 @@ class SetExpressCheckoutRequestDetailsType
 	public $BillingAddress;
 
 	/**
-	*  The value 1 indicates that on the PayPal pages, no shipping
-	*  address fields should be displayed whatsoever. Optional
-	*  Character length and limitations: Four single-byte numeric
-	*  characters.
+	 * The value 1 indicates that on the PayPal pages, no shipping
+	 * address fields should be displayed whatsoever. Optional
+	 * Character length and limitations: Four single-byte numeric
+	 * characters.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1477,13 +1477,13 @@ class SetExpressCheckoutRequestDetailsType
 	public $NoShipping;
 
 	/**
-	*  The value 1 indicates that the PayPal pages should display
-	*  the shipping address set by you in the Address element on
-	*  this SetExpressCheckoutRequest, not the shipping address on
-	*  file with PayPal for this customer. Displaying the PayPal
-	*  street address on file does not allow the customer to edit
-	*  that address. Optional Character length and limitations:
-	*  Four single-byte numeric characters.
+	 * The value 1 indicates that the PayPal pages should display
+	 * the shipping address set by you in the Address element on
+	 * this SetExpressCheckoutRequest, not the shipping address on
+	 * file with PayPal for this customer. Displaying the PayPal
+	 * street address on file does not allow the customer to edit
+	 * that address. Optional Character length and limitations:
+	 * Four single-byte numeric characters.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1494,11 +1494,11 @@ class SetExpressCheckoutRequestDetailsType
 	public $AddressOverride;
 
 	/**
-	*  Locale of pages displayed by PayPal during Express Checkout.
-	*  Optional Character length and limitations: Five single-byte
-	*  alphabetic characters, upper- or lowercase. Allowable
-	*  values: AU or en_AUDE or de_DEFR or fr_FRGB or en_GBIT or
-	*  it_ITJP or ja_JPUS or en_US
+	 * Locale of pages displayed by PayPal during Express Checkout.
+	 * Optional Character length and limitations: Five single-byte
+	 * alphabetic characters, upper- or lowercase. Allowable
+	 * values: AU or en_AUDE or de_DEFR or fr_FRGB or en_GBIT or
+	 * it_ITJP or ja_JPUS or en_US
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1509,14 +1509,14 @@ class SetExpressCheckoutRequestDetailsType
 	public $LocaleCode;
 
 	/**
-	*  Sets the Custom Payment Page Style for payment pages
-	*  associated with this button/link. PageStyle corresponds to
-	*  the HTML variable page_style for customizing payment pages.
-	*  The value is the same as the Page Style Name you chose when
-	*  adding or editing the page style from the Profile subtab of
-	*  the My Account tab of your PayPal account. Optional
-	*  Character length and limitations: 30 single-byte alphabetic
-	*  characters. 
+	 * Sets the Custom Payment Page Style for payment pages
+	 * associated with this button/link. PageStyle corresponds to
+	 * the HTML variable page_style for customizing payment pages.
+	 * The value is the same as the Page Style Name you chose when
+	 * adding or editing the page style from the Profile subtab of
+	 * the My Account tab of your PayPal account. Optional
+	 * Character length and limitations: 30 single-byte alphabetic
+	 * characters. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1527,11 +1527,11 @@ class SetExpressCheckoutRequestDetailsType
 	public $PageStyle;
 
 	/**
-	*  A URL for the image you want to appear at the top left of
-	*  the payment page. The image has a maximum size of 750 pixels
-	*  wide by 90 pixels high. PayPal recommends that you provide
-	*  an image that is stored on a secure (https) server. Optional
-	*  Character length and limitations: 127
+	 * A URL for the image you want to appear at the top left of
+	 * the payment page. The image has a maximum size of 750 pixels
+	 * wide by 90 pixels high. PayPal recommends that you provide
+	 * an image that is stored on a secure (https) server. Optional
+	 * Character length and limitations: 127
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1544,11 +1544,11 @@ class SetExpressCheckoutRequestDetailsType
 	public $cppheaderimage;
 
 	/**
-	*  Sets the border color around the header of the payment page.
-	*  The border is a 2-pixel perimeter around the header space,
-	*  which is 750 pixels wide by 90 pixels high. Optional
-	*  Character length and limitations: Six character HTML
-	*  hexadecimal color code in ASCII
+	 * Sets the border color around the header of the payment page.
+	 * The border is a 2-pixel perimeter around the header space,
+	 * which is 750 pixels wide by 90 pixels high. Optional
+	 * Character length and limitations: Six character HTML
+	 * hexadecimal color code in ASCII
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1561,9 +1561,9 @@ class SetExpressCheckoutRequestDetailsType
 	public $cppheaderbordercolor;
 
 	/**
-	*  Sets the background color for the header of the payment
-	*  page. Optional Character length and limitation: Six
-	*  character HTML hexadecimal color code in ASCII
+	 * Sets the background color for the header of the payment
+	 * page. Optional Character length and limitation: Six
+	 * character HTML hexadecimal color code in ASCII
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1576,9 +1576,9 @@ class SetExpressCheckoutRequestDetailsType
 	public $cppheaderbackcolor;
 
 	/**
-	*  Sets the background color for the payment page. Optional
-	*  Character length and limitation: Six character HTML
-	*  hexadecimal color code in ASCII
+	 * Sets the background color for the payment page. Optional
+	 * Character length and limitation: Six character HTML
+	 * hexadecimal color code in ASCII
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1591,9 +1591,9 @@ class SetExpressCheckoutRequestDetailsType
 	public $cpppayflowcolor;
 
 	/**
-	*  Sets the cart gradient color for the Mini Cart on 1X flow.
-	*  Optional Character length and limitation: Six character HTML
-	*  hexadecimal color code in ASCII
+	 * Sets the cart gradient color for the Mini Cart on 1X flow.
+	 * Optional Character length and limitation: Six character HTML
+	 * hexadecimal color code in ASCII
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1606,11 +1606,11 @@ class SetExpressCheckoutRequestDetailsType
 	public $cppcartbordercolor;
 
 	/**
-	*  A URL for the image you want to appear above the mini-cart.
-	*  The image has a maximum size of 190 pixels wide by 60 pixels
-	*  high. PayPal recommends that you provide an image that is
-	*  stored on a secure (https) server. Optional Character length
-	*  and limitations: 127
+	 * A URL for the image you want to appear above the mini-cart.
+	 * The image has a maximum size of 190 pixels wide by 60 pixels
+	 * high. PayPal recommends that you provide an image that is
+	 * stored on a secure (https) server. Optional Character length
+	 * and limitations: 127
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1623,10 +1623,10 @@ class SetExpressCheckoutRequestDetailsType
 	public $cpplogoimage;
 
 	/**
-	*  Customer's shipping address. Optional If you include a
-	*  shipping address and set the AddressOverride element on the
-	*  request, PayPal returns this same address in
-	*  GetExpressCheckoutDetailsResponse. 
+	 * Customer's shipping address. Optional If you include a
+	 * shipping address and set the AddressOverride element on the
+	 * request, PayPal returns this same address in
+	 * GetExpressCheckoutDetailsResponse. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1637,17 +1637,17 @@ class SetExpressCheckoutRequestDetailsType
 	public $Address;
 
 	/**
-	*  How you want to obtain payment. Required Authorization
-	*  indicates that this payment is a basic authorization subject
-	*  to settlement with PayPal Authorization and Capture. Order
-	*  indicates that this payment is is an order authorization
-	*  subject to settlement with PayPal Authorization and Capture.
-	*  Sale indicates that this is a final sale for which you are
-	*  requesting payment. IMPORTANT: You cannot set PaymentAction
-	*  to Sale or Order on SetExpressCheckoutRequest and then
-	*  change PaymentAction to Authorization on the final Express
-	*  Checkout API, DoExpressCheckoutPaymentRequest. Character
-	*  length and limit: Up to 13 single-byte alphabetic characters
+	 * How you want to obtain payment. Required Authorization
+	 * indicates that this payment is a basic authorization subject
+	 * to settlement with PayPal Authorization and Capture. Order
+	 * indicates that this payment is is an order authorization
+	 * subject to settlement with PayPal Authorization and Capture.
+	 * Sale indicates that this is a final sale for which you are
+	 * requesting payment. IMPORTANT: You cannot set PaymentAction
+	 * to Sale or Order on SetExpressCheckoutRequest and then
+	 * change PaymentAction to Authorization on the final Express
+	 * Checkout API, DoExpressCheckoutPaymentRequest. Character
+	 * length and limit: Up to 13 single-byte alphabetic characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1658,10 +1658,10 @@ class SetExpressCheckoutRequestDetailsType
 	public $PaymentAction;
 
 	/**
-	*  This will indicate which flow you are choosing
-	*  (expresschecheckout or expresscheckout optional) Optional
-	*  None Sole indicates that you are in the ExpressO flow Mark
-	*  indicates that you are in the old express flow. 
+	 * This will indicate which flow you are choosing
+	 * (expresschecheckout or expresscheckout optional) Optional
+	 * None Sole indicates that you are in the ExpressO flow Mark
+	 * indicates that you are in the old express flow. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1672,10 +1672,10 @@ class SetExpressCheckoutRequestDetailsType
 	public $SolutionType;
 
 	/**
-	*  This indicates Which page to display for ExpressO (Billing
-	*  or Login) Optional None Billing indicates that you are not a
-	*  paypal account holder Login indicates that you are a paypal
-	*  account holder 
+	 * This indicates Which page to display for ExpressO (Billing
+	 * or Login) Optional None Billing indicates that you are not a
+	 * paypal account holder Login indicates that you are a paypal
+	 * account holder 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1686,10 +1686,10 @@ class SetExpressCheckoutRequestDetailsType
 	public $LandingPage;
 
 	/**
-	*  Email address of the buyer as entered during checkout.
-	*  PayPal uses this value to pre-fill the PayPal membership
-	*  sign-up portion of the PayPal login page. Optional Character
-	*  length and limit: 127 single-byte alphanumeric characters 
+	 * Email address of the buyer as entered during checkout.
+	 * PayPal uses this value to pre-fill the PayPal membership
+	 * sign-up portion of the PayPal login page. Optional Character
+	 * length and limit: 127 single-byte alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1700,7 +1700,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $BuyerEmail;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1711,7 +1711,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $ChannelType;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -1723,9 +1723,9 @@ class SetExpressCheckoutRequestDetailsType
 	public $BillingAgreementDetails;
 
 	/**
-	*  Promo Code Optional List of promo codes supplied by
-	*  merchant. These promo codes enable the Merchant Services
-	*  Promotion Financing feature. 
+	 * Promo Code Optional List of promo codes supplied by
+	 * merchant. These promo codes enable the Merchant Services
+	 * Promotion Financing feature. 
      * @array
 	 * @access public
 	 
@@ -1737,7 +1737,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $PromoCodes;
 
 	/**
-	*  Default Funding option for PayLater Checkout button. 
+	 * Default Funding option for PayLater Checkout button. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1748,7 +1748,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $PayPalCheckOutBtnType;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1759,7 +1759,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $ProductCategory;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1770,8 +1770,8 @@ class SetExpressCheckoutRequestDetailsType
 	public $ShippingMethod;
 
 	/**
-	*  Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at
-	*  which address was changed by the user. 
+	 * Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at
+	 * which address was changed by the user. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1782,12 +1782,12 @@ class SetExpressCheckoutRequestDetailsType
 	public $ProfileAddressChangeDate;
 
 	/**
-	*  The value 1 indicates that the customer may enter a note to
-	*  the merchant on the PayPal page during checkout. The note is
-	*  returned in the GetExpressCheckoutDetails response and the
-	*  DoExpressCheckoutPayment response. Optional Character length
-	*  and limitations: One single-byte numeric character.
-	*  Allowable values: 0,1 
+	 * The value 1 indicates that the customer may enter a note to
+	 * the merchant on the PayPal page during checkout. The note is
+	 * returned in the GetExpressCheckoutDetails response and the
+	 * DoExpressCheckoutPayment response. Optional Character length
+	 * and limitations: One single-byte numeric character.
+	 * Allowable values: 0,1 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1798,7 +1798,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $AllowNote;
 
 	/**
-	*  Funding source preferences. 
+	 * Funding source preferences. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1809,9 +1809,9 @@ class SetExpressCheckoutRequestDetailsType
 	public $FundingSourceDetails;
 
 	/**
-	*  The label that needs to be displayed on the cancel links in
-	*  the PayPal hosted checkout pages. Optional Character length
-	*  and limit: 127 single-byte alphanumeric characters 
+	 * The label that needs to be displayed on the cancel links in
+	 * the PayPal hosted checkout pages. Optional Character length
+	 * and limit: 127 single-byte alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1822,9 +1822,9 @@ class SetExpressCheckoutRequestDetailsType
 	public $BrandName;
 
 	/**
-	*  URL for PayPal to use to retrieve shipping, handling,
-	*  insurance, and tax details from your website. Optional
-	*  Character length and limitations: 2048 characters. 
+	 * URL for PayPal to use to retrieve shipping, handling,
+	 * insurance, and tax details from your website. Optional
+	 * Character length and limitations: 2048 characters. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1835,7 +1835,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $CallbackURL;
 
 	/**
-	*  Enhanced data for different industry segments. Optional 
+	 * Enhanced data for different industry segments. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1846,9 +1846,9 @@ class SetExpressCheckoutRequestDetailsType
 	public $EnhancedCheckoutData;
 
 	/**
-	*  List of other payment methods the user can pay with.
-	*  Optional Refer to the OtherPaymentMethodDetailsType for more
-	*  details. 
+	 * List of other payment methods the user can pay with.
+	 * Optional Refer to the OtherPaymentMethodDetailsType for more
+	 * details. 
      * @array
 	 * @access public
 	 
@@ -1860,8 +1860,8 @@ class SetExpressCheckoutRequestDetailsType
 	public $OtherPaymentMethods;
 
 	/**
-	*  Details about the buyer's account. Optional Refer to the
-	*  BuyerDetailsType for more details. 
+	 * Details about the buyer's account. Optional Refer to the
+	 * BuyerDetailsType for more details. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1872,7 +1872,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $BuyerDetails;
 
 	/**
-	*  Information about the payment. 
+	 * Information about the payment. 
      * @array
 	 * @access public
 	 
@@ -1884,7 +1884,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $PaymentDetails;
 
 	/**
-	*  List of Fall Back Shipping options provided by merchant. 
+	 * List of Fall Back Shipping options provided by merchant. 
      * @array
 	 * @access public
 	 
@@ -1896,7 +1896,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $FlatRateShippingOptions;
 
 	/**
-	*  Information about the call back timeout override. 
+	 * Information about the call back timeout override. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1907,7 +1907,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $CallbackTimeout;
 
 	/**
-	*  Information about the call back version. 
+	 * Information about the call back version. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1918,7 +1918,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $CallbackVersion;
 
 	/**
-	*  Information about the Customer service number. 
+	 * Information about the Customer service number. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1929,7 +1929,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $CustomerServiceNumber;
 
 	/**
-	*  Information about the Gift message enable. 
+	 * Information about the Gift message enable. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1940,7 +1940,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $GiftMessageEnable;
 
 	/**
-	*  Information about the Gift receipt enable. 
+	 * Information about the Gift receipt enable. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1951,7 +1951,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $GiftReceiptEnable;
 
 	/**
-	*  Information about the Gift Wrap enable. 
+	 * Information about the Gift Wrap enable. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1962,7 +1962,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $GiftWrapEnable;
 
 	/**
-	*  Information about the Gift Wrap name. 
+	 * Information about the Gift Wrap name. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1973,7 +1973,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $GiftWrapName;
 
 	/**
-	*  Information about the Gift Wrap amount. 
+	 * Information about the Gift Wrap amount. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1984,7 +1984,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $GiftWrapAmount;
 
 	/**
-	*  Information about the Buyer email option enable . 
+	 * Information about the Buyer email option enable . 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -1995,7 +1995,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $BuyerEmailOptInEnable;
 
 	/**
-	*  Information about the survey enable. 
+	 * Information about the survey enable. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2006,7 +2006,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $SurveyEnable;
 
 	/**
-	*  Information about the survey question. 
+	 * Information about the survey question. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2017,7 +2017,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $SurveyQuestion;
 
 	/**
-	*  Information about the survey choices for survey question. 
+	 * Information about the survey choices for survey question. 
      * @array
 	 * @access public
 	 
@@ -2029,7 +2029,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $SurveyChoice;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2040,8 +2040,8 @@ class SetExpressCheckoutRequestDetailsType
 	public $TotalType;
 
 	/**
-	*  Any message the seller would like to be displayed in the
-	*  Mini Cart for UX. 
+	 * Any message the seller would like to be displayed in the
+	 * Mini Cart for UX. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2052,8 +2052,8 @@ class SetExpressCheckoutRequestDetailsType
 	public $NoteToBuyer;
 
 	/**
-	*  Incentive Code Optional List of incentive codes supplied by
-	*  ebay/merchant. 
+	 * Incentive Code Optional List of incentive codes supplied by
+	 * ebay/merchant. 
      * @array
 	 * @access public
 	 
@@ -2065,8 +2065,8 @@ class SetExpressCheckoutRequestDetailsType
 	public $Incentives;
 
 	/**
-	*  Merchant specified flag which indicates whether to return
-	*  Funding Instrument Details in DoEC or not. Optional 
+	 * Merchant specified flag which indicates whether to return
+	 * Funding Instrument Details in DoEC or not. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2077,11 +2077,11 @@ class SetExpressCheckoutRequestDetailsType
 	public $ReqInstrumentDetails;
 
 	/**
-	*  This element contains information that allows the merchant
-	*  to request to opt into external remember me on behalf of the
-	*  buyer or to request login bypass using external remember me.
-	*  Note the opt-in details are silently ignored if the
-	*  ExternalRememberMeID is present. 
+	 * This element contains information that allows the merchant
+	 * to request to opt into external remember me on behalf of the
+	 * buyer or to request login bypass using external remember me.
+	 * Note the opt-in details are silently ignored if the
+	 * ExternalRememberMeID is present. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2092,7 +2092,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $ExternalRememberMeOptInDetails;
 
 	/**
-	*  An optional set of values related to flow-specific details. 
+	 * An optional set of values related to flow-specific details. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2103,8 +2103,8 @@ class SetExpressCheckoutRequestDetailsType
 	public $FlowControlDetails;
 
 	/**
-	*  An optional set of values related to display-specific
-	*  details. 
+	 * An optional set of values related to display-specific
+	 * details. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2115,8 +2115,8 @@ class SetExpressCheckoutRequestDetailsType
 	public $DisplayControlDetails;
 
 	/**
-	*  An optional set of values related to tracking for external
-	*  partner. 
+	 * An optional set of values related to tracking for external
+	 * partner. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2127,7 +2127,7 @@ class SetExpressCheckoutRequestDetailsType
 	public $ExternalPartnerTrackingDetails;
 
 	/**
-	*  Optional element that defines relationship between buckets 
+	 * Optional element that defines relationship between buckets 
      * @array
 	 * @access public
 	 
@@ -2145,27 +2145,27 @@ class SetExpressCheckoutRequestDetailsType
 
 
 /**
- *  On your first invocation of
- *  ExecuteCheckoutOperationsRequest, the value of this token is
- *  returned by ExecuteCheckoutOperationsResponse. Optional
- *  Include this element and its value only if you want to
- *  modify an existing checkout session with another invocation
- *  of ExecuteCheckoutOperationsRequest; for example, if you
- *  want the customer to edit his shipping address on PayPal.
- *  Character length and limitations: 20 single-byte characters 
+ * On your first invocation of
+ * ExecuteCheckoutOperationsRequest, the value of this token is
+ * returned by ExecuteCheckoutOperationsResponse. Optional
+ * Include this element and its value only if you want to
+ * modify an existing checkout session with another invocation
+ * of ExecuteCheckoutOperationsRequest; for example, if you
+ * want the customer to edit his shipping address on PayPal.
+ * Character length and limitations: 20 single-byte characters 
  */
 class ExecuteCheckoutOperationsRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  On your first invocation of
-	*  ExecuteCheckoutOperationsRequest, the value of this token is
-	*  returned by ExecuteCheckoutOperationsResponse. Optional
-	*  Include this element and its value only if you want to
-	*  modify an existing checkout session with another invocation
-	*  of ExecuteCheckoutOperationsRequest; for example, if you
-	*  want the customer to edit his shipping address on PayPal.
-	*  Character length and limitations: 20 single-byte characters 
+	 * On your first invocation of
+	 * ExecuteCheckoutOperationsRequest, the value of this token is
+	 * returned by ExecuteCheckoutOperationsResponse. Optional
+	 * Include this element and its value only if you want to
+	 * modify an existing checkout session with another invocation
+	 * of ExecuteCheckoutOperationsRequest; for example, if you
+	 * want the customer to edit his shipping address on PayPal.
+	 * Character length and limitations: 20 single-byte characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2176,8 +2176,8 @@ class ExecuteCheckoutOperationsRequestDetailsType
 	public $Token;
 
 	/**
-	*  All the Data required to initiate the checkout session is
-	*  passed in this element. 
+	 * All the Data required to initiate the checkout session is
+	 * passed in this element. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2188,8 +2188,8 @@ class ExecuteCheckoutOperationsRequestDetailsType
 	public $SetDataRequest;
 
 	/**
-	*  If auto authorization is required, this should be passed in
-	*  with IsRequested set to yes. 
+	 * If auto authorization is required, this should be passed in
+	 * with IsRequested set to yes. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2213,13 +2213,13 @@ class ExecuteCheckoutOperationsRequestDetailsType
 
 
 /**
- *  Details about Billing Agreements requested to be created. 
+ * Details about Billing Agreements requested to be created. 
  */
 class SetDataRequestType  
    extends PPXmlMessage{
 
 	/**
-	*  Details about Billing Agreements requested to be created. 
+	 * Details about Billing Agreements requested to be created. 
      * @array
 	 * @access public
 	 
@@ -2231,8 +2231,8 @@ class SetDataRequestType
 	public $BillingApprovalDetails;
 
 	/**
-	*  Only needed if Auto Authorization is requested. The
-	*  authentication session token will be passed in here. 
+	 * Only needed if Auto Authorization is requested. The
+	 * authentication session token will be passed in here. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2243,9 +2243,9 @@ class SetDataRequestType
 	public $BuyerDetail;
 
 	/**
-	*  Requests for specific buyer information like Billing Address
-	*  to be returned through GetExpressCheckoutDetails should be
-	*  specified under this. 
+	 * Requests for specific buyer information like Billing Address
+	 * to be returned through GetExpressCheckoutDetails should be
+	 * specified under this. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2262,13 +2262,13 @@ class SetDataRequestType
 
 
 /**
- *  
+ * 
  */
 class AuthorizationRequestType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2292,15 +2292,15 @@ class AuthorizationRequestType
 
 
 /**
- *  The Type of Approval requested - Billing Agreement or
- *  Profile 
+ * The Type of Approval requested - Billing Agreement or
+ * Profile 
  */
 class BillingApprovalDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  The Type of Approval requested - Billing Agreement or
-	*  Profile
+	 * The Type of Approval requested - Billing Agreement or
+	 * Profile
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2311,8 +2311,8 @@ class BillingApprovalDetailsType
 	public $ApprovalType;
 
 	/**
-	*  The Approval subtype - Must be MerchantInitiatedBilling for
-	*  BillingAgreement ApprovalType
+	 * The Approval subtype - Must be MerchantInitiatedBilling for
+	 * BillingAgreement ApprovalType
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2323,7 +2323,7 @@ class BillingApprovalDetailsType
 	public $ApprovalSubType;
 
 	/**
-	*  Description about the Order
+	 * Description about the Order
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2334,7 +2334,7 @@ class BillingApprovalDetailsType
 	public $OrderDetails;
 
 	/**
-	*  Directives about the type of payment
+	 * Directives about the type of payment
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2345,8 +2345,8 @@ class BillingApprovalDetailsType
 	public $PaymentDirectives;
 
 	/**
-	*  Client may pass in its identification of this Billing
-	*  Agreement. It used for the client's tracking purposes.
+	 * Client may pass in its identification of this Billing
+	 * Agreement. It used for the client's tracking purposes.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2370,17 +2370,17 @@ class BillingApprovalDetailsType
 
 
 /**
- *  If Billing Address should be returned in
- *  GetExpressCheckoutDetails response, this parameter should be
- *  set to yes here 
+ * If Billing Address should be returned in
+ * GetExpressCheckoutDetails response, this parameter should be
+ * set to yes here 
  */
 class InfoSharingDirectivesType  
    extends PPXmlMessage{
 
 	/**
-	*  If Billing Address should be returned in
-	*  GetExpressCheckoutDetails response, this parameter should be
-	*  set to yes here
+	 * If Billing Address should be returned in
+	 * GetExpressCheckoutDetails response, this parameter should be
+	 * set to yes here
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2397,13 +2397,13 @@ class InfoSharingDirectivesType
 
 
 /**
- *  Description of the Order. 
+ * Description of the Order. 
  */
 class OrderDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Description of the Order.
+	 * Description of the Order.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2414,8 +2414,8 @@ class OrderDetailsType
 	public $Description;
 
 	/**
-	*  Expected maximum amount that the merchant may pull using
-	*  DoReferenceTransaction
+	 * Expected maximum amount that the merchant may pull using
+	 * DoReferenceTransaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2432,13 +2432,13 @@ class OrderDetailsType
 
 
 /**
- *  Type of the Payment is it Instant or Echeck or Any. 
+ * Type of the Payment is it Instant or Echeck or Any. 
  */
 class PaymentDirectivesType  
    extends PPXmlMessage{
 
 	/**
-	*  Type of the Payment is it Instant or Echeck or Any.
+	 * Type of the Payment is it Instant or Echeck or Any.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2455,17 +2455,17 @@ class PaymentDirectivesType
 
 
 /**
- *  Information that is used to indentify the Buyer. This is
- *  used for auto authorization. Mandatory if Authorization is
- *  requested. 
+ * Information that is used to indentify the Buyer. This is
+ * used for auto authorization. Mandatory if Authorization is
+ * requested. 
  */
 class BuyerDetailType  
    extends PPXmlMessage{
 
 	/**
-	*  Information that is used to indentify the Buyer. This is
-	*  used for auto authorization. Mandatory if Authorization is
-	*  requested.
+	 * Information that is used to indentify the Buyer. This is
+	 * used for auto authorization. Mandatory if Authorization is
+	 * requested.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2482,13 +2482,13 @@ class BuyerDetailType
 
 
 /**
- *  Mobile specific buyer identification. 
+ * Mobile specific buyer identification. 
  */
 class IdentificationInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  Mobile specific buyer identification.
+	 * Mobile specific buyer identification.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2499,7 +2499,7 @@ class IdentificationInfoType
 	public $MobileIDInfo;
 
 	/**
-	*  Contains login bypass information.
+	 * Contains login bypass information.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2510,7 +2510,7 @@ class IdentificationInfoType
 	public $RememberMeIDInfo;
 
 	/**
-	*  Identity Access Token.
+	 * Identity Access Token.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2527,13 +2527,13 @@ class IdentificationInfoType
 
 
 /**
- *  The Session token returned during buyer authentication. 
+ * The Session token returned during buyer authentication. 
  */
 class MobileIDInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  The Session token returned during buyer authentication.
+	 * The Session token returned during buyer authentication.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2550,25 +2550,25 @@ class MobileIDInfoType
 
 
 /**
- *  External remember-me ID returned by
- *  GetExpressCheckoutDetails on successful opt-in. The
- *  ExternalRememberMeID is a 17-character alphanumeric
- *  (encrypted) string that identifies the buyer's remembered
- *  login with a merchant and has meaning only to the merchant.
- *  If present, requests that the web flow attempt bypass of
- *  login. 
+ * External remember-me ID returned by
+ * GetExpressCheckoutDetails on successful opt-in. The
+ * ExternalRememberMeID is a 17-character alphanumeric
+ * (encrypted) string that identifies the buyer's remembered
+ * login with a merchant and has meaning only to the merchant.
+ * If present, requests that the web flow attempt bypass of
+ * login. 
  */
 class RememberMeIDInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  External remember-me ID returned by
-	*  GetExpressCheckoutDetails on successful opt-in. The
-	*  ExternalRememberMeID is a 17-character alphanumeric
-	*  (encrypted) string that identifies the buyer's remembered
-	*  login with a merchant and has meaning only to the merchant.
-	*  If present, requests that the web flow attempt bypass of
-	*  login. 
+	 * External remember-me ID returned by
+	 * GetExpressCheckoutDetails on successful opt-in. The
+	 * ExternalRememberMeID is a 17-character alphanumeric
+	 * (encrypted) string that identifies the buyer's remembered
+	 * login with a merchant and has meaning only to the merchant.
+	 * If present, requests that the web flow attempt bypass of
+	 * login. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2585,13 +2585,13 @@ class RememberMeIDInfoType
 
 
 /**
- *  Identity Access token from merchant 
+ * Identity Access token from merchant 
  */
 class IdentityTokenInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  Identity Access token from merchant
+	 * Identity Access token from merchant
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2615,19 +2615,19 @@ class IdentityTokenInfoType
 
 
 /**
- *  Allowable values: 0,1 The value 1 indicates that the
- *  customer can accept push funding, and 0 means they cannot.
- *  Optional Character length and limitations: One single-byte
- *  numeric character. 
+ * Allowable values: 0,1 The value 1 indicates that the
+ * customer can accept push funding, and 0 means they cannot.
+ * Optional Character length and limitations: One single-byte
+ * numeric character. 
  */
 class FundingSourceDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Allowable values: 0,1 The value 1 indicates that the
-	*  customer can accept push funding, and 0 means they cannot.
-	*  Optional Character length and limitations: One single-byte
-	*  numeric character. 
+	 * Allowable values: 0,1 The value 1 indicates that the
+	 * customer can accept push funding, and 0 means they cannot.
+	 * Optional Character length and limitations: One single-byte
+	 * numeric character. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2638,10 +2638,10 @@ class FundingSourceDetailsType
 	public $AllowPushFunding;
 
 	/**
-	*  Allowable values: ELV, CreditCard, ChinaUnionPay, BML This
-	*  element could be used to specify the perered funding option
-	*  for a guest users. It has effect only if LandingPage element
-	*  is set to Billing. Otherwise it will be ignored. 
+	 * Allowable values: ELV, CreditCard, ChinaUnionPay, BML This
+	 * element could be used to specify the perered funding option
+	 * for a guest users. It has effect only if LandingPage element
+	 * is set to Billing. Otherwise it will be ignored. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2658,13 +2658,13 @@ class FundingSourceDetailsType
 
 
 /**
- *  
+ * 
  */
 class BillingAgreementDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2675,7 +2675,7 @@ class BillingAgreementDetailsType
 	public $BillingType;
 
 	/**
-	*  Only needed for AutoBill billinng type. 
+	 * Only needed for AutoBill billinng type. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2686,7 +2686,7 @@ class BillingAgreementDetailsType
 	public $BillingAgreementDescription;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2697,7 +2697,7 @@ class BillingAgreementDetailsType
 	public $PaymentType;
 
 	/**
-	*  Custom annotation field for your exclusive use. 
+	 * Custom annotation field for your exclusive use. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2721,19 +2721,19 @@ class BillingAgreementDetailsType
 
 
 /**
- *  The timestamped token value that was returned by
- *  SetExpressCheckoutResponse and passed on
- *  GetExpressCheckoutDetailsRequest. Character length and
- *  limitations: 20 single-byte characters 
+ * The timestamped token value that was returned by
+ * SetExpressCheckoutResponse and passed on
+ * GetExpressCheckoutDetailsRequest. Character length and
+ * limitations: 20 single-byte characters 
  */
 class GetExpressCheckoutDetailsResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  The timestamped token value that was returned by
-	*  SetExpressCheckoutResponse and passed on
-	*  GetExpressCheckoutDetailsRequest. Character length and
-	*  limitations: 20 single-byte characters
+	 * The timestamped token value that was returned by
+	 * SetExpressCheckoutResponse and passed on
+	 * GetExpressCheckoutDetailsRequest. Character length and
+	 * limitations: 20 single-byte characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2744,7 +2744,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $Token;
 
 	/**
-	*  Information about the payer
+	 * Information about the payer
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2755,10 +2755,10 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $PayerInfo;
 
 	/**
-	*  A free-form field for your own use, as set by you in the
-	*  Custom element of SetExpressCheckoutRequest. Character
-	*  length and limitations: 256 single-byte alphanumeric
-	*  characters
+	 * A free-form field for your own use, as set by you in the
+	 * Custom element of SetExpressCheckoutRequest. Character
+	 * length and limitations: 256 single-byte alphanumeric
+	 * characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2769,10 +2769,10 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $Custom;
 
 	/**
-	*  Your own invoice or tracking number, as set by you in the
-	*  InvoiceID element of SetExpressCheckoutRequest. Character
-	*  length and limitations: 127 single-byte alphanumeric
-	*  characters
+	 * Your own invoice or tracking number, as set by you in the
+	 * InvoiceID element of SetExpressCheckoutRequest. Character
+	 * length and limitations: 127 single-byte alphanumeric
+	 * characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2783,9 +2783,9 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $InvoiceID;
 
 	/**
-	*  Payer's contact telephone number. PayPal returns a contact
-	*  telephone number only if your Merchant account profile
-	*  settings require that the buyer enter one.
+	 * Payer's contact telephone number. PayPal returns a contact
+	 * telephone number only if your Merchant account profile
+	 * settings require that the buyer enter one.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2796,7 +2796,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $ContactPhone;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2807,7 +2807,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $BillingAgreementAcceptedStatus;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2818,11 +2818,11 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $RedirectRequired;
 
 	/**
-	*  Customer's billing address. Optional If you have credit card
-	*  mapped in your account then billing address of the credit
-	*  card is returned otherwise your primary address is returned
-	*  , PayPal returns this address in
-	*  GetExpressCheckoutDetailsResponse.
+	 * Customer's billing address. Optional If you have credit card
+	 * mapped in your account then billing address of the credit
+	 * card is returned otherwise your primary address is returned
+	 * , PayPal returns this address in
+	 * GetExpressCheckoutDetailsResponse.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2833,7 +2833,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $BillingAddress;
 
 	/**
-	*  Text note entered by the buyer in PayPal flow. 
+	 * Text note entered by the buyer in PayPal flow. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2844,9 +2844,9 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $Note;
 
 	/**
-	*  Returns the status of the EC checkout session. Values
-	*  include 'PaymentActionNotInitiated', 'PaymentActionFailed',
-	*  'PaymentActionInProgress', 'PaymentCompleted'. 
+	 * Returns the status of the EC checkout session. Values
+	 * include 'PaymentActionNotInitiated', 'PaymentActionFailed',
+	 * 'PaymentActionInProgress', 'PaymentCompleted'. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2857,11 +2857,11 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $CheckoutStatus;
 
 	/**
-	*  PayPal may offer a discount or gift certificate to the
-	*  buyer, which will be represented by a negativeamount. If the
-	*  buyer has a negative balance, PayPal will add that amount to
-	*  the current charges, which will be represented as a positive
-	*  amount. 
+	 * PayPal may offer a discount or gift certificate to the
+	 * buyer, which will be represented by a negativeamount. If the
+	 * buyer has a negative balance, PayPal will add that amount to
+	 * the current charges, which will be represented as a positive
+	 * amount. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2872,7 +2872,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $PayPalAdjustment;
 
 	/**
-	*  Information about the individual purchased items. 
+	 * Information about the individual purchased items. 
      * @array
 	 * @access public
 	 
@@ -2884,7 +2884,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $PaymentDetails;
 
 	/**
-	*  Information about the user selected options. 
+	 * Information about the user selected options. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2895,8 +2895,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $UserSelectedOptions;
 
 	/**
-	*  Information about the incentives that were applied from Ebay
-	*  RYP page and PayPal RYP page. 
+	 * Information about the incentives that were applied from Ebay
+	 * RYP page and PayPal RYP page. 
      * @array
 	 * @access public
 	 
@@ -2908,7 +2908,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $IncentiveDetails;
 
 	/**
-	*  Information about the Gift message. 
+	 * Information about the Gift message. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2919,7 +2919,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $GiftMessage;
 
 	/**
-	*  Information about the Gift receipt enable. 
+	 * Information about the Gift receipt enable. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2930,7 +2930,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $GiftReceiptEnable;
 
 	/**
-	*  Information about the Gift Wrap name. 
+	 * Information about the Gift Wrap name. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2941,7 +2941,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $GiftWrapName;
 
 	/**
-	*  Information about the Gift Wrap amount. 
+	 * Information about the Gift Wrap amount. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2952,7 +2952,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $GiftWrapAmount;
 
 	/**
-	*  Information about the Buyer marketing email. 
+	 * Information about the Buyer marketing email. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2963,7 +2963,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $BuyerMarketingEmail;
 
 	/**
-	*  Information about the survey question. 
+	 * Information about the survey question. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -2974,7 +2974,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $SurveyQuestion;
 
 	/**
-	*  Information about the survey choice selected by the user. 
+	 * Information about the survey choice selected by the user. 
      * @array
 	 * @access public
 	 
@@ -2986,8 +2986,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $SurveyChoiceSelected;
 
 	/**
-	*  Contains payment request information about each bucket in
-	*  the cart. 
+	 * Contains payment request information about each bucket in
+	 * the cart. 
      * @array
 	 * @access public
 	 
@@ -2999,8 +2999,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $PaymentRequestInfo;
 
 	/**
-	*  Response information resulting from opt-in operation or
-	*  current login bypass status. 
+	 * Response information resulting from opt-in operation or
+	 * current login bypass status. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3011,8 +3011,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $ExternalRememberMeStatusDetails;
 
 	/**
-	*  Response information resulting from opt-in operation or
-	*  current login bypass status. 
+	 * Response information resulting from opt-in operation or
+	 * current login bypass status. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3028,13 +3028,13 @@ class GetExpressCheckoutDetailsResponseDetailsType
 
 
 /**
- *  
+ * 
  */
 class ExecuteCheckoutOperationsResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3045,7 +3045,7 @@ class ExecuteCheckoutOperationsResponseDetailsType
 	public $SetDataResponse;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3061,15 +3061,15 @@ class ExecuteCheckoutOperationsResponseDetailsType
 
 
 /**
- *  If Checkout session was initialized successfully, the
- *  corresponding token is returned in this element. 
+ * If Checkout session was initialized successfully, the
+ * corresponding token is returned in this element. 
  */
 class SetDataResponseType  
    extends PPXmlMessage{
 
 	/**
-	*  If Checkout session was initialized successfully, the
-	*  corresponding token is returned in this element. 
+	 * If Checkout session was initialized successfully, the
+	 * corresponding token is returned in this element. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3080,7 +3080,7 @@ class SetDataResponseType
 	public $Token;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -3097,15 +3097,15 @@ class SetDataResponseType
 
 
 /**
- *  Status will denote whether Auto authorization was successful
- *  or not. 
+ * Status will denote whether Auto authorization was successful
+ * or not. 
  */
 class AuthorizationResponseType  
    extends PPXmlMessage{
 
 	/**
-	*  Status will denote whether Auto authorization was successful
-	*  or not. 
+	 * Status will denote whether Auto authorization was successful
+	 * or not. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3116,7 +3116,7 @@ class AuthorizationResponseType
 	public $Status;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -3133,33 +3133,33 @@ class AuthorizationResponseType
 
 
 /**
- *  How you want to obtain payment. Required Authorization
- *  indicates that this payment is a basic authorization subject
- *  to settlement with PayPal Authorization and Capture. Order
- *  indicates that this payment is is an order authorization
- *  subject to settlement with PayPal Authorization and Capture.
- *  Sale indicates that this is a final sale for which you are
- *  requesting payment. IMPORTANT: You cannot set PaymentAction
- *  to Sale on SetExpressCheckoutRequest and then change
- *  PaymentAction to Authorization on the final Express Checkout
- *  API, DoExpressCheckoutPaymentRequest. Character length and
- *  limit: Up to 13 single-byte alphabetic characters 
+ * How you want to obtain payment. Required Authorization
+ * indicates that this payment is a basic authorization subject
+ * to settlement with PayPal Authorization and Capture. Order
+ * indicates that this payment is is an order authorization
+ * subject to settlement with PayPal Authorization and Capture.
+ * Sale indicates that this is a final sale for which you are
+ * requesting payment. IMPORTANT: You cannot set PaymentAction
+ * to Sale on SetExpressCheckoutRequest and then change
+ * PaymentAction to Authorization on the final Express Checkout
+ * API, DoExpressCheckoutPaymentRequest. Character length and
+ * limit: Up to 13 single-byte alphabetic characters 
  */
 class DoExpressCheckoutPaymentRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  How you want to obtain payment. Required Authorization
-	*  indicates that this payment is a basic authorization subject
-	*  to settlement with PayPal Authorization and Capture. Order
-	*  indicates that this payment is is an order authorization
-	*  subject to settlement with PayPal Authorization and Capture.
-	*  Sale indicates that this is a final sale for which you are
-	*  requesting payment. IMPORTANT: You cannot set PaymentAction
-	*  to Sale on SetExpressCheckoutRequest and then change
-	*  PaymentAction to Authorization on the final Express Checkout
-	*  API, DoExpressCheckoutPaymentRequest. Character length and
-	*  limit: Up to 13 single-byte alphabetic characters
+	 * How you want to obtain payment. Required Authorization
+	 * indicates that this payment is a basic authorization subject
+	 * to settlement with PayPal Authorization and Capture. Order
+	 * indicates that this payment is is an order authorization
+	 * subject to settlement with PayPal Authorization and Capture.
+	 * Sale indicates that this is a final sale for which you are
+	 * requesting payment. IMPORTANT: You cannot set PaymentAction
+	 * to Sale on SetExpressCheckoutRequest and then change
+	 * PaymentAction to Authorization on the final Express Checkout
+	 * API, DoExpressCheckoutPaymentRequest. Character length and
+	 * limit: Up to 13 single-byte alphabetic characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3170,10 +3170,10 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $PaymentAction;
 
 	/**
-	*  The timestamped token value that was returned by
-	*  SetExpressCheckoutResponse and passed on
-	*  GetExpressCheckoutDetailsRequest. Required Character length
-	*  and limitations: 20 single-byte characters
+	 * The timestamped token value that was returned by
+	 * SetExpressCheckoutResponse and passed on
+	 * GetExpressCheckoutDetailsRequest. Required Character length
+	 * and limitations: 20 single-byte characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3184,10 +3184,10 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $Token;
 
 	/**
-	*  Encrypted PayPal customer account identification number as
-	*  returned by GetExpressCheckoutDetailsResponse. Required
-	*  Character length and limitations: 127 single-byte
-	*  characters.
+	 * Encrypted PayPal customer account identification number as
+	 * returned by GetExpressCheckoutDetailsResponse. Required
+	 * Character length and limitations: 127 single-byte
+	 * characters.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3198,7 +3198,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $PayerID;
 
 	/**
-	*  URL on Merchant site pertaining to this invoice. Optional 
+	 * URL on Merchant site pertaining to this invoice. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3209,7 +3209,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $OrderURL;
 
 	/**
-	*  Information about the payment Required 
+	 * Information about the payment Required 
      * @array
 	 * @access public
 	 
@@ -3221,8 +3221,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $PaymentDetails;
 
 	/**
-	*  Flag to indicate if previously set promoCode shall be
-	*  overriden. Value 1 indicates overriding.  
+	 * Flag to indicate if previously set promoCode shall be
+	 * overriden. Value 1 indicates overriding.  
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3233,8 +3233,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $PromoOverrideFlag;
 
 	/**
-	*  Promotional financing code for item. Overrides any previous
-	*  PromoCode setting. 
+	 * Promotional financing code for item. Overrides any previous
+	 * PromoCode setting. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3245,8 +3245,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $PromoCode;
 
 	/**
-	*  Contains data for enhanced data like Airline Itinerary Data.
-	*  
+	 * Contains data for enhanced data like Airline Itinerary Data.
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3257,8 +3257,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $EnhancedData;
 
 	/**
-	*  Soft Descriptor supported for Sale and Auth in DEC only. For
-	*  Order this will be ignored. 
+	 * Soft Descriptor supported for Sale and Auth in DEC only. For
+	 * Order this will be ignored. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3269,7 +3269,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $SoftDescriptor;
 
 	/**
-	*  Information about the user selected options. 
+	 * Information about the user selected options. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3280,7 +3280,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $UserSelectedOptions;
 
 	/**
-	*  Information about the Gift message. 
+	 * Information about the Gift message. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3291,7 +3291,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $GiftMessage;
 
 	/**
-	*  Information about the Gift receipt enable. 
+	 * Information about the Gift receipt enable. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3302,7 +3302,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $GiftReceiptEnable;
 
 	/**
-	*  Information about the Gift Wrap name. 
+	 * Information about the Gift Wrap name. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3313,7 +3313,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $GiftWrapName;
 
 	/**
-	*  Information about the Gift Wrap amount. 
+	 * Information about the Gift Wrap amount. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3324,7 +3324,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $GiftWrapAmount;
 
 	/**
-	*  Information about the Buyer marketing email. 
+	 * Information about the Buyer marketing email. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3335,7 +3335,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $BuyerMarketingEmail;
 
 	/**
-	*  Information about the survey question. 
+	 * Information about the survey question. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3346,7 +3346,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $SurveyQuestion;
 
 	/**
-	*  Information about the survey choice selected by the user. 
+	 * Information about the survey choice selected by the user. 
      * @array
 	 * @access public
 	 
@@ -3358,9 +3358,9 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $SurveyChoiceSelected;
 
 	/**
-	*  An identification code for use by third-party applications
-	*  to identify transactions. Optional Character length and
-	*  limitations: 32 single-byte alphanumeric characters 
+	 * An identification code for use by third-party applications
+	 * to identify transactions. Optional Character length and
+	 * limitations: 32 single-byte alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3371,8 +3371,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $ButtonSource;
 
 	/**
-	*  Merchant specified flag which indicates whether to create
-	*  billing agreement as part of DoEC or not. Optional 
+	 * Merchant specified flag which indicates whether to create
+	 * billing agreement as part of DoEC or not. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3383,7 +3383,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $SkipBACreation;
 
 	/**
-	*  Optional element that defines relationship between buckets 
+	 * Optional element that defines relationship between buckets 
      * @array
 	 * @access public
 	 
@@ -3401,19 +3401,19 @@ class DoExpressCheckoutPaymentRequestDetailsType
 
 
 /**
- *  The timestamped token value that was returned by
- *  SetExpressCheckoutResponse and passed on
- *  GetExpressCheckoutDetailsRequest. Character length and
- *  limitations:20 single-byte characters 
+ * The timestamped token value that was returned by
+ * SetExpressCheckoutResponse and passed on
+ * GetExpressCheckoutDetailsRequest. Character length and
+ * limitations:20 single-byte characters 
  */
 class DoExpressCheckoutPaymentResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  The timestamped token value that was returned by
-	*  SetExpressCheckoutResponse and passed on
-	*  GetExpressCheckoutDetailsRequest. Character length and
-	*  limitations:20 single-byte characters
+	 * The timestamped token value that was returned by
+	 * SetExpressCheckoutResponse and passed on
+	 * GetExpressCheckoutDetailsRequest. Character length and
+	 * limitations:20 single-byte characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3424,7 +3424,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	public $Token;
 
 	/**
-	*  Information about the transaction 
+	 * Information about the transaction 
      * @array
 	 * @access public
 	 
@@ -3436,7 +3436,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	public $PaymentInfo;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3447,7 +3447,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	public $BillingAgreementID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3458,9 +3458,9 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	public $RedirectRequired;
 
 	/**
-	*  Memo entered by sender in PayPal Review Page note field.
-	*  Optional Character length and limitations: 255 single-byte
-	*  alphanumeric characters 
+	 * Memo entered by sender in PayPal Review Page note field.
+	 * Optional Character length and limitations: 255 single-byte
+	 * alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3471,7 +3471,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	public $Note;
 
 	/**
-	*  Redirect back to PayPal, PayPal can host the success page. 
+	 * Redirect back to PayPal, PayPal can host the success page. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3482,7 +3482,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	public $SuccessPageRedirectRequested;
 
 	/**
-	*  Information about the user selected options. 
+	 * Information about the user selected options. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3493,7 +3493,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	public $UserSelectedOptions;
 
 	/**
-	*  Information about Coupled Payment transactions. 
+	 * Information about Coupled Payment transactions. 
      * @array
 	 * @access public
 	 
@@ -3510,17 +3510,17 @@ class DoExpressCheckoutPaymentResponseDetailsType
 
 
 /**
- *  The authorization identification number you specified in the
- *  request. Character length and limits: 19 single-byte
- *  characters maximum 
+ * The authorization identification number you specified in the
+ * request. Character length and limits: 19 single-byte
+ * characters maximum 
  */
 class DoCaptureResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  The authorization identification number you specified in the
-	*  request. Character length and limits: 19 single-byte
-	*  characters maximum
+	 * The authorization identification number you specified in the
+	 * request. Character length and limits: 19 single-byte
+	 * characters maximum
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3531,7 +3531,7 @@ class DoCaptureResponseDetailsType
 	public $AuthorizationID;
 
 	/**
-	*  Information about the transaction 
+	 * Information about the transaction 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3542,7 +3542,7 @@ class DoCaptureResponseDetailsType
 	public $PaymentInfo;
 
 	/**
-	*  Return msgsubid back to merchant 
+	 * Return msgsubid back to merchant 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3558,25 +3558,25 @@ class DoCaptureResponseDetailsType
 
 
 /**
- *  How you want to obtain payment. Required Authorization
- *  indicates that this payment is a basic authorization subject
- *  to settlement with PayPal Authorization and Capture. Sale
- *  indicates that this is a final sale for which you are
- *  requesting payment. NOTE: Order is not allowed for Direct
- *  Payment. Character length and limit: Up to 13 single-byte
- *  alphabetic characters 
+ * How you want to obtain payment. Required Authorization
+ * indicates that this payment is a basic authorization subject
+ * to settlement with PayPal Authorization and Capture. Sale
+ * indicates that this is a final sale for which you are
+ * requesting payment. NOTE: Order is not allowed for Direct
+ * Payment. Character length and limit: Up to 13 single-byte
+ * alphabetic characters 
  */
 class DoDirectPaymentRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  How you want to obtain payment. Required Authorization
-	*  indicates that this payment is a basic authorization subject
-	*  to settlement with PayPal Authorization and Capture. Sale
-	*  indicates that this is a final sale for which you are
-	*  requesting payment. NOTE: Order is not allowed for Direct
-	*  Payment. Character length and limit: Up to 13 single-byte
-	*  alphabetic characters
+	 * How you want to obtain payment. Required Authorization
+	 * indicates that this payment is a basic authorization subject
+	 * to settlement with PayPal Authorization and Capture. Sale
+	 * indicates that this is a final sale for which you are
+	 * requesting payment. NOTE: Order is not allowed for Direct
+	 * Payment. Character length and limit: Up to 13 single-byte
+	 * alphabetic characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3587,7 +3587,7 @@ class DoDirectPaymentRequestDetailsType
 	public $PaymentAction;
 
 	/**
-	*  Information about the payment Required 
+	 * Information about the payment Required 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3598,7 +3598,7 @@ class DoDirectPaymentRequestDetailsType
 	public $PaymentDetails;
 
 	/**
-	*  Information about the credit card to be charged. Required 
+	 * Information about the credit card to be charged. Required 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3609,11 +3609,11 @@ class DoDirectPaymentRequestDetailsType
 	public $CreditCard;
 
 	/**
-	*  IP address of the payer's browser as recorded in its HTTP
-	*  request to your website. PayPal records this IP addresses as
-	*  a means to detect possible fraud. Required Character length
-	*  and limitations: 15 single-byte characters, including
-	*  periods, in dotted-quad format: ???.???.???.???
+	 * IP address of the payer's browser as recorded in its HTTP
+	 * request to your website. PayPal records this IP addresses as
+	 * a means to detect possible fraud. Required Character length
+	 * and limitations: 15 single-byte characters, including
+	 * periods, in dotted-quad format: ???.???.???.???
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3624,10 +3624,10 @@ class DoDirectPaymentRequestDetailsType
 	public $IPAddress;
 
 	/**
-	*  Your customer session identification token. PayPal records
-	*  this optional session identification token as an additional
-	*  means to detect possible fraud. Optional Character length
-	*  and limitations: 64 single-byte numeric characters
+	 * Your customer session identification token. PayPal records
+	 * this optional session identification token as an additional
+	 * means to detect possible fraud. Optional Character length
+	 * and limitations: 64 single-byte numeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3638,7 +3638,7 @@ class DoDirectPaymentRequestDetailsType
 	public $MerchantSessionId;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3655,13 +3655,13 @@ class DoDirectPaymentRequestDetailsType
 
 
 /**
- *  Type of the payment Required 
+ * Type of the payment Required 
  */
 class CreateMobilePaymentRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Type of the payment Required 
+	 * Type of the payment Required 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3672,11 +3672,11 @@ class CreateMobilePaymentRequestDetailsType
 	public $PaymentType;
 
 	/**
-	*  How you want to obtain payment. Defaults to Sale. Optional
-	*  Authorization indicates that this payment is a basic
-	*  authorization subject to settlement with PayPal
-	*  Authorization and Capture. Sale indicates that this is a
-	*  final sale for which you are requesting payment. 
+	 * How you want to obtain payment. Defaults to Sale. Optional
+	 * Authorization indicates that this payment is a basic
+	 * authorization subject to settlement with PayPal
+	 * Authorization and Capture. Sale indicates that this is a
+	 * final sale for which you are requesting payment. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3687,7 +3687,7 @@ class CreateMobilePaymentRequestDetailsType
 	public $PaymentAction;
 
 	/**
-	*  Phone number of the user making the payment. Required 
+	 * Phone number of the user making the payment. Required 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3698,8 +3698,8 @@ class CreateMobilePaymentRequestDetailsType
 	public $SenderPhone;
 
 	/**
-	*  Type of recipient specified, i.e., phone number or email
-	*  address Required 
+	 * Type of recipient specified, i.e., phone number or email
+	 * address Required 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3710,7 +3710,7 @@ class CreateMobilePaymentRequestDetailsType
 	public $RecipientType;
 
 	/**
-	*  Email address of the recipient 
+	 * Email address of the recipient 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3721,7 +3721,7 @@ class CreateMobilePaymentRequestDetailsType
 	public $RecipientEmail;
 
 	/**
-	*  Phone number of the recipipent Required 
+	 * Phone number of the recipipent Required 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3732,7 +3732,7 @@ class CreateMobilePaymentRequestDetailsType
 	public $RecipientPhone;
 
 	/**
-	*  Amount of item before tax and shipping 
+	 * Amount of item before tax and shipping 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3743,7 +3743,7 @@ class CreateMobilePaymentRequestDetailsType
 	public $ItemAmount;
 
 	/**
-	*  The tax charged on the transactionTax Optional 
+	 * The tax charged on the transactionTax Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3754,7 +3754,7 @@ class CreateMobilePaymentRequestDetailsType
 	public $Tax;
 
 	/**
-	*  Per-transaction shipping charge Optional 
+	 * Per-transaction shipping charge Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3765,8 +3765,8 @@ class CreateMobilePaymentRequestDetailsType
 	public $Shipping;
 
 	/**
-	*  Name of the item being ordered Optional Character length and
-	*  limitations: 255 single-byte alphanumeric characters 
+	 * Name of the item being ordered Optional Character length and
+	 * limitations: 255 single-byte alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3777,8 +3777,8 @@ class CreateMobilePaymentRequestDetailsType
 	public $ItemName;
 
 	/**
-	*  SKU of the item being ordered Optional Character length and
-	*  limitations: 255 single-byte alphanumeric characters 
+	 * SKU of the item being ordered Optional Character length and
+	 * limitations: 255 single-byte alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3789,9 +3789,9 @@ class CreateMobilePaymentRequestDetailsType
 	public $ItemNumber;
 
 	/**
-	*  Memo entered by sender in PayPal Website Payments note
-	*  field. Optional Character length and limitations: 255
-	*  single-byte alphanumeric characters 
+	 * Memo entered by sender in PayPal Website Payments note
+	 * field. Optional Character length and limitations: 255
+	 * single-byte alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3802,9 +3802,9 @@ class CreateMobilePaymentRequestDetailsType
 	public $Note;
 
 	/**
-	*  Unique ID for the order. Required for non-P2P transactions
-	*  Optional Character length and limitations: 255 single-byte
-	*  alphanumeric characters 
+	 * Unique ID for the order. Required for non-P2P transactions
+	 * Optional Character length and limitations: 255 single-byte
+	 * alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3815,8 +3815,8 @@ class CreateMobilePaymentRequestDetailsType
 	public $CustomID;
 
 	/**
-	*  Indicates whether the sender's phone number will be shared
-	*  with recipient Optional 
+	 * Indicates whether the sender's phone number will be shared
+	 * with recipient Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3827,8 +3827,8 @@ class CreateMobilePaymentRequestDetailsType
 	public $SharePhoneNumber;
 
 	/**
-	*  Indicates whether the sender's home address will be shared
-	*  with recipient Optional 
+	 * Indicates whether the sender's home address will be shared
+	 * with recipient Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3845,13 +3845,13 @@ class CreateMobilePaymentRequestDetailsType
 
 
 /**
- *  Phone number for status inquiry 
+ * Phone number for status inquiry 
  */
 class GetMobileStatusRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Phone number for status inquiry 
+	 * Phone number for status inquiry 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3868,17 +3868,17 @@ class GetMobileStatusRequestDetailsType
 
 
 /**
- *  URL to which the customer's browser is returned after
- *  choosing to login with PayPal. Required Character length and
- *  limitations: no limit. 
+ * URL to which the customer's browser is returned after
+ * choosing to login with PayPal. Required Character length and
+ * limitations: no limit. 
  */
 class SetAuthFlowParamRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  URL to which the customer's browser is returned after
-	*  choosing to login with PayPal. Required Character length and
-	*  limitations: no limit. 
+	 * URL to which the customer's browser is returned after
+	 * choosing to login with PayPal. Required Character length and
+	 * limitations: no limit. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3889,9 +3889,9 @@ class SetAuthFlowParamRequestDetailsType
 	public $ReturnURL;
 
 	/**
-	*  URL to which the customer is returned if he does not approve
-	*  the use of PayPal login. Required Character length and
-	*  limitations: no limit
+	 * URL to which the customer is returned if he does not approve
+	 * the use of PayPal login. Required Character length and
+	 * limitations: no limit
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3902,9 +3902,9 @@ class SetAuthFlowParamRequestDetailsType
 	public $CancelURL;
 
 	/**
-	*  URL to which the customer's browser is returned after user
-	*  logs out from PayPal. Required Character length and
-	*  limitations: no limit. 
+	 * URL to which the customer's browser is returned after user
+	 * logs out from PayPal. Required Character length and
+	 * limitations: no limit. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3915,8 +3915,8 @@ class SetAuthFlowParamRequestDetailsType
 	public $LogoutURL;
 
 	/**
-	*  The type of the flow. Optional Character length and
-	*  limitations: 127 single-byte alphanumeric characters
+	 * The type of the flow. Optional Character length and
+	 * limitations: 127 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3927,9 +3927,9 @@ class SetAuthFlowParamRequestDetailsType
 	public $InitFlowType;
 
 	/**
-	*  The used to decide SkipLogin allowed or not. Optional
-	*  Character length and limitations: 127 single-byte
-	*  alphanumeric characters 
+	 * The used to decide SkipLogin allowed or not. Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3940,9 +3940,9 @@ class SetAuthFlowParamRequestDetailsType
 	public $SkipLoginPage;
 
 	/**
-	*  The name of the field Merchant requires from PayPal after
-	*  user's login. Optional Character length and limitations: 256
-	*  single-byte alphanumeric characters 
+	 * The name of the field Merchant requires from PayPal after
+	 * user's login. Optional Character length and limitations: 256
+	 * single-byte alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3953,9 +3953,9 @@ class SetAuthFlowParamRequestDetailsType
 	public $ServiceName1;
 
 	/**
-	*  Whether the field is required, opt-in or opt-out.  Optional
-	*  Character length and limitations: 127 single-byte
-	*  alphanumeric characters 
+	 * Whether the field is required, opt-in or opt-out.  Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3966,9 +3966,9 @@ class SetAuthFlowParamRequestDetailsType
 	public $ServiceDefReq1;
 
 	/**
-	*  The name of the field Merchant requires from PayPal after
-	*  user's login. Optional Character length and limitations: 256
-	*  single-byte alphanumeric characters
+	 * The name of the field Merchant requires from PayPal after
+	 * user's login. Optional Character length and limitations: 256
+	 * single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3979,9 +3979,9 @@ class SetAuthFlowParamRequestDetailsType
 	public $ServiceName2;
 
 	/**
-	*  Whether the field is required, opt-in or opt-out. Optional
-	*  Character length and limitations: 127 single-byte
-	*  alphanumeric characters
+	 * Whether the field is required, opt-in or opt-out. Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3992,11 +3992,11 @@ class SetAuthFlowParamRequestDetailsType
 	public $ServiceDefReq2;
 
 	/**
-	*  Locale of pages displayed by PayPal during Authentication
-	*  Login. Optional Character length and limitations: Five
-	*  single-byte alphabetic characters, upper- or lowercase.
-	*  Allowable values: AU or en_AUDE or de_DEFR or fr_FRGB or
-	*  en_GBIT or it_ITJP or ja_JPUS or en_US
+	 * Locale of pages displayed by PayPal during Authentication
+	 * Login. Optional Character length and limitations: Five
+	 * single-byte alphabetic characters, upper- or lowercase.
+	 * Allowable values: AU or en_AUDE or de_DEFR or fr_FRGB or
+	 * en_GBIT or it_ITJP or ja_JPUS or en_US
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4007,14 +4007,14 @@ class SetAuthFlowParamRequestDetailsType
 	public $LocaleCode;
 
 	/**
-	*  Sets the Custom Payment Page Style for flow pages associated
-	*  with this button/link. PageStyle corresponds to the HTML
-	*  variable page_style for customizing flow pages. The value is
-	*  the same as the Page Style Name you chose when adding or
-	*  editing the page style from the Profile subtab of the My
-	*  Account tab of your PayPal account. Optional Character
-	*  length and limitations: 30 single-byte alphabetic
-	*  characters. 
+	 * Sets the Custom Payment Page Style for flow pages associated
+	 * with this button/link. PageStyle corresponds to the HTML
+	 * variable page_style for customizing flow pages. The value is
+	 * the same as the Page Style Name you chose when adding or
+	 * editing the page style from the Profile subtab of the My
+	 * Account tab of your PayPal account. Optional Character
+	 * length and limitations: 30 single-byte alphabetic
+	 * characters. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4025,11 +4025,11 @@ class SetAuthFlowParamRequestDetailsType
 	public $PageStyle;
 
 	/**
-	*  A URL for the image you want to appear at the top left of
-	*  the flow page. The image has a maximum size of 750 pixels
-	*  wide by 90 pixels high. PayPal recommends that you provide
-	*  an image that is stored on a secure (https) server. Optional
-	*  Character length and limitations: 127
+	 * A URL for the image you want to appear at the top left of
+	 * the flow page. The image has a maximum size of 750 pixels
+	 * wide by 90 pixels high. PayPal recommends that you provide
+	 * an image that is stored on a secure (https) server. Optional
+	 * Character length and limitations: 127
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4042,11 +4042,11 @@ class SetAuthFlowParamRequestDetailsType
 	public $cppheaderimage;
 
 	/**
-	*  Sets the border color around the header of the flow page.
-	*  The border is a 2-pixel perimeter around the header space,
-	*  which is 750 pixels wide by 90 pixels high. Optional
-	*  Character length and limitations: Six character HTML
-	*  hexadecimal color code in ASCII
+	 * Sets the border color around the header of the flow page.
+	 * The border is a 2-pixel perimeter around the header space,
+	 * which is 750 pixels wide by 90 pixels high. Optional
+	 * Character length and limitations: Six character HTML
+	 * hexadecimal color code in ASCII
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4059,9 +4059,9 @@ class SetAuthFlowParamRequestDetailsType
 	public $cppheaderbordercolor;
 
 	/**
-	*  Sets the background color for the header of the flow page.
-	*  Optional Character length and limitation: Six character HTML
-	*  hexadecimal color code in ASCII
+	 * Sets the background color for the header of the flow page.
+	 * Optional Character length and limitation: Six character HTML
+	 * hexadecimal color code in ASCII
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4074,9 +4074,9 @@ class SetAuthFlowParamRequestDetailsType
 	public $cppheaderbackcolor;
 
 	/**
-	*  Sets the background color for the payment page. Optional
-	*  Character length and limitation: Six character HTML
-	*  hexadecimal color code in ASCII
+	 * Sets the background color for the payment page. Optional
+	 * Character length and limitation: Six character HTML
+	 * hexadecimal color code in ASCII
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4089,10 +4089,10 @@ class SetAuthFlowParamRequestDetailsType
 	public $cpppayflowcolor;
 
 	/**
-	*  First Name of the user, this information is used if user
-	*  chooses to signup with PayPal. Optional Character length and
-	*  limitation: Six character HTML hexadecimal color code in
-	*  ASCII
+	 * First Name of the user, this information is used if user
+	 * chooses to signup with PayPal. Optional Character length and
+	 * limitation: Six character HTML hexadecimal color code in
+	 * ASCII
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4103,10 +4103,10 @@ class SetAuthFlowParamRequestDetailsType
 	public $FirstName;
 
 	/**
-	*  Last Name of the user, this information is used if user
-	*  chooses to signup with PayPal. Optional Character length and
-	*  limitation: Six character HTML hexadecimal color code in
-	*  ASCII
+	 * Last Name of the user, this information is used if user
+	 * chooses to signup with PayPal. Optional Character length and
+	 * limitation: Six character HTML hexadecimal color code in
+	 * ASCII
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4117,11 +4117,11 @@ class SetAuthFlowParamRequestDetailsType
 	public $LastName;
 
 	/**
-	*  User address, this information is used when user chooses to
-	*  signup for PayPal. Optional If you include a shipping
-	*  address and set the AddressOverride element on the request,
-	*  PayPal returns this same address in
-	*  GetExpressCheckoutDetailsResponse. 
+	 * User address, this information is used when user chooses to
+	 * signup for PayPal. Optional If you include a shipping
+	 * address and set the AddressOverride element on the request,
+	 * PayPal returns this same address in
+	 * GetExpressCheckoutDetailsResponse. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4138,15 +4138,15 @@ class SetAuthFlowParamRequestDetailsType
 
 
 /**
- *  The first name of the User. Character length and
- *  limitations: 127 single-byte alphanumeric characters 
+ * The first name of the User. Character length and
+ * limitations: 127 single-byte alphanumeric characters 
  */
 class GetAuthDetailsResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  The first name of the User. Character length and
-	*  limitations: 127 single-byte alphanumeric characters
+	 * The first name of the User. Character length and
+	 * limitations: 127 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4157,8 +4157,8 @@ class GetAuthDetailsResponseDetailsType
 	public $FirstName;
 
 	/**
-	*  The Last name of the user. Character length and limitations:
-	*  127 single-byte alphanumeric characters
+	 * The Last name of the user. Character length and limitations:
+	 * 127 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4169,8 +4169,8 @@ class GetAuthDetailsResponseDetailsType
 	public $LastName;
 
 	/**
-	*  The email address of the user. Character length and
-	*  limitations: 256 single-byte alphanumeric characters. 
+	 * The email address of the user. Character length and
+	 * limitations: 256 single-byte alphanumeric characters. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4181,9 +4181,9 @@ class GetAuthDetailsResponseDetailsType
 	public $Email;
 
 	/**
-	*  Encrypted PayPal customer account identification number.
-	*  Required Character length and limitations: 127 single-byte
-	*  characters.
+	 * Encrypted PayPal customer account identification number.
+	 * Required Character length and limitations: 127 single-byte
+	 * characters.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4199,17 +4199,17 @@ class GetAuthDetailsResponseDetailsType
 
 
 /**
- *  URL to which the customer's browser is returned after
- *  choosing to login with PayPal. Required Character length and
- *  limitations: no limit. 
+ * URL to which the customer's browser is returned after
+ * choosing to login with PayPal. Required Character length and
+ * limitations: no limit. 
  */
 class SetAccessPermissionsRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  URL to which the customer's browser is returned after
-	*  choosing to login with PayPal. Required Character length and
-	*  limitations: no limit. 
+	 * URL to which the customer's browser is returned after
+	 * choosing to login with PayPal. Required Character length and
+	 * limitations: no limit. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4220,9 +4220,9 @@ class SetAccessPermissionsRequestDetailsType
 	public $ReturnURL;
 
 	/**
-	*  URL to which the customer is returned if he does not approve
-	*  the use of PayPal login. Required Character length and
-	*  limitations: no limit 
+	 * URL to which the customer is returned if he does not approve
+	 * the use of PayPal login. Required Character length and
+	 * limitations: no limit 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4233,9 +4233,9 @@ class SetAccessPermissionsRequestDetailsType
 	public $CancelURL;
 
 	/**
-	*  URL to which the customer's browser is returned after user
-	*  logs out from PayPal. Required Character length and
-	*  limitations: no limit. 
+	 * URL to which the customer's browser is returned after user
+	 * logs out from PayPal. Required Character length and
+	 * limitations: no limit. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4246,8 +4246,8 @@ class SetAccessPermissionsRequestDetailsType
 	public $LogoutURL;
 
 	/**
-	*  The type of the flow. Optional Character length and
-	*  limitations: 127 single-byte alphanumeric characters 
+	 * The type of the flow. Optional Character length and
+	 * limitations: 127 single-byte alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4258,9 +4258,9 @@ class SetAccessPermissionsRequestDetailsType
 	public $InitFlowType;
 
 	/**
-	*  The used to decide SkipLogin allowed or not. Optional
-	*  Character length and limitations: 127 single-byte
-	*  alphanumeric characters 
+	 * The used to decide SkipLogin allowed or not. Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4271,7 +4271,7 @@ class SetAccessPermissionsRequestDetailsType
 	public $SkipLoginPage;
 
 	/**
-	*  contains information about API Services 
+	 * contains information about API Services 
      * @array
 	 * @access public
 	 
@@ -4283,7 +4283,7 @@ class SetAccessPermissionsRequestDetailsType
 	public $RequiredAccessPermissions;
 
 	/**
-	*  contains information about API Services 
+	 * contains information about API Services 
      * @array
 	 * @access public
 	 
@@ -4295,11 +4295,11 @@ class SetAccessPermissionsRequestDetailsType
 	public $OptionalAccessPermissions;
 
 	/**
-	*  Locale of pages displayed by PayPal during Authentication
-	*  Login. Optional Character length and limitations: Five
-	*  single-byte alphabetic characters, upper- or lowercase.
-	*  Allowable values: AU or en_AUDE or de_DEFR or fr_FRGB or
-	*  en_GBIT or it_ITJP or ja_JPUS or en_US 
+	 * Locale of pages displayed by PayPal during Authentication
+	 * Login. Optional Character length and limitations: Five
+	 * single-byte alphabetic characters, upper- or lowercase.
+	 * Allowable values: AU or en_AUDE or de_DEFR or fr_FRGB or
+	 * en_GBIT or it_ITJP or ja_JPUS or en_US 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4310,14 +4310,14 @@ class SetAccessPermissionsRequestDetailsType
 	public $LocaleCode;
 
 	/**
-	*  Sets the Custom Payment Page Style for flow pages associated
-	*  with this button/link. PageStyle corresponds to the HTML
-	*  variable page_style for customizing flow pages. The value is
-	*  the same as the Page Style Name you chose when adding or
-	*  editing the page style from the Profile subtab of the My
-	*  Account tab of your PayPal account. Optional Character
-	*  length and limitations: 30 single-byte alphabetic
-	*  characters. 
+	 * Sets the Custom Payment Page Style for flow pages associated
+	 * with this button/link. PageStyle corresponds to the HTML
+	 * variable page_style for customizing flow pages. The value is
+	 * the same as the Page Style Name you chose when adding or
+	 * editing the page style from the Profile subtab of the My
+	 * Account tab of your PayPal account. Optional Character
+	 * length and limitations: 30 single-byte alphabetic
+	 * characters. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4328,11 +4328,11 @@ class SetAccessPermissionsRequestDetailsType
 	public $PageStyle;
 
 	/**
-	*  A URL for the image you want to appear at the top left of
-	*  the flow page. The image has a maximum size of 750 pixels
-	*  wide by 90 pixels high. PayPal recommends that you provide
-	*  an image that is stored on a secure (https) server. Optional
-	*  Character length and limitations: 127 
+	 * A URL for the image you want to appear at the top left of
+	 * the flow page. The image has a maximum size of 750 pixels
+	 * wide by 90 pixels high. PayPal recommends that you provide
+	 * an image that is stored on a secure (https) server. Optional
+	 * Character length and limitations: 127 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4345,11 +4345,11 @@ class SetAccessPermissionsRequestDetailsType
 	public $cppheaderimage;
 
 	/**
-	*  Sets the border color around the header of the flow page.
-	*  The border is a 2-pixel perimeter around the header space,
-	*  which is 750 pixels wide by 90 pixels high. Optional
-	*  Character length and limitations: Six character HTML
-	*  hexadecimal color code in ASCII 
+	 * Sets the border color around the header of the flow page.
+	 * The border is a 2-pixel perimeter around the header space,
+	 * which is 750 pixels wide by 90 pixels high. Optional
+	 * Character length and limitations: Six character HTML
+	 * hexadecimal color code in ASCII 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4362,9 +4362,9 @@ class SetAccessPermissionsRequestDetailsType
 	public $cppheaderbordercolor;
 
 	/**
-	*  Sets the background color for the header of the flow page.
-	*  Optional Character length and limitation: Six character HTML
-	*  hexadecimal color code in ASCII 
+	 * Sets the background color for the header of the flow page.
+	 * Optional Character length and limitation: Six character HTML
+	 * hexadecimal color code in ASCII 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4377,9 +4377,9 @@ class SetAccessPermissionsRequestDetailsType
 	public $cppheaderbackcolor;
 
 	/**
-	*  Sets the background color for the payment page. Optional
-	*  Character length and limitation: Six character HTML
-	*  hexadecimal color code in ASCII 
+	 * Sets the background color for the payment page. Optional
+	 * Character length and limitation: Six character HTML
+	 * hexadecimal color code in ASCII 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4392,10 +4392,10 @@ class SetAccessPermissionsRequestDetailsType
 	public $cpppayflowcolor;
 
 	/**
-	*  First Name of the user, this information is used if user
-	*  chooses to signup with PayPal. Optional Character length and
-	*  limitation: Six character HTML hexadecimal color code in
-	*  ASCII 
+	 * First Name of the user, this information is used if user
+	 * chooses to signup with PayPal. Optional Character length and
+	 * limitation: Six character HTML hexadecimal color code in
+	 * ASCII 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4406,10 +4406,10 @@ class SetAccessPermissionsRequestDetailsType
 	public $FirstName;
 
 	/**
-	*  Last Name of the user, this information is used if user
-	*  chooses to signup with PayPal. Optional Character length and
-	*  limitation: Six character HTML hexadecimal color code in
-	*  ASCII 
+	 * Last Name of the user, this information is used if user
+	 * chooses to signup with PayPal. Optional Character length and
+	 * limitation: Six character HTML hexadecimal color code in
+	 * ASCII 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4420,11 +4420,11 @@ class SetAccessPermissionsRequestDetailsType
 	public $LastName;
 
 	/**
-	*  User address, this information is used when user chooses to
-	*  signup for PayPal. Optional If you include a shipping
-	*  address and set the AddressOverride element on the request,
-	*  PayPal returns this same address in
-	*  GetExpressCheckoutDetailsResponse. 
+	 * User address, this information is used when user chooses to
+	 * signup for PayPal. Optional If you include a shipping
+	 * address and set the AddressOverride element on the request,
+	 * PayPal returns this same address in
+	 * GetExpressCheckoutDetailsResponse. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4441,15 +4441,15 @@ class SetAccessPermissionsRequestDetailsType
 
 
 /**
- *  The first name of the User. Character length and
- *  limitations: 127 single-byte alphanumeric characters 
+ * The first name of the User. Character length and
+ * limitations: 127 single-byte alphanumeric characters 
  */
 class GetAccessPermissionDetailsResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  The first name of the User. Character length and
-	*  limitations: 127 single-byte alphanumeric characters
+	 * The first name of the User. Character length and
+	 * limitations: 127 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4460,8 +4460,8 @@ class GetAccessPermissionDetailsResponseDetailsType
 	public $FirstName;
 
 	/**
-	*  The Last name of the user. Character length and limitations:
-	*  127 single-byte alphanumeric characters 
+	 * The Last name of the user. Character length and limitations:
+	 * 127 single-byte alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4472,8 +4472,8 @@ class GetAccessPermissionDetailsResponseDetailsType
 	public $LastName;
 
 	/**
-	*  The email address of the user. Character length and
-	*  limitations: 256 single-byte alphanumeric characters. 
+	 * The email address of the user. Character length and
+	 * limitations: 256 single-byte alphanumeric characters. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4484,7 +4484,7 @@ class GetAccessPermissionDetailsResponseDetailsType
 	public $Email;
 
 	/**
-	*  contains information about API Services 
+	 * contains information about API Services 
      * @array
 	 * @access public
 	 
@@ -4496,7 +4496,7 @@ class GetAccessPermissionDetailsResponseDetailsType
 	public $AccessPermissionName;
 
 	/**
-	*  contains information about API Services 
+	 * contains information about API Services 
      * @array
 	 * @access public
 	 
@@ -4508,9 +4508,9 @@ class GetAccessPermissionDetailsResponseDetailsType
 	public $AccessPermissionStatus;
 
 	/**
-	*  Encrypted PayPal customer account identification number.
-	*  Required Character length and limitations: 127 single-byte
-	*  characters. 
+	 * Encrypted PayPal customer account identification number.
+	 * Required Character length and limitations: 127 single-byte
+	 * characters. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4526,13 +4526,13 @@ class GetAccessPermissionDetailsResponseDetailsType
 
 
 /**
- *  
+ * 
  */
 class BAUpdateResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4543,7 +4543,7 @@ class BAUpdateResponseDetailsType
 	public $BillingAgreementID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4554,7 +4554,7 @@ class BAUpdateResponseDetailsType
 	public $BillingAgreementDescription;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4565,7 +4565,7 @@ class BAUpdateResponseDetailsType
 	public $BillingAgreementStatus;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4576,7 +4576,7 @@ class BAUpdateResponseDetailsType
 	public $BillingAgreementCustom;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4587,7 +4587,7 @@ class BAUpdateResponseDetailsType
 	public $PayerInfo;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4598,10 +4598,10 @@ class BAUpdateResponseDetailsType
 	public $BillingAgreementMax;
 
 	/**
-	*  Customer's billing address. Optional If you have credit card
-	*  mapped in your account then billing address of the credit
-	*  card is returned otherwise your primary address is returned
-	*  , PayPal returns this address in BAUpdateResponseDetails. 
+	 * Customer's billing address. Optional If you have credit card
+	 * mapped in your account then billing address of the credit
+	 * card is returned otherwise your primary address is returned
+	 * , PayPal returns this address in BAUpdateResponseDetails. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4617,14 +4617,14 @@ class BAUpdateResponseDetailsType
 
 
 /**
- *  MerchantPullPaymentResponseType Response data from the
- *  merchant pull. 
+ * MerchantPullPaymentResponseType Response data from the
+ * merchant pull. 
  */
 class MerchantPullPaymentResponseType  
    extends PPXmlMessage{
 
 	/**
-	*  information about the customer
+	 * information about the customer
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4635,7 +4635,7 @@ class MerchantPullPaymentResponseType
 	public $PayerInfo;
 
 	/**
-	*  Information about the transaction 
+	 * Information about the transaction 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4646,7 +4646,7 @@ class MerchantPullPaymentResponseType
 	public $PaymentInfo;
 
 	/**
-	*  Specific information about the preapproved payment 
+	 * Specific information about the preapproved payment 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4662,13 +4662,13 @@ class MerchantPullPaymentResponseType
 
 
 /**
- *  MerchantPullInfoType Information about the merchant pull. 
+ * MerchantPullInfoType Information about the merchant pull. 
  */
 class MerchantPullInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  Current status of billing agreement 
+	 * Current status of billing agreement 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4679,7 +4679,7 @@ class MerchantPullInfoType
 	public $MpStatus;
 
 	/**
-	*  Monthly maximum payment amount
+	 * Monthly maximum payment amount
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4690,9 +4690,9 @@ class MerchantPullInfoType
 	public $MpMax;
 
 	/**
-	*  The value of the mp_custom variable that you specified in a
-	*  FORM submission to PayPal during the creation or updating of
-	*  a customer billing agreement 
+	 * The value of the mp_custom variable that you specified in a
+	 * FORM submission to PayPal during the creation or updating of
+	 * a customer billing agreement 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4703,8 +4703,8 @@ class MerchantPullInfoType
 	public $MpCustom;
 
 	/**
-	*  The value of the mp_desc variable (description of goods or
-	*  services) associated with the billing agreement 
+	 * The value of the mp_desc variable (description of goods or
+	 * services) associated with the billing agreement 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4715,7 +4715,7 @@ class MerchantPullInfoType
 	public $Desc;
 
 	/**
-	*  Invoice value as set by BillUserRequest API call 
+	 * Invoice value as set by BillUserRequest API call 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4726,7 +4726,7 @@ class MerchantPullInfoType
 	public $Invoice;
 
 	/**
-	*  Custom field as set by BillUserRequest API call 
+	 * Custom field as set by BillUserRequest API call 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4737,7 +4737,7 @@ class MerchantPullInfoType
 	public $Custom;
 
 	/**
-	*  Note: This field is no longer used and is always empty.
+	 * Note: This field is no longer used and is always empty.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4753,15 +4753,15 @@ class MerchantPullInfoType
 
 
 /**
- *  PaymentTransactionSearchResultType Results from a
- *  PaymentTransaction search 
+ * PaymentTransactionSearchResultType Results from a
+ * PaymentTransaction search 
  */
 class PaymentTransactionSearchResultType  
    extends PPXmlMessage{
 
 	/**
-	*  The date and time (in UTC/GMT format) the transaction
-	*  occurred
+	 * The date and time (in UTC/GMT format) the transaction
+	 * occurred
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4772,7 +4772,7 @@ class PaymentTransactionSearchResultType
 	public $Timestamp;
 
 	/**
-	*  The time zone of the transaction 
+	 * The time zone of the transaction 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4783,7 +4783,7 @@ class PaymentTransactionSearchResultType
 	public $Timezone;
 
 	/**
-	*  The type of the transaction
+	 * The type of the transaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4794,7 +4794,7 @@ class PaymentTransactionSearchResultType
 	public $Type;
 
 	/**
-	*  The email address of the payer
+	 * The email address of the payer
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4805,7 +4805,7 @@ class PaymentTransactionSearchResultType
 	public $Payer;
 
 	/**
-	*  Display name of the payer
+	 * Display name of the payer
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4816,7 +4816,7 @@ class PaymentTransactionSearchResultType
 	public $PayerDisplayName;
 
 	/**
-	*  The transaction ID of the seller
+	 * The transaction ID of the seller
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4827,7 +4827,7 @@ class PaymentTransactionSearchResultType
 	public $TransactionID;
 
 	/**
-	*  The status of the transaction
+	 * The status of the transaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4838,8 +4838,8 @@ class PaymentTransactionSearchResultType
 	public $Status;
 
 	/**
-	*  The total gross amount charged, including any profile
-	*  shipping cost and taxes
+	 * The total gross amount charged, including any profile
+	 * shipping cost and taxes
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4850,7 +4850,7 @@ class PaymentTransactionSearchResultType
 	public $GrossAmount;
 
 	/**
-	*  The fee that PayPal charged for the transaction 
+	 * The fee that PayPal charged for the transaction 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4861,7 +4861,7 @@ class PaymentTransactionSearchResultType
 	public $FeeAmount;
 
 	/**
-	*  The net amount of the transaction 
+	 * The net amount of the transaction 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4877,18 +4877,18 @@ class PaymentTransactionSearchResultType
 
 
 /**
- *  MerchantPullPayment Parameters to make initiate a pull
- *  payment 
+ * MerchantPullPayment Parameters to make initiate a pull
+ * payment 
  */
 class MerchantPullPaymentType  
    extends PPXmlMessage{
 
 	/**
-	*  The amount to charge to the customer. Required Only numeric
-	*  characters and a decimal separator are allowed. Limit: 10
-	*  single-byte characters, including two for decimals You must
-	*  set the currencyID attribute to one of the three-character
-	*  currency code for any of the supported PayPal currencies. 
+	 * The amount to charge to the customer. Required Only numeric
+	 * characters and a decimal separator are allowed. Limit: 10
+	 * single-byte characters, including two for decimals You must
+	 * set the currencyID attribute to one of the three-character
+	 * currency code for any of the supported PayPal currencies. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4899,12 +4899,12 @@ class MerchantPullPaymentType
 	public $Amount;
 
 	/**
-	*  Preapproved Payments billing agreement identification number
-	*  between the PayPal customer and you. Required Character
-	*  limit: 19 single-byte alphanumeric characters. The format of
-	*  a billing agreement identification number is the
-	*  single-character prefix B, followed by a hyphen and an
-	*  alphanumeric character string: B-unique_alphanumeric_string
+	 * Preapproved Payments billing agreement identification number
+	 * between the PayPal customer and you. Required Character
+	 * limit: 19 single-byte alphanumeric characters. The format of
+	 * a billing agreement identification number is the
+	 * single-character prefix B, followed by a hyphen and an
+	 * alphanumeric character string: B-unique_alphanumeric_string
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4915,7 +4915,7 @@ class MerchantPullPaymentType
 	public $MpID;
 
 	/**
-	*  Specifies type of PayPal payment you require Optional
+	 * Specifies type of PayPal payment you require Optional
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4926,8 +4926,8 @@ class MerchantPullPaymentType
 	public $PaymentType;
 
 	/**
-	*  Text entered by the customer in the Note field during
-	*  enrollment Optional
+	 * Text entered by the customer in the Note field during
+	 * enrollment Optional
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4938,8 +4938,8 @@ class MerchantPullPaymentType
 	public $Memo;
 
 	/**
-	*  Subject line of confirmation email sent to recipient
-	*  Optional
+	 * Subject line of confirmation email sent to recipient
+	 * Optional
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4950,7 +4950,7 @@ class MerchantPullPaymentType
 	public $EmailSubject;
 
 	/**
-	*  The tax charged on the transaction Optional
+	 * The tax charged on the transaction Optional
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4961,7 +4961,7 @@ class MerchantPullPaymentType
 	public $Tax;
 
 	/**
-	*  Per-transaction shipping charge Optional
+	 * Per-transaction shipping charge Optional
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4972,7 +4972,7 @@ class MerchantPullPaymentType
 	public $Shipping;
 
 	/**
-	*  Per-transaction handling charge Optional
+	 * Per-transaction handling charge Optional
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4983,7 +4983,7 @@ class MerchantPullPaymentType
 	public $Handling;
 
 	/**
-	*  Name of purchased item Optional
+	 * Name of purchased item Optional
 	 * @access public
 	 
 	 * @namespace ebl
@@ -4994,7 +4994,7 @@ class MerchantPullPaymentType
 	public $ItemName;
 
 	/**
-	*  Reference number of purchased item Optional
+	 * Reference number of purchased item Optional
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5005,7 +5005,7 @@ class MerchantPullPaymentType
 	public $ItemNumber;
 
 	/**
-	*  Your invoice number Optional
+	 * Your invoice number Optional
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5016,7 +5016,7 @@ class MerchantPullPaymentType
 	public $Invoice;
 
 	/**
-	*  Custom annotation field for tracking or other use Optional
+	 * Custom annotation field for tracking or other use Optional
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5027,9 +5027,9 @@ class MerchantPullPaymentType
 	public $Custom;
 
 	/**
-	*  An identification code for use by third-party applications
-	*  to identify transactions. Optional Character length and
-	*  limitations: 32 single-byte alphanumeric characters
+	 * An identification code for use by third-party applications
+	 * to identify transactions. Optional Character length and
+	 * limitations: 32 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5040,9 +5040,9 @@ class MerchantPullPaymentType
 	public $ButtonSource;
 
 	/**
-	*  Passed in soft descriptor string to be appended. Optional
-	*  Character length and limitations: single-byte alphanumeric
-	*  characters
+	 * Passed in soft descriptor string to be appended. Optional
+	 * Character length and limitations: single-byte alphanumeric
+	 * characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5059,14 +5059,14 @@ class MerchantPullPaymentType
 
 
 /**
- *  PaymentTransactionType Information about a PayPal payment
- *  from the seller side 
+ * PaymentTransactionType Information about a PayPal payment
+ * from the seller side 
  */
 class PaymentTransactionType  
    extends PPXmlMessage{
 
 	/**
-	*  Information about the recipient of the payment 
+	 * Information about the recipient of the payment 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5077,7 +5077,7 @@ class PaymentTransactionType
 	public $ReceiverInfo;
 
 	/**
-	*  Information about the payer 
+	 * Information about the payer 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5088,8 +5088,8 @@ class PaymentTransactionType
 	public $PayerInfo;
 
 	/**
-	*  This field is for holding ReferenceId for shippment sent
-	*  from Merchant to the 3rd Party  
+	 * This field is for holding ReferenceId for shippment sent
+	 * from Merchant to the 3rd Party  
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5100,7 +5100,7 @@ class PaymentTransactionType
 	public $TPLReferenceID;
 
 	/**
-	*  Information about the transaction 
+	 * Information about the transaction 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5111,7 +5111,7 @@ class PaymentTransactionType
 	public $PaymentInfo;
 
 	/**
-	*  Information about an individual item in the transaction
+	 * Information about an individual item in the transaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5122,8 +5122,8 @@ class PaymentTransactionType
 	public $PaymentItemInfo;
 
 	/**
-	*  Information about an individual Offer and Coupon information
-	*  in the transaction
+	 * Information about an individual Offer and Coupon information
+	 * in the transaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5134,7 +5134,7 @@ class PaymentTransactionType
 	public $OfferCouponInfo;
 
 	/**
-	*  Information about Secondary Address
+	 * Information about Secondary Address
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5145,7 +5145,7 @@ class PaymentTransactionType
 	public $SecondaryAddress;
 
 	/**
-	*  Information about the user selected options.  
+	 * Information about the user selected options.  
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5156,7 +5156,7 @@ class PaymentTransactionType
 	public $UserSelectedOptions;
 
 	/**
-	*  Information about the Gift message.  
+	 * Information about the Gift message.  
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5167,7 +5167,7 @@ class PaymentTransactionType
 	public $GiftMessage;
 
 	/**
-	*  Information about the Gift receipt.  
+	 * Information about the Gift receipt.  
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5178,7 +5178,7 @@ class PaymentTransactionType
 	public $GiftReceipt;
 
 	/**
-	*  Information about the Gift Wrap name.  
+	 * Information about the Gift Wrap name.  
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5189,7 +5189,7 @@ class PaymentTransactionType
 	public $GiftWrapName;
 
 	/**
-	*  Information about the Gift Wrap amount.  
+	 * Information about the Gift Wrap amount.  
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5200,7 +5200,7 @@ class PaymentTransactionType
 	public $GiftWrapAmount;
 
 	/**
-	*  Information about the Buyer email.  
+	 * Information about the Buyer email.  
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5211,7 +5211,7 @@ class PaymentTransactionType
 	public $BuyerEmailOptIn;
 
 	/**
-	*  Information about the survey question.  
+	 * Information about the survey question.  
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5222,7 +5222,7 @@ class PaymentTransactionType
 	public $SurveyQuestion;
 
 	/**
-	*  Information about the survey choice selected by the user.  
+	 * Information about the survey choice selected by the user.  
      * @array
 	 * @access public
 	 
@@ -5239,16 +5239,16 @@ class PaymentTransactionType
 
 
 /**
- *  ReceiverInfoType Receiver information. 
+ * ReceiverInfoType Receiver information. 
  */
 class ReceiverInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  Email address or account ID of the payment recipient (the
-	*  seller). Equivalent to Receiver if payment is sent to
-	*  primary account. Character length and limitations: 127
-	*  single-byte alphanumeric characters
+	 * Email address or account ID of the payment recipient (the
+	 * seller). Equivalent to Receiver if payment is sent to
+	 * primary account. Character length and limitations: 127
+	 * single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5259,12 +5259,12 @@ class ReceiverInfoType
 	public $Business;
 
 	/**
-	*  Primary email address of the payment recipient (the seller).
-	*  If you are the recipient of the payment and the payment is
-	*  sent to your non-primary email address, the value of
-	*  Receiver is still your primary email address. Character
-	*  length and limitations: 127 single-byte alphanumeric
-	*  characters
+	 * Primary email address of the payment recipient (the seller).
+	 * If you are the recipient of the payment and the payment is
+	 * sent to your non-primary email address, the value of
+	 * Receiver is still your primary email address. Character
+	 * length and limitations: 127 single-byte alphanumeric
+	 * characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5275,9 +5275,9 @@ class ReceiverInfoType
 	public $Receiver;
 
 	/**
-	*  Unique account ID of the payment recipient (the seller).
-	*  This value is the same as the value of the recipient's
-	*  referral ID. 
+	 * Unique account ID of the payment recipient (the seller).
+	 * This value is the same as the value of the recipient's
+	 * referral ID. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5293,14 +5293,14 @@ class ReceiverInfoType
 
 
 /**
- *  PayerInfoType Payer information 
+ * PayerInfoType Payer information 
  */
 class PayerInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  Email address of payer Character length and limitations: 127
-	*  single-byte characters
+	 * Email address of payer Character length and limitations: 127
+	 * single-byte characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5311,8 +5311,8 @@ class PayerInfoType
 	public $Payer;
 
 	/**
-	*  Unique customer ID Character length and limitations: 17
-	*  single-byte characters
+	 * Unique customer ID Character length and limitations: 17
+	 * single-byte characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5323,7 +5323,7 @@ class PayerInfoType
 	public $PayerID;
 
 	/**
-	*  Status of payer's email address 
+	 * Status of payer's email address 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5334,7 +5334,7 @@ class PayerInfoType
 	public $PayerStatus;
 
 	/**
-	*  Name of payer 
+	 * Name of payer 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5345,9 +5345,9 @@ class PayerInfoType
 	public $PayerName;
 
 	/**
-	*  Payment sender's country of residence using standard
-	*  two-character ISO 3166 country codes. Character length and
-	*  limitations: Two single-byte characters
+	 * Payment sender's country of residence using standard
+	 * two-character ISO 3166 country codes. Character length and
+	 * limitations: Two single-byte characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5358,8 +5358,8 @@ class PayerInfoType
 	public $PayerCountry;
 
 	/**
-	*  Payer's business name. Character length and limitations: 127
-	*  single-byte characters
+	 * Payer's business name. Character length and limitations: 127
+	 * single-byte characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5370,7 +5370,7 @@ class PayerInfoType
 	public $PayerBusiness;
 
 	/**
-	*  Payer's business address
+	 * Payer's business address
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5381,7 +5381,7 @@ class PayerInfoType
 	public $Address;
 
 	/**
-	*  Business contact telephone number
+	 * Business contact telephone number
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5392,8 +5392,8 @@ class PayerInfoType
 	public $ContactPhone;
 
 	/**
-	*  Details about payer's tax info. Refer to the
-	*  TaxIdDetailsType for more details. 
+	 * Details about payer's tax info. Refer to the
+	 * TaxIdDetailsType for more details. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5404,7 +5404,7 @@ class PayerInfoType
 	public $TaxIdDetails;
 
 	/**
-	*  Holds any enhanced information about the payer
+	 * Holds any enhanced information about the payer
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5421,14 +5421,14 @@ class PayerInfoType
 
 
 /**
- *  InstrumentDetailsType Promotional Instrument Information. 
+ * InstrumentDetailsType Promotional Instrument Information. 
  */
 class InstrumentDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  This field holds the category of the instrument only when it
-	*  is promotional. Return value 1 represents BML. 
+	 * This field holds the category of the instrument only when it
+	 * is promotional. Return value 1 represents BML. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5444,13 +5444,13 @@ class InstrumentDetailsType
 
 
 /**
- *  BMLOfferInfoType Specific information for BML. 
+ * BMLOfferInfoType Specific information for BML. 
  */
 class BMLOfferInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  Unique identification for merchant/buyer/offer combo. 
+	 * Unique identification for merchant/buyer/offer combo. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5467,13 +5467,13 @@ class BMLOfferInfoType
 
 
 /**
- *  OfferDetailsType Specific information for an offer. 
+ * OfferDetailsType Specific information for an offer. 
  */
 class OfferDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Code used to identify the promotion offer. 
+	 * Code used to identify the promotion offer. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5484,8 +5484,8 @@ class OfferDetailsType
 	public $OfferCode;
 
 	/**
-	*  Specific infromation for BML, Similar structure could be
-	*  added for sepcific  promotion needs like CrossPromotions 
+	 * Specific infromation for BML, Similar structure could be
+	 * added for sepcific  promotion needs like CrossPromotions 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5502,14 +5502,14 @@ class OfferDetailsType
 
 
 /**
- *  PaymentInfoType Payment information. 
+ * PaymentInfoType Payment information. 
  */
 class PaymentInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  A transaction identification number. Character length and
-	*  limits: 19 single-byte characters maximum
+	 * A transaction identification number. Character length and
+	 * limits: 19 single-byte characters maximum
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5520,8 +5520,8 @@ class PaymentInfoType
 	public $TransactionID;
 
 	/**
-	*  Its Ebay transaction id. EbayTransactionID will returned for
-	*  immediate pay item transaction in ECA 
+	 * Its Ebay transaction id. EbayTransactionID will returned for
+	 * immediate pay item transaction in ECA 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5532,16 +5532,16 @@ class PaymentInfoType
 	public $EbayTransactionID;
 
 	/**
-	*  Parent or related transaction identification number. This
-	*  field is populated for the following transaction types:
-	*  ReversalCapture of an authorized transaction.Reauthorization
-	*  of a transaction.Capture of an order. The value of
-	*  ParentTransactionID is the original OrderID.Authorization of
-	*  an order. The value of ParentTransactionID is the original
-	*  OrderID.Capture of an order authorization.Void of an order.
-	*  The value of ParentTransactionID is the original OrderID.
-	*  Character length and limits: 19 single-byte characters
-	*  maximum
+	 * Parent or related transaction identification number. This
+	 * field is populated for the following transaction types:
+	 * ReversalCapture of an authorized transaction.Reauthorization
+	 * of a transaction.Capture of an order. The value of
+	 * ParentTransactionID is the original OrderID.Authorization of
+	 * an order. The value of ParentTransactionID is the original
+	 * OrderID.Capture of an order authorization.Void of an order.
+	 * The value of ParentTransactionID is the original OrderID.
+	 * Character length and limits: 19 single-byte characters
+	 * maximum
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5552,8 +5552,8 @@ class PaymentInfoType
 	public $ParentTransactionID;
 
 	/**
-	*  Receipt ID Character length and limitations: 16 digits in
-	*  xxxx-xxxx-xxxx-xxxx format
+	 * Receipt ID Character length and limitations: 16 digits in
+	 * xxxx-xxxx-xxxx-xxxx format
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5564,19 +5564,19 @@ class PaymentInfoType
 	public $ReceiptID;
 
 	/**
-	*  The type of transaction cart: Transaction created via the
-	*  PayPal Shopping Cart feature or by Express Checkout with
-	*  multiple purchased item express-checkout: Transaction
-	*  created by Express Checkout with a single purchased items
-	*  send-money: Transaction created by customer from the Send
-	*  Money tab on the PayPal website. web-accept: Transaction
-	*  created by customer via Buy Now, Donation, or Auction Smart
-	*  Logos. subscr-*: Transaction created by customer via
-	*  Subscription. eot means "end of subscription term."
-	*  merch-pmt: preapproved payment. mass-pay: Transaction
-	*  created via MassPay. virtual-terminal: Transaction created
-	*  via merchant virtual terminal. credit: Transaction created
-	*  via merchant virtual terminal or API to credit a customer.
+	 * The type of transaction cart: Transaction created via the
+	 * PayPal Shopping Cart feature or by Express Checkout with
+	 * multiple purchased item express-checkout: Transaction
+	 * created by Express Checkout with a single purchased items
+	 * send-money: Transaction created by customer from the Send
+	 * Money tab on the PayPal website. web-accept: Transaction
+	 * created by customer via Buy Now, Donation, or Auction Smart
+	 * Logos. subscr-*: Transaction created by customer via
+	 * Subscription. eot means "end of subscription term."
+	 * merch-pmt: preapproved payment. mass-pay: Transaction
+	 * created via MassPay. virtual-terminal: Transaction created
+	 * via merchant virtual terminal. credit: Transaction created
+	 * via merchant virtual terminal or API to credit a customer.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5587,7 +5587,7 @@ class PaymentInfoType
 	public $TransactionType;
 
 	/**
-	*  The type of payment
+	 * The type of payment
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5598,7 +5598,7 @@ class PaymentInfoType
 	public $PaymentType;
 
 	/**
-	*  The type of funding source
+	 * The type of funding source
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5609,7 +5609,7 @@ class PaymentInfoType
 	public $RefundSourceCodeType;
 
 	/**
-	*  eCheck latest expected clear date 
+	 * eCheck latest expected clear date 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5620,7 +5620,7 @@ class PaymentInfoType
 	public $ExpectedeCheckClearDate;
 
 	/**
-	*  Date and time of payment 
+	 * Date and time of payment 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5631,8 +5631,8 @@ class PaymentInfoType
 	public $PaymentDate;
 
 	/**
-	*  Full amount of the customer's payment, before transaction
-	*  fee is subtracted
+	 * Full amount of the customer's payment, before transaction
+	 * fee is subtracted
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5643,7 +5643,7 @@ class PaymentInfoType
 	public $GrossAmount;
 
 	/**
-	*  Transaction fee associated with the payment 
+	 * Transaction fee associated with the payment 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5654,11 +5654,11 @@ class PaymentInfoType
 	public $FeeAmount;
 
 	/**
-	*  Amount deposited into the account's primary balance after a
-	*  currency conversion from automatic conversion through your
-	*  Payment Receiving Preferences or manual conversion through
-	*  manually accepting a payment. This amount is calculated
-	*  after fees and taxes have been assessed. 
+	 * Amount deposited into the account's primary balance after a
+	 * currency conversion from automatic conversion through your
+	 * Payment Receiving Preferences or manual conversion through
+	 * manually accepting a payment. This amount is calculated
+	 * after fees and taxes have been assessed. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5669,7 +5669,7 @@ class PaymentInfoType
 	public $SettleAmount;
 
 	/**
-	*  Amount of tax for transaction 
+	 * Amount of tax for transaction 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5680,7 +5680,7 @@ class PaymentInfoType
 	public $TaxAmount;
 
 	/**
-	*  Exchange rate for transaction 
+	 * Exchange rate for transaction 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5691,32 +5691,32 @@ class PaymentInfoType
 	public $ExchangeRate;
 
 	/**
-	*  The status of the payment: None: No status Created: A
-	*  giropay payment has been initiated. Canceled-Reversal: A
-	*  reversal has been canceled. For example, you won a dispute
-	*  with the customer, and the funds for the transaction that
-	*  was reversed have been returned to you. Completed: The
-	*  payment has been completed, and the funds have been added
-	*  successfully to your account balance. Denied: You denied the
-	*  payment. This happens only if the payment was previously
-	*  pending because of possible reasons described for the
-	*  PendingReason element. Expired: This authorization has
-	*  expired and cannot be captured. Failed: The payment has
-	*  failed. This happens only if the payment was made from your
-	*  customer's bank account. In-Progress: The transaction is in
-	*  process of authorization and capture. Partially-Refunded:
-	*  The transaction has been partially refunded. Pending: The
-	*  payment is pending. See "PendingReason" for more
-	*  information. Refunded: You refunded the payment. Reversed: A
-	*  payment was reversed due to a chargeback or other type of
-	*  reversal. The funds have been removed from your account
-	*  balance and returned to the buyer. The reason for the
-	*  reversal is specified in the ReasonCode element. Processed:
-	*  A payment has been accepted. Voided: This authorization has
-	*  been voided. Completed-Funds-Held: The payment has been
-	*  completed, and the funds have been added successfully to
-	*  your pending balance. See the "HoldDecision" field for more
-	*  information.
+	 * The status of the payment: None: No status Created: A
+	 * giropay payment has been initiated. Canceled-Reversal: A
+	 * reversal has been canceled. For example, you won a dispute
+	 * with the customer, and the funds for the transaction that
+	 * was reversed have been returned to you. Completed: The
+	 * payment has been completed, and the funds have been added
+	 * successfully to your account balance. Denied: You denied the
+	 * payment. This happens only if the payment was previously
+	 * pending because of possible reasons described for the
+	 * PendingReason element. Expired: This authorization has
+	 * expired and cannot be captured. Failed: The payment has
+	 * failed. This happens only if the payment was made from your
+	 * customer's bank account. In-Progress: The transaction is in
+	 * process of authorization and capture. Partially-Refunded:
+	 * The transaction has been partially refunded. Pending: The
+	 * payment is pending. See "PendingReason" for more
+	 * information. Refunded: You refunded the payment. Reversed: A
+	 * payment was reversed due to a chargeback or other type of
+	 * reversal. The funds have been removed from your account
+	 * balance and returned to the buyer. The reason for the
+	 * reversal is specified in the ReasonCode element. Processed:
+	 * A payment has been accepted. Voided: This authorization has
+	 * been voided. Completed-Funds-Held: The payment has been
+	 * completed, and the funds have been added successfully to
+	 * your pending balance. See the "HoldDecision" field for more
+	 * information.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5727,37 +5727,37 @@ class PaymentInfoType
 	public $PaymentStatus;
 
 	/**
-	*  The reason the payment is pending: none: No pending reason
-	*  address: The payment is pending because your customer did
-	*  not include a confirmed shipping address and your Payment
-	*  Receiving Preferences is set such that you want to manually
-	*  accept or deny each of these payments. To change your
-	*  preference, go to the Preferences section of your Profile.
-	*  authorization: You set PaymentAction to Authorization on
-	*  SetExpressCheckoutRequest and have not yet captured funds.
-	*  echeck: The payment is pending because it was made by an
-	*  eCheck that has not yet cleared. intl: The payment is
-	*  pending because you hold a non-U.S. account and do not have
-	*  a withdrawal mechanism. You must manually accept or deny
-	*  this payment from your Account Overview. multi-currency: You
-	*  do not have a balance in the currency sent, and you do not
-	*  have your Payment Receiving Preferences set to automatically
-	*  convert and accept this payment. You must manually accept or
-	*  deny this payment. unilateral: The payment is pending
-	*  because it was made to an email address that is not yet
-	*  registered or confirmed. upgrade: The payment is pending
-	*  because it was made via credit card and you must upgrade
-	*  your account to Business or Premier status in order to
-	*  receive the funds. upgrade can also mean that you have
-	*  reached the monthly limit for transactions on your account.
-	*  verify: The payment is pending because you are not yet
-	*  verified. You must verify your account before you can accept
-	*  this payment. regulatory-review: This payment is pending
-	*  while we make sure it meets regulatory requirements. We'll
-	*  contact you again in 24-72 hours with the outcome of our
-	*  review. other: The payment is pending for a reason other
-	*  than those listed above. For more information, contact
-	*  PayPal Customer Service.
+	 * The reason the payment is pending: none: No pending reason
+	 * address: The payment is pending because your customer did
+	 * not include a confirmed shipping address and your Payment
+	 * Receiving Preferences is set such that you want to manually
+	 * accept or deny each of these payments. To change your
+	 * preference, go to the Preferences section of your Profile.
+	 * authorization: You set PaymentAction to Authorization on
+	 * SetExpressCheckoutRequest and have not yet captured funds.
+	 * echeck: The payment is pending because it was made by an
+	 * eCheck that has not yet cleared. intl: The payment is
+	 * pending because you hold a non-U.S. account and do not have
+	 * a withdrawal mechanism. You must manually accept or deny
+	 * this payment from your Account Overview. multi-currency: You
+	 * do not have a balance in the currency sent, and you do not
+	 * have your Payment Receiving Preferences set to automatically
+	 * convert and accept this payment. You must manually accept or
+	 * deny this payment. unilateral: The payment is pending
+	 * because it was made to an email address that is not yet
+	 * registered or confirmed. upgrade: The payment is pending
+	 * because it was made via credit card and you must upgrade
+	 * your account to Business or Premier status in order to
+	 * receive the funds. upgrade can also mean that you have
+	 * reached the monthly limit for transactions on your account.
+	 * verify: The payment is pending because you are not yet
+	 * verified. You must verify your account before you can accept
+	 * this payment. regulatory-review: This payment is pending
+	 * while we make sure it meets regulatory requirements. We'll
+	 * contact you again in 24-72 hours with the outcome of our
+	 * review. other: The payment is pending for a reason other
+	 * than those listed above. For more information, contact
+	 * PayPal Customer Service.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5768,17 +5768,17 @@ class PaymentInfoType
 	public $PendingReason;
 
 	/**
-	*  The reason for a reversal if TransactionType is reversal:
-	*  none: No reason code chargeback: A reversal has occurred on
-	*  this transaction due to a chargeback by your customer.
-	*  guarantee: A reversal has occurred on this transaction due
-	*  to your customer triggering a money-back guarantee.
-	*  buyer-complaint: A reversal has occurred on this transaction
-	*  due to a complaint about the transaction from your customer.
-	*  refund: A reversal has occurred on this transaction because
-	*  you have given the customer a refund. other: A reversal has
-	*  occurred on this transaction due to a reason not listed
-	*  above.
+	 * The reason for a reversal if TransactionType is reversal:
+	 * none: No reason code chargeback: A reversal has occurred on
+	 * this transaction due to a chargeback by your customer.
+	 * guarantee: A reversal has occurred on this transaction due
+	 * to your customer triggering a money-back guarantee.
+	 * buyer-complaint: A reversal has occurred on this transaction
+	 * due to a complaint about the transaction from your customer.
+	 * refund: A reversal has occurred on this transaction because
+	 * you have given the customer a refund. other: A reversal has
+	 * occurred on this transaction due to a reason not listed
+	 * above.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5789,11 +5789,11 @@ class PaymentInfoType
 	public $ReasonCode;
 
 	/**
-	*  HoldDecision is returned in the response only if
-	*  PaymentStatus is Completed-Funds-Held. The reason the funds
-	*  are kept in pending balance: newsellerpaymenthold: The
-	*  seller is new. paymenthold: A hold is placed on your
-	*  transaction due to a reason not listed above. 
+	 * HoldDecision is returned in the response only if
+	 * PaymentStatus is Completed-Funds-Held. The reason the funds
+	 * are kept in pending balance: newsellerpaymenthold: The
+	 * seller is new. paymenthold: A hold is placed on your
+	 * transaction due to a reason not listed above. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5804,7 +5804,7 @@ class PaymentInfoType
 	public $HoldDecision;
 
 	/**
-	*  Shipping method selected by the user during check-out. 
+	 * Shipping method selected by the user during check-out. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5815,8 +5815,8 @@ class PaymentInfoType
 	public $ShippingMethod;
 
 	/**
-	*  Protection Eligibility for this Transaction - None, SPP or
-	*  ESPP 
+	 * Protection Eligibility for this Transaction - None, SPP or
+	 * ESPP 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5827,7 +5827,7 @@ class PaymentInfoType
 	public $ProtectionEligibility;
 
 	/**
-	*  Protection Eligibility details for this Transaction 
+	 * Protection Eligibility details for this Transaction 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5838,7 +5838,7 @@ class PaymentInfoType
 	public $ProtectionEligibilityType;
 
 	/**
-	*  Receipt Reference Number for this Transaction 
+	 * Receipt Reference Number for this Transaction 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5849,10 +5849,10 @@ class PaymentInfoType
 	public $ReceiptReferenceNumber;
 
 	/**
-	*  The type of POS transaction F: Forced post transaction. POS
-	*  merchant can send transactions at a later point if
-	*  connectivity is lost. S: Single call checkout, and this is
-	*  to identify PayPal Lite API usage. 
+	 * The type of POS transaction F: Forced post transaction. POS
+	 * merchant can send transactions at a later point if
+	 * connectivity is lost. S: Single call checkout, and this is
+	 * to identify PayPal Lite API usage. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5863,7 +5863,7 @@ class PaymentInfoType
 	public $POSTransactionType;
 
 	/**
-	*  Amount of shipping charged on transaction
+	 * Amount of shipping charged on transaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5874,7 +5874,7 @@ class PaymentInfoType
 	public $ShipAmount;
 
 	/**
-	*  Amount of ship handling charged on transaction
+	 * Amount of ship handling charged on transaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5885,7 +5885,7 @@ class PaymentInfoType
 	public $ShipHandleAmount;
 
 	/**
-	*  Amount of shipping discount on transaction
+	 * Amount of shipping discount on transaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5896,7 +5896,7 @@ class PaymentInfoType
 	public $ShipDiscount;
 
 	/**
-	*  Amount of Insurance amount on transaction
+	 * Amount of Insurance amount on transaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5907,7 +5907,7 @@ class PaymentInfoType
 	public $InsuranceAmount;
 
 	/**
-	*  Subject as entered in the transaction
+	 * Subject as entered in the transaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5918,7 +5918,7 @@ class PaymentInfoType
 	public $Subject;
 
 	/**
-	*  StoreID as entered in the transaction
+	 * StoreID as entered in the transaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5929,7 +5929,7 @@ class PaymentInfoType
 	public $StoreID;
 
 	/**
-	*  TerminalID as entered in the transaction
+	 * TerminalID as entered in the transaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5940,7 +5940,7 @@ class PaymentInfoType
 	public $TerminalID;
 
 	/**
-	*  Details about the seller. Optional 
+	 * Details about the seller. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5951,8 +5951,8 @@ class PaymentInfoType
 	public $SellerDetails;
 
 	/**
-	*  Unique identifier and mandatory for each bucket in case of
-	*  split payement 
+	 * Unique identifier and mandatory for each bucket in case of
+	 * split payement 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5963,8 +5963,8 @@ class PaymentInfoType
 	public $PaymentRequestID;
 
 	/**
-	*  Thes are filters that could result in accept/deny/pending
-	*  action. 
+	 * Thes are filters that could result in accept/deny/pending
+	 * action. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5975,8 +5975,8 @@ class PaymentInfoType
 	public $FMFDetails;
 
 	/**
-	*  This will be enhanced info for the payment: Example: UATP
-	*  details 
+	 * This will be enhanced info for the payment: Example: UATP
+	 * details 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5987,8 +5987,8 @@ class PaymentInfoType
 	public $EnhancedPaymentInfo;
 
 	/**
-	*  This will indicate the payment status for individual payment
-	*  request in case of split payment 
+	 * This will indicate the payment status for individual payment
+	 * request in case of split payment 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5999,7 +5999,7 @@ class PaymentInfoType
 	public $PaymentError;
 
 	/**
-	*  Type of the payment instrument. 
+	 * Type of the payment instrument. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6010,7 +6010,7 @@ class PaymentInfoType
 	public $InstrumentDetails;
 
 	/**
-	*  Offer Details. 
+	 * Offer Details. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6021,17 +6021,17 @@ class PaymentInfoType
 	public $OfferDetails;
 
 	/**
-	*  This field indicates whether the credit card number used for
-	*  this transaction is in a particular bin range registered
-	*  with PayPal by the merchant. This filed is optional and will
-	*  be present if merchant has a registered bin range. The value
-	*  of this field will be “true” if merchant has a
-	*  registered bin range and the credit card used in the
-	*  transaction is within the registered bin range. The value of
-	*  this field will be false if merchant has a registered bin
-	*  range and credit card used in the transaction outside
-	*  registered bin range or the transaction is not done using a
-	*  credit card. 
+	 * This field indicates whether the credit card number used for
+	 * this transaction is in a particular bin range registered
+	 * with PayPal by the merchant. This filed is optional and will
+	 * be present if merchant has a registered bin range. The value
+	 * of this field will be “true” if merchant has a
+	 * registered bin range and the credit card used in the
+	 * transaction is within the registered bin range. The value of
+	 * this field will be false if merchant has a registered bin
+	 * range and credit card used in the transaction outside
+	 * registered bin range or the transaction is not done using a
+	 * credit card. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6048,13 +6048,13 @@ class PaymentInfoType
 
 /**
  * @hasAttribute
- *  SubscriptionTermsType Terms of a PayPal subscription. 
+ * SubscriptionTermsType Terms of a PayPal subscription. 
  */
 class SubscriptionTermsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6065,7 +6065,7 @@ class SubscriptionTermsType
 	public $Amount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6084,15 +6084,15 @@ class SubscriptionTermsType
 
 /**
  * @hasAttribute
- *  SubscriptionInfoType Information about a PayPal
- *  Subscription. 
+ * SubscriptionInfoType Information about a PayPal
+ * Subscription. 
  */
 class SubscriptionInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  ID generated by PayPal for the subscriber. Character length
-	*  and limitations: no limit
+	 * ID generated by PayPal for the subscriber. Character length
+	 * and limitations: no limit
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6103,7 +6103,7 @@ class SubscriptionInfoType
 	public $SubscriptionID;
 
 	/**
-	*  Subscription start date 
+	 * Subscription start date 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6114,7 +6114,7 @@ class SubscriptionInfoType
 	public $SubscriptionDate;
 
 	/**
-	*  Date when the subscription modification will be effective 
+	 * Date when the subscription modification will be effective 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6125,7 +6125,7 @@ class SubscriptionInfoType
 	public $EffectiveDate;
 
 	/**
-	*  Date PayPal will retry a failed subscription payment 
+	 * Date PayPal will retry a failed subscription payment 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6136,9 +6136,9 @@ class SubscriptionInfoType
 	public $RetryTime;
 
 	/**
-	*  Username generated by PayPal and given to subscriber to
-	*  access the subscription. Character length and limitations:
-	*  64 alphanumeric single-byte characters
+	 * Username generated by PayPal and given to subscriber to
+	 * access the subscription. Character length and limitations:
+	 * 64 alphanumeric single-byte characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6149,10 +6149,10 @@ class SubscriptionInfoType
 	public $Username;
 
 	/**
-	*  Password generated by PayPal and given to subscriber to
-	*  access the subscription. For security, the value of the
-	*  password is hashed. Character length and limitations: 128
-	*  alphanumeric single-byte characters
+	 * Password generated by PayPal and given to subscriber to
+	 * access the subscription. For security, the value of the
+	 * password is hashed. Character length and limitations: 128
+	 * alphanumeric single-byte characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6163,8 +6163,8 @@ class SubscriptionInfoType
 	public $Password;
 
 	/**
-	*  The number of payment installments that will occur at the
-	*  regular rate. Character length and limitations: no limit
+	 * The number of payment installments that will occur at the
+	 * regular rate. Character length and limitations: no limit
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6175,7 +6175,7 @@ class SubscriptionInfoType
 	public $Recurrences;
 
 	/**
-	*  Subscription duration and charges
+	 * Subscription duration and charges
      * @array
 	 * @access public
 	 
@@ -6187,7 +6187,7 @@ class SubscriptionInfoType
 	public $Terms;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6200,7 +6200,7 @@ class SubscriptionInfoType
 	public $reattempt;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6219,13 +6219,13 @@ class SubscriptionInfoType
 
 /**
  * @hasAttribute
- *  AuctionInfoType Basic information about an auction. 
+ * AuctionInfoType Basic information about an auction. 
  */
 class AuctionInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  Customer's auction ID 
+	 * Customer's auction ID 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6236,7 +6236,7 @@ class AuctionInfoType
 	public $BuyerID;
 
 	/**
-	*  Auction's close date 
+	 * Auction's close date 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6247,7 +6247,7 @@ class AuctionInfoType
 	public $ClosingDate;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6266,13 +6266,13 @@ class AuctionInfoType
 
 /**
  * @hasAttribute
- *  OptionType PayPal item options for shopping cart. 
+ * OptionType PayPal item options for shopping cart. 
  */
 class OptionType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6285,7 +6285,7 @@ class OptionType
 	public $name;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6303,15 +6303,15 @@ class OptionType
 
 
 /**
- *  EbayItemPaymentDetailsItemType - Type declaration to be used
- *  by other schemas. Information about an Ebay Payment Item. 
+ * EbayItemPaymentDetailsItemType - Type declaration to be used
+ * by other schemas. Information about an Ebay Payment Item. 
  */
 class EbayItemPaymentDetailsItemType  
    extends PPXmlMessage{
 
 	/**
-	*  Auction ItemNumber. Optional Character length and
-	*  limitations: 765 single-byte characters
+	 * Auction ItemNumber. Optional Character length and
+	 * limitations: 765 single-byte characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6322,8 +6322,8 @@ class EbayItemPaymentDetailsItemType
 	public $ItemNumber;
 
 	/**
-	*  Auction Transaction ID. Optional Character length and
-	*  limitations: 255 single-byte characters
+	 * Auction Transaction ID. Optional Character length and
+	 * limitations: 255 single-byte characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6334,8 +6334,8 @@ class EbayItemPaymentDetailsItemType
 	public $AuctionTransactionId;
 
 	/**
-	*  Ebay Order ID. Optional Character length and limitations: 64
-	*  single-byte characters
+	 * Ebay Order ID. Optional Character length and limitations: 64
+	 * single-byte characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6346,8 +6346,8 @@ class EbayItemPaymentDetailsItemType
 	public $OrderId;
 
 	/**
-	*  Ebay Cart ID. Optional Character length and limitations: 64
-	*  single-byte characters 
+	 * Ebay Cart ID. Optional Character length and limitations: 64
+	 * single-byte characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6364,14 +6364,14 @@ class EbayItemPaymentDetailsItemType
 
 
 /**
- *  PaymentDetailsItemType Information about a Payment Item. 
+ * PaymentDetailsItemType Information about a Payment Item. 
  */
 class PaymentDetailsItemType  
    extends PPXmlMessage{
 
 	/**
-	*  Item name. Optional Character length and limitations: 127
-	*  single-byte characters
+	 * Item name. Optional Character length and limitations: 127
+	 * single-byte characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6382,8 +6382,8 @@ class PaymentDetailsItemType
 	public $Name;
 
 	/**
-	*  Item number. Optional Character length and limitations: 127
-	*  single-byte characters
+	 * Item number. Optional Character length and limitations: 127
+	 * single-byte characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6394,8 +6394,8 @@ class PaymentDetailsItemType
 	public $Number;
 
 	/**
-	*  Item quantity. Optional Character length and limitations:
-	*  Any positive integer
+	 * Item quantity. Optional Character length and limitations:
+	 * Any positive integer
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6406,9 +6406,9 @@ class PaymentDetailsItemType
 	public $Quantity;
 
 	/**
-	*  Item sales tax. Optional Character length and limitations:
-	*  any valid currency amount; currency code is set the same as
-	*  for OrderTotal.
+	 * Item sales tax. Optional Character length and limitations:
+	 * any valid currency amount; currency code is set the same as
+	 * for OrderTotal.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6419,12 +6419,12 @@ class PaymentDetailsItemType
 	public $Tax;
 
 	/**
-	*  Cost of item You must set the currencyID attribute to one of
-	*  the three-character currency codes for any of the supported
-	*  PayPal currencies. Optional Limitations: Must not exceed
-	*  $10,000 USD in any currency. No currency symbol. Decimal
-	*  separator must be a period (.), and the thousands separator
-	*  must be a comma (,).
+	 * Cost of item You must set the currencyID attribute to one of
+	 * the three-character currency codes for any of the supported
+	 * PayPal currencies. Optional Limitations: Must not exceed
+	 * $10,000 USD in any currency. No currency symbol. Decimal
+	 * separator must be a period (.), and the thousands separator
+	 * must be a comma (,).
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6435,7 +6435,7 @@ class PaymentDetailsItemType
 	public $Amount;
 
 	/**
-	*  Ebay specific details. Optional 
+	 * Ebay specific details. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6446,8 +6446,8 @@ class PaymentDetailsItemType
 	public $EbayItemPaymentDetailsItem;
 
 	/**
-	*  Promotional financing code for item. Part of the Merchant
-	*  Services Promotion Financing feature. 
+	 * Promotional financing code for item. Part of the Merchant
+	 * Services Promotion Financing feature. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6458,7 +6458,7 @@ class PaymentDetailsItemType
 	public $PromoCode;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6469,8 +6469,8 @@ class PaymentDetailsItemType
 	public $ProductCategory;
 
 	/**
-	*  Item description. Optional Character length and limitations:
-	*  127 single-byte characters 
+	 * Item description. Optional Character length and limitations:
+	 * 127 single-byte characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6481,7 +6481,7 @@ class PaymentDetailsItemType
 	public $Description;
 
 	/**
-	*  Information about the Item weight. 
+	 * Information about the Item weight. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6492,7 +6492,7 @@ class PaymentDetailsItemType
 	public $ItemWeight;
 
 	/**
-	*  Information about the Item length. 
+	 * Information about the Item length. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6503,7 +6503,7 @@ class PaymentDetailsItemType
 	public $ItemLength;
 
 	/**
-	*  Information about the Item width. 
+	 * Information about the Item width. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6514,7 +6514,7 @@ class PaymentDetailsItemType
 	public $ItemWidth;
 
 	/**
-	*  Information about the Item height. 
+	 * Information about the Item height. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6525,8 +6525,8 @@ class PaymentDetailsItemType
 	public $ItemHeight;
 
 	/**
-	*  URL for the item. Optional Character length and limitations:
-	*  no limit. 
+	 * URL for the item. Optional Character length and limitations:
+	 * no limit. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6537,7 +6537,7 @@ class PaymentDetailsItemType
 	public $ItemURL;
 
 	/**
-	*  Enhanced data for each item in the cart. Optional 
+	 * Enhanced data for each item in the cart. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6548,7 +6548,7 @@ class PaymentDetailsItemType
 	public $EnhancedItemData;
 
 	/**
-	*  Item category - physical or digital. Optional 
+	 * Item category - physical or digital. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6565,14 +6565,14 @@ class PaymentDetailsItemType
 
 
 /**
- *  PaymentItemType Information about a Payment Item. 
+ * PaymentItemType Information about a Payment Item. 
  */
 class PaymentItemType  
    extends PPXmlMessage{
 
 	/**
-	*  eBay Auction Transaction ID of the Item Optional Character
-	*  length and limitations: 255 single-byte characters 
+	 * eBay Auction Transaction ID of the Item Optional Character
+	 * length and limitations: 255 single-byte characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6583,9 +6583,9 @@ class PaymentItemType
 	public $EbayItemTxnId;
 
 	/**
-	*  Item name set by you or entered by the customer. Character
-	*  length and limitations: 127 single-byte alphanumeric
-	*  characters
+	 * Item name set by you or entered by the customer. Character
+	 * length and limitations: 127 single-byte alphanumeric
+	 * characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6596,8 +6596,8 @@ class PaymentItemType
 	public $Name;
 
 	/**
-	*  Item number set by you. Character length and limitations:
-	*  127 single-byte alphanumeric characters
+	 * Item number set by you. Character length and limitations:
+	 * 127 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6608,8 +6608,8 @@ class PaymentItemType
 	public $Number;
 
 	/**
-	*  Quantity set by you or entered by the customer. Character
-	*  length and limitations: no limit
+	 * Quantity set by you or entered by the customer. Character
+	 * length and limitations: no limit
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6620,7 +6620,7 @@ class PaymentItemType
 	public $Quantity;
 
 	/**
-	*  Amount of tax charged on payment 
+	 * Amount of tax charged on payment 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6631,7 +6631,7 @@ class PaymentItemType
 	public $SalesTax;
 
 	/**
-	*  Amount of shipping charged on payment 
+	 * Amount of shipping charged on payment 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6642,7 +6642,7 @@ class PaymentItemType
 	public $ShippingAmount;
 
 	/**
-	*  Amount of handling charged on payment 
+	 * Amount of handling charged on payment 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6653,7 +6653,7 @@ class PaymentItemType
 	public $HandlingAmount;
 
 	/**
-	*  Invoice item details 
+	 * Invoice item details 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6664,7 +6664,7 @@ class PaymentItemType
 	public $InvoiceItemDetails;
 
 	/**
-	*  Coupon ID Number 
+	 * Coupon ID Number 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6675,7 +6675,7 @@ class PaymentItemType
 	public $CouponID;
 
 	/**
-	*  Amount Value of The Coupon 
+	 * Amount Value of The Coupon 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6686,7 +6686,7 @@ class PaymentItemType
 	public $CouponAmount;
 
 	/**
-	*  Currency of the Coupon Amount 
+	 * Currency of the Coupon Amount 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6697,7 +6697,7 @@ class PaymentItemType
 	public $CouponAmountCurrency;
 
 	/**
-	*  Amount of Discount on this Loyalty Card
+	 * Amount of Discount on this Loyalty Card
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6708,7 +6708,7 @@ class PaymentItemType
 	public $LoyaltyCardDiscountAmount;
 
 	/**
-	*  Currency of the Discount
+	 * Currency of the Discount
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6719,7 +6719,7 @@ class PaymentItemType
 	public $LoyaltyCardDiscountCurrency;
 
 	/**
-	*  Cost of item 
+	 * Cost of item 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6730,7 +6730,7 @@ class PaymentItemType
 	public $Amount;
 
 	/**
-	*  Item options selected in PayPal shopping cart 
+	 * Item options selected in PayPal shopping cart 
      * @array
 	 * @access public
 	 
@@ -6747,15 +6747,15 @@ class PaymentItemType
 
 
 /**
- *  PaymentItemInfoType Information about a PayPal item. 
+ * PaymentItemInfoType Information about a PayPal item. 
  */
 class PaymentItemInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  Invoice number you set in the original transaction.
-	*  Character length and limitations: 127 single-byte
-	*  alphanumeric characters 
+	 * Invoice number you set in the original transaction.
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6766,9 +6766,9 @@ class PaymentItemInfoType
 	public $InvoiceID;
 
 	/**
-	*  Custom field you set in the original transaction. Character
-	*  length and limitations: 127 single-byte alphanumeric
-	*  characters
+	 * Custom field you set in the original transaction. Character
+	 * length and limitations: 127 single-byte alphanumeric
+	 * characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6779,9 +6779,9 @@ class PaymentItemInfoType
 	public $Custom;
 
 	/**
-	*  Memo entered by your customer in PayPal Website Payments
-	*  note field. Character length and limitations: 255
-	*  single-byte alphanumeric characters
+	 * Memo entered by your customer in PayPal Website Payments
+	 * note field. Character length and limitations: 255
+	 * single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6792,7 +6792,7 @@ class PaymentItemInfoType
 	public $Memo;
 
 	/**
-	*  Amount of tax charged on transaction
+	 * Amount of tax charged on transaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6803,7 +6803,7 @@ class PaymentItemInfoType
 	public $SalesTax;
 
 	/**
-	*  Details about the indivudal purchased item
+	 * Details about the indivudal purchased item
      * @array
 	 * @access public
 	 
@@ -6815,8 +6815,8 @@ class PaymentItemInfoType
 	public $PaymentItem;
 
 	/**
-	*  Information about the transaction if it was created via
-	*  PayPal Subcriptions
+	 * Information about the transaction if it was created via
+	 * PayPal Subcriptions
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6827,8 +6827,8 @@ class PaymentItemInfoType
 	public $Subscription;
 
 	/**
-	*  Information about the transaction if it was created via an
-	*  auction
+	 * Information about the transaction if it was created via an
+	 * auction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6844,14 +6844,14 @@ class PaymentItemInfoType
 
 
 /**
- *  OffersAndCouponsInfoType Information about a Offers and
- *  Coupons. 
+ * OffersAndCouponsInfoType Information about a Offers and
+ * Coupons. 
  */
 class OfferCouponInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  Type of the incentive 
+	 * Type of the incentive 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6862,7 +6862,7 @@ class OfferCouponInfoType
 	public $Type;
 
 	/**
-	*  ID of the Incentive used in transaction
+	 * ID of the Incentive used in transaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6873,7 +6873,7 @@ class OfferCouponInfoType
 	public $ID;
 
 	/**
-	*  Amount used on transaction
+	 * Amount used on transaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6884,7 +6884,7 @@ class OfferCouponInfoType
 	public $Amount;
 
 	/**
-	*  Amount Currency
+	 * Amount Currency
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6900,20 +6900,20 @@ class OfferCouponInfoType
 
 
 /**
- *  PaymentDetailsType Information about a payment. Used by DCC
- *  and Express Checkout. 
+ * PaymentDetailsType Information about a payment. Used by DCC
+ * and Express Checkout. 
  */
 class PaymentDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Total of order, including shipping, handling, and tax. You
-	*  must set the currencyID attribute to one of the
-	*  three-character currency codes for any of the supported
-	*  PayPal currencies. Limitations: Must not exceed $10,000 USD
-	*  in any currency. No currency symbol. Decimal separator must
-	*  be a period (.), and the thousands separator must be a comma
-	*  (,). 
+	 * Total of order, including shipping, handling, and tax. You
+	 * must set the currencyID attribute to one of the
+	 * three-character currency codes for any of the supported
+	 * PayPal currencies. Limitations: Must not exceed $10,000 USD
+	 * in any currency. No currency symbol. Decimal separator must
+	 * be a period (.), and the thousands separator must be a comma
+	 * (,). 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6924,10 +6924,10 @@ class PaymentDetailsType
 	public $OrderTotal;
 
 	/**
-	*  Sum of cost of all items in this order. You must set the
-	*  currencyID attribute to one of the three-character currency
-	*  codes for any of the supported PayPal currencies. Optional
-	*  separator must be a comma (,).
+	 * Sum of cost of all items in this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * separator must be a comma (,).
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6938,12 +6938,12 @@ class PaymentDetailsType
 	public $ItemTotal;
 
 	/**
-	*  Total shipping costs for this order. You must set the
-	*  currencyID attribute to one of the three-character currency
-	*  codes for any of the supported PayPal currencies. Optional
-	*  Limitations: Must not exceed $10,000 USD in any currency. No
-	*  currency symbol. Decimal separator must be a period (.), and
-	*  the thousands separator must be a comma (,).
+	 * Total shipping costs for this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * Limitations: Must not exceed $10,000 USD in any currency. No
+	 * currency symbol. Decimal separator must be a period (.), and
+	 * the thousands separator must be a comma (,).
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6954,12 +6954,12 @@ class PaymentDetailsType
 	public $ShippingTotal;
 
 	/**
-	*  Total handling costs for this order. You must set the
-	*  currencyID attribute to one of the three-character currency
-	*  codes for any of the supported PayPal currencies. Optional
-	*  Limitations: Must not exceed $10,000 USD in any currency. No
-	*  currency symbol. Decimal separator must be a period (.), and
-	*  the thousands separator must be a comma (,).
+	 * Total handling costs for this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * Limitations: Must not exceed $10,000 USD in any currency. No
+	 * currency symbol. Decimal separator must be a period (.), and
+	 * the thousands separator must be a comma (,).
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6970,12 +6970,12 @@ class PaymentDetailsType
 	public $HandlingTotal;
 
 	/**
-	*  Sum of tax for all items in this order. You must set the
-	*  currencyID attribute to one of the three-character currency
-	*  codes for any of the supported PayPal currencies. Optional
-	*  Limitations: Must not exceed $10,000 USD in any currency. No
-	*  currency symbol. Decimal separator must be a period (.), and
-	*  the thousands separator must be a comma (,).
+	 * Sum of tax for all items in this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * Limitations: Must not exceed $10,000 USD in any currency. No
+	 * currency symbol. Decimal separator must be a period (.), and
+	 * the thousands separator must be a comma (,).
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6986,9 +6986,9 @@ class PaymentDetailsType
 	public $TaxTotal;
 
 	/**
-	*  Description of items the customer is purchasing. Optional
-	*  Character length and limitations: 127 single-byte
-	*  alphanumeric characters
+	 * Description of items the customer is purchasing. Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6999,9 +6999,9 @@ class PaymentDetailsType
 	public $OrderDescription;
 
 	/**
-	*  A free-form field for your own use. Optional Character
-	*  length and limitations: 256 single-byte alphanumeric
-	*  characters
+	 * A free-form field for your own use. Optional Character
+	 * length and limitations: 256 single-byte alphanumeric
+	 * characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7012,9 +7012,9 @@ class PaymentDetailsType
 	public $Custom;
 
 	/**
-	*  Your own invoice or tracking number. Optional Character
-	*  length and limitations: 127 single-byte alphanumeric
-	*  characters
+	 * Your own invoice or tracking number. Optional Character
+	 * length and limitations: 127 single-byte alphanumeric
+	 * characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7025,9 +7025,9 @@ class PaymentDetailsType
 	public $InvoiceID;
 
 	/**
-	*  An identification code for use by third-party applications
-	*  to identify transactions. Optional Character length and
-	*  limitations: 32 single-byte alphanumeric characters
+	 * An identification code for use by third-party applications
+	 * to identify transactions. Optional Character length and
+	 * limitations: 32 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7038,11 +7038,11 @@ class PaymentDetailsType
 	public $ButtonSource;
 
 	/**
-	*  Your URL for receiving Instant Payment Notification (IPN)
-	*  about this transaction. Optional If you do not specify
-	*  NotifyURL in the request, the notification URL from your
-	*  Merchant Profile is used, if one exists. Character length
-	*  and limitations: 2,048 single-byte alphanumeric characters
+	 * Your URL for receiving Instant Payment Notification (IPN)
+	 * about this transaction. Optional If you do not specify
+	 * NotifyURL in the request, the notification URL from your
+	 * Merchant Profile is used, if one exists. Character length
+	 * and limitations: 2,048 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7053,10 +7053,10 @@ class PaymentDetailsType
 	public $NotifyURL;
 
 	/**
-	*  Address the order will be shipped to. Optional If you
-	*  include the ShipToAddress element, the AddressType elements
-	*  are required: Name Street1 CityName CountryCode Do not set
-	*  set the CountryName element. 
+	 * Address the order will be shipped to. Optional If you
+	 * include the ShipToAddress element, the AddressType elements
+	 * are required: Name Street1 CityName CountryCode Do not set
+	 * set the CountryName element. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7067,8 +7067,8 @@ class PaymentDetailsType
 	public $ShipToAddress;
 
 	/**
-	*  Thirdparty Fulfillment Reference Number. Optional Character
-	*  length and limitations: 32 alphanumeric characters. 
+	 * Thirdparty Fulfillment Reference Number. Optional Character
+	 * length and limitations: 32 alphanumeric characters. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7079,7 +7079,7 @@ class PaymentDetailsType
 	public $FulfillmentReferenceNumber;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7090,7 +7090,7 @@ class PaymentDetailsType
 	public $FulfillmentAddress;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7101,7 +7101,7 @@ class PaymentDetailsType
 	public $PaymentCategoryType;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7112,8 +7112,8 @@ class PaymentDetailsType
 	public $ShippingMethod;
 
 	/**
-	*  Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at
-	*  which address was changed by the user. 
+	 * Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at
+	 * which address was changed by the user. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7124,7 +7124,7 @@ class PaymentDetailsType
 	public $ProfileAddressChangeDate;
 
 	/**
-	*  Information about the individual purchased items
+	 * Information about the individual purchased items
      * @array
 	 * @access public
 	 
@@ -7136,7 +7136,7 @@ class PaymentDetailsType
 	public $PaymentDetailsItem;
 
 	/**
-	*  Total shipping insurance costs for this order. Optional 
+	 * Total shipping insurance costs for this order. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7147,8 +7147,8 @@ class PaymentDetailsType
 	public $InsuranceTotal;
 
 	/**
-	*  Shipping discount for this order, specified as a negative
-	*  number. Optional 
+	 * Shipping discount for this order, specified as a negative
+	 * number. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7159,7 +7159,7 @@ class PaymentDetailsType
 	public $ShippingDiscount;
 
 	/**
-	*  Information about the Insurance options. 
+	 * Information about the Insurance options. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7170,7 +7170,7 @@ class PaymentDetailsType
 	public $InsuranceOptionOffered;
 
 	/**
-	*  Allowed payment methods for this transaction. 
+	 * Allowed payment methods for this transaction. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7181,8 +7181,8 @@ class PaymentDetailsType
 	public $AllowedPaymentMethod;
 
 	/**
-	*  Enhanced Data section to accept channel specific data.
-	*  Optional Refer to EnhancedPaymentDataType for details. 
+	 * Enhanced Data section to accept channel specific data.
+	 * Optional Refer to EnhancedPaymentDataType for details. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7193,7 +7193,7 @@ class PaymentDetailsType
 	public $EnhancedPaymentData;
 
 	/**
-	*  Details about the seller. Optional 
+	 * Details about the seller. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7204,8 +7204,8 @@ class PaymentDetailsType
 	public $SellerDetails;
 
 	/**
-	*  Note to recipient/seller. Optional Character length and
-	*  limitations: 127 single-byte alphanumeric characters. 
+	 * Note to recipient/seller. Optional Character length and
+	 * limitations: 127 single-byte alphanumeric characters. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7216,8 +7216,8 @@ class PaymentDetailsType
 	public $NoteText;
 
 	/**
-	*  PayPal Transaction Id, returned once DoExpressCheckout is
-	*  completed. 
+	 * PayPal Transaction Id, returned once DoExpressCheckout is
+	 * completed. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7228,18 +7228,18 @@ class PaymentDetailsType
 	public $TransactionId;
 
 	/**
-	*  How you want to obtain payment. This payment action input
-	*  will be used for split payments Authorization indicates that
-	*  this payment is a basic authorization subject to settlement
-	*  with PayPal Authorization and Capture. Order indicates that
-	*  this payment is is an order authorization subject to
-	*  settlement with PayPal Authorization and Capture. Sale
-	*  indicates that this is a final sale for which you are
-	*  requesting payment. IMPORTANT: You cannot set PaymentAction
-	*  to Sale on SetExpressCheckoutRequest and then change
-	*  PaymentAction to Authorization on the final Express Checkout
-	*  API, DoExpressCheckoutPaymentRequest. Character length and
-	*  limit: Up to 13 single-byte alphabetic characters 
+	 * How you want to obtain payment. This payment action input
+	 * will be used for split payments Authorization indicates that
+	 * this payment is a basic authorization subject to settlement
+	 * with PayPal Authorization and Capture. Order indicates that
+	 * this payment is is an order authorization subject to
+	 * settlement with PayPal Authorization and Capture. Sale
+	 * indicates that this is a final sale for which you are
+	 * requesting payment. IMPORTANT: You cannot set PaymentAction
+	 * to Sale on SetExpressCheckoutRequest and then change
+	 * PaymentAction to Authorization on the final Express Checkout
+	 * API, DoExpressCheckoutPaymentRequest. Character length and
+	 * limit: Up to 13 single-byte alphabetic characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7250,8 +7250,8 @@ class PaymentDetailsType
 	public $PaymentAction;
 
 	/**
-	*  Unique identifier and mandatory for the particular payment
-	*  request in case of multiple payment 
+	 * Unique identifier and mandatory for the particular payment
+	 * request in case of multiple payment 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7262,7 +7262,7 @@ class PaymentDetailsType
 	public $PaymentRequestID;
 
 	/**
-	*  URL on Merchant site pertaining to this invoice. Optional 
+	 * URL on Merchant site pertaining to this invoice. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7273,8 +7273,8 @@ class PaymentDetailsType
 	public $OrderURL;
 
 	/**
-	*  Soft Descriptor supported for Sale and Auth in DEC only. For
-	*  Order this will be ignored. 
+	 * Soft Descriptor supported for Sale and Auth in DEC only. For
+	 * Order this will be ignored. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7285,10 +7285,10 @@ class PaymentDetailsType
 	public $SoftDescriptor;
 
 	/**
-	*  BranchLevel is used to identify chain payment. If
-	*  BranchLevel is 0 or 1, this payment is where money moves to.
-	*  If BranchLevel greater than 1, this payment contains the
-	*  actual seller info. Optional 
+	 * BranchLevel is used to identify chain payment. If
+	 * BranchLevel is 0 or 1, this payment is where money moves to.
+	 * If BranchLevel greater than 1, this payment contains the
+	 * actual seller info. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7299,8 +7299,8 @@ class PaymentDetailsType
 	public $BranchLevel;
 
 	/**
-	*  Soft Descriptor supported for Sale and Auth in DEC only. For
-	*  Order this will be ignored. 
+	 * Soft Descriptor supported for Sale and Auth in DEC only. For
+	 * Order this will be ignored. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7311,7 +7311,7 @@ class PaymentDetailsType
 	public $OfferDetails;
 
 	/**
-	*  Flag to indicate the recurring transaction 
+	 * Flag to indicate the recurring transaction 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7322,7 +7322,7 @@ class PaymentDetailsType
 	public $Recurring;
 
 	/**
-	*  Indicates the purpose of this payment like Refund 
+	 * Indicates the purpose of this payment like Refund 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7339,16 +7339,16 @@ class PaymentDetailsType
 
 
 /**
- *  Information about the incentives that were applied from Ebay
- *  RYP page and PayPal RYP page. 
+ * Information about the incentives that were applied from Ebay
+ * RYP page and PayPal RYP page. 
  */
 class IncentiveDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Unique Identifier consisting of redemption code, user
-	*  friendly descripotion, incentive type, campaign code,
-	*  incenitve application order and site redeemed on. 
+	 * Unique Identifier consisting of redemption code, user
+	 * friendly descripotion, incentive type, campaign code,
+	 * incenitve application order and site redeemed on. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7359,8 +7359,8 @@ class IncentiveDetailsType
 	public $UniqueIdentifier;
 
 	/**
-	*  Defines if the incentive has been applied on Ebay or PayPal.
-	*  
+	 * Defines if the incentive has been applied on Ebay or PayPal.
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7371,8 +7371,8 @@ class IncentiveDetailsType
 	public $SiteAppliedOn;
 
 	/**
-	*  The total discount amount for the incentive, summation of
-	*  discounts up across all the buckets/items. 
+	 * The total discount amount for the incentive, summation of
+	 * discounts up across all the buckets/items. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7383,7 +7383,7 @@ class IncentiveDetailsType
 	public $TotalDiscountAmount;
 
 	/**
-	*  Status of incentive processing. Sussess or Error. 
+	 * Status of incentive processing. Sussess or Error. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7394,7 +7394,7 @@ class IncentiveDetailsType
 	public $Status;
 
 	/**
-	*  Error code if there are any errors. Zero otherwise. 
+	 * Error code if there are any errors. Zero otherwise. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7405,7 +7405,7 @@ class IncentiveDetailsType
 	public $ErrorCode;
 
 	/**
-	*  Details of incentive application on individual bucket/item. 
+	 * Details of incentive application on individual bucket/item. 
      * @array
 	 * @access public
 	 
@@ -7422,14 +7422,14 @@ class IncentiveDetailsType
 
 
 /**
- *  Details of incentive application on individual bucket/item. 
+ * Details of incentive application on individual bucket/item. 
  */
 class IncentiveAppliedDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  PaymentRequestID uniquely identifies a bucket. It is the
-	*  "bucket id" in the world of EC API. 
+	 * PaymentRequestID uniquely identifies a bucket. It is the
+	 * "bucket id" in the world of EC API. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7440,7 +7440,7 @@ class IncentiveAppliedDetailsType
 	public $PaymentRequestID;
 
 	/**
-	*  The item id passed through by the merchant. 
+	 * The item id passed through by the merchant. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7451,7 +7451,7 @@ class IncentiveAppliedDetailsType
 	public $ItemId;
 
 	/**
-	*  The item transaction id passed through by the merchant. 
+	 * The item transaction id passed through by the merchant. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7462,7 +7462,7 @@ class IncentiveAppliedDetailsType
 	public $ExternalTxnId;
 
 	/**
-	*  Discount offerred for this bucket or item. 
+	 * Discount offerred for this bucket or item. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7473,7 +7473,7 @@ class IncentiveAppliedDetailsType
 	public $DiscountAmount;
 
 	/**
-	*  SubType for coupon. 
+	 * SubType for coupon. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7489,13 +7489,13 @@ class IncentiveAppliedDetailsType
 
 
 /**
- *  Details about the seller. 
+ * Details about the seller. 
  */
 class SellerDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Unique identifier for the seller. Optional 
+	 * Unique identifier for the seller. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7506,8 +7506,8 @@ class SellerDetailsType
 	public $SellerId;
 
 	/**
-	*  The user name of the user at the marketplaces site. Optional
-	*  
+	 * The user name of the user at the marketplaces site. Optional
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7518,8 +7518,8 @@ class SellerDetailsType
 	public $SellerUserName;
 
 	/**
-	*  Date when the user registered with the marketplace. Optional
-	*  
+	 * Date when the user registered with the marketplace. Optional
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7530,8 +7530,8 @@ class SellerDetailsType
 	public $SellerRegistrationDate;
 
 	/**
-	*  Seller Paypal Account Id contains the seller EmailId or
-	*  PayerId or PhoneNo passed during the Request. 
+	 * Seller Paypal Account Id contains the seller EmailId or
+	 * PayerId or PhoneNo passed during the Request. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7542,9 +7542,9 @@ class SellerDetailsType
 	public $PayPalAccountID;
 
 	/**
-	*  Unique PayPal customer account identification number (of the
-	*  seller). This feild is meant for Response. This field is
-	*  ignored, if passed in the Request. 
+	 * Unique PayPal customer account identification number (of the
+	 * seller). This feild is meant for Response. This field is
+	 * ignored, if passed in the Request. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7561,14 +7561,14 @@ class SellerDetailsType
 
 
 /**
- *  Lists the Payment Methods (other than PayPal) that the use
- *  can pay with e.g. Money Order. Optional. 
+ * Lists the Payment Methods (other than PayPal) that the use
+ * can pay with e.g. Money Order. Optional. 
  */
 class OtherPaymentMethodDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  The identifier of the Payment Method. 
+	 * The identifier of the Payment Method. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7579,7 +7579,7 @@ class OtherPaymentMethodDetailsType
 	public $OtherPaymentMethodId;
 
 	/**
-	*  Valid values are 'Method', 'SubMethod'. 
+	 * Valid values are 'Method', 'SubMethod'. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7590,7 +7590,7 @@ class OtherPaymentMethodDetailsType
 	public $OtherPaymentMethodType;
 
 	/**
-	*  The name of the Payment Method. 
+	 * The name of the Payment Method. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7601,8 +7601,8 @@ class OtherPaymentMethodDetailsType
 	public $OtherPaymentMethodLabel;
 
 	/**
-	*  The short description of the Payment Method, goes along with
-	*  the label. 
+	 * The short description of the Payment Method, goes along with
+	 * the label. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7613,7 +7613,7 @@ class OtherPaymentMethodDetailsType
 	public $OtherPaymentMethodLabelDescription;
 
 	/**
-	*  The title for the long description. 
+	 * The title for the long description. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7624,7 +7624,7 @@ class OtherPaymentMethodDetailsType
 	public $OtherPaymentMethodLongDescriptionTitle;
 
 	/**
-	*  The long description of the Payment Method. 
+	 * The long description of the Payment Method. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7635,7 +7635,7 @@ class OtherPaymentMethodDetailsType
 	public $OtherPaymentMethodLongDescription;
 
 	/**
-	*  The icon of the Payment Method. 
+	 * The icon of the Payment Method. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7646,9 +7646,9 @@ class OtherPaymentMethodDetailsType
 	public $OtherPaymentMethodIcon;
 
 	/**
-	*  If this flag is true, then OtherPaymentMethodIcon is
-	*  required to have a valid value; the label will be hidden and
-	*  only ICON will be shown. 
+	 * If this flag is true, then OtherPaymentMethodIcon is
+	 * required to have a valid value; the label will be hidden and
+	 * only ICON will be shown. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7665,14 +7665,14 @@ class OtherPaymentMethodDetailsType
 
 
 /**
- *  Details about the buyer's account passed in by the merchant
- *  or partner. Optional. 
+ * Details about the buyer's account passed in by the merchant
+ * or partner. Optional. 
  */
 class BuyerDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  The client's unique ID for this user. 
+	 * The client's unique ID for this user. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7683,7 +7683,7 @@ class BuyerDetailsType
 	public $BuyerId;
 
 	/**
-	*  The user name of the user at the marketplaces site. 
+	 * The user name of the user at the marketplaces site. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7694,7 +7694,7 @@ class BuyerDetailsType
 	public $BuyerUserName;
 
 	/**
-	*  Date when the user registered with the marketplace. 
+	 * Date when the user registered with the marketplace. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7705,8 +7705,8 @@ class BuyerDetailsType
 	public $BuyerRegistrationDate;
 
 	/**
-	*  Details about payer's tax info. Refer to the
-	*  TaxIdDetailsType for more details. 
+	 * Details about payer's tax info. Refer to the
+	 * TaxIdDetailsType for more details. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7717,8 +7717,8 @@ class BuyerDetailsType
 	public $TaxIdDetails;
 
 	/**
-	*  Contains information that identifies the buyer. e.g. email
-	*  address or the external remember me id. 
+	 * Contains information that identifies the buyer. e.g. email
+	 * address or the external remember me id. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7735,14 +7735,14 @@ class BuyerDetailsType
 
 
 /**
- *  Details about the payer's tax info passed in by the merchant
- *  or partner. Optional. 
+ * Details about the payer's tax info passed in by the merchant
+ * or partner. Optional. 
  */
 class TaxIdDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  The payer's Tax ID type; CNPJ/CPF for BR country. 
+	 * The payer's Tax ID type; CNPJ/CPF for BR country. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7753,7 +7753,7 @@ class TaxIdDetailsType
 	public $TaxIdType;
 
 	/**
-	*  The payer's Tax ID 
+	 * The payer's Tax ID 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7770,13 +7770,13 @@ class TaxIdDetailsType
 
 
 /**
- *  The Common 3DS fields. Common for both GTD and DCC API's. 
+ * The Common 3DS fields. Common for both GTD and DCC API's. 
  */
 class ThreeDSecureRequestType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7787,7 +7787,7 @@ class ThreeDSecureRequestType
 	public $Eci3ds;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7798,7 +7798,7 @@ class ThreeDSecureRequestType
 	public $Cavv;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7809,7 +7809,7 @@ class ThreeDSecureRequestType
 	public $Xid;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7820,7 +7820,7 @@ class ThreeDSecureRequestType
 	public $MpiVendor3ds;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7837,13 +7837,13 @@ class ThreeDSecureRequestType
 
 
 /**
- *  3DS remaining fields. 
+ * 3DS remaining fields. 
  */
 class ThreeDSecureResponseType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7854,7 +7854,7 @@ class ThreeDSecureResponseType
 	public $Vpas;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7870,13 +7870,13 @@ class ThreeDSecureResponseType
 
 
 /**
- *  3DSecureInfoType Information about 3D Secure parameters. 
+ * 3DSecureInfoType Information about 3D Secure parameters. 
  */
 class ThreeDSecureInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7887,7 +7887,7 @@ class ThreeDSecureInfoType
 	public $ThreeDSecureRequest;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7903,13 +7903,13 @@ class ThreeDSecureInfoType
 
 
 /**
- *  CreditCardDetailsType Information about a Credit Card. 
+ * CreditCardDetailsType Information about a Credit Card. 
  */
 class CreditCardDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7920,7 +7920,7 @@ class CreditCardDetailsType
 	public $CreditCardType;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7931,7 +7931,7 @@ class CreditCardDetailsType
 	public $CreditCardNumber;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7942,7 +7942,7 @@ class CreditCardDetailsType
 	public $ExpMonth;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7953,7 +7953,7 @@ class CreditCardDetailsType
 	public $ExpYear;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7964,7 +7964,7 @@ class CreditCardDetailsType
 	public $CardOwner;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7975,7 +7975,7 @@ class CreditCardDetailsType
 	public $CVV2;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7986,7 +7986,7 @@ class CreditCardDetailsType
 	public $StartMonth;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -7997,7 +7997,7 @@ class CreditCardDetailsType
 	public $StartYear;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8008,7 +8008,7 @@ class CreditCardDetailsType
 	public $IssueNumber;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8025,13 +8025,13 @@ class CreditCardDetailsType
 
 
 /**
- *  Fallback shipping options type. 
+ * Fallback shipping options type. 
  */
 class ShippingOptionType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8042,7 +8042,7 @@ class ShippingOptionType
 	public $ShippingOptionIsDefault;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8053,7 +8053,7 @@ class ShippingOptionType
 	public $ShippingOptionAmount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8070,13 +8070,13 @@ class ShippingOptionType
 
 
 /**
- *  Information on user selected options 
+ * Information on user selected options 
  */
 class UserSelectedOptionType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8087,7 +8087,7 @@ class UserSelectedOptionType
 	public $ShippingCalculationMode;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8098,7 +8098,7 @@ class UserSelectedOptionType
 	public $InsuranceOptionSelected;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8109,7 +8109,7 @@ class UserSelectedOptionType
 	public $ShippingOptionIsDefault;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8120,7 +8120,7 @@ class UserSelectedOptionType
 	public $ShippingOptionAmount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8137,13 +8137,13 @@ class UserSelectedOptionType
 
 
 /**
- *  
+ * 
  */
 class CreditCardNumberTypeType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8154,7 +8154,7 @@ class CreditCardNumberTypeType
 	public $CreditCardType;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8171,14 +8171,14 @@ class CreditCardNumberTypeType
 
 
 /**
- *  CreditCardDetailsType for DCC Reference Transaction
- *  Information about a Credit Card. 
+ * CreditCardDetailsType for DCC Reference Transaction
+ * Information about a Credit Card. 
  */
 class ReferenceCreditCardDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8189,7 +8189,7 @@ class ReferenceCreditCardDetailsType
 	public $CreditCardNumberType;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8200,7 +8200,7 @@ class ReferenceCreditCardDetailsType
 	public $ExpMonth;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8211,7 +8211,7 @@ class ReferenceCreditCardDetailsType
 	public $ExpYear;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8222,7 +8222,7 @@ class ReferenceCreditCardDetailsType
 	public $CardOwnerName;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8233,7 +8233,7 @@ class ReferenceCreditCardDetailsType
 	public $BillingAddress;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8244,7 +8244,7 @@ class ReferenceCreditCardDetailsType
 	public $CVV2;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8255,7 +8255,7 @@ class ReferenceCreditCardDetailsType
 	public $StartMonth;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8266,7 +8266,7 @@ class ReferenceCreditCardDetailsType
 	public $StartYear;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8283,13 +8283,13 @@ class ReferenceCreditCardDetailsType
 
 
 /**
- *  
+ * 
  */
 class SetCustomerBillingAgreementRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8300,7 +8300,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $BillingAgreementDetails;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8311,7 +8311,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $ReturnURL;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8322,7 +8322,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $CancelURL;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8333,7 +8333,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $LocaleCode;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8344,7 +8344,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $PageStyle;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8357,7 +8357,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $cppheaderimage;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8370,7 +8370,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $cppheaderbordercolor;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8383,7 +8383,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $cppheaderbackcolor;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8396,7 +8396,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $cpppayflowcolor;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8407,10 +8407,10 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $BuyerEmail;
 
 	/**
-	*  The value 1 indicates that you require that the customer's
-	*  billing address on file. Setting this element overrides the
-	*  setting you have specified in Admin. Optional Character
-	*  length and limitations: One single-byte numeric character.
+	 * The value 1 indicates that you require that the customer's
+	 * billing address on file. Setting this element overrides the
+	 * setting you have specified in Admin. Optional Character
+	 * length and limitations: One single-byte numeric character.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8436,13 +8436,13 @@ class SetCustomerBillingAgreementRequestDetailsType
 
 
 /**
- *  
+ * 
  */
 class GetBillingAgreementCustomerDetailsResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8453,11 +8453,11 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType
 	public $PayerInfo;
 
 	/**
-	*  Customer's billing address. Optional If you have a credit
-	*  card mapped in your PayPal account, PayPal returns the
-	*  billing address of the credit billing address otherwise your
-	*  primary address as billing address in
-	*  GetBillingAgreementCustomerDetails.
+	 * Customer's billing address. Optional If you have a credit
+	 * card mapped in your PayPal account, PayPal returns the
+	 * billing address of the credit billing address otherwise your
+	 * primary address as billing address in
+	 * GetBillingAgreementCustomerDetails.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8473,17 +8473,17 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType
 
 
 /**
- *  Device ID Optional  Character length and limits: 256
- *  single-byte characters DeviceID length morethan 256 is
- *  truncated  
+ * Device ID Optional  Character length and limits: 256
+ * single-byte characters DeviceID length morethan 256 is
+ * truncated  
  */
 class DeviceDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Device ID Optional  Character length and limits: 256
-	*  single-byte characters DeviceID length morethan 256 is
-	*  truncated  
+	 * Device ID Optional  Character length and limits: 256
+	 * single-byte characters DeviceID length morethan 256 is
+	 * truncated  
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8500,13 +8500,13 @@ class DeviceDetailsType
 
 
 /**
- *  
+ * 
  */
 class SenderDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8523,13 +8523,13 @@ class SenderDetailsType
 
 
 /**
- *  
+ * 
  */
 class DoReferenceTransactionRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8540,7 +8540,7 @@ class DoReferenceTransactionRequestDetailsType
 	public $ReferenceID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8551,7 +8551,7 @@ class DoReferenceTransactionRequestDetailsType
 	public $PaymentAction;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8562,7 +8562,7 @@ class DoReferenceTransactionRequestDetailsType
 	public $PaymentType;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8573,7 +8573,7 @@ class DoReferenceTransactionRequestDetailsType
 	public $PaymentDetails;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8584,7 +8584,7 @@ class DoReferenceTransactionRequestDetailsType
 	public $CreditCard;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8595,7 +8595,7 @@ class DoReferenceTransactionRequestDetailsType
 	public $IPAddress;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8606,7 +8606,7 @@ class DoReferenceTransactionRequestDetailsType
 	public $MerchantSessionId;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8617,7 +8617,7 @@ class DoReferenceTransactionRequestDetailsType
 	public $ReqConfirmShipping;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8628,7 +8628,7 @@ class DoReferenceTransactionRequestDetailsType
 	public $SoftDescriptor;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8639,9 +8639,9 @@ class DoReferenceTransactionRequestDetailsType
 	public $SenderDetails;
 
 	/**
-	*  Unique id for each API request to prevent duplicate
-	*  payments. Optional Character length and limits: 38
-	*  single-byte characters maximum. 
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8667,13 +8667,13 @@ class DoReferenceTransactionRequestDetailsType
 
 
 /**
- *  
+ * 
  */
 class DoReferenceTransactionResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8684,7 +8684,7 @@ class DoReferenceTransactionResponseDetailsType
 	public $BillingAgreementID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8695,7 +8695,7 @@ class DoReferenceTransactionResponseDetailsType
 	public $PaymentInfo;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8706,7 +8706,7 @@ class DoReferenceTransactionResponseDetailsType
 	public $Amount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8717,7 +8717,7 @@ class DoReferenceTransactionResponseDetailsType
 	public $AVSCode;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8728,7 +8728,7 @@ class DoReferenceTransactionResponseDetailsType
 	public $CVV2Code;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8739,8 +8739,8 @@ class DoReferenceTransactionResponseDetailsType
 	public $TransactionID;
 
 	/**
-	*  Response code from the processor when a recurring
-	*  transaction is declined 
+	 * Response code from the processor when a recurring
+	 * transaction is declined 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8751,7 +8751,7 @@ class DoReferenceTransactionResponseDetailsType
 	public $PaymentAdviceCode;
 
 	/**
-	*  Return msgsubid back to merchant 
+	 * Return msgsubid back to merchant 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8767,13 +8767,13 @@ class DoReferenceTransactionResponseDetailsType
 
 
 /**
- *  
+ * 
  */
 class DoNonReferencedCreditRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8784,7 +8784,7 @@ class DoNonReferencedCreditRequestDetailsType
 	public $Amount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8795,7 +8795,7 @@ class DoNonReferencedCreditRequestDetailsType
 	public $NetAmount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8806,7 +8806,7 @@ class DoNonReferencedCreditRequestDetailsType
 	public $TaxAmount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8817,7 +8817,7 @@ class DoNonReferencedCreditRequestDetailsType
 	public $ShippingAmount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8828,7 +8828,7 @@ class DoNonReferencedCreditRequestDetailsType
 	public $CreditCard;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8839,7 +8839,7 @@ class DoNonReferencedCreditRequestDetailsType
 	public $ReceiverEmail;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8856,13 +8856,13 @@ class DoNonReferencedCreditRequestDetailsType
 
 
 /**
- *  
+ * 
  */
 class DoNonReferencedCreditResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8873,7 +8873,7 @@ class DoNonReferencedCreditResponseDetailsType
 	public $Amount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8889,16 +8889,16 @@ class DoNonReferencedCreditResponseDetailsType
 
 
 /**
- *  Onboarding program code given to you by PayPal. Required
- *  Character length and limitations: 64 alphanumeric characters
- *  
+ * Onboarding program code given to you by PayPal. Required
+ * Character length and limitations: 64 alphanumeric characters
+ * 
  */
 class EnterBoardingRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Onboarding program code given to you by PayPal. Required
-	*  Character length and limitations: 64 alphanumeric characters
+	 * Onboarding program code given to you by PayPal. Required
+	 * Character length and limitations: 64 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8909,18 +8909,18 @@ class EnterBoardingRequestDetailsType
 	public $ProgramCode;
 
 	/**
-	*  A list of comma-separated values that indicate the PayPal
-	*  products you are implementing for this merchant: Direct
-	*  Payment (dp) allows payments by credit card without
-	*  requiring the customer to have a PayPal account. Express
-	*  Checkout (ec) allows customers to fund transactions with
-	*  their PayPal account. Authorization and Capture
-	*  (auth_settle) allows merchants to verify availability of
-	*  funds in a PayPal account, but capture them at a later time.
-	*  Administrative APIs (admin_api) is a collection of the
-	*  PayPal APIs for transaction searching, getting transaction
-	*  details, refunding, and mass payments. Required Character
-	*  length and limitations: 64 alphanumeric characters
+	 * A list of comma-separated values that indicate the PayPal
+	 * products you are implementing for this merchant: Direct
+	 * Payment (dp) allows payments by credit card without
+	 * requiring the customer to have a PayPal account. Express
+	 * Checkout (ec) allows customers to fund transactions with
+	 * their PayPal account. Authorization and Capture
+	 * (auth_settle) allows merchants to verify availability of
+	 * funds in a PayPal account, but capture them at a later time.
+	 * Administrative APIs (admin_api) is a collection of the
+	 * PayPal APIs for transaction searching, getting transaction
+	 * details, refunding, and mass payments. Required Character
+	 * length and limitations: 64 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8931,9 +8931,9 @@ class EnterBoardingRequestDetailsType
 	public $ProductList;
 
 	/**
-	*  Any custom information you want to store for this partner
-	*  Optional Character length and limitations: 256 alphanumeric
-	*  characters
+	 * Any custom information you want to store for this partner
+	 * Optional Character length and limitations: 256 alphanumeric
+	 * characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8944,9 +8944,9 @@ class EnterBoardingRequestDetailsType
 	public $PartnerCustom;
 
 	/**
-	*  The URL for the logo displayed on the PayPal Partner Welcome
-	*  Page. Optional Character length and limitations: 2,048
-	*  alphanumeric characters
+	 * The URL for the logo displayed on the PayPal Partner Welcome
+	 * Page. Optional Character length and limitations: 2,048
+	 * alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8957,8 +8957,8 @@ class EnterBoardingRequestDetailsType
 	public $ImageUrl;
 
 	/**
-	*  Marketing category tha configures the graphic displayed n
-	*  the PayPal Partner Welcome page.
+	 * Marketing category tha configures the graphic displayed n
+	 * the PayPal Partner Welcome page.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8969,7 +8969,7 @@ class EnterBoardingRequestDetailsType
 	public $MarketingCategory;
 
 	/**
-	*  Information about the merchant’s business
+	 * Information about the merchant’s business
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8980,7 +8980,7 @@ class EnterBoardingRequestDetailsType
 	public $BusinessInfo;
 
 	/**
-	*  Information about the merchant (the business owner)
+	 * Information about the merchant (the business owner)
 	 * @access public
 	 
 	 * @namespace ebl
@@ -8991,7 +8991,7 @@ class EnterBoardingRequestDetailsType
 	public $OwnerInfo;
 
 	/**
-	*  Information about the merchant's bank account
+	 * Information about the merchant's bank account
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9008,13 +9008,13 @@ class EnterBoardingRequestDetailsType
 
 
 /**
- *  BusinessInfoType 
+ * BusinessInfoType 
  */
 class BusinessInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  Type of business, such as corporation or sole proprietorship
+	 * Type of business, such as corporation or sole proprietorship
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9025,8 +9025,8 @@ class BusinessInfoType
 	public $Type;
 
 	/**
-	*  Official name of business Character length and limitations:
-	*  75 alphanumeric characters
+	 * Official name of business Character length and limitations:
+	 * 75 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9037,7 +9037,7 @@ class BusinessInfoType
 	public $Name;
 
 	/**
-	*  Merchant’s business postal address
+	 * Merchant’s business postal address
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9048,8 +9048,8 @@ class BusinessInfoType
 	public $Address;
 
 	/**
-	*  Business’s primary telephone number Character length and
-	*  limitations: 20 alphanumeric characters
+	 * Business’s primary telephone number Character length and
+	 * limitations: 20 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9060,7 +9060,7 @@ class BusinessInfoType
 	public $WorkPhone;
 
 	/**
-	*  Line of business, as defined in the enumerations
+	 * Line of business, as defined in the enumerations
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9071,7 +9071,7 @@ class BusinessInfoType
 	public $Category;
 
 	/**
-	*  Business sub-category, as defined in the enumerations
+	 * Business sub-category, as defined in the enumerations
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9082,18 +9082,18 @@ class BusinessInfoType
 	public $SubCategory;
 
 	/**
-	*  Average transaction price, as defined by the enumerations.
-	*  Enumeration Meaning AverageTransactionPrice-Not-Applicable
-	*  AverageTransactionPrice-Range1 Less than $25 USD
-	*  AverageTransactionPrice-Range2 $25 USD to $50 USD
-	*  AverageTransactionPrice-Range3 $50 USD to $100 USD
-	*  AverageTransactionPrice-Range4 $100 USD to $250 USD
-	*  AverageTransactionPrice-Range5 $250 USD to $500 USD
-	*  AverageTransactionPrice-Range6 $500 USD to $1,000 USD
-	*  AverageTransactionPrice-Range7 $1,000 USD to $2,000 USD
-	*  AverageTransactionPrice-Range8 $2,000 USD to $5,000 USD
-	*  AverageTransactionPrice-Range9 $5,000 USD to $10,000 USD
-	*  AverageTransactionPrice-Range10 More than $10,000 USD 
+	 * Average transaction price, as defined by the enumerations.
+	 * Enumeration Meaning AverageTransactionPrice-Not-Applicable
+	 * AverageTransactionPrice-Range1 Less than $25 USD
+	 * AverageTransactionPrice-Range2 $25 USD to $50 USD
+	 * AverageTransactionPrice-Range3 $50 USD to $100 USD
+	 * AverageTransactionPrice-Range4 $100 USD to $250 USD
+	 * AverageTransactionPrice-Range5 $250 USD to $500 USD
+	 * AverageTransactionPrice-Range6 $500 USD to $1,000 USD
+	 * AverageTransactionPrice-Range7 $1,000 USD to $2,000 USD
+	 * AverageTransactionPrice-Range8 $2,000 USD to $5,000 USD
+	 * AverageTransactionPrice-Range9 $5,000 USD to $10,000 USD
+	 * AverageTransactionPrice-Range10 More than $10,000 USD 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9104,15 +9104,15 @@ class BusinessInfoType
 	public $AveragePrice;
 
 	/**
-	*  Average monthly sales volume, as defined by the
-	*  enumerations. Enumeration Meaning
-	*  AverageMonthlyVolume-Not-Applicable
-	*  AverageMonthlyVolume-Range1 Less than $1,000 USD
-	*  AverageMonthlyVolume-Range2 $1,000 USD to $5,000 USD
-	*  AverageMonthlyVolume-Range3 $5,000 USD to $25,000 USD
-	*  AverageMonthlyVolume-Range4 $25,000 USD to $100,000 USD
-	*  AverageMonthlyVolume-Range5 $100,000 USD to $1,000,000 USD
-	*  AverageMonthlyVolume-Range6 More than $1,000,000 USD 
+	 * Average monthly sales volume, as defined by the
+	 * enumerations. Enumeration Meaning
+	 * AverageMonthlyVolume-Not-Applicable
+	 * AverageMonthlyVolume-Range1 Less than $1,000 USD
+	 * AverageMonthlyVolume-Range2 $1,000 USD to $5,000 USD
+	 * AverageMonthlyVolume-Range3 $5,000 USD to $25,000 USD
+	 * AverageMonthlyVolume-Range4 $25,000 USD to $100,000 USD
+	 * AverageMonthlyVolume-Range5 $100,000 USD to $1,000,000 USD
+	 * AverageMonthlyVolume-Range6 More than $1,000,000 USD 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9123,7 +9123,7 @@ class BusinessInfoType
 	public $AverageMonthlyVolume;
 
 	/**
-	*  Main sales venue, such as eBay
+	 * Main sales venue, such as eBay
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9134,8 +9134,8 @@ class BusinessInfoType
 	public $SalesVenue;
 
 	/**
-	*  Primary URL of business Character length and limitations:
-	*  2,048 alphanumeric characters
+	 * Primary URL of business Character length and limitations:
+	 * 2,048 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9146,13 +9146,13 @@ class BusinessInfoType
 	public $Website;
 
 	/**
-	*  Percentage of revenue attributable to online sales, as
-	*  defined by the enumerations Enumeration Meaning
-	*  PercentageRevenueFromOnlineSales-Not-Applicable
-	*  PercentageRevenueFromOnlineSales-Range1 Less than 25%
-	*  PercentageRevenueFromOnlineSales-Range2 25% to 50%
-	*  PercentageRevenueFromOnlineSales-Range3 50% to 75%
-	*  PercentageRevenueFromOnlineSales-Range4 75% to 100% 
+	 * Percentage of revenue attributable to online sales, as
+	 * defined by the enumerations Enumeration Meaning
+	 * PercentageRevenueFromOnlineSales-Not-Applicable
+	 * PercentageRevenueFromOnlineSales-Range1 Less than 25%
+	 * PercentageRevenueFromOnlineSales-Range2 25% to 50%
+	 * PercentageRevenueFromOnlineSales-Range3 50% to 75%
+	 * PercentageRevenueFromOnlineSales-Range4 75% to 100% 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9163,7 +9163,7 @@ class BusinessInfoType
 	public $RevenueFromOnlineSales;
 
 	/**
-	*  Date the merchant’s business was established
+	 * Date the merchant’s business was established
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9174,9 +9174,9 @@ class BusinessInfoType
 	public $BusinessEstablished;
 
 	/**
-	*  Email address to contact business’s customer service
-	*  Character length and limitations: 127 alphanumeric
-	*  characters
+	 * Email address to contact business’s customer service
+	 * Character length and limitations: 127 alphanumeric
+	 * characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9187,8 +9187,8 @@ class BusinessInfoType
 	public $CustomerServiceEmail;
 
 	/**
-	*  Telephone number to contact business’s customer service
-	*  Character length and limitations: 32 alphanumeric characters
+	 * Telephone number to contact business’s customer service
+	 * Character length and limitations: 32 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9205,13 +9205,13 @@ class BusinessInfoType
 
 
 /**
- *  BusinessOwnerInfoType 
+ * BusinessOwnerInfoType 
  */
 class BusinessOwnerInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  Details about the business owner
+	 * Details about the business owner
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9222,8 +9222,8 @@ class BusinessOwnerInfoType
 	public $Owner;
 
 	/**
-	*  Business owner’s home telephone number Character length
-	*  and limitations: 32 alphanumeric characters
+	 * Business owner’s home telephone number Character length
+	 * and limitations: 32 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9234,8 +9234,8 @@ class BusinessOwnerInfoType
 	public $HomePhone;
 
 	/**
-	*  Business owner’s mobile telephone number Character length
-	*  and limitations: 32 alphanumeric characters
+	 * Business owner’s mobile telephone number Character length
+	 * and limitations: 32 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9246,8 +9246,8 @@ class BusinessOwnerInfoType
 	public $MobilePhone;
 
 	/**
-	*  Business owner’s social security number Character length
-	*  and limitations: 9 alphanumeric characters
+	 * Business owner’s social security number Character length
+	 * and limitations: 9 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9264,14 +9264,14 @@ class BusinessOwnerInfoType
 
 
 /**
- *  BankAccountDetailsType 
+ * BankAccountDetailsType 
  */
 class BankAccountDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Name of bank Character length and limitations: 192
-	*  alphanumeric characters
+	 * Name of bank Character length and limitations: 192
+	 * alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9282,7 +9282,7 @@ class BankAccountDetailsType
 	public $Name;
 
 	/**
-	*  Type of bank account: Checking or Savings
+	 * Type of bank account: Checking or Savings
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9293,8 +9293,8 @@ class BankAccountDetailsType
 	public $Type;
 
 	/**
-	*  Merchant’s bank routing number Character length and
-	*  limitations: 23 alphanumeric characters
+	 * Merchant’s bank routing number Character length and
+	 * limitations: 23 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9305,8 +9305,8 @@ class BankAccountDetailsType
 	public $RoutingNumber;
 
 	/**
-	*  Merchant’s bank account number Character length and
-	*  limitations: 256 alphanumeric characters
+	 * Merchant’s bank account number Character length and
+	 * limitations: 256 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9323,17 +9323,17 @@ class BankAccountDetailsType
 
 
 /**
- *  Status of merchant's onboarding process:
- *  CompletedCancelledPending Character length and limitations:
- *  Eight alphabetic characters 
+ * Status of merchant's onboarding process:
+ * CompletedCancelledPending Character length and limitations:
+ * Eight alphabetic characters 
  */
 class GetBoardingDetailsResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Status of merchant's onboarding process:
-	*  CompletedCancelledPending Character length and limitations:
-	*  Eight alphabetic characters
+	 * Status of merchant's onboarding process:
+	 * CompletedCancelledPending Character length and limitations:
+	 * Eight alphabetic characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9344,7 +9344,7 @@ class GetBoardingDetailsResponseDetailsType
 	public $Status;
 
 	/**
-	*  Date the boarding process started
+	 * Date the boarding process started
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9355,7 +9355,7 @@ class GetBoardingDetailsResponseDetailsType
 	public $StartDate;
 
 	/**
-	*  Date the merchant’s status or progress was last updated
+	 * Date the merchant’s status or progress was last updated
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9366,8 +9366,8 @@ class GetBoardingDetailsResponseDetailsType
 	public $LastUpdated;
 
 	/**
-	*  Reason for merchant’s cancellation of sign-up. Character
-	*  length and limitations: 1,024 alphanumeric characters
+	 * Reason for merchant’s cancellation of sign-up. Character
+	 * length and limitations: 1,024 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9378,7 +9378,7 @@ class GetBoardingDetailsResponseDetailsType
 	public $Reason;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9389,7 +9389,7 @@ class GetBoardingDetailsResponseDetailsType
 	public $ProgramName;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9400,7 +9400,7 @@ class GetBoardingDetailsResponseDetailsType
 	public $ProgramCode;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9411,8 +9411,8 @@ class GetBoardingDetailsResponseDetailsType
 	public $CampaignID;
 
 	/**
-	*  Indicates if there is a limitation on the amount of money
-	*  the business can withdraw from PayPal
+	 * Indicates if there is a limitation on the amount of money
+	 * the business can withdraw from PayPal
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9423,9 +9423,9 @@ class GetBoardingDetailsResponseDetailsType
 	public $UserWithdrawalLimit;
 
 	/**
-	*  Custom information you set on the EnterBoarding API call
-	*  Character length and limitations: 256 alphanumeric
-	*  characters
+	 * Custom information you set on the EnterBoarding API call
+	 * Character length and limitations: 256 alphanumeric
+	 * characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9436,7 +9436,7 @@ class GetBoardingDetailsResponseDetailsType
 	public $PartnerCustom;
 
 	/**
-	*  Details about the owner of the account
+	 * Details about the owner of the account
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9447,7 +9447,7 @@ class GetBoardingDetailsResponseDetailsType
 	public $AccountOwner;
 
 	/**
-	*  Merchant’s PayPal API credentials
+	 * Merchant’s PayPal API credentials
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9458,9 +9458,9 @@ class GetBoardingDetailsResponseDetailsType
 	public $Credentials;
 
 	/**
-	*  The APIs that this merchant has granted the business partner
-	*  permission to call on his behalf. For example:
-	*  SetExpressCheckout,GetExpressCheckoutDetails,DoExpressCheckoutPayment
+	 * The APIs that this merchant has granted the business partner
+	 * permission to call on his behalf. For example:
+	 * SetExpressCheckout,GetExpressCheckoutDetails,DoExpressCheckoutPayment
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9471,7 +9471,7 @@ class GetBoardingDetailsResponseDetailsType
 	public $ConfigureAPIs;
 
 	/**
-	*  Primary email verification status. Confirmed, Unconfirmed
+	 * Primary email verification status. Confirmed, Unconfirmed
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9482,9 +9482,9 @@ class GetBoardingDetailsResponseDetailsType
 	public $EmailVerificationStatus;
 
 	/**
-	*  Gives VettingStatus - Pending, Cancelled, Approved,
-	*  UnderReview Character length and limitations: 256
-	*  alphanumeric characters
+	 * Gives VettingStatus - Pending, Cancelled, Approved,
+	 * UnderReview Character length and limitations: 256
+	 * alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9495,9 +9495,9 @@ class GetBoardingDetailsResponseDetailsType
 	public $VettingStatus;
 
 	/**
-	*  Gives BankAccountVerificationStatus - Added, Confirmed
-	*  Character length and limitations: 256 alphanumeric
-	*  characters
+	 * Gives BankAccountVerificationStatus - Added, Confirmed
+	 * Character length and limitations: 256 alphanumeric
+	 * characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9513,14 +9513,14 @@ class GetBoardingDetailsResponseDetailsType
 
 
 /**
- *  APICredentialsType 
+ * APICredentialsType 
  */
 class APICredentialsType  
    extends PPXmlMessage{
 
 	/**
-	*  Merchant’s PayPal API usernameCharacter length and
-	*  limitations: 128 alphanumeric characters
+	 * Merchant’s PayPal API usernameCharacter length and
+	 * limitations: 128 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9531,8 +9531,8 @@ class APICredentialsType
 	public $Username;
 
 	/**
-	*  Merchant’s PayPal API passwordCharacter length and
-	*  limitations: 40 alphanumeric characters
+	 * Merchant’s PayPal API passwordCharacter length and
+	 * limitations: 40 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9543,8 +9543,8 @@ class APICredentialsType
 	public $Password;
 
 	/**
-	*  Merchant’s PayPal API signature, if one exists. Character
-	*  length and limitations: 256 alphanumeric characters
+	 * Merchant’s PayPal API signature, if one exists. Character
+	 * length and limitations: 256 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9555,11 +9555,11 @@ class APICredentialsType
 	public $Signature;
 
 	/**
-	*  Merchant’s PayPal API certificate in PEM format, if one
-	*  exists The certificate consists of two parts: the private
-	*  key (2,048 bytes) and the certificate proper (4,000 bytes).
-	*  Character length and limitations: 6,048 alphanumeric
-	*  characters
+	 * Merchant’s PayPal API certificate in PEM format, if one
+	 * exists The certificate consists of two parts: the private
+	 * key (2,048 bytes) and the certificate proper (4,000 bytes).
+	 * Character length and limitations: 6,048 alphanumeric
+	 * characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9570,10 +9570,10 @@ class APICredentialsType
 	public $Certificate;
 
 	/**
-	*  Merchant’s PayPal API authentication mechanism. Auth-None:
-	*  no authentication mechanism on file Cert: API certificate
-	*  Sign: API signature Character length and limitations: 9
-	*  alphanumeric characters
+	 * Merchant’s PayPal API authentication mechanism. Auth-None:
+	 * no authentication mechanism on file Cert: API certificate
+	 * Sign: API signature Character length and limitations: 9
+	 * alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9589,15 +9589,15 @@ class APICredentialsType
 
 
 /**
- *  The phone number of the buyer's mobile device, if available.
- *  Optional 
+ * The phone number of the buyer's mobile device, if available.
+ * Optional 
  */
 class SetMobileCheckoutRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  The phone number of the buyer's mobile device, if available.
-	*  Optional 
+	 * The phone number of the buyer's mobile device, if available.
+	 * Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9608,9 +9608,9 @@ class SetMobileCheckoutRequestDetailsType
 	public $BuyerPhone;
 
 	/**
-	*  Cost of this item before tax and shipping.You must set the
-	*  currencyID attribute to one of the three-character currency
-	*  codes for any of the supported PayPal currencies. Required
+	 * Cost of this item before tax and shipping.You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Required
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9621,9 +9621,9 @@ class SetMobileCheckoutRequestDetailsType
 	public $ItemAmount;
 
 	/**
-	*  Tax amount for this item.You must set the currencyID
-	*  attribute to one of the three-character currency codes for
-	*  any of the supported PayPal currencies. Optional
+	 * Tax amount for this item.You must set the currencyID
+	 * attribute to one of the three-character currency codes for
+	 * any of the supported PayPal currencies. Optional
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9634,9 +9634,9 @@ class SetMobileCheckoutRequestDetailsType
 	public $Tax;
 
 	/**
-	*  Shipping amount for this item.You must set the currencyID
-	*  attribute to one of the three-character currency codes for
-	*  any of the supported PayPal currencies. Optional
+	 * Shipping amount for this item.You must set the currencyID
+	 * attribute to one of the three-character currency codes for
+	 * any of the supported PayPal currencies. Optional
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9647,9 +9647,9 @@ class SetMobileCheckoutRequestDetailsType
 	public $Shipping;
 
 	/**
-	*  Description of the item that the customer is purchasing.
-	*  Required Character length and limitations: 127 single-byte
-	*  alphanumeric characters
+	 * Description of the item that the customer is purchasing.
+	 * Required Character length and limitations: 127 single-byte
+	 * alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9660,9 +9660,9 @@ class SetMobileCheckoutRequestDetailsType
 	public $ItemName;
 
 	/**
-	*  Reference number of the item that the customer is
-	*  purchasing. Optional Character length and limitations: 127
-	*  single-byte alphanumeric characters
+	 * Reference number of the item that the customer is
+	 * purchasing. Optional Character length and limitations: 127
+	 * single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9673,10 +9673,10 @@ class SetMobileCheckoutRequestDetailsType
 	public $ItemNumber;
 
 	/**
-	*  A free-form field for your own use, such as a tracking
-	*  number or other value you want returned to you in IPN.
-	*  Optional Character length and limitations: 256 single-byte
-	*  alphanumeric characters
+	 * A free-form field for your own use, such as a tracking
+	 * number or other value you want returned to you in IPN.
+	 * Optional Character length and limitations: 256 single-byte
+	 * alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9687,9 +9687,9 @@ class SetMobileCheckoutRequestDetailsType
 	public $Custom;
 
 	/**
-	*  Your own unique invoice or tracking number. Optional
-	*  Character length and limitations: 127 single-byte
-	*  alphanumeric characters
+	 * Your own unique invoice or tracking number. Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9700,11 +9700,11 @@ class SetMobileCheckoutRequestDetailsType
 	public $InvoiceID;
 
 	/**
-	*  URL to which the customer's browser is returned after
-	*  choosing to pay with PayPal. PayPal recommends that the
-	*  value of ReturnURL be the final review page on which the
-	*  customer confirms the order and payment. Required Character
-	*  length and limitations: no limit. 
+	 * URL to which the customer's browser is returned after
+	 * choosing to pay with PayPal. PayPal recommends that the
+	 * value of ReturnURL be the final review page on which the
+	 * customer confirms the order and payment. Required Character
+	 * length and limitations: no limit. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9715,11 +9715,11 @@ class SetMobileCheckoutRequestDetailsType
 	public $ReturnURL;
 
 	/**
-	*  URL to which the customer is returned if he does not approve
-	*  the use of PayPal to pay you. PayPal recommends that the
-	*  value of CancelURL be the original page on which the
-	*  customer chose to pay with PayPal. Optional Character length
-	*  and limitations: no limit
+	 * URL to which the customer is returned if he does not approve
+	 * the use of PayPal to pay you. PayPal recommends that the
+	 * value of CancelURL be the original page on which the
+	 * customer chose to pay with PayPal. Optional Character length
+	 * and limitations: no limit
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9730,10 +9730,10 @@ class SetMobileCheckoutRequestDetailsType
 	public $CancelURL;
 
 	/**
-	*  The value 1 indicates that you require that the customer's
-	*  shipping address on file with PayPal be a confirmed address.
-	*  Setting this element overrides the setting you have
-	*  specified in your Merchant Account Profile. Optional
+	 * The value 1 indicates that you require that the customer's
+	 * shipping address on file with PayPal be a confirmed address.
+	 * Setting this element overrides the setting you have
+	 * specified in your Merchant Account Profile. Optional
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9744,9 +9744,9 @@ class SetMobileCheckoutRequestDetailsType
 	public $AddressDisplayOptions;
 
 	/**
-	*  The value 1 indicates that you require that the customer
-	*  specifies a contact phone for the transactxion. Default is 0
-	*  / none required. Optional
+	 * The value 1 indicates that you require that the customer
+	 * specifies a contact phone for the transactxion. Default is 0
+	 * / none required. Optional
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9757,7 +9757,7 @@ class SetMobileCheckoutRequestDetailsType
 	public $SharePhone;
 
 	/**
-	*  Customer's shipping address. Optional
+	 * Customer's shipping address. Optional
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9768,10 +9768,10 @@ class SetMobileCheckoutRequestDetailsType
 	public $ShipToAddress;
 
 	/**
-	*  Email address of the buyer as entered during checkout.
-	*  PayPal uses this value to pre-fill the login portion of the
-	*  PayPal login page. Optional Character length and limit: 127
-	*  single-byte alphanumeric characters 
+	 * Email address of the buyer as entered during checkout.
+	 * PayPal uses this value to pre-fill the login portion of the
+	 * PayPal login page. Optional Character length and limit: 127
+	 * single-byte alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9797,19 +9797,19 @@ class SetMobileCheckoutRequestDetailsType
 
 
 /**
- *  A free-form field for your own use, such as a tracking
- *  number or other value you want returned to you in IPN.
- *  Optional Character length and limitations: 256 single-byte
- *  alphanumeric characters 
+ * A free-form field for your own use, such as a tracking
+ * number or other value you want returned to you in IPN.
+ * Optional Character length and limitations: 256 single-byte
+ * alphanumeric characters 
  */
 class DoMobileCheckoutPaymentResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  A free-form field for your own use, such as a tracking
-	*  number or other value you want returned to you in IPN.
-	*  Optional Character length and limitations: 256 single-byte
-	*  alphanumeric characters
+	 * A free-form field for your own use, such as a tracking
+	 * number or other value you want returned to you in IPN.
+	 * Optional Character length and limitations: 256 single-byte
+	 * alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9820,9 +9820,9 @@ class DoMobileCheckoutPaymentResponseDetailsType
 	public $Custom;
 
 	/**
-	*  Your own unique invoice or tracking number. Optional
-	*  Character length and limitations: 127 single-byte
-	*  alphanumeric characters
+	 * Your own unique invoice or tracking number. Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9833,7 +9833,7 @@ class DoMobileCheckoutPaymentResponseDetailsType
 	public $InvoiceID;
 
 	/**
-	*  Information about the payer
+	 * Information about the payer
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9844,7 +9844,7 @@ class DoMobileCheckoutPaymentResponseDetailsType
 	public $PayerInfo;
 
 	/**
-	*  Information about the transaction
+	 * Information about the transaction
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9860,13 +9860,13 @@ class DoMobileCheckoutPaymentResponseDetailsType
 
 
 /**
- *  UATP Card Details Type 
+ * UATP Card Details Type 
  */
 class UATPDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  UATP Card Number
+	 * UATP Card Number
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9877,7 +9877,7 @@ class UATPDetailsType
 	public $UATPNumber;
 
 	/**
-	*  UATP Card expirty month
+	 * UATP Card expirty month
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9888,7 +9888,7 @@ class UATPDetailsType
 	public $ExpMonth;
 
 	/**
-	*  UATP Card expirty year
+	 * UATP Card expirty year
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9905,13 +9905,13 @@ class UATPDetailsType
 
 
 /**
- *  
+ * 
  */
 class RecurringPaymentsSummaryType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9922,7 +9922,7 @@ class RecurringPaymentsSummaryType
 	public $NextBillingDate;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9933,7 +9933,7 @@ class RecurringPaymentsSummaryType
 	public $NumberCyclesCompleted;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9944,7 +9944,7 @@ class RecurringPaymentsSummaryType
 	public $NumberCyclesRemaining;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9955,7 +9955,7 @@ class RecurringPaymentsSummaryType
 	public $OutstandingBalance;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9966,7 +9966,7 @@ class RecurringPaymentsSummaryType
 	public $FailedPaymentCount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9977,7 +9977,7 @@ class RecurringPaymentsSummaryType
 	public $LastPaymentDate;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9993,13 +9993,13 @@ class RecurringPaymentsSummaryType
 
 
 /**
- *  
+ * 
  */
 class ActivationDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10010,7 +10010,7 @@ class ActivationDetailsType
 	public $InitialAmount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10034,13 +10034,13 @@ class ActivationDetailsType
 
 
 /**
- *  Unit of meausre for billing cycle 
+ * Unit of meausre for billing cycle 
  */
 class BillingPeriodDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Unit of meausre for billing cycle 
+	 * Unit of meausre for billing cycle 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10051,7 +10051,7 @@ class BillingPeriodDetailsType
 	public $BillingPeriod;
 
 	/**
-	*  Number of BillingPeriod that make up one billing cycle 
+	 * Number of BillingPeriod that make up one billing cycle 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10062,7 +10062,7 @@ class BillingPeriodDetailsType
 	public $BillingFrequency;
 
 	/**
-	*  Total billing cycles in this portion of the schedule 
+	 * Total billing cycles in this portion of the schedule 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10073,7 +10073,7 @@ class BillingPeriodDetailsType
 	public $TotalBillingCycles;
 
 	/**
-	*  Amount to charge 
+	 * Amount to charge 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10084,7 +10084,7 @@ class BillingPeriodDetailsType
 	public $Amount;
 
 	/**
-	*  Additional shipping amount to charge 
+	 * Additional shipping amount to charge 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10095,7 +10095,7 @@ class BillingPeriodDetailsType
 	public $ShippingAmount;
 
 	/**
-	*  Additional tax amount to charge 
+	 * Additional tax amount to charge 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10121,13 +10121,13 @@ class BillingPeriodDetailsType
 
 
 /**
- *  Unit of meausre for billing cycle 
+ * Unit of meausre for billing cycle 
  */
 class BillingPeriodDetailsType_Update  
    extends PPXmlMessage{
 
 	/**
-	*  Unit of meausre for billing cycle 
+	 * Unit of meausre for billing cycle 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10138,7 +10138,7 @@ class BillingPeriodDetailsType_Update
 	public $BillingPeriod;
 
 	/**
-	*  Number of BillingPeriod that make up one billing cycle 
+	 * Number of BillingPeriod that make up one billing cycle 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10149,7 +10149,7 @@ class BillingPeriodDetailsType_Update
 	public $BillingFrequency;
 
 	/**
-	*  Total billing cycles in this portion of the schedule 
+	 * Total billing cycles in this portion of the schedule 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10160,7 +10160,7 @@ class BillingPeriodDetailsType_Update
 	public $TotalBillingCycles;
 
 	/**
-	*  Amount to charge 
+	 * Amount to charge 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10171,7 +10171,7 @@ class BillingPeriodDetailsType_Update
 	public $Amount;
 
 	/**
-	*  Additional shipping amount to charge 
+	 * Additional shipping amount to charge 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10182,7 +10182,7 @@ class BillingPeriodDetailsType_Update
 	public $ShippingAmount;
 
 	/**
-	*  Additional tax amount to charge 
+	 * Additional tax amount to charge 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10199,13 +10199,13 @@ class BillingPeriodDetailsType_Update
 
 
 /**
- *  Schedule details for the Recurring Payment 
+ * Schedule details for the Recurring Payment 
  */
 class ScheduleDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Schedule details for the Recurring Payment 
+	 * Schedule details for the Recurring Payment 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10216,7 +10216,7 @@ class ScheduleDetailsType
 	public $Description;
 
 	/**
-	*  Trial period of this schedule 
+	 * Trial period of this schedule 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10227,7 +10227,7 @@ class ScheduleDetailsType
 	public $TrialPeriod;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10238,8 +10238,8 @@ class ScheduleDetailsType
 	public $PaymentPeriod;
 
 	/**
-	*  The max number of payments the buyer can fail before this
-	*  Recurring Payments profile is cancelled 
+	 * The max number of payments the buyer can fail before this
+	 * Recurring Payments profile is cancelled 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10250,7 +10250,7 @@ class ScheduleDetailsType
 	public $MaxFailedPayments;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10261,7 +10261,7 @@ class ScheduleDetailsType
 	public $ActivationDetails;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10286,15 +10286,15 @@ class ScheduleDetailsType
 
 
 /**
- *  Subscriber name - if missing, will use name in buyer's
- *  account 
+ * Subscriber name - if missing, will use name in buyer's
+ * account 
  */
 class RecurringPaymentsProfileDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Subscriber name - if missing, will use name in buyer's
-	*  account 
+	 * Subscriber name - if missing, will use name in buyer's
+	 * account 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10305,8 +10305,8 @@ class RecurringPaymentsProfileDetailsType
 	public $SubscriberName;
 
 	/**
-	*  Subscriber address - if missing, will use address in buyer's
-	*  account 
+	 * Subscriber address - if missing, will use address in buyer's
+	 * account 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10317,7 +10317,7 @@ class RecurringPaymentsProfileDetailsType
 	public $SubscriberShippingAddress;
 
 	/**
-	*  When does this Profile begin billing? 
+	 * When does this Profile begin billing? 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10328,9 +10328,9 @@ class RecurringPaymentsProfileDetailsType
 	public $BillingStartDate;
 
 	/**
-	*  Your own unique invoice or tracking number. Optional
-	*  Character length and limitations: 127 single-byte
-	*  alphanumeric characters 
+	 * Your own unique invoice or tracking number. Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10354,13 +10354,13 @@ class RecurringPaymentsProfileDetailsType
 
 
 /**
- *  Billing Agreement token (required if Express Checkout) 
+ * Billing Agreement token (required if Express Checkout) 
  */
 class CreateRecurringPaymentsProfileRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Billing Agreement token (required if Express Checkout) 
+	 * Billing Agreement token (required if Express Checkout) 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10371,8 +10371,8 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	public $Token;
 
 	/**
-	*  Information about the credit card to be charged (required if
-	*  Direct Payment) 
+	 * Information about the credit card to be charged (required if
+	 * Direct Payment) 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10383,7 +10383,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	public $CreditCard;
 
 	/**
-	*  Customer Information for this Recurring Payments 
+	 * Customer Information for this Recurring Payments 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10394,7 +10394,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	public $RecurringPaymentsProfileDetails;
 
 	/**
-	*  Schedule Information for this Recurring Payments 
+	 * Schedule Information for this Recurring Payments 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10405,7 +10405,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	public $ScheduleDetails;
 
 	/**
-	*  Information about the Item Details. 
+	 * Information about the Item Details. 
      * @array
 	 * @access public
 	 
@@ -10431,13 +10431,13 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 
 
 /**
- *  Recurring Billing Profile ID 
+ * Recurring Billing Profile ID 
  */
 class CreateRecurringPaymentsProfileResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Recurring Billing Profile ID 
+	 * Recurring Billing Profile ID 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10448,7 +10448,7 @@ class CreateRecurringPaymentsProfileResponseDetailsType
 	public $ProfileID;
 
 	/**
-	*  Recurring Billing Profile Status 
+	 * Recurring Billing Profile Status 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10459,7 +10459,7 @@ class CreateRecurringPaymentsProfileResponseDetailsType
 	public $ProfileStatus;
 
 	/**
-	*  Transaction id from DCC initial payment 
+	 * Transaction id from DCC initial payment 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10470,7 +10470,7 @@ class CreateRecurringPaymentsProfileResponseDetailsType
 	public $TransactionID;
 
 	/**
-	*  Response from DCC initial payment 
+	 * Response from DCC initial payment 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10481,7 +10481,7 @@ class CreateRecurringPaymentsProfileResponseDetailsType
 	public $DCCProcessorResponse;
 
 	/**
-	*  Return code if DCC initial payment fails 
+	 * Return code if DCC initial payment fails 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10497,13 +10497,13 @@ class CreateRecurringPaymentsProfileResponseDetailsType
 
 
 /**
- *  Recurring Billing Profile ID 
+ * Recurring Billing Profile ID 
  */
 class GetRecurringPaymentsProfileDetailsResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Recurring Billing Profile ID 
+	 * Recurring Billing Profile ID 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10514,7 +10514,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $ProfileID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10525,7 +10525,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $ProfileStatus;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10536,7 +10536,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $Description;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10547,7 +10547,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $AutoBillOutstandingAmount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10558,7 +10558,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $MaxFailedPayments;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10569,7 +10569,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $RecurringPaymentsProfileDetails;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10580,7 +10580,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $CurrentRecurringPaymentsPeriod;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10591,7 +10591,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $RecurringPaymentsSummary;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10602,7 +10602,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $CreditCard;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10613,7 +10613,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $TrialRecurringPaymentsPeriod;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10624,7 +10624,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $RegularRecurringPaymentsPeriod;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10635,7 +10635,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $TrialAmountPaid;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10646,7 +10646,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $RegularAmountPaid;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10657,7 +10657,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $AggregateAmount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10668,7 +10668,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $AggregateOptionalAmount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10684,13 +10684,13 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 
 
 /**
- *  
+ * 
  */
 class ManageRecurringPaymentsProfileStatusRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10701,7 +10701,7 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType
 	public $ProfileID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10712,7 +10712,7 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType
 	public $Action;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10737,13 +10737,13 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType
 
 
 /**
- *  
+ * 
  */
 class ManageRecurringPaymentsProfileStatusResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10759,13 +10759,13 @@ class ManageRecurringPaymentsProfileStatusResponseDetailsType
 
 
 /**
- *  
+ * 
  */
 class BillOutstandingAmountRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10776,7 +10776,7 @@ class BillOutstandingAmountRequestDetailsType
 	public $ProfileID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10787,7 +10787,7 @@ class BillOutstandingAmountRequestDetailsType
 	public $Amount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10811,13 +10811,13 @@ class BillOutstandingAmountRequestDetailsType
 
 
 /**
- *  
+ * 
  */
 class BillOutstandingAmountResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10833,13 +10833,13 @@ class BillOutstandingAmountResponseDetailsType
 
 
 /**
- *  
+ * 
  */
 class UpdateRecurringPaymentsProfileRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10850,7 +10850,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $ProfileID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10861,7 +10861,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $Note;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10872,7 +10872,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $Description;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10883,7 +10883,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $SubscriberName;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10894,7 +10894,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $SubscriberShippingAddress;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10905,7 +10905,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $ProfileReference;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10916,7 +10916,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $AdditionalBillingCycles;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10927,7 +10927,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $Amount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10938,7 +10938,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $ShippingAmount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10949,7 +10949,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $TaxAmount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10960,7 +10960,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $OutstandingBalance;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10971,7 +10971,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $AutoBillOutstandingAmount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10982,8 +10982,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $MaxFailedPayments;
 
 	/**
-	*  Information about the credit card to be charged (required if
-	*  Direct Payment) 
+	 * Information about the credit card to be charged (required if
+	 * Direct Payment) 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -10994,7 +10994,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $CreditCard;
 
 	/**
-	*  When does this Profile begin billing? 
+	 * When does this Profile begin billing? 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11005,7 +11005,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $BillingStartDate;
 
 	/**
-	*  Trial period of this schedule 
+	 * Trial period of this schedule 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11016,7 +11016,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $TrialPeriod;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11040,13 +11040,13 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 
 
 /**
- *  
+ * 
  */
 class UpdateRecurringPaymentsProfileResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11062,13 +11062,13 @@ class UpdateRecurringPaymentsProfileResponseDetailsType
 
 
 /**
- *  Details of Risk Filter. 
+ * Details of Risk Filter. 
  */
 class RiskFilterDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11079,7 +11079,7 @@ class RiskFilterDetailsType
 	public $Id;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11090,7 +11090,7 @@ class RiskFilterDetailsType
 	public $Name;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11106,13 +11106,13 @@ class RiskFilterDetailsType
 
 
 /**
- *  Details of Risk Filter. 
+ * Details of Risk Filter. 
  */
 class RiskFilterListType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -11129,14 +11129,14 @@ class RiskFilterListType
 
 
 /**
- *  Thes are filters that could result in accept/deny/pending
- *  action. 
+ * Thes are filters that could result in accept/deny/pending
+ * action. 
  */
 class FMFDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11147,7 +11147,7 @@ class FMFDetailsType
 	public $AcceptFilters;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11158,7 +11158,7 @@ class FMFDetailsType
 	public $PendingFilters;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11169,7 +11169,7 @@ class FMFDetailsType
 	public $DenyFilters;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11185,13 +11185,13 @@ class FMFDetailsType
 
 
 /**
- *  Enhanced Data Information. Example: AID for Airlines 
+ * Enhanced Data Information. Example: AID for Airlines 
  */
 class EnhancedDataType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11208,13 +11208,13 @@ class EnhancedDataType
 
 
 /**
- *  AID for Airlines 
+ * AID for Airlines 
  */
 class AirlineItineraryType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11225,7 +11225,7 @@ class AirlineItineraryType
 	public $PassengerName;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11236,7 +11236,7 @@ class AirlineItineraryType
 	public $IssueDate;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11247,7 +11247,7 @@ class AirlineItineraryType
 	public $TravelAgencyName;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11258,7 +11258,7 @@ class AirlineItineraryType
 	public $TravelAgencyCode;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11269,7 +11269,7 @@ class AirlineItineraryType
 	public $TicketNumber;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11280,7 +11280,7 @@ class AirlineItineraryType
 	public $IssuingCarrierCode;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11291,7 +11291,7 @@ class AirlineItineraryType
 	public $CustomerCode;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11302,7 +11302,7 @@ class AirlineItineraryType
 	public $TotalFare;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11313,7 +11313,7 @@ class AirlineItineraryType
 	public $TotalTaxes;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11324,7 +11324,7 @@ class AirlineItineraryType
 	public $TotalFee;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11335,7 +11335,7 @@ class AirlineItineraryType
 	public $RestrictedTicket;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11346,7 +11346,7 @@ class AirlineItineraryType
 	public $ClearingSequence;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11357,7 +11357,7 @@ class AirlineItineraryType
 	public $ClearingCount;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -11375,13 +11375,13 @@ class AirlineItineraryType
 
 
 /**
- *  Details of leg information 
+ * Details of leg information 
  */
 class FlightDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11392,7 +11392,7 @@ class FlightDetailsType
 	public $ConjuctionTicket;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11403,7 +11403,7 @@ class FlightDetailsType
 	public $ExchangeTicket;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11414,7 +11414,7 @@ class FlightDetailsType
 	public $CouponNumber;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11425,7 +11425,7 @@ class FlightDetailsType
 	public $ServiceClass;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11436,7 +11436,7 @@ class FlightDetailsType
 	public $TravelDate;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11447,7 +11447,7 @@ class FlightDetailsType
 	public $CarrierCode;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11458,7 +11458,7 @@ class FlightDetailsType
 	public $StopOverPermitted;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11469,7 +11469,7 @@ class FlightDetailsType
 	public $DepartureAirport;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11480,7 +11480,7 @@ class FlightDetailsType
 	public $ArrivalAirport;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11491,7 +11491,7 @@ class FlightDetailsType
 	public $FlightNumber;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11502,7 +11502,7 @@ class FlightDetailsType
 	public $DepartureTime;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11513,7 +11513,7 @@ class FlightDetailsType
 	public $ArrivalTime;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11524,7 +11524,7 @@ class FlightDetailsType
 	public $FareBasisCode;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11535,7 +11535,7 @@ class FlightDetailsType
 	public $Fare;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11546,7 +11546,7 @@ class FlightDetailsType
 	public $Taxes;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11557,7 +11557,7 @@ class FlightDetailsType
 	public $Fee;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11574,14 +11574,14 @@ class FlightDetailsType
 
 
 /**
- *  Authorization details 
+ * Authorization details 
  */
 class AuthorizationInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  The status of the payment: Pending: The payment is pending.
-	*  See "PendingReason" for more information.
+	 * The status of the payment: Pending: The payment is pending.
+	 * See "PendingReason" for more information.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11592,35 +11592,35 @@ class AuthorizationInfoType
 	public $PaymentStatus;
 
 	/**
-	*  The reason the payment is pending:none: No pending reason
-	*  address: The payment is pending because your customer did
-	*  not include a confirmed shipping address and your Payment
-	*  Receiving Preferences is set such that you want to manually
-	*  accept or deny each of these payments. To change your
-	*  preference, go to the Preferences section of your Profile.
-	*  authorization: The authorization is pending at time of
-	*  creation if payment is not under review echeck: The payment
-	*  is pending because it was made by an eCheck that has not yet
-	*  cleared. intl: The payment is pending because you hold a
-	*  non-U.S. account and do not have a withdrawal mechanism. You
-	*  must manually accept or deny this payment from your Account
-	*  Overview. multi-currency: You do not have a balance in the
-	*  currency sent, and you do not have your Payment Receiving
-	*  Preferences set to automatically convert and accept this
-	*  payment. You must manually accept or deny this payment.
-	*  unilateral: The payment is pending because it was made to an
-	*  email address that is not yet registered or confirmed.
-	*  upgrade: The payment is pending because it was made via
-	*  credit card and you must upgrade your account to Business or
-	*  Premier status in order to receive the funds. upgrade can
-	*  also mean that you have reached the monthly limit for
-	*  transactions on your account. verify: The payment is pending
-	*  because you are not yet verified. You must verify your
-	*  account before you can accept this payment. payment_review:
-	*  The payment is pending because it is under payment review.
-	*  other: The payment is pending for a reason other than those
-	*  listed above. For more information, contact PayPal Customer
-	*  Service.
+	 * The reason the payment is pending:none: No pending reason
+	 * address: The payment is pending because your customer did
+	 * not include a confirmed shipping address and your Payment
+	 * Receiving Preferences is set such that you want to manually
+	 * accept or deny each of these payments. To change your
+	 * preference, go to the Preferences section of your Profile.
+	 * authorization: The authorization is pending at time of
+	 * creation if payment is not under review echeck: The payment
+	 * is pending because it was made by an eCheck that has not yet
+	 * cleared. intl: The payment is pending because you hold a
+	 * non-U.S. account and do not have a withdrawal mechanism. You
+	 * must manually accept or deny this payment from your Account
+	 * Overview. multi-currency: You do not have a balance in the
+	 * currency sent, and you do not have your Payment Receiving
+	 * Preferences set to automatically convert and accept this
+	 * payment. You must manually accept or deny this payment.
+	 * unilateral: The payment is pending because it was made to an
+	 * email address that is not yet registered or confirmed.
+	 * upgrade: The payment is pending because it was made via
+	 * credit card and you must upgrade your account to Business or
+	 * Premier status in order to receive the funds. upgrade can
+	 * also mean that you have reached the monthly limit for
+	 * transactions on your account. verify: The payment is pending
+	 * because you are not yet verified. You must verify your
+	 * account before you can accept this payment. payment_review:
+	 * The payment is pending because it is under payment review.
+	 * other: The payment is pending for a reason other than those
+	 * listed above. For more information, contact PayPal Customer
+	 * Service.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11631,8 +11631,8 @@ class AuthorizationInfoType
 	public $PendingReason;
 
 	/**
-	*  Protection Eligibility for this Transaction - None, SPP or
-	*  ESPP 
+	 * Protection Eligibility for this Transaction - None, SPP or
+	 * ESPP 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11643,7 +11643,7 @@ class AuthorizationInfoType
 	public $ProtectionEligibility;
 
 	/**
-	*  Protection Eligibility Type for this Transaction 
+	 * Protection Eligibility Type for this Transaction 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11659,13 +11659,13 @@ class AuthorizationInfoType
 
 
 /**
- *  Option Number. Optional 
+ * Option Number. Optional 
  */
 class OptionTrackingDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Option Number. Optional 
+	 * Option Number. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11676,7 +11676,7 @@ class OptionTrackingDetailsType
 	public $OptionNumber;
 
 	/**
-	*  Option Quantity. Optional 
+	 * Option Quantity. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11687,7 +11687,7 @@ class OptionTrackingDetailsType
 	public $OptionQty;
 
 	/**
-	*  Option Select Name. Optional 
+	 * Option Select Name. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11698,7 +11698,7 @@ class OptionTrackingDetailsType
 	public $OptionSelect;
 
 	/**
-	*  Option Quantity Delta. Optional 
+	 * Option Quantity Delta. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11709,7 +11709,7 @@ class OptionTrackingDetailsType
 	public $OptionQtyDelta;
 
 	/**
-	*  Option Alert. Optional 
+	 * Option Alert. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11720,7 +11720,7 @@ class OptionTrackingDetailsType
 	public $OptionAlert;
 
 	/**
-	*  Option Cost. Optional 
+	 * Option Cost. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11737,13 +11737,13 @@ class OptionTrackingDetailsType
 
 
 /**
- *  Item Number. Required 
+ * Item Number. Required 
  */
 class ItemTrackingDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Item Number. Required 
+	 * Item Number. Required 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11754,7 +11754,7 @@ class ItemTrackingDetailsType
 	public $ItemNumber;
 
 	/**
-	*  Option Quantity. Optional 
+	 * Option Quantity. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11765,7 +11765,7 @@ class ItemTrackingDetailsType
 	public $ItemQty;
 
 	/**
-	*  Item Quantity Delta. Optional 
+	 * Item Quantity Delta. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11776,7 +11776,7 @@ class ItemTrackingDetailsType
 	public $ItemQtyDelta;
 
 	/**
-	*  Item Alert. Optional 
+	 * Item Alert. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11787,7 +11787,7 @@ class ItemTrackingDetailsType
 	public $ItemAlert;
 
 	/**
-	*  Item Cost. Optional 
+	 * Item Cost. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11804,13 +11804,13 @@ class ItemTrackingDetailsType
 
 
 /**
- *  
+ * 
  */
 class ButtonSearchResultType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11821,7 +11821,7 @@ class ButtonSearchResultType
 	public $HostedButtonID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11832,7 +11832,7 @@ class ButtonSearchResultType
 	public $ButtonType;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11843,7 +11843,7 @@ class ButtonSearchResultType
 	public $ItemName;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11859,17 +11859,17 @@ class ButtonSearchResultType
 
 
 /**
- *  Identifier of the transaction to reverse. Required Character
- *  length and limitations: 17 single-byte alphanumeric
- *  characters 
+ * Identifier of the transaction to reverse. Required Character
+ * length and limitations: 17 single-byte alphanumeric
+ * characters 
  */
 class ReverseTransactionRequestDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Identifier of the transaction to reverse. Required Character
-	*  length and limitations: 17 single-byte alphanumeric
-	*  characters 
+	 * Identifier of the transaction to reverse. Required Character
+	 * length and limitations: 17 single-byte alphanumeric
+	 * characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11886,17 +11886,17 @@ class ReverseTransactionRequestDetailsType
 
 
 /**
- *  Unique transaction identifier of the reversal transaction
- *  created. Character length and limitations:17 single-byte
- *  characters 
+ * Unique transaction identifier of the reversal transaction
+ * created. Character length and limitations:17 single-byte
+ * characters 
  */
 class ReverseTransactionResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Unique transaction identifier of the reversal transaction
-	*  created. Character length and limitations:17 single-byte
-	*  characters 
+	 * Unique transaction identifier of the reversal transaction
+	 * created. Character length and limitations:17 single-byte
+	 * characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11907,7 +11907,7 @@ class ReverseTransactionResponseDetailsType
 	public $ReverseTransactionID;
 
 	/**
-	*  Status of reversal request. Required 
+	 * Status of reversal request. Required 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11923,13 +11923,13 @@ class ReverseTransactionResponseDetailsType
 
 
 /**
- *  Details of incentive application on individual bucket. 
+ * Details of incentive application on individual bucket. 
  */
 class IncentiveInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  Incentive redemption code. 
+	 * Incentive redemption code. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11940,8 +11940,8 @@ class IncentiveInfoType
 	public $IncentiveCode;
 
 	/**
-	*  Defines which bucket or item that the incentive should be
-	*  applied to. 
+	 * Defines which bucket or item that the incentive should be
+	 * applied to. 
      * @array
 	 * @access public
 	 
@@ -11959,14 +11959,14 @@ class IncentiveInfoType
 
 
 /**
- *  Defines which bucket or item that the incentive should be
- *  applied to. 
+ * Defines which bucket or item that the incentive should be
+ * applied to. 
  */
 class IncentiveApplyIndicationType  
    extends PPXmlMessage{
 
 	/**
-	*  The Bucket ID that the incentive is applied to. 
+	 * The Bucket ID that the incentive is applied to. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11977,7 +11977,7 @@ class IncentiveApplyIndicationType
 	public $PaymentRequestID;
 
 	/**
-	*  The item that the incentive is applied to. 
+	 * The item that the incentive is applied to. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -11994,14 +11994,14 @@ class IncentiveApplyIndicationType
 
 
 /**
- *  Contains payment request information for each bucket in the
- *  cart.  
+ * Contains payment request information for each bucket in the
+ * cart.  
  */
 class PaymentRequestInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  Contains the transaction id of the bucket.  
+	 * Contains the transaction id of the bucket.  
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12012,7 +12012,7 @@ class PaymentRequestInfoType
 	public $TransactionId;
 
 	/**
-	*  Contains the bucket id.  
+	 * Contains the bucket id.  
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12023,7 +12023,7 @@ class PaymentRequestInfoType
 	public $PaymentRequestID;
 
 	/**
-	*  Contains the error details.  
+	 * Contains the error details.  
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12039,22 +12039,22 @@ class PaymentRequestInfoType
 
 
 /**
- *  E-mail address or secure merchant account ID of merchant to
- *  associate with new external remember-me. 
+ * E-mail address or secure merchant account ID of merchant to
+ * associate with new external remember-me. 
  */
 class ExternalRememberMeOwnerDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  A discriminant that tells SetEC what kind of data the
-	*  ExternalRememberMeOwnerID parameter contains. Currently, the
-	*  owner must be either the API actor or omitted/none. In the
-	*  future, we may allow the owner to be a 3rd party merchant
-	*  account. Possible values are: None, ignore the
-	*  ExternalRememberMeOwnerID. An empty value for this field
-	*  also signifies None. Email, the owner ID is an email address
-	*  SecureMerchantAccountID, the owner id is a string
-	*  representing the secure merchant account ID 
+	 * A discriminant that tells SetEC what kind of data the
+	 * ExternalRememberMeOwnerID parameter contains. Currently, the
+	 * owner must be either the API actor or omitted/none. In the
+	 * future, we may allow the owner to be a 3rd party merchant
+	 * account. Possible values are: None, ignore the
+	 * ExternalRememberMeOwnerID. An empty value for this field
+	 * also signifies None. Email, the owner ID is an email address
+	 * SecureMerchantAccountID, the owner id is a string
+	 * representing the secure merchant account ID 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12065,12 +12065,12 @@ class ExternalRememberMeOwnerDetailsType
 	public $ExternalRememberMeOwnerIDType;
 
 	/**
-	*  When opting in to bypass login via remember me, this
-	*  parameter specifies the merchant account associated with the
-	*  remembered login. Currentl, the owner must be either the API
-	*  actor or omitted/none. In the future, we may allow the owner
-	*  to be a 3rd party merchant account. If the Owner ID Type
-	*  field is not present or "None", this parameter is ignored. 
+	 * When opting in to bypass login via remember me, this
+	 * parameter specifies the merchant account associated with the
+	 * remembered login. Currentl, the owner must be either the API
+	 * actor or omitted/none. In the future, we may allow the owner
+	 * to be a 3rd party merchant account. If the Owner ID Type
+	 * field is not present or "None", this parameter is ignored. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12087,17 +12087,17 @@ class ExternalRememberMeOwnerDetailsType
 
 
 /**
- *  This element contains information that allows the merchant
- *  to request to opt into external remember me on behalf of the
- *  buyer or to request login bypass using external remember me.
- *  
+ * This element contains information that allows the merchant
+ * to request to opt into external remember me on behalf of the
+ * buyer or to request login bypass using external remember me.
+ * 
  */
 class ExternalRememberMeOptInDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  1 = opt in to external remember me. 0 or omitted = no opt-in
-	*  Other values are invalid 
+	 * 1 = opt in to external remember me. 0 or omitted = no opt-in
+	 * Other values are invalid 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12108,11 +12108,11 @@ class ExternalRememberMeOptInDetailsType
 	public $ExternalRememberMeOptIn;
 
 	/**
-	*  E-mail address or secure merchant account ID of merchant to
-	*  associate with new external remember-me. Currently, the
-	*  owner must be either the API actor or omitted/none. In the
-	*  future, we may allow the owner to be a 3rd party merchant
-	*  account. 
+	 * E-mail address or secure merchant account ID of merchant to
+	 * associate with new external remember-me. Currently, the
+	 * owner must be either the API actor or omitted/none. In the
+	 * future, we may allow the owner to be a 3rd party merchant
+	 * account. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12129,14 +12129,14 @@ class ExternalRememberMeOptInDetailsType
 
 
 /**
- *  An optional set of values related to flow-specific details. 
+ * An optional set of values related to flow-specific details. 
  */
 class FlowControlDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  The URL to redirect to for an unpayable transaction. This
-	*  field is currently used only for the inline checkout flow. 
+	 * The URL to redirect to for an unpayable transaction. This
+	 * field is currently used only for the inline checkout flow. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12147,9 +12147,9 @@ class FlowControlDetailsType
 	public $ErrorURL;
 
 	/**
-	*  The URL to redirect to after a user clicks the "Pay" or
-	*  "Continue" button on the merchant's site. This field is
-	*  currently used only for the inline checkout flow. 
+	 * The URL to redirect to after a user clicks the "Pay" or
+	 * "Continue" button on the merchant's site. This field is
+	 * currently used only for the inline checkout flow. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12166,23 +12166,23 @@ class FlowControlDetailsType
 
 
 /**
- *  Response information resulting from opt-in operation or
- *  current login bypass status. 
+ * Response information resulting from opt-in operation or
+ * current login bypass status. 
  */
 class ExternalRememberMeStatusDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Required field that reports status of opt-in or login bypass
-	*  attempt. 0 = Success - successful opt-in or
-	*  ExternalRememberMeID specified in SetExpressCheckout is
-	*  valid. 1 = Invalid ID - ExternalRememberMeID specified in
-	*  SetExpressCheckout is invalid. 2 = Internal Error - System
-	*  error or outage during opt-in or login bypass. Can retry
-	*  opt-in or login bypass next time. Flow will force full
-	*  authentication and allow buyer to complete transaction. -1 =
-	*  None - the return value does not signify any valid remember
-	*  me status. 
+	 * Required field that reports status of opt-in or login bypass
+	 * attempt. 0 = Success - successful opt-in or
+	 * ExternalRememberMeID specified in SetExpressCheckout is
+	 * valid. 1 = Invalid ID - ExternalRememberMeID specified in
+	 * SetExpressCheckout is invalid. 2 = Internal Error - System
+	 * error or outage during opt-in or login bypass. Can retry
+	 * opt-in or login bypass next time. Flow will force full
+	 * authentication and allow buyer to complete transaction. -1 =
+	 * None - the return value does not signify any valid remember
+	 * me status. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12193,12 +12193,12 @@ class ExternalRememberMeStatusDetailsType
 	public $ExternalRememberMeStatus;
 
 	/**
-	*  Identifier returned on external-remember-me-opt-in to allow
-	*  the merchant to request bypass of PayPal login through
-	*  external remember me on behalf of the buyer in future
-	*  transactions. The ExternalRememberMeID is a 17-character
-	*  alphanumeric (encrypted) string. This field has meaning only
-	*  to the merchant. 
+	 * Identifier returned on external-remember-me-opt-in to allow
+	 * the merchant to request bypass of PayPal login through
+	 * external remember me on behalf of the buyer in future
+	 * transactions. The ExternalRememberMeID is a 17-character
+	 * alphanumeric (encrypted) string. This field has meaning only
+	 * to the merchant. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12214,25 +12214,25 @@ class ExternalRememberMeStatusDetailsType
 
 
 /**
- *  Response information resulting from opt-in operation or
- *  current login bypass status. 
+ * Response information resulting from opt-in operation or
+ * current login bypass status. 
  */
 class RefreshTokenStatusDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Required field that reports status of opt-in or login bypass
-	*  attempt.  0 = Success, successful opt-in or RefreshToken
-	*  corresponding to AccessToken specified  in
-	*  SetExpressCheckout is valid (user is still opted in).  1 =
-	*  New RefreshToken was generated (user is still opted in).  2
-	*  = Invalid ID, RefreshToken corresponding to AccessToken
-	*  specified in SetExpressCheckout  is invalid (user is opted
-	*  out). -2 = Internal Error, system error or outage during
-	*  opt-in or login bypass. Can retry  opt-in or login bypass
-	*  next time. Flow will force full authentication and allow 
-	*  buyer to complete transaction. -1 = None, the field does not
-	*  represent any valid value of the status. 
+	 * Required field that reports status of opt-in or login bypass
+	 * attempt.  0 = Success, successful opt-in or RefreshToken
+	 * corresponding to AccessToken specified  in
+	 * SetExpressCheckout is valid (user is still opted in).  1 =
+	 * New RefreshToken was generated (user is still opted in).  2
+	 * = Invalid ID, RefreshToken corresponding to AccessToken
+	 * specified in SetExpressCheckout  is invalid (user is opted
+	 * out). -2 = Internal Error, system error or outage during
+	 * opt-in or login bypass. Can retry  opt-in or login bypass
+	 * next time. Flow will force full authentication and allow 
+	 * buyer to complete transaction. -1 = None, the field does not
+	 * represent any valid value of the status. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12243,8 +12243,8 @@ class RefreshTokenStatusDetailsType
 	public $RefreshTokenStatus;
 
 	/**
-	*  Identifier returned on external-remember-me-opt-in to allow
-	*  the merchant to request bypass of PayPal login 
+	 * Identifier returned on external-remember-me-opt-in to allow
+	 * the merchant to request bypass of PayPal login 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12255,9 +12255,9 @@ class RefreshTokenStatusDetailsType
 	public $RefreshToken;
 
 	/**
-	*  The immutable_id is the user's unique value per merchant
-	*  that should never ever change for that account. This would
-	*  be the key used to uniquely identify the user 
+	 * The immutable_id is the user's unique value per merchant
+	 * that should never ever change for that account. This would
+	 * be the key used to uniquely identify the user 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12273,16 +12273,16 @@ class RefreshTokenStatusDetailsType
 
 
 /**
- *  Contains elements that allows customization of display (user
- *  interface) elements. 
+ * Contains elements that allows customization of display (user
+ * interface) elements. 
  */
 class DisplayControlDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Optional URL to pay button image for the inline checkout
-	*  flow. Currently applicable only to the inline checkout flow
-	*  when the FlowControlDetails/InlineReturnURL is present. 
+	 * Optional URL to pay button image for the inline checkout
+	 * flow. Currently applicable only to the inline checkout flow
+	 * when the FlowControlDetails/InlineReturnURL is present. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12299,23 +12299,23 @@ class DisplayControlDetailsType
 
 
 /**
- *  Contains elements that allow tracking for an external
- *  partner. 
+ * Contains elements that allow tracking for an external
+ * partner. 
  */
 class ExternalPartnerTrackingDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  PayPal will just log this string. There will NOT be any
-	*  business logic around it, nor any decisions made based on
-	*  the value of the string that is passed in. From a
-	*  tracking/analytical perspective, PayPal would not infer any
-	*  meaning to any specific value. We would just segment the
-	*  traffic based on the value passed (Cart and None as an
-	*  example) and track different metrics like risk/conversion
-	*  etc based on these segments. The external partner would
-	*  control the value of what gets passed and we take that value
-	*  as is and generate data based on it. Optional 
+	 * PayPal will just log this string. There will NOT be any
+	 * business logic around it, nor any decisions made based on
+	 * the value of the string that is passed in. From a
+	 * tracking/analytical perspective, PayPal would not infer any
+	 * meaning to any specific value. We would just segment the
+	 * traffic based on the value passed (Cart and None as an
+	 * example) and track different metrics like risk/conversion
+	 * etc based on these segments. The external partner would
+	 * control the value of what gets passed and we take that value
+	 * as is and generate data based on it. Optional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12332,15 +12332,15 @@ class ExternalPartnerTrackingDetailsType
 
 
 /**
- *  Store IDOptional Character length and limits: 50 single-byte
- *  characters 
+ * Store IDOptional Character length and limits: 50 single-byte
+ * characters 
  */
 class MerchantStoreDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Store IDOptional Character length and limits: 50 single-byte
-	*  characters 
+	 * Store IDOptional Character length and limits: 50 single-byte
+	 * characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12351,8 +12351,8 @@ class MerchantStoreDetailsType
 	public $StoreID;
 
 	/**
-	*  Terminal IDOptional Character length and limits: 50
-	*  single-byte characters 
+	 * Terminal IDOptional Character length and limits: 50
+	 * single-byte characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12376,13 +12376,13 @@ class MerchantStoreDetailsType
 
 
 /**
- *  
+ * 
  */
 class AdditionalFeeType  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12393,7 +12393,7 @@ class AdditionalFeeType
 	public $Type;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12410,14 +12410,14 @@ class AdditionalFeeType
 
 
 /**
- *  Describes discount information 
+ * Describes discount information 
  */
 class DiscountType  
    extends PPXmlMessage{
 
 	/**
-	*  Item nameOptional Character length and limits: 127
-	*  single-byte characters 
+	 * Item nameOptional Character length and limits: 127
+	 * single-byte characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12428,8 +12428,8 @@ class DiscountType
 	public $Name;
 
 	/**
-	*  description of the discountOptional Character length and
-	*  limits: 127 single-byte characters 
+	 * description of the discountOptional Character length and
+	 * limits: 127 single-byte characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12440,7 +12440,7 @@ class DiscountType
 	public $Description;
 
 	/**
-	*  amount discountedOptional 
+	 * amount discountedOptional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12451,7 +12451,7 @@ class DiscountType
 	public $Amount;
 
 	/**
-	*  offer typeOptional 
+	 * offer typeOptional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12462,8 +12462,8 @@ class DiscountType
 	public $RedeemedOfferType;
 
 	/**
-	*  offer IDOptional Character length and limits: 64 single-byte
-	*  characters 
+	 * offer IDOptional Character length and limits: 64 single-byte
+	 * characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12487,14 +12487,14 @@ class DiscountType
 
 
 /**
- *  Describes an individual item for an invoice. 
+ * Describes an individual item for an invoice. 
  */
 class InvoiceItemType  
    extends PPXmlMessage{
 
 	/**
-	*  a human readable item nameOptional Character length and
-	*  limits: 127 single-byte characters 
+	 * a human readable item nameOptional Character length and
+	 * limits: 127 single-byte characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12505,8 +12505,8 @@ class InvoiceItemType
 	public $Name;
 
 	/**
-	*  a human readable item descriptionOptional Character length
-	*  and limits: 127 single-byte characters 
+	 * a human readable item descriptionOptional Character length
+	 * and limits: 127 single-byte characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12517,9 +12517,9 @@ class InvoiceItemType
 	public $Description;
 
 	/**
-	*  The International Article Number or Universal Product Code
-	*  (UPC) for the item. Empty string is allowed. Character
-	*  length and limits: 17 single-byte characters 
+	 * The International Article Number or Universal Product Code
+	 * (UPC) for the item. Empty string is allowed. Character
+	 * length and limits: 17 single-byte characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12530,9 +12530,9 @@ class InvoiceItemType
 	public $EAN;
 
 	/**
-	*  The Stock-Keeping Unit or other identification code assigned
-	*  to the item. Character length and limits: 64 single-byte
-	*  characters 
+	 * The Stock-Keeping Unit or other identification code assigned
+	 * to the item. Character length and limits: 64 single-byte
+	 * characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12543,12 +12543,12 @@ class InvoiceItemType
 	public $SKU;
 
 	/**
-	*  A retailer could apply different return policies on
-	*  different items. Each return policy would be identified
-	*  using a label or identifier. This return policy identifier
-	*  should be set here. This identifier will be displayed next
-	*  to the item in the e-Receipt. Character length and limits: 8
-	*  single-byte characters 
+	 * A retailer could apply different return policies on
+	 * different items. Each return policy would be identified
+	 * using a label or identifier. This return policy identifier
+	 * should be set here. This identifier will be displayed next
+	 * to the item in the e-Receipt. Character length and limits: 8
+	 * single-byte characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12559,7 +12559,7 @@ class InvoiceItemType
 	public $ReturnPolicyIdentifier;
 
 	/**
-	*  total price of this item 
+	 * total price of this item 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12570,7 +12570,7 @@ class InvoiceItemType
 	public $Price;
 
 	/**
-	*  price per item quantity 
+	 * price per item quantity 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12581,7 +12581,7 @@ class InvoiceItemType
 	public $ItemPrice;
 
 	/**
-	*  quantity of the item (non-negative) 
+	 * quantity of the item (non-negative) 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12592,7 +12592,7 @@ class InvoiceItemType
 	public $ItemCount;
 
 	/**
-	*  Unit of measure for the itemCount 
+	 * Unit of measure for the itemCount 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12603,7 +12603,7 @@ class InvoiceItemType
 	public $ItemCountUnit;
 
 	/**
-	*  discount applied to this item 
+	 * discount applied to this item 
      * @array
 	 * @access public
 	 
@@ -12615,8 +12615,8 @@ class InvoiceItemType
 	public $Discount;
 
 	/**
-	*  identifies whether this item is taxable or not. If not
-	*  passed, this will be assumed to be true. 
+	 * identifies whether this item is taxable or not. If not
+	 * passed, this will be assumed to be true. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12627,11 +12627,11 @@ class InvoiceItemType
 	public $Taxable;
 
 	/**
-	*  The tax percentage applied to the item. This is only used
-	*  for displaying in the receipt, it is not used in pricing
-	*  calculations. Note: we have totalTax at invoice level. It's
-	*  up to the caller to do the calculations for setting that
-	*  other element. 
+	 * The tax percentage applied to the item. This is only used
+	 * for displaying in the receipt, it is not used in pricing
+	 * calculations. Note: we have totalTax at invoice level. It's
+	 * up to the caller to do the calculations for setting that
+	 * other element. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12642,7 +12642,7 @@ class InvoiceItemType
 	public $TaxRate;
 
 	/**
-	*  Additional fees to this item 
+	 * Additional fees to this item 
      * @array
 	 * @access public
 	 
@@ -12654,8 +12654,8 @@ class InvoiceItemType
 	public $AdditionalFees;
 
 	/**
-	*  identifies whether this is reimbursable or not. If not pass,
-	*  this will be assumed to be true. 
+	 * identifies whether this is reimbursable or not. If not pass,
+	 * this will be assumed to be true. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12666,7 +12666,7 @@ class InvoiceItemType
 	public $Reimbursable;
 
 	/**
-	*  Manufacturer part number. 
+	 * Manufacturer part number. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12677,9 +12677,9 @@ class InvoiceItemType
 	public $MPN;
 
 	/**
-	*  International Standard Book Number. Reference
-	*  http://en.wikipedia.org/wiki/ISBN Character length and
-	*  limits: 32 single-byte characters 
+	 * International Standard Book Number. Reference
+	 * http://en.wikipedia.org/wiki/ISBN Character length and
+	 * limits: 32 single-byte characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12690,9 +12690,9 @@ class InvoiceItemType
 	public $ISBN;
 
 	/**
-	*  Price Look-Up code Reference
-	*  http://en.wikipedia.org/wiki/Price_Look-Up_code Character
-	*  length and limits: 5 single-byte characters 
+	 * Price Look-Up code Reference
+	 * http://en.wikipedia.org/wiki/Price_Look-Up_code Character
+	 * length and limits: 5 single-byte characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12703,7 +12703,7 @@ class InvoiceItemType
 	public $PLU;
 
 	/**
-	*  Character length and limits: 32 single-byte characters 
+	 * Character length and limits: 32 single-byte characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12714,7 +12714,7 @@ class InvoiceItemType
 	public $ModelNumber;
 
 	/**
-	*  Character length and limits: 32 single-byte characters 
+	 * Character length and limits: 32 single-byte characters 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12731,13 +12731,13 @@ class InvoiceItemType
 
 
 /**
- *  Holds refunds payment status information 
+ * Holds refunds payment status information 
  */
 class RefundInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  Refund status whether it is Instant or Delayed. 
+	 * Refund status whether it is Instant or Delayed. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12748,7 +12748,7 @@ class RefundInfoType
 	public $RefundStatus;
 
 	/**
-	*  Tells us the reason when refund payment status is Delayed. 
+	 * Tells us the reason when refund payment status is Delayed. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12764,13 +12764,13 @@ class RefundInfoType
 
 
 /**
- *  Defines relationship between buckets 
+ * Defines relationship between buckets 
  */
 class CoupledBucketsType  
    extends PPXmlMessage{
 
 	/**
-	*  Relationship Type - LifeTime (default) 
+	 * Relationship Type - LifeTime (default) 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12781,7 +12781,7 @@ class CoupledBucketsType
 	public $CoupleType;
 
 	/**
-	*  Identifier for this relation 
+	 * Identifier for this relation 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12792,7 +12792,7 @@ class CoupledBucketsType
 	public $CoupledPaymentRequestID;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -12817,13 +12817,13 @@ class CoupledBucketsType
 
 
 /**
- *  Information about Coupled Payment transactions. 
+ * Information about Coupled Payment transactions. 
  */
 class CoupledPaymentInfoType  
    extends PPXmlMessage{
 
 	/**
-	*  ID received in the Coupled Payment Request
+	 * ID received in the Coupled Payment Request
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12834,8 +12834,8 @@ class CoupledPaymentInfoType
 	public $CoupledPaymentRequestID;
 
 	/**
-	*  ID that uniquely identifies this CoupledPayment. Generated
-	*  by PP in Response
+	 * ID that uniquely identifies this CoupledPayment. Generated
+	 * by PP in Response
 	 * @access public
 	 
 	 * @namespace ebl
@@ -12851,7 +12851,7 @@ class CoupledPaymentInfoType
 
 
 /**
- *  
+ * 
  */
 class EnhancedCheckoutDataType  
    extends PPXmlMessage{
@@ -12863,7 +12863,7 @@ class EnhancedCheckoutDataType
 
 
 /**
- *  
+ * 
  */
 class EnhancedPaymentDataType  
    extends PPXmlMessage{
@@ -12875,7 +12875,7 @@ class EnhancedPaymentDataType
 
 
 /**
- *  
+ * 
  */
 class EnhancedItemDataType  
    extends PPXmlMessage{
@@ -12887,7 +12887,7 @@ class EnhancedItemDataType
 
 
 /**
- *  
+ * 
  */
 class EnhancedPaymentInfoType  
    extends PPXmlMessage{
@@ -12898,7 +12898,7 @@ class EnhancedPaymentInfoType
 
 
 /**
- *  
+ * 
  */
 class EnhancedInitiateRecoupRequestDetailsType  
    extends PPXmlMessage{
@@ -12910,7 +12910,7 @@ class EnhancedInitiateRecoupRequestDetailsType
 
 
 /**
- *  
+ * 
  */
 class EnhancedCompleteRecoupRequestDetailsType  
    extends PPXmlMessage{
@@ -12922,7 +12922,7 @@ class EnhancedCompleteRecoupRequestDetailsType
 
 
 /**
- *  
+ * 
  */
 class EnhancedCompleteRecoupResponseDetailsType  
    extends PPXmlMessage{
@@ -12933,7 +12933,7 @@ class EnhancedCompleteRecoupResponseDetailsType
 
 
 /**
- *  
+ * 
  */
 class EnhancedCancelRecoupRequestDetailsType  
    extends PPXmlMessage{
@@ -12945,7 +12945,7 @@ class EnhancedCancelRecoupRequestDetailsType
 
 
 /**
- *  
+ * 
  */
 class EnhancedPayerInfoType  
    extends PPXmlMessage{
@@ -12957,13 +12957,13 @@ class EnhancedPayerInfoType
 
 
 /**
- *  Installment Period. Optional 
+ * Installment Period. Optional 
  */
 class InstallmentDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Installment Period. Optional 
+	 * Installment Period. Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -12974,7 +12974,7 @@ class InstallmentDetailsType
 	public $BillingPeriod;
 
 	/**
-	*  Installment Frequency. Optional 
+	 * Installment Frequency. Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -12985,7 +12985,7 @@ class InstallmentDetailsType
 	public $BillingFrequency;
 
 	/**
-	*  Installment Cycles. Optional 
+	 * Installment Cycles. Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -12996,7 +12996,7 @@ class InstallmentDetailsType
 	public $TotalBillingCycles;
 
 	/**
-	*  Installment Amount. Optional 
+	 * Installment Amount. Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13007,7 +13007,7 @@ class InstallmentDetailsType
 	public $Amount;
 
 	/**
-	*  Installment Amount. Optional 
+	 * Installment Amount. Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13018,7 +13018,7 @@ class InstallmentDetailsType
 	public $ShippingAmount;
 
 	/**
-	*  Installment Amount. Optional 
+	 * Installment Amount. Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13035,15 +13035,15 @@ class InstallmentDetailsType
 
 
 /**
- *  Option Selection. Required Character length and limitations:
- *  12 single-byte alphanumeric characters 
+ * Option Selection. Required Character length and limitations:
+ * 12 single-byte alphanumeric characters 
  */
 class OptionSelectionDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Option Selection. Required Character length and limitations:
-	*  12 single-byte alphanumeric characters 
+	 * Option Selection. Required Character length and limitations:
+	 * 12 single-byte alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13054,7 +13054,7 @@ class OptionSelectionDetailsType
 	public $OptionSelection;
 
 	/**
-	*  Option Price. Optional 
+	 * Option Price. Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13065,7 +13065,7 @@ class OptionSelectionDetailsType
 	public $Price;
 
 	/**
-	*  Option Type Optional 
+	 * Option Type Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13076,7 +13076,7 @@ class OptionSelectionDetailsType
 	public $OptionType;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -13101,13 +13101,13 @@ class OptionSelectionDetailsType
 
 
 /**
- *  Option Name. Optional 
+ * Option Name. Optional 
  */
 class OptionDetailsType  
    extends PPXmlMessage{
 
 	/**
-	*  Option Name. Optional 
+	 * Option Name. Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13118,7 +13118,7 @@ class OptionDetailsType
 	public $OptionName;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -13143,13 +13143,13 @@ class OptionDetailsType
 
 
 /**
- *  
+ * 
  */
 class BMCreateButtonReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13179,17 +13179,17 @@ class BMCreateButtonReq
 
 
 /**
- *  Type of Button to create.  Required Must be one of the
- *  following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
- *  PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE  
+ * Type of Button to create.  Required Must be one of the
+ * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
+ * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE  
  */
 class BMCreateButtonRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  Type of Button to create.  Required Must be one of the
-	*  following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
-	*  PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE 
+	 * Type of Button to create.  Required Must be one of the
+	 * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
+	 * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13200,8 +13200,8 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	public $ButtonType;
 
 	/**
-	*  button code.  optional Must be one of the following: hosted,
-	*  encrypted or cleartext 
+	 * button code.  optional Must be one of the following: hosted,
+	 * encrypted or cleartext 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13212,8 +13212,8 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	public $ButtonCode;
 
 	/**
-	*  Button sub type.  optional for button types buynow and cart
-	*  only Must Be either PRODUCTS or SERVICES 
+	 * Button sub type.  optional for button types buynow and cart
+	 * only Must Be either PRODUCTS or SERVICES 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13224,9 +13224,9 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	public $ButtonSubType;
 
 	/**
-	*  Button Variable information  At least one required recurring
-	*  Character length and limitations: 63 single-byte
-	*  alphanumeric characters 
+	 * Button Variable information  At least one required recurring
+	 * Character length and limitations: 63 single-byte
+	 * alphanumeric characters 
      * @array
 	 * @access public
 	 
@@ -13238,7 +13238,7 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	public $ButtonVar;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -13250,7 +13250,7 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	public $OptionDetails;
 
 	/**
-	*  Details of each option for the button.  Optional 
+	 * Details of each option for the button.  Optional 
      * @array
 	 * @access public
 	 
@@ -13262,8 +13262,8 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	public $TextBox;
 
 	/**
-	*  Button image to use.  Optional Must be one of: REG, SML, or
-	*  CC 
+	 * Button image to use.  Optional Must be one of: REG, SML, or
+	 * CC 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13274,9 +13274,9 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	public $ButtonImage;
 
 	/**
-	*  Button URL for custom button image.  Optional Character
-	*  length and limitations: 127 single-byte alphanumeric
-	*  characters 
+	 * Button URL for custom button image.  Optional Character
+	 * length and limitations: 127 single-byte alphanumeric
+	 * characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13287,8 +13287,8 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	public $ButtonImageURL;
 
 	/**
-	*  Text to use on Buy Now Button.  Optional Must be either
-	*  BUYNOW or PAYNOW 
+	 * Text to use on Buy Now Button.  Optional Must be either
+	 * BUYNOW or PAYNOW 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13299,8 +13299,8 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	public $BuyNowText;
 
 	/**
-	*  Text to use on Subscribe button.  Optional Must be either
-	*  BUYNOW or SUBSCRIBE 
+	 * Text to use on Subscribe button.  Optional Must be either
+	 * BUYNOW or SUBSCRIBE 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13311,7 +13311,7 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	public $SubscribeText;
 
 	/**
-	*  Button Country.  Optional Must be valid ISO country code 
+	 * Button Country.  Optional Must be valid ISO country code 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13322,8 +13322,8 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	public $ButtonCountry;
 
 	/**
-	*  Button language code.  Optional Character length and
-	*  limitations: 3 single-byte alphanumeric characters 
+	 * Button language code.  Optional Character length and
+	 * limitations: 3 single-byte alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13340,13 +13340,13 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class BMCreateButtonResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13357,7 +13357,7 @@ class BMCreateButtonResponseType  extends AbstractResponseType
 	public $Website;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13368,7 +13368,7 @@ class BMCreateButtonResponseType  extends AbstractResponseType
 	public $Email;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13379,7 +13379,7 @@ class BMCreateButtonResponseType  extends AbstractResponseType
 	public $Mobile;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13395,13 +13395,13 @@ class BMCreateButtonResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class BMUpdateButtonReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13431,17 +13431,17 @@ class BMUpdateButtonReq
 
 
 /**
- *  Hosted Button id of the button to update.  Required
- *  Character length and limitations: 10 single-byte numeric
- *  characters  
+ * Hosted Button id of the button to update.  Required
+ * Character length and limitations: 10 single-byte numeric
+ * characters  
  */
 class BMUpdateButtonRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  Hosted Button id of the button to update.  Required
-	*  Character length and limitations: 10 single-byte numeric
-	*  characters 
+	 * Hosted Button id of the button to update.  Required
+	 * Character length and limitations: 10 single-byte numeric
+	 * characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13452,9 +13452,9 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	public $HostedButtonID;
 
 	/**
-	*  Type of Button to create.  Required Must be one of the
-	*  following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
-	*  PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE 
+	 * Type of Button to create.  Required Must be one of the
+	 * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
+	 * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13465,8 +13465,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	public $ButtonType;
 
 	/**
-	*  button code.  optional Must be one of the following: hosted,
-	*  encrypted or cleartext 
+	 * button code.  optional Must be one of the following: hosted,
+	 * encrypted or cleartext 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13477,8 +13477,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	public $ButtonCode;
 
 	/**
-	*  Button sub type.  optional for button types buynow and cart
-	*  only Must Be either PRODUCTS or SERVICES 
+	 * Button sub type.  optional for button types buynow and cart
+	 * only Must Be either PRODUCTS or SERVICES 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13489,9 +13489,9 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	public $ButtonSubType;
 
 	/**
-	*  Button Variable information  At least one required recurring
-	*  Character length and limitations: 63 single-byte
-	*  alphanumeric characters 
+	 * Button Variable information  At least one required recurring
+	 * Character length and limitations: 63 single-byte
+	 * alphanumeric characters 
      * @array
 	 * @access public
 	 
@@ -13503,7 +13503,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	public $ButtonVar;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -13515,7 +13515,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	public $OptionDetails;
 
 	/**
-	*  Details of each option for the button.  Optional 
+	 * Details of each option for the button.  Optional 
      * @array
 	 * @access public
 	 
@@ -13527,8 +13527,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	public $TextBox;
 
 	/**
-	*  Button image to use.  Optional Must be one of: REG, SML, or
-	*  CC 
+	 * Button image to use.  Optional Must be one of: REG, SML, or
+	 * CC 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13539,9 +13539,9 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	public $ButtonImage;
 
 	/**
-	*  Button URL for custom button image.  Optional Character
-	*  length and limitations: 127 single-byte alphanumeric
-	*  characters 
+	 * Button URL for custom button image.  Optional Character
+	 * length and limitations: 127 single-byte alphanumeric
+	 * characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13552,8 +13552,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	public $ButtonImageURL;
 
 	/**
-	*  Text to use on Buy Now Button.  Optional Must be either
-	*  BUYNOW or PAYNOW 
+	 * Text to use on Buy Now Button.  Optional Must be either
+	 * BUYNOW or PAYNOW 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13564,8 +13564,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	public $BuyNowText;
 
 	/**
-	*  Text to use on Subscribe button.  Optional Must be either
-	*  BUYNOW or SUBSCRIBE 
+	 * Text to use on Subscribe button.  Optional Must be either
+	 * BUYNOW or SUBSCRIBE 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13576,7 +13576,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	public $SubscribeText;
 
 	/**
-	*  Button Country.  Optional Must be valid ISO country code 
+	 * Button Country.  Optional Must be valid ISO country code 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13587,8 +13587,8 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	public $ButtonCountry;
 
 	/**
-	*  Button language code.  Optional Character length and
-	*  limitations: 2 single-byte alphanumeric characters 
+	 * Button language code.  Optional Character length and
+	 * limitations: 2 single-byte alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13612,13 +13612,13 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class BMUpdateButtonResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13629,7 +13629,7 @@ class BMUpdateButtonResponseType  extends AbstractResponseType
 	public $Website;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13640,7 +13640,7 @@ class BMUpdateButtonResponseType  extends AbstractResponseType
 	public $Email;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13651,7 +13651,7 @@ class BMUpdateButtonResponseType  extends AbstractResponseType
 	public $Mobile;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13667,13 +13667,13 @@ class BMUpdateButtonResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class BMManageButtonStatusReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13703,15 +13703,15 @@ class BMManageButtonStatusReq
 
 
 /**
- *  Button ID of Hosted button.  Required Character length and
- *  limitations: 10 single-byte numeric characters  
+ * Button ID of Hosted button.  Required Character length and
+ * limitations: 10 single-byte numeric characters  
  */
 class BMManageButtonStatusRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  Button ID of Hosted button.  Required Character length and
-	*  limitations: 10 single-byte numeric characters 
+	 * Button ID of Hosted button.  Required Character length and
+	 * limitations: 10 single-byte numeric characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13722,9 +13722,9 @@ class BMManageButtonStatusRequestType  extends AbstractRequestType
 	public $HostedButtonID;
 
 	/**
-	*  Requested Status change for hosted button.  Required
-	*  Character length and limitations: 1 single-byte alphanumeric
-	*  characters 
+	 * Requested Status change for hosted button.  Required
+	 * Character length and limitations: 1 single-byte alphanumeric
+	 * characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13741,7 +13741,7 @@ class BMManageButtonStatusRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class BMManageButtonStatusResponseType  extends AbstractResponseType  
   {
@@ -13752,13 +13752,13 @@ class BMManageButtonStatusResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class BMGetButtonDetailsReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13788,15 +13788,15 @@ class BMGetButtonDetailsReq
 
 
 /**
- *  Button ID of button to return.  Required Character length
- *  and limitations: 10 single-byte numeric characters  
+ * Button ID of button to return.  Required Character length
+ * and limitations: 10 single-byte numeric characters  
  */
 class BMGetButtonDetailsRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  Button ID of button to return.  Required Character length
-	*  and limitations: 10 single-byte numeric characters 
+	 * Button ID of button to return.  Required Character length
+	 * and limitations: 10 single-byte numeric characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13820,15 +13820,15 @@ class BMGetButtonDetailsRequestType  extends AbstractRequestType
 
 
 /**
- *  Type of button. One of the following: BUYNOW, CART,
- *  GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
- *  DONATE, VIEWCART or UNSUBSCRIBE 
+ * Type of button. One of the following: BUYNOW, CART,
+ * GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
+ * DONATE, VIEWCART or UNSUBSCRIBE 
  */
 class BMGetButtonDetailsResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13839,7 +13839,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $Website;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13850,7 +13850,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $Email;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13861,7 +13861,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $Mobile;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13872,9 +13872,9 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $HostedButtonID;
 
 	/**
-	*  Type of button. One of the following: BUYNOW, CART,
-	*  GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
-	*  DONATE, VIEWCART or UNSUBSCRIBE 
+	 * Type of button. One of the following: BUYNOW, CART,
+	 * GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
+	 * DONATE, VIEWCART or UNSUBSCRIBE 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13885,8 +13885,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $ButtonType;
 
 	/**
-	*  Type of button code. One of the following: hosted, encrypted
-	*  or cleartext 
+	 * Type of button code. One of the following: hosted, encrypted
+	 * or cleartext 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13897,8 +13897,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $ButtonCode;
 
 	/**
-	*  Button sub type. optional for button types buynow and cart
-	*  only Either PRODUCTS or SERVICES 
+	 * Button sub type. optional for button types buynow and cart
+	 * only Either PRODUCTS or SERVICES 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13909,8 +13909,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $ButtonSubType;
 
 	/**
-	*  Button Variable information Character length and
-	*  limitations: 63 single-byte alphanumeric characters 
+	 * Button Variable information Character length and
+	 * limitations: 63 single-byte alphanumeric characters 
      * @array
 	 * @access public
 	 
@@ -13922,7 +13922,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $ButtonVar;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -13934,7 +13934,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $OptionDetails;
 
 	/**
-	*  Text field 
+	 * Text field 
      * @array
 	 * @access public
 	 
@@ -13946,7 +13946,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $TextBox;
 
 	/**
-	*  Button image to use. One of: REG, SML, or CC 
+	 * Button image to use. One of: REG, SML, or CC 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13957,7 +13957,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $ButtonImage;
 
 	/**
-	*  Button URL for custom button image. 
+	 * Button URL for custom button image. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13968,7 +13968,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $ButtonImageURL;
 
 	/**
-	*  Text to use on Buy Now Button. Either BUYNOW or PAYNOW 
+	 * Text to use on Buy Now Button. Either BUYNOW or PAYNOW 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13979,8 +13979,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $BuyNowText;
 
 	/**
-	*  Text to use on Subscribe button. Must be either BUYNOW or
-	*  SUBSCRIBE 
+	 * Text to use on Subscribe button. Must be either BUYNOW or
+	 * SUBSCRIBE 
 	 * @access public
 	 
 	 * @namespace ns
@@ -13991,7 +13991,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $SubscribeText;
 
 	/**
-	*  Button Country. Valid ISO country code or 'International' 
+	 * Button Country. Valid ISO country code or 'International' 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14002,8 +14002,8 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $ButtonCountry;
 
 	/**
-	*  Button language code. Character length and limitations: 3
-	*  single-byte alphanumeric characters 
+	 * Button language code. Character length and limitations: 3
+	 * single-byte alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14019,13 +14019,13 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class BMSetInventoryReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14055,17 +14055,17 @@ class BMSetInventoryReq
 
 
 /**
- *  Hosted Button ID of button you wish to change.  Required
- *  Character length and limitations: 10 single-byte numeric
- *  characters  
+ * Hosted Button ID of button you wish to change.  Required
+ * Character length and limitations: 10 single-byte numeric
+ * characters  
  */
 class BMSetInventoryRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  Hosted Button ID of button you wish to change.  Required
-	*  Character length and limitations: 10 single-byte numeric
-	*  characters 
+	 * Hosted Button ID of button you wish to change.  Required
+	 * Character length and limitations: 10 single-byte numeric
+	 * characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14076,7 +14076,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	public $HostedButtonID;
 
 	/**
-	*  Is Inventory tracked.  Required 0 or 1 
+	 * Is Inventory tracked.  Required 0 or 1 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14087,7 +14087,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	public $TrackInv;
 
 	/**
-	*  Is PNL Tracked.  Required 0 or 1 
+	 * Is PNL Tracked.  Required 0 or 1 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14098,7 +14098,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	public $TrackPnl;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -14109,8 +14109,8 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	public $ItemTrackingDetails;
 
 	/**
-	*  Option Index.  Optional Character length and limitations: 1
-	*  single-byte alphanumeric characters 
+	 * Option Index.  Optional Character length and limitations: 1
+	 * single-byte alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14121,7 +14121,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	public $OptionIndex;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -14133,9 +14133,9 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	public $OptionTrackingDetails;
 
 	/**
-	*  URL of page to display when an item is soldout.  Optional
-	*  Character length and limitations: 127 single-byte
-	*  alphanumeric characters 
+	 * URL of page to display when an item is soldout.  Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14146,8 +14146,8 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	public $SoldoutURL;
 
 	/**
-	*  Whether to use the same digital download key repeatedly. 
-	*  Optional 
+	 * Whether to use the same digital download key repeatedly. 
+	 * Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14158,8 +14158,8 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	public $ReuseDigitalDownloadKeys;
 
 	/**
-	*  Whether to append these keys to the list or not (replace). 
-	*  Optional 
+	 * Whether to append these keys to the list or not (replace). 
+	 * Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14170,10 +14170,10 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	public $AppendDigitalDownloadKeys;
 
 	/**
-	*  Zero or more digital download keys to distribute to
-	*  customers after transaction is completed.  Optional
-	*  Character length and limitations: 1000 single-byte
-	*  alphanumeric characters 
+	 * Zero or more digital download keys to distribute to
+	 * customers after transaction is completed.  Optional
+	 * Character length and limitations: 1000 single-byte
+	 * alphanumeric characters 
      * @array
 	 * @access public
 	 
@@ -14200,7 +14200,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class BMSetInventoryResponseType  extends AbstractResponseType  
   {
@@ -14211,13 +14211,13 @@ class BMSetInventoryResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class BMGetInventoryReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14247,17 +14247,17 @@ class BMGetInventoryReq
 
 
 /**
- *  Hosted Button ID of the button to return inventory for. 
- *  Required Character length and limitations: 10 single-byte
- *  numeric characters  
+ * Hosted Button ID of the button to return inventory for. 
+ * Required Character length and limitations: 10 single-byte
+ * numeric characters  
  */
 class BMGetInventoryRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  Hosted Button ID of the button to return inventory for. 
-	*  Required Character length and limitations: 10 single-byte
-	*  numeric characters 
+	 * Hosted Button ID of the button to return inventory for. 
+	 * Required Character length and limitations: 10 single-byte
+	 * numeric characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14281,13 +14281,13 @@ class BMGetInventoryRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class BMGetInventoryResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14298,7 +14298,7 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	public $HostedButtonID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14309,7 +14309,7 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	public $TrackInv;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14320,7 +14320,7 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	public $TrackPnl;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -14331,7 +14331,7 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	public $ItemTrackingDetails;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14342,7 +14342,7 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	public $OptionIndex;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14353,7 +14353,7 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	public $OptionName;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -14365,7 +14365,7 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	public $OptionTrackingDetails;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14376,7 +14376,7 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	public $SoldoutURL;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -14393,13 +14393,13 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class BMButtonSearchReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14429,15 +14429,15 @@ class BMButtonSearchReq
 
 
 /**
- *  The earliest transaction date at which to start the search.
- *  No wildcards are allowed. Required 
+ * The earliest transaction date at which to start the search.
+ * No wildcards are allowed. Required 
  */
 class BMButtonSearchRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  The earliest transaction date at which to start the search.
-	*  No wildcards are allowed. Required 
+	 * The earliest transaction date at which to start the search.
+	 * No wildcards are allowed. Required 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14448,8 +14448,8 @@ class BMButtonSearchRequestType  extends AbstractRequestType
 	public $StartDate;
 
 	/**
-	*  The latest transaction date to be included in the search
-	*  Optional 
+	 * The latest transaction date to be included in the search
+	 * Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14466,13 +14466,13 @@ class BMButtonSearchRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class BMButtonSearchResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -14489,13 +14489,13 @@ class BMButtonSearchResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class RefundTransactionReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14525,17 +14525,17 @@ class RefundTransactionReq
 
 
 /**
- *  Unique identifier of the transaction you are refunding.
- *  Optional Character length and limitations: 17 single-byte
- *  alphanumeric characters 
+ * Unique identifier of the transaction you are refunding.
+ * Optional Character length and limitations: 17 single-byte
+ * alphanumeric characters 
  */
 class RefundTransactionRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  Unique identifier of the transaction you are refunding.
-	*  Optional Character length and limitations: 17 single-byte
-	*  alphanumeric characters 
+	 * Unique identifier of the transaction you are refunding.
+	 * Optional Character length and limitations: 17 single-byte
+	 * alphanumeric characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14546,9 +14546,9 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	public $TransactionID;
 
 	/**
-	*  Encrypted PayPal customer account identification number.
-	*  Optional Character length and limitations: 127 single-byte
-	*  alphanumeric characters
+	 * Encrypted PayPal customer account identification number.
+	 * Optional Character length and limitations: 127 single-byte
+	 * alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -14559,12 +14559,12 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	public $PayerID;
 
 	/**
-	*  Invoice number corresponding to transaction details for
-	*  tracking the refund of a payment. This parameter is passed
-	*  by the merchant or recipient while refunding the
-	*  transaction. This parameter does not affect the business
-	*  logic, it is persisted in the DB for transaction reference
-	*  Optional 
+	 * Invoice number corresponding to transaction details for
+	 * tracking the refund of a payment. This parameter is passed
+	 * by the merchant or recipient while refunding the
+	 * transaction. This parameter does not affect the business
+	 * logic, it is persisted in the DB for transaction reference
+	 * Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14575,7 +14575,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	public $InvoiceID;
 
 	/**
-	*  Type of refund you are making Required 
+	 * Type of refund you are making Required 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14586,8 +14586,8 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	public $RefundType;
 
 	/**
-	*  Refund amount. Amount is required if RefundType is Partial.
-	*  NOTE: If RefundType is Full, do not set Amount.
+	 * Refund amount. Amount is required if RefundType is Partial.
+	 * NOTE: If RefundType is Full, do not set Amount.
 	 * @access public
 	 
 	 * @namespace ns
@@ -14598,8 +14598,8 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	public $Amount;
 
 	/**
-	*  Custom memo about the refund. Optional Character length and
-	*  limitations: 255 single-byte alphanumeric characters
+	 * Custom memo about the refund. Optional Character length and
+	 * limitations: 255 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -14610,7 +14610,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	public $Memo;
 
 	/**
-	*  The maximum time till which refund must be tried. Optional 
+	 * The maximum time till which refund must be tried. Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14621,7 +14621,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	public $RetryUntil;
 
 	/**
-	*  The type of funding source for refund. Optional 
+	 * The type of funding source for refund. Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14632,9 +14632,9 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	public $RefundSource;
 
 	/**
-	*  Flag to indicate that the customer was already given store
-	*  credit for a given transaction. This will allow us to make
-	*  sure we do not double refund. Optional 
+	 * Flag to indicate that the customer was already given store
+	 * credit for a given transaction. This will allow us to make
+	 * sure we do not double refund. Optional 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14645,7 +14645,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	public $RefundAdvice;
 
 	/**
-	*  To pass the Merchant store informationOptional 
+	 * To pass the Merchant store informationOptional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -14656,8 +14656,8 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	public $MerchantStoreDetails;
 
 	/**
-	*  Information about the individual details of the items to be
-	*  refunded.Optional 
+	 * Information about the individual details of the items to be
+	 * refunded.Optional 
      * @array
 	 * @access public
 	 
@@ -14669,9 +14669,9 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	public $RefundItemDetails;
 
 	/**
-	*  Unique id for each API request to prevent duplicate
-	*  payments. Optional Character length and limits: 38
-	*  single-byte characters maximum. 
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14688,15 +14688,15 @@ class RefundTransactionRequestType  extends AbstractRequestType
 
 
 /**
- *  Unique transaction ID of the refund. Character length and
- *  limitations:17 single-byte characters 
+ * Unique transaction ID of the refund. Character length and
+ * limitations:17 single-byte characters 
  */
 class RefundTransactionResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  Unique transaction ID of the refund. Character length and
-	*  limitations:17 single-byte characters
+	 * Unique transaction ID of the refund. Character length and
+	 * limitations:17 single-byte characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -14707,8 +14707,8 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	public $RefundTransactionID;
 
 	/**
-	*  Amount subtracted from PayPal balance of original recipient
-	*  of payment to make this refund 
+	 * Amount subtracted from PayPal balance of original recipient
+	 * of payment to make this refund 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14719,7 +14719,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	public $NetRefundAmount;
 
 	/**
-	*  Transaction fee refunded to original recipient of payment 
+	 * Transaction fee refunded to original recipient of payment 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14730,7 +14730,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	public $FeeRefundAmount;
 
 	/**
-	*  Amount of money refunded to original payer 
+	 * Amount of money refunded to original payer 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14741,7 +14741,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	public $GrossRefundAmount;
 
 	/**
-	*  Total of all previous refunds
+	 * Total of all previous refunds
 	 * @access public
 	 
 	 * @namespace ns
@@ -14752,7 +14752,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	public $TotalRefundedAmount;
 
 	/**
-	*  Contains Refund Payment status information.
+	 * Contains Refund Payment status information.
 	 * @access public
 	 
 	 * @namespace ebl
@@ -14763,8 +14763,8 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	public $RefundInfo;
 
 	/**
-	*  Any general information like offer details that is
-	*  reinstated or any other marketing data
+	 * Any general information like offer details that is
+	 * reinstated or any other marketing data
 	 * @access public
 	 
 	 * @namespace ns
@@ -14775,7 +14775,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	public $ReceiptData;
 
 	/**
-	*  Return msgsubid back to merchant
+	 * Return msgsubid back to merchant
 	 * @access public
 	 
 	 * @namespace ns
@@ -14791,13 +14791,13 @@ class RefundTransactionResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class InitiateRecoupReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14827,13 +14827,13 @@ class InitiateRecoupReq
 
 
 /**
- *  
+ * 
  */
 class InitiateRecoupRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ed
@@ -14857,7 +14857,7 @@ class InitiateRecoupRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class InitiateRecoupResponseType  extends AbstractResponseType  
   {
@@ -14868,13 +14868,13 @@ class InitiateRecoupResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class CompleteRecoupReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14904,13 +14904,13 @@ class CompleteRecoupReq
 
 
 /**
- *  
+ * 
  */
 class CompleteRecoupRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ed
@@ -14934,13 +14934,13 @@ class CompleteRecoupRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class CompleteRecoupResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ed
@@ -14956,13 +14956,13 @@ class CompleteRecoupResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class CancelRecoupReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -14992,13 +14992,13 @@ class CancelRecoupReq
 
 
 /**
- *  
+ * 
  */
 class CancelRecoupRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ed
@@ -15022,7 +15022,7 @@ class CancelRecoupRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class CancelRecoupResponseType  extends AbstractResponseType  
   {
@@ -15033,13 +15033,13 @@ class CancelRecoupResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class GetTransactionDetailsReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -15069,21 +15069,21 @@ class GetTransactionDetailsReq
 
 
 /**
- *  Unique identifier of a transaction. RequiredThe details for
- *  some kinds of transactions cannot be retrieved with
- *  GetTransactionDetailsRequest. You cannot obtain details of
- *  bank transfer withdrawals, for example. Character length and
- *  limitations: 17 single-byte alphanumeric characters
+ * Unique identifier of a transaction. RequiredThe details for
+ * some kinds of transactions cannot be retrieved with
+ * GetTransactionDetailsRequest. You cannot obtain details of
+ * bank transfer withdrawals, for example. Character length and
+ * limitations: 17 single-byte alphanumeric characters
  */
 class GetTransactionDetailsRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  Unique identifier of a transaction. RequiredThe details for
-	*  some kinds of transactions cannot be retrieved with
-	*  GetTransactionDetailsRequest. You cannot obtain details of
-	*  bank transfer withdrawals, for example. Character length and
-	*  limitations: 17 single-byte alphanumeric characters
+	 * Unique identifier of a transaction. RequiredThe details for
+	 * some kinds of transactions cannot be retrieved with
+	 * GetTransactionDetailsRequest. You cannot obtain details of
+	 * bank transfer withdrawals, for example. Character length and
+	 * limitations: 17 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -15100,13 +15100,13 @@ class GetTransactionDetailsRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class GetTransactionDetailsResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -15117,7 +15117,7 @@ class GetTransactionDetailsResponseType  extends AbstractResponseType
 	public $PaymentTransactionDetails;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -15133,13 +15133,13 @@ class GetTransactionDetailsResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class BillUserReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -15169,14 +15169,14 @@ class BillUserReq
 
 
 /**
- *  This flag indicates that the response should include
- *  FMFDetails 
+ * This flag indicates that the response should include
+ * FMFDetails 
  */
 class BillUserRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -15187,8 +15187,8 @@ class BillUserRequestType  extends AbstractRequestType
 	public $MerchantPullPaymentDetails;
 
 	/**
-	*  This flag indicates that the response should include
-	*  FMFDetails
+	 * This flag indicates that the response should include
+	 * FMFDetails
 	 * @access public
 	 
 	 * @namespace ns
@@ -15205,13 +15205,13 @@ class BillUserRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class BillUserResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -15222,7 +15222,7 @@ class BillUserResponseType  extends AbstractResponseType
 	public $BillUserResponseDetails;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -15238,13 +15238,13 @@ class BillUserResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class TransactionSearchReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -15274,15 +15274,15 @@ class TransactionSearchReq
 
 
 /**
- *  The earliest transaction date at which to start the search.
- *  No wildcards are allowed. Required
+ * The earliest transaction date at which to start the search.
+ * No wildcards are allowed. Required
  */
 class TransactionSearchRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  The earliest transaction date at which to start the search.
-	*  No wildcards are allowed. Required
+	 * The earliest transaction date at which to start the search.
+	 * No wildcards are allowed. Required
 	 * @access public
 	 
 	 * @namespace ns
@@ -15293,8 +15293,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	public $StartDate;
 
 	/**
-	*  The latest transaction date to be included in the search
-	*  Optional
+	 * The latest transaction date to be included in the search
+	 * Optional
 	 * @access public
 	 
 	 * @namespace ns
@@ -15305,8 +15305,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	public $EndDate;
 
 	/**
-	*  Search by the buyer's email address OptionalCharacter length
-	*  and limitations: 127 single-byte alphanumeric characters
+	 * Search by the buyer's email address OptionalCharacter length
+	 * and limitations: 127 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -15317,9 +15317,9 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	public $Payer;
 
 	/**
-	*  Search by the receiver's email address. If the merchant
-	*  account has only one email, this is the primary email. Can
-	*  also be a non-primary email.Optional
+	 * Search by the receiver's email address. If the merchant
+	 * account has only one email, this is the primary email. Can
+	 * also be a non-primary email.Optional
 	 * @access public
 	 
 	 * @namespace ns
@@ -15330,7 +15330,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	public $Receiver;
 
 	/**
-	*  Search by the PayPal Account Optional receipt IDOptional
+	 * Search by the PayPal Account Optional receipt IDOptional
 	 * @access public
 	 
 	 * @namespace ns
@@ -15341,9 +15341,9 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	public $ReceiptID;
 
 	/**
-	*  Search by the transaction ID. OptionalThe returned results
-	*  are from the merchant's transaction records. Character
-	*  length and limitations: 19 single-byte characters maximum
+	 * Search by the transaction ID. OptionalThe returned results
+	 * are from the merchant's transaction records. Character
+	 * length and limitations: 19 single-byte characters maximum
 	 * @access public
 	 
 	 * @namespace ns
@@ -15354,9 +15354,9 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	public $TransactionID;
 
 	/**
-	*  Search by Recurring Payment Profile id. The ProfileID is
-	*  returned as part of the CreateRecurringPaymentsProfile API
-	*  response. Optional
+	 * Search by Recurring Payment Profile id. The ProfileID is
+	 * returned as part of the CreateRecurringPaymentsProfile API
+	 * response. Optional
 	 * @access public
 	 
 	 * @namespace ns
@@ -15367,11 +15367,11 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	public $ProfileID;
 
 	/**
-	*  Search by the buyer's name OptionalSalutation: 20
-	*  single-byte character limit.FirstName: 25 single-byte
-	*  character limit.MiddleName: 25 single-byte character
-	*  limit.LastName: 25 single-byte character limit.Suffix: 12
-	*  single-byte character limit.
+	 * Search by the buyer's name OptionalSalutation: 20
+	 * single-byte character limit.FirstName: 25 single-byte
+	 * character limit.MiddleName: 25 single-byte character
+	 * limit.LastName: 25 single-byte character limit.Suffix: 12
+	 * single-byte character limit.
 	 * @access public
 	 
 	 * @namespace ns
@@ -15382,11 +15382,11 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	public $PayerName;
 
 	/**
-	*  Search by item number of the purchased goods.OptionalTo
-	*  search for purchased items not related to auctions, set the
-	*  AuctionItemNumber element to the value of the HTML
-	*  item_number variable set in the shopping cart for the
-	*  original transaction.
+	 * Search by item number of the purchased goods.OptionalTo
+	 * search for purchased items not related to auctions, set the
+	 * AuctionItemNumber element to the value of the HTML
+	 * item_number variable set in the shopping cart for the
+	 * original transaction.
 	 * @access public
 	 
 	 * @namespace ns
@@ -15397,13 +15397,13 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	public $AuctionItemNumber;
 
 	/**
-	*  Search by invoice identification key, as set by you for the
-	*  original transaction. InvoiceID searches the invoice records
-	*  for items sold by the merchant, not the items purchased.
-	*  OptionalThe value for InvoiceID must exactly match an
-	*  invoice identification number. No wildcards are allowed.
-	*  Character length and limitations: 127 single-byte characters
-	*  maximum
+	 * Search by invoice identification key, as set by you for the
+	 * original transaction. InvoiceID searches the invoice records
+	 * for items sold by the merchant, not the items purchased.
+	 * OptionalThe value for InvoiceID must exactly match an
+	 * invoice identification number. No wildcards are allowed.
+	 * Character length and limitations: 127 single-byte characters
+	 * maximum
 	 * @access public
 	 
 	 * @namespace ns
@@ -15414,7 +15414,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	public $InvoiceID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -15425,29 +15425,29 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	public $CardNumber;
 
 	/**
-	*  Search by classification of transaction. Some kinds of
-	*  possible classes of transactions are not searchable with
-	*  TransactionSearchRequest. You cannot search for bank
-	*  transfer withdrawals, for example. OptionalAll: all
-	*  transaction classifications.Sent: only payments
-	*  sent.Received: only payments received.MassPay: only mass
-	*  payments.MoneyRequest: only money requests.FundsAdded: only
-	*  funds added to balance.FundsWithdrawn: only funds withdrawn
-	*  from balance.Referral: only transactions involving
-	*  referrals.Fee: only transactions involving
-	*  fees.Subscription: only transactions involving
-	*  subscriptions.Dividend: only transactions involving
-	*  dividends.Billpay: only transactions involving BillPay
-	*  Transactions.Refund: only transactions involving
-	*  funds.CurrencyConversions: only transactions involving
-	*  currency conversions.BalanceTransfer: only transactions
-	*  involving balance transfers.Reversal: only transactions
-	*  involving BillPay reversals.Shipping: only transactions
-	*  involving UPS shipping fees.BalanceAffecting: only
-	*  transactions that affect the account balance.ECheck: only
-	*  transactions involving eCheckForcedPostTransaction: forced
-	*  post transaction.NonReferencedRefunds: non-referenced
-	*  refunds.
+	 * Search by classification of transaction. Some kinds of
+	 * possible classes of transactions are not searchable with
+	 * TransactionSearchRequest. You cannot search for bank
+	 * transfer withdrawals, for example. OptionalAll: all
+	 * transaction classifications.Sent: only payments
+	 * sent.Received: only payments received.MassPay: only mass
+	 * payments.MoneyRequest: only money requests.FundsAdded: only
+	 * funds added to balance.FundsWithdrawn: only funds withdrawn
+	 * from balance.Referral: only transactions involving
+	 * referrals.Fee: only transactions involving
+	 * fees.Subscription: only transactions involving
+	 * subscriptions.Dividend: only transactions involving
+	 * dividends.Billpay: only transactions involving BillPay
+	 * Transactions.Refund: only transactions involving
+	 * funds.CurrencyConversions: only transactions involving
+	 * currency conversions.BalanceTransfer: only transactions
+	 * involving balance transfers.Reversal: only transactions
+	 * involving BillPay reversals.Shipping: only transactions
+	 * involving UPS shipping fees.BalanceAffecting: only
+	 * transactions that affect the account balance.ECheck: only
+	 * transactions involving eCheckForcedPostTransaction: forced
+	 * post transaction.NonReferencedRefunds: non-referenced
+	 * refunds.
 	 * @access public
 	 
 	 * @namespace ns
@@ -15458,9 +15458,9 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	public $TransactionClass;
 
 	/**
-	*  Search by transaction amount OptionalYou must set the
-	*  currencyID attribute to one of the three-character currency
-	*  codes for any of the supported PayPal currencies. 
+	 * Search by transaction amount OptionalYou must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -15471,7 +15471,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	public $Amount;
 
 	/**
-	*  Search by currency codeOptional
+	 * Search by currency codeOptional
 	 * @access public
 	 
 	 * @namespace ns
@@ -15482,17 +15482,17 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	public $CurrencyCode;
 
 	/**
-	*  Search by transaction status OptionalPending: The payment is
-	*  pending. The specific reason the payment is pending is
-	*  returned by the GetTransactionDetails APIPendingReason
-	*  element. For more information, see PendingReason.Processing:
-	*  The payment is being processed.Success: The payment has been
-	*  completed and the funds have been added successfully to your
-	*  account balance.Denied: You denied the payment. This happens
-	*  only if the payment was previously pending.Reversed: A
-	*  payment was reversed due to a chargeback or other type of
-	*  reversal. The funds have been removed from your account
-	*  balance and returned to the buyer.
+	 * Search by transaction status OptionalPending: The payment is
+	 * pending. The specific reason the payment is pending is
+	 * returned by the GetTransactionDetails APIPendingReason
+	 * element. For more information, see PendingReason.Processing:
+	 * The payment is being processed.Success: The payment has been
+	 * completed and the funds have been added successfully to your
+	 * account balance.Denied: You denied the payment. This happens
+	 * only if the payment was previously pending.Reversed: A
+	 * payment was reversed due to a chargeback or other type of
+	 * reversal. The funds have been removed from your account
+	 * balance and returned to the buyer.
 	 * @access public
 	 
 	 * @namespace ns
@@ -15516,13 +15516,13 @@ class TransactionSearchRequestType  extends AbstractRequestType
 
 
 /**
- *  Results of a Transaction Search.
+ * Results of a Transaction Search.
  */
 class TransactionSearchResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  Results of a Transaction Search.
+	 * Results of a Transaction Search.
      * @array
 	 * @access public
 	 
@@ -15539,13 +15539,13 @@ class TransactionSearchResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class MassPayReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -15575,19 +15575,19 @@ class MassPayReq
 
 
 /**
- *  Subject line of the email sent to all recipients. This
- *  subject is not contained in the input file; you must create
- *  it with your application. Optional Character length and
- *  limitations: 255 single-byte alphanumeric characters 
+ * Subject line of the email sent to all recipients. This
+ * subject is not contained in the input file; you must create
+ * it with your application. Optional Character length and
+ * limitations: 255 single-byte alphanumeric characters 
  */
 class MassPayRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  Subject line of the email sent to all recipients. This
-	*  subject is not contained in the input file; you must create
-	*  it with your application. Optional Character length and
-	*  limitations: 255 single-byte alphanumeric characters
+	 * Subject line of the email sent to all recipients. This
+	 * subject is not contained in the input file; you must create
+	 * it with your application. Optional Character length and
+	 * limitations: 255 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -15598,11 +15598,11 @@ class MassPayRequestType  extends AbstractRequestType
 	public $EmailSubject;
 
 	/**
-	*  Indicates how you identify the recipients of payments in all
-	*  MassPayItems: either by EmailAddress (ReceiverEmail in
-	*  MassPayItem), PhoneNumber (ReceiverPhone in MassPayItem), or
-	*  by UserID (ReceiverID in MassPayItem). Required. You must
-	*  specify one or the other of EmailAddress or UserID.
+	 * Indicates how you identify the recipients of payments in all
+	 * MassPayItems: either by EmailAddress (ReceiverEmail in
+	 * MassPayItem), PhoneNumber (ReceiverPhone in MassPayItem), or
+	 * by UserID (ReceiverID in MassPayItem). Required. You must
+	 * specify one or the other of EmailAddress or UserID.
 	 * @access public
 	 
 	 * @namespace ns
@@ -15613,9 +15613,9 @@ class MassPayRequestType  extends AbstractRequestType
 	public $ReceiverType;
 
 	/**
-	*  Known as BN code, to track the partner referred merchant
-	*  transactions. OptionalCharacter length and limitations: 32
-	*  single-byte alphanumeric characters
+	 * Known as BN code, to track the partner referred merchant
+	 * transactions. OptionalCharacter length and limitations: 32
+	 * single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -15626,8 +15626,8 @@ class MassPayRequestType  extends AbstractRequestType
 	public $ButtonSource;
 
 	/**
-	*  Details of each payment. A single MassPayRequest can include
-	*  up to 250 MassPayItems. Required 
+	 * Details of each payment. A single MassPayRequest can include
+	 * up to 250 MassPayItems. Required 
      * @array
 	 * @access public
 	 
@@ -15652,7 +15652,7 @@ class MassPayRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class MassPayResponseType  extends AbstractResponseType  
   {
@@ -15663,17 +15663,17 @@ class MassPayResponseType  extends AbstractResponseType
 
 
 /**
- *  MassPayRequestItemType 
+ * MassPayRequestItemType 
  */
 class MassPayRequestItemType  
    extends PPXmlMessage{
 
 	/**
-	*  Email address of recipient. Required You must specify
-	*  ReceiverEmail, ReceiverPhone, or ReceiverID, but all
-	*  MassPayItems in a request must use the same field to specify
-	*  recipients. Character length and limitations: 127
-	*  single-byte characters maximum.
+	 * Email address of recipient. Required You must specify
+	 * ReceiverEmail, ReceiverPhone, or ReceiverID, but all
+	 * MassPayItems in a request must use the same field to specify
+	 * recipients. Character length and limitations: 127
+	 * single-byte characters maximum.
 	 * @access public
 	 
 	 * @namespace ns
@@ -15684,10 +15684,10 @@ class MassPayRequestItemType
 	public $ReceiverEmail;
 
 	/**
-	*  Phone number of recipient. Required You must specify
-	*  ReceiverEmail, ReceiverPhone, or ReceiverID, but all
-	*  MassPayItems in a request must use the same field to specify
-	*  recipients.
+	 * Phone number of recipient. Required You must specify
+	 * ReceiverEmail, ReceiverPhone, or ReceiverID, but all
+	 * MassPayItems in a request must use the same field to specify
+	 * recipients.
 	 * @access public
 	 
 	 * @namespace ns
@@ -15698,13 +15698,13 @@ class MassPayRequestItemType
 	public $ReceiverPhone;
 
 	/**
-	*  Unique PayPal customer account number. This value
-	*  corresponds to the value of PayerID returned by
-	*  GetTransactionDetails. Required You must specify
-	*  ReceiverEmail, ReceiverPhone, or ReceiverID, but all
-	*  MassPayItems in a request must use the same field to specify
-	*  recipients. Character length and limitations: 17 single-byte
-	*  characters maximum.
+	 * Unique PayPal customer account number. This value
+	 * corresponds to the value of PayerID returned by
+	 * GetTransactionDetails. Required You must specify
+	 * ReceiverEmail, ReceiverPhone, or ReceiverID, but all
+	 * MassPayItems in a request must use the same field to specify
+	 * recipients. Character length and limitations: 17 single-byte
+	 * characters maximum.
 	 * @access public
 	 
 	 * @namespace ns
@@ -15715,11 +15715,11 @@ class MassPayRequestItemType
 	public $ReceiverID;
 
 	/**
-	*  Payment amount. You must set the currencyID attribute to one
-	*  of the three-character currency codes for any of the
-	*  supported PayPal currencies. Required You cannot mix
-	*  currencies in a single MassPayRequest. A single request must
-	*  include items that are of the same currency.
+	 * Payment amount. You must set the currencyID attribute to one
+	 * of the three-character currency codes for any of the
+	 * supported PayPal currencies. Required You cannot mix
+	 * currencies in a single MassPayRequest. A single request must
+	 * include items that are of the same currency.
 	 * @access public
 	 
 	 * @namespace ns
@@ -15730,10 +15730,10 @@ class MassPayRequestItemType
 	public $Amount;
 
 	/**
-	*  Transaction-specific identification number for tracking in
-	*  an accounting system. Optional Character length and
-	*  limitations: 30 single-byte characters. No whitespace
-	*  allowed.
+	 * Transaction-specific identification number for tracking in
+	 * an accounting system. Optional Character length and
+	 * limitations: 30 single-byte characters. No whitespace
+	 * allowed.
 	 * @access public
 	 
 	 * @namespace ns
@@ -15744,8 +15744,8 @@ class MassPayRequestItemType
 	public $UniqueId;
 
 	/**
-	*  Custom note for each recipient. Optional Character length
-	*  and limitations: 4,000 single-byte alphanumeric characters
+	 * Custom note for each recipient. Optional Character length
+	 * and limitations: 4,000 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -15769,13 +15769,13 @@ class MassPayRequestItemType
 
 
 /**
- *  
+ * 
  */
 class BillAgreementUpdateReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -15805,13 +15805,13 @@ class BillAgreementUpdateReq
 
 
 /**
- *  
+ * 
  */
 class BAUpdateRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -15822,7 +15822,7 @@ class BAUpdateRequestType  extends AbstractRequestType
 	public $ReferenceID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -15833,7 +15833,7 @@ class BAUpdateRequestType  extends AbstractRequestType
 	public $BillingAgreementDescription;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -15844,7 +15844,7 @@ class BAUpdateRequestType  extends AbstractRequestType
 	public $BillingAgreementStatus;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -15868,13 +15868,13 @@ class BAUpdateRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class BAUpdateResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -15890,13 +15890,13 @@ class BAUpdateResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class AddressVerifyReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -15926,16 +15926,16 @@ class AddressVerifyReq
 
 
 /**
- *  Email address of buyer to be verified. Required Maximum
- *  string length: 255 single-byte characters Input mask: ?@?.??
- *  
+ * Email address of buyer to be verified. Required Maximum
+ * string length: 255 single-byte characters Input mask: ?@?.??
+ * 
  */
 class AddressVerifyRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  Email address of buyer to be verified. Required Maximum
-	*  string length: 255 single-byte characters Input mask: ?@?.??
+	 * Email address of buyer to be verified. Required Maximum
+	 * string length: 255 single-byte characters Input mask: ?@?.??
 	 * @access public
 	 
 	 * @namespace ns
@@ -15946,13 +15946,13 @@ class AddressVerifyRequestType  extends AbstractRequestType
 	public $Email;
 
 	/**
-	*  First line of buyer’s billing or shipping street address
-	*  to be verified. Required For verification, input value of
-	*  street address must match the first three single-byte
-	*  characters of the street address on file for the PayPal
-	*  account. Maximum string length: 35 single-byte characters
-	*  Alphanumeric plus - , . ‘ # \ Whitespace and case of input
-	*  value are ignored.
+	 * First line of buyer’s billing or shipping street address
+	 * to be verified. Required For verification, input value of
+	 * street address must match the first three single-byte
+	 * characters of the street address on file for the PayPal
+	 * account. Maximum string length: 35 single-byte characters
+	 * Alphanumeric plus - , . ‘ # \ Whitespace and case of input
+	 * value are ignored.
 	 * @access public
 	 
 	 * @namespace ns
@@ -15963,11 +15963,11 @@ class AddressVerifyRequestType  extends AbstractRequestType
 	public $Street;
 
 	/**
-	*  Postal code to be verified. Required For verification, input
-	*  value of postal code must match the first five single-byte
-	*  characters of the postal code on file for the PayPal
-	*  account. Maximum string length: 16 single-byte characters
-	*  Whitespace and case of input value are ignored.
+	 * Postal code to be verified. Required For verification, input
+	 * value of postal code must match the first five single-byte
+	 * characters of the postal code on file for the PayPal
+	 * account. Maximum string length: 16 single-byte characters
+	 * Whitespace and case of input value are ignored.
 	 * @access public
 	 
 	 * @namespace ns
@@ -15993,23 +15993,23 @@ class AddressVerifyRequestType  extends AbstractRequestType
 
 
 /**
- *  Confirmation of a match, with one of the following tokens:
- *  None: The input value of the Email object does not match any
- *  email address on file at PayPal. Confirmed: If the value of
- *  the StreetMatch object is Matched, PayPal responds that the
- *  entire postal address is confirmed. Unconfirmed: PayPal
- *  responds that the postal address is unconfirmed 
+ * Confirmation of a match, with one of the following tokens:
+ * None: The input value of the Email object does not match any
+ * email address on file at PayPal. Confirmed: If the value of
+ * the StreetMatch object is Matched, PayPal responds that the
+ * entire postal address is confirmed. Unconfirmed: PayPal
+ * responds that the postal address is unconfirmed 
  */
 class AddressVerifyResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  Confirmation of a match, with one of the following tokens:
-	*  None: The input value of the Email object does not match any
-	*  email address on file at PayPal. Confirmed: If the value of
-	*  the StreetMatch object is Matched, PayPal responds that the
-	*  entire postal address is confirmed. Unconfirmed: PayPal
-	*  responds that the postal address is unconfirmed
+	 * Confirmation of a match, with one of the following tokens:
+	 * None: The input value of the Email object does not match any
+	 * email address on file at PayPal. Confirmed: If the value of
+	 * the StreetMatch object is Matched, PayPal responds that the
+	 * entire postal address is confirmed. Unconfirmed: PayPal
+	 * responds that the postal address is unconfirmed
 	 * @access public
 	 
 	 * @namespace ns
@@ -16020,14 +16020,14 @@ class AddressVerifyResponseType  extends AbstractResponseType
 	public $ConfirmationCode;
 
 	/**
-	*  PayPal has compared the postal address you want to verify
-	*  with the postal address on file at PayPal. None: The input
-	*  value of the Email object does not match any email address
-	*  on file at PayPal. In addition, an error response is
-	*  returned. No further comparison of other input values has
-	*  been made. Matched: The street address matches the street
-	*  address on file at PayPal. Unmatched: The street address
-	*  does not match the street address on file at PayPal. 
+	 * PayPal has compared the postal address you want to verify
+	 * with the postal address on file at PayPal. None: The input
+	 * value of the Email object does not match any email address
+	 * on file at PayPal. In addition, an error response is
+	 * returned. No further comparison of other input values has
+	 * been made. Matched: The street address matches the street
+	 * address on file at PayPal. Unmatched: The street address
+	 * does not match the street address on file at PayPal. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16038,12 +16038,12 @@ class AddressVerifyResponseType  extends AbstractResponseType
 	public $StreetMatch;
 
 	/**
-	*  PayPal has compared the zip code you want to verify with the
-	*  zip code on file for the email address. None: The street
-	*  address was unmatched. No further comparison of other input
-	*  values has been made. Matched: The zip code matches the zip
-	*  code on file at PayPal. Unmatched: The zip code does not
-	*  match the zip code on file at PayPal. 
+	 * PayPal has compared the zip code you want to verify with the
+	 * zip code on file for the email address. None: The street
+	 * address was unmatched. No further comparison of other input
+	 * values has been made. Matched: The zip code matches the zip
+	 * code on file at PayPal. Unmatched: The zip code does not
+	 * match the zip code on file at PayPal. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16054,8 +16054,8 @@ class AddressVerifyResponseType  extends AbstractResponseType
 	public $ZipMatch;
 
 	/**
-	*  Two-character country code (ISO 3166) on file for the PayPal
-	*  email address. 
+	 * Two-character country code (ISO 3166) on file for the PayPal
+	 * email address. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16066,16 +16066,16 @@ class AddressVerifyResponseType  extends AbstractResponseType
 	public $CountryCode;
 
 	/**
-	*  The token prevents a buyer from using any street address
-	*  other than the address on file at PayPal during additional
-	*  purchases he might make from the merchant. It contains
-	*  encrypted information about the user’s street address and
-	*  email address. You can pass the value of the token with the
-	*  Buy Now button HTML address_api_token variable so that
-	*  PayPal prevents the buyer from using any street address or
-	*  email address other than those verified by PayPal. The token
-	*  is valid for 24 hours. Character length and limitations: 94
-	*  single-byte characters 
+	 * The token prevents a buyer from using any street address
+	 * other than the address on file at PayPal during additional
+	 * purchases he might make from the merchant. It contains
+	 * encrypted information about the user’s street address and
+	 * email address. You can pass the value of the token with the
+	 * Buy Now button HTML address_api_token variable so that
+	 * PayPal prevents the buyer from using any street address or
+	 * email address other than those verified by PayPal. The token
+	 * is valid for 24 hours. Character length and limitations: 94
+	 * single-byte characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16091,13 +16091,13 @@ class AddressVerifyResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class EnterBoardingReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16127,13 +16127,13 @@ class EnterBoardingReq
 
 
 /**
- *  
+ * 
  */
 class EnterBoardingRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -16157,19 +16157,19 @@ class EnterBoardingRequestType  extends AbstractRequestType
 
 
 /**
- *  A unique token that identifies this boarding session. Use
- *  this token with the GetBoarding Details API call.Character
- *  length and limitations: 64 alphanumeric characters. The
- *  token has the following format:OB-61characterstring
+ * A unique token that identifies this boarding session. Use
+ * this token with the GetBoarding Details API call.Character
+ * length and limitations: 64 alphanumeric characters. The
+ * token has the following format:OB-61characterstring
  */
 class EnterBoardingResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  A unique token that identifies this boarding session. Use
-	*  this token with the GetBoarding Details API call.Character
-	*  length and limitations: 64 alphanumeric characters. The
-	*  token has the following format:OB-61characterstring
+	 * A unique token that identifies this boarding session. Use
+	 * this token with the GetBoarding Details API call.Character
+	 * length and limitations: 64 alphanumeric characters. The
+	 * token has the following format:OB-61characterstring
 	 * @access public
 	 
 	 * @namespace ns
@@ -16185,13 +16185,13 @@ class EnterBoardingResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class GetBoardingDetailsReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16221,19 +16221,19 @@ class GetBoardingDetailsReq
 
 
 /**
- *  A unique token returned by the EnterBoarding API call that
- *  identifies this boarding session. RequiredCharacter length
- *  and limitations: 64 alphanumeric characters. The token has
- *  the following format:OB-61characterstring
+ * A unique token returned by the EnterBoarding API call that
+ * identifies this boarding session. RequiredCharacter length
+ * and limitations: 64 alphanumeric characters. The token has
+ * the following format:OB-61characterstring
  */
 class GetBoardingDetailsRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  A unique token returned by the EnterBoarding API call that
-	*  identifies this boarding session. RequiredCharacter length
-	*  and limitations: 64 alphanumeric characters. The token has
-	*  the following format:OB-61characterstring
+	 * A unique token returned by the EnterBoarding API call that
+	 * identifies this boarding session. RequiredCharacter length
+	 * and limitations: 64 alphanumeric characters. The token has
+	 * the following format:OB-61characterstring
 	 * @access public
 	 
 	 * @namespace ns
@@ -16257,13 +16257,13 @@ class GetBoardingDetailsRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class GetBoardingDetailsResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -16279,13 +16279,13 @@ class GetBoardingDetailsResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class SetAuthFlowParamReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16315,13 +16315,13 @@ class SetAuthFlowParamReq
 
 
 /**
- *  
+ * 
  */
 class SetAuthFlowParamRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -16345,19 +16345,19 @@ class SetAuthFlowParamRequestType  extends AbstractRequestType
 
 
 /**
- *  A timestamped token by which you identify to PayPal that you
- *  are processing this user. The token expires after three
- *  hours. Character length and limitations: 20 single-byte
- *  characters
+ * A timestamped token by which you identify to PayPal that you
+ * are processing this user. The token expires after three
+ * hours. Character length and limitations: 20 single-byte
+ * characters
  */
 class SetAuthFlowParamResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  A timestamped token by which you identify to PayPal that you
-	*  are processing this user. The token expires after three
-	*  hours. Character length and limitations: 20 single-byte
-	*  characters
+	 * A timestamped token by which you identify to PayPal that you
+	 * are processing this user. The token expires after three
+	 * hours. Character length and limitations: 20 single-byte
+	 * characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -16373,13 +16373,13 @@ class SetAuthFlowParamResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class GetAuthDetailsReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16409,17 +16409,17 @@ class GetAuthDetailsReq
 
 
 /**
- *  A timestamped token, the value of which was returned by
- *  SetAuthFlowParam Response. RequiredCharacter length and
- *  limitations: 20 single-byte characters
+ * A timestamped token, the value of which was returned by
+ * SetAuthFlowParam Response. RequiredCharacter length and
+ * limitations: 20 single-byte characters
  */
 class GetAuthDetailsRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  A timestamped token, the value of which was returned by
-	*  SetAuthFlowParam Response. RequiredCharacter length and
-	*  limitations: 20 single-byte characters
+	 * A timestamped token, the value of which was returned by
+	 * SetAuthFlowParam Response. RequiredCharacter length and
+	 * limitations: 20 single-byte characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -16443,13 +16443,13 @@ class GetAuthDetailsRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class GetAuthDetailsResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -16465,13 +16465,13 @@ class GetAuthDetailsResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class SetAccessPermissionsReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16501,13 +16501,13 @@ class SetAccessPermissionsReq
 
 
 /**
- *  
+ * 
  */
 class SetAccessPermissionsRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -16531,19 +16531,19 @@ class SetAccessPermissionsRequestType  extends AbstractRequestType
 
 
 /**
- *  A timestamped token by which you identify to PayPal that you
- *  are processing this user. The token expires after three
- *  hours. Character length and limitations: 20 single-byte
- *  characters
+ * A timestamped token by which you identify to PayPal that you
+ * are processing this user. The token expires after three
+ * hours. Character length and limitations: 20 single-byte
+ * characters
  */
 class SetAccessPermissionsResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  A timestamped token by which you identify to PayPal that you
-	*  are processing this user. The token expires after three
-	*  hours. Character length and limitations: 20 single-byte
-	*  characters
+	 * A timestamped token by which you identify to PayPal that you
+	 * are processing this user. The token expires after three
+	 * hours. Character length and limitations: 20 single-byte
+	 * characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -16559,13 +16559,13 @@ class SetAccessPermissionsResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class UpdateAccessPermissionsReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16595,17 +16595,17 @@ class UpdateAccessPermissionsReq
 
 
 /**
- *  Unique PayPal customer account number, the value of which
- *  was returned by GetAuthDetails Response. Required Character
- *  length and limitations: 20 single-byte characters 
+ * Unique PayPal customer account number, the value of which
+ * was returned by GetAuthDetails Response. Required Character
+ * length and limitations: 20 single-byte characters 
  */
 class UpdateAccessPermissionsRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  Unique PayPal customer account number, the value of which
-	*  was returned by GetAuthDetails Response. Required Character
-	*  length and limitations: 20 single-byte characters 
+	 * Unique PayPal customer account number, the value of which
+	 * was returned by GetAuthDetails Response. Required Character
+	 * length and limitations: 20 single-byte characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16629,15 +16629,15 @@ class UpdateAccessPermissionsRequestType  extends AbstractRequestType
 
 
 /**
- *  The status of the update call, Success/Failure. Character
- *  length and limitations: 20 single-byte characters 
+ * The status of the update call, Success/Failure. Character
+ * length and limitations: 20 single-byte characters 
  */
 class UpdateAccessPermissionsResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  The status of the update call, Success/Failure. Character
-	*  length and limitations: 20 single-byte characters 
+	 * The status of the update call, Success/Failure. Character
+	 * length and limitations: 20 single-byte characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16653,13 +16653,13 @@ class UpdateAccessPermissionsResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class GetAccessPermissionDetailsReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16689,17 +16689,17 @@ class GetAccessPermissionDetailsReq
 
 
 /**
- *  A timestamped token, the value of which was returned by
- *  SetAuthFlowParam Response. Required Character length and
- *  limitations: 20 single-byte characters 
+ * A timestamped token, the value of which was returned by
+ * SetAuthFlowParam Response. Required Character length and
+ * limitations: 20 single-byte characters 
  */
 class GetAccessPermissionDetailsRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  A timestamped token, the value of which was returned by
-	*  SetAuthFlowParam Response. Required Character length and
-	*  limitations: 20 single-byte characters 
+	 * A timestamped token, the value of which was returned by
+	 * SetAuthFlowParam Response. Required Character length and
+	 * limitations: 20 single-byte characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16723,13 +16723,13 @@ class GetAccessPermissionDetailsRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class GetAccessPermissionDetailsResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -16745,13 +16745,13 @@ class GetAccessPermissionDetailsResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class GetIncentiveEvaluationReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16781,13 +16781,13 @@ class GetIncentiveEvaluationReq
 
 
 /**
- *  
+ * 
  */
 class GetIncentiveEvaluationRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -16811,13 +16811,13 @@ class GetIncentiveEvaluationRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class GetIncentiveEvaluationResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -16833,13 +16833,13 @@ class GetIncentiveEvaluationResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class SetExpressCheckoutReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16869,13 +16869,13 @@ class SetExpressCheckoutReq
 
 
 /**
- *  
+ * 
  */
 class SetExpressCheckoutRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -16899,23 +16899,23 @@ class SetExpressCheckoutRequestType  extends AbstractRequestType
 
 
 /**
- *  A timestamped token by which you identify to PayPal that you
- *  are processing this payment with Express Checkout. The token
- *  expires after three hours. If you set Token in the
- *  SetExpressCheckoutRequest, the value of Token in the
- *  response is identical to the value in the request. Character
- *  length and limitations: 20 single-byte characters
+ * A timestamped token by which you identify to PayPal that you
+ * are processing this payment with Express Checkout. The token
+ * expires after three hours. If you set Token in the
+ * SetExpressCheckoutRequest, the value of Token in the
+ * response is identical to the value in the request. Character
+ * length and limitations: 20 single-byte characters
  */
 class SetExpressCheckoutResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  A timestamped token by which you identify to PayPal that you
-	*  are processing this payment with Express Checkout. The token
-	*  expires after three hours. If you set Token in the
-	*  SetExpressCheckoutRequest, the value of Token in the
-	*  response is identical to the value in the request. Character
-	*  length and limitations: 20 single-byte characters
+	 * A timestamped token by which you identify to PayPal that you
+	 * are processing this payment with Express Checkout. The token
+	 * expires after three hours. If you set Token in the
+	 * SetExpressCheckoutRequest, the value of Token in the
+	 * response is identical to the value in the request. Character
+	 * length and limitations: 20 single-byte characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -16931,13 +16931,13 @@ class SetExpressCheckoutResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class ExecuteCheckoutOperationsReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -16967,13 +16967,13 @@ class ExecuteCheckoutOperationsReq
 
 
 /**
- *  
+ * 
  */
 class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -16997,13 +16997,13 @@ class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class ExecuteCheckoutOperationsResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -17019,13 +17019,13 @@ class ExecuteCheckoutOperationsResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class GetExpressCheckoutDetailsReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17055,17 +17055,17 @@ class GetExpressCheckoutDetailsReq
 
 
 /**
- *  A timestamped token, the value of which was returned by
- *  SetExpressCheckoutResponse. RequiredCharacter length and
- *  limitations: 20 single-byte characters
+ * A timestamped token, the value of which was returned by
+ * SetExpressCheckoutResponse. RequiredCharacter length and
+ * limitations: 20 single-byte characters
  */
 class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  A timestamped token, the value of which was returned by
-	*  SetExpressCheckoutResponse. RequiredCharacter length and
-	*  limitations: 20 single-byte characters
+	 * A timestamped token, the value of which was returned by
+	 * SetExpressCheckoutResponse. RequiredCharacter length and
+	 * limitations: 20 single-byte characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -17089,13 +17089,13 @@ class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class GetExpressCheckoutDetailsResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -17111,13 +17111,13 @@ class GetExpressCheckoutDetailsResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class DoExpressCheckoutPaymentReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17147,14 +17147,14 @@ class DoExpressCheckoutPaymentReq
 
 
 /**
- *  This flag indicates that the response should include
- *  FMFDetails 
+ * This flag indicates that the response should include
+ * FMFDetails 
  */
 class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -17165,8 +17165,8 @@ class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType
 	public $DoExpressCheckoutPaymentRequestDetails;
 
 	/**
-	*  This flag indicates that the response should include
-	*  FMFDetails
+	 * This flag indicates that the response should include
+	 * FMFDetails
 	 * @access public
 	 
 	 * @namespace ns
@@ -17190,13 +17190,13 @@ class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -17207,7 +17207,7 @@ class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType
 	public $DoExpressCheckoutPaymentResponseDetails;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17223,13 +17223,13 @@ class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class DoUATPExpressCheckoutPaymentReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17259,7 +17259,7 @@ class DoUATPExpressCheckoutPaymentReq
 
 
 /**
- *  
+ * 
  */
 class DoUATPExpressCheckoutPaymentRequestType  extends DoExpressCheckoutPaymentRequestType  
   {
@@ -17271,13 +17271,13 @@ class DoUATPExpressCheckoutPaymentRequestType  extends DoExpressCheckoutPaymentR
 
 
 /**
- *  
+ * 
  */
 class DoUATPExpressCheckoutPaymentResponseType  extends DoExpressCheckoutPaymentResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -17293,13 +17293,13 @@ class DoUATPExpressCheckoutPaymentResponseType  extends DoExpressCheckoutPayment
 
 
 /**
- *  
+ * 
  */
 class ManagePendingTransactionStatusReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17329,13 +17329,13 @@ class ManagePendingTransactionStatusReq
 
 
 /**
- *  
+ * 
  */
 class ManagePendingTransactionStatusRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17346,7 +17346,7 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType
 	public $TransactionID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17371,13 +17371,13 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class ManagePendingTransactionStatusResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17388,7 +17388,7 @@ class ManagePendingTransactionStatusResponseType  extends AbstractResponseType
 	public $TransactionID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17404,13 +17404,13 @@ class ManagePendingTransactionStatusResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class DoDirectPaymentReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17440,14 +17440,14 @@ class DoDirectPaymentReq
 
 
 /**
- *  This flag indicates that the response should include
- *  FMFDetails 
+ * This flag indicates that the response should include
+ * FMFDetails 
  */
 class DoDirectPaymentRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -17458,8 +17458,8 @@ class DoDirectPaymentRequestType  extends AbstractRequestType
 	public $DoDirectPaymentRequestDetails;
 
 	/**
-	*  This flag indicates that the response should include
-	*  FMFDetails
+	 * This flag indicates that the response should include
+	 * FMFDetails
 	 * @access public
 	 
 	 * @namespace ns
@@ -17483,15 +17483,15 @@ class DoDirectPaymentRequestType  extends AbstractRequestType
 
 
 /**
- *  The amount of the payment as specified by you on
- *  DoDirectPaymentRequest.
+ * The amount of the payment as specified by you on
+ * DoDirectPaymentRequest.
  */
 class DoDirectPaymentResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  The amount of the payment as specified by you on
-	*  DoDirectPaymentRequest.
+	 * The amount of the payment as specified by you on
+	 * DoDirectPaymentRequest.
 	 * @access public
 	 
 	 * @namespace ns
@@ -17502,21 +17502,21 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	public $Amount;
 
 	/**
-	*  Address Verification System response code. Character limit:
-	*  One single-byte alphanumeric character AVS
-	*  CodeMeaningMatched Details A AddressAddress only (no ZIP) B
-	*  International “A”Address only (no ZIP) CInternational
-	*  “N” None DInternational “X” Address and Postal Code
-	*  E Not allowed for MOTO (Internet/Phone) transactions Not
-	*  applicable F UK-specific “X”Address and Postal Code G
-	*  Global Unavailable Not applicable I International
-	*  UnavailableNot applicable N NoNone PPostal (International
-	*  “Z”)Postal Code only (no Address) RRetryNot applicable S
-	*  Service not Supported Not applicable U UnavailableNot
-	*  applicable W Whole ZIPNine-digit ZIP code (no Address) X
-	*  Exact match Address and nine-digit ZIP code Y YesAddress and
-	*  five-digit ZIP Z ZIP Five-digit ZIP code (no Address) All
-	*  others Error Not applicable
+	 * Address Verification System response code. Character limit:
+	 * One single-byte alphanumeric character AVS
+	 * CodeMeaningMatched Details A AddressAddress only (no ZIP) B
+	 * International “A”Address only (no ZIP) CInternational
+	 * “N” None DInternational “X” Address and Postal Code
+	 * E Not allowed for MOTO (Internet/Phone) transactions Not
+	 * applicable F UK-specific “X”Address and Postal Code G
+	 * Global Unavailable Not applicable I International
+	 * UnavailableNot applicable N NoNone PPostal (International
+	 * “Z”)Postal Code only (no Address) RRetryNot applicable S
+	 * Service not Supported Not applicable U UnavailableNot
+	 * applicable W Whole ZIPNine-digit ZIP code (no Address) X
+	 * Exact match Address and nine-digit ZIP code Y YesAddress and
+	 * five-digit ZIP Z ZIP Five-digit ZIP code (no Address) All
+	 * others Error Not applicable
 	 * @access public
 	 
 	 * @namespace ns
@@ -17527,11 +17527,11 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	public $AVSCode;
 
 	/**
-	*  Result of the CVV2 check by PayPal. CVV2 CodeMeaningMatched
-	*  Details M MatchCVV2 N No match None P Not ProcessedNot
-	*  applicable SService not SupportedNot applicable U
-	*  UnavailableNot applicable XNo response Not applicable All
-	*  others ErrorNot applicable 
+	 * Result of the CVV2 check by PayPal. CVV2 CodeMeaningMatched
+	 * Details M MatchCVV2 N No match None P Not ProcessedNot
+	 * applicable SService not SupportedNot applicable U
+	 * UnavailableNot applicable XNo response Not applicable All
+	 * others ErrorNot applicable 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17542,8 +17542,8 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	public $CVV2Code;
 
 	/**
-	*  Transaction identification number. Character length and
-	*  limitations: 19 characters maximum.
+	 * Transaction identification number. Character length and
+	 * limitations: 19 characters maximum.
 	 * @access public
 	 
 	 * @namespace ns
@@ -17554,7 +17554,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	public $TransactionID;
 
 	/**
-	*  The reason why a particular transaction went in pending. 
+	 * The reason why a particular transaction went in pending. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17565,7 +17565,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	public $PendingReason;
 
 	/**
-	*  This will identify the actual transaction status. 
+	 * This will identify the actual transaction status. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17576,7 +17576,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	public $PaymentStatus;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17587,7 +17587,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	public $FMFDetails;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17598,8 +17598,8 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	public $ThreeDSecureResponse;
 
 	/**
-	*  Response code from the processor when a recurring
-	*  transaction is declined.  
+	 * Response code from the processor when a recurring
+	 * transaction is declined.  
 	 * @access public
 	 
 	 * @namespace ns
@@ -17615,13 +17615,13 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class DoCancelReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17651,13 +17651,13 @@ class DoCancelReq
 
 
 /**
- *  Msg Sub Id that was used for the orginal operation. 
+ * Msg Sub Id that was used for the orginal operation. 
  */
 class DoCancelRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  Msg Sub Id that was used for the orginal operation. 
+	 * Msg Sub Id that was used for the orginal operation. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17668,7 +17668,7 @@ class DoCancelRequestType  extends AbstractRequestType
 	public $CancelMsgSubID;
 
 	/**
-	*  Original API's type
+	 * Original API's type
 	 * @access public
 	 
 	 * @namespace ns
@@ -17679,9 +17679,9 @@ class DoCancelRequestType  extends AbstractRequestType
 	public $APIType;
 
 	/**
-	*  Unique id for each API request to prevent duplicate
-	*  payments. Optional Character length and limits: 38
-	*  single-byte characters maximum. 
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17706,13 +17706,13 @@ class DoCancelRequestType  extends AbstractRequestType
 
 
 /**
- *  Return msgsubid back to merchant 
+ * Return msgsubid back to merchant 
  */
 class DoCancelResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  Return msgsubid back to merchant
+	 * Return msgsubid back to merchant
 	 * @access public
 	 
 	 * @namespace ns
@@ -17728,13 +17728,13 @@ class DoCancelResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class DoCaptureReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17764,17 +17764,17 @@ class DoCaptureReq
 
 
 /**
- *  The authorization identification number of the payment you
- *  want to capture. Required Character length and limits: 19
- *  single-byte characters maximum 
+ * The authorization identification number of the payment you
+ * want to capture. Required Character length and limits: 19
+ * single-byte characters maximum 
  */
 class DoCaptureRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  The authorization identification number of the payment you
-	*  want to capture. Required Character length and limits: 19
-	*  single-byte characters maximum
+	 * The authorization identification number of the payment you
+	 * want to capture. Required Character length and limits: 19
+	 * single-byte characters maximum
 	 * @access public
 	 
 	 * @namespace ns
@@ -17785,11 +17785,11 @@ class DoCaptureRequestType  extends AbstractRequestType
 	public $AuthorizationID;
 
 	/**
-	*  Amount to authorize. You must set the currencyID attribute
-	*  to USD. Required Limitations: Must not exceed $10,000 USD in
-	*  any currency. No currency symbol. Decimal separator must be
-	*  a period (.), and the thousands separator must be a comma
-	*  (,)
+	 * Amount to authorize. You must set the currencyID attribute
+	 * to USD. Required Limitations: Must not exceed $10,000 USD in
+	 * any currency. No currency symbol. Decimal separator must be
+	 * a period (.), and the thousands separator must be a comma
+	 * (,)
 	 * @access public
 	 
 	 * @namespace ns
@@ -17800,11 +17800,11 @@ class DoCaptureRequestType  extends AbstractRequestType
 	public $Amount;
 
 	/**
-	*  Indicates if this capture is the last capture you intend to
-	*  make. The default is Complete. If CompleteType is Complete,
-	*  any remaining amount of the original reauthorized
-	*  transaction is automatically voided. Required Character
-	*  length and limits: 12 single-byte alphanumeric characters
+	 * Indicates if this capture is the last capture you intend to
+	 * make. The default is Complete. If CompleteType is Complete,
+	 * any remaining amount of the original reauthorized
+	 * transaction is automatically voided. Required Character
+	 * length and limits: 12 single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -17815,10 +17815,10 @@ class DoCaptureRequestType  extends AbstractRequestType
 	public $CompleteType;
 
 	/**
-	*  An informational note about this settlement that is
-	*  displayed to the payer in email and in transaction history.
-	*  Optional Character length and limits: 255 single-byte
-	*  characters
+	 * An informational note about this settlement that is
+	 * displayed to the payer in email and in transaction history.
+	 * Optional Character length and limits: 255 single-byte
+	 * characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -17829,11 +17829,11 @@ class DoCaptureRequestType  extends AbstractRequestType
 	public $Note;
 
 	/**
-	*  Your invoice number or other identification number. The
-	*  InvoiceID value is recorded only if the authorization you
-	*  are capturing is an order authorization, not a basic
-	*  authorization. Optional Character length and limits: 127
-	*  single-byte alphanumeric characters
+	 * Your invoice number or other identification number. The
+	 * InvoiceID value is recorded only if the authorization you
+	 * are capturing is an order authorization, not a basic
+	 * authorization. Optional Character length and limits: 127
+	 * single-byte alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -17844,8 +17844,8 @@ class DoCaptureRequestType  extends AbstractRequestType
 	public $InvoiceID;
 
 	/**
-	*  Contains enhanced data like airline itinerary information.
-	*  Not Required 
+	 * Contains enhanced data like airline itinerary information.
+	 * Not Required 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -17856,10 +17856,10 @@ class DoCaptureRequestType  extends AbstractRequestType
 	public $EnhancedData;
 
 	/**
-	*  dynamic descriptor Dynamic descriptor is used for merchant
-	*  to provide detail of a transaction appears on statement
-	*  Optional Character length and limits: <18 characters
-	*  alphanumeric characters
+	 * dynamic descriptor Dynamic descriptor is used for merchant
+	 * to provide detail of a transaction appears on statement
+	 * Optional Character length and limits: <18 characters
+	 * alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -17870,7 +17870,7 @@ class DoCaptureRequestType  extends AbstractRequestType
 	public $Descriptor;
 
 	/**
-	*  To pass the Merchant store informationOptional 
+	 * To pass the Merchant store informationOptional 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -17881,9 +17881,9 @@ class DoCaptureRequestType  extends AbstractRequestType
 	public $MerchantStoreDetails;
 
 	/**
-	*  Unique id for each API request to prevent duplicate
-	*  payments. Optional Character length and limits: 38
-	*  single-byte characters maximum. 
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17909,13 +17909,13 @@ class DoCaptureRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class DoCaptureResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -17931,13 +17931,13 @@ class DoCaptureResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class DoReauthorizationReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -17967,23 +17967,23 @@ class DoReauthorizationReq
 
 
 /**
- *  The value of a previously authorized transaction
- *  identification number returned by a PayPal product. You can
- *  obtain a buyer's transaction number from the TransactionID
- *  element of the PayerInfo structure returned by
- *  GetTransactionDetailsResponse. Required Character length and
- *  limits: 19 single-byte characters maximum 
+ * The value of a previously authorized transaction
+ * identification number returned by a PayPal product. You can
+ * obtain a buyer's transaction number from the TransactionID
+ * element of the PayerInfo structure returned by
+ * GetTransactionDetailsResponse. Required Character length and
+ * limits: 19 single-byte characters maximum 
  */
 class DoReauthorizationRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  The value of a previously authorized transaction
-	*  identification number returned by a PayPal product. You can
-	*  obtain a buyer's transaction number from the TransactionID
-	*  element of the PayerInfo structure returned by
-	*  GetTransactionDetailsResponse. Required Character length and
-	*  limits: 19 single-byte characters maximum
+	 * The value of a previously authorized transaction
+	 * identification number returned by a PayPal product. You can
+	 * obtain a buyer's transaction number from the TransactionID
+	 * element of the PayerInfo structure returned by
+	 * GetTransactionDetailsResponse. Required Character length and
+	 * limits: 19 single-byte characters maximum
 	 * @access public
 	 
 	 * @namespace ns
@@ -17994,10 +17994,10 @@ class DoReauthorizationRequestType  extends AbstractRequestType
 	public $AuthorizationID;
 
 	/**
-	*  Amount to reauthorize. Required Limitations: Must not exceed
-	*  $10,000 USD in any currency. No currency symbol. Decimal
-	*  separator must be a period (.), and the thousands separator
-	*  must be a comma (,).
+	 * Amount to reauthorize. Required Limitations: Must not exceed
+	 * $10,000 USD in any currency. No currency symbol. Decimal
+	 * separator must be a period (.), and the thousands separator
+	 * must be a comma (,).
 	 * @access public
 	 
 	 * @namespace ns
@@ -18008,9 +18008,9 @@ class DoReauthorizationRequestType  extends AbstractRequestType
 	public $Amount;
 
 	/**
-	*  Unique id for each API request to prevent duplicate
-	*  payments. Optional Character length and limits: 38
-	*  single-byte characters maximum. 
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18035,15 +18035,15 @@ class DoReauthorizationRequestType  extends AbstractRequestType
 
 
 /**
- *  A new authorization identification number. Character length
- *  and limits: 19 single-byte characters 
+ * A new authorization identification number. Character length
+ * and limits: 19 single-byte characters 
  */
 class DoReauthorizationResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  A new authorization identification number. Character length
-	*  and limits: 19 single-byte characters 
+	 * A new authorization identification number. Character length
+	 * and limits: 19 single-byte characters 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18054,7 +18054,7 @@ class DoReauthorizationResponseType  extends AbstractResponseType
 	public $AuthorizationID;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -18065,7 +18065,7 @@ class DoReauthorizationResponseType  extends AbstractResponseType
 	public $AuthorizationInfo;
 
 	/**
-	*  Return msgsubid back to merchant
+	 * Return msgsubid back to merchant
 	 * @access public
 	 
 	 * @namespace ns
@@ -18081,13 +18081,13 @@ class DoReauthorizationResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class DoVoidReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18117,23 +18117,23 @@ class DoVoidReq
 
 
 /**
- *  The value of the original authorization identification
- *  number returned by a PayPal product. If you are voiding a
- *  transaction that has been reauthorized, use the ID from the
- *  original authorization, and not the reauthorization.
- *  Required Character length and limits: 19 single-byte
- *  characters 
+ * The value of the original authorization identification
+ * number returned by a PayPal product. If you are voiding a
+ * transaction that has been reauthorized, use the ID from the
+ * original authorization, and not the reauthorization.
+ * Required Character length and limits: 19 single-byte
+ * characters 
  */
 class DoVoidRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  The value of the original authorization identification
-	*  number returned by a PayPal product. If you are voiding a
-	*  transaction that has been reauthorized, use the ID from the
-	*  original authorization, and not the reauthorization.
-	*  Required Character length and limits: 19 single-byte
-	*  characters
+	 * The value of the original authorization identification
+	 * number returned by a PayPal product. If you are voiding a
+	 * transaction that has been reauthorized, use the ID from the
+	 * original authorization, and not the reauthorization.
+	 * Required Character length and limits: 19 single-byte
+	 * characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -18144,10 +18144,10 @@ class DoVoidRequestType  extends AbstractRequestType
 	public $AuthorizationID;
 
 	/**
-	*  An informational note about this settlement that is
-	*  displayed to the payer in email and in transaction history.
-	*  Optional Character length and limits: 255 single-byte
-	*  characters
+	 * An informational note about this settlement that is
+	 * displayed to the payer in email and in transaction history.
+	 * Optional Character length and limits: 255 single-byte
+	 * characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -18158,9 +18158,9 @@ class DoVoidRequestType  extends AbstractRequestType
 	public $Note;
 
 	/**
-	*  Unique id for each API request to prevent duplicate
-	*  payments. Optional Character length and limits: 38
-	*  single-byte characters maximum. 
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18184,17 +18184,17 @@ class DoVoidRequestType  extends AbstractRequestType
 
 
 /**
- *  The authorization identification number you specified in the
- *  request. Character length and limits: 19 single-byte
- *  characters 
+ * The authorization identification number you specified in the
+ * request. Character length and limits: 19 single-byte
+ * characters 
  */
 class DoVoidResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  The authorization identification number you specified in the
-	*  request. Character length and limits: 19 single-byte
-	*  characters
+	 * The authorization identification number you specified in the
+	 * request. Character length and limits: 19 single-byte
+	 * characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -18205,7 +18205,7 @@ class DoVoidResponseType  extends AbstractResponseType
 	public $AuthorizationID;
 
 	/**
-	*  Return msgsubid back to merchant
+	 * Return msgsubid back to merchant
 	 * @access public
 	 
 	 * @namespace ns
@@ -18221,13 +18221,13 @@ class DoVoidResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class DoAuthorizationReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18257,17 +18257,17 @@ class DoAuthorizationReq
 
 
 /**
- *  The value of the order’s transaction identification number
- *  returned by a PayPal product. Required Character length and
- *  limits: 19 single-byte characters maximum 
+ * The value of the order’s transaction identification number
+ * returned by a PayPal product. Required Character length and
+ * limits: 19 single-byte characters maximum 
  */
 class DoAuthorizationRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  The value of the order’s transaction identification number
-	*  returned by a PayPal product. Required Character length and
-	*  limits: 19 single-byte characters maximum
+	 * The value of the order’s transaction identification number
+	 * returned by a PayPal product. Required Character length and
+	 * limits: 19 single-byte characters maximum
 	 * @access public
 	 
 	 * @namespace ns
@@ -18278,9 +18278,9 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	public $TransactionID;
 
 	/**
-	*  Type of transaction to authorize. The only allowable value
-	*  is Order, which means that the transaction represents a
-	*  customer order that can be fulfilled over 29 days. Optional
+	 * Type of transaction to authorize. The only allowable value
+	 * is Order, which means that the transaction represents a
+	 * customer order that can be fulfilled over 29 days. Optional
 	 * @access public
 	 
 	 * @namespace ns
@@ -18291,10 +18291,10 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	public $TransactionEntity;
 
 	/**
-	*  Amount to authorize. Required Limitations: Must not exceed
-	*  $10,000 USD in any currency. No currency symbol. Decimal
-	*  separator must be a period (.), and the thousands separator
-	*  must be a comma (,).
+	 * Amount to authorize. Required Limitations: Must not exceed
+	 * $10,000 USD in any currency. No currency symbol. Decimal
+	 * separator must be a period (.), and the thousands separator
+	 * must be a comma (,).
 	 * @access public
 	 
 	 * @namespace ns
@@ -18305,9 +18305,9 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	public $Amount;
 
 	/**
-	*  Unique id for each API request to prevent duplicate
-	*  payments. Optional Character length and limits: 38
-	*  single-byte characters maximum. 
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18332,15 +18332,15 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 
 
 /**
- *  An authorization identification number. Character length and
- *  limits: 19 single-byte characters 
+ * An authorization identification number. Character length and
+ * limits: 19 single-byte characters 
  */
 class DoAuthorizationResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  An authorization identification number. Character length and
-	*  limits: 19 single-byte characters
+	 * An authorization identification number. Character length and
+	 * limits: 19 single-byte characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -18351,7 +18351,7 @@ class DoAuthorizationResponseType  extends AbstractResponseType
 	public $TransactionID;
 
 	/**
-	*  The amount and currency you specified in the request. 
+	 * The amount and currency you specified in the request. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18362,7 +18362,7 @@ class DoAuthorizationResponseType  extends AbstractResponseType
 	public $Amount;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -18373,7 +18373,7 @@ class DoAuthorizationResponseType  extends AbstractResponseType
 	public $AuthorizationInfo;
 
 	/**
-	*  Return msgsubid back to merchant
+	 * Return msgsubid back to merchant
 	 * @access public
 	 
 	 * @namespace ns
@@ -18389,13 +18389,13 @@ class DoAuthorizationResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class DoUATPAuthorizationReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18425,13 +18425,13 @@ class DoUATPAuthorizationReq
 
 
 /**
- *  UATP card details Required 
+ * UATP card details Required 
  */
 class DoUATPAuthorizationRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  UATP card details Required 
+	 * UATP card details Required 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -18442,9 +18442,9 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	public $UATPDetails;
 
 	/**
-	*  Type of transaction to authorize. The only allowable value
-	*  is Order, which means that the transaction represents a
-	*  customer order that can be fulfilled over 29 days. Optional
+	 * Type of transaction to authorize. The only allowable value
+	 * is Order, which means that the transaction represents a
+	 * customer order that can be fulfilled over 29 days. Optional
 	 * @access public
 	 
 	 * @namespace ns
@@ -18455,10 +18455,10 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	public $TransactionEntity;
 
 	/**
-	*  Amount to authorize. Required Limitations: Must not exceed
-	*  $10,000 USD in any currency. No currency symbol. Decimal
-	*  separator must be a period (.), and the thousands separator
-	*  must be a comma (,).
+	 * Amount to authorize. Required Limitations: Must not exceed
+	 * $10,000 USD in any currency. No currency symbol. Decimal
+	 * separator must be a period (.), and the thousands separator
+	 * must be a comma (,).
 	 * @access public
 	 
 	 * @namespace ns
@@ -18469,7 +18469,7 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	public $Amount;
 
 	/**
-	*  Invoice ID. A pass through. 
+	 * Invoice ID. A pass through. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18480,9 +18480,9 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	public $InvoiceID;
 
 	/**
-	*  Unique id for each API request to prevent duplicate
-	*  payments. Optional Character length and limits: 38
-	*  single-byte characters maximum. 
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18507,13 +18507,13 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 
 
 /**
- *  Auth Authorization Code. 
+ * Auth Authorization Code. 
  */
 class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -18524,7 +18524,7 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType
 	public $UATPDetails;
 
 	/**
-	*  Auth Authorization Code. 
+	 * Auth Authorization Code. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18535,7 +18535,7 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType
 	public $AuthorizationCode;
 
 	/**
-	*  Invoice ID. A pass through. 
+	 * Invoice ID. A pass through. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18546,9 +18546,9 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType
 	public $InvoiceID;
 
 	/**
-	*  Unique id for each API request to prevent duplicate
-	*  payments. Optional Character length and limits: 38
-	*  single-byte characters maximum. 
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18564,13 +18564,13 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType
 
 
 /**
- *  
+ * 
  */
 class CreateMobilePaymentReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18600,13 +18600,13 @@ class CreateMobilePaymentReq
 
 
 /**
- *  
+ * 
  */
 class CreateMobilePaymentRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -18630,7 +18630,7 @@ class CreateMobilePaymentRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class CreateMobilePaymentResponseType  extends AbstractResponseType  
   {
@@ -18641,13 +18641,13 @@ class CreateMobilePaymentResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class GetMobileStatusReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18677,13 +18677,13 @@ class GetMobileStatusReq
 
 
 /**
- *  
+ * 
  */
 class GetMobileStatusRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -18707,15 +18707,15 @@ class GetMobileStatusRequestType  extends AbstractRequestType
 
 
 /**
- *  Indicates whether the phone is activated for mobile payments
- *  
+ * Indicates whether the phone is activated for mobile payments
+ * 
  */
 class GetMobileStatusResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  Indicates whether the phone is activated for mobile payments
-	*  
+	 * Indicates whether the phone is activated for mobile payments
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18726,7 +18726,7 @@ class GetMobileStatusResponseType  extends AbstractResponseType
 	public $IsActivated;
 
 	/**
-	*  Indicates whether there is a payment pending from the phone 
+	 * Indicates whether there is a payment pending from the phone 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18742,13 +18742,13 @@ class GetMobileStatusResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class SetMobileCheckoutReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18778,13 +18778,13 @@ class SetMobileCheckoutReq
 
 
 /**
- *  
+ * 
  */
 class SetMobileCheckoutRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -18808,19 +18808,19 @@ class SetMobileCheckoutRequestType  extends AbstractRequestType
 
 
 /**
- *  A timestamped token by which you identify to PayPal that you
- *  are processing this payment with Mobile Checkout. The token
- *  expires after three hours. Character length and limitations:
- *  20 single-byte characters
+ * A timestamped token by which you identify to PayPal that you
+ * are processing this payment with Mobile Checkout. The token
+ * expires after three hours. Character length and limitations:
+ * 20 single-byte characters
  */
 class SetMobileCheckoutResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  A timestamped token by which you identify to PayPal that you
-	*  are processing this payment with Mobile Checkout. The token
-	*  expires after three hours. Character length and limitations:
-	*  20 single-byte characters
+	 * A timestamped token by which you identify to PayPal that you
+	 * are processing this payment with Mobile Checkout. The token
+	 * expires after three hours. Character length and limitations:
+	 * 20 single-byte characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -18836,13 +18836,13 @@ class SetMobileCheckoutResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class DoMobileCheckoutPaymentReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18872,17 +18872,17 @@ class DoMobileCheckoutPaymentReq
 
 
 /**
- *  A timestamped token, the value of which was returned by
- *  SetMobileCheckoutResponse. RequiredCharacter length and
- *  limitations: 20 single-byte characters
+ * A timestamped token, the value of which was returned by
+ * SetMobileCheckoutResponse. RequiredCharacter length and
+ * limitations: 20 single-byte characters
  */
 class DoMobileCheckoutPaymentRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  A timestamped token, the value of which was returned by
-	*  SetMobileCheckoutResponse. RequiredCharacter length and
-	*  limitations: 20 single-byte characters
+	 * A timestamped token, the value of which was returned by
+	 * SetMobileCheckoutResponse. RequiredCharacter length and
+	 * limitations: 20 single-byte characters
 	 * @access public
 	 
 	 * @namespace ns
@@ -18906,13 +18906,13 @@ class DoMobileCheckoutPaymentRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class DoMobileCheckoutPaymentResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -18928,13 +18928,13 @@ class DoMobileCheckoutPaymentResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class GetBalanceReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18964,13 +18964,13 @@ class GetBalanceReq
 
 
 /**
- *  
+ * 
  */
 class GetBalanceRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -18987,13 +18987,13 @@ class GetBalanceRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class GetBalanceResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19004,7 +19004,7 @@ class GetBalanceResponseType  extends AbstractResponseType
 	public $Balance;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19015,7 +19015,7 @@ class GetBalanceResponseType  extends AbstractResponseType
 	public $BalanceTimeStamp;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -19032,13 +19032,13 @@ class GetBalanceResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class SetCustomerBillingAgreementReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19068,13 +19068,13 @@ class SetCustomerBillingAgreementReq
 
 
 /**
- *  
+ * 
  */
 class SetCustomerBillingAgreementRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -19098,13 +19098,13 @@ class SetCustomerBillingAgreementRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class SetCustomerBillingAgreementResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19120,13 +19120,13 @@ class SetCustomerBillingAgreementResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class GetBillingAgreementCustomerDetailsReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19156,13 +19156,13 @@ class GetBillingAgreementCustomerDetailsReq
 
 
 /**
- *  
+ * 
  */
 class GetBillingAgreementCustomerDetailsRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19186,13 +19186,13 @@ class GetBillingAgreementCustomerDetailsRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class GetBillingAgreementCustomerDetailsResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -19208,13 +19208,13 @@ class GetBillingAgreementCustomerDetailsResponseType  extends AbstractResponseTy
 
 
 /**
- *  
+ * 
  */
 class CreateBillingAgreementReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19244,13 +19244,13 @@ class CreateBillingAgreementReq
 
 
 /**
- *  
+ * 
  */
 class CreateBillingAgreementRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19274,13 +19274,13 @@ class CreateBillingAgreementRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class CreateBillingAgreementResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19296,13 +19296,13 @@ class CreateBillingAgreementResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class DoReferenceTransactionReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19332,14 +19332,14 @@ class DoReferenceTransactionReq
 
 
 /**
- *  This flag indicates that the response should include
- *  FMFDetails 
+ * This flag indicates that the response should include
+ * FMFDetails 
  */
 class DoReferenceTransactionRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -19350,8 +19350,8 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType
 	public $DoReferenceTransactionRequestDetails;
 
 	/**
-	*  This flag indicates that the response should include
-	*  FMFDetails
+	 * This flag indicates that the response should include
+	 * FMFDetails
 	 * @access public
 	 
 	 * @namespace ns
@@ -19375,13 +19375,13 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class DoReferenceTransactionResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -19392,7 +19392,7 @@ class DoReferenceTransactionResponseType  extends AbstractResponseType
 	public $DoReferenceTransactionResponseDetails;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19408,13 +19408,13 @@ class DoReferenceTransactionResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class DoNonReferencedCreditReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19444,13 +19444,13 @@ class DoNonReferencedCreditReq
 
 
 /**
- *  
+ * 
  */
 class DoNonReferencedCreditRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -19474,13 +19474,13 @@ class DoNonReferencedCreditRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class DoNonReferencedCreditResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -19496,13 +19496,13 @@ class DoNonReferencedCreditResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class CreateRecurringPaymentsProfileReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19532,13 +19532,13 @@ class CreateRecurringPaymentsProfileReq
 
 
 /**
- *  
+ * 
  */
 class CreateRecurringPaymentsProfileRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -19555,13 +19555,13 @@ class CreateRecurringPaymentsProfileRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class CreateRecurringPaymentsProfileResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -19577,13 +19577,13 @@ class CreateRecurringPaymentsProfileResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class GetRecurringPaymentsProfileDetailsReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19613,13 +19613,13 @@ class GetRecurringPaymentsProfileDetailsReq
 
 
 /**
- *  
+ * 
  */
 class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19643,13 +19643,13 @@ class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class GetRecurringPaymentsProfileDetailsResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -19665,13 +19665,13 @@ class GetRecurringPaymentsProfileDetailsResponseType  extends AbstractResponseTy
 
 
 /**
- *  
+ * 
  */
 class ManageRecurringPaymentsProfileStatusReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19701,13 +19701,13 @@ class ManageRecurringPaymentsProfileStatusReq
 
 
 /**
- *  
+ * 
  */
 class ManageRecurringPaymentsProfileStatusRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -19724,13 +19724,13 @@ class ManageRecurringPaymentsProfileStatusRequestType  extends AbstractRequestTy
 
 
 /**
- *  
+ * 
  */
 class ManageRecurringPaymentsProfileStatusResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -19746,13 +19746,13 @@ class ManageRecurringPaymentsProfileStatusResponseType  extends AbstractResponse
 
 
 /**
- *  
+ * 
  */
 class BillOutstandingAmountReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19782,13 +19782,13 @@ class BillOutstandingAmountReq
 
 
 /**
- *  
+ * 
  */
 class BillOutstandingAmountRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -19805,13 +19805,13 @@ class BillOutstandingAmountRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class BillOutstandingAmountResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -19827,13 +19827,13 @@ class BillOutstandingAmountResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class UpdateRecurringPaymentsProfileReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19863,13 +19863,13 @@ class UpdateRecurringPaymentsProfileReq
 
 
 /**
- *  
+ * 
  */
 class UpdateRecurringPaymentsProfileRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -19886,13 +19886,13 @@ class UpdateRecurringPaymentsProfileRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class UpdateRecurringPaymentsProfileResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -19908,13 +19908,13 @@ class UpdateRecurringPaymentsProfileResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class GetPalDetailsReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19944,7 +19944,7 @@ class GetPalDetailsReq
 
 
 /**
- *  
+ * 
  */
 class GetPalDetailsRequestType  extends AbstractRequestType  
   {
@@ -19956,13 +19956,13 @@ class GetPalDetailsRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class GetPalDetailsResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19973,7 +19973,7 @@ class GetPalDetailsResponseType  extends AbstractResponseType
 	public $Pal;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -19989,13 +19989,13 @@ class GetPalDetailsResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class ReverseTransactionReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -20025,13 +20025,13 @@ class ReverseTransactionReq
 
 
 /**
- *  
+ * 
  */
 class ReverseTransactionRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -20055,13 +20055,13 @@ class ReverseTransactionRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class ReverseTransactionResponseType  extends AbstractResponseType  
   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -20077,13 +20077,13 @@ class ReverseTransactionResponseType  extends AbstractResponseType
 
 
 /**
- *  
+ * 
  */
 class ExternalRememberMeOptOutReq  
    extends PPXmlMessage{
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 * @namespace ns
@@ -20113,21 +20113,21 @@ class ExternalRememberMeOptOutReq
 
 
 /**
- *  The merchant passes in the ExternalRememberMeID to identify
- *  the user to opt out. This is a 17-character alphanumeric
- *  (encrypted) string that identifies the buyer's remembered
- *  login with a merchant and has meaning only to the merchant.
- *  Required 
+ * The merchant passes in the ExternalRememberMeID to identify
+ * the user to opt out. This is a 17-character alphanumeric
+ * (encrypted) string that identifies the buyer's remembered
+ * login with a merchant and has meaning only to the merchant.
+ * Required 
  */
 class ExternalRememberMeOptOutRequestType  extends AbstractRequestType  
   {
 
 	/**
-	*  The merchant passes in the ExternalRememberMeID to identify
-	*  the user to opt out. This is a 17-character alphanumeric
-	*  (encrypted) string that identifies the buyer's remembered
-	*  login with a merchant and has meaning only to the merchant.
-	*  Required 
+	 * The merchant passes in the ExternalRememberMeID to identify
+	 * the user to opt out. This is a 17-character alphanumeric
+	 * (encrypted) string that identifies the buyer's remembered
+	 * login with a merchant and has meaning only to the merchant.
+	 * Required 
 	 * @access public
 	 
 	 * @namespace ns
@@ -20138,8 +20138,8 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType
 	public $ExternalRememberMeID;
 
 	/**
-	*  E-mail address or secure merchant account ID of merchant to
-	*  associate with external remember-me. 
+	 * E-mail address or secure merchant account ID of merchant to
+	 * associate with external remember-me. 
 	 * @access public
 	 
 	 * @namespace ns
@@ -20163,7 +20163,7 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType
 
 
 /**
- *  
+ * 
  */
 class ExternalRememberMeOptOutResponseType  extends AbstractResponseType  
   {
