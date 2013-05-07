@@ -299,10 +299,10 @@ function copyConfig($source, $destination ) {
  */
 function createConfig($configFile) {
 	if(!file_exists($configFile)) {
-		echo "Generating $configFile" . PHP_EOL;
+		echo "Generating $configFile. You must update it with your account details." . PHP_EOL;
 		$script = <<< SCRIPT
 
-; mode configuration which sets the endpoint
+; Integration mode - Must be one of sandbox/live
 mode = sandbox
 
 ;Account credentials
