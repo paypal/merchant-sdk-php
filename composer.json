@@ -16,6 +16,12 @@
         "paypal/sdk-core-php":"dev-namespace-5.3"
     },
     "autoload": {
-        "classmap": ["lib"]
-    }
+        "psr-0": {
+            "PayPal\\Service": "lib/",
+            "PayPal\\CoreComponentTypes": "lib/",
+            "PayPal\\EBLBaseComponents": "lib/",
+            "PayPal\\EnhancedDataTypes": "lib/",
+            "PayPal\\PayPalAPI": "lib/"
+        }
+    } 
 }
