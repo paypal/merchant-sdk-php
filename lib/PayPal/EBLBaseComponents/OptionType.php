@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * @hasAttribute
  * OptionType PayPal item options for shopping cart. 

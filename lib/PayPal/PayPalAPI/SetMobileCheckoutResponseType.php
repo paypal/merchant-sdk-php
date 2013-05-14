@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractResponseType;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
 /**
  * A timestamped token by which you identify to PayPal that you
  * are processing this payment with Mobile Checkout. The token

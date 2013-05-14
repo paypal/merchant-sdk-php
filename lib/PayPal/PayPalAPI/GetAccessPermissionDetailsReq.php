@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class GetAccessPermissionDetailsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\GetAccessPermissionDetailsRequestType	 
+	 * @var PayPal\PayPalAPI\GetAccessPermissionDetailsRequestType	 
 	 */ 
 	public $GetAccessPermissionDetailsRequest;
 

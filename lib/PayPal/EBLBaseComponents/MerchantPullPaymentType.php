@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * MerchantPullPayment Parameters to make initiate a pull
  * payment 
@@ -19,7 +19,7 @@ class MerchantPullPaymentType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Amount;
 
@@ -35,7 +35,7 @@ class MerchantPullPaymentType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $MpID;
 
@@ -81,7 +81,7 @@ class MerchantPullPaymentType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Tax;
 
@@ -92,7 +92,7 @@ class MerchantPullPaymentType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Shipping;
 
@@ -103,7 +103,7 @@ class MerchantPullPaymentType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Handling;
 

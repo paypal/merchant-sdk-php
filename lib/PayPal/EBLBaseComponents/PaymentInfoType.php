@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * PaymentInfoType Payment information. 
  */
@@ -15,7 +15,7 @@ class PaymentInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $TransactionID;
 
@@ -27,7 +27,7 @@ class PaymentInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $EbayTransactionID;
 
@@ -47,7 +47,7 @@ class PaymentInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $ParentTransactionID;
 
@@ -59,7 +59,7 @@ class PaymentInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $ReceiptID;
 
@@ -138,7 +138,7 @@ class PaymentInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $GrossAmount;
 
@@ -149,7 +149,7 @@ class PaymentInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $FeeAmount;
 
@@ -164,7 +164,7 @@ class PaymentInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $SettleAmount;
 
@@ -175,7 +175,7 @@ class PaymentInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $TaxAmount;
 
@@ -446,7 +446,7 @@ class PaymentInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\SellerDetailsType	 
+	 * @var PayPal\EBLBaseComponents\SellerDetailsType	 
 	 */ 
 	public $SellerDetails;
 
@@ -470,7 +470,7 @@ class PaymentInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\FMFDetailsType	 
+	 * @var PayPal\EBLBaseComponents\FMFDetailsType	 
 	 */ 
 	public $FMFDetails;
 
@@ -482,7 +482,7 @@ class PaymentInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\EnhancedPaymentInfoType	 
+	 * @var PayPal\EnhancedDataTypes\EnhancedPaymentInfoType	 
 	 */ 
 	public $EnhancedPaymentInfo;
 
@@ -494,7 +494,7 @@ class PaymentInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ErrorType	 
+	 * @var PayPal\EBLBaseComponents\ErrorType	 
 	 */ 
 	public $PaymentError;
 
@@ -505,7 +505,7 @@ class PaymentInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\InstrumentDetailsType	 
+	 * @var PayPal\EBLBaseComponents\InstrumentDetailsType	 
 	 */ 
 	public $InstrumentDetails;
 
@@ -516,7 +516,7 @@ class PaymentInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\OfferDetailsType	 
+	 * @var PayPal\EBLBaseComponents\OfferDetailsType	 
 	 */ 
 	public $OfferDetails;
 

@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractResponseType;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
 /**
  * 
  */
@@ -14,7 +14,7 @@ class GetBalanceResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Balance;
 
@@ -37,7 +37,7 @@ class GetBalanceResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $BalanceHoldings;
 

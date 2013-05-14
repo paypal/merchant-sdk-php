@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * Unique PayPal customer account number, the value of which
  * was returned by GetAuthDetails Response. Required Character
@@ -18,7 +18,7 @@ class UpdateAccessPermissionsRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $PayerID;
 

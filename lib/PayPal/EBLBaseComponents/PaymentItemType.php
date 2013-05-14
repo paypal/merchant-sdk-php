@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * PaymentItemType Information about a Payment Item. 
  */
@@ -96,7 +96,7 @@ class PaymentItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\InvoiceItemType	 
+	 * @var PayPal\EBLBaseComponents\InvoiceItemType	 
 	 */ 
 	public $InvoiceItemDetails;
 
@@ -162,7 +162,7 @@ class PaymentItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Amount;
 
@@ -174,7 +174,7 @@ class PaymentItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\OptionType	 
+	 * @var PayPal\EBLBaseComponents\OptionType	 
 	 */ 
 	public $Options;
 

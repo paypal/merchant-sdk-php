@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractResponseType;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
 /**
  * Confirmation of a match, with one of the following tokens:
  * None: The input value of the Email object does not match any

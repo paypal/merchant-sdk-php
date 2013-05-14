@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Holds refunds payment status information 
  */

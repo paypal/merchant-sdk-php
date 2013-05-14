@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Error code can be used by a receiving application to
  * debugging a response message. These codes will need to be
@@ -69,7 +69,7 @@ class ErrorType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ErrorParameterType	 
+	 * @var PayPal\EBLBaseComponents\ErrorParameterType	 
 	 */ 
 	public $ErrorParameters;
 

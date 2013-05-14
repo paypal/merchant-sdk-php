@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Details of incentive application on individual bucket/item. 
  */
@@ -48,7 +48,7 @@ class IncentiveAppliedDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $DiscountAmount;
 

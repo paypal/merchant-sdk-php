@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * The authorization identification number you specified in the
  * request. Character length and limits: 19 single-byte
@@ -18,7 +18,7 @@ class DoCaptureResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $AuthorizationID;
 
@@ -29,7 +29,7 @@ class DoCaptureResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PaymentInfoType	 
+	 * @var PayPal\EBLBaseComponents\PaymentInfoType	 
 	 */ 
 	public $PaymentInfo;
 

@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class BillOutstandingAmountReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BillOutstandingAmountRequestType	 
+	 * @var PayPal\PayPalAPI\BillOutstandingAmountRequestType	 
 	 */ 
 	public $BillOutstandingAmountRequest;
 

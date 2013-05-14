@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * 
  */
@@ -14,7 +14,7 @@ class UpdateRecurringPaymentsProfileRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\UpdateRecurringPaymentsProfileRequestDetailsType	 
+	 * @var PayPal\EBLBaseComponents\UpdateRecurringPaymentsProfileRequestDetailsType	 
 	 */ 
 	public $UpdateRecurringPaymentsProfileRequestDetails;
 

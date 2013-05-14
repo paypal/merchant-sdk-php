@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class DoCancelReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\DoCancelRequestType	 
+	 * @var PayPal\PayPalAPI\DoCancelRequestType	 
 	 */ 
 	public $DoCancelRequest;
 

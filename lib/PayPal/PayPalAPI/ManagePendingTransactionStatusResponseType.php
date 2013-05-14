@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractResponseType;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
 /**
  * 
  */
@@ -14,7 +14,7 @@ class ManagePendingTransactionStatusResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $TransactionID;
 

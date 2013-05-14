@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * This flag indicates that the response should include
  * FMFDetails 
@@ -15,7 +15,7 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\DoReferenceTransactionRequestDetailsType	 
+	 * @var PayPal\EBLBaseComponents\DoReferenceTransactionRequestDetailsType	 
 	 */ 
 	public $DoReferenceTransactionRequestDetails;
 

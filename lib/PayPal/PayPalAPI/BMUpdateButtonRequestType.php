@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * Hosted Button id of the button to update.  Required
  * Character length and limitations: 10 single-byte numeric
@@ -81,7 +81,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\OptionDetailsType	 
+	 * @var PayPal\PayPalAPI\OptionDetailsType	 
 	 */ 
 	public $OptionDetails;
 

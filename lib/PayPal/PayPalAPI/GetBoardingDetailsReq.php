@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class GetBoardingDetailsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\GetBoardingDetailsRequestType	 
+	 * @var PayPal\PayPalAPI\GetBoardingDetailsRequestType	 
 	 */ 
 	public $GetBoardingDetailsRequest;
 

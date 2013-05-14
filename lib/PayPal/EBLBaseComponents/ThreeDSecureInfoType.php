@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 3DSecureInfoType Information about 3D Secure parameters. 
  */
@@ -14,7 +14,7 @@ class ThreeDSecureInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ThreeDSecureRequestType	 
+	 * @var PayPal\EBLBaseComponents\ThreeDSecureRequestType	 
 	 */ 
 	public $ThreeDSecureRequest;
 
@@ -25,7 +25,7 @@ class ThreeDSecureInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ThreeDSecureResponseType	 
+	 * @var PayPal\EBLBaseComponents\ThreeDSecureResponseType	 
 	 */ 
 	public $ThreeDSecureResponse;
 

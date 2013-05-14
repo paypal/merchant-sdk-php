@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Option Name. Optional 
  */
@@ -26,7 +26,7 @@ class OptionDetailsType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\OptionSelectionDetailsType	 
+	 * @var PayPal\PayPalAPI\OptionSelectionDetailsType	 
 	 */ 
 	public $OptionSelectionDetails;
 

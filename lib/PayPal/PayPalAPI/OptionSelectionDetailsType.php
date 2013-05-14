@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Option Selection. Required Character length and limitations:
  * 12 single-byte alphanumeric characters 
@@ -50,7 +50,7 @@ class OptionSelectionDetailsType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\InstallmentDetailsType	 
+	 * @var PayPal\PayPalAPI\InstallmentDetailsType	 
 	 */ 
 	public $PaymentPeriod;
 

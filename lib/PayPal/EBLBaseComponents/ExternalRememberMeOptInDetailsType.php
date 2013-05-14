@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * This element contains information that allows the merchant
  * to request to opt into external remember me on behalf of the
@@ -33,7 +33,7 @@ class ExternalRememberMeOptInDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ExternalRememberMeOwnerDetailsType	 
+	 * @var PayPal\EBLBaseComponents\ExternalRememberMeOwnerDetailsType	 
 	 */ 
 	public $ExternalRememberMeOwnerDetails;
 

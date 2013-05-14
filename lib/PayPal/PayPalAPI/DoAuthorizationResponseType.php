@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractResponseType;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
 /**
  * An authorization identification number. Character length and
  * limits: 19 single-byte characters 
@@ -27,7 +27,7 @@ class DoAuthorizationResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Amount;
 
@@ -38,7 +38,7 @@ class DoAuthorizationResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AuthorizationInfoType	 
+	 * @var PayPal\EBLBaseComponents\AuthorizationInfoType	 
 	 */ 
 	public $AuthorizationInfo;
 

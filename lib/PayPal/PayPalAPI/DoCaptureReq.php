@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class DoCaptureReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\DoCaptureRequestType	 
+	 * @var PayPal\PayPalAPI\DoCaptureRequestType	 
 	 */ 
 	public $DoCaptureRequest;
 

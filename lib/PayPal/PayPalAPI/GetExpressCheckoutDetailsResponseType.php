@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractResponseType;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
 /**
  * 
  */
@@ -14,7 +14,7 @@ class GetExpressCheckoutDetailsResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\GetExpressCheckoutDetailsResponseDetailsType	 
+	 * @var PayPal\EBLBaseComponents\GetExpressCheckoutDetailsResponseDetailsType	 
 	 */ 
 	public $GetExpressCheckoutDetailsResponseDetails;
 

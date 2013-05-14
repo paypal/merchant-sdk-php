@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractResponseType;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
 /**
  * 
  */
@@ -47,7 +47,7 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ItemTrackingDetailsType	 
+	 * @var PayPal\EBLBaseComponents\ItemTrackingDetailsType	 
 	 */ 
 	public $ItemTrackingDetails;
 
@@ -81,7 +81,7 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\OptionTrackingDetailsType	 
+	 * @var PayPal\EBLBaseComponents\OptionTrackingDetailsType	 
 	 */ 
 	public $OptionTrackingDetails;
 

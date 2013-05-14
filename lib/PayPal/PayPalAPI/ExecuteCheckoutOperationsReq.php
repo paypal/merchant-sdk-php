@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class ExecuteCheckoutOperationsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\ExecuteCheckoutOperationsRequestType	 
+	 * @var PayPal\PayPalAPI\ExecuteCheckoutOperationsRequestType	 
 	 */ 
 	public $ExecuteCheckoutOperationsRequest;
 

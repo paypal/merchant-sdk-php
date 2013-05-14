@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EnhancedDataTypes;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */

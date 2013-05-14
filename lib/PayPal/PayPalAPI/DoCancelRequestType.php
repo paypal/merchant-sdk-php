@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * Msg Sub Id that was used for the orginal operation. 
  */

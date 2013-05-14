@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractResponseType;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
 /**
  * Type of button. One of the following: BUYNOW, CART,
  * GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
@@ -111,7 +111,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\OptionDetailsType	 
+	 * @var PayPal\PayPalAPI\OptionDetailsType	 
 	 */ 
 	public $OptionDetails;
 

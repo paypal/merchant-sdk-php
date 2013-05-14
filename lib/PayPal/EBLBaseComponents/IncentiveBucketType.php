@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -15,7 +15,7 @@ class IncentiveBucketType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\IncentiveItemType	 
+	 * @var PayPal\EBLBaseComponents\IncentiveItemType	 
 	 */ 
 	public $Items;
 
@@ -59,7 +59,7 @@ class IncentiveBucketType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $BucketSubtotalAmt;
 
@@ -70,7 +70,7 @@ class IncentiveBucketType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $BucketShippingAmt;
 
@@ -81,7 +81,7 @@ class IncentiveBucketType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $BucketInsuranceAmt;
 
@@ -92,7 +92,7 @@ class IncentiveBucketType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $BucketSalesTaxAmt;
 
@@ -103,7 +103,7 @@ class IncentiveBucketType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $BucketTotalAmt;
 

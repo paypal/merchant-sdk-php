@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class MassPayReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\MassPayRequestType	 
+	 * @var PayPal\PayPalAPI\MassPayRequestType	 
 	 */ 
 	public $MassPayRequest;
 

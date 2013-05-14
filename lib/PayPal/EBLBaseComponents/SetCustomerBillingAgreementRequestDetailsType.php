@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BillingAgreementDetailsType	 
+	 * @var PayPal\EBLBaseComponents\BillingAgreementDetailsType	 
 	 */ 
 	public $BillingAgreementDetails;
 
@@ -121,7 +121,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $BuyerEmail;
 

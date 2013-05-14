@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class RefundTransactionReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\RefundTransactionRequestType	 
+	 * @var PayPal\PayPalAPI\RefundTransactionRequestType	 
 	 */ 
 	public $RefundTransactionRequest;
 

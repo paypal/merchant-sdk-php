@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class SenderDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\DeviceDetailsType	 
+	 * @var PayPal\EBLBaseComponents\DeviceDetailsType	 
 	 */ 
 	public $DeviceDetails;
 

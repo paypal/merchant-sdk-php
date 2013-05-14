@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * The value of the order’s transaction identification number
  * returned by a PayPal product. Required Character length and
@@ -45,7 +45,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Amount;
 

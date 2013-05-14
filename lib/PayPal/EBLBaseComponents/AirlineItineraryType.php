@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * AID for Airlines 
  */
@@ -91,7 +91,7 @@ class AirlineItineraryType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $TotalFare;
 
@@ -102,7 +102,7 @@ class AirlineItineraryType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $TotalTaxes;
 
@@ -113,7 +113,7 @@ class AirlineItineraryType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $TotalFee;
 
@@ -158,7 +158,7 @@ class AirlineItineraryType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\FlightDetailsType	 
+	 * @var PayPal\EBLBaseComponents\FlightDetailsType	 
 	 */ 
 	public $FlightDetails;
 

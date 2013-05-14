@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * If Billing Address should be returned in
  * GetExpressCheckoutDetails response, this parameter should be

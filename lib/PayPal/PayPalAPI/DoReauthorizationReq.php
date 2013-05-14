@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class DoReauthorizationReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\DoReauthorizationRequestType	 
+	 * @var PayPal\PayPalAPI\DoReauthorizationRequestType	 
 	 */ 
 	public $DoReauthorizationRequest;
 

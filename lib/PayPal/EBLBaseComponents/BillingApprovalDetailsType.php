@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * The Type of Approval requested - Billing Agreement or
  * Profile 
@@ -39,7 +39,7 @@ class BillingApprovalDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\OrderDetailsType	 
+	 * @var PayPal\EBLBaseComponents\OrderDetailsType	 
 	 */ 
 	public $OrderDetails;
 
@@ -50,7 +50,7 @@ class BillingApprovalDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PaymentDirectivesType	 
+	 * @var PayPal\EBLBaseComponents\PaymentDirectivesType	 
 	 */ 
 	public $PaymentDirectives;
 

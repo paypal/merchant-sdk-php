@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class CompleteRecoupReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\CompleteRecoupRequestType	 
+	 * @var PayPal\PayPalAPI\CompleteRecoupRequestType	 
 	 */ 
 	public $CompleteRecoupRequest;
 

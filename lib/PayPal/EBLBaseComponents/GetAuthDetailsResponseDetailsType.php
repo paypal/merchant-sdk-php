@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * The first name of the User. Character length and
  * limitations: 127 single-byte alphanumeric characters 
@@ -53,7 +53,7 @@ class GetAuthDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $PayerID;
 

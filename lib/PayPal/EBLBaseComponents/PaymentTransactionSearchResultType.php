@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * PaymentTransactionSearchResultType Results from a
  * PaymentTransaction search 
@@ -49,7 +49,7 @@ class PaymentTransactionSearchResultType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $Payer;
 
@@ -71,7 +71,7 @@ class PaymentTransactionSearchResultType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $TransactionID;
 
@@ -94,7 +94,7 @@ class PaymentTransactionSearchResultType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $GrossAmount;
 
@@ -105,7 +105,7 @@ class PaymentTransactionSearchResultType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $FeeAmount;
 
@@ -116,7 +116,7 @@ class PaymentTransactionSearchResultType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $NetAmount;
 

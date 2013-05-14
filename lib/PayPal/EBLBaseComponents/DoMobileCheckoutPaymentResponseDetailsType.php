@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * A free-form field for your own use, such as a tracking
  * number or other value you want returned to you in IPN.
@@ -44,7 +44,7 @@ class DoMobileCheckoutPaymentResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PayerInfoType	 
+	 * @var PayPal\EBLBaseComponents\PayerInfoType	 
 	 */ 
 	public $PayerInfo;
 
@@ -55,7 +55,7 @@ class DoMobileCheckoutPaymentResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PaymentInfoType	 
+	 * @var PayPal\EBLBaseComponents\PaymentInfoType	 
 	 */ 
 	public $PaymentInfo;
 

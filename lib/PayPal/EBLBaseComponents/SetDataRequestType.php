@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Details about Billing Agreements requested to be created. 
  */
@@ -15,7 +15,7 @@ class SetDataRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BillingApprovalDetailsType	 
+	 * @var PayPal\EBLBaseComponents\BillingApprovalDetailsType	 
 	 */ 
 	public $BillingApprovalDetails;
 
@@ -27,7 +27,7 @@ class SetDataRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BuyerDetailType	 
+	 * @var PayPal\EBLBaseComponents\BuyerDetailType	 
 	 */ 
 	public $BuyerDetail;
 
@@ -40,7 +40,7 @@ class SetDataRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\InfoSharingDirectivesType	 
+	 * @var PayPal\EBLBaseComponents\InfoSharingDirectivesType	 
 	 */ 
 	public $InfoSharingDirectives;
 

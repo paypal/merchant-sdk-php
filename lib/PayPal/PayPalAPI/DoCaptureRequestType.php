@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * The authorization identification number of the payment you
  * want to capture. Required Character length and limits: 19
@@ -18,7 +18,7 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $AuthorizationID;
 
@@ -33,7 +33,7 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Amount;
 
@@ -89,7 +89,7 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\EnhancedDataType	 
+	 * @var PayPal\EBLBaseComponents\EnhancedDataType	 
 	 */ 
 	public $EnhancedData;
 
@@ -114,7 +114,7 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\MerchantStoreDetailsType	 
+	 * @var PayPal\EBLBaseComponents\MerchantStoreDetailsType	 
 	 */ 
 	public $MerchantStoreDetails;
 

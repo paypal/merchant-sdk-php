@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * Type of Button to create.  Required Must be one of the
  * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
@@ -68,7 +68,7 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\OptionDetailsType	 
+	 * @var PayPal\PayPalAPI\OptionDetailsType	 
 	 */ 
 	public $OptionDetails;
 

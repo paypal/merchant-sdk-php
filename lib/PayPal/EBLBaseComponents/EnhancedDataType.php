@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Enhanced Data Information. Example: AID for Airlines 
  */
@@ -14,7 +14,7 @@ class EnhancedDataType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AirlineItineraryType	 
+	 * @var PayPal\EBLBaseComponents\AirlineItineraryType	 
 	 */ 
 	public $AirlineItinerary;
 

@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * 
  */
@@ -14,7 +14,7 @@ class InitiateRecoupRequestType  extends AbstractRequestType
 	 * @namespace ed
 	 
 	 	 	 	 
-	 * @var PayPal\\EnhancedInitiateRecoupRequestDetailsType	 
+	 * @var PayPal\EnhancedDataTypes\EnhancedInitiateRecoupRequestDetailsType	 
 	 */ 
 	public $EnhancedInitiateRecoupRequestDetails;
 

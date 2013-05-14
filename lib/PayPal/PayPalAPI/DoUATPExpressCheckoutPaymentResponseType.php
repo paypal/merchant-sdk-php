@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\DoExpressCheckoutPaymentResponseType;
+use PayPal\PayPalAPI\DoExpressCheckoutPaymentResponseType; 
 /**
  * 
  */
@@ -14,7 +14,7 @@ class DoUATPExpressCheckoutPaymentResponseType  extends DoExpressCheckoutPayment
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\UATPDetailsType	 
+	 * @var PayPal\EBLBaseComponents\UATPDetailsType	 
 	 */ 
 	public $UATPDetails;
 

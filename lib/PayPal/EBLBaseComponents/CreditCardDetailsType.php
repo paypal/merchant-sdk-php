@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * CreditCardDetailsType Information about a Credit Card. 
  */
@@ -58,7 +58,7 @@ class CreditCardDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PayerInfoType	 
+	 * @var PayPal\EBLBaseComponents\PayerInfoType	 
 	 */ 
 	public $CardOwner;
 
@@ -113,7 +113,7 @@ class CreditCardDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ThreeDSecureRequestType	 
+	 * @var PayPal\EBLBaseComponents\ThreeDSecureRequestType	 
 	 */ 
 	public $ThreeDSecureRequest;
 

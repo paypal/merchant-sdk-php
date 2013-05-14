@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class DoNonReferencedCreditReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\DoNonReferencedCreditRequestType	 
+	 * @var PayPal\PayPalAPI\DoNonReferencedCreditRequestType	 
 	 */ 
 	public $DoNonReferencedCreditRequest;
 

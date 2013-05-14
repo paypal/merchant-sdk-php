@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class DoNonReferencedCreditRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Amount;
 
@@ -25,7 +25,7 @@ class DoNonReferencedCreditRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $NetAmount;
 
@@ -36,7 +36,7 @@ class DoNonReferencedCreditRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $TaxAmount;
 
@@ -47,7 +47,7 @@ class DoNonReferencedCreditRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $ShippingAmount;
 
@@ -58,7 +58,7 @@ class DoNonReferencedCreditRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\CreditCardDetailsType	 
+	 * @var PayPal\EBLBaseComponents\CreditCardDetailsType	 
 	 */ 
 	public $CreditCard;
 

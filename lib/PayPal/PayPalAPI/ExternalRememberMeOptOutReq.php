@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class ExternalRememberMeOptOutReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\ExternalRememberMeOptOutRequestType	 
+	 * @var PayPal\PayPalAPI\ExternalRememberMeOptOutRequestType	 
 	 */ 
 	public $ExternalRememberMeOptOutRequest;
 

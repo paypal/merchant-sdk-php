@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -38,7 +38,7 @@ class GetIncentiveEvaluationRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\IncentiveApplyIndicationType	 
+	 * @var PayPal\EBLBaseComponents\IncentiveApplyIndicationType	 
 	 */ 
 	public $ApplyIndication;
 
@@ -50,7 +50,7 @@ class GetIncentiveEvaluationRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\IncentiveBucketType	 
+	 * @var PayPal\EBLBaseComponents\IncentiveBucketType	 
 	 */ 
 	public $Buckets;
 
@@ -61,7 +61,7 @@ class GetIncentiveEvaluationRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $CartTotalAmt;
 
@@ -72,7 +72,7 @@ class GetIncentiveEvaluationRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\IncentiveRequestDetailsType	 
+	 * @var PayPal\EBLBaseComponents\IncentiveRequestDetailsType	 
 	 */ 
 	public $RequestDetails;
 

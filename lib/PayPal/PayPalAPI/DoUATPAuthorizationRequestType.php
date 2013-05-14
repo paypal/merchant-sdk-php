@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * UATP card details Required 
  */
@@ -14,7 +14,7 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\UATPDetailsType	 
+	 * @var PayPal\EBLBaseComponents\UATPDetailsType	 
 	 */ 
 	public $UATPDetails;
 
@@ -41,7 +41,7 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Amount;
 

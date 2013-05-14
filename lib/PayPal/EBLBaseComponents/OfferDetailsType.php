@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * OfferDetailsType Specific information for an offer. 
  */
@@ -26,7 +26,7 @@ class OfferDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BMLOfferInfoType	 
+	 * @var PayPal\EBLBaseComponents\BMLOfferInfoType	 
 	 */ 
 	public $BMLOfferInfo;
 

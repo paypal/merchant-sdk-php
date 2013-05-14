@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class BMSetInventoryReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BMSetInventoryRequestType	 
+	 * @var PayPal\PayPalAPI\BMSetInventoryRequestType	 
 	 */ 
 	public $BMSetInventoryRequest;
 

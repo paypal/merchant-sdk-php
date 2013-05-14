@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Subscriber name - if missing, will use name in buyer's
  * account 
@@ -28,7 +28,7 @@ class RecurringPaymentsProfileDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AddressType	 
+	 * @var PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $SubscriberShippingAddress;
 

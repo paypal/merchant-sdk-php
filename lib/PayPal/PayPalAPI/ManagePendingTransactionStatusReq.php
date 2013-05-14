@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class ManagePendingTransactionStatusReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\ManagePendingTransactionStatusRequestType	 
+	 * @var PayPal\PayPalAPI\ManagePendingTransactionStatusRequestType	 
 	 */ 
 	public $ManagePendingTransactionStatusRequest;
 

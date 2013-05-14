@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\DoExpressCheckoutPaymentRequestType;
+use PayPal\PayPalAPI\DoExpressCheckoutPaymentRequestType; 
 /**
  * 
  */

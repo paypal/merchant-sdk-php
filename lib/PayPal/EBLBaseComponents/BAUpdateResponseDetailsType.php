@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -58,7 +58,7 @@ class BAUpdateResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PayerInfoType	 
+	 * @var PayPal\EBLBaseComponents\PayerInfoType	 
 	 */ 
 	public $PayerInfo;
 
@@ -69,7 +69,7 @@ class BAUpdateResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $BillingAgreementMax;
 
@@ -83,7 +83,7 @@ class BAUpdateResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AddressType	 
+	 * @var PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $BillingAddress;
 

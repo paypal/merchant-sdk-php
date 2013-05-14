@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * On your first invocation of
  * ExecuteCheckoutOperationsRequest, the value of this token is
@@ -28,7 +28,7 @@ class ExecuteCheckoutOperationsRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $Token;
 
@@ -40,7 +40,7 @@ class ExecuteCheckoutOperationsRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\SetDataRequestType	 
+	 * @var PayPal\EBLBaseComponents\SetDataRequestType	 
 	 */ 
 	public $SetDataRequest;
 
@@ -52,7 +52,7 @@ class ExecuteCheckoutOperationsRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AuthorizationRequestType	 
+	 * @var PayPal\EBLBaseComponents\AuthorizationRequestType	 
 	 */ 
 	public $AuthorizationRequest;
 

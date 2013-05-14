@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Details of incentive application on individual bucket. 
  */
@@ -27,7 +27,7 @@ class IncentiveInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\IncentiveApplyIndicationType	 
+	 * @var PayPal\EBLBaseComponents\IncentiveApplyIndicationType	 
 	 */ 
 	public $ApplyIndication;
 

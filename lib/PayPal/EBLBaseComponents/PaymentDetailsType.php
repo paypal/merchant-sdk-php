@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * PaymentDetailsType Information about a payment. Used by DCC
  * and Express Checkout. 
@@ -21,7 +21,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $OrderTotal;
 
@@ -35,7 +35,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $ItemTotal;
 
@@ -51,7 +51,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $ShippingTotal;
 
@@ -67,7 +67,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $HandlingTotal;
 
@@ -83,7 +83,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $TaxTotal;
 
@@ -164,7 +164,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AddressType	 
+	 * @var PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $ShipToAddress;
 
@@ -187,7 +187,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AddressType	 
+	 * @var PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $FulfillmentAddress;
 
@@ -233,7 +233,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PaymentDetailsItemType	 
+	 * @var PayPal\EBLBaseComponents\PaymentDetailsItemType	 
 	 */ 
 	public $PaymentDetailsItem;
 
@@ -244,7 +244,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $InsuranceTotal;
 
@@ -256,7 +256,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $ShippingDiscount;
 
@@ -290,7 +290,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\EnhancedPaymentDataType	 
+	 * @var PayPal\EnhancedDataTypes\EnhancedPaymentDataType	 
 	 */ 
 	public $EnhancedPaymentData;
 
@@ -301,7 +301,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\SellerDetailsType	 
+	 * @var PayPal\EBLBaseComponents\SellerDetailsType	 
 	 */ 
 	public $SellerDetails;
 
@@ -408,7 +408,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\OfferDetailsType	 
+	 * @var PayPal\EBLBaseComponents\OfferDetailsType	 
 	 */ 
 	public $OfferDetails;
 

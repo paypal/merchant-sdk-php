@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class SetExpressCheckoutReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\SetExpressCheckoutRequestType	 
+	 * @var PayPal\PayPalAPI\SetExpressCheckoutRequestType	 
 	 */ 
 	public $SetExpressCheckoutRequest;
 

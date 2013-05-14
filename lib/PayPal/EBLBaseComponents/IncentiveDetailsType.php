@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Information about the incentives that were applied from Ebay
  * RYP page and PayPal RYP page. 
@@ -41,7 +41,7 @@ class IncentiveDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $TotalDiscountAmount;
 
@@ -75,7 +75,7 @@ class IncentiveDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\IncentiveAppliedDetailsType	 
+	 * @var PayPal\EBLBaseComponents\IncentiveAppliedDetailsType	 
 	 */ 
 	public $IncentiveAppliedDetails;
 

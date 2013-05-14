@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class GetMobileStatusReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\GetMobileStatusRequestType	 
+	 * @var PayPal\PayPalAPI\GetMobileStatusRequestType	 
 	 */ 
 	public $GetMobileStatusRequest;
 

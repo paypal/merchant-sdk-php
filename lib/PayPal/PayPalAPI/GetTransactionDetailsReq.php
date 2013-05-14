@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class GetTransactionDetailsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\GetTransactionDetailsRequestType	 
+	 * @var PayPal\PayPalAPI\GetTransactionDetailsRequestType	 
 	 */ 
 	public $GetTransactionDetailsRequest;
 

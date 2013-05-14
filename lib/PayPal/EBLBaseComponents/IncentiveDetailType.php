@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -70,7 +70,7 @@ class IncentiveDetailType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\IncentiveAppliedToType	 
+	 * @var PayPal\EBLBaseComponents\IncentiveAppliedToType	 
 	 */ 
 	public $AppliedTo;
 

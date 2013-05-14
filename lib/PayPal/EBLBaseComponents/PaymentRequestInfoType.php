@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Contains payment request information for each bucket in the
  * cart.  
@@ -37,7 +37,7 @@ class PaymentRequestInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ErrorType	 
+	 * @var PayPal\EBLBaseComponents\ErrorType	 
 	 */ 
 	public $PaymentError;
 

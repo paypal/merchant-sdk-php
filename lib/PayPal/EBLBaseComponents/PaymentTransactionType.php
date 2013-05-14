@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * PaymentTransactionType Information about a PayPal payment
  * from the seller side 
@@ -15,7 +15,7 @@ class PaymentTransactionType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ReceiverInfoType	 
+	 * @var PayPal\EBLBaseComponents\ReceiverInfoType	 
 	 */ 
 	public $ReceiverInfo;
 
@@ -26,7 +26,7 @@ class PaymentTransactionType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PayerInfoType	 
+	 * @var PayPal\EBLBaseComponents\PayerInfoType	 
 	 */ 
 	public $PayerInfo;
 
@@ -49,7 +49,7 @@ class PaymentTransactionType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PaymentInfoType	 
+	 * @var PayPal\EBLBaseComponents\PaymentInfoType	 
 	 */ 
 	public $PaymentInfo;
 
@@ -60,7 +60,7 @@ class PaymentTransactionType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PaymentItemInfoType	 
+	 * @var PayPal\EBLBaseComponents\PaymentItemInfoType	 
 	 */ 
 	public $PaymentItemInfo;
 
@@ -72,7 +72,7 @@ class PaymentTransactionType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\OfferCouponInfoType	 
+	 * @var PayPal\EBLBaseComponents\OfferCouponInfoType	 
 	 */ 
 	public $OfferCouponInfo;
 
@@ -83,7 +83,7 @@ class PaymentTransactionType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AddressType	 
+	 * @var PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $SecondaryAddress;
 
@@ -94,7 +94,7 @@ class PaymentTransactionType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\UserSelectedOptionType	 
+	 * @var PayPal\EBLBaseComponents\UserSelectedOptionType	 
 	 */ 
 	public $UserSelectedOptions;
 
@@ -138,7 +138,7 @@ class PaymentTransactionType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $GiftWrapAmount;
 

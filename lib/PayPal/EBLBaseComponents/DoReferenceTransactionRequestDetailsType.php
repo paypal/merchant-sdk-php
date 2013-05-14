@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -47,7 +47,7 @@ class DoReferenceTransactionRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PaymentDetailsType	 
+	 * @var PayPal\EBLBaseComponents\PaymentDetailsType	 
 	 */ 
 	public $PaymentDetails;
 
@@ -58,7 +58,7 @@ class DoReferenceTransactionRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ReferenceCreditCardDetailsType	 
+	 * @var PayPal\EBLBaseComponents\ReferenceCreditCardDetailsType	 
 	 */ 
 	public $CreditCard;
 
@@ -113,7 +113,7 @@ class DoReferenceTransactionRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\SenderDetailsType	 
+	 * @var PayPal\EBLBaseComponents\SenderDetailsType	 
 	 */ 
 	public $SenderDetails;
 

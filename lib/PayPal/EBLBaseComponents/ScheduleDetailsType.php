@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Schedule details for the Recurring Payment 
  */
@@ -25,7 +25,7 @@ class ScheduleDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BillingPeriodDetailsType	 
+	 * @var PayPal\EBLBaseComponents\BillingPeriodDetailsType	 
 	 */ 
 	public $TrialPeriod;
 
@@ -36,7 +36,7 @@ class ScheduleDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BillingPeriodDetailsType	 
+	 * @var PayPal\EBLBaseComponents\BillingPeriodDetailsType	 
 	 */ 
 	public $PaymentPeriod;
 
@@ -59,7 +59,7 @@ class ScheduleDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ActivationDetailsType	 
+	 * @var PayPal\EBLBaseComponents\ActivationDetailsType	 
 	 */ 
 	public $ActivationDetails;
 

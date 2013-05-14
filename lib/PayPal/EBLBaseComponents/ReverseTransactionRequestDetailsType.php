@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Identifier of the transaction to reverse. Required Character
  * length and limitations: 17 single-byte alphanumeric
@@ -18,7 +18,7 @@ class ReverseTransactionRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $TransactionID;
 

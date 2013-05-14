@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Lists the Payment Methods (other than PayPal) that the use
  * can pay with e.g. Money Order. Optional. 

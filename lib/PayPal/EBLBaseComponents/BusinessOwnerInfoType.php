@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * BusinessOwnerInfoType 
  */
@@ -14,7 +14,7 @@ class BusinessOwnerInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PayerInfoType	 
+	 * @var PayPal\EBLBaseComponents\PayerInfoType	 
 	 */ 
 	public $Owner;
 

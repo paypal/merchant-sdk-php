@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * CreditCardDetailsType for DCC Reference Transaction
  * Information about a Credit Card. 
@@ -15,7 +15,7 @@ class ReferenceCreditCardDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\CreditCardNumberTypeType	 
+	 * @var PayPal\EBLBaseComponents\CreditCardNumberTypeType	 
 	 */ 
 	public $CreditCardNumberType;
 
@@ -48,7 +48,7 @@ class ReferenceCreditCardDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PersonNameType	 
+	 * @var PayPal\EBLBaseComponents\PersonNameType	 
 	 */ 
 	public $CardOwnerName;
 
@@ -59,7 +59,7 @@ class ReferenceCreditCardDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AddressType	 
+	 * @var PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $BillingAddress;
 

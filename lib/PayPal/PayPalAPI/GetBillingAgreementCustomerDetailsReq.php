@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class GetBillingAgreementCustomerDetailsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\GetBillingAgreementCustomerDetailsRequestType	 
+	 * @var PayPal\PayPalAPI\GetBillingAgreementCustomerDetailsRequestType	 
 	 */ 
 	public $GetBillingAgreementCustomerDetailsRequest;
 

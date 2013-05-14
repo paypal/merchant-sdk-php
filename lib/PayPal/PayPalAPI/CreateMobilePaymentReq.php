@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class CreateMobilePaymentReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\CreateMobilePaymentRequestType	 
+	 * @var PayPal\PayPalAPI\CreateMobilePaymentRequestType	 
 	 */ 
 	public $CreateMobilePaymentRequest;
 

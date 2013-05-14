@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class ManageRecurringPaymentsProfileStatusReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\ManageRecurringPaymentsProfileStatusRequestType	 
+	 * @var PayPal\PayPalAPI\ManageRecurringPaymentsProfileStatusRequestType	 
 	 */ 
 	public $ManageRecurringPaymentsProfileStatusRequest;
 

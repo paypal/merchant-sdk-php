@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * The total cost of the order to the customer. If shipping
  * cost and tax charges are known, include them in OrderTotal;
@@ -30,7 +30,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $OrderTotal;
 
@@ -129,7 +129,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $Token;
 
@@ -146,7 +146,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $MaxAmount;
 
@@ -234,7 +234,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AddressType	 
+	 * @var PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $BillingAddress;
 
@@ -408,7 +408,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AddressType	 
+	 * @var PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $Address;
 
@@ -471,7 +471,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $BuyerEmail;
 
@@ -494,7 +494,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BillingAgreementDetailsType	 
+	 * @var PayPal\EBLBaseComponents\BillingAgreementDetailsType	 
 	 */ 
 	public $BillingAgreementDetails;
 
@@ -580,7 +580,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\FundingSourceDetailsType	 
+	 * @var PayPal\EBLBaseComponents\FundingSourceDetailsType	 
 	 */ 
 	public $FundingSourceDetails;
 
@@ -617,7 +617,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\EnhancedCheckoutDataType	 
+	 * @var PayPal\EnhancedDataTypes\EnhancedCheckoutDataType	 
 	 */ 
 	public $EnhancedCheckoutData;
 
@@ -631,7 +631,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\OtherPaymentMethodDetailsType	 
+	 * @var PayPal\EBLBaseComponents\OtherPaymentMethodDetailsType	 
 	 */ 
 	public $OtherPaymentMethods;
 
@@ -643,7 +643,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BuyerDetailsType	 
+	 * @var PayPal\EBLBaseComponents\BuyerDetailsType	 
 	 */ 
 	public $BuyerDetails;
 
@@ -655,7 +655,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PaymentDetailsType	 
+	 * @var PayPal\EBLBaseComponents\PaymentDetailsType	 
 	 */ 
 	public $PaymentDetails;
 
@@ -667,7 +667,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ShippingOptionType	 
+	 * @var PayPal\EBLBaseComponents\ShippingOptionType	 
 	 */ 
 	public $FlatRateShippingOptions;
 
@@ -755,7 +755,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $GiftWrapAmount;
 
@@ -836,7 +836,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\IncentiveInfoType	 
+	 * @var PayPal\EBLBaseComponents\IncentiveInfoType	 
 	 */ 
 	public $Incentives;
 
@@ -863,7 +863,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ExternalRememberMeOptInDetailsType	 
+	 * @var PayPal\EBLBaseComponents\ExternalRememberMeOptInDetailsType	 
 	 */ 
 	public $ExternalRememberMeOptInDetails;
 
@@ -874,7 +874,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\FlowControlDetailsType	 
+	 * @var PayPal\EBLBaseComponents\FlowControlDetailsType	 
 	 */ 
 	public $FlowControlDetails;
 
@@ -886,7 +886,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\DisplayControlDetailsType	 
+	 * @var PayPal\EBLBaseComponents\DisplayControlDetailsType	 
 	 */ 
 	public $DisplayControlDetails;
 
@@ -898,7 +898,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ExternalPartnerTrackingDetailsType	 
+	 * @var PayPal\EBLBaseComponents\ExternalPartnerTrackingDetailsType	 
 	 */ 
 	public $ExternalPartnerTrackingDetails;
 
@@ -910,7 +910,7 @@ class SetExpressCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\CoupledBucketsType	 
+	 * @var PayPal\EBLBaseComponents\CoupledBucketsType	 
 	 */ 
 	public $CoupledBuckets;
 

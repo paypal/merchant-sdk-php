@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class BMGetButtonDetailsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BMGetButtonDetailsRequestType	 
+	 * @var PayPal\PayPalAPI\BMGetButtonDetailsRequestType	 
 	 */ 
 	public $BMGetButtonDetailsRequest;
 

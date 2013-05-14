@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class SetAuthFlowParamReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\SetAuthFlowParamRequestType	 
+	 * @var PayPal\PayPalAPI\SetAuthFlowParamRequestType	 
 	 */ 
 	public $SetAuthFlowParamRequest;
 

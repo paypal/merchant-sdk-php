@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractResponseType;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
 /**
  * 
  */
@@ -14,7 +14,7 @@ class ReverseTransactionResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ReverseTransactionResponseDetailsType	 
+	 * @var PayPal\EBLBaseComponents\ReverseTransactionResponseDetailsType	 
 	 */ 
 	public $ReverseTransactionResponseDetails;
 

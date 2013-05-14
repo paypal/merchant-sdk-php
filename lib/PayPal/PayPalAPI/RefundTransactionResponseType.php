@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractResponseType;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
 /**
  * Unique transaction ID of the refund. Character length and
  * limitations:17 single-byte characters 
@@ -16,7 +16,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $RefundTransactionID;
 
@@ -28,7 +28,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $NetRefundAmount;
 
@@ -39,7 +39,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $FeeRefundAmount;
 
@@ -50,7 +50,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $GrossRefundAmount;
 
@@ -61,7 +61,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $TotalRefundedAmount;
 
@@ -72,7 +72,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\RefundInfoType	 
+	 * @var PayPal\EBLBaseComponents\RefundInfoType	 
 	 */ 
 	public $RefundInfo;
 

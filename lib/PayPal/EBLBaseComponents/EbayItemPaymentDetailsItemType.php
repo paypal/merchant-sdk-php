@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * EbayItemPaymentDetailsItemType - Type declaration to be used
  * by other schemas. Information about an Ebay Payment Item. 

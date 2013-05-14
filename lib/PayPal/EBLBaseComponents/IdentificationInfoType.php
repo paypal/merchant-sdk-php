@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Mobile specific buyer identification. 
  */
@@ -14,7 +14,7 @@ class IdentificationInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\MobileIDInfoType	 
+	 * @var PayPal\EBLBaseComponents\MobileIDInfoType	 
 	 */ 
 	public $MobileIDInfo;
 
@@ -25,7 +25,7 @@ class IdentificationInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\RememberMeIDInfoType	 
+	 * @var PayPal\EBLBaseComponents\RememberMeIDInfoType	 
 	 */ 
 	public $RememberMeIDInfo;
 
@@ -36,7 +36,7 @@ class IdentificationInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\IdentityTokenInfoType	 
+	 * @var PayPal\EBLBaseComponents\IdentityTokenInfoType	 
 	 */ 
 	public $IdentityTokenInfo;
 

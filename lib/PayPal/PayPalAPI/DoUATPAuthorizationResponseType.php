@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\DoAuthorizationResponseType;
+use PayPal\PayPalAPI\DoAuthorizationResponseType; 
 /**
  * Auth Authorization Code. 
  */
@@ -14,7 +14,7 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\UATPDetailsType	 
+	 * @var PayPal\EBLBaseComponents\UATPDetailsType	 
 	 */ 
 	public $UATPDetails;
 

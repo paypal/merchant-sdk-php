@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class BillUserReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BillUserRequestType	 
+	 * @var PayPal\PayPalAPI\BillUserRequestType	 
 	 */ 
 	public $BillUserRequest;
 

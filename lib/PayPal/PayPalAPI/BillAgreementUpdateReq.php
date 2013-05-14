@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class BillAgreementUpdateReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BAUpdateRequestType	 
+	 * @var PayPal\PayPalAPI\BAUpdateRequestType	 
 	 */ 
 	public $BAUpdateRequest;
 

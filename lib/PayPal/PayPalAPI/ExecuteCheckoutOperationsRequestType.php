@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * 
  */
@@ -14,7 +14,7 @@ class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ExecuteCheckoutOperationsRequestDetailsType	 
+	 * @var PayPal\EBLBaseComponents\ExecuteCheckoutOperationsRequestDetailsType	 
 	 */ 
 	public $ExecuteCheckoutOperationsRequestDetails;
 

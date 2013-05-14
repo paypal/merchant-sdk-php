@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Recurring Billing Profile ID 
  */
@@ -69,7 +69,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\RecurringPaymentsProfileDetailsType	 
+	 * @var PayPal\EBLBaseComponents\RecurringPaymentsProfileDetailsType	 
 	 */ 
 	public $RecurringPaymentsProfileDetails;
 
@@ -80,7 +80,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BillingPeriodDetailsType	 
+	 * @var PayPal\EBLBaseComponents\BillingPeriodDetailsType	 
 	 */ 
 	public $CurrentRecurringPaymentsPeriod;
 
@@ -91,7 +91,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\RecurringPaymentsSummaryType	 
+	 * @var PayPal\EBLBaseComponents\RecurringPaymentsSummaryType	 
 	 */ 
 	public $RecurringPaymentsSummary;
 
@@ -102,7 +102,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\CreditCardDetailsType	 
+	 * @var PayPal\EBLBaseComponents\CreditCardDetailsType	 
 	 */ 
 	public $CreditCard;
 
@@ -113,7 +113,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BillingPeriodDetailsType	 
+	 * @var PayPal\EBLBaseComponents\BillingPeriodDetailsType	 
 	 */ 
 	public $TrialRecurringPaymentsPeriod;
 
@@ -124,7 +124,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BillingPeriodDetailsType	 
+	 * @var PayPal\EBLBaseComponents\BillingPeriodDetailsType	 
 	 */ 
 	public $RegularRecurringPaymentsPeriod;
 
@@ -135,7 +135,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $TrialAmountPaid;
 
@@ -146,7 +146,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $RegularAmountPaid;
 
@@ -157,7 +157,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $AggregateAmount;
 
@@ -168,7 +168,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $AggregateOptionalAmount;
 

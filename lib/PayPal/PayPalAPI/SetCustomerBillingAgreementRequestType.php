@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * 
  */
@@ -14,7 +14,7 @@ class SetCustomerBillingAgreementRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\SetCustomerBillingAgreementRequestDetailsType	 
+	 * @var PayPal\EBLBaseComponents\SetCustomerBillingAgreementRequestDetailsType	 
 	 */ 
 	public $SetCustomerBillingAgreementRequestDetails;
 

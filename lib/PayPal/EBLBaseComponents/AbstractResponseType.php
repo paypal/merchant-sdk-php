@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Base type definition of a response payload that can carry
  * any type of payload content with following optional
@@ -55,7 +55,7 @@ class AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ErrorType	 
+	 * @var PayPal\EBLBaseComponents\ErrorType	 
 	 */ 
 	public $Errors;
 

@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * A timestamped token, the value of which was returned by
  * SetMobileCheckoutResponse. RequiredCharacter length and

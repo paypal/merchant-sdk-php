@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Details about the buyer's account passed in by the merchant
  * or partner. Optional. 
@@ -49,7 +49,7 @@ class BuyerDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\TaxIdDetailsType	 
+	 * @var PayPal\EBLBaseComponents\TaxIdDetailsType	 
 	 */ 
 	public $TaxIdDetails;
 
@@ -61,7 +61,7 @@ class BuyerDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\IdentificationInfoType	 
+	 * @var PayPal\EBLBaseComponents\IdentificationInfoType	 
 	 */ 
 	public $IdentificationInfo;
 

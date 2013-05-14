@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Phone number for status inquiry 
  */
@@ -14,7 +14,7 @@ class GetMobileStatusRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PhoneNumberType	 
+	 * @var PayPal\EBLBaseComponents\PhoneNumberType	 
 	 */ 
 	public $Phone;
 

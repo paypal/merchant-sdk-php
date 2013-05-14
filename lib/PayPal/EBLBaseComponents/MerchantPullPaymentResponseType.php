@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * MerchantPullPaymentResponseType Response data from the
  * merchant pull. 
@@ -15,7 +15,7 @@ class MerchantPullPaymentResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PayerInfoType	 
+	 * @var PayPal\EBLBaseComponents\PayerInfoType	 
 	 */ 
 	public $PayerInfo;
 
@@ -26,7 +26,7 @@ class MerchantPullPaymentResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PaymentInfoType	 
+	 * @var PayPal\EBLBaseComponents\PaymentInfoType	 
 	 */ 
 	public $PaymentInfo;
 
@@ -37,7 +37,7 @@ class MerchantPullPaymentResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\MerchantPullInfoType	 
+	 * @var PayPal\EBLBaseComponents\MerchantPullInfoType	 
 	 */ 
 	public $MerchantPullInfo;
 

@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractResponseType;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
 /**
  * 
  */
@@ -14,7 +14,7 @@ class ManageRecurringPaymentsProfileStatusResponseType  extends AbstractResponse
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ManageRecurringPaymentsProfileStatusResponseDetailsType	 
+	 * @var PayPal\EBLBaseComponents\ManageRecurringPaymentsProfileStatusResponseDetailsType	 
 	 */ 
 	public $ManageRecurringPaymentsProfileStatusResponseDetails;
 

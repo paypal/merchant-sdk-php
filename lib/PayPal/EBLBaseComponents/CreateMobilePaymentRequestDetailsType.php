@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Type of the payment Required 
  */
@@ -40,7 +40,7 @@ class CreateMobilePaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PhoneNumberType	 
+	 * @var PayPal\EBLBaseComponents\PhoneNumberType	 
 	 */ 
 	public $SenderPhone;
 
@@ -74,7 +74,7 @@ class CreateMobilePaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PhoneNumberType	 
+	 * @var PayPal\EBLBaseComponents\PhoneNumberType	 
 	 */ 
 	public $RecipientPhone;
 
@@ -85,7 +85,7 @@ class CreateMobilePaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $ItemAmount;
 
@@ -96,7 +96,7 @@ class CreateMobilePaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Tax;
 
@@ -107,7 +107,7 @@ class CreateMobilePaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Shipping;
 

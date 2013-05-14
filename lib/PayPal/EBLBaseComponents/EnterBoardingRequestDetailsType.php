@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Onboarding program code given to you by PayPal. Required
  * Character length and limitations: 64 alphanumeric characters
@@ -88,7 +88,7 @@ class EnterBoardingRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BusinessInfoType	 
+	 * @var PayPal\EBLBaseComponents\BusinessInfoType	 
 	 */ 
 	public $BusinessInfo;
 
@@ -99,7 +99,7 @@ class EnterBoardingRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BusinessOwnerInfoType	 
+	 * @var PayPal\EBLBaseComponents\BusinessOwnerInfoType	 
 	 */ 
 	public $OwnerInfo;
 
@@ -110,7 +110,7 @@ class EnterBoardingRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BankAccountDetailsType	 
+	 * @var PayPal\EBLBaseComponents\BankAccountDetailsType	 
 	 */ 
 	public $BankAccount;
 

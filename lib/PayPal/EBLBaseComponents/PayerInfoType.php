@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * PayerInfoType Payer information 
  */
@@ -15,7 +15,7 @@ class PayerInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $Payer;
 
@@ -27,7 +27,7 @@ class PayerInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $PayerID;
 
@@ -49,7 +49,7 @@ class PayerInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PersonNameType	 
+	 * @var PayPal\EBLBaseComponents\PersonNameType	 
 	 */ 
 	public $PayerName;
 
@@ -85,7 +85,7 @@ class PayerInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AddressType	 
+	 * @var PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $Address;
 
@@ -108,7 +108,7 @@ class PayerInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\TaxIdDetailsType	 
+	 * @var PayPal\EBLBaseComponents\TaxIdDetailsType	 
 	 */ 
 	public $TaxIdDetails;
 
@@ -119,7 +119,7 @@ class PayerInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\EnhancedPayerInfoType	 
+	 * @var PayPal\EnhancedDataTypes\EnhancedPayerInfoType	 
 	 */ 
 	public $EnhancedPayerInfo;
 

@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Status will denote whether Auto authorization was successful
  * or not. 
@@ -28,7 +28,7 @@ class AuthorizationResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ErrorType	 
+	 * @var PayPal\EBLBaseComponents\ErrorType	 
 	 */ 
 	public $AuthorizationError;
 

@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class BMButtonSearchReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BMButtonSearchRequestType	 
+	 * @var PayPal\PayPalAPI\BMButtonSearchRequestType	 
 	 */ 
 	public $BMButtonSearchRequest;
 

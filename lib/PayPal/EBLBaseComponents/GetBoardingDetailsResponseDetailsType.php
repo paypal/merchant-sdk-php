@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Status of merchant's onboarding process:
  * CompletedCancelledPending Character length and limitations:
@@ -121,7 +121,7 @@ class GetBoardingDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PayerInfoType	 
+	 * @var PayPal\EBLBaseComponents\PayerInfoType	 
 	 */ 
 	public $AccountOwner;
 
@@ -132,7 +132,7 @@ class GetBoardingDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\APICredentialsType	 
+	 * @var PayPal\EBLBaseComponents\APICredentialsType	 
 	 */ 
 	public $Credentials;
 

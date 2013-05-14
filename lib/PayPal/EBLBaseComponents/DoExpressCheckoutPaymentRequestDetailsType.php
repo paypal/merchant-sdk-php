@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * How you want to obtain payment. Required Authorization
  * indicates that this payment is a basic authorization subject
@@ -48,7 +48,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $Token;
 
@@ -62,7 +62,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $PayerID;
 
@@ -85,7 +85,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PaymentDetailsType	 
+	 * @var PayPal\EBLBaseComponents\PaymentDetailsType	 
 	 */ 
 	public $PaymentDetails;
 
@@ -121,7 +121,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\EnhancedDataType	 
+	 * @var PayPal\EBLBaseComponents\EnhancedDataType	 
 	 */ 
 	public $EnhancedData;
 
@@ -144,7 +144,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\UserSelectedOptionType	 
+	 * @var PayPal\EBLBaseComponents\UserSelectedOptionType	 
 	 */ 
 	public $UserSelectedOptions;
 
@@ -188,7 +188,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $GiftWrapAmount;
 
@@ -259,7 +259,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\CoupledBucketsType	 
+	 * @var PayPal\EBLBaseComponents\CoupledBucketsType	 
 	 */ 
 	public $CoupledBuckets;
 

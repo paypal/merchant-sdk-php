@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Billing Agreement token (required if Express Checkout) 
  */
@@ -26,7 +26,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\CreditCardDetailsType	 
+	 * @var PayPal\EBLBaseComponents\CreditCardDetailsType	 
 	 */ 
 	public $CreditCard;
 
@@ -37,7 +37,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\RecurringPaymentsProfileDetailsType	 
+	 * @var PayPal\EBLBaseComponents\RecurringPaymentsProfileDetailsType	 
 	 */ 
 	public $RecurringPaymentsProfileDetails;
 
@@ -48,7 +48,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ScheduleDetailsType	 
+	 * @var PayPal\EBLBaseComponents\ScheduleDetailsType	 
 	 */ 
 	public $ScheduleDetails;
 
@@ -60,7 +60,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PaymentDetailsItemType	 
+	 * @var PayPal\EBLBaseComponents\PaymentDetailsItemType	 
 	 */ 
 	public $PaymentDetailsItem;
 

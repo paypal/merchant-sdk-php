@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Describes an individual item for an invoice. 
  */
@@ -80,7 +80,7 @@ class InvoiceItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Price;
 
@@ -91,7 +91,7 @@ class InvoiceItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $ItemPrice;
 
@@ -125,7 +125,7 @@ class InvoiceItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\DiscountType	 
+	 * @var PayPal\EBLBaseComponents\DiscountType	 
 	 */ 
 	public $Discount;
 
@@ -164,7 +164,7 @@ class InvoiceItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AdditionalFeeType	 
+	 * @var PayPal\EBLBaseComponents\AdditionalFeeType	 
 	 */ 
 	public $AdditionalFees;
 

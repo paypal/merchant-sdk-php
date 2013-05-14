@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class GetIncentiveEvaluationReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\GetIncentiveEvaluationRequestType	 
+	 * @var PayPal\PayPalAPI\GetIncentiveEvaluationRequestType	 
 	 */ 
 	public $GetIncentiveEvaluationRequest;
 

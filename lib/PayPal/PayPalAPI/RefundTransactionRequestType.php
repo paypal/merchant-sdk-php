@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * Unique identifier of the transaction you are refunding.
  * Optional Character length and limitations: 17 single-byte
@@ -18,7 +18,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $TransactionID;
 
@@ -31,7 +31,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $PayerID;
 
@@ -70,7 +70,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Amount;
 
@@ -128,7 +128,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\MerchantStoreDetailsType	 
+	 * @var PayPal\EBLBaseComponents\MerchantStoreDetailsType	 
 	 */ 
 	public $MerchantStoreDetails;
 
@@ -141,7 +141,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\InvoiceItemType	 
+	 * @var PayPal\EBLBaseComponents\InvoiceItemType	 
 	 */ 
 	public $RefundItemDetails;
 

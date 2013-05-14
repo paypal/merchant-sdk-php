@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * If Checkout session was initialized successfully, the
  * corresponding token is returned in this element. 
@@ -16,7 +16,7 @@ class SetDataResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $Token;
 
@@ -28,7 +28,7 @@ class SetDataResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ErrorType	 
+	 * @var PayPal\EBLBaseComponents\ErrorType	 
 	 */ 
 	public $SetDataError;
 

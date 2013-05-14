@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * Hosted Button ID of button you wish to change.  Required
  * Character length and limitations: 10 single-byte numeric
@@ -51,7 +51,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ItemTrackingDetailsType	 
+	 * @var PayPal\EBLBaseComponents\ItemTrackingDetailsType	 
 	 */ 
 	public $ItemTrackingDetails;
 
@@ -75,7 +75,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\OptionTrackingDetailsType	 
+	 * @var PayPal\EBLBaseComponents\OptionTrackingDetailsType	 
 	 */ 
 	public $OptionTrackingDetails;
 

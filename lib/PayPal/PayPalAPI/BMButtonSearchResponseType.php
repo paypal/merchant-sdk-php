@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractResponseType;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
 /**
  * 
  */
@@ -15,7 +15,7 @@ class BMButtonSearchResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ButtonSearchResultType	 
+	 * @var PayPal\EBLBaseComponents\ButtonSearchResultType	 
 	 */ 
 	public $ButtonSearchResult;
 

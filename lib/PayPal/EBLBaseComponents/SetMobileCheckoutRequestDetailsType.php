@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * The phone number of the buyer's mobile device, if available.
  * Optional 
@@ -16,7 +16,7 @@ class SetMobileCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PhoneNumberType	 
+	 * @var PayPal\EBLBaseComponents\PhoneNumberType	 
 	 */ 
 	public $BuyerPhone;
 
@@ -29,7 +29,7 @@ class SetMobileCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $ItemAmount;
 
@@ -42,7 +42,7 @@ class SetMobileCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Tax;
 
@@ -55,7 +55,7 @@ class SetMobileCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Shipping;
 
@@ -176,7 +176,7 @@ class SetMobileCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AddressType	 
+	 * @var PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $ShipToAddress;
 
@@ -190,7 +190,7 @@ class SetMobileCheckoutRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $BuyerEmail;
 

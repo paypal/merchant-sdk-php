@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * PaymentDetailsItemType Information about a Payment Item. 
  */
@@ -52,7 +52,7 @@ class PaymentDetailsItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Tax;
 
@@ -68,7 +68,7 @@ class PaymentDetailsItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Amount;
 
@@ -79,7 +79,7 @@ class PaymentDetailsItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\EbayItemPaymentDetailsItemType	 
+	 * @var PayPal\EBLBaseComponents\EbayItemPaymentDetailsItemType	 
 	 */ 
 	public $EbayItemPaymentDetailsItem;
 
@@ -125,7 +125,7 @@ class PaymentDetailsItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\MeasureType	 
+	 * @var PayPal\CoreComponentTypes\MeasureType	 
 	 */ 
 	public $ItemWeight;
 
@@ -136,7 +136,7 @@ class PaymentDetailsItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\MeasureType	 
+	 * @var PayPal\CoreComponentTypes\MeasureType	 
 	 */ 
 	public $ItemLength;
 
@@ -147,7 +147,7 @@ class PaymentDetailsItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\MeasureType	 
+	 * @var PayPal\CoreComponentTypes\MeasureType	 
 	 */ 
 	public $ItemWidth;
 
@@ -158,7 +158,7 @@ class PaymentDetailsItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\MeasureType	 
+	 * @var PayPal\CoreComponentTypes\MeasureType	 
 	 */ 
 	public $ItemHeight;
 
@@ -181,7 +181,7 @@ class PaymentDetailsItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\EnhancedItemDataType	 
+	 * @var PayPal\EnhancedDataTypes\EnhancedItemDataType	 
 	 */ 
 	public $EnhancedItemData;
 

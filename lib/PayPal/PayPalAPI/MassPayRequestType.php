@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * Subject line of the email sent to all recipients. This
  * subject is not contained in the input file; you must create
@@ -61,7 +61,7 @@ class MassPayRequestType  extends AbstractRequestType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\MassPayRequestItemType	 
+	 * @var PayPal\PayPalAPI\MassPayRequestItemType	 
 	 */ 
 	public $MassPayItem;
 

@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Details of Risk Filter. 
  */
@@ -15,7 +15,7 @@ class RiskFilterListType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\RiskFilterDetailsType	 
+	 * @var PayPal\EBLBaseComponents\RiskFilterDetailsType	 
 	 */ 
 	public $Filters;
 

@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * The timestamped token value that was returned by
  * SetExpressCheckoutResponse and passed on
@@ -20,7 +20,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $Token;
 
@@ -32,7 +32,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PaymentInfoType	 
+	 * @var PayPal\EBLBaseComponents\PaymentInfoType	 
 	 */ 
 	public $PaymentInfo;
 
@@ -89,7 +89,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\UserSelectedOptionType	 
+	 * @var PayPal\EBLBaseComponents\UserSelectedOptionType	 
 	 */ 
 	public $UserSelectedOptions;
 
@@ -101,7 +101,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\CoupledPaymentInfoType	 
+	 * @var PayPal\EBLBaseComponents\CoupledPaymentInfoType	 
 	 */ 
 	public $CoupledPaymentInfo;
 

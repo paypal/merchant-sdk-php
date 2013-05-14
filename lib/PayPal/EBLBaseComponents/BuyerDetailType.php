@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * Information that is used to indentify the Buyer. This is
  * used for auto authorization. Mandatory if Authorization is
@@ -18,7 +18,7 @@ class BuyerDetailType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\IdentificationInfoType	 
+	 * @var PayPal\EBLBaseComponents\IdentificationInfoType	 
 	 */ 
 	public $IdentificationInfo;
 

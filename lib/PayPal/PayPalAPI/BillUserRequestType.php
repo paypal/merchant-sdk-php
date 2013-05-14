@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * This flag indicates that the response should include
  * FMFDetails 
@@ -15,7 +15,7 @@ class BillUserRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\MerchantPullPaymentType	 
+	 * @var PayPal\EBLBaseComponents\MerchantPullPaymentType	 
 	 */ 
 	public $MerchantPullPaymentDetails;
 

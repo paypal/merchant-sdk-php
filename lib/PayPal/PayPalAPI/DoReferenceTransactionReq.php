@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class DoReferenceTransactionReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\DoReferenceTransactionRequestType	 
+	 * @var PayPal\PayPalAPI\DoReferenceTransactionRequestType	 
 	 */ 
 	public $DoReferenceTransactionRequest;
 

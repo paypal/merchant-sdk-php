@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractResponseType;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
 /**
  * The amount of the payment as specified by you on
  * DoDirectPaymentRequest.
@@ -16,7 +16,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Amount;
 
@@ -68,7 +68,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $TransactionID;
 
@@ -101,7 +101,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\FMFDetailsType	 
+	 * @var PayPal\EBLBaseComponents\FMFDetailsType	 
 	 */ 
 	public $FMFDetails;
 
@@ -112,7 +112,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\ThreeDSecureResponseType	 
+	 * @var PayPal\EBLBaseComponents\ThreeDSecureResponseType	 
 	 */ 
 	public $ThreeDSecureResponse;
 

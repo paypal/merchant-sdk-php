@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * The timestamped token value that was returned by
  * SetExpressCheckoutResponse and passed on
@@ -20,7 +20,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $Token;
 
@@ -31,7 +31,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PayerInfoType	 
+	 * @var PayPal\EBLBaseComponents\PayerInfoType	 
 	 */ 
 	public $PayerInfo;
 
@@ -109,7 +109,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AddressType	 
+	 * @var PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $BillingAddress;
 
@@ -148,7 +148,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $PayPalAdjustment;
 
@@ -160,7 +160,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PaymentDetailsType	 
+	 * @var PayPal\EBLBaseComponents\PaymentDetailsType	 
 	 */ 
 	public $PaymentDetails;
 
@@ -171,7 +171,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\UserSelectedOptionType	 
+	 * @var PayPal\EBLBaseComponents\UserSelectedOptionType	 
 	 */ 
 	public $UserSelectedOptions;
 
@@ -184,7 +184,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\IncentiveDetailsType	 
+	 * @var PayPal\EBLBaseComponents\IncentiveDetailsType	 
 	 */ 
 	public $IncentiveDetails;
 
@@ -228,7 +228,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $GiftWrapAmount;
 
@@ -275,7 +275,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PaymentRequestInfoType	 
+	 * @var PayPal\EBLBaseComponents\PaymentRequestInfoType	 
 	 */ 
 	public $PaymentRequestInfo;
 
@@ -287,7 +287,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\ExternalRememberMeStatusDetailsType	 
+	 * @var PayPal\EBLBaseComponents\ExternalRememberMeStatusDetailsType	 
 	 */ 
 	public $ExternalRememberMeStatusDetails;
 
@@ -299,7 +299,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\RefreshTokenStatusDetailsType	 
+	 * @var PayPal\EBLBaseComponents\RefreshTokenStatusDetailsType	 
 	 */ 
 	public $RefreshTokenStatusDetails;
 

@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class ExecuteCheckoutOperationsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\SetDataResponseType	 
+	 * @var PayPal\EBLBaseComponents\SetDataResponseType	 
 	 */ 
 	public $SetDataResponse;
 
@@ -25,7 +25,7 @@ class ExecuteCheckoutOperationsResponseDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\AuthorizationResponseType	 
+	 * @var PayPal\EBLBaseComponents\AuthorizationResponseType	 
 	 */ 
 	public $AuthorizationResponse;
 

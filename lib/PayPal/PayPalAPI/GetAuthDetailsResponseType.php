@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\AbstractResponseType;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
 /**
  * 
  */
@@ -14,7 +14,7 @@ class GetAuthDetailsResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\GetAuthDetailsResponseDetailsType	 
+	 * @var PayPal\EBLBaseComponents\GetAuthDetailsResponseDetailsType	 
 	 */ 
 	public $GetAuthDetailsResponseDetails;
 

@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class TransactionSearchReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\TransactionSearchRequestType	 
+	 * @var PayPal\PayPalAPI\TransactionSearchRequestType	 
 	 */ 
 	public $TransactionSearchRequest;
 

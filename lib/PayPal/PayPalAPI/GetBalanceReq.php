@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\PayPalAPI;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * 
  */
@@ -14,7 +14,7 @@ class GetBalanceReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\\GetBalanceRequestType	 
+	 * @var PayPal\PayPalAPI\GetBalanceRequestType	 
 	 */ 
 	public $GetBalanceRequest;
 

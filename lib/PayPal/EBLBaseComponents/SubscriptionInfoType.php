@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * @hasAttribute
  * SubscriptionInfoType Information about a PayPal
@@ -17,7 +17,7 @@ class SubscriptionInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\string	 
+	 * @var PayPal\EBLBaseComponents\string	 
 	 */ 
 	public $SubscriptionID;
 
@@ -101,7 +101,7 @@ class SubscriptionInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\SubscriptionTermsType	 
+	 * @var PayPal\EBLBaseComponents\SubscriptionTermsType	 
 	 */ 
 	public $Terms;
 

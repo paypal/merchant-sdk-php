@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * External remember-me ID returned by
  * GetExpressCheckoutDetails on successful opt-in. The

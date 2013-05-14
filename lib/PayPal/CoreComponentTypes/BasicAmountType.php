@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\CoreComponentTypes;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * @hasAttribute
  * On requests, you must set the currencyID attribute to one of

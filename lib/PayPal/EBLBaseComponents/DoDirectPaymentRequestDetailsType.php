@@ -1,6 +1,6 @@
 <?php 
 namespace PayPal\EBLBaseComponents;
-use PayPal\Core\;
+use PayPal\Core\PPXmlMessage;
 /**
  * How you want to obtain payment. Required Authorization
  * indicates that this payment is a basic authorization subject
@@ -37,7 +37,7 @@ class DoDirectPaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\PaymentDetailsType	 
+	 * @var PayPal\EBLBaseComponents\PaymentDetailsType	 
 	 */ 
 	public $PaymentDetails;
 
@@ -48,7 +48,7 @@ class DoDirectPaymentRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\\CreditCardDetailsType	 
+	 * @var PayPal\EBLBaseComponents\CreditCardDetailsType	 
 	 */ 
 	public $CreditCard;
 
