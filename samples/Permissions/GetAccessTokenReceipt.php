@@ -1,5 +1,7 @@
 <?php
-
+use PayPal\Service\PermissionsService;
+use PayPal\Types\Common\RequestEnvelope;
+use PayPal\Types\Perm\GetAccessTokenRequest;
 /********************************************
  GetAccessTokenReceipt.php
  Called by GetAccessToken.php

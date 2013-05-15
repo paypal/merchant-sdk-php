@@ -1,5 +1,7 @@
 <?php
-
+use PayPal\Service\PermissionsService;
+use PayPal\Types\Common\RequestEnvelope;
+use PayPal\Types\Perm\RequestPermissionsRequest;
 /********************************************
  RequestPermissionsReceipt.php
  Called by RequestPermissions.php
