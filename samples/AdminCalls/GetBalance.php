@@ -1,4 +1,7 @@
 <?php
+use PayPal\PayPalAPI\GetBalanceReq;
+use PayPal\PayPalAPI\GetBalanceRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

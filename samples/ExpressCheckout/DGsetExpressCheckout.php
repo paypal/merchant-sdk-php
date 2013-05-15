@@ -1,4 +1,11 @@
 <?php
+use PayPal\CoreComponentTypes\BasicAmountType;
+use PayPal\EBLBaseComponents\PaymentDetailsItemType;
+use PayPal\EBLBaseComponents\PaymentDetailsType;
+use PayPal\EBLBaseComponents\SetExpressCheckoutRequestDetailsType;
+use PayPal\PayPalAPI\SetExpressCheckoutReq;
+use PayPal\PayPalAPI\SetExpressCheckoutRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 session_start();
 /*

@@ -1,4 +1,9 @@
 <?php
+use PayPal\CoreComponentTypes\BasicAmountType;
+use PayPal\EBLBaseComponents\BillOutstandingAmountRequestDetailsType;
+use PayPal\PayPalAPI\BillOutstandingAmountReq;
+use PayPal\PayPalAPI\BillOutstandingAmountRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

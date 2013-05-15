@@ -1,4 +1,7 @@
 <?php
+use PayPal\PayPalAPI\GetPalDetailsReq;
+use PayPal\PayPalAPI\GetPalDetailsRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /*
  * Obtain your Pal ID, which is the PayPal-assigned merchant account number, and other informaton about your account. You need the account number when working with dynamic versions of PayPalbuttons and logos

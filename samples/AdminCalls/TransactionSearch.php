@@ -1,4 +1,7 @@
 <?php
+use PayPal\PayPalAPI\TransactionSearchReq;
+use PayPal\PayPalAPI\TransactionSearchRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

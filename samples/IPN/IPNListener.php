@@ -1,4 +1,5 @@
 <?php
+use PayPal\IPN\PPIPNMessage;
 /**
  * This is a sample implementation of an IPN listener
  * that uses the SDK's PPIPNMessage class to process IPNs

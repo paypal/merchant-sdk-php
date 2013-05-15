@@ -1,4 +1,8 @@
 <?php
+use PayPal\EBLBaseComponents\ReverseTransactionRequestDetailsType;
+use PayPal\PayPalAPI\ReverseTransactionReq;
+use PayPal\PayPalAPI\ReverseTransactionRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /**
  * Get required parameters from the web form for the request

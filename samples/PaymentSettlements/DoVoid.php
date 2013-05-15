@@ -1,4 +1,7 @@
 <?php
+use PayPal\PayPalAPI\DoVoidReq;
+use PayPal\PayPalAPI\DoVoidRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

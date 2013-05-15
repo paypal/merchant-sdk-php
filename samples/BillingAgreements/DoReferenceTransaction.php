@@ -1,4 +1,14 @@
 <?php
+use PayPal\CoreComponentTypes\BasicAmountType;
+use PayPal\EBLBaseComponents\AddressType;
+use PayPal\EBLBaseComponents\CreditCardNumberTypeType;
+use PayPal\EBLBaseComponents\DoReferenceTransactionRequestDetailsType;
+use PayPal\EBLBaseComponents\PaymentDetailsType;
+use PayPal\EBLBaseComponents\PersonNameType;
+use PayPal\EBLBaseComponents\ReferenceCreditCardDetailsType;
+use PayPal\PayPalAPI\DoReferenceTransactionReq;
+use PayPal\PayPalAPI\DoReferenceTransactionRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

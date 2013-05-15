@@ -1,4 +1,7 @@
 <?php
+use PayPal\PayPalAPI\BAUpdateRequestType;
+use PayPal\PayPalAPI\BillAgreementUpdateReq;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /*
  * update billing agreement

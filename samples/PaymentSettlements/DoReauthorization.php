@@ -1,4 +1,8 @@
 <?php
+use PayPal\CoreComponentTypes\BasicAmountType;
+use PayPal\PayPalAPI\DoReauthorizationReq;
+use PayPal\PayPalAPI\DoReauthorizationRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /*
  * Authorize a payment. 

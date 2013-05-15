@@ -1,4 +1,7 @@
 <?php
+use PayPal\PayPalAPI\GetBillingAgreementCustomerDetailsReq;
+use PayPal\PayPalAPI\GetBillingAgreementCustomerDetailsRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /*
  * The GetBillingAgreementCustomerDetails API operation obtains information about a billing agreement’s PayPal account holder. 

@@ -1,4 +1,7 @@
 <?php
+use PayPal\PayPalAPI\ManagePendingTransactionStatusReq;
+use PayPal\PayPalAPI\ManagePendingTransactionStatusRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

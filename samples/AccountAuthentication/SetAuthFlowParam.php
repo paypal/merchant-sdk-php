@@ -1,4 +1,8 @@
 <?php
+use PayPal\EBLBaseComponents\SetAuthFlowParamRequestDetailsType;
+use PayPal\PayPalAPI\SetAuthFlowParamReq;
+use PayPal\PayPalAPI\SetAuthFlowParamRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

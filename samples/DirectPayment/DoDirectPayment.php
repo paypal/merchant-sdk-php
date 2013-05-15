@@ -1,4 +1,14 @@
 <?php
+use PayPal\CoreComponentTypes\BasicAmountType;
+use PayPal\EBLBaseComponents\AddressType;
+use PayPal\EBLBaseComponents\CreditCardDetailsType;
+use PayPal\EBLBaseComponents\DoDirectPaymentRequestDetailsType;
+use PayPal\EBLBaseComponents\PayerInfoType;
+use PayPal\EBLBaseComponents\PaymentDetailsType;
+use PayPal\EBLBaseComponents\PersonNameType;
+use PayPal\PayPalAPI\DoDirectPaymentReq;
+use PayPal\PayPalAPI\DoDirectPaymentRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 /***********************************************************
  DoDirectPayment.php
 

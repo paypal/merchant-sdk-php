@@ -1,4 +1,10 @@
 <?php
+use PayPal\CoreComponentTypes\BasicAmountType;
+use PayPal\EBLBaseComponents\CreditCardDetailsType;
+use PayPal\EBLBaseComponents\DoNonReferencedCreditRequestDetailsType;
+use PayPal\PayPalAPI\DoNonReferencedCreditReq;
+use PayPal\PayPalAPI\DoNonReferencedCreditRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

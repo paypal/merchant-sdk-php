@@ -1,4 +1,15 @@
 <?php
+use PayPal\CoreComponentTypes\BasicAmountType;
+use PayPal\EBLBaseComponents\ActivationDetailsType;
+use PayPal\EBLBaseComponents\AddressType;
+use PayPal\EBLBaseComponents\BillingPeriodDetailsType;
+use PayPal\EBLBaseComponents\CreateRecurringPaymentsProfileRequestDetailsType;
+use PayPal\EBLBaseComponents\CreditCardDetailsType;
+use PayPal\EBLBaseComponents\RecurringPaymentsProfileDetailsType;
+use PayPal\EBLBaseComponents\ScheduleDetailsType;
+use PayPal\PayPalAPI\CreateRecurringPaymentsProfileReq;
+use PayPal\PayPalAPI\CreateRecurringPaymentsProfileRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /**
  *

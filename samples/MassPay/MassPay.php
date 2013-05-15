@@ -1,4 +1,9 @@
 <?php
+use PayPal\CoreComponentTypes\BasicAmountType;
+use PayPal\PayPalAPI\MassPayReq;
+use PayPal\PayPalAPI\MassPayRequestItemType;
+use PayPal\PayPalAPI\MassPayRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

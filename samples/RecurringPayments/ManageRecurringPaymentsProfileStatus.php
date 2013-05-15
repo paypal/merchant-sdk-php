@@ -1,4 +1,8 @@
 <?php
+use PayPal\EBLBaseComponents\ManageRecurringPaymentsProfileStatusRequestDetailsType;
+use PayPal\PayPalAPI\ManageRecurringPaymentsProfileStatusReq;
+use PayPal\PayPalAPI\ManageRecurringPaymentsProfileStatusRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

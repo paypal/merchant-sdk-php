@@ -1,4 +1,8 @@
 <?php
+use PayPal\CoreComponentTypes\BasicAmountType;
+use PayPal\PayPalAPI\RefundTransactionReq;
+use PayPal\PayPalAPI\RefundTransactionRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

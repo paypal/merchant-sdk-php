@@ -1,4 +1,9 @@
 <?php
+use PayPal\CoreComponentTypes\BasicAmountType;
+use PayPal\EBLBaseComponents\MerchantPullPaymentType;
+use PayPal\PayPalAPI\BillUserReq;
+use PayPal\PayPalAPI\BillUserRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

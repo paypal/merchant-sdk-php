@@ -1,4 +1,7 @@
 <?php
+use PayPal\PayPalAPI\AddressVerifyReq;
+use PayPal\PayPalAPI\AddressVerifyRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

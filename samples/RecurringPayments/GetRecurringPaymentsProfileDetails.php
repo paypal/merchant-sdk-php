@@ -1,4 +1,7 @@
 <?php
+use PayPal\PayPalAPI\GetRecurringPaymentsProfileDetailsReq;
+use PayPal\PayPalAPI\GetRecurringPaymentsProfileDetailsRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*

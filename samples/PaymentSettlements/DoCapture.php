@@ -1,4 +1,8 @@
 <?php
+use PayPal\CoreComponentTypes\BasicAmountType;
+use PayPal\PayPalAPI\DoCaptureReq;
+use PayPal\PayPalAPI\DoCaptureRequestType;
+use PayPal\Service\PayPalAPIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /*
  *  # DoCapture API
