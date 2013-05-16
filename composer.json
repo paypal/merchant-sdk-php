@@ -1,8 +1,8 @@
 {
     "name": "paypal/merchant-sdk-php",
-    "description": "PayPal Core SDK for PHP",
+    "description": "PayPal Merchant SDK for PHP",
     "keywords": ["paypal", "php", "sdk"],
-    "homepage": "https://www.x.com/developers/paypal",
+    "homepage": "https://developer.paypal.com",
     "license": "Apache2",
     "authors": [
         {

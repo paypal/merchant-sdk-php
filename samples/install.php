@@ -1,188 +1,133 @@
 <?php 
+
 /**
- *  Downloads and Installs PayPal PHP SDK
- *  custom installer is invoked if composer is not installed
+ *  Downloads PayPal PHP SDK dependencies based on your composer.json file
  */
 
 define('DS', DIRECTORY_SEPARATOR);
+
 define('COMPOSER_FILE', 'composer.json');
-$useComposer = false;
+
 // name of the bootstrap file in custom installation
-$bootStrap = 'PPBootStrap.php';
-// Required : URL from where the composer.json is downloaded if not present
-$composerUrl = 'https://raw.github.com/paypal/merchant-sdk-php/composer/samples/composer.json';
+define('BOOTSTRAP_FILE', 'PPBootStrap.php');
 
-/**
- *  initiates and installs the SDK
- */
-init($useComposer, $composerUrl);
+// name of the SDK configuration file
+define('CONFIGURATION_FILE', 'sdk_config.ini');
 
-/**
- * Autoloads all the classes
-*/
+// URL from where the composer.json is downloaded if not present
+define('COMPOSER_URL', 'https://raw.github.com/paypal/merchant-sdk-php/stable/samples/composer.json');
+
+// Flag to control whether composer should be used for installation
+$useComposer = false;
+
+init($useComposer);
 createAutoload();
-if(!file_exists($bootStrap))
-{
-	createBootStrap($bootStrap);
-}
-echo "installation successful";
-function init($useComposer, $composerUrl)
-{
+createConfig(CONFIGURATION_FILE);
+createBootStrap(BOOTSTRAP_FILE);
+echo "Installation successful";
+exit(0);
+
+
+function init($useComposer) {
 
 	// download if composer.json is not present
-	if(!file_exists(COMPOSER_FILE))
-	{
+	if(!file_exists(COMPOSER_FILE)) {
 		$fp = fopen(COMPOSER_FILE, "w");
-		curlExec($composerUrl, $fp);
+		curlExec(COMPOSER_URL, $fp);
 		fclose($fp);
 	}
-	/**
-	 * check if composer is installed
-	 */
-	if($useComposer)
-	{
-		@exec('composer',$output,$status);
-		if( $status == 0)
-		{
-			@exec('composer update',$output,$status);
+
+	// check if composer is installed
+	if($useComposer) {
+		@exec('composer', $output, $status);
+		if( $status == 0) {
+			@exec('composer update', $output, $status);
 			var_dump($output);
-			exit();
-		}
-		else
-		{
-			@exec('composer.phar',$output,$status);
+			exit($status);
+		} else {
+			@exec('composer.phar', $output, $status);
 			if( $status == 0)
 			{
-				@exec('composer.phar update',$output,$status);
+				@exec('composer.phar update', $output, $status);
 				var_dump($output);
-				exit();
+				exit($status);
 			}
 		}
-	}
-	else
-	{
-		echo "composer not installed or 'useComposer' is set to false in install.php...".PHP_EOL;
-		echo "running custom installation... ".PHP_EOL;
-		if (!extension_loaded('zip')) {
-			echo PHP_EOL . "Please enable zip extension in php.ini...";
-			exit;
+	} else {
+		echo "composer not installed or 'useComposer' is set to false in install.php." . PHP_EOL;
+		echo "Running custom installation ... " . PHP_EOL;
+		$extensions = array('zip', 'curl', 'openssl');
+		foreach($extensions as $e) {
+			if (!extension_loaded($e)) {
+				echo PHP_EOL . "Please enable the $e extension. This script requires the " . implode(", ", $extensions) . " extensions to work correctly.";
+				exit(1);
+			}
 		}
 
-		$json = file_get_contents(COMPOSER_FILE);
+		$json = @file_get_contents(COMPOSER_FILE);
 		$json_a = json_decode($json, true);
-		//array $skipDir contains list of directories already scanned for dependency
-		$skipDir = array();
-		$dependencies =  getDependency($json_a);
-		foreach ($dependencies as $dependency )
-		{
-
-			$downloadUrl = 'https://api.github.com/repos/'.$dependency['group'].'/'.$dependency['artifact'].'/zipball/'.$dependency['branch'];
-			echo "downloading dependency " .$dependency['artifact'] . PHP_EOL;
-			customInstall($downloadUrl, $dependency['group'], $skipDir);
-
+		//array $processsed contains list of dependencies that have already been downloaded
+		$processed = array();
+		foreach (getDependency($json_a) as $dependency ) {		
+			customInstall($dependency, $dependency['group'], $processed);
 		}
-
-
 	}
 }
 /**
- * @param array $json_a content of composer.json
- * @param array $skipDir contains list of directories already scanned for dependency
+ * @param array $dependency
+ * @param array $installDir	directory where the dependency must be copied to
+ * @param array $processed contains list of directories already scanned for dependency
  */
-function customInstall($downloadUrl, $installDir, $skipDir)
-{
-
-	/**
-	 *  download zip from github
-	 */
-	$fileZip = "tempZip.zip";
-	$dest= 'vendor/'.$installDir.'/';
-	$tempSourceDir = 'sdk-core-php-composer';
-	$fp = fopen("$fileZip", "w");
-
-	curlExec($downloadUrl, $fp);
-
-
-	$zip = new ZipArchive;
-	if($zip->open($fileZip) != "true") {
-		echo PHP_EOL . "Could not open $fileZip";
-		exit;
-	}
-
-	/**
-	 * extract the downloaded zip
-	 **/
-
-	$zip->extractTo($dest);
-	$zip->close();
-	fclose($fp);
-	unlink($fileZip);
-	/**
-	 * scan extracted directory for nested dependency
-	*/
-	$results = scandir($dest);
-	foreach ($results as $result) {
-		if ($result === '.' or $result === '..') continue;
-		if (is_dir($dest . '/' . $result)) {
-			/**
-			 *  skip the directories already scanned
-			 */
-			if( !in_array($result, $skipDir))
-			{
-				$scannedFiles = scandir($dest . '/' . $result);
-				foreach ($scannedFiles as $file)
-				{
-					/**
-					 * copy the config file to root directory
-					 */
-					if($file == 'config')
-					{
-						if (!is_dir("config"))
-							mkdir("config");
-						copyConfig($dest . '/' . $result.'/'.$file.'/' , 'config/');
-						rmdir($dest . '/' . $result.'/'.$file);
-					}
-					if($file == COMPOSER_FILE)
-					{
-						$json = file_get_contents($dest. '/' . $result.'/'.COMPOSER_FILE);
-						$json_a = json_decode($json, true);
-						$skipDir[] =  $result;
-						$dependencies =  getDependency($json_a);
-						if(!empty($dependencies))
-						{
-							foreach ($dependencies as $dependency )
-							{
-
-								$downloadUrl = 'https://api.github.com/repos/'.$dependency['group'].'/'.$dependency['artifact'].'/zipball/'.$dependency['branch'];
-								echo "downloading dependency " .$dependency['artifact'].'...'.PHP_EOL;
-								customInstall($downloadUrl, $dependency['group'], $skipDir);
-							}
-
-						}
-
-					}
-				}
+function customInstall($dependency, $installDir, &$processed) {
+	// download zip from github
+	$downloadUrl = sprintf('https://api.github.com/repos/%s/%s/zipball/%s',
+			$dependency['group'], $dependency['artifact'], $dependency['branch']);
+	if(!in_array($downloadUrl, $processed)) {
+		echo "Downloading " . $dependency['artifact'] . ' - ' . $dependency['branch'] . PHP_EOL;
+		$dest = 'vendor/' . $installDir . '/';
+		$fileZip = tempnam(sys_get_temp_dir(), 'ppzip');
+		$fp = fopen($fileZip, "w");
+		
+		curlExec($downloadUrl, $fp);
+		$processed[] = $downloadUrl;
+		
+		// extract the downloaded zip		
+		$zip = new ZipArchive;
+		if($zip->open($fileZip) != "true") {
+			echo PHP_EOL . "Could not open $fileZip";
+			exit;
+		}
+		$zip->extractTo($dest);
+		$zip->close();
+		fclose($fp);
+		unlink($fileZip);
+		
+		// scan extracted directory for nested dependency
+		foreach (glob("$dest/**/composer.json") as $composer) {			
+			$json = file_get_contents($composer);
+			$json_a = json_decode($json, true);			
+			$dependencies =  getDependency($json_a);
+			foreach ($dependencies as $dependency ) {										
+				customInstall($dependency, $dependency['group'], $processed);
 			}
 		}
 	}
-
 }
 
-function getDependency($json_a)
-{
-	$requiredArray = $json_a['require'];
-	foreach ($requiredArray as $key => $val)
-	{
-		if(strpos($key, '/'))
-		{
+function getDependency($json_a) {
+	if( !array_key_exists('require', $json_a)) {
+		return array();
+	}
+
+	$res = array();
+	foreach ($json_a['require'] as $key => $val) {
+		if(strpos($key, '/')) {
 			$parts = explode('/', $key);
+			// Convert versions such as "dev-xyz" to "xyz"
 			$pos = strpos($val, '-');
-            if($pos == null || empty($pos))
-            {
+            if($pos == null || empty($pos)) {
                 $branch = $val;
-            }
-            else
-            {
+            } else {
                 $branch = substr($val, $pos+1);
             }
 			$batch['group'] = $parts[0] ;
@@ -192,27 +137,26 @@ function getDependency($json_a)
 		}
 
 	}
-	if(empty($res))
-		return null;
-	else
-		return $res;
+	return $res;
 }
-function curlExec($targetUrl, $writeToFile)
-{
+
+function curlExec($targetUrl, $writeToFile) {
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL,$targetUrl);
+	curl_setopt($ch, CURLOPT_URL, $targetUrl);
 	curl_setopt($ch, CURLOPT_FAILONERROR, true);
-	curl_setopt($ch, CURLOPT_HEADER,0);
+	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 	curl_setopt($ch, CURLOPT_AUTOREFERER, true);
+    curl_setopt($ch, CURLOPT_USERAGENT, 'curl/installScript');
 	curl_setopt($ch, CURLOPT_BINARYTRANSFER,true);
 	curl_setopt($ch, CURLOPT_TIMEOUT, 60);
 	curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
 	curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
 	curl_setopt($ch, CURLOPT_FILE, $writeToFile);
+
 	$res = curl_exec($ch);
 	if (!$res) {
-		echo PHP_EOL . "cURL error number:" .curl_errno($ch);
+		echo PHP_EOL . "cURL error number:" .curl_errno($ch) . " for $targetUrl";
 		echo PHP_EOL . "cURL error:" . curl_error($ch);
 		exit;
 	}
@@ -220,16 +164,15 @@ function curlExec($targetUrl, $writeToFile)
 }
 
 /**
- *
+ * Autoloads all the classes
  * contributor: https://github.com/rrehbeindoi
  */
-function createAutoload()
-{
+function createAutoload() {
 
-	$libraryPath = dirname(__FILE__).'/';
+	$libraryPath = dirname(__FILE__) . '/';
 	$loaderClass = 'PPAutoloader';
 	$loaderFile  = $loaderClass . '.php';
-	echo "generating autoload file ".PHP_EOL;
+	echo "Generating autoload file ".PHP_EOL;
 	/**
 	 * From comment by "Mike" on http://us2.php.net/manual/en/function.glob.php
 	 *
@@ -237,8 +180,7 @@ function createAutoload()
 	 * @param int $flags - as per glob function
 	 * @return array of strings
 	 */
-	function glob_recursive($pattern, $flags = 0)
-	{
+	function glob_recursive($pattern, $flags = 0) {
 		$files = glob($pattern, $flags);
 
 		foreach (glob(dirname($pattern).'/*', GLOB_ONLYDIR|GLOB_NOSORT) as $dir)
@@ -257,8 +199,7 @@ function createAutoload()
 	 * @param string $source php source to parse
 	 * @return array of strings
 	 */
-	function get_classes_defined($source)
-	{
+	function get_classes_defined($source) {
 
 		$classes = array();
 		$i       = 0;
@@ -305,47 +246,42 @@ function createAutoload()
 	}
 
 	ksort($classes, SORT_STRING);
-
 	$classList = var_export($classes, true);
 
-
 	$script = <<< SCRIPT
-		<?php
-		/**
- * Basic class-map auto loader, generated by ant target "create-autoloader"
-	 * Do not modify
-	 */
-	 class {$loaderClass}
-	 {
-	 private static \$map = {$classList};
+<?php
+	 /**
+      * Basic class-map auto loader generated by install.php.
+	  * Do not modify.
+	  */
+	 class {$loaderClass} {
+	 	private static \$map = {$classList};
 
-	 public static function loadClass(\$class)
-    {
-        \$class = strtolower(trim(\$class, '\\\\'));
+		public static function loadClass(\$class) {
+	        \$class = strtolower(trim(\$class, '\\\\'));
 
-        if (isset(self::\$map[\$class])) {
-            require dirname(__FILE__) . '/' . self::\$map[\$class];
-        }
-    }
+    	    if (isset(self::\$map[\$class])) {
+            	require dirname(__FILE__) . '/' . self::\$map[\$class];
+        	}
+    	}
 
-    public static function register()
-    {
-        spl_autoload_register(array(__CLASS__, 'loadClass'), true);
-    }
+		public static function register() {
+	        spl_autoload_register(array(__CLASS__, 'loadClass'), true);
+    	}
 }
-
 SCRIPT;
 
 	file_put_contents($loaderFile, $script);
 
 }
-function copyConfig($source, $destination )
-{
-	$files = scandir($source);
+
+function copyConfig($source, $destination ) {
 
 	// Cycle through all source files
-	foreach ($files as $file) {
-		if (in_array($file, array(".",".."))) continue;
+	foreach (scandir($source) as $file) {
+		if (in_array($file, array(".", ".."))) {
+			continue;
+		}
 		// If we copied this successfully, mark it for deletion
 		if (copy($source.$file, $destination.$file)) {
 			$delete[] = $source.$file;
@@ -356,24 +292,65 @@ function copyConfig($source, $destination )
 		unlink($file);
 	}
 }
-function createBootStrap($bootStrap)
-{
-	$script = <<< SCRIPT
-		<?php
-/**
- *  Include this file in your application
- *  this file includes autoloader.php if using composer. includes custom actoloader if it is a custom installation of SDK
- */
-define('PP_CONFIG_PATH',dirname(__FILE__).'/config/');
-if(file_exists('vendor/autoload.php'))
-    require 'vendor/autoload.php';
 
-else
-{
+/**
+ * Creates a config file if one is not present
+ * @param string $configFile name of the configuration file
+ */
+function createConfig($configFile) {
+	if(!file_exists($configFile)) {
+		echo "Generating $configFile. You must update it with your account details." . PHP_EOL;
+		$script = <<< SCRIPT
+
+; Integration mode - Must be one of sandbox/live
+mode = sandbox
+
+;Account credentials
+[Account]
+; Update your account credentials from developer portal here
+acct1.UserName = 
+acct1.Password = 
+acct1.Signature = 
+
+;Connection Information
+[Http]
+http.ConnectionTimeOut = 30
+http.Retry = 1
+
+;Logging Information
+[Log]
+log.FileName=PayPal.log
+log.LogLevel=INFO
+log.LogEnabled=true
+
+SCRIPT;
+		file_put_contents($configFile, $script);
+	}	
+}
+
+/**
+ *  initiates and installs the SDK
+ */
+function createBootStrap($bootstrapFile) {
+
+	if(!file_exists($bootstrapFile)) {
+		$script = <<< SCRIPT
+<?php
+/**
+ * Include this file in your application. This file sets up the required classloader based on 
+ * whether you used composer or the custom installer.
+ */
+
+// Let the SDK know where the config file resides.
+define('PP_CONFIG_PATH', dirname(__FILE__));
+
+if(file_exists( dirname(__FILE__). '/vendor/autoload.php')) {
+    require 'vendor/autoload.php';
+} else {
     require 'PPAutoloader.php';
     PPAutoloader::register();
 }
-
 SCRIPT;
-	file_put_contents($bootStrap, $script);
+		file_put_contents($bootstrapFile, $script);
+	}
 }
