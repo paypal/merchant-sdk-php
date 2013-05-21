@@ -1,4 +1,3 @@
-
 # PayPal PHP Merchant SDK
 
    The merchant SDK can be used for integrating with the Express Checkout, Mass Pay, Web Payments Pro APIs.
@@ -23,7 +22,7 @@ If using composer, run `composer update` from the samples folder. Otherwise, run
     curl  https://raw.github.com/paypal/merchant-sdk-php/stable/samples/install.php | php
         OR       
     php install.php
-
+```
 
 ## Using the SDK
 
@@ -102,11 +101,14 @@ The SDK allows you to configure the following parameters-
    * (Multiple) API account credentials.
    * HTTP connection parameters
    * Logging 
+
 ```php
     define('PP_CONFIG_PATH', '/directory/that/contains/sdk_config.ini');
     $service  = new PayPalAPIInterfaceServiceService();
 ```
+
 Alternatively, dynamic configuration values can be set by passing a map of credential and config values (if config map is passed the config file is ignored)
+
 ```php
     $config = array(
        'mode' => 'sandbox',
