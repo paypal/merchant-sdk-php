@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  *  Downloads PayPal PHP SDK dependencies based on your composer.json file
@@ -68,7 +68,7 @@ function init($useComposer) {
 		$json_a = json_decode($json, true);
 		//array $processsed contains list of dependencies that have already been downloaded
 		$processed = array();
-		foreach (getDependency($json_a) as $dependency ) {		
+		foreach (getDependency($json_a) as $dependency ) {
 			customInstall($dependency, $dependency['group'], $processed);
 		}
 	}
@@ -87,11 +87,11 @@ function customInstall($dependency, $installDir, &$processed) {
 		$dest = 'vendor/' . $installDir . '/';
 		$fileZip = tempnam(sys_get_temp_dir(), 'ppzip');
 		$fp = fopen($fileZip, "w");
-		
+
 		curlExec($downloadUrl, $fp);
 		$processed[] = $downloadUrl;
-		
-		// extract the downloaded zip		
+
+		// extract the downloaded zip
 		$zip = new ZipArchive;
 		if($zip->open($fileZip) != "true") {
 			echo PHP_EOL . "Could not open $fileZip";
@@ -101,13 +101,13 @@ function customInstall($dependency, $installDir, &$processed) {
 		$zip->close();
 		fclose($fp);
 		unlink($fileZip);
-		
+
 		// scan extracted directory for nested dependency
-		foreach (glob("$dest/**/composer.json") as $composer) {			
+		foreach (glob("$dest/**/composer.json") as $composer) {
 			$json = file_get_contents($composer);
-			$json_a = json_decode($json, true);			
+			$json_a = json_decode($json, true);
 			$dependencies =  getDependency($json_a);
-			foreach ($dependencies as $dependency ) {										
+			foreach ($dependencies as $dependency ) {
 				customInstall($dependency, $dependency['group'], $processed);
 			}
 		}
@@ -125,11 +125,11 @@ function getDependency($json_a) {
 			$parts = explode('/', $key);
 			// Convert versions such as "dev-xyz" to "xyz"
 			$pos = strpos($val, '-');
-            if($pos == null || empty($pos)) {
-                $branch = $val;
-            } else {
-                $branch = substr($val, $pos+1);
-            }
+			if($pos == null || empty($pos)) {
+				$branch = $val;
+			} else {
+				$branch = substr($val, $pos+1);
+			}
 			$batch['group'] = $parts[0] ;
 			$batch['artifact'] = $parts[1];
 			$batch['branch'] = $branch;
@@ -147,7 +147,7 @@ function curlExec($targetUrl, $writeToFile) {
 	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 	curl_setopt($ch, CURLOPT_AUTOREFERER, true);
-    curl_setopt($ch, CURLOPT_USERAGENT, 'curl/installScript');
+	curl_setopt($ch, CURLOPT_USERAGENT, 'curl/installScript');
 	curl_setopt($ch, CURLOPT_BINARYTRANSFER,true);
 	curl_setopt($ch, CURLOPT_TIMEOUT, 60);
 	curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
@@ -163,87 +163,38 @@ function curlExec($targetUrl, $writeToFile) {
 	curl_close($ch);
 }
 
+function getFilePath($json_a, $composerPath)
+{
+	$composerPath = str_replace("composer.json", "", $composerPath);
+	foreach ($json_a['autoload']['psr-0'] as $namespace => $path)
+	{
+		$pathArr[$namespace] = $composerPath.$path;
+	}
+	return $pathArr;
+}
 /**
- * Autoloads all the classes
- * contributor: https://github.com/rrehbeindoi
+ * creates namespace map to load the classes
  */
 function createAutoload() {
+
+	$dest = dirname(__FILE__).'/vendor/paypal/';
+	foreach (glob("$dest/**/composer.json") as $composer) {
+		$json = file_get_contents($composer);
+		$json_a = json_decode($json, true);
+		$namespacePath[] =  getFilePath($json_a, $composer);	
+	}
+	$classes = array();
+    foreach($namespacePath as $k) {
+        foreach ($k as $key => $value)
+        {
+            $classes[$key][] = $value;
+        }
+    }
 
 	$libraryPath = dirname(__FILE__) . '/';
 	$loaderClass = 'PPAutoloader';
 	$loaderFile  = $loaderClass . '.php';
 	echo "Generating autoload file ".PHP_EOL;
-	/**
-	 * From comment by "Mike" on http://us2.php.net/manual/en/function.glob.php
-	 *
-	 * @param string $pattern
-	 * @param int $flags - as per glob function
-	 * @return array of strings
-	 */
-	function glob_recursive($pattern, $flags = 0) {
-		$files = glob($pattern, $flags);
-
-		foreach (glob(dirname($pattern).'/*', GLOB_ONLYDIR|GLOB_NOSORT) as $dir)
-		{
-			$files = array_merge($files, glob_recursive($dir.'/'.basename($pattern), $flags));
-		}
-
-		return $files;
-	}
-
-	/**
-	 * Use built in parser to get class and interface names from a script
-	 *
-	 * Based on code from http://stackoverflow.com/questions/7153000/get-class-name-from-file
-	 *
-	 * @param string $source php source to parse
-	 * @return array of strings
-	 */
-	function get_classes_defined($source) {
-
-		$classes = array();
-		$i       = 0;
-		$tokens  = token_get_all($source);
-
-		$length = count($tokens);
-		for ($i = 0; $i < $length; $i++) {
-			if (in_array($tokens[$i][0], array(T_CLASS, T_INTERFACE))) {
-				for ($j = $i + 1; $j < $length; $j++) {
-					if ($tokens[$j] === '{') {
-						$classes[] = $tokens[$i+2][1];
-						break;
-					}
-				}
-			}
-		}
-
-		return $classes;
-	}
-
-	$fileList = glob_recursive($libraryPath . '*.php');
-	$classes  = array();
-
-	foreach ($fileList as $file) {
-		// Trim off the absolute path
-		$filename = str_replace($libraryPath, '', $file);
-		if ($filename === $loaderFile) {
-			// Don't include the autoloader in the autoloader map
-			continue;
-		}
-
-		$found = get_classes_defined(file_get_contents($file));
-
-		foreach ($found as $class) {
-			$class = strtolower($class);
-
-			if (isset($classes[$class])) {
-				;
-				//echo "Warning: class [{$class}] is defined in both\n\t{$filename}\n\t{$classes[$class]}\n";
-			}
-
-			$classes[$class] = $filename;
-		}
-	}
 
 	ksort($classes, SORT_STRING);
 	$classList = var_export($classes, true);
@@ -256,13 +207,33 @@ function createAutoload() {
 	  */
 	 class {$loaderClass} {
 	 	private static \$map = {$classList};
-
-		public static function loadClass(\$class) {
-	        \$class = strtolower(trim(\$class, '\\\\'));
-
-    	    if (isset(self::\$map[\$class])) {
-            	require dirname(__FILE__) . '/' . self::\$map[\$class];
-        	}
+        
+        public static function loadClass(\$class) {
+			if ('\\\\' == \$class[0]) {
+				\$class = substr(\$class, 1);
+			}
+			
+			if (false !== \$pos = strrpos(\$class, '\\\\')) {
+				// namespaced class name
+				\$classPath = str_replace('\\\\', DIRECTORY_SEPARATOR, substr(\$class, 0, \$pos)) . DIRECTORY_SEPARATOR;
+				\$className = substr(\$class, \$pos + 1);
+			} else {
+				// PEAR-like class name
+				\$classPath = null;
+				\$className = \$class;
+			}
+			
+			\$classPath .= str_replace('_', DIRECTORY_SEPARATOR, \$className) . '.php';
+            foreach (self::\$map as \$prefix => \$dirs) {
+	        	if (0 === strpos(\$class, \$prefix)) {
+	        		foreach (\$dirs as \$dir) {
+	        			if (file_exists(\$dir . DIRECTORY_SEPARATOR . \$classPath)) {
+	        				include \$dir . DIRECTORY_SEPARATOR . \$classPath;
+                            return;
+	        			}
+	        		}
+	        	}
+	        }
     	}
 
 		public static function register() {
@@ -308,9 +279,10 @@ mode = sandbox
 ;Account credentials
 [Account]
 ; Update your account credentials from developer portal here
-acct1.UserName = 
-acct1.Password = 
-acct1.Signature = 
+acct1.UserName =
+acct1.Password =
+acct1.Signature =
+acct1.AppId =
 
 ;Connection Information
 [Http]
@@ -325,7 +297,7 @@ log.LogEnabled=true
 
 SCRIPT;
 		file_put_contents($configFile, $script);
-	}	
+	}
 }
 
 /**
@@ -337,7 +309,7 @@ function createBootStrap($bootstrapFile) {
 		$script = <<< SCRIPT
 <?php
 /**
- * Include this file in your application. This file sets up the required classloader based on 
+ * Include this file in your application. This file sets up the required classloader based on
  * whether you used composer or the custom installer.
  */
 
