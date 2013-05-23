@@ -282,7 +282,6 @@ mode = sandbox
 acct1.UserName =
 acct1.Password =
 acct1.Signature =
-acct1.AppId =
 
 ;Connection Information
 [Http]
