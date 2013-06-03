@@ -4,6 +4,9 @@ use PayPal\PayPalAPI\MassPayReq;
 use PayPal\PayPalAPI\MassPayRequestItemType;
 use PayPal\PayPalAPI\MassPayRequestType;
 use PayPal\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Auth\PPSignatureCredential;
+use PayPal\Auth\PPTokenAuthorization;
+
 require_once('../PPBootStrap.php');
 
 /*
@@ -57,13 +60,18 @@ $paypalService = new PayPalAPIInterfaceServiceService();
 
 // required in third party permissioning
 if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
-	$paypalService->setAccessToken($_POST['accessToken']);
-	$paypalService->setTokenSecret($_POST['tokenSecret']);
+	$cred = new PPSignatureCredential("jb-us-seller_api1.paypal.com", "WX4WTU3S8MY44S7F", "AFcWxV21C7fd0v3bYYYRCpSSRl31A7yDhhsPUU2XhtMoZXsWHFxu-RWy");
+	$cred->setThirdPartyAuthorization(new PPTokenAuthorization($_POST['accessToken'], $_POST['tokenSecret']));
 }
 
 try {
 	/* wrap API method calls on the service object with a try catch */
-	$massPayResponse = $paypalService->MassPay($massPayReq);
+	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
+			$massPayResponse = $paypalService->MassPay($massPayReq, $cred);
+		}
+		else{
+		 	$massPayResponse = $paypalService->MassPay($massPayReq);
+		}
 } catch (Exception $ex) {
 	include_once("../Error.php");
 	exit;
