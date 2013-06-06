@@ -15,7 +15,7 @@ define('BOOTSTRAP_FILE', 'PPBootStrap.php');
 define('CONFIGURATION_FILE', 'sdk_config.ini');
 
 // URL from where the composer.json is downloaded if not present
-define('COMPOSER_URL', 'https://raw.github.com/paypal/merchant-sdk-php/stable/samples/composer.json');
+define('COMPOSER_URL', 'https://raw.github.com/paypal/merchant-sdk-php/stable-php5.3/samples/composer.json');
 
 // Flag to control whether composer should be used for installation
 $useComposer = false;
