@@ -73,12 +73,99 @@ function init($useComposer) {
 		}
 	}
 }
+
+/*
+ * get the correct tag based on the tag in composer.json
+* ex: get v3.1.4 if the entry in composer.json is 3.1.*
+* @param $inputTag the tag in composer.json
+* @param array $array array of all the tags fetched from github
+*/
+function getTag($inputTag, $array)
+{
+	natsort($array);
+	if(strpos($inputTag, '*') === 0 || ((strpos($inputTag, '>')) !== false) && (strpos($inputTag, '>') >=0))
+	{
+		end($array);
+		$key = key($array);
+		$tag = $array[$key];
+		return $tag;
+	}
+	else
+	{
+		if(strpos($inputTag, '<=') === 0)
+		{
+			$strippedTag = 'v'.str_replace('<=', '', $inputTag);
+			foreach ($array as $version)
+			{
+				if(version_compare($strippedTag, strtolower($version)) == 1 || version_compare($strippedTag, strtolower($version)) == 0)
+				{
+					$tag = $version;
+				}
+			}
+			if(!in_array($tag, $array))
+			{
+				echo "error: invalid version tag in composer.json";
+				exit();
+			}
+			return $tag;
+		}
+		else if(strpos($inputTag, '<') === 0)
+		{
+			$strippedTag = 'v'.str_replace('<', '', $inputTag);
+			foreach ($array as $version)
+			{
+				if(version_compare($strippedTag, strtolower($version)) == 1)
+				{
+					$tag = $version;
+				}
+			}
+			if(!in_array($tag, $array))
+			{
+				echo "error: invalid version tag in composer.json";
+				exit();
+			}
+			return $tag;
+		}
+		else if(strpos($inputTag, '*'))
+		{
+			$exp = explode('*', $inputTag);
+			$tag = 'v'.str_replace('*', '0', $inputTag);
+
+			foreach ($array as $version)
+			{
+				if(strpos($version, $exp['0']) == 1 && version_compare($tag, $version) == -1)
+				{
+					$tag = $version;
+				}
+			}
+			if(!in_array($tag, $array))
+			{
+				echo "error: invalid version tag in composer.json";
+				exit();
+			}
+			return $tag;
+		}
+		else
+		{
+			return $inputTag;
+		}
+	}
+}
+
 /**
  * @param array $dependency
  * @param array $installDir	directory where the dependency must be copied to
  * @param array $processed contains list of directories already scanned for dependency
  */
 function customInstall($dependency, $installDir, &$processed) {
+	$tagUrl = sprintf('https://api.github.com/repos/%s/%s/git/refs/tags/',
+			$dependency['group'], $dependency['artifact']);
+	$reference = json_decode(curlExec($tagUrl));
+	foreach ($reference as $ref)
+	{
+		$tags[] = str_replace('refs/tags/', '', $ref->ref);
+	}
+	$dependency['branch'] = getTag($dependency['branch'], $tags);
 	// download zip from github
 	$downloadUrl = sprintf('https://api.github.com/repos/%s/%s/zipball/%s',
 			$dependency['group'], $dependency['artifact'], $dependency['branch']);
@@ -114,6 +201,9 @@ function customInstall($dependency, $installDir, &$processed) {
 	}
 }
 
+/*
+ * @param array $json_a composer.json converted to array
+*/
 function getDependency($json_a) {
 	if( !array_key_exists('require', $json_a)) {
 		return array();
@@ -140,7 +230,12 @@ function getDependency($json_a) {
 	return $res;
 }
 
-function curlExec($targetUrl, $writeToFile) {
+/*
+ * curl execute
+* @param $targetUrl url to hit
+* @param $writeToFile file to which the received data to be written
+*/
+function curlExec($targetUrl, $writeToFile = null) {
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $targetUrl);
 	curl_setopt($ch, CURLOPT_FAILONERROR, true);
@@ -152,8 +247,11 @@ function curlExec($targetUrl, $writeToFile) {
 	curl_setopt($ch, CURLOPT_TIMEOUT, 60);
 	curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
 	curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
-	curl_setopt($ch, CURLOPT_FILE, $writeToFile);
-
+	curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+	if($writeToFile != null)
+	{
+		curl_setopt($ch, CURLOPT_FILE, $writeToFile);
+	}
 	$res = curl_exec($ch);
 	if (!$res) {
 		echo PHP_EOL . "cURL error number:" .curl_errno($ch) . " for $targetUrl";
@@ -161,6 +259,7 @@ function curlExec($targetUrl, $writeToFile) {
 		exit;
 	}
 	curl_close($ch);
+	return $res;
 }
 
 /**
@@ -273,24 +372,6 @@ SCRIPT;
 
 	file_put_contents($loaderFile, $script);
 
-}
-
-function copyConfig($source, $destination ) {
-
-	// Cycle through all source files
-	foreach (scandir($source) as $file) {
-		if (in_array($file, array(".", ".."))) {
-			continue;
-		}
-		// If we copied this successfully, mark it for deletion
-		if (copy($source.$file, $destination.$file)) {
-			$delete[] = $source.$file;
-		}
-	}
-	// Delete all successfully-copied files
-	foreach ($delete as $file) {
-		unlink($file);
-	}
 }
 
 /**
