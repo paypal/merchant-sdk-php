@@ -35,7 +35,7 @@ To use the SDK,
 {
     "name": "me/shopping-cart-app",
     "require": {
-        "paypal/merchant-sdk-php":"v3.4.102"
+        "paypal/merchant-sdk-php":"v3.5.102"
     }
 }
 ```
