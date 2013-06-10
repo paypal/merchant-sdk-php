@@ -80,29 +80,35 @@ function init($useComposer) {
 * @param $inputTag the tag in composer.json
 * @param array $array array of all the tags fetched from github
 */
-function getTag($inputTag, $array)
+function getTag($inputTag, $tagArray, $branchArray)
 {
-	natsort($array);
-	if(strpos($inputTag, '*') === 0 || ((strpos($inputTag, '>')) !== false) && (strpos($inputTag, '>') >=0))
+	natsort($tagArray);
+	if(strpos($inputTag, '*') === 0 )
 	{
-		end($array);
-		$key = key($array);
-		$tag = $array[$key];
-		return $tag;
+		return end($tagArray);
+	}
+	else if(((strpos($inputTag, '>')) !== false) && (strpos($inputTag, '>') >=0))
+	{
+		if(!in_array($inputTag, $tagArray))
+		{
+			echo "error: invalid version tag in composer.json";
+			exit();
+		}
+		return end($tagArray);
 	}
 	else
 	{
 		if(strpos($inputTag, '<=') === 0)
 		{
 			$strippedTag = 'v'.str_replace('<=', '', $inputTag);
-			foreach ($array as $version)
+			foreach ($tagArray as $version)
 			{
 				if(version_compare($strippedTag, strtolower($version)) == 1 || version_compare($strippedTag, strtolower($version)) == 0)
 				{
 					$tag = $version;
 				}
 			}
-			if(!in_array($tag, $array))
+			if(!in_array($tag, $tagArray))
 			{
 				echo "error: invalid version tag in composer.json";
 				exit();
@@ -112,14 +118,14 @@ function getTag($inputTag, $array)
 		else if(strpos($inputTag, '<') === 0)
 		{
 			$strippedTag = 'v'.str_replace('<', '', $inputTag);
-			foreach ($array as $version)
+			foreach ($tagArray as $version)
 			{
 				if(version_compare($strippedTag, strtolower($version)) == 1)
 				{
 					$tag = $version;
 				}
 			}
-			if(!in_array($tag, $array))
+			if(!in_array($tag, $tagArray))
 			{
 				echo "error: invalid version tag in composer.json";
 				exit();
@@ -131,14 +137,14 @@ function getTag($inputTag, $array)
 			$exp = explode('*', $inputTag);
 			$tag = 'v'.str_replace('*', '0', $inputTag);
 
-			foreach ($array as $version)
+			foreach ($tagArray as $version)
 			{
 				if(strpos($version, $exp['0']) == 1 && version_compare($tag, $version) == -1)
 				{
 					$tag = $version;
 				}
 			}
-			if(!in_array($tag, $array))
+			if(!in_array($tag, $tagArray))
 			{
 				echo "error: invalid version tag in composer.json";
 				exit();
@@ -147,9 +153,10 @@ function getTag($inputTag, $array)
 		}
 		else
 		{
-			if(!in_array($inputTag, $array))
+			$inputTag = str_replace('dev-', '', $inputTag);
+			if(!in_array($inputTag, $tagArray) && !in_array($inputTag, $branchArray))
 			{
-				echo "error: invalid version tag in composer.json";
+				echo "error: invalid version tag or branch in composer.json";
 				exit();
 			}
 			return $inputTag;
@@ -157,6 +164,29 @@ function getTag($inputTag, $array)
 	}
 }
 
+/*
+ * extract the tags/branches from github reference API response
+ */
+function extractRef($url)
+{
+	$reference = json_decode(curlExec($url));
+	if(strpos($reference['0']->ref, 'refs/tags/') === 0)
+	{
+		foreach ($reference as $ref)
+		{
+			$array[] = str_replace('refs/tags/', '', $ref->ref);
+		}
+	}
+	else 
+	{
+		foreach ($reference as $ref)
+		{
+			$array[] = str_replace('refs/heads/', '', $ref->ref);
+		}
+	}
+	
+	return $array;
+}
 /**
  * @param array $dependency
  * @param array $installDir	directory where the dependency must be copied to
@@ -165,12 +195,11 @@ function getTag($inputTag, $array)
 function customInstall($dependency, $installDir, &$processed) {
 	$tagUrl = sprintf('https://api.github.com/repos/%s/%s/git/refs/tags/',
 			$dependency['group'], $dependency['artifact']);
-	$reference = json_decode(curlExec($tagUrl));
-	foreach ($reference as $ref)
-	{
-		$tags[] = str_replace('refs/tags/', '', $ref->ref);
-	}
-	$dependency['branch'] = getTag($dependency['branch'], $tags);
+	$branchUrl = sprintf('https://api.github.com/repos/%s/%s/git/refs/heads/',
+			$dependency['group'], $dependency['artifact']);
+	$branchArray = extractRef($branchUrl);
+	$tagsArray = extractRef($tagUrl);
+	$dependency['branch'] = getTag($dependency['branch'], $tagsArray, $branchArray);
 	// download zip from github
 	$downloadUrl = sprintf('https://api.github.com/repos/%s/%s/zipball/%s',
 			$dependency['group'], $dependency['artifact'], $dependency['branch']);
