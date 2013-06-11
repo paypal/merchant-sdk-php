@@ -1,8 +1,8 @@
 {
-    "name": "paypal/php-sdk-sample",
-    "description": "PayPal Core SDK for PHP",
+    "name": "paypal/merchant-sdk-php-sample",
+    "description": "Sample app for PayPal's Merchant SDK",
     "keywords": ["paypal", "php", "sdk"],
-    "homepage": "https://www.x.com/developers/paypal",
+    "homepage": "https://developer.paypal.com",
     "license": "Apache2",
     "authors": [
         {
@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.2.0",
         "ext-curl": "*",
-        "paypal/merchant-sdk-php":"v2.3.101",
-        "paypal/permissions-sdk-php":"v2.3.101"
+        "paypal/merchant-sdk-php":"v2.4.103",
+        "paypal/permissions-sdk-php":"v2.4.103"
     }
 }
