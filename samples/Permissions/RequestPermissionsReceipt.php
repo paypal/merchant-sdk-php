@@ -91,7 +91,7 @@ $request->requestEnvelope = $requestEnvelope;
 Creating service wrapper object to make API call and loading
 configuration file for your credentials and endpoint
 */
-$service = new PermissionsService('Permissions');
+$service = new PermissionsService();
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$response = $service->RequestPermissions($request);
