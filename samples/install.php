@@ -73,12 +73,138 @@ function init($useComposer) {
 		}
 	}
 }
+
+/*
+ * get the correct tag based on the tag in composer.json
+* ex: get v3.1.4 if the entry in composer.json is 3.1.*
+* @param $inputTag the tag in composer.json
+* @param array $array array of all the tags fetched from github
+*/
+function getTag($inputTag, $tagArray, $branchArray)
+{
+	natsort($tagArray);
+	if(strpos($inputTag, '*') === 0 )
+	{
+		return end($tagArray);
+	}
+	else if(((strpos($inputTag, '>')) !== false) && (strpos($inputTag, '>') >=0))
+	{
+		if(!in_array($inputTag, $tagArray))
+		{
+			echo "error: invalid version tag in composer.json";
+			exit();
+		}
+		return end($tagArray);
+	}
+	else
+	{
+		if(strpos($inputTag, '<=') === 0)
+		{
+			$strippedTag = 'v'.str_replace('<=', '', $inputTag);
+			foreach ($tagArray as $version)
+			{
+				if(version_compare($strippedTag, strtolower($version)) == 1 || version_compare($strippedTag, strtolower($version)) == 0)
+				{
+					$tag = $version;
+				}
+			}
+			if(!in_array($tag, $tagArray))
+			{
+				echo "error: invalid version tag in composer.json";
+				exit();
+			}
+			return $tag;
+		}
+		else if(strpos($inputTag, '<') === 0)
+		{
+			$strippedTag = 'v'.str_replace('<', '', $inputTag);
+			foreach ($tagArray as $version)
+			{
+				if(version_compare($strippedTag, strtolower($version)) == 1)
+				{
+					$tag = $version;
+				}
+			}
+			if(!in_array($tag, $tagArray))
+			{
+				echo "error: invalid version tag in composer.json";
+				exit();
+			}
+			return $tag;
+		}
+		else if(strpos($inputTag, '*'))
+		{
+			$exp = explode('*', $inputTag);
+			$tag = 'v'.str_replace('*', '0', $inputTag);
+
+			foreach ($tagArray as $version)
+			{
+				if(strpos($version, $exp['0']) == 1 && version_compare($tag, $version) == -1)
+				{
+					$tag = $version;
+				}
+			}
+			if(!in_array($tag, $tagArray))
+			{
+				echo "error: invalid version tag in composer.json";
+				exit();
+			}
+			return $tag;
+		}
+		else
+		{
+			$inputTag = str_replace('dev-', '', $inputTag);
+			if(!in_array($inputTag, $tagArray) && !in_array($inputTag, $branchArray))
+			{
+				echo "error: invalid version tag or branch in composer.json";
+				exit();
+			}
+			return $inputTag;
+		}
+	}
+}
+
+/*
+ * extract the tags/branches from github reference API response
+ */
+function extractRef($url)
+{
+	$reference = json_decode(curlExec($url));
+	if(strpos($reference['0']->ref, 'refs/tags/') === 0)
+	{
+		foreach ($reference as $ref)
+		{
+			$array[] = str_replace('refs/tags/', '', $ref->ref);
+		}
+	}
+	else 
+	{
+		foreach ($reference as $ref)
+		{
+			$array[] = str_replace('refs/heads/', '', $ref->ref);
+		}
+	}
+	
+	return $array;
+}
 /**
  * @param array $dependency
  * @param array $installDir	directory where the dependency must be copied to
  * @param array $processed contains list of directories already scanned for dependency
  */
 function customInstall($dependency, $installDir, &$processed) {
+	if(isset($dependency['autoload']['psr-0']))
+	{
+		echo "error: The SDK you are trying to install or one of its dependeincies is namespace based. enter the specific version in composer.json to install non-namespace based SDK. Else download the latest SDK from github for namespace based SDK";
+		exit();
+	}
+	$tagUrl = sprintf('https://api.github.com/repos/%s/%s/git/refs/tags/',
+			$dependency['group'], $dependency['artifact']);
+	$branchUrl = sprintf('https://api.github.com/repos/%s/%s/git/refs/heads/',
+			$dependency['group'], $dependency['artifact']);
+	$branchArray = extractRef($branchUrl);
+	$tagsArray = extractRef($tagUrl);
+	$dependency['branch'] = getTag($dependency['branch'], $tagsArray, $branchArray);
 	// download zip from github
 	$downloadUrl = sprintf('https://api.github.com/repos/%s/%s/zipball/%s',
 			$dependency['group'], $dependency['artifact'], $dependency['branch']);
@@ -87,7 +213,7 @@ function customInstall($dependency, $installDir, &$processed) {
 		$dest = 'vendor/' . $installDir . '/';
 		$fileZip = tempnam(sys_get_temp_dir(), 'ppzip');
 		$fp = fopen($fileZip, "w");
-		
+
 		curlExec($downloadUrl, $fp);
 		$processed[] = $downloadUrl;
 		
@@ -114,6 +240,9 @@ function customInstall($dependency, $installDir, &$processed) {
 	}
 }
 
+/*
+ * @param array $json_a composer.json converted to array
+*/
 function getDependency($json_a) {
 	if( !array_key_exists('require', $json_a)) {
 		return array();
@@ -140,7 +269,12 @@ function getDependency($json_a) {
 	return $res;
 }
 
-function curlExec($targetUrl, $writeToFile) {
+/*
+ * curl execute
+* @param $targetUrl url to hit
+* @param $writeToFile file to which the received data to be written
+*/
+function curlExec($targetUrl, $writeToFile = null) {
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $targetUrl);
 	curl_setopt($ch, CURLOPT_FAILONERROR, true);
@@ -152,8 +286,11 @@ function curlExec($targetUrl, $writeToFile) {
 	curl_setopt($ch, CURLOPT_TIMEOUT, 60);
 	curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
 	curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
-	curl_setopt($ch, CURLOPT_FILE, $writeToFile);
-
+	curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+	if($writeToFile != null)
+	{
+		curl_setopt($ch, CURLOPT_FILE, $writeToFile);
+	}
 	$res = curl_exec($ch);
 	if (!$res) {
 		echo PHP_EOL . "cURL error number:" .curl_errno($ch) . " for $targetUrl";
@@ -161,6 +298,7 @@ function curlExec($targetUrl, $writeToFile) {
 		exit;
 	}
 	curl_close($ch);
+	return $res;
 }
 
 /**
@@ -273,24 +411,6 @@ SCRIPT;
 
 	file_put_contents($loaderFile, $script);
 
-}
-
-function copyConfig($source, $destination ) {
-
-	// Cycle through all source files
-	foreach (scandir($source) as $file) {
-		if (in_array($file, array(".", ".."))) {
-			continue;
-		}
-		// If we copied this successfully, mark it for deletion
-		if (copy($source.$file, $destination.$file)) {
-			$delete[] = $source.$file;
-		}
-	}
-	// Delete all successfully-copied files
-	foreach ($delete as $file) {
-		unlink($file);
-	}
 }
 
 /**
