@@ -1,6 +1,6 @@
 <?php
 require_once('../PPBootStrap.php');
-
+require_once('Constants.php');
 /*
  *  # MassPay API
 The MassPay API operation makes a payment to one or more PayPal account
@@ -52,13 +52,18 @@ $paypalService = new PayPalAPIInterfaceServiceService();
 
 // required in third party permissioning
 if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
-	$paypalService->setAccessToken($_POST['accessToken']);
-	$paypalService->setTokenSecret($_POST['tokenSecret']);
+		$cred = new PPSignatureCredential(USERNAME, PASSWORD, SIGNATURE);
+	    $cred->setThirdPartyAuthorization(new PPTokenAuthorization($_POST['accessToken'], $_POST['tokenSecret']));
 }
 
 try {
 	/* wrap API method calls on the service object with a try catch */
-	$massPayResponse = $paypalService->MassPay($massPayReq);
+	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
+		$massPayResponse = $paypalService->MassPay($massPayReq, $cred);
+	}
+	else{
+		$massPayResponse = $paypalService->MassPay($massPayReq);
+	}
 } catch (Exception $ex) {
 	include_once("../Error.php");
 	exit;

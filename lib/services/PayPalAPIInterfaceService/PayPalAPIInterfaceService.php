@@ -18726,6 +18726,18 @@ class GetMobileStatusResponseType  extends AbstractResponseType
 	public $IsActivated;
 
 	/**
+	 * Indicates whether the password is enabled for particular
+	 * account 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var integer 	 
+	 */ 
+	public $IsPasswordSet;
+
+	/**
 	 * Indicates whether there is a payment pending from the phone 
 	 * @access public
 	 
