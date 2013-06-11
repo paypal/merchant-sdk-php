@@ -1,5 +1,18 @@
 ### CHANGELOG
+
+#### Version 2.4.103 - June 11, 2013
  
+   - Updated stubs for 103 release.
+   - Removed deprecated methods like setAccessToken, getAccessToken from baseService in core.
+   - Added correct thirdparty auth header in core.
+   - Updated install script in samples to handle wildcard tag names. 
+   - Setting thirdparty credential using credential object in samples
+	
+	
+You can see source code of this release in github under https://github.com/paypal/merchant-sdk-php/tree/v2.4.103.
+
+--------------------------------------------------------------------------------------------------
+
 #### Version 2.3.101 - April 30, 2013
 
    - Updated stubs for 101 release
