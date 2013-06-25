@@ -11,9 +11,6 @@ define('COMPOSER_FILE', 'composer.json');
 // name of the bootstrap file in custom installation
 define('BOOTSTRAP_FILE', 'PPBootStrap.php');
 
-// name of the SDK configuration file
-define('CONFIGURATION_FILE', 'sdk_config.ini');
-
 // URL from where the composer.json is downloaded if not present
 define('COMPOSER_URL', 'https://raw.github.com/paypal/merchant-sdk-php/stable/samples/composer.json');
 
@@ -22,7 +19,6 @@ $useComposer = false;
 
 init($useComposer);
 createAutoload();
-createConfig(CONFIGURATION_FILE);
 createBootStrap(BOOTSTRAP_FILE);
 echo "Installation successful";
 exit(0);
@@ -411,41 +407,6 @@ SCRIPT;
 
 	file_put_contents($loaderFile, $script);
 
-}
-
-/**
- * Creates a config file if one is not present
- * @param string $configFile name of the configuration file
- */
-function createConfig($configFile) {
-	if(!file_exists($configFile)) {
-		echo "Generating $configFile. You must update it with your account details." . PHP_EOL;
-		$script = <<< SCRIPT
-
-; Integration mode - Must be one of sandbox/live
-mode = sandbox
-
-;Account credentials
-[Account]
-; Update your account credentials from developer portal here
-acct1.UserName = 
-acct1.Password = 
-acct1.Signature = 
-
-;Connection Information
-[Http]
-http.ConnectionTimeOut = 30
-http.Retry = 1
-
-;Logging Information
-[Log]
-log.FileName=PayPal.log
-log.LogLevel=INFO
-log.LogEnabled=true
-
-SCRIPT;
-		file_put_contents($configFile, $script);
-	}	
 }
 
 /**

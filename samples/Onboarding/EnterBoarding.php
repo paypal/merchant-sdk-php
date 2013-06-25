@@ -42,8 +42,10 @@ $enterBoardingRequest->EnterBoardingRequestDetails = $enterBoardingRequestDetail
 
 $enterBoardingReq = new EnterBoardingReq();
 $enterBoardingReq->EnterBoardingRequest = $enterBoardingRequest;
-
-$paypalService = new PayPalAPIInterfaceServiceService();
+/*
+Configuration::getSignatureConfig() returns array that contains credential and config parameters
+*/
+$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getSignatureConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$enterBoardingResponse = $paypalService->EnterBoarding($enterBoardingReq);

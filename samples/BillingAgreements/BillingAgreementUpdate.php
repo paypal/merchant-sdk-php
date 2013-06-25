@@ -10,7 +10,12 @@ $BAUpdateRequest->BillingAgreementDescription = $_REQUEST['billingAgreementDescr
 $billingAgreementUpdateReq = new BillAgreementUpdateReq();
 $billingAgreementUpdateReq->BAUpdateRequest = $BAUpdateRequest;
 
-$paypalService = new PayPalAPIInterfaceServiceService();
+/*
+ * Configuration::getSignatureConfig() returns array that contains credential and config parameters
+ * 
+ */
+$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getSignatureConfig());
+
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$BAUpdatResponse = $paypalService->BillAgreementUpdate($billingAgreementUpdateReq);

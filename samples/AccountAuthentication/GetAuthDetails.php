@@ -9,7 +9,10 @@ $req = new GetAuthDetailsReq();
 $req->GetAuthDetailsRequest = $reqType;
 
 $logger->info("created GetAuthDetailsRequest Object");
-$paypalService = new PayPalAPIInterfaceServiceService();
+/*
+Configuration::getSignatureConfig() returns array that contains credential and config parameters
+*/
+$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getSignatureConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$getAuthDetailsResponse = $paypalService->GetAuthDetails($req);
