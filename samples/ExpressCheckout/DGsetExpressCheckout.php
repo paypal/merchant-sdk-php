@@ -104,9 +104,9 @@ $_SESSION['currencyID'] = $_REQUEST['currencyId'];
 /*
  * 	 ## Creating service wrapper object
 Creating service wrapper object to make API call and loading
-configuration file for your credentials and endpoint
+Configuration::getSignatureConfig() returns array that contains credential and config parameters
 */
-$PayPal_service = new PayPalAPIInterfaceServiceService();
+$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getSignatureConfig());
 $setECResponse = $PayPal_service->SetExpressCheckout($setECReq);
 // echo '<pre>';
 //print_r($setECResponse);
