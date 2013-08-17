@@ -3,8 +3,8 @@ IPN Overview :
 
 * PayPal Instant Payment Notification is call back system that initiated once a tranction is completed  
   (eg: When ExpressCheckout completed successfully).
-* you will receive the transaction related IPN variables on your call back url that you have specified in your request.
-* You have to send this IPN variable back to PayPal system for varification, Upon varification PayPal will send  
+* You will receive the transaction related IPN variables on your call back url that you have specified in your request.
+* You have to send this IPN variable back to PayPal system for verification, Upon verification PayPal will send  
   a response string "VERIFIED" or "INVALID".
 * PayPal will continuously resend this IPN, if a wrong IPN is sent.
     
@@ -30,7 +30,7 @@ IPN How to use
 Ex:
 		$result = $ipnMessage->validate();
 		  
-  Intiating IPN:
+  Initiating IPN:
 * Make an PayPal API call (eg: SetExpressCheckout request), setting the NotifyURL field of API request   
   to the url of deployed IPNLIstener sample(eg:https://example.com/merchant-sdk-sample/IPN/IPNListener.php)  
   the notifyURL field is in 'PaymentDetailsType' class under API request class  

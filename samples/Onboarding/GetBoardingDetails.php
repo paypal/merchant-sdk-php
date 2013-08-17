@@ -8,9 +8,9 @@ $getBoardingDetailsReqest->Token = $_REQUEST['onboardingToken'];
 $getBoardingDetailsReq =  new GetBoardingDetailsReq();
 $getBoardingDetailsReq->GetBoardingDetailsRequest = $getBoardingDetailsReqest;
 /*
-Configuration::getSignatureConfig() returns array that contains credential and config parameters
+Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getSignatureConfig());
+$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$getBoardingDetailsResponse = $paypalService->GetBoardingDetails($getBoardingDetailsReq);
