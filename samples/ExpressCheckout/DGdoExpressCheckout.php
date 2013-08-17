@@ -85,9 +85,9 @@ $DoECReq->DoExpressCheckoutPaymentRequest = $DoECRequest;
 /*
  * 	 ## Creating service wrapper object
 Creating service wrapper object to make API call and loading
-Configuration::getSignatureConfig() returns array that contains credential and config parameters
+Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getSignatureConfig());
+$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
 $DoECResponse = $paypalService->DoExpressCheckoutPayment($DoECReq);
 //var_dump($DoECResponse);
 if($DoECResponse->Ack == 'Success')

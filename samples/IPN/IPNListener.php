@@ -11,7 +11,7 @@ use PayPal\IPN\PPIPNMessage;
  */
 require_once('../PPBootStrap.php');
 // first param takes ipn data to be validated. if null, raw POST data is read from input stream
-$ipnMessage = new PPIPNMessage(null, Configuration::getSignatureConfig()); 
+$ipnMessage = new PPIPNMessage(null, Configuration::getConfig()); 
 foreach($ipnMessage->getRawData() as $key => $value) {
 	error_log("IPN: $key => $value");
 }
