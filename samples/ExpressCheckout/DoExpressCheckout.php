@@ -25,8 +25,10 @@ $paymentAction = urlencode(  $_REQUEST['paymentAction']);
 $getExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType($token);
 $getExpressCheckoutReq = new GetExpressCheckoutDetailsReq();
 $getExpressCheckoutReq->GetExpressCheckoutDetailsRequest = $getExpressCheckoutDetailsRequest;
-
-$paypalService = new PayPalAPIInterfaceServiceService();
+/*
+Configuration::getAcctAndConfig() returns array that contains credential and config parameters
+*/
+$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$getECResponse = $paypalService->GetExpressCheckoutDetails($getExpressCheckoutReq);
