@@ -123,8 +123,8 @@ $updateRPProfileRequest = new UpdateRecurringPaymentsProfileRequestType();
 $updateRPProfileRequest->UpdateRecurringPaymentsProfileRequestDetails = $updateRPProfileRequestDetail;
 
 
-$createRPProfileReq =  new UpdateRecurringPaymentsProfileReq();
-$createRPProfileReq->UpdateRecurringPaymentsProfileRequest = $updateRPProfileRequest;
+$updateRPProfileReq =  new UpdateRecurringPaymentsProfileReq();
+$updateRPProfileReq->UpdateRecurringPaymentsProfileRequest = $updateRPProfileRequest;
 
 /*
  *  ## Creating service wrapper object
@@ -134,7 +134,7 @@ Configuration::getAcctAndConfig() returns array that contains credential and con
 $paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());;
 try {
 	/* wrap API method calls on the service object with a try catch */
-	$updateRPProfileResponse = $paypalService->UpdateRecurringPaymentsProfile($createRPProfileReq);
+	$updateRPProfileResponse = $paypalService->UpdateRecurringPaymentsProfile($updateRPProfileReq);
 } catch (Exception $ex) {
 	include_once("../Error.php");
 	exit;
