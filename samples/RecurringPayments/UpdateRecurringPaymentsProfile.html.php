@@ -15,12 +15,13 @@
 					payments profile.</p>
 			</div>
 		</div>
-		<form method="POST">
+		<form method="POST" name="UpdateRPProfileForm"
+			action="UpdateRecurringPaymentsProfile.php">
 			<div id="request_form">
 				<div class="params">
 					<div class="param_name">
 						Profile ID *(Get Profile ID via <a
-							href='CreateRecurringPaymentsProfile'>CreateRecurringPaymentsProfile</a>)
+							href='CreateRecurringPaymentsProfile.html.php'>CreateRecurringPaymentsProfile</a>)
 					</div>
 					<div class="param_value">
 						<input type="text" name="profileID" value="" size="50"
@@ -88,7 +89,7 @@
 				<div class="param_name">Billing start date</div>
 				<div class="param_value">
 					<input type="text" name="billingStartDate" id="billingStartDate"
-						value= />
+						value= <?php echo date(DATE_ATOM)?>/>
 				</div>
 				<div class="param_name">Subscriber shipping address (if different
 					from buyer's PayPal account address)</div>
@@ -266,22 +267,10 @@
 					<input type="submit" name="UpdateRecurringPaymentsProfileBtn"
 						value="UpdateRecurringPaymentsProfile" /><br />
 				</div>
-				<a href="/merchant-sample/index.html">Home</a>
+				<a href="../index.php">Home</a>
 			</div>
 		</form>
-		<div id="relatedcalls">
-			See also
-			<ul>
-				<li><a href="CreateRecurringPaymentsProfile">CreateRecurringPaymentsProfile</a>
-				</li>
-				<li><a href="ManageRecurringPaymentsProfileStatus">ManageRecurringPaymentsProfileStatus</a>
-				</li>
-				<li><a href="GetRecurringPaymentsProfileDetails">GetRecurringPaymentsProfileDetails</a>
-				</li>
-				<li><a href="BillOutstandingAmount">BillOutstandingAmount</a>
-				</li>
-			</ul>
-		</div>
+		
 	</div>
 </body>
 </html>
