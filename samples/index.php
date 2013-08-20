@@ -72,6 +72,9 @@ td {
 						href="RecurringPayments/CreateRecurringPaymentsProfile.html.php">CreateRecurringPaymentsProfile</a>
 					</li>
 					<li><a
+						href="RecurringPayments/UpdateRecurringPaymentsProfile.html.php">UpdateRecurringPaymentsProfile</a>
+					</li>
+					<li><a
 						href="RecurringPayments/GetRecurringPaymentsProfileDetails.html.php">GetRecurringPaymentsProfileDetails</a>
 					</li>
 					<li><a
