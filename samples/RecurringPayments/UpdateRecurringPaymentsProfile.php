@@ -23,7 +23,6 @@ $shippingAddress->Phone = $_REQUEST['shippingPhone'];
 
 $updateRPProfileRequestDetail = new UpdateRecurringPaymentsProfileRequestDetailsType();
 
-$RPProfileDetails = new RecurringPaymentsProfileDetailsType();
 $updateRPProfileRequestDetail->SubscriberName = $_REQUEST['subscriberName'];
 $updateRPProfileRequestDetail->BillingStartDate = $_REQUEST['billingStartDate'];
 $updateRPProfileRequestDetail->SubscriberShippingAddress  = $shippingAddress;
