@@ -121,11 +121,13 @@ Dynamic configuration values can be set by passing a map of credential and confi
     );
 	$service  = new PayPalAPIInterfaceServiceService($config);
 ```
-Alternatively, credential and configuration can be loaded from a file. refer <https://github.com/paypal/merchant-sdk-php/wiki> for example
+Alternatively, credential and configuration can be loaded from a file. 
 ```php
     define('PP_CONFIG_PATH', '/directory/that/contains/sdk_config.ini');
     $service  = new PayPalAPIInterfaceServiceService();
 ```
+
+You can refer full list of configuration parameters in [wiki](https://github.com/paypal/sdk-core-php/wiki/Configuring-the-SDK) page.
 
 Please refer to the sample config file provided with this bundle for more.
 

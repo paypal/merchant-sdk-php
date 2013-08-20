@@ -22,8 +22,6 @@ IPN How to use
 			// These values are defaulted in SDK. If you want to override default values, uncomment it and add your value.
 			// "http.ConnectionTimeOut" => "5000",
 			// "http.Retry" => "2",
-			// "http.ReadTimeOut" => "30000",
-			// "http.MaxConnection" => "100"
 		);
 		$ipnMessage = new PPIPNMessage(null, $config);   
 * 'validate()' method validates the IPN message and returns true if 'VERIFIED' or returns false if 'INVALID'  

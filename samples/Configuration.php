@@ -1,7 +1,7 @@
 <?php 
 class Configuration
 {
-	// For a full list of configuration parameters refer at [https://github.com/paypal/merchant-sdk-php/wiki/SDK-Configuration-Parameters]
+	// For a full list of configuration parameters refer in wiki page (https://github.com/paypal/sdk-core-php/wiki/Configuring-the-SDK)
 	public static function getConfig()
 	{
 		$config = array(
@@ -12,8 +12,6 @@ class Configuration
 				// These values are defaulted in SDK. If you want to override default values, uncomment it and add your value.
 				// "http.ConnectionTimeOut" => "5000",
 				// "http.Retry" => "2",
-				// "http.ReadTimeOut" => "30000",
-				// "http.MaxConnection" => "100"
 		);
 		return $config;
 	}
