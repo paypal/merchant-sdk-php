@@ -125,6 +125,18 @@ td {
 				</ul>
 			</td>
 		</tr>
+		<tr valign="top">
+			<td><b>Sample Usecases</b>
+				<ul>
+					<li><a href="Simplesamples/SetExpresscheckout.html.php">SetExpressCheckout - Simple Pay</a></li>
+					<li><a href="Simplesamples/DoExpresscheckout.html.php">DoExpressCheckout - Simple Pay</a>
+					</li>
+					<li><a href="Simplesamples/CreateRecurringPaymentsProfileUsingCreditCard.html.php">Recurring Payments Using Credit Card</a></li>
+					<li><a href="Simplesamples/ParallelPayment.html.php">ParellelPayment with Express Checkout</a>
+					</li>
+				</ul>
+			</td>
+		</tr>
 	</table>
 </body>
 </html>
