@@ -114,11 +114,13 @@ Dynamic configuration values can be set by passing a map of credential and confi
     $service  = new PayPalAPIInterfaceServiceService($config); 
 ```
 
-Alternatively, you can configure the SDK via the sdk_config.ini file. refer <https://github.com/paypal/merchant-sdk-php/wiki> for example
+Alternatively, you can configure the SDK via the sdk_config.ini file. 
 ```php
     define('PP_CONFIG_PATH', '/directory/that/contains/sdk_config.ini');
     $service  = new PayPalAPIInterfaceServiceService();
 ```
+
+You can refer full list of configuration parameters in [wiki](https://github.com/paypal/sdk-core-php/wiki/Configuring-the-SDK) page.
 
 ## Instant Payment Notification (IPN)
 
