@@ -72,9 +72,9 @@ $setECReq->SetExpressCheckoutRequest = $setECReqType;
 /*
  * 	 ## Creating service wrapper object
 Creating service wrapper object to make API call and loading
-Configuration::getSignatureConfig() returns array that contains credential and config parameters
+Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getSignatureConfig());
+$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$setECResponse = $paypalService->SetExpressCheckout($setECReq);
