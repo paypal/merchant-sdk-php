@@ -30,5 +30,5 @@ class DoMobileCheckoutPaymentRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

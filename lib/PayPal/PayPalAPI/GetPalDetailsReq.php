@@ -32,5 +32,5 @@ class GetPalDetailsReq
 			$str .= '</ns:GetPalDetailsReq>';
 			return $str;
 	}
-   
+    
 }

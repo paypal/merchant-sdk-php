@@ -38,5 +38,5 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

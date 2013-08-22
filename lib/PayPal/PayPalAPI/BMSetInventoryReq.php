@@ -32,5 +32,5 @@ class BMSetInventoryReq
 			$str .= '</ns:BMSetInventoryReq>';
 			return $str;
 	}
-   
+    
 }

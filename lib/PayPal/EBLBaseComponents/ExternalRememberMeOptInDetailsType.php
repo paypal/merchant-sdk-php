@@ -38,5 +38,5 @@ class ExternalRememberMeOptInDetailsType
 	public $ExternalRememberMeOwnerDetails;
 
 
-   
+    
 }

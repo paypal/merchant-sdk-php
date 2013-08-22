@@ -32,5 +32,5 @@ class UpdateAccessPermissionsReq
 			$str .= '</ns:UpdateAccessPermissionsReq>';
 			return $str;
 	}
-   
+    
 }

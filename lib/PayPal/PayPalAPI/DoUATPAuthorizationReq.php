@@ -32,5 +32,5 @@ class DoUATPAuthorizationReq
 			$str .= '</ns:DoUATPAuthorizationReq>';
 			return $str;
 	}
-   
+    
 }

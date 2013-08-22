@@ -141,5 +141,5 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

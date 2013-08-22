@@ -34,5 +34,5 @@ class BMManageButtonStatusRequestType  extends AbstractRequestType
 	public $ButtonStatus;
 
 
-   
+    
 }

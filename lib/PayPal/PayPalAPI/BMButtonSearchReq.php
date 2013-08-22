@@ -32,5 +32,5 @@ class BMButtonSearchReq
 			$str .= '</ns:BMButtonSearchReq>';
 			return $str;
 	}
-   
+    
 }

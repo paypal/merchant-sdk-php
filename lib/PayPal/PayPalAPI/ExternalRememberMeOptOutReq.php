@@ -32,5 +32,5 @@ class ExternalRememberMeOptOutReq
 			$str .= '</ns:ExternalRememberMeOptOutReq>';
 			return $str;
 	}
-   
+    
 }

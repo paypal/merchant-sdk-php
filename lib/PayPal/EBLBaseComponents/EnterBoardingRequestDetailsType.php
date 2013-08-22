@@ -82,7 +82,7 @@ class EnterBoardingRequestDetailsType
 	public $MarketingCategory;
 
 	/**
-	 * Information about the merchant’s business
+	 * Information about the merchantâs business
 	 * @access public
 	 
 	 * @namespace ebl
@@ -115,5 +115,5 @@ class EnterBoardingRequestDetailsType
 	public $BankAccount;
 
 
-   
+    
 }

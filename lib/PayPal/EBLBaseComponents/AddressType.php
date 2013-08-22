@@ -259,5 +259,5 @@ class AddressType
 	public $AddressNormalizationStatus;
 
 
-   
+    
 }

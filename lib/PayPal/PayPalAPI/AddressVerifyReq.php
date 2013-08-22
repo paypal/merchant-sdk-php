@@ -32,5 +32,5 @@ class AddressVerifyReq
 			$str .= '</ns:AddressVerifyReq>';
 			return $str;
 	}
-   
+    
 }

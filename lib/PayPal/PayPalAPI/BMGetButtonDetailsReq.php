@@ -32,5 +32,5 @@ class BMGetButtonDetailsReq
 			$str .= '</ns:BMGetButtonDetailsReq>';
 			return $str;
 	}
-   
+    
 }

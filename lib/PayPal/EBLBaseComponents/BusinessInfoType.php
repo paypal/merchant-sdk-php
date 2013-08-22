@@ -31,7 +31,7 @@ class BusinessInfoType
 	public $Name;
 
 	/**
-	 * Merchant’s business postal address
+	 * Merchantâs business postal address
 	 * @access public
 	 
 	 * @namespace ebl
@@ -42,7 +42,7 @@ class BusinessInfoType
 	public $Address;
 
 	/**
-	 * Business’s primary telephone number Character length and
+	 * Businessâs primary telephone number Character length and
 	 * limitations: 20 alphanumeric characters
 	 * @access public
 	 
@@ -157,7 +157,7 @@ class BusinessInfoType
 	public $RevenueFromOnlineSales;
 
 	/**
-	 * Date the merchant’s business was established
+	 * Date the merchantâs business was established
 	 * @access public
 	 
 	 * @namespace ebl
@@ -168,7 +168,7 @@ class BusinessInfoType
 	public $BusinessEstablished;
 
 	/**
-	 * Email address to contact business’s customer service
+	 * Email address to contact businessâs customer service
 	 * Character length and limitations: 127 alphanumeric
 	 * characters
 	 * @access public
@@ -181,7 +181,7 @@ class BusinessInfoType
 	public $CustomerServiceEmail;
 
 	/**
-	 * Telephone number to contact business’s customer service
+	 * Telephone number to contact businessâs customer service
 	 * Character length and limitations: 32 alphanumeric characters
 	 * @access public
 	 
@@ -193,5 +193,5 @@ class BusinessInfoType
 	public $CustomerServicePhone;
 
 
-   
+    
 }

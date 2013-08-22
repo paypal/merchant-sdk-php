@@ -26,5 +26,5 @@ class SetMobileCheckoutRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

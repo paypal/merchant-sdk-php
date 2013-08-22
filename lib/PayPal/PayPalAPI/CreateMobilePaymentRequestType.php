@@ -26,5 +26,5 @@ class CreateMobilePaymentRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

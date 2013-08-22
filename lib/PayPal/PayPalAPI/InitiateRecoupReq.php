@@ -32,5 +32,5 @@ class InitiateRecoupReq
 			$str .= '</ns:InitiateRecoupReq>';
 			return $str;
 	}
-   
+    
 }

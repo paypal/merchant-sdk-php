@@ -8,5 +8,5 @@ class EnhancedCheckoutDataType
    extends PPXmlMessage{
 
 
-   
+    
 }

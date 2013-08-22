@@ -32,5 +32,5 @@ class BillAgreementUpdateReq
 			$str .= '</ns:BillAgreementUpdateReq>';
 			return $str;
 	}
-   
+    
 }

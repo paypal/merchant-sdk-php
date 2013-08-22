@@ -41,5 +41,5 @@ class IdentificationInfoType
 	public $IdentityTokenInfo;
 
 
-   
+    
 }

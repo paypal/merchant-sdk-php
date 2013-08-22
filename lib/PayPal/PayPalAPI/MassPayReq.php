@@ -32,5 +32,5 @@ class MassPayReq
 			$str .= '</ns:MassPayReq>';
 			return $str;
 	}
-   
+    
 }

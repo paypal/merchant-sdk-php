@@ -32,5 +32,5 @@ class SetMobileCheckoutReq
 			$str .= '</ns:SetMobileCheckoutReq>';
 			return $str;
 	}
-   
+    
 }

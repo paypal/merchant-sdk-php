@@ -32,5 +32,5 @@ class DoCancelReq
 			$str .= '</ns:DoCancelReq>';
 			return $str;
 	}
-   
+    
 }

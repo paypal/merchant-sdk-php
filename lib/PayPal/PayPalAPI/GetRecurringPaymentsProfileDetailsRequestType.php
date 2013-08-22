@@ -26,5 +26,5 @@ class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

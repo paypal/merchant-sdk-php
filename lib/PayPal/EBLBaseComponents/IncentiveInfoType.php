@@ -32,5 +32,5 @@ class IncentiveInfoType
 	public $ApplyIndication;
 
 
-   
+    
 }

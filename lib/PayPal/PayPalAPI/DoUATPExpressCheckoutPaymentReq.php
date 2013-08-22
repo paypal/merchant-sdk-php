@@ -32,5 +32,5 @@ class DoUATPExpressCheckoutPaymentReq
 			$str .= '</ns:DoUATPExpressCheckoutPaymentReq>';
 			return $str;
 	}
-   
+    
 }

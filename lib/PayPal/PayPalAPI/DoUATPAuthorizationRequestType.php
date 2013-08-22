@@ -78,5 +78,5 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

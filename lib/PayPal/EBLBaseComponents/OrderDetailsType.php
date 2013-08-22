@@ -31,5 +31,5 @@ class OrderDetailsType
 	public $MaxAmount;
 
 
-   
+    
 }

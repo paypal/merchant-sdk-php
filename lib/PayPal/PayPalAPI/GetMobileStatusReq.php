@@ -32,5 +32,5 @@ class GetMobileStatusReq
 			$str .= '</ns:GetMobileStatusReq>';
 			return $str;
 	}
-   
+    
 }

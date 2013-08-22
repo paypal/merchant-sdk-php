@@ -54,9 +54,9 @@ $massPayReq->MassPayRequest = $massPayRequest;
 /*
  * 	 ## Creating service wrapper object
 Creating service wrapper object to make API call and loading
-configuration file for your credentials and endpoint
+Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService();
+$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
 
 // required in third party permissioning
 if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {

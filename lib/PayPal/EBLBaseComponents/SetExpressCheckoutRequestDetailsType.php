@@ -915,5 +915,5 @@ class SetExpressCheckoutRequestDetailsType
 	public $CoupledBuckets;
 
 
-   
+    
 }

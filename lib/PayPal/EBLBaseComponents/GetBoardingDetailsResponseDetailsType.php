@@ -34,7 +34,7 @@ class GetBoardingDetailsResponseDetailsType
 	public $StartDate;
 
 	/**
-	 * Date the merchant’s status or progress was last updated
+	 * Date the merchantâs status or progress was last updated
 	 * @access public
 	 
 	 * @namespace ebl
@@ -45,7 +45,7 @@ class GetBoardingDetailsResponseDetailsType
 	public $LastUpdated;
 
 	/**
-	 * Reason for merchant’s cancellation of sign-up. Character
+	 * Reason for merchantâs cancellation of sign-up. Character
 	 * length and limitations: 1,024 alphanumeric characters
 	 * @access public
 	 
@@ -126,7 +126,7 @@ class GetBoardingDetailsResponseDetailsType
 	public $AccountOwner;
 
 	/**
-	 * Merchant’s PayPal API credentials
+	 * Merchantâs PayPal API credentials
 	 * @access public
 	 
 	 * @namespace ebl

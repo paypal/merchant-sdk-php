@@ -240,5 +240,5 @@ class InvoiceItemType
 	public $StyleNumber;
 
 
-   
+    
 }

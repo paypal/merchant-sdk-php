@@ -32,5 +32,5 @@ class DoReferenceTransactionReq
 			$str .= '</ns:DoReferenceTransactionReq>';
 			return $str;
 	}
-   
+    
 }

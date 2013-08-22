@@ -32,5 +32,5 @@ class GetAuthDetailsReq
 			$str .= '</ns:GetAuthDetailsReq>';
 			return $str;
 	}
-   
+    
 }

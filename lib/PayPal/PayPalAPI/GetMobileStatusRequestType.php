@@ -26,5 +26,5 @@ class GetMobileStatusRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

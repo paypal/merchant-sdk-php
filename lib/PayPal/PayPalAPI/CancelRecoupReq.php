@@ -32,5 +32,5 @@ class CancelRecoupReq
 			$str .= '</ns:CancelRecoupReq>';
 			return $str;
 	}
-   
+    
 }

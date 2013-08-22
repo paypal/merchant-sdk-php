@@ -63,5 +63,5 @@ class PersonNameType
 	public $Suffix;
 
 
-   
+    
 }

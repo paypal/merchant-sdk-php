@@ -63,5 +63,5 @@ class ItemTrackingDetailsType
 	public $ItemCost;
 
 
-   
+    
 }
