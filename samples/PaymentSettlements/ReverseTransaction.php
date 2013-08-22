@@ -13,8 +13,10 @@ $reverseTransactionReqest->ReverseTransactionRequestDetails = $reverseTransactio
 
 $reverseTransactionReq = new ReverseTransactionReq();
 $reverseTransactionReq->ReverseTransactionRequest = $reverseTransactionReqest;
-
-$paypalService = new PayPalAPIInterfaceServiceService();
+/*
+Configuration::getAcctAndConfig() returns array that contains credential and config parameters
+*/
+$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());;
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$reverseTransactionResponse = $paypalService->ReverseTransaction($reverseTransactionReq);
