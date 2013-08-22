@@ -44,5 +44,5 @@ class ExternalRememberMeOwnerDetailsType
 	public $ExternalRememberMeOwnerID;
 
 
-   
+    
 }

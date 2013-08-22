@@ -162,7 +162,7 @@ class MerchantPullPaymentType
 	 	 	 	 
 	 * @var string	 
 	 */ 
-	public $ButtonSource;
+	public $ButtonSource= "PayPal_SDK";
 
 	/**
 	 * Passed in soft descriptor string to be appended. Optional
@@ -178,5 +178,5 @@ class MerchantPullPaymentType
 	public $SoftDescriptor;
 
 
-   
+    
 }

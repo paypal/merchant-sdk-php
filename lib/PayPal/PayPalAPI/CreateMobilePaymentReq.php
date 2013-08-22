@@ -32,5 +32,5 @@ class CreateMobilePaymentReq
 			$str .= '</ns:CreateMobilePaymentReq>';
 			return $str;
 	}
-   
+    
 }

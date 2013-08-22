@@ -41,5 +41,5 @@ class IncentiveRequestDetailsType
 	public $RequestDetailLevel;
 
 
-   
+    
 }

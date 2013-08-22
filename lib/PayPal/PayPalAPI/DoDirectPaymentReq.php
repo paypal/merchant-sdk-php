@@ -32,5 +32,5 @@ class DoDirectPaymentReq
 			$str .= '</ns:DoDirectPaymentReq>';
 			return $str;
 	}
-   
+    
 }

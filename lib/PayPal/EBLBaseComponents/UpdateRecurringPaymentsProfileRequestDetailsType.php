@@ -203,5 +203,5 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	}
 
 
-   
+    
 }

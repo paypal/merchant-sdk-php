@@ -204,5 +204,5 @@ class SetMobileCheckoutRequestDetailsType
 	}
 
 
-   
+    
 }

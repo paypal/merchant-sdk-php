@@ -32,5 +32,5 @@ class CreateBillingAgreementReq
 			$str .= '</ns:CreateBillingAgreementReq>';
 			return $str;
 	}
-   
+    
 }

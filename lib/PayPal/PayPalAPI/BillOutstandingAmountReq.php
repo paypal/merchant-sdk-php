@@ -32,5 +32,5 @@ class BillOutstandingAmountReq
 			$str .= '</ns:BillOutstandingAmountReq>';
 			return $str;
 	}
-   
+    
 }

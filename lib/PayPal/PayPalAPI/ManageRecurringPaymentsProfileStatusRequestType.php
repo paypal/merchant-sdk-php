@@ -19,5 +19,5 @@ class ManageRecurringPaymentsProfileStatusRequestType  extends AbstractRequestTy
 	public $ManageRecurringPaymentsProfileStatusRequestDetails;
 
 
-   
+    
 }

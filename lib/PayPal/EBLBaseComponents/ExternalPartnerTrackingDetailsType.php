@@ -29,5 +29,5 @@ class ExternalPartnerTrackingDetailsType
 	public $ExternalPartnerSegmentID;
 
 
-   
+    
 }

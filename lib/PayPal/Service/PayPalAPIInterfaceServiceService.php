@@ -39,6 +39,7 @@ use PayPal\PayPalAPI\DoCaptureResponseType;
 use PayPal\PayPalAPI\DoReauthorizationResponseType;
 use PayPal\PayPalAPI\DoVoidResponseType;
 use PayPal\PayPalAPI\DoAuthorizationResponseType;
+use PayPal\PayPalAPI\UpdateAuthorizationResponseType;
 use PayPal\PayPalAPI\SetCustomerBillingAgreementResponseType;
 use PayPal\PayPalAPI\GetBillingAgreementCustomerDetailsResponseType;
 use PayPal\PayPalAPI\CreateBillingAgreementResponseType;
@@ -59,7 +60,7 @@ use PayPal\PayPalAPI\ExternalRememberMeOptOutResponseType;
 class PayPalAPIInterfaceServiceService extends PPBaseService {
 
 	// Service Version
-	private static $SERVICE_VERSION = "98.0";
+	private static $SERVICE_VERSION = "106.0";
 
 	// Service Name
 	private static $SERVICE_NAME = "PayPalAPIInterfaceService";
@@ -68,7 +69,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	protected static $SDK_NAME = "merchant-php-sdk";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "3.5.103";
+	protected static $SDK_VERSION = "3.6.106";
 
     /**
     * @param $config - Dynamic config map. This takes the higher precedence if config file is also present.
@@ -729,6 +730,24 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 		$this->setStandardParams($doAuthorizationReq->DoAuthorizationRequest);
 		$ret = new DoAuthorizationResponseType();
 		$resp = $this->call('PayPalAPIAA', 'DoAuthorization', $doAuthorizationReq, $apiCredential);
+		$ret->init(PPUtils::xmlToArray($resp));
+		return $ret;
+	}
+	 
+
+	/**
+	 * Service Call: UpdateAuthorization
+	 * @param UpdateAuthorizationReq $updateAuthorizationReq
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
+	 * @return PayPalAPI\UpdateAuthorizationResponseType
+	 * @throws APIException
+	 */
+	public function UpdateAuthorization($updateAuthorizationReq, $apiCredential = NULL) {
+		$this->setStandardParams($updateAuthorizationReq->UpdateAuthorizationRequest);
+		$ret = new UpdateAuthorizationResponseType();
+		$resp = $this->call('PayPalAPIAA', 'UpdateAuthorization', $updateAuthorizationReq, $apiCredential);
 		$ret->init(PPUtils::xmlToArray($resp));
 		return $ret;
 	}

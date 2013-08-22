@@ -32,5 +32,5 @@ class BillUserRequestType  extends AbstractRequestType
 	public $ReturnFMFDetails;
 
 
-   
+    
 }

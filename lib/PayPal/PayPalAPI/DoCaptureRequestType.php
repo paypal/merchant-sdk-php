@@ -132,6 +132,18 @@ class DoCaptureRequestType  extends AbstractRequestType
 	public $MsgSubID;
 
 	/**
+	 * This holds key-value pair which merchants wants to pass it
+	 * to the open wallet-PLCC processorOptional 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\MerchantDataType	 
+	 */ 
+	public $MerchantData;
+
+	/**
 	 * Constructor with arguments
 	 */
 	public function __construct($AuthorizationID = NULL, $Amount = NULL, $CompleteType = NULL) {
@@ -141,5 +153,5 @@ class DoCaptureRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

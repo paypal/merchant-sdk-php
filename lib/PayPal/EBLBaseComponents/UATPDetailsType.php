@@ -41,5 +41,5 @@ class UATPDetailsType
 	public $ExpYear;
 
 
-   
+    
 }

@@ -32,5 +32,5 @@ class ManagePendingTransactionStatusReq
 			$str .= '</ns:ManagePendingTransactionStatusReq>';
 			return $str;
 	}
-   
+    
 }

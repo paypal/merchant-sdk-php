@@ -74,5 +74,5 @@ class InstallmentDetailsType
 	public $TaxAmount;
 
 
-   
+    
 }

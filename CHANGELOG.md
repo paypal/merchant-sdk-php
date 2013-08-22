@@ -1,5 +1,14 @@
 ### CHANGELOG
 
+####Version 3.6.106 - August 22, 2013
+
+   - Updated stubs.
+   - Updated samples to showcase dynamic configuration.
+	
+
+You can see source code of this release in github under https://github.com/paypal/merchant-sdk-php/tree/v3.6.106
+--------------------------------------------------------------------------------------------------
+
 ####Version 3.5.103 - June 11, 2013
 
    - Updated stubs for 103 release.

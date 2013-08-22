@@ -266,5 +266,5 @@ class SetAuthFlowParamRequestDetailsType
 	public $Address;
 
 
-   
+    
 }

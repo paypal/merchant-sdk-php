@@ -31,5 +31,5 @@ class IncentiveApplyIndicationType
 	public $ItemId;
 
 
-   
+    
 }

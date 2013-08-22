@@ -27,5 +27,5 @@ class GetTransactionDetailsRequestType  extends AbstractRequestType
 	public $TransactionID;
 
 
-   
+    
 }

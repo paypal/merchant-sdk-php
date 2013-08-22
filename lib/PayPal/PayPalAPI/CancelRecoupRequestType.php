@@ -26,5 +26,5 @@ class CancelRecoupRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

@@ -50,7 +50,7 @@ class MassPayRequestType  extends AbstractRequestType
 	 	 	 	 
 	 * @var string	 
 	 */ 
-	public $ButtonSource;
+	public $ButtonSource = "PayPal_SDK";
 
 	/**
 	 * Details of each payment. A single MassPayRequest can include
@@ -73,5 +73,5 @@ class MassPayRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

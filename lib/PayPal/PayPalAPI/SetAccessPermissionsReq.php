@@ -32,5 +32,5 @@ class SetAccessPermissionsReq
 			$str .= '</ns:SetAccessPermissionsReq>';
 			return $str;
 	}
-   
+    
 }

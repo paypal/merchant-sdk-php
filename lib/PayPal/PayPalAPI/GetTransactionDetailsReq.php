@@ -32,5 +32,5 @@ class GetTransactionDetailsReq
 			$str .= '</ns:GetTransactionDetailsReq>';
 			return $str;
 	}
-   
+    
 }

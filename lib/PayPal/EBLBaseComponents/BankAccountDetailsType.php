@@ -31,7 +31,7 @@ class BankAccountDetailsType
 	public $Type;
 
 	/**
-	 * Merchant’s bank routing number Character length and
+	 * Merchantâs bank routing number Character length and
 	 * limitations: 23 alphanumeric characters
 	 * @access public
 	 
@@ -43,7 +43,7 @@ class BankAccountDetailsType
 	public $RoutingNumber;
 
 	/**
-	 * Merchant’s bank account number Character length and
+	 * Merchantâs bank account number Character length and
 	 * limitations: 256 alphanumeric characters
 	 * @access public
 	 
@@ -55,5 +55,5 @@ class BankAccountDetailsType
 	public $AccountNumber;
 
 
-   
+    
 }

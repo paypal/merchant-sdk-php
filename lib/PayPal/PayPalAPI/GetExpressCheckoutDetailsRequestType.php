@@ -30,5 +30,5 @@ class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

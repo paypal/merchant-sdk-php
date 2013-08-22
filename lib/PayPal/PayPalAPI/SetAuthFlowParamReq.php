@@ -32,5 +32,5 @@ class SetAuthFlowParamReq
 			$str .= '</ns:SetAuthFlowParamReq>';
 			return $str;
 	}
-   
+    
 }
