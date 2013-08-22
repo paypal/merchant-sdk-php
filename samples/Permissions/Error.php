@@ -15,6 +15,7 @@ function getDetailedExceptionMessage($ex) {
 <body>
 	<br />
 	<div id="wrapper">
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png">
 		<h3>SDK Exception</h3>
 		<?php if (isset($ex) && $ex instanceof Exception) {?>
 		<table>

@@ -30,5 +30,5 @@ class GetAuthDetailsRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

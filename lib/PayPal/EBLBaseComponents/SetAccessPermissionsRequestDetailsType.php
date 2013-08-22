@@ -238,5 +238,5 @@ class SetAccessPermissionsRequestDetailsType
 	public $Address;
 
 
-   
+    
 }

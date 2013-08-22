@@ -26,5 +26,5 @@ class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

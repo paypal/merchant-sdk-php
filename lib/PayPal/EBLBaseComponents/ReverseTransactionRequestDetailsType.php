@@ -23,5 +23,5 @@ class ReverseTransactionRequestDetailsType
 	public $TransactionID;
 
 
-   
+    
 }

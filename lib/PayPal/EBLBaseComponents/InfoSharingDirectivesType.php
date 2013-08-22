@@ -23,5 +23,5 @@ class InfoSharingDirectivesType
 	public $ReqBillingAddress;
 
 
-   
+    
 }

@@ -186,5 +186,5 @@ class CreateMobilePaymentRequestDetailsType
 	public $ShareHomeAddress;
 
 
-   
+    
 }

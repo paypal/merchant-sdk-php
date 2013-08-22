@@ -32,5 +32,5 @@ class EnterBoardingReq
 			$str .= '</ns:EnterBoardingReq>';
 			return $str;
 	}
-   
+    
 }

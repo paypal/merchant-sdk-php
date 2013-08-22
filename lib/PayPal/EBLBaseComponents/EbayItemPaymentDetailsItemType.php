@@ -57,5 +57,5 @@ class EbayItemPaymentDetailsItemType
 	public $CartID;
 
 
-   
+    
 }

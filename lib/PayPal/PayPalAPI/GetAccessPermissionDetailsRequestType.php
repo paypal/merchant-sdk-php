@@ -30,5 +30,5 @@ class GetAccessPermissionDetailsRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

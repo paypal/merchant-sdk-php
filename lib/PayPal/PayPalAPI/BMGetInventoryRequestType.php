@@ -30,5 +30,5 @@ class BMGetInventoryRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

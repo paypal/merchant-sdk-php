@@ -19,5 +19,5 @@ class BMLOfferInfoType
 	public $OfferTrackingID;
 
 
-   
+    
 }

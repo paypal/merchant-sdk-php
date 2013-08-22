@@ -137,7 +137,7 @@ class PaymentDetailsType
 	 	 	 	 
 	 * @var string	 
 	 */ 
-	public $ButtonSource;
+	public $ButtonSource = "PayPal_SDK";
 
 	/**
 	 * Your URL for receiving Instant Payment Notification (IPN)
@@ -167,6 +167,19 @@ class PaymentDetailsType
 	 * @var PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $ShipToAddress;
+
+	/**
+	 * The value 1 indicates that this payment is associated with
+	 * multiple shipping addresses. Optional Character length and
+	 * limitations: Four single-byte numeric characters. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $MultiShipping;
 
 	/**
 	 * Thirdparty Fulfillment Reference Number. Optional Character
@@ -435,5 +448,5 @@ class PaymentDetailsType
 	public $PaymentReason;
 
 
-   
+    
 }

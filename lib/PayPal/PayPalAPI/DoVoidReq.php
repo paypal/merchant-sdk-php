@@ -32,5 +32,5 @@ class DoVoidReq
 			$str .= '</ns:DoVoidReq>';
 			return $str;
 	}
-   
+    
 }

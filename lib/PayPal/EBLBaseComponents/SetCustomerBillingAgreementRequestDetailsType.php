@@ -149,5 +149,5 @@ class SetCustomerBillingAgreementRequestDetailsType
 	}
 
 
-   
+    
 }

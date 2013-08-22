@@ -32,5 +32,5 @@ class GetBalanceReq
 			$str .= '</ns:GetBalanceReq>';
 			return $str;
 	}
-   
+    
 }

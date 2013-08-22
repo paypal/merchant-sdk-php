@@ -28,6 +28,18 @@ class SetDataResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\AddressType	 
+	 */ 
+	public $ShippingAddresses;
+
+	/**
+	 * 
+     * @array
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
 	 * @var PayPal\EBLBaseComponents\ErrorType	 
 	 */ 
 	public $SetDataError;

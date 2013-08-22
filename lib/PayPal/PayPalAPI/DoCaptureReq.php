@@ -32,5 +32,5 @@ class DoCaptureReq
 			$str .= '</ns:DoCaptureReq>';
 			return $str;
 	}
-   
+    
 }

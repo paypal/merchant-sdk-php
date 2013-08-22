@@ -26,5 +26,5 @@ class EnterBoardingRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

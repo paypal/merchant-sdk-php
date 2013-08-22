@@ -140,5 +140,5 @@ class DoReferenceTransactionRequestDetailsType
 	}
 
 
-   
+    
 }

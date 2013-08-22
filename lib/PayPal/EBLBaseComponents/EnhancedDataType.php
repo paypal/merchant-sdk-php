@@ -19,5 +19,5 @@ class EnhancedDataType
 	public $AirlineItinerary;
 
 
-   
+    
 }

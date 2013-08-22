@@ -74,5 +74,5 @@ class BillingPeriodDetailsType_Update
 	public $TaxAmount;
 
 
-   
+    
 }

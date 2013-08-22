@@ -102,5 +102,5 @@ class MassPayRequestItemType
 	}
 
 
-   
+    
 }

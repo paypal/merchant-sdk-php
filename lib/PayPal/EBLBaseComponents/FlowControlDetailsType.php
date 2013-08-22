@@ -33,5 +33,5 @@ class FlowControlDetailsType
 	public $InContextReturnURL;
 
 
-   
+    
 }

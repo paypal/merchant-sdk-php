@@ -41,5 +41,5 @@ class ShippingOptionType
 	public $ShippingOptionName;
 
 
-   
+    
 }

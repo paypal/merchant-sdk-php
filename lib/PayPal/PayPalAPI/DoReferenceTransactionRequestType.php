@@ -39,5 +39,5 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

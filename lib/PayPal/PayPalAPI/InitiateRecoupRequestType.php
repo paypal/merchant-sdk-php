@@ -26,5 +26,5 @@ class InitiateRecoupRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

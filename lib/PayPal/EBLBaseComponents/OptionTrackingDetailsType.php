@@ -74,5 +74,5 @@ class OptionTrackingDetailsType
 	public $OptionCost;
 
 
-   
+    
 }

@@ -237,7 +237,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 	 	 	 
 	 * @var string	 
 	 */ 
-	public $ButtonSource;
+	public $ButtonSource= "PayPal_SDK";
 
 	/**
 	 * Merchant specified flag which indicates whether to create
@@ -264,5 +264,5 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $CoupledBuckets;
 
 
-   
+    
 }

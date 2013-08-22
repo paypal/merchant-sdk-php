@@ -32,5 +32,5 @@ class RefundTransactionReq
 			$str .= '</ns:RefundTransactionReq>';
 			return $str;
 	}
-   
+    
 }

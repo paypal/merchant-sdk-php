@@ -108,5 +108,5 @@ class ReferenceCreditCardDetailsType
 	public $IssueNumber;
 
 
-   
+    
 }

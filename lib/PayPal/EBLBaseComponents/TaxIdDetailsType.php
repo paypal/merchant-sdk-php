@@ -31,5 +31,5 @@ class TaxIdDetailsType
 	public $TaxId;
 
 
-   
+    
 }

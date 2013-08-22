@@ -177,5 +177,19 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	}
 
 
-   
+	public function toXMLString()
+	{
+		$flag = 0;
+		foreach($this->ButtonVar as $var){
+			if(strpos($var, 'bn=') !== FALSE){
+     			$flag = 1;
+				break;
+			}
+		}
+		if(!$flag){
+		    array_push($this->ButtonVar, "bn=PayPal_SDK");
+		}
+		return parent::toXMLString();
+	}
+    
 }
