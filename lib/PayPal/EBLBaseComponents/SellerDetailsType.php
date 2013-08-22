@@ -68,5 +68,5 @@ class SellerDetailsType
 	public $SecureMerchantAccountID;
 
 
-   
+    
 }

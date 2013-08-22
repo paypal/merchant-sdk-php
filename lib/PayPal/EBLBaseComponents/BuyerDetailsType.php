@@ -66,5 +66,5 @@ class BuyerDetailsType
 	public $IdentificationInfo;
 
 
-   
+    
 }

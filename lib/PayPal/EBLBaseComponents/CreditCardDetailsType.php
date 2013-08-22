@@ -118,5 +118,5 @@ class CreditCardDetailsType
 	public $ThreeDSecureRequest;
 
 
-   
+    
 }

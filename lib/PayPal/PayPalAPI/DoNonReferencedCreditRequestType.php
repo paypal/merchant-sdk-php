@@ -26,5 +26,5 @@ class DoNonReferencedCreditRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

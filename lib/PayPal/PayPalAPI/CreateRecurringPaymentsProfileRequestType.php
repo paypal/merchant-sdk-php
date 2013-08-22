@@ -19,5 +19,5 @@ class CreateRecurringPaymentsProfileRequestType  extends AbstractRequestType
 	public $CreateRecurringPaymentsProfileRequestDetails;
 
 
-   
+    
 }

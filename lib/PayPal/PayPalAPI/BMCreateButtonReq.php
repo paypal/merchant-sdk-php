@@ -32,5 +32,5 @@ class BMCreateButtonReq
 			$str .= '</ns:BMCreateButtonReq>';
 			return $str;
 	}
-   
+    
 }

@@ -30,5 +30,5 @@ class CreditCardNumberTypeType
 	public $CreditCardNumber;
 
 
-   
+    
 }

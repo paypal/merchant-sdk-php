@@ -32,5 +32,5 @@ class BMManageButtonStatusReq
 			$str .= '</ns:BMManageButtonStatusReq>';
 			return $str;
 	}
-   
+    
 }

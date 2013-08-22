@@ -19,5 +19,5 @@ class GetBalanceRequestType  extends AbstractRequestType
 	public $ReturnAllCurrencies;
 
 
-   
+    
 }

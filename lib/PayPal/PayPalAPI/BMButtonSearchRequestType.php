@@ -33,5 +33,5 @@ class BMButtonSearchRequestType  extends AbstractRequestType
 	public $EndDate;
 
 
-   
+    
 }

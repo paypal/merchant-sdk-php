@@ -32,5 +32,5 @@ class CompleteRecoupReq
 			$str .= '</ns:CompleteRecoupReq>';
 			return $str;
 	}
-   
+    
 }

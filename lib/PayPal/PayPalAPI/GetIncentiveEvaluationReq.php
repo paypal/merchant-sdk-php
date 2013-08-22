@@ -32,5 +32,5 @@ class GetIncentiveEvaluationReq
 			$str .= '</ns:GetIncentiveEvaluationReq>';
 			return $str;
 	}
-   
+    
 }

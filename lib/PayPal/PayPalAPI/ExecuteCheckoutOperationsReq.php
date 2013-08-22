@@ -32,5 +32,5 @@ class ExecuteCheckoutOperationsReq
 			$str .= '</ns:ExecuteCheckoutOperationsReq>';
 			return $str;
 	}
-   
+    
 }

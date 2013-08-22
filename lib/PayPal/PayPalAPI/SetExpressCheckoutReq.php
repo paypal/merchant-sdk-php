@@ -32,5 +32,5 @@ class SetExpressCheckoutReq
 			$str .= '</ns:SetExpressCheckoutReq>';
 			return $str;
 	}
-   
+    
 }

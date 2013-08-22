@@ -32,5 +32,5 @@ class DoNonReferencedCreditReq
 			$str .= '</ns:DoNonReferencedCreditReq>';
 			return $str;
 	}
-   
+    
 }

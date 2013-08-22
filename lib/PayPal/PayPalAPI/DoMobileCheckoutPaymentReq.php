@@ -32,5 +32,5 @@ class DoMobileCheckoutPaymentReq
 			$str .= '</ns:DoMobileCheckoutPaymentReq>';
 			return $str;
 	}
-   
+    
 }

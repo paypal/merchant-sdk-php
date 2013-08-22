@@ -19,5 +19,5 @@ class SenderDetailsType
 	public $DeviceDetails;
 
 
-   
+    
 }

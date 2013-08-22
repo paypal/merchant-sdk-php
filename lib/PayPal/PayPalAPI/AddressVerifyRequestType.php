@@ -63,5 +63,5 @@ class AddressVerifyRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

@@ -85,5 +85,5 @@ class DoNonReferencedCreditRequestDetailsType
 	public $Comment;
 
 
-   
+    
 }

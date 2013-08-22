@@ -32,5 +32,5 @@ class TransactionSearchReq
 			$str .= '</ns:TransactionSearchReq>';
 			return $str;
 	}
-   
+    
 }

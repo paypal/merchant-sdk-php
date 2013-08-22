@@ -26,5 +26,5 @@ class SetAuthFlowParamRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

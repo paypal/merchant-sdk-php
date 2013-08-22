@@ -63,5 +63,5 @@ class UserSelectedOptionType
 	public $ShippingOptionName;
 
 
-   
+    
 }

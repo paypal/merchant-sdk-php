@@ -32,5 +32,5 @@ class GetBoardingDetailsReq
 			$str .= '</ns:GetBoardingDetailsReq>';
 			return $str;
 	}
-   
+    
 }

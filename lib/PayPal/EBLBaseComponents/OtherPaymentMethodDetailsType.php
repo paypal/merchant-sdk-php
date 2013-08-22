@@ -100,5 +100,5 @@ class OtherPaymentMethodDetailsType
 	public $OtherPaymentMethodHideLabel;
 
 
-   
+    
 }

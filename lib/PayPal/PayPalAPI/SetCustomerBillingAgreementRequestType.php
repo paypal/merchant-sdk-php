@@ -26,5 +26,5 @@ class SetCustomerBillingAgreementRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

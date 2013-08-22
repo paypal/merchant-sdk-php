@@ -28,5 +28,5 @@ class BMGetButtonDetailsRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

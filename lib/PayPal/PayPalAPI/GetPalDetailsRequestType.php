@@ -8,5 +8,5 @@ class GetPalDetailsRequestType  extends AbstractRequestType
   {
 
 
-   
+    
 }

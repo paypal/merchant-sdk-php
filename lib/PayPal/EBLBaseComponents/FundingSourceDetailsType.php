@@ -39,5 +39,5 @@ class FundingSourceDetailsType
 	public $UserSelectedFundingSource;
 
 
-   
+    
 }

@@ -19,5 +19,5 @@ class MobileIDInfoType
 	public $SessionToken;
 
 
-   
+    
 }

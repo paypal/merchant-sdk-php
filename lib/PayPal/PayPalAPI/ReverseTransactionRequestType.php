@@ -26,5 +26,5 @@ class ReverseTransactionRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

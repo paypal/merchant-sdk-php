@@ -195,5 +195,5 @@ class FlightDetailsType
 	public $EndorsementOrRestrictions;
 
 
-   
+    
 }

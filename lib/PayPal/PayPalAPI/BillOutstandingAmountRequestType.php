@@ -19,5 +19,5 @@ class BillOutstandingAmountRequestType  extends AbstractRequestType
 	public $BillOutstandingAmountRequestDetails;
 
 
-   
+    
 }

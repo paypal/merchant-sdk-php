@@ -159,5 +159,5 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	public $MsgSubID;
 
 
-   
+    
 }

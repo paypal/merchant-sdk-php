@@ -238,5 +238,5 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	}
 
 
-   
+    
 }

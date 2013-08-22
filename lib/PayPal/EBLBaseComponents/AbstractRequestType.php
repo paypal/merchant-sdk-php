@@ -49,5 +49,5 @@ class AbstractRequestType
 	public $Version;
 
 
-   
+    
 }

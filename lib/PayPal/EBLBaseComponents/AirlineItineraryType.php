@@ -163,5 +163,5 @@ class AirlineItineraryType
 	public $FlightDetails;
 
 
-   
+    
 }

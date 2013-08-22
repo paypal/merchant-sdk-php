@@ -32,5 +32,5 @@ class ReverseTransactionReq
 			$str .= '</ns:ReverseTransactionReq>';
 			return $str;
 	}
-   
+    
 }

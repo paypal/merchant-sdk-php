@@ -197,5 +197,5 @@ class PaymentDetailsItemType
 	public $ItemCategory;
 
 
-   
+    
 }

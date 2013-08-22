@@ -93,5 +93,5 @@ class DoDirectPaymentRequestDetailsType
 	public $ReturnFMFDetails;
 
 
-   
+    
 }

@@ -63,5 +63,5 @@ class ThreeDSecureRequestType
 	public $AuthStatus3ds;
 
 
-   
+    
 }

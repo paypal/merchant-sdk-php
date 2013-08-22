@@ -32,5 +32,5 @@ class BillUserReq
 			$str .= '</ns:BillUserReq>';
 			return $str;
 	}
-   
+    
 }

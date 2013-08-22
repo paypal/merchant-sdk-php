@@ -31,5 +31,5 @@ class OfferDetailsType
 	public $BMLOfferInfo;
 
 
-   
+    
 }

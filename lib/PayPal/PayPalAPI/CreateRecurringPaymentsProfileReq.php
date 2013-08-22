@@ -32,5 +32,5 @@ class CreateRecurringPaymentsProfileReq
 			$str .= '</ns:CreateRecurringPaymentsProfileReq>';
 			return $str;
 	}
-   
+    
 }
