@@ -51,7 +51,8 @@ class BasicAmountType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -98,7 +99,8 @@ class MeasureType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -264,7 +266,8 @@ class AbstractRequestType
 	public $Version;
 
 
-   
+  
+ 
 }
 
 
@@ -396,7 +399,8 @@ class PhoneNumberType
 	public $Extension;
 
 
-   
+  
+ 
 }
 
 
@@ -659,7 +663,8 @@ class AddressType
 	public $AddressNormalizationStatus;
 
 
-   
+  
+ 
 }
 
 
@@ -726,7 +731,8 @@ class PersonNameType
 	public $Suffix;
 
 
-   
+  
+ 
 }
 
 
@@ -948,7 +954,8 @@ class IncentiveItemType
 	public $ItemQuantity;
 
 
-   
+  
+ 
 }
 
 
@@ -1060,7 +1067,8 @@ class IncentiveBucketType
 	public $BucketTotalAmt;
 
 
-   
+  
+ 
 }
 
 
@@ -1105,7 +1113,8 @@ class IncentiveRequestDetailsType
 	public $RequestDetailLevel;
 
 
-   
+  
+ 
 }
 
 
@@ -1186,7 +1195,8 @@ class GetIncentiveEvaluationRequestDetailsType
 	public $RequestDetails;
 
 
-   
+  
+ 
 }
 
 
@@ -2139,7 +2149,8 @@ class SetExpressCheckoutRequestDetailsType
 	public $CoupledBuckets;
 
 
-   
+  
+ 
 }
 
 
@@ -2207,7 +2218,8 @@ class ExecuteCheckoutOperationsRequestDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -2255,8 +2267,77 @@ class SetDataRequestType
 	 */ 
 	public $InfoSharingDirectives;
 
+	/**
+	 * The value 1 indicates that you require to retrieve the
+	 * customer's shipping address on file with PayPal. Any value
+	 * other than 1 indicates that no such requirement. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var boolean 	 
+	 */ 
+	public $RetrieveShippingAddress;
 
-   
+	/**
+	 * the value is required by ACS team to specify the channel
+	 * which the partners are in. the channel will be used for risk
+	 * assessment the value is defined in
+	 * biz/User/value_object/Channel.oml Optional 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $UserChannel;
+
+	/**
+	 * The value 1 indicates that you require that the customer's
+	 * shipping address on file with PayPal be a confirmed address.
+	 * Any value other than 1 indicates that the customer's
+	 * shipping address on file with PayPal need NOT be a confirmed
+	 * address. Setting this element overrides the setting you have
+	 * specified in the recipient's Merchant Account Profile.
+	 * Optional 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var boolean 	 
+	 */ 
+	public $ReqConfirmShipping;
+
+	/**
+	 * Information about the payment. 
+     * @array
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var PaymentDetailsType 	 
+	 */ 
+	public $PaymentDetails;
+
+	/**
+	 * An optional set of values related to tracking for external
+	 * partner. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var ExternalPartnerTrackingDetailsType 	 
+	 */ 
+	public $ExternalPartnerTrackingDetails;
+
+
+  
+ 
 }
 
 
@@ -2286,7 +2367,8 @@ class AuthorizationRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -2364,7 +2446,8 @@ class BillingApprovalDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -2391,7 +2474,8 @@ class InfoSharingDirectivesType
 	public $ReqBillingAddress;
 
 
-   
+  
+ 
 }
 
 
@@ -2426,7 +2510,8 @@ class OrderDetailsType
 	public $MaxAmount;
 
 
-   
+  
+ 
 }
 
 
@@ -2449,7 +2534,8 @@ class PaymentDirectivesType
 	public $PaymentType;
 
 
-   
+  
+ 
 }
 
 
@@ -2476,7 +2562,8 @@ class BuyerDetailType
 	public $IdentificationInfo;
 
 
-   
+  
+ 
 }
 
 
@@ -2521,7 +2608,8 @@ class IdentificationInfoType
 	public $IdentityTokenInfo;
 
 
-   
+  
+ 
 }
 
 
@@ -2544,7 +2632,8 @@ class MobileIDInfoType
 	public $SessionToken;
 
 
-   
+  
+ 
 }
 
 
@@ -2579,7 +2668,8 @@ class RememberMeIDInfoType
 	public $ExternalRememberMeID;
 
 
-   
+  
+ 
 }
 
 
@@ -2609,7 +2699,8 @@ class IdentityTokenInfoType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -2652,7 +2743,8 @@ class FundingSourceDetailsType
 	public $UserSelectedFundingSource;
 
 
-   
+  
+ 
 }
 
 
@@ -2715,7 +2807,8 @@ class BillingAgreementDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -3087,6 +3180,18 @@ class SetDataResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
+	 * @var AddressType 	 
+	 */ 
+	public $ShippingAddresses;
+
+	/**
+	 * 
+     * @array
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
 	 * @var ErrorType 	 
 	 */ 
 	public $SetDataError;
@@ -3368,7 +3473,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 	 	 	 
 	 * @var string 	 
 	 */ 
-	public $ButtonSource;
+	public $ButtonSource = "PayPal_SDK";
 
 	/**
 	 * Merchant specified flag which indicates whether to create
@@ -3395,7 +3500,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $CoupledBuckets;
 
 
-   
+  
+ 
 }
 
 
@@ -3649,7 +3755,8 @@ class DoDirectPaymentRequestDetailsType
 	public $ReturnFMFDetails;
 
 
-   
+  
+ 
 }
 
 
@@ -3839,7 +3946,8 @@ class CreateMobilePaymentRequestDetailsType
 	public $ShareHomeAddress;
 
 
-   
+  
+ 
 }
 
 
@@ -3862,7 +3970,8 @@ class GetMobileStatusRequestDetailsType
 	public $Phone;
 
 
-   
+  
+ 
 }
 
 
@@ -4132,7 +4241,8 @@ class SetAuthFlowParamRequestDetailsType
 	public $Address;
 
 
-   
+  
+ 
 }
 
 
@@ -4435,7 +4545,8 @@ class SetAccessPermissionsRequestDetailsType
 	public $Address;
 
 
-   
+  
+ 
 }
 
 
@@ -5037,7 +5148,7 @@ class MerchantPullPaymentType
 	 	 	 	 
 	 * @var string 	 
 	 */ 
-	public $ButtonSource;
+	public $ButtonSource = "PayPal_SDK";
 
 	/**
 	 * Passed in soft descriptor string to be appended. Optional
@@ -5053,7 +5164,8 @@ class MerchantPullPaymentType
 	public $SoftDescriptor;
 
 
-   
+  
+ 
 }
 
 
@@ -5415,7 +5527,8 @@ class PayerInfoType
 	public $EnhancedPayerInfo;
 
 
-   
+  
+ 
 }
 
 
@@ -5461,7 +5574,8 @@ class BMLOfferInfoType
 	public $OfferTrackingID;
 
 
-   
+  
+ 
 }
 
 
@@ -5496,7 +5610,8 @@ class OfferDetailsType
 	public $BMLOfferInfo;
 
 
-   
+  
+ 
 }
 
 
@@ -6025,13 +6140,12 @@ class PaymentInfoType
 	 * this transaction is in a particular bin range registered
 	 * with PayPal by the merchant. This filed is optional and will
 	 * be present if merchant has a registered bin range. The value
-	 * of this field will be “true” if merchant has a
-	 * registered bin range and the credit card used in the
-	 * transaction is within the registered bin range. The value of
-	 * this field will be false if merchant has a registered bin
-	 * range and credit card used in the transaction outside
-	 * registered bin range or the transaction is not done using a
-	 * credit card. 
+	 * of this field will be "true" if merchant has a registered
+	 * bin range and the credit card used in the transaction is
+	 * within the registered bin range. The value of this field
+	 * will be false if merchant has a registered bin range and
+	 * credit card used in the transaction outside registered bin
+	 * range or the transaction is not done using a credit card. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -6358,7 +6472,8 @@ class EbayItemPaymentDetailsItemType
 	public $CartID;
 
 
-   
+  
+ 
 }
 
 
@@ -6559,7 +6674,8 @@ class PaymentDetailsItemType
 	public $ItemCategory;
 
 
-   
+  
+ 
 }
 
 
@@ -7035,7 +7151,7 @@ class PaymentDetailsType
 	 	 	 	 
 	 * @var string 	 
 	 */ 
-	public $ButtonSource;
+	public $ButtonSource = "PayPal_SDK";
 
 	/**
 	 * Your URL for receiving Instant Payment Notification (IPN)
@@ -7065,6 +7181,19 @@ class PaymentDetailsType
 	 * @var AddressType 	 
 	 */ 
 	public $ShipToAddress;
+
+	/**
+	 * The value 1 indicates that this payment is associated with
+	 * multiple shipping addresses. Optional Character length and
+	 * limitations: Four single-byte numeric characters. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $MultiShipping;
 
 	/**
 	 * Thirdparty Fulfillment Reference Number. Optional Character
@@ -7333,7 +7462,8 @@ class PaymentDetailsType
 	public $PaymentReason;
 
 
-   
+  
+ 
 }
 
 
@@ -7555,7 +7685,8 @@ class SellerDetailsType
 	public $SecureMerchantAccountID;
 
 
-   
+  
+ 
 }
 
 
@@ -7659,7 +7790,8 @@ class OtherPaymentMethodDetailsType
 	public $OtherPaymentMethodHideLabel;
 
 
-   
+  
+ 
 }
 
 
@@ -7729,7 +7861,8 @@ class BuyerDetailsType
 	public $IdentificationInfo;
 
 
-   
+  
+ 
 }
 
 
@@ -7764,7 +7897,8 @@ class TaxIdDetailsType
 	public $TaxId;
 
 
-   
+  
+ 
 }
 
 
@@ -7831,7 +7965,8 @@ class ThreeDSecureRequestType
 	public $AuthStatus3ds;
 
 
-   
+  
+ 
 }
 
 
@@ -8019,7 +8154,8 @@ class CreditCardDetailsType
 	public $ThreeDSecureRequest;
 
 
-   
+  
+ 
 }
 
 
@@ -8064,7 +8200,8 @@ class ShippingOptionType
 	public $ShippingOptionName;
 
 
-   
+  
+ 
 }
 
 
@@ -8131,7 +8268,8 @@ class UserSelectedOptionType
 	public $ShippingOptionName;
 
 
-   
+  
+ 
 }
 
 
@@ -8165,7 +8303,8 @@ class CreditCardNumberTypeType
 	public $CreditCardNumber;
 
 
-   
+  
+ 
 }
 
 
@@ -8277,7 +8416,8 @@ class ReferenceCreditCardDetailsType
 	public $IssueNumber;
 
 
-   
+  
+ 
 }
 
 
@@ -8430,7 +8570,8 @@ class SetCustomerBillingAgreementRequestDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -8494,7 +8635,8 @@ class DeviceDetailsType
 	public $DeviceID;
 
 
-   
+  
+ 
 }
 
 
@@ -8517,7 +8659,8 @@ class SenderDetailsType
 	public $DeviceDetails;
 
 
-   
+  
+ 
 }
 
 
@@ -8661,7 +8804,8 @@ class DoReferenceTransactionRequestDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -8850,7 +8994,8 @@ class DoNonReferencedCreditRequestDetailsType
 	public $Comment;
 
 
-   
+  
+ 
 }
 
 
@@ -8969,7 +9114,7 @@ class EnterBoardingRequestDetailsType
 	public $MarketingCategory;
 
 	/**
-	 * Information about the merchant’s business
+	 * Information about the merchantâs business
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9002,7 +9147,8 @@ class EnterBoardingRequestDetailsType
 	public $BankAccount;
 
 
-   
+  
+ 
 }
 
 
@@ -9037,7 +9183,7 @@ class BusinessInfoType
 	public $Name;
 
 	/**
-	 * Merchant’s business postal address
+	 * Merchantâs business postal address
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9048,7 +9194,7 @@ class BusinessInfoType
 	public $Address;
 
 	/**
-	 * Business’s primary telephone number Character length and
+	 * Businessâs primary telephone number Character length and
 	 * limitations: 20 alphanumeric characters
 	 * @access public
 	 
@@ -9163,7 +9309,7 @@ class BusinessInfoType
 	public $RevenueFromOnlineSales;
 
 	/**
-	 * Date the merchant’s business was established
+	 * Date the merchantâs business was established
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9174,7 +9320,7 @@ class BusinessInfoType
 	public $BusinessEstablished;
 
 	/**
-	 * Email address to contact business’s customer service
+	 * Email address to contact businessâs customer service
 	 * Character length and limitations: 127 alphanumeric
 	 * characters
 	 * @access public
@@ -9187,7 +9333,7 @@ class BusinessInfoType
 	public $CustomerServiceEmail;
 
 	/**
-	 * Telephone number to contact business’s customer service
+	 * Telephone number to contact businessâs customer service
 	 * Character length and limitations: 32 alphanumeric characters
 	 * @access public
 	 
@@ -9199,7 +9345,8 @@ class BusinessInfoType
 	public $CustomerServicePhone;
 
 
-   
+  
+ 
 }
 
 
@@ -9222,8 +9369,8 @@ class BusinessOwnerInfoType
 	public $Owner;
 
 	/**
-	 * Business owner’s home telephone number Character length
-	 * and limitations: 32 alphanumeric characters
+	 * Business ownerâs home telephone number Character length and
+	 * limitations: 32 alphanumeric characters
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9234,7 +9381,7 @@ class BusinessOwnerInfoType
 	public $HomePhone;
 
 	/**
-	 * Business owner’s mobile telephone number Character length
+	 * Business ownerâs mobile telephone number Character length
 	 * and limitations: 32 alphanumeric characters
 	 * @access public
 	 
@@ -9246,7 +9393,7 @@ class BusinessOwnerInfoType
 	public $MobilePhone;
 
 	/**
-	 * Business owner’s social security number Character length
+	 * Business ownerâs social security number Character length
 	 * and limitations: 9 alphanumeric characters
 	 * @access public
 	 
@@ -9258,7 +9405,8 @@ class BusinessOwnerInfoType
 	public $SSN;
 
 
-   
+  
+ 
 }
 
 
@@ -9293,7 +9441,7 @@ class BankAccountDetailsType
 	public $Type;
 
 	/**
-	 * Merchant’s bank routing number Character length and
+	 * Merchantâs bank routing number Character length and
 	 * limitations: 23 alphanumeric characters
 	 * @access public
 	 
@@ -9305,7 +9453,7 @@ class BankAccountDetailsType
 	public $RoutingNumber;
 
 	/**
-	 * Merchant’s bank account number Character length and
+	 * Merchantâs bank account number Character length and
 	 * limitations: 256 alphanumeric characters
 	 * @access public
 	 
@@ -9317,7 +9465,8 @@ class BankAccountDetailsType
 	public $AccountNumber;
 
 
-   
+  
+ 
 }
 
 
@@ -9355,7 +9504,7 @@ class GetBoardingDetailsResponseDetailsType
 	public $StartDate;
 
 	/**
-	 * Date the merchant’s status or progress was last updated
+	 * Date the merchantâs status or progress was last updated
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9366,7 +9515,7 @@ class GetBoardingDetailsResponseDetailsType
 	public $LastUpdated;
 
 	/**
-	 * Reason for merchant’s cancellation of sign-up. Character
+	 * Reason for merchantâs cancellation of sign-up. Character
 	 * length and limitations: 1,024 alphanumeric characters
 	 * @access public
 	 
@@ -9447,7 +9596,7 @@ class GetBoardingDetailsResponseDetailsType
 	public $AccountOwner;
 
 	/**
-	 * Merchant’s PayPal API credentials
+	 * Merchantâs PayPal API credentials
 	 * @access public
 	 
 	 * @namespace ebl
@@ -9519,7 +9668,7 @@ class APICredentialsType
    extends PPXmlMessage{
 
 	/**
-	 * Merchant’s PayPal API usernameCharacter length and
+	 * Merchantâs PayPal API usernameCharacter length and
 	 * limitations: 128 alphanumeric characters
 	 * @access public
 	 
@@ -9531,7 +9680,7 @@ class APICredentialsType
 	public $Username;
 
 	/**
-	 * Merchant’s PayPal API passwordCharacter length and
+	 * Merchantâs PayPal API passwordCharacter length and
 	 * limitations: 40 alphanumeric characters
 	 * @access public
 	 
@@ -9543,7 +9692,7 @@ class APICredentialsType
 	public $Password;
 
 	/**
-	 * Merchant’s PayPal API signature, if one exists. Character
+	 * Merchantâs PayPal API signature, if one exists. Character
 	 * length and limitations: 256 alphanumeric characters
 	 * @access public
 	 
@@ -9555,7 +9704,7 @@ class APICredentialsType
 	public $Signature;
 
 	/**
-	 * Merchant’s PayPal API certificate in PEM format, if one
+	 * Merchantâs PayPal API certificate in PEM format, if one
 	 * exists The certificate consists of two parts: the private
 	 * key (2,048 bytes) and the certificate proper (4,000 bytes).
 	 * Character length and limitations: 6,048 alphanumeric
@@ -9570,7 +9719,7 @@ class APICredentialsType
 	public $Certificate;
 
 	/**
-	 * Merchant’s PayPal API authentication mechanism. Auth-None:
+	 * Merchantâs PayPal API authentication mechanism. Auth-None:
 	 * no authentication mechanism on file Cert: API certificate
 	 * Sign: API signature Character length and limitations: 9
 	 * alphanumeric characters
@@ -9791,7 +9940,8 @@ class SetMobileCheckoutRequestDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -9899,7 +10049,8 @@ class UATPDetailsType
 	public $ExpYear;
 
 
-   
+  
+ 
 }
 
 
@@ -10028,7 +10179,8 @@ class ActivationDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -10115,7 +10267,8 @@ class BillingPeriodDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -10193,7 +10346,8 @@ class BillingPeriodDetailsType_Update
 	public $TaxAmount;
 
 
-   
+  
+ 
 }
 
 
@@ -10280,7 +10434,8 @@ class ScheduleDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -10348,7 +10503,8 @@ class RecurringPaymentsProfileDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -10425,7 +10581,8 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -10731,7 +10888,8 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -10805,7 +10963,8 @@ class BillOutstandingAmountRequestDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -11034,7 +11193,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -11202,7 +11362,8 @@ class EnhancedDataType
 	public $AirlineItinerary;
 
 
-   
+  
+ 
 }
 
 
@@ -11369,7 +11530,8 @@ class AirlineItineraryType
 	public $FlightDetails;
 
 
-   
+  
+ 
 }
 
 
@@ -11568,7 +11730,8 @@ class FlightDetailsType
 	public $EndorsementOrRestrictions;
 
 
-   
+  
+ 
 }
 
 
@@ -11731,7 +11894,8 @@ class OptionTrackingDetailsType
 	public $OptionCost;
 
 
-   
+  
+ 
 }
 
 
@@ -11798,7 +11962,8 @@ class ItemTrackingDetailsType
 	public $ItemCost;
 
 
-   
+  
+ 
 }
 
 
@@ -11880,7 +12045,8 @@ class ReverseTransactionRequestDetailsType
 	public $TransactionID;
 
 
-   
+  
+ 
 }
 
 
@@ -11953,7 +12119,8 @@ class IncentiveInfoType
 	public $ApplyIndication;
 
 
-   
+  
+ 
 }
 
 
@@ -11988,7 +12155,8 @@ class IncentiveApplyIndicationType
 	public $ItemId;
 
 
-   
+  
+ 
 }
 
 
@@ -12081,7 +12249,8 @@ class ExternalRememberMeOwnerDetailsType
 	public $ExternalRememberMeOwnerID;
 
 
-   
+  
+ 
 }
 
 
@@ -12123,7 +12292,8 @@ class ExternalRememberMeOptInDetailsType
 	public $ExternalRememberMeOwnerDetails;
 
 
-   
+  
+ 
 }
 
 
@@ -12160,7 +12330,8 @@ class FlowControlDetailsType
 	public $InContextReturnURL;
 
 
-   
+  
+ 
 }
 
 
@@ -12293,7 +12464,8 @@ class DisplayControlDetailsType
 	public $InContextPaymentButtonImage;
 
 
-   
+  
+ 
 }
 
 
@@ -12326,7 +12498,8 @@ class ExternalPartnerTrackingDetailsType
 	public $ExternalPartnerSegmentID;
 
 
-   
+  
+ 
 }
 
 
@@ -12370,7 +12543,8 @@ class MerchantStoreDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -12404,7 +12578,8 @@ class AdditionalFeeType
 	public $Amount;
 
 
-   
+  
+ 
 }
 
 
@@ -12481,7 +12656,8 @@ class DiscountType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -12725,7 +12901,8 @@ class InvoiceItemType
 	public $StyleNumber;
 
 
-   
+  
+ 
 }
 
 
@@ -12811,7 +12988,8 @@ class CoupledBucketsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -12851,13 +13029,83 @@ class CoupledPaymentInfoType
 
 
 /**
+ * This holds single key-value pair. 
+ */
+class TupleType  
+   extends PPXmlMessage{
+
+	/**
+	 * Key Name.Optional
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $Key;
+
+	/**
+	 * Value for the above key.Optional
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $Value;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($Key = NULL, $Value = NULL) {
+		$this->Key = $Key;
+		$this->Value = $Value;
+	}
+
+
+  
+ 
+}
+
+
+
+/**
+ * This holds all key-value pairs which merchants wants to pass
+ * it to the open wallet(PLCC) processor. 
+ */
+class MerchantDataType  
+   extends PPXmlMessage{
+
+	/**
+	 * 
+     * @array
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var TupleType 	 
+	 */ 
+	public $MerchantDataTuple;
+
+
+  
+ 
+}
+
+
+
+/**
  * 
  */
 class EnhancedCheckoutDataType  
    extends PPXmlMessage{
 
 
-   
+  
+ 
 }
 
 
@@ -12869,7 +13117,8 @@ class EnhancedPaymentDataType
    extends PPXmlMessage{
 
 
-   
+  
+ 
 }
 
 
@@ -12881,7 +13130,8 @@ class EnhancedItemDataType
    extends PPXmlMessage{
 
 
-   
+  
+ 
 }
 
 
@@ -12904,7 +13154,8 @@ class EnhancedInitiateRecoupRequestDetailsType
    extends PPXmlMessage{
 
 
-   
+  
+ 
 }
 
 
@@ -12916,7 +13167,8 @@ class EnhancedCompleteRecoupRequestDetailsType
    extends PPXmlMessage{
 
 
-   
+  
+ 
 }
 
 
@@ -12939,7 +13191,8 @@ class EnhancedCancelRecoupRequestDetailsType
    extends PPXmlMessage{
 
 
-   
+  
+ 
 }
 
 
@@ -12951,7 +13204,8 @@ class EnhancedPayerInfoType
    extends PPXmlMessage{
 
 
-   
+  
+ 
 }
 
 
@@ -13029,7 +13283,8 @@ class InstallmentDetailsType
 	public $TaxAmount;
 
 
-   
+  
+ 
 }
 
 
@@ -13095,7 +13350,8 @@ class OptionSelectionDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -13137,7 +13393,8 @@ class OptionDetailsType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -13173,7 +13430,8 @@ class BMCreateButtonReq
 			$str .= '</ns:BMCreateButtonReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -13334,7 +13592,22 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	public $ButtonLanguage;
 
 
-   
+  
+	public function toXMLString()
+	{
+		$flag = 0;
+		foreach($this->ButtonVar as $var){
+			if(strpos($var, 'bn=') !== FALSE){
+     			$flag = 1;
+				break;
+			}
+		}
+		if(!$flag){
+		    array_push($this->ButtonVar, "bn=PayPal_SDK");
+		}
+		return parent::toXMLString();
+	}
+ 
 }
 
 
@@ -13425,7 +13698,8 @@ class BMUpdateButtonReq
 			$str .= '</ns:BMUpdateButtonReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -13606,7 +13880,22 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+	public function toXMLString()
+	{
+		$flag = 0;
+		foreach($this->ButtonVar as $var){
+			if(strpos($var, 'bn=') !== FALSE){
+     			$flag = 1;
+				break;
+			}
+		}
+		if(!$flag){
+		    array_push($this->ButtonVar, "bn=PayPal_SDK");
+		}
+		return parent::toXMLString();
+	}
+ 
 }
 
 
@@ -13697,7 +13986,8 @@ class BMManageButtonStatusReq
 			$str .= '</ns:BMManageButtonStatusReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -13735,7 +14025,8 @@ class BMManageButtonStatusRequestType  extends AbstractRequestType
 	public $ButtonStatus;
 
 
-   
+  
+ 
 }
 
 
@@ -13782,7 +14073,8 @@ class BMGetButtonDetailsReq
 			$str .= '</ns:BMGetButtonDetailsReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -13814,7 +14106,8 @@ class BMGetButtonDetailsRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -14049,7 +14342,8 @@ class BMSetInventoryReq
 			$str .= '</ns:BMSetInventoryReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -14194,7 +14488,8 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -14241,7 +14536,8 @@ class BMGetInventoryReq
 			$str .= '</ns:BMGetInventoryReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -14275,7 +14571,8 @@ class BMGetInventoryRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -14423,7 +14720,8 @@ class BMButtonSearchReq
 			$str .= '</ns:BMButtonSearchReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -14460,7 +14758,8 @@ class BMButtonSearchRequestType  extends AbstractRequestType
 	public $EndDate;
 
 
-   
+  
+ 
 }
 
 
@@ -14519,7 +14818,8 @@ class RefundTransactionReq
 			$str .= '</ns:RefundTransactionReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -14682,7 +14982,8 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	public $MsgSubID;
 
 
-   
+  
+ 
 }
 
 
@@ -14821,7 +15122,8 @@ class InitiateRecoupReq
 			$str .= '</ns:InitiateRecoupReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -14851,7 +15153,8 @@ class InitiateRecoupRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -14898,7 +15201,8 @@ class CompleteRecoupReq
 			$str .= '</ns:CompleteRecoupReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -14928,7 +15232,8 @@ class CompleteRecoupRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -14986,7 +15291,8 @@ class CancelRecoupReq
 			$str .= '</ns:CancelRecoupReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -15016,7 +15322,8 @@ class CancelRecoupRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -15063,7 +15370,8 @@ class GetTransactionDetailsReq
 			$str .= '</ns:GetTransactionDetailsReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -15094,7 +15402,8 @@ class GetTransactionDetailsRequestType  extends AbstractRequestType
 	public $TransactionID;
 
 
-   
+  
+ 
 }
 
 
@@ -15163,7 +15472,8 @@ class BillUserReq
 			$str .= '</ns:BillUserReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -15199,7 +15509,8 @@ class BillUserRequestType  extends AbstractRequestType
 	public $ReturnFMFDetails;
 
 
-   
+  
+ 
 }
 
 
@@ -15268,7 +15579,8 @@ class TransactionSearchReq
 			$str .= '</ns:TransactionSearchReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -15510,7 +15822,8 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -15569,7 +15882,8 @@ class MassPayReq
 			$str .= '</ns:MassPayReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -15623,7 +15937,7 @@ class MassPayRequestType  extends AbstractRequestType
 	 	 	 	 
 	 * @var string 	 
 	 */ 
-	public $ButtonSource;
+	public $ButtonSource = "PayPal_SDK";
 
 	/**
 	 * Details of each payment. A single MassPayRequest can include
@@ -15646,7 +15960,8 @@ class MassPayRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -15763,7 +16078,8 @@ class MassPayRequestItemType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -15799,7 +16115,8 @@ class BillAgreementUpdateReq
 			$str .= '</ns:BillAgreementUpdateReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -15862,7 +16179,8 @@ class BAUpdateRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -15920,7 +16238,8 @@ class AddressVerifyReq
 			$str .= '</ns:AddressVerifyReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -15987,7 +16306,8 @@ class AddressVerifyRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -16121,7 +16441,8 @@ class EnterBoardingReq
 			$str .= '</ns:EnterBoardingReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -16151,7 +16472,8 @@ class EnterBoardingRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -16215,7 +16537,8 @@ class GetBoardingDetailsReq
 			$str .= '</ns:GetBoardingDetailsReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -16251,7 +16574,8 @@ class GetBoardingDetailsRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -16309,7 +16633,8 @@ class SetAuthFlowParamReq
 			$str .= '</ns:SetAuthFlowParamReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -16339,7 +16664,8 @@ class SetAuthFlowParamRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -16403,7 +16729,8 @@ class GetAuthDetailsReq
 			$str .= '</ns:GetAuthDetailsReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -16437,7 +16764,8 @@ class GetAuthDetailsRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -16495,7 +16823,8 @@ class SetAccessPermissionsReq
 			$str .= '</ns:SetAccessPermissionsReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -16525,7 +16854,8 @@ class SetAccessPermissionsRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -16589,7 +16919,8 @@ class UpdateAccessPermissionsReq
 			$str .= '</ns:UpdateAccessPermissionsReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -16623,7 +16954,8 @@ class UpdateAccessPermissionsRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -16683,7 +17015,8 @@ class GetAccessPermissionDetailsReq
 			$str .= '</ns:GetAccessPermissionDetailsReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -16717,7 +17050,8 @@ class GetAccessPermissionDetailsRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -16775,7 +17109,8 @@ class GetIncentiveEvaluationReq
 			$str .= '</ns:GetIncentiveEvaluationReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -16805,7 +17140,8 @@ class GetIncentiveEvaluationRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -16863,7 +17199,8 @@ class SetExpressCheckoutReq
 			$str .= '</ns:SetExpressCheckoutReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -16893,7 +17230,8 @@ class SetExpressCheckoutRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -16961,7 +17299,8 @@ class ExecuteCheckoutOperationsReq
 			$str .= '</ns:ExecuteCheckoutOperationsReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -16991,7 +17330,8 @@ class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -17049,7 +17389,8 @@ class GetExpressCheckoutDetailsReq
 			$str .= '</ns:GetExpressCheckoutDetailsReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -17083,7 +17424,8 @@ class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -17141,7 +17483,8 @@ class DoExpressCheckoutPaymentReq
 			$str .= '</ns:DoExpressCheckoutPaymentReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -17184,7 +17527,8 @@ class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -17253,7 +17597,8 @@ class DoUATPExpressCheckoutPaymentReq
 			$str .= '</ns:DoUATPExpressCheckoutPaymentReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -17265,7 +17610,8 @@ class DoUATPExpressCheckoutPaymentRequestType  extends DoExpressCheckoutPaymentR
   {
 
 
-   
+  
+ 
 }
 
 
@@ -17323,7 +17669,8 @@ class ManagePendingTransactionStatusReq
 			$str .= '</ns:ManagePendingTransactionStatusReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -17365,7 +17712,8 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -17434,7 +17782,8 @@ class DoDirectPaymentReq
 			$str .= '</ns:DoDirectPaymentReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -17477,7 +17826,8 @@ class DoDirectPaymentRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -17645,7 +17995,8 @@ class DoCancelReq
 			$str .= '</ns:DoCancelReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -17700,7 +18051,8 @@ class DoCancelRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -17758,7 +18110,8 @@ class DoCaptureReq
 			$str .= '</ns:DoCaptureReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -17894,6 +18247,18 @@ class DoCaptureRequestType  extends AbstractRequestType
 	public $MsgSubID;
 
 	/**
+	 * This holds key-value pair which merchants wants to pass it
+	 * to the open wallet-PLCC processorOptional 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var MerchantDataType 	 
+	 */ 
+	public $MerchantData;
+
+	/**
 	 * Constructor with arguments
 	 */
 	public function __construct($AuthorizationID = NULL, $Amount = NULL, $CompleteType = NULL) {
@@ -17903,7 +18268,8 @@ class DoCaptureRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -17961,7 +18327,8 @@ class DoReauthorizationReq
 			$str .= '</ns:DoReauthorizationReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -18029,7 +18396,8 @@ class DoReauthorizationRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -18111,7 +18479,8 @@ class DoVoidReq
 			$str .= '</ns:DoVoidReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -18178,7 +18547,8 @@ class DoVoidRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -18251,7 +18621,8 @@ class DoAuthorizationReq
 			$str .= '</ns:DoAuthorizationReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -18305,6 +18676,142 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	public $Amount;
 
 	/**
+	 * Address the order will be shipped to. Optional 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var AddressType 	 
+	 */ 
+	public $ShipToAddress;
+
+	/**
+	 * Information about the individual purchased items 
+     * @array
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var PaymentDetailsItemType 	 
+	 */ 
+	public $PaymentDetailsItem;
+
+	/**
+	 * Sum of cost of all items in this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * Limitations: Must not exceed $10,000 USD in any currency. No
+	 * currency symbol. Decimal separator must be a period (.), and
+	 * the thousands separator must be a comma (,). 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var BasicAmountType 	 
+	 */ 
+	public $ItemTotal;
+
+	/**
+	 * Total shipping costs for this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * Limitations: Must not exceed $10,000 USD in any currency. No
+	 * currency symbol. Decimal separator must be a period (.), and
+	 * the thousands separator must be a comma (,). 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var BasicAmountType 	 
+	 */ 
+	public $ShippingTotal;
+
+	/**
+	 * Total handling costs for this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * Limitations: Must not exceed $10,000 USD in any currency. No
+	 * currency symbol. Decimal separator must be a period (.), and
+	 * the thousands separator must be a comma (,). 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var BasicAmountType 	 
+	 */ 
+	public $HandlingTotal;
+
+	/**
+	 * Sum of tax for all items in this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * Limitations: Must not exceed $10,000 USD in any currency. No
+	 * currency symbol. Decimal separator must be a period (.), and
+	 * the thousands separator must be a comma (,). 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var BasicAmountType 	 
+	 */ 
+	public $TaxTotal;
+
+	/**
+	 * Total shipping insurance costs for this order. Optional 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var BasicAmountType 	 
+	 */ 
+	public $InsuranceTotal;
+
+	/**
+	 * Shipping discount for this order, specified as a negative
+	 * number. Optional 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var BasicAmountType 	 
+	 */ 
+	public $ShippingDiscount;
+
+	/**
+	 * Description of items the customer is purchasing. Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $OrderDescription;
+
+	/**
+	 * A free-form field for your own use. Optional Character
+	 * length and limitations: 256 single-byte alphanumeric
+	 * characters 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $Custom;
+
+	/**
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 
@@ -18318,6 +18825,17 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	public $MsgSubID;
 
 	/**
+	 * IP Address of the buyer 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $IPAddress;
+
+	/**
 	 * Constructor with arguments
 	 */
 	public function __construct($TransactionID = NULL, $Amount = NULL) {
@@ -18326,7 +18844,8 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -18391,6 +18910,135 @@ class DoAuthorizationResponseType  extends AbstractResponseType
 /**
  * 
  */
+class UpdateAuthorizationReq  
+   extends PPXmlMessage{
+
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var UpdateAuthorizationRequestType 	 
+	 */ 
+	public $UpdateAuthorizationRequest;
+
+
+	public function toXMLString()
+	{
+		    $str = '';
+			$str .= '<ns:UpdateAuthorizationReq>';
+			if($this->UpdateAuthorizationRequest != NULL)
+			{
+		   		$str .= '<ns:UpdateAuthorizationRequest>';
+				$str .= $this->UpdateAuthorizationRequest->toXMLString();
+				$str .= '</ns:UpdateAuthorizationRequest>';
+			}
+			$str .= '</ns:UpdateAuthorizationReq>';
+			return $str;
+	}
+  
+ 
+}
+
+
+
+/**
+ * The value of the authorizationâtransaction identification
+ * number returned by a PayPal product. Required Character
+ * length and limits: 19 single-byte characters maximum 
+ */
+class UpdateAuthorizationRequestType  extends AbstractRequestType  
+  {
+
+	/**
+	 * The value of the authorizationâtransaction identification
+	 * number returned by a PayPal product. Required Character
+	 * length and limits: 19 single-byte characters maximum 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $TransactionID;
+
+	/**
+	 * Shipping Address for this transaction. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var AddressType 	 
+	 */ 
+	public $ShipToAddress;
+
+	/**
+	 * IP Address of the buyer 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $IPAddress;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($TransactionID = NULL) {
+		$this->TransactionID = $TransactionID;
+	}
+
+
+  
+ 
+}
+
+
+
+/**
+ * An authorization identification number. Character length and
+ * limits: 19 single-byte characters 
+ */
+class UpdateAuthorizationResponseType  extends AbstractResponseType  
+  {
+
+	/**
+	 * An authorization identification number. Character length and
+	 * limits: 19 single-byte characters 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $TransactionID;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var AuthorizationInfoType 	 
+	 */ 
+	public $AuthorizationInfo;
+
+
+}
+
+
+
+/**
+ * 
+ */
 class DoUATPAuthorizationReq  
    extends PPXmlMessage{
 
@@ -18419,7 +19067,8 @@ class DoUATPAuthorizationReq
 			$str .= '</ns:DoUATPAuthorizationReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -18501,7 +19150,8 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -18594,7 +19244,8 @@ class CreateMobilePaymentReq
 			$str .= '</ns:CreateMobilePaymentReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -18624,7 +19275,8 @@ class CreateMobilePaymentRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -18671,7 +19323,8 @@ class GetMobileStatusReq
 			$str .= '</ns:GetMobileStatusReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -18701,7 +19354,8 @@ class GetMobileStatusRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -18784,7 +19438,8 @@ class SetMobileCheckoutReq
 			$str .= '</ns:SetMobileCheckoutReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -18814,7 +19469,8 @@ class SetMobileCheckoutRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -18878,7 +19534,8 @@ class DoMobileCheckoutPaymentReq
 			$str .= '</ns:DoMobileCheckoutPaymentReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -18912,7 +19569,8 @@ class DoMobileCheckoutPaymentRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -18970,7 +19628,8 @@ class GetBalanceReq
 			$str .= '</ns:GetBalanceReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -18993,7 +19652,8 @@ class GetBalanceRequestType  extends AbstractRequestType
 	public $ReturnAllCurrencies;
 
 
-   
+  
+ 
 }
 
 
@@ -19074,7 +19734,8 @@ class SetCustomerBillingAgreementReq
 			$str .= '</ns:SetCustomerBillingAgreementReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -19104,7 +19765,8 @@ class SetCustomerBillingAgreementRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -19162,7 +19824,8 @@ class GetBillingAgreementCustomerDetailsReq
 			$str .= '</ns:GetBillingAgreementCustomerDetailsReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -19192,7 +19855,8 @@ class GetBillingAgreementCustomerDetailsRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -19250,7 +19914,8 @@ class CreateBillingAgreementReq
 			$str .= '</ns:CreateBillingAgreementReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -19280,7 +19945,8 @@ class CreateBillingAgreementRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -19338,7 +20004,8 @@ class DoReferenceTransactionReq
 			$str .= '</ns:DoReferenceTransactionReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -19381,7 +20048,8 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -19450,7 +20118,8 @@ class DoNonReferencedCreditReq
 			$str .= '</ns:DoNonReferencedCreditReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -19480,7 +20149,8 @@ class DoNonReferencedCreditRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -19538,7 +20208,8 @@ class CreateRecurringPaymentsProfileReq
 			$str .= '</ns:CreateRecurringPaymentsProfileReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -19561,7 +20232,8 @@ class CreateRecurringPaymentsProfileRequestType  extends AbstractRequestType
 	public $CreateRecurringPaymentsProfileRequestDetails;
 
 
-   
+  
+ 
 }
 
 
@@ -19619,7 +20291,8 @@ class GetRecurringPaymentsProfileDetailsReq
 			$str .= '</ns:GetRecurringPaymentsProfileDetailsReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -19649,7 +20322,8 @@ class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -19707,7 +20381,8 @@ class ManageRecurringPaymentsProfileStatusReq
 			$str .= '</ns:ManageRecurringPaymentsProfileStatusReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -19730,7 +20405,8 @@ class ManageRecurringPaymentsProfileStatusRequestType  extends AbstractRequestTy
 	public $ManageRecurringPaymentsProfileStatusRequestDetails;
 
 
-   
+  
+ 
 }
 
 
@@ -19788,7 +20464,8 @@ class BillOutstandingAmountReq
 			$str .= '</ns:BillOutstandingAmountReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -19811,7 +20488,8 @@ class BillOutstandingAmountRequestType  extends AbstractRequestType
 	public $BillOutstandingAmountRequestDetails;
 
 
-   
+  
+ 
 }
 
 
@@ -19869,7 +20547,8 @@ class UpdateRecurringPaymentsProfileReq
 			$str .= '</ns:UpdateRecurringPaymentsProfileReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -19892,7 +20571,8 @@ class UpdateRecurringPaymentsProfileRequestType  extends AbstractRequestType
 	public $UpdateRecurringPaymentsProfileRequestDetails;
 
 
-   
+  
+ 
 }
 
 
@@ -19950,7 +20630,8 @@ class GetPalDetailsReq
 			$str .= '</ns:GetPalDetailsReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -19962,7 +20643,8 @@ class GetPalDetailsRequestType  extends AbstractRequestType
   {
 
 
-   
+  
+ 
 }
 
 
@@ -20031,7 +20713,8 @@ class ReverseTransactionReq
 			$str .= '</ns:ReverseTransactionReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -20061,7 +20744,8 @@ class ReverseTransactionRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 
@@ -20119,7 +20803,8 @@ class ExternalRememberMeOptOutReq
 			$str .= '</ns:ExternalRememberMeOptOutReq>';
 			return $str;
 	}
-   
+  
+ 
 }
 
 
@@ -20169,7 +20854,8 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType
 	}
 
 
-   
+  
+ 
 }
 
 

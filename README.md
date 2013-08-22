@@ -1,4 +1,3 @@
-
 # PayPal PHP Merchant SDK
 
    The merchant SDK can be used for integrating with the Express Checkout, Mass Pay, Web Payments Pro APIs.
@@ -36,7 +35,7 @@ To use the SDK,
 {
     "name": "me/shopping-cart-app",
     "require": {
-        "paypal/merchant-sdk-php":"v2.4.103"
+        "paypal/merchant-sdk-php":"v2.5.106"
     }
 }
 ```
