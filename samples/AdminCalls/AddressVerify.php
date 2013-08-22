@@ -18,9 +18,9 @@ $addrVerifyReq->AddressVerifyRequest = $addressVerifyRequest;
 /*
  * 		// ## Creating service wrapper object
 		// Creating service wrapper object to make API call and loading
-		// configuration file for your credentials and endpoint
- */
-$paypalService = new PayPalAPIInterfaceServiceService();
+Configuration::getAcctAndConfig() returns array that contains credential and config parameters
+*/
+$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$addrVerifyResponse = $paypalService->AddressVerify($addrVerifyReq);

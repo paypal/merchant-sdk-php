@@ -7,7 +7,6 @@
 </head>
 <body>
 	<div id="wrapper">
-		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png">
 		<div id="header">
 			<h3>DoExpressCheckout</h3>
 			<div id="apidetails">Used to make checkout payment</div>
@@ -54,15 +53,7 @@
 							maxlength="260" />
 					</div>
 				</div>
-				
-				<div class="params">
-					<div class="param_name">IPN listener URL</div>
-					<div class="param_value">
-						<input type="text" name="notifyURL" value="" size="50"
-							maxlength="260" />
-					</div>
-				</div>
-
+		
 				<div class="submit">
 					<input type="submit" name="DoExpressCheckoutBtn"
 						value="DoExpressCheckout" /> <br />

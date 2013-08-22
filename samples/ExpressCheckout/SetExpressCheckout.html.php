@@ -19,6 +19,7 @@ function display(value) {
 </head>
 <body>
 	<div id="wrapper">
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png">
 		<div id="header">
 			<h3>SetExpressCheckout</h3>
 		</div>

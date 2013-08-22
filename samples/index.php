@@ -72,6 +72,9 @@ td {
 						href="RecurringPayments/CreateRecurringPaymentsProfile.html.php">CreateRecurringPaymentsProfile</a>
 					</li>
 					<li><a
+						href="RecurringPayments/UpdateRecurringPaymentsProfile.html.php">UpdateRecurringPaymentsProfile</a>
+					</li>
+					<li><a
 						href="RecurringPayments/GetRecurringPaymentsProfileDetails.html.php">GetRecurringPaymentsProfileDetails</a>
 					</li>
 					<li><a
@@ -118,6 +121,18 @@ td {
 				<ul>
 					<li><a href="Onboarding/EnterBoarding.html.php">EnterBoarding</a></li>
 					<li><a href="Onboarding/GetBoardingDetails.html.php">GetBoardingDetails</a>
+					</li>
+				</ul>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td><b>Sample Usecases</b>
+				<ul>
+					<li><a href="Simplesamples/SetExpresscheckout.html.php">SetExpressCheckout - Simple Pay</a></li>
+					<li><a href="Simplesamples/DoExpresscheckout.html.php">DoExpressCheckout - Simple Pay</a>
+					</li>
+					<li><a href="Simplesamples/CreateRecurringPaymentsProfileUsingCreditCard.html.php">Recurring Payments Using Credit Card</a></li>
+					<li><a href="Simplesamples/ParallelPayment.html.php">ParellelPayment with Express Checkout</a>
 					</li>
 				</ul>
 			</td>
