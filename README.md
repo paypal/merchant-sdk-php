@@ -22,7 +22,7 @@ If using composer, run `composer update` from the samples folder. Otherwise, run
     curl  https://raw.github.com/paypal/merchant-sdk-php/stable/samples/install.php | php
         OR       
     php install.php
-
+```
 
 ## Using the SDK
 
