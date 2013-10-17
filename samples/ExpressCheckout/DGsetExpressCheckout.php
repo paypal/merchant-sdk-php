@@ -15,7 +15,7 @@ session_start();
 */
 $serverName = $_SERVER['SERVER_NAME'];
 $serverPort = $_SERVER['SERVER_PORT'];
-$url=dirname('http://'.$serverName.':'.$serverPort.$_SERVER['REQUEST_URI']);
+$url = dirname('http://'.$serverName.':'.$serverPort.$_SERVER['REQUEST_URI']);
 
 /*
  * URL to which the buyer's browser is returned after choosing to pay with PayPal. For digital goods, you must add JavaScript to this page to close the in-context experience.
@@ -73,20 +73,20 @@ $setECReqDetails->ReturnURL = $returnUrl;
 /*
  * Indicates whether or not you require the buyer's shipping address on file with PayPal be a confirmed address. For digital goods, this field is required, and you must set it to 0. It is one of the following values:
 
-    0 – You do not require the buyer's shipping address be a confirmed address.
+    0 ï¿½ You do not require the buyer's shipping address be a confirmed address.
 
-    1 – You require the buyer's shipping address be a confirmed address.
+    1 ï¿½ You require the buyer's shipping address be a confirmed address.
 
  */
 $setECReqDetails->ReqConfirmShipping = 0;
 /*
  * Determines where or not PayPal displays shipping address fields on the PayPal pages. For digital goods, this field is required, and you must set it to 1. It is one of the following values:
 
-    0 – PayPal displays the shipping address on the PayPal pages.
+    0 ï¿½ PayPal displays the shipping address on the PayPal pages.
 
-    1 – PayPal does not display shipping address fields whatsoever.
+    1 ï¿½ PayPal does not display shipping address fields whatsoever.
 
-    2 – If you do not pass the shipping address, PayPal obtains it from the buyer's account profile.
+    2 ï¿½ If you do not pass the shipping address, PayPal obtains it from the buyer's account profile.
 
  */
 $setECReqDetails->NoShipping = 1;
@@ -107,7 +107,7 @@ Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
 $paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
-$setECResponse = $PayPal_service->SetExpressCheckout($setECReq);
+$setECResponse = $paypalService->SetExpressCheckout($setECReq);
 // echo '<pre>';
 //print_r($setECResponse);
 // echo '</pre>';
