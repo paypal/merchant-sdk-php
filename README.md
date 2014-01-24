@@ -76,7 +76,7 @@ For example,
 	$setECResponse = $paypalService->SetExpressCheckout($setECReq);
 	
     // Check results
-	if($strtoupper($setECResponse->Ack) == 'SUCCESS') {
+	if(strtoupper($setECResponse->Ack) == 'SUCCESS') {
 		// Success
 	}  
 ```
