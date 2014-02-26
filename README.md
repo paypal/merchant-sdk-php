@@ -1,3 +1,5 @@
+#### THIS SDK is deprecated. It is strongly recommended that new implementations use the [Rest SDK](https://github.com/paypal/rest-api-sdk-php)
+
 # PayPal PHP Merchant SDK
 
    The merchant SDK can be used for integrating with the Express Checkout, Mass Pay, Web Payments Pro APIs.
