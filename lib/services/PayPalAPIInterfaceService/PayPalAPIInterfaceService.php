@@ -2561,6 +2561,18 @@ class BuyerDetailType
 	 */ 
 	public $IdentificationInfo;
 
+	/**
+	 * Correlation id related to risk process done for the device.
+	 * Max length is 36 Chars.
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $RiskSessionCorrelationID;
+
 
   
  
@@ -3488,6 +3500,18 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $SkipBACreation;
 
 	/**
+	 * Merchant specified flag which indicates to use payment
+	 * details from session if available. Optional 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $UseSessionPaymentDetails;
+
+	/**
 	 * Optional element that defines relationship between buckets 
      * @array
 	 * @access public
@@ -3657,6 +3681,18 @@ class DoCaptureResponseDetailsType
 	 * @var string 	 
 	 */ 
 	public $MsgSubID;
+
+	/**
+	 * Partner funding source id corresponding to the FS used in
+	 * authorization. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $PartnerFundingSourceID;
 
 
 }
@@ -5541,7 +5577,8 @@ class InstrumentDetailsType
 
 	/**
 	 * This field holds the category of the instrument only when it
-	 * is promotional. Return value 1 represents BML. 
+	 * is promotional. Return value 1 represents BML, 2 reprasents
+	 * PLCC/Cobranded. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -5550,6 +5587,18 @@ class InstrumentDetailsType
 	 * @var string 	 
 	 */ 
 	public $InstrumentCategory;
+
+	/**
+	 * This field holds the InstrumentID issued by external party
+	 * corresponding to the funding source used in payment. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $InstrumentID;
 
 
 }
