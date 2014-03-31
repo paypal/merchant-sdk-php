@@ -11,7 +11,7 @@ PayPal's PHP Merchant SDK requires
 
 ## Running the sample
 
-To run the bundled sample, first copy the samples folder to your web server root. You will then need to install the SDK as a dependency using either composer (PHP V5.3+ only).
+To run the bundled sample, first copy the samples folder to your web server root. You will then need to install the SDK as a dependency using composer (PHP V5.3+ only).
 
 
 run `composer update` from the samples folder.
@@ -31,7 +31,7 @@ To use the SDK,
     }
 }
 ```
-   * Install the SDK as a dependency using composer or the install.php script. 
+   * Install the SDK as a dependency using composer. 
    * Require `vendor/autoload.php` OR `PPBootStrap.php` in your application depending on whether you used composer or the custom installer.
    * Choose how you would like to configure the SDK - You can either
 	  * Create a hashmap containing configuration parameters and pass it to the service object OR
