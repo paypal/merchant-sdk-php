@@ -1,6 +1,8 @@
 # PayPal PHP Merchant SDK
 
    The merchant SDK can be used for integrating with the Express Checkout, Mass Pay, Web Payments Pro APIs.
+   
+#### This SDK is deprecated. It is strongly recommended that new implementations use the [PHP Rest SDK](https://github.com/paypal/rest-api-sdk-php)
 
 ## Prerequisites
 
@@ -22,7 +24,7 @@ If using composer, run `composer update` from the samples folder. Otherwise, run
     curl  https://raw.github.com/paypal/merchant-sdk-php/stable/samples/install.php | php
         OR       
     php install.php
-
+```
 
 ## Using the SDK
 
@@ -76,7 +78,7 @@ For example,
 	$setECResponse = $paypalService->SetExpressCheckout($setECReq);
 	
     // Check results
-	if($strtoupper($setECResponse->Ack) == 'SUCCESS') {
+	if(strtoupper($setECResponse->Ack) == 'SUCCESS') {
 		// Success
 	}  
 ```

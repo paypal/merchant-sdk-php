@@ -1,5 +1,13 @@
 ### CHANGELOG
 
+## Version 2.6.112 - April 9, 2014
+ 
+   - Updated stubs for 112 release, useSessionPaymentDetails option added
+	
+You can see source code of this release in github under https://github.com/paypal/merchant-sdk-php/tree/v2.5.106.
+
+--------------------------------------------------------------------------------------------------
+
 ## Version 2.5.106 - August 22, 2013
  
    - Updated stubs.
