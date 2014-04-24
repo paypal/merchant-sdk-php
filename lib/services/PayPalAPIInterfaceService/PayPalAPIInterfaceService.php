@@ -3326,6 +3326,20 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	public $OrderURL;
 
 	/**
+	 * Unique id for each API request to prevent duplicate payments
+	 * on merchant side. Passed directly back to merchant in
+	 * response. Optional Character length and limits: 38
+	 * single-byte characters maximum. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $MsgSubID;
+
+	/**
 	 * Information about the payment Required 
      * @array
 	 * @access public
@@ -3599,6 +3613,17 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 * @var string 	 
 	 */ 
 	public $Note;
+
+	/**
+	 * Unique id passed in the DoEC call. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $MsgSubID;
 
 	/**
 	 * Redirect back to PayPal, PayPal can host the success page. 
@@ -5538,6 +5563,19 @@ class PayerInfoType
 	 * @var string 	 
 	 */ 
 	public $ContactPhone;
+
+	/**
+	 * Items such as merchant coupons, loyalty cards, and
+	 * manufacturer coupons in the PayPal wallet.
+     * @array
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var WalletItemsType 	 
+	 */ 
+	public $WalletItems;
 
 	/**
 	 * Details about payer's tax info. Refer to the
@@ -7509,6 +7547,32 @@ class PaymentDetailsType
 	 * @var string 	 
 	 */ 
 	public $PaymentReason;
+
+	/**
+	 * For instance single use coupons should not be returned in
+	 * future CheckIn calls once they are redeemed. 
+     * @array
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var DiscountInfoType 	 
+	 */ 
+	public $RedeemedOffers;
+
+	/**
+	 * Total loyalty points for a given id accumulated by the
+	 * consumre so far. 
+     * @array
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var DiscountInfoType 	 
+	 */ 
+	public $CummulativePoints;
 
 
   
@@ -13138,6 +13202,139 @@ class MerchantDataType
 	 * @var TupleType 	 
 	 */ 
 	public $MerchantDataTuple;
+
+
+  
+ 
+}
+
+
+
+/**
+ * Details about an Item stored in the PayPal Wallet. 
+ */
+class WalletItemsType  
+   extends PPXmlMessage{
+
+	/**
+	 * (Optional)Identifies a wallet item of a given type. The
+	 * format varies depending on the type. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $Type;
+
+	/**
+	 * (Optional)Uniquely identifies a wallet item of given type.
+	 * Format varies depending on the type. Character length and
+	 * limitations: 64 single-byte characters maximum. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $Id;
+
+	/**
+	 * (Optional)Description of wallet item. Character length and
+	 * limitations: 512 single-byte characters maximum. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $Description;
+
+
+  
+ 
+}
+
+
+
+/**
+ * Describes discount information. 
+ */
+class DiscountInfoType  
+   extends PPXmlMessage{
+
+	/**
+	 * (Optional)Item name. Character length and limits: 127
+	 * single-byte characters 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $Name;
+
+	/**
+	 * (Optional)Description of the discount. Character length and
+	 * limits: 127 single-byte characters 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $Description;
+
+	/**
+	 * (Optional)Amount discounted. The value includes an amount
+	 * and a 3-character currency code. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var BasicAmountType 	 
+	 */ 
+	public $Amount;
+
+	/**
+	 * (Optional)Offer type. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $RedeemedOfferType;
+
+	/**
+	 * (Optional)Offer ID. Character length and limits: 64
+	 * single-byte characters. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $RedeemedOfferId;
+
+	/**
+	 * (Optional)Loyalty points accrued. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var double 	 
+	 */ 
+	public $PointsAccrued;
 
 
   
