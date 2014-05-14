@@ -1,10 +1,18 @@
 ### CHANGELOG
 
+## Version 2.8.114 - May 14, 2014
+
+  - Updated stubs for 114 release, Idempotency for DoExpressCheckoutPaymentReq
+
+You can see source code of this release in github under https://github.com/paypal/merchant-sdk-php/tree/v2.8.114.
+
+--------------------------------------------------------------------------------------------------
+
 ## Version 2.7.113 - April 24, 2014
 
   - Updated stubs for 113 release, Wallet Items and Discount Type option added
 
-You can see source code of this release in github under https://github.com/paypal/merchant-sdk-php/tree/v2.5.106.
+You can see source code of this release in github under https://github.com/paypal/merchant-sdk-php/tree/v2.7.113.
 
 --------------------------------------------------------------------------------------------------
 
@@ -12,7 +20,7 @@ You can see source code of this release in github under https://github.com/paypa
  
    - Updated stubs for 112 release, useSessionPaymentDetails option added
 	
-You can see source code of this release in github under https://github.com/paypal/merchant-sdk-php/tree/v2.5.106.
+You can see source code of this release in github under https://github.com/paypal/merchant-sdk-php/tree/v2.6.112.
 
 --------------------------------------------------------------------------------------------------
 
