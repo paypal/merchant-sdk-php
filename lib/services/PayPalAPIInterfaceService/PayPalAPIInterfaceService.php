@@ -3537,6 +3537,28 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 */ 
 	public $CoupledBuckets;
 
+	/**
+	 * Optional element for the passing client id 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $ClientID;
+
+	/**
+	 * Optional element for the passing product lines 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $ProductLine;
+
 
   
  
