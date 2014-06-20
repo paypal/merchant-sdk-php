@@ -1,6 +1,12 @@
-### CHANGELOG
+###CHANGELOG
+#### Version 2.9.115 - June 20, 2014
+ 
+   - Updated stubs for 115 release. SoftDescriptor and SoftDescriptorCity for DoDirectPayment
+You can see source code of this release in github under https://github.com/paypal/merchant-sdk-php/tree/v2.8.115.
 
-## Version 2.8.114 - May 14, 2014
+--------------------------------------------------------------------------------------------------
+
+####Version 2.8.114 - May 14, 2014
 
   - Updated stubs for 114 release, Idempotency for DoExpressCheckoutPaymentReq
 

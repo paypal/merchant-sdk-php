@@ -3837,6 +3837,42 @@ class DoDirectPaymentRequestDetailsType
 	 */ 
 	public $ReturnFMFDetails;
 
+	/**
+	 * Use this optional parameter to pass in your business name
+	 * and other data describing the transaction. Optional This
+	 * information is usually displayed in the account holder's
+	 * statement. Example: RedCross Haiti, RedCross Uganda,
+	 * Realtor.com dues, Realtor.com list fee Length 25 characters.
+	 * Alphanumeric characters and dash(-), dot(.), asterisk(*),
+	 * space( ) On the customer's statement, an asterisk is used to
+	 * separate the DBA name and product name. The asterisk
+	 * delimiter can appear in position 4, 8, or 13. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $SoftDescriptor;
+
+	/**
+	 * Use this optional parameter to pass information about how
+	 * consumer should contact the merchant. Optional This
+	 * information is usually displayed in the account holder's
+	 * statement. For Ecom trx: phone, email or URL is allowed For
+	 * Retail trx: only the actual city is allowed For details on
+	 * allowed characters in Soft Descriptor City refer to the API
+	 * documentation. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $SoftDescriptorCity;
+
 
   
  
@@ -6264,6 +6300,32 @@ class PaymentInfoType
 	 */ 
 	public $BinEligibility;
 
+	/**
+	 * This information holds business name and other data
+	 * describing the transaction. This information is usually
+	 * displayed in the CC account holder's statement. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $SoftDescriptor;
+
+	/**
+	 * CC Information about how consumer should contact the
+	 * merchant. This information is usually displayed in the CC
+	 * account holder's statement. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $SoftDescriptorCity;
+
 
 }
 
@@ -7347,6 +7409,17 @@ class PaymentDetailsType
 	 	 	 	 
 	 * @var string 	 
 	 */ 
+	public $LocationType;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
 	public $ShippingMethod;
 
 	/**
@@ -7569,6 +7642,18 @@ class PaymentDetailsType
 	 * @var string 	 
 	 */ 
 	public $PaymentReason;
+
+	/**
+	 * Location ID Specified by merchant Optional Character length
+	 * and limitations: 50 single-byte alphanumeric characters 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $LocationID;
 
 	/**
 	 * For instance single use coupons should not be returned in
@@ -10708,6 +10793,42 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	public $PaymentDetailsItem;
 
 	/**
+	 * Use this optional parameter to pass in your business name
+	 * and other data describing the transaction. Optional This
+	 * information is usually displayed in the CC account holder's
+	 * statement. Example: RedCross Haiti, RedCross Uganda,
+	 * Realtor.com dues, Realtor.com list fee Length 25 characters.
+	 * Alphanumeric characters and dash(-), dot(.), asterisk(*),
+	 * space( ) On the customer's statement, an asterisk is used to
+	 * separate the DBA name and product name. The asterisk
+	 * delimiter can appear in position 4, 8, or 13. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $SoftDescriptor;
+
+	/**
+	 * Use this optional parameter to pass information about how
+	 * consumer should contact the merchant. Optional This
+	 * information is usually displayed in the CC account holder's
+	 * statement. For Ecom trx: phone, email or URL is allowed For
+	 * Retail trx: only the actual city is allowed For details on
+	 * allowed characters in Soft Descriptor City refer to the API
+	 * documentation. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $SoftDescriptorCity;
+
+	/**
 	 * Constructor with arguments
 	 */
 	public function __construct($RecurringPaymentsProfileDetails = NULL, $ScheduleDetails = NULL) {
@@ -10969,6 +11090,42 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	 * @var dateTime 	 
 	 */ 
 	public $FinalPaymentDueDate;
+
+	/**
+	 * Use this optional parameter to pass in your business name
+	 * and other data describing the transaction. Optional This
+	 * information is usually displayed in the account holder's
+	 * statement. Example: RedCross Haiti, RedCross Uganda,
+	 * Realtor.com dues, Realtor.com list fee Length 25 characters.
+	 * Alphanumeric characters and dash(-), dot(.), asterisk(*),
+	 * space( ) On the customer's statement, an asterisk is used to
+	 * separate the DBA name and product name. The asterisk
+	 * delimiter can appear in position 4, 8, or 13. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $SoftDescriptor;
+
+	/**
+	 * Use this optional parameter to pass information about how
+	 * consumer should contact the merchant. Optional This
+	 * information is usually displayed in the account holder's
+	 * statement. For Ecom trx: phone, email or URL is allowed For
+	 * Retail trx: only the actual city is allowed For details on
+	 * allowed characters in Soft Descriptor City refer to the API
+	 * documentation. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $SoftDescriptorCity;
 
 
 }
