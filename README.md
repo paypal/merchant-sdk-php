@@ -136,7 +136,11 @@ Please refer to the sample config file provided with this bundle for more.
 
 Please refer to the IPN-README in 'samples/IPN' directory.
 
+## Troubleshooting
+
+   * [Issue with running samples](https://github.com/paypal/merchant-sdk-php/issues/68)
+
 ## Links
 
    * API Reference - https://developer.paypal.com/webapps/developer/docs/classic/api/#merchant
-   * If you need help using the SDK, a new feature that you need or have a issue to report, please visit https://github.com/paypal/merchant-sdk-php/issues 
+   * If you need help using the SDK, a new feature that you need or have a issue to report, please visit https://github.com/paypal/merchant-sdk-php/issues
