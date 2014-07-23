@@ -1,7 +1,16 @@
 ###CHANGELOG
-#### Version 2.9.115 - June 20, 2014
+#### Version 2.10.116 - July 23, 2014
  
-   - Updated stubs for 115 release. SoftDescriptor and SoftDescriptorCity for DoDirectPayment
+   - Updated stubs for 116 release. CartChangeTolerance, FinancingFeeAmount, FinancingTotalCost, ShipToStore added.
+	
+You can see source code of this release in github under https://github.com/paypal/merchant-sdk-php/tree/v2.10.116.
+
+--------------------------------------------------------------------------------------------------
+
+####Version 2.9.115 - June 20, 2014
+ 
+   - Updated stubs for 115 release
+	
 You can see source code of this release in github under https://github.com/paypal/merchant-sdk-php/tree/v2.8.115.
 
 --------------------------------------------------------------------------------------------------
