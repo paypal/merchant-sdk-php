@@ -2741,10 +2741,11 @@ class FundingSourceDetailsType
 	public $AllowPushFunding;
 
 	/**
-	 * Allowable values: ELV, CreditCard, ChinaUnionPay, BML This
-	 * element could be used to specify the perered funding option
-	 * for a guest users. It has effect only if LandingPage element
-	 * is set to Billing. Otherwise it will be ignored. 
+	 * Allowable values: ELV, CreditCard, ChinaUnionPay, BML,
+	 * Finance This element could be used to specify the preferred
+	 * funding option for a guest users. It has effect only if
+	 * LandingPage element is set to Billing. Otherwise it will be
+	 * ignored. 
 	 * @access public
 	 
 	 * @namespace ebl
@@ -3126,6 +3127,33 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @var RefreshTokenStatusDetailsType 	 
 	 */ 
 	public $RefreshTokenStatusDetails;
+
+	/**
+	 * Information about the transaction 
+     * @array
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var PaymentInfoType 	 
+	 */ 
+	public $PaymentInfo;
+
+	/**
+	 * Indicate the tolerance a cart can be changed. Possible
+	 * values are NONE = cart cannot be changed (since financing
+	 * was used and country is DE). FLEXIBLE = cart can be changed
+	 * If this parameter does not exist, then assume cart can be
+	 * modified. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $CartChangeTolerance;
 
 
 }
@@ -5912,6 +5940,62 @@ class PaymentInfoType
 	 * @var BasicAmountType 	 
 	 */ 
 	public $FeeAmount;
+
+	/**
+	 * Transaction financing fee associated with the payment. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var BasicAmountType 	 
+	 */ 
+	public $FinancingFeeAmount;
+
+	/**
+	 * Total overall cost associated with this financing
+	 * transaction. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var BasicAmountType 	 
+	 */ 
+	public $FinancingTotalCost;
+
+	/**
+	 * Monthly payment for this financing transaction. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var BasicAmountType 	 
+	 */ 
+	public $FinancingMonthlyPayment;
+
+	/**
+	 * The length of this financing term, in months. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $FinancingTerm;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $IsFinancing;
 
 	/**
 	 * Amount deposited into the account's primary balance after a
@@ -19261,6 +19345,18 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	public $IPAddress;
 
 	/**
+	 * A flag indicating that this transaction is a Ship to Store
+	 * transaction. Optional 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $ShipToStore;
+
+	/**
 	 * Constructor with arguments
 	 */
 	public function __construct($TransactionID = NULL, $Amount = NULL) {
@@ -19411,6 +19507,18 @@ class UpdateAuthorizationRequestType  extends AbstractRequestType
 	 * @var string 	 
 	 */ 
 	public $IPAddress;
+
+	/**
+	 * A flag indicating that this transaction is a Ship to Store
+	 * transaction. Optional 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $ShipToStore;
 
 	/**
 	 * Constructor with arguments
