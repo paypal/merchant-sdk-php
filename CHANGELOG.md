@@ -1,4 +1,12 @@
 ###CHANGELOG
+#### Version 2.11.117 - August 22, 2014
+ 
+   - Updated stubs for 117 release
+   - InstrumentDetails, InstrumentCategory, InstrumentID, MerchantData
+  
+You can see source code of this release in github under https://github.com/paypal/merchant-sdk-php/tree/v2.11.117.
+
+--------------------------------------------------------------------------------------------------
 #### Version 2.10.116 - July 23, 2014
  
    - Updated stubs for 116 release. CartChangeTolerance, FinancingFeeAmount, FinancingTotalCost, ShipToStore added.
