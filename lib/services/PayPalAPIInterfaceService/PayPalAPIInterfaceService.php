@@ -2335,6 +2335,18 @@ class SetDataRequestType
 	 */ 
 	public $ExternalPartnerTrackingDetails;
 
+	/**
+	 * URI(uniform resource identifier), the source from which the
+	 * request is initiated. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $URI;
+
 
   
  
@@ -3154,6 +3166,17 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * @var string 	 
 	 */ 
 	public $CartChangeTolerance;
+
+	/**
+	 * Type of the payment instrument. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var InstrumentDetailsType 	 
+	 */ 
+	public $InstrumentDetails;
 
 
 }
@@ -7765,6 +7788,19 @@ class PaymentDetailsType
 	 */ 
 	public $CummulativePoints;
 
+	/**
+	 * Merchant Data that is passed through from Merchant to
+	 * Processor 
+     * @array
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var MerchantDataType 	 
+	 */ 
+	public $MerchantData;
+
 
   
  
@@ -9073,6 +9109,17 @@ class DoReferenceTransactionRequestDetailsType
 	 * @var string 	 
 	 */ 
 	public $SoftDescriptor;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $SoftDescriptorCity;
 
 	/**
 	 * 
