@@ -37,7 +37,7 @@ class Configuration
 		
 				);
 		
-		return array_merge($config, self::getConfig());;
+		return array_merge($config, self::getConfig());
 	}
 
 }
