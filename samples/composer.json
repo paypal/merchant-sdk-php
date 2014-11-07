@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.2.0",
         "ext-curl": "*",
-        "paypal/merchant-sdk-php":"v2.*",
-        "paypal/permissions-sdk-php":"v2.*"
+        "paypal/merchant-sdk-php":"2.*",
+        "paypal/permissions-sdk-php":"2.*"
     }
 }
