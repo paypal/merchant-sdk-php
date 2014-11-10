@@ -22,7 +22,7 @@ $getExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType($to
 $getExpressCheckoutReq = new GetExpressCheckoutDetailsReq();
 $getExpressCheckoutReq->GetExpressCheckoutDetailsRequest = $getExpressCheckoutDetailsRequest;
 
-$paypalService = new PayPalAPIInterfaceServiceService();
+$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
 $getECResponse = $paypalService->GetExpressCheckoutDetails($getExpressCheckoutReq);
 
 //--------------------------------------------------------------------
@@ -85,6 +85,7 @@ if($DoECResponse->Ack == 'Success')
 {
 	?>
 <html>
+<head>
 <script>
 alert("Payment Successful")
 top.dg.closeFlow();
