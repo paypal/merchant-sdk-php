@@ -71,7 +71,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	protected static $SDK_NAME = "merchant-php-sdk";
 
 	// SDK Version
-	protected static $SDK_VERSION = "3.6.106";
+	protected static $SDK_VERSION = "3.8.107";
 
     /**
     * @param $config - Dynamic config map. This takes the higher precedence if config file is also present.
