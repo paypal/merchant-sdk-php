@@ -1,4 +1,36 @@
 # PayPal PHP Merchant SDK
+## POODLE Update
+- Because of the Poodle vulnerability, PayPal has disabled SSLv3. 
+- To enable TLS encryption, the changes were made to [PPHttpConfig.php](https://github.com/paypal/sdk-core-php/blob/master/lib/PPHttpConfig.php#L9) in [SDK Core](https://github.com/paypal/sdk-core-php) to use a cipher list specific to TLS encryption.
+``` php
+    /**
+	 * Some default options for curl
+	 * These are typically overridden by PPConnectionManager
+	 */
+	public static $DEFAULT_CURL_OPTS = array(
+		CURLOPT_SSLVERSION => 1,
+		CURLOPT_CONNECTTIMEOUT => 10,
+		CURLOPT_RETURNTRANSFER => TRUE,
+		CURLOPT_TIMEOUT        => 60,	// maximum number of seconds to allow cURL functions to execute
+		CURLOPT_USERAGENT      => 'PayPal-PHP-SDK',
+		CURLOPT_HTTPHEADER     => array(),
+		CURLOPT_SSL_VERIFYHOST => 2,
+		CURLOPT_SSL_VERIFYPEER => 1,
+		CURLOPT_SSL_CIPHER_LIST => 'TLSv1',
+	);
+```
+- There are two primary changes done to curl options: 
+    - CURLOPT_SSLVERSION is set to 1 . See [here](http://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html) for more information
+    - CURLOPT_SSL_CIPHER_LIST was set to TLSv1, See [here](http://curl.haxx.se/libcurl/c/CURLOPT_SSL_CIPHER_LIST.html) for more information
+
+All these changes are included in the recent release, along with many other bug fixes. We highly encourage you to update your versions, by either using `composer` or running this command shown below:
+
+```
+curl -L https://raw.github.com/paypal/adaptiveaccounts-sdk-php/stable/samples/install.php | php    
+        OR        
+wget  https://raw.github.com/paypal/adaptiveaccounts-sdk-php/stable/samples/install.php
+php install.php
+```
 
 #### This Classic SDK is not actively supported and will be deprecated in the future. For full support on new integrations, please use the [PHP Rest SDK](https://github.com/paypal/rest-api-sdk-php)
    
