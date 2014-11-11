@@ -26,9 +26,9 @@
 All these changes are included in the recent release, along with many other bug fixes. We highly encourage you to update your versions, by either using `composer` or running this command shown below:
 
 ```
-curl -L https://raw.github.com/paypal/adaptiveaccounts-sdk-php/stable/samples/install.php | php    
+curl -k -L https://raw.githubusercontent.com/paypal/merchant-sdk-php/stable/samples/install.php | php    
         OR        
-wget  https://raw.github.com/paypal/adaptiveaccounts-sdk-php/stable/samples/install.php
+wget  https://raw.githubusercontent.com/paypal/merchant-sdk-php/stable/samples/install.php
 php install.php
 ```
 
