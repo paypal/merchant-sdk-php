@@ -64,7 +64,6 @@ currencies.
 * `Amount`
 */
 $paymentDetails->OrderTotal = new BasicAmountType('USD', $_POST['amount']);
-$paymentDetails->PaymentAction = $_REQUEST['paymentType'];
 /*
  * 		Your URL for receiving Instant Payment Notification (IPN) about this transaction. If you do not specify this value in the request, the notification URL from your Merchant Profile is used, if one exists.
 
@@ -115,6 +114,7 @@ $cardDetails->CardOwner = $payer;
 $ddReqDetails = new DoDirectPaymentRequestDetailsType();
 $ddReqDetails->CreditCard = $cardDetails;
 $ddReqDetails->PaymentDetails = $paymentDetails;
+$ddReqDetails->PaymentAction = $_REQUEST['paymentType'];
 
 $doDirectPaymentReq = new DoDirectPaymentReq();
 $doDirectPaymentReq->DoDirectPaymentRequest = new DoDirectPaymentRequestType($ddReqDetails);
