@@ -26,16 +26,16 @@ the CheckOut call when the payment action is Authorization.
 * `amount` - Amount to capture
 * `CompleteCode` - Indicates whether or not this is your last capture.
 It is one of the following values:
-* Complete – This is the last capture you intend to make.
-* NotComplete – You intend to make additional captures.
+* Complete â€“ This is the last capture you intend to make.
+* NotComplete â€“ You intend to make additional captures.
 `Note:
 If Complete, any remaining amount of the original authorized
 transaction is automatically voided and all remaining open
 authorizations are voided.`
 */
-$doCaptureReqest = new DoCaptureRequestType($_REQUEST['authID'], $amount, $_REQUEST['completeCodeType']);
+$doCaptureRequest = new DoCaptureRequestType($_REQUEST['authID'], $amount, $_REQUEST['completeCodeType']);
 $doCaptureReq = new DoCaptureReq();
-$doCaptureReq->DoCaptureRequest = $doCaptureReqest;
+$doCaptureReq->DoCaptureRequest = $doCaptureRequest;
 
 /*
  *  ## Creating service wrapper object
