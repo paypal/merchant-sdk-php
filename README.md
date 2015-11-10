@@ -87,7 +87,7 @@ For example,
 	// Sets config file path(if config file is used) and registers the classloader
     require("PPBootStrap.php");
 	
-	// Array containing credentials and confiuration parameters. (not required if config file is used)
+	// Array containing credentials and configuration parameters. (not required if config file is used)
 	$config = array(
        'mode' => 'sandbox',
        'acct1.UserName' => 'jb-us-seller_api1.paypal.com',
