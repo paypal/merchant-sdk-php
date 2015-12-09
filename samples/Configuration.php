@@ -7,7 +7,11 @@ class Configuration
 		$config = array(
 				// values: 'sandbox' for testing
 				//		   'live' for production
+                //         'tls' for testing if your server supports TLSv1.2
 				"mode" => "sandbox",
+                // TLSv1.2 Check: Comment the above line, and switch the mode to tls as shown below
+                // "mode" => "tls"
+
                 'log.LogEnabled' => true,
                 'log.FileName' => '../PayPal.log',
                 'log.LogLevel' => 'FINE'

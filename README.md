@@ -2,6 +2,11 @@
 
    The merchant SDK can be used for integrating with the Express Checkout, Mass Pay, Web Payments Pro APIs.
 
+## TLSv1.2 Update
+> **The [PCIv3.1 DSS (PDF)](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-1.pdf) mandates (p.46) that TLSv1.0 be retired from service by June 30, 2016. All organizations that handle credit card information are required to comply with this standard. As part of this obligation, PayPal is updating it's services to require TLSv1.2 for all HTTPS connections. [Click here](https://github.paypal.com/SDK-R/tls-update) for more information**
+
+> A new `mode` has been created to test if your server/machine handles TLSv1.2 connections. Please use `tls` mode instead of `sandbox` to verify. You can return back to `sandbox` mode once you have verified. Please have a look at this [Sample Configuration](https://github.com/paypal/merchant-sdk-php/blob/namespace-php5.3/samples/Configuration.php#L10-15).
+
 ## POODLE Update
 - Because of the Poodle vulnerability, PayPal has disabled SSLv3. 
 - To enable TLS encryption, the changes were made to [PPHttpConfig.php](https://github.com/paypal/sdk-core-php/blob/namespace-5.3/lib/PayPal/Core/PPHttpConfig.php#L11) in [SDK Core](https://github.com/paypal/sdk-core-php/tree/namespace-5.3) to use a cipher list specific to TLS encryption.

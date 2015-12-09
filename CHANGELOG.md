@@ -1,5 +1,8 @@
 ### CHANGELOG
 
+####Version 3.9.1 - Dec 9, 2015
+   - Added TLSv1.2 Endpoint support
+
 ####Version 3.9.0 - Sep 22, 2015
    - Updated IPN Endpoint
 
