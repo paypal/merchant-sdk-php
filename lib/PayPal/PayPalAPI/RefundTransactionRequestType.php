@@ -93,7 +93,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * @namespace ns
 
 
-	 * @var dateTime
+	 * @var string ISO8601
 	 */
 	public $RetryUntil;
 

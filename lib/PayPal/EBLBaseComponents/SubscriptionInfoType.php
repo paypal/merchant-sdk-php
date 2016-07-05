@@ -28,7 +28,7 @@ class SubscriptionInfoType
 	 * @namespace ebl
 
 
-	 * @var dateTime
+	 * @var string ISO8601
 	 */
 	public $SubscriptionDate;
 
@@ -39,7 +39,7 @@ class SubscriptionInfoType
 	 * @namespace ebl
 
 
-	 * @var dateTime
+	 * @var string ISO8601
 	 */
 	public $EffectiveDate;
 
@@ -50,7 +50,7 @@ class SubscriptionInfoType
 	 * @namespace ebl
 
 
-	 * @var dateTime
+	 * @var string ISO8601
 	 */
 	public $RetryTime;
 

@@ -25,7 +25,7 @@ class GetBalanceResponseType  extends AbstractResponseType
 	 * @namespace ns
 
 
-	 * @var dateTime
+	 * @var string ISO8601
 	 */
 	public $BalanceTimeStamp;
 

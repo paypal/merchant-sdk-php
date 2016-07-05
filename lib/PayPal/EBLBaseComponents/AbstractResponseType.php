@@ -20,7 +20,7 @@ class AbstractResponseType
 	 * @namespace ebl
 
 
-	 * @var dateTime
+	 * @var string ISO8601
 	 */
 	public $Timestamp;
 

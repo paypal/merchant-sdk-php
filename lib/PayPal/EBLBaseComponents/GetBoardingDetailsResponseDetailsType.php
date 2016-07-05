@@ -29,7 +29,7 @@ class GetBoardingDetailsResponseDetailsType
 	 * @namespace ebl
 
 
-	 * @var dateTime
+	 * @var string ISO8601
 	 */
 	public $StartDate;
 
@@ -40,7 +40,7 @@ class GetBoardingDetailsResponseDetailsType
 	 * @namespace ebl
 
 
-	 * @var dateTime
+	 * @var string ISO8601
 	 */
 	public $LastUpdated;
 

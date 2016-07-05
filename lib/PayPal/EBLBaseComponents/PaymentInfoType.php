@@ -115,7 +115,7 @@ class PaymentInfoType
 	 * @namespace ebl
 
 
-	 * @var dateTime
+	 * @var string ISO8601
 	 */
 	public $ExpectedeCheckClearDate;
 
@@ -126,7 +126,7 @@ class PaymentInfoType
 	 * @namespace ebl
 
 
-	 * @var dateTime
+	 * @var string ISO8601
 	 */
 	public $PaymentDate;
 

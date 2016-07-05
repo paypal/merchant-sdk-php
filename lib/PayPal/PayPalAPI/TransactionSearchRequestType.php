@@ -16,7 +16,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * @namespace ns
 
 
-	 * @var dateTime
+	 * @var string ISO8601
 	 */
 	public $StartDate;
 
@@ -28,7 +28,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * @namespace ns
 
 
-	 * @var dateTime
+	 * @var string ISO8601
 	 */
 	public $EndDate;
 
