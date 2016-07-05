@@ -135,13 +135,12 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	/**
 	 * Information about the individual details of the items to be
 	 * refunded.Optional
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\InvoiceItemType
+	 * @var \PayPal\EBLBaseComponents\InvoiceItemType[]
 	 */
 	public $RefundItemDetails;
 

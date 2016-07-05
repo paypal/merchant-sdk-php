@@ -55,13 +55,12 @@ class MassPayRequestType  extends AbstractRequestType
 	/**
 	 * Details of each payment. A single MassPayRequest can include
 	 * up to 250 MassPayItems. Required
-     * @array
 	 * @access public
 
 	 * @namespace ns
 
 
-	 * @var \PayPal\PayPalAPI\MassPayRequestItemType
+	 * @var \PayPal\PayPalAPI\MassPayRequestItemType[]
 	 */
 	public $MassPayItem;
 

@@ -64,13 +64,12 @@ class IncentiveDetailType
 
 	/**
 	 *
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\IncentiveAppliedToType
+	 * @var \PayPal\EBLBaseComponents\IncentiveAppliedToType[]
 	 */
 	public $AppliedTo;
 

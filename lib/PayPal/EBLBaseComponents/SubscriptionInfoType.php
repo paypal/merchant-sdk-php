@@ -95,13 +95,12 @@ class SubscriptionInfoType
 
 	/**
 	 * Subscription duration and charges
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\SubscriptionTermsType
+	 * @var \PayPal\EBLBaseComponents\SubscriptionTermsType[]
 	 */
 	public $Terms;
 

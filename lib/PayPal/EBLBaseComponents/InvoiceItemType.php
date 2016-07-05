@@ -1,60 +1,60 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
- * Describes an individual item for an invoice. 
+ * Describes an individual item for an invoice.
  */
-class InvoiceItemType  
+class InvoiceItemType
    extends PPXmlMessage{
 
 	/**
 	 * a human readable item nameOptional Character length and
-	 * limits: 127 single-byte characters 
+	 * limits: 127 single-byte characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Name;
 
 	/**
 	 * a human readable item descriptionOptional Character length
-	 * and limits: 127 single-byte characters 
+	 * and limits: 127 single-byte characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Description;
 
 	/**
 	 * The International Article Number or Universal Product Code
 	 * (UPC) for the item. Empty string is allowed. Character
-	 * length and limits: 17 single-byte characters 
+	 * length and limits: 17 single-byte characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $EAN;
 
 	/**
 	 * The Stock-Keeping Unit or other identification code assigned
 	 * to the item. Character length and limits: 64 single-byte
-	 * characters 
+	 * characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $SKU;
 
 	/**
@@ -63,82 +63,81 @@ class InvoiceItemType
 	 * using a label or identifier. This return policy identifier
 	 * should be set here. This identifier will be displayed next
 	 * to the item in the e-Receipt. Character length and limits: 8
-	 * single-byte characters 
+	 * single-byte characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ReturnPolicyIdentifier;
 
 	/**
-	 * total price of this item 
+	 * total price of this item
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+
+
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $Price;
 
 	/**
-	 * price per item quantity 
+	 * price per item quantity
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+
+
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $ItemPrice;
 
 	/**
-	 * quantity of the item (non-negative) 
+	 * quantity of the item (non-negative)
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var double	 
-	 */ 
+
+
+	 * @var double
+	 */
 	public $ItemCount;
 
 	/**
-	 * Unit of measure for the itemCount 
+	 * Unit of measure for the itemCount
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ItemCountUnit;
 
 	/**
-	 * discount applied to this item 
-     * @array
+	 * discount applied to this item
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\DiscountType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\DiscountType[]
+	 */
 	public $Discount;
 
 	/**
 	 * identifies whether this item is taxable or not. If not
-	 * passed, this will be assumed to be true. 
+	 * passed, this will be assumed to be true.
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var boolean	 
-	 */ 
+
+
+	 * @var boolean
+	 */
 	public $Taxable;
 
 	/**
@@ -146,99 +145,98 @@ class InvoiceItemType
 	 * for displaying in the receipt, it is not used in pricing
 	 * calculations. Note: we have totalTax at invoice level. It's
 	 * up to the caller to do the calculations for setting that
-	 * other element. 
+	 * other element.
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var double	 
-	 */ 
+
+
+	 * @var double
+	 */
 	public $TaxRate;
 
 	/**
-	 * Additional fees to this item 
-     * @array
+	 * Additional fees to this item
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\AdditionalFeeType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\AdditionalFeeType[]
+	 */
 	public $AdditionalFees;
 
 	/**
 	 * identifies whether this is reimbursable or not. If not pass,
-	 * this will be assumed to be true. 
+	 * this will be assumed to be true.
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var boolean	 
-	 */ 
+
+
+	 * @var boolean
+	 */
 	public $Reimbursable;
 
 	/**
-	 * Manufacturer part number. 
+	 * Manufacturer part number.
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $MPN;
 
 	/**
 	 * International Standard Book Number. Reference
 	 * http://en.wikipedia.org/wiki/ISBN Character length and
-	 * limits: 32 single-byte characters 
+	 * limits: 32 single-byte characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ISBN;
 
 	/**
 	 * Price Look-Up code Reference
 	 * http://en.wikipedia.org/wiki/Price_Look-Up_code Character
-	 * length and limits: 5 single-byte characters 
+	 * length and limits: 5 single-byte characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $PLU;
 
 	/**
-	 * Character length and limits: 32 single-byte characters 
+	 * Character length and limits: 32 single-byte characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ModelNumber;
 
 	/**
-	 * Character length and limits: 32 single-byte characters 
+	 * Character length and limits: 32 single-byte characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $StyleNumber;
 
 
-    
+
 }

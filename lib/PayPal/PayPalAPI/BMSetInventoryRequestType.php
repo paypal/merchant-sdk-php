@@ -69,13 +69,12 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 
 	/**
 	 *
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\OptionTrackingDetailsType
+	 * @var \PayPal\EBLBaseComponents\OptionTrackingDetailsType[]
 	 */
 	public $OptionTrackingDetails;
 
@@ -121,13 +120,12 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 * customers after transaction is completed.  Optional
 	 * Character length and limitations: 1000 single-byte
 	 * alphanumeric characters
-     * @array
 	 * @access public
 
 	 * @namespace ns
 
 
-	 * @var string
+	 * @var string[]
 	 */
 	public $DigitalDownloadKeys;
 

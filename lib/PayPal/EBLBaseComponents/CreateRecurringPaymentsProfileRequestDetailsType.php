@@ -54,13 +54,12 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 
 	/**
 	 * Information about the Item Details.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\PaymentDetailsItemType
+	 * @var \PayPal\EBLBaseComponents\PaymentDetailsItemType[]
 	 */
 	public $PaymentDetailsItem;
 

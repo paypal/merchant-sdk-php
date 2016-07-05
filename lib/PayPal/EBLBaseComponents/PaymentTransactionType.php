@@ -166,13 +166,12 @@ class PaymentTransactionType
 
 	/**
 	 * Information about the survey choice selected by the user.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var string
+	 * @var string[]
 	 */
 	public $SurveyChoiceSelected;
 

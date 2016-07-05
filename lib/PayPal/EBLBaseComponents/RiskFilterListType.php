@@ -9,13 +9,12 @@ class RiskFilterListType
 
 	/**
 	 *
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\RiskFilterDetailsType
+	 * @var \PayPal\EBLBaseComponents\RiskFilterDetailsType[]
 	 */
 	public $Filters;
 

@@ -9,13 +9,12 @@ class IncentiveBucketType
 
 	/**
 	 *
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\IncentiveItemType
+	 * @var \PayPal\EBLBaseComponents\IncentiveItemType[]
 	 */
 	public $Items;
 

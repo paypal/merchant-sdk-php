@@ -1,111 +1,109 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractResponseType; 
+use PayPal\EBLBaseComponents\AbstractResponseType;
 /**
- * 
+ *
  */
-class BMGetInventoryResponseType  extends AbstractResponseType  
+class BMGetInventoryResponseType  extends AbstractResponseType
   {
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $HostedButtonID;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $TrackInv;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $TrackPnl;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\ItemTrackingDetailsType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\ItemTrackingDetailsType
+	 */
 	public $ItemTrackingDetails;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $OptionIndex;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $OptionName;
 
 	/**
-	 * 
-     * @array
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\OptionTrackingDetailsType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\OptionTrackingDetailsType[]
+	 */
 	public $OptionTrackingDetails;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $SoldoutURL;
 
 	/**
-	 * 
-     * @array
+	 *
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string[]
+	 */
 	public $DigitalDownloadKeys;
 
 

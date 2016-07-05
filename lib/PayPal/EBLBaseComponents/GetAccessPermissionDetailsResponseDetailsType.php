@@ -46,25 +46,23 @@ class GetAccessPermissionDetailsResponseDetailsType
 
 	/**
 	 * contains information about API Services
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var string
+	 * @var string[]
 	 */
 	public $AccessPermissionName;
 
 	/**
 	 * contains information about API Services
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var string
+	 * @var string[]
 	 */
 	public $AccessPermissionStatus;
 

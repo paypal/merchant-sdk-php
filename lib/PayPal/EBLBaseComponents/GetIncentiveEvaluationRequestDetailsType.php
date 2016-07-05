@@ -20,37 +20,34 @@ class GetIncentiveEvaluationRequestDetailsType
 
 	/**
 	 *
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var string
+	 * @var string[]
 	 */
 	public $IncentiveCodes;
 
 	/**
 	 *
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\IncentiveApplyIndicationType
+	 * @var \PayPal\EBLBaseComponents\IncentiveApplyIndicationType[]
 	 */
 	public $ApplyIndication;
 
 	/**
 	 *
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\IncentiveBucketType
+	 * @var \PayPal\EBLBaseComponents\IncentiveBucketType[]
 	 */
 	public $Buckets;
 

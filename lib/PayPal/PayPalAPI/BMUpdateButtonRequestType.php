@@ -63,37 +63,34 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 * Button Variable information  At least one required recurring
 	 * Character length and limitations: 63 single-byte
 	 * alphanumeric characters
-     * @array
 	 * @access public
 
 	 * @namespace ns
 
 
-	 * @var string
+	 * @var string[]
 	 */
 	public $ButtonVar;
 
 	/**
 	 *
-     * @array
 	 * @access public
 
 	 * @namespace ns
 
 
-	 * @var \PayPal\PayPalAPI\OptionDetailsType
+	 * @var \PayPal\PayPalAPI\OptionDetailsType[]
 	 */
 	public $OptionDetails;
 
 	/**
 	 * Details of each option for the button.  Optional
-     * @array
 	 * @access public
 
 	 * @namespace ns
 
 
-	 * @var string
+	 * @var string[]
 	 */
 	public $TextBox;
 

@@ -63,13 +63,12 @@ class ErrorType
 	 * information about the error condition particularly in the
 	 * cases where there are multiple instances of the ErrorType
 	 * which require additional context.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\ErrorParameterType
+	 * @var \PayPal\EBLBaseComponents\ErrorParameterType[]
 	 */
 	public $ErrorParameters;
 

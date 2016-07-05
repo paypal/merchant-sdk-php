@@ -488,13 +488,12 @@ class SetExpressCheckoutRequestDetailsType
 
 	/**
 	 *
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\BillingAgreementDetailsType
+	 * @var \PayPal\EBLBaseComponents\BillingAgreementDetailsType[]
 	 */
 	public $BillingAgreementDetails;
 
@@ -502,13 +501,12 @@ class SetExpressCheckoutRequestDetailsType
 	 * Promo Code Optional List of promo codes supplied by
 	 * merchant. These promo codes enable the Merchant Services
 	 * Promotion Financing feature.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var string
+	 * @var string[]
 	 */
 	public $PromoCodes;
 
@@ -625,13 +623,12 @@ class SetExpressCheckoutRequestDetailsType
 	 * List of other payment methods the user can pay with.
 	 * Optional Refer to the OtherPaymentMethodDetailsType for more
 	 * details.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\OtherPaymentMethodDetailsType
+	 * @var \PayPal\EBLBaseComponents\OtherPaymentMethodDetailsType[]
 	 */
 	public $OtherPaymentMethods;
 
@@ -649,25 +646,23 @@ class SetExpressCheckoutRequestDetailsType
 
 	/**
 	 * Information about the payment.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType
+	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType[]
 	 */
 	public $PaymentDetails;
 
 	/**
 	 * List of Fall Back Shipping options provided by merchant.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\ShippingOptionType
+	 * @var \PayPal\EBLBaseComponents\ShippingOptionType[]
 	 */
 	public $FlatRateShippingOptions;
 
@@ -794,13 +789,12 @@ class SetExpressCheckoutRequestDetailsType
 
 	/**
 	 * Information about the survey choices for survey question.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var string
+	 * @var string[]
 	 */
 	public $SurveyChoice;
 
@@ -830,13 +824,12 @@ class SetExpressCheckoutRequestDetailsType
 	/**
 	 * Incentive Code Optional List of incentive codes supplied by
 	 * ebay/merchant.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\IncentiveInfoType
+	 * @var \PayPal\EBLBaseComponents\IncentiveInfoType[]
 	 */
 	public $Incentives;
 
@@ -904,13 +897,12 @@ class SetExpressCheckoutRequestDetailsType
 
 	/**
 	 * Optional element that defines relationship between buckets
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\CoupledBucketsType
+	 * @var \PayPal\EBLBaseComponents\CoupledBucketsType[]
 	 */
 	public $CoupledBuckets;
 

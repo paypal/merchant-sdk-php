@@ -10,13 +10,12 @@ class MerchantDataType
 
 	/**
 	 *
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\TupleType
+	 * @var \PayPal\EBLBaseComponents\TupleType[]
 	 */
 	public $MerchantDataTuple;
 

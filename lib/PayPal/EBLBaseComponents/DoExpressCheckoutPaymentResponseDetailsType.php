@@ -26,13 +26,12 @@ class DoExpressCheckoutPaymentResponseDetailsType
 
 	/**
 	 * Information about the transaction
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\PaymentInfoType
+	 * @var \PayPal\EBLBaseComponents\PaymentInfoType[]
 	 */
 	public $PaymentInfo;
 
@@ -95,13 +94,12 @@ class DoExpressCheckoutPaymentResponseDetailsType
 
 	/**
 	 * Information about Coupled Payment transactions.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\CoupledPaymentInfoType
+	 * @var \PayPal\EBLBaseComponents\CoupledPaymentInfoType[]
 	 */
 	public $CoupledPaymentInfo;
 

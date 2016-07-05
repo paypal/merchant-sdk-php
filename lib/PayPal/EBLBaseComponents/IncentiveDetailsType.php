@@ -69,13 +69,12 @@ class IncentiveDetailsType
 
 	/**
 	 * Details of incentive application on individual bucket/item.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\IncentiveAppliedDetailsType
+	 * @var \PayPal\EBLBaseComponents\IncentiveAppliedDetailsType[]
 	 */
 	public $IncentiveAppliedDetails;
 

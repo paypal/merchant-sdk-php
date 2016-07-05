@@ -22,25 +22,23 @@ class SetDataResponseType
 
 	/**
 	 *
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\AddressType
+	 * @var \PayPal\EBLBaseComponents\AddressType[]
 	 */
 	public $ShippingAddresses;
 
 	/**
 	 *
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\ErrorType
+	 * @var \PayPal\EBLBaseComponents\ErrorType[]
 	 */
 	public $SetDataError;
 

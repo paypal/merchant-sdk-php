@@ -21,13 +21,12 @@ class IncentiveInfoType
 	/**
 	 * Defines which bucket or item that the incentive should be
 	 * applied to.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\IncentiveApplyIndicationType
+	 * @var \PayPal\EBLBaseComponents\IncentiveApplyIndicationType[]
 	 */
 	public $ApplyIndication;
 

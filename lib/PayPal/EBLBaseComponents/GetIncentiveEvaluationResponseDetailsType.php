@@ -9,13 +9,12 @@ class GetIncentiveEvaluationResponseDetailsType
 
 	/**
 	 *
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\IncentiveDetailType
+	 * @var \PayPal\EBLBaseComponents\IncentiveDetailType[]
 	 */
 	public $IncentiveDetails;
 

@@ -79,13 +79,12 @@ class DoExpressCheckoutPaymentRequestDetailsType
 
 	/**
 	 * Information about the payment Required
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType
+	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType[]
 	 */
 	public $PaymentDetails;
 
@@ -216,13 +215,12 @@ class DoExpressCheckoutPaymentRequestDetailsType
 
 	/**
 	 * Information about the survey choice selected by the user.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var string
+	 * @var string[]
 	 */
 	public $SurveyChoiceSelected;
 
@@ -253,13 +251,12 @@ class DoExpressCheckoutPaymentRequestDetailsType
 
 	/**
 	 * Optional element that defines relationship between buckets
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\CoupledBucketsType
+	 * @var \PayPal\EBLBaseComponents\CoupledBucketsType[]
 	 */
 	public $CoupledBuckets;
 

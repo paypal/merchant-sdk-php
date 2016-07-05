@@ -152,13 +152,12 @@ class AirlineItineraryType
 
 	/**
 	 *
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\FlightDetailsType
+	 * @var \PayPal\EBLBaseComponents\FlightDetailsType[]
 	 */
 	public $FlightDetails;
 

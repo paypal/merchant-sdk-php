@@ -168,13 +168,12 @@ class PaymentItemType
 
 	/**
 	 * Item options selected in PayPal shopping cart
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\OptionType
+	 * @var \PayPal\EBLBaseComponents\OptionType[]
 	 */
 	public $Options;
 

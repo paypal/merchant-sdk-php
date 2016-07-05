@@ -20,13 +20,12 @@ class OptionDetailsType
 
 	/**
 	 *
-     * @array
 	 * @access public
 
 	 * @namespace ns
 
 
-	 * @var \PayPal\PayPalAPI\OptionSelectionDetailsType
+	 * @var \PayPal\PayPalAPI\OptionSelectionDetailsType[]
 	 */
 	public $OptionSelectionDetails;
 

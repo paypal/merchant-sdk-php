@@ -62,13 +62,12 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 
 	/**
 	 * Information about the individual purchased items
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\PaymentDetailsItemType
+	 * @var \PayPal\EBLBaseComponents\PaymentDetailsItemType[]
 	 */
 	public $PaymentDetailsItem;
 

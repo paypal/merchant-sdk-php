@@ -154,13 +154,12 @@ class GetExpressCheckoutDetailsResponseDetailsType
 
 	/**
 	 * Information about the individual purchased items.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType
+	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType[]
 	 */
 	public $PaymentDetails;
 
@@ -178,13 +177,12 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	/**
 	 * Information about the incentives that were applied from Ebay
 	 * RYP page and PayPal RYP page.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\IncentiveDetailsType
+	 * @var \PayPal\EBLBaseComponents\IncentiveDetailsType[]
 	 */
 	public $IncentiveDetails;
 
@@ -256,26 +254,24 @@ class GetExpressCheckoutDetailsResponseDetailsType
 
 	/**
 	 * Information about the survey choice selected by the user.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var string
+	 * @var string[]
 	 */
 	public $SurveyChoiceSelected;
 
 	/**
 	 * Contains payment request information about each bucket in
 	 * the cart.
-     * @array
 	 * @access public
 
 	 * @namespace ebl
 
 
-	 * @var \PayPal\EBLBaseComponents\PaymentRequestInfoType
+	 * @var \PayPal\EBLBaseComponents\PaymentRequestInfoType[]
 	 */
 	public $PaymentRequestInfo;
 
