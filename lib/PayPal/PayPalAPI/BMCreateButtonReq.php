@@ -14,7 +14,7 @@ class BMCreateButtonReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\BMCreateButtonRequestType	 
+	 * @var \PayPal\PayPalAPI\BMCreateButtonRequestType	 
 	 */ 
 	public $BMCreateButtonRequest;
 

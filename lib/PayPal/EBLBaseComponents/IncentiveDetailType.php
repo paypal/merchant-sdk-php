@@ -1,99 +1,99 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
- * 
+ *
  */
-class IncentiveDetailType  
+class IncentiveDetailType
    extends PPXmlMessage{
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $RedemptionCode;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $DisplayCode;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ProgramId;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $IncentiveType;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $IncentiveDescription;
 
 	/**
-	 * 
+	 *
      * @array
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\IncentiveAppliedToType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\IncentiveAppliedToType
+	 */
 	public $AppliedTo;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Status;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ErrorCode;
 
 

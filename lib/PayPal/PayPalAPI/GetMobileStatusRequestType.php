@@ -1,21 +1,21 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
+use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
- * 
+ *
  */
-class GetMobileStatusRequestType  extends AbstractRequestType  
+class GetMobileStatusRequestType  extends AbstractRequestType
   {
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\GetMobileStatusRequestDetailsType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\GetMobileStatusRequestDetailsType
+	 */
 	public $GetMobileStatusRequestDetails;
 
 	/**
@@ -26,5 +26,5 @@ class GetMobileStatusRequestType  extends AbstractRequestType
 	}
 
 
-    
+
 }

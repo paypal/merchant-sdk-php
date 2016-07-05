@@ -1,12 +1,12 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
+use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  * A timestamped token, the value of which was returned by
  * SetExpressCheckoutResponse. RequiredCharacter length and
  * limitations: 20 single-byte characters
  */
-class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType  
+class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType
   {
 
 	/**
@@ -14,12 +14,12 @@ class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType
 	 * SetExpressCheckoutResponse. RequiredCharacter length and
 	 * limitations: 20 single-byte characters
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Token;
 
 	/**
@@ -30,5 +30,5 @@ class GetExpressCheckoutDetailsRequestType  extends AbstractRequestType
 	}
 
 
-    
+
 }

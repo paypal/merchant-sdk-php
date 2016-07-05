@@ -14,7 +14,7 @@ class CreateRecurringPaymentsProfileReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\CreateRecurringPaymentsProfileRequestType	 
+	 * @var \PayPal\PayPalAPI\CreateRecurringPaymentsProfileRequestType	 
 	 */ 
 	public $CreateRecurringPaymentsProfileRequest;
 

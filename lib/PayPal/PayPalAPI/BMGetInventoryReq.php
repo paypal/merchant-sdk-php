@@ -14,7 +14,7 @@ class BMGetInventoryReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\BMGetInventoryRequestType	 
+	 * @var \PayPal\PayPalAPI\BMGetInventoryRequestType	 
 	 */ 
 	public $BMGetInventoryRequest;
 

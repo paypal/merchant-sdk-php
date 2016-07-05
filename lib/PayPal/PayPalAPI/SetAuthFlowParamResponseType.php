@@ -1,13 +1,13 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractResponseType; 
+use PayPal\EBLBaseComponents\AbstractResponseType;
 /**
  * A timestamped token by which you identify to PayPal that you
  * are processing this user. The token expires after three
  * hours. Character length and limitations: 20 single-byte
  * characters
  */
-class SetAuthFlowParamResponseType  extends AbstractResponseType  
+class SetAuthFlowParamResponseType  extends AbstractResponseType
   {
 
 	/**
@@ -16,12 +16,12 @@ class SetAuthFlowParamResponseType  extends AbstractResponseType
 	 * hours. Character length and limitations: 20 single-byte
 	 * characters
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Token;
 
 

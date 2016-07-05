@@ -14,7 +14,7 @@ class DoUATPExpressCheckoutPaymentResponseType  extends DoExpressCheckoutPayment
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\UATPDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\UATPDetailsType	 
 	 */ 
 	public $UATPDetails;
 

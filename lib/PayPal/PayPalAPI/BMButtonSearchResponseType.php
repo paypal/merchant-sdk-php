@@ -15,7 +15,7 @@ class BMButtonSearchResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ButtonSearchResultType	 
+	 * @var \PayPal\EBLBaseComponents\ButtonSearchResultType	 
 	 */ 
 	public $ButtonSearchResult;
 

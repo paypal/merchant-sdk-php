@@ -1,23 +1,23 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
  * The phone number of the buyer's mobile device, if available.
- * Optional 
+ * Optional
  */
-class SetMobileCheckoutRequestDetailsType  
+class SetMobileCheckoutRequestDetailsType
    extends PPXmlMessage{
 
 	/**
 	 * The phone number of the buyer's mobile device, if available.
-	 * Optional 
+	 * Optional
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PhoneNumberType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\PhoneNumberType
+	 */
 	public $BuyerPhone;
 
 	/**
@@ -25,12 +25,12 @@ class SetMobileCheckoutRequestDetailsType
 	 * currencyID attribute to one of the three-character currency
 	 * codes for any of the supported PayPal currencies. Required
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+
+
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $ItemAmount;
 
 	/**
@@ -38,12 +38,12 @@ class SetMobileCheckoutRequestDetailsType
 	 * attribute to one of the three-character currency codes for
 	 * any of the supported PayPal currencies. Optional
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+
+
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $Tax;
 
 	/**
@@ -51,12 +51,12 @@ class SetMobileCheckoutRequestDetailsType
 	 * attribute to one of the three-character currency codes for
 	 * any of the supported PayPal currencies. Optional
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+
+
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $Shipping;
 
 	/**
@@ -64,12 +64,12 @@ class SetMobileCheckoutRequestDetailsType
 	 * Required Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ItemName;
 
 	/**
@@ -77,12 +77,12 @@ class SetMobileCheckoutRequestDetailsType
 	 * purchasing. Optional Character length and limitations: 127
 	 * single-byte alphanumeric characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ItemNumber;
 
 	/**
@@ -91,12 +91,12 @@ class SetMobileCheckoutRequestDetailsType
 	 * Optional Character length and limitations: 256 single-byte
 	 * alphanumeric characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Custom;
 
 	/**
@@ -104,12 +104,12 @@ class SetMobileCheckoutRequestDetailsType
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $InvoiceID;
 
 	/**
@@ -117,14 +117,14 @@ class SetMobileCheckoutRequestDetailsType
 	 * choosing to pay with PayPal. PayPal recommends that the
 	 * value of ReturnURL be the final review page on which the
 	 * customer confirms the order and payment. Required Character
-	 * length and limitations: no limit. 
+	 * length and limitations: no limit.
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ReturnURL;
 
 	/**
@@ -134,12 +134,12 @@ class SetMobileCheckoutRequestDetailsType
 	 * customer chose to pay with PayPal. Optional Character length
 	 * and limitations: no limit
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $CancelURL;
 
 	/**
@@ -148,12 +148,12 @@ class SetMobileCheckoutRequestDetailsType
 	 * Setting this element overrides the setting you have
 	 * specified in your Merchant Account Profile. Optional
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var integer	 
-	 */ 
+
+
+	 * @var integer
+	 */
 	public $AddressDisplayOptions;
 
 	/**
@@ -161,37 +161,37 @@ class SetMobileCheckoutRequestDetailsType
 	 * specifies a contact phone for the transactxion. Default is 0
 	 * / none required. Optional
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var integer	 
-	 */ 
+
+
+	 * @var integer
+	 */
 	public $SharePhone;
 
 	/**
 	 * Customer's shipping address. Optional
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AddressType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\AddressType
+	 */
 	public $ShipToAddress;
 
 	/**
 	 * Email address of the buyer as entered during checkout.
 	 * PayPal uses this value to pre-fill the login portion of the
 	 * PayPal login page. Optional Character length and limit: 127
-	 * single-byte alphanumeric characters 
+	 * single-byte alphanumeric characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $BuyerEmail;
 
 	/**
@@ -204,5 +204,5 @@ class SetMobileCheckoutRequestDetailsType
 	}
 
 
-    
+
 }

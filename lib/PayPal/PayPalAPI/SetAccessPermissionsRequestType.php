@@ -14,7 +14,7 @@ class SetAccessPermissionsRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\SetAccessPermissionsRequestDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\SetAccessPermissionsRequestDetailsType	 
 	 */ 
 	public $SetAccessPermissionsRequestDetails;
 

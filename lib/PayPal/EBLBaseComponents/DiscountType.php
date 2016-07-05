@@ -1,68 +1,68 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
- * Describes discount information 
+ * Describes discount information
  */
-class DiscountType  
+class DiscountType
    extends PPXmlMessage{
 
 	/**
 	 * Item nameOptional Character length and limits: 127
-	 * single-byte characters 
+	 * single-byte characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Name;
 
 	/**
 	 * description of the discountOptional Character length and
-	 * limits: 127 single-byte characters 
+	 * limits: 127 single-byte characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Description;
 
 	/**
-	 * amount discountedOptional 
+	 * amount discountedOptional
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+
+
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $Amount;
 
 	/**
-	 * offer typeOptional 
+	 * offer typeOptional
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $RedeemedOfferType;
 
 	/**
 	 * offer IDOptional Character length and limits: 64 single-byte
-	 * characters 
+	 * characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $RedeemedOfferID;
 
 	/**
@@ -73,5 +73,5 @@ class DiscountType
 	}
 
 
-    
+
 }

@@ -1,21 +1,21 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
+use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
- * 
+ *
  */
-class CompleteRecoupRequestType  extends AbstractRequestType  
+class CompleteRecoupRequestType  extends AbstractRequestType
   {
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ed
-	 
-	 	 	 	 
-	 * @var PayPal\EnhancedDataTypes\EnhancedCompleteRecoupRequestDetailsType	 
-	 */ 
+
+
+	 * @var \PayPal\EnhancedDataTypes\EnhancedCompleteRecoupRequestDetailsType
+	 */
 	public $EnhancedCompleteRecoupRequestDetails;
 
 	/**
@@ -26,5 +26,5 @@ class CompleteRecoupRequestType  extends AbstractRequestType
 	}
 
 
-    
+
 }

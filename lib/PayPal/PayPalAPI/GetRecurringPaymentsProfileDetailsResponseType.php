@@ -14,7 +14,7 @@ class GetRecurringPaymentsProfileDetailsResponseType  extends AbstractResponseTy
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\GetRecurringPaymentsProfileDetailsResponseDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\GetRecurringPaymentsProfileDetailsResponseDetailsType	 
 	 */ 
 	public $GetRecurringPaymentsProfileDetailsResponseDetails;
 

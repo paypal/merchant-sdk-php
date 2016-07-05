@@ -1,21 +1,21 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
 use PayPal\Core\PPXmlMessage;
 /**
- * 
+ *
  */
-class DoReauthorizationReq  
+class DoReauthorizationReq
    extends PPXmlMessage{
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\PayPalAPI\DoReauthorizationRequestType	 
-	 */ 
+
+
+	 * @var \PayPal\PayPalAPI\DoReauthorizationRequestType
+	 */
 	public $DoReauthorizationRequest;
 
 
@@ -32,5 +32,5 @@ class DoReauthorizationReq
 			$str .= '</ns:DoReauthorizationReq>';
 			return $str;
 	}
-    
+
 }

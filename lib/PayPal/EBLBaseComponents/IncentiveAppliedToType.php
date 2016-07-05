@@ -1,54 +1,54 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
- * 
+ *
  */
-class IncentiveAppliedToType  
+class IncentiveAppliedToType
    extends PPXmlMessage{
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $BucketId;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ItemId;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+
+
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $IncentiveAmount;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $SubType;
 
 

@@ -14,7 +14,7 @@ class DoMobileCheckoutPaymentResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\DoMobileCheckoutPaymentResponseDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\DoMobileCheckoutPaymentResponseDetailsType	 
 	 */ 
 	public $DoMobileCheckoutPaymentResponseDetails;
 

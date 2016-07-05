@@ -29,7 +29,7 @@ class UpdateAuthorizationRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AddressType	 
+	 * @var \PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $ShipToAddress;
 

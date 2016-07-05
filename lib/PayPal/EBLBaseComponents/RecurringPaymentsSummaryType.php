@@ -47,7 +47,7 @@ class RecurringPaymentsSummaryType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $OutstandingBalance;
 
@@ -80,7 +80,7 @@ class RecurringPaymentsSummaryType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $LastPaymentAmount;
 

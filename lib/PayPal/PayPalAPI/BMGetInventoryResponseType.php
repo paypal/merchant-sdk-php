@@ -47,7 +47,7 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ItemTrackingDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\ItemTrackingDetailsType	 
 	 */ 
 	public $ItemTrackingDetails;
 
@@ -81,7 +81,7 @@ class BMGetInventoryResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\OptionTrackingDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\OptionTrackingDetailsType	 
 	 */ 
 	public $OptionTrackingDetails;
 

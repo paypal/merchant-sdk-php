@@ -47,7 +47,7 @@ class UserSelectedOptionType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $ShippingOptionAmount;
 

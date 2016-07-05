@@ -14,7 +14,7 @@ class GetTransactionDetailsResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PaymentTransactionType	 
+	 * @var \PayPal\EBLBaseComponents\PaymentTransactionType	 
 	 */ 
 	public $PaymentTransactionDetails;
 
@@ -25,7 +25,7 @@ class GetTransactionDetailsResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ThreeDSecureInfoType	 
+	 * @var \PayPal\EBLBaseComponents\ThreeDSecureInfoType	 
 	 */ 
 	public $ThreeDSecureDetails;
 

@@ -14,7 +14,7 @@ class GetBoardingDetailsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\GetBoardingDetailsRequestType	 
+	 * @var \PayPal\PayPalAPI\GetBoardingDetailsRequestType	 
 	 */ 
 	public $GetBoardingDetailsRequest;
 

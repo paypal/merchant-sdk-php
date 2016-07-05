@@ -1,34 +1,34 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
- * 
+ *
  */
-class AdditionalFeeType  
+class AdditionalFeeType
    extends PPXmlMessage{
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Type;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+
+
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $Amount;
 
 
-    
+
 }

@@ -14,7 +14,7 @@ class ExecuteCheckoutOperationsResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ExecuteCheckoutOperationsResponseDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\ExecuteCheckoutOperationsResponseDetailsType	 
 	 */ 
 	public $ExecuteCheckoutOperationsResponseDetails;
 

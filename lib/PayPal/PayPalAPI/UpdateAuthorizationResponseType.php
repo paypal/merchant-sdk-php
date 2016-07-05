@@ -27,7 +27,7 @@ class UpdateAuthorizationResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AuthorizationInfoType	 
+	 * @var \PayPal\EBLBaseComponents\AuthorizationInfoType	 
 	 */ 
 	public $AuthorizationInfo;
 

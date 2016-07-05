@@ -14,7 +14,7 @@ class DoUATPAuthorizationReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\DoUATPAuthorizationRequestType	 
+	 * @var \PayPal\PayPalAPI\DoUATPAuthorizationRequestType	 
 	 */ 
 	public $DoUATPAuthorizationRequest;
 

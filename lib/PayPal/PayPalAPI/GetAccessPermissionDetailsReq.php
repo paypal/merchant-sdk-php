@@ -14,7 +14,7 @@ class GetAccessPermissionDetailsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\GetAccessPermissionDetailsRequestType	 
+	 * @var \PayPal\PayPalAPI\GetAccessPermissionDetailsRequestType	 
 	 */ 
 	public $GetAccessPermissionDetailsRequest;
 

@@ -1,25 +1,25 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
+use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  * Unique identifier of the transaction you are refunding.
  * Optional Character length and limitations: 17 single-byte
- * alphanumeric characters 
+ * alphanumeric characters
  */
-class RefundTransactionRequestType  extends AbstractRequestType  
+class RefundTransactionRequestType  extends AbstractRequestType
   {
 
 	/**
 	 * Unique identifier of the transaction you are refunding.
 	 * Optional Character length and limitations: 17 single-byte
-	 * alphanumeric characters 
+	 * alphanumeric characters
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $TransactionID;
 
 	/**
@@ -27,12 +27,12 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * Optional Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $PayerID;
 
 	/**
@@ -41,123 +41,123 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * by the merchant or recipient while refunding the
 	 * transaction. This parameter does not affect the business
 	 * logic, it is persisted in the DB for transaction reference
-	 * Optional 
+	 * Optional
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $InvoiceID;
 
 	/**
-	 * Type of refund you are making Required 
+	 * Type of refund you are making Required
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $RefundType;
 
 	/**
 	 * Refund amount. Amount is required if RefundType is Partial.
 	 * NOTE: If RefundType is Full, do not set Amount.
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+
+
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $Amount;
 
 	/**
 	 * Custom memo about the refund. Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Memo;
 
 	/**
-	 * The maximum time till which refund must be tried. Optional 
+	 * The maximum time till which refund must be tried. Optional
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var dateTime	 
-	 */ 
+
+
+	 * @var dateTime
+	 */
 	public $RetryUntil;
 
 	/**
-	 * The type of funding source for refund. Optional 
+	 * The type of funding source for refund. Optional
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $RefundSource;
 
 	/**
 	 * Flag to indicate that the customer was already given store
 	 * credit for a given transaction. This will allow us to make
-	 * sure we do not double refund. Optional 
+	 * sure we do not double refund. Optional
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var boolean	 
-	 */ 
+
+
+	 * @var boolean
+	 */
 	public $RefundAdvice;
 
 	/**
-	 * To pass the Merchant store informationOptional 
+	 * To pass the Merchant store informationOptional
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\MerchantStoreDetailsType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\MerchantStoreDetailsType
+	 */
 	public $MerchantStoreDetails;
 
 	/**
 	 * Information about the individual details of the items to be
-	 * refunded.Optional 
+	 * refunded.Optional
      * @array
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\InvoiceItemType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\InvoiceItemType
+	 */
 	public $RefundItemDetails;
 
 	/**
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
-	 * single-byte characters maximum. 
+	 * single-byte characters maximum.
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $MsgSubID;
 
 
-    
+
 }

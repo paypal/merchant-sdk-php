@@ -15,7 +15,7 @@ class SetDataRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\BillingApprovalDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\BillingApprovalDetailsType	 
 	 */ 
 	public $BillingApprovalDetails;
 
@@ -27,7 +27,7 @@ class SetDataRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\BuyerDetailType	 
+	 * @var \PayPal\EBLBaseComponents\BuyerDetailType	 
 	 */ 
 	public $BuyerDetail;
 
@@ -40,7 +40,7 @@ class SetDataRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\InfoSharingDirectivesType	 
+	 * @var \PayPal\EBLBaseComponents\InfoSharingDirectivesType	 
 	 */ 
 	public $InfoSharingDirectives;
 
@@ -96,7 +96,7 @@ class SetDataRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PaymentDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType	 
 	 */ 
 	public $PaymentDetails;
 
@@ -108,7 +108,7 @@ class SetDataRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ExternalPartnerTrackingDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\ExternalPartnerTrackingDetailsType	 
 	 */ 
 	public $ExternalPartnerTrackingDetails;
 

@@ -14,7 +14,7 @@ class DoUATPExpressCheckoutPaymentReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\DoUATPExpressCheckoutPaymentRequestType	 
+	 * @var \PayPal\PayPalAPI\DoUATPExpressCheckoutPaymentRequestType	 
 	 */ 
 	public $DoUATPExpressCheckoutPaymentRequest;
 

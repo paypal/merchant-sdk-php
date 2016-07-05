@@ -21,7 +21,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $OrderTotal;
 
@@ -35,7 +35,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $ItemTotal;
 
@@ -51,7 +51,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $ShippingTotal;
 
@@ -67,7 +67,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $HandlingTotal;
 
@@ -83,7 +83,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $TaxTotal;
 
@@ -164,7 +164,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AddressType	 
+	 * @var \PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $ShipToAddress;
 
@@ -200,7 +200,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AddressType	 
+	 * @var \PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $FulfillmentAddress;
 
@@ -246,7 +246,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PaymentDetailsItemType	 
+	 * @var \PayPal\EBLBaseComponents\PaymentDetailsItemType	 
 	 */ 
 	public $PaymentDetailsItem;
 
@@ -257,7 +257,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $InsuranceTotal;
 
@@ -269,7 +269,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $ShippingDiscount;
 
@@ -303,7 +303,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EnhancedDataTypes\EnhancedPaymentDataType	 
+	 * @var \PayPal\EnhancedDataTypes\EnhancedPaymentDataType	 
 	 */ 
 	public $EnhancedPaymentData;
 
@@ -314,7 +314,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\SellerDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\SellerDetailsType	 
 	 */ 
 	public $SellerDetails;
 
@@ -421,7 +421,7 @@ class PaymentDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\OfferDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\OfferDetailsType	 
 	 */ 
 	public $OfferDetails;
 

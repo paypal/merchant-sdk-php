@@ -14,7 +14,7 @@ class GetAuthDetailsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\GetAuthDetailsRequestType	 
+	 * @var \PayPal\PayPalAPI\GetAuthDetailsRequestType	 
 	 */ 
 	public $GetAuthDetailsRequest;
 

@@ -111,7 +111,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\OptionDetailsType	 
+	 * @var \PayPal\PayPalAPI\OptionDetailsType	 
 	 */ 
 	public $OptionDetails;
 

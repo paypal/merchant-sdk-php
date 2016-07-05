@@ -65,7 +65,7 @@ class PaymentItemInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PaymentItemType	 
+	 * @var \PayPal\EBLBaseComponents\PaymentItemType	 
 	 */ 
 	public $PaymentItem;
 
@@ -77,7 +77,7 @@ class PaymentItemInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\SubscriptionInfoType	 
+	 * @var \PayPal\EBLBaseComponents\SubscriptionInfoType	 
 	 */ 
 	public $Subscription;
 
@@ -89,7 +89,7 @@ class PaymentItemInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AuctionInfoType	 
+	 * @var \PayPal\EBLBaseComponents\AuctionInfoType	 
 	 */ 
 	public $Auction;
 

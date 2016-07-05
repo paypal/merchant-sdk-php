@@ -14,7 +14,7 @@ class SetMobileCheckoutRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\SetMobileCheckoutRequestDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\SetMobileCheckoutRequestDetailsType	 
 	 */ 
 	public $SetMobileCheckoutRequestDetails;
 

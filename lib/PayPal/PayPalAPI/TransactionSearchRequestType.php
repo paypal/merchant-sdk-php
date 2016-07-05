@@ -1,47 +1,47 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
+use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  * The earliest transaction date at which to start the search.
  * No wildcards are allowed. Required
  */
-class TransactionSearchRequestType  extends AbstractRequestType  
+class TransactionSearchRequestType  extends AbstractRequestType
   {
 
 	/**
 	 * The earliest transaction date at which to start the search.
 	 * No wildcards are allowed. Required
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var dateTime	 
-	 */ 
+
+
+	 * @var dateTime
+	 */
 	public $StartDate;
 
 	/**
 	 * The latest transaction date to be included in the search
 	 * Optional
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var dateTime	 
-	 */ 
+
+
+	 * @var dateTime
+	 */
 	public $EndDate;
 
 	/**
 	 * Search by the buyer's email address OptionalCharacter length
 	 * and limitations: 127 single-byte alphanumeric characters
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Payer;
 
 	/**
@@ -49,23 +49,23 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * account has only one email, this is the primary email. Can
 	 * also be a non-primary email.Optional
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Receiver;
 
 	/**
 	 * Search by the PayPal Account Optional receipt IDOptional
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ReceiptID;
 
 	/**
@@ -73,12 +73,12 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * are from the merchant's transaction records. Character
 	 * length and limitations: 19 single-byte characters maximum
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $TransactionID;
 
 	/**
@@ -86,12 +86,12 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * returned as part of the CreateRecurringPaymentsProfile API
 	 * response. Optional
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ProfileID;
 
 	/**
@@ -101,12 +101,12 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * limit.LastName: 25 single-byte character limit.Suffix: 12
 	 * single-byte character limit.
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PersonNameType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\PersonNameType
+	 */
 	public $PayerName;
 
 	/**
@@ -116,12 +116,12 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * item_number variable set in the shopping cart for the
 	 * original transaction.
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $AuctionItemNumber;
 
 	/**
@@ -133,23 +133,23 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * Character length and limitations: 127 single-byte characters
 	 * maximum
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $InvoiceID;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $CardNumber;
 
 	/**
@@ -177,36 +177,36 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * post transaction.NonReferencedRefunds: non-referenced
 	 * refunds.
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $TransactionClass;
 
 	/**
 	 * Search by transaction amount OptionalYou must set the
 	 * currencyID attribute to one of the three-character currency
-	 * codes for any of the supported PayPal currencies. 
+	 * codes for any of the supported PayPal currencies.
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+
+
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $Amount;
 
 	/**
 	 * Search by currency codeOptional
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $CurrencyCode;
 
 	/**
@@ -222,12 +222,12 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * reversal. The funds have been removed from your account
 	 * balance and returned to the buyer.
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Status;
 
 	/**
@@ -238,5 +238,5 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	}
 
 
-    
+
 }

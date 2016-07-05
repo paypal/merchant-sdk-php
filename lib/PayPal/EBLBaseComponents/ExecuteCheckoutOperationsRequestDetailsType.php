@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
@@ -9,9 +9,9 @@ use PayPal\Core\PPXmlMessage;
  * modify an existing checkout session with another invocation
  * of ExecuteCheckoutOperationsRequest; for example, if you
  * want the customer to edit his shipping address on PayPal.
- * Character length and limitations: 20 single-byte characters 
+ * Character length and limitations: 20 single-byte characters
  */
-class ExecuteCheckoutOperationsRequestDetailsType  
+class ExecuteCheckoutOperationsRequestDetailsType
    extends PPXmlMessage{
 
 	/**
@@ -22,38 +22,38 @@ class ExecuteCheckoutOperationsRequestDetailsType
 	 * modify an existing checkout session with another invocation
 	 * of ExecuteCheckoutOperationsRequest; for example, if you
 	 * want the customer to edit his shipping address on PayPal.
-	 * Character length and limitations: 20 single-byte characters 
+	 * Character length and limitations: 20 single-byte characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Token;
 
 	/**
 	 * All the Data required to initiate the checkout session is
-	 * passed in this element. 
+	 * passed in this element.
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\SetDataRequestType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\SetDataRequestType
+	 */
 	public $SetDataRequest;
 
 	/**
 	 * If auto authorization is required, this should be passed in
-	 * with IsRequested set to yes. 
+	 * with IsRequested set to yes.
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AuthorizationRequestType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\AuthorizationRequestType
+	 */
 	public $AuthorizationRequest;
 
 	/**
@@ -64,5 +64,5 @@ class ExecuteCheckoutOperationsRequestDetailsType
 	}
 
 
-    
+
 }

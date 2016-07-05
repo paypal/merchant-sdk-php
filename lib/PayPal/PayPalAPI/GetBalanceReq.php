@@ -14,7 +14,7 @@ class GetBalanceReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\GetBalanceRequestType	 
+	 * @var \PayPal\PayPalAPI\GetBalanceRequestType	 
 	 */ 
 	public $GetBalanceRequest;
 

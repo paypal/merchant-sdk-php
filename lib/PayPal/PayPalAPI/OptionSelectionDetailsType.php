@@ -50,7 +50,7 @@ class OptionSelectionDetailsType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\InstallmentDetailsType	 
+	 * @var \PayPal\PayPalAPI\InstallmentDetailsType	 
 	 */ 
 	public $PaymentPeriod;
 

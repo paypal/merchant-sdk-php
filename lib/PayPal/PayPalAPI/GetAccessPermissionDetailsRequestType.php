@@ -1,25 +1,25 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
+use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  * A timestamped token, the value of which was returned by
  * SetAuthFlowParam Response. Required Character length and
- * limitations: 20 single-byte characters 
+ * limitations: 20 single-byte characters
  */
-class GetAccessPermissionDetailsRequestType  extends AbstractRequestType  
+class GetAccessPermissionDetailsRequestType  extends AbstractRequestType
   {
 
 	/**
 	 * A timestamped token, the value of which was returned by
 	 * SetAuthFlowParam Response. Required Character length and
-	 * limitations: 20 single-byte characters 
+	 * limitations: 20 single-byte characters
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Token;
 
 	/**
@@ -30,5 +30,5 @@ class GetAccessPermissionDetailsRequestType  extends AbstractRequestType
 	}
 
 
-    
+
 }

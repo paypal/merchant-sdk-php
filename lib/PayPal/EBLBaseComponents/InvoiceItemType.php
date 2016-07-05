@@ -80,7 +80,7 @@ class InvoiceItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Price;
 
@@ -91,7 +91,7 @@ class InvoiceItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $ItemPrice;
 
@@ -125,7 +125,7 @@ class InvoiceItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\DiscountType	 
+	 * @var \PayPal\EBLBaseComponents\DiscountType	 
 	 */ 
 	public $Discount;
 
@@ -164,7 +164,7 @@ class InvoiceItemType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AdditionalFeeType	 
+	 * @var \PayPal\EBLBaseComponents\AdditionalFeeType	 
 	 */ 
 	public $AdditionalFees;
 

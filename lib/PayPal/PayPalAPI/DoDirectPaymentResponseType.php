@@ -1,23 +1,23 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractResponseType; 
+use PayPal\EBLBaseComponents\AbstractResponseType;
 /**
  * The amount of the payment as specified by you on
  * DoDirectPaymentRequest.
  */
-class DoDirectPaymentResponseType  extends AbstractResponseType  
+class DoDirectPaymentResponseType  extends AbstractResponseType
   {
 
 	/**
 	 * The amount of the payment as specified by you on
 	 * DoDirectPaymentRequest.
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+
+
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $Amount;
 
 	/**
@@ -37,12 +37,12 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 * five-digit ZIP Z ZIP Five-digit ZIP code (no Address) All
 	 * others Error Not applicable
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $AVSCode;
 
 	/**
@@ -50,82 +50,82 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 * Details M MatchCVV2 N No match None P Not ProcessedNot
 	 * applicable SService not SupportedNot applicable U
 	 * UnavailableNot applicable XNo response Not applicable All
-	 * others ErrorNot applicable 
+	 * others ErrorNot applicable
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $CVV2Code;
 
 	/**
 	 * Transaction identification number. Character length and
 	 * limitations: 19 characters maximum.
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $TransactionID;
 
 	/**
-	 * The reason why a particular transaction went in pending. 
+	 * The reason why a particular transaction went in pending.
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $PendingReason;
 
 	/**
-	 * This will identify the actual transaction status. 
+	 * This will identify the actual transaction status.
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $PaymentStatus;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\FMFDetailsType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\FMFDetailsType
+	 */
 	public $FMFDetails;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ThreeDSecureResponseType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\ThreeDSecureResponseType
+	 */
 	public $ThreeDSecureResponse;
 
 	/**
 	 * Response code from the processor when a recurring
-	 * transaction is declined.  
+	 * transaction is declined.
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $PaymentAdviceCode;
 
 

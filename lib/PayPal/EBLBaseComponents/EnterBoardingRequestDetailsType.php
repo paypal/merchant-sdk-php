@@ -1,24 +1,24 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
  * Onboarding program code given to you by PayPal. Required
  * Character length and limitations: 64 alphanumeric characters
- * 
+ *
  */
-class EnterBoardingRequestDetailsType  
+class EnterBoardingRequestDetailsType
    extends PPXmlMessage{
 
 	/**
 	 * Onboarding program code given to you by PayPal. Required
 	 * Character length and limitations: 64 alphanumeric characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ProgramCode;
 
 	/**
@@ -35,12 +35,12 @@ class EnterBoardingRequestDetailsType
 	 * details, refunding, and mass payments. Required Character
 	 * length and limitations: 64 alphanumeric characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ProductList;
 
 	/**
@@ -48,12 +48,12 @@ class EnterBoardingRequestDetailsType
 	 * Optional Character length and limitations: 256 alphanumeric
 	 * characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $PartnerCustom;
 
 	/**
@@ -61,59 +61,59 @@ class EnterBoardingRequestDetailsType
 	 * Page. Optional Character length and limitations: 2,048
 	 * alphanumeric characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ImageUrl;
 
 	/**
 	 * Marketing category tha configures the graphic displayed n
 	 * the PayPal Partner Welcome page.
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $MarketingCategory;
 
 	/**
 	 * Information about the merchantâs business
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\BusinessInfoType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\BusinessInfoType
+	 */
 	public $BusinessInfo;
 
 	/**
 	 * Information about the merchant (the business owner)
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\BusinessOwnerInfoType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\BusinessOwnerInfoType
+	 */
 	public $OwnerInfo;
 
 	/**
 	 * Information about the merchant's bank account
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\BankAccountDetailsType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\BankAccountDetailsType
+	 */
 	public $BankAccount;
 
 
-    
+
 }

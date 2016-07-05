@@ -58,7 +58,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AddressType	 
+	 * @var \PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $SubscriberShippingAddress;
 
@@ -91,7 +91,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Amount;
 
@@ -102,7 +102,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $ShippingAmount;
 
@@ -113,7 +113,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $TaxAmount;
 
@@ -124,7 +124,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $OutstandingBalance;
 
@@ -158,7 +158,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\CreditCardDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\CreditCardDetailsType	 
 	 */ 
 	public $CreditCard;
 
@@ -180,7 +180,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\BillingPeriodDetailsType_Update	 
+	 * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType_Update	 
 	 */ 
 	public $TrialPeriod;
 
@@ -191,7 +191,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\BillingPeriodDetailsType_Update	 
+	 * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType_Update	 
 	 */ 
 	public $PaymentPeriod;
 

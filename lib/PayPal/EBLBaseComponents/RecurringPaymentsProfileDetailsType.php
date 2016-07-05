@@ -1,59 +1,59 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
  * Subscriber name - if missing, will use name in buyer's
- * account 
+ * account
  */
-class RecurringPaymentsProfileDetailsType  
+class RecurringPaymentsProfileDetailsType
    extends PPXmlMessage{
 
 	/**
 	 * Subscriber name - if missing, will use name in buyer's
-	 * account 
+	 * account
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $SubscriberName;
 
 	/**
 	 * Subscriber address - if missing, will use address in buyer's
-	 * account 
+	 * account
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AddressType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\AddressType
+	 */
 	public $SubscriberShippingAddress;
 
 	/**
-	 * When does this Profile begin billing? 
+	 * When does this Profile begin billing?
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var dateTime	 
-	 */ 
+
+
+	 * @var dateTime
+	 */
 	public $BillingStartDate;
 
 	/**
 	 * Your own unique invoice or tracking number. Optional
 	 * Character length and limitations: 127 single-byte
-	 * alphanumeric characters 
+	 * alphanumeric characters
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $ProfileReference;
 
 	/**
@@ -64,5 +64,5 @@ class RecurringPaymentsProfileDetailsType
 	}
 
 
-    
+
 }

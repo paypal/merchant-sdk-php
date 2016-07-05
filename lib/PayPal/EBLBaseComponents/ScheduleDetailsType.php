@@ -1,77 +1,77 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
- * Schedule details for the Recurring Payment 
+ * Schedule details for the Recurring Payment
  */
-class ScheduleDetailsType  
+class ScheduleDetailsType
    extends PPXmlMessage{
 
 	/**
-	 * Schedule details for the Recurring Payment 
+	 * Schedule details for the Recurring Payment
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $Description;
 
 	/**
-	 * Trial period of this schedule 
+	 * Trial period of this schedule
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\BillingPeriodDetailsType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType
+	 */
 	public $TrialPeriod;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\BillingPeriodDetailsType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType
+	 */
 	public $PaymentPeriod;
 
 	/**
 	 * The max number of payments the buyer can fail before this
-	 * Recurring Payments profile is cancelled 
+	 * Recurring Payments profile is cancelled
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var integer	 
-	 */ 
+
+
+	 * @var integer
+	 */
 	public $MaxFailedPayments;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ActivationDetailsType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\ActivationDetailsType
+	 */
 	public $ActivationDetails;
 
 	/**
-	 * 
+	 *
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $AutoBillOutstandingAmount;
 
 	/**
@@ -83,5 +83,5 @@ class ScheduleDetailsType
 	}
 
 
-    
+
 }

@@ -1,21 +1,21 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
+use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
- * UATP card details Required 
+ * UATP card details Required
  */
-class DoUATPAuthorizationRequestType  extends AbstractRequestType  
+class DoUATPAuthorizationRequestType  extends AbstractRequestType
   {
 
 	/**
-	 * UATP card details Required 
+	 * UATP card details Required
 	 * @access public
-	 
+
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\UATPDetailsType	 
-	 */ 
+
+
+	 * @var \PayPal\EBLBaseComponents\UATPDetailsType
+	 */
 	public $UATPDetails;
 
 	/**
@@ -23,12 +23,12 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	 * is Order, which means that the transaction represents a
 	 * customer order that can be fulfilled over 29 days. Optional
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $TransactionEntity;
 
 	/**
@@ -37,36 +37,36 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	 * separator must be a period (.), and the thousands separator
 	 * must be a comma (,).
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+
+
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $Amount;
 
 	/**
-	 * Invoice ID. A pass through. 
+	 * Invoice ID. A pass through.
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $InvoiceID;
 
 	/**
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
-	 * single-byte characters maximum. 
+	 * single-byte characters maximum.
 	 * @access public
-	 
+
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+
+
+	 * @var string
+	 */
 	public $MsgSubID;
 
 	/**
@@ -78,5 +78,5 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	}
 
 
-    
+
 }
