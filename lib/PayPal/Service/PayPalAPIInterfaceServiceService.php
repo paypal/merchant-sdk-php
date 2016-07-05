@@ -5,12 +5,59 @@ use PayPal\Core\PPBaseService;
 use PayPal\Core\PPUtils;
 use PayPal\Common\PPApiContext;
 use PayPal\Handler\PPMerchantServiceHandler;
+use PayPal\PayPalAPI\AddressVerifyReq;
+use PayPal\PayPalAPI\BillAgreementUpdateReq;
+use PayPal\PayPalAPI\BillOutstandingAmountReq;
+use PayPal\PayPalAPI\BillUserReq;
+use PayPal\PayPalAPI\CancelRecoupReq;
+use PayPal\PayPalAPI\CompleteRecoupReq;
+use PayPal\PayPalAPI\CreateBillingAgreementReq;
+use PayPal\PayPalAPI\CreateMobilePaymentReq;
+use PayPal\PayPalAPI\CreateRecurringPaymentsProfileReq;
+use PayPal\PayPalAPI\DoAuthorizationReq;
+use PayPal\PayPalAPI\DoCancelReq;
+use PayPal\PayPalAPI\DoCaptureReq;
+use PayPal\PayPalAPI\DoDirectPaymentReq;
+use PayPal\PayPalAPI\DoExpressCheckoutPaymentReq;
+use PayPal\PayPalAPI\DoMobileCheckoutPaymentReq;
+use PayPal\PayPalAPI\DoNonReferencedCreditReq;
+use PayPal\PayPalAPI\DoReauthorizationReq;
+use PayPal\PayPalAPI\DoReferenceTransactionReq;
+use PayPal\PayPalAPI\DoUATPAuthorizationReq;
+use PayPal\PayPalAPI\DoUATPExpressCheckoutPaymentReq;
+use PayPal\PayPalAPI\DoVoidReq;
+use PayPal\PayPalAPI\EnterBoardingReq;
+use PayPal\PayPalAPI\ExecuteCheckoutOperationsReq;
+use PayPal\PayPalAPI\ExternalRememberMeOptOutReq;
+use PayPal\PayPalAPI\GetAccessPermissionDetailsReq;
+use PayPal\PayPalAPI\GetAuthDetailsReq;
+use PayPal\PayPalAPI\GetBalanceReq;
+use PayPal\PayPalAPI\GetBillingAgreementCustomerDetailsReq;
+use PayPal\PayPalAPI\GetBoardingDetailsReq;
+use PayPal\PayPalAPI\GetExpressCheckoutDetailsReq;
+use PayPal\PayPalAPI\GetIncentiveEvaluationReq;
+use PayPal\PayPalAPI\GetMobileStatusReq;
+use PayPal\PayPalAPI\GetPalDetailsReq;
+use PayPal\PayPalAPI\GetRecurringPaymentsProfileDetailsReq;
+use PayPal\PayPalAPI\GetTransactionDetailsReq;
+use PayPal\PayPalAPI\InitiateRecoupReq;
+use PayPal\PayPalAPI\ManagePendingTransactionStatusReq;
+use PayPal\PayPalAPI\ManageRecurringPaymentsProfileStatusReq;
+use PayPal\PayPalAPI\MassPayReq;
+use PayPal\PayPalAPI\RefundTransactionReq;
 use PayPal\PayPalAPI\RefundTransactionResponseType;
 use PayPal\PayPalAPI\InitiateRecoupResponseType;
 use PayPal\PayPalAPI\CompleteRecoupResponseType;
 use PayPal\PayPalAPI\CancelRecoupResponseType;
 use PayPal\PayPalAPI\GetTransactionDetailsResponseType;
 use PayPal\PayPalAPI\BillUserResponseType;
+use PayPal\PayPalAPI\ReverseTransactionReq;
+use PayPal\PayPalAPI\SetAccessPermissionsReq;
+use PayPal\PayPalAPI\SetAuthFlowParamReq;
+use PayPal\PayPalAPI\SetCustomerBillingAgreementReq;
+use PayPal\PayPalAPI\SetExpressCheckoutReq;
+use PayPal\PayPalAPI\SetMobileCheckoutReq;
+use PayPal\PayPalAPI\TransactionSearchReq;
 use PayPal\PayPalAPI\TransactionSearchResponseType;
 use PayPal\PayPalAPI\MassPayResponseType;
 use PayPal\PayPalAPI\BAUpdateResponseType;
@@ -28,6 +75,7 @@ use PayPal\PayPalAPI\DoUATPExpressCheckoutPaymentResponseType;
 use PayPal\PayPalAPI\SetAuthFlowParamResponseType;
 use PayPal\PayPalAPI\GetAuthDetailsResponseType;
 use PayPal\PayPalAPI\SetAccessPermissionsResponseType;
+use PayPal\PayPalAPI\UpdateAccessPermissionsReq;
 use PayPal\PayPalAPI\UpdateAccessPermissionsResponseType;
 use PayPal\PayPalAPI\GetAccessPermissionDetailsResponseType;
 use PayPal\PayPalAPI\GetIncentiveEvaluationResponseType;
@@ -41,6 +89,7 @@ use PayPal\PayPalAPI\DoCaptureResponseType;
 use PayPal\PayPalAPI\DoReauthorizationResponseType;
 use PayPal\PayPalAPI\DoVoidResponseType;
 use PayPal\PayPalAPI\DoAuthorizationResponseType;
+use PayPal\PayPalAPI\UpdateAuthorizationReq;
 use PayPal\PayPalAPI\UpdateAuthorizationResponseType;
 use PayPal\PayPalAPI\SetCustomerBillingAgreementResponseType;
 use PayPal\PayPalAPI\GetBillingAgreementCustomerDetailsResponseType;
@@ -52,6 +101,7 @@ use PayPal\PayPalAPI\CreateRecurringPaymentsProfileResponseType;
 use PayPal\PayPalAPI\GetRecurringPaymentsProfileDetailsResponseType;
 use PayPal\PayPalAPI\ManageRecurringPaymentsProfileStatusResponseType;
 use PayPal\PayPalAPI\BillOutstandingAmountResponseType;
+use PayPal\PayPalAPI\UpdateRecurringPaymentsProfileReq;
 use PayPal\PayPalAPI\UpdateRecurringPaymentsProfileResponseType;
 use PayPal\PayPalAPI\ReverseTransactionResponseType;
 use PayPal\PayPalAPI\ExternalRememberMeOptOutResponseType;
@@ -93,7 +143,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\RefundTransactionResponseType
+	 * @return \PayPal\PayPalAPI\RefundTransactionResponseType
 	 * @throws APIException
 	 */
 	public function RefundTransaction($refundTransactionReq, $apiCredential = NULL) {
@@ -115,7 +165,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\InitiateRecoupResponseType
+	 * @return \PayPal\PayPalAPI\InitiateRecoupResponseType
 	 * @throws APIException
 	 */
 	public function InitiateRecoup($initiateRecoupReq, $apiCredential = NULL) {
@@ -137,7 +187,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\CompleteRecoupResponseType
+	 * @return \PayPal\PayPalAPI\CompleteRecoupResponseType
 	 * @throws APIException
 	 */
 	public function CompleteRecoup($completeRecoupReq, $apiCredential = NULL) {
@@ -159,7 +209,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\CancelRecoupResponseType
+	 * @return \PayPal\PayPalAPI\CancelRecoupResponseType
 	 * @throws APIException
 	 */
 	public function CancelRecoup($cancelRecoupReq, $apiCredential = NULL) {
@@ -181,7 +231,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\GetTransactionDetailsResponseType
+	 * @return \PayPal\PayPalAPI\GetTransactionDetailsResponseType
 	 * @throws APIException
 	 */
 	public function GetTransactionDetails($getTransactionDetailsReq, $apiCredential = NULL) {
@@ -203,7 +253,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\BillUserResponseType
+	 * @return \PayPal\PayPalAPI\BillUserResponseType
 	 * @throws APIException
 	 */
 	public function BillUser($billUserReq, $apiCredential = NULL) {
@@ -225,7 +275,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\TransactionSearchResponseType
+	 * @return \PayPal\PayPalAPI\TransactionSearchResponseType
 	 * @throws APIException
 	 */
 	public function TransactionSearch($transactionSearchReq, $apiCredential = NULL) {
@@ -247,7 +297,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\MassPayResponseType
+	 * @return \PayPal\PayPalAPI\MassPayResponseType
 	 * @throws APIException
 	 */
 	public function MassPay($massPayReq, $apiCredential = NULL) {
@@ -269,7 +319,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\BAUpdateResponseType
+	 * @return \PayPal\PayPalAPI\BAUpdateResponseType
 	 * @throws APIException
 	 */
 	public function BillAgreementUpdate($billAgreementUpdateReq, $apiCredential = NULL) {
@@ -291,7 +341,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\AddressVerifyResponseType
+	 * @return \PayPal\PayPalAPI\AddressVerifyResponseType
 	 * @throws APIException
 	 */
 	public function AddressVerify($addressVerifyReq, $apiCredential = NULL) {
@@ -313,7 +363,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\EnterBoardingResponseType
+	 * @return \PayPal\PayPalAPI\EnterBoardingResponseType
 	 * @throws APIException
 	 */
 	public function EnterBoarding($enterBoardingReq, $apiCredential = NULL) {
@@ -335,7 +385,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\GetBoardingDetailsResponseType
+	 * @return \PayPal\PayPalAPI\GetBoardingDetailsResponseType
 	 * @throws APIException
 	 */
 	public function GetBoardingDetails($getBoardingDetailsReq, $apiCredential = NULL) {
@@ -357,7 +407,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\CreateMobilePaymentResponseType
+	 * @return \PayPal\PayPalAPI\CreateMobilePaymentResponseType
 	 * @throws APIException
 	 */
 	public function CreateMobilePayment($createMobilePaymentReq, $apiCredential = NULL) {
@@ -379,7 +429,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\GetMobileStatusResponseType
+	 * @return \PayPal\PayPalAPI\GetMobileStatusResponseType
 	 * @throws APIException
 	 */
 	public function GetMobileStatus($getMobileStatusReq, $apiCredential = NULL) {
@@ -401,7 +451,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\SetMobileCheckoutResponseType
+	 * @return \PayPal\PayPalAPI\SetMobileCheckoutResponseType
 	 * @throws APIException
 	 */
 	public function SetMobileCheckout($setMobileCheckoutReq, $apiCredential = NULL) {
@@ -423,7 +473,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\DoMobileCheckoutPaymentResponseType
+	 * @return \PayPal\PayPalAPI\DoMobileCheckoutPaymentResponseType
 	 * @throws APIException
 	 */
 	public function DoMobileCheckoutPayment($doMobileCheckoutPaymentReq, $apiCredential = NULL) {
@@ -445,7 +495,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\GetBalanceResponseType
+	 * @return \PayPal\PayPalAPI\GetBalanceResponseType
 	 * @throws APIException
 	 */
 	public function GetBalance($getBalanceReq, $apiCredential = NULL) {
@@ -467,7 +517,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\GetPalDetailsResponseType
+	 * @return \PayPal\PayPalAPI\GetPalDetailsResponseType
 	 * @throws APIException
 	 */
 	public function GetPalDetails($getPalDetailsReq, $apiCredential = NULL) {
@@ -489,7 +539,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\DoExpressCheckoutPaymentResponseType
+	 * @return \PayPal\PayPalAPI\DoExpressCheckoutPaymentResponseType
 	 * @throws APIException
 	 */
 	public function DoExpressCheckoutPayment($doExpressCheckoutPaymentReq, $apiCredential = NULL) {
@@ -511,7 +561,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\DoUATPExpressCheckoutPaymentResponseType
+	 * @return \PayPal\PayPalAPI\DoUATPExpressCheckoutPaymentResponseType
 	 * @throws APIException
 	 */
 	public function DoUATPExpressCheckoutPayment($doUATPExpressCheckoutPaymentReq, $apiCredential = NULL) {
@@ -533,7 +583,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\SetAuthFlowParamResponseType
+	 * @return \PayPal\PayPalAPI\SetAuthFlowParamResponseType
 	 * @throws APIException
 	 */
 	public function SetAuthFlowParam($setAuthFlowParamReq, $apiCredential = NULL) {
@@ -555,7 +605,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\GetAuthDetailsResponseType
+	 * @return \PayPal\PayPalAPI\GetAuthDetailsResponseType
 	 * @throws APIException
 	 */
 	public function GetAuthDetails($getAuthDetailsReq, $apiCredential = NULL) {
@@ -577,7 +627,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\SetAccessPermissionsResponseType
+	 * @return \PayPal\PayPalAPI\SetAccessPermissionsResponseType
 	 * @throws APIException
 	 */
 	public function SetAccessPermissions($setAccessPermissionsReq, $apiCredential = NULL) {
@@ -599,7 +649,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\UpdateAccessPermissionsResponseType
+	 * @return \PayPal\PayPalAPI\UpdateAccessPermissionsResponseType
 	 * @throws APIException
 	 */
 	public function UpdateAccessPermissions($updateAccessPermissionsReq, $apiCredential = NULL) {
@@ -621,7 +671,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\GetAccessPermissionDetailsResponseType
+	 * @return \PayPal\PayPalAPI\GetAccessPermissionDetailsResponseType
 	 * @throws APIException
 	 */
 	public function GetAccessPermissionDetails($getAccessPermissionDetailsReq, $apiCredential = NULL) {
@@ -643,7 +693,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\GetIncentiveEvaluationResponseType
+	 * @return \PayPal\PayPalAPI\GetIncentiveEvaluationResponseType
 	 * @throws APIException
 	 */
 	public function GetIncentiveEvaluation($getIncentiveEvaluationReq, $apiCredential = NULL) {
@@ -665,7 +715,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\SetExpressCheckoutResponseType
+	 * @return \PayPal\PayPalAPI\SetExpressCheckoutResponseType
 	 * @throws APIException
 	 */
 	public function SetExpressCheckout($setExpressCheckoutReq, $apiCredential = NULL) {
@@ -687,7 +737,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\ExecuteCheckoutOperationsResponseType
+	 * @return \PayPal\PayPalAPI\ExecuteCheckoutOperationsResponseType
 	 * @throws APIException
 	 */
 	public function ExecuteCheckoutOperations($executeCheckoutOperationsReq, $apiCredential = NULL) {
@@ -709,7 +759,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\GetExpressCheckoutDetailsResponseType
+	 * @return \PayPal\PayPalAPI\GetExpressCheckoutDetailsResponseType
 	 * @throws APIException
 	 */
 	public function GetExpressCheckoutDetails($getExpressCheckoutDetailsReq, $apiCredential = NULL) {
@@ -731,7 +781,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\DoDirectPaymentResponseType
+	 * @return \PayPal\PayPalAPI\DoDirectPaymentResponseType
 	 * @throws APIException
 	 */
 	public function DoDirectPayment($doDirectPaymentReq, $apiCredential = NULL) {
@@ -753,7 +803,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\ManagePendingTransactionStatusResponseType
+	 * @return \PayPal\PayPalAPI\ManagePendingTransactionStatusResponseType
 	 * @throws APIException
 	 */
 	public function ManagePendingTransactionStatus($managePendingTransactionStatusReq, $apiCredential = NULL) {
@@ -775,7 +825,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\DoCancelResponseType
+	 * @return \PayPal\PayPalAPI\DoCancelResponseType
 	 * @throws APIException
 	 */
 	public function DoCancel($doCancelReq, $apiCredential = NULL) {
@@ -797,7 +847,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\DoCaptureResponseType
+	 * @return \PayPal\PayPalAPI\DoCaptureResponseType
 	 * @throws APIException
 	 */
 	public function DoCapture($doCaptureReq, $apiCredential = NULL) {
@@ -819,7 +869,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\DoReauthorizationResponseType
+	 * @return \PayPal\PayPalAPI\DoReauthorizationResponseType
 	 * @throws APIException
 	 */
 	public function DoReauthorization($doReauthorizationReq, $apiCredential = NULL) {
@@ -841,7 +891,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\DoVoidResponseType
+	 * @return \PayPal\PayPalAPI\DoVoidResponseType
 	 * @throws APIException
 	 */
 	public function DoVoid($doVoidReq, $apiCredential = NULL) {
@@ -863,7 +913,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\DoAuthorizationResponseType
+	 * @return \PayPal\PayPalAPI\DoAuthorizationResponseType
 	 * @throws APIException
 	 */
 	public function DoAuthorization($doAuthorizationReq, $apiCredential = NULL) {
@@ -885,7 +935,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\UpdateAuthorizationResponseType
+	 * @return \PayPal\PayPalAPI\UpdateAuthorizationResponseType
 	 * @throws APIException
 	 */
 	public function UpdateAuthorization($updateAuthorizationReq, $apiCredential = NULL) {
@@ -907,7 +957,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\SetCustomerBillingAgreementResponseType
+	 * @return \PayPal\PayPalAPI\SetCustomerBillingAgreementResponseType
 	 * @throws APIException
 	 */
 	public function SetCustomerBillingAgreement($setCustomerBillingAgreementReq, $apiCredential = NULL) {
@@ -929,7 +979,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\GetBillingAgreementCustomerDetailsResponseType
+	 * @return \PayPal\PayPalAPI\GetBillingAgreementCustomerDetailsResponseType
 	 * @throws APIException
 	 */
 	public function GetBillingAgreementCustomerDetails($getBillingAgreementCustomerDetailsReq, $apiCredential = NULL) {
@@ -951,7 +1001,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\CreateBillingAgreementResponseType
+	 * @return \PayPal\PayPalAPI\CreateBillingAgreementResponseType
 	 * @throws APIException
 	 */
 	public function CreateBillingAgreement($createBillingAgreementReq, $apiCredential = NULL) {
@@ -973,7 +1023,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\DoReferenceTransactionResponseType
+	 * @return \PayPal\PayPalAPI\DoReferenceTransactionResponseType
 	 * @throws APIException
 	 */
 	public function DoReferenceTransaction($doReferenceTransactionReq, $apiCredential = NULL) {
@@ -995,7 +1045,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\DoNonReferencedCreditResponseType
+	 * @return \PayPal\PayPalAPI\DoNonReferencedCreditResponseType
 	 * @throws APIException
 	 */
 	public function DoNonReferencedCredit($doNonReferencedCreditReq, $apiCredential = NULL) {
@@ -1017,7 +1067,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\DoUATPAuthorizationResponseType
+	 * @return \PayPal\PayPalAPI\DoUATPAuthorizationResponseType
 	 * @throws APIException
 	 */
 	public function DoUATPAuthorization($doUATPAuthorizationReq, $apiCredential = NULL) {
@@ -1039,7 +1089,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\CreateRecurringPaymentsProfileResponseType
+	 * @return \PayPal\PayPalAPI\CreateRecurringPaymentsProfileResponseType
 	 * @throws APIException
 	 */
 	public function CreateRecurringPaymentsProfile($createRecurringPaymentsProfileReq, $apiCredential = NULL) {
@@ -1061,7 +1111,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\GetRecurringPaymentsProfileDetailsResponseType
+	 * @return \PayPal\PayPalAPI\GetRecurringPaymentsProfileDetailsResponseType
 	 * @throws APIException
 	 */
 	public function GetRecurringPaymentsProfileDetails($getRecurringPaymentsProfileDetailsReq, $apiCredential = NULL) {
@@ -1083,7 +1133,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\ManageRecurringPaymentsProfileStatusResponseType
+	 * @return \PayPal\PayPalAPI\ManageRecurringPaymentsProfileStatusResponseType
 	 * @throws APIException
 	 */
 	public function ManageRecurringPaymentsProfileStatus($manageRecurringPaymentsProfileStatusReq, $apiCredential = NULL) {
@@ -1105,7 +1155,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\BillOutstandingAmountResponseType
+	 * @return \PayPal\PayPalAPI\BillOutstandingAmountResponseType
 	 * @throws APIException
 	 */
 	public function BillOutstandingAmount($billOutstandingAmountReq, $apiCredential = NULL) {
@@ -1127,7 +1177,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\UpdateRecurringPaymentsProfileResponseType
+	 * @return \PayPal\PayPalAPI\UpdateRecurringPaymentsProfileResponseType
 	 * @throws APIException
 	 */
 	public function UpdateRecurringPaymentsProfile($updateRecurringPaymentsProfileReq, $apiCredential = NULL) {
@@ -1149,7 +1199,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\ReverseTransactionResponseType
+	 * @return \PayPal\PayPalAPI\ReverseTransactionResponseType
 	 * @throws APIException
 	 */
 	public function ReverseTransaction($reverseTransactionReq, $apiCredential = NULL) {
@@ -1171,7 +1221,7 @@ class PayPalAPIInterfaceServiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically
-	 * @return PayPalAPI\ExternalRememberMeOptOutResponseType
+	 * @return \PayPal\PayPalAPI\ExternalRememberMeOptOutResponseType
 	 * @throws APIException
 	 */
 	public function ExternalRememberMeOptOut($externalRememberMeOptOutReq, $apiCredential = NULL) {
