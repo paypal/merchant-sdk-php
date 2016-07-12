@@ -81,7 +81,6 @@ class SubscriptionInfoType
 	public $Terms;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @attribute
@@ -90,7 +89,6 @@ class SubscriptionInfoType
 	public $reattempt;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @attribute

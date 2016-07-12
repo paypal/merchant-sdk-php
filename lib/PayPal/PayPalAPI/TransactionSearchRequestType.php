@@ -112,7 +112,6 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	public $InvoiceID;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ns
 	 * @var string

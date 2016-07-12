@@ -107,7 +107,6 @@ class AddressType
 	public $Phone;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string

@@ -34,7 +34,6 @@ class OptionSelectionDetailsType
 	public $OptionType;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ns
 	 * @var \PayPal\PayPalAPI\InstallmentDetailsType[]

@@ -67,7 +67,6 @@ class DoDirectPaymentRequestDetailsType
 	public $MerchantSessionId;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var boolean

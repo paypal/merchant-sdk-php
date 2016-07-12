@@ -30,7 +30,6 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	public $PaymentInfo;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -38,7 +37,6 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	public $BillingAgreementID;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string

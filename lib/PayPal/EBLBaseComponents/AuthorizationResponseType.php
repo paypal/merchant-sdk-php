@@ -18,7 +18,6 @@ class AuthorizationResponseType
 	public $Status;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\ErrorType[]

@@ -24,7 +24,6 @@ class ScheduleDetailsType
 	public $TrialPeriod;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType
@@ -41,7 +40,6 @@ class ScheduleDetailsType
 	public $MaxFailedPayments;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\ActivationDetailsType
@@ -49,7 +47,6 @@ class ScheduleDetailsType
 	public $ActivationDetails;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string

@@ -9,7 +9,6 @@ class FMFDetailsType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\RiskFilterListType
@@ -17,7 +16,6 @@ class FMFDetailsType
 	public $AcceptFilters;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\RiskFilterListType
@@ -25,7 +23,6 @@ class FMFDetailsType
 	public $PendingFilters;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\RiskFilterListType
@@ -33,7 +30,6 @@ class FMFDetailsType
 	public $DenyFilters;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\RiskFilterListType

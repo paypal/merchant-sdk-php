@@ -45,7 +45,6 @@ class GetBoardingDetailsResponseDetailsType
 	public $Reason;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -53,7 +52,6 @@ class GetBoardingDetailsResponseDetailsType
 	public $ProgramName;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -61,7 +59,6 @@ class GetBoardingDetailsResponseDetailsType
 	public $ProgramCode;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string

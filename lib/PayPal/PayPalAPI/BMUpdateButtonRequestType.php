@@ -58,7 +58,6 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	public $ButtonVar;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ns
 	 * @var \PayPal\PayPalAPI\OptionDetailsType[]

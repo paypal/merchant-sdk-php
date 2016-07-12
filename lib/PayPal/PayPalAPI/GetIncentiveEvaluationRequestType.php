@@ -1,14 +1,11 @@
 <?php
 namespace PayPal\PayPalAPI;
 use PayPal\EBLBaseComponents\AbstractRequestType;
-/**
- *
- */
+
 class GetIncentiveEvaluationRequestType  extends AbstractRequestType
   {
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\GetIncentiveEvaluationRequestDetailsType

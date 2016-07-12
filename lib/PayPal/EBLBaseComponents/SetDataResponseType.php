@@ -18,7 +18,6 @@ class SetDataResponseType
 	public $Token;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\AddressType[]
@@ -26,7 +25,6 @@ class SetDataResponseType
 	public $ShippingAddresses;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\ErrorType[]

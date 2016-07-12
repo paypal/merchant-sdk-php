@@ -10,7 +10,6 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
   {
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ns
 	 * @var string
@@ -18,7 +17,6 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $Website;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ns
 	 * @var string
@@ -26,7 +24,6 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $Email;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ns
 	 * @var string
@@ -34,7 +31,6 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $Mobile;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ns
 	 * @var string
@@ -79,7 +75,6 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	public $ButtonVar;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ns
 	 * @var \PayPal\PayPalAPI\OptionDetailsType[]

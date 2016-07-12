@@ -36,7 +36,6 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	public $TrackPnl;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\ItemTrackingDetailsType
@@ -53,7 +52,6 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	public $OptionIndex;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\OptionTrackingDetailsType[]

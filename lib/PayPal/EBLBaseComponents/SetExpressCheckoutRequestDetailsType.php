@@ -380,7 +380,6 @@ class SetExpressCheckoutRequestDetailsType
 	public $BuyerEmail;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -388,7 +387,6 @@ class SetExpressCheckoutRequestDetailsType
 	public $ChannelType;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\BillingAgreementDetailsType[]
@@ -414,7 +412,6 @@ class SetExpressCheckoutRequestDetailsType
 	public $PayPalCheckOutBtnType;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -422,7 +419,6 @@ class SetExpressCheckoutRequestDetailsType
 	public $ProductCategory;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -619,7 +615,6 @@ class SetExpressCheckoutRequestDetailsType
 	public $SurveyChoice;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string

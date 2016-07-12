@@ -1,14 +1,11 @@
 <?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
-/**
- *
- */
+
 class PersonNameType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -16,7 +13,6 @@ class PersonNameType
 	public $Salutation;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -24,7 +20,6 @@ class PersonNameType
 	public $FirstName;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -32,7 +27,6 @@ class PersonNameType
 	public $MiddleName;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -40,7 +34,6 @@ class PersonNameType
 	public $LastName;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string

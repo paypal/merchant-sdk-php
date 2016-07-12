@@ -25,7 +25,6 @@ class AuctionInfoType
 	public $ClosingDate;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @attribute

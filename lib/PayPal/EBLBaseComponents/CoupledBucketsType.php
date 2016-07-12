@@ -24,7 +24,6 @@ class CoupledBucketsType
 	public $CoupledPaymentRequestID;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string[]

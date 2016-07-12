@@ -1,14 +1,11 @@
 <?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
-/**
- *
- */
+
 class UpdateRecurringPaymentsProfileRequestDetailsType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -16,7 +13,6 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $ProfileID;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -24,7 +20,6 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $Note;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -32,7 +27,6 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $Description;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -40,7 +34,6 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $SubscriberName;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\AddressType
@@ -48,7 +41,6 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $SubscriberShippingAddress;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -56,7 +48,6 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $ProfileReference;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var integer
@@ -64,7 +55,6 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $AdditionalBillingCycles;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -72,7 +62,6 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $Amount;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -80,7 +69,6 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $ShippingAmount;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -88,7 +76,6 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $TaxAmount;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -96,7 +83,6 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $OutstandingBalance;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -104,7 +90,6 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $AutoBillOutstandingAmount;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var integer
@@ -137,7 +122,6 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	public $TrialPeriod;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType_Update

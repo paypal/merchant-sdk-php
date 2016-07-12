@@ -8,7 +8,6 @@ class RiskFilterListType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\RiskFilterDetailsType[]

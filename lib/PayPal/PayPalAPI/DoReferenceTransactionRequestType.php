@@ -9,7 +9,6 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType
   {
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\DoReferenceTransactionRequestDetailsType

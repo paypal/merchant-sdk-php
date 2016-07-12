@@ -1,14 +1,11 @@
 <?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
-/**
- *
- */
+
 class SetCustomerBillingAgreementRequestDetailsType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\BillingAgreementDetailsType
@@ -16,7 +13,6 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $BillingAgreementDetails;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -24,7 +20,6 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $ReturnURL;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -32,7 +27,6 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $CancelURL;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -40,7 +34,6 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $LocaleCode;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -48,7 +41,6 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $PageStyle;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @name cpp-header-image
@@ -57,7 +49,6 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $cppheaderimage;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @name cpp-header-border-color
@@ -66,7 +57,6 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $cppheaderbordercolor;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @name cpp-header-back-color
@@ -75,7 +65,6 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $cppheaderbackcolor;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @name cpp-payflow-color
@@ -84,7 +73,6 @@ class SetCustomerBillingAgreementRequestDetailsType
 	public $cpppayflowcolor;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string

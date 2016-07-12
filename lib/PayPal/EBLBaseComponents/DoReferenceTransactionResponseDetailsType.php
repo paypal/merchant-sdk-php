@@ -1,14 +1,11 @@
 <?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
-/**
- *
- */
+
 class DoReferenceTransactionResponseDetailsType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -16,7 +13,6 @@ class DoReferenceTransactionResponseDetailsType
 	public $BillingAgreementID;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\PaymentInfoType
@@ -24,7 +20,6 @@ class DoReferenceTransactionResponseDetailsType
 	public $PaymentInfo;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -32,7 +27,6 @@ class DoReferenceTransactionResponseDetailsType
 	public $Amount;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -40,7 +34,6 @@ class DoReferenceTransactionResponseDetailsType
 	public $AVSCode;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -48,7 +41,6 @@ class DoReferenceTransactionResponseDetailsType
 	public $CVV2Code;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string

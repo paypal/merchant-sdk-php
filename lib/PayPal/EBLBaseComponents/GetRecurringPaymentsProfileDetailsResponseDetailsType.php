@@ -16,7 +16,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $ProfileID;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -24,7 +23,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $ProfileStatus;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -32,7 +30,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $Description;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -40,7 +37,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $AutoBillOutstandingAmount;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var integer
@@ -48,7 +44,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $MaxFailedPayments;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\RecurringPaymentsProfileDetailsType
@@ -56,7 +51,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $RecurringPaymentsProfileDetails;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType
@@ -64,7 +58,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $CurrentRecurringPaymentsPeriod;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\RecurringPaymentsSummaryType
@@ -72,7 +65,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $RecurringPaymentsSummary;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\CreditCardDetailsType
@@ -80,7 +72,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $CreditCard;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType
@@ -88,7 +79,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $TrialRecurringPaymentsPeriod;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType
@@ -96,7 +86,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $RegularRecurringPaymentsPeriod;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -104,7 +93,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $TrialAmountPaid;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -112,7 +100,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $RegularAmountPaid;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -120,7 +107,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $AggregateAmount;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -128,7 +114,6 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
 	public $AggregateOptionalAmount;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string ISO8601

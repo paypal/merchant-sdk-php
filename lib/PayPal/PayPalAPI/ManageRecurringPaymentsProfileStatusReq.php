@@ -1,14 +1,11 @@
 <?php
 namespace PayPal\PayPalAPI;
 use PayPal\Core\PPXmlMessage;
-/**
- *
- */
+
 class ManageRecurringPaymentsProfileStatusReq
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ns
 	 * @var \PayPal\PayPalAPI\ManageRecurringPaymentsProfileStatusRequestType

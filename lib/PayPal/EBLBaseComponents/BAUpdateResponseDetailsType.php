@@ -1,14 +1,11 @@
 <?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
-/**
- *
- */
+
 class BAUpdateResponseDetailsType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -16,7 +13,6 @@ class BAUpdateResponseDetailsType
 	public $BillingAgreementID;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -24,7 +20,6 @@ class BAUpdateResponseDetailsType
 	public $BillingAgreementDescription;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -32,7 +27,6 @@ class BAUpdateResponseDetailsType
 	public $BillingAgreementStatus;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -40,7 +34,6 @@ class BAUpdateResponseDetailsType
 	public $BillingAgreementCustom;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\PayerInfoType
@@ -48,7 +41,6 @@ class BAUpdateResponseDetailsType
 	public $PayerInfo;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType

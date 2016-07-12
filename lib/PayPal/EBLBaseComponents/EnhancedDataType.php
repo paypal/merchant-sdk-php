@@ -8,7 +8,6 @@ class EnhancedDataType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\AirlineItineraryType

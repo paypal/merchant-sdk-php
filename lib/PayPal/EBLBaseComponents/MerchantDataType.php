@@ -9,7 +9,6 @@ class MerchantDataType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\TupleType[]

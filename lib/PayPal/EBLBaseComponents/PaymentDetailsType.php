@@ -155,7 +155,6 @@ class PaymentDetailsType
 	public $FulfillmentReferenceNumber;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\AddressType
@@ -163,7 +162,6 @@ class PaymentDetailsType
 	public $FulfillmentAddress;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -171,7 +169,6 @@ class PaymentDetailsType
 	public $PaymentCategoryType;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string

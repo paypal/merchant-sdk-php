@@ -62,7 +62,6 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $ContactPhone;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var boolean
@@ -70,7 +69,6 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	public $BillingAgreementAcceptedStatus;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string

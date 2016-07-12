@@ -1,14 +1,11 @@
 <?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
-/**
- *
- */
+
 class DoNonReferencedCreditResponseDetailsType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -16,7 +13,6 @@ class DoNonReferencedCreditResponseDetailsType
 	public $Amount;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string

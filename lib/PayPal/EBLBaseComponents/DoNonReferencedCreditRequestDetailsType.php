@@ -1,14 +1,11 @@
 <?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
-/**
- *
- */
+
 class DoNonReferencedCreditRequestDetailsType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -16,7 +13,6 @@ class DoNonReferencedCreditRequestDetailsType
 	public $Amount;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -24,7 +20,6 @@ class DoNonReferencedCreditRequestDetailsType
 	public $NetAmount;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -32,7 +27,6 @@ class DoNonReferencedCreditRequestDetailsType
 	public $TaxAmount;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -40,7 +34,6 @@ class DoNonReferencedCreditRequestDetailsType
 	public $ShippingAmount;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\CreditCardDetailsType
@@ -48,7 +41,6 @@ class DoNonReferencedCreditRequestDetailsType
 	public $CreditCard;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -56,7 +48,6 @@ class DoNonReferencedCreditRequestDetailsType
 	public $ReceiverEmail;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string

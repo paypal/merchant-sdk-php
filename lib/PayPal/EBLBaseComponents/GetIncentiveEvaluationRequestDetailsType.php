@@ -1,14 +1,11 @@
 <?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
-/**
- *
- */
+
 class GetIncentiveEvaluationRequestDetailsType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -16,7 +13,6 @@ class GetIncentiveEvaluationRequestDetailsType
 	public $ExternalBuyerId;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string[]
@@ -24,7 +20,6 @@ class GetIncentiveEvaluationRequestDetailsType
 	public $IncentiveCodes;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\IncentiveApplyIndicationType[]
@@ -32,7 +27,6 @@ class GetIncentiveEvaluationRequestDetailsType
 	public $ApplyIndication;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\IncentiveBucketType[]
@@ -40,7 +34,6 @@ class GetIncentiveEvaluationRequestDetailsType
 	public $Buckets;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -48,7 +41,6 @@ class GetIncentiveEvaluationRequestDetailsType
 	public $CartTotalAmt;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\IncentiveRequestDetailsType

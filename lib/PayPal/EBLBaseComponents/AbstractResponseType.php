@@ -39,7 +39,6 @@ class AbstractResponseType
 	public $CorrelationID;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\ErrorType[]

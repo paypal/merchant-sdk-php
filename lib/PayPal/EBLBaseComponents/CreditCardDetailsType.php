@@ -8,7 +8,6 @@ class CreditCardDetailsType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -16,7 +15,6 @@ class CreditCardDetailsType
 	public $CreditCardType;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -24,7 +22,6 @@ class CreditCardDetailsType
 	public $CreditCardNumber;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var integer
@@ -32,7 +29,6 @@ class CreditCardDetailsType
 	public $ExpMonth;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var integer
@@ -40,7 +36,6 @@ class CreditCardDetailsType
 	public $ExpYear;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\PayerInfoType
@@ -48,7 +43,6 @@ class CreditCardDetailsType
 	public $CardOwner;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -56,7 +50,6 @@ class CreditCardDetailsType
 	public $CVV2;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var integer
@@ -64,7 +57,6 @@ class CreditCardDetailsType
 	public $StartMonth;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var integer
@@ -72,7 +64,6 @@ class CreditCardDetailsType
 	public $StartYear;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -80,7 +71,6 @@ class CreditCardDetailsType
 	public $IssueNumber;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\ThreeDSecureRequestType

@@ -1,14 +1,11 @@
 <?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
-/**
- *
- */
+
 class BillOutstandingAmountRequestDetailsType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -16,7 +13,6 @@ class BillOutstandingAmountRequestDetailsType
 	public $ProfileID;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -24,7 +20,6 @@ class BillOutstandingAmountRequestDetailsType
 	public $Amount;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string

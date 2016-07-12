@@ -1,14 +1,11 @@
 <?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
-/**
- *
- */
+
 class DoReferenceTransactionRequestDetailsType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -16,7 +13,6 @@ class DoReferenceTransactionRequestDetailsType
 	public $ReferenceID;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -24,7 +20,6 @@ class DoReferenceTransactionRequestDetailsType
 	public $PaymentAction;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -32,7 +27,6 @@ class DoReferenceTransactionRequestDetailsType
 	public $PaymentType;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType
@@ -40,7 +34,6 @@ class DoReferenceTransactionRequestDetailsType
 	public $PaymentDetails;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\ReferenceCreditCardDetailsType
@@ -48,7 +41,6 @@ class DoReferenceTransactionRequestDetailsType
 	public $CreditCard;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -56,7 +48,6 @@ class DoReferenceTransactionRequestDetailsType
 	public $IPAddress;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -64,7 +55,6 @@ class DoReferenceTransactionRequestDetailsType
 	public $MerchantSessionId;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -72,7 +62,6 @@ class DoReferenceTransactionRequestDetailsType
 	public $ReqConfirmShipping;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -80,7 +69,6 @@ class DoReferenceTransactionRequestDetailsType
 	public $SoftDescriptor;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\SenderDetailsType

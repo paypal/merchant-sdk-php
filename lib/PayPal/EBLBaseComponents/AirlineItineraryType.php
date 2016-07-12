@@ -8,7 +8,6 @@ class AirlineItineraryType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -16,7 +15,6 @@ class AirlineItineraryType
 	public $PassengerName;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -24,7 +22,6 @@ class AirlineItineraryType
 	public $IssueDate;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -32,7 +29,6 @@ class AirlineItineraryType
 	public $TravelAgencyName;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -40,7 +36,6 @@ class AirlineItineraryType
 	public $TravelAgencyCode;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -48,7 +43,6 @@ class AirlineItineraryType
 	public $TicketNumber;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -56,7 +50,6 @@ class AirlineItineraryType
 	public $IssuingCarrierCode;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -64,7 +57,6 @@ class AirlineItineraryType
 	public $CustomerCode;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -72,7 +64,6 @@ class AirlineItineraryType
 	public $TotalFare;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -80,7 +71,6 @@ class AirlineItineraryType
 	public $TotalTaxes;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
@@ -88,7 +78,6 @@ class AirlineItineraryType
 	public $TotalFee;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -96,7 +85,6 @@ class AirlineItineraryType
 	public $RestrictedTicket;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -104,7 +92,6 @@ class AirlineItineraryType
 	public $ClearingSequence;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -112,7 +99,6 @@ class AirlineItineraryType
 	public $ClearingCount;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\FlightDetailsType[]

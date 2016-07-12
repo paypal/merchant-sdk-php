@@ -10,7 +10,6 @@ class ErrorType
    extends PPXmlMessage{
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string
@@ -18,7 +17,6 @@ class ErrorType
 	public $ShortMessage;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var string

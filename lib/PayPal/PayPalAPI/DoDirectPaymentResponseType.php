@@ -77,7 +77,6 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	public $PaymentStatus;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ns
 	 * @var \PayPal\EBLBaseComponents\FMFDetailsType
@@ -85,7 +84,6 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	public $FMFDetails;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ns
 	 * @var \PayPal\EBLBaseComponents\ThreeDSecureResponseType

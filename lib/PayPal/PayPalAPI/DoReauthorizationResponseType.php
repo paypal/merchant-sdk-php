@@ -18,7 +18,6 @@ class DoReauthorizationResponseType  extends AbstractResponseType
 	public $AuthorizationID;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ebl
 	 * @var \PayPal\EBLBaseComponents\AuthorizationInfoType

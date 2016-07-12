@@ -48,7 +48,6 @@ class BMCreateButtonRequestType  extends AbstractRequestType
 	public $ButtonVar;
 
 	/**
-	 *
 	 * @access public
 	 * @namespace ns
 	 * @var \PayPal\PayPalAPI\OptionDetailsType[]
