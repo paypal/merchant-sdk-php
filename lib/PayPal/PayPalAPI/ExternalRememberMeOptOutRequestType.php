@@ -1,14 +1,14 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
+use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  * The merchant passes in the ExternalRememberMeID to identify
  * the user to opt out. This is a 17-character alphanumeric
  * (encrypted) string that identifies the buyer's remembered
  * login with a merchant and has meaning only to the merchant.
- * Required 
+ * Required
  */
-class ExternalRememberMeOptOutRequestType  extends AbstractRequestType  
+class ExternalRememberMeOptOutRequestType  extends AbstractRequestType
   {
 
 	/**
@@ -16,26 +16,20 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType
 	 * the user to opt out. This is a 17-character alphanumeric
 	 * (encrypted) string that identifies the buyer's remembered
 	 * login with a merchant and has meaning only to the merchant.
-	 * Required 
+	 * Required
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $ExternalRememberMeID;
 
 	/**
 	 * E-mail address or secure merchant account ID of merchant to
-	 * associate with external remember-me. 
+	 * associate with external remember-me.
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ExternalRememberMeOwnerDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\ExternalRememberMeOwnerDetailsType
+	 */
 	public $ExternalRememberMeOwnerDetails;
 
 	/**
@@ -46,5 +40,5 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType
 	}
 
 
-    
+
 }

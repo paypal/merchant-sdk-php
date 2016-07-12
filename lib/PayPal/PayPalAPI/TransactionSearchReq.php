@@ -14,7 +14,7 @@ class TransactionSearchReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\TransactionSearchRequestType	 
+	 * @var \PayPal\PayPalAPI\TransactionSearchRequestType	 
 	 */ 
 	public $TransactionSearchRequest;
 

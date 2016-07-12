@@ -14,7 +14,7 @@ class SetExpressCheckoutRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\SetExpressCheckoutRequestDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\SetExpressCheckoutRequestDetailsType	 
 	 */ 
 	public $SetExpressCheckoutRequestDetails;
 

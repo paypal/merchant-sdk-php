@@ -1,15 +1,15 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
+use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  * The value of a previously authorized transaction
  * identification number returned by a PayPal product. You can
  * obtain a buyer's transaction number from the TransactionID
  * element of the PayerInfo structure returned by
  * GetTransactionDetailsResponse. Required Character length and
- * limits: 19 single-byte characters maximum 
+ * limits: 19 single-byte characters maximum
  */
-class DoReauthorizationRequestType  extends AbstractRequestType  
+class DoReauthorizationRequestType  extends AbstractRequestType
   {
 
 	/**
@@ -20,12 +20,9 @@ class DoReauthorizationRequestType  extends AbstractRequestType
 	 * GetTransactionDetailsResponse. Required Character length and
 	 * limits: 19 single-byte characters maximum
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $AuthorizationID;
 
 	/**
@@ -34,25 +31,19 @@ class DoReauthorizationRequestType  extends AbstractRequestType
 	 * separator must be a period (.), and the thousands separator
 	 * must be a comma (,).
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $Amount;
 
 	/**
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
-	 * single-byte characters maximum. 
+	 * single-byte characters maximum.
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $MsgSubID;
 
 	/**
@@ -64,5 +55,5 @@ class DoReauthorizationRequestType  extends AbstractRequestType
 	}
 
 
-    
+
 }

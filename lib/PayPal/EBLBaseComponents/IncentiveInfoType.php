@@ -1,36 +1,29 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
- * Details of incentive application on individual bucket. 
+ * Details of incentive application on individual bucket.
  */
-class IncentiveInfoType  
+class IncentiveInfoType
    extends PPXmlMessage{
 
 	/**
-	 * Incentive redemption code. 
+	 * Incentive redemption code.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $IncentiveCode;
 
 	/**
 	 * Defines which bucket or item that the incentive should be
-	 * applied to. 
-     * @array
+	 * applied to.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\IncentiveApplyIndicationType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\IncentiveApplyIndicationType[]
+	 */
 	public $ApplyIndication;
 
 
-    
+
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
@@ -8,9 +8,9 @@ use PayPal\Core\PPXmlMessage;
  * indicates that this is a final sale for which you are
  * requesting payment. NOTE: Order is not allowed for Direct
  * Payment. Character length and limit: Up to 13 single-byte
- * alphabetic characters 
+ * alphabetic characters
  */
-class DoDirectPaymentRequestDetailsType  
+class DoDirectPaymentRequestDetailsType
    extends PPXmlMessage{
 
 	/**
@@ -22,34 +22,25 @@ class DoDirectPaymentRequestDetailsType
 	 * Payment. Character length and limit: Up to 13 single-byte
 	 * alphabetic characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $PaymentAction;
 
 	/**
-	 * Information about the payment Required 
+	 * Information about the payment Required
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PaymentDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType
+	 */
 	public $PaymentDetails;
 
 	/**
-	 * Information about the credit card to be charged. Required 
+	 * Information about the credit card to be charged. Required
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\CreditCardDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\CreditCardDetailsType
+	 */
 	public $CreditCard;
 
 	/**
@@ -59,12 +50,9 @@ class DoDirectPaymentRequestDetailsType
 	 * and limitations: 15 single-byte characters, including
 	 * periods, in dotted-quad format: ???.???.???.???
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $IPAddress;
 
 	/**
@@ -73,25 +61,18 @@ class DoDirectPaymentRequestDetailsType
 	 * means to detect possible fraud. Optional Character length
 	 * and limitations: 64 single-byte numeric characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $MerchantSessionId;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var boolean	 
-	 */ 
+	 * @var boolean
+	 */
 	public $ReturnFMFDetails;
 
 
-    
+
 }

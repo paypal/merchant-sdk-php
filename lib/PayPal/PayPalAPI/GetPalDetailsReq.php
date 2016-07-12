@@ -1,21 +1,15 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
 use PayPal\Core\PPXmlMessage;
-/**
- * 
- */
-class GetPalDetailsReq  
+
+class GetPalDetailsReq
    extends PPXmlMessage{
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\PayPalAPI\GetPalDetailsRequestType	 
-	 */ 
+	 * @var \PayPal\PayPalAPI\GetPalDetailsRequestType
+	 */
 	public $GetPalDetailsRequest;
 
 
@@ -32,5 +26,5 @@ class GetPalDetailsReq
 			$str .= '</ns:GetPalDetailsReq>';
 			return $str;
 	}
-    
+
 }

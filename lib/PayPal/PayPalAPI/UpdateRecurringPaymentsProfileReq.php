@@ -14,7 +14,7 @@ class UpdateRecurringPaymentsProfileReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\UpdateRecurringPaymentsProfileRequestType	 
+	 * @var \PayPal\PayPalAPI\UpdateRecurringPaymentsProfileRequestType	 
 	 */ 
 	public $UpdateRecurringPaymentsProfileRequest;
 

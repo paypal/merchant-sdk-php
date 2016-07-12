@@ -14,7 +14,7 @@ class GetBillingAgreementCustomerDetailsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\GetBillingAgreementCustomerDetailsRequestType	 
+	 * @var \PayPal\PayPalAPI\GetBillingAgreementCustomerDetailsRequestType	 
 	 */ 
 	public $GetBillingAgreementCustomerDetailsRequest;
 

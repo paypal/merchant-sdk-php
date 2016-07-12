@@ -1,172 +1,129 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
+use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  * Hosted Button id of the button to update.  Required
  * Character length and limitations: 10 single-byte numeric
- * characters  
+ * characters
  */
-class BMUpdateButtonRequestType  extends AbstractRequestType  
+class BMUpdateButtonRequestType  extends AbstractRequestType
   {
 
 	/**
 	 * Hosted Button id of the button to update.  Required
 	 * Character length and limitations: 10 single-byte numeric
-	 * characters 
+	 * characters
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $HostedButtonID;
 
 	/**
 	 * Type of Button to create.  Required Must be one of the
 	 * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
-	 * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE 
+	 * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $ButtonType;
 
 	/**
 	 * button code.  optional Must be one of the following: hosted,
-	 * encrypted or cleartext 
+	 * encrypted or cleartext
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $ButtonCode;
 
 	/**
 	 * Button sub type.  optional for button types buynow and cart
-	 * only Must Be either PRODUCTS or SERVICES 
+	 * only Must Be either PRODUCTS or SERVICES
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $ButtonSubType;
 
 	/**
 	 * Button Variable information  At least one required recurring
 	 * Character length and limitations: 63 single-byte
-	 * alphanumeric characters 
-     * @array
+	 * alphanumeric characters
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string[]
+	 */
 	public $ButtonVar;
 
 	/**
-	 * 
-     * @array
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\PayPalAPI\OptionDetailsType	 
-	 */ 
+	 * @var \PayPal\PayPalAPI\OptionDetailsType[]
+	 */
 	public $OptionDetails;
 
 	/**
-	 * Details of each option for the button.  Optional 
-     * @array
+	 * Details of each option for the button.  Optional
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string[]
+	 */
 	public $TextBox;
 
 	/**
 	 * Button image to use.  Optional Must be one of: REG, SML, or
-	 * CC 
+	 * CC
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $ButtonImage;
 
 	/**
 	 * Button URL for custom button image.  Optional Character
 	 * length and limitations: 127 single-byte alphanumeric
-	 * characters 
+	 * characters
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $ButtonImageURL;
 
 	/**
 	 * Text to use on Buy Now Button.  Optional Must be either
-	 * BUYNOW or PAYNOW 
+	 * BUYNOW or PAYNOW
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $BuyNowText;
 
 	/**
 	 * Text to use on Subscribe button.  Optional Must be either
-	 * BUYNOW or SUBSCRIBE 
+	 * BUYNOW or SUBSCRIBE
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $SubscribeText;
 
 	/**
-	 * Button Country.  Optional Must be valid ISO country code 
+	 * Button Country.  Optional Must be valid ISO country code
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $ButtonCountry;
 
 	/**
 	 * Button language code.  Optional Character length and
-	 * limitations: 2 single-byte alphanumeric characters 
+	 * limitations: 2 single-byte alphanumeric characters
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $ButtonLanguage;
 
 	/**
@@ -191,5 +148,5 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 		}
 		return parent::toXMLString();
 	}
-    
+
 }

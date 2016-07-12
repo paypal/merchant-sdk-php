@@ -1,56 +1,44 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
- * PayerInfoType Payer information 
+ * PayerInfoType Payer information
  */
-class PayerInfoType  
+class PayerInfoType
    extends PPXmlMessage{
 
 	/**
 	 * Email address of payer Character length and limitations: 127
 	 * single-byte characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+	 * @var string
+	 */
 	public $Payer;
 
 	/**
 	 * Unique customer ID Character length and limitations: 17
 	 * single-byte characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+	 * @var string
+	 */
 	public $PayerID;
 
 	/**
-	 * Status of payer's email address 
+	 * Status of payer's email address
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $PayerStatus;
 
 	/**
-	 * Name of payer 
+	 * Name of payer
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PersonNameType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\PersonNameType
+	 */
 	public $PayerName;
 
 	/**
@@ -58,71 +46,53 @@ class PayerInfoType
 	 * two-character ISO 3166 country codes. Character length and
 	 * limitations: Two single-byte characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $PayerCountry;
 
 	/**
 	 * Payer's business name. Character length and limitations: 127
 	 * single-byte characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $PayerBusiness;
 
 	/**
 	 * Payer's business address
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AddressType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\AddressType
+	 */
 	public $Address;
 
 	/**
 	 * Business contact telephone number
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $ContactPhone;
 
 	/**
 	 * Details about payer's tax info. Refer to the
-	 * TaxIdDetailsType for more details. 
+	 * TaxIdDetailsType for more details.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\TaxIdDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\TaxIdDetailsType
+	 */
 	public $TaxIdDetails;
 
 	/**
 	 * Holds any enhanced information about the payer
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EnhancedDataTypes\EnhancedPayerInfoType	 
-	 */ 
+	 * @var \PayPal\EnhancedDataTypes\EnhancedPayerInfoType
+	 */
 	public $EnhancedPayerInfo;
 
 
-    
+
 }

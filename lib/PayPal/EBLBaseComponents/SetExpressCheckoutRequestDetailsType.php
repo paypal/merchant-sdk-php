@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
@@ -10,9 +10,9 @@ use PayPal\Core\PPXmlMessage;
  * PayPal currencies. Limitations: Must not exceed $10,000 USD
  * in any currency. No currency symbol. Decimal separator must
  * be a period (.), and the thousands separator must be a comma
- * (,). 
+ * (,).
  */
-class SetExpressCheckoutRequestDetailsType  
+class SetExpressCheckoutRequestDetailsType
    extends PPXmlMessage{
 
 	/**
@@ -26,12 +26,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * be a period (.), and the thousands separator must be a comma
 	 * (,).
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $OrderTotal;
 
 	/**
@@ -39,14 +36,11 @@ class SetExpressCheckoutRequestDetailsType
 	 * choosing to pay with PayPal. PayPal recommends that the
 	 * value of ReturnURL be the final review page on which the
 	 * customer confirms the order and payment. Required Character
-	 * length and limitations: no limit. 
+	 * length and limitations: no limit.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $ReturnURL;
 
 	/**
@@ -56,24 +50,18 @@ class SetExpressCheckoutRequestDetailsType
 	 * customer chose to pay with PayPal. Required Character length
 	 * and limitations: no limit
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $CancelURL;
 
 	/**
 	 * Tracking URL for ebay. Required Character length and
 	 * limitations: no limit
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $TrackingImageURL;
 
 	/**
@@ -81,12 +69,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * with giropay online. Optional Character length and
 	 * limitations: no limit.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $giropaySuccessURL;
 
 	/**
@@ -94,12 +79,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * to pay with giropay online. Optional Character length and
 	 * limitations: no limit.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $giropayCancelURL;
 
 	/**
@@ -107,12 +89,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * mEFT done page. Optional Character length and limitations:
 	 * no limit.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $BanktxnPendingURL;
 
 	/**
@@ -125,12 +104,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * customer to edit his shipping address on PayPal. Character
 	 * length and limitations: 20 single-byte characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+	 * @var string
+	 */
 	public $Token;
 
 	/**
@@ -142,12 +118,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $MaxAmount;
 
 	/**
@@ -155,12 +128,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $OrderDescription;
 
 	/**
@@ -170,12 +140,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * DoExpressCheckoutPaymentResponse. Optional Character length
 	 * and limitations: 256 single-byte alphanumeric characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $Custom;
 
 	/**
@@ -184,12 +151,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * Optional Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $InvoiceID;
 
 	/**
@@ -202,40 +166,31 @@ class SetExpressCheckoutRequestDetailsType
 	 * Optional Character length and limitations: One single-byte
 	 * numeric character.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $ReqConfirmShipping;
 
 	/**
 	 * The value 1 indicates that you require that the customer's
 	 * billing address on file. Setting this element overrides the
 	 * setting you have specified in Admin. Optional Character
-	 * length and limitations: One single-byte numeric character. 
+	 * length and limitations: One single-byte numeric character.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $ReqBillingAddress;
 
 	/**
 	 * The billing address for the buyer. Optional If you include
 	 * the BillingAddress element, the AddressType elements are
 	 * required: Name Street1 CityName CountryCode Do not set set
-	 * the CountryName element. 
+	 * the CountryName element.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AddressType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\AddressType
+	 */
 	public $BillingAddress;
 
 	/**
@@ -244,12 +199,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * Character length and limitations: Four single-byte numeric
 	 * characters.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $NoShipping;
 
 	/**
@@ -261,12 +213,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * that address. Optional Character length and limitations:
 	 * Four single-byte numeric characters.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $AddressOverride;
 
 	/**
@@ -276,12 +225,9 @@ class SetExpressCheckoutRequestDetailsType
 	 * values: AU or en_AUDE or de_DEFR or fr_FRGB or en_GBIT or
 	 * it_ITJP or ja_JPUS or en_US
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $LocaleCode;
 
 	/**
@@ -292,14 +238,11 @@ class SetExpressCheckoutRequestDetailsType
 	 * adding or editing the page style from the Profile subtab of
 	 * the My Account tab of your PayPal account. Optional
 	 * Character length and limitations: 30 single-byte alphabetic
-	 * characters. 
+	 * characters.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $PageStyle;
 
 	/**
@@ -309,14 +252,10 @@ class SetExpressCheckoutRequestDetailsType
 	 * an image that is stored on a secure (https) server. Optional
 	 * Character length and limitations: 127
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 
 	 * @name cpp-header-image
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $cppheaderimage;
 
 	/**
@@ -326,14 +265,10 @@ class SetExpressCheckoutRequestDetailsType
 	 * Character length and limitations: Six character HTML
 	 * hexadecimal color code in ASCII
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 
 	 * @name cpp-header-border-color
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $cppheaderbordercolor;
 
 	/**
@@ -341,14 +276,10 @@ class SetExpressCheckoutRequestDetailsType
 	 * page. Optional Character length and limitation: Six
 	 * character HTML hexadecimal color code in ASCII
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 
 	 * @name cpp-header-back-color
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $cppheaderbackcolor;
 
 	/**
@@ -356,14 +287,10 @@ class SetExpressCheckoutRequestDetailsType
 	 * Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 
 	 * @name cpp-payflow-color
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $cpppayflowcolor;
 
 	/**
@@ -371,14 +298,10 @@ class SetExpressCheckoutRequestDetailsType
 	 * Optional Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 
 	 * @name cpp-cart-border-color
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $cppcartbordercolor;
 
 	/**
@@ -388,28 +311,21 @@ class SetExpressCheckoutRequestDetailsType
 	 * stored on a secure (https) server. Optional Character length
 	 * and limitations: 127
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 
 	 * @name cpp-logo-image
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $cpplogoimage;
 
 	/**
 	 * Customer's shipping address. Optional If you include a
 	 * shipping address and set the AddressOverride element on the
 	 * request, PayPal returns this same address in
-	 * GetExpressCheckoutDetailsResponse. 
+	 * GetExpressCheckoutDetailsResponse.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AddressType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\AddressType
+	 */
 	public $Address;
 
 	/**
@@ -425,136 +341,97 @@ class SetExpressCheckoutRequestDetailsType
 	 * Checkout API, DoExpressCheckoutPaymentRequest. Character
 	 * length and limit: Up to 13 single-byte alphabetic characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $PaymentAction;
 
 	/**
 	 * This will indicate which flow you are choosing
 	 * (expresschecheckout or expresscheckout optional) Optional
 	 * None Sole indicates that you are in the ExpressO flow Mark
-	 * indicates that you are in the old express flow. 
+	 * indicates that you are in the old express flow.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $SolutionType;
 
 	/**
 	 * This indicates Which page to display for ExpressO (Billing
 	 * or Login) Optional None Billing indicates that you are not a
 	 * paypal account holder Login indicates that you are a paypal
-	 * account holder 
+	 * account holder
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $LandingPage;
 
 	/**
 	 * Email address of the buyer as entered during checkout.
 	 * PayPal uses this value to pre-fill the PayPal membership
 	 * sign-up portion of the PayPal login page. Optional Character
-	 * length and limit: 127 single-byte alphanumeric characters 
+	 * length and limit: 127 single-byte alphanumeric characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+	 * @var string
+	 */
 	public $BuyerEmail;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $ChannelType;
 
 	/**
-	 * 
-     * @array
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\BillingAgreementDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\BillingAgreementDetailsType[]
+	 */
 	public $BillingAgreementDetails;
 
 	/**
 	 * Promo Code Optional List of promo codes supplied by
 	 * merchant. These promo codes enable the Merchant Services
-	 * Promotion Financing feature. 
-     * @array
+	 * Promotion Financing feature.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string[]
+	 */
 	public $PromoCodes;
 
 	/**
-	 * Default Funding option for PayLater Checkout button. 
+	 * Default Funding option for PayLater Checkout button.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $PayPalCheckOutBtnType;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $ProductCategory;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $ShippingMethod;
 
 	/**
 	 * Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at
-	 * which address was changed by the user. 
+	 * which address was changed by the user.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var dateTime	 
-	 */ 
+	 * @var string ISO8601
+	 */
 	public $ProfileAddressChangeDate;
 
 	/**
@@ -563,293 +440,212 @@ class SetExpressCheckoutRequestDetailsType
 	 * returned in the GetExpressCheckoutDetails response and the
 	 * DoExpressCheckoutPayment response. Optional Character length
 	 * and limitations: One single-byte numeric character.
-	 * Allowable values: 0,1 
+	 * Allowable values: 0,1
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $AllowNote;
 
 	/**
-	 * Funding source preferences. 
+	 * Funding source preferences.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\FundingSourceDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\FundingSourceDetailsType
+	 */
 	public $FundingSourceDetails;
 
 	/**
 	 * The label that needs to be displayed on the cancel links in
 	 * the PayPal hosted checkout pages. Optional Character length
-	 * and limit: 127 single-byte alphanumeric characters 
+	 * and limit: 127 single-byte alphanumeric characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $BrandName;
 
 	/**
 	 * URL for PayPal to use to retrieve shipping, handling,
 	 * insurance, and tax details from your website. Optional
-	 * Character length and limitations: 2048 characters. 
+	 * Character length and limitations: 2048 characters.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $CallbackURL;
 
 	/**
-	 * Enhanced data for different industry segments. Optional 
+	 * Enhanced data for different industry segments. Optional
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EnhancedDataTypes\EnhancedCheckoutDataType	 
-	 */ 
+	 * @var \PayPal\EnhancedDataTypes\EnhancedCheckoutDataType
+	 */
 	public $EnhancedCheckoutData;
 
 	/**
 	 * List of other payment methods the user can pay with.
 	 * Optional Refer to the OtherPaymentMethodDetailsType for more
-	 * details. 
-     * @array
+	 * details.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\OtherPaymentMethodDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\OtherPaymentMethodDetailsType[]
+	 */
 	public $OtherPaymentMethods;
 
 	/**
 	 * Details about the buyer's account. Optional Refer to the
-	 * BuyerDetailsType for more details. 
+	 * BuyerDetailsType for more details.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\BuyerDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\BuyerDetailsType
+	 */
 	public $BuyerDetails;
 
 	/**
-	 * Information about the payment. 
-     * @array
+	 * Information about the payment.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PaymentDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType[]
+	 */
 	public $PaymentDetails;
 
 	/**
-	 * List of Fall Back Shipping options provided by merchant. 
-     * @array
+	 * List of Fall Back Shipping options provided by merchant.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ShippingOptionType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\ShippingOptionType[]
+	 */
 	public $FlatRateShippingOptions;
 
 	/**
-	 * Information about the call back timeout override. 
+	 * Information about the call back timeout override.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $CallbackTimeout;
 
 	/**
-	 * Information about the call back version. 
+	 * Information about the call back version.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $CallbackVersion;
 
 	/**
-	 * Information about the Customer service number. 
+	 * Information about the Customer service number.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $CustomerServiceNumber;
 
 	/**
-	 * Information about the Gift message enable. 
+	 * Information about the Gift message enable.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $GiftMessageEnable;
 
 	/**
-	 * Information about the Gift receipt enable. 
+	 * Information about the Gift receipt enable.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $GiftReceiptEnable;
 
 	/**
-	 * Information about the Gift Wrap enable. 
+	 * Information about the Gift Wrap enable.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $GiftWrapEnable;
 
 	/**
-	 * Information about the Gift Wrap name. 
+	 * Information about the Gift Wrap name.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $GiftWrapName;
 
 	/**
-	 * Information about the Gift Wrap amount. 
+	 * Information about the Gift Wrap amount.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $GiftWrapAmount;
 
 	/**
-	 * Information about the Buyer email option enable . 
+	 * Information about the Buyer email option enable .
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $BuyerEmailOptInEnable;
 
 	/**
-	 * Information about the survey enable. 
+	 * Information about the survey enable.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $SurveyEnable;
 
 	/**
-	 * Information about the survey question. 
+	 * Information about the survey question.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $SurveyQuestion;
 
 	/**
-	 * Information about the survey choices for survey question. 
-     * @array
+	 * Information about the survey choices for survey question.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string[]
+	 */
 	public $SurveyChoice;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $TotalType;
 
 	/**
 	 * Any message the seller would like to be displayed in the
-	 * Mini Cart for UX. 
+	 * Mini Cart for UX.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $NoteToBuyer;
 
 	/**
 	 * Incentive Code Optional List of incentive codes supplied by
-	 * ebay/merchant. 
-     * @array
+	 * ebay/merchant.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\IncentiveInfoType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\IncentiveInfoType[]
+	 */
 	public $Incentives;
 
 	/**
 	 * Merchant specified flag which indicates whether to return
-	 * Funding Instrument Details in DoEC or not. Optional 
+	 * Funding Instrument Details in DoEC or not. Optional
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $ReqInstrumentDetails;
 
 	/**
@@ -857,63 +653,47 @@ class SetExpressCheckoutRequestDetailsType
 	 * to request to opt into external remember me on behalf of the
 	 * buyer or to request login bypass using external remember me.
 	 * Note the opt-in details are silently ignored if the
-	 * ExternalRememberMeID is present. 
+	 * ExternalRememberMeID is present.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ExternalRememberMeOptInDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\ExternalRememberMeOptInDetailsType
+	 */
 	public $ExternalRememberMeOptInDetails;
 
 	/**
-	 * An optional set of values related to flow-specific details. 
+	 * An optional set of values related to flow-specific details.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\FlowControlDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\FlowControlDetailsType
+	 */
 	public $FlowControlDetails;
 
 	/**
 	 * An optional set of values related to display-specific
-	 * details. 
+	 * details.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\DisplayControlDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\DisplayControlDetailsType
+	 */
 	public $DisplayControlDetails;
 
 	/**
 	 * An optional set of values related to tracking for external
-	 * partner. 
+	 * partner.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ExternalPartnerTrackingDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\ExternalPartnerTrackingDetailsType
+	 */
 	public $ExternalPartnerTrackingDetails;
 
 	/**
-	 * Optional element that defines relationship between buckets 
-     * @array
+	 * Optional element that defines relationship between buckets
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\CoupledBucketsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\CoupledBucketsType[]
+	 */
 	public $CoupledBuckets;
 
 
-    
+
 }

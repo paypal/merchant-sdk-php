@@ -14,7 +14,7 @@ class CreateMobilePaymentReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\CreateMobilePaymentRequestType	 
+	 * @var \PayPal\PayPalAPI\CreateMobilePaymentRequestType	 
 	 */ 
 	public $CreateMobilePaymentRequest;
 

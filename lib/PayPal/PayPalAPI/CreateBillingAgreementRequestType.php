@@ -1,21 +1,15 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
-/**
- * 
- */
-class CreateBillingAgreementRequestType  extends AbstractRequestType  
+use PayPal\EBLBaseComponents\AbstractRequestType;
+
+class CreateBillingAgreementRequestType  extends AbstractRequestType
   {
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+	 * @var string
+	 */
 	public $Token;
 
 	/**
@@ -26,5 +20,5 @@ class CreateBillingAgreementRequestType  extends AbstractRequestType
 	}
 
 
-    
+
 }

@@ -1,25 +1,22 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
+use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  * Unique PayPal customer account number, the value of which
  * was returned by GetAuthDetails Response. Required Character
- * length and limitations: 20 single-byte characters 
+ * length and limitations: 20 single-byte characters
  */
-class UpdateAccessPermissionsRequestType  extends AbstractRequestType  
+class UpdateAccessPermissionsRequestType  extends AbstractRequestType
   {
 
 	/**
 	 * Unique PayPal customer account number, the value of which
 	 * was returned by GetAuthDetails Response. Required Character
-	 * length and limitations: 20 single-byte characters 
+	 * length and limitations: 20 single-byte characters
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+	 * @var string
+	 */
 	public $PayerID;
 
 	/**
@@ -30,5 +27,5 @@ class UpdateAccessPermissionsRequestType  extends AbstractRequestType
 	}
 
 
-    
+
 }

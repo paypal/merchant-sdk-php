@@ -1,21 +1,15 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
 use PayPal\Core\PPXmlMessage;
-/**
- * 
- */
-class MassPayReq  
+
+class MassPayReq
    extends PPXmlMessage{
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\PayPalAPI\MassPayRequestType	 
-	 */ 
+	 * @var \PayPal\PayPalAPI\MassPayRequestType
+	 */
 	public $MassPayRequest;
 
 
@@ -32,5 +26,5 @@ class MassPayReq
 			$str .= '</ns:MassPayReq>';
 			return $str;
 	}
-    
+
 }

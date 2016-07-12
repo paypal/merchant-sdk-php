@@ -1,21 +1,15 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
 use PayPal\Core\PPXmlMessage;
-/**
- * 
- */
-class BillOutstandingAmountReq  
+
+class BillOutstandingAmountReq
    extends PPXmlMessage{
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\PayPalAPI\BillOutstandingAmountRequestType	 
-	 */ 
+	 * @var \PayPal\PayPalAPI\BillOutstandingAmountRequestType
+	 */
 	public $BillOutstandingAmountRequest;
 
 
@@ -32,5 +26,5 @@ class BillOutstandingAmountReq
 			$str .= '</ns:BillOutstandingAmountReq>';
 			return $str;
 	}
-    
+
 }

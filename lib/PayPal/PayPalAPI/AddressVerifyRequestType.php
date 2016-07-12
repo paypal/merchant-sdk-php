@@ -1,24 +1,21 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
+use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  * Email address of buyer to be verified. Required Maximum
  * string length: 255 single-byte characters Input mask: ?@?.??
- * 
+ *
  */
-class AddressVerifyRequestType  extends AbstractRequestType  
+class AddressVerifyRequestType  extends AbstractRequestType
   {
 
 	/**
 	 * Email address of buyer to be verified. Required Maximum
 	 * string length: 255 single-byte characters Input mask: ?@?.??
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+	 * @var string
+	 */
 	public $Email;
 
 	/**
@@ -30,12 +27,9 @@ class AddressVerifyRequestType  extends AbstractRequestType
 	 * Alphanumeric plus - , . ‘ # \ Whitespace and case of input
 	 * value are ignored.
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $Street;
 
 	/**
@@ -45,12 +39,9 @@ class AddressVerifyRequestType  extends AbstractRequestType
 	 * account. Maximum string length: 16 single-byte characters
 	 * Whitespace and case of input value are ignored.
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $Zip;
 
 	/**
@@ -63,5 +54,5 @@ class AddressVerifyRequestType  extends AbstractRequestType
 	}
 
 
-    
+
 }

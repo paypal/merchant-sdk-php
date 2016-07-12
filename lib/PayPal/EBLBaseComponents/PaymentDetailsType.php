@@ -1,11 +1,11 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
  * PaymentDetailsType Information about a payment. Used by DCC
- * and Express Checkout. 
+ * and Express Checkout.
  */
-class PaymentDetailsType  
+class PaymentDetailsType
    extends PPXmlMessage{
 
 	/**
@@ -15,14 +15,11 @@ class PaymentDetailsType
 	 * PayPal currencies. Limitations: Must not exceed $10,000 USD
 	 * in any currency. No currency symbol. Decimal separator must
 	 * be a period (.), and the thousands separator must be a comma
-	 * (,). 
+	 * (,).
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $OrderTotal;
 
 	/**
@@ -31,12 +28,9 @@ class PaymentDetailsType
 	 * codes for any of the supported PayPal currencies. Optional
 	 * separator must be a comma (,).
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $ItemTotal;
 
 	/**
@@ -47,12 +41,9 @@ class PaymentDetailsType
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $ShippingTotal;
 
 	/**
@@ -63,12 +54,9 @@ class PaymentDetailsType
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $HandlingTotal;
 
 	/**
@@ -79,12 +67,9 @@ class PaymentDetailsType
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $TaxTotal;
 
 	/**
@@ -92,12 +77,9 @@ class PaymentDetailsType
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $OrderDescription;
 
 	/**
@@ -105,12 +87,9 @@ class PaymentDetailsType
 	 * length and limitations: 256 single-byte alphanumeric
 	 * characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $Custom;
 
 	/**
@@ -118,12 +97,9 @@ class PaymentDetailsType
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $InvoiceID;
 
 	/**
@@ -131,12 +107,9 @@ class PaymentDetailsType
 	 * to identify transactions. Optional Character length and
 	 * limitations: 32 single-byte alphanumeric characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $ButtonSource = "PayPal_SDK";
 
 	/**
@@ -146,200 +119,145 @@ class PaymentDetailsType
 	 * Merchant Profile is used, if one exists. Character length
 	 * and limitations: 2,048 single-byte alphanumeric characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $NotifyURL;
 
 	/**
 	 * Address the order will be shipped to. Optional If you
 	 * include the ShipToAddress element, the AddressType elements
 	 * are required: Name Street1 CityName CountryCode Do not set
-	 * set the CountryName element. 
+	 * set the CountryName element.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AddressType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\AddressType
+	 */
 	public $ShipToAddress;
 
 	/**
 	 * The value 1 indicates that this payment is associated with
 	 * multiple shipping addresses. Optional Character length and
-	 * limitations: Four single-byte numeric characters. 
+	 * limitations: Four single-byte numeric characters.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $MultiShipping;
 
 	/**
 	 * Thirdparty Fulfillment Reference Number. Optional Character
-	 * length and limitations: 32 alphanumeric characters. 
+	 * length and limitations: 32 alphanumeric characters.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $FulfillmentReferenceNumber;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AddressType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\AddressType
+	 */
 	public $FulfillmentAddress;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $PaymentCategoryType;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $ShippingMethod;
 
 	/**
 	 * Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at
-	 * which address was changed by the user. 
+	 * which address was changed by the user.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var dateTime	 
-	 */ 
+	 * @var string ISO8601
+	 */
 	public $ProfileAddressChangeDate;
 
 	/**
 	 * Information about the individual purchased items
-     * @array
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PaymentDetailsItemType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\PaymentDetailsItemType[]
+	 */
 	public $PaymentDetailsItem;
 
 	/**
-	 * Total shipping insurance costs for this order. Optional 
+	 * Total shipping insurance costs for this order. Optional
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $InsuranceTotal;
 
 	/**
 	 * Shipping discount for this order, specified as a negative
-	 * number. Optional 
+	 * number. Optional
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $ShippingDiscount;
 
 	/**
-	 * Information about the Insurance options. 
+	 * Information about the Insurance options.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $InsuranceOptionOffered;
 
 	/**
-	 * Allowed payment methods for this transaction. 
+	 * Allowed payment methods for this transaction.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $AllowedPaymentMethod;
 
 	/**
 	 * Enhanced Data section to accept channel specific data.
-	 * Optional Refer to EnhancedPaymentDataType for details. 
+	 * Optional Refer to EnhancedPaymentDataType for details.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EnhancedDataTypes\EnhancedPaymentDataType	 
-	 */ 
+	 * @var \PayPal\EnhancedDataTypes\EnhancedPaymentDataType
+	 */
 	public $EnhancedPaymentData;
 
 	/**
-	 * Details about the seller. Optional 
+	 * Details about the seller. Optional
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\SellerDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\SellerDetailsType
+	 */
 	public $SellerDetails;
 
 	/**
 	 * Note to recipient/seller. Optional Character length and
-	 * limitations: 127 single-byte alphanumeric characters. 
+	 * limitations: 127 single-byte alphanumeric characters.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $NoteText;
 
 	/**
 	 * PayPal Transaction Id, returned once DoExpressCheckout is
-	 * completed. 
+	 * completed.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $TransactionId;
 
 	/**
@@ -354,99 +272,75 @@ class PaymentDetailsType
 	 * to Sale on SetExpressCheckoutRequest and then change
 	 * PaymentAction to Authorization on the final Express Checkout
 	 * API, DoExpressCheckoutPaymentRequest. Character length and
-	 * limit: Up to 13 single-byte alphabetic characters 
+	 * limit: Up to 13 single-byte alphabetic characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $PaymentAction;
 
 	/**
 	 * Unique identifier and mandatory for the particular payment
-	 * request in case of multiple payment 
+	 * request in case of multiple payment
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $PaymentRequestID;
 
 	/**
-	 * URL on Merchant site pertaining to this invoice. Optional 
+	 * URL on Merchant site pertaining to this invoice. Optional
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $OrderURL;
 
 	/**
 	 * Soft Descriptor supported for Sale and Auth in DEC only. For
-	 * Order this will be ignored. 
+	 * Order this will be ignored.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $SoftDescriptor;
 
 	/**
 	 * BranchLevel is used to identify chain payment. If
 	 * BranchLevel is 0 or 1, this payment is where money moves to.
 	 * If BranchLevel greater than 1, this payment contains the
-	 * actual seller info. Optional 
+	 * actual seller info. Optional
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var integer	 
-	 */ 
+	 * @var integer
+	 */
 	public $BranchLevel;
 
 	/**
 	 * Soft Descriptor supported for Sale and Auth in DEC only. For
-	 * Order this will be ignored. 
+	 * Order this will be ignored.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\OfferDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\OfferDetailsType
+	 */
 	public $OfferDetails;
 
 	/**
-	 * Flag to indicate the recurring transaction 
+	 * Flag to indicate the recurring transaction
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $Recurring;
 
 	/**
-	 * Indicates the purpose of this payment like Refund 
+	 * Indicates the purpose of this payment like Refund
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $PaymentReason;
 
 
-    
+
 }

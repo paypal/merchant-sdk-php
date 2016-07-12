@@ -14,7 +14,7 @@ class EnterBoardingReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\EnterBoardingRequestType	 
+	 * @var \PayPal\PayPalAPI\EnterBoardingRequestType	 
 	 */ 
 	public $EnterBoardingRequest;
 

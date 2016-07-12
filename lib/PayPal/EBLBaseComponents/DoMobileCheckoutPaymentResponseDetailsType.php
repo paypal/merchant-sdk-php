@@ -1,13 +1,13 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
  * A free-form field for your own use, such as a tracking
  * number or other value you want returned to you in IPN.
  * Optional Character length and limitations: 256 single-byte
- * alphanumeric characters 
+ * alphanumeric characters
  */
-class DoMobileCheckoutPaymentResponseDetailsType  
+class DoMobileCheckoutPaymentResponseDetailsType
    extends PPXmlMessage{
 
 	/**
@@ -16,12 +16,9 @@ class DoMobileCheckoutPaymentResponseDetailsType
 	 * Optional Character length and limitations: 256 single-byte
 	 * alphanumeric characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $Custom;
 
 	/**
@@ -29,34 +26,25 @@ class DoMobileCheckoutPaymentResponseDetailsType
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $InvoiceID;
 
 	/**
 	 * Information about the payer
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PayerInfoType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\PayerInfoType
+	 */
 	public $PayerInfo;
 
 	/**
 	 * Information about the transaction
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PaymentInfoType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\PaymentInfoType
+	 */
 	public $PaymentInfo;
 
 

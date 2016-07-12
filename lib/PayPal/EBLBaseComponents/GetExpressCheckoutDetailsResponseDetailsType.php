@@ -1,13 +1,13 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
  * The timestamped token value that was returned by
  * SetExpressCheckoutResponse and passed on
  * GetExpressCheckoutDetailsRequest. Character length and
- * limitations: 20 single-byte characters 
+ * limitations: 20 single-byte characters
  */
-class GetExpressCheckoutDetailsResponseDetailsType  
+class GetExpressCheckoutDetailsResponseDetailsType
    extends PPXmlMessage{
 
 	/**
@@ -16,23 +16,17 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * GetExpressCheckoutDetailsRequest. Character length and
 	 * limitations: 20 single-byte characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+	 * @var string
+	 */
 	public $Token;
 
 	/**
 	 * Information about the payer
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PayerInfoType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\PayerInfoType
+	 */
 	public $PayerInfo;
 
 	/**
@@ -41,12 +35,9 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * length and limitations: 256 single-byte alphanumeric
 	 * characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $Custom;
 
 	/**
@@ -55,12 +46,9 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $InvoiceID;
 
 	/**
@@ -68,34 +56,23 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * telephone number only if your Merchant account profile
 	 * settings require that the buyer enter one.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $ContactPhone;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var boolean	 
-	 */ 
+	 * @var boolean
+	 */
 	public $BillingAgreementAcceptedStatus;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $RedirectRequired;
 
 	/**
@@ -105,36 +82,27 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * , PayPal returns this address in
 	 * GetExpressCheckoutDetailsResponse.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AddressType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\AddressType
+	 */
 	public $BillingAddress;
 
 	/**
-	 * Text note entered by the buyer in PayPal flow. 
+	 * Text note entered by the buyer in PayPal flow.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $Note;
 
 	/**
 	 * Returns the status of the EC checkout session. Values
 	 * include 'PaymentActionNotInitiated', 'PaymentActionFailed',
-	 * 'PaymentActionInProgress', 'PaymentCompleted'. 
+	 * 'PaymentActionInProgress', 'PaymentCompleted'.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $CheckoutStatus;
 
 	/**
@@ -142,165 +110,119 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * buyer, which will be represented by a negativeamount. If the
 	 * buyer has a negative balance, PayPal will add that amount to
 	 * the current charges, which will be represented as a positive
-	 * amount. 
+	 * amount.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $PayPalAdjustment;
 
 	/**
-	 * Information about the individual purchased items. 
-     * @array
+	 * Information about the individual purchased items.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PaymentDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType[]
+	 */
 	public $PaymentDetails;
 
 	/**
-	 * Information about the user selected options. 
+	 * Information about the user selected options.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\UserSelectedOptionType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\UserSelectedOptionType
+	 */
 	public $UserSelectedOptions;
 
 	/**
 	 * Information about the incentives that were applied from Ebay
-	 * RYP page and PayPal RYP page. 
-     * @array
+	 * RYP page and PayPal RYP page.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\IncentiveDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\IncentiveDetailsType[]
+	 */
 	public $IncentiveDetails;
 
 	/**
-	 * Information about the Gift message. 
+	 * Information about the Gift message.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $GiftMessage;
 
 	/**
-	 * Information about the Gift receipt enable. 
+	 * Information about the Gift receipt enable.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $GiftReceiptEnable;
 
 	/**
-	 * Information about the Gift Wrap name. 
+	 * Information about the Gift Wrap name.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $GiftWrapName;
 
 	/**
-	 * Information about the Gift Wrap amount. 
+	 * Information about the Gift Wrap amount.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $GiftWrapAmount;
 
 	/**
-	 * Information about the Buyer marketing email. 
+	 * Information about the Buyer marketing email.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $BuyerMarketingEmail;
 
 	/**
-	 * Information about the survey question. 
+	 * Information about the survey question.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $SurveyQuestion;
 
 	/**
-	 * Information about the survey choice selected by the user. 
-     * @array
+	 * Information about the survey choice selected by the user.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string[]
+	 */
 	public $SurveyChoiceSelected;
 
 	/**
 	 * Contains payment request information about each bucket in
-	 * the cart. 
-     * @array
+	 * the cart.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PaymentRequestInfoType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\PaymentRequestInfoType[]
+	 */
 	public $PaymentRequestInfo;
 
 	/**
 	 * Response information resulting from opt-in operation or
-	 * current login bypass status. 
+	 * current login bypass status.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ExternalRememberMeStatusDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\ExternalRememberMeStatusDetailsType
+	 */
 	public $ExternalRememberMeStatusDetails;
 
 	/**
 	 * Response information resulting from opt-in operation or
-	 * current login bypass status. 
+	 * current login bypass status.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\RefreshTokenStatusDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\RefreshTokenStatusDetailsType
+	 */
 	public $RefreshTokenStatusDetails;
 
 

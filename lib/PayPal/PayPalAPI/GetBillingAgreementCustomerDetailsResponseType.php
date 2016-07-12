@@ -14,7 +14,7 @@ class GetBillingAgreementCustomerDetailsResponseType  extends AbstractResponseTy
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\GetBillingAgreementCustomerDetailsResponseDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\GetBillingAgreementCustomerDetailsResponseDetailsType	 
 	 */ 
 	public $GetBillingAgreementCustomerDetailsResponseDetails;
 

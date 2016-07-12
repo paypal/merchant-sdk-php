@@ -14,7 +14,7 @@ class BMUpdateButtonReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\BMUpdateButtonRequestType	 
+	 * @var \PayPal\PayPalAPI\BMUpdateButtonRequestType	 
 	 */ 
 	public $BMUpdateButtonRequest;
 

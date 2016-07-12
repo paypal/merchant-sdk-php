@@ -14,7 +14,7 @@ class ManageRecurringPaymentsProfileStatusResponseType  extends AbstractResponse
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ManageRecurringPaymentsProfileStatusResponseDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\ManageRecurringPaymentsProfileStatusResponseDetailsType	 
 	 */ 
 	public $ManageRecurringPaymentsProfileStatusResponseDetails;
 

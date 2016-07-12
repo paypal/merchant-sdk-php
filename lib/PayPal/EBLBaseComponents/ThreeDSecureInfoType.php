@@ -14,7 +14,7 @@ class ThreeDSecureInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ThreeDSecureRequestType	 
+	 * @var \PayPal\EBLBaseComponents\ThreeDSecureRequestType	 
 	 */ 
 	public $ThreeDSecureRequest;
 
@@ -25,7 +25,7 @@ class ThreeDSecureInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ThreeDSecureResponseType	 
+	 * @var \PayPal\EBLBaseComponents\ThreeDSecureResponseType	 
 	 */ 
 	public $ThreeDSecureResponse;
 

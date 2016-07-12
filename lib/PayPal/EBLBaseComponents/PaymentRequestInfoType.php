@@ -37,7 +37,7 @@ class PaymentRequestInfoType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\ErrorType	 
+	 * @var \PayPal\EBLBaseComponents\ErrorType	 
 	 */ 
 	public $PaymentError;
 

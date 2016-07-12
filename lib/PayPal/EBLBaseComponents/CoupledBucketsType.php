@@ -1,44 +1,33 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
- * Defines relationship between buckets 
+ * Defines relationship between buckets
  */
-class CoupledBucketsType  
+class CoupledBucketsType
    extends PPXmlMessage{
 
 	/**
-	 * Relationship Type - LifeTime (default) 
+	 * Relationship Type - LifeTime (default)
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $CoupleType;
 
 	/**
-	 * Identifier for this relation 
+	 * Identifier for this relation
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $CoupledPaymentRequestID;
 
 	/**
-	 * 
-     * @array
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string[]
+	 */
 	public $PaymentRequestID;
 
 	/**
@@ -49,5 +38,5 @@ class CoupledBucketsType
 	}
 
 
-    
+
 }

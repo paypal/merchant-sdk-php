@@ -14,7 +14,7 @@ class GetTransactionDetailsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\GetTransactionDetailsRequestType	 
+	 * @var \PayPal\PayPalAPI\GetTransactionDetailsRequestType	 
 	 */ 
 	public $GetTransactionDetailsRequest;
 

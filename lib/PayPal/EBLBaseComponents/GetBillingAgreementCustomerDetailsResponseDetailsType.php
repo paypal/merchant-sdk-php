@@ -1,21 +1,15 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
-/**
- * 
- */
-class GetBillingAgreementCustomerDetailsResponseDetailsType  
+
+class GetBillingAgreementCustomerDetailsResponseDetailsType
    extends PPXmlMessage{
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PayerInfoType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\PayerInfoType
+	 */
 	public $PayerInfo;
 
 	/**
@@ -25,12 +19,9 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType
 	 * primary address as billing address in
 	 * GetBillingAgreementCustomerDetails.
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AddressType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\AddressType
+	 */
 	public $BillingAddress;
 
 

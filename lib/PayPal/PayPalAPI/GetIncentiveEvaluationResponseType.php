@@ -14,7 +14,7 @@ class GetIncentiveEvaluationResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\GetIncentiveEvaluationResponseDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\GetIncentiveEvaluationResponseDetailsType	 
 	 */ 
 	public $GetIncentiveEvaluationResponseDetails;
 

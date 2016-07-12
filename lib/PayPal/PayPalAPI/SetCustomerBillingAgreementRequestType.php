@@ -14,7 +14,7 @@ class SetCustomerBillingAgreementRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\SetCustomerBillingAgreementRequestDetailsType	 
+	 * @var \PayPal\EBLBaseComponents\SetCustomerBillingAgreementRequestDetailsType	 
 	 */ 
 	public $SetCustomerBillingAgreementRequestDetails;
 

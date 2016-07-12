@@ -1,87 +1,57 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
-/**
- * 
- */
-class RecurringPaymentsSummaryType  
+
+class RecurringPaymentsSummaryType
    extends PPXmlMessage{
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var dateTime	 
-	 */ 
+	 * @var string ISO8601
+	 */
 	public $NextBillingDate;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var integer	 
-	 */ 
+	 * @var integer
+	 */
 	public $NumberCyclesCompleted;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var integer	 
-	 */ 
+	 * @var integer
+	 */
 	public $NumberCyclesRemaining;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $OutstandingBalance;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var integer	 
-	 */ 
+	 * @var integer
+	 */
 	public $FailedPaymentCount;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var dateTime	 
-	 */ 
+	 * @var string ISO8601
+	 */
 	public $LastPaymentDate;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
 	public $LastPaymentAmount;
 
 

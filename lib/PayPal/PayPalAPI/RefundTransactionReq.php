@@ -14,7 +14,7 @@ class RefundTransactionReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\RefundTransactionRequestType	 
+	 * @var \PayPal\PayPalAPI\RefundTransactionRequestType	 
 	 */ 
 	public $RefundTransactionRequest;
 

@@ -15,7 +15,7 @@ class ReferenceCreditCardDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\CreditCardNumberTypeType	 
+	 * @var \PayPal\EBLBaseComponents\CreditCardNumberTypeType	 
 	 */ 
 	public $CreditCardNumberType;
 
@@ -48,7 +48,7 @@ class ReferenceCreditCardDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PersonNameType	 
+	 * @var \PayPal\EBLBaseComponents\PersonNameType	 
 	 */ 
 	public $CardOwnerName;
 
@@ -59,7 +59,7 @@ class ReferenceCreditCardDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\AddressType	 
+	 * @var \PayPal\EBLBaseComponents\AddressType	 
 	 */ 
 	public $BillingAddress;
 

@@ -1,21 +1,15 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
-/**
- * 
- */
-class EnterBoardingRequestType  extends AbstractRequestType  
+use PayPal\EBLBaseComponents\AbstractRequestType;
+
+class EnterBoardingRequestType  extends AbstractRequestType
   {
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\EnterBoardingRequestDetailsType	 
-	 */ 
+	 * @var \PayPal\EBLBaseComponents\EnterBoardingRequestDetailsType
+	 */
 	public $EnterBoardingRequestDetails;
 
 	/**
@@ -26,5 +20,5 @@ class EnterBoardingRequestType  extends AbstractRequestType
 	}
 
 
-    
+
 }

@@ -1,33 +1,25 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
 use PayPal\Core\PPXmlMessage;
 /**
- * Option Name. Optional 
+ * Option Name. Optional
  */
-class OptionDetailsType  
+class OptionDetailsType
    extends PPXmlMessage{
 
 	/**
-	 * Option Name. Optional 
+	 * Option Name. Optional
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
+	 * @var string
+	 */
 	public $OptionName;
 
 	/**
-	 * 
-     * @array
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\PayPalAPI\OptionSelectionDetailsType	 
-	 */ 
+	 * @var \PayPal\PayPalAPI\OptionSelectionDetailsType[]
+	 */
 	public $OptionSelectionDetails;
 
 	/**
@@ -38,5 +30,5 @@ class OptionDetailsType
 	}
 
 
-    
+
 }

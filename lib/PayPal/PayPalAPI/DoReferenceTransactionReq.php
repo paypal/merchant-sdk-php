@@ -1,21 +1,15 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
 use PayPal\Core\PPXmlMessage;
-/**
- * 
- */
-class DoReferenceTransactionReq  
+
+class DoReferenceTransactionReq
    extends PPXmlMessage{
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\PayPalAPI\DoReferenceTransactionRequestType	 
-	 */ 
+	 * @var \PayPal\PayPalAPI\DoReferenceTransactionRequestType
+	 */
 	public $DoReferenceTransactionRequest;
 
 
@@ -32,5 +26,5 @@ class DoReferenceTransactionReq
 			$str .= '</ns:DoReferenceTransactionReq>';
 			return $str;
 	}
-    
+
 }

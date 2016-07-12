@@ -14,7 +14,7 @@ class AddressVerifyReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var PayPal\PayPalAPI\AddressVerifyRequestType	 
+	 * @var \PayPal\PayPalAPI\AddressVerifyRequestType	 
 	 */ 
 	public $AddressVerifyRequest;
 

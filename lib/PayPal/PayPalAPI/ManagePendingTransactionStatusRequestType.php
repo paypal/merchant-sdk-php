@@ -1,32 +1,22 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
-/**
- * 
- */
-class ManagePendingTransactionStatusRequestType  extends AbstractRequestType  
+use PayPal\EBLBaseComponents\AbstractRequestType;
+
+class ManagePendingTransactionStatusRequestType  extends AbstractRequestType
   {
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+	 * @var string
+	 */
 	public $TransactionID;
 
 	/**
-	 * 
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
+	 * @var string
+	 */
 	public $Action;
 
 	/**
@@ -38,5 +28,5 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType
 	}
 
 
-    
+
 }

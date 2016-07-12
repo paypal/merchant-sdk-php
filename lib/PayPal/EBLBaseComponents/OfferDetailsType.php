@@ -26,7 +26,7 @@ class OfferDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\BMLOfferInfoType	 
+	 * @var \PayPal\EBLBaseComponents\BMLOfferInfoType	 
 	 */ 
 	public $BMLOfferInfo;
 

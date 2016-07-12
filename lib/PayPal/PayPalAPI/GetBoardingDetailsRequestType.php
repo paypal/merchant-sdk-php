@@ -1,13 +1,13 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
+use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  * A unique token returned by the EnterBoarding API call that
  * identifies this boarding session. RequiredCharacter length
  * and limitations: 64 alphanumeric characters. The token has
  * the following format:OB-61characterstring
  */
-class GetBoardingDetailsRequestType  extends AbstractRequestType  
+class GetBoardingDetailsRequestType  extends AbstractRequestType
   {
 
 	/**
@@ -16,12 +16,9 @@ class GetBoardingDetailsRequestType  extends AbstractRequestType
 	 * and limitations: 64 alphanumeric characters. The token has
 	 * the following format:OB-61characterstring
 	 * @access public
-	 
 	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
+	 * @var string
+	 */
 	public $Token;
 
 	/**
@@ -32,5 +29,5 @@ class GetBoardingDetailsRequestType  extends AbstractRequestType
 	}
 
 
-    
+
 }
