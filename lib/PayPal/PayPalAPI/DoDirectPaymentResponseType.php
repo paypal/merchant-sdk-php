@@ -12,10 +12,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 * The amount of the payment as specified by you on
 	 * DoDirectPaymentRequest.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Amount;
@@ -37,10 +34,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 * five-digit ZIP Z ZIP Five-digit ZIP code (no Address) All
 	 * others Error Not applicable
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $AVSCode;
@@ -52,10 +46,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 * UnavailableNot applicable XNo response Not applicable All
 	 * others ErrorNot applicable
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $CVV2Code;
@@ -64,10 +55,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 * Transaction identification number. Character length and
 	 * limitations: 19 characters maximum.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $TransactionID;
@@ -75,10 +63,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	/**
 	 * The reason why a particular transaction went in pending.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $PendingReason;
@@ -86,10 +71,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	/**
 	 * This will identify the actual transaction status.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $PaymentStatus;
@@ -97,10 +79,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\EBLBaseComponents\FMFDetailsType
 	 */
 	public $FMFDetails;
@@ -108,10 +87,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\EBLBaseComponents\ThreeDSecureResponseType
 	 */
 	public $ThreeDSecureResponse;
@@ -120,10 +96,7 @@ class DoDirectPaymentResponseType  extends AbstractResponseType
 	 * Response code from the processor when a recurring
 	 * transaction is declined.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $PaymentAdviceCode;

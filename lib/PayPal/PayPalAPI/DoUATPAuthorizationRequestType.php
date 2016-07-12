@@ -10,10 +10,7 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	/**
 	 * UATP card details Required
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\UATPDetailsType
 	 */
 	public $UATPDetails;
@@ -23,10 +20,7 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	 * is Order, which means that the transaction represents a
 	 * customer order that can be fulfilled over 29 days. Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $TransactionEntity;
@@ -37,10 +31,7 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	 * separator must be a period (.), and the thousands separator
 	 * must be a comma (,).
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Amount;
@@ -48,10 +39,7 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	/**
 	 * Invoice ID. A pass through.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $InvoiceID;
@@ -61,10 +49,7 @@ class DoUATPAuthorizationRequestType  extends AbstractRequestType
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $MsgSubID;

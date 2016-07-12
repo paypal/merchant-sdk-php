@@ -11,10 +11,7 @@ class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\DoExpressCheckoutPaymentRequestDetailsType
 	 */
 	public $DoExpressCheckoutPaymentRequestDetails;
@@ -23,10 +20,7 @@ class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType
 	 * This flag indicates that the response should include
 	 * FMFDetails
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var integer
 	 */
 	public $ReturnFMFDetails;

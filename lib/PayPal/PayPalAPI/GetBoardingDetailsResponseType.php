@@ -10,10 +10,7 @@ class GetBoardingDetailsResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\GetBoardingDetailsResponseDetailsType
 	 */
 	public $GetBoardingDetailsResponseDetails;

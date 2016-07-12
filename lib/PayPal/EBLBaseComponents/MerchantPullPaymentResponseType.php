@@ -11,10 +11,7 @@ class MerchantPullPaymentResponseType
 	/**
 	 * information about the customer
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PayerInfoType
 	 */
 	public $PayerInfo;
@@ -22,10 +19,7 @@ class MerchantPullPaymentResponseType
 	/**
 	 * Information about the transaction
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentInfoType
 	 */
 	public $PaymentInfo;
@@ -33,10 +27,7 @@ class MerchantPullPaymentResponseType
 	/**
 	 * Specific information about the preapproved payment
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\MerchantPullInfoType
 	 */
 	public $MerchantPullInfo;

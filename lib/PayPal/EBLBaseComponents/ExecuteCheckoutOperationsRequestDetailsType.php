@@ -24,10 +24,7 @@ class ExecuteCheckoutOperationsRequestDetailsType
 	 * want the customer to edit his shipping address on PayPal.
 	 * Character length and limitations: 20 single-byte characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Token;
@@ -36,10 +33,7 @@ class ExecuteCheckoutOperationsRequestDetailsType
 	 * All the Data required to initiate the checkout session is
 	 * passed in this element.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\SetDataRequestType
 	 */
 	public $SetDataRequest;
@@ -48,10 +42,7 @@ class ExecuteCheckoutOperationsRequestDetailsType
 	 * If auto authorization is required, this should be passed in
 	 * with IsRequested set to yes.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\AuthorizationRequestType
 	 */
 	public $AuthorizationRequest;

@@ -10,10 +10,7 @@ class BillingPeriodDetailsType_Update
 	/**
 	 * Unit of meausre for billing cycle
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BillingPeriod;
@@ -21,10 +18,7 @@ class BillingPeriodDetailsType_Update
 	/**
 	 * Number of BillingPeriod that make up one billing cycle
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $BillingFrequency;
@@ -32,10 +26,7 @@ class BillingPeriodDetailsType_Update
 	/**
 	 * Total billing cycles in this portion of the schedule
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $TotalBillingCycles;
@@ -43,10 +34,7 @@ class BillingPeriodDetailsType_Update
 	/**
 	 * Amount to charge
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Amount;
@@ -54,10 +42,7 @@ class BillingPeriodDetailsType_Update
 	/**
 	 * Additional shipping amount to charge
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $ShippingAmount;
@@ -65,10 +50,7 @@ class BillingPeriodDetailsType_Update
 	/**
 	 * Additional tax amount to charge
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $TaxAmount;

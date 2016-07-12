@@ -10,10 +10,7 @@ class ActivationDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $InitialAmount;
@@ -21,10 +18,7 @@ class ActivationDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $FailedInitialAmountAction;

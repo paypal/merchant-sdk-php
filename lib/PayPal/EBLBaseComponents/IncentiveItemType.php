@@ -10,10 +10,7 @@ class IncentiveItemType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ItemId;
@@ -21,10 +18,7 @@ class IncentiveItemType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string ISO8601
 	 */
 	public $PurchaseTime;
@@ -32,10 +26,7 @@ class IncentiveItemType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ItemCategoryList;
@@ -43,10 +34,7 @@ class IncentiveItemType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $ItemPrice;
@@ -54,10 +42,7 @@ class IncentiveItemType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $ItemQuantity;

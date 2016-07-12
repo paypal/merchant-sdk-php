@@ -12,10 +12,7 @@ class PaymentItemInfoType
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $InvoiceID;
@@ -25,10 +22,7 @@ class PaymentItemInfoType
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Custom;
@@ -38,10 +32,7 @@ class PaymentItemInfoType
 	 * note field. Character length and limitations: 255
 	 * single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Memo;
@@ -49,10 +40,7 @@ class PaymentItemInfoType
 	/**
 	 * Amount of tax charged on transaction
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SalesTax;
@@ -60,10 +48,7 @@ class PaymentItemInfoType
 	/**
 	 * Details about the indivudal purchased item
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentItemType[]
 	 */
 	public $PaymentItem;
@@ -72,10 +57,7 @@ class PaymentItemInfoType
 	 * Information about the transaction if it was created via
 	 * PayPal Subcriptions
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\SubscriptionInfoType
 	 */
 	public $Subscription;
@@ -84,10 +66,7 @@ class PaymentItemInfoType
 	 * Information about the transaction if it was created via an
 	 * auction
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\AuctionInfoType
 	 */
 	public $Auction;

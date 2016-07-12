@@ -10,10 +10,7 @@ class BusinessInfoType
 	/**
 	 * Type of business, such as corporation or sole proprietorship
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Type;
@@ -22,10 +19,7 @@ class BusinessInfoType
 	 * Official name of business Character length and limitations:
 	 * 75 alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Name;
@@ -33,10 +27,7 @@ class BusinessInfoType
 	/**
 	 * Merchantâs business postal address
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\AddressType
 	 */
 	public $Address;
@@ -45,10 +36,7 @@ class BusinessInfoType
 	 * Businessâs primary telephone number Character length and
 	 * limitations: 20 alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $WorkPhone;
@@ -56,10 +44,7 @@ class BusinessInfoType
 	/**
 	 * Line of business, as defined in the enumerations
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Category;
@@ -67,10 +52,7 @@ class BusinessInfoType
 	/**
 	 * Business sub-category, as defined in the enumerations
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SubCategory;
@@ -89,10 +71,7 @@ class BusinessInfoType
 	 * AverageTransactionPrice-Range9 $5,000 USD to $10,000 USD
 	 * AverageTransactionPrice-Range10 More than $10,000 USD
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $AveragePrice;
@@ -108,10 +87,7 @@ class BusinessInfoType
 	 * AverageMonthlyVolume-Range5 $100,000 USD to $1,000,000 USD
 	 * AverageMonthlyVolume-Range6 More than $1,000,000 USD
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $AverageMonthlyVolume;
@@ -119,10 +95,7 @@ class BusinessInfoType
 	/**
 	 * Main sales venue, such as eBay
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SalesVenue;
@@ -131,10 +104,7 @@ class BusinessInfoType
 	 * Primary URL of business Character length and limitations:
 	 * 2,048 alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Website;
@@ -148,10 +118,7 @@ class BusinessInfoType
 	 * PercentageRevenueFromOnlineSales-Range3 50% to 75%
 	 * PercentageRevenueFromOnlineSales-Range4 75% to 100%
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $RevenueFromOnlineSales;
@@ -159,10 +126,7 @@ class BusinessInfoType
 	/**
 	 * Date the merchantâs business was established
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string ISO8601
 	 */
 	public $BusinessEstablished;
@@ -172,10 +136,7 @@ class BusinessInfoType
 	 * Character length and limitations: 127 alphanumeric
 	 * characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CustomerServiceEmail;
@@ -184,10 +145,7 @@ class BusinessInfoType
 	 * Telephone number to contact businessâs customer service
 	 * Character length and limitations: 32 alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CustomerServicePhone;

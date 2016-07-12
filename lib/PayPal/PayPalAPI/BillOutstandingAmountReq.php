@@ -10,10 +10,7 @@ class BillOutstandingAmountReq
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\PayPalAPI\BillOutstandingAmountRequestType
 	 */
 	public $BillOutstandingAmountRequest;

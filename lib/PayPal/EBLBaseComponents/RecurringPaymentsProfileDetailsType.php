@@ -12,10 +12,7 @@ class RecurringPaymentsProfileDetailsType
 	 * Subscriber name - if missing, will use name in buyer's
 	 * account
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SubscriberName;
@@ -24,10 +21,7 @@ class RecurringPaymentsProfileDetailsType
 	 * Subscriber address - if missing, will use address in buyer's
 	 * account
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\AddressType
 	 */
 	public $SubscriberShippingAddress;
@@ -35,10 +29,7 @@ class RecurringPaymentsProfileDetailsType
 	/**
 	 * When does this Profile begin billing?
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string ISO8601
 	 */
 	public $BillingStartDate;
@@ -48,10 +39,7 @@ class RecurringPaymentsProfileDetailsType
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ProfileReference;

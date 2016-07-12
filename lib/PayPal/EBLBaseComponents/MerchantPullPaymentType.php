@@ -15,10 +15,7 @@ class MerchantPullPaymentType
 	 * set the currencyID attribute to one of the three-character
 	 * currency code for any of the supported PayPal currencies.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Amount;
@@ -31,10 +28,7 @@ class MerchantPullPaymentType
 	 * single-character prefix B, followed by a hyphen and an
 	 * alphanumeric character string: B-unique_alphanumeric_string
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $MpID;
@@ -42,10 +36,7 @@ class MerchantPullPaymentType
 	/**
 	 * Specifies type of PayPal payment you require Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PaymentType;
@@ -54,10 +45,7 @@ class MerchantPullPaymentType
 	 * Text entered by the customer in the Note field during
 	 * enrollment Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Memo;
@@ -66,10 +54,7 @@ class MerchantPullPaymentType
 	 * Subject line of confirmation email sent to recipient
 	 * Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $EmailSubject;
@@ -77,10 +62,7 @@ class MerchantPullPaymentType
 	/**
 	 * The tax charged on the transaction Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Tax;
@@ -88,10 +70,7 @@ class MerchantPullPaymentType
 	/**
 	 * Per-transaction shipping charge Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Shipping;
@@ -99,10 +78,7 @@ class MerchantPullPaymentType
 	/**
 	 * Per-transaction handling charge Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Handling;
@@ -110,10 +86,7 @@ class MerchantPullPaymentType
 	/**
 	 * Name of purchased item Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ItemName;
@@ -121,10 +94,7 @@ class MerchantPullPaymentType
 	/**
 	 * Reference number of purchased item Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ItemNumber;
@@ -132,10 +102,7 @@ class MerchantPullPaymentType
 	/**
 	 * Your invoice number Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Invoice;
@@ -143,10 +110,7 @@ class MerchantPullPaymentType
 	/**
 	 * Custom annotation field for tracking or other use Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Custom;
@@ -156,10 +120,7 @@ class MerchantPullPaymentType
 	 * to identify transactions. Optional Character length and
 	 * limitations: 32 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ButtonSource= "PayPal_SDK";
@@ -169,10 +130,7 @@ class MerchantPullPaymentType
 	 * Character length and limitations: single-byte alphanumeric
 	 * characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SoftDescriptor;

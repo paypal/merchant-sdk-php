@@ -10,10 +10,7 @@ class ExecuteCheckoutOperationsRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\ExecuteCheckoutOperationsRequestDetailsType
 	 */
 	public $ExecuteCheckoutOperationsRequestDetails;

@@ -10,10 +10,7 @@ class DoReferenceTransactionReq
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\PayPalAPI\DoReferenceTransactionRequestType
 	 */
 	public $DoReferenceTransactionRequest;

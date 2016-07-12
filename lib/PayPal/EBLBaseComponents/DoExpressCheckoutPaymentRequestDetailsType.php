@@ -30,10 +30,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * API, DoExpressCheckoutPaymentRequest. Character length and
 	 * limit: Up to 13 single-byte alphabetic characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PaymentAction;
@@ -44,10 +41,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * GetExpressCheckoutDetailsRequest. Required Character length
 	 * and limitations: 20 single-byte characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Token;
@@ -58,10 +52,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * Character length and limitations: 127 single-byte
 	 * characters.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PayerID;
@@ -69,10 +60,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	/**
 	 * URL on Merchant site pertaining to this invoice. Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $OrderURL;
@@ -80,10 +68,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	/**
 	 * Information about the payment Required
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType[]
 	 */
 	public $PaymentDetails;
@@ -92,10 +77,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * Flag to indicate if previously set promoCode shall be
 	 * overriden. Value 1 indicates overriding.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PromoOverrideFlag;
@@ -104,10 +86,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * Promotional financing code for item. Overrides any previous
 	 * PromoCode setting.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PromoCode;
@@ -116,10 +95,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * Contains data for enhanced data like Airline Itinerary Data.
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\EnhancedDataType
 	 */
 	public $EnhancedData;
@@ -128,10 +104,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * Soft Descriptor supported for Sale and Auth in DEC only. For
 	 * Order this will be ignored.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SoftDescriptor;
@@ -139,10 +112,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	/**
 	 * Information about the user selected options.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\UserSelectedOptionType
 	 */
 	public $UserSelectedOptions;
@@ -150,10 +120,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	/**
 	 * Information about the Gift message.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $GiftMessage;
@@ -161,10 +128,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	/**
 	 * Information about the Gift receipt enable.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $GiftReceiptEnable;
@@ -172,10 +136,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	/**
 	 * Information about the Gift Wrap name.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $GiftWrapName;
@@ -183,10 +144,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	/**
 	 * Information about the Gift Wrap amount.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $GiftWrapAmount;
@@ -194,10 +152,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	/**
 	 * Information about the Buyer marketing email.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BuyerMarketingEmail;
@@ -205,10 +160,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	/**
 	 * Information about the survey question.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SurveyQuestion;
@@ -216,10 +168,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	/**
 	 * Information about the survey choice selected by the user.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string[]
 	 */
 	public $SurveyChoiceSelected;
@@ -229,10 +178,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * to identify transactions. Optional Character length and
 	 * limitations: 32 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ButtonSource= "PayPal_SDK";
@@ -241,10 +187,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	 * Merchant specified flag which indicates whether to create
 	 * billing agreement as part of DoEC or not. Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var boolean
 	 */
 	public $SkipBACreation;
@@ -252,10 +195,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 	/**
 	 * Optional element that defines relationship between buckets
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\CoupledBucketsType[]
 	 */
 	public $CoupledBuckets;

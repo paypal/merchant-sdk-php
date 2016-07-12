@@ -12,10 +12,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Website;
@@ -23,10 +20,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Email;
@@ -34,10 +28,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Mobile;
@@ -45,10 +36,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $HostedButtonID;
@@ -58,10 +46,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 * GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
 	 * DONATE, VIEWCART or UNSUBSCRIBE
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ButtonType;
@@ -70,10 +55,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 * Type of button code. One of the following: hosted, encrypted
 	 * or cleartext
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ButtonCode;
@@ -82,10 +64,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 * Button sub type. optional for button types buynow and cart
 	 * only Either PRODUCTS or SERVICES
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ButtonSubType;
@@ -94,10 +73,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 * Button Variable information Character length and
 	 * limitations: 63 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string[]
 	 */
 	public $ButtonVar;
@@ -105,10 +81,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\PayPalAPI\OptionDetailsType[]
 	 */
 	public $OptionDetails;
@@ -116,10 +89,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	/**
 	 * Text field
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string[]
 	 */
 	public $TextBox;
@@ -127,10 +97,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	/**
 	 * Button image to use. One of: REG, SML, or CC
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ButtonImage;
@@ -138,10 +105,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	/**
 	 * Button URL for custom button image.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ButtonImageURL;
@@ -149,10 +113,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	/**
 	 * Text to use on Buy Now Button. Either BUYNOW or PAYNOW
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $BuyNowText;
@@ -161,10 +122,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 * Text to use on Subscribe button. Must be either BUYNOW or
 	 * SUBSCRIBE
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $SubscribeText;
@@ -172,10 +130,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	/**
 	 * Button Country. Valid ISO country code or 'International'
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ButtonCountry;
@@ -184,10 +139,7 @@ class BMGetButtonDetailsResponseType  extends AbstractResponseType
 	 * Button language code. Character length and limitations: 3
 	 * single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ButtonLanguage;

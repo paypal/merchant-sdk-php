@@ -12,10 +12,7 @@ class OptionSelectionDetailsType
 	 * Option Selection. Required Character length and limitations:
 	 * 12 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $OptionSelection;
@@ -23,10 +20,7 @@ class OptionSelectionDetailsType
 	/**
 	 * Option Price. Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Price;
@@ -34,10 +28,7 @@ class OptionSelectionDetailsType
 	/**
 	 * Option Type Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $OptionType;
@@ -45,10 +36,7 @@ class OptionSelectionDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\PayPalAPI\InstallmentDetailsType[]
 	 */
 	public $PaymentPeriod;

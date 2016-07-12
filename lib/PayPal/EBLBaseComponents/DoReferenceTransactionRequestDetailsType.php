@@ -10,10 +10,7 @@ class DoReferenceTransactionRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ReferenceID;
@@ -21,10 +18,7 @@ class DoReferenceTransactionRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PaymentAction;
@@ -32,10 +26,7 @@ class DoReferenceTransactionRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PaymentType;
@@ -43,10 +34,7 @@ class DoReferenceTransactionRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType
 	 */
 	public $PaymentDetails;
@@ -54,10 +42,7 @@ class DoReferenceTransactionRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\ReferenceCreditCardDetailsType
 	 */
 	public $CreditCard;
@@ -65,10 +50,7 @@ class DoReferenceTransactionRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $IPAddress;
@@ -76,10 +58,7 @@ class DoReferenceTransactionRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $MerchantSessionId;
@@ -87,10 +66,7 @@ class DoReferenceTransactionRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ReqConfirmShipping;
@@ -98,10 +74,7 @@ class DoReferenceTransactionRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SoftDescriptor;
@@ -109,10 +82,7 @@ class DoReferenceTransactionRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\SenderDetailsType
 	 */
 	public $SenderDetails;
@@ -122,10 +92,7 @@ class DoReferenceTransactionRequestDetailsType
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $MsgSubID;

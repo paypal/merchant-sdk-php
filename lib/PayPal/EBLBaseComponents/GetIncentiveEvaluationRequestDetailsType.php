@@ -10,10 +10,7 @@ class GetIncentiveEvaluationRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ExternalBuyerId;
@@ -21,10 +18,7 @@ class GetIncentiveEvaluationRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string[]
 	 */
 	public $IncentiveCodes;
@@ -32,10 +26,7 @@ class GetIncentiveEvaluationRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\IncentiveApplyIndicationType[]
 	 */
 	public $ApplyIndication;
@@ -43,10 +34,7 @@ class GetIncentiveEvaluationRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\IncentiveBucketType[]
 	 */
 	public $Buckets;
@@ -54,10 +42,7 @@ class GetIncentiveEvaluationRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $CartTotalAmt;
@@ -65,10 +50,7 @@ class GetIncentiveEvaluationRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\IncentiveRequestDetailsType
 	 */
 	public $RequestDetails;

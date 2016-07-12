@@ -10,10 +10,7 @@ class ManageRecurringPaymentsProfileStatusRequestType  extends AbstractRequestTy
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\ManageRecurringPaymentsProfileStatusRequestDetailsType
 	 */
 	public $ManageRecurringPaymentsProfileStatusRequestDetails;

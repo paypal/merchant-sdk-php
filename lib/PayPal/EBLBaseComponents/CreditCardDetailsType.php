@@ -10,10 +10,7 @@ class CreditCardDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CreditCardType;
@@ -21,10 +18,7 @@ class CreditCardDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CreditCardNumber;
@@ -32,10 +26,7 @@ class CreditCardDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $ExpMonth;
@@ -43,10 +34,7 @@ class CreditCardDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $ExpYear;
@@ -54,10 +42,7 @@ class CreditCardDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PayerInfoType
 	 */
 	public $CardOwner;
@@ -65,10 +50,7 @@ class CreditCardDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CVV2;
@@ -76,10 +58,7 @@ class CreditCardDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $StartMonth;
@@ -87,10 +66,7 @@ class CreditCardDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $StartYear;
@@ -98,10 +74,7 @@ class CreditCardDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $IssueNumber;
@@ -109,10 +82,7 @@ class CreditCardDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\ThreeDSecureRequestType
 	 */
 	public $ThreeDSecureRequest;

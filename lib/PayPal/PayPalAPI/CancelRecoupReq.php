@@ -10,10 +10,7 @@ class CancelRecoupReq
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\PayPalAPI\CancelRecoupRequestType
 	 */
 	public $CancelRecoupRequest;

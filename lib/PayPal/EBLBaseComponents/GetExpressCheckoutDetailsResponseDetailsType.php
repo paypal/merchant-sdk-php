@@ -16,10 +16,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * GetExpressCheckoutDetailsRequest. Character length and
 	 * limitations: 20 single-byte characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Token;
@@ -27,10 +24,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	/**
 	 * Information about the payer
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PayerInfoType
 	 */
 	public $PayerInfo;
@@ -41,10 +35,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * length and limitations: 256 single-byte alphanumeric
 	 * characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Custom;
@@ -55,10 +46,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $InvoiceID;
@@ -68,10 +56,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * telephone number only if your Merchant account profile
 	 * settings require that the buyer enter one.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ContactPhone;
@@ -79,10 +64,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var boolean
 	 */
 	public $BillingAgreementAcceptedStatus;
@@ -90,10 +72,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $RedirectRequired;
@@ -105,10 +84,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * , PayPal returns this address in
 	 * GetExpressCheckoutDetailsResponse.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\AddressType
 	 */
 	public $BillingAddress;
@@ -116,10 +92,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	/**
 	 * Text note entered by the buyer in PayPal flow.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Note;
@@ -129,10 +102,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * include 'PaymentActionNotInitiated', 'PaymentActionFailed',
 	 * 'PaymentActionInProgress', 'PaymentCompleted'.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CheckoutStatus;
@@ -144,10 +114,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * the current charges, which will be represented as a positive
 	 * amount.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $PayPalAdjustment;
@@ -155,10 +122,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	/**
 	 * Information about the individual purchased items.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType[]
 	 */
 	public $PaymentDetails;
@@ -166,10 +130,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	/**
 	 * Information about the user selected options.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\UserSelectedOptionType
 	 */
 	public $UserSelectedOptions;
@@ -178,10 +139,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * Information about the incentives that were applied from Ebay
 	 * RYP page and PayPal RYP page.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\IncentiveDetailsType[]
 	 */
 	public $IncentiveDetails;
@@ -189,10 +147,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	/**
 	 * Information about the Gift message.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $GiftMessage;
@@ -200,10 +155,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	/**
 	 * Information about the Gift receipt enable.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $GiftReceiptEnable;
@@ -211,10 +163,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	/**
 	 * Information about the Gift Wrap name.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $GiftWrapName;
@@ -222,10 +171,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	/**
 	 * Information about the Gift Wrap amount.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $GiftWrapAmount;
@@ -233,10 +179,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	/**
 	 * Information about the Buyer marketing email.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BuyerMarketingEmail;
@@ -244,10 +187,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	/**
 	 * Information about the survey question.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SurveyQuestion;
@@ -255,10 +195,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	/**
 	 * Information about the survey choice selected by the user.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string[]
 	 */
 	public $SurveyChoiceSelected;
@@ -267,10 +204,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * Contains payment request information about each bucket in
 	 * the cart.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentRequestInfoType[]
 	 */
 	public $PaymentRequestInfo;
@@ -279,10 +213,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * Response information resulting from opt-in operation or
 	 * current login bypass status.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\ExternalRememberMeStatusDetailsType
 	 */
 	public $ExternalRememberMeStatusDetails;
@@ -291,10 +222,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
 	 * Response information resulting from opt-in operation or
 	 * current login bypass status.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\RefreshTokenStatusDetailsType
 	 */
 	public $RefreshTokenStatusDetails;

@@ -10,10 +10,7 @@ class MassPayReq
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\PayPalAPI\MassPayRequestType
 	 */
 	public $MassPayRequest;

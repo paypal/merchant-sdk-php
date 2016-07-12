@@ -10,10 +10,7 @@ class GetIncentiveEvaluationRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\GetIncentiveEvaluationRequestDetailsType
 	 */
 	public $GetIncentiveEvaluationRequestDetails;

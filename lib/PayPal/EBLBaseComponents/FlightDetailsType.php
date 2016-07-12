@@ -10,10 +10,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ConjuctionTicket;
@@ -21,10 +18,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ExchangeTicket;
@@ -32,10 +26,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CouponNumber;
@@ -43,10 +34,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ServiceClass;
@@ -54,10 +42,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $TravelDate;
@@ -65,10 +50,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CarrierCode;
@@ -76,10 +58,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $StopOverPermitted;
@@ -87,10 +66,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $DepartureAirport;
@@ -98,10 +74,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ArrivalAirport;
@@ -109,10 +82,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $FlightNumber;
@@ -120,10 +90,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $DepartureTime;
@@ -131,10 +98,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ArrivalTime;
@@ -142,10 +106,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $FareBasisCode;
@@ -153,10 +114,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Fare;
@@ -164,10 +122,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Taxes;
@@ -175,10 +130,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Fee;
@@ -186,10 +138,7 @@ class FlightDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $EndorsementOrRestrictions;

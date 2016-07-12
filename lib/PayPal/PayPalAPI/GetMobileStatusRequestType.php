@@ -10,10 +10,7 @@ class GetMobileStatusRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\GetMobileStatusRequestDetailsType
 	 */
 	public $GetMobileStatusRequestDetails;

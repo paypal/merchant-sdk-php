@@ -14,10 +14,7 @@ class GetAuthDetailsRequestType  extends AbstractRequestType
 	 * SetAuthFlowParam Response. RequiredCharacter length and
 	 * limitations: 20 single-byte characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Token;

@@ -12,10 +12,7 @@ class BillingApprovalDetailsType
 	 * The Type of Approval requested - Billing Agreement or
 	 * Profile
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ApprovalType;
@@ -24,10 +21,7 @@ class BillingApprovalDetailsType
 	 * The Approval subtype - Must be MerchantInitiatedBilling for
 	 * BillingAgreement ApprovalType
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ApprovalSubType;
@@ -35,10 +29,7 @@ class BillingApprovalDetailsType
 	/**
 	 * Description about the Order
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\OrderDetailsType
 	 */
 	public $OrderDetails;
@@ -46,10 +37,7 @@ class BillingApprovalDetailsType
 	/**
 	 * Directives about the type of payment
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentDirectivesType
 	 */
 	public $PaymentDirectives;
@@ -58,10 +46,7 @@ class BillingApprovalDetailsType
 	 * Client may pass in its identification of this Billing
 	 * Agreement. It used for the client's tracking purposes.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Custom;

@@ -12,10 +12,7 @@ class AddressType
 	 * Person's name associated with this address. Character length
 	 * and limitations: 32 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Name;
@@ -24,10 +21,7 @@ class AddressType
 	 * First street address. Character length and limitations: 300
 	 * single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Street1;
@@ -36,10 +30,7 @@ class AddressType
 	 * Second street address. Character length and limitations: 300
 	 * single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Street2;
@@ -48,10 +39,7 @@ class AddressType
 	 * Name of city. Character length and limitations: 120
 	 * single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CityName;
@@ -81,10 +69,7 @@ class AddressType
 	 * Wisconsin WI Wyoming WY Armed_Forces_Americas AA
 	 * Armed_Forces AE Armed_Forces_Pacific AP
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $StateOrProvince;
@@ -93,10 +78,7 @@ class AddressType
 	 * ISO 3166 standard country code Character limit: Two
 	 * single-byte characters.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Country;
@@ -111,10 +93,7 @@ class AddressType
 	 * country using the Country element (which refers to a
 	 * 2-letter country code).
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CountryName;
@@ -122,10 +101,7 @@ class AddressType
 	/**
 	 * Telephone number associated with this address
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Phone;
@@ -133,10 +109,7 @@ class AddressType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PostalCode;
@@ -147,10 +120,7 @@ class AddressType
 	 * CreateRecurringPaymentsProfile, or
 	 * UpdateRecurringPaymentsProfile.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $AddressID;
@@ -161,10 +131,7 @@ class AddressType
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $AddressOwner;
@@ -175,10 +142,7 @@ class AddressType
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ExternalAddressID;
@@ -191,10 +155,7 @@ class AddressType
 	 * SellerPaymentAddress today. Seller's international name that
 	 * is associated with the payment address.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $InternationalName;
@@ -207,10 +168,7 @@ class AddressType
 	 * SellerPaymentAddress today. International state and city for
 	 * the seller's payment address.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $InternationalStateAndCity;
@@ -223,10 +181,7 @@ class AddressType
 	 * SellerPaymentAddress today. Seller's international street
 	 * address that is associated with the payment address.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $InternationalStreet;
@@ -238,10 +193,7 @@ class AddressType
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $AddressStatus;
@@ -250,10 +202,7 @@ class AddressType
 	 * Returns Normalization Status of the Address. Possible values
 	 * are Normalized, Unnormalized, and None.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $AddressNormalizationStatus;

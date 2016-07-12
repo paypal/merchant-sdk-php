@@ -12,10 +12,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 * Unique transaction ID of the refund. Character length and
 	 * limitations:17 single-byte characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $RefundTransactionID;
@@ -24,10 +21,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 * Amount subtracted from PayPal balance of original recipient
 	 * of payment to make this refund
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $NetRefundAmount;
@@ -35,10 +29,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	/**
 	 * Transaction fee refunded to original recipient of payment
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $FeeRefundAmount;
@@ -46,10 +37,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	/**
 	 * Amount of money refunded to original payer
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $GrossRefundAmount;
@@ -57,10 +45,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	/**
 	 * Total of all previous refunds
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $TotalRefundedAmount;
@@ -68,10 +53,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	/**
 	 * Contains Refund Payment status information.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\RefundInfoType
 	 */
 	public $RefundInfo;
@@ -80,10 +62,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	 * Any general information like offer details that is
 	 * reinstated or any other marketing data
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ReceiptData;
@@ -91,10 +70,7 @@ class RefundTransactionResponseType  extends AbstractResponseType
 	/**
 	 * Return msgsubid back to merchant
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $MsgSubID;

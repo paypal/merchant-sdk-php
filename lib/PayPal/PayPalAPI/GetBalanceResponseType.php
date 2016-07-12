@@ -10,10 +10,7 @@ class GetBalanceResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Balance;
@@ -21,10 +18,7 @@ class GetBalanceResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string ISO8601
 	 */
 	public $BalanceTimeStamp;
@@ -32,10 +26,7 @@ class GetBalanceResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType[]
 	 */
 	public $BalanceHoldings;

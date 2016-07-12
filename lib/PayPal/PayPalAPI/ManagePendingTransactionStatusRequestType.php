@@ -10,10 +10,7 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $TransactionID;
@@ -21,10 +18,7 @@ class ManagePendingTransactionStatusRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Action;

@@ -10,10 +10,7 @@ class DoNonReferencedCreditRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Amount;
@@ -21,10 +18,7 @@ class DoNonReferencedCreditRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $NetAmount;
@@ -32,10 +26,7 @@ class DoNonReferencedCreditRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $TaxAmount;
@@ -43,10 +34,7 @@ class DoNonReferencedCreditRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $ShippingAmount;
@@ -54,10 +42,7 @@ class DoNonReferencedCreditRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\CreditCardDetailsType
 	 */
 	public $CreditCard;
@@ -65,10 +50,7 @@ class DoNonReferencedCreditRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ReceiverEmail;
@@ -76,10 +58,7 @@ class DoNonReferencedCreditRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Comment;

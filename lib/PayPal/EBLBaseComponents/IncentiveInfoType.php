@@ -10,10 +10,7 @@ class IncentiveInfoType
 	/**
 	 * Incentive redemption code.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $IncentiveCode;
@@ -22,10 +19,7 @@ class IncentiveInfoType
 	 * Defines which bucket or item that the incentive should be
 	 * applied to.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\IncentiveApplyIndicationType[]
 	 */
 	public $ApplyIndication;

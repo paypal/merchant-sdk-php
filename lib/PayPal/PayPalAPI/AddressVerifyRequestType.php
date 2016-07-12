@@ -13,10 +13,7 @@ class AddressVerifyRequestType  extends AbstractRequestType
 	 * Email address of buyer to be verified. Required Maximum
 	 * string length: 255 single-byte characters Input mask: ?@?.??
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Email;
@@ -30,10 +27,7 @@ class AddressVerifyRequestType  extends AbstractRequestType
 	 * Alphanumeric plus - , . ‘ # \ Whitespace and case of input
 	 * value are ignored.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Street;
@@ -45,10 +39,7 @@ class AddressVerifyRequestType  extends AbstractRequestType
 	 * account. Maximum string length: 16 single-byte characters
 	 * Whitespace and case of input value are ignored.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Zip;

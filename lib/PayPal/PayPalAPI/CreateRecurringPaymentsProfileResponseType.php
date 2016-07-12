@@ -10,10 +10,7 @@ class CreateRecurringPaymentsProfileResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\CreateRecurringPaymentsProfileResponseDetailsType
 	 */
 	public $CreateRecurringPaymentsProfileResponseDetails;

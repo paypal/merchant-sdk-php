@@ -16,10 +16,7 @@ class DoMobileCheckoutPaymentResponseDetailsType
 	 * Optional Character length and limitations: 256 single-byte
 	 * alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Custom;
@@ -29,10 +26,7 @@ class DoMobileCheckoutPaymentResponseDetailsType
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $InvoiceID;
@@ -40,10 +34,7 @@ class DoMobileCheckoutPaymentResponseDetailsType
 	/**
 	 * Information about the payer
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PayerInfoType
 	 */
 	public $PayerInfo;
@@ -51,10 +42,7 @@ class DoMobileCheckoutPaymentResponseDetailsType
 	/**
 	 * Information about the transaction
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentInfoType
 	 */
 	public $PaymentInfo;

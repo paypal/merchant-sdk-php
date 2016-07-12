@@ -10,10 +10,7 @@ class ScheduleDetailsType
 	/**
 	 * Schedule details for the Recurring Payment
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Description;
@@ -21,10 +18,7 @@ class ScheduleDetailsType
 	/**
 	 * Trial period of this schedule
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType
 	 */
 	public $TrialPeriod;
@@ -32,10 +26,7 @@ class ScheduleDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType
 	 */
 	public $PaymentPeriod;
@@ -44,10 +35,7 @@ class ScheduleDetailsType
 	 * The max number of payments the buyer can fail before this
 	 * Recurring Payments profile is cancelled
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $MaxFailedPayments;
@@ -55,10 +43,7 @@ class ScheduleDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\ActivationDetailsType
 	 */
 	public $ActivationDetails;
@@ -66,10 +51,7 @@ class ScheduleDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $AutoBillOutstandingAmount;

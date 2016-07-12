@@ -12,10 +12,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * The earliest transaction date at which to start the search.
 	 * No wildcards are allowed. Required
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string ISO8601
 	 */
 	public $StartDate;
@@ -24,10 +21,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * The latest transaction date to be included in the search
 	 * Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string ISO8601
 	 */
 	public $EndDate;
@@ -36,10 +30,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * Search by the buyer's email address OptionalCharacter length
 	 * and limitations: 127 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Payer;
@@ -49,10 +40,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * account has only one email, this is the primary email. Can
 	 * also be a non-primary email.Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Receiver;
@@ -60,10 +48,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	/**
 	 * Search by the PayPal Account Optional receipt IDOptional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ReceiptID;
@@ -73,10 +58,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * are from the merchant's transaction records. Character
 	 * length and limitations: 19 single-byte characters maximum
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $TransactionID;
@@ -86,10 +68,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * returned as part of the CreateRecurringPaymentsProfile API
 	 * response. Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ProfileID;
@@ -101,10 +80,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * limit.LastName: 25 single-byte character limit.Suffix: 12
 	 * single-byte character limit.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\EBLBaseComponents\PersonNameType
 	 */
 	public $PayerName;
@@ -116,10 +92,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * item_number variable set in the shopping cart for the
 	 * original transaction.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $AuctionItemNumber;
@@ -133,10 +106,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * Character length and limitations: 127 single-byte characters
 	 * maximum
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $InvoiceID;
@@ -144,10 +114,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $CardNumber;
@@ -177,10 +144,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * post transaction.NonReferencedRefunds: non-referenced
 	 * refunds.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $TransactionClass;
@@ -190,10 +154,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * currencyID attribute to one of the three-character currency
 	 * codes for any of the supported PayPal currencies.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Amount;
@@ -201,10 +162,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	/**
 	 * Search by currency codeOptional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $CurrencyCode;
@@ -222,10 +180,7 @@ class TransactionSearchRequestType  extends AbstractRequestType
 	 * reversal. The funds have been removed from your account
 	 * balance and returned to the buyer.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Status;

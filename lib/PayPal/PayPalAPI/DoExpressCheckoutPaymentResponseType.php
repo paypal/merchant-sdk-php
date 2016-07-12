@@ -10,10 +10,7 @@ class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\DoExpressCheckoutPaymentResponseDetailsType
 	 */
 	public $DoExpressCheckoutPaymentResponseDetails;
@@ -21,10 +18,7 @@ class DoExpressCheckoutPaymentResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\EBLBaseComponents\FMFDetailsType
 	 */
 	public $FMFDetails;

@@ -10,10 +10,7 @@ class DoNonReferencedCreditResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Amount;
@@ -21,10 +18,7 @@ class DoNonReferencedCreditResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $TransactionID;

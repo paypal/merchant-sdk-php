@@ -12,10 +12,7 @@ class GetAccessPermissionDetailsResponseDetailsType
 	 * The first name of the User. Character length and
 	 * limitations: 127 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $FirstName;
@@ -24,10 +21,7 @@ class GetAccessPermissionDetailsResponseDetailsType
 	 * The Last name of the user. Character length and limitations:
 	 * 127 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $LastName;
@@ -36,10 +30,7 @@ class GetAccessPermissionDetailsResponseDetailsType
 	 * The email address of the user. Character length and
 	 * limitations: 256 single-byte alphanumeric characters.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Email;
@@ -47,10 +38,7 @@ class GetAccessPermissionDetailsResponseDetailsType
 	/**
 	 * contains information about API Services
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string[]
 	 */
 	public $AccessPermissionName;
@@ -58,10 +46,7 @@ class GetAccessPermissionDetailsResponseDetailsType
 	/**
 	 * contains information about API Services
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string[]
 	 */
 	public $AccessPermissionStatus;
@@ -71,10 +56,7 @@ class GetAccessPermissionDetailsResponseDetailsType
 	 * Required Character length and limitations: 127 single-byte
 	 * characters.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PayerID;

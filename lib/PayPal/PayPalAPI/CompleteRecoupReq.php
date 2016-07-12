@@ -10,10 +10,7 @@ class CompleteRecoupReq
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\PayPalAPI\CompleteRecoupRequestType
 	 */
 	public $CompleteRecoupRequest;

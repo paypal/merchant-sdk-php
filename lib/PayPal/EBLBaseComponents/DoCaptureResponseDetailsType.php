@@ -14,10 +14,7 @@ class DoCaptureResponseDetailsType
 	 * request. Character length and limits: 19 single-byte
 	 * characters maximum
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $AuthorizationID;
@@ -25,10 +22,7 @@ class DoCaptureResponseDetailsType
 	/**
 	 * Information about the transaction
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentInfoType
 	 */
 	public $PaymentInfo;
@@ -36,10 +30,7 @@ class DoCaptureResponseDetailsType
 	/**
 	 * Return msgsubid back to merchant
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $MsgSubID;

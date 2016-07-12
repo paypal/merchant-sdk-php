@@ -10,10 +10,7 @@ class ManageRecurringPaymentsProfileStatusReq
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\PayPalAPI\ManageRecurringPaymentsProfileStatusRequestType
 	 */
 	public $ManageRecurringPaymentsProfileStatusRequest;

@@ -10,10 +10,7 @@ class CompleteRecoupRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ed
-
-
 	 * @var \PayPal\EnhancedDataTypes\EnhancedCompleteRecoupRequestDetailsType
 	 */
 	public $EnhancedCompleteRecoupRequestDetails;

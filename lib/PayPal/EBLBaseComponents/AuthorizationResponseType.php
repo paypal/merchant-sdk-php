@@ -12,10 +12,7 @@ class AuthorizationResponseType
 	 * Status will denote whether Auto authorization was successful
 	 * or not.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Status;
@@ -23,10 +20,7 @@ class AuthorizationResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\ErrorType[]
 	 */
 	public $AuthorizationError;

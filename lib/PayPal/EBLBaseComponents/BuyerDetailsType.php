@@ -11,10 +11,7 @@ class BuyerDetailsType
 	/**
 	 * The client's unique ID for this user.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BuyerId;
@@ -22,10 +19,7 @@ class BuyerDetailsType
 	/**
 	 * The user name of the user at the marketplaces site.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BuyerUserName;
@@ -33,10 +27,7 @@ class BuyerDetailsType
 	/**
 	 * Date when the user registered with the marketplace.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string ISO8601
 	 */
 	public $BuyerRegistrationDate;
@@ -45,10 +36,7 @@ class BuyerDetailsType
 	 * Details about payer's tax info. Refer to the
 	 * TaxIdDetailsType for more details.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\TaxIdDetailsType
 	 */
 	public $TaxIdDetails;
@@ -57,10 +45,7 @@ class BuyerDetailsType
 	 * Contains information that identifies the buyer. e.g. email
 	 * address or the external remember me id.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\IdentificationInfoType
 	 */
 	public $IdentificationInfo;

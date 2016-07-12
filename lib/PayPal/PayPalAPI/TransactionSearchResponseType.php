@@ -10,10 +10,7 @@ class TransactionSearchResponseType  extends AbstractResponseType
 	/**
 	 * Results of a Transaction Search.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentTransactionSearchResultType[]
 	 */
 	public $PaymentTransactions;

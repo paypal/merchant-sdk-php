@@ -18,10 +18,7 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType
 	 * login with a merchant and has meaning only to the merchant.
 	 * Required
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ExternalRememberMeID;
@@ -30,10 +27,7 @@ class ExternalRememberMeOptOutRequestType  extends AbstractRequestType
 	 * E-mail address or secure merchant account ID of merchant to
 	 * associate with external remember-me.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\EBLBaseComponents\ExternalRememberMeOwnerDetailsType
 	 */
 	public $ExternalRememberMeOwnerDetails;

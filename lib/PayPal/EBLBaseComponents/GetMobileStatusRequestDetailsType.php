@@ -10,10 +10,7 @@ class GetMobileStatusRequestDetailsType
 	/**
 	 * Phone number for status inquiry
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PhoneNumberType
 	 */
 	public $Phone;

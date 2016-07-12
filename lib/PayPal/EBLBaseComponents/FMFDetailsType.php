@@ -11,10 +11,7 @@ class FMFDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\RiskFilterListType
 	 */
 	public $AcceptFilters;
@@ -22,10 +19,7 @@ class FMFDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\RiskFilterListType
 	 */
 	public $PendingFilters;
@@ -33,10 +27,7 @@ class FMFDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\RiskFilterListType
 	 */
 	public $DenyFilters;
@@ -44,10 +35,7 @@ class FMFDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\RiskFilterListType
 	 */
 	public $ReportFilters;

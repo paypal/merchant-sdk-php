@@ -10,10 +10,7 @@ class BillOutstandingAmountRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ProfileID;
@@ -21,10 +18,7 @@ class BillOutstandingAmountRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Amount;
@@ -32,10 +26,7 @@ class BillOutstandingAmountRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Note;

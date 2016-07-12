@@ -10,10 +10,7 @@ class ManagePendingTransactionStatusResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $TransactionID;
@@ -21,10 +18,7 @@ class ManagePendingTransactionStatusResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Status;

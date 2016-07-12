@@ -13,10 +13,7 @@ class IncentiveDetailsType
 	 * friendly descripotion, incentive type, campaign code,
 	 * incenitve application order and site redeemed on.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $UniqueIdentifier;
@@ -25,10 +22,7 @@ class IncentiveDetailsType
 	 * Defines if the incentive has been applied on Ebay or PayPal.
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SiteAppliedOn;
@@ -37,10 +31,7 @@ class IncentiveDetailsType
 	 * The total discount amount for the incentive, summation of
 	 * discounts up across all the buckets/items.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $TotalDiscountAmount;
@@ -48,10 +39,7 @@ class IncentiveDetailsType
 	/**
 	 * Status of incentive processing. Sussess or Error.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Status;
@@ -59,10 +47,7 @@ class IncentiveDetailsType
 	/**
 	 * Error code if there are any errors. Zero otherwise.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $ErrorCode;
@@ -70,10 +55,7 @@ class IncentiveDetailsType
 	/**
 	 * Details of incentive application on individual bucket/item.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\IncentiveAppliedDetailsType[]
 	 */
 	public $IncentiveAppliedDetails;

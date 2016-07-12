@@ -10,10 +10,7 @@ class BusinessOwnerInfoType
 	/**
 	 * Details about the business owner
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PayerInfoType
 	 */
 	public $Owner;
@@ -22,10 +19,7 @@ class BusinessOwnerInfoType
 	 * Business ownerâs home telephone number Character length and
 	 * limitations: 32 alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $HomePhone;
@@ -34,10 +28,7 @@ class BusinessOwnerInfoType
 	 * Business ownerâs mobile telephone number Character length
 	 * and limitations: 32 alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $MobilePhone;
@@ -46,10 +37,7 @@ class BusinessOwnerInfoType
 	 * Business ownerâs social security number Character length
 	 * and limitations: 9 alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SSN;

@@ -10,10 +10,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\BillingAgreementDetailsType
 	 */
 	public $BillingAgreementDetails;
@@ -21,10 +18,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ReturnURL;
@@ -32,10 +26,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CancelURL;
@@ -43,10 +34,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $LocaleCode;
@@ -54,10 +42,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PageStyle;
@@ -65,12 +50,8 @@ class SetCustomerBillingAgreementRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @name cpp-header-image
-
 	 * @var string
 	 */
 	public $cppheaderimage;
@@ -78,12 +59,8 @@ class SetCustomerBillingAgreementRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @name cpp-header-border-color
-
 	 * @var string
 	 */
 	public $cppheaderbordercolor;
@@ -91,12 +68,8 @@ class SetCustomerBillingAgreementRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @name cpp-header-back-color
-
 	 * @var string
 	 */
 	public $cppheaderbackcolor;
@@ -104,12 +77,8 @@ class SetCustomerBillingAgreementRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @name cpp-payflow-color
-
 	 * @var string
 	 */
 	public $cpppayflowcolor;
@@ -117,10 +86,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BuyerEmail;
@@ -131,10 +97,7 @@ class SetCustomerBillingAgreementRequestDetailsType
 	 * setting you have specified in Admin. Optional Character
 	 * length and limitations: One single-byte numeric character.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ReqBillingAddress;

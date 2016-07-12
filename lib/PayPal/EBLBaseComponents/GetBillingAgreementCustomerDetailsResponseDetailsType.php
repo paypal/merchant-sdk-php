@@ -10,10 +10,7 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PayerInfoType
 	 */
 	public $PayerInfo;
@@ -25,10 +22,7 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType
 	 * primary address as billing address in
 	 * GetBillingAgreementCustomerDetails.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\AddressType
 	 */
 	public $BillingAddress;

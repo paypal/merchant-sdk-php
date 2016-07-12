@@ -13,10 +13,7 @@ class ReceiverInfoType
 	 * primary account. Character length and limitations: 127
 	 * single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Business;
@@ -29,10 +26,7 @@ class ReceiverInfoType
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Receiver;
@@ -42,10 +36,7 @@ class ReceiverInfoType
 	 * This value is the same as the value of the recipient's
 	 * referral ID.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ReceiverID;

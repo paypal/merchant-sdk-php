@@ -10,10 +10,7 @@ class GetIncentiveEvaluationReq
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\PayPalAPI\GetIncentiveEvaluationRequestType
 	 */
 	public $GetIncentiveEvaluationRequest;

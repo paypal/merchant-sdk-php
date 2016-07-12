@@ -10,10 +10,7 @@ class RiskFilterListType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\RiskFilterDetailsType[]
 	 */
 	public $Filters;

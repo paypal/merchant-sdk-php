@@ -14,10 +14,7 @@ class SetAccessPermissionsRequestDetailsType
 	 * choosing to login with PayPal. Required Character length and
 	 * limitations: no limit.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ReturnURL;
@@ -27,10 +24,7 @@ class SetAccessPermissionsRequestDetailsType
 	 * the use of PayPal login. Required Character length and
 	 * limitations: no limit
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CancelURL;
@@ -40,10 +34,7 @@ class SetAccessPermissionsRequestDetailsType
 	 * logs out from PayPal. Required Character length and
 	 * limitations: no limit.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $LogoutURL;
@@ -52,10 +43,7 @@ class SetAccessPermissionsRequestDetailsType
 	 * The type of the flow. Optional Character length and
 	 * limitations: 127 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $InitFlowType;
@@ -65,10 +53,7 @@ class SetAccessPermissionsRequestDetailsType
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SkipLoginPage;
@@ -76,10 +61,7 @@ class SetAccessPermissionsRequestDetailsType
 	/**
 	 * contains information about API Services
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string[]
 	 */
 	public $RequiredAccessPermissions;
@@ -87,10 +69,7 @@ class SetAccessPermissionsRequestDetailsType
 	/**
 	 * contains information about API Services
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string[]
 	 */
 	public $OptionalAccessPermissions;
@@ -102,10 +81,7 @@ class SetAccessPermissionsRequestDetailsType
 	 * Allowable values: AU or en_AUDE or de_DEFR or fr_FRGB or
 	 * en_GBIT or it_ITJP or ja_JPUS or en_US
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $LocaleCode;
@@ -120,10 +96,7 @@ class SetAccessPermissionsRequestDetailsType
 	 * length and limitations: 30 single-byte alphabetic
 	 * characters.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PageStyle;
@@ -135,12 +108,8 @@ class SetAccessPermissionsRequestDetailsType
 	 * an image that is stored on a secure (https) server. Optional
 	 * Character length and limitations: 127
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @name cpp-header-image
-
 	 * @var string
 	 */
 	public $cppheaderimage;
@@ -152,12 +121,8 @@ class SetAccessPermissionsRequestDetailsType
 	 * Character length and limitations: Six character HTML
 	 * hexadecimal color code in ASCII
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @name cpp-header-border-color
-
 	 * @var string
 	 */
 	public $cppheaderbordercolor;
@@ -167,12 +132,8 @@ class SetAccessPermissionsRequestDetailsType
 	 * Optional Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @name cpp-header-back-color
-
 	 * @var string
 	 */
 	public $cppheaderbackcolor;
@@ -182,12 +143,8 @@ class SetAccessPermissionsRequestDetailsType
 	 * Character length and limitation: Six character HTML
 	 * hexadecimal color code in ASCII
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @name cpp-payflow-color
-
 	 * @var string
 	 */
 	public $cpppayflowcolor;
@@ -198,10 +155,7 @@ class SetAccessPermissionsRequestDetailsType
 	 * limitation: Six character HTML hexadecimal color code in
 	 * ASCII
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $FirstName;
@@ -212,10 +166,7 @@ class SetAccessPermissionsRequestDetailsType
 	 * limitation: Six character HTML hexadecimal color code in
 	 * ASCII
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $LastName;
@@ -227,10 +178,7 @@ class SetAccessPermissionsRequestDetailsType
 	 * PayPal returns this same address in
 	 * GetExpressCheckoutDetailsResponse.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\AddressType
 	 */
 	public $Address;

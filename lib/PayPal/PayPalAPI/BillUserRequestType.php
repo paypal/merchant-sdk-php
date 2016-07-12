@@ -11,10 +11,7 @@ class BillUserRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\MerchantPullPaymentType
 	 */
 	public $MerchantPullPaymentDetails;
@@ -23,10 +20,7 @@ class BillUserRequestType  extends AbstractRequestType
 	 * This flag indicates that the response should include
 	 * FMFDetails
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var integer
 	 */
 	public $ReturnFMFDetails;

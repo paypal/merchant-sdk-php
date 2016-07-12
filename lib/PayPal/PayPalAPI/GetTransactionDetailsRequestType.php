@@ -18,10 +18,7 @@ class GetTransactionDetailsRequestType  extends AbstractRequestType
 	 * bank transfer withdrawals, for example. Character length and
 	 * limitations: 17 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $TransactionID;

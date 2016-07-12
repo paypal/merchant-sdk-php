@@ -10,10 +10,7 @@ class GetIncentiveEvaluationResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\IncentiveDetailType[]
 	 */
 	public $IncentiveDetails;
@@ -21,10 +18,7 @@ class GetIncentiveEvaluationResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $RequestId;

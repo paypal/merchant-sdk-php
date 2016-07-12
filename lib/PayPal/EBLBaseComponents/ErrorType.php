@@ -12,10 +12,7 @@ class ErrorType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ShortMessage;
@@ -23,10 +20,7 @@ class ErrorType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $LongMessage;
@@ -36,10 +30,7 @@ class ErrorType
 	 * debugging a response message. These codes will need to be
 	 * uniquely defined for each application.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ErrorCode;
@@ -49,10 +40,7 @@ class ErrorType
 	 * level error or if it is informational error, i.e., warning.
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SeverityCode;
@@ -64,10 +52,7 @@ class ErrorType
 	 * cases where there are multiple instances of the ErrorType
 	 * which require additional context.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\ErrorParameterType[]
 	 */
 	public $ErrorParameters;

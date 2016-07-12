@@ -16,10 +16,7 @@ class MassPayRequestType  extends AbstractRequestType
 	 * it with your application. Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $EmailSubject;
@@ -31,10 +28,7 @@ class MassPayRequestType  extends AbstractRequestType
 	 * by UserID (ReceiverID in MassPayItem). Required. You must
 	 * specify one or the other of EmailAddress or UserID.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ReceiverType;
@@ -44,10 +38,7 @@ class MassPayRequestType  extends AbstractRequestType
 	 * transactions. OptionalCharacter length and limitations: 32
 	 * single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ButtonSource = "PayPal_SDK";
@@ -56,10 +47,7 @@ class MassPayRequestType  extends AbstractRequestType
 	 * Details of each payment. A single MassPayRequest can include
 	 * up to 250 MassPayItems. Required
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\PayPalAPI\MassPayRequestItemType[]
 	 */
 	public $MassPayItem;

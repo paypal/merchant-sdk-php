@@ -10,10 +10,7 @@ class CoupledBucketsType
 	/**
 	 * Relationship Type - LifeTime (default)
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CoupleType;
@@ -21,10 +18,7 @@ class CoupledBucketsType
 	/**
 	 * Identifier for this relation
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CoupledPaymentRequestID;
@@ -32,10 +26,7 @@ class CoupledBucketsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string[]
 	 */
 	public $PaymentRequestID;

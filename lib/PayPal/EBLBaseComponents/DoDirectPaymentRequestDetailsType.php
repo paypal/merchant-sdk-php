@@ -22,10 +22,7 @@ class DoDirectPaymentRequestDetailsType
 	 * Payment. Character length and limit: Up to 13 single-byte
 	 * alphabetic characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PaymentAction;
@@ -33,10 +30,7 @@ class DoDirectPaymentRequestDetailsType
 	/**
 	 * Information about the payment Required
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType
 	 */
 	public $PaymentDetails;
@@ -44,10 +38,7 @@ class DoDirectPaymentRequestDetailsType
 	/**
 	 * Information about the credit card to be charged. Required
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\CreditCardDetailsType
 	 */
 	public $CreditCard;
@@ -59,10 +50,7 @@ class DoDirectPaymentRequestDetailsType
 	 * and limitations: 15 single-byte characters, including
 	 * periods, in dotted-quad format: ???.???.???.???
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $IPAddress;
@@ -73,10 +61,7 @@ class DoDirectPaymentRequestDetailsType
 	 * means to detect possible fraud. Optional Character length
 	 * and limitations: 64 single-byte numeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $MerchantSessionId;
@@ -84,10 +69,7 @@ class DoDirectPaymentRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var boolean
 	 */
 	public $ReturnFMFDetails;

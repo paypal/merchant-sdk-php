@@ -20,10 +20,7 @@ class DoReauthorizationRequestType  extends AbstractRequestType
 	 * GetTransactionDetailsResponse. Required Character length and
 	 * limits: 19 single-byte characters maximum
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $AuthorizationID;
@@ -34,10 +31,7 @@ class DoReauthorizationRequestType  extends AbstractRequestType
 	 * separator must be a period (.), and the thousands separator
 	 * must be a comma (,).
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Amount;
@@ -47,10 +41,7 @@ class DoReauthorizationRequestType  extends AbstractRequestType
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $MsgSubID;

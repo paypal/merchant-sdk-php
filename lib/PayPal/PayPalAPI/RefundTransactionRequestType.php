@@ -14,10 +14,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * Optional Character length and limitations: 17 single-byte
 	 * alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $TransactionID;
@@ -27,10 +24,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * Optional Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $PayerID;
@@ -43,10 +37,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * logic, it is persisted in the DB for transaction reference
 	 * Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $InvoiceID;
@@ -54,10 +45,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	/**
 	 * Type of refund you are making Required
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $RefundType;
@@ -66,10 +54,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * Refund amount. Amount is required if RefundType is Partial.
 	 * NOTE: If RefundType is Full, do not set Amount.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Amount;
@@ -78,10 +63,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * Custom memo about the refund. Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Memo;
@@ -89,10 +71,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	/**
 	 * The maximum time till which refund must be tried. Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string ISO8601
 	 */
 	public $RetryUntil;
@@ -100,10 +79,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	/**
 	 * The type of funding source for refund. Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $RefundSource;
@@ -113,10 +89,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * credit for a given transaction. This will allow us to make
 	 * sure we do not double refund. Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var boolean
 	 */
 	public $RefundAdvice;
@@ -124,10 +97,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	/**
 	 * To pass the Merchant store informationOptional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\MerchantStoreDetailsType
 	 */
 	public $MerchantStoreDetails;
@@ -136,10 +106,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * Information about the individual details of the items to be
 	 * refunded.Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\InvoiceItemType[]
 	 */
 	public $RefundItemDetails;
@@ -149,10 +116,7 @@ class RefundTransactionRequestType  extends AbstractRequestType
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $MsgSubID;

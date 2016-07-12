@@ -10,10 +10,7 @@ class IncentiveAppliedToType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BucketId;
@@ -21,10 +18,7 @@ class IncentiveAppliedToType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ItemId;
@@ -32,10 +26,7 @@ class IncentiveAppliedToType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $IncentiveAmount;
@@ -43,10 +34,7 @@ class IncentiveAppliedToType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SubType;

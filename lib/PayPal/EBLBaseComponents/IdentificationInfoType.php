@@ -10,10 +10,7 @@ class IdentificationInfoType
 	/**
 	 * Mobile specific buyer identification.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\MobileIDInfoType
 	 */
 	public $MobileIDInfo;
@@ -21,10 +18,7 @@ class IdentificationInfoType
 	/**
 	 * Contains login bypass information.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\RememberMeIDInfoType
 	 */
 	public $RememberMeIDInfo;
@@ -32,10 +26,7 @@ class IdentificationInfoType
 	/**
 	 * Identity Access Token.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\IdentityTokenInfoType
 	 */
 	public $IdentityTokenInfo;

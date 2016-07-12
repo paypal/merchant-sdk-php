@@ -10,10 +10,7 @@ class OrderDetailsType
 	/**
 	 * Description of the Order.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Description;
@@ -22,10 +19,7 @@ class OrderDetailsType
 	 * Expected maximum amount that the merchant may pull using
 	 * DoReferenceTransaction
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $MaxAmount;

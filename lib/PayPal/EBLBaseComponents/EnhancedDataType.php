@@ -10,10 +10,7 @@ class EnhancedDataType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\AirlineItineraryType
 	 */
 	public $AirlineItinerary;

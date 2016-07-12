@@ -14,10 +14,7 @@ class BuyerDetailType
 	 * used for auto authorization. Mandatory if Authorization is
 	 * requested.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\IdentificationInfoType
 	 */
 	public $IdentificationInfo;

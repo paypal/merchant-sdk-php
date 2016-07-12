@@ -10,10 +10,7 @@ class DoNonReferencedCreditRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\DoNonReferencedCreditRequestDetailsType
 	 */
 	public $DoNonReferencedCreditRequestDetails;

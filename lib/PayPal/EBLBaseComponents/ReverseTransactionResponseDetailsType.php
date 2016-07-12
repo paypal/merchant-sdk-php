@@ -14,10 +14,7 @@ class ReverseTransactionResponseDetailsType
 	 * created. Character length and limitations:17 single-byte
 	 * characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ReverseTransactionID;
@@ -25,10 +22,7 @@ class ReverseTransactionResponseDetailsType
 	/**
 	 * Status of reversal request. Required
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Status;

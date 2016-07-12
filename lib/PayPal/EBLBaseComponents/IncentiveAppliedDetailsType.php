@@ -11,10 +11,7 @@ class IncentiveAppliedDetailsType
 	 * PaymentRequestID uniquely identifies a bucket. It is the
 	 * "bucket id" in the world of EC API.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PaymentRequestID;
@@ -22,10 +19,7 @@ class IncentiveAppliedDetailsType
 	/**
 	 * The item id passed through by the merchant.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ItemId;
@@ -33,10 +27,7 @@ class IncentiveAppliedDetailsType
 	/**
 	 * The item transaction id passed through by the merchant.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ExternalTxnId;
@@ -44,10 +35,7 @@ class IncentiveAppliedDetailsType
 	/**
 	 * Discount offerred for this bucket or item.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $DiscountAmount;
@@ -55,10 +43,7 @@ class IncentiveAppliedDetailsType
 	/**
 	 * SubType for coupon.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SubType;

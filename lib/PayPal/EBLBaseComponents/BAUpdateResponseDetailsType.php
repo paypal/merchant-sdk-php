@@ -10,10 +10,7 @@ class BAUpdateResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BillingAgreementID;
@@ -21,10 +18,7 @@ class BAUpdateResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BillingAgreementDescription;
@@ -32,10 +26,7 @@ class BAUpdateResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BillingAgreementStatus;
@@ -43,10 +34,7 @@ class BAUpdateResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BillingAgreementCustom;
@@ -54,10 +42,7 @@ class BAUpdateResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PayerInfoType
 	 */
 	public $PayerInfo;
@@ -65,10 +50,7 @@ class BAUpdateResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $BillingAgreementMax;
@@ -79,10 +61,7 @@ class BAUpdateResponseDetailsType
 	 * card is returned otherwise your primary address is returned
 	 * , PayPal returns this address in BAUpdateResponseDetails.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\AddressType
 	 */
 	public $BillingAddress;

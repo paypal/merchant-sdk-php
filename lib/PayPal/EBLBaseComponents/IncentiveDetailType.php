@@ -10,10 +10,7 @@ class IncentiveDetailType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $RedemptionCode;
@@ -21,10 +18,7 @@ class IncentiveDetailType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $DisplayCode;
@@ -32,10 +26,7 @@ class IncentiveDetailType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ProgramId;
@@ -43,10 +34,7 @@ class IncentiveDetailType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $IncentiveType;
@@ -54,10 +42,7 @@ class IncentiveDetailType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $IncentiveDescription;
@@ -65,10 +50,7 @@ class IncentiveDetailType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\IncentiveAppliedToType[]
 	 */
 	public $AppliedTo;
@@ -76,10 +58,7 @@ class IncentiveDetailType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Status;
@@ -87,10 +66,7 @@ class IncentiveDetailType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ErrorCode;

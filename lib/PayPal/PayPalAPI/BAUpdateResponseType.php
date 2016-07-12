@@ -10,10 +10,7 @@ class BAUpdateResponseType  extends AbstractResponseType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\BAUpdateResponseDetailsType
 	 */
 	public $BAUpdateResponseDetails;

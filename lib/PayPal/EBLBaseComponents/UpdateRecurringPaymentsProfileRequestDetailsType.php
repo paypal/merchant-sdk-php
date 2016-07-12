@@ -10,10 +10,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ProfileID;
@@ -21,10 +18,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Note;
@@ -32,10 +26,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Description;
@@ -43,10 +34,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SubscriberName;
@@ -54,10 +42,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\AddressType
 	 */
 	public $SubscriberShippingAddress;
@@ -65,10 +50,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ProfileReference;
@@ -76,10 +58,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $AdditionalBillingCycles;
@@ -87,10 +66,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Amount;
@@ -98,10 +74,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $ShippingAmount;
@@ -109,10 +82,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $TaxAmount;
@@ -120,10 +90,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $OutstandingBalance;
@@ -131,10 +98,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $AutoBillOutstandingAmount;
@@ -142,10 +106,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $MaxFailedPayments;
@@ -154,10 +115,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	 * Information about the credit card to be charged (required if
 	 * Direct Payment)
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\CreditCardDetailsType
 	 */
 	public $CreditCard;
@@ -165,10 +123,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 * When does this Profile begin billing?
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string ISO8601
 	 */
 	public $BillingStartDate;
@@ -176,10 +131,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 * Trial period of this schedule
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType_Update
 	 */
 	public $TrialPeriod;
@@ -187,10 +139,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType_Update
 	 */
 	public $PaymentPeriod;

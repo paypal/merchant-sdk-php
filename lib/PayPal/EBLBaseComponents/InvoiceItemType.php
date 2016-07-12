@@ -11,10 +11,7 @@ class InvoiceItemType
 	 * a human readable item nameOptional Character length and
 	 * limits: 127 single-byte characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Name;
@@ -23,10 +20,7 @@ class InvoiceItemType
 	 * a human readable item descriptionOptional Character length
 	 * and limits: 127 single-byte characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Description;
@@ -36,10 +30,7 @@ class InvoiceItemType
 	 * (UPC) for the item. Empty string is allowed. Character
 	 * length and limits: 17 single-byte characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $EAN;
@@ -49,10 +40,7 @@ class InvoiceItemType
 	 * to the item. Character length and limits: 64 single-byte
 	 * characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SKU;
@@ -65,10 +53,7 @@ class InvoiceItemType
 	 * to the item in the e-Receipt. Character length and limits: 8
 	 * single-byte characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ReturnPolicyIdentifier;
@@ -76,10 +61,7 @@ class InvoiceItemType
 	/**
 	 * total price of this item
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Price;
@@ -87,10 +69,7 @@ class InvoiceItemType
 	/**
 	 * price per item quantity
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $ItemPrice;
@@ -98,10 +77,7 @@ class InvoiceItemType
 	/**
 	 * quantity of the item (non-negative)
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var double
 	 */
 	public $ItemCount;
@@ -109,10 +85,7 @@ class InvoiceItemType
 	/**
 	 * Unit of measure for the itemCount
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ItemCountUnit;
@@ -120,10 +93,7 @@ class InvoiceItemType
 	/**
 	 * discount applied to this item
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\DiscountType[]
 	 */
 	public $Discount;
@@ -132,10 +102,7 @@ class InvoiceItemType
 	 * identifies whether this item is taxable or not. If not
 	 * passed, this will be assumed to be true.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var boolean
 	 */
 	public $Taxable;
@@ -147,10 +114,7 @@ class InvoiceItemType
 	 * up to the caller to do the calculations for setting that
 	 * other element.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var double
 	 */
 	public $TaxRate;
@@ -158,10 +122,7 @@ class InvoiceItemType
 	/**
 	 * Additional fees to this item
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\AdditionalFeeType[]
 	 */
 	public $AdditionalFees;
@@ -170,10 +131,7 @@ class InvoiceItemType
 	 * identifies whether this is reimbursable or not. If not pass,
 	 * this will be assumed to be true.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var boolean
 	 */
 	public $Reimbursable;
@@ -181,10 +139,7 @@ class InvoiceItemType
 	/**
 	 * Manufacturer part number.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $MPN;
@@ -194,10 +149,7 @@ class InvoiceItemType
 	 * http://en.wikipedia.org/wiki/ISBN Character length and
 	 * limits: 32 single-byte characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ISBN;
@@ -207,10 +159,7 @@ class InvoiceItemType
 	 * http://en.wikipedia.org/wiki/Price_Look-Up_code Character
 	 * length and limits: 5 single-byte characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PLU;
@@ -218,10 +167,7 @@ class InvoiceItemType
 	/**
 	 * Character length and limits: 32 single-byte characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ModelNumber;
@@ -229,10 +175,7 @@ class InvoiceItemType
 	/**
 	 * Character length and limits: 32 single-byte characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $StyleNumber;

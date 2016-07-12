@@ -11,10 +11,7 @@ class AuctionInfoType
 	/**
 	 * Customer's auction ID
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BuyerID;
@@ -22,10 +19,7 @@ class AuctionInfoType
 	/**
 	 * Auction's close date
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string ISO8601
 	 */
 	public $ClosingDate;
@@ -33,12 +27,8 @@ class AuctionInfoType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @attribute
-
 	 * @var string
 	 */
 	public $multiItem;

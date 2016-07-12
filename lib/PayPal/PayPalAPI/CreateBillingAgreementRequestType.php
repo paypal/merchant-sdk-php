@@ -10,10 +10,7 @@ class CreateBillingAgreementRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Token;

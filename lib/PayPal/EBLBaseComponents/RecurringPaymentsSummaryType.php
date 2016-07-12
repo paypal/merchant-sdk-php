@@ -10,10 +10,7 @@ class RecurringPaymentsSummaryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string ISO8601
 	 */
 	public $NextBillingDate;
@@ -21,10 +18,7 @@ class RecurringPaymentsSummaryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $NumberCyclesCompleted;
@@ -32,10 +26,7 @@ class RecurringPaymentsSummaryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $NumberCyclesRemaining;
@@ -43,10 +34,7 @@ class RecurringPaymentsSummaryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $OutstandingBalance;
@@ -54,10 +42,7 @@ class RecurringPaymentsSummaryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $FailedPaymentCount;
@@ -65,10 +50,7 @@ class RecurringPaymentsSummaryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string ISO8601
 	 */
 	public $LastPaymentDate;
@@ -76,10 +58,7 @@ class RecurringPaymentsSummaryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $LastPaymentAmount;

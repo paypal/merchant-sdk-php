@@ -14,10 +14,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 * Character length and limitations: 10 single-byte numeric
 	 * characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $HostedButtonID;
@@ -25,10 +22,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	/**
 	 * Is Inventory tracked.  Required 0 or 1
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $TrackInv;
@@ -36,10 +30,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	/**
 	 * Is PNL Tracked.  Required 0 or 1
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $TrackPnl;
@@ -47,10 +38,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\ItemTrackingDetailsType
 	 */
 	public $ItemTrackingDetails;
@@ -59,10 +47,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 * Option Index.  Optional Character length and limitations: 1
 	 * single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $OptionIndex;
@@ -70,10 +55,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\OptionTrackingDetailsType[]
 	 */
 	public $OptionTrackingDetails;
@@ -83,10 +65,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $SoldoutURL;
@@ -95,10 +74,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 * Whether to use the same digital download key repeatedly.
 	 * Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ReuseDigitalDownloadKeys;
@@ -107,10 +83,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 * Whether to append these keys to the list or not (replace).
 	 * Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $AppendDigitalDownloadKeys;
@@ -121,10 +94,7 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	 * Character length and limitations: 1000 single-byte
 	 * alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string[]
 	 */
 	public $DigitalDownloadKeys;

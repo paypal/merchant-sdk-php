@@ -10,10 +10,7 @@ class GetPalDetailsReq
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\PayPalAPI\GetPalDetailsRequestType
 	 */
 	public $GetPalDetailsRequest;

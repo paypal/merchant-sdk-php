@@ -16,10 +16,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 * GetExpressCheckoutDetailsRequest. Character length and
 	 * limitations:20 single-byte characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Token;
@@ -27,10 +24,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	/**
 	 * Information about the transaction
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentInfoType[]
 	 */
 	public $PaymentInfo;
@@ -38,10 +32,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BillingAgreementID;
@@ -49,10 +40,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $RedirectRequired;
@@ -62,10 +50,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 * Optional Character length and limitations: 255 single-byte
 	 * alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Note;
@@ -73,10 +58,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	/**
 	 * Redirect back to PayPal, PayPal can host the success page.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SuccessPageRedirectRequested;
@@ -84,10 +66,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	/**
 	 * Information about the user selected options.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\UserSelectedOptionType
 	 */
 	public $UserSelectedOptions;
@@ -95,10 +74,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	/**
 	 * Information about Coupled Payment transactions.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\CoupledPaymentInfoType[]
 	 */
 	public $CoupledPaymentInfo;

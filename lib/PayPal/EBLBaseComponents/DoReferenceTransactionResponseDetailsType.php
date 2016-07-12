@@ -10,10 +10,7 @@ class DoReferenceTransactionResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BillingAgreementID;
@@ -21,10 +18,7 @@ class DoReferenceTransactionResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentInfoType
 	 */
 	public $PaymentInfo;
@@ -32,10 +26,7 @@ class DoReferenceTransactionResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Amount;
@@ -43,10 +34,7 @@ class DoReferenceTransactionResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $AVSCode;
@@ -54,10 +42,7 @@ class DoReferenceTransactionResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CVV2Code;
@@ -65,10 +50,7 @@ class DoReferenceTransactionResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $TransactionID;
@@ -77,10 +59,7 @@ class DoReferenceTransactionResponseDetailsType
 	 * Response code from the processor when a recurring
 	 * transaction is declined
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PaymentAdviceCode;
@@ -88,10 +67,7 @@ class DoReferenceTransactionResponseDetailsType
 	/**
 	 * Return msgsubid back to merchant
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $MsgSubID;

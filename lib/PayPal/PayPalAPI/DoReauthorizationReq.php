@@ -10,10 +10,7 @@ class DoReauthorizationReq
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\PayPalAPI\DoReauthorizationRequestType
 	 */
 	public $DoReauthorizationRequest;

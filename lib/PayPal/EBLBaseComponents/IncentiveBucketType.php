@@ -10,10 +10,7 @@ class IncentiveBucketType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\IncentiveItemType[]
 	 */
 	public $Items;
@@ -21,10 +18,7 @@ class IncentiveBucketType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BucketId;
@@ -32,10 +26,7 @@ class IncentiveBucketType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SellerId;
@@ -43,10 +34,7 @@ class IncentiveBucketType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ExternalSellerId;
@@ -54,10 +42,7 @@ class IncentiveBucketType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $BucketSubtotalAmt;
@@ -65,10 +50,7 @@ class IncentiveBucketType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $BucketShippingAmt;
@@ -76,10 +58,7 @@ class IncentiveBucketType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $BucketInsuranceAmt;
@@ -87,10 +66,7 @@ class IncentiveBucketType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $BucketSalesTaxAmt;
@@ -98,10 +74,7 @@ class IncentiveBucketType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $BucketTotalAmt;

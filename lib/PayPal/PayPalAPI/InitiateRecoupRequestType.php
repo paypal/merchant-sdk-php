@@ -10,10 +10,7 @@ class InitiateRecoupRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ed
-
-
 	 * @var \PayPal\EnhancedDataTypes\EnhancedInitiateRecoupRequestDetailsType
 	 */
 	public $EnhancedInitiateRecoupRequestDetails;

@@ -10,10 +10,7 @@ class ExternalRememberMeOptOutReq
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\PayPalAPI\ExternalRememberMeOptOutRequestType
 	 */
 	public $ExternalRememberMeOptOutRequest;

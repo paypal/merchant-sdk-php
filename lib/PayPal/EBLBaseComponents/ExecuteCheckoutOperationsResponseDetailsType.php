@@ -10,10 +10,7 @@ class ExecuteCheckoutOperationsResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\SetDataResponseType
 	 */
 	public $SetDataResponse;
@@ -21,10 +18,7 @@ class ExecuteCheckoutOperationsResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\AuthorizationResponseType
 	 */
 	public $AuthorizationResponse;

@@ -14,10 +14,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 * returned by a PayPal product. Required Character length and
 	 * limits: 19 single-byte characters maximum
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $TransactionID;
@@ -27,10 +24,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 * is Order, which means that the transaction represents a
 	 * customer order that can be fulfilled over 29 days. Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $TransactionEntity;
@@ -41,10 +35,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 * separator must be a period (.), and the thousands separator
 	 * must be a comma (,).
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Amount;
@@ -52,10 +43,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	/**
 	 * Address the order will be shipped to. Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\AddressType
 	 */
 	public $ShipToAddress;
@@ -63,10 +51,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	/**
 	 * Information about the individual purchased items
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentDetailsItemType[]
 	 */
 	public $PaymentDetailsItem;
@@ -79,10 +64,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $ItemTotal;
@@ -95,10 +77,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $ShippingTotal;
@@ -111,10 +90,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $HandlingTotal;
@@ -127,10 +103,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $TaxTotal;
@@ -138,10 +111,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	/**
 	 * Total shipping insurance costs for this order. Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $InsuranceTotal;
@@ -150,10 +120,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 * Shipping discount for this order, specified as a negative
 	 * number. Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $ShippingDiscount;
@@ -163,10 +130,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $OrderDescription;
@@ -176,10 +140,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 * length and limitations: 256 single-byte alphanumeric
 	 * characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $Custom;
@@ -189,10 +150,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum.
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $MsgSubID;
@@ -200,10 +158,7 @@ class DoAuthorizationRequestType  extends AbstractRequestType
 	/**
 	 * IP Address of the buyer
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $IPAddress;

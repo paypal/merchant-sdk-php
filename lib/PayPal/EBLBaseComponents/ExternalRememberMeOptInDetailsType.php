@@ -14,10 +14,7 @@ class ExternalRememberMeOptInDetailsType
 	 * 1 = opt in to external remember me. 0 or omitted = no opt-in
 	 * Other values are invalid
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ExternalRememberMeOptIn;
@@ -29,10 +26,7 @@ class ExternalRememberMeOptInDetailsType
 	 * future, we may allow the owner to be a 3rd party merchant
 	 * account.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\ExternalRememberMeOwnerDetailsType
 	 */
 	public $ExternalRememberMeOwnerDetails;

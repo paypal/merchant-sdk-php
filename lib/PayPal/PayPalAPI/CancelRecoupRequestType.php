@@ -10,10 +10,7 @@ class CancelRecoupRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ed
-
-
 	 * @var \PayPal\EnhancedDataTypes\EnhancedCancelRecoupRequestDetailsType
 	 */
 	public $EnhancedCancelRecoupRequestDetails;

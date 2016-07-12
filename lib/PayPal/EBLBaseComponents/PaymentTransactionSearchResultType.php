@@ -12,10 +12,7 @@ class PaymentTransactionSearchResultType
 	 * The date and time (in UTC/GMT format) the transaction
 	 * occurred
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string ISO8601
 	 */
 	public $Timestamp;
@@ -23,10 +20,7 @@ class PaymentTransactionSearchResultType
 	/**
 	 * The time zone of the transaction
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Timezone;
@@ -34,10 +28,7 @@ class PaymentTransactionSearchResultType
 	/**
 	 * The type of the transaction
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Type;
@@ -45,10 +36,7 @@ class PaymentTransactionSearchResultType
 	/**
 	 * The email address of the payer
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Payer;
@@ -56,10 +44,7 @@ class PaymentTransactionSearchResultType
 	/**
 	 * Display name of the payer
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PayerDisplayName;
@@ -67,10 +52,7 @@ class PaymentTransactionSearchResultType
 	/**
 	 * The transaction ID of the seller
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $TransactionID;
@@ -78,10 +60,7 @@ class PaymentTransactionSearchResultType
 	/**
 	 * The status of the transaction
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Status;
@@ -90,10 +69,7 @@ class PaymentTransactionSearchResultType
 	 * The total gross amount charged, including any profile
 	 * shipping cost and taxes
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $GrossAmount;
@@ -101,10 +77,7 @@ class PaymentTransactionSearchResultType
 	/**
 	 * The fee that PayPal charged for the transaction
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $FeeAmount;
@@ -112,10 +85,7 @@ class PaymentTransactionSearchResultType
 	/**
 	 * The net amount of the transaction
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $NetAmount;

@@ -12,10 +12,7 @@ class GetAuthDetailsResponseDetailsType
 	 * The first name of the User. Character length and
 	 * limitations: 127 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $FirstName;
@@ -24,10 +21,7 @@ class GetAuthDetailsResponseDetailsType
 	 * The Last name of the user. Character length and limitations:
 	 * 127 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $LastName;
@@ -36,10 +30,7 @@ class GetAuthDetailsResponseDetailsType
 	 * The email address of the user. Character length and
 	 * limitations: 256 single-byte alphanumeric characters.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Email;
@@ -49,10 +40,7 @@ class GetAuthDetailsResponseDetailsType
 	 * Required Character length and limitations: 127 single-byte
 	 * characters.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PayerID;

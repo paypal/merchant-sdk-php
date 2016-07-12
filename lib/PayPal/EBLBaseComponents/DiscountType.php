@@ -11,10 +11,7 @@ class DiscountType
 	 * Item nameOptional Character length and limits: 127
 	 * single-byte characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Name;
@@ -23,10 +20,7 @@ class DiscountType
 	 * description of the discountOptional Character length and
 	 * limits: 127 single-byte characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Description;
@@ -34,10 +28,7 @@ class DiscountType
 	/**
 	 * amount discountedOptional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Amount;
@@ -45,10 +36,7 @@ class DiscountType
 	/**
 	 * offer typeOptional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $RedeemedOfferType;
@@ -57,10 +45,7 @@ class DiscountType
 	 * offer IDOptional Character length and limits: 64 single-byte
 	 * characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $RedeemedOfferID;

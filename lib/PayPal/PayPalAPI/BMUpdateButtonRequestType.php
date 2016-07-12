@@ -14,10 +14,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 * Character length and limitations: 10 single-byte numeric
 	 * characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $HostedButtonID;
@@ -27,10 +24,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
 	 * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ButtonType;
@@ -39,10 +33,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 * button code.  optional Must be one of the following: hosted,
 	 * encrypted or cleartext
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ButtonCode;
@@ -51,10 +42,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 * Button sub type.  optional for button types buynow and cart
 	 * only Must Be either PRODUCTS or SERVICES
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ButtonSubType;
@@ -64,10 +52,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 * Character length and limitations: 63 single-byte
 	 * alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string[]
 	 */
 	public $ButtonVar;
@@ -75,10 +60,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\PayPalAPI\OptionDetailsType[]
 	 */
 	public $OptionDetails;
@@ -86,10 +68,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	/**
 	 * Details of each option for the button.  Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string[]
 	 */
 	public $TextBox;
@@ -98,10 +77,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 * Button image to use.  Optional Must be one of: REG, SML, or
 	 * CC
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ButtonImage;
@@ -111,10 +87,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ButtonImageURL;
@@ -123,10 +96,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 * Text to use on Buy Now Button.  Optional Must be either
 	 * BUYNOW or PAYNOW
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $BuyNowText;
@@ -135,10 +105,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 * Text to use on Subscribe button.  Optional Must be either
 	 * BUYNOW or SUBSCRIBE
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $SubscribeText;
@@ -146,10 +113,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	/**
 	 * Button Country.  Optional Must be valid ISO country code
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ButtonCountry;
@@ -158,10 +122,7 @@ class BMUpdateButtonRequestType  extends AbstractRequestType
 	 * Button language code.  Optional Character length and
 	 * limitations: 2 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $ButtonLanguage;

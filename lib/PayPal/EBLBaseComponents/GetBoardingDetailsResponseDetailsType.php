@@ -14,10 +14,7 @@ class GetBoardingDetailsResponseDetailsType
 	 * CompletedCancelledPending Character length and limitations:
 	 * Eight alphabetic characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Status;
@@ -25,10 +22,7 @@ class GetBoardingDetailsResponseDetailsType
 	/**
 	 * Date the boarding process started
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string ISO8601
 	 */
 	public $StartDate;
@@ -36,10 +30,7 @@ class GetBoardingDetailsResponseDetailsType
 	/**
 	 * Date the merchantâs status or progress was last updated
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string ISO8601
 	 */
 	public $LastUpdated;
@@ -48,10 +39,7 @@ class GetBoardingDetailsResponseDetailsType
 	 * Reason for merchantâs cancellation of sign-up. Character
 	 * length and limitations: 1,024 alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Reason;
@@ -59,10 +47,7 @@ class GetBoardingDetailsResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ProgramName;
@@ -70,10 +55,7 @@ class GetBoardingDetailsResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ProgramCode;
@@ -81,10 +63,7 @@ class GetBoardingDetailsResponseDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CampaignID;
@@ -93,10 +72,7 @@ class GetBoardingDetailsResponseDetailsType
 	 * Indicates if there is a limitation on the amount of money
 	 * the business can withdraw from PayPal
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $UserWithdrawalLimit;
@@ -106,10 +82,7 @@ class GetBoardingDetailsResponseDetailsType
 	 * Character length and limitations: 256 alphanumeric
 	 * characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PartnerCustom;
@@ -117,10 +90,7 @@ class GetBoardingDetailsResponseDetailsType
 	/**
 	 * Details about the owner of the account
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PayerInfoType
 	 */
 	public $AccountOwner;
@@ -128,10 +98,7 @@ class GetBoardingDetailsResponseDetailsType
 	/**
 	 * Merchantâs PayPal API credentials
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\APICredentialsType
 	 */
 	public $Credentials;
@@ -141,10 +108,7 @@ class GetBoardingDetailsResponseDetailsType
 	 * permission to call on his behalf. For example:
 	 * SetExpressCheckout,GetExpressCheckoutDetails,DoExpressCheckoutPayment
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ConfigureAPIs;
@@ -152,10 +116,7 @@ class GetBoardingDetailsResponseDetailsType
 	/**
 	 * Primary email verification status. Confirmed, Unconfirmed
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $EmailVerificationStatus;
@@ -165,10 +126,7 @@ class GetBoardingDetailsResponseDetailsType
 	 * UnderReview Character length and limitations: 256
 	 * alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $VettingStatus;
@@ -178,10 +136,7 @@ class GetBoardingDetailsResponseDetailsType
 	 * Character length and limitations: 256 alphanumeric
 	 * characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BankAccountVerificationStatus;

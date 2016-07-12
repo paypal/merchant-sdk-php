@@ -10,10 +10,7 @@ class SetDataRequestType
 	/**
 	 * Details about Billing Agreements requested to be created.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\BillingApprovalDetailsType[]
 	 */
 	public $BillingApprovalDetails;
@@ -22,10 +19,7 @@ class SetDataRequestType
 	 * Only needed if Auto Authorization is requested. The
 	 * authentication session token will be passed in here.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\BuyerDetailType
 	 */
 	public $BuyerDetail;
@@ -35,10 +29,7 @@ class SetDataRequestType
 	 * to be returned through GetExpressCheckoutDetails should be
 	 * specified under this.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\InfoSharingDirectivesType
 	 */
 	public $InfoSharingDirectives;
@@ -48,10 +39,7 @@ class SetDataRequestType
 	 * customer's shipping address on file with PayPal. Any value
 	 * other than 1 indicates that no such requirement.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var boolean
 	 */
 	public $RetrieveShippingAddress;
@@ -62,10 +50,7 @@ class SetDataRequestType
 	 * assessment the value is defined in
 	 * biz/User/value_object/Channel.oml Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $UserChannel;
@@ -79,10 +64,7 @@ class SetDataRequestType
 	 * specified in the recipient's Merchant Account Profile.
 	 * Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var boolean
 	 */
 	public $ReqConfirmShipping;
@@ -91,10 +73,7 @@ class SetDataRequestType
 	 * Information about the payment.
      * @array
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentDetailsType
 	 */
 	public $PaymentDetails;
@@ -103,10 +82,7 @@ class SetDataRequestType
 	 * An optional set of values related to tracking for external
 	 * partner.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\ExternalPartnerTrackingDetailsType
 	 */
 	public $ExternalPartnerTrackingDetails;

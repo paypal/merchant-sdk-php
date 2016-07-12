@@ -10,10 +10,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 * Billing Agreement token (required if Express Checkout)
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Token;
@@ -22,10 +19,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	 * Information about the credit card to be charged (required if
 	 * Direct Payment)
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\CreditCardDetailsType
 	 */
 	public $CreditCard;
@@ -33,10 +27,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 * Customer Information for this Recurring Payments
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\RecurringPaymentsProfileDetailsType
 	 */
 	public $RecurringPaymentsProfileDetails;
@@ -44,10 +35,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 * Schedule Information for this Recurring Payments
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\ScheduleDetailsType
 	 */
 	public $ScheduleDetails;
@@ -55,10 +43,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType
 	/**
 	 * Information about the Item Details.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentDetailsItemType[]
 	 */
 	public $PaymentDetailsItem;

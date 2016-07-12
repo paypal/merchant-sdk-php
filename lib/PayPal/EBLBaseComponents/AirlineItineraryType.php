@@ -10,10 +10,7 @@ class AirlineItineraryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PassengerName;
@@ -21,10 +18,7 @@ class AirlineItineraryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $IssueDate;
@@ -32,10 +26,7 @@ class AirlineItineraryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $TravelAgencyName;
@@ -43,10 +34,7 @@ class AirlineItineraryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $TravelAgencyCode;
@@ -54,10 +42,7 @@ class AirlineItineraryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $TicketNumber;
@@ -65,10 +50,7 @@ class AirlineItineraryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $IssuingCarrierCode;
@@ -76,10 +58,7 @@ class AirlineItineraryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CustomerCode;
@@ -87,10 +66,7 @@ class AirlineItineraryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $TotalFare;
@@ -98,10 +74,7 @@ class AirlineItineraryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $TotalTaxes;
@@ -109,10 +82,7 @@ class AirlineItineraryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $TotalFee;
@@ -120,10 +90,7 @@ class AirlineItineraryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $RestrictedTicket;
@@ -131,10 +98,7 @@ class AirlineItineraryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ClearingSequence;
@@ -142,10 +106,7 @@ class AirlineItineraryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ClearingCount;
@@ -153,10 +114,7 @@ class AirlineItineraryType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\FlightDetailsType[]
 	 */
 	public $FlightDetails;

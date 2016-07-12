@@ -11,10 +11,7 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\DoReferenceTransactionRequestDetailsType
 	 */
 	public $DoReferenceTransactionRequestDetails;
@@ -23,10 +20,7 @@ class DoReferenceTransactionRequestType  extends AbstractRequestType
 	 * This flag indicates that the response should include
 	 * FMFDetails
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var integer
 	 */
 	public $ReturnFMFDetails;

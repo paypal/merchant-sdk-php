@@ -10,10 +10,7 @@ class OptionDetailsType
 	/**
 	 * Option Name. Optional
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var string
 	 */
 	public $OptionName;
@@ -21,10 +18,7 @@ class OptionDetailsType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var \PayPal\PayPalAPI\OptionSelectionDetailsType[]
 	 */
 	public $OptionSelectionDetails;

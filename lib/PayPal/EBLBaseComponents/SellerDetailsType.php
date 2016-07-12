@@ -10,10 +10,7 @@ class SellerDetailsType
 	/**
 	 * Unique identifier for the seller. Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SellerId;
@@ -22,10 +19,7 @@ class SellerDetailsType
 	 * The user name of the user at the marketplaces site. Optional
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SellerUserName;
@@ -34,10 +28,7 @@ class SellerDetailsType
 	 * Date when the user registered with the marketplace. Optional
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string ISO8601
 	 */
 	public $SellerRegistrationDate;
@@ -46,10 +37,7 @@ class SellerDetailsType
 	 * Seller Paypal Account Id contains the seller EmailId or
 	 * PayerId or PhoneNo passed during the Request.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PayPalAccountID;
@@ -59,10 +47,7 @@ class SellerDetailsType
 	 * seller). This feild is meant for Response. This field is
 	 * ignored, if passed in the Request.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SecureMerchantAccountID;

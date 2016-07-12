@@ -11,10 +11,7 @@ class PaymentTransactionType
 	/**
 	 * Information about the recipient of the payment
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\ReceiverInfoType
 	 */
 	public $ReceiverInfo;
@@ -22,10 +19,7 @@ class PaymentTransactionType
 	/**
 	 * Information about the payer
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PayerInfoType
 	 */
 	public $PayerInfo;
@@ -34,10 +28,7 @@ class PaymentTransactionType
 	 * This field is for holding ReferenceId for shippment sent
 	 * from Merchant to the 3rd Party
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $TPLReferenceID;
@@ -45,10 +36,7 @@ class PaymentTransactionType
 	/**
 	 * Information about the transaction
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentInfoType
 	 */
 	public $PaymentInfo;
@@ -56,10 +44,7 @@ class PaymentTransactionType
 	/**
 	 * Information about an individual item in the transaction
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PaymentItemInfoType
 	 */
 	public $PaymentItemInfo;
@@ -68,10 +53,7 @@ class PaymentTransactionType
 	 * Information about an individual Offer and Coupon information
 	 * in the transaction
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\OfferCouponInfoType
 	 */
 	public $OfferCouponInfo;
@@ -79,10 +61,7 @@ class PaymentTransactionType
 	/**
 	 * Information about Secondary Address
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\AddressType
 	 */
 	public $SecondaryAddress;
@@ -90,10 +69,7 @@ class PaymentTransactionType
 	/**
 	 * Information about the user selected options.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\UserSelectedOptionType
 	 */
 	public $UserSelectedOptions;
@@ -101,10 +77,7 @@ class PaymentTransactionType
 	/**
 	 * Information about the Gift message.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $GiftMessage;
@@ -112,10 +85,7 @@ class PaymentTransactionType
 	/**
 	 * Information about the Gift receipt.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $GiftReceipt;
@@ -123,10 +93,7 @@ class PaymentTransactionType
 	/**
 	 * Information about the Gift Wrap name.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $GiftWrapName;
@@ -134,10 +101,7 @@ class PaymentTransactionType
 	/**
 	 * Information about the Gift Wrap amount.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $GiftWrapAmount;
@@ -145,10 +109,7 @@ class PaymentTransactionType
 	/**
 	 * Information about the Buyer email.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $BuyerEmailOptIn;
@@ -156,10 +117,7 @@ class PaymentTransactionType
 	/**
 	 * Information about the survey question.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $SurveyQuestion;
@@ -167,10 +125,7 @@ class PaymentTransactionType
 	/**
 	 * Information about the survey choice selected by the user.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string[]
 	 */
 	public $SurveyChoiceSelected;

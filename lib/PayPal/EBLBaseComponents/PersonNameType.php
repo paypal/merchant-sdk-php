@@ -10,10 +10,7 @@ class PersonNameType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Salutation;
@@ -21,10 +18,7 @@ class PersonNameType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $FirstName;
@@ -32,10 +26,7 @@ class PersonNameType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $MiddleName;
@@ -43,10 +34,7 @@ class PersonNameType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $LastName;
@@ -54,10 +42,7 @@ class PersonNameType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Suffix;

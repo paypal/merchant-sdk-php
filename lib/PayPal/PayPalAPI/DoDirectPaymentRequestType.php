@@ -11,10 +11,7 @@ class DoDirectPaymentRequestType  extends AbstractRequestType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\DoDirectPaymentRequestDetailsType
 	 */
 	public $DoDirectPaymentRequestDetails;
@@ -23,10 +20,7 @@ class DoDirectPaymentRequestType  extends AbstractRequestType
 	 * This flag indicates that the response should include
 	 * FMFDetails
 	 * @access public
-
 	 * @namespace ns
-
-
 	 * @var integer
 	 */
 	public $ReturnFMFDetails;

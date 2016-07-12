@@ -10,10 +10,7 @@ class ButtonSearchResultType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $HostedButtonID;
@@ -21,10 +18,7 @@ class ButtonSearchResultType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ButtonType;
@@ -32,10 +26,7 @@ class ButtonSearchResultType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ItemName;
@@ -43,10 +34,7 @@ class ButtonSearchResultType
 	/**
 	 *
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string ISO8601
 	 */
 	public $ModifyDate;

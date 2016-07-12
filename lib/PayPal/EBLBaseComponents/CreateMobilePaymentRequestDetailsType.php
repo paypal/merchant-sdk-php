@@ -10,10 +10,7 @@ class CreateMobilePaymentRequestDetailsType
 	/**
 	 * Type of the payment Required
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PaymentType;
@@ -25,10 +22,7 @@ class CreateMobilePaymentRequestDetailsType
 	 * Authorization and Capture. Sale indicates that this is a
 	 * final sale for which you are requesting payment.
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $PaymentAction;
@@ -36,10 +30,7 @@ class CreateMobilePaymentRequestDetailsType
 	/**
 	 * Phone number of the user making the payment. Required
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PhoneNumberType
 	 */
 	public $SenderPhone;
@@ -48,10 +39,7 @@ class CreateMobilePaymentRequestDetailsType
 	 * Type of recipient specified, i.e., phone number or email
 	 * address Required
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $RecipientType;
@@ -59,10 +47,7 @@ class CreateMobilePaymentRequestDetailsType
 	/**
 	 * Email address of the recipient
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $RecipientEmail;
@@ -70,10 +55,7 @@ class CreateMobilePaymentRequestDetailsType
 	/**
 	 * Phone number of the recipipent Required
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\EBLBaseComponents\PhoneNumberType
 	 */
 	public $RecipientPhone;
@@ -81,10 +63,7 @@ class CreateMobilePaymentRequestDetailsType
 	/**
 	 * Amount of item before tax and shipping
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $ItemAmount;
@@ -92,10 +71,7 @@ class CreateMobilePaymentRequestDetailsType
 	/**
 	 * The tax charged on the transactionTax Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Tax;
@@ -103,10 +79,7 @@ class CreateMobilePaymentRequestDetailsType
 	/**
 	 * Per-transaction shipping charge Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var \PayPal\CoreComponentTypes\BasicAmountType
 	 */
 	public $Shipping;
@@ -115,10 +88,7 @@ class CreateMobilePaymentRequestDetailsType
 	 * Name of the item being ordered Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ItemName;
@@ -127,10 +97,7 @@ class CreateMobilePaymentRequestDetailsType
 	 * SKU of the item being ordered Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $ItemNumber;
@@ -140,10 +107,7 @@ class CreateMobilePaymentRequestDetailsType
 	 * field. Optional Character length and limitations: 255
 	 * single-byte alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $Note;
@@ -153,10 +117,7 @@ class CreateMobilePaymentRequestDetailsType
 	 * Optional Character length and limitations: 255 single-byte
 	 * alphanumeric characters
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var string
 	 */
 	public $CustomID;
@@ -165,10 +126,7 @@ class CreateMobilePaymentRequestDetailsType
 	 * Indicates whether the sender's phone number will be shared
 	 * with recipient Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $SharePhoneNumber;
@@ -177,10 +135,7 @@ class CreateMobilePaymentRequestDetailsType
 	 * Indicates whether the sender's home address will be shared
 	 * with recipient Optional
 	 * @access public
-
 	 * @namespace ebl
-
-
 	 * @var integer
 	 */
 	public $ShareHomeAddress;
