@@ -1,36 +1,28 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
+
 use PayPal\Core\PPXmlMessage;
-/**
- * 
- */
-class GetBillingAgreementCustomerDetailsReq  
-   extends PPXmlMessage{
 
-	/**
-	 * 
-	 * @access public
-	 
-	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var \PayPal\PayPalAPI\GetBillingAgreementCustomerDetailsRequestType	 
-	 */ 
-	public $GetBillingAgreementCustomerDetailsRequest;
+class GetBillingAgreementCustomerDetailsReq
+  extends PPXmlMessage
+{
+    /**
+     * @access    public
+     * @namespace ns
+     * @var GetBillingAgreementCustomerDetailsRequestType
+     */
+    public $GetBillingAgreementCustomerDetailsRequest;
 
-
-	public function toXMLString()
-	{
-		    $str = '';
-			$str .= '<ns:GetBillingAgreementCustomerDetailsReq>';
-			if($this->GetBillingAgreementCustomerDetailsRequest != NULL)
-			{
-		   		$str .= '<ns:GetBillingAgreementCustomerDetailsRequest>';
-				$str .= $this->GetBillingAgreementCustomerDetailsRequest->toXMLString();
-				$str .= '</ns:GetBillingAgreementCustomerDetailsRequest>';
-			}
-			$str .= '</ns:GetBillingAgreementCustomerDetailsReq>';
-			return $str;
-	}
-    
+    public function toXMLString()
+    {
+        $str = '';
+        $str .= '<ns:GetBillingAgreementCustomerDetailsReq>';
+        if ($this->GetBillingAgreementCustomerDetailsRequest != null) {
+            $str .= '<ns:GetBillingAgreementCustomerDetailsRequest>';
+            $str .= $this->GetBillingAgreementCustomerDetailsRequest->toXMLString();
+            $str .= '</ns:GetBillingAgreementCustomerDetailsRequest>';
+        }
+        $str .= '</ns:GetBillingAgreementCustomerDetailsReq>';
+        return $str;
+    }
 }

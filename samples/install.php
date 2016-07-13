@@ -177,14 +177,14 @@ function extractRef($url)
 			$array[] = str_replace('refs/tags/', '', $ref->ref);
 		}
 	}
-	else 
+	else
 	{
 		foreach ($reference as $ref)
 		{
 			$array[] = str_replace('refs/heads/', '', $ref->ref);
 		}
 	}
-	
+
 	return $array;
 }
 /**
@@ -426,6 +426,8 @@ SCRIPT;
 
 /**
  *  initiates and installs the SDK
+ *
+ * @param $bootstrapFile
  */
 function createBootStrap($bootstrapFile) {
 
