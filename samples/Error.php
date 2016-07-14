@@ -1,8 +1,13 @@
 <?php
 
-$ex_message = "";
+use PayPal\Exception\PPConfigurationException;
+use PayPal\Exception\PPConnectionException;
+use PayPal\Exception\PPInvalidCredentialException;
+use PayPal\Exception\PPMissingCredentialException;
+
+$ex_message          = "";
 $ex_detailed_message = "";
-$ex_type = "Unknown";
+$ex_type             = "Unknown";
 
 if(isset($ex)) {
 

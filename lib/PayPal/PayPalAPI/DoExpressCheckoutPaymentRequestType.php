@@ -1,36 +1,39 @@
 <?php
 namespace PayPal\PayPalAPI;
+
 use PayPal\EBLBaseComponents\AbstractRequestType;
+use PayPal\EBLBaseComponents\DoExpressCheckoutPaymentRequestDetailsType;
+
 /**
  * This flag indicates that the response should include
  * FMFDetails
  */
-class DoExpressCheckoutPaymentRequestType  extends AbstractRequestType
-  {
+class DoExpressCheckoutPaymentRequestType
+  extends AbstractRequestType
+{
+    /**
+     * @access    public
+     * @namespace ebl
+     * @var DoExpressCheckoutPaymentRequestDetailsType
+     */
+    public $DoExpressCheckoutPaymentRequestDetails;
 
-	/**
-	 * @access public
-	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\DoExpressCheckoutPaymentRequestDetailsType
-	 */
-	public $DoExpressCheckoutPaymentRequestDetails;
+    /**
+     * This flag indicates that the response should include
+     * FMFDetails
+     * @access    public
+     * @namespace ns
+     * @var integer
+     */
+    public $ReturnFMFDetails;
 
-	/**
-	 * This flag indicates that the response should include
-	 * FMFDetails
-	 * @access public
-	 * @namespace ns
-	 * @var integer
-	 */
-	public $ReturnFMFDetails;
-
-	/**
-	 * Constructor with arguments
-	 */
-	public function __construct($DoExpressCheckoutPaymentRequestDetails = NULL) {
-		$this->DoExpressCheckoutPaymentRequestDetails = $DoExpressCheckoutPaymentRequestDetails;
-	}
-
-
-
+    /**
+     * Constructor with arguments
+     *
+     * @param DoExpressCheckoutPaymentRequestDetailsType $DoExpressCheckoutPaymentRequestDetails
+     */
+    public function __construct($DoExpressCheckoutPaymentRequestDetails = null)
+    {
+        $this->DoExpressCheckoutPaymentRequestDetails = $DoExpressCheckoutPaymentRequestDetails;
+    }
 }

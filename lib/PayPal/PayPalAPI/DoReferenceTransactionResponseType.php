@@ -1,33 +1,24 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractResponseType; 
-/**
- * 
- */
-class DoReferenceTransactionResponseType  extends AbstractResponseType  
-  {
 
-	/**
-	 * 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\DoReferenceTransactionResponseDetailsType	 
-	 */ 
-	public $DoReferenceTransactionResponseDetails;
+use PayPal\EBLBaseComponents\AbstractResponseType;
+use PayPal\EBLBaseComponents\DoReferenceTransactionResponseDetailsType;
+use PayPal\EBLBaseComponents\FMFDetailsType;
 
-	/**
-	 * 
-	 * @access public
-	 
-	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\FMFDetailsType	 
-	 */ 
-	public $FMFDetails;
+class DoReferenceTransactionResponseType
+  extends AbstractResponseType
+{
+    /**
+     * @access    public
+     * @namespace ebl
+     * @var DoReferenceTransactionResponseDetailsType
+     */
+    public $DoReferenceTransactionResponseDetails;
 
-
+    /**
+     * @access    public
+     * @namespace ns
+     * @var FMFDetailsType
+     */
+    public $FMFDetails;
 }

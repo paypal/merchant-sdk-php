@@ -1,57 +1,46 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractResponseType; 
+
+use PayPal\CoreComponentTypes\BasicAmountType;
+use PayPal\EBLBaseComponents\AbstractResponseType;
+use PayPal\EBLBaseComponents\AuthorizationInfoType;
+
 /**
  * An authorization identification number. Character length and
- * limits: 19 single-byte characters 
+ * limits: 19 single-byte characters
  */
-class DoAuthorizationResponseType  extends AbstractResponseType  
-  {
+class DoAuthorizationResponseType
+  extends AbstractResponseType
+{
+    /**
+     * An authorization identification number. Character length and
+     * limits: 19 single-byte characters
+     * @access    public
+     * @namespace ns
+     * @var string
+     */
+    public $TransactionID;
 
-	/**
-	 * An authorization identification number. Character length and
-	 * limits: 19 single-byte characters
-	 * @access public
-	 
-	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
-	public $TransactionID;
+    /**
+     * The amount and currency you specified in the request.
+     * @access    public
+     * @namespace ns
+     * @var BasicAmountType
+     */
+    public $Amount;
 
-	/**
-	 * The amount and currency you specified in the request. 
-	 * @access public
-	 
-	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
-	 */ 
-	public $Amount;
+    /**
+     * @access    public
+     * @namespace ebl
+     * @var AuthorizationInfoType
+     */
+    public $AuthorizationInfo;
 
-	/**
-	 * 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\AuthorizationInfoType	 
-	 */ 
-	public $AuthorizationInfo;
-
-	/**
-	 * Return msgsubid back to merchant
-	 * @access public
-	 
-	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
-	public $MsgSubID;
-
-
+    /**
+     * Return msgsubid back to merchant
+     * @access    public
+     * @namespace ns
+     * @var string
+     */
+    public $MsgSubID;
 }

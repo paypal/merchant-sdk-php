@@ -1,36 +1,39 @@
 <?php
 namespace PayPal\PayPalAPI;
+
 use PayPal\EBLBaseComponents\AbstractRequestType;
+use PayPal\EBLBaseComponents\DoReferenceTransactionRequestDetailsType;
+
 /**
  * This flag indicates that the response should include
  * FMFDetails
  */
-class DoReferenceTransactionRequestType  extends AbstractRequestType
-  {
+class DoReferenceTransactionRequestType
+  extends AbstractRequestType
+{
+    /**
+     * @access    public
+     * @namespace ebl
+     * @var DoReferenceTransactionRequestDetailsType
+     */
+    public $DoReferenceTransactionRequestDetails;
 
-	/**
-	 * @access public
-	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\DoReferenceTransactionRequestDetailsType
-	 */
-	public $DoReferenceTransactionRequestDetails;
+    /**
+     * This flag indicates that the response should include
+     * FMFDetails
+     * @access    public
+     * @namespace ns
+     * @var integer
+     */
+    public $ReturnFMFDetails;
 
-	/**
-	 * This flag indicates that the response should include
-	 * FMFDetails
-	 * @access public
-	 * @namespace ns
-	 * @var integer
-	 */
-	public $ReturnFMFDetails;
-
-	/**
-	 * Constructor with arguments
-	 */
-	public function __construct($DoReferenceTransactionRequestDetails = NULL) {
-		$this->DoReferenceTransactionRequestDetails = $DoReferenceTransactionRequestDetails;
-	}
-
-
-
+    /**
+     * Constructor with arguments
+     *
+     * @param DoReferenceTransactionRequestDetailsType $DoReferenceTransactionRequestDetails
+     */
+    public function __construct($DoReferenceTransactionRequestDetails = null)
+    {
+        $this->DoReferenceTransactionRequestDetails = $DoReferenceTransactionRequestDetails;
+    }
 }

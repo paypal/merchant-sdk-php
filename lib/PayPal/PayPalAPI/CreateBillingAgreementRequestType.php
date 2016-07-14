@@ -1,24 +1,25 @@
 <?php
 namespace PayPal\PayPalAPI;
+
 use PayPal\EBLBaseComponents\AbstractRequestType;
 
-class CreateBillingAgreementRequestType  extends AbstractRequestType
-  {
+class CreateBillingAgreementRequestType
+  extends AbstractRequestType
+{
+    /**
+     * @access    public
+     * @namespace ns
+     * @var string
+     */
+    public $Token;
 
-	/**
-	 * @access public
-	 * @namespace ns
-	 * @var string
-	 */
-	public $Token;
-
-	/**
-	 * Constructor with arguments
-	 */
-	public function __construct($Token = NULL) {
-		$this->Token = $Token;
-	}
-
-
-
+    /**
+     * Constructor with arguments
+     *
+     * @param string $Token
+     */
+    public function __construct($Token = null)
+    {
+        $this->Token = $Token;
+    }
 }

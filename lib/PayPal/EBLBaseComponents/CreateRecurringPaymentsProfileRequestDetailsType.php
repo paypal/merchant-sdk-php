@@ -1,61 +1,64 @@
 <?php
 namespace PayPal\EBLBaseComponents;
+
 use PayPal\Core\PPXmlMessage;
+
 /**
  * Billing Agreement token (required if Express Checkout)
  */
 class CreateRecurringPaymentsProfileRequestDetailsType
-   extends PPXmlMessage{
+  extends PPXmlMessage
+{
+    /**
+     * Billing Agreement token (required if Express Checkout)
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $Token;
 
-	/**
-	 * Billing Agreement token (required if Express Checkout)
-	 * @access public
-	 * @namespace ebl
-	 * @var string
-	 */
-	public $Token;
+    /**
+     * Information about the credit card to be charged (required if
+     * Direct Payment)
+     * @access    public
+     * @namespace ebl
+     * @var CreditCardDetailsType
+     */
+    public $CreditCard;
 
-	/**
-	 * Information about the credit card to be charged (required if
-	 * Direct Payment)
-	 * @access public
-	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\CreditCardDetailsType
-	 */
-	public $CreditCard;
+    /**
+     * Customer Information for this Recurring Payments
+     * @access    public
+     * @namespace ebl
+     * @var RecurringPaymentsProfileDetailsType
+     */
+    public $RecurringPaymentsProfileDetails;
 
-	/**
-	 * Customer Information for this Recurring Payments
-	 * @access public
-	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\RecurringPaymentsProfileDetailsType
-	 */
-	public $RecurringPaymentsProfileDetails;
+    /**
+     * Schedule Information for this Recurring Payments
+     * @access    public
+     * @namespace ebl
+     * @var ScheduleDetailsType
+     */
+    public $ScheduleDetails;
 
-	/**
-	 * Schedule Information for this Recurring Payments
-	 * @access public
-	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\ScheduleDetailsType
-	 */
-	public $ScheduleDetails;
+    /**
+     * Information about the Item Details.
+     * @access    public
+     * @namespace ebl
+     * @var PaymentDetailsItemType[]
+     */
+    public $PaymentDetailsItem;
 
-	/**
-	 * Information about the Item Details.
-	 * @access public
-	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\PaymentDetailsItemType[]
-	 */
-	public $PaymentDetailsItem;
-
-	/**
-	 * Constructor with arguments
-	 */
-	public function __construct($RecurringPaymentsProfileDetails = NULL, $ScheduleDetails = NULL) {
-		$this->RecurringPaymentsProfileDetails = $RecurringPaymentsProfileDetails;
-		$this->ScheduleDetails = $ScheduleDetails;
-	}
-
-
-
+    /**
+     * Constructor with arguments
+     *
+     * @param RecurringPaymentsProfileDetailsType $RecurringPaymentsProfileDetails
+     * @param ScheduleDetailsType                 $ScheduleDetails
+     */
+    public function __construct($RecurringPaymentsProfileDetails = null, $ScheduleDetails = null)
+    {
+        $this->RecurringPaymentsProfileDetails = $RecurringPaymentsProfileDetails;
+        $this->ScheduleDetails                 = $ScheduleDetails;
+    }
 }
