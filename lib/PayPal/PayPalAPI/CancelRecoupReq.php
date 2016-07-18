@@ -1,15 +1,21 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
 use PayPal\Core\PPXmlMessage;
-
-class CancelRecoupReq
+/**
+ * 
+ */
+class CancelRecoupReq  
    extends PPXmlMessage{
 
 	/**
+	 * 
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var \PayPal\PayPalAPI\CancelRecoupRequestType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\PayPalAPI\CancelRecoupRequestType	 
+	 */ 
 	public $CancelRecoupRequest;
 
 
@@ -26,5 +32,5 @@ class CancelRecoupReq
 			$str .= '</ns:CancelRecoupReq>';
 			return $str;
 	}
-
+    
 }

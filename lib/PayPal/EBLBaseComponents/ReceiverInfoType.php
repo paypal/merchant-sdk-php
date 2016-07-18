@@ -1,10 +1,10 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
- * ReceiverInfoType Receiver information.
+ * ReceiverInfoType Receiver information. 
  */
-class ReceiverInfoType
+class ReceiverInfoType  
    extends PPXmlMessage{
 
 	/**
@@ -13,9 +13,12 @@ class ReceiverInfoType
 	 * primary account. Character length and limitations: 127
 	 * single-byte alphanumeric characters
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\string	 
+	 */ 
 	public $Business;
 
 	/**
@@ -26,19 +29,25 @@ class ReceiverInfoType
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\string	 
+	 */ 
 	public $Receiver;
 
 	/**
 	 * Unique account ID of the payment recipient (the seller).
 	 * This value is the same as the value of the recipient's
-	 * referral ID.
+	 * referral ID. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\string	 
+	 */ 
 	public $ReceiverID;
 
 

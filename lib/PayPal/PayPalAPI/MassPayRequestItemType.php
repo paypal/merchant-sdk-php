@@ -1,10 +1,10 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
 use PayPal\Core\PPXmlMessage;
 /**
- * MassPayRequestItemType
+ * MassPayRequestItemType 
  */
-class MassPayRequestItemType
+class MassPayRequestItemType  
    extends PPXmlMessage{
 
 	/**
@@ -14,9 +14,12 @@ class MassPayRequestItemType
 	 * recipients. Character length and limitations: 127
 	 * single-byte characters maximum.
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\string	 
+	 */ 
 	public $ReceiverEmail;
 
 	/**
@@ -25,9 +28,12 @@ class MassPayRequestItemType
 	 * MassPayItems in a request must use the same field to specify
 	 * recipients.
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $ReceiverPhone;
 
 	/**
@@ -39,9 +45,12 @@ class MassPayRequestItemType
 	 * recipients. Character length and limitations: 17 single-byte
 	 * characters maximum.
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\string	 
+	 */ 
 	public $ReceiverID;
 
 	/**
@@ -51,9 +60,12 @@ class MassPayRequestItemType
 	 * currencies in a single MassPayRequest. A single request must
 	 * include items that are of the same currency.
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var \PayPal\CoreComponentTypes\BasicAmountType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 */ 
 	public $Amount;
 
 	/**
@@ -62,18 +74,24 @@ class MassPayRequestItemType
 	 * limitations: 30 single-byte characters. No whitespace
 	 * allowed.
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $UniqueId;
 
 	/**
 	 * Custom note for each recipient. Optional Character length
 	 * and limitations: 4,000 single-byte alphanumeric characters
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $Note;
 
 	/**
@@ -84,5 +102,5 @@ class MassPayRequestItemType
 	}
 
 
-
+    
 }

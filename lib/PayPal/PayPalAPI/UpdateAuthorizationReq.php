@@ -14,7 +14,7 @@ class UpdateAuthorizationReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\UpdateAuthorizationRequestType	 
+	 * @var PayPal\PayPalAPI\UpdateAuthorizationRequestType	 
 	 */ 
 	public $UpdateAuthorizationRequest;
 

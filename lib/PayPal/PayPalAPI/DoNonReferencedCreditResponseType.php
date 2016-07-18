@@ -14,7 +14,7 @@ class DoNonReferencedCreditResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\DoNonReferencedCreditResponseDetailsType	 
+	 * @var PayPal\EBLBaseComponents\DoNonReferencedCreditResponseDetailsType	 
 	 */ 
 	public $DoNonReferencedCreditResponseDetails;
 

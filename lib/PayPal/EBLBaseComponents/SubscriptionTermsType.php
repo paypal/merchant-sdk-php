@@ -15,7 +15,7 @@ class SubscriptionTermsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Amount;
 

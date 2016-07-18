@@ -14,7 +14,7 @@ class InitiateRecoupReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\InitiateRecoupRequestType	 
+	 * @var PayPal\PayPalAPI\InitiateRecoupRequestType	 
 	 */ 
 	public $InitiateRecoupRequest;
 

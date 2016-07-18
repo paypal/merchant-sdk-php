@@ -14,7 +14,7 @@ class SetAccessPermissionsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\SetAccessPermissionsRequestType	 
+	 * @var PayPal\PayPalAPI\SetAccessPermissionsRequestType	 
 	 */ 
 	public $SetAccessPermissionsRequest;
 

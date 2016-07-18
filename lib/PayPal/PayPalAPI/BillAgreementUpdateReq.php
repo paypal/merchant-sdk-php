@@ -14,7 +14,7 @@ class BillAgreementUpdateReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\BAUpdateRequestType	 
+	 * @var PayPal\PayPalAPI\BAUpdateRequestType	 
 	 */ 
 	public $BAUpdateRequest;
 

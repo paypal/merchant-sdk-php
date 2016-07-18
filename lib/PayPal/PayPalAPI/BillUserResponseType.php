@@ -14,7 +14,7 @@ class BillUserResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\MerchantPullPaymentResponseType	 
+	 * @var PayPal\EBLBaseComponents\MerchantPullPaymentResponseType	 
 	 */ 
 	public $BillUserResponseDetails;
 
@@ -25,7 +25,7 @@ class BillUserResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\FMFDetailsType	 
+	 * @var PayPal\EBLBaseComponents\FMFDetailsType	 
 	 */ 
 	public $FMFDetails;
 

@@ -14,7 +14,7 @@ class BillOutstandingAmountResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\BillOutstandingAmountResponseDetailsType	 
+	 * @var PayPal\EBLBaseComponents\BillOutstandingAmountResponseDetailsType	 
 	 */ 
 	public $BillOutstandingAmountResponseDetails;
 

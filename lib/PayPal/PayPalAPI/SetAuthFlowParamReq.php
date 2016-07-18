@@ -14,7 +14,7 @@ class SetAuthFlowParamReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\SetAuthFlowParamRequestType	 
+	 * @var PayPal\PayPalAPI\SetAuthFlowParamRequestType	 
 	 */ 
 	public $SetAuthFlowParamRequest;
 

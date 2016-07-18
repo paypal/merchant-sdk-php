@@ -14,7 +14,7 @@ class ReverseTransactionReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\ReverseTransactionRequestType	 
+	 * @var PayPal\PayPalAPI\ReverseTransactionRequestType	 
 	 */ 
 	public $ReverseTransactionRequest;
 

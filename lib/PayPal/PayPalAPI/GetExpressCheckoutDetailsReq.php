@@ -14,7 +14,7 @@ class GetExpressCheckoutDetailsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\GetExpressCheckoutDetailsRequestType	 
+	 * @var PayPal\PayPalAPI\GetExpressCheckoutDetailsRequestType	 
 	 */ 
 	public $GetExpressCheckoutDetailsRequest;
 

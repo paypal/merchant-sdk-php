@@ -14,7 +14,7 @@ class DoUATPAuthorizationResponseType  extends DoAuthorizationResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\UATPDetailsType	 
+	 * @var PayPal\EBLBaseComponents\UATPDetailsType	 
 	 */ 
 	public $UATPDetails;
 

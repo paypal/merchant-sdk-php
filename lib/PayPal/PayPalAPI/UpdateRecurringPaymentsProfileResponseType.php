@@ -14,7 +14,7 @@ class UpdateRecurringPaymentsProfileResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\UpdateRecurringPaymentsProfileResponseDetailsType	 
+	 * @var PayPal\EBLBaseComponents\UpdateRecurringPaymentsProfileResponseDetailsType	 
 	 */ 
 	public $UpdateRecurringPaymentsProfileResponseDetails;
 

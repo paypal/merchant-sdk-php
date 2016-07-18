@@ -14,7 +14,7 @@ class DoDirectPaymentReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\DoDirectPaymentRequestType	 
+	 * @var PayPal\PayPalAPI\DoDirectPaymentRequestType	 
 	 */ 
 	public $DoDirectPaymentRequest;
 

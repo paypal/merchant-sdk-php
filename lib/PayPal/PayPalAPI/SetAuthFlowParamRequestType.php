@@ -14,7 +14,7 @@ class SetAuthFlowParamRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\SetAuthFlowParamRequestDetailsType	 
+	 * @var PayPal\EBLBaseComponents\SetAuthFlowParamRequestDetailsType	 
 	 */ 
 	public $SetAuthFlowParamRequestDetails;
 

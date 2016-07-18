@@ -1,35 +1,46 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
  * @hasAttribute
- * AuctionInfoType Basic information about an auction.
+ * AuctionInfoType Basic information about an auction. 
  */
-class AuctionInfoType
+class AuctionInfoType  
    extends PPXmlMessage{
 
 	/**
-	 * Customer's auction ID
+	 * Customer's auction ID 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $BuyerID;
 
 	/**
-	 * Auction's close date
+	 * Auction's close date 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string ISO8601
-	 */
+	 
+	 	 	 	 
+	 * @var dateTime	 
+	 */ 
 	public $ClosingDate;
 
 	/**
+	 * 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @attribute
-	 * @var string
-	 */
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $multiItem;
 
 

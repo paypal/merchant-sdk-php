@@ -1,67 +1,99 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
-
-class DoReferenceTransactionResponseDetailsType
+/**
+ * 
+ */
+class DoReferenceTransactionResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
+	 * 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $BillingAgreementID;
 
 	/**
+	 * 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\PaymentInfoType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\PaymentInfoType	 
+	 */ 
 	public $PaymentInfo;
 
 	/**
+	 * 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\CoreComponentTypes\BasicAmountType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 */ 
 	public $Amount;
 
 	/**
+	 * 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $AVSCode;
 
 	/**
+	 * 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $CVV2Code;
 
 	/**
+	 * 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\string	 
+	 */ 
 	public $TransactionID;
 
 	/**
 	 * Response code from the processor when a recurring
-	 * transaction is declined
+	 * transaction is declined 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $PaymentAdviceCode;
 
 	/**
-	 * Return msgsubid back to merchant
+	 * Return msgsubid back to merchant 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $MsgSubID;
 
 

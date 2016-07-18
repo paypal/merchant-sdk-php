@@ -14,7 +14,7 @@ class DoMobileCheckoutPaymentReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\DoMobileCheckoutPaymentRequestType	 
+	 * @var PayPal\PayPalAPI\DoMobileCheckoutPaymentRequestType	 
 	 */ 
 	public $DoMobileCheckoutPaymentRequest;
 

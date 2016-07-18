@@ -1,15 +1,21 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
 use PayPal\Core\PPXmlMessage;
-
-class CompleteRecoupReq
+/**
+ * 
+ */
+class CompleteRecoupReq  
    extends PPXmlMessage{
 
 	/**
+	 * 
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var \PayPal\PayPalAPI\CompleteRecoupRequestType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\PayPalAPI\CompleteRecoupRequestType	 
+	 */ 
 	public $CompleteRecoupRequest;
 
 
@@ -26,5 +32,5 @@ class CompleteRecoupReq
 			$str .= '</ns:CompleteRecoupReq>';
 			return $str;
 	}
-
+    
 }

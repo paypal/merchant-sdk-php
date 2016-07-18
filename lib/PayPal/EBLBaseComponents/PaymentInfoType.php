@@ -1,28 +1,34 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
- * PaymentInfoType Payment information.
+ * PaymentInfoType Payment information. 
  */
-class PaymentInfoType
+class PaymentInfoType  
    extends PPXmlMessage{
 
 	/**
 	 * A transaction identification number. Character length and
 	 * limits: 19 single-byte characters maximum
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\string	 
+	 */ 
 	public $TransactionID;
 
 	/**
 	 * Its Ebay transaction id. EbayTransactionID will returned for
-	 * immediate pay item transaction in ECA
+	 * immediate pay item transaction in ECA 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\string	 
+	 */ 
 	public $EbayTransactionID;
 
 	/**
@@ -37,18 +43,24 @@ class PaymentInfoType
 	 * Character length and limits: 19 single-byte characters
 	 * maximum
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\string	 
+	 */ 
 	public $ParentTransactionID;
 
 	/**
 	 * Receipt ID Character length and limitations: 16 digits in
 	 * xxxx-xxxx-xxxx-xxxx format
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\string	 
+	 */ 
 	public $ReceiptID;
 
 	/**
@@ -66,58 +78,79 @@ class PaymentInfoType
 	 * via merchant virtual terminal. credit: Transaction created
 	 * via merchant virtual terminal or API to credit a customer.
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
 	public $TransactionType;
 
 	/**
 	 * The type of payment
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
 	public $PaymentType;
 
 	/**
 	 * The type of funding source
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
 	public $RefundSourceCodeType;
 
 	/**
-	 * eCheck latest expected clear date
+	 * eCheck latest expected clear date 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string ISO8601
-	 */
+	 
+	 	 	 	 
+	 * @var dateTime	 
+	 */ 
 	public $ExpectedeCheckClearDate;
 
 	/**
-	 * Date and time of payment
+	 * Date and time of payment 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string ISO8601
-	 */
+	 
+	 	 	 	 
+	 * @var dateTime	 
+	 */ 
 	public $PaymentDate;
 
 	/**
 	 * Full amount of the customer's payment, before transaction
 	 * fee is subtracted
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\CoreComponentTypes\BasicAmountType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 */ 
 	public $GrossAmount;
 
 	/**
-	 * Transaction fee associated with the payment
+	 * Transaction fee associated with the payment 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\CoreComponentTypes\BasicAmountType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 */ 
 	public $FeeAmount;
 
 	/**
@@ -125,27 +158,36 @@ class PaymentInfoType
 	 * currency conversion from automatic conversion through your
 	 * Payment Receiving Preferences or manual conversion through
 	 * manually accepting a payment. This amount is calculated
-	 * after fees and taxes have been assessed.
+	 * after fees and taxes have been assessed. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\CoreComponentTypes\BasicAmountType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 */ 
 	public $SettleAmount;
 
 	/**
-	 * Amount of tax for transaction
+	 * Amount of tax for transaction 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\CoreComponentTypes\BasicAmountType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 */ 
 	public $TaxAmount;
 
 	/**
-	 * Exchange rate for transaction
+	 * Exchange rate for transaction 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $ExchangeRate;
 
 	/**
@@ -176,9 +218,12 @@ class PaymentInfoType
 	 * your pending balance. See the "HoldDecision" field for more
 	 * information.
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
 	public $PaymentStatus;
 
 	/**
@@ -214,9 +259,12 @@ class PaymentInfoType
 	 * than those listed above. For more information, contact
 	 * PayPal Customer Service.
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
 	public $PendingReason;
 
 	/**
@@ -232,9 +280,12 @@ class PaymentInfoType
 	 * occurred on this transaction due to a reason not listed
 	 * above.
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
 	public $ReasonCode;
 
 	/**
@@ -242,171 +293,231 @@ class PaymentInfoType
 	 * PaymentStatus is Completed-Funds-Held. The reason the funds
 	 * are kept in pending balance: newsellerpaymenthold: The
 	 * seller is new. paymenthold: A hold is placed on your
-	 * transaction due to a reason not listed above.
+	 * transaction due to a reason not listed above. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $HoldDecision;
 
 	/**
-	 * Shipping method selected by the user during check-out.
+	 * Shipping method selected by the user during check-out. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $ShippingMethod;
 
 	/**
 	 * Protection Eligibility for this Transaction - None, SPP or
-	 * ESPP
+	 * ESPP 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $ProtectionEligibility;
 
 	/**
-	 * Protection Eligibility details for this Transaction
+	 * Protection Eligibility details for this Transaction 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $ProtectionEligibilityType;
 
 	/**
-	 * Receipt Reference Number for this Transaction
+	 * Receipt Reference Number for this Transaction 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $ReceiptReferenceNumber;
 
 	/**
 	 * The type of POS transaction F: Forced post transaction. POS
 	 * merchant can send transactions at a later point if
 	 * connectivity is lost. S: Single call checkout, and this is
-	 * to identify PayPal Lite API usage.
+	 * to identify PayPal Lite API usage. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
 	public $POSTransactionType;
 
 	/**
 	 * Amount of shipping charged on transaction
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $ShipAmount;
 
 	/**
 	 * Amount of ship handling charged on transaction
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $ShipHandleAmount;
 
 	/**
 	 * Amount of shipping discount on transaction
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $ShipDiscount;
 
 	/**
 	 * Amount of Insurance amount on transaction
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $InsuranceAmount;
 
 	/**
 	 * Subject as entered in the transaction
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $Subject;
 
 	/**
 	 * StoreID as entered in the transaction
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $StoreID;
 
 	/**
 	 * TerminalID as entered in the transaction
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $TerminalID;
 
 	/**
-	 * Details about the seller. Optional
+	 * Details about the seller. Optional 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\SellerDetailsType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\SellerDetailsType	 
+	 */ 
 	public $SellerDetails;
 
 	/**
 	 * Unique identifier and mandatory for each bucket in case of
-	 * split payement
+	 * split payement 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $PaymentRequestID;
 
 	/**
 	 * Thes are filters that could result in accept/deny/pending
-	 * action.
+	 * action. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\FMFDetailsType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\FMFDetailsType	 
+	 */ 
 	public $FMFDetails;
 
 	/**
 	 * This will be enhanced info for the payment: Example: UATP
-	 * details
+	 * details 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EnhancedDataTypes\EnhancedPaymentInfoType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EnhancedDataTypes\EnhancedPaymentInfoType	 
+	 */ 
 	public $EnhancedPaymentInfo;
 
 	/**
 	 * This will indicate the payment status for individual payment
-	 * request in case of split payment
+	 * request in case of split payment 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\ErrorType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\ErrorType	 
+	 */ 
 	public $PaymentError;
 
 	/**
-	 * Type of the payment instrument.
+	 * Type of the payment instrument. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\InstrumentDetailsType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\InstrumentDetailsType	 
+	 */ 
 	public $InstrumentDetails;
 
 	/**
-	 * Offer Details.
+	 * Offer Details. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\OfferDetailsType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\OfferDetailsType	 
+	 */ 
 	public $OfferDetails;
 
 	/**
@@ -419,11 +530,14 @@ class PaymentInfoType
 	 * within the registered bin range. The value of this field
 	 * will be false if merchant has a registered bin range and
 	 * credit card used in the transaction outside registered bin
-	 * range or the transaction is not done using a credit card.
+	 * range or the transaction is not done using a credit card. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $BinEligibility;
 
 

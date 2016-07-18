@@ -14,7 +14,7 @@ class GetRecurringPaymentsProfileDetailsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\GetRecurringPaymentsProfileDetailsRequestType	 
+	 * @var PayPal\PayPalAPI\GetRecurringPaymentsProfileDetailsRequestType	 
 	 */ 
 	public $GetRecurringPaymentsProfileDetailsRequest;
 

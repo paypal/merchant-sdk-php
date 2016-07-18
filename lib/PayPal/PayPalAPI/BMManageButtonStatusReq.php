@@ -14,7 +14,7 @@ class BMManageButtonStatusReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\BMManageButtonStatusRequestType	 
+	 * @var PayPal\PayPalAPI\BMManageButtonStatusRequestType	 
 	 */ 
 	public $BMManageButtonStatusRequest;
 

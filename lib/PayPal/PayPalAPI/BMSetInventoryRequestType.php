@@ -1,100 +1,134 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * Hosted Button ID of button you wish to change.  Required
  * Character length and limitations: 10 single-byte numeric
- * characters
+ * characters  
  */
-class BMSetInventoryRequestType  extends AbstractRequestType
+class BMSetInventoryRequestType  extends AbstractRequestType  
   {
 
 	/**
 	 * Hosted Button ID of button you wish to change.  Required
 	 * Character length and limitations: 10 single-byte numeric
-	 * characters
+	 * characters 
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $HostedButtonID;
 
 	/**
-	 * Is Inventory tracked.  Required 0 or 1
+	 * Is Inventory tracked.  Required 0 or 1 
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $TrackInv;
 
 	/**
-	 * Is PNL Tracked.  Required 0 or 1
+	 * Is PNL Tracked.  Required 0 or 1 
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $TrackPnl;
 
 	/**
+	 * 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\ItemTrackingDetailsType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\ItemTrackingDetailsType	 
+	 */ 
 	public $ItemTrackingDetails;
 
 	/**
 	 * Option Index.  Optional Character length and limitations: 1
-	 * single-byte alphanumeric characters
+	 * single-byte alphanumeric characters 
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $OptionIndex;
 
 	/**
+	 * 
+     * @array
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\OptionTrackingDetailsType[]
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\OptionTrackingDetailsType	 
+	 */ 
 	public $OptionTrackingDetails;
 
 	/**
 	 * URL of page to display when an item is soldout.  Optional
 	 * Character length and limitations: 127 single-byte
-	 * alphanumeric characters
+	 * alphanumeric characters 
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $SoldoutURL;
 
 	/**
-	 * Whether to use the same digital download key repeatedly.
-	 * Optional
+	 * Whether to use the same digital download key repeatedly. 
+	 * Optional 
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $ReuseDigitalDownloadKeys;
 
 	/**
-	 * Whether to append these keys to the list or not (replace).
-	 * Optional
+	 * Whether to append these keys to the list or not (replace). 
+	 * Optional 
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $AppendDigitalDownloadKeys;
 
 	/**
 	 * Zero or more digital download keys to distribute to
 	 * customers after transaction is completed.  Optional
 	 * Character length and limitations: 1000 single-byte
-	 * alphanumeric characters
+	 * alphanumeric characters 
+     * @array
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string[]
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $DigitalDownloadKeys;
 
 	/**
@@ -107,5 +141,5 @@ class BMSetInventoryRequestType  extends AbstractRequestType
 	}
 
 
-
+    
 }

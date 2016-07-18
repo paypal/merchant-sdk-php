@@ -1,13 +1,13 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
  * The timestamped token value that was returned by
  * SetExpressCheckoutResponse and passed on
  * GetExpressCheckoutDetailsRequest. Character length and
- * limitations:20 single-byte characters
+ * limitations:20 single-byte characters 
  */
-class DoExpressCheckoutPaymentResponseDetailsType
+class DoExpressCheckoutPaymentResponseDetailsType  
    extends PPXmlMessage{
 
 	/**
@@ -16,65 +16,93 @@ class DoExpressCheckoutPaymentResponseDetailsType
 	 * GetExpressCheckoutDetailsRequest. Character length and
 	 * limitations:20 single-byte characters
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\string	 
+	 */ 
 	public $Token;
 
 	/**
-	 * Information about the transaction
+	 * Information about the transaction 
+     * @array
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\PaymentInfoType[]
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\PaymentInfoType	 
+	 */ 
 	public $PaymentInfo;
 
 	/**
+	 * 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $BillingAgreementID;
 
 	/**
+	 * 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $RedirectRequired;
 
 	/**
 	 * Memo entered by sender in PayPal Review Page note field.
 	 * Optional Character length and limitations: 255 single-byte
-	 * alphanumeric characters
+	 * alphanumeric characters 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $Note;
 
 	/**
-	 * Redirect back to PayPal, PayPal can host the success page.
+	 * Redirect back to PayPal, PayPal can host the success page. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $SuccessPageRedirectRequested;
 
 	/**
-	 * Information about the user selected options.
+	 * Information about the user selected options. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\UserSelectedOptionType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\UserSelectedOptionType	 
+	 */ 
 	public $UserSelectedOptions;
 
 	/**
-	 * Information about Coupled Payment transactions.
+	 * Information about Coupled Payment transactions. 
+     * @array
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\CoupledPaymentInfoType[]
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\CoupledPaymentInfoType	 
+	 */ 
 	public $CoupledPaymentInfo;
 
 

@@ -1,47 +1,59 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
  * Person's name associated with this address. Character length
- * and limitations: 32 single-byte alphanumeric characters
+ * and limitations: 32 single-byte alphanumeric characters 
  */
-class AddressType
+class AddressType  
    extends PPXmlMessage{
 
 	/**
 	 * Person's name associated with this address. Character length
 	 * and limitations: 32 single-byte alphanumeric characters
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $Name;
 
 	/**
 	 * First street address. Character length and limitations: 300
 	 * single-byte alphanumeric characters
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $Street1;
 
 	/**
 	 * Second street address. Character length and limitations: 300
 	 * single-byte alphanumeric characters
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $Street2;
 
 	/**
 	 * Name of city. Character length and limitations: 120
 	 * single-byte alphanumeric characters
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $CityName;
 
 	/**
@@ -67,20 +79,26 @@ class AddressType
 	 * South_Dakota SD Tennessee TN Texas TX Utah UT Vermont VT
 	 * Virgin_Islands VI Virginia VA Washington WA West_Virginia WV
 	 * Wisconsin WI Wyoming WY Armed_Forces_Americas AA
-	 * Armed_Forces AE Armed_Forces_Pacific AP
+	 * Armed_Forces AE Armed_Forces_Pacific AP 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $StateOrProvince;
 
 	/**
 	 * ISO 3166 standard country code Character limit: Two
-	 * single-byte characters.
+	 * single-byte characters. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
 	public $Country;
 
 	/**
@@ -90,27 +108,37 @@ class AddressType
 	 * UpdateRecurringPaymentsProfile.  This element should only be
 	 * used in response elements and typically  should not be used
 	 * in creating request messages which specify the name of a
-	 * country using the Country element (which refers to a
-	 * 2-letter country code).
+	 * country using the Country element (which refers to a 
+	 * 2-letter country code). 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\string	 
+	 */ 
 	public $CountryName;
 
 	/**
 	 * Telephone number associated with this address
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $Phone;
 
 	/**
+	 * 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $PostalCode;
 
 	/**
@@ -119,9 +147,12 @@ class AddressType
 	 * CreateRecurringPaymentsProfile, or
 	 * UpdateRecurringPaymentsProfile.
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $AddressID;
 
 	/**
@@ -130,9 +161,12 @@ class AddressType
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile.
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
 	public $AddressOwner;
 
 	/**
@@ -141,9 +175,12 @@ class AddressType
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile.
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $ExternalAddressID;
 
 	/**
@@ -152,11 +189,14 @@ class AddressType
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile.  Only applicable to
 	 * SellerPaymentAddress today. Seller's international name that
-	 * is associated with the payment address.
+	 * is associated with the payment address. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $InternationalName;
 
 	/**
@@ -165,11 +205,14 @@ class AddressType
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile. Only applicable to
 	 * SellerPaymentAddress today. International state and city for
-	 * the seller's payment address.
+	 * the seller's payment address. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $InternationalStateAndCity;
 
 	/**
@@ -178,11 +221,14 @@ class AddressType
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile. Only applicable to
 	 * SellerPaymentAddress today. Seller's international street
-	 * address that is associated with the payment address.
+	 * address that is associated with the payment address. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $InternationalStreet;
 
 	/**
@@ -190,22 +236,28 @@ class AddressType
 	 * set this element for SetExpressCheckout,
 	 * DoExpressCheckoutPayment, DoDirectPayment,
 	 * CreateRecurringPaymentsProfile or
-	 * UpdateRecurringPaymentsProfile.
+	 * UpdateRecurringPaymentsProfile. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
 	public $AddressStatus;
 
 	/**
 	 * Returns Normalization Status of the Address. Possible values
-	 * are Normalized, Unnormalized, and None.
+	 * are Normalized, Unnormalized, and None. 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
 	public $AddressNormalizationStatus;
 
 
-
+    
 }

@@ -1,17 +1,22 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
 use PayPal\Core\PPXmlMessage;
 /**
- * Details of Risk Filter.
+ * Details of Risk Filter. 
  */
-class RiskFilterListType
+class RiskFilterListType  
    extends PPXmlMessage{
 
 	/**
+	 * 
+     * @array
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\RiskFilterDetailsType[]
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\RiskFilterDetailsType	 
+	 */ 
 	public $Filters;
 
 

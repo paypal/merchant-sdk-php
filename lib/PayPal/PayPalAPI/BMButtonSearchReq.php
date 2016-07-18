@@ -14,7 +14,7 @@ class BMButtonSearchReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\BMButtonSearchRequestType	 
+	 * @var PayPal\PayPalAPI\BMButtonSearchRequestType	 
 	 */ 
 	public $BMButtonSearchRequest;
 

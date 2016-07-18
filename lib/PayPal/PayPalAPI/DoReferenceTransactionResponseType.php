@@ -14,7 +14,7 @@ class DoReferenceTransactionResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\DoReferenceTransactionResponseDetailsType	 
+	 * @var PayPal\EBLBaseComponents\DoReferenceTransactionResponseDetailsType	 
 	 */ 
 	public $DoReferenceTransactionResponseDetails;
 
@@ -25,7 +25,7 @@ class DoReferenceTransactionResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\FMFDetailsType	 
+	 * @var PayPal\EBLBaseComponents\FMFDetailsType	 
 	 */ 
 	public $FMFDetails;
 

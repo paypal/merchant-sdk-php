@@ -14,7 +14,7 @@ class DoCancelReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\DoCancelRequestType	 
+	 * @var PayPal\PayPalAPI\DoCancelRequestType	 
 	 */ 
 	public $DoCancelRequest;
 

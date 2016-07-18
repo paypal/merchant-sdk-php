@@ -1,15 +1,21 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractResponseType;
-
-class SetCustomerBillingAgreementResponseType  extends AbstractResponseType
+use PayPal\EBLBaseComponents\AbstractResponseType; 
+/**
+ * 
+ */
+class SetCustomerBillingAgreementResponseType  extends AbstractResponseType  
   {
 
 	/**
+	 * 
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\string	 
+	 */ 
 	public $Token;
 
 

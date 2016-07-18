@@ -14,7 +14,7 @@ class UpdateRecurringPaymentsProfileRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\UpdateRecurringPaymentsProfileRequestDetailsType	 
+	 * @var PayPal\EBLBaseComponents\UpdateRecurringPaymentsProfileRequestDetailsType	 
 	 */ 
 	public $UpdateRecurringPaymentsProfileRequestDetails;
 

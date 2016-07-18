@@ -1,15 +1,21 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
 use PayPal\Core\PPXmlMessage;
-
-class ManagePendingTransactionStatusReq
+/**
+ * 
+ */
+class ManagePendingTransactionStatusReq  
    extends PPXmlMessage{
 
 	/**
+	 * 
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var \PayPal\PayPalAPI\ManagePendingTransactionStatusRequestType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\PayPalAPI\ManagePendingTransactionStatusRequestType	 
+	 */ 
 	public $ManagePendingTransactionStatusRequest;
 
 
@@ -26,5 +32,5 @@ class ManagePendingTransactionStatusReq
 			$str .= '</ns:ManagePendingTransactionStatusReq>';
 			return $str;
 	}
-
+    
 }

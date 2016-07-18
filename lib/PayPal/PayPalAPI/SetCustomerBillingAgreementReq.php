@@ -14,7 +14,7 @@ class SetCustomerBillingAgreementReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\SetCustomerBillingAgreementRequestType	 
+	 * @var PayPal\PayPalAPI\SetCustomerBillingAgreementRequestType	 
 	 */ 
 	public $SetCustomerBillingAgreementRequest;
 

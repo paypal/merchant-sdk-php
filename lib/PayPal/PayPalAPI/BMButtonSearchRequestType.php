@@ -1,31 +1,37 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * The earliest transaction date at which to start the search.
- * No wildcards are allowed. Required
+ * No wildcards are allowed. Required 
  */
-class BMButtonSearchRequestType  extends AbstractRequestType
+class BMButtonSearchRequestType  extends AbstractRequestType  
   {
 
 	/**
 	 * The earliest transaction date at which to start the search.
-	 * No wildcards are allowed. Required
+	 * No wildcards are allowed. Required 
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string ISO8601
-	 */
+	 
+	 	 	 	 
+	 * @var dateTime	 
+	 */ 
 	public $StartDate;
 
 	/**
 	 * The latest transaction date to be included in the search
-	 * Optional
+	 * Optional 
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string ISO8601
-	 */
+	 
+	 	 	 	 
+	 * @var dateTime	 
+	 */ 
 	public $EndDate;
 
 
-
+    
 }

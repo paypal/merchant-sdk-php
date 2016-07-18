@@ -1,13 +1,13 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * Subject line of the email sent to all recipients. This
  * subject is not contained in the input file; you must create
  * it with your application. Optional Character length and
- * limitations: 255 single-byte alphanumeric characters
+ * limitations: 255 single-byte alphanumeric characters 
  */
-class MassPayRequestType  extends AbstractRequestType
+class MassPayRequestType  extends AbstractRequestType  
   {
 
 	/**
@@ -16,9 +16,12 @@ class MassPayRequestType  extends AbstractRequestType
 	 * it with your application. Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $EmailSubject;
 
 	/**
@@ -28,9 +31,12 @@ class MassPayRequestType  extends AbstractRequestType
 	 * by UserID (ReceiverID in MassPayItem). Required. You must
 	 * specify one or the other of EmailAddress or UserID.
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
 	public $ReceiverType;
 
 	/**
@@ -38,18 +44,25 @@ class MassPayRequestType  extends AbstractRequestType
 	 * transactions. OptionalCharacter length and limitations: 32
 	 * single-byte alphanumeric characters
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $ButtonSource = "PayPal_SDK";
 
 	/**
 	 * Details of each payment. A single MassPayRequest can include
-	 * up to 250 MassPayItems. Required
+	 * up to 250 MassPayItems. Required 
+     * @array
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var \PayPal\PayPalAPI\MassPayRequestItemType[]
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\PayPalAPI\MassPayRequestItemType	 
+	 */ 
 	public $MassPayItem;
 
 	/**
@@ -60,5 +73,5 @@ class MassPayRequestType  extends AbstractRequestType
 	}
 
 
-
+    
 }

@@ -14,7 +14,7 @@ class SenderDetailsType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\DeviceDetailsType	 
+	 * @var PayPal\EBLBaseComponents\DeviceDetailsType	 
 	 */ 
 	public $DeviceDetails;
 

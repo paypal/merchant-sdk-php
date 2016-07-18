@@ -14,7 +14,7 @@ class UpdateAccessPermissionsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\UpdateAccessPermissionsRequestType	 
+	 * @var PayPal\PayPalAPI\UpdateAccessPermissionsRequestType	 
 	 */ 
 	public $UpdateAccessPermissionsRequest;
 

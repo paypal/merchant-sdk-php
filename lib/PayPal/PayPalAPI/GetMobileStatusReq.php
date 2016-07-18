@@ -14,7 +14,7 @@ class GetMobileStatusReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\GetMobileStatusRequestType	 
+	 * @var PayPal\PayPalAPI\GetMobileStatusRequestType	 
 	 */ 
 	public $GetMobileStatusRequest;
 

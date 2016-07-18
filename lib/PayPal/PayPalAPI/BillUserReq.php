@@ -14,7 +14,7 @@ class BillUserReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\BillUserRequestType	 
+	 * @var PayPal\PayPalAPI\BillUserRequestType	 
 	 */ 
 	public $BillUserRequest;
 

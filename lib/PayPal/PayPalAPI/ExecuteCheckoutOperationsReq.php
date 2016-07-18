@@ -14,7 +14,7 @@ class ExecuteCheckoutOperationsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\ExecuteCheckoutOperationsRequestType	 
+	 * @var PayPal\PayPalAPI\ExecuteCheckoutOperationsRequestType	 
 	 */ 
 	public $ExecuteCheckoutOperationsRequest;
 

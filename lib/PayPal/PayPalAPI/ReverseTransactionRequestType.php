@@ -14,7 +14,7 @@ class ReverseTransactionRequestType  extends AbstractRequestType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\ReverseTransactionRequestDetailsType	 
+	 * @var PayPal\EBLBaseComponents\ReverseTransactionRequestDetailsType	 
 	 */ 
 	public $ReverseTransactionRequestDetails;
 

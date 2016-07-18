@@ -1,6 +1,6 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * Unique identifier of a transaction. RequiredThe details for
  * some kinds of transactions cannot be retrieved with
@@ -8,7 +8,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * bank transfer withdrawals, for example. Character length and
  * limitations: 17 single-byte alphanumeric characters
  */
-class GetTransactionDetailsRequestType  extends AbstractRequestType
+class GetTransactionDetailsRequestType  extends AbstractRequestType  
   {
 
 	/**
@@ -18,11 +18,14 @@ class GetTransactionDetailsRequestType  extends AbstractRequestType
 	 * bank transfer withdrawals, for example. Character length and
 	 * limitations: 17 single-byte alphanumeric characters
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\string	 
+	 */ 
 	public $TransactionID;
 
 
-
+    
 }

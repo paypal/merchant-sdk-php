@@ -14,7 +14,7 @@ class GetAuthDetailsResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\GetAuthDetailsResponseDetailsType	 
+	 * @var PayPal\EBLBaseComponents\GetAuthDetailsResponseDetailsType	 
 	 */ 
 	public $GetAuthDetailsResponseDetails;
 

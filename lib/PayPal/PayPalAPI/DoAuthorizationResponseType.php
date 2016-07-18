@@ -27,7 +27,7 @@ class DoAuthorizationResponseType  extends AbstractResponseType
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
 	 */ 
 	public $Amount;
 
@@ -38,7 +38,7 @@ class DoAuthorizationResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\AuthorizationInfoType	 
+	 * @var PayPal\EBLBaseComponents\AuthorizationInfoType	 
 	 */ 
 	public $AuthorizationInfo;
 

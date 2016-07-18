@@ -14,7 +14,7 @@ class ReverseTransactionResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\ReverseTransactionResponseDetailsType	 
+	 * @var PayPal\EBLBaseComponents\ReverseTransactionResponseDetailsType	 
 	 */ 
 	public $ReverseTransactionResponseDetails;
 

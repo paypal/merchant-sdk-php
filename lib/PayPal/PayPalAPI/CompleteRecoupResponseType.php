@@ -14,7 +14,7 @@ class CompleteRecoupResponseType  extends AbstractResponseType
 	 * @namespace ed
 	 
 	 	 	 	 
-	 * @var \PayPal\EnhancedDataTypes\EnhancedCompleteRecoupResponseDetailsType	 
+	 * @var PayPal\EnhancedDataTypes\EnhancedCompleteRecoupResponseDetailsType	 
 	 */ 
 	public $EnhancedCompleteRecoupResponseDetails;
 

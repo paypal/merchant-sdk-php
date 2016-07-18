@@ -14,7 +14,7 @@ class GetAccessPermissionDetailsResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\GetAccessPermissionDetailsResponseDetailsType	 
+	 * @var PayPal\EBLBaseComponents\GetAccessPermissionDetailsResponseDetailsType	 
 	 */ 
 	public $GetAccessPermissionDetailsResponseDetails;
 

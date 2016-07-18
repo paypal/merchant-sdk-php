@@ -14,7 +14,7 @@ class DoNonReferencedCreditReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\DoNonReferencedCreditRequestType	 
+	 * @var PayPal\PayPalAPI\DoNonReferencedCreditRequestType	 
 	 */ 
 	public $DoNonReferencedCreditRequest;
 

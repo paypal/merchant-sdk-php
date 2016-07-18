@@ -14,7 +14,7 @@ class DoCaptureReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\DoCaptureRequestType	 
+	 * @var PayPal\PayPalAPI\DoCaptureRequestType	 
 	 */ 
 	public $DoCaptureRequest;
 

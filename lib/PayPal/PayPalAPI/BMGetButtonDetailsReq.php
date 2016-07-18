@@ -14,7 +14,7 @@ class BMGetButtonDetailsReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\BMGetButtonDetailsRequestType	 
+	 * @var PayPal\PayPalAPI\BMGetButtonDetailsRequestType	 
 	 */ 
 	public $BMGetButtonDetailsRequest;
 

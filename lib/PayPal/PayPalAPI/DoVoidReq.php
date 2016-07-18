@@ -14,7 +14,7 @@ class DoVoidReq
 	 * @namespace ns
 	 
 	 	 	 	 
-	 * @var \PayPal\PayPalAPI\DoVoidRequestType	 
+	 * @var PayPal\PayPalAPI\DoVoidRequestType	 
 	 */ 
 	public $DoVoidRequest;
 

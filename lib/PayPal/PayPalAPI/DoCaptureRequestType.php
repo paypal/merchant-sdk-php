@@ -1,12 +1,12 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
  * The authorization identification number of the payment you
  * want to capture. Required Character length and limits: 19
- * single-byte characters maximum
+ * single-byte characters maximum 
  */
-class DoCaptureRequestType  extends AbstractRequestType
+class DoCaptureRequestType  extends AbstractRequestType  
   {
 
 	/**
@@ -14,9 +14,12 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 * want to capture. Required Character length and limits: 19
 	 * single-byte characters maximum
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\string	 
+	 */ 
 	public $AuthorizationID;
 
 	/**
@@ -26,9 +29,12 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 * a period (.), and the thousands separator must be a comma
 	 * (,)
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var \PayPal\CoreComponentTypes\BasicAmountType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\CoreComponentTypes\BasicAmountType	 
+	 */ 
 	public $Amount;
 
 	/**
@@ -38,9 +44,12 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 * transaction is automatically voided. Required Character
 	 * length and limits: 12 single-byte alphanumeric characters
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
 	public $CompleteType;
 
 	/**
@@ -49,9 +58,12 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 * Optional Character length and limits: 255 single-byte
 	 * characters
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $Note;
 
 	/**
@@ -61,18 +73,24 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 * authorization. Optional Character length and limits: 127
 	 * single-byte alphanumeric characters
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $InvoiceID;
 
 	/**
 	 * Contains enhanced data like airline itinerary information.
-	 * Not Required
+	 * Not Required 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\EnhancedDataType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\EnhancedDataType	 
+	 */ 
 	public $EnhancedData;
 
 	/**
@@ -81,36 +99,48 @@ class DoCaptureRequestType  extends AbstractRequestType
 	 * Optional Character length and limits: <18 characters
 	 * alphanumeric characters
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $Descriptor;
 
 	/**
-	 * To pass the Merchant store informationOptional
+	 * To pass the Merchant store informationOptional 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\MerchantStoreDetailsType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\MerchantStoreDetailsType	 
+	 */ 
 	public $MerchantStoreDetails;
 
 	/**
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
-	 * single-byte characters maximum.
+	 * single-byte characters maximum. 
 	 * @access public
+	 
 	 * @namespace ns
-	 * @var string
-	 */
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
 	public $MsgSubID;
 
 	/**
 	 * This holds key-value pair which merchants wants to pass it
-	 * to the open wallet-PLCC processorOptional
+	 * to the open wallet-PLCC processorOptional 
 	 * @access public
+	 
 	 * @namespace ebl
-	 * @var \PayPal\EBLBaseComponents\MerchantDataType
-	 */
+	 
+	 	 	 	 
+	 * @var PayPal\EBLBaseComponents\MerchantDataType	 
+	 */ 
 	public $MerchantData;
 
 	/**
@@ -123,5 +153,5 @@ class DoCaptureRequestType  extends AbstractRequestType
 	}
 
 
-
+    
 }

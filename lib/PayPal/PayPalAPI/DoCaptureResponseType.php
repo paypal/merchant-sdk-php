@@ -14,7 +14,7 @@ class DoCaptureResponseType  extends AbstractResponseType
 	 * @namespace ebl
 	 
 	 	 	 	 
-	 * @var \PayPal\EBLBaseComponents\DoCaptureResponseDetailsType	 
+	 * @var PayPal\EBLBaseComponents\DoCaptureResponseDetailsType	 
 	 */ 
 	public $DoCaptureResponseDetails;
 
