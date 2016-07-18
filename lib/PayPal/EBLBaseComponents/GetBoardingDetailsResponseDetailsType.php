@@ -1,142 +1,142 @@
 <?php
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
  * Status of merchant's onboarding process:
  * CompletedCancelledPending Character length and limitations:
  * Eight alphabetic characters
  */
 class GetBoardingDetailsResponseDetailsType
-  extends PPXmlMessage
-{
-    /**
-     * Status of merchant's onboarding process:
-     * CompletedCancelledPending Character length and limitations:
-     * Eight alphabetic characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Status;
+   extends PPXmlMessage{
 
-    /**
-     * Date the boarding process started
-     * @access    public
-     * @namespace ebl
-     * @var string ISO8601
-     */
-    public $StartDate;
+	/**
+	 * Status of merchant's onboarding process:
+	 * CompletedCancelledPending Character length and limitations:
+	 * Eight alphabetic characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Status;
 
-    /**
-     * Date the merchantâs status or progress was last updated
-     * @access    public
-     * @namespace ebl
-     * @var string ISO8601
-     */
-    public $LastUpdated;
+	/**
+	 * Date the boarding process started
+	 * @access public
+	 * @namespace ebl
+	 * @var string ISO8601
+	 */
+	public $StartDate;
 
-    /**
-     * Reason for merchantâs cancellation of sign-up. Character
-     * length and limitations: 1,024 alphanumeric characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Reason;
+	/**
+	 * Date the merchantâs status or progress was last updated
+	 * @access public
+	 * @namespace ebl
+	 * @var string ISO8601
+	 */
+	public $LastUpdated;
 
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $ProgramName;
+	/**
+	 * Reason for merchantâs cancellation of sign-up. Character
+	 * length and limitations: 1,024 alphanumeric characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Reason;
 
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $ProgramCode;
+	/**
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $ProgramName;
 
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $CampaignID;
+	/**
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $ProgramCode;
 
-    /**
-     * Indicates if there is a limitation on the amount of money
-     * the business can withdraw from PayPal
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $UserWithdrawalLimit;
+	/**
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $CampaignID;
 
-    /**
-     * Custom information you set on the EnterBoarding API call
-     * Character length and limitations: 256 alphanumeric
-     * characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $PartnerCustom;
+	/**
+	 * Indicates if there is a limitation on the amount of money
+	 * the business can withdraw from PayPal
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $UserWithdrawalLimit;
 
-    /**
-     * Details about the owner of the account
-     * @access    public
-     * @namespace ebl
-     * @var PayerInfoType
-     */
-    public $AccountOwner;
+	/**
+	 * Custom information you set on the EnterBoarding API call
+	 * Character length and limitations: 256 alphanumeric
+	 * characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $PartnerCustom;
 
-    /**
-     * Merchantâs PayPal API credentials
-     * @access    public
-     * @namespace ebl
-     * @var APICredentialsType
-     */
-    public $Credentials;
+	/**
+	 * Details about the owner of the account
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\PayerInfoType
+	 */
+	public $AccountOwner;
 
-    /**
-     * The APIs that this merchant has granted the business partner
-     * permission to call on his behalf. For example:
-     * SetExpressCheckout,GetExpressCheckoutDetails,DoExpressCheckoutPayment
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $ConfigureAPIs;
+	/**
+	 * Merchantâs PayPal API credentials
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\APICredentialsType
+	 */
+	public $Credentials;
 
-    /**
-     * Primary email verification status. Confirmed, Unconfirmed
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $EmailVerificationStatus;
+	/**
+	 * The APIs that this merchant has granted the business partner
+	 * permission to call on his behalf. For example:
+	 * SetExpressCheckout,GetExpressCheckoutDetails,DoExpressCheckoutPayment
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $ConfigureAPIs;
 
-    /**
-     * Gives VettingStatus - Pending, Cancelled, Approved,
-     * UnderReview Character length and limitations: 256
-     * alphanumeric characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $VettingStatus;
+	/**
+	 * Primary email verification status. Confirmed, Unconfirmed
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $EmailVerificationStatus;
 
-    /**
-     * Gives BankAccountVerificationStatus - Added, Confirmed
-     * Character length and limitations: 256 alphanumeric
-     * characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $BankAccountVerificationStatus;
+	/**
+	 * Gives VettingStatus - Pending, Cancelled, Approved,
+	 * UnderReview Character length and limitations: 256
+	 * alphanumeric characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $VettingStatus;
+
+	/**
+	 * Gives BankAccountVerificationStatus - Added, Confirmed
+	 * Character length and limitations: 256 alphanumeric
+	 * characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $BankAccountVerificationStatus;
+
+
 }

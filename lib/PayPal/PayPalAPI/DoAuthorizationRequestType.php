@@ -1,182 +1,176 @@
 <?php
 namespace PayPal\PayPalAPI;
-
-use PayPal\CoreComponentTypes\BasicAmountType;
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\AddressType;
-use PayPal\EBLBaseComponents\PaymentDetailsItemType;
-
 /**
  * The value of the order’s transaction identification number
  * returned by a PayPal product. Required Character length and
  * limits: 19 single-byte characters maximum
  */
-class DoAuthorizationRequestType
-  extends AbstractRequestType
-{
-    /**
-     * The value of the order’s transaction identification number
-     * returned by a PayPal product. Required Character length and
-     * limits: 19 single-byte characters maximum
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $TransactionID;
+class DoAuthorizationRequestType  extends AbstractRequestType
+  {
 
-    /**
-     * Type of transaction to authorize. The only allowable value
-     * is Order, which means that the transaction represents a
-     * customer order that can be fulfilled over 29 days. Optional
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $TransactionEntity;
+	/**
+	 * The value of the order’s transaction identification number
+	 * returned by a PayPal product. Required Character length and
+	 * limits: 19 single-byte characters maximum
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $TransactionID;
 
-    /**
-     * Amount to authorize. Required Limitations: Must not exceed
-     * $10,000 USD in any currency. No currency symbol. Decimal
-     * separator must be a period (.), and the thousands separator
-     * must be a comma (,).
-     * @access    public
-     * @namespace ns
-     * @var BasicAmountType
-     */
-    public $Amount;
+	/**
+	 * Type of transaction to authorize. The only allowable value
+	 * is Order, which means that the transaction represents a
+	 * customer order that can be fulfilled over 29 days. Optional
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $TransactionEntity;
 
-    /**
-     * Address the order will be shipped to. Optional
-     * @access    public
-     * @namespace ebl
-     * @var AddressType
-     */
-    public $ShipToAddress;
+	/**
+	 * Amount to authorize. Required Limitations: Must not exceed
+	 * $10,000 USD in any currency. No currency symbol. Decimal
+	 * separator must be a period (.), and the thousands separator
+	 * must be a comma (,).
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $Amount;
 
-    /**
-     * Information about the individual purchased items
-     * @access    public
-     * @namespace ebl
-     * @var PaymentDetailsItemType[]
-     */
-    public $PaymentDetailsItem;
+	/**
+	 * Address the order will be shipped to. Optional
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\AddressType
+	 */
+	public $ShipToAddress;
 
-    /**
-     * Sum of cost of all items in this order. You must set the
-     * currencyID attribute to one of the three-character currency
-     * codes for any of the supported PayPal currencies. Optional
-     * Limitations: Must not exceed $10,000 USD in any currency. No
-     * currency symbol. Decimal separator must be a period (.), and
-     * the thousands separator must be a comma (,).
-     * @access    public
-     * @namespace ns
-     * @var BasicAmountType
-     */
-    public $ItemTotal;
+	/**
+	 * Information about the individual purchased items
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\PaymentDetailsItemType[]
+	 */
+	public $PaymentDetailsItem;
 
-    /**
-     * Total shipping costs for this order. You must set the
-     * currencyID attribute to one of the three-character currency
-     * codes for any of the supported PayPal currencies. Optional
-     * Limitations: Must not exceed $10,000 USD in any currency. No
-     * currency symbol. Decimal separator must be a period (.), and
-     * the thousands separator must be a comma (,).
-     * @access    public
-     * @namespace ns
-     * @var BasicAmountType
-     */
-    public $ShippingTotal;
+	/**
+	 * Sum of cost of all items in this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * Limitations: Must not exceed $10,000 USD in any currency. No
+	 * currency symbol. Decimal separator must be a period (.), and
+	 * the thousands separator must be a comma (,).
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $ItemTotal;
 
-    /**
-     * Total handling costs for this order. You must set the
-     * currencyID attribute to one of the three-character currency
-     * codes for any of the supported PayPal currencies. Optional
-     * Limitations: Must not exceed $10,000 USD in any currency. No
-     * currency symbol. Decimal separator must be a period (.), and
-     * the thousands separator must be a comma (,).
-     * @access    public
-     * @namespace ns
-     * @var BasicAmountType
-     */
-    public $HandlingTotal;
+	/**
+	 * Total shipping costs for this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * Limitations: Must not exceed $10,000 USD in any currency. No
+	 * currency symbol. Decimal separator must be a period (.), and
+	 * the thousands separator must be a comma (,).
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $ShippingTotal;
 
-    /**
-     * Sum of tax for all items in this order. You must set the
-     * currencyID attribute to one of the three-character currency
-     * codes for any of the supported PayPal currencies. Optional
-     * Limitations: Must not exceed $10,000 USD in any currency. No
-     * currency symbol. Decimal separator must be a period (.), and
-     * the thousands separator must be a comma (,).
-     * @access    public
-     * @namespace ns
-     * @var BasicAmountType
-     */
-    public $TaxTotal;
+	/**
+	 * Total handling costs for this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * Limitations: Must not exceed $10,000 USD in any currency. No
+	 * currency symbol. Decimal separator must be a period (.), and
+	 * the thousands separator must be a comma (,).
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $HandlingTotal;
 
-    /**
-     * Total shipping insurance costs for this order. Optional
-     * @access    public
-     * @namespace ns
-     * @var BasicAmountType
-     */
-    public $InsuranceTotal;
+	/**
+	 * Sum of tax for all items in this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * Limitations: Must not exceed $10,000 USD in any currency. No
+	 * currency symbol. Decimal separator must be a period (.), and
+	 * the thousands separator must be a comma (,).
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $TaxTotal;
 
-    /**
-     * Shipping discount for this order, specified as a negative
-     * number. Optional
-     * @access    public
-     * @namespace ns
-     * @var BasicAmountType
-     */
-    public $ShippingDiscount;
+	/**
+	 * Total shipping insurance costs for this order. Optional
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $InsuranceTotal;
 
-    /**
-     * Description of items the customer is purchasing. Optional
-     * Character length and limitations: 127 single-byte
-     * alphanumeric characters
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $OrderDescription;
+	/**
+	 * Shipping discount for this order, specified as a negative
+	 * number. Optional
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $ShippingDiscount;
 
-    /**
-     * A free-form field for your own use. Optional Character
-     * length and limitations: 256 single-byte alphanumeric
-     * characters
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $Custom;
+	/**
+	 * Description of items the customer is purchasing. Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $OrderDescription;
 
-    /**
-     * Unique id for each API request to prevent duplicate
-     * payments. Optional Character length and limits: 38
-     * single-byte characters maximum.
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $MsgSubID;
+	/**
+	 * A free-form field for your own use. Optional Character
+	 * length and limitations: 256 single-byte alphanumeric
+	 * characters
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $Custom;
 
-    /**
-     * IP Address of the buyer
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $IPAddress;
+	/**
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum.
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $MsgSubID;
 
-    /**
-     * Constructor with arguments
-     *
-     * @param string          $TransactionID
-     * @param BasicAmountType $Amount
-     */
-    public function __construct($TransactionID = null, $Amount = null)
-    {
-        $this->TransactionID = $TransactionID;
-        $this->Amount        = $Amount;
-    }
+	/**
+	 * IP Address of the buyer
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $IPAddress;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($TransactionID = NULL, $Amount = NULL) {
+		$this->TransactionID = $TransactionID;
+		$this->Amount = $Amount;
+	}
+
+
+
 }

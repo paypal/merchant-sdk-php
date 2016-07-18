@@ -1,26 +1,30 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
+/**
+ * 
+ */
+class ReverseTransactionRequestType  extends AbstractRequestType  
+  {
 
-use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\ReverseTransactionRequestDetailsType;
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var \PayPal\EBLBaseComponents\ReverseTransactionRequestDetailsType	 
+	 */ 
+	public $ReverseTransactionRequestDetails;
 
-class ReverseTransactionRequestType
-  extends AbstractRequestType
-{
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var ReverseTransactionRequestDetailsType
-     */
-    public $ReverseTransactionRequestDetails;
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($ReverseTransactionRequestDetails = NULL) {
+		$this->ReverseTransactionRequestDetails = $ReverseTransactionRequestDetails;
+	}
 
-    /**
-     * Constructor with arguments
-     *
-     * @param ReverseTransactionRequestDetailsType $ReverseTransactionRequestDetails
-     */
-    public function __construct($ReverseTransactionRequestDetails = null)
-    {
-        $this->ReverseTransactionRequestDetails = $ReverseTransactionRequestDetails;
-    }
+
+    
 }

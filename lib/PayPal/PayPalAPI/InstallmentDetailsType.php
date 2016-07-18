@@ -1,59 +1,78 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
- * Installment Period. Optional
+ * Installment Period. Optional 
  */
-class InstallmentDetailsType
-  extends PPXmlMessage
-{
-    /**
-     * Installment Period. Optional
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $BillingPeriod;
+class InstallmentDetailsType  
+   extends PPXmlMessage{
 
-    /**
-     * Installment Frequency. Optional
-     * @access    public
-     * @namespace ns
-     * @var integer
-     */
-    public $BillingFrequency;
+	/**
+	 * Installment Period. Optional 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $BillingPeriod;
 
-    /**
-     * Installment Cycles. Optional
-     * @access    public
-     * @namespace ns
-     * @var integer
-     */
-    public $TotalBillingCycles;
+	/**
+	 * Installment Frequency. Optional 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var integer	 
+	 */ 
+	public $BillingFrequency;
 
-    /**
-     * Installment Amount. Optional
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $Amount;
+	/**
+	 * Installment Cycles. Optional 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var integer	 
+	 */ 
+	public $TotalBillingCycles;
 
-    /**
-     * Installment Amount. Optional
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ShippingAmount;
+	/**
+	 * Installment Amount. Optional 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $Amount;
 
-    /**
-     * Installment Amount. Optional
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $TaxAmount;
+	/**
+	 * Installment Amount. Optional 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $ShippingAmount;
+
+	/**
+	 * Installment Amount. Optional 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $TaxAmount;
+
+
+    
 }

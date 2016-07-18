@@ -1,16 +1,22 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
+/**
+ * 
+ */
+class ManageRecurringPaymentsProfileStatusResponseType  extends AbstractResponseType  
+  {
 
-use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EBLBaseComponents\ManageRecurringPaymentsProfileStatusResponseDetailsType;
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var \PayPal\EBLBaseComponents\ManageRecurringPaymentsProfileStatusResponseDetailsType	 
+	 */ 
+	public $ManageRecurringPaymentsProfileStatusResponseDetails;
 
-class ManageRecurringPaymentsProfileStatusResponseType
-  extends AbstractResponseType
-{
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var ManageRecurringPaymentsProfileStatusResponseDetailsType
-     */
-    public $ManageRecurringPaymentsProfileStatusResponseDetails;
+
 }

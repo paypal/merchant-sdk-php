@@ -1,36 +1,34 @@
 <?php
 namespace PayPal\PayPalAPI;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
  * Option Name. Optional
  */
 class OptionDetailsType
-  extends PPXmlMessage
-{
-    /**
-     * Option Name. Optional
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $OptionName;
+   extends PPXmlMessage{
 
-    /**
-     * @access    public
-     * @namespace ns
-     * @var OptionSelectionDetailsType[]
-     */
-    public $OptionSelectionDetails;
+	/**
+	 * Option Name. Optional
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $OptionName;
 
-    /**
-     * Constructor with arguments
-     *
-     * @param string $OptionName
-     */
-    public function __construct($OptionName = null)
-    {
-        $this->OptionName = $OptionName;
-    }
+	/**
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\PayPalAPI\OptionSelectionDetailsType[]
+	 */
+	public $OptionSelectionDetails;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($OptionName = NULL) {
+		$this->OptionName = $OptionName;
+	}
+
+
+
 }

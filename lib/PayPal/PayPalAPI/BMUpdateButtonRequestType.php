@@ -1,155 +1,152 @@
 <?php
 namespace PayPal\PayPalAPI;
-
 use PayPal\EBLBaseComponents\AbstractRequestType;
-
 /**
  * Hosted Button id of the button to update.  Required
  * Character length and limitations: 10 single-byte numeric
  * characters
  */
-class BMUpdateButtonRequestType
-  extends AbstractRequestType
-{
-    /**
-     * Hosted Button id of the button to update.  Required
-     * Character length and limitations: 10 single-byte numeric
-     * characters
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $HostedButtonID;
+class BMUpdateButtonRequestType  extends AbstractRequestType
+  {
 
-    /**
-     * Type of Button to create.  Required Must be one of the
-     * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
-     * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ButtonType;
+	/**
+	 * Hosted Button id of the button to update.  Required
+	 * Character length and limitations: 10 single-byte numeric
+	 * characters
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $HostedButtonID;
 
-    /**
-     * button code.  optional Must be one of the following: hosted,
-     * encrypted or cleartext
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ButtonCode;
+	/**
+	 * Type of Button to create.  Required Must be one of the
+	 * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
+	 * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ButtonType;
 
-    /**
-     * Button sub type.  optional for button types buynow and cart
-     * only Must Be either PRODUCTS or SERVICES
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ButtonSubType;
+	/**
+	 * button code.  optional Must be one of the following: hosted,
+	 * encrypted or cleartext
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ButtonCode;
 
-    /**
-     * Button Variable information  At least one required recurring
-     * Character length and limitations: 63 single-byte
-     * alphanumeric characters
-     * @access    public
-     * @namespace ns
-     * @var string[]
-     */
-    public $ButtonVar;
+	/**
+	 * Button sub type.  optional for button types buynow and cart
+	 * only Must Be either PRODUCTS or SERVICES
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ButtonSubType;
 
-    /**
-     * @access    public
-     * @namespace ns
-     * @var OptionDetailsType[]
-     */
-    public $OptionDetails;
+	/**
+	 * Button Variable information  At least one required recurring
+	 * Character length and limitations: 63 single-byte
+	 * alphanumeric characters
+	 * @access public
+	 * @namespace ns
+	 * @var string[]
+	 */
+	public $ButtonVar;
 
-    /**
-     * Details of each option for the button.  Optional
-     * @access    public
-     * @namespace ns
-     * @var string[]
-     */
-    public $TextBox;
+	/**
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\PayPalAPI\OptionDetailsType[]
+	 */
+	public $OptionDetails;
 
-    /**
-     * Button image to use.  Optional Must be one of: REG, SML, or
-     * CC
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ButtonImage;
+	/**
+	 * Details of each option for the button.  Optional
+	 * @access public
+	 * @namespace ns
+	 * @var string[]
+	 */
+	public $TextBox;
 
-    /**
-     * Button URL for custom button image.  Optional Character
-     * length and limitations: 127 single-byte alphanumeric
-     * characters
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ButtonImageURL;
+	/**
+	 * Button image to use.  Optional Must be one of: REG, SML, or
+	 * CC
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ButtonImage;
 
-    /**
-     * Text to use on Buy Now Button.  Optional Must be either
-     * BUYNOW or PAYNOW
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $BuyNowText;
+	/**
+	 * Button URL for custom button image.  Optional Character
+	 * length and limitations: 127 single-byte alphanumeric
+	 * characters
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ButtonImageURL;
 
-    /**
-     * Text to use on Subscribe button.  Optional Must be either
-     * BUYNOW or SUBSCRIBE
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $SubscribeText;
+	/**
+	 * Text to use on Buy Now Button.  Optional Must be either
+	 * BUYNOW or PAYNOW
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $BuyNowText;
 
-    /**
-     * Button Country.  Optional Must be valid ISO country code
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ButtonCountry;
+	/**
+	 * Text to use on Subscribe button.  Optional Must be either
+	 * BUYNOW or SUBSCRIBE
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $SubscribeText;
 
-    /**
-     * Button language code.  Optional Character length and
-     * limitations: 2 single-byte alphanumeric characters
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ButtonLanguage;
+	/**
+	 * Button Country.  Optional Must be valid ISO country code
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ButtonCountry;
 
-    /**
-     * Constructor with arguments
-     *
-     * @param string $HostedButtonID
-     */
-    public function __construct($HostedButtonID = null)
-    {
-        $this->HostedButtonID = $HostedButtonID;
-    }
+	/**
+	 * Button language code.  Optional Character length and
+	 * limitations: 2 single-byte alphanumeric characters
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ButtonLanguage;
 
-    public function toXMLString()
-    {
-        $flag = 0;
-        foreach ($this->ButtonVar as $var) {
-            if (strpos($var, 'bn=') !== false) {
-                $flag = 1;
-                break;
-            }
-        }
-        if (!$flag) {
-            array_push($this->ButtonVar, "bn=PayPal_SDK");
-        }
-        return parent::toXMLString();
-    }
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($HostedButtonID = NULL) {
+		$this->HostedButtonID = $HostedButtonID;
+	}
+
+
+	public function toXMLString()
+	{
+		$flag = 0;
+		foreach($this->ButtonVar as $var){
+			if(strpos($var, 'bn=') !== FALSE){
+     			$flag = 1;
+				break;
+			}
+		}
+		if(!$flag){
+		    array_push($this->ButtonVar, "bn=PayPal_SDK");
+		}
+		return parent::toXMLString();
+	}
+
 }

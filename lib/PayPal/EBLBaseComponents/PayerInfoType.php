@@ -1,98 +1,98 @@
 <?php
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-use PayPal\EnhancedDataTypes\EnhancedPayerInfoType;
-
 /**
  * PayerInfoType Payer information
  */
 class PayerInfoType
-  extends PPXmlMessage
-{
-    /**
-     * Email address of payer Character length and limitations: 127
-     * single-byte characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Payer;
+   extends PPXmlMessage{
 
-    /**
-     * Unique customer ID Character length and limitations: 17
-     * single-byte characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $PayerID;
+	/**
+	 * Email address of payer Character length and limitations: 127
+	 * single-byte characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Payer;
 
-    /**
-     * Status of payer's email address
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $PayerStatus;
+	/**
+	 * Unique customer ID Character length and limitations: 17
+	 * single-byte characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $PayerID;
 
-    /**
-     * Name of payer
-     * @access    public
-     * @namespace ebl
-     * @var PersonNameType
-     */
-    public $PayerName;
+	/**
+	 * Status of payer's email address
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $PayerStatus;
 
-    /**
-     * Payment sender's country of residence using standard
-     * two-character ISO 3166 country codes. Character length and
-     * limitations: Two single-byte characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $PayerCountry;
+	/**
+	 * Name of payer
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\PersonNameType
+	 */
+	public $PayerName;
 
-    /**
-     * Payer's business name. Character length and limitations: 127
-     * single-byte characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $PayerBusiness;
+	/**
+	 * Payment sender's country of residence using standard
+	 * two-character ISO 3166 country codes. Character length and
+	 * limitations: Two single-byte characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $PayerCountry;
 
-    /**
-     * Payer's business address
-     * @access    public
-     * @namespace ebl
-     * @var AddressType
-     */
-    public $Address;
+	/**
+	 * Payer's business name. Character length and limitations: 127
+	 * single-byte characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $PayerBusiness;
 
-    /**
-     * Business contact telephone number
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $ContactPhone;
+	/**
+	 * Payer's business address
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\AddressType
+	 */
+	public $Address;
 
-    /**
-     * Details about payer's tax info. Refer to the
-     * TaxIdDetailsType for more details.
-     * @access    public
-     * @namespace ebl
-     * @var TaxIdDetailsType
-     */
-    public $TaxIdDetails;
+	/**
+	 * Business contact telephone number
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $ContactPhone;
 
-    /**
-     * Holds any enhanced information about the payer
-     * @access    public
-     * @namespace ebl
-     * @var EnhancedPayerInfoType
-     */
-    public $EnhancedPayerInfo;
+	/**
+	 * Details about payer's tax info. Refer to the
+	 * TaxIdDetailsType for more details.
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\TaxIdDetailsType
+	 */
+	public $TaxIdDetails;
+
+	/**
+	 * Holds any enhanced information about the payer
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EnhancedDataTypes\EnhancedPayerInfoType
+	 */
+	public $EnhancedPayerInfo;
+
+
+
 }

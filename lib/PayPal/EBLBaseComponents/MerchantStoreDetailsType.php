@@ -1,40 +1,44 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
  * Store IDOptional Character length and limits: 50 single-byte
- * characters
+ * characters 
  */
-class MerchantStoreDetailsType
-  extends PPXmlMessage
-{
-    /**
-     * Store IDOptional Character length and limits: 50 single-byte
-     * characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $StoreID;
+class MerchantStoreDetailsType  
+   extends PPXmlMessage{
 
-    /**
-     * Terminal IDOptional Character length and limits: 50
-     * single-byte characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $TerminalID;
+	/**
+	 * Store IDOptional Character length and limits: 50 single-byte
+	 * characters 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $StoreID;
 
-    /**
-     * Constructor with arguments
-     *
-     * @param string $StoreID
-     */
-    public function __construct($StoreID = null)
-    {
-        $this->StoreID = $StoreID;
-    }
+	/**
+	 * Terminal IDOptional Character length and limits: 50
+	 * single-byte characters 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $TerminalID;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($StoreID = NULL) {
+		$this->StoreID = $StoreID;
+	}
+
+
+    
 }

@@ -1,26 +1,24 @@
 <?php
 namespace PayPal\PayPalAPI;
-
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\EnterBoardingRequestDetailsType;
 
-class EnterBoardingRequestType
-  extends AbstractRequestType
-{
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var EnterBoardingRequestDetailsType
-     */
-    public $EnterBoardingRequestDetails;
+class EnterBoardingRequestType  extends AbstractRequestType
+  {
 
-    /**
-     * Constructor with arguments
-     *
-     * @param EnterBoardingRequestDetailsType $EnterBoardingRequestDetails
-     */
-    public function __construct($EnterBoardingRequestDetails = null)
-    {
-        $this->EnterBoardingRequestDetails = $EnterBoardingRequestDetails;
-    }
+	/**
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\EnterBoardingRequestDetailsType
+	 */
+	public $EnterBoardingRequestDetails;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($EnterBoardingRequestDetails = NULL) {
+		$this->EnterBoardingRequestDetails = $EnterBoardingRequestDetails;
+	}
+
+
+
 }

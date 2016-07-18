@@ -1,143 +1,143 @@
 <?php
 namespace PayPal\PayPalAPI;
-
 use PayPal\EBLBaseComponents\AbstractResponseType;
-
 /**
  * Type of button. One of the following: BUYNOW, CART,
  * GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
  * DONATE, VIEWCART or UNSUBSCRIBE
  */
-class BMGetButtonDetailsResponseType
-  extends AbstractResponseType
-{
-    /**
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $Website;
+class BMGetButtonDetailsResponseType  extends AbstractResponseType
+  {
 
-    /**
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $Email;
+	/**
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $Website;
 
-    /**
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $Mobile;
+	/**
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $Email;
 
-    /**
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $HostedButtonID;
+	/**
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $Mobile;
 
-    /**
-     * Type of button. One of the following: BUYNOW, CART,
-     * GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
-     * DONATE, VIEWCART or UNSUBSCRIBE
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ButtonType;
+	/**
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $HostedButtonID;
 
-    /**
-     * Type of button code. One of the following: hosted, encrypted
-     * or cleartext
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ButtonCode;
+	/**
+	 * Type of button. One of the following: BUYNOW, CART,
+	 * GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
+	 * DONATE, VIEWCART or UNSUBSCRIBE
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ButtonType;
 
-    /**
-     * Button sub type. optional for button types buynow and cart
-     * only Either PRODUCTS or SERVICES
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ButtonSubType;
+	/**
+	 * Type of button code. One of the following: hosted, encrypted
+	 * or cleartext
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ButtonCode;
 
-    /**
-     * Button Variable information Character length and
-     * limitations: 63 single-byte alphanumeric characters
-     * @access    public
-     * @namespace ns
-     * @var string[]
-     */
-    public $ButtonVar;
+	/**
+	 * Button sub type. optional for button types buynow and cart
+	 * only Either PRODUCTS or SERVICES
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ButtonSubType;
 
-    /**
-     * @access    public
-     * @namespace ns
-     * @var OptionDetailsType[]
-     */
-    public $OptionDetails;
+	/**
+	 * Button Variable information Character length and
+	 * limitations: 63 single-byte alphanumeric characters
+	 * @access public
+	 * @namespace ns
+	 * @var string[]
+	 */
+	public $ButtonVar;
 
-    /**
-     * Text field
-     * @access    public
-     * @namespace ns
-     * @var string[]
-     */
-    public $TextBox;
+	/**
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\PayPalAPI\OptionDetailsType[]
+	 */
+	public $OptionDetails;
 
-    /**
-     * Button image to use. One of: REG, SML, or CC
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ButtonImage;
+	/**
+	 * Text field
+	 * @access public
+	 * @namespace ns
+	 * @var string[]
+	 */
+	public $TextBox;
 
-    /**
-     * Button URL for custom button image.
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ButtonImageURL;
+	/**
+	 * Button image to use. One of: REG, SML, or CC
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ButtonImage;
 
-    /**
-     * Text to use on Buy Now Button. Either BUYNOW or PAYNOW
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $BuyNowText;
+	/**
+	 * Button URL for custom button image.
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ButtonImageURL;
 
-    /**
-     * Text to use on Subscribe button. Must be either BUYNOW or
-     * SUBSCRIBE
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $SubscribeText;
+	/**
+	 * Text to use on Buy Now Button. Either BUYNOW or PAYNOW
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $BuyNowText;
 
-    /**
-     * Button Country. Valid ISO country code or 'International'
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ButtonCountry;
+	/**
+	 * Text to use on Subscribe button. Must be either BUYNOW or
+	 * SUBSCRIBE
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $SubscribeText;
 
-    /**
-     * Button language code. Character length and limitations: 3
-     * single-byte alphanumeric characters
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ButtonLanguage;
+	/**
+	 * Button Country. Valid ISO country code or 'International'
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ButtonCountry;
+
+	/**
+	 * Button language code. Character length and limitations: 3
+	 * single-byte alphanumeric characters
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ButtonLanguage;
+
+
 }

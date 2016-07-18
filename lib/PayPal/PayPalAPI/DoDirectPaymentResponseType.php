@@ -1,106 +1,103 @@
 <?php
 namespace PayPal\PayPalAPI;
-
-use PayPal\CoreComponentTypes\BasicAmountType;
 use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EBLBaseComponents\FMFDetailsType;
-use PayPal\EBLBaseComponents\ThreeDSecureResponseType;
-
 /**
  * The amount of the payment as specified by you on
  * DoDirectPaymentRequest.
  */
-class DoDirectPaymentResponseType
-  extends AbstractResponseType
-{
-    /**
-     * The amount of the payment as specified by you on
-     * DoDirectPaymentRequest.
-     * @access    public
-     * @namespace ns
-     * @var BasicAmountType
-     */
-    public $Amount;
+class DoDirectPaymentResponseType  extends AbstractResponseType
+  {
 
-    /**
-     * Address Verification System response code. Character limit:
-     * One single-byte alphanumeric character AVS
-     * CodeMeaningMatched Details A AddressAddress only (no ZIP) B
-     * International “A”Address only (no ZIP) CInternational
-     * “N” None DInternational “X” Address and Postal Code
-     * E Not allowed for MOTO (Internet/Phone) transactions Not
-     * applicable F UK-specific “X”Address and Postal Code G
-     * Global Unavailable Not applicable I International
-     * UnavailableNot applicable N NoNone PPostal (International
-     * “Z”)Postal Code only (no Address) RRetryNot applicable S
-     * Service not Supported Not applicable U UnavailableNot
-     * applicable W Whole ZIPNine-digit ZIP code (no Address) X
-     * Exact match Address and nine-digit ZIP code Y YesAddress and
-     * five-digit ZIP Z ZIP Five-digit ZIP code (no Address) All
-     * others Error Not applicable
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $AVSCode;
+	/**
+	 * The amount of the payment as specified by you on
+	 * DoDirectPaymentRequest.
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $Amount;
 
-    /**
-     * Result of the CVV2 check by PayPal. CVV2 CodeMeaningMatched
-     * Details M MatchCVV2 N No match None P Not ProcessedNot
-     * applicable SService not SupportedNot applicable U
-     * UnavailableNot applicable XNo response Not applicable All
-     * others ErrorNot applicable
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $CVV2Code;
+	/**
+	 * Address Verification System response code. Character limit:
+	 * One single-byte alphanumeric character AVS
+	 * CodeMeaningMatched Details A AddressAddress only (no ZIP) B
+	 * International “A”Address only (no ZIP) CInternational
+	 * “N” None DInternational “X” Address and Postal Code
+	 * E Not allowed for MOTO (Internet/Phone) transactions Not
+	 * applicable F UK-specific “X”Address and Postal Code G
+	 * Global Unavailable Not applicable I International
+	 * UnavailableNot applicable N NoNone PPostal (International
+	 * “Z”)Postal Code only (no Address) RRetryNot applicable S
+	 * Service not Supported Not applicable U UnavailableNot
+	 * applicable W Whole ZIPNine-digit ZIP code (no Address) X
+	 * Exact match Address and nine-digit ZIP code Y YesAddress and
+	 * five-digit ZIP Z ZIP Five-digit ZIP code (no Address) All
+	 * others Error Not applicable
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $AVSCode;
 
-    /**
-     * Transaction identification number. Character length and
-     * limitations: 19 characters maximum.
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $TransactionID;
+	/**
+	 * Result of the CVV2 check by PayPal. CVV2 CodeMeaningMatched
+	 * Details M MatchCVV2 N No match None P Not ProcessedNot
+	 * applicable SService not SupportedNot applicable U
+	 * UnavailableNot applicable XNo response Not applicable All
+	 * others ErrorNot applicable
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $CVV2Code;
 
-    /**
-     * The reason why a particular transaction went in pending.
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $PendingReason;
+	/**
+	 * Transaction identification number. Character length and
+	 * limitations: 19 characters maximum.
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $TransactionID;
 
-    /**
-     * This will identify the actual transaction status.
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $PaymentStatus;
+	/**
+	 * The reason why a particular transaction went in pending.
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $PendingReason;
 
-    /**
-     * @access    public
-     * @namespace ns
-     * @var FMFDetailsType
-     */
-    public $FMFDetails;
+	/**
+	 * This will identify the actual transaction status.
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $PaymentStatus;
 
-    /**
-     * @access    public
-     * @namespace ns
-     * @var ThreeDSecureResponseType
-     */
-    public $ThreeDSecureResponse;
+	/**
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\EBLBaseComponents\FMFDetailsType
+	 */
+	public $FMFDetails;
 
-    /**
-     * Response code from the processor when a recurring
-     * transaction is declined.
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $PaymentAdviceCode;
+	/**
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\EBLBaseComponents\ThreeDSecureResponseType
+	 */
+	public $ThreeDSecureResponse;
+
+	/**
+	 * Response code from the processor when a recurring
+	 * transaction is declined.
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $PaymentAdviceCode;
+
+
 }

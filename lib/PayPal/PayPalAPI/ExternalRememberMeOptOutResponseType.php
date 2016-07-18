@@ -1,9 +1,11 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
+/**
+ * 
+ */
+class ExternalRememberMeOptOutResponseType  extends AbstractResponseType  
+  {
 
-use PayPal\EBLBaseComponents\AbstractResponseType;
 
-class ExternalRememberMeOptOutResponseType
-  extends AbstractResponseType
-{
 }

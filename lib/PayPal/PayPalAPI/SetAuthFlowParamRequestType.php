@@ -1,26 +1,30 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
+use PayPal\EBLBaseComponents\AbstractRequestType; 
+/**
+ * 
+ */
+class SetAuthFlowParamRequestType  extends AbstractRequestType  
+  {
 
-use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\SetAuthFlowParamRequestDetailsType;
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var \PayPal\EBLBaseComponents\SetAuthFlowParamRequestDetailsType	 
+	 */ 
+	public $SetAuthFlowParamRequestDetails;
 
-class SetAuthFlowParamRequestType
-  extends AbstractRequestType
-{
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var SetAuthFlowParamRequestDetailsType
-     */
-    public $SetAuthFlowParamRequestDetails;
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($SetAuthFlowParamRequestDetails = NULL) {
+		$this->SetAuthFlowParamRequestDetails = $SetAuthFlowParamRequestDetails;
+	}
 
-    /**
-     * Constructor with arguments
-     *
-     * @param SetAuthFlowParamRequestDetailsType $SetAuthFlowParamRequestDetails
-     */
-    public function __construct($SetAuthFlowParamRequestDetails = null)
-    {
-        $this->SetAuthFlowParamRequestDetails = $SetAuthFlowParamRequestDetails;
-    }
+
+    
 }

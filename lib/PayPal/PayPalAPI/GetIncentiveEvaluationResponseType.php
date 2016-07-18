@@ -1,16 +1,22 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
+/**
+ * 
+ */
+class GetIncentiveEvaluationResponseType  extends AbstractResponseType  
+  {
 
-use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EBLBaseComponents\GetIncentiveEvaluationResponseDetailsType;
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var \PayPal\EBLBaseComponents\GetIncentiveEvaluationResponseDetailsType	 
+	 */ 
+	public $GetIncentiveEvaluationResponseDetails;
 
-class GetIncentiveEvaluationResponseType
-  extends AbstractResponseType
-{
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var GetIncentiveEvaluationResponseDetailsType
-     */
-    public $GetIncentiveEvaluationResponseDetails;
+
 }

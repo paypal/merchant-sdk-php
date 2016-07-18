@@ -1,26 +1,24 @@
 <?php
 namespace PayPal\PayPalAPI;
-
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\GetIncentiveEvaluationRequestDetailsType;
 
-class GetIncentiveEvaluationRequestType
-  extends AbstractRequestType
-{
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var GetIncentiveEvaluationRequestDetailsType
-     */
-    public $GetIncentiveEvaluationRequestDetails;
+class GetIncentiveEvaluationRequestType  extends AbstractRequestType
+  {
 
-    /**
-     * Constructor with arguments
-     *
-     * @param GetIncentiveEvaluationRequestDetailsType $GetIncentiveEvaluationRequestDetails
-     */
-    public function __construct($GetIncentiveEvaluationRequestDetails = null)
-    {
-        $this->GetIncentiveEvaluationRequestDetails = $GetIncentiveEvaluationRequestDetails;
-    }
+	/**
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\GetIncentiveEvaluationRequestDetailsType
+	 */
+	public $GetIncentiveEvaluationRequestDetails;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($GetIncentiveEvaluationRequestDetails = NULL) {
+		$this->GetIncentiveEvaluationRequestDetails = $GetIncentiveEvaluationRequestDetails;
+	}
+
+
+
 }

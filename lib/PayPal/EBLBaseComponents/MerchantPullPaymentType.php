@@ -1,140 +1,140 @@
 <?php
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
-
 /**
  * MerchantPullPayment Parameters to make initiate a pull
  * payment
  */
 class MerchantPullPaymentType
-  extends PPXmlMessage
-{
-    /**
-     * The amount to charge to the customer. Required Only numeric
-     * characters and a decimal separator are allowed. Limit: 10
-     * single-byte characters, including two for decimals You must
-     * set the currencyID attribute to one of the three-character
-     * currency code for any of the supported PayPal currencies.
-     * @access    public
-     * @namespace ebl
-     * @var BasicAmountType
-     */
-    public $Amount;
+   extends PPXmlMessage{
 
-    /**
-     * Preapproved Payments billing agreement identification number
-     * between the PayPal customer and you. Required Character
-     * limit: 19 single-byte alphanumeric characters. The format of
-     * a billing agreement identification number is the
-     * single-character prefix B, followed by a hyphen and an
-     * alphanumeric character string: B-unique_alphanumeric_string
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $MpID;
+	/**
+	 * The amount to charge to the customer. Required Only numeric
+	 * characters and a decimal separator are allowed. Limit: 10
+	 * single-byte characters, including two for decimals You must
+	 * set the currencyID attribute to one of the three-character
+	 * currency code for any of the supported PayPal currencies.
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $Amount;
 
-    /**
-     * Specifies type of PayPal payment you require Optional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $PaymentType;
+	/**
+	 * Preapproved Payments billing agreement identification number
+	 * between the PayPal customer and you. Required Character
+	 * limit: 19 single-byte alphanumeric characters. The format of
+	 * a billing agreement identification number is the
+	 * single-character prefix B, followed by a hyphen and an
+	 * alphanumeric character string: B-unique_alphanumeric_string
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $MpID;
 
-    /**
-     * Text entered by the customer in the Note field during
-     * enrollment Optional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Memo;
+	/**
+	 * Specifies type of PayPal payment you require Optional
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $PaymentType;
 
-    /**
-     * Subject line of confirmation email sent to recipient
-     * Optional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $EmailSubject;
+	/**
+	 * Text entered by the customer in the Note field during
+	 * enrollment Optional
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Memo;
 
-    /**
-     * The tax charged on the transaction Optional
-     * @access    public
-     * @namespace ebl
-     * @var BasicAmountType
-     */
-    public $Tax;
+	/**
+	 * Subject line of confirmation email sent to recipient
+	 * Optional
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $EmailSubject;
 
-    /**
-     * Per-transaction shipping charge Optional
-     * @access    public
-     * @namespace ebl
-     * @var BasicAmountType
-     */
-    public $Shipping;
+	/**
+	 * The tax charged on the transaction Optional
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $Tax;
 
-    /**
-     * Per-transaction handling charge Optional
-     * @access    public
-     * @namespace ebl
-     * @var BasicAmountType
-     */
-    public $Handling;
+	/**
+	 * Per-transaction shipping charge Optional
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $Shipping;
 
-    /**
-     * Name of purchased item Optional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $ItemName;
+	/**
+	 * Per-transaction handling charge Optional
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $Handling;
 
-    /**
-     * Reference number of purchased item Optional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $ItemNumber;
+	/**
+	 * Name of purchased item Optional
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $ItemName;
 
-    /**
-     * Your invoice number Optional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Invoice;
+	/**
+	 * Reference number of purchased item Optional
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $ItemNumber;
 
-    /**
-     * Custom annotation field for tracking or other use Optional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Custom;
+	/**
+	 * Your invoice number Optional
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Invoice;
 
-    /**
-     * An identification code for use by third-party applications
-     * to identify transactions. Optional Character length and
-     * limitations: 32 single-byte alphanumeric characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $ButtonSource = "PayPal_SDK";
+	/**
+	 * Custom annotation field for tracking or other use Optional
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Custom;
 
-    /**
-     * Passed in soft descriptor string to be appended. Optional
-     * Character length and limitations: single-byte alphanumeric
-     * characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $SoftDescriptor;
+	/**
+	 * An identification code for use by third-party applications
+	 * to identify transactions. Optional Character length and
+	 * limitations: 32 single-byte alphanumeric characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $ButtonSource= "PayPal_SDK";
+
+	/**
+	 * Passed in soft descriptor string to be appended. Optional
+	 * Character length and limitations: single-byte alphanumeric
+	 * characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $SoftDescriptor;
+
+
+
 }

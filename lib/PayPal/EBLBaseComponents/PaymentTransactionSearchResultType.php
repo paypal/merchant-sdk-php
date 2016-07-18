@@ -1,95 +1,94 @@
 <?php
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
-
 /**
  * PaymentTransactionSearchResultType Results from a
  * PaymentTransaction search
  */
 class PaymentTransactionSearchResultType
-  extends PPXmlMessage
-{
-    /**
-     * The date and time (in UTC/GMT format) the transaction
-     * occurred
-     * @access    public
-     * @namespace ebl
-     * @var string ISO8601
-     */
-    public $Timestamp;
+   extends PPXmlMessage{
 
-    /**
-     * The time zone of the transaction
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Timezone;
+	/**
+	 * The date and time (in UTC/GMT format) the transaction
+	 * occurred
+	 * @access public
+	 * @namespace ebl
+	 * @var string ISO8601
+	 */
+	public $Timestamp;
 
-    /**
-     * The type of the transaction
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Type;
+	/**
+	 * The time zone of the transaction
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Timezone;
 
-    /**
-     * The email address of the payer
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Payer;
+	/**
+	 * The type of the transaction
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Type;
 
-    /**
-     * Display name of the payer
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $PayerDisplayName;
+	/**
+	 * The email address of the payer
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Payer;
 
-    /**
-     * The transaction ID of the seller
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $TransactionID;
+	/**
+	 * Display name of the payer
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $PayerDisplayName;
 
-    /**
-     * The status of the transaction
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Status;
+	/**
+	 * The transaction ID of the seller
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $TransactionID;
 
-    /**
-     * The total gross amount charged, including any profile
-     * shipping cost and taxes
-     * @access    public
-     * @namespace ebl
-     * @var BasicAmountType
-     */
-    public $GrossAmount;
+	/**
+	 * The status of the transaction
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Status;
 
-    /**
-     * The fee that PayPal charged for the transaction
-     * @access    public
-     * @namespace ebl
-     * @var BasicAmountType
-     */
-    public $FeeAmount;
+	/**
+	 * The total gross amount charged, including any profile
+	 * shipping cost and taxes
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $GrossAmount;
 
-    /**
-     * The net amount of the transaction
-     * @access    public
-     * @namespace ebl
-     * @var BasicAmountType
-     */
-    public $NetAmount;
+	/**
+	 * The fee that PayPal charged for the transaction
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $FeeAmount;
+
+	/**
+	 * The net amount of the transaction
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $NetAmount;
+
+
 }

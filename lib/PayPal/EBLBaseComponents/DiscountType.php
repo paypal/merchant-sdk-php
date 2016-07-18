@@ -1,65 +1,62 @@
 <?php
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
-
 /**
  * Describes discount information
  */
 class DiscountType
-  extends PPXmlMessage
-{
-    /**
-     * Item nameOptional Character length and limits: 127
-     * single-byte characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Name;
+   extends PPXmlMessage{
 
-    /**
-     * description of the discountOptional Character length and
-     * limits: 127 single-byte characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Description;
+	/**
+	 * Item nameOptional Character length and limits: 127
+	 * single-byte characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Name;
 
-    /**
-     * amount discountedOptional
-     * @access    public
-     * @namespace ebl
-     * @var BasicAmountType
-     */
-    public $Amount;
+	/**
+	 * description of the discountOptional Character length and
+	 * limits: 127 single-byte characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Description;
 
-    /**
-     * offer typeOptional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $RedeemedOfferType;
+	/**
+	 * amount discountedOptional
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $Amount;
 
-    /**
-     * offer IDOptional Character length and limits: 64 single-byte
-     * characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $RedeemedOfferID;
+	/**
+	 * offer typeOptional
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $RedeemedOfferType;
 
-    /**
-     * Constructor with arguments
-     *
-     * @param BasicAmountType $Amount
-     */
-    public function __construct($Amount = null)
-    {
-        $this->Amount = $Amount;
-    }
+	/**
+	 * offer IDOptional Character length and limits: 64 single-byte
+	 * characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $RedeemedOfferID;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($Amount = NULL) {
+		$this->Amount = $Amount;
+	}
+
+
+
 }

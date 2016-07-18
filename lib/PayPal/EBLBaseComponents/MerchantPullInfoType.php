@@ -1,71 +1,91 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
-
 /**
- * MerchantPullInfoType Information about the merchant pull.
+ * MerchantPullInfoType Information about the merchant pull. 
  */
-class MerchantPullInfoType
-  extends PPXmlMessage
-{
-    /**
-     * Current status of billing agreement
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $MpStatus;
+class MerchantPullInfoType  
+   extends PPXmlMessage{
 
-    /**
-     * Monthly maximum payment amount
-     * @access    public
-     * @namespace ebl
-     * @var BasicAmountType
-     */
-    public $MpMax;
+	/**
+	 * Current status of billing agreement 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $MpStatus;
 
-    /**
-     * The value of the mp_custom variable that you specified in a
-     * FORM submission to PayPal during the creation or updating of
-     * a customer billing agreement
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $MpCustom;
+	/**
+	 * Monthly maximum payment amount
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType	 
+	 */ 
+	public $MpMax;
 
-    /**
-     * The value of the mp_desc variable (description of goods or
-     * services) associated with the billing agreement
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Desc;
+	/**
+	 * The value of the mp_custom variable that you specified in a
+	 * FORM submission to PayPal during the creation or updating of
+	 * a customer billing agreement 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $MpCustom;
 
-    /**
-     * Invoice value as set by BillUserRequest API call
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Invoice;
+	/**
+	 * The value of the mp_desc variable (description of goods or
+	 * services) associated with the billing agreement 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $Desc;
 
-    /**
-     * Custom field as set by BillUserRequest API call
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Custom;
+	/**
+	 * Invoice value as set by BillUserRequest API call 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $Invoice;
 
-    /**
-     * Note: This field is no longer used and is always empty.
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $PaymentSourceID;
+	/**
+	 * Custom field as set by BillUserRequest API call 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $Custom;
+
+	/**
+	 * Note: This field is no longer used and is always empty.
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $PaymentSourceID;
+
+
 }
