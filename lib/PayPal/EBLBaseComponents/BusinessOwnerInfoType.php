@@ -1,46 +1,47 @@
 <?php
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
  * BusinessOwnerInfoType
  */
 class BusinessOwnerInfoType
-  extends PPXmlMessage
-{
-    /**
-     * Details about the business owner
-     * @access    public
-     * @namespace ebl
-     * @var PayerInfoType
-     */
-    public $Owner;
+   extends PPXmlMessage{
 
-    /**
-     * Business ownerâs home telephone number Character length and
-     * limitations: 32 alphanumeric characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $HomePhone;
+	/**
+	 * Details about the business owner
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\PayerInfoType
+	 */
+	public $Owner;
 
-    /**
-     * Business ownerâs mobile telephone number Character length
-     * and limitations: 32 alphanumeric characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $MobilePhone;
+	/**
+	 * Business ownerâs home telephone number Character length and
+	 * limitations: 32 alphanumeric characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $HomePhone;
 
-    /**
-     * Business ownerâs social security number Character length
-     * and limitations: 9 alphanumeric characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $SSN;
+	/**
+	 * Business ownerâs mobile telephone number Character length
+	 * and limitations: 32 alphanumeric characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $MobilePhone;
+
+	/**
+	 * Business ownerâs social security number Character length
+	 * and limitations: 9 alphanumeric characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $SSN;
+
+
+
 }

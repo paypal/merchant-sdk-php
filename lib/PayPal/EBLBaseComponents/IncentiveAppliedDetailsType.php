@@ -1,53 +1,52 @@
 <?php
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
-
 /**
  * Details of incentive application on individual bucket/item.
  */
 class IncentiveAppliedDetailsType
-  extends PPXmlMessage
-{
-    /**
-     * PaymentRequestID uniquely identifies a bucket. It is the
-     * "bucket id" in the world of EC API.
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $PaymentRequestID;
+   extends PPXmlMessage{
 
-    /**
-     * The item id passed through by the merchant.
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $ItemId;
+	/**
+	 * PaymentRequestID uniquely identifies a bucket. It is the
+	 * "bucket id" in the world of EC API.
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $PaymentRequestID;
 
-    /**
-     * The item transaction id passed through by the merchant.
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $ExternalTxnId;
+	/**
+	 * The item id passed through by the merchant.
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $ItemId;
 
-    /**
-     * Discount offerred for this bucket or item.
-     * @access    public
-     * @namespace ebl
-     * @var BasicAmountType
-     */
-    public $DiscountAmount;
+	/**
+	 * The item transaction id passed through by the merchant.
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $ExternalTxnId;
 
-    /**
-     * SubType for coupon.
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $SubType;
+	/**
+	 * Discount offerred for this bucket or item.
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $DiscountAmount;
+
+	/**
+	 * SubType for coupon.
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $SubType;
+
+
 }

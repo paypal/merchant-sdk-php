@@ -1,117 +1,111 @@
 <?php
 namespace PayPal\PayPalAPI;
-
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\ItemTrackingDetailsType;
-use PayPal\EBLBaseComponents\OptionTrackingDetailsType;
-
 /**
  * Hosted Button ID of button you wish to change.  Required
  * Character length and limitations: 10 single-byte numeric
  * characters
  */
-class BMSetInventoryRequestType
-  extends AbstractRequestType
-{
-    /**
-     * Hosted Button ID of button you wish to change.  Required
-     * Character length and limitations: 10 single-byte numeric
-     * characters
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $HostedButtonID;
+class BMSetInventoryRequestType  extends AbstractRequestType
+  {
 
-    /**
-     * Is Inventory tracked.  Required 0 or 1
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $TrackInv;
+	/**
+	 * Hosted Button ID of button you wish to change.  Required
+	 * Character length and limitations: 10 single-byte numeric
+	 * characters
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $HostedButtonID;
 
-    /**
-     * Is PNL Tracked.  Required 0 or 1
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $TrackPnl;
+	/**
+	 * Is Inventory tracked.  Required 0 or 1
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $TrackInv;
 
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var ItemTrackingDetailsType
-     */
-    public $ItemTrackingDetails;
+	/**
+	 * Is PNL Tracked.  Required 0 or 1
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $TrackPnl;
 
-    /**
-     * Option Index.  Optional Character length and limitations: 1
-     * single-byte alphanumeric characters
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $OptionIndex;
+	/**
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\ItemTrackingDetailsType
+	 */
+	public $ItemTrackingDetails;
 
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var OptionTrackingDetailsType[]
-     */
-    public $OptionTrackingDetails;
+	/**
+	 * Option Index.  Optional Character length and limitations: 1
+	 * single-byte alphanumeric characters
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $OptionIndex;
 
-    /**
-     * URL of page to display when an item is soldout.  Optional
-     * Character length and limitations: 127 single-byte
-     * alphanumeric characters
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $SoldoutURL;
+	/**
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\OptionTrackingDetailsType[]
+	 */
+	public $OptionTrackingDetails;
 
-    /**
-     * Whether to use the same digital download key repeatedly.
-     * Optional
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ReuseDigitalDownloadKeys;
+	/**
+	 * URL of page to display when an item is soldout.  Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $SoldoutURL;
 
-    /**
-     * Whether to append these keys to the list or not (replace).
-     * Optional
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $AppendDigitalDownloadKeys;
+	/**
+	 * Whether to use the same digital download key repeatedly.
+	 * Optional
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ReuseDigitalDownloadKeys;
 
-    /**
-     * Zero or more digital download keys to distribute to
-     * customers after transaction is completed.  Optional
-     * Character length and limitations: 1000 single-byte
-     * alphanumeric characters
-     * @access    public
-     * @namespace ns
-     * @var string[]
-     */
-    public $DigitalDownloadKeys;
+	/**
+	 * Whether to append these keys to the list or not (replace).
+	 * Optional
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $AppendDigitalDownloadKeys;
 
-    /**
-     * Constructor with arguments
-     *
-     * @param string $HostedButtonID
-     * @param string $TrackInv
-     * @param string $TrackPnl
-     */
-    public function __construct($HostedButtonID = null, $TrackInv = null, $TrackPnl = null)
-    {
-        $this->HostedButtonID = $HostedButtonID;
-        $this->TrackInv       = $TrackInv;
-        $this->TrackPnl       = $TrackPnl;
-    }
+	/**
+	 * Zero or more digital download keys to distribute to
+	 * customers after transaction is completed.  Optional
+	 * Character length and limitations: 1000 single-byte
+	 * alphanumeric characters
+	 * @access public
+	 * @namespace ns
+	 * @var string[]
+	 */
+	public $DigitalDownloadKeys;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($HostedButtonID = NULL, $TrackInv = NULL, $TrackPnl = NULL) {
+		$this->HostedButtonID = $HostedButtonID;
+		$this->TrackInv = $TrackInv;
+		$this->TrackPnl = $TrackPnl;
+	}
+
+
+
 }

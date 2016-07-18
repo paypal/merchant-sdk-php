@@ -1,74 +1,69 @@
 <?php
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
-
 /**
  * Unit of meausre for billing cycle
  */
 class BillingPeriodDetailsType
-  extends PPXmlMessage
-{
-    /**
-     * Unit of meausre for billing cycle
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $BillingPeriod;
+   extends PPXmlMessage{
 
-    /**
-     * Number of BillingPeriod that make up one billing cycle
-     * @access    public
-     * @namespace ebl
-     * @var integer
-     */
-    public $BillingFrequency;
+	/**
+	 * Unit of meausre for billing cycle
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $BillingPeriod;
 
-    /**
-     * Total billing cycles in this portion of the schedule
-     * @access    public
-     * @namespace ebl
-     * @var integer
-     */
-    public $TotalBillingCycles;
+	/**
+	 * Number of BillingPeriod that make up one billing cycle
+	 * @access public
+	 * @namespace ebl
+	 * @var integer
+	 */
+	public $BillingFrequency;
 
-    /**
-     * Amount to charge
-     * @access    public
-     * @namespace ebl
-     * @var BasicAmountType
-     */
-    public $Amount;
+	/**
+	 * Total billing cycles in this portion of the schedule
+	 * @access public
+	 * @namespace ebl
+	 * @var integer
+	 */
+	public $TotalBillingCycles;
 
-    /**
-     * Additional shipping amount to charge
-     * @access    public
-     * @namespace ebl
-     * @var BasicAmountType
-     */
-    public $ShippingAmount;
+	/**
+	 * Amount to charge
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $Amount;
 
-    /**
-     * Additional tax amount to charge
-     * @access    public
-     * @namespace ebl
-     * @var BasicAmountType
-     */
-    public $TaxAmount;
+	/**
+	 * Additional shipping amount to charge
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $ShippingAmount;
 
-    /**
-     * Constructor with arguments
-     *
-     * @param string          $BillingPeriod
-     * @param integer         $BillingFrequency
-     * @param BasicAmountType $Amount
-     */
-    public function __construct($BillingPeriod = null, $BillingFrequency = null, $Amount = null)
-    {
-        $this->BillingPeriod    = $BillingPeriod;
-        $this->BillingFrequency = $BillingFrequency;
-        $this->Amount           = $Amount;
-    }
+	/**
+	 * Additional tax amount to charge
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $TaxAmount;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($BillingPeriod = NULL, $BillingFrequency = NULL, $Amount = NULL) {
+		$this->BillingPeriod = $BillingPeriod;
+		$this->BillingFrequency = $BillingFrequency;
+		$this->Amount = $Amount;
+	}
+
+
+
 }

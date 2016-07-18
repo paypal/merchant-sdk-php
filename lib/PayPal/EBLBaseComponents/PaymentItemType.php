@@ -1,137 +1,136 @@
 <?php
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
-
 /**
  * PaymentItemType Information about a Payment Item.
  */
 class PaymentItemType
-  extends PPXmlMessage
-{
-    /**
-     * eBay Auction Transaction ID of the Item Optional Character
-     * length and limitations: 255 single-byte characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $EbayItemTxnId;
+   extends PPXmlMessage{
 
-    /**
-     * Item name set by you or entered by the customer. Character
-     * length and limitations: 127 single-byte alphanumeric
-     * characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Name;
+	/**
+	 * eBay Auction Transaction ID of the Item Optional Character
+	 * length and limitations: 255 single-byte characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $EbayItemTxnId;
 
-    /**
-     * Item number set by you. Character length and limitations:
-     * 127 single-byte alphanumeric characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Number;
+	/**
+	 * Item name set by you or entered by the customer. Character
+	 * length and limitations: 127 single-byte alphanumeric
+	 * characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Name;
 
-    /**
-     * Quantity set by you or entered by the customer. Character
-     * length and limitations: no limit
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Quantity;
+	/**
+	 * Item number set by you. Character length and limitations:
+	 * 127 single-byte alphanumeric characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Number;
 
-    /**
-     * Amount of tax charged on payment
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $SalesTax;
+	/**
+	 * Quantity set by you or entered by the customer. Character
+	 * length and limitations: no limit
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Quantity;
 
-    /**
-     * Amount of shipping charged on payment
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $ShippingAmount;
+	/**
+	 * Amount of tax charged on payment
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $SalesTax;
 
-    /**
-     * Amount of handling charged on payment
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $HandlingAmount;
+	/**
+	 * Amount of shipping charged on payment
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $ShippingAmount;
 
-    /**
-     * Invoice item details
-     * @access    public
-     * @namespace ebl
-     * @var InvoiceItemType
-     */
-    public $InvoiceItemDetails;
+	/**
+	 * Amount of handling charged on payment
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $HandlingAmount;
 
-    /**
-     * Coupon ID Number
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $CouponID;
+	/**
+	 * Invoice item details
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\InvoiceItemType
+	 */
+	public $InvoiceItemDetails;
 
-    /**
-     * Amount Value of The Coupon
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $CouponAmount;
+	/**
+	 * Coupon ID Number
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $CouponID;
 
-    /**
-     * Currency of the Coupon Amount
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $CouponAmountCurrency;
+	/**
+	 * Amount Value of The Coupon
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $CouponAmount;
 
-    /**
-     * Amount of Discount on this Loyalty Card
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $LoyaltyCardDiscountAmount;
+	/**
+	 * Currency of the Coupon Amount
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $CouponAmountCurrency;
 
-    /**
-     * Currency of the Discount
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $LoyaltyCardDiscountCurrency;
+	/**
+	 * Amount of Discount on this Loyalty Card
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $LoyaltyCardDiscountAmount;
 
-    /**
-     * Cost of item
-     * @access    public
-     * @namespace ebl
-     * @var BasicAmountType
-     */
-    public $Amount;
+	/**
+	 * Currency of the Discount
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $LoyaltyCardDiscountCurrency;
 
-    /**
-     * Item options selected in PayPal shopping cart
-     * @access    public
-     * @namespace ebl
-     * @var OptionType[]
-     */
-    public $Options;
+	/**
+	 * Cost of item
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $Amount;
+
+	/**
+	 * Item options selected in PayPal shopping cart
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\OptionType[]
+	 */
+	public $Options;
+
+
 }

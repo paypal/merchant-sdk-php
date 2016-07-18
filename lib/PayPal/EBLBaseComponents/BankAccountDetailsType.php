@@ -1,46 +1,59 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
- * BankAccountDetailsType
+ * BankAccountDetailsType 
  */
-class BankAccountDetailsType
-  extends PPXmlMessage
-{
-    /**
-     * Name of bank Character length and limitations: 192
-     * alphanumeric characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Name;
+class BankAccountDetailsType  
+   extends PPXmlMessage{
 
-    /**
-     * Type of bank account: Checking or Savings
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Type;
+	/**
+	 * Name of bank Character length and limitations: 192
+	 * alphanumeric characters
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $Name;
 
-    /**
-     * Merchantâs bank routing number Character length and
-     * limitations: 23 alphanumeric characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $RoutingNumber;
+	/**
+	 * Type of bank account: Checking or Savings
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $Type;
 
-    /**
-     * Merchantâs bank account number Character length and
-     * limitations: 256 alphanumeric characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $AccountNumber;
+	/**
+	 * Merchantâs bank routing number Character length and
+	 * limitations: 23 alphanumeric characters
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $RoutingNumber;
+
+	/**
+	 * Merchantâs bank account number Character length and
+	 * limitations: 256 alphanumeric characters
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $AccountNumber;
+
+
+    
 }

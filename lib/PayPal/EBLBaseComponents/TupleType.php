@@ -1,39 +1,42 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
- * This holds single key-value pair.
+ * This holds single key-value pair. 
  */
-class TupleType
-  extends PPXmlMessage
-{
-    /**
-     * Key Name.Optional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Key;
+class TupleType  
+   extends PPXmlMessage{
 
-    /**
-     * Value for the above key.Optional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Value;
+	/**
+	 * Key Name.Optional
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $Key;
 
-    /**
-     * Constructor with arguments
-     *
-     * @param string $Key
-     * @param string $Value
-     */
-    public function __construct($Key = null, $Value = null)
-    {
-        $this->Key   = $Key;
-        $this->Value = $Value;
-    }
+	/**
+	 * Value for the above key.Optional
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $Value;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($Key = NULL, $Value = NULL) {
+		$this->Key = $Key;
+		$this->Value = $Value;
+	}
+
+
+    
 }

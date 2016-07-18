@@ -1,24 +1,33 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
+/**
+ * 
+ */
+class BillUserResponseType  extends AbstractResponseType  
+  {
 
-use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EBLBaseComponents\FMFDetailsType;
-use PayPal\EBLBaseComponents\MerchantPullPaymentResponseType;
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var \PayPal\EBLBaseComponents\MerchantPullPaymentResponseType	 
+	 */ 
+	public $BillUserResponseDetails;
 
-class BillUserResponseType
-  extends AbstractResponseType
-{
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var MerchantPullPaymentResponseType
-     */
-    public $BillUserResponseDetails;
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var \PayPal\EBLBaseComponents\FMFDetailsType	 
+	 */ 
+	public $FMFDetails;
 
-    /**
-     * @access    public
-     * @namespace ns
-     * @var FMFDetailsType
-     */
-    public $FMFDetails;
+
 }

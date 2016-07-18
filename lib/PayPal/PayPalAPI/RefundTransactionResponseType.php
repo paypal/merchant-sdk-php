@@ -1,81 +1,79 @@
 <?php
 namespace PayPal\PayPalAPI;
-
-use PayPal\CoreComponentTypes\BasicAmountType;
 use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EBLBaseComponents\RefundInfoType;
-
 /**
  * Unique transaction ID of the refund. Character length and
  * limitations:17 single-byte characters
  */
-class RefundTransactionResponseType
-  extends AbstractResponseType
-{
-    /**
-     * Unique transaction ID of the refund. Character length and
-     * limitations:17 single-byte characters
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $RefundTransactionID;
+class RefundTransactionResponseType  extends AbstractResponseType
+  {
 
-    /**
-     * Amount subtracted from PayPal balance of original recipient
-     * of payment to make this refund
-     * @access    public
-     * @namespace ns
-     * @var BasicAmountType
-     */
-    public $NetRefundAmount;
+	/**
+	 * Unique transaction ID of the refund. Character length and
+	 * limitations:17 single-byte characters
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $RefundTransactionID;
 
-    /**
-     * Transaction fee refunded to original recipient of payment
-     * @access    public
-     * @namespace ns
-     * @var BasicAmountType
-     */
-    public $FeeRefundAmount;
+	/**
+	 * Amount subtracted from PayPal balance of original recipient
+	 * of payment to make this refund
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $NetRefundAmount;
 
-    /**
-     * Amount of money refunded to original payer
-     * @access    public
-     * @namespace ns
-     * @var BasicAmountType
-     */
-    public $GrossRefundAmount;
+	/**
+	 * Transaction fee refunded to original recipient of payment
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $FeeRefundAmount;
 
-    /**
-     * Total of all previous refunds
-     * @access    public
-     * @namespace ns
-     * @var BasicAmountType
-     */
-    public $TotalRefundedAmount;
+	/**
+	 * Amount of money refunded to original payer
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $GrossRefundAmount;
 
-    /**
-     * Contains Refund Payment status information.
-     * @access    public
-     * @namespace ebl
-     * @var RefundInfoType
-     */
-    public $RefundInfo;
+	/**
+	 * Total of all previous refunds
+	 * @access public
+	 * @namespace ns
+	 * @var \PayPal\CoreComponentTypes\BasicAmountType
+	 */
+	public $TotalRefundedAmount;
 
-    /**
-     * Any general information like offer details that is
-     * reinstated or any other marketing data
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $ReceiptData;
+	/**
+	 * Contains Refund Payment status information.
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\RefundInfoType
+	 */
+	public $RefundInfo;
 
-    /**
-     * Return msgsubid back to merchant
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $MsgSubID;
+	/**
+	 * Any general information like offer details that is
+	 * reinstated or any other marketing data
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $ReceiptData;
+
+	/**
+	 * Return msgsubid back to merchant
+	 * @access public
+	 * @namespace ns
+	 * @var string
+	 */
+	public $MsgSubID;
+
+
 }

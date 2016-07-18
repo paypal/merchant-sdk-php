@@ -1,65 +1,63 @@
 <?php
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
  * The Type of Approval requested - Billing Agreement or
  * Profile
  */
 class BillingApprovalDetailsType
-  extends PPXmlMessage
-{
-    /**
-     * The Type of Approval requested - Billing Agreement or
-     * Profile
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $ApprovalType;
+   extends PPXmlMessage{
 
-    /**
-     * The Approval subtype - Must be MerchantInitiatedBilling for
-     * BillingAgreement ApprovalType
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $ApprovalSubType;
+	/**
+	 * The Type of Approval requested - Billing Agreement or
+	 * Profile
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $ApprovalType;
 
-    /**
-     * Description about the Order
-     * @access    public
-     * @namespace ebl
-     * @var OrderDetailsType
-     */
-    public $OrderDetails;
+	/**
+	 * The Approval subtype - Must be MerchantInitiatedBilling for
+	 * BillingAgreement ApprovalType
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $ApprovalSubType;
 
-    /**
-     * Directives about the type of payment
-     * @access    public
-     * @namespace ebl
-     * @var PaymentDirectivesType
-     */
-    public $PaymentDirectives;
+	/**
+	 * Description about the Order
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\OrderDetailsType
+	 */
+	public $OrderDetails;
 
-    /**
-     * Client may pass in its identification of this Billing
-     * Agreement. It used for the client's tracking purposes.
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Custom;
+	/**
+	 * Directives about the type of payment
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\PaymentDirectivesType
+	 */
+	public $PaymentDirectives;
 
-    /**
-     * Constructor with arguments
-     *
-     * @param string $ApprovalType
-     */
-    public function __construct($ApprovalType = null)
-    {
-        $this->ApprovalType = $ApprovalType;
-    }
+	/**
+	 * Client may pass in its identification of this Billing
+	 * Agreement. It used for the client's tracking purposes.
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $Custom;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($ApprovalType = NULL) {
+		$this->ApprovalType = $ApprovalType;
+	}
+
+
+
 }
