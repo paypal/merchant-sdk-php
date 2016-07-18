@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class ExternalRememberMeOptOutReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var ExternalRememberMeOptOutRequestType
+     * @var \PayPal\PayPalAPI\ExternalRememberMeOptOutRequestType
      */
     public $ExternalRememberMeOptOutRequest;
 
@@ -25,4 +30,5 @@ class ExternalRememberMeOptOutReq
         $str .= '</ns:ExternalRememberMeOptOutReq>';
         return $str;
     }
+
 }

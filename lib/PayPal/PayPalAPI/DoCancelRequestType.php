@@ -9,6 +9,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 class DoCancelRequestType
   extends AbstractRequestType
 {
+
     /**
      * Msg Sub Id that was used for the orginal operation.
      * @access    public
@@ -37,13 +38,11 @@ class DoCancelRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $CancelMsgSubID
-     * @param string $APIType
      */
     public function __construct($CancelMsgSubID = null, $APIType = null)
     {
         $this->CancelMsgSubID = $CancelMsgSubID;
         $this->APIType        = $APIType;
     }
+
 }

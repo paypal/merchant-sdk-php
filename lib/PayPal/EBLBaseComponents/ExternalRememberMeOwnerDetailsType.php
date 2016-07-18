@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class ExternalRememberMeOwnerDetailsType
   extends PPXmlMessage
 {
+
     /**
      * A discriminant that tells SetEC what kind of data the
      * ExternalRememberMeOwnerID parameter contains. Currently, the
@@ -38,4 +39,5 @@ class ExternalRememberMeOwnerDetailsType
      * @var string
      */
     public $ExternalRememberMeOwnerID;
+
 }

@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class UATPDetailsType
   extends PPXmlMessage
 {
+
     /**
      * UATP Card Number
      * @access    public
@@ -32,4 +33,5 @@ class UATPDetailsType
      * @var integer
      */
     public $ExpYear;
+
 }

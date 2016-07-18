@@ -11,6 +11,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 class DoVoidResponseType
   extends AbstractResponseType
 {
+
     /**
      * The authorization identification number you specified in the
      * request. Character length and limits: 19 single-byte
@@ -28,4 +29,5 @@ class DoVoidResponseType
      * @var string
      */
     public $MsgSubID;
+
 }

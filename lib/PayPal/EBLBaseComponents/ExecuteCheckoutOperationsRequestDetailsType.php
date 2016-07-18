@@ -16,6 +16,7 @@ use PayPal\Core\PPXmlMessage;
 class ExecuteCheckoutOperationsRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
      * On your first invocation of
      * ExecuteCheckoutOperationsRequest, the value of this token is
@@ -36,7 +37,7 @@ class ExecuteCheckoutOperationsRequestDetailsType
      * passed in this element.
      * @access    public
      * @namespace ebl
-     * @var SetDataRequestType
+     * @var \PayPal\EBLBaseComponents\SetDataRequestType
      */
     public $SetDataRequest;
 
@@ -45,17 +46,16 @@ class ExecuteCheckoutOperationsRequestDetailsType
      * with IsRequested set to yes.
      * @access    public
      * @namespace ebl
-     * @var AuthorizationRequestType
+     * @var \PayPal\EBLBaseComponents\AuthorizationRequestType
      */
     public $AuthorizationRequest;
 
     /**
      * Constructor with arguments
-     *
-     * @param SetDataRequestType $SetDataRequest
      */
     public function __construct($SetDataRequest = null)
     {
         $this->SetDataRequest = $SetDataRequest;
     }
+
 }

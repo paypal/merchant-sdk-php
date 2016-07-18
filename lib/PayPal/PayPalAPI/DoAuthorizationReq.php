@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class DoAuthorizationReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var DoAuthorizationRequestType
+     * @var \PayPal\PayPalAPI\DoAuthorizationRequestType
      */
     public $DoAuthorizationRequest;
 
@@ -25,4 +30,5 @@ class DoAuthorizationReq
         $str .= '</ns:DoAuthorizationReq>';
         return $str;
     }
+
 }

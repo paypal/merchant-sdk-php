@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class ExecuteCheckoutOperationsReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var ExecuteCheckoutOperationsRequestType
+     * @var \PayPal\PayPalAPI\ExecuteCheckoutOperationsRequestType
      */
     public $ExecuteCheckoutOperationsRequest;
 
@@ -25,4 +30,5 @@ class ExecuteCheckoutOperationsReq
         $str .= '</ns:ExecuteCheckoutOperationsReq>';
         return $str;
     }
+
 }

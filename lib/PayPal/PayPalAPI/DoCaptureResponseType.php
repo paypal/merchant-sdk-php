@@ -2,15 +2,20 @@
 namespace PayPal\PayPalAPI;
 
 use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EBLBaseComponents\DoCaptureResponseDetailsType;
 
+/**
+ *
+ */
 class DoCaptureResponseType
   extends AbstractResponseType
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var DoCaptureResponseDetailsType
+     * @var \PayPal\EBLBaseComponents\DoCaptureResponseDetailsType
      */
     public $DoCaptureResponseDetails;
+
 }

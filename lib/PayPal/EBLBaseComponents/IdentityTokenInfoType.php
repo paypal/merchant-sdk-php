@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class IdentityTokenInfoType
   extends PPXmlMessage
 {
+
     /**
      * Identity Access token from merchant
      * @access    public
@@ -19,11 +20,10 @@ class IdentityTokenInfoType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $AccessToken
      */
     public function __construct($AccessToken = null)
     {
         $this->AccessToken = $AccessToken;
     }
+
 }

@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * How you want to obtain payment. Required Authorization
@@ -20,6 +19,7 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class DoExpressCheckoutPaymentRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
      * How you want to obtain payment. Required Authorization
      * indicates that this payment is a basic authorization subject
@@ -70,9 +70,10 @@ class DoExpressCheckoutPaymentRequestDetailsType
 
     /**
      * Information about the payment Required
+     * @array
      * @access    public
      * @namespace ebl
-     * @var PaymentDetailsType[]
+     * @var \PayPal\EBLBaseComponents\PaymentDetailsType
      */
     public $PaymentDetails;
 
@@ -99,7 +100,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
      *
      * @access    public
      * @namespace ebl
-     * @var EnhancedDataType
+     * @var \PayPal\EBLBaseComponents\EnhancedDataType
      */
     public $EnhancedData;
 
@@ -116,7 +117,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
      * Information about the user selected options.
      * @access    public
      * @namespace ebl
-     * @var UserSelectedOptionType
+     * @var \PayPal\EBLBaseComponents\UserSelectedOptionType
      */
     public $UserSelectedOptions;
 
@@ -148,7 +149,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
      * Information about the Gift Wrap amount.
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $GiftWrapAmount;
 
@@ -170,9 +171,10 @@ class DoExpressCheckoutPaymentRequestDetailsType
 
     /**
      * Information about the survey choice selected by the user.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var string[]
+     * @var string
      */
     public $SurveyChoiceSelected;
 
@@ -197,9 +199,11 @@ class DoExpressCheckoutPaymentRequestDetailsType
 
     /**
      * Optional element that defines relationship between buckets
+     * @array
      * @access    public
      * @namespace ebl
-     * @var CoupledBucketsType[]
+     * @var \PayPal\EBLBaseComponents\CoupledBucketsType
      */
     public $CoupledBuckets;
+
 }

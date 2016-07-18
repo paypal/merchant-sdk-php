@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * AID for Airlines
@@ -10,7 +9,9 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class AirlineItineraryType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -18,6 +19,7 @@ class AirlineItineraryType
     public $PassengerName;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -25,6 +27,7 @@ class AirlineItineraryType
     public $IssueDate;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -32,6 +35,7 @@ class AirlineItineraryType
     public $TravelAgencyName;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -39,6 +43,7 @@ class AirlineItineraryType
     public $TravelAgencyCode;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -46,6 +51,7 @@ class AirlineItineraryType
     public $TicketNumber;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -53,6 +59,7 @@ class AirlineItineraryType
     public $IssuingCarrierCode;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -60,27 +67,31 @@ class AirlineItineraryType
     public $CustomerCode;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $TotalFare;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $TotalTaxes;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $TotalFee;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -88,6 +99,7 @@ class AirlineItineraryType
     public $RestrictedTicket;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -95,6 +107,7 @@ class AirlineItineraryType
     public $ClearingSequence;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -102,9 +115,12 @@ class AirlineItineraryType
     public $ClearingCount;
 
     /**
+     *
+     * @array
      * @access    public
      * @namespace ebl
-     * @var FlightDetailsType[]
+     * @var \PayPal\EBLBaseComponents\FlightDetailsType
      */
     public $FlightDetails;
+
 }

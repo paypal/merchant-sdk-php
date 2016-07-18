@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class BankAccountDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Name of bank Character length and limitations: 192
      * alphanumeric characters
@@ -43,4 +44,5 @@ class BankAccountDetailsType
      * @var string
      */
     public $AccountNumber;
+
 }

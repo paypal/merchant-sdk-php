@@ -1,10 +1,7 @@
 <?php
 namespace PayPal\PayPalAPI;
 
-use PayPal\CoreComponentTypes\BasicAmountType;
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\InvoiceItemType;
-use PayPal\EBLBaseComponents\MerchantStoreDetailsType;
 
 /**
  * Unique identifier of the transaction you are refunding.
@@ -14,6 +11,7 @@ use PayPal\EBLBaseComponents\MerchantStoreDetailsType;
 class RefundTransactionRequestType
   extends AbstractRequestType
 {
+
     /**
      * Unique identifier of the transaction you are refunding.
      * Optional Character length and limitations: 17 single-byte
@@ -60,7 +58,7 @@ class RefundTransactionRequestType
      * NOTE: If RefundType is Full, do not set Amount.
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
@@ -77,7 +75,7 @@ class RefundTransactionRequestType
      * The maximum time till which refund must be tried. Optional
      * @access    public
      * @namespace ns
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $RetryUntil;
 
@@ -103,16 +101,17 @@ class RefundTransactionRequestType
      * To pass the Merchant store informationOptional
      * @access    public
      * @namespace ebl
-     * @var MerchantStoreDetailsType
+     * @var \PayPal\EBLBaseComponents\MerchantStoreDetailsType
      */
     public $MerchantStoreDetails;
 
     /**
      * Information about the individual details of the items to be
      * refunded.Optional
+     * @array
      * @access    public
      * @namespace ebl
-     * @var InvoiceItemType[]
+     * @var \PayPal\EBLBaseComponents\InvoiceItemType
      */
     public $RefundItemDetails;
 
@@ -125,4 +124,5 @@ class RefundTransactionRequestType
      * @var string
      */
     public $MsgSubID;
+
 }

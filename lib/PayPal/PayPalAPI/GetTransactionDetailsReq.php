@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class GetTransactionDetailsReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var GetTransactionDetailsRequestType
+     * @var \PayPal\PayPalAPI\GetTransactionDetailsRequestType
      */
     public $GetTransactionDetailsRequest;
 
@@ -25,4 +30,5 @@ class GetTransactionDetailsReq
         $str .= '</ns:GetTransactionDetailsReq>';
         return $str;
     }
+
 }

@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class OfferDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Code used to identify the promotion offer.
      * @access    public
@@ -22,7 +23,8 @@ class OfferDetailsType
      * added for sepcific  promotion needs like CrossPromotions
      * @access    public
      * @namespace ebl
-     * @var BMLOfferInfoType
+     * @var \PayPal\EBLBaseComponents\BMLOfferInfoType
      */
     public $BMLOfferInfo;
+
 }

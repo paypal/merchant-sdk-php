@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class GetAccessPermissionDetailsReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var GetAccessPermissionDetailsRequestType
+     * @var \PayPal\PayPalAPI\GetAccessPermissionDetailsRequestType
      */
     public $GetAccessPermissionDetailsRequest;
 
@@ -25,4 +30,5 @@ class GetAccessPermissionDetailsReq
         $str .= '</ns:GetAccessPermissionDetailsReq>';
         return $str;
     }
+
 }

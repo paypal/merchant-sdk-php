@@ -2,7 +2,6 @@
 namespace PayPal\PayPalAPI;
 
 use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EBLBaseComponents\PaymentTransactionSearchResultType;
 
 /**
  * Results of a Transaction Search.
@@ -10,11 +9,14 @@ use PayPal\EBLBaseComponents\PaymentTransactionSearchResultType;
 class TransactionSearchResponseType
   extends AbstractResponseType
 {
+
     /**
      * Results of a Transaction Search.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var PaymentTransactionSearchResultType[]
+     * @var \PayPal\EBLBaseComponents\PaymentTransactionSearchResultType
      */
     public $PaymentTransactions;
+
 }

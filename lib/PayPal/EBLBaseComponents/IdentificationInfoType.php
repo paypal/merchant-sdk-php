@@ -9,11 +9,12 @@ use PayPal\Core\PPXmlMessage;
 class IdentificationInfoType
   extends PPXmlMessage
 {
+
     /**
      * Mobile specific buyer identification.
      * @access    public
      * @namespace ebl
-     * @var MobileIDInfoType
+     * @var \PayPal\EBLBaseComponents\MobileIDInfoType
      */
     public $MobileIDInfo;
 
@@ -21,7 +22,7 @@ class IdentificationInfoType
      * Contains login bypass information.
      * @access    public
      * @namespace ebl
-     * @var RememberMeIDInfoType
+     * @var \PayPal\EBLBaseComponents\RememberMeIDInfoType
      */
     public $RememberMeIDInfo;
 
@@ -29,7 +30,8 @@ class IdentificationInfoType
      * Identity Access Token.
      * @access    public
      * @namespace ebl
-     * @var IdentityTokenInfoType
+     * @var \PayPal\EBLBaseComponents\IdentityTokenInfoType
      */
     public $IdentityTokenInfo;
+
 }

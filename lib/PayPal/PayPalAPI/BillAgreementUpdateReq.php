@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class BillAgreementUpdateReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var BAUpdateRequestType
+     * @var \PayPal\PayPalAPI\BAUpdateRequestType
      */
     public $BAUpdateRequest;
 
@@ -25,4 +30,5 @@ class BillAgreementUpdateReq
         $str .= '</ns:BillAgreementUpdateReq>';
         return $str;
     }
+
 }

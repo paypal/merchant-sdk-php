@@ -12,6 +12,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 class SetMobileCheckoutResponseType
   extends AbstractResponseType
 {
+
     /**
      * A timestamped token by which you identify to PayPal that you
      * are processing this payment with Mobile Checkout. The token
@@ -22,4 +23,5 @@ class SetMobileCheckoutResponseType
      * @var string
      */
     public $Token;
+
 }

@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class EbayItemPaymentDetailsItemType
   extends PPXmlMessage
 {
+
     /**
      * Auction ItemNumber. Optional Character length and
      * limitations: 765 single-byte characters
@@ -45,4 +46,5 @@ class EbayItemPaymentDetailsItemType
      * @var string
      */
     public $CartID;
+
 }

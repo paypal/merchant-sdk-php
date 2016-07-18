@@ -15,7 +15,9 @@ use PayPal\Core\PPXmlMessage;
 class BasicAmountType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace cc
      * @attribute
@@ -24,6 +26,7 @@ class BasicAmountType
     public $currencyID;
 
     /**
+     *
      * @access    public
      * @namespace cc
      * @value
@@ -33,13 +36,11 @@ class BasicAmountType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $currencyID
-     * @param string $value
      */
     public function __construct($currencyID = null, $value = null)
     {
         $this->currencyID = $currencyID;
         $this->value      = $value;
     }
+
 }

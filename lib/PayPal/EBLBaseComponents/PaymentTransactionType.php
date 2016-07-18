@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * PaymentTransactionType Information about a PayPal payment
@@ -11,11 +10,12 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class PaymentTransactionType
   extends PPXmlMessage
 {
+
     /**
      * Information about the recipient of the payment
      * @access    public
      * @namespace ebl
-     * @var ReceiverInfoType
+     * @var \PayPal\EBLBaseComponents\ReceiverInfoType
      */
     public $ReceiverInfo;
 
@@ -23,7 +23,7 @@ class PaymentTransactionType
      * Information about the payer
      * @access    public
      * @namespace ebl
-     * @var PayerInfoType
+     * @var \PayPal\EBLBaseComponents\PayerInfoType
      */
     public $PayerInfo;
 
@@ -40,7 +40,7 @@ class PaymentTransactionType
      * Information about the transaction
      * @access    public
      * @namespace ebl
-     * @var PaymentInfoType
+     * @var \PayPal\EBLBaseComponents\PaymentInfoType
      */
     public $PaymentInfo;
 
@@ -48,7 +48,7 @@ class PaymentTransactionType
      * Information about an individual item in the transaction
      * @access    public
      * @namespace ebl
-     * @var PaymentItemInfoType
+     * @var \PayPal\EBLBaseComponents\PaymentItemInfoType
      */
     public $PaymentItemInfo;
 
@@ -57,7 +57,7 @@ class PaymentTransactionType
      * in the transaction
      * @access    public
      * @namespace ebl
-     * @var OfferCouponInfoType
+     * @var \PayPal\EBLBaseComponents\OfferCouponInfoType
      */
     public $OfferCouponInfo;
 
@@ -65,7 +65,7 @@ class PaymentTransactionType
      * Information about Secondary Address
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $SecondaryAddress;
 
@@ -73,7 +73,7 @@ class PaymentTransactionType
      * Information about the user selected options.
      * @access    public
      * @namespace ebl
-     * @var UserSelectedOptionType
+     * @var \PayPal\EBLBaseComponents\UserSelectedOptionType
      */
     public $UserSelectedOptions;
 
@@ -105,7 +105,7 @@ class PaymentTransactionType
      * Information about the Gift Wrap amount.
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $GiftWrapAmount;
 
@@ -127,9 +127,11 @@ class PaymentTransactionType
 
     /**
      * Information about the survey choice selected by the user.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var string[]
+     * @var string
      */
     public $SurveyChoiceSelected;
+
 }

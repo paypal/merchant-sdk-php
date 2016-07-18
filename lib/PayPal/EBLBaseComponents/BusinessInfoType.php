@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class BusinessInfoType
   extends PPXmlMessage
 {
+
     /**
      * Type of business, such as corporation or sole proprietorship
      * @access    public
@@ -30,7 +31,7 @@ class BusinessInfoType
      * Merchantâs business postal address
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $Address;
 
@@ -129,7 +130,7 @@ class BusinessInfoType
      * Date the merchantâs business was established
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $BusinessEstablished;
 
@@ -151,4 +152,5 @@ class BusinessInfoType
      * @var string
      */
     public $CustomerServicePhone;
+
 }

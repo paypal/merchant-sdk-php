@@ -1,9 +1,7 @@
 <?php
 namespace PayPal\PayPalAPI;
 
-use PayPal\CoreComponentTypes\BasicAmountType;
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\UATPDetailsType;
 
 /**
  * UATP card details Required
@@ -11,11 +9,12 @@ use PayPal\EBLBaseComponents\UATPDetailsType;
 class DoUATPAuthorizationRequestType
   extends AbstractRequestType
 {
+
     /**
      * UATP card details Required
      * @access    public
      * @namespace ebl
-     * @var UATPDetailsType
+     * @var \PayPal\EBLBaseComponents\UATPDetailsType
      */
     public $UATPDetails;
 
@@ -36,7 +35,7 @@ class DoUATPAuthorizationRequestType
      * must be a comma (,).
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
@@ -60,13 +59,11 @@ class DoUATPAuthorizationRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param UATPDetailsType $UATPDetails
-     * @param BasicAmountType $Amount
      */
     public function __construct($UATPDetails = null, $Amount = null)
     {
         $this->UATPDetails = $UATPDetails;
         $this->Amount      = $Amount;
     }
+
 }

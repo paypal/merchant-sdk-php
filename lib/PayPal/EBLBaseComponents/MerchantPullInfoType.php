@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * MerchantPullInfoType Information about the merchant pull.
@@ -10,6 +9,7 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class MerchantPullInfoType
   extends PPXmlMessage
 {
+
     /**
      * Current status of billing agreement
      * @access    public
@@ -22,7 +22,7 @@ class MerchantPullInfoType
      * Monthly maximum payment amount
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $MpMax;
 
@@ -68,4 +68,5 @@ class MerchantPullInfoType
      * @var string
      */
     public $PaymentSourceID;
+
 }

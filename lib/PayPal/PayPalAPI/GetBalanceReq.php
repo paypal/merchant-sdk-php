@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class GetBalanceReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var GetBalanceRequestType
+     * @var \PayPal\PayPalAPI\GetBalanceRequestType
      */
     public $GetBalanceRequest;
 
@@ -25,4 +30,5 @@ class GetBalanceReq
         $str .= '</ns:GetBalanceReq>';
         return $str;
     }
+
 }

@@ -9,11 +9,13 @@ use PayPal\Core\PPXmlMessage;
 class SetDataRequestType
   extends PPXmlMessage
 {
+
     /**
      * Details about Billing Agreements requested to be created.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var BillingApprovalDetailsType[]
+     * @var \PayPal\EBLBaseComponents\BillingApprovalDetailsType
      */
     public $BillingApprovalDetails;
 
@@ -22,7 +24,7 @@ class SetDataRequestType
      * authentication session token will be passed in here.
      * @access    public
      * @namespace ebl
-     * @var BuyerDetailType
+     * @var \PayPal\EBLBaseComponents\BuyerDetailType
      */
     public $BuyerDetail;
 
@@ -32,7 +34,7 @@ class SetDataRequestType
      * specified under this.
      * @access    public
      * @namespace ebl
-     * @var InfoSharingDirectivesType
+     * @var \PayPal\EBLBaseComponents\InfoSharingDirectivesType
      */
     public $InfoSharingDirectives;
 
@@ -76,7 +78,7 @@ class SetDataRequestType
      * @array
      * @access    public
      * @namespace ebl
-     * @var PaymentDetailsType
+     * @var \PayPal\EBLBaseComponents\PaymentDetailsType
      */
     public $PaymentDetails;
 
@@ -85,7 +87,8 @@ class SetDataRequestType
      * partner.
      * @access    public
      * @namespace ebl
-     * @var ExternalPartnerTrackingDetailsType
+     * @var \PayPal\EBLBaseComponents\ExternalPartnerTrackingDetailsType
      */
     public $ExternalPartnerTrackingDetails;
+
 }

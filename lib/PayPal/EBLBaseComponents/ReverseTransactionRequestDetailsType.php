@@ -11,6 +11,7 @@ use PayPal\Core\PPXmlMessage;
 class ReverseTransactionRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Identifier of the transaction to reverse. Required Character
      * length and limitations: 17 single-byte alphanumeric
@@ -20,4 +21,5 @@ class ReverseTransactionRequestDetailsType
      * @var string
      */
     public $TransactionID;
+
 }

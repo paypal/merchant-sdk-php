@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class BMGetButtonDetailsReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var BMGetButtonDetailsRequestType
+     * @var \PayPal\PayPalAPI\BMGetButtonDetailsRequestType
      */
     public $BMGetButtonDetailsRequest;
 
@@ -25,4 +30,5 @@ class BMGetButtonDetailsReq
         $str .= '</ns:BMGetButtonDetailsReq>';
         return $str;
     }
+
 }

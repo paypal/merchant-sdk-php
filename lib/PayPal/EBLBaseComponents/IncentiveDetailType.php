@@ -3,10 +3,15 @@ namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class IncentiveDetailType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -14,6 +19,7 @@ class IncentiveDetailType
     public $RedemptionCode;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -21,6 +27,7 @@ class IncentiveDetailType
     public $DisplayCode;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -28,6 +35,7 @@ class IncentiveDetailType
     public $ProgramId;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -35,6 +43,7 @@ class IncentiveDetailType
     public $IncentiveType;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -42,13 +51,16 @@ class IncentiveDetailType
     public $IncentiveDescription;
 
     /**
+     *
+     * @array
      * @access    public
      * @namespace ebl
-     * @var IncentiveAppliedToType[]
+     * @var \PayPal\EBLBaseComponents\IncentiveAppliedToType
      */
     public $AppliedTo;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -56,9 +68,11 @@ class IncentiveDetailType
     public $Status;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
      */
     public $ErrorCode;
+
 }

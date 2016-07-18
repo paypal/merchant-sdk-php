@@ -13,6 +13,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 class GetTransactionDetailsRequestType
   extends AbstractRequestType
 {
+
     /**
      * Unique identifier of a transaction. RequiredThe details for
      * some kinds of transactions cannot be retrieved with
@@ -24,4 +25,5 @@ class GetTransactionDetailsRequestType
      * @var string
      */
     public $TransactionID;
+
 }

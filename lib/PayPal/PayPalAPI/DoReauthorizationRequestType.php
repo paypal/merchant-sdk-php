@@ -1,7 +1,6 @@
 <?php
 namespace PayPal\PayPalAPI;
 
-use PayPal\CoreComponentTypes\BasicAmountType;
 use PayPal\EBLBaseComponents\AbstractRequestType;
 
 /**
@@ -15,6 +14,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 class DoReauthorizationRequestType
   extends AbstractRequestType
 {
+
     /**
      * The value of a previously authorized transaction
      * identification number returned by a PayPal product. You can
@@ -35,7 +35,7 @@ class DoReauthorizationRequestType
      * must be a comma (,).
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
@@ -51,13 +51,11 @@ class DoReauthorizationRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param string          $AuthorizationID
-     * @param BasicAmountType $Amount
      */
     public function __construct($AuthorizationID = null, $Amount = null)
     {
         $this->AuthorizationID = $AuthorizationID;
         $this->Amount          = $Amount;
     }
+
 }

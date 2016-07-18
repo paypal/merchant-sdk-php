@@ -2,12 +2,16 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
+/**
+ *
+ */
 class AdditionalFeeType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -15,9 +19,11 @@ class AdditionalFeeType
     public $Type;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
+
 }

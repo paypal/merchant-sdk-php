@@ -2,8 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
-use PayPal\EnhancedDataTypes\EnhancedPaymentInfoType;
 
 /**
  * PaymentInfoType Payment information.
@@ -11,6 +9,7 @@ use PayPal\EnhancedDataTypes\EnhancedPaymentInfoType;
 class PaymentInfoType
   extends PPXmlMessage
 {
+
     /**
      * A transaction identification number. Character length and
      * limits: 19 single-byte characters maximum
@@ -95,7 +94,7 @@ class PaymentInfoType
      * eCheck latest expected clear date
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $ExpectedeCheckClearDate;
 
@@ -103,7 +102,7 @@ class PaymentInfoType
      * Date and time of payment
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $PaymentDate;
 
@@ -112,7 +111,7 @@ class PaymentInfoType
      * fee is subtracted
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $GrossAmount;
 
@@ -120,7 +119,7 @@ class PaymentInfoType
      * Transaction fee associated with the payment
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $FeeAmount;
 
@@ -132,7 +131,7 @@ class PaymentInfoType
      * after fees and taxes have been assessed.
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $SettleAmount;
 
@@ -140,7 +139,7 @@ class PaymentInfoType
      * Amount of tax for transaction
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $TaxAmount;
 
@@ -357,7 +356,7 @@ class PaymentInfoType
      * Details about the seller. Optional
      * @access    public
      * @namespace ebl
-     * @var SellerDetailsType
+     * @var \PayPal\EBLBaseComponents\SellerDetailsType
      */
     public $SellerDetails;
 
@@ -375,7 +374,7 @@ class PaymentInfoType
      * action.
      * @access    public
      * @namespace ebl
-     * @var FMFDetailsType
+     * @var \PayPal\EBLBaseComponents\FMFDetailsType
      */
     public $FMFDetails;
 
@@ -384,7 +383,7 @@ class PaymentInfoType
      * details
      * @access    public
      * @namespace ebl
-     * @var EnhancedPaymentInfoType
+     * @var \PayPal\EnhancedDataTypes\EnhancedPaymentInfoType
      */
     public $EnhancedPaymentInfo;
 
@@ -393,7 +392,7 @@ class PaymentInfoType
      * request in case of split payment
      * @access    public
      * @namespace ebl
-     * @var ErrorType
+     * @var \PayPal\EBLBaseComponents\ErrorType
      */
     public $PaymentError;
 
@@ -401,7 +400,7 @@ class PaymentInfoType
      * Type of the payment instrument.
      * @access    public
      * @namespace ebl
-     * @var InstrumentDetailsType
+     * @var \PayPal\EBLBaseComponents\InstrumentDetailsType
      */
     public $InstrumentDetails;
 
@@ -409,7 +408,7 @@ class PaymentInfoType
      * Offer Details.
      * @access    public
      * @namespace ebl
-     * @var OfferDetailsType
+     * @var \PayPal\EBLBaseComponents\OfferDetailsType
      */
     public $OfferDetails;
 
@@ -429,4 +428,5 @@ class PaymentInfoType
      * @var string
      */
     public $BinEligibility;
+
 }

@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class TransactionSearchReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var TransactionSearchRequestType
+     * @var \PayPal\PayPalAPI\TransactionSearchRequestType
      */
     public $TransactionSearchRequest;
 
@@ -25,4 +30,5 @@ class TransactionSearchReq
         $str .= '</ns:TransactionSearchReq>';
         return $str;
     }
+
 }

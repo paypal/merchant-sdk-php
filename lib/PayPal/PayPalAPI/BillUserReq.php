@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class BillUserReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var BillUserRequestType
+     * @var \PayPal\PayPalAPI\BillUserRequestType
      */
     public $BillUserRequest;
 
@@ -25,4 +30,5 @@ class BillUserReq
         $str .= '</ns:BillUserReq>';
         return $str;
     }
+
 }

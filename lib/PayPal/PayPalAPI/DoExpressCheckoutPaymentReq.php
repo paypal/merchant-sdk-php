@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class DoExpressCheckoutPaymentReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var DoExpressCheckoutPaymentRequestType
+     * @var \PayPal\PayPalAPI\DoExpressCheckoutPaymentRequestType
      */
     public $DoExpressCheckoutPaymentRequest;
 
@@ -25,4 +30,5 @@ class DoExpressCheckoutPaymentReq
         $str .= '</ns:DoExpressCheckoutPaymentReq>';
         return $str;
     }
+
 }

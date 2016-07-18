@@ -11,6 +11,7 @@ use PayPal\Core\PPXmlMessage;
 class AbstractRequestType
   extends PPXmlMessage
 {
+
     /**
      * This specifies the required detail level that is needed by a
      * client application pertaining to a particular data component
@@ -40,4 +41,5 @@ class AbstractRequestType
      * @var string
      */
     public $Version;
+
 }

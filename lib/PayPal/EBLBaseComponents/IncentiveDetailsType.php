@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * Information about the incentives that were applied from Ebay
@@ -11,6 +10,7 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class IncentiveDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Unique Identifier consisting of redemption code, user
      * friendly descripotion, incentive type, campaign code,
@@ -35,7 +35,7 @@ class IncentiveDetailsType
      * discounts up across all the buckets/items.
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $TotalDiscountAmount;
 
@@ -57,9 +57,11 @@ class IncentiveDetailsType
 
     /**
      * Details of incentive application on individual bucket/item.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var IncentiveAppliedDetailsType[]
+     * @var \PayPal\EBLBaseComponents\IncentiveAppliedDetailsType
      */
     public $IncentiveAppliedDetails;
+
 }

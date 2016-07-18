@@ -9,10 +9,13 @@ use PayPal\Core\PPXmlMessage;
 class EnhancedDataType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var AirlineItineraryType
+     * @var \PayPal\EBLBaseComponents\AirlineItineraryType
      */
     public $AirlineItinerary;
+
 }

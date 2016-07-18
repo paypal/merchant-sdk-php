@@ -1,9 +1,7 @@
 <?php
 namespace PayPal\PayPalAPI;
 
-use PayPal\CoreComponentTypes\BasicAmountType;
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\PersonNameType;
 
 /**
  * The earliest transaction date at which to start the search.
@@ -12,12 +10,13 @@ use PayPal\EBLBaseComponents\PersonNameType;
 class TransactionSearchRequestType
   extends AbstractRequestType
 {
+
     /**
      * The earliest transaction date at which to start the search.
      * No wildcards are allowed. Required
      * @access    public
      * @namespace ns
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $StartDate;
 
@@ -26,7 +25,7 @@ class TransactionSearchRequestType
      * Optional
      * @access    public
      * @namespace ns
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $EndDate;
 
@@ -85,7 +84,7 @@ class TransactionSearchRequestType
      * single-byte character limit.
      * @access    public
      * @namespace ns
-     * @var PersonNameType
+     * @var \PayPal\EBLBaseComponents\PersonNameType
      */
     public $PayerName;
 
@@ -116,6 +115,7 @@ class TransactionSearchRequestType
     public $InvoiceID;
 
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -158,7 +158,7 @@ class TransactionSearchRequestType
      * codes for any of the supported PayPal currencies.
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
@@ -190,11 +190,10 @@ class TransactionSearchRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $StartDate ISO8601
      */
     public function __construct($StartDate = null)
     {
         $this->StartDate = $StartDate;
     }
+
 }

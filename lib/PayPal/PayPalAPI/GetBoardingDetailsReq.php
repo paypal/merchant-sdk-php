@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class GetBoardingDetailsReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var GetBoardingDetailsRequestType
+     * @var \PayPal\PayPalAPI\GetBoardingDetailsRequestType
      */
     public $GetBoardingDetailsRequest;
 
@@ -25,4 +30,5 @@ class GetBoardingDetailsReq
         $str .= '</ns:GetBoardingDetailsReq>';
         return $str;
     }
+
 }

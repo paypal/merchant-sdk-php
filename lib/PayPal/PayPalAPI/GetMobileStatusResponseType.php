@@ -10,6 +10,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 class GetMobileStatusResponseType
   extends AbstractResponseType
 {
+
     /**
      * Indicates whether the phone is activated for mobile payments
      *
@@ -35,4 +36,5 @@ class GetMobileStatusResponseType
      * @var integer
      */
     public $PaymentPending;
+
 }

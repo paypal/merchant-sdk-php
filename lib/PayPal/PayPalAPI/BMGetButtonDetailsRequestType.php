@@ -10,6 +10,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 class BMGetButtonDetailsRequestType
   extends AbstractRequestType
 {
+
     /**
      * Button ID of button to return.  Required Character length
      * and limitations: 10 single-byte numeric characters
@@ -21,11 +22,10 @@ class BMGetButtonDetailsRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $HostedButtonID
      */
     public function __construct($HostedButtonID = null)
     {
         $this->HostedButtonID = $HostedButtonID;
     }
+
 }

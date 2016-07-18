@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class GetMobileStatusReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var GetMobileStatusRequestType
+     * @var \PayPal\PayPalAPI\GetMobileStatusRequestType
      */
     public $GetMobileStatusRequest;
 
@@ -25,4 +30,5 @@ class GetMobileStatusReq
         $str .= '</ns:GetMobileStatusReq>';
         return $str;
     }
+
 }

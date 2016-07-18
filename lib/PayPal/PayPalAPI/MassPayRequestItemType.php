@@ -2,7 +2,6 @@
 namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * MassPayRequestItemType
@@ -10,6 +9,7 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class MassPayRequestItemType
   extends PPXmlMessage
 {
+
     /**
      * Email address of recipient. Required You must specify
      * ReceiverEmail, ReceiverPhone, or ReceiverID, but all
@@ -55,7 +55,7 @@ class MassPayRequestItemType
      * include items that are of the same currency.
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
@@ -81,11 +81,10 @@ class MassPayRequestItemType
 
     /**
      * Constructor with arguments
-     *
-     * @param BasicAmountType $Amount
      */
     public function __construct($Amount = null)
     {
         $this->Amount = $Amount;
     }
+
 }

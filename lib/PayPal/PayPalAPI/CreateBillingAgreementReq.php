@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class CreateBillingAgreementReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var CreateBillingAgreementRequestType
+     * @var \PayPal\PayPalAPI\CreateBillingAgreementRequestType
      */
     public $CreateBillingAgreementRequest;
 
@@ -25,4 +30,5 @@ class CreateBillingAgreementReq
         $str .= '</ns:CreateBillingAgreementReq>';
         return $str;
     }
+
 }

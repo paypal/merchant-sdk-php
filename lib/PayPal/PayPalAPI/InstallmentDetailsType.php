@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class InstallmentDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Installment Period. Optional
      * @access    public
@@ -56,4 +57,5 @@ class InstallmentDetailsType
      * @var string
      */
     public $TaxAmount;
+
 }

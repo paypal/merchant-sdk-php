@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class BMButtonSearchReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var BMButtonSearchRequestType
+     * @var \PayPal\PayPalAPI\BMButtonSearchRequestType
      */
     public $BMButtonSearchRequest;
 
@@ -25,4 +30,5 @@ class BMButtonSearchReq
         $str .= '</ns:BMButtonSearchReq>';
         return $str;
     }
+
 }

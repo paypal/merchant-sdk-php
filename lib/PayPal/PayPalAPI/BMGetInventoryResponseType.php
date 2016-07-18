@@ -2,13 +2,16 @@
 namespace PayPal\PayPalAPI;
 
 use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EBLBaseComponents\ItemTrackingDetailsType;
-use PayPal\EBLBaseComponents\OptionTrackingDetailsType;
 
+/**
+ *
+ */
 class BMGetInventoryResponseType
   extends AbstractResponseType
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -16,6 +19,7 @@ class BMGetInventoryResponseType
     public $HostedButtonID;
 
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -23,6 +27,7 @@ class BMGetInventoryResponseType
     public $TrackInv;
 
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -30,13 +35,15 @@ class BMGetInventoryResponseType
     public $TrackPnl;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var ItemTrackingDetailsType
+     * @var \PayPal\EBLBaseComponents\ItemTrackingDetailsType
      */
     public $ItemTrackingDetails;
 
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -44,6 +51,7 @@ class BMGetInventoryResponseType
     public $OptionIndex;
 
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -51,13 +59,16 @@ class BMGetInventoryResponseType
     public $OptionName;
 
     /**
+     *
+     * @array
      * @access    public
      * @namespace ebl
-     * @var OptionTrackingDetailsType[]
+     * @var \PayPal\EBLBaseComponents\OptionTrackingDetailsType
      */
     public $OptionTrackingDetails;
 
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -65,9 +76,12 @@ class BMGetInventoryResponseType
     public $SoldoutURL;
 
     /**
+     *
+     * @array
      * @access    public
      * @namespace ns
-     * @var string[]
+     * @var string
      */
     public $DigitalDownloadKeys;
+
 }

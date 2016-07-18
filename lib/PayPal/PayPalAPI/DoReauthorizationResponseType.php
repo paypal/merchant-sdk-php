@@ -2,7 +2,6 @@
 namespace PayPal\PayPalAPI;
 
 use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EBLBaseComponents\AuthorizationInfoType;
 
 /**
  * A new authorization identification number. Character length
@@ -11,6 +10,7 @@ use PayPal\EBLBaseComponents\AuthorizationInfoType;
 class DoReauthorizationResponseType
   extends AbstractResponseType
 {
+
     /**
      * A new authorization identification number. Character length
      * and limits: 19 single-byte characters
@@ -21,9 +21,10 @@ class DoReauthorizationResponseType
     public $AuthorizationID;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var AuthorizationInfoType
+     * @var \PayPal\EBLBaseComponents\AuthorizationInfoType
      */
     public $AuthorizationInfo;
 
@@ -34,4 +35,5 @@ class DoReauthorizationResponseType
      * @var string
      */
     public $MsgSubID;
+
 }

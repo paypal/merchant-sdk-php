@@ -11,7 +11,9 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 class BMGetButtonDetailsResponseType
   extends AbstractResponseType
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -19,6 +21,7 @@ class BMGetButtonDetailsResponseType
     public $Website;
 
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -26,6 +29,7 @@ class BMGetButtonDetailsResponseType
     public $Email;
 
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -33,6 +37,7 @@ class BMGetButtonDetailsResponseType
     public $Mobile;
 
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -70,24 +75,28 @@ class BMGetButtonDetailsResponseType
     /**
      * Button Variable information Character length and
      * limitations: 63 single-byte alphanumeric characters
+     * @array
      * @access    public
      * @namespace ns
-     * @var string[]
+     * @var string
      */
     public $ButtonVar;
 
     /**
+     *
+     * @array
      * @access    public
      * @namespace ns
-     * @var OptionDetailsType[]
+     * @var \PayPal\PayPalAPI\OptionDetailsType
      */
     public $OptionDetails;
 
     /**
      * Text field
+     * @array
      * @access    public
      * @namespace ns
-     * @var string[]
+     * @var string
      */
     public $TextBox;
 
@@ -140,4 +149,5 @@ class BMGetButtonDetailsResponseType
      * @var string
      */
     public $ButtonLanguage;
+
 }

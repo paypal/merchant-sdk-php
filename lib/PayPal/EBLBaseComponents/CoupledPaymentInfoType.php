@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class CoupledPaymentInfoType
   extends PPXmlMessage
 {
+
     /**
      * ID received in the Coupled Payment Request
      * @access    public
@@ -25,4 +26,5 @@ class CoupledPaymentInfoType
      * @var string
      */
     public $CoupledPaymentID;
+
 }

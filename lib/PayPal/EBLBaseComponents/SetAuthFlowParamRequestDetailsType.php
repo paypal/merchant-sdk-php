@@ -11,6 +11,7 @@ use PayPal\Core\PPXmlMessage;
 class SetAuthFlowParamRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
      * URL to which the customer's browser is returned after
      * choosing to login with PayPal. Required Character length and
@@ -205,7 +206,8 @@ class SetAuthFlowParamRequestDetailsType
      * GetExpressCheckoutDetailsResponse.
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $Address;
+
 }

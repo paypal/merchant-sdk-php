@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class CreateRecurringPaymentsProfileResponseDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Recurring Billing Profile ID
      * @access    public
@@ -48,4 +49,5 @@ class CreateRecurringPaymentsProfileResponseDetailsType
      * @var string
      */
     public $DCCReturnCode;
+
 }

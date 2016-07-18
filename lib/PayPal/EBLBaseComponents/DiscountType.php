@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * Describes discount information
@@ -10,6 +9,7 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class DiscountType
   extends PPXmlMessage
 {
+
     /**
      * Item nameOptional Character length and limits: 127
      * single-byte characters
@@ -32,7 +32,7 @@ class DiscountType
      * amount discountedOptional
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
@@ -55,11 +55,10 @@ class DiscountType
 
     /**
      * Constructor with arguments
-     *
-     * @param BasicAmountType $Amount
      */
     public function __construct($Amount = null)
     {
         $this->Amount = $Amount;
     }
+
 }

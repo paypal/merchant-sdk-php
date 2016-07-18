@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * The timestamped token value that was returned by
@@ -13,6 +12,7 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class GetExpressCheckoutDetailsResponseDetailsType
   extends PPXmlMessage
 {
+
     /**
      * The timestamped token value that was returned by
      * SetExpressCheckoutResponse and passed on
@@ -28,7 +28,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
      * Information about the payer
      * @access    public
      * @namespace ebl
-     * @var PayerInfoType
+     * @var \PayPal\EBLBaseComponents\PayerInfoType
      */
     public $PayerInfo;
 
@@ -65,6 +65,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
     public $ContactPhone;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var boolean
@@ -72,6 +73,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
     public $BillingAgreementAcceptedStatus;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -86,7 +88,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
      * GetExpressCheckoutDetailsResponse.
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $BillingAddress;
 
@@ -116,15 +118,16 @@ class GetExpressCheckoutDetailsResponseDetailsType
      * amount.
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $PayPalAdjustment;
 
     /**
      * Information about the individual purchased items.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var PaymentDetailsType[]
+     * @var \PayPal\EBLBaseComponents\PaymentDetailsType
      */
     public $PaymentDetails;
 
@@ -132,16 +135,17 @@ class GetExpressCheckoutDetailsResponseDetailsType
      * Information about the user selected options.
      * @access    public
      * @namespace ebl
-     * @var UserSelectedOptionType
+     * @var \PayPal\EBLBaseComponents\UserSelectedOptionType
      */
     public $UserSelectedOptions;
 
     /**
      * Information about the incentives that were applied from Ebay
      * RYP page and PayPal RYP page.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var IncentiveDetailsType[]
+     * @var \PayPal\EBLBaseComponents\IncentiveDetailsType
      */
     public $IncentiveDetails;
 
@@ -173,7 +177,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
      * Information about the Gift Wrap amount.
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $GiftWrapAmount;
 
@@ -195,18 +199,20 @@ class GetExpressCheckoutDetailsResponseDetailsType
 
     /**
      * Information about the survey choice selected by the user.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var string[]
+     * @var string
      */
     public $SurveyChoiceSelected;
 
     /**
      * Contains payment request information about each bucket in
      * the cart.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var PaymentRequestInfoType[]
+     * @var \PayPal\EBLBaseComponents\PaymentRequestInfoType
      */
     public $PaymentRequestInfo;
 
@@ -215,7 +221,7 @@ class GetExpressCheckoutDetailsResponseDetailsType
      * current login bypass status.
      * @access    public
      * @namespace ebl
-     * @var ExternalRememberMeStatusDetailsType
+     * @var \PayPal\EBLBaseComponents\ExternalRememberMeStatusDetailsType
      */
     public $ExternalRememberMeStatusDetails;
 
@@ -224,7 +230,8 @@ class GetExpressCheckoutDetailsResponseDetailsType
      * current login bypass status.
      * @access    public
      * @namespace ebl
-     * @var RefreshTokenStatusDetailsType
+     * @var \PayPal\EBLBaseComponents\RefreshTokenStatusDetailsType
      */
     public $RefreshTokenStatusDetails;
+
 }

@@ -11,6 +11,7 @@ use PayPal\Core\PPXmlMessage;
 class SetAccessPermissionsRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
      * URL to which the customer's browser is returned after
      * choosing to login with PayPal. Required Character length and
@@ -62,17 +63,19 @@ class SetAccessPermissionsRequestDetailsType
 
     /**
      * contains information about API Services
+     * @array
      * @access    public
      * @namespace ebl
-     * @var string[]
+     * @var string
      */
     public $RequiredAccessPermissions;
 
     /**
      * contains information about API Services
+     * @array
      * @access    public
      * @namespace ebl
-     * @var string[]
+     * @var string
      */
     public $OptionalAccessPermissions;
 
@@ -181,7 +184,8 @@ class SetAccessPermissionsRequestDetailsType
      * GetExpressCheckoutDetailsResponse.
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $Address;
+
 }

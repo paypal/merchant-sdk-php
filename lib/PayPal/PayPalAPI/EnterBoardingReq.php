@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class EnterBoardingReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var EnterBoardingRequestType
+     * @var \PayPal\PayPalAPI\EnterBoardingRequestType
      */
     public $EnterBoardingRequest;
 
@@ -25,4 +30,5 @@ class EnterBoardingReq
         $str .= '</ns:EnterBoardingReq>';
         return $str;
     }
+
 }

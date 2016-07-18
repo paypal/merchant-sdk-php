@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class BMUpdateButtonReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var BMUpdateButtonRequestType
+     * @var \PayPal\PayPalAPI\BMUpdateButtonRequestType
      */
     public $BMUpdateButtonRequest;
 
@@ -25,4 +30,5 @@ class BMUpdateButtonReq
         $str .= '</ns:BMUpdateButtonReq>';
         return $str;
     }
+
 }

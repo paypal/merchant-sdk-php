@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class DoCancelReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var DoCancelRequestType
+     * @var \PayPal\PayPalAPI\DoCancelRequestType
      */
     public $DoCancelRequest;
 
@@ -25,4 +30,5 @@ class DoCancelReq
         $str .= '</ns:DoCancelReq>';
         return $str;
     }
+
 }

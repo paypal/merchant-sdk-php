@@ -3,10 +3,15 @@ namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class IncentiveRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -14,6 +19,7 @@ class IncentiveRequestDetailsType
     public $RequestId;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -21,9 +27,11 @@ class IncentiveRequestDetailsType
     public $RequestType;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
      */
     public $RequestDetailLevel;
+
 }

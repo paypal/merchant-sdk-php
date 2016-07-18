@@ -9,17 +9,21 @@ use PayPal\Core\PPXmlMessage;
 class ThreeDSecureInfoType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var ThreeDSecureRequestType
+     * @var \PayPal\EBLBaseComponents\ThreeDSecureRequestType
      */
     public $ThreeDSecureRequest;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var ThreeDSecureResponseType
+     * @var \PayPal\EBLBaseComponents\ThreeDSecureResponseType
      */
     public $ThreeDSecureResponse;
+
 }

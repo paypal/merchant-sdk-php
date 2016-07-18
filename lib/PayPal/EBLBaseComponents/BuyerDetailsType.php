@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class BuyerDetailsType
   extends PPXmlMessage
 {
+
     /**
      * The client's unique ID for this user.
      * @access    public
@@ -30,7 +31,7 @@ class BuyerDetailsType
      * Date when the user registered with the marketplace.
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $BuyerRegistrationDate;
 
@@ -39,7 +40,7 @@ class BuyerDetailsType
      * TaxIdDetailsType for more details.
      * @access    public
      * @namespace ebl
-     * @var TaxIdDetailsType
+     * @var \PayPal\EBLBaseComponents\TaxIdDetailsType
      */
     public $TaxIdDetails;
 
@@ -48,7 +49,8 @@ class BuyerDetailsType
      * address or the external remember me id.
      * @access    public
      * @namespace ebl
-     * @var IdentificationInfoType
+     * @var \PayPal\EBLBaseComponents\IdentificationInfoType
      */
     public $IdentificationInfo;
+
 }

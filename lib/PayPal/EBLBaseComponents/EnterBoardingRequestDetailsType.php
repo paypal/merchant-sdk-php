@@ -11,6 +11,7 @@ use PayPal\Core\PPXmlMessage;
 class EnterBoardingRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Onboarding program code given to you by PayPal. Required
      * Character length and limitations: 64 alphanumeric characters
@@ -72,7 +73,7 @@ class EnterBoardingRequestDetailsType
      * Information about the merchantâs business
      * @access    public
      * @namespace ebl
-     * @var BusinessInfoType
+     * @var \PayPal\EBLBaseComponents\BusinessInfoType
      */
     public $BusinessInfo;
 
@@ -80,7 +81,7 @@ class EnterBoardingRequestDetailsType
      * Information about the merchant (the business owner)
      * @access    public
      * @namespace ebl
-     * @var BusinessOwnerInfoType
+     * @var \PayPal\EBLBaseComponents\BusinessOwnerInfoType
      */
     public $OwnerInfo;
 
@@ -88,7 +89,8 @@ class EnterBoardingRequestDetailsType
      * Information about the merchant's bank account
      * @access    public
      * @namespace ebl
-     * @var BankAccountDetailsType
+     * @var \PayPal\EBLBaseComponents\BankAccountDetailsType
      */
     public $BankAccount;
+
 }

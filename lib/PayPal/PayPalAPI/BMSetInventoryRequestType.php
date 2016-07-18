@@ -2,8 +2,6 @@
 namespace PayPal\PayPalAPI;
 
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\ItemTrackingDetailsType;
-use PayPal\EBLBaseComponents\OptionTrackingDetailsType;
 
 /**
  * Hosted Button ID of button you wish to change.  Required
@@ -13,6 +11,7 @@ use PayPal\EBLBaseComponents\OptionTrackingDetailsType;
 class BMSetInventoryRequestType
   extends AbstractRequestType
 {
+
     /**
      * Hosted Button ID of button you wish to change.  Required
      * Character length and limitations: 10 single-byte numeric
@@ -40,9 +39,10 @@ class BMSetInventoryRequestType
     public $TrackPnl;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var ItemTrackingDetailsType
+     * @var \PayPal\EBLBaseComponents\ItemTrackingDetailsType
      */
     public $ItemTrackingDetails;
 
@@ -56,9 +56,11 @@ class BMSetInventoryRequestType
     public $OptionIndex;
 
     /**
+     *
+     * @array
      * @access    public
      * @namespace ebl
-     * @var OptionTrackingDetailsType[]
+     * @var \PayPal\EBLBaseComponents\OptionTrackingDetailsType
      */
     public $OptionTrackingDetails;
 
@@ -95,18 +97,15 @@ class BMSetInventoryRequestType
      * customers after transaction is completed.  Optional
      * Character length and limitations: 1000 single-byte
      * alphanumeric characters
+     * @array
      * @access    public
      * @namespace ns
-     * @var string[]
+     * @var string
      */
     public $DigitalDownloadKeys;
 
     /**
      * Constructor with arguments
-     *
-     * @param string $HostedButtonID
-     * @param string $TrackInv
-     * @param string $TrackPnl
      */
     public function __construct($HostedButtonID = null, $TrackInv = null, $TrackPnl = null)
     {
@@ -114,4 +113,5 @@ class BMSetInventoryRequestType
         $this->TrackInv       = $TrackInv;
         $this->TrackPnl       = $TrackPnl;
     }
+
 }

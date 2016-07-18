@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class PaymentDirectivesType
   extends PPXmlMessage
 {
+
     /**
      * Type of the Payment is it Instant or Echeck or Any.
      * @access    public
@@ -16,4 +17,5 @@ class PaymentDirectivesType
      * @var string
      */
     public $PaymentType;
+
 }

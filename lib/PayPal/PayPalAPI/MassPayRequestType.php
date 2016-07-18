@@ -12,6 +12,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 class MassPayRequestType
   extends AbstractRequestType
 {
+
     /**
      * Subject line of the email sent to all recipients. This
      * subject is not contained in the input file; you must create
@@ -48,19 +49,19 @@ class MassPayRequestType
     /**
      * Details of each payment. A single MassPayRequest can include
      * up to 250 MassPayItems. Required
+     * @array
      * @access    public
      * @namespace ns
-     * @var MassPayRequestItemType[]
+     * @var \PayPal\PayPalAPI\MassPayRequestItemType
      */
     public $MassPayItem;
 
     /**
      * Constructor with arguments
-     *
-     * @param MassPayRequestItemType[] $MassPayItem
      */
     public function __construct($MassPayItem = null)
     {
         $this->MassPayItem = $MassPayItem;
     }
+
 }

@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * Type of the payment Required
@@ -10,6 +9,7 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class CreateMobilePaymentRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Type of the payment Required
      * @access    public
@@ -34,7 +34,7 @@ class CreateMobilePaymentRequestDetailsType
      * Phone number of the user making the payment. Required
      * @access    public
      * @namespace ebl
-     * @var PhoneNumberType
+     * @var \PayPal\EBLBaseComponents\PhoneNumberType
      */
     public $SenderPhone;
 
@@ -59,7 +59,7 @@ class CreateMobilePaymentRequestDetailsType
      * Phone number of the recipipent Required
      * @access    public
      * @namespace ebl
-     * @var PhoneNumberType
+     * @var \PayPal\EBLBaseComponents\PhoneNumberType
      */
     public $RecipientPhone;
 
@@ -67,7 +67,7 @@ class CreateMobilePaymentRequestDetailsType
      * Amount of item before tax and shipping
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $ItemAmount;
 
@@ -75,7 +75,7 @@ class CreateMobilePaymentRequestDetailsType
      * The tax charged on the transactionTax Optional
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Tax;
 
@@ -83,7 +83,7 @@ class CreateMobilePaymentRequestDetailsType
      * Per-transaction shipping charge Optional
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Shipping;
 
@@ -142,4 +142,5 @@ class CreateMobilePaymentRequestDetailsType
      * @var integer
      */
     public $ShareHomeAddress;
+
 }

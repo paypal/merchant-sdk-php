@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class InitiateRecoupReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var InitiateRecoupRequestType
+     * @var \PayPal\PayPalAPI\InitiateRecoupRequestType
      */
     public $InitiateRecoupRequest;
 
@@ -25,4 +30,5 @@ class InitiateRecoupReq
         $str .= '</ns:InitiateRecoupReq>';
         return $str;
     }
+
 }

@@ -10,6 +10,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 class UpdateAccessPermissionsResponseType
   extends AbstractResponseType
 {
+
     /**
      * The status of the update call, Success/Failure. Character
      * length and limitations: 20 single-byte characters
@@ -18,4 +19,5 @@ class UpdateAccessPermissionsResponseType
      * @var string
      */
     public $Status;
+
 }

@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class TaxIdDetailsType
   extends PPXmlMessage
 {
+
     /**
      * The payer's Tax ID type; CNPJ/CPF for BR country.
      * @access    public
@@ -25,4 +26,5 @@ class TaxIdDetailsType
      * @var string
      */
     public $TaxId;
+
 }

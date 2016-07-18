@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class RefundTransactionReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var RefundTransactionRequestType
+     * @var \PayPal\PayPalAPI\RefundTransactionRequestType
      */
     public $RefundTransactionRequest;
 
@@ -25,4 +30,5 @@ class RefundTransactionReq
         $str .= '</ns:RefundTransactionReq>';
         return $str;
     }
+
 }

@@ -9,10 +9,14 @@ use PayPal\Core\PPXmlMessage;
 class RiskFilterListType
   extends PPXmlMessage
 {
+
     /**
+     *
+     * @array
      * @access    public
      * @namespace ebl
-     * @var RiskFilterDetailsType[]
+     * @var \PayPal\EBLBaseComponents\RiskFilterDetailsType
      */
     public $Filters;
+
 }

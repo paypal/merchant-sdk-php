@@ -11,6 +11,7 @@ use PayPal\Core\PPXmlMessage;
 class GetBoardingDetailsResponseDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Status of merchant's onboarding process:
      * CompletedCancelledPending Character length and limitations:
@@ -25,7 +26,7 @@ class GetBoardingDetailsResponseDetailsType
      * Date the boarding process started
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $StartDate;
 
@@ -33,7 +34,7 @@ class GetBoardingDetailsResponseDetailsType
      * Date the merchantâs status or progress was last updated
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $LastUpdated;
 
@@ -47,6 +48,7 @@ class GetBoardingDetailsResponseDetailsType
     public $Reason;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -54,6 +56,7 @@ class GetBoardingDetailsResponseDetailsType
     public $ProgramName;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -61,6 +64,7 @@ class GetBoardingDetailsResponseDetailsType
     public $ProgramCode;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -90,7 +94,7 @@ class GetBoardingDetailsResponseDetailsType
      * Details about the owner of the account
      * @access    public
      * @namespace ebl
-     * @var PayerInfoType
+     * @var \PayPal\EBLBaseComponents\PayerInfoType
      */
     public $AccountOwner;
 
@@ -98,7 +102,7 @@ class GetBoardingDetailsResponseDetailsType
      * Merchantâs PayPal API credentials
      * @access    public
      * @namespace ebl
-     * @var APICredentialsType
+     * @var \PayPal\EBLBaseComponents\APICredentialsType
      */
     public $Credentials;
 
@@ -139,4 +143,5 @@ class GetBoardingDetailsResponseDetailsType
      * @var string
      */
     public $BankAccountVerificationStatus;
+
 }

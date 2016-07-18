@@ -14,6 +14,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 class AddressVerifyResponseType
   extends AbstractResponseType
 {
+
     /**
      * Confirmation of a match, with one of the following tokens:
      * None: The input value of the Email object does not match any
@@ -80,4 +81,5 @@ class AddressVerifyResponseType
      * @var string
      */
     public $PayPalToken;
+
 }

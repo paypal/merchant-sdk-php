@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * Recurring Billing Profile ID
@@ -10,6 +9,7 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class GetRecurringPaymentsProfileDetailsResponseDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Recurring Billing Profile ID
      * @access    public
@@ -19,6 +19,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
     public $ProfileID;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -26,6 +27,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
     public $ProfileStatus;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -33,6 +35,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
     public $Description;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -40,6 +43,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
     public $AutoBillOutstandingAmount;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var integer
@@ -47,79 +51,91 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType
     public $MaxFailedPayments;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var RecurringPaymentsProfileDetailsType
+     * @var \PayPal\EBLBaseComponents\RecurringPaymentsProfileDetailsType
      */
     public $RecurringPaymentsProfileDetails;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BillingPeriodDetailsType
+     * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType
      */
     public $CurrentRecurringPaymentsPeriod;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var RecurringPaymentsSummaryType
+     * @var \PayPal\EBLBaseComponents\RecurringPaymentsSummaryType
      */
     public $RecurringPaymentsSummary;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var CreditCardDetailsType
+     * @var \PayPal\EBLBaseComponents\CreditCardDetailsType
      */
     public $CreditCard;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BillingPeriodDetailsType
+     * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType
      */
     public $TrialRecurringPaymentsPeriod;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BillingPeriodDetailsType
+     * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType
      */
     public $RegularRecurringPaymentsPeriod;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $TrialAmountPaid;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $RegularAmountPaid;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $AggregateAmount;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $AggregateOptionalAmount;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $FinalPaymentDueDate;
+
 }

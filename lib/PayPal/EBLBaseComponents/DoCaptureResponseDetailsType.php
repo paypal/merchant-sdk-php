@@ -11,6 +11,7 @@ use PayPal\Core\PPXmlMessage;
 class DoCaptureResponseDetailsType
   extends PPXmlMessage
 {
+
     /**
      * The authorization identification number you specified in the
      * request. Character length and limits: 19 single-byte
@@ -25,7 +26,7 @@ class DoCaptureResponseDetailsType
      * Information about the transaction
      * @access    public
      * @namespace ebl
-     * @var PaymentInfoType
+     * @var \PayPal\EBLBaseComponents\PaymentInfoType
      */
     public $PaymentInfo;
 
@@ -36,4 +37,5 @@ class DoCaptureResponseDetailsType
      * @var string
      */
     public $MsgSubID;
+
 }

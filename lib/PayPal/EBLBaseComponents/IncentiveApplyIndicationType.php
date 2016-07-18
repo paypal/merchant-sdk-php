@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class IncentiveApplyIndicationType
   extends PPXmlMessage
 {
+
     /**
      * The Bucket ID that the incentive is applied to.
      * @access    public
@@ -25,4 +26,5 @@ class IncentiveApplyIndicationType
      * @var string
      */
     public $ItemId;
+
 }

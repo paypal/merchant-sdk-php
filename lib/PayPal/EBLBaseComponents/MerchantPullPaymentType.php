@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * MerchantPullPayment Parameters to make initiate a pull
@@ -11,6 +10,7 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class MerchantPullPaymentType
   extends PPXmlMessage
 {
+
     /**
      * The amount to charge to the customer. Required Only numeric
      * characters and a decimal separator are allowed. Limit: 10
@@ -19,7 +19,7 @@ class MerchantPullPaymentType
      * currency code for any of the supported PayPal currencies.
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
@@ -66,7 +66,7 @@ class MerchantPullPaymentType
      * The tax charged on the transaction Optional
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Tax;
 
@@ -74,7 +74,7 @@ class MerchantPullPaymentType
      * Per-transaction shipping charge Optional
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Shipping;
 
@@ -82,7 +82,7 @@ class MerchantPullPaymentType
      * Per-transaction handling charge Optional
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Handling;
 
@@ -137,4 +137,5 @@ class MerchantPullPaymentType
      * @var string
      */
     public $SoftDescriptor;
+
 }

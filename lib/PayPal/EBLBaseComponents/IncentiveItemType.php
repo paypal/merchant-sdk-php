@@ -2,12 +2,16 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
+/**
+ *
+ */
 class IncentiveItemType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -15,13 +19,15 @@ class IncentiveItemType
     public $ItemId;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $PurchaseTime;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -29,16 +35,19 @@ class IncentiveItemType
     public $ItemCategoryList;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $ItemPrice;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var integer
      */
     public $ItemQuantity;
+
 }

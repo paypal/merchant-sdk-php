@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class CreateRecurringPaymentsProfileReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var CreateRecurringPaymentsProfileRequestType
+     * @var \PayPal\PayPalAPI\CreateRecurringPaymentsProfileRequestType
      */
     public $CreateRecurringPaymentsProfileRequest;
 
@@ -25,4 +30,5 @@ class CreateRecurringPaymentsProfileReq
         $str .= '</ns:CreateRecurringPaymentsProfileReq>';
         return $str;
     }
+
 }

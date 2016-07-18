@@ -2,15 +2,20 @@
 namespace PayPal\PayPalAPI;
 
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\BillOutstandingAmountRequestDetailsType;
 
+/**
+ *
+ */
 class BillOutstandingAmountRequestType
   extends AbstractRequestType
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BillOutstandingAmountRequestDetailsType
+     * @var \PayPal\EBLBaseComponents\BillOutstandingAmountRequestDetailsType
      */
     public $BillOutstandingAmountRequestDetails;
+
 }

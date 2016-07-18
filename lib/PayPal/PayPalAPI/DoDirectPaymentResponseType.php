@@ -1,10 +1,7 @@
 <?php
 namespace PayPal\PayPalAPI;
 
-use PayPal\CoreComponentTypes\BasicAmountType;
 use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EBLBaseComponents\FMFDetailsType;
-use PayPal\EBLBaseComponents\ThreeDSecureResponseType;
 
 /**
  * The amount of the payment as specified by you on
@@ -13,12 +10,13 @@ use PayPal\EBLBaseComponents\ThreeDSecureResponseType;
 class DoDirectPaymentResponseType
   extends AbstractResponseType
 {
+
     /**
      * The amount of the payment as specified by you on
      * DoDirectPaymentRequest.
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
@@ -82,16 +80,18 @@ class DoDirectPaymentResponseType
     public $PaymentStatus;
 
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var FMFDetailsType
+     * @var \PayPal\EBLBaseComponents\FMFDetailsType
      */
     public $FMFDetails;
 
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var ThreeDSecureResponseType
+     * @var \PayPal\EBLBaseComponents\ThreeDSecureResponseType
      */
     public $ThreeDSecureResponse;
 
@@ -103,4 +103,5 @@ class DoDirectPaymentResponseType
      * @var string
      */
     public $PaymentAdviceCode;
+
 }

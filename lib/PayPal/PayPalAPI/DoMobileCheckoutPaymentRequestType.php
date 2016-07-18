@@ -11,6 +11,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 class DoMobileCheckoutPaymentRequestType
   extends AbstractRequestType
 {
+
     /**
      * A timestamped token, the value of which was returned by
      * SetMobileCheckoutResponse. RequiredCharacter length and
@@ -23,11 +24,10 @@ class DoMobileCheckoutPaymentRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $Token
      */
     public function __construct($Token = null)
     {
         $this->Token = $Token;
     }
+
 }

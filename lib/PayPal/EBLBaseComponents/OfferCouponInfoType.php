@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class OfferCouponInfoType
   extends PPXmlMessage
 {
+
     /**
      * Type of the incentive
      * @access    public
@@ -41,4 +42,5 @@ class OfferCouponInfoType
      * @var string
      */
     public $AmountCurrency;
+
 }

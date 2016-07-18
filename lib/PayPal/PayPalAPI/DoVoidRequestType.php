@@ -14,6 +14,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 class DoVoidRequestType
   extends AbstractRequestType
 {
+
     /**
      * The value of the original authorization identification
      * number returned by a PayPal product. If you are voiding a
@@ -50,11 +51,10 @@ class DoVoidRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $AuthorizationID
      */
     public function __construct($AuthorizationID = null)
     {
         $this->AuthorizationID = $AuthorizationID;
     }
+
 }

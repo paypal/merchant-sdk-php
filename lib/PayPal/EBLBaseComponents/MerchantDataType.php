@@ -10,10 +10,14 @@ use PayPal\Core\PPXmlMessage;
 class MerchantDataType
   extends PPXmlMessage
 {
+
     /**
+     *
+     * @array
      * @access    public
      * @namespace ebl
-     * @var TupleType[]
+     * @var \PayPal\EBLBaseComponents\TupleType
      */
     public $MerchantDataTuple;
+
 }

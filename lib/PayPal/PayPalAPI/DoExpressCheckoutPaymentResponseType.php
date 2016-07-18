@@ -2,23 +2,28 @@
 namespace PayPal\PayPalAPI;
 
 use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EBLBaseComponents\DoExpressCheckoutPaymentResponseDetailsType;
-use PayPal\EBLBaseComponents\FMFDetailsType;
 
+/**
+ *
+ */
 class DoExpressCheckoutPaymentResponseType
   extends AbstractResponseType
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var DoExpressCheckoutPaymentResponseDetailsType
+     * @var \PayPal\EBLBaseComponents\DoExpressCheckoutPaymentResponseDetailsType
      */
     public $DoExpressCheckoutPaymentResponseDetails;
 
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var FMFDetailsType
+     * @var \PayPal\EBLBaseComponents\FMFDetailsType
      */
     public $FMFDetails;
+
 }

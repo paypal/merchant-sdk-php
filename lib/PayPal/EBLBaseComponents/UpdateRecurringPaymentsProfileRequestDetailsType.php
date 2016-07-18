@@ -2,12 +2,16 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
+/**
+ *
+ */
 class UpdateRecurringPaymentsProfileRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -15,6 +19,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
     public $ProfileID;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -22,6 +27,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
     public $Note;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -29,6 +35,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
     public $Description;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -36,13 +43,15 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
     public $SubscriberName;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $SubscriberShippingAddress;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -50,6 +59,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
     public $ProfileReference;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var integer
@@ -57,34 +67,39 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
     public $AdditionalBillingCycles;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $ShippingAmount;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $TaxAmount;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $OutstandingBalance;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -92,6 +107,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
     public $AutoBillOutstandingAmount;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var integer
@@ -103,7 +119,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
      * Direct Payment)
      * @access    public
      * @namespace ebl
-     * @var CreditCardDetailsType
+     * @var \PayPal\EBLBaseComponents\CreditCardDetailsType
      */
     public $CreditCard;
 
@@ -111,7 +127,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
      * When does this Profile begin billing?
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $BillingStartDate;
 
@@ -119,24 +135,24 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
      * Trial period of this schedule
      * @access    public
      * @namespace ebl
-     * @var BillingPeriodDetailsType_Update
+     * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType_Update
      */
     public $TrialPeriod;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BillingPeriodDetailsType_Update
+     * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType_Update
      */
     public $PaymentPeriod;
 
     /**
      * Constructor with arguments
-     *
-     * @param string $ProfileID
      */
     public function __construct($ProfileID = null)
     {
         $this->ProfileID = $ProfileID;
     }
+
 }

@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class OptionSelectionDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Option Selection. Required Character length and limitations:
      * 12 single-byte alphanumeric characters
@@ -36,19 +37,20 @@ class OptionSelectionDetailsType
     public $OptionType;
 
     /**
+     *
+     * @array
      * @access    public
      * @namespace ns
-     * @var InstallmentDetailsType[]
+     * @var \PayPal\PayPalAPI\InstallmentDetailsType
      */
     public $PaymentPeriod;
 
     /**
      * Constructor with arguments
-     *
-     * @param string $OptionSelection
      */
     public function __construct($OptionSelection = null)
     {
         $this->OptionSelection = $OptionSelection;
     }
+
 }

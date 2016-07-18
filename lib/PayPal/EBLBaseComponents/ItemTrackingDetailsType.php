@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class ItemTrackingDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Item Number. Required
      * @access    public
@@ -48,4 +49,5 @@ class ItemTrackingDetailsType
      * @var string
      */
     public $ItemCost;
+
 }

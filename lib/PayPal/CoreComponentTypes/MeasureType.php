@@ -10,7 +10,9 @@ use PayPal\Core\PPXmlMessage;
 class MeasureType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace cc
      * @attribute
@@ -19,6 +21,7 @@ class MeasureType
     public $unit;
 
     /**
+     *
      * @access    public
      * @namespace cc
      * @value
@@ -28,13 +31,11 @@ class MeasureType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $unit
-     * @param double $value
      */
     public function __construct($unit = null, $value = null)
     {
         $this->unit  = $unit;
         $this->value = $value;
     }
+
 }

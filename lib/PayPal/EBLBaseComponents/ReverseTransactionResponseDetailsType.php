@@ -11,6 +11,7 @@ use PayPal\Core\PPXmlMessage;
 class ReverseTransactionResponseDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Unique transaction identifier of the reversal transaction
      * created. Character length and limitations:17 single-byte
@@ -28,4 +29,5 @@ class ReverseTransactionResponseDetailsType
      * @var string
      */
     public $Status;
+
 }

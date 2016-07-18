@@ -9,7 +9,9 @@ use PayPal\Core\PPXmlMessage;
 class ThreeDSecureRequestType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -17,6 +19,7 @@ class ThreeDSecureRequestType
     public $Eci3ds;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -24,6 +27,7 @@ class ThreeDSecureRequestType
     public $Cavv;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -31,6 +35,7 @@ class ThreeDSecureRequestType
     public $Xid;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -38,9 +43,11 @@ class ThreeDSecureRequestType
     public $MpiVendor3ds;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
      */
     public $AuthStatus3ds;
+
 }

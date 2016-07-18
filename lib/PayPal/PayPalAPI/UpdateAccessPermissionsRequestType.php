@@ -11,6 +11,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 class UpdateAccessPermissionsRequestType
   extends AbstractRequestType
 {
+
     /**
      * Unique PayPal customer account number, the value of which
      * was returned by GetAuthDetails Response. Required Character
@@ -23,11 +24,10 @@ class UpdateAccessPermissionsRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $PayerID
      */
     public function __construct($PayerID = null)
     {
         $this->PayerID = $PayerID;
     }
+
 }

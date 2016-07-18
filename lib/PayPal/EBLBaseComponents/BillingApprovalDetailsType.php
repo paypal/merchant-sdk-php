@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class BillingApprovalDetailsType
   extends PPXmlMessage
 {
+
     /**
      * The Type of Approval requested - Billing Agreement or
      * Profile
@@ -32,7 +33,7 @@ class BillingApprovalDetailsType
      * Description about the Order
      * @access    public
      * @namespace ebl
-     * @var OrderDetailsType
+     * @var \PayPal\EBLBaseComponents\OrderDetailsType
      */
     public $OrderDetails;
 
@@ -40,7 +41,7 @@ class BillingApprovalDetailsType
      * Directives about the type of payment
      * @access    public
      * @namespace ebl
-     * @var PaymentDirectivesType
+     * @var \PayPal\EBLBaseComponents\PaymentDirectivesType
      */
     public $PaymentDirectives;
 
@@ -55,11 +56,10 @@ class BillingApprovalDetailsType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $ApprovalType
      */
     public function __construct($ApprovalType = null)
     {
         $this->ApprovalType = $ApprovalType;
     }
+
 }

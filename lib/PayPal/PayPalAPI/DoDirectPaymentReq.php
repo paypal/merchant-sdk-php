@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class DoDirectPaymentReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var DoDirectPaymentRequestType
+     * @var \PayPal\PayPalAPI\DoDirectPaymentRequestType
      */
     public $DoDirectPaymentRequest;
 
@@ -25,4 +30,5 @@ class DoDirectPaymentReq
         $str .= '</ns:DoDirectPaymentReq>';
         return $str;
     }
+
 }

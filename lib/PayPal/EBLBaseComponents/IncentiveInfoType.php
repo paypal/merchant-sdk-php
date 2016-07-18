@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class IncentiveInfoType
   extends PPXmlMessage
 {
+
     /**
      * Incentive redemption code.
      * @access    public
@@ -20,9 +21,11 @@ class IncentiveInfoType
     /**
      * Defines which bucket or item that the incentive should be
      * applied to.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var IncentiveApplyIndicationType[]
+     * @var \PayPal\EBLBaseComponents\IncentiveApplyIndicationType
      */
     public $ApplyIndication;
+
 }

@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class ExternalPartnerTrackingDetailsType
   extends PPXmlMessage
 {
+
     /**
      * PayPal will just log this string. There will NOT be any
      * business logic around it, nor any decisions made based on
@@ -26,4 +27,5 @@ class ExternalPartnerTrackingDetailsType
      * @var string
      */
     public $ExternalPartnerSegmentID;
+
 }

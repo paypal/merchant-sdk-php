@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * @hasAttribute
@@ -11,18 +10,22 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class SubscriptionTermsType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @attribute
      * @var string
      */
     public $period;
+
 }

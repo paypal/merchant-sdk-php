@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class PaymentRequestInfoType
   extends PPXmlMessage
 {
+
     /**
      * Contains the transaction id of the bucket.
      * @access    public
@@ -30,7 +31,8 @@ class PaymentRequestInfoType
      * Contains the error details.
      * @access    public
      * @namespace ebl
-     * @var ErrorType
+     * @var \PayPal\EBLBaseComponents\ErrorType
      */
     public $PaymentError;
+
 }

@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class UpdateAuthorizationReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var UpdateAuthorizationRequestType
+     * @var \PayPal\PayPalAPI\UpdateAuthorizationRequestType
      */
     public $UpdateAuthorizationRequest;
 
@@ -25,4 +30,5 @@ class UpdateAuthorizationReq
         $str .= '</ns:UpdateAuthorizationReq>';
         return $str;
     }
+
 }

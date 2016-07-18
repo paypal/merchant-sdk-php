@@ -3,13 +3,18 @@ namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class GetBillingAgreementCustomerDetailsResponseDetailsType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var PayerInfoType
+     * @var \PayPal\EBLBaseComponents\PayerInfoType
      */
     public $PayerInfo;
 
@@ -21,7 +26,8 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType
      * GetBillingAgreementCustomerDetails.
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $BillingAddress;
+
 }

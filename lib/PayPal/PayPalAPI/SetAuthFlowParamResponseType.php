@@ -12,6 +12,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 class SetAuthFlowParamResponseType
   extends AbstractResponseType
 {
+
     /**
      * A timestamped token by which you identify to PayPal that you
      * are processing this user. The token expires after three
@@ -22,4 +23,5 @@ class SetAuthFlowParamResponseType
      * @var string
      */
     public $Token;
+
 }

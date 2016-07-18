@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class AuthorizationInfoType
   extends PPXmlMessage
 {
+
     /**
      * The status of the payment: Pending: The payment is pending.
      * See "PendingReason" for more information.
@@ -70,4 +71,5 @@ class AuthorizationInfoType
      * @var string
      */
     public $ProtectionEligibilityType;
+
 }

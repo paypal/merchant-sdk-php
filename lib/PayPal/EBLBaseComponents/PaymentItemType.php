@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * PaymentItemType Information about a Payment Item.
@@ -10,6 +9,7 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class PaymentItemType
   extends PPXmlMessage
 {
+
     /**
      * eBay Auction Transaction ID of the Item Optional Character
      * length and limitations: 255 single-byte characters
@@ -75,7 +75,7 @@ class PaymentItemType
      * Invoice item details
      * @access    public
      * @namespace ebl
-     * @var InvoiceItemType
+     * @var \PayPal\EBLBaseComponents\InvoiceItemType
      */
     public $InvoiceItemDetails;
 
@@ -123,15 +123,17 @@ class PaymentItemType
      * Cost of item
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
     /**
      * Item options selected in PayPal shopping cart
+     * @array
      * @access    public
      * @namespace ebl
-     * @var OptionType[]
+     * @var \PayPal\EBLBaseComponents\OptionType
      */
     public $Options;
+
 }

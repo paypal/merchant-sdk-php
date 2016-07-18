@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * Unit of meausre for billing cycle
@@ -10,6 +9,7 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class BillingPeriodDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Unit of meausre for billing cycle
      * @access    public
@@ -38,7 +38,7 @@ class BillingPeriodDetailsType
      * Amount to charge
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
@@ -46,7 +46,7 @@ class BillingPeriodDetailsType
      * Additional shipping amount to charge
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $ShippingAmount;
 
@@ -54,16 +54,12 @@ class BillingPeriodDetailsType
      * Additional tax amount to charge
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $TaxAmount;
 
     /**
      * Constructor with arguments
-     *
-     * @param string          $BillingPeriod
-     * @param integer         $BillingFrequency
-     * @param BasicAmountType $Amount
      */
     public function __construct($BillingPeriod = null, $BillingFrequency = null, $Amount = null)
     {
@@ -71,4 +67,5 @@ class BillingPeriodDetailsType
         $this->BillingFrequency = $BillingFrequency;
         $this->Amount           = $Amount;
     }
+
 }

@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class CreateRecurringPaymentsProfileRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Billing Agreement token (required if Express Checkout)
      * @access    public
@@ -22,7 +23,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType
      * Direct Payment)
      * @access    public
      * @namespace ebl
-     * @var CreditCardDetailsType
+     * @var \PayPal\EBLBaseComponents\CreditCardDetailsType
      */
     public $CreditCard;
 
@@ -30,7 +31,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType
      * Customer Information for this Recurring Payments
      * @access    public
      * @namespace ebl
-     * @var RecurringPaymentsProfileDetailsType
+     * @var \PayPal\EBLBaseComponents\RecurringPaymentsProfileDetailsType
      */
     public $RecurringPaymentsProfileDetails;
 
@@ -38,27 +39,26 @@ class CreateRecurringPaymentsProfileRequestDetailsType
      * Schedule Information for this Recurring Payments
      * @access    public
      * @namespace ebl
-     * @var ScheduleDetailsType
+     * @var \PayPal\EBLBaseComponents\ScheduleDetailsType
      */
     public $ScheduleDetails;
 
     /**
      * Information about the Item Details.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var PaymentDetailsItemType[]
+     * @var \PayPal\EBLBaseComponents\PaymentDetailsItemType
      */
     public $PaymentDetailsItem;
 
     /**
      * Constructor with arguments
-     *
-     * @param RecurringPaymentsProfileDetailsType $RecurringPaymentsProfileDetails
-     * @param ScheduleDetailsType                 $ScheduleDetails
      */
     public function __construct($RecurringPaymentsProfileDetails = null, $ScheduleDetails = null)
     {
         $this->RecurringPaymentsProfileDetails = $RecurringPaymentsProfileDetails;
         $this->ScheduleDetails                 = $ScheduleDetails;
     }
+
 }

@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class AddressType
   extends PPXmlMessage
 {
+
     /**
      * Person's name associated with this address. Character length
      * and limitations: 32 single-byte alphanumeric characters
@@ -109,6 +110,7 @@ class AddressType
     public $Phone;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -207,4 +209,5 @@ class AddressType
      * @var string
      */
     public $AddressNormalizationStatus;
+
 }

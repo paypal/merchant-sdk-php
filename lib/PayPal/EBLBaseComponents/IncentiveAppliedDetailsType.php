@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * Details of incentive application on individual bucket/item.
@@ -10,6 +9,7 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class IncentiveAppliedDetailsType
   extends PPXmlMessage
 {
+
     /**
      * PaymentRequestID uniquely identifies a bucket. It is the
      * "bucket id" in the world of EC API.
@@ -39,7 +39,7 @@ class IncentiveAppliedDetailsType
      * Discount offerred for this bucket or item.
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $DiscountAmount;
 
@@ -50,4 +50,5 @@ class IncentiveAppliedDetailsType
      * @var string
      */
     public $SubType;
+
 }

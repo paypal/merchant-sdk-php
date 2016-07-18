@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class AuctionInfoType
   extends PPXmlMessage
 {
+
     /**
      * Customer's auction ID
      * @access    public
@@ -22,15 +23,17 @@ class AuctionInfoType
      * Auction's close date
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $ClosingDate;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @attribute
      * @var string
      */
     public $multiItem;
+
 }

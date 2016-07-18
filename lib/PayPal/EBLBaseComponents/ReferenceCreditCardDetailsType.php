@@ -10,14 +10,17 @@ use PayPal\Core\PPXmlMessage;
 class ReferenceCreditCardDetailsType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var CreditCardNumberTypeType
+     * @var \PayPal\EBLBaseComponents\CreditCardNumberTypeType
      */
     public $CreditCardNumberType;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var integer
@@ -25,6 +28,7 @@ class ReferenceCreditCardDetailsType
     public $ExpMonth;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var integer
@@ -32,20 +36,23 @@ class ReferenceCreditCardDetailsType
     public $ExpYear;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var PersonNameType
+     * @var \PayPal\EBLBaseComponents\PersonNameType
      */
     public $CardOwnerName;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $BillingAddress;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -53,6 +60,7 @@ class ReferenceCreditCardDetailsType
     public $CVV2;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var integer
@@ -60,6 +68,7 @@ class ReferenceCreditCardDetailsType
     public $StartMonth;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var integer
@@ -67,9 +76,11 @@ class ReferenceCreditCardDetailsType
     public $StartYear;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
      */
     public $IssueNumber;
+
 }

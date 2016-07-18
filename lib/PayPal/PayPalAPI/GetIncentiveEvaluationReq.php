@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class GetIncentiveEvaluationReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var GetIncentiveEvaluationRequestType
+     * @var \PayPal\PayPalAPI\GetIncentiveEvaluationRequestType
      */
     public $GetIncentiveEvaluationRequest;
 
@@ -25,4 +30,5 @@ class GetIncentiveEvaluationReq
         $str .= '</ns:GetIncentiveEvaluationReq>';
         return $str;
     }
+
 }

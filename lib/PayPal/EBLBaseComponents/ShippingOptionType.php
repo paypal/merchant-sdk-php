@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * Fallback shipping options type.
@@ -10,7 +9,9 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class ShippingOptionType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -18,16 +19,19 @@ class ShippingOptionType
     public $ShippingOptionIsDefault;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $ShippingOptionAmount;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
      */
     public $ShippingOptionName;
+
 }

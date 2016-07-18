@@ -11,6 +11,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 class BMGetInventoryRequestType
   extends AbstractRequestType
 {
+
     /**
      * Hosted Button ID of the button to return inventory for.
      * Required Character length and limitations: 10 single-byte
@@ -23,11 +24,10 @@ class BMGetInventoryRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $HostedButtonID
      */
     public function __construct($HostedButtonID = null)
     {
         $this->HostedButtonID = $HostedButtonID;
     }
+
 }

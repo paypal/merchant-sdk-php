@@ -2,8 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
-use PayPal\EnhancedDataTypes\EnhancedCheckoutDataType;
 
 /**
  * The total cost of the order to the customer. If shipping
@@ -19,6 +17,7 @@ use PayPal\EnhancedDataTypes\EnhancedCheckoutDataType;
 class SetExpressCheckoutRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
      * The total cost of the order to the customer. If shipping
      * cost and tax charges are known, include them in OrderTotal;
@@ -31,7 +30,7 @@ class SetExpressCheckoutRequestDetailsType
      * (,).
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $OrderTotal;
 
@@ -123,7 +122,7 @@ class SetExpressCheckoutRequestDetailsType
      * the thousands separator must be a comma (,).
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $MaxAmount;
 
@@ -193,7 +192,7 @@ class SetExpressCheckoutRequestDetailsType
      * the CountryName element.
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $BillingAddress;
 
@@ -328,7 +327,7 @@ class SetExpressCheckoutRequestDetailsType
      * GetExpressCheckoutDetailsResponse.
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $Address;
 
@@ -384,6 +383,7 @@ class SetExpressCheckoutRequestDetailsType
     public $BuyerEmail;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -391,9 +391,11 @@ class SetExpressCheckoutRequestDetailsType
     public $ChannelType;
 
     /**
+     *
+     * @array
      * @access    public
      * @namespace ebl
-     * @var BillingAgreementDetailsType[]
+     * @var \PayPal\EBLBaseComponents\BillingAgreementDetailsType
      */
     public $BillingAgreementDetails;
 
@@ -401,9 +403,10 @@ class SetExpressCheckoutRequestDetailsType
      * Promo Code Optional List of promo codes supplied by
      * merchant. These promo codes enable the Merchant Services
      * Promotion Financing feature.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var string[]
+     * @var string
      */
     public $PromoCodes;
 
@@ -416,6 +419,7 @@ class SetExpressCheckoutRequestDetailsType
     public $PayPalCheckOutBtnType;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -423,6 +427,7 @@ class SetExpressCheckoutRequestDetailsType
     public $ProductCategory;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -434,7 +439,7 @@ class SetExpressCheckoutRequestDetailsType
      * which address was changed by the user.
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $ProfileAddressChangeDate;
 
@@ -455,7 +460,7 @@ class SetExpressCheckoutRequestDetailsType
      * Funding source preferences.
      * @access    public
      * @namespace ebl
-     * @var FundingSourceDetailsType
+     * @var \PayPal\EBLBaseComponents\FundingSourceDetailsType
      */
     public $FundingSourceDetails;
 
@@ -483,7 +488,7 @@ class SetExpressCheckoutRequestDetailsType
      * Enhanced data for different industry segments. Optional
      * @access    public
      * @namespace ebl
-     * @var EnhancedCheckoutDataType
+     * @var \PayPal\EnhancedDataTypes\EnhancedCheckoutDataType
      */
     public $EnhancedCheckoutData;
 
@@ -491,9 +496,10 @@ class SetExpressCheckoutRequestDetailsType
      * List of other payment methods the user can pay with.
      * Optional Refer to the OtherPaymentMethodDetailsType for more
      * details.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var OtherPaymentMethodDetailsType[]
+     * @var \PayPal\EBLBaseComponents\OtherPaymentMethodDetailsType
      */
     public $OtherPaymentMethods;
 
@@ -502,23 +508,25 @@ class SetExpressCheckoutRequestDetailsType
      * BuyerDetailsType for more details.
      * @access    public
      * @namespace ebl
-     * @var BuyerDetailsType
+     * @var \PayPal\EBLBaseComponents\BuyerDetailsType
      */
     public $BuyerDetails;
 
     /**
      * Information about the payment.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var PaymentDetailsType[]
+     * @var \PayPal\EBLBaseComponents\PaymentDetailsType
      */
     public $PaymentDetails;
 
     /**
      * List of Fall Back Shipping options provided by merchant.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var ShippingOptionType[]
+     * @var \PayPal\EBLBaseComponents\ShippingOptionType
      */
     public $FlatRateShippingOptions;
 
@@ -582,7 +590,7 @@ class SetExpressCheckoutRequestDetailsType
      * Information about the Gift Wrap amount.
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $GiftWrapAmount;
 
@@ -612,13 +620,15 @@ class SetExpressCheckoutRequestDetailsType
 
     /**
      * Information about the survey choices for survey question.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var string[]
+     * @var string
      */
     public $SurveyChoice;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -637,9 +647,10 @@ class SetExpressCheckoutRequestDetailsType
     /**
      * Incentive Code Optional List of incentive codes supplied by
      * ebay/merchant.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var IncentiveInfoType[]
+     * @var \PayPal\EBLBaseComponents\IncentiveInfoType
      */
     public $Incentives;
 
@@ -660,7 +671,7 @@ class SetExpressCheckoutRequestDetailsType
      * ExternalRememberMeID is present.
      * @access    public
      * @namespace ebl
-     * @var ExternalRememberMeOptInDetailsType
+     * @var \PayPal\EBLBaseComponents\ExternalRememberMeOptInDetailsType
      */
     public $ExternalRememberMeOptInDetails;
 
@@ -668,7 +679,7 @@ class SetExpressCheckoutRequestDetailsType
      * An optional set of values related to flow-specific details.
      * @access    public
      * @namespace ebl
-     * @var FlowControlDetailsType
+     * @var \PayPal\EBLBaseComponents\FlowControlDetailsType
      */
     public $FlowControlDetails;
 
@@ -677,7 +688,7 @@ class SetExpressCheckoutRequestDetailsType
      * details.
      * @access    public
      * @namespace ebl
-     * @var DisplayControlDetailsType
+     * @var \PayPal\EBLBaseComponents\DisplayControlDetailsType
      */
     public $DisplayControlDetails;
 
@@ -686,15 +697,17 @@ class SetExpressCheckoutRequestDetailsType
      * partner.
      * @access    public
      * @namespace ebl
-     * @var ExternalPartnerTrackingDetailsType
+     * @var \PayPal\EBLBaseComponents\ExternalPartnerTrackingDetailsType
      */
     public $ExternalPartnerTrackingDetails;
 
     /**
      * Optional element that defines relationship between buckets
+     * @array
      * @access    public
      * @namespace ebl
-     * @var CoupledBucketsType[]
+     * @var \PayPal\EBLBaseComponents\CoupledBucketsType
      */
     public $CoupledBuckets;
+
 }

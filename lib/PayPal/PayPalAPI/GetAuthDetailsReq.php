@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class GetAuthDetailsReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var GetAuthDetailsRequestType
+     * @var \PayPal\PayPalAPI\GetAuthDetailsRequestType
      */
     public $GetAuthDetailsRequest;
 
@@ -25,4 +30,5 @@ class GetAuthDetailsReq
         $str .= '</ns:GetAuthDetailsReq>';
         return $str;
     }
+
 }

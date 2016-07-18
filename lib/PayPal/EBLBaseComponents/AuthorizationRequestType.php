@@ -3,10 +3,15 @@ namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class AuthorizationRequestType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var boolean
@@ -15,11 +20,10 @@ class AuthorizationRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param boolean $IsRequested
      */
     public function __construct($IsRequested = null)
     {
         $this->IsRequested = $IsRequested;
     }
+
 }

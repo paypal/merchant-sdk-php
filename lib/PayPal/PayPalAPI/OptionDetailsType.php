@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class OptionDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Option Name. Optional
      * @access    public
@@ -18,19 +19,20 @@ class OptionDetailsType
     public $OptionName;
 
     /**
+     *
+     * @array
      * @access    public
      * @namespace ns
-     * @var OptionSelectionDetailsType[]
+     * @var \PayPal\PayPalAPI\OptionSelectionDetailsType
      */
     public $OptionSelectionDetails;
 
     /**
      * Constructor with arguments
-     *
-     * @param string $OptionName
      */
     public function __construct($OptionName = null)
     {
         $this->OptionName = $OptionName;
     }
+
 }

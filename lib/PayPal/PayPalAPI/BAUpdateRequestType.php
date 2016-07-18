@@ -3,10 +3,15 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\EBLBaseComponents\AbstractRequestType;
 
+/**
+ *
+ */
 class BAUpdateRequestType
   extends AbstractRequestType
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -14,6 +19,7 @@ class BAUpdateRequestType
     public $ReferenceID;
 
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -21,6 +27,7 @@ class BAUpdateRequestType
     public $BillingAgreementDescription;
 
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -28,6 +35,7 @@ class BAUpdateRequestType
     public $BillingAgreementStatus;
 
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -36,11 +44,10 @@ class BAUpdateRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $ReferenceID
      */
     public function __construct($ReferenceID = null)
     {
         $this->ReferenceID = $ReferenceID;
     }
+
 }

@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class CreateMobilePaymentReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var CreateMobilePaymentRequestType
+     * @var \PayPal\PayPalAPI\CreateMobilePaymentRequestType
      */
     public $CreateMobilePaymentRequest;
 
@@ -25,4 +30,5 @@ class CreateMobilePaymentReq
         $str .= '</ns:CreateMobilePaymentReq>';
         return $str;
     }
+
 }

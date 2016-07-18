@@ -3,10 +3,15 @@ namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class DoReferenceTransactionRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -14,6 +19,7 @@ class DoReferenceTransactionRequestDetailsType
     public $ReferenceID;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -21,6 +27,7 @@ class DoReferenceTransactionRequestDetailsType
     public $PaymentAction;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -28,20 +35,23 @@ class DoReferenceTransactionRequestDetailsType
     public $PaymentType;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var PaymentDetailsType
+     * @var \PayPal\EBLBaseComponents\PaymentDetailsType
      */
     public $PaymentDetails;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var ReferenceCreditCardDetailsType
+     * @var \PayPal\EBLBaseComponents\ReferenceCreditCardDetailsType
      */
     public $CreditCard;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -49,6 +59,7 @@ class DoReferenceTransactionRequestDetailsType
     public $IPAddress;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -56,6 +67,7 @@ class DoReferenceTransactionRequestDetailsType
     public $MerchantSessionId;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -63,6 +75,7 @@ class DoReferenceTransactionRequestDetailsType
     public $ReqConfirmShipping;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -70,9 +83,10 @@ class DoReferenceTransactionRequestDetailsType
     public $SoftDescriptor;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var SenderDetailsType
+     * @var \PayPal\EBLBaseComponents\SenderDetailsType
      */
     public $SenderDetails;
 
@@ -88,10 +102,6 @@ class DoReferenceTransactionRequestDetailsType
 
     /**
      * Constructor with arguments
-     *
-     * @param string             $ReferenceID
-     * @param string             $PaymentAction
-     * @param PaymentDetailsType $PaymentDetails
      */
     public function __construct($ReferenceID = null, $PaymentAction = null, $PaymentDetails = null)
     {
@@ -99,4 +109,5 @@ class DoReferenceTransactionRequestDetailsType
         $this->PaymentAction  = $PaymentAction;
         $this->PaymentDetails = $PaymentDetails;
     }
+
 }

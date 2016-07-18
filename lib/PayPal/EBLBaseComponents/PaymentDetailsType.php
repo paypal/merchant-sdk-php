@@ -2,8 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
-use PayPal\EnhancedDataTypes\EnhancedPaymentDataType;
 
 /**
  * PaymentDetailsType Information about a payment. Used by DCC
@@ -12,6 +10,7 @@ use PayPal\EnhancedDataTypes\EnhancedPaymentDataType;
 class PaymentDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Total of order, including shipping, handling, and tax. You
      * must set the currencyID attribute to one of the
@@ -22,7 +21,7 @@ class PaymentDetailsType
      * (,).
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $OrderTotal;
 
@@ -33,7 +32,7 @@ class PaymentDetailsType
      * separator must be a comma (,).
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $ItemTotal;
 
@@ -46,7 +45,7 @@ class PaymentDetailsType
      * the thousands separator must be a comma (,).
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $ShippingTotal;
 
@@ -59,7 +58,7 @@ class PaymentDetailsType
      * the thousands separator must be a comma (,).
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $HandlingTotal;
 
@@ -72,7 +71,7 @@ class PaymentDetailsType
      * the thousands separator must be a comma (,).
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $TaxTotal;
 
@@ -135,7 +134,7 @@ class PaymentDetailsType
      * set the CountryName element.
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $ShipToAddress;
 
@@ -159,13 +158,15 @@ class PaymentDetailsType
     public $FulfillmentReferenceNumber;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $FulfillmentAddress;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -173,6 +174,7 @@ class PaymentDetailsType
     public $PaymentCategoryType;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -184,15 +186,16 @@ class PaymentDetailsType
      * which address was changed by the user.
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $ProfileAddressChangeDate;
 
     /**
      * Information about the individual purchased items
+     * @array
      * @access    public
      * @namespace ebl
-     * @var PaymentDetailsItemType[]
+     * @var \PayPal\EBLBaseComponents\PaymentDetailsItemType
      */
     public $PaymentDetailsItem;
 
@@ -200,7 +203,7 @@ class PaymentDetailsType
      * Total shipping insurance costs for this order. Optional
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $InsuranceTotal;
 
@@ -209,7 +212,7 @@ class PaymentDetailsType
      * number. Optional
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $ShippingDiscount;
 
@@ -234,7 +237,7 @@ class PaymentDetailsType
      * Optional Refer to EnhancedPaymentDataType for details.
      * @access    public
      * @namespace ebl
-     * @var EnhancedPaymentDataType
+     * @var \PayPal\EnhancedDataTypes\EnhancedPaymentDataType
      */
     public $EnhancedPaymentData;
 
@@ -242,7 +245,7 @@ class PaymentDetailsType
      * Details about the seller. Optional
      * @access    public
      * @namespace ebl
-     * @var SellerDetailsType
+     * @var \PayPal\EBLBaseComponents\SellerDetailsType
      */
     public $SellerDetails;
 
@@ -325,7 +328,7 @@ class PaymentDetailsType
      * Order this will be ignored.
      * @access    public
      * @namespace ebl
-     * @var OfferDetailsType
+     * @var \PayPal\EBLBaseComponents\OfferDetailsType
      */
     public $OfferDetails;
 
@@ -344,4 +347,5 @@ class PaymentDetailsType
      * @var string
      */
     public $PaymentReason;
+
 }

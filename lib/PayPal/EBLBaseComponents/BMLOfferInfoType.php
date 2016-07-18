@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class BMLOfferInfoType
   extends PPXmlMessage
 {
+
     /**
      * Unique identification for merchant/buyer/offer combo.
      * @access    public
@@ -16,4 +17,5 @@ class BMLOfferInfoType
      * @var string
      */
     public $OfferTrackingID;
+
 }

@@ -2,7 +2,6 @@
 namespace PayPal\PayPalAPI;
 
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\DoReferenceTransactionRequestDetailsType;
 
 /**
  * This flag indicates that the response should include
@@ -11,10 +10,12 @@ use PayPal\EBLBaseComponents\DoReferenceTransactionRequestDetailsType;
 class DoReferenceTransactionRequestType
   extends AbstractRequestType
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var DoReferenceTransactionRequestDetailsType
+     * @var \PayPal\EBLBaseComponents\DoReferenceTransactionRequestDetailsType
      */
     public $DoReferenceTransactionRequestDetails;
 
@@ -29,11 +30,10 @@ class DoReferenceTransactionRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param DoReferenceTransactionRequestDetailsType $DoReferenceTransactionRequestDetails
      */
     public function __construct($DoReferenceTransactionRequestDetails = null)
     {
         $this->DoReferenceTransactionRequestDetails = $DoReferenceTransactionRequestDetails;
     }
+
 }

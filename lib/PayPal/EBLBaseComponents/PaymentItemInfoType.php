@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class PaymentItemInfoType
   extends PPXmlMessage
 {
+
     /**
      * Invoice number you set in the original transaction.
      * Character length and limitations: 127 single-byte
@@ -49,9 +50,10 @@ class PaymentItemInfoType
 
     /**
      * Details about the indivudal purchased item
+     * @array
      * @access    public
      * @namespace ebl
-     * @var PaymentItemType[]
+     * @var \PayPal\EBLBaseComponents\PaymentItemType
      */
     public $PaymentItem;
 
@@ -60,7 +62,7 @@ class PaymentItemInfoType
      * PayPal Subcriptions
      * @access    public
      * @namespace ebl
-     * @var SubscriptionInfoType
+     * @var \PayPal\EBLBaseComponents\SubscriptionInfoType
      */
     public $Subscription;
 
@@ -69,7 +71,8 @@ class PaymentItemInfoType
      * auction
      * @access    public
      * @namespace ebl
-     * @var AuctionInfoType
+     * @var \PayPal\EBLBaseComponents\AuctionInfoType
      */
     public $Auction;
+
 }

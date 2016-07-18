@@ -10,11 +10,12 @@ use PayPal\Core\PPXmlMessage;
 class MerchantPullPaymentResponseType
   extends PPXmlMessage
 {
+
     /**
      * information about the customer
      * @access    public
      * @namespace ebl
-     * @var PayerInfoType
+     * @var \PayPal\EBLBaseComponents\PayerInfoType
      */
     public $PayerInfo;
 
@@ -22,7 +23,7 @@ class MerchantPullPaymentResponseType
      * Information about the transaction
      * @access    public
      * @namespace ebl
-     * @var PaymentInfoType
+     * @var \PayPal\EBLBaseComponents\PaymentInfoType
      */
     public $PaymentInfo;
 
@@ -30,7 +31,8 @@ class MerchantPullPaymentResponseType
      * Specific information about the preapproved payment
      * @access    public
      * @namespace ebl
-     * @var MerchantPullInfoType
+     * @var \PayPal\EBLBaseComponents\MerchantPullInfoType
      */
     public $MerchantPullInfo;
+
 }

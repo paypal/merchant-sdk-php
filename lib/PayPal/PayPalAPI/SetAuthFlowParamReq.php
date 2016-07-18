@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class SetAuthFlowParamReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var SetAuthFlowParamRequestType
+     * @var \PayPal\PayPalAPI\SetAuthFlowParamRequestType
      */
     public $SetAuthFlowParamRequest;
 
@@ -25,4 +30,5 @@ class SetAuthFlowParamReq
         $str .= '</ns:SetAuthFlowParamReq>';
         return $str;
     }
+
 }

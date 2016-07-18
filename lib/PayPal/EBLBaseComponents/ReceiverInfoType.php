@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class ReceiverInfoType
   extends PPXmlMessage
 {
+
     /**
      * Email address or account ID of the payment recipient (the
      * seller). Equivalent to Receiver if payment is sent to
@@ -42,4 +43,5 @@ class ReceiverInfoType
      * @var string
      */
     public $ReceiverID;
+
 }

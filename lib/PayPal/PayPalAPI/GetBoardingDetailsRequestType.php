@@ -12,6 +12,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 class GetBoardingDetailsRequestType
   extends AbstractRequestType
 {
+
     /**
      * A unique token returned by the EnterBoarding API call that
      * identifies this boarding session. RequiredCharacter length
@@ -25,11 +26,10 @@ class GetBoardingDetailsRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $Token
      */
     public function __construct($Token = null)
     {
         $this->Token = $Token;
     }
+
 }

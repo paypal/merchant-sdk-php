@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class ErrorParameterType
   extends PPXmlMessage
 {
+
     /**
      * Value of the application-specific error parameter.
      * @access    public
@@ -19,10 +20,12 @@ class ErrorParameterType
     public $Value;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @attribute
      * @var string
      */
     public $ParamID;
+
 }

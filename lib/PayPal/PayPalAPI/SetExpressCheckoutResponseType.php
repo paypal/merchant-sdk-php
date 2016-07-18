@@ -14,6 +14,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 class SetExpressCheckoutResponseType
   extends AbstractResponseType
 {
+
     /**
      * A timestamped token by which you identify to PayPal that you
      * are processing this payment with Express Checkout. The token
@@ -26,4 +27,5 @@ class SetExpressCheckoutResponseType
      * @var string
      */
     public $Token;
+
 }

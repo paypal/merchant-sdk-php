@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class RecurringPaymentsProfileDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Subscriber name - if missing, will use name in buyer's
      * account
@@ -24,7 +25,7 @@ class RecurringPaymentsProfileDetailsType
      * account
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $SubscriberShippingAddress;
 
@@ -32,7 +33,7 @@ class RecurringPaymentsProfileDetailsType
      * When does this Profile begin billing?
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $BillingStartDate;
 
@@ -48,11 +49,10 @@ class RecurringPaymentsProfileDetailsType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $BillingStartDate ISO8601
      */
     public function __construct($BillingStartDate = null)
     {
         $this->BillingStartDate = $BillingStartDate;
     }
+
 }

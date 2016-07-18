@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * Description of the Order.
@@ -10,6 +9,7 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class OrderDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Description of the Order.
      * @access    public
@@ -23,7 +23,8 @@ class OrderDetailsType
      * DoReferenceTransaction
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $MaxAmount;
+
 }

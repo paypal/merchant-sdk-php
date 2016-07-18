@@ -15,6 +15,7 @@ use PayPal\Core\PPXmlMessage;
 class RememberMeIDInfoType
   extends PPXmlMessage
 {
+
     /**
      * External remember-me ID returned by
      * GetExpressCheckoutDetails on successful opt-in. The
@@ -28,4 +29,5 @@ class RememberMeIDInfoType
      * @var string
      */
     public $ExternalRememberMeID;
+
 }

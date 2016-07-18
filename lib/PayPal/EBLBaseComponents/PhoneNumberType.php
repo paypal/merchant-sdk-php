@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class PhoneNumberType
   extends PPXmlMessage
 {
+
     /**
      * Country code associated with this phone number.
      * @access    public
@@ -32,4 +33,5 @@ class PhoneNumberType
      * @var string
      */
     public $Extension;
+
 }

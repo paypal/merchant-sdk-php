@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class OptionTrackingDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Option Number. Optional
      * @access    public
@@ -56,4 +57,5 @@ class OptionTrackingDetailsType
      * @var string
      */
     public $OptionCost;
+
 }

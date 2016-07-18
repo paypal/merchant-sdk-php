@@ -11,7 +11,9 @@ use PayPal\Core\PPXmlMessage;
 class ErrorType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -19,6 +21,7 @@ class ErrorType
     public $ShortMessage;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -51,9 +54,11 @@ class ErrorType
      * information about the error condition particularly in the
      * cases where there are multiple instances of the ErrorType
      * which require additional context.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var ErrorParameterType[]
+     * @var \PayPal\EBLBaseComponents\ErrorParameterType
      */
     public $ErrorParameters;
+
 }

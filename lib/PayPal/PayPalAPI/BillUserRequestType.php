@@ -2,7 +2,6 @@
 namespace PayPal\PayPalAPI;
 
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\MerchantPullPaymentType;
 
 /**
  * This flag indicates that the response should include
@@ -11,10 +10,12 @@ use PayPal\EBLBaseComponents\MerchantPullPaymentType;
 class BillUserRequestType
   extends AbstractRequestType
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var MerchantPullPaymentType
+     * @var \PayPal\EBLBaseComponents\MerchantPullPaymentType
      */
     public $MerchantPullPaymentDetails;
 
@@ -26,4 +27,5 @@ class BillUserRequestType
      * @var integer
      */
     public $ReturnFMFDetails;
+
 }

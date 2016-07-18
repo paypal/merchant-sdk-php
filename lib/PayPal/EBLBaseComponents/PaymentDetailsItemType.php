@@ -2,9 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
-use PayPal\CoreComponentTypes\MeasureType;
-use PayPal\EnhancedDataTypes\EnhancedItemDataType;
 
 /**
  * PaymentDetailsItemType Information about a Payment Item.
@@ -12,6 +9,7 @@ use PayPal\EnhancedDataTypes\EnhancedItemDataType;
 class PaymentDetailsItemType
   extends PPXmlMessage
 {
+
     /**
      * Item name. Optional Character length and limitations: 127
      * single-byte characters
@@ -45,7 +43,7 @@ class PaymentDetailsItemType
      * for OrderTotal.
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Tax;
 
@@ -58,7 +56,7 @@ class PaymentDetailsItemType
      * must be a comma (,).
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
@@ -66,7 +64,7 @@ class PaymentDetailsItemType
      * Ebay specific details. Optional
      * @access    public
      * @namespace ebl
-     * @var EbayItemPaymentDetailsItemType
+     * @var \PayPal\EBLBaseComponents\EbayItemPaymentDetailsItemType
      */
     public $EbayItemPaymentDetailsItem;
 
@@ -80,6 +78,7 @@ class PaymentDetailsItemType
     public $PromoCode;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -99,7 +98,7 @@ class PaymentDetailsItemType
      * Information about the Item weight.
      * @access    public
      * @namespace ebl
-     * @var MeasureType
+     * @var \PayPal\CoreComponentTypes\MeasureType
      */
     public $ItemWeight;
 
@@ -107,7 +106,7 @@ class PaymentDetailsItemType
      * Information about the Item length.
      * @access    public
      * @namespace ebl
-     * @var MeasureType
+     * @var \PayPal\CoreComponentTypes\MeasureType
      */
     public $ItemLength;
 
@@ -115,7 +114,7 @@ class PaymentDetailsItemType
      * Information about the Item width.
      * @access    public
      * @namespace ebl
-     * @var MeasureType
+     * @var \PayPal\CoreComponentTypes\MeasureType
      */
     public $ItemWidth;
 
@@ -123,7 +122,7 @@ class PaymentDetailsItemType
      * Information about the Item height.
      * @access    public
      * @namespace ebl
-     * @var MeasureType
+     * @var \PayPal\CoreComponentTypes\MeasureType
      */
     public $ItemHeight;
 
@@ -140,7 +139,7 @@ class PaymentDetailsItemType
      * Enhanced data for each item in the cart. Optional
      * @access    public
      * @namespace ebl
-     * @var EnhancedItemDataType
+     * @var \PayPal\EnhancedDataTypes\EnhancedItemDataType
      */
     public $EnhancedItemData;
 
@@ -151,4 +150,5 @@ class PaymentDetailsItemType
      * @var string
      */
     public $ItemCategory;
+
 }

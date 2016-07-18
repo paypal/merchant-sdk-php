@@ -11,6 +11,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 class AddressVerifyRequestType
   extends AbstractRequestType
 {
+
     /**
      * Email address of buyer to be verified. Required Maximum
      * string length: 255 single-byte characters Input mask: ?@?.??
@@ -48,10 +49,6 @@ class AddressVerifyRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $Email
-     * @param string $Street
-     * @param string $Zip
      */
     public function __construct($Email = null, $Street = null, $Zip = null)
     {
@@ -59,4 +56,5 @@ class AddressVerifyRequestType
         $this->Street = $Street;
         $this->Zip    = $Zip;
     }
+
 }

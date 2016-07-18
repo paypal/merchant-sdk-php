@@ -3,10 +3,15 @@ namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class ButtonSearchResultType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -14,6 +19,7 @@ class ButtonSearchResultType
     public $HostedButtonID;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -21,6 +27,7 @@ class ButtonSearchResultType
     public $ButtonType;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -28,9 +35,11 @@ class ButtonSearchResultType
     public $ItemName;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $ModifyDate;
+
 }

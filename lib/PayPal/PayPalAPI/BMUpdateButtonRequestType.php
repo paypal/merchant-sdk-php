@@ -11,6 +11,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 class BMUpdateButtonRequestType
   extends AbstractRequestType
 {
+
     /**
      * Hosted Button id of the button to update.  Required
      * Character length and limitations: 10 single-byte numeric
@@ -53,24 +54,28 @@ class BMUpdateButtonRequestType
      * Button Variable information  At least one required recurring
      * Character length and limitations: 63 single-byte
      * alphanumeric characters
+     * @array
      * @access    public
      * @namespace ns
-     * @var string[]
+     * @var string
      */
     public $ButtonVar;
 
     /**
+     *
+     * @array
      * @access    public
      * @namespace ns
-     * @var OptionDetailsType[]
+     * @var \PayPal\PayPalAPI\OptionDetailsType
      */
     public $OptionDetails;
 
     /**
      * Details of each option for the button.  Optional
+     * @array
      * @access    public
      * @namespace ns
-     * @var string[]
+     * @var string
      */
     public $TextBox;
 
@@ -130,8 +135,6 @@ class BMUpdateButtonRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $HostedButtonID
      */
     public function __construct($HostedButtonID = null)
     {
@@ -152,4 +155,5 @@ class BMUpdateButtonRequestType
         }
         return parent::toXMLString();
     }
+
 }

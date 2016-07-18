@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class RefundInfoType
   extends PPXmlMessage
 {
+
     /**
      * Refund status whether it is Instant or Delayed.
      * @access    public
@@ -24,4 +25,5 @@ class RefundInfoType
      * @var string
      */
     public $PendingReason;
+
 }

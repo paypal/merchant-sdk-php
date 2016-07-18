@@ -10,7 +10,9 @@ use PayPal\Core\PPXmlMessage;
 class OptionType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @attribute
@@ -19,10 +21,12 @@ class OptionType
     public $name;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @attribute
      * @var string
      */
     public $value;
+
 }

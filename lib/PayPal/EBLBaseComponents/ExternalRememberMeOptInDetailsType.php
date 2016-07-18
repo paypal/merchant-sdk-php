@@ -12,6 +12,7 @@ use PayPal\Core\PPXmlMessage;
 class ExternalRememberMeOptInDetailsType
   extends PPXmlMessage
 {
+
     /**
      * 1 = opt in to external remember me. 0 or omitted = no opt-in
      * Other values are invalid
@@ -29,7 +30,8 @@ class ExternalRememberMeOptInDetailsType
      * account.
      * @access    public
      * @namespace ebl
-     * @var ExternalRememberMeOwnerDetailsType
+     * @var \PayPal\EBLBaseComponents\ExternalRememberMeOwnerDetailsType
      */
     public $ExternalRememberMeOwnerDetails;
+
 }

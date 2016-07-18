@@ -9,7 +9,9 @@ use PayPal\Core\PPXmlMessage;
 class RiskFilterDetailsType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var integer
@@ -17,6 +19,7 @@ class RiskFilterDetailsType
     public $Id;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -24,9 +27,11 @@ class RiskFilterDetailsType
     public $Name;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
      */
     public $Description;
+
 }

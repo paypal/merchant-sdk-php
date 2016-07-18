@@ -1,11 +1,7 @@
 <?php
 namespace PayPal\PayPalAPI;
 
-use PayPal\CoreComponentTypes\BasicAmountType;
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\EnhancedDataType;
-use PayPal\EBLBaseComponents\MerchantDataType;
-use PayPal\EBLBaseComponents\MerchantStoreDetailsType;
 
 /**
  * The authorization identification number of the payment you
@@ -15,6 +11,7 @@ use PayPal\EBLBaseComponents\MerchantStoreDetailsType;
 class DoCaptureRequestType
   extends AbstractRequestType
 {
+
     /**
      * The authorization identification number of the payment you
      * want to capture. Required Character length and limits: 19
@@ -33,7 +30,7 @@ class DoCaptureRequestType
      * (,)
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
@@ -77,7 +74,7 @@ class DoCaptureRequestType
      * Not Required
      * @access    public
      * @namespace ebl
-     * @var EnhancedDataType
+     * @var \PayPal\EBLBaseComponents\EnhancedDataType
      */
     public $EnhancedData;
 
@@ -96,7 +93,7 @@ class DoCaptureRequestType
      * To pass the Merchant store informationOptional
      * @access    public
      * @namespace ebl
-     * @var MerchantStoreDetailsType
+     * @var \PayPal\EBLBaseComponents\MerchantStoreDetailsType
      */
     public $MerchantStoreDetails;
 
@@ -115,16 +112,12 @@ class DoCaptureRequestType
      * to the open wallet-PLCC processorOptional
      * @access    public
      * @namespace ebl
-     * @var MerchantDataType
+     * @var \PayPal\EBLBaseComponents\MerchantDataType
      */
     public $MerchantData;
 
     /**
      * Constructor with arguments
-     *
-     * @param string          $AuthorizationID
-     * @param BasicAmountType $Amount
-     * @param string          $CompleteType
      */
     public function __construct($AuthorizationID = null, $Amount = null, $CompleteType = null)
     {
@@ -132,4 +125,5 @@ class DoCaptureRequestType
         $this->Amount          = $Amount;
         $this->CompleteType    = $CompleteType;
     }
+
 }

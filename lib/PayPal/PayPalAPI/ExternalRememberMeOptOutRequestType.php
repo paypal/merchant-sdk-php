@@ -2,7 +2,6 @@
 namespace PayPal\PayPalAPI;
 
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\ExternalRememberMeOwnerDetailsType;
 
 /**
  * The merchant passes in the ExternalRememberMeID to identify
@@ -14,6 +13,7 @@ use PayPal\EBLBaseComponents\ExternalRememberMeOwnerDetailsType;
 class ExternalRememberMeOptOutRequestType
   extends AbstractRequestType
 {
+
     /**
      * The merchant passes in the ExternalRememberMeID to identify
      * the user to opt out. This is a 17-character alphanumeric
@@ -31,17 +31,16 @@ class ExternalRememberMeOptOutRequestType
      * associate with external remember-me.
      * @access    public
      * @namespace ns
-     * @var ExternalRememberMeOwnerDetailsType
+     * @var \PayPal\EBLBaseComponents\ExternalRememberMeOwnerDetailsType
      */
     public $ExternalRememberMeOwnerDetails;
 
     /**
      * Constructor with arguments
-     *
-     * @param string $ExternalRememberMeID
      */
     public function __construct($ExternalRememberMeID = null)
     {
         $this->ExternalRememberMeID = $ExternalRememberMeID;
     }
+
 }

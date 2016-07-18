@@ -10,31 +10,37 @@ use PayPal\Core\PPXmlMessage;
 class FMFDetailsType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var RiskFilterListType
+     * @var \PayPal\EBLBaseComponents\RiskFilterListType
      */
     public $AcceptFilters;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var RiskFilterListType
+     * @var \PayPal\EBLBaseComponents\RiskFilterListType
      */
     public $PendingFilters;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var RiskFilterListType
+     * @var \PayPal\EBLBaseComponents\RiskFilterListType
      */
     public $DenyFilters;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var RiskFilterListType
+     * @var \PayPal\EBLBaseComponents\RiskFilterListType
      */
     public $ReportFilters;
+
 }

@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class GetAuthDetailsResponseDetailsType
   extends PPXmlMessage
 {
+
     /**
      * The first name of the User. Character length and
      * limitations: 127 single-byte alphanumeric characters
@@ -46,4 +47,5 @@ class GetAuthDetailsResponseDetailsType
      * @var string
      */
     public $PayerID;
+
 }

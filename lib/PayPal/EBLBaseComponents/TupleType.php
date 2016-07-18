@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class TupleType
   extends PPXmlMessage
 {
+
     /**
      * Key Name.Optional
      * @access    public
@@ -27,13 +28,11 @@ class TupleType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $Key
-     * @param string $Value
      */
     public function __construct($Key = null, $Value = null)
     {
         $this->Key   = $Key;
         $this->Value = $Value;
     }
+
 }

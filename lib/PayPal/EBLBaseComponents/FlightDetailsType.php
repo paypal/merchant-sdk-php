@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * Details of leg information
@@ -10,7 +9,9 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class FlightDetailsType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -18,6 +19,7 @@ class FlightDetailsType
     public $ConjuctionTicket;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -25,6 +27,7 @@ class FlightDetailsType
     public $ExchangeTicket;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -32,6 +35,7 @@ class FlightDetailsType
     public $CouponNumber;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -39,6 +43,7 @@ class FlightDetailsType
     public $ServiceClass;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -46,6 +51,7 @@ class FlightDetailsType
     public $TravelDate;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -53,6 +59,7 @@ class FlightDetailsType
     public $CarrierCode;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -60,6 +67,7 @@ class FlightDetailsType
     public $StopOverPermitted;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -67,6 +75,7 @@ class FlightDetailsType
     public $DepartureAirport;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -74,6 +83,7 @@ class FlightDetailsType
     public $ArrivalAirport;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -81,6 +91,7 @@ class FlightDetailsType
     public $FlightNumber;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -88,6 +99,7 @@ class FlightDetailsType
     public $DepartureTime;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -95,6 +107,7 @@ class FlightDetailsType
     public $ArrivalTime;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -102,30 +115,35 @@ class FlightDetailsType
     public $FareBasisCode;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Fare;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Taxes;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Fee;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
      */
     public $EndorsementOrRestrictions;
+
 }

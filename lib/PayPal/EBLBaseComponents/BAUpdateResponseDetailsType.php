@@ -2,12 +2,16 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
+/**
+ *
+ */
 class BAUpdateResponseDetailsType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -15,6 +19,7 @@ class BAUpdateResponseDetailsType
     public $BillingAgreementID;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -22,6 +27,7 @@ class BAUpdateResponseDetailsType
     public $BillingAgreementDescription;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -29,6 +35,7 @@ class BAUpdateResponseDetailsType
     public $BillingAgreementStatus;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -36,16 +43,18 @@ class BAUpdateResponseDetailsType
     public $BillingAgreementCustom;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var PayerInfoType
+     * @var \PayPal\EBLBaseComponents\PayerInfoType
      */
     public $PayerInfo;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $BillingAgreementMax;
 
@@ -56,7 +65,8 @@ class BAUpdateResponseDetailsType
      * , PayPal returns this address in BAUpdateResponseDetails.
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $BillingAddress;
+
 }

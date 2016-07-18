@@ -9,11 +9,13 @@ use PayPal\Core\PPXmlMessage;
 class GetMobileStatusRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Phone number for status inquiry
      * @access    public
      * @namespace ebl
-     * @var PhoneNumberType
+     * @var \PayPal\EBLBaseComponents\PhoneNumberType
      */
     public $Phone;
+
 }

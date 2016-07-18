@@ -3,10 +3,15 @@ namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class ManageRecurringPaymentsProfileStatusRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -14,6 +19,7 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType
     public $ProfileID;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -21,6 +27,7 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType
     public $Action;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -29,13 +36,11 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $ProfileID
-     * @param string $Action
      */
     public function __construct($ProfileID = null, $Action = null)
     {
         $this->ProfileID = $ProfileID;
         $this->Action    = $Action;
     }
+
 }

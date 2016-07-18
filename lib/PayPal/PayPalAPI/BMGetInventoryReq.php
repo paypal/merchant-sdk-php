@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class BMGetInventoryReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var BMGetInventoryRequestType
+     * @var \PayPal\PayPalAPI\BMGetInventoryRequestType
      */
     public $BMGetInventoryRequest;
 
@@ -25,4 +30,5 @@ class BMGetInventoryReq
         $str .= '</ns:BMGetInventoryReq>';
         return $str;
     }
+
 }

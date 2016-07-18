@@ -12,6 +12,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 class EnterBoardingResponseType
   extends AbstractResponseType
 {
+
     /**
      * A unique token that identifies this boarding session. Use
      * this token with the GetBoarding Details API call.Character
@@ -22,4 +23,5 @@ class EnterBoardingResponseType
      * @var string
      */
     public $Token;
+
 }

@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\EnhancedDataTypes\EnhancedPayerInfoType;
 
 /**
  * PayerInfoType Payer information
@@ -10,6 +9,7 @@ use PayPal\EnhancedDataTypes\EnhancedPayerInfoType;
 class PayerInfoType
   extends PPXmlMessage
 {
+
     /**
      * Email address of payer Character length and limitations: 127
      * single-byte characters
@@ -40,7 +40,7 @@ class PayerInfoType
      * Name of payer
      * @access    public
      * @namespace ebl
-     * @var PersonNameType
+     * @var \PayPal\EBLBaseComponents\PersonNameType
      */
     public $PayerName;
 
@@ -67,7 +67,7 @@ class PayerInfoType
      * Payer's business address
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $Address;
 
@@ -84,7 +84,7 @@ class PayerInfoType
      * TaxIdDetailsType for more details.
      * @access    public
      * @namespace ebl
-     * @var TaxIdDetailsType
+     * @var \PayPal\EBLBaseComponents\TaxIdDetailsType
      */
     public $TaxIdDetails;
 
@@ -92,7 +92,8 @@ class PayerInfoType
      * Holds any enhanced information about the payer
      * @access    public
      * @namespace ebl
-     * @var EnhancedPayerInfoType
+     * @var \PayPal\EnhancedDataTypes\EnhancedPayerInfoType
      */
     public $EnhancedPayerInfo;
+
 }

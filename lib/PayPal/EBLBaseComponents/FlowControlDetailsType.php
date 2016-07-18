@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class FlowControlDetailsType
   extends PPXmlMessage
 {
+
     /**
      * The URL to redirect to for an unpayable transaction. This
      * field is currently used only for the inline checkout flow.
@@ -27,4 +28,5 @@ class FlowControlDetailsType
      * @var string
      */
     public $InContextReturnURL;
+
 }

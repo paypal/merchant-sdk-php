@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class OtherPaymentMethodDetailsType
   extends PPXmlMessage
 {
+
     /**
      * The identifier of the Payment Method.
      * @access    public
@@ -76,4 +77,5 @@ class OtherPaymentMethodDetailsType
      * @var boolean
      */
     public $OtherPaymentMethodHideLabel;
+
 }

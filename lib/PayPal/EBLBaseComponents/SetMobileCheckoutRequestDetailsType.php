@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * The phone number of the buyer's mobile device, if available.
@@ -11,12 +10,13 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class SetMobileCheckoutRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
      * The phone number of the buyer's mobile device, if available.
      * Optional
      * @access    public
      * @namespace ebl
-     * @var PhoneNumberType
+     * @var \PayPal\EBLBaseComponents\PhoneNumberType
      */
     public $BuyerPhone;
 
@@ -26,7 +26,7 @@ class SetMobileCheckoutRequestDetailsType
      * codes for any of the supported PayPal currencies. Required
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $ItemAmount;
 
@@ -36,7 +36,7 @@ class SetMobileCheckoutRequestDetailsType
      * any of the supported PayPal currencies. Optional
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Tax;
 
@@ -46,7 +46,7 @@ class SetMobileCheckoutRequestDetailsType
      * any of the supported PayPal currencies. Optional
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Shipping;
 
@@ -140,7 +140,7 @@ class SetMobileCheckoutRequestDetailsType
      * Customer's shipping address. Optional
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $ShipToAddress;
 
@@ -157,10 +157,6 @@ class SetMobileCheckoutRequestDetailsType
 
     /**
      * Constructor with arguments
-     *
-     * @param BasicAmountType $ItemAmount
-     * @param string          $ItemName
-     * @param string          $ReturnURL
      */
     public function __construct($ItemAmount = null, $ItemName = null, $ReturnURL = null)
     {
@@ -168,4 +164,5 @@ class SetMobileCheckoutRequestDetailsType
         $this->ItemName   = $ItemName;
         $this->ReturnURL  = $ReturnURL;
     }
+
 }

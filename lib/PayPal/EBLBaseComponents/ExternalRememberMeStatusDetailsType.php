@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class ExternalRememberMeStatusDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Required field that reports status of opt-in or login bypass
      * attempt. 0 = Success - successful opt-in or
@@ -39,4 +40,5 @@ class ExternalRememberMeStatusDetailsType
      * @var string
      */
     public $ExternalRememberMeID;
+
 }

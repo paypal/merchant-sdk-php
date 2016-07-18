@@ -2,12 +2,16 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
+/**
+ *
+ */
 class IncentiveAppliedToType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -15,6 +19,7 @@ class IncentiveAppliedToType
     public $BucketId;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -22,16 +27,19 @@ class IncentiveAppliedToType
     public $ItemId;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $IncentiveAmount;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
      */
     public $SubType;
+
 }

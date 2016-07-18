@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class RefreshTokenStatusDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Required field that reports status of opt-in or login bypass
      * attempt.  0 = Success, successful opt-in or RefreshToken
@@ -47,4 +48,5 @@ class RefreshTokenStatusDetailsType
      * @var string
      */
     public $ImmutableID;
+
 }

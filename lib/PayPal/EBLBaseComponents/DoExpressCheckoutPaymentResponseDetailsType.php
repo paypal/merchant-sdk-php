@@ -12,6 +12,7 @@ use PayPal\Core\PPXmlMessage;
 class DoExpressCheckoutPaymentResponseDetailsType
   extends PPXmlMessage
 {
+
     /**
      * The timestamped token value that was returned by
      * SetExpressCheckoutResponse and passed on
@@ -25,13 +26,15 @@ class DoExpressCheckoutPaymentResponseDetailsType
 
     /**
      * Information about the transaction
+     * @array
      * @access    public
      * @namespace ebl
-     * @var PaymentInfoType[]
+     * @var \PayPal\EBLBaseComponents\PaymentInfoType
      */
     public $PaymentInfo;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -39,6 +42,7 @@ class DoExpressCheckoutPaymentResponseDetailsType
     public $BillingAgreementID;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -67,15 +71,17 @@ class DoExpressCheckoutPaymentResponseDetailsType
      * Information about the user selected options.
      * @access    public
      * @namespace ebl
-     * @var UserSelectedOptionType
+     * @var \PayPal\EBLBaseComponents\UserSelectedOptionType
      */
     public $UserSelectedOptions;
 
     /**
      * Information about Coupled Payment transactions.
+     * @array
      * @access    public
      * @namespace ebl
-     * @var CoupledPaymentInfoType[]
+     * @var \PayPal\EBLBaseComponents\CoupledPaymentInfoType
      */
     public $CoupledPaymentInfo;
+
 }

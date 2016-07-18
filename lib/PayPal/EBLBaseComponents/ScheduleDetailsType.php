@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class ScheduleDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Schedule details for the Recurring Payment
      * @access    public
@@ -21,14 +22,15 @@ class ScheduleDetailsType
      * Trial period of this schedule
      * @access    public
      * @namespace ebl
-     * @var BillingPeriodDetailsType
+     * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType
      */
     public $TrialPeriod;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BillingPeriodDetailsType
+     * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType
      */
     public $PaymentPeriod;
 
@@ -42,13 +44,15 @@ class ScheduleDetailsType
     public $MaxFailedPayments;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var ActivationDetailsType
+     * @var \PayPal\EBLBaseComponents\ActivationDetailsType
      */
     public $ActivationDetails;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -57,13 +61,11 @@ class ScheduleDetailsType
 
     /**
      * Constructor with arguments
-     *
-     * @param string                   $Description
-     * @param BillingPeriodDetailsType $PaymentPeriod
      */
     public function __construct($Description = null, $PaymentPeriod = null)
     {
         $this->Description   = $Description;
         $this->PaymentPeriod = $PaymentPeriod;
     }
+
 }

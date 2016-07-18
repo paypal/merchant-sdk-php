@@ -2,7 +2,6 @@
 namespace PayPal\PayPalAPI;
 
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\AddressType;
 
 /**
  * The value of the authorizationâtransaction identification
@@ -12,6 +11,7 @@ use PayPal\EBLBaseComponents\AddressType;
 class UpdateAuthorizationRequestType
   extends AbstractRequestType
 {
+
     /**
      * The value of the authorizationâtransaction identification
      * number returned by a PayPal product. Required Character
@@ -26,7 +26,7 @@ class UpdateAuthorizationRequestType
      * Shipping Address for this transaction.
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $ShipToAddress;
 
@@ -40,11 +40,10 @@ class UpdateAuthorizationRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $TransactionID
      */
     public function __construct($TransactionID = null)
     {
         $this->TransactionID = $TransactionID;
     }
+
 }

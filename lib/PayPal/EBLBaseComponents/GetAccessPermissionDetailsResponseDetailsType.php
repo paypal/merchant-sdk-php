@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class GetAccessPermissionDetailsResponseDetailsType
   extends PPXmlMessage
 {
+
     /**
      * The first name of the User. Character length and
      * limitations: 127 single-byte alphanumeric characters
@@ -39,17 +40,19 @@ class GetAccessPermissionDetailsResponseDetailsType
 
     /**
      * contains information about API Services
+     * @array
      * @access    public
      * @namespace ebl
-     * @var string[]
+     * @var string
      */
     public $AccessPermissionName;
 
     /**
      * contains information about API Services
+     * @array
      * @access    public
      * @namespace ebl
-     * @var string[]
+     * @var string
      */
     public $AccessPermissionStatus;
 
@@ -62,4 +65,5 @@ class GetAccessPermissionDetailsResponseDetailsType
      * @var string
      */
     public $PayerID;
+
 }

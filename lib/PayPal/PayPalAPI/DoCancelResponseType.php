@@ -9,6 +9,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 class DoCancelResponseType
   extends AbstractResponseType
 {
+
     /**
      * Return msgsubid back to merchant
      * @access    public
@@ -16,4 +17,5 @@ class DoCancelResponseType
      * @var string
      */
     public $MsgSubID;
+
 }

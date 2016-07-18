@@ -11,6 +11,7 @@ use PayPal\Core\PPXmlMessage;
 class InfoSharingDirectivesType
   extends PPXmlMessage
 {
+
     /**
      * If Billing Address should be returned in
      * GetExpressCheckoutDetails response, this parameter should be
@@ -20,4 +21,5 @@ class InfoSharingDirectivesType
      * @var string
      */
     public $ReqBillingAddress;
+
 }

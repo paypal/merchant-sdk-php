@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class MobileIDInfoType
   extends PPXmlMessage
 {
+
     /**
      * The Session token returned during buyer authentication.
      * @access    public
@@ -16,4 +17,5 @@ class MobileIDInfoType
      * @var string
      */
     public $SessionToken;
+
 }

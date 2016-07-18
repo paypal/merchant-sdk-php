@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class DoVoidReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var DoVoidRequestType
+     * @var \PayPal\PayPalAPI\DoVoidRequestType
      */
     public $DoVoidRequest;
 
@@ -25,4 +30,5 @@ class DoVoidReq
         $str .= '</ns:DoVoidReq>';
         return $str;
     }
+
 }

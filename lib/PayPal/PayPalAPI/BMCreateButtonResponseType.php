@@ -3,10 +3,15 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\EBLBaseComponents\AbstractResponseType;
 
+/**
+ *
+ */
 class BMCreateButtonResponseType
   extends AbstractResponseType
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -14,6 +19,7 @@ class BMCreateButtonResponseType
     public $Website;
 
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -21,6 +27,7 @@ class BMCreateButtonResponseType
     public $Email;
 
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
@@ -28,9 +35,11 @@ class BMCreateButtonResponseType
     public $Mobile;
 
     /**
+     *
      * @access    public
      * @namespace ns
      * @var string
      */
     public $HostedButtonID;
+
 }

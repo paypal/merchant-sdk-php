@@ -15,6 +15,7 @@ use PayPal\Core\PPXmlMessage;
 class DoDirectPaymentRequestDetailsType
   extends PPXmlMessage
 {
+
     /**
      * How you want to obtain payment. Required Authorization
      * indicates that this payment is a basic authorization subject
@@ -33,7 +34,7 @@ class DoDirectPaymentRequestDetailsType
      * Information about the payment Required
      * @access    public
      * @namespace ebl
-     * @var PaymentDetailsType
+     * @var \PayPal\EBLBaseComponents\PaymentDetailsType
      */
     public $PaymentDetails;
 
@@ -41,7 +42,7 @@ class DoDirectPaymentRequestDetailsType
      * Information about the credit card to be charged. Required
      * @access    public
      * @namespace ebl
-     * @var CreditCardDetailsType
+     * @var \PayPal\EBLBaseComponents\CreditCardDetailsType
      */
     public $CreditCard;
 
@@ -69,9 +70,11 @@ class DoDirectPaymentRequestDetailsType
     public $MerchantSessionId;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var boolean
      */
     public $ReturnFMFDetails;
+
 }

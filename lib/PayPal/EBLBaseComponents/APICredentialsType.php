@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class APICredentialsType
   extends PPXmlMessage
 {
+
     /**
      * Merchantâs PayPal API usernameCharacter length and
      * limitations: 128 alphanumeric characters
@@ -58,4 +59,5 @@ class APICredentialsType
      * @var string
      */
     public $Type;
+
 }

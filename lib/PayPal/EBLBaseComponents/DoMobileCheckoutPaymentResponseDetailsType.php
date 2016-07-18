@@ -12,6 +12,7 @@ use PayPal\Core\PPXmlMessage;
 class DoMobileCheckoutPaymentResponseDetailsType
   extends PPXmlMessage
 {
+
     /**
      * A free-form field for your own use, such as a tracking
      * number or other value you want returned to you in IPN.
@@ -37,7 +38,7 @@ class DoMobileCheckoutPaymentResponseDetailsType
      * Information about the payer
      * @access    public
      * @namespace ebl
-     * @var PayerInfoType
+     * @var \PayPal\EBLBaseComponents\PayerInfoType
      */
     public $PayerInfo;
 
@@ -45,7 +46,8 @@ class DoMobileCheckoutPaymentResponseDetailsType
      * Information about the transaction
      * @access    public
      * @namespace ebl
-     * @var PaymentInfoType
+     * @var \PayPal\EBLBaseComponents\PaymentInfoType
      */
     public $PaymentInfo;
+
 }

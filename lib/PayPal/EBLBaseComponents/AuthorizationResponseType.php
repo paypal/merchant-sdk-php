@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class AuthorizationResponseType
   extends PPXmlMessage
 {
+
     /**
      * Status will denote whether Auto authorization was successful
      * or not.
@@ -20,9 +21,12 @@ class AuthorizationResponseType
     public $Status;
 
     /**
+     *
+     * @array
      * @access    public
      * @namespace ebl
-     * @var ErrorType[]
+     * @var \PayPal\EBLBaseComponents\ErrorType
      */
     public $AuthorizationError;
+
 }

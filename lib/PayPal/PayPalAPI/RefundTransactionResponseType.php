@@ -1,9 +1,7 @@
 <?php
 namespace PayPal\PayPalAPI;
 
-use PayPal\CoreComponentTypes\BasicAmountType;
 use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EBLBaseComponents\RefundInfoType;
 
 /**
  * Unique transaction ID of the refund. Character length and
@@ -12,6 +10,7 @@ use PayPal\EBLBaseComponents\RefundInfoType;
 class RefundTransactionResponseType
   extends AbstractResponseType
 {
+
     /**
      * Unique transaction ID of the refund. Character length and
      * limitations:17 single-byte characters
@@ -26,7 +25,7 @@ class RefundTransactionResponseType
      * of payment to make this refund
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $NetRefundAmount;
 
@@ -34,7 +33,7 @@ class RefundTransactionResponseType
      * Transaction fee refunded to original recipient of payment
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $FeeRefundAmount;
 
@@ -42,7 +41,7 @@ class RefundTransactionResponseType
      * Amount of money refunded to original payer
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $GrossRefundAmount;
 
@@ -50,7 +49,7 @@ class RefundTransactionResponseType
      * Total of all previous refunds
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $TotalRefundedAmount;
 
@@ -58,7 +57,7 @@ class RefundTransactionResponseType
      * Contains Refund Payment status information.
      * @access    public
      * @namespace ebl
-     * @var RefundInfoType
+     * @var \PayPal\EBLBaseComponents\RefundInfoType
      */
     public $RefundInfo;
 
@@ -78,4 +77,5 @@ class RefundTransactionResponseType
      * @var string
      */
     public $MsgSubID;
+
 }

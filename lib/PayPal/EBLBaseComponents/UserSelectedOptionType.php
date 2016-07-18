@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * Information on user selected options
@@ -10,7 +9,9 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class UserSelectedOptionType
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -18,6 +19,7 @@ class UserSelectedOptionType
     public $ShippingCalculationMode;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -25,6 +27,7 @@ class UserSelectedOptionType
     public $InsuranceOptionSelected;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
@@ -32,16 +35,19 @@ class UserSelectedOptionType
     public $ShippingOptionIsDefault;
 
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $ShippingOptionAmount;
 
     /**
+     *
      * @access    public
      * @namespace ebl
      * @var string
      */
     public $ShippingOptionName;
+
 }

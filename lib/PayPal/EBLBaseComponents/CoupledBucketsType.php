@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class CoupledBucketsType
   extends PPXmlMessage
 {
+
     /**
      * Relationship Type - LifeTime (default)
      * @access    public
@@ -26,19 +27,20 @@ class CoupledBucketsType
     public $CoupledPaymentRequestID;
 
     /**
+     *
+     * @array
      * @access    public
      * @namespace ebl
-     * @var string[]
+     * @var string
      */
     public $PaymentRequestID;
 
     /**
      * Constructor with arguments
-     *
-     * @param string[] $PaymentRequestID
      */
     public function __construct($PaymentRequestID = null)
     {
         $this->PaymentRequestID = $PaymentRequestID;
     }
+
 }

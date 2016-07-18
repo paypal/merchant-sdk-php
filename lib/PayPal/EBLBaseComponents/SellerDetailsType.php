@@ -9,6 +9,7 @@ use PayPal\Core\PPXmlMessage;
 class SellerDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Unique identifier for the seller. Optional
      * @access    public
@@ -31,7 +32,7 @@ class SellerDetailsType
      *
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $SellerRegistrationDate;
 
@@ -53,4 +54,5 @@ class SellerDetailsType
      * @var string
      */
     public $SecureMerchantAccountID;
+
 }

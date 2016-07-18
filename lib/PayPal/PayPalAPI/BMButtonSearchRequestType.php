@@ -10,12 +10,13 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 class BMButtonSearchRequestType
   extends AbstractRequestType
 {
+
     /**
      * The earliest transaction date at which to start the search.
      * No wildcards are allowed. Required
      * @access    public
      * @namespace ns
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $StartDate;
 
@@ -24,7 +25,8 @@ class BMButtonSearchRequestType
      * Optional
      * @access    public
      * @namespace ns
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $EndDate;
+
 }

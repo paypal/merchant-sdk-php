@@ -9,11 +9,12 @@ use PayPal\Core\PPXmlMessage;
 class BusinessOwnerInfoType
   extends PPXmlMessage
 {
+
     /**
      * Details about the business owner
      * @access    public
      * @namespace ebl
-     * @var PayerInfoType
+     * @var \PayPal\EBLBaseComponents\PayerInfoType
      */
     public $Owner;
 
@@ -43,4 +44,5 @@ class BusinessOwnerInfoType
      * @var string
      */
     public $SSN;
+
 }

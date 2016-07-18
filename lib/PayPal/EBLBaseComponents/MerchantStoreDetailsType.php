@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class MerchantStoreDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Store IDOptional Character length and limits: 50 single-byte
      * characters
@@ -30,11 +31,10 @@ class MerchantStoreDetailsType
 
     /**
      * Constructor with arguments
-     *
-     * @param string $StoreID
      */
     public function __construct($StoreID = null)
     {
         $this->StoreID = $StoreID;
     }
+
 }

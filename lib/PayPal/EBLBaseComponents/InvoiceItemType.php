@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * Describes an individual item for an invoice.
@@ -10,6 +9,7 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class InvoiceItemType
   extends PPXmlMessage
 {
+
     /**
      * a human readable item nameOptional Character length and
      * limits: 127 single-byte characters
@@ -65,7 +65,7 @@ class InvoiceItemType
      * total price of this item
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Price;
 
@@ -73,7 +73,7 @@ class InvoiceItemType
      * price per item quantity
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $ItemPrice;
 
@@ -95,9 +95,10 @@ class InvoiceItemType
 
     /**
      * discount applied to this item
+     * @array
      * @access    public
      * @namespace ebl
-     * @var DiscountType[]
+     * @var \PayPal\EBLBaseComponents\DiscountType
      */
     public $Discount;
 
@@ -124,9 +125,10 @@ class InvoiceItemType
 
     /**
      * Additional fees to this item
+     * @array
      * @access    public
      * @namespace ebl
-     * @var AdditionalFeeType[]
+     * @var \PayPal\EBLBaseComponents\AdditionalFeeType
      */
     public $AdditionalFees;
 
@@ -182,4 +184,5 @@ class InvoiceItemType
      * @var string
      */
     public $StyleNumber;
+
 }

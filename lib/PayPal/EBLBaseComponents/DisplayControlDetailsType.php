@@ -10,6 +10,7 @@ use PayPal\Core\PPXmlMessage;
 class DisplayControlDetailsType
   extends PPXmlMessage
 {
+
     /**
      * Optional URL to pay button image for the inline checkout
      * flow. Currently applicable only to the inline checkout flow
@@ -19,4 +20,5 @@ class DisplayControlDetailsType
      * @var string
      */
     public $InContextPaymentButtonImage;
+
 }

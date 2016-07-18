@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * PaymentTransactionSearchResultType Results from a
@@ -11,12 +10,13 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class PaymentTransactionSearchResultType
   extends PPXmlMessage
 {
+
     /**
      * The date and time (in UTC/GMT format) the transaction
      * occurred
      * @access    public
      * @namespace ebl
-     * @var string ISO8601
+     * @var string DateTime in ISO8601
      */
     public $Timestamp;
 
@@ -73,7 +73,7 @@ class PaymentTransactionSearchResultType
      * shipping cost and taxes
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $GrossAmount;
 
@@ -81,7 +81,7 @@ class PaymentTransactionSearchResultType
      * The fee that PayPal charged for the transaction
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $FeeAmount;
 
@@ -89,7 +89,8 @@ class PaymentTransactionSearchResultType
      * The net amount of the transaction
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $NetAmount;
+
 }

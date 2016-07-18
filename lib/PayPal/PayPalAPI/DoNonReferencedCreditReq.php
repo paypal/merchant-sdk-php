@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class DoNonReferencedCreditReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var DoNonReferencedCreditRequestType
+     * @var \PayPal\PayPalAPI\DoNonReferencedCreditRequestType
      */
     public $DoNonReferencedCreditRequest;
 
@@ -25,4 +30,5 @@ class DoNonReferencedCreditReq
         $str .= '</ns:DoNonReferencedCreditReq>';
         return $str;
     }
+
 }

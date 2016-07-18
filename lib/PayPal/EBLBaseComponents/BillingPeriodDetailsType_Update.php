@@ -2,7 +2,6 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
-use PayPal\CoreComponentTypes\BasicAmountType;
 
 /**
  * Unit of meausre for billing cycle
@@ -10,6 +9,7 @@ use PayPal\CoreComponentTypes\BasicAmountType;
 class BillingPeriodDetailsType_Update
   extends PPXmlMessage
 {
+
     /**
      * Unit of meausre for billing cycle
      * @access    public
@@ -38,7 +38,7 @@ class BillingPeriodDetailsType_Update
      * Amount to charge
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
@@ -46,7 +46,7 @@ class BillingPeriodDetailsType_Update
      * Additional shipping amount to charge
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $ShippingAmount;
 
@@ -54,7 +54,8 @@ class BillingPeriodDetailsType_Update
      * Additional tax amount to charge
      * @access    public
      * @namespace ebl
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $TaxAmount;
+
 }

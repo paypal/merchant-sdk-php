@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class DoCaptureReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var DoCaptureRequestType
+     * @var \PayPal\PayPalAPI\DoCaptureRequestType
      */
     public $DoCaptureRequest;
 
@@ -25,4 +30,5 @@ class DoCaptureReq
         $str .= '</ns:DoCaptureReq>';
         return $str;
     }
+
 }

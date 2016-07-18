@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class ReverseTransactionReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var ReverseTransactionRequestType
+     * @var \PayPal\PayPalAPI\ReverseTransactionRequestType
      */
     public $ReverseTransactionRequest;
 
@@ -25,4 +30,5 @@ class ReverseTransactionReq
         $str .= '</ns:ReverseTransactionReq>';
         return $str;
     }
+
 }

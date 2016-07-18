@@ -1,10 +1,7 @@
 <?php
 namespace PayPal\PayPalAPI;
 
-use PayPal\CoreComponentTypes\BasicAmountType;
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\AddressType;
-use PayPal\EBLBaseComponents\PaymentDetailsItemType;
 
 /**
  * The value of the order’s transaction identification number
@@ -14,6 +11,7 @@ use PayPal\EBLBaseComponents\PaymentDetailsItemType;
 class DoAuthorizationRequestType
   extends AbstractRequestType
 {
+
     /**
      * The value of the order’s transaction identification number
      * returned by a PayPal product. Required Character length and
@@ -41,7 +39,7 @@ class DoAuthorizationRequestType
      * must be a comma (,).
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
 
@@ -49,15 +47,16 @@ class DoAuthorizationRequestType
      * Address the order will be shipped to. Optional
      * @access    public
      * @namespace ebl
-     * @var AddressType
+     * @var \PayPal\EBLBaseComponents\AddressType
      */
     public $ShipToAddress;
 
     /**
      * Information about the individual purchased items
+     * @array
      * @access    public
      * @namespace ebl
-     * @var PaymentDetailsItemType[]
+     * @var \PayPal\EBLBaseComponents\PaymentDetailsItemType
      */
     public $PaymentDetailsItem;
 
@@ -70,7 +69,7 @@ class DoAuthorizationRequestType
      * the thousands separator must be a comma (,).
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $ItemTotal;
 
@@ -83,7 +82,7 @@ class DoAuthorizationRequestType
      * the thousands separator must be a comma (,).
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $ShippingTotal;
 
@@ -96,7 +95,7 @@ class DoAuthorizationRequestType
      * the thousands separator must be a comma (,).
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $HandlingTotal;
 
@@ -109,7 +108,7 @@ class DoAuthorizationRequestType
      * the thousands separator must be a comma (,).
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $TaxTotal;
 
@@ -117,7 +116,7 @@ class DoAuthorizationRequestType
      * Total shipping insurance costs for this order. Optional
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $InsuranceTotal;
 
@@ -126,7 +125,7 @@ class DoAuthorizationRequestType
      * number. Optional
      * @access    public
      * @namespace ns
-     * @var BasicAmountType
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $ShippingDiscount;
 
@@ -170,13 +169,11 @@ class DoAuthorizationRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param string          $TransactionID
-     * @param BasicAmountType $Amount
      */
     public function __construct($TransactionID = null, $Amount = null)
     {
         $this->TransactionID = $TransactionID;
         $this->Amount        = $Amount;
     }
+
 }

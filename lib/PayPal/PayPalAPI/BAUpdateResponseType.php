@@ -2,15 +2,20 @@
 namespace PayPal\PayPalAPI;
 
 use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EBLBaseComponents\BAUpdateResponseDetailsType;
 
+/**
+ *
+ */
 class BAUpdateResponseType
   extends AbstractResponseType
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var BAUpdateResponseDetailsType
+     * @var \PayPal\EBLBaseComponents\BAUpdateResponseDetailsType
      */
     public $BAUpdateResponseDetails;
+
 }

@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class SetMobileCheckoutReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var SetMobileCheckoutRequestType
+     * @var \PayPal\PayPalAPI\SetMobileCheckoutRequestType
      */
     public $SetMobileCheckoutRequest;
 
@@ -25,4 +30,5 @@ class SetMobileCheckoutReq
         $str .= '</ns:SetMobileCheckoutReq>';
         return $str;
     }
+
 }

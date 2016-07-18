@@ -2,7 +2,6 @@
 namespace PayPal\PayPalAPI;
 
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\DoDirectPaymentRequestDetailsType;
 
 /**
  * This flag indicates that the response should include
@@ -11,10 +10,12 @@ use PayPal\EBLBaseComponents\DoDirectPaymentRequestDetailsType;
 class DoDirectPaymentRequestType
   extends AbstractRequestType
 {
+
     /**
+     *
      * @access    public
      * @namespace ebl
-     * @var DoDirectPaymentRequestDetailsType
+     * @var \PayPal\EBLBaseComponents\DoDirectPaymentRequestDetailsType
      */
     public $DoDirectPaymentRequestDetails;
 
@@ -29,11 +30,10 @@ class DoDirectPaymentRequestType
 
     /**
      * Constructor with arguments
-     *
-     * @param DoDirectPaymentRequestDetailsType $DoDirectPaymentRequestDetails
      */
     public function __construct($DoDirectPaymentRequestDetails = null)
     {
         $this->DoDirectPaymentRequestDetails = $DoDirectPaymentRequestDetails;
     }
+
 }

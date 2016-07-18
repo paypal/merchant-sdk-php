@@ -3,13 +3,18 @@ namespace PayPal\PayPalAPI;
 
 use PayPal\Core\PPXmlMessage;
 
+/**
+ *
+ */
 class AddressVerifyReq
   extends PPXmlMessage
 {
+
     /**
+     *
      * @access    public
      * @namespace ns
-     * @var AddressVerifyRequestType
+     * @var \PayPal\PayPalAPI\AddressVerifyRequestType
      */
     public $AddressVerifyRequest;
 
@@ -25,4 +30,5 @@ class AddressVerifyReq
         $str .= '</ns:AddressVerifyReq>';
         return $str;
     }
+
 }
