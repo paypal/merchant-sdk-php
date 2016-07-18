@@ -1,25 +1,33 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
- * 3DS remaining fields.
+ * 3DS remaining fields. 
  */
-class ThreeDSecureResponseType
-  extends PPXmlMessage
-{
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Vpas;
+class ThreeDSecureResponseType  
+   extends PPXmlMessage{
 
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $EciSubmitted3DS;
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $Vpas;
+
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $EciSubmitted3DS;
+
+
 }

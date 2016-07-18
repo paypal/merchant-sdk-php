@@ -1,44 +1,42 @@
 <?php
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
  * Defines relationship between buckets
  */
 class CoupledBucketsType
-  extends PPXmlMessage
-{
-    /**
-     * Relationship Type - LifeTime (default)
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $CoupleType;
+   extends PPXmlMessage{
 
-    /**
-     * Identifier for this relation
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $CoupledPaymentRequestID;
+	/**
+	 * Relationship Type - LifeTime (default)
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $CoupleType;
 
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var string[]
-     */
-    public $PaymentRequestID;
+	/**
+	 * Identifier for this relation
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $CoupledPaymentRequestID;
 
-    /**
-     * Constructor with arguments
-     *
-     * @param string[] $PaymentRequestID
-     */
-    public function __construct($PaymentRequestID = null)
-    {
-        $this->PaymentRequestID = $PaymentRequestID;
-    }
+	/**
+	 * @access public
+	 * @namespace ebl
+	 * @var string[]
+	 */
+	public $PaymentRequestID;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($PaymentRequestID = NULL) {
+		$this->PaymentRequestID = $PaymentRequestID;
+	}
+
+
+
 }

@@ -1,9 +1,4 @@
 <?php
-use PayPal\Exception\PPConfigurationException;
-use PayPal\Exception\PPConnectionException;
-use PayPal\Exception\PPInvalidCredentialException;
-use PayPal\Exception\PPMissingCredentialException;
-
 function getDetailedExceptionMessage($ex) {
 	if($ex instanceof PPConnectionException) {
 		return "Error connecting to " . $ex->getUrl();

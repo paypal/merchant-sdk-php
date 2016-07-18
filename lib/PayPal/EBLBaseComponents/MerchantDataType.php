@@ -1,19 +1,20 @@
 <?php
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
  * This holds all key-value pairs which merchants wants to pass
  * it to the open wallet(PLCC) processor.
  */
 class MerchantDataType
-  extends PPXmlMessage
-{
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var TupleType[]
-     */
-    public $MerchantDataTuple;
+   extends PPXmlMessage{
+
+	/**
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\TupleType[]
+	 */
+	public $MerchantDataTuple;
+
+
+
 }

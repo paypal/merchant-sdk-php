@@ -1,59 +1,78 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
- * Option Number. Optional
+ * Option Number. Optional 
  */
-class OptionTrackingDetailsType
-  extends PPXmlMessage
-{
-    /**
-     * Option Number. Optional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $OptionNumber;
+class OptionTrackingDetailsType  
+   extends PPXmlMessage{
 
-    /**
-     * Option Quantity. Optional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $OptionQty;
+	/**
+	 * Option Number. Optional 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $OptionNumber;
 
-    /**
-     * Option Select Name. Optional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $OptionSelect;
+	/**
+	 * Option Quantity. Optional 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $OptionQty;
 
-    /**
-     * Option Quantity Delta. Optional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $OptionQtyDelta;
+	/**
+	 * Option Select Name. Optional 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $OptionSelect;
 
-    /**
-     * Option Alert. Optional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $OptionAlert;
+	/**
+	 * Option Quantity Delta. Optional 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $OptionQtyDelta;
 
-    /**
-     * Option Cost. Optional
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $OptionCost;
+	/**
+	 * Option Alert. Optional 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $OptionAlert;
+
+	/**
+	 * Option Cost. Optional 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $OptionCost;
+
+
+    
 }

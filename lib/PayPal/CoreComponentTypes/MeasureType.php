@@ -1,40 +1,47 @@
-<?php
+<?php 
 namespace PayPal\CoreComponentTypes;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
  * @hasAttribute
- *
+ * 
  */
-class MeasureType
-  extends PPXmlMessage
-{
-    /**
-     * @access    public
-     * @namespace cc
-     * @attribute
-     * @var string
-     */
-    public $unit;
+class MeasureType  
+   extends PPXmlMessage{
 
-    /**
-     * @access    public
-     * @namespace cc
-     * @value
-     * @var double
-     */
-    public $value;
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace cc
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $unit;
 
-    /**
-     * Constructor with arguments
-     *
-     * @param string $unit
-     * @param double $value
-     */
-    public function __construct($unit = null, $value = null)
-    {
-        $this->unit  = $unit;
-        $this->value = $value;
-    }
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace cc
+	 
+	 
+	 * @value
+	 	 	 	 
+	 * @var double	 
+	 */ 
+	public $value;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($unit = NULL, $value = NULL) {
+		$this->unit = $unit;
+		$this->value = $value;
+	}
+
+
+    
 }

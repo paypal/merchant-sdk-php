@@ -1,16 +1,22 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
+/**
+ * 
+ */
+class CompleteRecoupResponseType  extends AbstractResponseType  
+  {
 
-use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EnhancedDataTypes\EnhancedCompleteRecoupResponseDetailsType;
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ed
+	 
+	 	 	 	 
+	 * @var \PayPal\EnhancedDataTypes\EnhancedCompleteRecoupResponseDetailsType	 
+	 */ 
+	public $EnhancedCompleteRecoupResponseDetails;
 
-class CompleteRecoupResponseType
-  extends AbstractResponseType
-{
-    /**
-     * @access    public
-     * @namespace ed
-     * @var EnhancedCompleteRecoupResponseDetailsType
-     */
-    public $EnhancedCompleteRecoupResponseDetails;
+
 }

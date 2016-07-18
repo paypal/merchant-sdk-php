@@ -1,36 +1,45 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
  * Contains payment request information for each bucket in the
- * cart.
+ * cart.  
  */
-class PaymentRequestInfoType
-  extends PPXmlMessage
-{
-    /**
-     * Contains the transaction id of the bucket.
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $TransactionId;
+class PaymentRequestInfoType  
+   extends PPXmlMessage{
 
-    /**
-     * Contains the bucket id.
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $PaymentRequestID;
+	/**
+	 * Contains the transaction id of the bucket.  
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $TransactionId;
 
-    /**
-     * Contains the error details.
-     * @access    public
-     * @namespace ebl
-     * @var ErrorType
-     */
-    public $PaymentError;
+	/**
+	 * Contains the bucket id.  
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $PaymentRequestID;
+
+	/**
+	 * Contains the error details.  
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var \PayPal\EBLBaseComponents\ErrorType	 
+	 */ 
+	public $PaymentError;
+
+
 }

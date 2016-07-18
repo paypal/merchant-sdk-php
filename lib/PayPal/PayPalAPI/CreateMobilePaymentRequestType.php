@@ -1,26 +1,24 @@
 <?php
 namespace PayPal\PayPalAPI;
-
 use PayPal\EBLBaseComponents\AbstractRequestType;
-use PayPal\EBLBaseComponents\CreateMobilePaymentRequestDetailsType;
 
-class CreateMobilePaymentRequestType
-  extends AbstractRequestType
-{
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var CreateMobilePaymentRequestDetailsType
-     */
-    public $CreateMobilePaymentRequestDetails;
+class CreateMobilePaymentRequestType  extends AbstractRequestType
+  {
 
-    /**
-     * Constructor with arguments
-     *
-     * @param CreateMobilePaymentRequestDetailsType $CreateMobilePaymentRequestDetails
-     */
-    public function __construct($CreateMobilePaymentRequestDetails = null)
-    {
-        $this->CreateMobilePaymentRequestDetails = $CreateMobilePaymentRequestDetails;
-    }
+	/**
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\CreateMobilePaymentRequestDetailsType
+	 */
+	public $CreateMobilePaymentRequestDetails;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($CreateMobilePaymentRequestDetails = NULL) {
+		$this->CreateMobilePaymentRequestDetails = $CreateMobilePaymentRequestDetails;
+	}
+
+
+
 }

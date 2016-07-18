@@ -1,35 +1,45 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
- * Country code associated with this phone number.
+ * Country code associated with this phone number. 
  */
-class PhoneNumberType
-  extends PPXmlMessage
-{
-    /**
-     * Country code associated with this phone number.
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $CountryCode;
+class PhoneNumberType  
+   extends PPXmlMessage{
 
-    /**
-     * Phone number associated with this phone.
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $PhoneNumber;
+	/**
+	 * Country code associated with this phone number. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $CountryCode;
 
-    /**
-     * Extension associated with this phone number.
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $Extension;
+	/**
+	 * Phone number associated with this phone. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $PhoneNumber;
+
+	/**
+	 * Extension associated with this phone number. 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $Extension;
+
+
+    
 }

@@ -1,51 +1,66 @@
-<?php
+<?php 
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
- * Recurring Billing Profile ID
+ * Recurring Billing Profile ID 
  */
-class CreateRecurringPaymentsProfileResponseDetailsType
-  extends PPXmlMessage
-{
-    /**
-     * Recurring Billing Profile ID
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $ProfileID;
+class CreateRecurringPaymentsProfileResponseDetailsType  
+   extends PPXmlMessage{
 
-    /**
-     * Recurring Billing Profile Status
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $ProfileStatus;
+	/**
+	 * Recurring Billing Profile ID 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $ProfileID;
 
-    /**
-     * Transaction id from DCC initial payment
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $TransactionID;
+	/**
+	 * Recurring Billing Profile Status 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $ProfileStatus;
 
-    /**
-     * Response from DCC initial payment
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $DCCProcessorResponse;
+	/**
+	 * Transaction id from DCC initial payment 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $TransactionID;
 
-    /**
-     * Return code if DCC initial payment fails
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $DCCReturnCode;
+	/**
+	 * Response from DCC initial payment 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $DCCProcessorResponse;
+
+	/**
+	 * Return code if DCC initial payment fails 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $DCCReturnCode;
+
+
 }

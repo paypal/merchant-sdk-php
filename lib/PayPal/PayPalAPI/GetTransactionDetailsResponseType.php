@@ -1,24 +1,33 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
+/**
+ * 
+ */
+class GetTransactionDetailsResponseType  extends AbstractResponseType  
+  {
 
-use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EBLBaseComponents\PaymentTransactionType;
-use PayPal\EBLBaseComponents\ThreeDSecureInfoType;
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var \PayPal\EBLBaseComponents\PaymentTransactionType	 
+	 */ 
+	public $PaymentTransactionDetails;
 
-class GetTransactionDetailsResponseType
-  extends AbstractResponseType
-{
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var PaymentTransactionType
-     */
-    public $PaymentTransactionDetails;
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var \PayPal\EBLBaseComponents\ThreeDSecureInfoType	 
+	 */ 
+	public $ThreeDSecureDetails;
 
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var ThreeDSecureInfoType
-     */
-    public $ThreeDSecureDetails;
+
 }

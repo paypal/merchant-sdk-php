@@ -1,58 +1,56 @@
 <?php
 namespace PayPal\EBLBaseComponents;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
  * Subscriber name - if missing, will use name in buyer's
  * account
  */
 class RecurringPaymentsProfileDetailsType
-  extends PPXmlMessage
-{
-    /**
-     * Subscriber name - if missing, will use name in buyer's
-     * account
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $SubscriberName;
+   extends PPXmlMessage{
 
-    /**
-     * Subscriber address - if missing, will use address in buyer's
-     * account
-     * @access    public
-     * @namespace ebl
-     * @var AddressType
-     */
-    public $SubscriberShippingAddress;
+	/**
+	 * Subscriber name - if missing, will use name in buyer's
+	 * account
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $SubscriberName;
 
-    /**
-     * When does this Profile begin billing?
-     * @access    public
-     * @namespace ebl
-     * @var string ISO8601
-     */
-    public $BillingStartDate;
+	/**
+	 * Subscriber address - if missing, will use address in buyer's
+	 * account
+	 * @access public
+	 * @namespace ebl
+	 * @var \PayPal\EBLBaseComponents\AddressType
+	 */
+	public $SubscriberShippingAddress;
 
-    /**
-     * Your own unique invoice or tracking number. Optional
-     * Character length and limitations: 127 single-byte
-     * alphanumeric characters
-     * @access    public
-     * @namespace ebl
-     * @var string
-     */
-    public $ProfileReference;
+	/**
+	 * When does this Profile begin billing?
+	 * @access public
+	 * @namespace ebl
+	 * @var string ISO8601
+	 */
+	public $BillingStartDate;
 
-    /**
-     * Constructor with arguments
-     *
-     * @param string $BillingStartDate ISO8601
-     */
-    public function __construct($BillingStartDate = null)
-    {
-        $this->BillingStartDate = $BillingStartDate;
-    }
+	/**
+	 * Your own unique invoice or tracking number. Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters
+	 * @access public
+	 * @namespace ebl
+	 * @var string
+	 */
+	public $ProfileReference;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($BillingStartDate = NULL) {
+		$this->BillingStartDate = $BillingStartDate;
+	}
+
+
+
 }

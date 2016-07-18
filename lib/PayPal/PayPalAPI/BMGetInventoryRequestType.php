@@ -1,33 +1,34 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
-
-use PayPal\EBLBaseComponents\AbstractRequestType;
-
+use PayPal\EBLBaseComponents\AbstractRequestType; 
 /**
- * Hosted Button ID of the button to return inventory for.
+ * Hosted Button ID of the button to return inventory for. 
  * Required Character length and limitations: 10 single-byte
- * numeric characters
+ * numeric characters  
  */
-class BMGetInventoryRequestType
-  extends AbstractRequestType
-{
-    /**
-     * Hosted Button ID of the button to return inventory for.
-     * Required Character length and limitations: 10 single-byte
-     * numeric characters
-     * @access    public
-     * @namespace ns
-     * @var string
-     */
-    public $HostedButtonID;
+class BMGetInventoryRequestType  extends AbstractRequestType  
+  {
 
-    /**
-     * Constructor with arguments
-     *
-     * @param string $HostedButtonID
-     */
-    public function __construct($HostedButtonID = null)
-    {
-        $this->HostedButtonID = $HostedButtonID;
-    }
+	/**
+	 * Hosted Button ID of the button to return inventory for. 
+	 * Required Character length and limitations: 10 single-byte
+	 * numeric characters 
+	 * @access public
+	 
+	 * @namespace ns
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $HostedButtonID;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($HostedButtonID = NULL) {
+		$this->HostedButtonID = $HostedButtonID;
+	}
+
+
+    
 }

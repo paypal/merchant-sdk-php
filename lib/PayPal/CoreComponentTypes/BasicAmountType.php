@@ -1,8 +1,6 @@
-<?php
+<?php 
 namespace PayPal\CoreComponentTypes;
-
 use PayPal\Core\PPXmlMessage;
-
 /**
  * @hasAttribute
  * On requests, you must set the currencyID attribute to one of
@@ -12,34 +10,43 @@ use PayPal\Core\PPXmlMessage;
  * be a period (.), and the thousands separator must be a comma
  * (,).
  */
-class BasicAmountType
-  extends PPXmlMessage
-{
-    /**
-     * @access    public
-     * @namespace cc
-     * @attribute
-     * @var string
-     */
-    public $currencyID;
+class BasicAmountType  
+   extends PPXmlMessage{
 
-    /**
-     * @access    public
-     * @namespace cc
-     * @value
-     * @var string
-     */
-    public $value;
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace cc
+	 
+	 
+	 * @attribute 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $currencyID;
 
-    /**
-     * Constructor with arguments
-     *
-     * @param string $currencyID
-     * @param string $value
-     */
-    public function __construct($currencyID = null, $value = null)
-    {
-        $this->currencyID = $currencyID;
-        $this->value      = $value;
-    }
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace cc
+	 
+	 
+	 * @value
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $value;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($currencyID = NULL, $value = NULL) {
+		$this->currencyID = $currencyID;
+		$this->value = $value;
+	}
+
+
+    
 }

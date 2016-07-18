@@ -1,16 +1,22 @@
-<?php
+<?php 
 namespace PayPal\PayPalAPI;
+use PayPal\EBLBaseComponents\AbstractResponseType; 
+/**
+ * 
+ */
+class BillOutstandingAmountResponseType  extends AbstractResponseType  
+  {
 
-use PayPal\EBLBaseComponents\AbstractResponseType;
-use PayPal\EBLBaseComponents\BillOutstandingAmountResponseDetailsType;
+	/**
+	 * 
+	 * @access public
+	 
+	 * @namespace ebl
+	 
+	 	 	 	 
+	 * @var \PayPal\EBLBaseComponents\BillOutstandingAmountResponseDetailsType	 
+	 */ 
+	public $BillOutstandingAmountResponseDetails;
 
-class BillOutstandingAmountResponseType
-  extends AbstractResponseType
-{
-    /**
-     * @access    public
-     * @namespace ebl
-     * @var BillOutstandingAmountResponseDetailsType
-     */
-    public $BillOutstandingAmountResponseDetails;
+
 }
