@@ -1,67 +1,53 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
+
 use PayPal\Core\PPXmlMessage;
+
 /**
- * Item Number. Required 
+ * Item Number. Required
  */
-class ItemTrackingDetailsType  
-   extends PPXmlMessage{
+class ItemTrackingDetailsType
+  extends PPXmlMessage
+{
 
-	/**
-	 * Item Number. Required 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
-	public $ItemNumber;
+    /**
+     * Item Number. Required
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $ItemNumber;
 
-	/**
-	 * Option Quantity. Optional 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
-	public $ItemQty;
+    /**
+     * Option Quantity. Optional
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $ItemQty;
 
-	/**
-	 * Item Quantity Delta. Optional 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
-	public $ItemQtyDelta;
+    /**
+     * Item Quantity Delta. Optional
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $ItemQtyDelta;
 
-	/**
-	 * Item Alert. Optional 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
-	public $ItemAlert;
+    /**
+     * Item Alert. Optional
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $ItemAlert;
 
-	/**
-	 * Item Cost. Optional 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
-	public $ItemCost;
+    /**
+     * Item Cost. Optional
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $ItemCost;
 
-
-    
 }

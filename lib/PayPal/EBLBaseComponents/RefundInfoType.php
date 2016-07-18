@@ -1,33 +1,29 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
+
 use PayPal\Core\PPXmlMessage;
+
 /**
- * Holds refunds payment status information 
+ * Holds refunds payment status information
  */
-class RefundInfoType  
-   extends PPXmlMessage{
+class RefundInfoType
+  extends PPXmlMessage
+{
 
-	/**
-	 * Refund status whether it is Instant or Delayed. 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
-	public $RefundStatus;
+    /**
+     * Refund status whether it is Instant or Delayed.
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $RefundStatus;
 
-	/**
-	 * Tells us the reason when refund payment status is Delayed. 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string 	 
-	 */ 
-	public $PendingReason;
-
+    /**
+     * Tells us the reason when refund payment status is Delayed.
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $PendingReason;
 
 }

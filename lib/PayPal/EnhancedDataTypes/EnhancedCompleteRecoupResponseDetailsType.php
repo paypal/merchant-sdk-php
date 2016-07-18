@@ -1,11 +1,13 @@
-<?php 
+<?php
 namespace PayPal\EnhancedDataTypes;
-use PayPal\Core\PPXmlMessage;
-/**
- * 
- */
-class EnhancedCompleteRecoupResponseDetailsType  
-   extends PPXmlMessage{
 
+use PayPal\Core\PPXmlMessage;
+
+/**
+ *
+ */
+class EnhancedCompleteRecoupResponseDetailsType
+  extends PPXmlMessage
+{
 
 }

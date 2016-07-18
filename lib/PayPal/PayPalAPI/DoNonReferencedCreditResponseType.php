@@ -1,22 +1,21 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractResponseType; 
+
+use PayPal\EBLBaseComponents\AbstractResponseType;
+
 /**
- * 
+ *
  */
-class DoNonReferencedCreditResponseType  extends AbstractResponseType  
-  {
+class DoNonReferencedCreditResponseType
+  extends AbstractResponseType
+{
 
-	/**
-	 * 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\DoNonReferencedCreditResponseDetailsType	 
-	 */ 
-	public $DoNonReferencedCreditResponseDetails;
-
+    /**
+     *
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\DoNonReferencedCreditResponseDetailsType
+     */
+    public $DoNonReferencedCreditResponseDetails;
 
 }

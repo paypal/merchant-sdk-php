@@ -1,36 +1,31 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
+
+use PayPal\EBLBaseComponents\AbstractRequestType;
+
 /**
  * This flag indicates that the response should include
- * FMFDetails 
+ * FMFDetails
  */
-class BillUserRequestType  extends AbstractRequestType  
-  {
+class BillUserRequestType
+  extends AbstractRequestType
+{
 
-	/**
-	 * 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\MerchantPullPaymentType	 
-	 */ 
-	public $MerchantPullPaymentDetails;
+    /**
+     *
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\MerchantPullPaymentType
+     */
+    public $MerchantPullPaymentDetails;
 
-	/**
-	 * This flag indicates that the response should include
-	 * FMFDetails
-	 * @access public
-	 
-	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var integer	 
-	 */ 
-	public $ReturnFMFDetails;
+    /**
+     * This flag indicates that the response should include
+     * FMFDetails
+     * @access    public
+     * @namespace ns
+     * @var integer
+     */
+    public $ReturnFMFDetails;
 
-
-    
 }

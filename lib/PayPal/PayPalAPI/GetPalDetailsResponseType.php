@@ -1,33 +1,29 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractResponseType; 
+
+use PayPal\EBLBaseComponents\AbstractResponseType;
+
 /**
- * 
+ *
  */
-class GetPalDetailsResponseType  extends AbstractResponseType  
-  {
+class GetPalDetailsResponseType
+  extends AbstractResponseType
+{
 
-	/**
-	 * 
-	 * @access public
-	 
-	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
-	public $Pal;
+    /**
+     *
+     * @access    public
+     * @namespace ns
+     * @var string
+     */
+    public $Pal;
 
-	/**
-	 * 
-	 * @access public
-	 
-	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
-	public $Locale;
-
+    /**
+     *
+     * @access    public
+     * @namespace ns
+     * @var string
+     */
+    public $Locale;
 
 }

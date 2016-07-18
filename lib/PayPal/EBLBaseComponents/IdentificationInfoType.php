@@ -1,45 +1,37 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
+
 use PayPal\Core\PPXmlMessage;
+
 /**
- * Mobile specific buyer identification. 
+ * Mobile specific buyer identification.
  */
-class IdentificationInfoType  
-   extends PPXmlMessage{
+class IdentificationInfoType
+  extends PPXmlMessage
+{
 
-	/**
-	 * Mobile specific buyer identification.
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\MobileIDInfoType	 
-	 */ 
-	public $MobileIDInfo;
+    /**
+     * Mobile specific buyer identification.
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\MobileIDInfoType
+     */
+    public $MobileIDInfo;
 
-	/**
-	 * Contains login bypass information.
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\RememberMeIDInfoType	 
-	 */ 
-	public $RememberMeIDInfo;
+    /**
+     * Contains login bypass information.
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\RememberMeIDInfoType
+     */
+    public $RememberMeIDInfo;
 
-	/**
-	 * Identity Access Token.
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\IdentityTokenInfoType	 
-	 */ 
-	public $IdentityTokenInfo;
+    /**
+     * Identity Access Token.
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\IdentityTokenInfoType
+     */
+    public $IdentityTokenInfo;
 
-
-    
 }

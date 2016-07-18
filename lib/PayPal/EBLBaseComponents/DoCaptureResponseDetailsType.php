@@ -1,48 +1,41 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
+
 use PayPal\Core\PPXmlMessage;
+
 /**
  * The authorization identification number you specified in the
  * request. Character length and limits: 19 single-byte
- * characters maximum 
+ * characters maximum
  */
-class DoCaptureResponseDetailsType  
-   extends PPXmlMessage{
+class DoCaptureResponseDetailsType
+  extends PPXmlMessage
+{
 
-	/**
-	 * The authorization identification number you specified in the
-	 * request. Character length and limits: 19 single-byte
-	 * characters maximum
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\string	 
-	 */ 
-	public $AuthorizationID;
+    /**
+     * The authorization identification number you specified in the
+     * request. Character length and limits: 19 single-byte
+     * characters maximum
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $AuthorizationID;
 
-	/**
-	 * Information about the transaction 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\PaymentInfoType	 
-	 */ 
-	public $PaymentInfo;
+    /**
+     * Information about the transaction
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\PaymentInfoType
+     */
+    public $PaymentInfo;
 
-	/**
-	 * Return msgsubid back to merchant 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
-	public $MsgSubID;
-
+    /**
+     * Return msgsubid back to merchant
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $MsgSubID;
 
 }

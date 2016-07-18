@@ -1,22 +1,21 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractResponseType; 
+
+use PayPal\EBLBaseComponents\AbstractResponseType;
+
 /**
- * 
+ *
  */
-class BAUpdateResponseType  extends AbstractResponseType  
-  {
+class BAUpdateResponseType
+  extends AbstractResponseType
+{
 
-	/**
-	 * 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\BAUpdateResponseDetailsType	 
-	 */ 
-	public $BAUpdateResponseDetails;
-
+    /**
+     *
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\BAUpdateResponseDetailsType
+     */
+    public $BAUpdateResponseDetails;
 
 }

@@ -1,56 +1,46 @@
-<?php 
+<?php
 namespace PayPal\EBLBaseComponents;
+
 use PayPal\Core\PPXmlMessage;
+
 /**
  * OffersAndCouponsInfoType Information about a Offers and
- * Coupons. 
+ * Coupons.
  */
-class OfferCouponInfoType  
-   extends PPXmlMessage{
+class OfferCouponInfoType
+  extends PPXmlMessage
+{
 
-	/**
-	 * Type of the incentive 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
-	public $Type;
+    /**
+     * Type of the incentive
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $Type;
 
-	/**
-	 * ID of the Incentive used in transaction
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
-	public $ID;
+    /**
+     * ID of the Incentive used in transaction
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $ID;
 
-	/**
-	 * Amount used on transaction
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
-	public $Amount;
+    /**
+     * Amount used on transaction
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $Amount;
 
-	/**
-	 * Amount Currency
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
-	public $AmountCurrency;
-
+    /**
+     * Amount Currency
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $AmountCurrency;
 
 }

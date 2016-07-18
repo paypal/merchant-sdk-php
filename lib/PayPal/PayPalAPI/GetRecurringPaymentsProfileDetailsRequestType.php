@@ -1,30 +1,29 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractRequestType; 
+
+use PayPal\EBLBaseComponents\AbstractRequestType;
+
 /**
- * 
+ *
  */
-class GetRecurringPaymentsProfileDetailsRequestType  extends AbstractRequestType  
-  {
+class GetRecurringPaymentsProfileDetailsRequestType
+  extends AbstractRequestType
+{
 
-	/**
-	 * 
-	 * @access public
-	 
-	 * @namespace ns
-	 
-	 	 	 	 
-	 * @var string	 
-	 */ 
-	public $ProfileID;
+    /**
+     *
+     * @access    public
+     * @namespace ns
+     * @var string
+     */
+    public $ProfileID;
 
-	/**
-	 * Constructor with arguments
-	 */
-	public function __construct($ProfileID = NULL) {
-		$this->ProfileID = $ProfileID;
-	}
+    /**
+     * Constructor with arguments
+     */
+    public function __construct($ProfileID = null)
+    {
+        $this->ProfileID = $ProfileID;
+    }
 
-
-    
 }

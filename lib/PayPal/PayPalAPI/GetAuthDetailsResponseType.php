@@ -1,22 +1,21 @@
-<?php 
+<?php
 namespace PayPal\PayPalAPI;
-use PayPal\EBLBaseComponents\AbstractResponseType; 
+
+use PayPal\EBLBaseComponents\AbstractResponseType;
+
 /**
- * 
+ *
  */
-class GetAuthDetailsResponseType  extends AbstractResponseType  
-  {
+class GetAuthDetailsResponseType
+  extends AbstractResponseType
+{
 
-	/**
-	 * 
-	 * @access public
-	 
-	 * @namespace ebl
-	 
-	 	 	 	 
-	 * @var PayPal\EBLBaseComponents\GetAuthDetailsResponseDetailsType	 
-	 */ 
-	public $GetAuthDetailsResponseDetails;
-
+    /**
+     *
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\GetAuthDetailsResponseDetailsType
+     */
+    public $GetAuthDetailsResponseDetails;
 
 }
