@@ -1,4 +1,5 @@
 <?php
+
 use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
 use PayPal\Merchant\EBLBaseComponents\ActivationDetailsType;
 use PayPal\Merchant\EBLBaseComponents\AddressType;

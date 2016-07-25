@@ -1,4 +1,5 @@
 <?php
+
 use PayPal\Merchant\Service\PermissionsService;
 use PayPal\Merchant\Types\Common\RequestEnvelope;
 use PayPal\Merchant\Types\Perm\RequestPermissionsRequest;

@@ -1,4 +1,5 @@
 <?php
+
 use PayPal\Merchant\PayPalAPI\GetExpressCheckoutDetailsReq;
 use PayPal\Merchant\PayPalAPI\GetExpressCheckoutDetailsRequestType;
 use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;

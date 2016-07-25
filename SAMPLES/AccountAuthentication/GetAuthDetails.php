@@ -1,4 +1,5 @@
 <?php
+
 use PayPal\Merchant\PayPalAPI\GetAuthDetailsReq;
 use PayPal\Merchant\PayPalAPI\GetAuthDetailsRequestType;
 use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;

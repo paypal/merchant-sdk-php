@@ -1,4 +1,5 @@
 <?php
+
 namespace PayPal\Merchant\Service;
 
 use PayPal\Merchant\Common\PPApiContext;

@@ -1,4 +1,5 @@
 <?php
+
 use PayPal\Merchant\EBLBaseComponents\SetAuthFlowParamRequestDetailsType;
 use PayPal\Merchant\PayPalAPI\SetAuthFlowParamReq;
 use PayPal\Merchant\PayPalAPI\SetAuthFlowParamRequestType;

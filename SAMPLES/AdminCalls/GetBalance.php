@@ -1,4 +1,5 @@
 <?php
+
 use PayPal\Merchant\PayPalAPI\GetBalanceReq;
 use PayPal\Merchant\PayPalAPI\GetBalanceRequestType;
 use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;

@@ -1,4 +1,5 @@
 <?php
+
 use PayPal\Merchant\PayPalAPI\GetRecurringPaymentsProfileDetailsReq;
 use PayPal\Merchant\PayPalAPI\GetRecurringPaymentsProfileDetailsRequestType;
 use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;

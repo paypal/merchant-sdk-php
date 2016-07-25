@@ -1,4 +1,5 @@
 <?php
+
 use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
 use PayPal\Merchant\PayPalAPI\DoReauthorizationReq;
 use PayPal\Merchant\PayPalAPI\DoReauthorizationRequestType;

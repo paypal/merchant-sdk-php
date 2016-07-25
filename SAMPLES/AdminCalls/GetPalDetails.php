@@ -1,4 +1,5 @@
 <?php
+
 use PayPal\Merchant\PayPalAPI\GetPalDetailsReq;
 use PayPal\Merchant\PayPalAPI\GetPalDetailsRequestType;
 use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;

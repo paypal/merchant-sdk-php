@@ -1,4 +1,5 @@
 <?php
+
 use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
 use PayPal\Merchant\EBLBaseComponents\DoExpressCheckoutPaymentRequestDetailsType;
 use PayPal\Merchant\EBLBaseComponents\PaymentDetailsType;

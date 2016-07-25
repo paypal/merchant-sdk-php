@@ -1,4 +1,5 @@
 <?php
+
 namespace PayPal\Merchant\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;

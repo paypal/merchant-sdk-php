@@ -1,4 +1,5 @@
 <?php
+
 use PayPal\Merchant\IPN\PPIPNMessage;
 /**
  * This is a sample implementation of an IPN listener
