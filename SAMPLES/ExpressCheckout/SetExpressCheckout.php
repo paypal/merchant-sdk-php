@@ -6,9 +6,9 @@ use PayPal\Merchant\EBLBaseComponents\BillingAgreementDetailsType;
 use PayPal\Merchant\EBLBaseComponents\PaymentDetailsItemType;
 use PayPal\Merchant\EBLBaseComponents\PaymentDetailsType;
 use PayPal\Merchant\EBLBaseComponents\SetExpressCheckoutRequestDetailsType;
-use PayPal\Merchant\PayPalAPI\SetExpressCheckoutReq;
-use PayPal\Merchant\PayPalAPI\SetExpressCheckoutRequestType;
-use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Merchant\API\SetExpressCheckoutReq;
+use PayPal\Merchant\API\SetExpressCheckoutRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -173,7 +173,7 @@ $setECReq->SetExpressCheckoutRequest = $setECReqType;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$setECResponse = $paypalService->SetExpressCheckout($setECReq);

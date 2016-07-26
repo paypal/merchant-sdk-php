@@ -1,8 +1,8 @@
 <?php
 
-use PayPal\Merchant\PayPalAPI\BAUpdateRequestType;
-use PayPal\Merchant\PayPalAPI\BillAgreementUpdateReq;
-use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Merchant\API\BAUpdateRequestType;
+use PayPal\Merchant\API\BillAgreementUpdateReq;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /*
  * update billing agreement
@@ -16,7 +16,7 @@ $billingAgreementUpdateReq->BAUpdateRequest = $BAUpdateRequest;
 /*
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$BAUpdatResponse = $paypalService->BillAgreementUpdate($billingAgreementUpdateReq);

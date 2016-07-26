@@ -1,8 +1,8 @@
 <?php
 
-use PayPal\Merchant\PayPalAPI\GetAuthDetailsReq;
-use PayPal\Merchant\PayPalAPI\GetAuthDetailsRequestType;
-use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Merchant\API\GetAuthDetailsReq;
+use PayPal\Merchant\API\GetAuthDetailsRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -16,7 +16,7 @@ $logger->info("created GetAuthDetailsRequest Object");
 /*
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$getAuthDetailsResponse = $paypalService->GetAuthDetails($req);

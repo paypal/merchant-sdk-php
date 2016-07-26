@@ -8,9 +8,9 @@ use PayPal\Merchant\EBLBaseComponents\CreateRecurringPaymentsProfileRequestDetai
 use PayPal\Merchant\EBLBaseComponents\CreditCardDetailsType;
 use PayPal\Merchant\EBLBaseComponents\RecurringPaymentsProfileDetailsType;
 use PayPal\Merchant\EBLBaseComponents\ScheduleDetailsType;
-use PayPal\Merchant\PayPalAPI\CreateRecurringPaymentsProfileReq;
-use PayPal\Merchant\PayPalAPI\CreateRecurringPaymentsProfileRequestType;
-use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Merchant\API\CreateRecurringPaymentsProfileReq;
+use PayPal\Merchant\API\CreateRecurringPaymentsProfileRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /**
  *
@@ -213,7 +213,7 @@ $createRPProfileReq->CreateRecurringPaymentsProfileRequest = $createRPProfileReq
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$createRPProfileResponse = $paypalService->CreateRecurringPaymentsProfile($createRPProfileReq);

@@ -1,8 +1,8 @@
 <?php
 
-use PayPal\Merchant\PayPalAPI\GetExpressCheckoutDetailsReq;
-use PayPal\Merchant\PayPalAPI\GetExpressCheckoutDetailsRequestType;
-use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Merchant\API\GetExpressCheckoutDetailsReq;
+use PayPal\Merchant\API\GetExpressCheckoutDetailsRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 session_start();
 
@@ -28,7 +28,7 @@ $getExpressCheckoutReq->GetExpressCheckoutDetailsRequest = $getExpressCheckoutDe
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$getECResponse = $paypalService->GetExpressCheckoutDetails($getExpressCheckoutReq);

@@ -1,9 +1,9 @@
 <?php
 
 use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
-use PayPal\Merchant\PayPalAPI\RefundTransactionReq;
-use PayPal\Merchant\PayPalAPI\RefundTransactionRequestType;
-use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Merchant\API\RefundTransactionReq;
+use PayPal\Merchant\API\RefundTransactionRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -75,7 +75,7 @@ $refundReq->RefundTransactionRequest = $refundReqest;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$refundResponse = $paypalService->RefundTransaction($refundReq);

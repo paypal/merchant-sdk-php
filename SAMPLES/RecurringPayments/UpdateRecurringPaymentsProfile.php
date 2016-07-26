@@ -5,9 +5,9 @@ use PayPal\Merchant\EBLBaseComponents\AddressType;
 use PayPal\Merchant\EBLBaseComponents\BillingPeriodDetailsType;
 use PayPal\Merchant\EBLBaseComponents\UpdateRecurringPaymentsProfileRequestDetailsType;
 use PayPal\Merchant\EBLBaseComponents\CreditCardDetailsType;
-use PayPal\Merchant\PayPalAPI\UpdateRecurringPaymentsProfileReq;
-use PayPal\Merchant\PayPalAPI\UpdateRecurringPaymentsProfileRequestType;
-use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Merchant\API\UpdateRecurringPaymentsProfileReq;
+use PayPal\Merchant\API\UpdateRecurringPaymentsProfileRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /**
  *
@@ -139,7 +139,7 @@ $updateRPProfileReq->UpdateRecurringPaymentsProfileRequest = $updateRPProfileReq
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());;
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());;
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$updateRPProfileResponse = $paypalService->UpdateRecurringPaymentsProfile($updateRPProfileReq);

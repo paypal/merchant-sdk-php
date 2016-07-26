@@ -2,9 +2,9 @@
 
 use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
 use PayPal\Merchant\EBLBaseComponents\MerchantPullPaymentType;
-use PayPal\Merchant\PayPalAPI\BillUserReq;
-use PayPal\Merchant\PayPalAPI\BillUserRequestType;
-use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Merchant\API\BillUserReq;
+use PayPal\Merchant\API\BillUserRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -40,7 +40,7 @@ $billUserReq->BillUserRequest = $billUserReqest;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$billUserResponse = $paypalService->BillUser($billUserReq);

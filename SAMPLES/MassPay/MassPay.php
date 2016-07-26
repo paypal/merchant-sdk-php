@@ -1,10 +1,10 @@
 <?php
 
 use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
-use PayPal\Merchant\PayPalAPI\MassPayReq;
-use PayPal\Merchant\PayPalAPI\MassPayRequestItemType;
-use PayPal\Merchant\PayPalAPI\MassPayRequestType;
-use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Merchant\API\MassPayReq;
+use PayPal\Merchant\API\MassPayRequestItemType;
+use PayPal\Merchant\API\MassPayRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 use PayPal\Merchant\Auth\PPSignatureCredential;
 use PayPal\Merchant\Auth\PPTokenAuthorization;
 
@@ -57,7 +57,7 @@ $massPayReq->MassPayRequest = $massPayRequest;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 
 // required in third party permissioning
 if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {

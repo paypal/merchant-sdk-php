@@ -1,9 +1,9 @@
 <?php
 
 use PayPal\Merchant\EBLBaseComponents\ReverseTransactionRequestDetailsType;
-use PayPal\Merchant\PayPalAPI\ReverseTransactionReq;
-use PayPal\Merchant\PayPalAPI\ReverseTransactionRequestType;
-use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Merchant\API\ReverseTransactionReq;
+use PayPal\Merchant\API\ReverseTransactionRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /**
  * Get required parameters from the web form for the request
@@ -21,7 +21,7 @@ $reverseTransactionReq->ReverseTransactionRequest = $reverseTransactionReqest;
 /*
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$reverseTransactionResponse = $paypalService->ReverseTransaction($reverseTransactionReq);

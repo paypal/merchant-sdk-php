@@ -1,9 +1,9 @@
 <?php
 
 use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
-use PayPal\Merchant\PayPalAPI\DoCaptureReq;
-use PayPal\Merchant\PayPalAPI\DoCaptureRequestType;
-use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Merchant\API\DoCaptureReq;
+use PayPal\Merchant\API\DoCaptureRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /*
  *  # DoCapture API
@@ -47,7 +47,7 @@ $doCaptureReq->DoCaptureRequest = $doCaptureReqest;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$doCaptureResponse = $paypalService->DoCapture($doCaptureReq);

@@ -1,8 +1,8 @@
 <?php
 
-use PayPal\Merchant\PayPalAPI\GetBillingAgreementCustomerDetailsReq;
-use PayPal\Merchant\PayPalAPI\GetBillingAgreementCustomerDetailsRequestType;
-use PayPal\Merchant\Service\PayPalAPIInterfaceServiceService;
+use PayPal\Merchant\API\GetBillingAgreementCustomerDetailsReq;
+use PayPal\Merchant\API\GetBillingAgreementCustomerDetailsRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /*
  * The GetBillingAgreementCustomerDetails API operation obtains information about a billing agreement�s PayPal account holder. 
@@ -20,7 +20,7 @@ $BACustomerDetailReq->GetBillingAgreementCustomerDetailsRequest = $BACustomerDet
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$BACustomerDetailResponse = $paypalService->GetBillingAgreementCustomerDetails($BACustomerDetailReq);
