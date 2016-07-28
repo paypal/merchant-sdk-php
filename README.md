@@ -40,9 +40,6 @@ wget  https://raw.githubusercontent.com/paypal/merchant-sdk-php/stable-php5.3/sa
 php install.php
 ```
 
-   
-#### This SDK is deprecated. It is strongly recommended that new implementations use the [PHP Rest SDK](https://github.com/paypal/rest-api-sdk-php)
-
 ## Prerequisites
 
 PayPal's PHP Merchant SDK requires 
