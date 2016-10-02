@@ -3,7 +3,7 @@
     "description": "PayPal Merchant SDK for PHP",
     "keywords": ["paypal", "php", "sdk"],
     "homepage": "https://developer.paypal.com",
-    "license": "Apache2",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "PayPal",
