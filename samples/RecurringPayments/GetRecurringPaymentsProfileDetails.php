@@ -1,7 +1,8 @@
 <?php
-use PayPal\PayPalAPI\GetRecurringPaymentsProfileDetailsReq;
-use PayPal\PayPalAPI\GetRecurringPaymentsProfileDetailsRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\API\GetRecurringPaymentsProfileDetailsReq;
+use PayPal\Merchant\API\GetRecurringPaymentsProfileDetailsRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -22,7 +23,7 @@ $getRPPDetailsReq->GetRecurringPaymentsProfileDetailsRequest = $getRPPDetailsReq
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$getRPPDetailsResponse = $paypalService->GetRecurringPaymentsProfileDetails($getRPPDetailsReq);

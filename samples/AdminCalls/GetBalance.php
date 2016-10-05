@@ -1,7 +1,8 @@
 <?php
-use PayPal\PayPalAPI\GetBalanceReq;
-use PayPal\PayPalAPI\GetBalanceRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\API\GetBalanceReq;
+use PayPal\Merchant\API\GetBalanceRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -14,8 +15,8 @@ $getBalanceRequest = new GetBalanceRequestType();
  *  Indicates whether to return all currencies. It is one of the
 following values:
 
-* 0 – Return only the balance for the primary currency holding.
-* 1 – Return the balance for each currency holding.
+* 0 ï¿½ Return only the balance for the primary currency holding.
+* 1 ï¿½ Return the balance for each currency holding.
 */
 $getBalanceRequest->ReturnAllCurrencies = $_REQUEST['returnAllCurrencies'];
 
@@ -27,7 +28,7 @@ $getBalanceReq->GetBalanceRequest = $getBalanceRequest;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$getBalanceResponse = $paypalService->GetBalance($getBalanceReq);

@@ -1,7 +1,8 @@
 <?php
-use PayPal\PayPalAPI\AddressVerifyReq;
-use PayPal\PayPalAPI\AddressVerifyRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\API\AddressVerifyReq;
+use PayPal\Merchant\API\AddressVerifyRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -23,7 +24,7 @@ $addrVerifyReq->AddressVerifyRequest = $addressVerifyRequest;
 		// Creating service wrapper object to make API call and loading
 		Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$addrVerifyResponse = $paypalService->AddressVerify($addrVerifyReq);

@@ -1,8 +1,9 @@
 <?php
-use PayPal\EBLBaseComponents\ManageRecurringPaymentsProfileStatusRequestDetailsType;
-use PayPal\PayPalAPI\ManageRecurringPaymentsProfileStatusReq;
-use PayPal\PayPalAPI\ManageRecurringPaymentsProfileStatusRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\EBLBaseComponents\ManageRecurringPaymentsProfileStatusRequestDetailsType;
+use PayPal\Merchant\API\ManageRecurringPaymentsProfileStatusReq;
+use PayPal\Merchant\API\ManageRecurringPaymentsProfileStatusRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -12,11 +13,11 @@ $manageRPPStatusReqestDetails = new ManageRecurringPaymentsProfileStatusRequestD
 /*
  *  (Required) The action to be performed to the recurring payments profile. Must be one of the following:
 
-    Cancel – Only profiles in Active or Suspended state can be canceled.
+    Cancel ï¿½ Only profiles in Active or Suspended state can be canceled.
 
-    Suspend – Only profiles in Active state can be suspended.
+    Suspend ï¿½ Only profiles in Active state can be suspended.
 
-    Reactivate – Only profiles in a suspended state can be reactivated.
+    Reactivate ï¿½ Only profiles in a suspended state can be reactivated.
 
  */
 $manageRPPStatusReqestDetails->Action =  $_REQUEST['action'];
@@ -37,7 +38,7 @@ $manageRPPStatusReq->ManageRecurringPaymentsProfileStatusRequest = $manageRPPSta
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$manageRPPStatusResponse = $paypalService->ManageRecurringPaymentsProfileStatus($manageRPPStatusReq);

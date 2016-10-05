@@ -1,11 +1,12 @@
 <?php
-use PayPal\CoreComponentTypes\BasicAmountType;
-use PayPal\EBLBaseComponents\PaymentDetailsItemType;
-use PayPal\EBLBaseComponents\PaymentDetailsType;
-use PayPal\EBLBaseComponents\SetExpressCheckoutRequestDetailsType;
-use PayPal\PayPalAPI\SetExpressCheckoutReq;
-use PayPal\PayPalAPI\SetExpressCheckoutRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
+use PayPal\Merchant\EBLBaseComponents\PaymentDetailsItemType;
+use PayPal\Merchant\EBLBaseComponents\PaymentDetailsType;
+use PayPal\Merchant\EBLBaseComponents\SetExpressCheckoutRequestDetailsType;
+use PayPal\Merchant\API\SetExpressCheckoutReq;
+use PayPal\Merchant\API\SetExpressCheckoutRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 session_start();
 /*
@@ -106,7 +107,7 @@ $_SESSION['currencyID'] = $_REQUEST['currencyId'];
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 $setECResponse = $paypalService->SetExpressCheckout($setECReq);
 // echo '<pre>';
 //print_r($setECResponse);

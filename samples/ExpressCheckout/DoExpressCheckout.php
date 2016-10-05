@@ -1,12 +1,13 @@
 <?php
-use PayPal\CoreComponentTypes\BasicAmountType;
-use PayPal\EBLBaseComponents\DoExpressCheckoutPaymentRequestDetailsType;
-use PayPal\EBLBaseComponents\PaymentDetailsType;
-use PayPal\PayPalAPI\DoExpressCheckoutPaymentReq;
-use PayPal\PayPalAPI\DoExpressCheckoutPaymentRequestType;
-use PayPal\PayPalAPI\GetExpressCheckoutDetailsReq;
-use PayPal\PayPalAPI\GetExpressCheckoutDetailsRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
+use PayPal\Merchant\EBLBaseComponents\DoExpressCheckoutPaymentRequestDetailsType;
+use PayPal\Merchant\EBLBaseComponents\PaymentDetailsType;
+use PayPal\Merchant\API\DoExpressCheckoutPaymentReq;
+use PayPal\Merchant\API\DoExpressCheckoutPaymentRequestType;
+use PayPal\Merchant\API\GetExpressCheckoutDetailsReq;
+use PayPal\Merchant\API\GetExpressCheckoutDetailsRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 session_start();
 
@@ -36,7 +37,7 @@ $getExpressCheckoutReq->GetExpressCheckoutDetailsRequest = $getExpressCheckoutDe
 /*
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$getECResponse = $paypalService->GetExpressCheckoutDetails($getExpressCheckoutReq);

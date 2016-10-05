@@ -1,7 +1,8 @@
 <?php
-use PayPal\PayPalAPI\ManagePendingTransactionStatusReq;
-use PayPal\PayPalAPI\ManagePendingTransactionStatusRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\API\ManagePendingTransactionStatusReq;
+use PayPal\Merchant\API\ManagePendingTransactionStatusRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -13,9 +14,9 @@ require_once('../PPBootStrap.php');
  * 
  * (Required) The operation you want to perform on the transaction. It is one of the following values:
 
-    Accept – Accepts the payment
+    Accept ï¿½ Accepts the payment
 
-    Deny – Rejects the payment
+    Deny ï¿½ Rejects the payment
 
  */
 $MPTranStatusReqest= new ManagePendingTransactionStatusRequestType($_REQUEST['transactionID'], $_REQUEST['action']);
@@ -27,7 +28,7 @@ $MPTranStatusReq->ManagePendingTransactionStatusRequest = $MPTranStatusReqest;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$MPTranStatusResponse = $paypalService->ManagePendingTransactionStatus($MPTranStatusReq);

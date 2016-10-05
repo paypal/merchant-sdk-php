@@ -1,14 +1,15 @@
 <?php
-use PayPal\CoreComponentTypes\BasicAmountType;
-use PayPal\EBLBaseComponents\AddressType;
-use PayPal\EBLBaseComponents\CreditCardDetailsType;
-use PayPal\EBLBaseComponents\DoDirectPaymentRequestDetailsType;
-use PayPal\EBLBaseComponents\PayerInfoType;
-use PayPal\EBLBaseComponents\PaymentDetailsType;
-use PayPal\EBLBaseComponents\PersonNameType;
-use PayPal\PayPalAPI\DoDirectPaymentReq;
-use PayPal\PayPalAPI\DoDirectPaymentRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
+use PayPal\Merchant\EBLBaseComponents\AddressType;
+use PayPal\Merchant\EBLBaseComponents\CreditCardDetailsType;
+use PayPal\Merchant\EBLBaseComponents\DoDirectPaymentRequestDetailsType;
+use PayPal\Merchant\EBLBaseComponents\PayerInfoType;
+use PayPal\Merchant\EBLBaseComponents\PaymentDetailsType;
+use PayPal\Merchant\EBLBaseComponents\PersonNameType;
+use PayPal\Merchant\API\DoDirectPaymentReq;
+use PayPal\Merchant\API\DoDirectPaymentRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 /***********************************************************
  DoDirectPayment.php
 
@@ -134,7 +135,7 @@ $doDirectPaymentReq->DoDirectPaymentRequest = new DoDirectPaymentRequestType($dd
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$doDirectPaymentResponse = $paypalService->DoDirectPayment($doDirectPaymentReq);

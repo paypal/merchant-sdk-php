@@ -1,7 +1,8 @@
 <?php
-use PayPal\PayPalAPI\GetPalDetailsReq;
-use PayPal\PayPalAPI\GetPalDetailsRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\API\GetPalDetailsReq;
+use PayPal\Merchant\API\GetPalDetailsRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /*
  * Obtain your Pal ID, which is the PayPal-assigned merchant account number, and other informaton about your account. You need the account number when working with dynamic versions of PayPalbuttons and logos
@@ -15,7 +16,7 @@ $getPalDetailsReq->GetPalDetailsRequest = $getPalDetailsRequest;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$getPalDetailsResponse = $paypalService->GetPalDetails($getPalDetailsReq);

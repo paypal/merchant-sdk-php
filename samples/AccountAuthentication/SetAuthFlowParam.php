@@ -1,8 +1,9 @@
 <?php
-use PayPal\EBLBaseComponents\SetAuthFlowParamRequestDetailsType;
-use PayPal\PayPalAPI\SetAuthFlowParamReq;
-use PayPal\PayPalAPI\SetAuthFlowParamRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\EBLBaseComponents\SetAuthFlowParamRequestDetailsType;
+use PayPal\Merchant\API\SetAuthFlowParamReq;
+use PayPal\Merchant\API\SetAuthFlowParamRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -30,7 +31,7 @@ $req->SetAuthFlowParamRequest = $reqType;
 		 Creating service wrapper object to make API call and loading
 		Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$setAuthFlowParamResponse = $paypalService->SetAuthFlowParam($req);

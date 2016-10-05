@@ -1,11 +1,12 @@
 <?php
-use PayPal\Service\PermissionsService;
-use PayPal\Types\Common\RequestEnvelope;
-use PayPal\Types\Perm\RequestPermissionsRequest;
+
+use PayPal\Merchant\Service\PermissionsService;
+use PayPal\Merchant\Types\Common\RequestEnvelope;
+use PayPal\Merchant\Types\Perm\RequestPermissionsRequest;
 /********************************************
  RequestPermissionsReceipt.php
  Called by RequestPermissions.php
- Use the RequestPermissions API operation to request permissions to execute API operations on a PayPal account holder’s behalf. 
+ Use the RequestPermissions API operation to request permissions to execute API operations on a PayPal account holderï¿½s behalf. 
  ********************************************/
 require_once('../PPBootStrap.php');
 $serverName = $_SERVER['SERVER_NAME'];

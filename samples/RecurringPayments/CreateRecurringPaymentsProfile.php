@@ -1,15 +1,16 @@
 <?php
-use PayPal\CoreComponentTypes\BasicAmountType;
-use PayPal\EBLBaseComponents\ActivationDetailsType;
-use PayPal\EBLBaseComponents\AddressType;
-use PayPal\EBLBaseComponents\BillingPeriodDetailsType;
-use PayPal\EBLBaseComponents\CreateRecurringPaymentsProfileRequestDetailsType;
-use PayPal\EBLBaseComponents\CreditCardDetailsType;
-use PayPal\EBLBaseComponents\RecurringPaymentsProfileDetailsType;
-use PayPal\EBLBaseComponents\ScheduleDetailsType;
-use PayPal\PayPalAPI\CreateRecurringPaymentsProfileReq;
-use PayPal\PayPalAPI\CreateRecurringPaymentsProfileRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
+use PayPal\Merchant\EBLBaseComponents\ActivationDetailsType;
+use PayPal\Merchant\EBLBaseComponents\AddressType;
+use PayPal\Merchant\EBLBaseComponents\BillingPeriodDetailsType;
+use PayPal\Merchant\EBLBaseComponents\CreateRecurringPaymentsProfileRequestDetailsType;
+use PayPal\Merchant\EBLBaseComponents\CreditCardDetailsType;
+use PayPal\Merchant\EBLBaseComponents\RecurringPaymentsProfileDetailsType;
+use PayPal\Merchant\EBLBaseComponents\ScheduleDetailsType;
+use PayPal\Merchant\API\CreateRecurringPaymentsProfileReq;
+use PayPal\Merchant\API\CreateRecurringPaymentsProfileRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /**
  *
@@ -65,11 +66,11 @@ $activationDetails->InitialAmount = new BasicAmountType($currencyCode, $_REQUEST
 /*
  *  (Optional) Action you can specify when a payment fails. It is one of the following values:
 
-    ContinueOnFailure – By default, PayPal suspends the pending profile in the event that the initial payment amount fails. You can override this default behavior by setting this field to ContinueOnFailure. Then, if the initial payment amount fails, PayPal adds the failed payment amount to the outstanding balance for this recurring payment profile.
+    ContinueOnFailure ï¿½ By default, PayPal suspends the pending profile in the event that the initial payment amount fails. You can override this default behavior by setting this field to ContinueOnFailure. Then, if the initial payment amount fails, PayPal adds the failed payment amount to the outstanding balance for this recurring payment profile.
 
     When you specify ContinueOnFailure, a success code is returned to you in the CreateRecurringPaymentsProfile response and the recurring payments profile is activated for scheduled billing immediately. You should check your IPN messages or PayPal account for updates of the payment status.
 
-    CancelOnFailure – If this field is not set or you set it to CancelOnFailure, PayPal creates the recurring payment profile, but places it into a pending status until the initial payment completes. If the initial payment clears, PayPal notifies you by IPN that the pending profile has been activated. If the payment fails, PayPal notifies you by IPN that the pending profile has been canceled.
+    CancelOnFailure ï¿½ If this field is not set or you set it to CancelOnFailure, PayPal creates the recurring payment profile, but places it into a pending status until the initial payment completes. If the initial payment clears, PayPal notifies you by IPN that the pending profile has been activated. If the payment fails, PayPal notifies you by IPN that the pending profile has been canceled.
 
  */
 $activationDetails->FailedInitialAmountAction = $_REQUEST['failedInitialAmountAction'];
@@ -212,7 +213,7 @@ $createRPProfileReq->CreateRecurringPaymentsProfileRequest = $createRPProfileReq
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$createRPProfileResponse = $paypalService->CreateRecurringPaymentsProfile($createRPProfileReq);

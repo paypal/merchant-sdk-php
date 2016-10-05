@@ -1,8 +1,9 @@
 <?php
-use PayPal\CoreComponentTypes\BasicAmountType;
-use PayPal\PayPalAPI\DoReauthorizationReq;
-use PayPal\PayPalAPI\DoReauthorizationRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
+use PayPal\Merchant\API\DoReauthorizationReq;
+use PayPal\Merchant\API\DoReauthorizationRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /*
  * Authorize a payment. 
@@ -25,7 +26,7 @@ $doReAuthReq->DoReauthorizationRequest =$doReAuthRequest;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$doReAuthResponse = $paypalService->DoReauthorization($doReAuthReq);

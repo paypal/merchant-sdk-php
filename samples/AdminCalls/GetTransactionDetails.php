@@ -1,7 +1,8 @@
 <?php
-use PayPal\PayPalAPI\GetTransactionDetailsReq;
-use PayPal\PayPalAPI\GetTransactionDetailsRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\API\GetTransactionDetailsReq;
+use PayPal\Merchant\API\GetTransactionDetailsRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -21,7 +22,7 @@ $request->GetTransactionDetailsRequest = $transactionDetails;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$transDetailsResponse = $paypalService->GetTransactionDetails($request);

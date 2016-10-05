@@ -1,14 +1,15 @@
 <?php
-use PayPal\CoreComponentTypes\BasicAmountType;
-use PayPal\EBLBaseComponents\AddressType;
-use PayPal\EBLBaseComponents\CreditCardNumberTypeType;
-use PayPal\EBLBaseComponents\DoReferenceTransactionRequestDetailsType;
-use PayPal\EBLBaseComponents\PaymentDetailsType;
-use PayPal\EBLBaseComponents\PersonNameType;
-use PayPal\EBLBaseComponents\ReferenceCreditCardDetailsType;
-use PayPal\PayPalAPI\DoReferenceTransactionReq;
-use PayPal\PayPalAPI\DoReferenceTransactionRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
+use PayPal\Merchant\EBLBaseComponents\AddressType;
+use PayPal\Merchant\EBLBaseComponents\CreditCardNumberTypeType;
+use PayPal\Merchant\EBLBaseComponents\DoReferenceTransactionRequestDetailsType;
+use PayPal\Merchant\EBLBaseComponents\PaymentDetailsType;
+use PayPal\Merchant\EBLBaseComponents\PersonNameType;
+use PayPal\Merchant\EBLBaseComponents\ReferenceCreditCardDetailsType;
+use PayPal\Merchant\API\DoReferenceTransactionReq;
+use PayPal\Merchant\API\DoReferenceTransactionRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -124,7 +125,7 @@ $RTReq->DoReferenceTransactionRequest = $RTRequest;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$RTResponse = $paypalService->DoReferenceTransaction($RTReq);

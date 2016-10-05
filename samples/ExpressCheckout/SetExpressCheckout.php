@@ -1,13 +1,14 @@
 <?php
-use PayPal\CoreComponentTypes\BasicAmountType;
-use PayPal\EBLBaseComponents\AddressType;
-use PayPal\EBLBaseComponents\BillingAgreementDetailsType;
-use PayPal\EBLBaseComponents\PaymentDetailsItemType;
-use PayPal\EBLBaseComponents\PaymentDetailsType;
-use PayPal\EBLBaseComponents\SetExpressCheckoutRequestDetailsType;
-use PayPal\PayPalAPI\SetExpressCheckoutReq;
-use PayPal\PayPalAPI\SetExpressCheckoutRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
+use PayPal\Merchant\EBLBaseComponents\AddressType;
+use PayPal\Merchant\EBLBaseComponents\BillingAgreementDetailsType;
+use PayPal\Merchant\EBLBaseComponents\PaymentDetailsItemType;
+use PayPal\Merchant\EBLBaseComponents\PaymentDetailsType;
+use PayPal\Merchant\EBLBaseComponents\SetExpressCheckoutRequestDetailsType;
+use PayPal\Merchant\API\SetExpressCheckoutReq;
+use PayPal\Merchant\API\SetExpressCheckoutRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -81,11 +82,11 @@ $paymentDetails->OrderTotal = new BasicAmountType($currencyCode, $orderTotalValu
 /*
  * How you want to obtain payment. When implementing parallel payments, this field is required and must be set to Order. When implementing digital goods, this field is required and must be set to Sale. If the transaction does not include a one-time purchase, this field is ignored. It is one of the following values:
 
-    Sale – This is a final sale for which you are requesting payment (default).
+    Sale ï¿½ This is a final sale for which you are requesting payment (default).
 
-    Authorization – This payment is a basic authorization subject to settlement with PayPal Authorization and Capture.
+    Authorization ï¿½ This payment is a basic authorization subject to settlement with PayPal Authorization and Capture.
 
-    Order – This payment is an order authorization subject to settlement with PayPal Authorization and Capture.
+    Order ï¿½ This payment is an order authorization subject to settlement with PayPal Authorization and Capture.
 
  */
 $paymentDetails->PaymentAction = $_REQUEST['paymentType'];
@@ -116,20 +117,20 @@ $setECReqDetails->ReturnURL = $returnUrl;
 /*
  * Determines where or not PayPal displays shipping address fields on the PayPal pages. For digital goods, this field is required, and you must set it to 1. It is one of the following values:
 
-    0 – PayPal displays the shipping address on the PayPal pages.
+    0 ï¿½ PayPal displays the shipping address on the PayPal pages.
 
-    1 – PayPal does not display shipping address fields whatsoever.
+    1 ï¿½ PayPal does not display shipping address fields whatsoever.
 
-    2 – If you do not pass the shipping address, PayPal obtains it from the buyer's account profile.
+    2 ï¿½ If you do not pass the shipping address, PayPal obtains it from the buyer's account profile.
 
  */
 $setECReqDetails->NoShipping = $_REQUEST['noShipping'];
 /*
  *  (Optional) Determines whether or not the PayPal pages should display the shipping address set by you in this SetExpressCheckout request, not the shipping address on file with PayPal for this buyer. Displaying the PayPal street address on file does not allow the buyer to edit that address. It is one of the following values:
 
-    0 – The PayPal pages should not display the shipping address.
+    0 ï¿½ The PayPal pages should not display the shipping address.
 
-    1 – The PayPal pages should display the shipping address.
+    1 ï¿½ The PayPal pages should display the shipping address.
 
  */
 $setECReqDetails->AddressOverride = $_REQUEST['addressOverride'];
@@ -137,9 +138,9 @@ $setECReqDetails->AddressOverride = $_REQUEST['addressOverride'];
 /*
  * Indicates whether or not you require the buyer's shipping address on file with PayPal be a confirmed address. For digital goods, this field is required, and you must set it to 0. It is one of the following values:
 
-    0 – You do not require the buyer's shipping address be a confirmed address.
+    0 ï¿½ You do not require the buyer's shipping address be a confirmed address.
 
-    1 – You require the buyer's shipping address be a confirmed address.
+    1 ï¿½ You require the buyer's shipping address be a confirmed address.
 
  */
 $setECReqDetails->ReqConfirmShipping = $_REQUEST['reqConfirmShipping'];
@@ -172,7 +173,7 @@ $setECReq->SetExpressCheckoutRequest = $setECReqType;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$setECResponse = $paypalService->SetExpressCheckout($setECReq);

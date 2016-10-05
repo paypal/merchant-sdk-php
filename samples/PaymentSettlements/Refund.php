@@ -1,8 +1,9 @@
 <?php
-use PayPal\CoreComponentTypes\BasicAmountType;
-use PayPal\PayPalAPI\RefundTransactionReq;
-use PayPal\PayPalAPI\RefundTransactionRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
+use PayPal\Merchant\API\RefundTransactionReq;
+use PayPal\Merchant\API\RefundTransactionRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 
 /*
@@ -49,13 +50,13 @@ $refundReqest->TransactionID = $_REQUEST['transID'];
 /*
  *  (Optional)Type of PayPal funding source (balance or eCheck) that can be used for auto refund. It is one of the following values:
 
-    any – The merchant does not have a preference. Use any available funding source.
+    any ï¿½ The merchant does not have a preference. Use any available funding source.
 
-    default – Use the merchant's preferred funding source, as configured in the merchant's profile.
+    default ï¿½ Use the merchant's preferred funding source, as configured in the merchant's profile.
 
-    instant – Use the merchant's balance as the funding source.
+    instant ï¿½ Use the merchant's balance as the funding source.
 
-    eCheck – The merchant prefers using the eCheck funding source. If the merchant's PayPal balance can cover the refund amount, use the PayPal balance.
+    eCheck ï¿½ The merchant prefers using the eCheck funding source. If the merchant's PayPal balance can cover the refund amount, use the PayPal balance.
 
  */
 $refundReqest->RefundSource = $_REQUEST['refundSource'];
@@ -74,7 +75,7 @@ $refundReq->RefundTransactionRequest = $refundReqest;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$refundResponse = $paypalService->RefundTransaction($refundReq);

@@ -1,8 +1,9 @@
 <?php
-use PayPal\CoreComponentTypes\BasicAmountType;
-use PayPal\PayPalAPI\DoCaptureReq;
-use PayPal\PayPalAPI\DoCaptureRequestType;
-use PayPal\Service\PayPalAPIInterfaceServiceService;
+
+use PayPal\Merchant\CoreComponentTypes\BasicAmountType;
+use PayPal\Merchant\API\DoCaptureReq;
+use PayPal\Merchant\API\DoCaptureRequestType;
+use PayPal\Merchant\Service\APIInterfaceServiceService;
 require_once('../PPBootStrap.php');
 /*
  *  # DoCapture API
@@ -30,8 +31,8 @@ the CheckOut call when the payment action is Authorization.
 * `amount` - Amount to capture
 * `CompleteCode` - Indicates whether or not this is your last capture.
 It is one of the following values:
-* Complete – This is the last capture you intend to make.
-* NotComplete – You intend to make additional captures.
+* Complete ï¿½ This is the last capture you intend to make.
+* NotComplete ï¿½ You intend to make additional captures.
 `Note:
 If Complete, any remaining amount of the original authorized
 transaction is automatically voided and all remaining open
@@ -46,7 +47,7 @@ $doCaptureReq->DoCaptureRequest = $doCaptureReqest;
 Creating service wrapper object to make API call and loading
 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 */
-$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+$paypalService = new APIInterfaceServiceService(Configuration::getAcctAndConfig());
 try {
 	/* wrap API method calls on the service object with a try catch */
 	$doCaptureResponse = $paypalService->DoCapture($doCaptureReq);
