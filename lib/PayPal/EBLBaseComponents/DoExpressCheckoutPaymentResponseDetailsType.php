@@ -60,6 +60,14 @@ class DoExpressCheckoutPaymentResponseDetailsType
     public $Note;
 
     /**
+     * Unique id passed in the DoEC call.
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $MsgSubID;
+
+    /**
      * Redirect back to PayPal, PayPal can host the success page.
      * @access    public
      * @namespace ebl

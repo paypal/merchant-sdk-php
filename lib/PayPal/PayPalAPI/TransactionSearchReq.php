@@ -18,6 +18,7 @@ class TransactionSearchReq
      */
     public $TransactionSearchRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class TransactionSearchReq
         $str .= '</ns:TransactionSearchReq>';
         return $str;
     }
-
 }

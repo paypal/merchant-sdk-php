@@ -7,8 +7,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * Button ID of button to return.  Required Character length
  * and limitations: 10 single-byte numeric characters
  */
-class BMGetButtonDetailsRequestType
-  extends AbstractRequestType
+class BMGetButtonDetailsRequestType extends AbstractRequestType
 {
 
     /**

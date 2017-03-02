@@ -7,8 +7,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
  * An authorization identification number. Character length and
  * limits: 19 single-byte characters
  */
-class DoAuthorizationResponseType
-  extends AbstractResponseType
+class DoAuthorizationResponseType extends AbstractResponseType
 {
 
     /**

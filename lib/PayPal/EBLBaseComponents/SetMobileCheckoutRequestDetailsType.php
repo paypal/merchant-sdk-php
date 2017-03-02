@@ -161,8 +161,8 @@ class SetMobileCheckoutRequestDetailsType
     public function __construct($ItemAmount = null, $ItemName = null, $ReturnURL = null)
     {
         $this->ItemAmount = $ItemAmount;
-        $this->ItemName   = $ItemName;
-        $this->ReturnURL  = $ReturnURL;
+        $this->ItemName = $ItemName;
+        $this->ReturnURL = $ReturnURL;
     }
 
 }

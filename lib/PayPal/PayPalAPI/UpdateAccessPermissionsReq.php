@@ -18,6 +18,7 @@ class UpdateAccessPermissionsReq
      */
     public $UpdateAccessPermissionsRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class UpdateAccessPermissionsReq
         $str .= '</ns:UpdateAccessPermissionsReq>';
         return $str;
     }
-
 }

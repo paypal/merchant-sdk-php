@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  *
  */
-class ManagePendingTransactionStatusRequestType
-  extends AbstractRequestType
+class ManagePendingTransactionStatusRequestType extends AbstractRequestType
 {
 
     /**
@@ -32,7 +31,7 @@ class ManagePendingTransactionStatusRequestType
     public function __construct($TransactionID = null, $Action = null)
     {
         $this->TransactionID = $TransactionID;
-        $this->Action        = $Action;
+        $this->Action = $Action;
     }
 
 }

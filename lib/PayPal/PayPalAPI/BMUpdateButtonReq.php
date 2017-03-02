@@ -18,6 +18,7 @@ class BMUpdateButtonReq
      */
     public $BMUpdateButtonRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class BMUpdateButtonReq
         $str .= '</ns:BMUpdateButtonReq>';
         return $str;
     }
-
 }

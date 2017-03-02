@@ -18,6 +18,7 @@ class GetExpressCheckoutDetailsReq
      */
     public $GetExpressCheckoutDetailsRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class GetExpressCheckoutDetailsReq
         $str .= '</ns:GetExpressCheckoutDetailsReq>';
         return $str;
     }
-
 }

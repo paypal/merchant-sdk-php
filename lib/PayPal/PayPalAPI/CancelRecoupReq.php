@@ -18,6 +18,7 @@ class CancelRecoupReq
      */
     public $CancelRecoupRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class CancelRecoupReq
         $str .= '</ns:CancelRecoupReq>';
         return $str;
     }
-
 }

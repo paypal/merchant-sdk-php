@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 /**
  *
  */
-class BMManageButtonStatusResponseType
-  extends AbstractResponseType
+class BMManageButtonStatusResponseType extends AbstractResponseType
 {
 
 }

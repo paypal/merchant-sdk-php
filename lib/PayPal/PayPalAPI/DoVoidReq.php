@@ -18,6 +18,7 @@ class DoVoidReq
      */
     public $DoVoidRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class DoVoidReq
         $str .= '</ns:DoVoidReq>';
         return $str;
     }
-
 }

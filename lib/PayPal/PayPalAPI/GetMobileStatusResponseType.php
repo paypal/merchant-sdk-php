@@ -7,8 +7,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
  * Indicates whether the phone is activated for mobile payments
  *
  */
-class GetMobileStatusResponseType
-  extends AbstractResponseType
+class GetMobileStatusResponseType extends AbstractResponseType
 {
 
     /**

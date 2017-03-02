@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  *
  */
-class SetAuthFlowParamRequestType
-  extends AbstractRequestType
+class SetAuthFlowParamRequestType extends AbstractRequestType
 {
 
     /**

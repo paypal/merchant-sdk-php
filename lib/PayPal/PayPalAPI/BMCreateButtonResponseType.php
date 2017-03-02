@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 /**
  *
  */
-class BMCreateButtonResponseType
-  extends AbstractResponseType
+class BMCreateButtonResponseType extends AbstractResponseType
 {
 
     /**

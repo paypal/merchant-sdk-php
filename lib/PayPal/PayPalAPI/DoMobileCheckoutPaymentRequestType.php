@@ -8,8 +8,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * SetMobileCheckoutResponse. RequiredCharacter length and
  * limitations: 20 single-byte characters
  */
-class DoMobileCheckoutPaymentRequestType
-  extends AbstractRequestType
+class DoMobileCheckoutPaymentRequestType extends AbstractRequestType
 {
 
     /**

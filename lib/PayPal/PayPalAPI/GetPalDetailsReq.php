@@ -18,6 +18,7 @@ class GetPalDetailsReq
      */
     public $GetPalDetailsRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class GetPalDetailsReq
         $str .= '</ns:GetPalDetailsReq>';
         return $str;
     }
-
 }

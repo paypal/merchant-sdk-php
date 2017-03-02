@@ -8,8 +8,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * SetExpressCheckoutResponse. RequiredCharacter length and
  * limitations: 20 single-byte characters
  */
-class GetExpressCheckoutDetailsRequestType
-  extends AbstractRequestType
+class GetExpressCheckoutDetailsRequestType extends AbstractRequestType
 {
 
     /**

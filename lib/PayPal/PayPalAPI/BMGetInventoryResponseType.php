@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 /**
  *
  */
-class BMGetInventoryResponseType
-  extends AbstractResponseType
+class BMGetInventoryResponseType extends AbstractResponseType
 {
 
     /**

@@ -18,6 +18,7 @@ class CompleteRecoupReq
      */
     public $CompleteRecoupRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class CompleteRecoupReq
         $str .= '</ns:CompleteRecoupReq>';
         return $str;
     }
-
 }

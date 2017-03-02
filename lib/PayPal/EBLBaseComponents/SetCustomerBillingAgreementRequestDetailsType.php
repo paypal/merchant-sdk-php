@@ -111,8 +111,8 @@ class SetCustomerBillingAgreementRequestDetailsType
     public function __construct($BillingAgreementDetails = null, $ReturnURL = null, $CancelURL = null)
     {
         $this->BillingAgreementDetails = $BillingAgreementDetails;
-        $this->ReturnURL               = $ReturnURL;
-        $this->CancelURL               = $CancelURL;
+        $this->ReturnURL = $ReturnURL;
+        $this->CancelURL = $CancelURL;
     }
 
 }

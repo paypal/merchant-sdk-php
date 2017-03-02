@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  * UATP card details Required
  */
-class DoUATPAuthorizationRequestType
-  extends AbstractRequestType
+class DoUATPAuthorizationRequestType extends AbstractRequestType
 {
 
     /**
@@ -63,7 +62,7 @@ class DoUATPAuthorizationRequestType
     public function __construct($UATPDetails = null, $Amount = null)
     {
         $this->UATPDetails = $UATPDetails;
-        $this->Amount      = $Amount;
+        $this->Amount = $Amount;
     }
 
 }

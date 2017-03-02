@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  *
  */
-class GetIncentiveEvaluationRequestType
-  extends AbstractRequestType
+class GetIncentiveEvaluationRequestType extends AbstractRequestType
 {
 
     /**

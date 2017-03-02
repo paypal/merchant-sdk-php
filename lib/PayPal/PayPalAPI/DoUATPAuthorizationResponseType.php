@@ -4,8 +4,7 @@ namespace PayPal\PayPalAPI;
 /**
  * Auth Authorization Code.
  */
-class DoUATPAuthorizationResponseType
-  extends DoAuthorizationResponseType
+class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType
 {
 
     /**

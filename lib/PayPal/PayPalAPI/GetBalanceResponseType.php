@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 /**
  *
  */
-class GetBalanceResponseType
-  extends AbstractResponseType
+class GetBalanceResponseType extends AbstractResponseType
 {
 
     /**

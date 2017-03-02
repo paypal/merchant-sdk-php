@@ -18,6 +18,7 @@ class DoMobileCheckoutPaymentReq
      */
     public $DoMobileCheckoutPaymentRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class DoMobileCheckoutPaymentReq
         $str .= '</ns:DoMobileCheckoutPaymentReq>';
         return $str;
     }
-
 }

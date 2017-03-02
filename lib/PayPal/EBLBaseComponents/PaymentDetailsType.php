@@ -179,6 +179,14 @@ class PaymentDetailsType
      * @namespace ebl
      * @var string
      */
+    public $LocationType;
+
+    /**
+     *
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
     public $ShippingMethod;
 
     /**
@@ -234,7 +242,9 @@ class PaymentDetailsType
 
     /**
      * Enhanced Data section to accept channel specific data.
-     * Optional Refer to EnhancedPaymentDataType for details.
+     * Applicable for version 62 and above, use this tag to pass
+     * airline itinerary data. Optional Refer to
+     * EnhancedPaymentDataType for details.
      * @access    public
      * @namespace ebl
      * @var \PayPal\EnhancedDataTypes\EnhancedPaymentDataType
@@ -347,5 +357,44 @@ class PaymentDetailsType
      * @var string
      */
     public $PaymentReason;
+
+    /**
+     * Location ID Specified by merchant Optional Character length
+     * and limitations: 50 single-byte alphanumeric characters
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $LocationID;
+
+    /**
+     * For instance single use coupons should not be returned in
+     * future CheckIn calls once they are redeemed.
+     * @array
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\DiscountInfoType
+     */
+    public $RedeemedOffers;
+
+    /**
+     * Total loyalty points for a given id accumulated by the
+     * consumre so far.
+     * @array
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\DiscountInfoType
+     */
+    public $CummulativePoints;
+
+    /**
+     * Merchant Data that is passed through from Merchant to
+     * Processor
+     * @array
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\MerchantDataType
+     */
+    public $MerchantData;
 
 }

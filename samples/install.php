@@ -386,7 +386,6 @@ function createAutoload() {
 SCRIPT;
 
 	file_put_contents($loaderFile, $script);
-
 }
 
 /**

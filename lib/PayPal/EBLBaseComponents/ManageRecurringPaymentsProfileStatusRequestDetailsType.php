@@ -40,7 +40,7 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType
     public function __construct($ProfileID = null, $Action = null)
     {
         $this->ProfileID = $ProfileID;
-        $this->Action    = $Action;
+        $this->Action = $Action;
     }
 
 }

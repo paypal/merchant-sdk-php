@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  *
  */
-class BAUpdateRequestType
-  extends AbstractRequestType
+class BAUpdateRequestType extends AbstractRequestType
 {
 
     /**

@@ -110,11 +110,11 @@ use PayPal\PayPalAPI\UpdateRecurringPaymentsProfileResponseType;
  * AUTO GENERATED code for PayPalAPIInterfaceService
  */
 class PayPalAPIInterfaceServiceService
-  extends PPBaseService
+    extends PPBaseService
 {
 
     // Service Version
-    private static $SERVICE_VERSION = "106.0";
+    private static $SERVICE_VERSION = "204.0";
 
     // Service Name
     private static $SERVICE_NAME = "PayPalAPIInterfaceService";
@@ -123,7 +123,7 @@ class PayPalAPIInterfaceServiceService
     protected static $SDK_NAME = "merchant-php-sdk";
 
     // SDK Version
-    protected static $SDK_VERSION = "3.9.1";
+    protected static $SDK_VERSION = "3.9.2";
 
     /**
      * @param $config - Dynamic config map. This takes the higher precedence if config file is also present.
@@ -156,7 +156,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($refundTransactionReq->RefundTransactionRequest);
         $ret  = new RefundTransactionResponseType();
@@ -180,7 +180,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($initiateRecoupReq->InitiateRecoupRequest);
         $ret  = new InitiateRecoupResponseType();
@@ -204,7 +204,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($completeRecoupReq->CompleteRecoupRequest);
         $ret  = new CompleteRecoupResponseType();
@@ -228,7 +228,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($cancelRecoupReq->CancelRecoupRequest);
         $ret  = new CancelRecoupResponseType();
@@ -252,7 +252,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($getTransactionDetailsReq->GetTransactionDetailsRequest);
         $ret  = new GetTransactionDetailsResponseType();
@@ -276,7 +276,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($billUserReq->BillUserRequest);
         $ret  = new BillUserResponseType();
@@ -300,7 +300,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($transactionSearchReq->TransactionSearchRequest);
         $ret  = new TransactionSearchResponseType();
@@ -324,7 +324,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($massPayReq->MassPayRequest);
         $ret  = new MassPayResponseType();
@@ -348,7 +348,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($billAgreementUpdateReq->BAUpdateRequest);
         $ret  = new BAUpdateResponseType();
@@ -372,7 +372,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($addressVerifyReq->AddressVerifyRequest);
         $ret  = new AddressVerifyResponseType();
@@ -396,7 +396,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($enterBoardingReq->EnterBoardingRequest);
         $ret  = new EnterBoardingResponseType();
@@ -420,7 +420,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($getBoardingDetailsReq->GetBoardingDetailsRequest);
         $ret  = new GetBoardingDetailsResponseType();
@@ -444,7 +444,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($createMobilePaymentReq->CreateMobilePaymentRequest);
         $ret  = new CreateMobilePaymentResponseType();
@@ -468,7 +468,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($getMobileStatusReq->GetMobileStatusRequest);
         $ret  = new GetMobileStatusResponseType();
@@ -492,7 +492,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($setMobileCheckoutReq->SetMobileCheckoutRequest);
         $ret  = new SetMobileCheckoutResponseType();
@@ -516,12 +516,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($doMobileCheckoutPaymentReq->DoMobileCheckoutPaymentRequest);
         $ret  = new DoMobileCheckoutPaymentResponseType();
         $resp = $this->call('PayPalAPI', 'DoMobileCheckoutPayment', $doMobileCheckoutPaymentReq, $apiContext,
-          $handlers);
+            $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -541,7 +541,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($getBalanceReq->GetBalanceRequest);
         $ret  = new GetBalanceResponseType();
@@ -565,7 +565,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($getPalDetailsReq->GetPalDetailsRequest);
         $ret  = new GetPalDetailsResponseType();
@@ -589,12 +589,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($doExpressCheckoutPaymentReq->DoExpressCheckoutPaymentRequest);
         $ret  = new DoExpressCheckoutPaymentResponseType();
         $resp = $this->call('PayPalAPIAA', 'DoExpressCheckoutPayment', $doExpressCheckoutPaymentReq, $apiContext,
-          $handlers);
+            $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -614,12 +614,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($doUATPExpressCheckoutPaymentReq->DoUATPExpressCheckoutPaymentRequest);
         $ret  = new DoUATPExpressCheckoutPaymentResponseType();
         $resp = $this->call('PayPalAPIAA', 'DoUATPExpressCheckoutPayment', $doUATPExpressCheckoutPaymentReq,
-          $apiContext, $handlers);
+            $apiContext, $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -639,7 +639,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($setAuthFlowParamReq->SetAuthFlowParamRequest);
         $ret  = new SetAuthFlowParamResponseType();
@@ -663,7 +663,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($getAuthDetailsReq->GetAuthDetailsRequest);
         $ret  = new GetAuthDetailsResponseType();
@@ -687,7 +687,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($setAccessPermissionsReq->SetAccessPermissionsRequest);
         $ret  = new SetAccessPermissionsResponseType();
@@ -711,12 +711,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($updateAccessPermissionsReq->UpdateAccessPermissionsRequest);
         $ret  = new UpdateAccessPermissionsResponseType();
         $resp = $this->call('PayPalAPIAA', 'UpdateAccessPermissions', $updateAccessPermissionsReq, $apiContext,
-          $handlers);
+            $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -736,12 +736,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($getAccessPermissionDetailsReq->GetAccessPermissionDetailsRequest);
         $ret  = new GetAccessPermissionDetailsResponseType();
         $resp = $this->call('PayPalAPIAA', 'GetAccessPermissionDetails', $getAccessPermissionDetailsReq, $apiContext,
-          $handlers);
+            $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -761,12 +761,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($getIncentiveEvaluationReq->GetIncentiveEvaluationRequest);
         $ret  = new GetIncentiveEvaluationResponseType();
         $resp = $this->call('PayPalAPIAA', 'GetIncentiveEvaluation', $getIncentiveEvaluationReq, $apiContext,
-          $handlers);
+            $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -786,7 +786,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($setExpressCheckoutReq->SetExpressCheckoutRequest);
         $ret  = new SetExpressCheckoutResponseType();
@@ -810,12 +810,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($executeCheckoutOperationsReq->ExecuteCheckoutOperationsRequest);
         $ret  = new ExecuteCheckoutOperationsResponseType();
         $resp = $this->call('PayPalAPIAA', 'ExecuteCheckoutOperations', $executeCheckoutOperationsReq, $apiContext,
-          $handlers);
+            $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -835,12 +835,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($getExpressCheckoutDetailsReq->GetExpressCheckoutDetailsRequest);
         $ret  = new GetExpressCheckoutDetailsResponseType();
         $resp = $this->call('PayPalAPIAA', 'GetExpressCheckoutDetails', $getExpressCheckoutDetailsReq, $apiContext,
-          $handlers);
+            $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -860,7 +860,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($doDirectPaymentReq->DoDirectPaymentRequest);
         $ret  = new DoDirectPaymentResponseType();
@@ -884,12 +884,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($managePendingTransactionStatusReq->ManagePendingTransactionStatusRequest);
         $ret  = new ManagePendingTransactionStatusResponseType();
         $resp = $this->call('PayPalAPIAA', 'ManagePendingTransactionStatus', $managePendingTransactionStatusReq,
-          $apiContext, $handlers);
+            $apiContext, $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -909,7 +909,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($doCancelReq->DoCancelRequest);
         $ret  = new DoCancelResponseType();
@@ -933,7 +933,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($doCaptureReq->DoCaptureRequest);
         $ret  = new DoCaptureResponseType();
@@ -957,7 +957,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($doReauthorizationReq->DoReauthorizationRequest);
         $ret  = new DoReauthorizationResponseType();
@@ -981,7 +981,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($doVoidReq->DoVoidRequest);
         $ret  = new DoVoidResponseType();
@@ -1005,7 +1005,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($doAuthorizationReq->DoAuthorizationRequest);
         $ret  = new DoAuthorizationResponseType();
@@ -1029,7 +1029,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($updateAuthorizationReq->UpdateAuthorizationRequest);
         $ret  = new UpdateAuthorizationResponseType();
@@ -1053,12 +1053,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($setCustomerBillingAgreementReq->SetCustomerBillingAgreementRequest);
         $ret  = new SetCustomerBillingAgreementResponseType();
         $resp = $this->call('PayPalAPIAA', 'SetCustomerBillingAgreement', $setCustomerBillingAgreementReq, $apiContext,
-          $handlers);
+            $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -1078,12 +1078,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($getBillingAgreementCustomerDetailsReq->GetBillingAgreementCustomerDetailsRequest);
         $ret  = new GetBillingAgreementCustomerDetailsResponseType();
         $resp = $this->call('PayPalAPIAA', 'GetBillingAgreementCustomerDetails', $getBillingAgreementCustomerDetailsReq,
-          $apiContext, $handlers);
+            $apiContext, $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -1103,12 +1103,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($createBillingAgreementReq->CreateBillingAgreementRequest);
         $ret  = new CreateBillingAgreementResponseType();
         $resp = $this->call('PayPalAPIAA', 'CreateBillingAgreement', $createBillingAgreementReq, $apiContext,
-          $handlers);
+            $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -1128,12 +1128,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($doReferenceTransactionReq->DoReferenceTransactionRequest);
         $ret  = new DoReferenceTransactionResponseType();
         $resp = $this->call('PayPalAPIAA', 'DoReferenceTransaction', $doReferenceTransactionReq, $apiContext,
-          $handlers);
+            $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -1153,7 +1153,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($doNonReferencedCreditReq->DoNonReferencedCreditRequest);
         $ret  = new DoNonReferencedCreditResponseType();
@@ -1177,7 +1177,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($doUATPAuthorizationReq->DoUATPAuthorizationRequest);
         $ret  = new DoUATPAuthorizationResponseType();
@@ -1201,12 +1201,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($createRecurringPaymentsProfileReq->CreateRecurringPaymentsProfileRequest);
         $ret  = new CreateRecurringPaymentsProfileResponseType();
         $resp = $this->call('PayPalAPIAA', 'CreateRecurringPaymentsProfile', $createRecurringPaymentsProfileReq,
-          $apiContext, $handlers);
+            $apiContext, $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -1226,12 +1226,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($getRecurringPaymentsProfileDetailsReq->GetRecurringPaymentsProfileDetailsRequest);
         $ret  = new GetRecurringPaymentsProfileDetailsResponseType();
         $resp = $this->call('PayPalAPIAA', 'GetRecurringPaymentsProfileDetails', $getRecurringPaymentsProfileDetailsReq,
-          $apiContext, $handlers);
+            $apiContext, $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -1248,17 +1248,17 @@ class PayPalAPIInterfaceServiceService
      * @throws \Exception
      */
     public function ManageRecurringPaymentsProfileStatus(
-      $manageRecurringPaymentsProfileStatusReq,
-      $apiCredential = null
+        $manageRecurringPaymentsProfileStatusReq,
+        $apiCredential = null
     ) {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($manageRecurringPaymentsProfileStatusReq->ManageRecurringPaymentsProfileStatusRequest);
         $ret  = new ManageRecurringPaymentsProfileStatusResponseType();
         $resp = $this->call('PayPalAPIAA', 'ManageRecurringPaymentsProfileStatus',
-          $manageRecurringPaymentsProfileStatusReq, $apiContext, $handlers);
+            $manageRecurringPaymentsProfileStatusReq, $apiContext, $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -1278,7 +1278,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($billOutstandingAmountReq->BillOutstandingAmountRequest);
         $ret  = new BillOutstandingAmountResponseType();
@@ -1302,12 +1302,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($updateRecurringPaymentsProfileReq->UpdateRecurringPaymentsProfileRequest);
         $ret  = new UpdateRecurringPaymentsProfileResponseType();
         $resp = $this->call('PayPalAPIAA', 'UpdateRecurringPaymentsProfile', $updateRecurringPaymentsProfileReq,
-          $apiContext, $handlers);
+            $apiContext, $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }
@@ -1327,7 +1327,7 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($reverseTransactionReq->ReverseTransactionRequest);
         $ret  = new ReverseTransactionResponseType();
@@ -1351,12 +1351,12 @@ class PayPalAPIInterfaceServiceService
     {
         $apiContext = new PPApiContext($this->config);
         $handlers   = array(
-          new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+            new PPMerchantServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
         );
         $this->setStandardParams($externalRememberMeOptOutReq->ExternalRememberMeOptOutRequest);
         $ret  = new ExternalRememberMeOptOutResponseType();
         $resp = $this->call('PayPalAPIAA', 'ExternalRememberMeOptOut', $externalRememberMeOptOutReq, $apiContext,
-          $handlers);
+            $handlers);
         $ret->init(PPUtils::xmlToArray($resp));
         return $ret;
     }

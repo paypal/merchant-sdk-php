@@ -18,6 +18,7 @@ class GetBoardingDetailsReq
      */
     public $GetBoardingDetailsRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class GetBoardingDetailsReq
         $str .= '</ns:GetBoardingDetailsReq>';
         return $str;
     }
-
 }

@@ -34,7 +34,7 @@ class MeasureType
      */
     public function __construct($unit = null, $value = null)
     {
-        $this->unit  = $unit;
+        $this->unit = $unit;
         $this->value = $value;
     }
 

@@ -18,6 +18,7 @@ class BMGetInventoryReq
      */
     public $BMGetInventoryRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class BMGetInventoryReq
         $str .= '</ns:BMGetInventoryReq>';
         return $str;
     }
-
 }

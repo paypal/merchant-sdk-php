@@ -8,8 +8,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * Optional Character length and limitations: 17 single-byte
  * alphanumeric characters
  */
-class RefundTransactionRequestType
-  extends AbstractRequestType
+class RefundTransactionRequestType extends AbstractRequestType
 {
 
     /**
@@ -61,6 +60,22 @@ class RefundTransactionRequestType
      * @var \PayPal\CoreComponentTypes\BasicAmountType
      */
     public $Amount;
+
+    /**
+     * Shipping amount. Optional
+     * @access    public
+     * @namespace ns
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
+     */
+    public $ShippingAmount;
+
+    /**
+     * Tax amount. Optional
+     * @access    public
+     * @namespace ns
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
+     */
+    public $TaxAmount;
 
     /**
      * Custom memo about the refund. Optional Character length and
@@ -124,5 +139,14 @@ class RefundTransactionRequestType
      * @var string
      */
     public $MsgSubID;
+
+    /**
+     * This holds key-value pair which merchants wants to pass it
+     * to the open wallet-PLCC processorOptional
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\MerchantDataType
+     */
+    public $MerchantData;
 
 }

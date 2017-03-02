@@ -18,6 +18,7 @@ class GetAccessPermissionDetailsReq
      */
     public $GetAccessPermissionDetailsRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class GetAccessPermissionDetailsReq
         $str .= '</ns:GetAccessPermissionDetailsReq>';
         return $str;
     }
-
 }

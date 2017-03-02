@@ -50,4 +50,20 @@ class UserSelectedOptionType
      */
     public $ShippingOptionName;
 
+    /**
+     *
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $ScheduledShippingDate;
+
+    /**
+     *
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $ScheduledShippingPeriod;
+
 }

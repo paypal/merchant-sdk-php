@@ -18,6 +18,7 @@ class GetMobileStatusReq
      */
     public $GetMobileStatusRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class GetMobileStatusReq
         $str .= '</ns:GetMobileStatusReq>';
         return $str;
     }
-
 }

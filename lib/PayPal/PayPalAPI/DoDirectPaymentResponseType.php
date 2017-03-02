@@ -7,8 +7,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
  * The amount of the payment as specified by you on
  * DoDirectPaymentRequest.
  */
-class DoDirectPaymentResponseType
-  extends AbstractResponseType
+class DoDirectPaymentResponseType extends AbstractResponseType
 {
 
     /**
@@ -62,6 +61,14 @@ class DoDirectPaymentResponseType
      * @var string
      */
     public $TransactionID;
+
+    /**
+     * pending reason for IC+ interchange plus
+     * @access    public
+     * @namespace ns
+     * @var string
+     */
+    public $TransactionPendingReason;
 
     /**
      * The reason why a particular transaction went in pending.

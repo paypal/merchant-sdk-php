@@ -18,6 +18,7 @@ class ExecuteCheckoutOperationsReq
      */
     public $ExecuteCheckoutOperationsRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class ExecuteCheckoutOperationsReq
         $str .= '</ns:ExecuteCheckoutOperationsReq>';
         return $str;
     }
-
 }

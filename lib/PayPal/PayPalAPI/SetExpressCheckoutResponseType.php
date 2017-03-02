@@ -11,8 +11,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
  * response is identical to the value in the request. Character
  * length and limitations: 20 single-byte characters
  */
-class SetExpressCheckoutResponseType
-  extends AbstractResponseType
+class SetExpressCheckoutResponseType extends AbstractResponseType
 {
 
     /**

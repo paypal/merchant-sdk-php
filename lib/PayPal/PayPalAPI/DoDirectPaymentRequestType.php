@@ -7,8 +7,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * This flag indicates that the response should include
  * FMFDetails
  */
-class DoDirectPaymentRequestType
-  extends AbstractRequestType
+class DoDirectPaymentRequestType extends AbstractRequestType
 {
 
     /**

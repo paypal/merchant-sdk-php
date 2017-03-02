@@ -69,6 +69,17 @@ class DoExpressCheckoutPaymentRequestDetailsType
     public $OrderURL;
 
     /**
+     * Unique id for each API request to prevent duplicate payments
+     * on merchant side. Passed directly back to merchant in
+     * response. Optional Character length and limits: 38
+     * single-byte characters maximum.
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $MsgSubID;
+
+    /**
      * Information about the payment Required
      * @array
      * @access    public
@@ -97,7 +108,8 @@ class DoExpressCheckoutPaymentRequestDetailsType
 
     /**
      * Contains data for enhanced data like Airline Itinerary Data.
-     *
+     * This tag became Obsolete on or after 62 version, use
+     * EnhancedPaymentData instead.
      * @access    public
      * @namespace ebl
      * @var \PayPal\EBLBaseComponents\EnhancedDataType
@@ -198,6 +210,15 @@ class DoExpressCheckoutPaymentRequestDetailsType
     public $SkipBACreation;
 
     /**
+     * Merchant specified flag which indicates to use payment
+     * details from session if available. Optional
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $UseSessionPaymentDetails;
+
+    /**
      * Optional element that defines relationship between buckets
      * @array
      * @access    public
@@ -205,5 +226,21 @@ class DoExpressCheckoutPaymentRequestDetailsType
      * @var \PayPal\EBLBaseComponents\CoupledBucketsType
      */
     public $CoupledBuckets;
+
+    /**
+     * Optional element for the passing client id
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $ClientID;
+
+    /**
+     * Optional element for the passing product lines
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $ProductLine;
 
 }

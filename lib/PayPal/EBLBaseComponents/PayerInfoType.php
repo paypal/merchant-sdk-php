@@ -80,6 +80,16 @@ class PayerInfoType
     public $ContactPhone;
 
     /**
+     * Items such as merchant coupons, loyalty cards, and
+     * manufacturer coupons in the PayPal wallet.
+     * @array
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\WalletItemsType
+     */
+    public $WalletItems;
+
+    /**
      * Details about payer's tax info. Refer to the
      * TaxIdDetailsType for more details.
      * @access    public

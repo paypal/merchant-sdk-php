@@ -18,6 +18,7 @@ class DoReferenceTransactionReq
      */
     public $DoReferenceTransactionRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class DoReferenceTransactionReq
         $str .= '</ns:DoReferenceTransactionReq>';
         return $str;
     }
-
 }

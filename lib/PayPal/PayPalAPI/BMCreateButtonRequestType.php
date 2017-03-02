@@ -8,8 +8,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
  * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE
  */
-class BMCreateButtonRequestType
-  extends AbstractRequestType
+class BMCreateButtonRequestType extends AbstractRequestType
 {
 
     /**
@@ -122,20 +121,5 @@ class BMCreateButtonRequestType
      * @var string
      */
     public $ButtonLanguage;
-
-    public function toXMLString()
-    {
-        $flag = 0;
-        foreach ($this->ButtonVar as $var) {
-            if (strpos($var, 'bn=') !== false) {
-                $flag = 1;
-                break;
-            }
-        }
-        if (!$flag) {
-            array_push($this->ButtonVar, "bn=PayPal_SDK");
-        }
-        return parent::toXMLString();
-    }
 
 }

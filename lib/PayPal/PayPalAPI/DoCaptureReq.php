@@ -18,6 +18,7 @@ class DoCaptureReq
      */
     public $DoCaptureRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class DoCaptureReq
         $str .= '</ns:DoCaptureReq>';
         return $str;
     }
-
 }

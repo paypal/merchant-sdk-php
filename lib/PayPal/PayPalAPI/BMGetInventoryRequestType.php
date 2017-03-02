@@ -8,8 +8,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * Required Character length and limitations: 10 single-byte
  * numeric characters
  */
-class BMGetInventoryRequestType
-  extends AbstractRequestType
+class BMGetInventoryRequestType extends AbstractRequestType
 {
 
     /**

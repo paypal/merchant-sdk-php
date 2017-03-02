@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  *
  */
-class SetExpressCheckoutRequestType
-  extends AbstractRequestType
+class SetExpressCheckoutRequestType extends AbstractRequestType
 {
 
     /**

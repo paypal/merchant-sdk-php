@@ -7,8 +7,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * Button ID of Hosted button.  Required Character length and
  * limitations: 10 single-byte numeric characters
  */
-class BMManageButtonStatusRequestType
-  extends AbstractRequestType
+class BMManageButtonStatusRequestType extends AbstractRequestType
 {
 
     /**

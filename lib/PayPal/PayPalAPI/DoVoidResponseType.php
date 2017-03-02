@@ -8,8 +8,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
  * request. Character length and limits: 19 single-byte
  * characters
  */
-class DoVoidResponseType
-  extends AbstractResponseType
+class DoVoidResponseType extends AbstractResponseType
 {
 
     /**

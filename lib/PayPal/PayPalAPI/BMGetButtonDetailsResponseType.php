@@ -8,8 +8,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
  * GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
  * DONATE, VIEWCART or UNSUBSCRIBE
  */
-class BMGetButtonDetailsResponseType
-  extends AbstractResponseType
+class BMGetButtonDetailsResponseType extends AbstractResponseType
 {
 
     /**

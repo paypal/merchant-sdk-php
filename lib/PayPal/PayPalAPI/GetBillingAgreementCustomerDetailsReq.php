@@ -18,6 +18,7 @@ class GetBillingAgreementCustomerDetailsReq
      */
     public $GetBillingAgreementCustomerDetailsRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class GetBillingAgreementCustomerDetailsReq
         $str .= '</ns:GetBillingAgreementCustomerDetailsReq>';
         return $str;
     }
-
 }

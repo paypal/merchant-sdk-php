@@ -7,8 +7,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
  * Unique transaction ID of the refund. Character length and
  * limitations:17 single-byte characters
  */
-class RefundTransactionResponseType
-  extends AbstractResponseType
+class RefundTransactionResponseType extends AbstractResponseType
 {
 
     /**

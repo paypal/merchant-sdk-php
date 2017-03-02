@@ -11,8 +11,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
  * entire postal address is confirmed. Unconfirmed: PayPal
  * responds that the postal address is unconfirmed
  */
-class AddressVerifyResponseType
-  extends AbstractResponseType
+class AddressVerifyResponseType extends AbstractResponseType
 {
 
     /**

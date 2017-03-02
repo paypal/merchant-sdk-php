@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 /**
  *
  */
-class BillOutstandingAmountResponseType
-  extends AbstractResponseType
+class BillOutstandingAmountResponseType extends AbstractResponseType
 {
 
     /**

@@ -18,6 +18,7 @@ class GetBalanceReq
      */
     public $GetBalanceRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class GetBalanceReq
         $str .= '</ns:GetBalanceReq>';
         return $str;
     }
-
 }

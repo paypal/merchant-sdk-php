@@ -40,7 +40,7 @@ class BasicAmountType
     public function __construct($currencyID = null, $value = null)
     {
         $this->currencyID = $currencyID;
-        $this->value      = $value;
+        $this->value = $value;
     }
 
 }

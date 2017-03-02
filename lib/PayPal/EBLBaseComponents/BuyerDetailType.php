@@ -22,4 +22,21 @@ class BuyerDetailType
      */
     public $IdentificationInfo;
 
+    /**
+     * Correlation id related to risk process done for the device.
+     * Max length is 36 Chars.
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $RiskSessionCorrelationID;
+
+    /**
+     * Buyer's IP Address
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $BuyerIPAddress;
+
 }
