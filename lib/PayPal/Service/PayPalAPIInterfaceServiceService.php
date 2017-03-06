@@ -123,7 +123,7 @@ class PayPalAPIInterfaceServiceService
     protected static $SDK_NAME = "merchant-php-sdk";
 
     // SDK Version
-    protected static $SDK_VERSION = "3.9.1";
+    protected static $SDK_VERSION = "3.10.0";
 
     /**
      * @param $config - Dynamic config map. This takes the higher precedence if config file is also present.
