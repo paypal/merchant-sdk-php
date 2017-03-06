@@ -59,6 +59,15 @@ class DoReferenceTransactionRequestDetailsType
     public $IPAddress;
 
     /**
+     * Correlation id related to risk process done for the device.
+     * Max length is 36 Chars.
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $RiskSessionCorrelationID;
+
+    /**
      *
      * @access    public
      * @namespace ebl
