@@ -1,5 +1,8 @@
 ### CHANGELOG
 
+####Version 3.10.0 - Mar 6, 2017
+   - Add RiskSesionCorrelationId to `DoReferenceTransactionRequestDetailsType`.
+
 ####Version 3.9.1 - Dec 9, 2015
    - Added TLSv1.2 Endpoint support
 
