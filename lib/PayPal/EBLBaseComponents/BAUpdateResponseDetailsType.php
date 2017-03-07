@@ -69,4 +69,12 @@ class BAUpdateResponseDetailsType
      */
     public $BillingAddress;
 
+    /**
+     * Information about the Merchant/Agreement Owner
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\PayeeInfoType
+     */
+    public $PayeeInfo;
+
 }

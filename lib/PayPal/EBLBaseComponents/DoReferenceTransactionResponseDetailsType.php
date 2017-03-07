@@ -75,4 +75,12 @@ class DoReferenceTransactionResponseDetailsType
      */
     public $MsgSubID;
 
+    /**
+     * pending reason for IC+ interchange plus
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $PendingReason;
+
 }

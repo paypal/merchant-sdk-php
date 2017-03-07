@@ -18,6 +18,7 @@ class CreateBillingAgreementReq
      */
     public $CreateBillingAgreementRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class CreateBillingAgreementReq
         $str .= '</ns:CreateBillingAgreementReq>';
         return $str;
     }
-
 }

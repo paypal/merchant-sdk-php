@@ -9,8 +9,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * it with your application. Optional Character length and
  * limitations: 255 single-byte alphanumeric characters
  */
-class MassPayRequestType
-  extends AbstractRequestType
+class MassPayRequestType extends AbstractRequestType
 {
 
     /**
@@ -44,7 +43,7 @@ class MassPayRequestType
      * @namespace ns
      * @var string
      */
-    public $ButtonSource = "PayPal_SDK";
+    public $ButtonSource;
 
     /**
      * Details of each payment. A single MassPayRequest can include

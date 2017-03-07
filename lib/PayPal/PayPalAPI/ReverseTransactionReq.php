@@ -18,6 +18,7 @@ class ReverseTransactionReq
      */
     public $ReverseTransactionRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class ReverseTransactionReq
         $str .= '</ns:ReverseTransactionReq>';
         return $str;
     }
-
 }

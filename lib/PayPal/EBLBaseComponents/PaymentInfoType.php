@@ -124,6 +124,47 @@ class PaymentInfoType
     public $FeeAmount;
 
     /**
+     * Transaction financing fee associated with the payment.
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
+     */
+    public $FinancingFeeAmount;
+
+    /**
+     * Total overall cost associated with this financing
+     * transaction.
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
+     */
+    public $FinancingTotalCost;
+
+    /**
+     * Monthly payment for this financing transaction.
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\CoreComponentTypes\BasicAmountType
+     */
+    public $FinancingMonthlyPayment;
+
+    /**
+     * The length of this financing term, in months.
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $FinancingTerm;
+
+    /**
+     *
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $IsFinancing;
+
+    /**
      * Amount deposited into the account's primary balance after a
      * currency conversion from automatic conversion through your
      * Payment Receiving Preferences or manual conversion through
@@ -428,5 +469,25 @@ class PaymentInfoType
      * @var string
      */
     public $BinEligibility;
+
+    /**
+     * This information holds business name and other data
+     * describing the transaction. This information is usually
+     * displayed in the CC account holder's statement.
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $SoftDescriptor;
+
+    /**
+     * CC Information about how consumer should contact the
+     * merchant. This information is usually displayed in the CC
+     * account holder's statement.
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $SoftDescriptorCity;
 
 }

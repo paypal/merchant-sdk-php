@@ -4,8 +4,7 @@ namespace PayPal\PayPalAPI;
 /**
  *
  */
-class DoUATPExpressCheckoutPaymentRequestType
-  extends DoExpressCheckoutPaymentRequestType
+class DoUATPExpressCheckoutPaymentRequestType extends DoExpressCheckoutPaymentRequestType
 {
 
 }

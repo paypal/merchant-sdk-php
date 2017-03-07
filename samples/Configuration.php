@@ -46,5 +46,4 @@ class Configuration
 		
 		return array_merge($config, self::getConfig());
 	}
-
 }

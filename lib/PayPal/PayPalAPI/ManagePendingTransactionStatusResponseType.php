@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 /**
  *
  */
-class ManagePendingTransactionStatusResponseType
-  extends AbstractResponseType
+class ManagePendingTransactionStatusResponseType extends AbstractResponseType
 {
 
     /**

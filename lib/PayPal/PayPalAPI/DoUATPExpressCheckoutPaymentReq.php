@@ -18,6 +18,7 @@ class DoUATPExpressCheckoutPaymentReq
      */
     public $DoUATPExpressCheckoutPaymentRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class DoUATPExpressCheckoutPaymentReq
         $str .= '</ns:DoUATPExpressCheckoutPaymentReq>';
         return $str;
     }
-
 }

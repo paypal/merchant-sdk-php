@@ -18,6 +18,7 @@ class CreateMobilePaymentReq
      */
     public $CreateMobilePaymentRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class CreateMobilePaymentReq
         $str .= '</ns:CreateMobilePaymentReq>';
         return $str;
     }
-
 }

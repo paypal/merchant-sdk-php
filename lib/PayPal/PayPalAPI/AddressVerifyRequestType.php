@@ -8,8 +8,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * string length: 255 single-byte characters Input mask: ?@?.??
  *
  */
-class AddressVerifyRequestType
-  extends AbstractRequestType
+class AddressVerifyRequestType extends AbstractRequestType
 {
 
     /**
@@ -52,9 +51,9 @@ class AddressVerifyRequestType
      */
     public function __construct($Email = null, $Street = null, $Zip = null)
     {
-        $this->Email  = $Email;
+        $this->Email = $Email;
         $this->Street = $Street;
-        $this->Zip    = $Zip;
+        $this->Zip = $Zip;
     }
 
 }

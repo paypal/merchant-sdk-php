@@ -11,8 +11,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * Required Character length and limits: 19 single-byte
  * characters
  */
-class DoVoidRequestType
-  extends AbstractRequestType
+class DoVoidRequestType extends AbstractRequestType
 {
 
     /**

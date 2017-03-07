@@ -63,9 +63,9 @@ class BillingPeriodDetailsType
      */
     public function __construct($BillingPeriod = null, $BillingFrequency = null, $Amount = null)
     {
-        $this->BillingPeriod    = $BillingPeriod;
+        $this->BillingPeriod = $BillingPeriod;
         $this->BillingFrequency = $BillingFrequency;
-        $this->Amount           = $Amount;
+        $this->Amount = $Amount;
     }
 
 }

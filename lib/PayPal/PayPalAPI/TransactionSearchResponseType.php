@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 /**
  * Results of a Transaction Search.
  */
-class TransactionSearchResponseType
-  extends AbstractResponseType
+class TransactionSearchResponseType extends AbstractResponseType
 {
 
     /**

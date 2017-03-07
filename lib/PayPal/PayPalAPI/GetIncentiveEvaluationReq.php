@@ -18,6 +18,7 @@ class GetIncentiveEvaluationReq
      */
     public $GetIncentiveEvaluationRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class GetIncentiveEvaluationReq
         $str .= '</ns:GetIncentiveEvaluationReq>';
         return $str;
     }
-
 }

@@ -18,6 +18,7 @@ class InitiateRecoupReq
      */
     public $InitiateRecoupRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class InitiateRecoupReq
         $str .= '</ns:InitiateRecoupReq>';
         return $str;
     }
-
 }

@@ -38,4 +38,13 @@ class DoCaptureResponseDetailsType
      */
     public $MsgSubID;
 
+    /**
+     * Partner funding source id corresponding to the FS used in
+     * authorization.
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $PartnerFundingSourceID;
+
 }

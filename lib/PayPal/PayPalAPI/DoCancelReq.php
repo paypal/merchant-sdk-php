@@ -18,6 +18,7 @@ class DoCancelReq
      */
     public $DoCancelRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class DoCancelReq
         $str .= '</ns:DoCancelReq>';
         return $str;
     }
-
 }

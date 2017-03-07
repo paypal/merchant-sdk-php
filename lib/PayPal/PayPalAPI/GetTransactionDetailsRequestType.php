@@ -10,8 +10,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * bank transfer withdrawals, for example. Character length and
  * limitations: 17 single-byte alphanumeric characters
  */
-class GetTransactionDetailsRequestType
-  extends AbstractRequestType
+class GetTransactionDetailsRequestType extends AbstractRequestType
 {
 
     /**

@@ -18,6 +18,7 @@ class SetAuthFlowParamReq
      */
     public $SetAuthFlowParamRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class SetAuthFlowParamReq
         $str .= '</ns:SetAuthFlowParamReq>';
         return $str;
     }
-
 }

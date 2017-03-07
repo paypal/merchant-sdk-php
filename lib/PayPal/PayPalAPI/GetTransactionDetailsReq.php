@@ -18,6 +18,7 @@ class GetTransactionDetailsReq
      */
     public $GetTransactionDetailsRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class GetTransactionDetailsReq
         $str .= '</ns:GetTransactionDetailsReq>';
         return $str;
     }
-
 }

@@ -18,6 +18,7 @@ class DoDirectPaymentReq
      */
     public $DoDirectPaymentRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class DoDirectPaymentReq
         $str .= '</ns:DoDirectPaymentReq>';
         return $str;
     }
-
 }

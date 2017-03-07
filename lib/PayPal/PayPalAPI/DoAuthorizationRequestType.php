@@ -8,8 +8,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * returned by a PayPal product. Required Character length and
  * limits: 19 single-byte characters maximum
  */
-class DoAuthorizationRequestType
-  extends AbstractRequestType
+class DoAuthorizationRequestType extends AbstractRequestType
 {
 
     /**
@@ -168,12 +167,21 @@ class DoAuthorizationRequestType
     public $IPAddress;
 
     /**
+     * A flag indicating that this transaction is a Ship to Store
+     * transaction. Optional
+     * @access    public
+     * @namespace ns
+     * @var string
+     */
+    public $ShipToStore;
+
+    /**
      * Constructor with arguments
      */
     public function __construct($TransactionID = null, $Amount = null)
     {
         $this->TransactionID = $TransactionID;
-        $this->Amount        = $Amount;
+        $this->Amount = $Amount;
     }
 
 }

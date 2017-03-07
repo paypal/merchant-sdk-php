@@ -119,7 +119,6 @@ if($setECResponse->Ack == 'Success')
 		$payPalURL = 'https://www.sandbox.paypal.com/incontext?token=' . $token;
 	header("Location: ".$payPalURL);*/
 	echo "<br><br><br><br><br><br><br><br><a href=https://www.sandbox.paypal.com/incontext?token=$token />Click here to continue to https://www.sandbox.paypal.com/incontext?token=$token</a>";
-
 }
 else {
 	var_dump($setECResponse);

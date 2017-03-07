@@ -8,8 +8,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * want to capture. Required Character length and limits: 19
  * single-byte characters maximum
  */
-class DoCaptureRequestType
-  extends AbstractRequestType
+class DoCaptureRequestType extends AbstractRequestType
 {
 
     /**
@@ -122,8 +121,8 @@ class DoCaptureRequestType
     public function __construct($AuthorizationID = null, $Amount = null, $CompleteType = null)
     {
         $this->AuthorizationID = $AuthorizationID;
-        $this->Amount          = $Amount;
-        $this->CompleteType    = $CompleteType;
+        $this->Amount = $Amount;
+        $this->CompleteType = $CompleteType;
     }
 
 }

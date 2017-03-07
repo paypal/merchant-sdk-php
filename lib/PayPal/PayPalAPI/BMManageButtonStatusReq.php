@@ -18,6 +18,7 @@ class BMManageButtonStatusReq
      */
     public $BMManageButtonStatusRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class BMManageButtonStatusReq
         $str .= '</ns:BMManageButtonStatusReq>';
         return $str;
     }
-
 }

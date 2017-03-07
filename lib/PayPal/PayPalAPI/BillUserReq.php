@@ -18,6 +18,7 @@ class BillUserReq
      */
     public $BillUserRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class BillUserReq
         $str .= '</ns:BillUserReq>';
         return $str;
     }
-
 }

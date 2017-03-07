@@ -11,8 +11,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * GetTransactionDetailsResponse. Required Character length and
  * limits: 19 single-byte characters maximum
  */
-class DoReauthorizationRequestType
-  extends AbstractRequestType
+class DoReauthorizationRequestType extends AbstractRequestType
 {
 
     /**
@@ -55,7 +54,7 @@ class DoReauthorizationRequestType
     public function __construct($AuthorizationID = null, $Amount = null)
     {
         $this->AuthorizationID = $AuthorizationID;
-        $this->Amount          = $Amount;
+        $this->Amount = $Amount;
     }
 
 }

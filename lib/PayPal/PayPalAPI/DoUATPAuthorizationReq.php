@@ -18,6 +18,7 @@ class DoUATPAuthorizationReq
      */
     public $DoUATPAuthorizationRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class DoUATPAuthorizationReq
         $str .= '</ns:DoUATPAuthorizationReq>';
         return $str;
     }
-
 }

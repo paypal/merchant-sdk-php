@@ -31,7 +31,7 @@ class TupleType
      */
     public function __construct($Key = null, $Value = null)
     {
-        $this->Key   = $Key;
+        $this->Key = $Key;
         $this->Value = $Value;
     }
 

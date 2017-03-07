@@ -18,6 +18,7 @@ class GetAuthDetailsReq
      */
     public $GetAuthDetailsRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class GetAuthDetailsReq
         $str .= '</ns:GetAuthDetailsReq>';
         return $str;
     }
-
 }

@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 /**
  *
  */
-class ExternalRememberMeOptOutResponseType
-  extends AbstractResponseType
+class ExternalRememberMeOptOutResponseType extends AbstractResponseType
 {
 
 }

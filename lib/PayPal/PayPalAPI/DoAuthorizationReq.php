@@ -18,6 +18,7 @@ class DoAuthorizationReq
      */
     public $DoAuthorizationRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class DoAuthorizationReq
         $str .= '</ns:DoAuthorizationReq>';
         return $str;
     }
-
 }

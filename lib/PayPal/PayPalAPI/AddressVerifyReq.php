@@ -18,6 +18,7 @@ class AddressVerifyReq
      */
     public $AddressVerifyRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class AddressVerifyReq
         $str .= '</ns:AddressVerifyReq>';
         return $str;
     }
-
 }

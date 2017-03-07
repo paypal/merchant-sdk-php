@@ -64,7 +64,7 @@ class ScheduleDetailsType
      */
     public function __construct($Description = null, $PaymentPeriod = null)
     {
-        $this->Description   = $Description;
+        $this->Description = $Description;
         $this->PaymentPeriod = $PaymentPeriod;
     }
 

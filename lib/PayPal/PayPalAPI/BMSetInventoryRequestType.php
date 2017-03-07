@@ -8,8 +8,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * Character length and limitations: 10 single-byte numeric
  * characters
  */
-class BMSetInventoryRequestType
-  extends AbstractRequestType
+class BMSetInventoryRequestType extends AbstractRequestType
 {
 
     /**
@@ -110,8 +109,8 @@ class BMSetInventoryRequestType
     public function __construct($HostedButtonID = null, $TrackInv = null, $TrackPnl = null)
     {
         $this->HostedButtonID = $HostedButtonID;
-        $this->TrackInv       = $TrackInv;
-        $this->TrackPnl       = $TrackPnl;
+        $this->TrackInv = $TrackInv;
+        $this->TrackPnl = $TrackPnl;
     }
 
 }

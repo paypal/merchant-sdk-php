@@ -18,6 +18,7 @@ class SetMobileCheckoutReq
      */
     public $SetMobileCheckoutRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class SetMobileCheckoutReq
         $str .= '</ns:SetMobileCheckoutReq>';
         return $str;
     }
-
 }

@@ -18,6 +18,7 @@ class BillAgreementUpdateReq
      */
     public $BAUpdateRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class BillAgreementUpdateReq
         $str .= '</ns:BillAgreementUpdateReq>';
         return $str;
     }
-
 }

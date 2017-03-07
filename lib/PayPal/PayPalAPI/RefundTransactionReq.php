@@ -18,6 +18,7 @@ class RefundTransactionReq
      */
     public $RefundTransactionRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class RefundTransactionReq
         $str .= '</ns:RefundTransactionReq>';
         return $str;
     }
-
 }

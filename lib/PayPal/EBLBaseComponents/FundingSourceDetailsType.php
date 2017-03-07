@@ -25,10 +25,11 @@ class FundingSourceDetailsType
     public $AllowPushFunding;
 
     /**
-     * Allowable values: ELV, CreditCard, ChinaUnionPay, BML This
-     * element could be used to specify the perered funding option
-     * for a guest users. It has effect only if LandingPage element
-     * is set to Billing. Otherwise it will be ignored.
+     * Allowable values: ELV, CreditCard, ChinaUnionPay, BML,
+     * Finance, Qiwi This element could be used to specify the
+     * perered funding option for a guest users. It has effect only
+     * if LandingPage element is set to Billing. Otherwise it will
+     * be ignored.
      * @access    public
      * @namespace ebl
      * @var string

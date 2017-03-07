@@ -91,4 +91,13 @@ class SetDataRequestType
      */
     public $ExternalPartnerTrackingDetails;
 
+    /**
+     * URI(uniform resource identifier), the source from which the
+     * request is initiated.
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $URI;
+
 }

@@ -18,6 +18,7 @@ class BMButtonSearchReq
      */
     public $BMButtonSearchRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class BMButtonSearchReq
         $str .= '</ns:BMButtonSearchReq>';
         return $str;
     }
-
 }

@@ -18,6 +18,7 @@ class ManageRecurringPaymentsProfileStatusReq
      */
     public $ManageRecurringPaymentsProfileStatusRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class ManageRecurringPaymentsProfileStatusReq
         $str .= '</ns:ManageRecurringPaymentsProfileStatusReq>';
         return $str;
     }
-
 }

@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  *
  */
-class SetCustomerBillingAgreementRequestType
-  extends AbstractRequestType
+class SetCustomerBillingAgreementRequestType extends AbstractRequestType
 {
 
     /**

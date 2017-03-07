@@ -18,6 +18,7 @@ class BillOutstandingAmountReq
      */
     public $BillOutstandingAmountRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class BillOutstandingAmountReq
         $str .= '</ns:BillOutstandingAmountReq>';
         return $str;
     }
-
 }

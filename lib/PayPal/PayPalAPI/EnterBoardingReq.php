@@ -18,6 +18,7 @@ class EnterBoardingReq
      */
     public $EnterBoardingRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class EnterBoardingReq
         $str .= '</ns:EnterBoardingReq>';
         return $str;
     }
-
 }

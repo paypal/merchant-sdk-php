@@ -18,6 +18,7 @@ class ManagePendingTransactionStatusReq
      */
     public $ManagePendingTransactionStatusRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class ManagePendingTransactionStatusReq
         $str .= '</ns:ManagePendingTransactionStatusReq>';
         return $str;
     }
-
 }

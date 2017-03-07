@@ -18,6 +18,7 @@ class ExternalRememberMeOptOutReq
      */
     public $ExternalRememberMeOptOutRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class ExternalRememberMeOptOutReq
         $str .= '</ns:ExternalRememberMeOptOutReq>';
         return $str;
     }
-
 }

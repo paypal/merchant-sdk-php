@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 /**
  * Return msgsubid back to merchant
  */
-class DoCancelResponseType
-  extends AbstractResponseType
+class DoCancelResponseType extends AbstractResponseType
 {
 
     /**

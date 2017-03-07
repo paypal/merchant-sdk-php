@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
 /**
  *
  */
-class CreateMobilePaymentResponseType
-  extends AbstractResponseType
+class CreateMobilePaymentResponseType extends AbstractResponseType
 {
 
 }

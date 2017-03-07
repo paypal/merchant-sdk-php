@@ -8,8 +8,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * number returned by a PayPal product. Required Character
  * length and limits: 19 single-byte characters maximum
  */
-class UpdateAuthorizationRequestType
-  extends AbstractRequestType
+class UpdateAuthorizationRequestType extends AbstractRequestType
 {
 
     /**
@@ -37,6 +36,15 @@ class UpdateAuthorizationRequestType
      * @var string
      */
     public $IPAddress;
+
+    /**
+     * A flag indicating that this transaction is a Ship to Store
+     * transaction. Optional
+     * @access    public
+     * @namespace ns
+     * @var string
+     */
+    public $ShipToStore;
 
     /**
      * Constructor with arguments

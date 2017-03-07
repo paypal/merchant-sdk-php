@@ -9,8 +9,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
  * length and limitations: 64 alphanumeric characters. The
  * token has the following format:OB-61characterstring
  */
-class EnterBoardingResponseType
-  extends AbstractResponseType
+class EnterBoardingResponseType extends AbstractResponseType
 {
 
     /**

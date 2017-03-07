@@ -18,6 +18,7 @@ class DoNonReferencedCreditReq
      */
     public $DoNonReferencedCreditRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class DoNonReferencedCreditReq
         $str .= '</ns:DoNonReferencedCreditReq>';
         return $str;
     }
-
 }

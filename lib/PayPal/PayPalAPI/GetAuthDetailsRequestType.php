@@ -8,8 +8,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * SetAuthFlowParam Response. RequiredCharacter length and
  * limitations: 20 single-byte characters
  */
-class GetAuthDetailsRequestType
-  extends AbstractRequestType
+class GetAuthDetailsRequestType extends AbstractRequestType
 {
 
     /**

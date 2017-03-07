@@ -95,6 +95,14 @@ class DoReferenceTransactionRequestDetailsType
      *
      * @access    public
      * @namespace ebl
+     * @var string
+     */
+    public $SoftDescriptorCity;
+
+    /**
+     *
+     * @access    public
+     * @namespace ebl
      * @var \PayPal\EBLBaseComponents\SenderDetailsType
      */
     public $SenderDetails;
@@ -114,8 +122,8 @@ class DoReferenceTransactionRequestDetailsType
      */
     public function __construct($ReferenceID = null, $PaymentAction = null, $PaymentDetails = null)
     {
-        $this->ReferenceID    = $ReferenceID;
-        $this->PaymentAction  = $PaymentAction;
+        $this->ReferenceID = $ReferenceID;
+        $this->PaymentAction = $PaymentAction;
         $this->PaymentDetails = $PaymentDetails;
     }
 

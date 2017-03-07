@@ -6,8 +6,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
 /**
  *
  */
-class DoNonReferencedCreditRequestType
-  extends AbstractRequestType
+class DoNonReferencedCreditRequestType extends AbstractRequestType
 {
 
     /**

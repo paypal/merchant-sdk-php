@@ -234,4 +234,33 @@ class GetExpressCheckoutDetailsResponseDetailsType
      */
     public $RefreshTokenStatusDetails;
 
+    /**
+     * Information about the transaction
+     * @array
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\PaymentInfoType
+     */
+    public $PaymentInfo;
+
+    /**
+     * Indicate the tolerance a cart can be changed. Possible
+     * values are NONE = cart cannot be changed (since financing
+     * was used and country is DE). FLEXIBLE = cart can be changed
+     * If this parameter does not exist, then assume cart can be
+     * modified.
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $CartChangeTolerance;
+
+    /**
+     * Type of the payment instrument.
+     * @access    public
+     * @namespace ebl
+     * @var \PayPal\EBLBaseComponents\InstrumentDetailsType
+     */
+    public $InstrumentDetails;
+
 }

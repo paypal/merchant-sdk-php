@@ -50,4 +50,12 @@ class CreateRecurringPaymentsProfileResponseDetailsType
      */
     public $DCCReturnCode;
 
+    /**
+     * Interchange Plus Pricing pending reason
+     * @access    public
+     * @namespace ebl
+     * @var string
+     */
+    public $PendingReason;
+
 }

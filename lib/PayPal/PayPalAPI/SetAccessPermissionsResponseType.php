@@ -9,8 +9,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
  * hours. Character length and limitations: 20 single-byte
  * characters
  */
-class SetAccessPermissionsResponseType
-  extends AbstractResponseType
+class SetAccessPermissionsResponseType extends AbstractResponseType
 {
 
     /**

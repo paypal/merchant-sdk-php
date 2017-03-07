@@ -9,8 +9,7 @@ use PayPal\EBLBaseComponents\AbstractResponseType;
  * expires after three hours. Character length and limitations:
  * 20 single-byte characters
  */
-class SetMobileCheckoutResponseType
-  extends AbstractResponseType
+class SetMobileCheckoutResponseType extends AbstractResponseType
 {
 
     /**

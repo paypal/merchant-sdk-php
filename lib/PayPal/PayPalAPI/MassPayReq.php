@@ -18,6 +18,7 @@ class MassPayReq
      */
     public $MassPayRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class MassPayReq
         $str .= '</ns:MassPayReq>';
         return $str;
     }
-
 }

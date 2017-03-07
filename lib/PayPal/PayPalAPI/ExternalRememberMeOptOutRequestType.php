@@ -10,8 +10,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * login with a merchant and has meaning only to the merchant.
  * Required
  */
-class ExternalRememberMeOptOutRequestType
-  extends AbstractRequestType
+class ExternalRememberMeOptOutRequestType extends AbstractRequestType
 {
 
     /**

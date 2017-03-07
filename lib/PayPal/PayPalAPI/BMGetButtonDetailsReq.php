@@ -18,6 +18,7 @@ class BMGetButtonDetailsReq
      */
     public $BMGetButtonDetailsRequest;
 
+
     public function toXMLString()
     {
         $str = '';
@@ -30,5 +31,4 @@ class BMGetButtonDetailsReq
         $str .= '</ns:BMGetButtonDetailsReq>';
         return $str;
     }
-
 }

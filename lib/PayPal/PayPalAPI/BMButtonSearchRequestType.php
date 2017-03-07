@@ -7,8 +7,7 @@ use PayPal\EBLBaseComponents\AbstractRequestType;
  * The earliest transaction date at which to start the search.
  * No wildcards are allowed. Required
  */
-class BMButtonSearchRequestType
-  extends AbstractRequestType
+class BMButtonSearchRequestType extends AbstractRequestType
 {
 
     /**
