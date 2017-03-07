@@ -1,5 +1,8 @@
 ### CHANGELOG
 
+####Version 3.11.0 - Mar 7, 2017
+   - Updated stubs for 204 release.
+
 ####Version 3.10.0 - Mar 6, 2017
    - Add RiskSesionCorrelationId to `DoReferenceTransactionRequestDetailsType`.
 
