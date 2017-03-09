@@ -4,7 +4,10 @@
 <title>PayPal Merchant SDK - GetAuthDetails</title>
 <link rel="stylesheet" href="../Common/sdk.css"/>
 </head>
-<?php $token = isset($_GET['token'])?  $_GET['token'] : 'HA-WJH3DBT463KH4';
+<?php
+
+$token = isset($_GET['token'])?  $_GET['token'] : 'HA-WJH3DBT463KH4'; // This could be a big problem..
+$$token = htmlspecialchars($token, ENT_QUOTES, 'UTF-8'); // Fixed.
 ?>
 <body>
 	<div id="wrapper">
@@ -30,4 +33,3 @@
 	<div id="relatedcalls"></div>
 </body>
 </html>
-
