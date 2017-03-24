@@ -256,7 +256,7 @@ class SetExpressCheckoutRequestDetailsType
      * Character length and limitations: 127
      * @access    public
      * @namespace ebl
-     * @name cpp -header-image
+     * @name cpp-header-image
      * @var string
      */
     public $cppheaderimage;
@@ -269,7 +269,7 @@ class SetExpressCheckoutRequestDetailsType
      * hexadecimal color code in ASCII
      * @access    public
      * @namespace ebl
-     * @name cpp -header-border-color
+     * @name cpp-header-border-color
      * @var string
      */
     public $cppheaderbordercolor;
@@ -280,7 +280,7 @@ class SetExpressCheckoutRequestDetailsType
      * character HTML hexadecimal color code in ASCII
      * @access    public
      * @namespace ebl
-     * @name cpp -header-back-color
+     * @name cpp-header-back-color
      * @var string
      */
     public $cppheaderbackcolor;
@@ -291,7 +291,7 @@ class SetExpressCheckoutRequestDetailsType
      * hexadecimal color code in ASCII
      * @access    public
      * @namespace ebl
-     * @name cpp -payflow-color
+     * @name cpp-payflow-color
      * @var string
      */
     public $cpppayflowcolor;
@@ -302,7 +302,7 @@ class SetExpressCheckoutRequestDetailsType
      * hexadecimal color code in ASCII
      * @access    public
      * @namespace ebl
-     * @name cpp -cart-border-color
+     * @name cpp-cart-border-color
      * @var string
      */
     public $cppcartbordercolor;
@@ -315,7 +315,7 @@ class SetExpressCheckoutRequestDetailsType
      * and limitations: 127
      * @access    public
      * @namespace ebl
-     * @name cpp -logo-image
+     * @name cpp-logo-image
      * @var string
      */
     public $cpplogoimage;
