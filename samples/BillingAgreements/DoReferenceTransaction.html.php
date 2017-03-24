@@ -94,7 +94,7 @@ document.getElementById("id2").style.display = "";
 					<div class="params">
 						<div class="param_name">Country</div>
 						<div class="param_value">
-							<input type="text" name="country" id="country" value="USA" />
+							<input type="text" name="country" id="country" value="US" />
 						</div>
 					</div>
 
@@ -301,7 +301,7 @@ document.getElementById("id2").style.display = "";
 						<div class="params">
 							<div class="param_name">Country</div>
 							<div class="param_value">
-								<input type="text" name="Bcountry" id="country" value="USA" />
+								<input type="text" name="Bcountry" id="country" value="US" />
 							</div>
 						</div>
 						<div class="params">
