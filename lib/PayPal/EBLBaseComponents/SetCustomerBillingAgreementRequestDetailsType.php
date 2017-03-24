@@ -54,7 +54,7 @@ class SetCustomerBillingAgreementRequestDetailsType
      *
      * @access    public
      * @namespace ebl
-     * @name cpp -header-image
+     * @name cpp-header-image
      * @var string
      */
     public $cppheaderimage;
@@ -63,7 +63,7 @@ class SetCustomerBillingAgreementRequestDetailsType
      *
      * @access    public
      * @namespace ebl
-     * @name cpp -header-border-color
+     * @name cpp-header-border-color
      * @var string
      */
     public $cppheaderbordercolor;
@@ -72,7 +72,7 @@ class SetCustomerBillingAgreementRequestDetailsType
      *
      * @access    public
      * @namespace ebl
-     * @name cpp -header-back-color
+     * @name cpp-header-back-color
      * @var string
      */
     public $cppheaderbackcolor;
@@ -81,7 +81,7 @@ class SetCustomerBillingAgreementRequestDetailsType
      *
      * @access    public
      * @namespace ebl
-     * @name cpp -payflow-color
+     * @name cpp-payflow-color
      * @var string
      */
     public $cpppayflowcolor;
