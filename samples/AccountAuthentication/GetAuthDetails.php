@@ -7,7 +7,7 @@ require_once('../PPBootStrap.php');
 /*
  *  If a token from the SetAuthFlowParam call is specified on input, the GetAuthDetails call can return a customer's Payer ID, PayPal email address, first name, and last name. 
  */
-$reqType = new GetAuthDetailsRequestType($token = htmlspecialchars($_REQUEST['token'], ENT_QUOTES, 'UTF-8')); // token protected from XSS.
+$reqType = new GetAuthDetailsRequestType(htmlspecialchars($_REQUEST['token'], ENT_QUOTES, 'UTF-8')); // token protected from XSS.
 $req = new GetAuthDetailsReq();
 $req->GetAuthDetailsRequest = $reqType;
 
