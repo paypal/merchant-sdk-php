@@ -31,14 +31,7 @@
     - CURLOPT_SSLVERSION is set to 1 . See [here](http://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html) for more information
     - CURLOPT_SSL_CIPHER_LIST was set to TLSv1, See [here](http://curl.haxx.se/libcurl/c/CURLOPT_SSL_CIPHER_LIST.html) for more information
 
-All these changes are included in the recent release, along with many other bug fixes. We highly encourage you to update your versions, by either using `composer` or running this command shown below:
-
-```
-curl -k -L https://raw.githubusercontent.com/paypal/merchant-sdk-php/stable-php5.3/samples/install.php | php    
-        OR        
-wget  https://raw.githubusercontent.com/paypal/merchant-sdk-php/stable-php5.3/samples/install.php
-php install.php
-```
+All these changes are included in the recent release, along with many other bug fixes.
 
 ## Prerequisites
 
@@ -51,15 +44,11 @@ PayPal's PHP Merchant SDK requires
 
 To run the bundled sample, first copy the samples folder to your web server root. You will then need to install the SDK as a dependency using composer (PHP V5.3+ only).
 
-
-run `composer update` from the samples folder.
-
 ## Using the SDK
-
 
 To use the SDK,
 
-   * Create a composer.json file with the following contents.
+   * Create a `composer.json` file with the following contents.
 
 ```json
 {
@@ -69,7 +58,7 @@ To use the SDK,
     }
 }
 ```
-   * Install the SDK as a dependency using composer. 
+   * Install the SDK as a dependency using `composer`. To download `composer`, follow [installation instructions](https://getcomposer.org/download/) provided in Composer documentation.
    * Require `PPBootStrap.php` in your application.
    * Choose how you would like to configure the SDK - You can either
 	  * Create a hashmap containing configuration parameters and pass it to the service object OR
