@@ -1,5 +1,9 @@
 ### CHANGELOG
 
+####Version 3.12.0 - Oct 10, 2017
+   - Fixes name attribute in EBLBaseComponents. Fixes #136.
+   - Minor bug fixes.
+
 ####Version 3.11.0 - Mar 7, 2017
    - Updated stubs for 204 release.
 
