@@ -1,3 +1,5 @@
+<!-- ** If you have a live issue that needs immediate attention, contact [PayPal Technical Support](https://developer.paypal.com/support/). ** -->
+
 ### General information
 
 * SDK/Library version: <!-- Example: 4.7.2 -->
