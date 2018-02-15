@@ -33,6 +33,10 @@
 
 All these changes are included in the recent release, along with many other bug fixes.
 
+## Support
+
+> Please contact [PayPal Technical Support](https://developer.paypal.com/support/) for any live or account issues.
+
 ## Prerequisites
 
 PayPal's PHP Merchant SDK requires 
