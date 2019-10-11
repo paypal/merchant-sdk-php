@@ -2,6 +2,7 @@
 namespace PayPal\EBLBaseComponents;
 
 use PayPal\Core\PPXmlMessage;
+use PayPal\Core\PPUtils;
 Use PayPal\EBLBaseComponents\ErrorType;
 
 /**
@@ -44,7 +45,6 @@ class AbstractResponseType
 
     /**
      *
-     * @array
      * @access    public
      * @namespace ebl
      * @var \PayPal\EBLBaseComponents\ErrorType
@@ -139,7 +139,7 @@ class AbstractResponseType
         }
     }
 
-    public function fillRelation($property, array $element)
+    private function fillRelation($property, array $element)
     {
         $type = PPUtils::propertyType($this, $property);
 
@@ -151,8 +151,9 @@ class AbstractResponseType
         }
 
         if (isset($element['num'])) { // array of objects
-            $this->{$property}[$element['num']] = $item = new $type();
+            $item = new $type();
             $item->init($element['children'], false);
+            $this->{$property}[$element['num']] = $item;
         } else {
             $this->{$property} = new $type();
             $this->{$property}->init($element["children"], false);
