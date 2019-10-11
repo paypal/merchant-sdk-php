@@ -68,4 +68,8 @@ class AbstractResponseType
      */
     public $Build;
 
+    public $LongMessage;
+    
+    public $ShortMessage;
+
 }
