@@ -153,7 +153,7 @@
 						<th>Amount</th>
 						<th>Shipping Amount</th>
 						<th>Tax Amount</th>
-						<th>Additonal Billing Cycles</th>
+						<th>Additional Billing Cycles</th>
 					</tr>
 					<tr>
 						<td><span class="param_value"> <input id="amount" name="amount" />

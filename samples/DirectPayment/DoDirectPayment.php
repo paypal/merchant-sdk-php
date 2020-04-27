@@ -42,7 +42,7 @@ $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 
 /*
- * shipping adress
+ * shipping address
 */
 $address = new AddressType();
 $address->Name = "$firstName $lastName";
