@@ -19,7 +19,7 @@ class OfferDetailsType
     public $OfferCode;
 
     /**
-     * Specific infromation for BML, Similar structure could be
+     * Specific information for BML, Similar structure could be
      * added for sepcific  promotion needs like CrossPromotions
      * @access    public
      * @namespace ebl

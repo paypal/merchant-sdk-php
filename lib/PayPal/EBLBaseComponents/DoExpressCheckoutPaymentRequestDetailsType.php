@@ -90,7 +90,7 @@ class DoExpressCheckoutPaymentRequestDetailsType
 
     /**
      * Flag to indicate if previously set promoCode shall be
-     * overriden. Value 1 indicates overriding.
+     * overridden. Value 1 indicates overriding.
      * @access    public
      * @namespace ebl
      * @var string

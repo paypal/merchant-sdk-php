@@ -4,13 +4,13 @@ namespace PayPal\PayPalAPI;
 use PayPal\EBLBaseComponents\AbstractRequestType;
 
 /**
- * Msg Sub Id that was used for the orginal operation.
+ * Msg Sub Id that was used for the original operation.
  */
 class DoCancelRequestType extends AbstractRequestType
 {
 
     /**
-     * Msg Sub Id that was used for the orginal operation.
+     * Msg Sub Id that was used for the original operation.
      * @access    public
      * @namespace ns
      * @var string
