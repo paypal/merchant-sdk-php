@@ -1,5 +1,5 @@
 {
-    "name": "paypal/merchant-sdk-php",
+    "name": "filmin/merchant-sdk-php",
     "description": "PayPal Merchant SDK for PHP",
     "keywords": ["paypal", "php", "sdk"],
     "homepage": "https://developer.paypal.com",
