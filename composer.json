@@ -26,5 +26,11 @@
             "PayPal\\EnhancedDataTypes": "lib/",
             "PayPal\\PayPalAPI": "lib/"
         }
-    }
+    },
+    "repositories": [
+        {
+            "url": "https://github.com/filmin/sdk-core-php",
+            "type": "vcs"
+        }
+    ]
 }
