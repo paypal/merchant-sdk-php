@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.3.0",
         "ext-curl": "*",
-        "filmin/paypal-sdk-core-php":"3.*"
+        "filmin/paypal-sdk-core-php":"dev-master"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master"
