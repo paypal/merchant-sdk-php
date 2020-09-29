@@ -6,7 +6,7 @@ use PayPal\Core\PPXmlMessage;
 /**
  * Unit of meausre for billing cycle
  */
-class BillingPeriodDetailsType_Update
+class BillingPeriodDetailsTypeUpdate
   extends PPXmlMessage
 {
 
