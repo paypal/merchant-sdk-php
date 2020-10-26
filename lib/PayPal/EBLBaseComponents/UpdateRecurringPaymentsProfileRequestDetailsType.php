@@ -135,7 +135,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
      * Trial period of this schedule
      * @access    public
      * @namespace ebl
-     * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType_Update
+     * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsTypeUpdate
      */
     public $TrialPeriod;
 
@@ -143,7 +143,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType
      *
      * @access    public
      * @namespace ebl
-     * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsType_Update
+     * @var \PayPal\EBLBaseComponents\BillingPeriodDetailsTypeUpdate
      */
     public $PaymentPeriod;
 
