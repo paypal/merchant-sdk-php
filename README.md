@@ -10,12 +10,12 @@
 ## POODLE Update
 - Because of the Poodle vulnerability, PayPal has disabled SSLv3. 
 - To enable TLS encryption, the changes were made to [PPHttpConfig.php](https://github.com/paypal/sdk-core-php/blob/master/lib/PayPal/Core/PPHttpConfig.php#L11) in [SDK Core](https://github.com/paypal/sdk-core-php/tree/master) to use a cipher list specific to TLS encryption.
-``` php
+```php
     /**
 	 * Some default options for curl
 	 * These are typically overridden by PPConnectionManager
 	 */
-	public static $DEFAULT_CURL_OPTS = array(
+	public static $DEFAULT_CURL_OPTS = [
 		CURLOPT_SSLVERSION => 1,
 		CURLOPT_CONNECTTIMEOUT => 10,
 		CURLOPT_RETURNTRANSFER => TRUE,
@@ -25,7 +25,7 @@
 		CURLOPT_SSL_VERIFYHOST => 2,
 		CURLOPT_SSL_VERIFYPEER => 1,
 		CURLOPT_SSL_CIPHER_LIST => 'TLSv1',
-	);
+	];
 ```
 - There are two primary changes done to curl options: 
     - CURLOPT_SSLVERSION is set to 1 . See [here](http://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html) for more information
@@ -58,7 +58,7 @@ To use the SDK,
 {
     "name": "me/shopping-cart-app",
     "require": {
-        "paypal/merchant-sdk-php":"3.8.*"
+        "protonlabs/paypal-merchant-sdk-php":"3.8.*"
     }
 }
 ```
@@ -77,12 +77,12 @@ For example,
     require("PPBootStrap.php");
 	
 	// Array containing credentials and confiuration parameters. (not required if config file is used)
-	$config = array(
+	$config = [
        'mode' => 'sandbox',
        'acct1.UserName' => 'jb-us-seller_api1.paypal.com',
-       'acct1.Password' => 'WX4WTU3S8MY44S7F'
+       'acct1.Password' => 'WX4WTU3S8MY44S7F',
        .....
-    );
+    ];
 
     // Create request details
     $itemAmount = new BasicAmountType($currencyId, $amount);
@@ -97,9 +97,9 @@ For example,
     // Perform request
 	$paypalService = new PayPalAPIInterfaceServiceService($config);
 	$setECResponse = $paypalService->SetExpressCheckout($setECReq);
-	
+
     // Check results
-	if(strtoupper($setECResponse->Ack) == 'SUCCESS') {
+	if (strtoupper($setECResponse->Ack) == 'SUCCESS') {
 		// Success
 	}  
 ```
@@ -136,12 +136,12 @@ The SDK allows you to configure the following parameters-
 Dynamic configuration values can be set by passing a map of credential and config values (if config map is passed the config file is ignored)
 
 ```php
-    $config = array(
+    $config = [
        'mode' => 'sandbox',
        'acct1.UserName' => 'jb-us-seller_api1.paypal.com',
-       'acct1.Password' => 'WX4WTU3S8MY44S7F'
+       'acct1.Password' => 'WX4WTU3S8MY44S7F',
        .....
-    );
+    ];
     $service  = new PayPalAPIInterfaceServiceService($config); 
 ```
 
