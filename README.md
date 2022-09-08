@@ -1,3 +1,5 @@
+![status: archive](https://github.com/GIScience/badges/raw/master/status/archive.svg)
+
 # PayPal PHP Merchant SDK
 
    The merchant SDK can be used for integrating with the Express Checkout, Mass Pay, Web Payments Pro APIs.
